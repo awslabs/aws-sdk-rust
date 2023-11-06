@@ -6,7 +6,7 @@ pub struct ListSequenceStoresOutput {
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of sequence stores.</p>
-    pub sequence_stores: ::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>>,
+    pub sequence_stores: ::std::vec::Vec<crate::types::SequenceStoreDetail>,
     _request_id: Option<String>,
 }
 impl ListSequenceStoresOutput {
@@ -15,8 +15,9 @@ impl ListSequenceStoresOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of sequence stores.</p>
-    pub fn sequence_stores(&self) -> ::std::option::Option<&[crate::types::SequenceStoreDetail]> {
-        self.sequence_stores.as_deref()
+    pub fn sequence_stores(&self) -> &[crate::types::SequenceStoreDetail] {
+        use std::ops::Deref;
+        self.sequence_stores.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSequenceStoresOutput {
@@ -84,11 +85,21 @@ impl ListSequenceStoresOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSequenceStoresOutput`](crate::operation::list_sequence_stores::ListSequenceStoresOutput).
-    pub fn build(self) -> crate::operation::list_sequence_stores::ListSequenceStoresOutput {
-        crate::operation::list_sequence_stores::ListSequenceStoresOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sequence_stores`](crate::operation::list_sequence_stores::builders::ListSequenceStoresOutputBuilder::sequence_stores)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_sequence_stores::ListSequenceStoresOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_sequence_stores::ListSequenceStoresOutput {
             next_token: self.next_token,
-            sequence_stores: self.sequence_stores,
+            sequence_stores: self.sequence_stores.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sequence_stores",
+                    "sequence_stores was not specified but it is required when building ListSequenceStoresOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

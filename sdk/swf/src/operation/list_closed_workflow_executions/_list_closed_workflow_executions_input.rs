@@ -116,6 +116,7 @@ pub struct ListClosedWorkflowExecutionsInputBuilder {
 }
 impl ListClosedWorkflowExecutionsInputBuilder {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -299,7 +300,7 @@ impl ListClosedWorkflowExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsInput {
             domain: self.domain,

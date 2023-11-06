@@ -9,8 +9,10 @@ pub struct TaskTemplateDefaults {
 }
 impl TaskTemplateDefaults {
     /// <p>Default value for the field.</p>
-    pub fn default_field_values(&self) -> ::std::option::Option<&[crate::types::TaskTemplateDefaultFieldValue]> {
-        self.default_field_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_field_values.is_none()`.
+    pub fn default_field_values(&self) -> &[crate::types::TaskTemplateDefaultFieldValue] {
+        self.default_field_values.as_deref().unwrap_or_default()
     }
 }
 impl TaskTemplateDefaults {

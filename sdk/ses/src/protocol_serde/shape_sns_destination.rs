@@ -3,15 +3,16 @@
 pub fn ser_sns_destination(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::SnsDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TopicARN");
-    if let Some(var_2) = &input.topic_arn {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.topic_arn);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_sns_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SnsDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -20,7 +21,7 @@ pub fn de_sns_destination(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicARN") /* TopicARN com.amazonaws.ses#SNSDestination$TopicARN */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -29,11 +30,13 @@ pub fn de_sns_destination(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_3);
+                builder = builder.set_topic_arn(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::sns_destination_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

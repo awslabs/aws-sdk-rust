@@ -11,8 +11,10 @@ pub struct DescribeReplicationConfigurationsOutput {
 }
 impl DescribeReplicationConfigurationsOutput {
     /// <p>The collection of replication configurations that is returned.</p>
-    pub fn replications(&self) -> ::std::option::Option<&[crate::types::ReplicationConfigurationDescription]> {
-        self.replications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replications.is_none()`.
+    pub fn replications(&self) -> &[crate::types::ReplicationConfigurationDescription] {
+        self.replications.as_deref().unwrap_or_default()
     }
     /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

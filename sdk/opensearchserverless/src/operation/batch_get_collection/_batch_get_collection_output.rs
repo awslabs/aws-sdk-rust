@@ -11,12 +11,16 @@ pub struct BatchGetCollectionOutput {
 }
 impl BatchGetCollectionOutput {
     /// <p>Details about each collection.</p>
-    pub fn collection_details(&self) -> ::std::option::Option<&[crate::types::CollectionDetail]> {
-        self.collection_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collection_details.is_none()`.
+    pub fn collection_details(&self) -> &[crate::types::CollectionDetail] {
+        self.collection_details.as_deref().unwrap_or_default()
     }
     /// <p>Error information for the request.</p>
-    pub fn collection_error_details(&self) -> ::std::option::Option<&[crate::types::CollectionErrorDetail]> {
-        self.collection_error_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collection_error_details.is_none()`.
+    pub fn collection_error_details(&self) -> &[crate::types::CollectionErrorDetail] {
+        self.collection_error_details.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetCollectionOutput {

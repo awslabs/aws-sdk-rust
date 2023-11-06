@@ -90,6 +90,7 @@ pub struct ListOpenWorkflowExecutionsInputBuilder {
 }
 impl ListOpenWorkflowExecutionsInputBuilder {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl ListOpenWorkflowExecutionsInputBuilder {
         &self.domain
     }
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
+    /// This field is required.
     pub fn start_time_filter(mut self, input: crate::types::ExecutionTimeFilter) -> Self {
         self.start_time_filter = ::std::option::Option::Some(input);
         self
@@ -227,7 +229,7 @@ impl ListOpenWorkflowExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsInput {
             domain: self.domain,

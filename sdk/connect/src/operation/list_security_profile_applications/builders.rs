@@ -10,7 +10,7 @@ impl ListSecurityProfileApplicationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -22,7 +22,7 @@ impl ListSecurityProfileApplicationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSecurityProfileApplications`.
 ///
-/// <p>Returns a list of third party applications in a specific security profile.</p>
+/// <p>Returns a list of third-party applications in a specific security profile.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSecurityProfileApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -72,12 +72,15 @@ impl ListSecurityProfileApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_security_profile_applications::ListSecurityProfileApplications::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl ListSecurityProfileApplicationsFluentBuilder {
         crate::operation::list_security_profile_applications::ListSecurityProfileApplications::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput,
-            crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput,
+        crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,49 +110,49 @@ impl ListSecurityProfileApplicationsFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_security_profile_applications::paginator::ListSecurityProfileApplicationsPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::list_security_profile_applications::paginator::ListSecurityProfileApplicationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::list_security_profile_applications::paginator::ListSecurityProfileApplicationsPaginator {
         crate::operation::list_security_profile_applications::paginator::ListSecurityProfileApplicationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The security profile identifier.</p>
+    /// <p>The identifier for the security profle.</p>
     pub fn security_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_id(input.into());
         self
     }
-    /// <p>The security profile identifier.</p>
+    /// <p>The identifier for the security profle.</p>
     pub fn set_security_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_id(input);
         self
     }
-    /// <p>The security profile identifier.</p>
+    /// <p>The identifier for the security profle.</p>
     pub fn get_security_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_profile_id()
     }
-    /// <p>The instance identifier.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The instance identifier.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The instance identifier.</p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The token for the next set of results. The next set of results can be retrieved by using the token value returned in the previous response when making the next request.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results. The next set of results can be retrieved by using the token value returned in the previous response when making the next request.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results. The next set of results can be retrieved by using the token value returned in the previous response when making the next request.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

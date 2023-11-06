@@ -14,8 +14,10 @@ impl CreateReplicationConfigurationInput {
         self.source_file_system_id.as_deref()
     }
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::DestinationToCreate]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::DestinationToCreate] {
+        self.destinations.as_deref().unwrap_or_default()
     }
 }
 impl CreateReplicationConfigurationInput {
@@ -34,6 +36,7 @@ pub struct CreateReplicationConfigurationInputBuilder {
 }
 impl CreateReplicationConfigurationInputBuilder {
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+    /// This field is required.
     pub fn source_file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl CreateReplicationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_configuration::CreateReplicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_replication_configuration::CreateReplicationConfigurationInput {
             source_file_system_id: self.source_file_system_id,

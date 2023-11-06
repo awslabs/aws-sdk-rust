@@ -80,8 +80,10 @@ impl DescribeImagesInput {
     /// <li> <p>If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs shared with your account are returned. In addition, AMIs that are shared with the organization or OU of which you are member are also returned. </p> </li>
     /// <li> <p>If you specify <code>all</code>, all public AMIs are returned.</p> </li>
     /// </ul>
-    pub fn executable_users(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.executable_users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.executable_users.is_none()`.
+    pub fn executable_users(&self) -> &[::std::string::String] {
+        self.executable_users.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -125,17 +127,23 @@ impl DescribeImagesInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The image IDs.</p>
     /// <p>Default: Describes all images available to you.</p>
-    pub fn image_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
+    pub fn image_ids(&self) -> &[::std::string::String] {
+        self.image_ids.as_deref().unwrap_or_default()
     }
     /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub fn owners(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.owners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owners.is_none()`.
+    pub fn owners(&self) -> &[::std::string::String] {
+        self.owners.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to include deprecated AMIs.</p>
     /// <p>Default: No deprecated AMIs are included in the response.</p> <note>
@@ -490,7 +498,7 @@ impl DescribeImagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_images::DescribeImagesInput {
             executable_users: self.executable_users,
             filters: self.filters,

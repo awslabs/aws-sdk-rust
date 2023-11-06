@@ -2,7 +2,7 @@
 pub fn ser_delete_data_lake_organization_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_enable_new_account {
         let mut array_2 = object.key("autoEnableNewAccount").start_array();
         for item_3 in var_1 {

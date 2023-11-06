@@ -41,6 +41,7 @@ pub struct RebootReplicationInstanceInputBuilder {
 }
 impl RebootReplicationInstanceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    /// This field is required.
     pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl RebootReplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_replication_instance::RebootReplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reboot_replication_instance::RebootReplicationInstanceInput {
             replication_instance_arn: self.replication_instance_arn,

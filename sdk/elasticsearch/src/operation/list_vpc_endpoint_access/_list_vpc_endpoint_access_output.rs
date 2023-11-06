@@ -5,19 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcEndpointAccessOutput {
     /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
-    pub authorized_principal_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
+    pub authorized_principal_list: ::std::vec::Vec<crate::types::AuthorizedPrincipal>,
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
+    pub next_token: ::std::string::String,
     _request_id: Option<String>,
 }
 impl ListVpcEndpointAccessOutput {
     /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
-    pub fn authorized_principal_list(&self) -> ::std::option::Option<&[crate::types::AuthorizedPrincipal]> {
-        self.authorized_principal_list.as_deref()
+    pub fn authorized_principal_list(&self) -> &[crate::types::AuthorizedPrincipal] {
+        use std::ops::Deref;
+        self.authorized_principal_list.deref()
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
+    pub fn next_token(&self) -> &str {
+        use std::ops::Deref;
+        self.next_token.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVpcEndpointAccessOutput {
@@ -62,6 +64,7 @@ impl ListVpcEndpointAccessOutputBuilder {
         &self.authorized_principal_list
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    /// This field is required.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
@@ -85,11 +88,29 @@ impl ListVpcEndpointAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVpcEndpointAccessOutput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput).
-    pub fn build(self) -> crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput {
-        crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput {
-            authorized_principal_list: self.authorized_principal_list,
-            next_token: self.next_token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`authorized_principal_list`](crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder::authorized_principal_list)
+    /// - [`next_token`](crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder::next_token)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput {
+            authorized_principal_list: self.authorized_principal_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "authorized_principal_list",
+                    "authorized_principal_list was not specified but it is required when building ListVpcEndpointAccessOutput",
+                )
+            })?,
+            next_token: self.next_token.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "next_token",
+                    "next_token was not specified but it is required when building ListVpcEndpointAccessOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -52,6 +52,7 @@ pub struct GetChannelMessageStatusInputBuilder {
 }
 impl GetChannelMessageStatusInputBuilder {
     /// <p>The ARN of the channel</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl GetChannelMessageStatusInputBuilder {
         &self.channel_arn
     }
     /// <p>The ID of the message.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +82,7 @@ impl GetChannelMessageStatusInputBuilder {
         &self.message_id
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +121,7 @@ impl GetChannelMessageStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_channel_message_status::GetChannelMessageStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_channel_message_status::GetChannelMessageStatusInput {
             channel_arn: self.channel_arn,

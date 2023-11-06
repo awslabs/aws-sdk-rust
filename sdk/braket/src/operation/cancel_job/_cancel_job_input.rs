@@ -27,6 +27,7 @@ pub struct CancelJobInputBuilder {
 }
 impl CancelJobInputBuilder {
     /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl CancelJobInputBuilder {
         &self.job_arn
     }
     /// Consumes the builder and constructs a [`CancelJobInput`](crate::operation::cancel_job::CancelJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_job::CancelJobInput { job_arn: self.job_arn })
     }
 }

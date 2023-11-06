@@ -2,7 +2,7 @@
 pub fn ser_put_bucket_policy_input_input(
     input: &crate::operation::put_bucket_policy::PutBucketPolicyInput,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.policy {

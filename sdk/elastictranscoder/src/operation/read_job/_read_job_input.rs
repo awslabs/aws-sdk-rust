@@ -28,6 +28,7 @@ pub struct ReadJobInputBuilder {
 }
 impl ReadJobInputBuilder {
     /// <p>The identifier of the job for which you want to get detailed information.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl ReadJobInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ReadJobInput`](crate::operation::read_job::ReadJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::read_job::ReadJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::read_job::ReadJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::read_job::ReadJobInput { id: self.id })
     }
 }

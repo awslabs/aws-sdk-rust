@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Record {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
-    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub data: ::aws_smithy_types::Blob,
 }
 impl Record {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.data.as_ref()
+    pub fn data(&self) -> &::aws_smithy_types::Blob {
+        &self.data
     }
 }
 impl Record {
@@ -28,6 +28,7 @@ pub struct RecordBuilder {
 }
 impl RecordBuilder {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl RecordBuilder {
         &self.data
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
-    pub fn build(self) -> crate::types::Record {
-        crate::types::Record { data: self.data }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data`](crate::types::builders::RecordBuilder::data)
+    pub fn build(self) -> ::std::result::Result<crate::types::Record, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Record {
+            data: self.data.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data",
+                    "data was not specified but it is required when building Record",
+                )
+            })?,
+        })
     }
 }

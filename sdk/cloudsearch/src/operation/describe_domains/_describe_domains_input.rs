@@ -9,8 +9,10 @@ pub struct DescribeDomainsInput {
 }
 impl DescribeDomainsInput {
     /// <p>The names of the domains you want to include in the response.</p>
-    pub fn domain_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domain_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_names.is_none()`.
+    pub fn domain_names(&self) -> &[::std::string::String] {
+        self.domain_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeDomainsInput {
@@ -50,7 +52,7 @@ impl DescribeDomainsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDomainsInput`](crate::operation::describe_domains::DescribeDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_domains::DescribeDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_domains::DescribeDomainsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_domains::DescribeDomainsInput {
             domain_names: self.domain_names,
         })

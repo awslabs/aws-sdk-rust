@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMissionProfile`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`mission_profile_id(impl Into<String>)`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::mission_profile_id) / [`set_mission_profile_id(Option<String>)`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::set_mission_profile_id): <p>UUID of a mission profile.</p>
+    ///   - [`mission_profile_id(impl Into<String>)`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::mission_profile_id) / [`set_mission_profile_id(Option<String>)`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::set_mission_profile_id):<br>required: **true**<br><p>UUID of a mission profile.</p><br>
     /// - On success, responds with [`GetMissionProfileOutput`](crate::operation::get_mission_profile::GetMissionProfileOutput) with field(s):
     ///   - [`mission_profile_id(Option<String>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::mission_profile_id): <p>UUID of a mission profile.</p>
     ///   - [`mission_profile_arn(Option<String>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::mission_profile_arn): <p>ARN of a mission profile.</p>
@@ -12,9 +12,9 @@ impl super::Client {
     ///   - [`contact_pre_pass_duration_seconds(Option<i32>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::contact_pre_pass_duration_seconds): <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
     ///   - [`contact_post_pass_duration_seconds(Option<i32>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::contact_post_pass_duration_seconds): <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     ///   - [`minimum_viable_contact_duration_seconds(Option<i32>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::minimum_viable_contact_duration_seconds): <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    ///   - [`dataflow_edges(Option<Vec<Vec<String>>>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::dataflow_edges): <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    ///   - [`dataflow_edges(Option<Vec::<Vec::<String>>>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::dataflow_edges): <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
     ///   - [`tracking_config_arn(Option<String>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::tracking_config_arn): <p>ARN of a tracking <code>Config</code>.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::tags): <p>Tags assigned to a mission profile.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::tags): <p>Tags assigned to a mission profile.</p>
     ///   - [`streams_kms_key(Option<KmsKey>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::streams_kms_key): <p>KMS key to use for encrypting streams.</p>
     ///   - [`streams_kms_role(Option<String>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::streams_kms_role): <p>Role to use for encrypting streams with KMS key.</p>
     /// - On failure, responds with [`SdkError<GetMissionProfileError>`](crate::operation::get_mission_profile::GetMissionProfileError)

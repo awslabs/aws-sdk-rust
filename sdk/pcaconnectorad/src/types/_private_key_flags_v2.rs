@@ -9,7 +9,7 @@ pub struct PrivateKeyFlagsV2 {
     /// <p>Require user input when using the private key for enrollment.</p>
     pub strong_key_protection_required: ::std::option::Option<bool>,
     /// <p>Defines the minimum client compatibility.</p>
-    pub client_version: ::std::option::Option<crate::types::ClientCompatibilityV2>,
+    pub client_version: crate::types::ClientCompatibilityV2,
 }
 impl PrivateKeyFlagsV2 {
     /// <p>Allows the private key to be exported.</p>
@@ -21,8 +21,8 @@ impl PrivateKeyFlagsV2 {
         self.strong_key_protection_required
     }
     /// <p>Defines the minimum client compatibility.</p>
-    pub fn client_version(&self) -> ::std::option::Option<&crate::types::ClientCompatibilityV2> {
-        self.client_version.as_ref()
+    pub fn client_version(&self) -> &crate::types::ClientCompatibilityV2 {
+        &self.client_version
     }
 }
 impl PrivateKeyFlagsV2 {
@@ -70,6 +70,7 @@ impl PrivateKeyFlagsV2Builder {
         &self.strong_key_protection_required
     }
     /// <p>Defines the minimum client compatibility.</p>
+    /// This field is required.
     pub fn client_version(mut self, input: crate::types::ClientCompatibilityV2) -> Self {
         self.client_version = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl PrivateKeyFlagsV2Builder {
         &self.client_version
     }
     /// Consumes the builder and constructs a [`PrivateKeyFlagsV2`](crate::types::PrivateKeyFlagsV2).
-    pub fn build(self) -> crate::types::PrivateKeyFlagsV2 {
-        crate::types::PrivateKeyFlagsV2 {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`client_version`](crate::types::builders::PrivateKeyFlagsV2Builder::client_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyFlagsV2, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PrivateKeyFlagsV2 {
             exportable_key: self.exportable_key,
             strong_key_protection_required: self.strong_key_protection_required,
-            client_version: self.client_version,
-        }
+            client_version: self.client_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "client_version",
+                    "client_version was not specified but it is required when building PrivateKeyFlagsV2",
+                )
+            })?,
+        })
     }
 }

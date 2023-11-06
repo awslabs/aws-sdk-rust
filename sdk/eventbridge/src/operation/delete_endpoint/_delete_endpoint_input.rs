@@ -27,6 +27,7 @@ pub struct DeleteEndpointInputBuilder {
 }
 impl DeleteEndpointInputBuilder {
     /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::operation::delete_endpoint::DeleteEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_endpoint::DeleteEndpointInput { name: self.name })
     }
 }

@@ -10,8 +10,10 @@ pub struct DescribeCachediScsiVolumesOutput {
 }
 impl DescribeCachediScsiVolumesOutput {
     /// <p>An array of objects where each object contains metadata about one cached volume.</p>
-    pub fn cachedi_scsi_volumes(&self) -> ::std::option::Option<&[crate::types::CachediScsiVolume]> {
-        self.cachedi_scsi_volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cachedi_scsi_volumes.is_none()`.
+    pub fn cachedi_scsi_volumes(&self) -> &[crate::types::CachediScsiVolume] {
+        self.cachedi_scsi_volumes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCachediScsiVolumesOutput {

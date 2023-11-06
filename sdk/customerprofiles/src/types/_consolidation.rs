@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Consolidation {
     /// <p>A list of matching criteria.</p>
-    pub matching_attributes_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub matching_attributes_list: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
 }
 impl Consolidation {
     /// <p>A list of matching criteria.</p>
-    pub fn matching_attributes_list(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.matching_attributes_list.as_deref()
+    pub fn matching_attributes_list(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        use std::ops::Deref;
+        self.matching_attributes_list.deref()
     }
 }
 impl Consolidation {
@@ -48,9 +49,16 @@ impl ConsolidationBuilder {
         &self.matching_attributes_list
     }
     /// Consumes the builder and constructs a [`Consolidation`](crate::types::Consolidation).
-    pub fn build(self) -> crate::types::Consolidation {
-        crate::types::Consolidation {
-            matching_attributes_list: self.matching_attributes_list,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`matching_attributes_list`](crate::types::builders::ConsolidationBuilder::matching_attributes_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::Consolidation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Consolidation {
+            matching_attributes_list: self.matching_attributes_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "matching_attributes_list",
+                    "matching_attributes_list was not specified but it is required when building Consolidation",
+                )
+            })?,
+        })
     }
 }

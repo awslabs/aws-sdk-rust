@@ -34,6 +34,7 @@ pub struct DeleteKeyOutputBuilder {
 }
 impl DeleteKeyOutputBuilder {
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::Key) -> Self {
         self.key = ::std::option::Option::Some(input);
         self

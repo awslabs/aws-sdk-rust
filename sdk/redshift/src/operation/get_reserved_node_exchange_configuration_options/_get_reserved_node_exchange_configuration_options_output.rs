@@ -15,8 +15,10 @@ impl GetReservedNodeExchangeConfigurationOptionsOutput {
         self.marker.as_deref()
     }
     /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
-    pub fn reserved_node_configuration_option_list(&self) -> ::std::option::Option<&[crate::types::ReservedNodeConfigurationOption]> {
-        self.reserved_node_configuration_option_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_node_configuration_option_list.is_none()`.
+    pub fn reserved_node_configuration_option_list(&self) -> &[crate::types::ReservedNodeConfigurationOption] {
+        self.reserved_node_configuration_option_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetReservedNodeExchangeConfigurationOptionsOutput {

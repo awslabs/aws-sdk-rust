@@ -9,8 +9,10 @@ pub struct TestAuthorizationOutput {
 }
 impl TestAuthorizationOutput {
     /// <p>The authentication results.</p>
-    pub fn auth_results(&self) -> ::std::option::Option<&[crate::types::AuthResult]> {
-        self.auth_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth_results.is_none()`.
+    pub fn auth_results(&self) -> &[crate::types::AuthResult] {
+        self.auth_results.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for TestAuthorizationOutput {

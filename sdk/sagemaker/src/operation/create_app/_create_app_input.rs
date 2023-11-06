@@ -38,8 +38,10 @@ impl CreateAppInput {
         self.app_name.as_deref()
     }
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
@@ -73,6 +75,7 @@ pub struct CreateAppInputBuilder {
 }
 impl CreateAppInputBuilder {
     /// <p>The domain ID.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +104,7 @@ impl CreateAppInputBuilder {
         &self.user_profile_name
     }
     /// <p>The type of app.</p>
+    /// This field is required.
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.app_type = ::std::option::Option::Some(input);
         self
@@ -115,6 +119,7 @@ impl CreateAppInputBuilder {
         &self.app_type
     }
     /// <p>The name of the app.</p>
+    /// This field is required.
     pub fn app_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_name = ::std::option::Option::Some(input.into());
         self
@@ -183,7 +188,7 @@ impl CreateAppInputBuilder {
         &self.space_name
     }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app::CreateAppInput {
             domain_id: self.domain_id,
             user_profile_name: self.user_profile_name,

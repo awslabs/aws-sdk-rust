@@ -27,6 +27,7 @@ pub struct GetPendingJobExecutionsInputBuilder {
 }
 impl GetPendingJobExecutionsInputBuilder {
     /// <p>The name of the thing that is executing the job.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetPendingJobExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput { thing_name: self.thing_name })
     }

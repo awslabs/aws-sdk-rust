@@ -34,6 +34,7 @@ pub struct RemoveAutoScalingPolicyInputBuilder {
 }
 impl RemoveAutoScalingPolicyInputBuilder {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveAutoScalingPolicyInputBuilder {
         &self.cluster_id
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    /// This field is required.
     pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl RemoveAutoScalingPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput {
             cluster_id: self.cluster_id,

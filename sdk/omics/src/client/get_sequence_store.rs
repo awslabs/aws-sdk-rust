@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSequenceStore`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::set_id): <p>The store's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::set_id):<br>required: **true**<br><p>The store's ID.</p><br>
     /// - On success, responds with [`GetSequenceStoreOutput`](crate::operation::get_sequence_store::GetSequenceStoreOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::id): <p>The store's ID.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::arn): <p>The store's ARN.</p>
+    ///   - [`id(String)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::id): <p>The store's ID.</p>
+    ///   - [`arn(String)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::arn): <p>The store's ARN.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::name): <p>The store's name.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::description): <p>The store's description.</p>
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::sse_config): <p>The store's server-side encryption (SSE) settings.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::creation_time): <p>When the store was created.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::creation_time): <p>When the store was created.</p>
     ///   - [`fallback_location(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::fallback_location): <p> An S3 location that is used to store files that have failed a direct upload. </p>
     /// - On failure, responds with [`SdkError<GetSequenceStoreError>`](crate::operation::get_sequence_store::GetSequenceStoreError)
     pub fn get_sequence_store(&self) -> crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder {

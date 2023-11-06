@@ -36,8 +36,10 @@ impl CreateSecurityGroupInput {
         self.vpc_id.as_deref()
     }
     /// <p>The tags to assign to the security group.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -65,6 +67,7 @@ impl CreateSecurityGroupInputBuilder {
     /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +88,7 @@ impl CreateSecurityGroupInputBuilder {
     /// <p>The name of the security group.</p>
     /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -153,7 +157,7 @@ impl CreateSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateSecurityGroupInput`](crate::operation::create_security_group::CreateSecurityGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_security_group::CreateSecurityGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_security_group::CreateSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_security_group::CreateSecurityGroupInput {
             description: self.description,

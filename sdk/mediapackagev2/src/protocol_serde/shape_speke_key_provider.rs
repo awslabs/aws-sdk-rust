@@ -53,7 +53,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::speke_key_provider_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -64,30 +66,30 @@ where
 pub fn ser_speke_key_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SpekeKeyProvider,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption_contract_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("EncryptionContractConfiguration").start_object();
         crate::protocol_serde::shape_encryption_contract_configuration::ser_encryption_contract_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.resource_id {
-        object.key("ResourceId").string(var_3.as_str());
+    {
+        object.key("ResourceId").string(input.resource_id.as_str());
     }
-    if let Some(var_4) = &input.drm_systems {
-        let mut array_5 = object.key("DrmSystems").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_3 = object.key("DrmSystems").start_array();
+        for item_4 in &input.drm_systems {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.role_arn {
-        object.key("RoleArn").string(var_7.as_str());
+    {
+        object.key("RoleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_8) = &input.url {
-        object.key("Url").string(var_8.as_str());
+    {
+        object.key("Url").string(input.url.as_str());
     }
     Ok(())
 }

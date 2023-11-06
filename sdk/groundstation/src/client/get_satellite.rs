@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSatellite`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`satellite_id(impl Into<String>)`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::satellite_id) / [`set_satellite_id(Option<String>)`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::set_satellite_id): <p>UUID of a satellite.</p>
+    ///   - [`satellite_id(impl Into<String>)`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::satellite_id) / [`set_satellite_id(Option<String>)`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::set_satellite_id):<br>required: **true**<br><p>UUID of a satellite.</p><br>
     /// - On success, responds with [`GetSatelliteOutput`](crate::operation::get_satellite::GetSatelliteOutput) with field(s):
     ///   - [`satellite_id(Option<String>)`](crate::operation::get_satellite::GetSatelliteOutput::satellite_id): <p>UUID of a satellite.</p>
     ///   - [`satellite_arn(Option<String>)`](crate::operation::get_satellite::GetSatelliteOutput::satellite_arn): <p>ARN of a satellite.</p>
     ///   - [`norad_satellite_id(i32)`](crate::operation::get_satellite::GetSatelliteOutput::norad_satellite_id): <p>NORAD satellite ID number.</p>
-    ///   - [`ground_stations(Option<Vec<String>>)`](crate::operation::get_satellite::GetSatelliteOutput::ground_stations): <p>A list of ground stations to which the satellite is on-boarded.</p>
+    ///   - [`ground_stations(Option<Vec::<String>>)`](crate::operation::get_satellite::GetSatelliteOutput::ground_stations): <p>A list of ground stations to which the satellite is on-boarded.</p>
     ///   - [`current_ephemeris(Option<EphemerisMetaData>)`](crate::operation::get_satellite::GetSatelliteOutput::current_ephemeris): <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
     /// - On failure, responds with [`SdkError<GetSatelliteError>`](crate::operation::get_satellite::GetSatelliteError)
     pub fn get_satellite(&self) -> crate::operation::get_satellite::builders::GetSatelliteFluentBuilder {

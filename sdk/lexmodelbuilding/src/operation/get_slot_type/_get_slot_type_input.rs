@@ -34,6 +34,7 @@ pub struct GetSlotTypeInputBuilder {
 }
 impl GetSlotTypeInputBuilder {
     /// <p>The name of the slot type. The name is case sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSlotTypeInputBuilder {
         &self.name
     }
     /// <p>The version of the slot type. </p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetSlotTypeInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetSlotTypeInput`](crate::operation::get_slot_type::GetSlotTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_slot_type::GetSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_slot_type::GetSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_slot_type::GetSlotTypeInput {
             name: self.name,
             version: self.version,

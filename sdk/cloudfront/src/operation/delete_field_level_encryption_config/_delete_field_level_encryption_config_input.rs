@@ -34,6 +34,7 @@ pub struct DeleteFieldLevelEncryptionConfigInputBuilder {
 }
 impl DeleteFieldLevelEncryptionConfigInputBuilder {
     /// <p>The ID of the configuration you want to delete from CloudFront.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteFieldLevelEncryptionConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigInput {

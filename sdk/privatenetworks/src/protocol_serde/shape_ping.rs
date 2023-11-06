@@ -29,11 +29,10 @@ pub fn de_ping_http_error(
                         .map_err(|_| crate::operation::ping::PingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::ping::PingError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::ping::PingError::generic(generic),

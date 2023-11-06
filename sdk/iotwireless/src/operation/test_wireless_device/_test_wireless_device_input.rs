@@ -27,6 +27,7 @@ pub struct TestWirelessDeviceInputBuilder {
 }
 impl TestWirelessDeviceInputBuilder {
     /// <p>The ID of the wireless device to test.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl TestWirelessDeviceInputBuilder {
     /// Consumes the builder and constructs a [`TestWirelessDeviceInput`](crate::operation::test_wireless_device::TestWirelessDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_wireless_device::TestWirelessDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_wireless_device::TestWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::test_wireless_device::TestWirelessDeviceInput { id: self.id })
     }
 }

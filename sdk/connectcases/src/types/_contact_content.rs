@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactContent {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub channel: ::std::option::Option<::std::string::String>,
+    pub channel: ::std::string::String,
     /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
-    pub connected_to_system_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub connected_to_system_time: ::aws_smithy_types::DateTime,
 }
 impl ContactContent {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub fn channel(&self) -> ::std::option::Option<&str> {
-        self.channel.as_deref()
+    pub fn channel(&self) -> &str {
+        use std::ops::Deref;
+        self.channel.deref()
     }
     /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
-    pub fn connected_to_system_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.connected_to_system_time.as_ref()
+    pub fn connected_to_system_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.connected_to_system_time
     }
 }
 impl ContactContent {
@@ -42,6 +44,7 @@ pub struct ContactContentBuilder {
 }
 impl ContactContentBuilder {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ContactContentBuilder {
         &self.contact_arn
     }
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
+    /// This field is required.
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl ContactContentBuilder {
         &self.channel
     }
     /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
+    /// This field is required.
     pub fn connected_to_system_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.connected_to_system_time = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl ContactContentBuilder {
         &self.connected_to_system_time
     }
     /// Consumes the builder and constructs a [`ContactContent`](crate::types::ContactContent).
-    pub fn build(self) -> crate::types::ContactContent {
-        crate::types::ContactContent {
-            contact_arn: self.contact_arn,
-            channel: self.channel,
-            connected_to_system_time: self.connected_to_system_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_arn`](crate::types::builders::ContactContentBuilder::contact_arn)
+    /// - [`channel`](crate::types::builders::ContactContentBuilder::channel)
+    /// - [`connected_to_system_time`](crate::types::builders::ContactContentBuilder::connected_to_system_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContactContent, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContactContent {
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building ContactContent",
+                )
+            })?,
+            channel: self.channel.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "channel",
+                    "channel was not specified but it is required when building ContactContent",
+                )
+            })?,
+            connected_to_system_time: self.connected_to_system_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connected_to_system_time",
+                    "connected_to_system_time was not specified but it is required when building ContactContent",
+                )
+            })?,
+        })
     }
 }

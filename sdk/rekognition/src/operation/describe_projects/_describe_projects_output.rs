@@ -11,8 +11,10 @@ pub struct DescribeProjectsOutput {
 }
 impl DescribeProjectsOutput {
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-    pub fn project_descriptions(&self) -> ::std::option::Option<&[crate::types::ProjectDescription]> {
-        self.project_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project_descriptions.is_none()`.
+    pub fn project_descriptions(&self) -> &[crate::types::ProjectDescription] {
+        self.project_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -77,6 +77,7 @@ impl PutRecordInputBuilder {
         &self.stream_name
     }
     /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl PutRecordInputBuilder {
         &self.data
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
+    /// This field is required.
     pub fn partition_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_key = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +149,7 @@ impl PutRecordInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record::PutRecordInput {
             stream_name: self.stream_name,
             data: self.data,

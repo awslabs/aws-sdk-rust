@@ -4,43 +4,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetPolicyTemplateOutput {
     /// <p>The ID of the policy store that contains the policy template.</p>
-    pub policy_store_id: ::std::option::Option<::std::string::String>,
+    pub policy_store_id: ::std::string::String,
     /// <p>The ID of the policy template.</p>
-    pub policy_template_id: ::std::option::Option<::std::string::String>,
+    pub policy_template_id: ::std::string::String,
     /// <p>The description of the policy template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The content of the body of the policy template written in the Cedar policy language.</p>
-    pub statement: ::std::option::Option<::std::string::String>,
+    pub statement: ::std::string::String,
     /// <p>The date and time that the policy template was originally created.</p>
-    pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the policy template was most recently updated.</p>
-    pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetPolicyTemplateOutput {
     /// <p>The ID of the policy store that contains the policy template.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
-        self.policy_store_id.as_deref()
+    pub fn policy_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_store_id.deref()
     }
     /// <p>The ID of the policy template.</p>
-    pub fn policy_template_id(&self) -> ::std::option::Option<&str> {
-        self.policy_template_id.as_deref()
+    pub fn policy_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_template_id.deref()
     }
     /// <p>The description of the policy template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The content of the body of the policy template written in the Cedar policy language.</p>
-    pub fn statement(&self) -> ::std::option::Option<&str> {
-        self.statement.as_deref()
+    pub fn statement(&self) -> &str {
+        use std::ops::Deref;
+        self.statement.deref()
     }
     /// <p>The date and time that the policy template was originally created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_date.as_ref()
+    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_date
     }
     /// <p>The date and time that the policy template was most recently updated.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_date.as_ref()
+    pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_date
     }
 }
 impl ::std::fmt::Debug for GetPolicyTemplateOutput {
@@ -82,6 +85,7 @@ pub struct GetPolicyTemplateOutputBuilder {
 }
 impl GetPolicyTemplateOutputBuilder {
     /// <p>The ID of the policy store that contains the policy template.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +100,7 @@ impl GetPolicyTemplateOutputBuilder {
         &self.policy_store_id
     }
     /// <p>The ID of the policy template.</p>
+    /// This field is required.
     pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_template_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +129,7 @@ impl GetPolicyTemplateOutputBuilder {
         &self.description
     }
     /// <p>The content of the body of the policy template written in the Cedar policy language.</p>
+    /// This field is required.
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +144,7 @@ impl GetPolicyTemplateOutputBuilder {
         &self.statement
     }
     /// <p>The date and time that the policy template was originally created.</p>
+    /// This field is required.
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
         self
@@ -152,6 +159,7 @@ impl GetPolicyTemplateOutputBuilder {
         &self.created_date
     }
     /// <p>The date and time that the policy template was most recently updated.</p>
+    /// This field is required.
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
         self
@@ -175,16 +183,49 @@ impl GetPolicyTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPolicyTemplateOutput`](crate::operation::get_policy_template::GetPolicyTemplateOutput).
-    pub fn build(self) -> crate::operation::get_policy_template::GetPolicyTemplateOutput {
-        crate::operation::get_policy_template::GetPolicyTemplateOutput {
-            policy_store_id: self.policy_store_id,
-            policy_template_id: self.policy_template_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_store_id`](crate::operation::get_policy_template::builders::GetPolicyTemplateOutputBuilder::policy_store_id)
+    /// - [`policy_template_id`](crate::operation::get_policy_template::builders::GetPolicyTemplateOutputBuilder::policy_template_id)
+    /// - [`statement`](crate::operation::get_policy_template::builders::GetPolicyTemplateOutputBuilder::statement)
+    /// - [`created_date`](crate::operation::get_policy_template::builders::GetPolicyTemplateOutputBuilder::created_date)
+    /// - [`last_updated_date`](crate::operation::get_policy_template::builders::GetPolicyTemplateOutputBuilder::last_updated_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_policy_template::GetPolicyTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_policy_template::GetPolicyTemplateOutput {
+            policy_store_id: self.policy_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_store_id",
+                    "policy_store_id was not specified but it is required when building GetPolicyTemplateOutput",
+                )
+            })?,
+            policy_template_id: self.policy_template_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_template_id",
+                    "policy_template_id was not specified but it is required when building GetPolicyTemplateOutput",
+                )
+            })?,
             description: self.description,
-            statement: self.statement,
-            created_date: self.created_date,
-            last_updated_date: self.last_updated_date,
+            statement: self.statement.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statement",
+                    "statement was not specified but it is required when building GetPolicyTemplateOutput",
+                )
+            })?,
+            created_date: self.created_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_date",
+                    "created_date was not specified but it is required when building GetPolicyTemplateOutput",
+                )
+            })?,
+            last_updated_date: self.last_updated_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_updated_date",
+                    "last_updated_date was not specified but it is required when building GetPolicyTemplateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetPolicyTemplateOutputBuilder {

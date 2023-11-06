@@ -15,8 +15,10 @@ impl ListCallAnalyticsCategoriesOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
-    pub fn categories(&self) -> ::std::option::Option<&[crate::types::CategoryProperties]> {
-        self.categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
+    pub fn categories(&self) -> &[crate::types::CategoryProperties] {
+        self.categories.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCallAnalyticsCategoriesOutput {

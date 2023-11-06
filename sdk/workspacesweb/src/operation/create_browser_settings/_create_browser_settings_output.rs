@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBrowserSettingsOutput {
     /// <p>The ARN of the browser settings.</p>
-    pub browser_settings_arn: ::std::option::Option<::std::string::String>,
+    pub browser_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateBrowserSettingsOutput {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.browser_settings_arn.as_deref()
+    pub fn browser_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.browser_settings_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateBrowserSettingsOutput {
@@ -34,6 +35,7 @@ pub struct CreateBrowserSettingsOutputBuilder {
 }
 impl CreateBrowserSettingsOutputBuilder {
     /// <p>The ARN of the browser settings.</p>
+    /// This field is required.
     pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl CreateBrowserSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateBrowserSettingsOutput`](crate::operation::create_browser_settings::CreateBrowserSettingsOutput).
-    pub fn build(self) -> crate::operation::create_browser_settings::CreateBrowserSettingsOutput {
-        crate::operation::create_browser_settings::CreateBrowserSettingsOutput {
-            browser_settings_arn: self.browser_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`browser_settings_arn`](crate::operation::create_browser_settings::builders::CreateBrowserSettingsOutputBuilder::browser_settings_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_browser_settings::CreateBrowserSettingsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_browser_settings::CreateBrowserSettingsOutput {
+            browser_settings_arn: self.browser_settings_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "browser_settings_arn",
+                    "browser_settings_arn was not specified but it is required when building CreateBrowserSettingsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct GetRoomInputBuilder {
 }
 impl GetRoomInputBuilder {
     /// <p>Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetRoomInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetRoomInput`](crate::operation::get_room::GetRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_room::GetRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_room::GetRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_room::GetRoomInput { identifier: self.identifier })
     }
 }

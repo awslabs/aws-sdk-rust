@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSuggestedResiliencyPoliciesOutput {
     /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
-    pub resiliency_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>,
+    pub resiliency_policies: ::std::vec::Vec<crate::types::ResiliencyPolicy>,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSuggestedResiliencyPoliciesOutput {
     /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
-    pub fn resiliency_policies(&self) -> ::std::option::Option<&[crate::types::ResiliencyPolicy]> {
-        self.resiliency_policies.as_deref()
+    pub fn resiliency_policies(&self) -> &[crate::types::ResiliencyPolicy] {
+        use std::ops::Deref;
+        self.resiliency_policies.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,25 @@ impl ListSuggestedResiliencyPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSuggestedResiliencyPoliciesOutput`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput).
-    pub fn build(self) -> crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput {
-        crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput {
-            resiliency_policies: self.resiliency_policies,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resiliency_policies`](crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesOutputBuilder::resiliency_policies)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput {
+                resiliency_policies: self.resiliency_policies.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "resiliency_policies",
+                        "resiliency_policies was not specified but it is required when building ListSuggestedResiliencyPoliciesOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

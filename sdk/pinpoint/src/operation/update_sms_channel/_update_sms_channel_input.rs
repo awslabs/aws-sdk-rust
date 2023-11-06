@@ -34,6 +34,7 @@ pub struct UpdateSmsChannelInputBuilder {
 }
 impl UpdateSmsChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateSmsChannelInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the status and settings of the SMS channel for an application.</p>
+    /// This field is required.
     pub fn sms_channel_request(mut self, input: crate::types::SmsChannelRequest) -> Self {
         self.sms_channel_request = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl UpdateSmsChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSmsChannelInput`](crate::operation::update_sms_channel::UpdateSmsChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_sms_channel::UpdateSmsChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_sms_channel::UpdateSmsChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_sms_channel::UpdateSmsChannelInput {
             application_id: self.application_id,
             sms_channel_request: self.sms_channel_request,

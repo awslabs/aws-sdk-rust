@@ -14,8 +14,10 @@ impl DisassociateAccountsInput {
         self.arn.as_deref()
     }
     /// <p>The array of account IDs to disassociate. </p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateAccountsInput {
@@ -34,6 +36,7 @@ pub struct DisassociateAccountsInputBuilder {
 }
 impl DisassociateAccountsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl DisassociateAccountsInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateAccountsInput`](crate::operation::disassociate_accounts::DisassociateAccountsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_accounts::DisassociateAccountsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_accounts::DisassociateAccountsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_accounts::DisassociateAccountsInput {
             arn: self.arn,

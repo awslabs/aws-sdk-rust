@@ -12,8 +12,10 @@ pub struct ListRemoteAccessSessionsOutput {
 }
 impl ListRemoteAccessSessionsOutput {
     /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
-    pub fn remote_access_sessions(&self) -> ::std::option::Option<&[crate::types::RemoteAccessSession]> {
-        self.remote_access_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remote_access_sessions.is_none()`.
+    pub fn remote_access_sessions(&self) -> &[crate::types::RemoteAccessSession] {
+        self.remote_access_sessions.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

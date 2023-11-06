@@ -27,6 +27,7 @@ pub struct GetCalculationExecutionCodeInputBuilder {
 }
 impl GetCalculationExecutionCodeInputBuilder {
     /// <p>The calculation execution UUID.</p>
+    /// This field is required.
     pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculation_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetCalculationExecutionCodeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeInput {
             calculation_execution_id: self.calculation_execution_id,

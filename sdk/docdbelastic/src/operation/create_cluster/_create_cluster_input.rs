@@ -96,12 +96,16 @@ impl CreateClusterInput {
         self.shard_count
     }
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 subnet IDs for the new Elastic DocumentDB cluster.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
@@ -177,6 +181,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p> <i>Example</i>: <code>my-cluster</code> </p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -205,6 +210,7 @@ impl CreateClusterInputBuilder {
         &self.cluster_name
     }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn auth_type(mut self, input: crate::types::Auth) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
@@ -225,6 +231,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn admin_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_name = ::std::option::Option::Some(input.into());
         self
@@ -256,6 +263,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
     /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
@@ -280,6 +288,7 @@ impl CreateClusterInputBuilder {
         &self.admin_user_password
     }
     /// <p>The capacity of each shard in the new Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn shard_capacity(mut self, input: i32) -> Self {
         self.shard_capacity = ::std::option::Option::Some(input);
         self
@@ -294,6 +303,7 @@ impl CreateClusterInputBuilder {
         &self.shard_capacity
     }
     /// <p>The number of shards to create in the new Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn shard_count(mut self, input: i32) -> Self {
         self.shard_count = ::std::option::Option::Some(input);
         self
@@ -430,7 +440,7 @@ impl CreateClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             cluster_name: self.cluster_name,
             auth_type: self.auth_type,

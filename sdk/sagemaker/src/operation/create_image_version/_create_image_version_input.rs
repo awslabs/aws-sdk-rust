@@ -71,8 +71,10 @@ impl CreateImageVersionInput {
         self.image_name.as_deref()
     }
     /// <p>A list of aliases created with the image version.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[::std::string::String] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>The stability of the image version, specified by the maintainer.</p>
     /// <ul>
@@ -151,6 +153,7 @@ impl CreateImageVersionInputBuilder {
     /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
     /// </region>
     /// </acct-id></code> </p>
+    /// This field is required.
     pub fn base_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_image = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +184,7 @@ impl CreateImageVersionInputBuilder {
         &self.base_image
     }
     /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +199,7 @@ impl CreateImageVersionInputBuilder {
         &self.client_token
     }
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -374,7 +379,8 @@ impl CreateImageVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateImageVersionInput`](crate::operation::create_image_version::CreateImageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_image_version::CreateImageVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_image_version::CreateImageVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_image_version::CreateImageVersionInput {
             base_image: self.base_image,
             client_token: self.client_token,

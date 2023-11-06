@@ -24,16 +24,22 @@ impl UpdateDatasetInput {
         self.dataset_name.as_deref()
     }
     /// <p>A list of <code>DatasetAction</code> objects.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::DatasetAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::DatasetAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
-    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::DatasetTrigger]> {
-        self.triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
+    pub fn triggers(&self) -> &[crate::types::DatasetTrigger] {
+        self.triggers.as_deref().unwrap_or_default()
     }
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    pub fn content_delivery_rules(&self) -> ::std::option::Option<&[crate::types::DatasetContentDeliveryRule]> {
-        self.content_delivery_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content_delivery_rules.is_none()`.
+    pub fn content_delivery_rules(&self) -> &[crate::types::DatasetContentDeliveryRule] {
+        self.content_delivery_rules.as_deref().unwrap_or_default()
     }
     /// <p>How long, in days, dataset contents are kept for the dataset.</p>
     pub fn retention_period(&self) -> ::std::option::Option<&crate::types::RetentionPeriod> {
@@ -44,8 +50,10 @@ impl UpdateDatasetInput {
         self.versioning_configuration.as_ref()
     }
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    pub fn late_data_rules(&self) -> ::std::option::Option<&[crate::types::LateDataRule]> {
-        self.late_data_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.late_data_rules.is_none()`.
+    pub fn late_data_rules(&self) -> &[crate::types::LateDataRule] {
+        self.late_data_rules.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDatasetInput {
@@ -69,6 +77,7 @@ pub struct UpdateDatasetInputBuilder {
 }
 impl UpdateDatasetInputBuilder {
     /// <p>The name of the dataset to update.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -193,7 +202,7 @@ impl UpdateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dataset::UpdateDatasetInput {
             dataset_name: self.dataset_name,
             actions: self.actions,

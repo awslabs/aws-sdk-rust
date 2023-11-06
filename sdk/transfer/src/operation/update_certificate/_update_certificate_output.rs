@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCertificateOutput {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
-    pub certificate_id: ::std::option::Option<::std::string::String>,
+    pub certificate_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateCertificateOutput {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
-        self.certificate_id.as_deref()
+    pub fn certificate_id(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateCertificateOutput {
@@ -34,6 +35,7 @@ pub struct UpdateCertificateOutputBuilder {
 }
 impl UpdateCertificateOutputBuilder {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl UpdateCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput).
-    pub fn build(self) -> crate::operation::update_certificate::UpdateCertificateOutput {
-        crate::operation::update_certificate::UpdateCertificateOutput {
-            certificate_id: self.certificate_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_id`](crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder::certificate_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_certificate::UpdateCertificateOutput {
+            certificate_id: self.certificate_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "certificate_id",
+                    "certificate_id was not specified but it is required when building UpdateCertificateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

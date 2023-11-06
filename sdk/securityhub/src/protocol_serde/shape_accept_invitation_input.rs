@@ -2,7 +2,7 @@
 pub fn ser_accept_invitation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::accept_invitation::AcceptInvitationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.invitation_id {
         object.key("InvitationId").string(var_1.as_str());
     }

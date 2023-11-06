@@ -11,8 +11,10 @@ pub struct ListGatewaysOutput {
 }
 impl ListGatewaysOutput {
     /// <p>An array of <code>GatewayInfo</code> objects.</p>
-    pub fn gateways(&self) -> ::std::option::Option<&[crate::types::GatewayInfo]> {
-        self.gateways.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateways.is_none()`.
+    pub fn gateways(&self) -> &[crate::types::GatewayInfo] {
+        self.gateways.as_deref().unwrap_or_default()
     }
     /// <p>Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways to list, this field does not appear in the response.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

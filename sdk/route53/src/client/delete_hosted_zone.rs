@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteHostedZone`](crate::operation::delete_hosted_zone::builders::DeleteHostedZoneFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_hosted_zone::builders::DeleteHostedZoneFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_hosted_zone::builders::DeleteHostedZoneFluentBuilder::set_id): <p>The ID of the hosted zone you want to delete.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_hosted_zone::builders::DeleteHostedZoneFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_hosted_zone::builders::DeleteHostedZoneFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the hosted zone you want to delete.</p><br>
     /// - On success, responds with [`DeleteHostedZoneOutput`](crate::operation::delete_hosted_zone::DeleteHostedZoneOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::delete_hosted_zone::DeleteHostedZoneOutput::change_info): <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
     /// - On failure, responds with [`SdkError<DeleteHostedZoneError>`](crate::operation::delete_hosted_zone::DeleteHostedZoneError)

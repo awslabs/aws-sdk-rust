@@ -41,6 +41,7 @@ pub struct ListConfigurationRevisionsInputBuilder {
 }
 impl ListConfigurationRevisionsInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    /// This field is required.
     pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListConfigurationRevisionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput {
             configuration_id: self.configuration_id,

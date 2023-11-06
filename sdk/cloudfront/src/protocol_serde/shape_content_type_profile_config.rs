@@ -2,21 +2,22 @@
 pub fn ser_content_type_profile_config(
     input: &crate::types::ContentTypeProfileConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.forward_when_content_type_is_unknown {
+    {
         let mut inner_writer = scope.start_el("ForwardWhenContentTypeIsUnknown").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.forward_when_content_type_is_unknown).encode());
     }
-    if let Some(var_2) = &input.content_type_profiles {
+    if let Some(var_1) = &input.content_type_profiles {
         let inner_writer = scope.start_el("ContentTypeProfiles");
-        crate::protocol_serde::shape_content_type_profiles::ser_content_type_profiles(var_2, inner_writer)?
+        crate::protocol_serde::shape_content_type_profiles::ser_content_type_profiles(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_content_type_profile_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ContentTypeProfileConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_content_type_profile_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ForwardWhenContentTypeIsUnknown") /* ForwardWhenContentTypeIsUnknown com.amazonaws.cloudfront#ContentTypeProfileConfig$ForwardWhenContentTypeIsUnknown */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -36,21 +37,23 @@ pub fn de_content_type_profile_config(
                         ?
                     )
                 ;
-                builder = builder.set_forward_when_content_type_is_unknown(var_3);
+                builder = builder.set_forward_when_content_type_is_unknown(var_2);
             }
             ,
             s if s.matches("ContentTypeProfiles") /* ContentTypeProfiles com.amazonaws.cloudfront#ContentTypeProfileConfig$ContentTypeProfiles */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_content_type_profiles::de_content_type_profiles(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_content_type_profiles(var_4);
+                builder = builder.set_content_type_profiles(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::content_type_profile_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -2,12 +2,12 @@
 pub fn ser_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Item,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.item_id {
-        object.key("itemId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("itemId").string(input.item_id.as_str());
     }
-    if let Some(var_2) = &input.properties {
-        object.key("properties").string(var_2.as_str());
+    if let Some(var_1) = &input.properties {
+        object.key("properties").string(var_1.as_str());
     }
     Ok(())
 }

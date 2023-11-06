@@ -65,8 +65,10 @@ impl Item {
         self.participant_role.as_ref()
     }
     /// <p>Provides information about the attachments.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::AttachmentItem]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::AttachmentItem] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
     pub fn message_metadata(&self) -> ::std::option::Option<&crate::types::MessageMetadata> {

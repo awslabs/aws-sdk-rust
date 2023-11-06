@@ -2,24 +2,24 @@
 pub fn ser_free_form_layout_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FreeFormLayoutConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.elements {
-        let mut array_2 = object.key("Elements").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("Elements").start_array();
+        for item_2 in &input.elements {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_free_form_layout_element::ser_free_form_layout_element(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_free_form_layout_element::ser_free_form_layout_element(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.canvas_size_options {
+    if let Some(var_4) = &input.canvas_size_options {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("CanvasSizeOptions").start_object();
-        crate::protocol_serde::shape_free_form_layout_canvas_size_options::ser_free_form_layout_canvas_size_options(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("CanvasSizeOptions").start_object();
+        crate::protocol_serde::shape_free_form_layout_canvas_size_options::ser_free_form_layout_canvas_size_options(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }
@@ -58,7 +58,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::free_form_layout_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

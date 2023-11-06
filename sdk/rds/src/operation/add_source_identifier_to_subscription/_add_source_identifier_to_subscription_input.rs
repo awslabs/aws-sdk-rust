@@ -55,6 +55,7 @@ pub struct AddSourceIdentifierToSubscriptionInputBuilder {
 }
 impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <li> <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p> </li>
     /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self
@@ -117,7 +119,7 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput {

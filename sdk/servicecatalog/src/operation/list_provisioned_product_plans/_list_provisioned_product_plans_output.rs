@@ -11,8 +11,10 @@ pub struct ListProvisionedProductPlansOutput {
 }
 impl ListProvisionedProductPlansOutput {
     /// <p>Information about the plans.</p>
-    pub fn provisioned_product_plans(&self) -> ::std::option::Option<&[crate::types::ProvisionedProductPlanSummary]> {
-        self.provisioned_product_plans.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_product_plans.is_none()`.
+    pub fn provisioned_product_plans(&self) -> &[crate::types::ProvisionedProductPlanSummary] {
+        self.provisioned_product_plans.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

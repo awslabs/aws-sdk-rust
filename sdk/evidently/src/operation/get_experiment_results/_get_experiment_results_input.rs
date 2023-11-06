@@ -28,7 +28,7 @@ pub struct GetExperimentResultsInput {
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
     pub report_names: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>,
     /// <p>In seconds, the amount of time to aggregate results together. </p>
-    pub period: i64,
+    pub period: ::std::option::Option<i64>,
 }
 impl GetExperimentResultsInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
@@ -48,12 +48,16 @@ impl GetExperimentResultsInput {
         self.end_time.as_ref()
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub fn metric_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metric_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_names.is_none()`.
+    pub fn metric_names(&self) -> &[::std::string::String] {
+        self.metric_names.as_deref().unwrap_or_default()
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn treatment_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.treatment_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.treatment_names.is_none()`.
+    pub fn treatment_names(&self) -> &[::std::string::String] {
+        self.treatment_names.as_deref().unwrap_or_default()
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub fn base_stat(&self) -> ::std::option::Option<&crate::types::ExperimentBaseStat> {
@@ -66,15 +70,19 @@ impl GetExperimentResultsInput {
     /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
     /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
     /// </ul>
-    pub fn result_stats(&self) -> ::std::option::Option<&[crate::types::ExperimentResultRequestType]> {
-        self.result_stats.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_stats.is_none()`.
+    pub fn result_stats(&self) -> &[crate::types::ExperimentResultRequestType] {
+        self.result_stats.as_deref().unwrap_or_default()
     }
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    pub fn report_names(&self) -> ::std::option::Option<&[crate::types::ExperimentReportName]> {
-        self.report_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_names.is_none()`.
+    pub fn report_names(&self) -> &[crate::types::ExperimentReportName] {
+        self.report_names.as_deref().unwrap_or_default()
     }
     /// <p>In seconds, the amount of time to aggregate results together. </p>
-    pub fn period(&self) -> i64 {
+    pub fn period(&self) -> ::std::option::Option<i64> {
         self.period
     }
 }
@@ -102,6 +110,7 @@ pub struct GetExperimentResultsInputBuilder {
 }
 impl GetExperimentResultsInputBuilder {
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +125,7 @@ impl GetExperimentResultsInputBuilder {
         &self.project
     }
     /// <p>The name of the experiment to retrieve the results of.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
         self
@@ -286,7 +296,7 @@ impl GetExperimentResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetExperimentResultsInput`](crate::operation::get_experiment_results::GetExperimentResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_experiment_results::GetExperimentResultsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_experiment_results::GetExperimentResultsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_experiment_results::GetExperimentResultsInput {
             project: self.project,
@@ -298,7 +308,7 @@ impl GetExperimentResultsInputBuilder {
             base_stat: self.base_stat,
             result_stats: self.result_stats,
             report_names: self.report_names,
-            period: self.period.unwrap_or_default(),
+            period: self.period,
         })
     }
 }

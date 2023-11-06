@@ -11,8 +11,10 @@ pub struct ListLoggingConfigurationsOutput {
 }
 impl ListLoggingConfigurationsOutput {
     /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn logging_configurations(&self) -> ::std::option::Option<&[crate::types::LoggingConfiguration]> {
-        self.logging_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logging_configurations.is_none()`.
+    pub fn logging_configurations(&self) -> &[crate::types::LoggingConfiguration] {
+        self.logging_configurations.as_deref().unwrap_or_default()
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

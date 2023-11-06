@@ -13,8 +13,10 @@ pub struct ShareRule {
 }
 impl ShareRule {
     /// <p>The IDs of the Amazon Web Services accounts with which to share the snapshots.</p>
-    pub fn target_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_accounts.is_none()`.
+    pub fn target_accounts(&self) -> &[::std::string::String] {
+        self.target_accounts.as_deref().unwrap_or_default()
     }
     /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
     pub fn unshare_interval(&self) -> ::std::option::Option<i32> {

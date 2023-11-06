@@ -39,7 +39,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::vdm_attributes_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -50,21 +52,21 @@ where
 pub fn ser_vdm_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VdmAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.vdm_enabled {
-        object.key("VdmEnabled").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("VdmEnabled").string(input.vdm_enabled.as_str());
     }
-    if let Some(var_2) = &input.dashboard_attributes {
+    if let Some(var_1) = &input.dashboard_attributes {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DashboardAttributes").start_object();
-        crate::protocol_serde::shape_dashboard_attributes::ser_dashboard_attributes(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("DashboardAttributes").start_object();
+        crate::protocol_serde::shape_dashboard_attributes::ser_dashboard_attributes(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.guardian_attributes {
+    if let Some(var_3) = &input.guardian_attributes {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("GuardianAttributes").start_object();
-        crate::protocol_serde::shape_guardian_attributes::ser_guardian_attributes(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("GuardianAttributes").start_object();
+        crate::protocol_serde::shape_guardian_attributes::ser_guardian_attributes(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

@@ -59,6 +59,7 @@ pub struct PutBucketWebsiteInputBuilder {
 }
 impl PutBucketWebsiteInputBuilder {
     /// <p>The bucket name.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +108,7 @@ impl PutBucketWebsiteInputBuilder {
         &self.checksum_algorithm
     }
     /// <p>Container for the request.</p>
+    /// This field is required.
     pub fn website_configuration(mut self, input: crate::types::WebsiteConfiguration) -> Self {
         self.website_configuration = ::std::option::Option::Some(input);
         self
@@ -137,7 +139,7 @@ impl PutBucketWebsiteInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketWebsiteInput`](crate::operation::put_bucket_website::PutBucketWebsiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_website::PutBucketWebsiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_bucket_website::PutBucketWebsiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bucket_website::PutBucketWebsiteInput {
             bucket: self.bucket,
             content_md5: self.content_md5,

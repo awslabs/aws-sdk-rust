@@ -41,6 +41,7 @@ pub struct UpdateDataSetInputBuilder {
 }
 impl UpdateDataSetInputBuilder {
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl UpdateDataSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_set::UpdateDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_data_set::UpdateDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_data_set::UpdateDataSetInput {
             data_set_id: self.data_set_id,
             description: self.description,

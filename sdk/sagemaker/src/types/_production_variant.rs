@@ -105,6 +105,7 @@ pub struct ProductionVariantBuilder {
 }
 impl ProductionVariantBuilder {
     /// <p>The name of the production variant.</p>
+    /// This field is required.
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +120,7 @@ impl ProductionVariantBuilder {
         &self.variant_name
     }
     /// <p>The name of the model that you want to host. This is the name that you specified when creating the model.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self

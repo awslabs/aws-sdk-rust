@@ -35,6 +35,7 @@ pub struct DeleteBackendEnvironmentInputBuilder {
 }
 impl DeleteBackendEnvironmentInputBuilder {
     /// <p> The unique ID of an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteBackendEnvironmentInputBuilder {
         &self.app_id
     }
     /// <p> The name of a backend environment of an Amplify app. </p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl DeleteBackendEnvironmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput {
             app_id: self.app_id,

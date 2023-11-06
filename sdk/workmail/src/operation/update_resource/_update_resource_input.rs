@@ -81,6 +81,7 @@ pub struct UpdateResourceInputBuilder {
 }
 impl UpdateResourceInputBuilder {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +102,7 @@ impl UpdateResourceInputBuilder {
     /// <li> <p>Email address: resource@domain.tld</p> </li>
     /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -199,7 +201,7 @@ impl UpdateResourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resource::UpdateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_resource::UpdateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_resource::UpdateResourceInput {
             organization_id: self.organization_id,
             resource_id: self.resource_id,

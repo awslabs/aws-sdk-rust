@@ -7,15 +7,15 @@ pub struct ImportReadSetSourceItem {
     /// <p>The source files' location in Amazon S3.</p>
     pub source_files: ::std::option::Option<crate::types::SourceFiles>,
     /// <p>The source's file type.</p>
-    pub source_file_type: ::std::option::Option<crate::types::FileType>,
+    pub source_file_type: crate::types::FileType,
     /// <p>The source's status.</p>
-    pub status: ::std::option::Option<crate::types::ReadSetImportJobItemStatus>,
+    pub status: crate::types::ReadSetImportJobItemStatus,
     /// <p>The source's status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The source's subject ID.</p>
-    pub subject_id: ::std::option::Option<::std::string::String>,
+    pub subject_id: ::std::string::String,
     /// <p>The source's sample ID.</p>
-    pub sample_id: ::std::option::Option<::std::string::String>,
+    pub sample_id: ::std::string::String,
     /// <p>Where the source originated.</p>
     pub generated_from: ::std::option::Option<::std::string::String>,
     /// <p>The source's genome reference ARN.</p>
@@ -33,24 +33,26 @@ impl ImportReadSetSourceItem {
         self.source_files.as_ref()
     }
     /// <p>The source's file type.</p>
-    pub fn source_file_type(&self) -> ::std::option::Option<&crate::types::FileType> {
-        self.source_file_type.as_ref()
+    pub fn source_file_type(&self) -> &crate::types::FileType {
+        &self.source_file_type
     }
     /// <p>The source's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetImportJobItemStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReadSetImportJobItemStatus {
+        &self.status
     }
     /// <p>The source's status message.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The source's subject ID.</p>
-    pub fn subject_id(&self) -> ::std::option::Option<&str> {
-        self.subject_id.as_deref()
+    pub fn subject_id(&self) -> &str {
+        use std::ops::Deref;
+        self.subject_id.deref()
     }
     /// <p>The source's sample ID.</p>
-    pub fn sample_id(&self) -> ::std::option::Option<&str> {
-        self.sample_id.as_deref()
+    pub fn sample_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sample_id.deref()
     }
     /// <p>Where the source originated.</p>
     pub fn generated_from(&self) -> ::std::option::Option<&str> {
@@ -98,6 +100,7 @@ pub struct ImportReadSetSourceItemBuilder {
 }
 impl ImportReadSetSourceItemBuilder {
     /// <p>The source files' location in Amazon S3.</p>
+    /// This field is required.
     pub fn source_files(mut self, input: crate::types::SourceFiles) -> Self {
         self.source_files = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl ImportReadSetSourceItemBuilder {
         &self.source_files
     }
     /// <p>The source's file type.</p>
+    /// This field is required.
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
         self.source_file_type = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl ImportReadSetSourceItemBuilder {
         &self.source_file_type
     }
     /// <p>The source's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReadSetImportJobItemStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -154,6 +159,7 @@ impl ImportReadSetSourceItemBuilder {
         &self.status_message
     }
     /// <p>The source's subject ID.</p>
+    /// This field is required.
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +174,7 @@ impl ImportReadSetSourceItemBuilder {
         &self.subject_id
     }
     /// <p>The source's sample ID.</p>
+    /// This field is required.
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_id = ::std::option::Option::Some(input.into());
         self
@@ -258,19 +265,44 @@ impl ImportReadSetSourceItemBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportReadSetSourceItem`](crate::types::ImportReadSetSourceItem).
-    pub fn build(self) -> crate::types::ImportReadSetSourceItem {
-        crate::types::ImportReadSetSourceItem {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_file_type`](crate::types::builders::ImportReadSetSourceItemBuilder::source_file_type)
+    /// - [`status`](crate::types::builders::ImportReadSetSourceItemBuilder::status)
+    /// - [`subject_id`](crate::types::builders::ImportReadSetSourceItemBuilder::subject_id)
+    /// - [`sample_id`](crate::types::builders::ImportReadSetSourceItemBuilder::sample_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportReadSetSourceItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImportReadSetSourceItem {
             source_files: self.source_files,
-            source_file_type: self.source_file_type,
-            status: self.status,
+            source_file_type: self.source_file_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_file_type",
+                    "source_file_type was not specified but it is required when building ImportReadSetSourceItem",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ImportReadSetSourceItem",
+                )
+            })?,
             status_message: self.status_message,
-            subject_id: self.subject_id,
-            sample_id: self.sample_id,
+            subject_id: self.subject_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subject_id",
+                    "subject_id was not specified but it is required when building ImportReadSetSourceItem",
+                )
+            })?,
+            sample_id: self.sample_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sample_id",
+                    "sample_id was not specified but it is required when building ImportReadSetSourceItem",
+                )
+            })?,
             generated_from: self.generated_from,
             reference_arn: self.reference_arn,
             name: self.name,
             description: self.description,
             tags: self.tags,
-        }
+        })
     }
 }

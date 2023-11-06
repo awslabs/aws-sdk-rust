@@ -41,6 +41,7 @@ pub struct CreateUserInputBuilder {
 }
 impl CreateUserInputBuilder {
     /// <p>The ID of an existing collection to which the new UserID needs to be created.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateUserInputBuilder {
         &self.collection_id
     }
     /// <p>ID for the UserID to be created. This ID needs to be unique within the collection.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl CreateUserInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
             collection_id: self.collection_id,
             user_id: self.user_id,

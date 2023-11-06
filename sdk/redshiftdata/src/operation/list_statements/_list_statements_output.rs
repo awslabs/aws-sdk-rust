@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStatementsOutput {
     /// <p>The SQL statements. </p>
-    pub statements: ::std::option::Option<::std::vec::Vec<crate::types::StatementData>>,
+    pub statements: ::std::vec::Vec<crate::types::StatementData>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStatementsOutput {
     /// <p>The SQL statements. </p>
-    pub fn statements(&self) -> ::std::option::Option<&[crate::types::StatementData]> {
-        self.statements.as_deref()
+    pub fn statements(&self) -> &[crate::types::StatementData] {
+        use std::ops::Deref;
+        self.statements.deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListStatementsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStatementsOutput`](crate::operation::list_statements::ListStatementsOutput).
-    pub fn build(self) -> crate::operation::list_statements::ListStatementsOutput {
-        crate::operation::list_statements::ListStatementsOutput {
-            statements: self.statements,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statements`](crate::operation::list_statements::builders::ListStatementsOutputBuilder::statements)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_statements::ListStatementsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_statements::ListStatementsOutput {
+            statements: self.statements.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statements",
+                    "statements was not specified but it is required when building ListStatementsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

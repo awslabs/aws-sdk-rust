@@ -65,10 +65,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
         self.noncurrent_version_expiration_in_days
     }
     /// <p>Transition rules that describe when noncurrent objects transition to a specified storage class.</p>
-    pub fn noncurrent_version_transitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails]> {
-        self.noncurrent_version_transitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.noncurrent_version_transitions.is_none()`.
+    pub fn noncurrent_version_transitions(&self) -> &[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails] {
+        self.noncurrent_version_transitions.as_deref().unwrap_or_default()
     }
     /// <p>A prefix that identifies one or more objects that the rule applies to.</p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -79,8 +79,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
         self.status.as_deref()
     }
     /// <p>Transition rules that indicate when objects transition to a specified storage class.</p>
-    pub fn transitions(&self) -> ::std::option::Option<&[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails]> {
-        self.transitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transitions.is_none()`.
+    pub fn transitions(&self) -> &[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails] {
+        self.transitions.as_deref().unwrap_or_default()
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {

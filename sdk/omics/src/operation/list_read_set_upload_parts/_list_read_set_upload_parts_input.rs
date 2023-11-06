@@ -62,6 +62,7 @@ pub struct ListReadSetUploadPartsInputBuilder {
 }
 impl ListReadSetUploadPartsInputBuilder {
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ListReadSetUploadPartsInputBuilder {
         &self.sequence_store_id
     }
     /// <p> The ID for the initiated multipart upload. </p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ListReadSetUploadPartsInputBuilder {
         &self.upload_id
     }
     /// <p> The source file for the upload part. </p>
+    /// This field is required.
     pub fn part_source(mut self, input: crate::types::ReadSetPartSource) -> Self {
         self.part_source = ::std::option::Option::Some(input);
         self
@@ -150,7 +153,7 @@ impl ListReadSetUploadPartsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsInput {
             sequence_store_id: self.sequence_store_id,

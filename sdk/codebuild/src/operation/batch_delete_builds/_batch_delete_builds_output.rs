@@ -11,12 +11,16 @@ pub struct BatchDeleteBuildsOutput {
 }
 impl BatchDeleteBuildsOutput {
     /// <p>The IDs of the builds that were successfully deleted.</p>
-    pub fn builds_deleted(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.builds_deleted.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.builds_deleted.is_none()`.
+    pub fn builds_deleted(&self) -> &[::std::string::String] {
+        self.builds_deleted.as_deref().unwrap_or_default()
     }
     /// <p>Information about any builds that could not be successfully deleted.</p>
-    pub fn builds_not_deleted(&self) -> ::std::option::Option<&[crate::types::BuildNotDeleted]> {
-        self.builds_not_deleted.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.builds_not_deleted.is_none()`.
+    pub fn builds_not_deleted(&self) -> &[crate::types::BuildNotDeleted] {
+        self.builds_not_deleted.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteBuildsOutput {

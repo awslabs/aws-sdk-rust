@@ -41,6 +41,7 @@ pub struct UpdateAssessmentTargetInputBuilder {
 }
 impl UpdateAssessmentTargetInputBuilder {
     /// <p>The ARN of the assessment target that you want to update.</p>
+    /// This field is required.
     pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateAssessmentTargetInputBuilder {
         &self.assessment_target_arn
     }
     /// <p>The name of the assessment target that you want to update.</p>
+    /// This field is required.
     pub fn assessment_target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_name = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +87,10 @@ impl UpdateAssessmentTargetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssessmentTargetInput`](crate::operation::update_assessment_target::UpdateAssessmentTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_assessment_target::UpdateAssessmentTargetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_assessment_target::UpdateAssessmentTargetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_assessment_target::UpdateAssessmentTargetInput {
             assessment_target_arn: self.assessment_target_arn,
             assessment_target_name: self.assessment_target_name,

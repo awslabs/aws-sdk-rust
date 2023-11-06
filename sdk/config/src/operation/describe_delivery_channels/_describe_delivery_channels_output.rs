@@ -10,8 +10,10 @@ pub struct DescribeDeliveryChannelsOutput {
 }
 impl DescribeDeliveryChannelsOutput {
     /// <p>A list that contains the descriptions of the specified delivery channel.</p>
-    pub fn delivery_channels(&self) -> ::std::option::Option<&[crate::types::DeliveryChannel]> {
-        self.delivery_channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delivery_channels.is_none()`.
+    pub fn delivery_channels(&self) -> &[crate::types::DeliveryChannel] {
+        self.delivery_channels.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDeliveryChannelsOutput {

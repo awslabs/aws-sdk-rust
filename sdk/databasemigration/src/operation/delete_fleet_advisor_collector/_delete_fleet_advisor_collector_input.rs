@@ -27,6 +27,7 @@ pub struct DeleteFleetAdvisorCollectorInputBuilder {
 }
 impl DeleteFleetAdvisorCollectorInputBuilder {
     /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+    /// This field is required.
     pub fn collector_referenced_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collector_referenced_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteFleetAdvisorCollectorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorInput {
             collector_referenced_id: self.collector_referenced_id,

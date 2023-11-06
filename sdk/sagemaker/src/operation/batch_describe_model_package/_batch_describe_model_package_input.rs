@@ -8,8 +8,10 @@ pub struct BatchDescribeModelPackageInput {
 }
 impl BatchDescribeModelPackageInput {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    pub fn model_package_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.model_package_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_package_arn_list.is_none()`.
+    pub fn model_package_arn_list(&self) -> &[::std::string::String] {
+        self.model_package_arn_list.as_deref().unwrap_or_default()
     }
 }
 impl BatchDescribeModelPackageInput {
@@ -51,7 +53,7 @@ impl BatchDescribeModelPackageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput {
             model_package_arn_list: self.model_package_arn_list,

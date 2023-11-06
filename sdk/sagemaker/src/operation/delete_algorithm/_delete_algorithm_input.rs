@@ -27,6 +27,7 @@ pub struct DeleteAlgorithmInputBuilder {
 }
 impl DeleteAlgorithmInputBuilder {
     /// <p>The name of the algorithm to delete.</p>
+    /// This field is required.
     pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAlgorithmInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAlgorithmInput`](crate::operation::delete_algorithm::DeleteAlgorithmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_algorithm::DeleteAlgorithmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_algorithm::DeleteAlgorithmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_algorithm::DeleteAlgorithmInput {
             algorithm_name: self.algorithm_name,
         })

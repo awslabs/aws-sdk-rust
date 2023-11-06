@@ -41,6 +41,7 @@ pub struct DeleteSecurityPolicyInputBuilder {
 }
 impl DeleteSecurityPolicyInputBuilder {
     /// <p>The type of policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl DeleteSecurityPolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the policy to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSecurityPolicyInput`](crate::operation::delete_security_policy::DeleteSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_security_policy::DeleteSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_security_policy::DeleteSecurityPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_security_policy::DeleteSecurityPolicyInput {
             r#type: self.r#type,

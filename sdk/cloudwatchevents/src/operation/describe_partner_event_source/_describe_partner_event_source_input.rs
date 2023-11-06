@@ -27,6 +27,7 @@ pub struct DescribePartnerEventSourceInputBuilder {
 }
 impl DescribePartnerEventSourceInputBuilder {
     /// <p>The name of the event source to display.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribePartnerEventSourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput { name: self.name })
     }

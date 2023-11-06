@@ -60,16 +60,20 @@ impl CreateNetworkProfileInput {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-    pub fn trust_anchors(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.trust_anchors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_anchors.is_none()`.
+    pub fn trust_anchors(&self) -> &[::std::string::String] {
+        self.trust_anchors.as_deref().unwrap_or_default()
     }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateNetworkProfileInput {
@@ -114,6 +118,7 @@ pub struct CreateNetworkProfileInputBuilder {
 }
 impl CreateNetworkProfileInputBuilder {
     /// <p>The name of the network profile associated with a device.</p>
+    /// This field is required.
     pub fn network_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +147,7 @@ impl CreateNetworkProfileInputBuilder {
         &self.description
     }
     /// <p>The SSID of the Wi-Fi network.</p>
+    /// This field is required.
     pub fn ssid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssid = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +162,7 @@ impl CreateNetworkProfileInputBuilder {
         &self.ssid
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
+    /// This field is required.
     pub fn security_type(mut self, input: crate::types::NetworkSecurityType) -> Self {
         self.security_type = ::std::option::Option::Some(input);
         self
@@ -246,6 +253,7 @@ impl CreateNetworkProfileInputBuilder {
         &self.trust_anchors
     }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -282,7 +290,7 @@ impl CreateNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkProfileInput`](crate::operation::create_network_profile::CreateNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_network_profile::CreateNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_network_profile::CreateNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_network_profile::CreateNetworkProfileInput {
             network_profile_name: self.network_profile_name,

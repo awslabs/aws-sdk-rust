@@ -40,6 +40,7 @@ pub struct DeleteAccessInputBuilder {
 }
 impl DeleteAccessInputBuilder {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DeleteAccessInputBuilder {
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// This field is required.
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +79,9 @@ impl DeleteAccessInputBuilder {
         &self.external_id
     }
     /// Consumes the builder and constructs a [`DeleteAccessInput`](crate::operation::delete_access::DeleteAccessInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_access::DeleteAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_access::DeleteAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_access::DeleteAccessInput {
             server_id: self.server_id,
             external_id: self.external_id,

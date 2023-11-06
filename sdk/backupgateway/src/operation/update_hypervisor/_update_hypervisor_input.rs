@@ -74,6 +74,7 @@ pub struct UpdateHypervisorInputBuilder {
 }
 impl UpdateHypervisorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
+    /// This field is required.
     pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +161,7 @@ impl UpdateHypervisorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHypervisorInput`](crate::operation::update_hypervisor::UpdateHypervisorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_hypervisor::UpdateHypervisorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_hypervisor::UpdateHypervisorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_hypervisor::UpdateHypervisorInput {
             hypervisor_arn: self.hypervisor_arn,
             host: self.host,

@@ -84,6 +84,7 @@ pub struct RedshiftDatasetDefinitionBuilder {
 }
 impl RedshiftDatasetDefinitionBuilder {
     /// <p>The Redshift cluster Identifier.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl RedshiftDatasetDefinitionBuilder {
         &self.cluster_id
     }
     /// <p>The name of the Redshift database used in Redshift query execution.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl RedshiftDatasetDefinitionBuilder {
         &self.database
     }
     /// <p>The database user name used in Redshift query execution.</p>
+    /// This field is required.
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_user = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +129,7 @@ impl RedshiftDatasetDefinitionBuilder {
         &self.db_user
     }
     /// <p>The SQL query statements to be executed.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl RedshiftDatasetDefinitionBuilder {
         &self.query_string
     }
     /// <p>The IAM role attached to your Redshift cluster that Amazon SageMaker uses to generate datasets.</p>
+    /// This field is required.
     pub fn cluster_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +159,7 @@ impl RedshiftDatasetDefinitionBuilder {
         &self.cluster_role_arn
     }
     /// <p>The location in Amazon S3 where the Redshift query results are stored.</p>
+    /// This field is required.
     pub fn output_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +188,7 @@ impl RedshiftDatasetDefinitionBuilder {
         &self.kms_key_id
     }
     /// <p>The data storage format for Redshift query results.</p>
+    /// This field is required.
     pub fn output_format(mut self, input: crate::types::RedshiftResultFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self

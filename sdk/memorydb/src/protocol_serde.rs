@@ -51,7 +51,7 @@ pub(crate) mod shape_delete_subnet_group;
 
 pub(crate) mod shape_delete_user;
 
-pub(crate) mod shape_describe_ac_ls;
+pub(crate) mod shape_describe_acls;
 
 pub(crate) mod shape_describe_clusters;
 
@@ -151,7 +151,7 @@ pub(crate) mod shape_delete_subnet_group_input;
 
 pub(crate) mod shape_delete_user_input;
 
-pub(crate) mod shape_describe_ac_ls_input;
+pub(crate) mod shape_describe_acls_input;
 
 pub(crate) mod shape_describe_clusters_input;
 
@@ -383,7 +383,7 @@ pub(crate) mod shape_unprocessed_cluster;
 
 pub(crate) mod shape_user_name_list;
 
-pub(crate) mod shape_ac_ls_update_status;
+pub(crate) mod shape_acls_update_status;
 
 pub(crate) mod shape_pending_modified_service_update_list;
 

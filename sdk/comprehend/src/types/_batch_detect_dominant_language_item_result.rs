@@ -15,8 +15,10 @@ impl BatchDetectDominantLanguageItemResult {
         self.index
     }
     /// <p>One or more <code>DominantLanguage</code> objects describing the dominant languages in the document.</p>
-    pub fn languages(&self) -> ::std::option::Option<&[crate::types::DominantLanguage]> {
-        self.languages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.languages.is_none()`.
+    pub fn languages(&self) -> &[crate::types::DominantLanguage] {
+        self.languages.as_deref().unwrap_or_default()
     }
 }
 impl BatchDetectDominantLanguageItemResult {

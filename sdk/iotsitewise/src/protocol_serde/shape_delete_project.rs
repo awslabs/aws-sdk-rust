@@ -25,11 +25,10 @@ pub fn de_delete_project_http_error(
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_project::DeleteProjectError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_project::DeleteProjectError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::delete_project::DeleteProjectError::InvalidRequestException({
@@ -40,11 +39,10 @@ pub fn de_delete_project_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_project::DeleteProjectError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_project::DeleteProjectError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::delete_project::DeleteProjectError::ResourceNotFoundException({
@@ -55,11 +53,10 @@ pub fn de_delete_project_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_project::DeleteProjectError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_project::DeleteProjectError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::delete_project::DeleteProjectError::ThrottlingException({
@@ -70,11 +67,10 @@ pub fn de_delete_project_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_project::DeleteProjectError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_project::DeleteProjectError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::delete_project::DeleteProjectError::generic(generic),

@@ -34,6 +34,7 @@ pub struct UpdatePhoneNumberSettingsInputBuilder {
 }
 impl UpdatePhoneNumberSettingsInputBuilder {
     /// <p>The default outbound calling name for the account.</p>
+    /// This field is required.
     pub fn calling_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calling_name = ::std::option::Option::Some(input.into());
         self
@@ -52,7 +53,7 @@ impl UpdatePhoneNumberSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput {
             calling_name: self.calling_name,

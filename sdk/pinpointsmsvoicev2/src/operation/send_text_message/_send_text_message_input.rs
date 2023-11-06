@@ -25,7 +25,7 @@ pub struct SendTextMessageInput {
     pub destination_country_parameters:
         ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
@@ -71,7 +71,7 @@ impl SendTextMessageInput {
         self.destination_country_parameters.as_ref()
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -101,6 +101,7 @@ pub struct SendTextMessageInputBuilder {
 }
 impl SendTextMessageInputBuilder {
     /// <p>The destination phone number in E.164 format.</p>
+    /// This field is required.
     pub fn destination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -278,7 +279,7 @@ impl SendTextMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendTextMessageInput`](crate::operation::send_text_message::SendTextMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_text_message::SendTextMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_text_message::SendTextMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_text_message::SendTextMessageInput {
             destination_phone_number: self.destination_phone_number,
             origination_identity: self.origination_identity,
@@ -290,7 +291,7 @@ impl SendTextMessageInputBuilder {
             time_to_live: self.time_to_live,
             context: self.context,
             destination_country_parameters: self.destination_country_parameters,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

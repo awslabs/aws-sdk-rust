@@ -55,6 +55,7 @@ pub struct UpdateEndpointInputBuilder {
 }
 impl UpdateEndpointInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl UpdateEndpointInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_endpoint::UpdateEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_endpoint::UpdateEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_endpoint::UpdateEndpointInput {
             endpoint_arn: self.endpoint_arn,
             desired_model_arn: self.desired_model_arn,

@@ -9,7 +9,7 @@ pub struct SourceSchema {
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
     pub record_encoding: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>RecordColumn</code> objects. </p>
-    pub record_columns: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>,
+    pub record_columns: ::std::vec::Vec<crate::types::RecordColumn>,
 }
 impl SourceSchema {
     /// <p>Specifies the format of the records on the streaming source.</p>
@@ -21,8 +21,9 @@ impl SourceSchema {
         self.record_encoding.as_deref()
     }
     /// <p>A list of <code>RecordColumn</code> objects. </p>
-    pub fn record_columns(&self) -> ::std::option::Option<&[crate::types::RecordColumn]> {
-        self.record_columns.as_deref()
+    pub fn record_columns(&self) -> &[crate::types::RecordColumn] {
+        use std::ops::Deref;
+        self.record_columns.deref()
     }
 }
 impl SourceSchema {
@@ -42,6 +43,7 @@ pub struct SourceSchemaBuilder {
 }
 impl SourceSchemaBuilder {
     /// <p>Specifies the format of the records on the streaming source.</p>
+    /// This field is required.
     pub fn record_format(mut self, input: crate::types::RecordFormat) -> Self {
         self.record_format = ::std::option::Option::Some(input);
         self
@@ -90,11 +92,18 @@ impl SourceSchemaBuilder {
         &self.record_columns
     }
     /// Consumes the builder and constructs a [`SourceSchema`](crate::types::SourceSchema).
-    pub fn build(self) -> crate::types::SourceSchema {
-        crate::types::SourceSchema {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`record_columns`](crate::types::builders::SourceSchemaBuilder::record_columns)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceSchema, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceSchema {
             record_format: self.record_format,
             record_encoding: self.record_encoding,
-            record_columns: self.record_columns,
-        }
+            record_columns: self.record_columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "record_columns",
+                    "record_columns was not specified but it is required when building SourceSchema",
+                )
+            })?,
+        })
     }
 }

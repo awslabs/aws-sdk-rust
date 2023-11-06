@@ -42,6 +42,7 @@ pub struct GetRequestValidatorsInputBuilder {
 }
 impl GetRequestValidatorsInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl GetRequestValidatorsInputBuilder {
     /// Consumes the builder and constructs a [`GetRequestValidatorsInput`](crate::operation::get_request_validators::GetRequestValidatorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_request_validators::GetRequestValidatorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_request_validators::GetRequestValidatorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_request_validators::GetRequestValidatorsInput {
             rest_api_id: self.rest_api_id,

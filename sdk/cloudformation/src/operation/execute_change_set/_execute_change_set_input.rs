@@ -68,6 +68,7 @@ pub struct ExecuteChangeSetInputBuilder {
 }
 impl ExecuteChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
+    /// This field is required.
     pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +159,7 @@ impl ExecuteChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteChangeSetInput`](crate::operation::execute_change_set::ExecuteChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_change_set::ExecuteChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::execute_change_set::ExecuteChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_change_set::ExecuteChangeSetInput {
             change_set_name: self.change_set_name,
             stack_name: self.stack_name,

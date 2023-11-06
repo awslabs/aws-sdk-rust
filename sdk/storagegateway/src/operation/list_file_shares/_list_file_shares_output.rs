@@ -22,8 +22,10 @@ impl ListFileSharesOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of information about the S3 File Gateway's file shares.</p>
-    pub fn file_share_info_list(&self) -> ::std::option::Option<&[crate::types::FileShareInfo]> {
-        self.file_share_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_share_info_list.is_none()`.
+    pub fn file_share_info_list(&self) -> &[crate::types::FileShareInfo] {
+        self.file_share_info_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFileSharesOutput {

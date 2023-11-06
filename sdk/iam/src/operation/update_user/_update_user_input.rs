@@ -48,6 +48,7 @@ pub struct UpdateUserInputBuilder {
 impl UpdateUserInputBuilder {
     /// <p>Name of the user to update. If you're changing the name of the user, this is the original user name.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -98,7 +99,7 @@ impl UpdateUserInputBuilder {
         &self.new_user_name
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
             user_name: self.user_name,
             new_path: self.new_path,

@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSolFunctionPackageOutput {
     /// <p>Function package ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Function package ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Function package onboarding state.</p>
-    pub onboarding_state: ::std::option::Option<crate::types::OnboardingState>,
+    pub onboarding_state: crate::types::OnboardingState,
     /// <p>Function package operational state.</p>
-    pub operational_state: ::std::option::Option<crate::types::OperationalState>,
+    pub operational_state: crate::types::OperationalState,
     /// <p>Function package usage state.</p>
-    pub usage_state: ::std::option::Option<crate::types::UsageState>,
+    pub usage_state: crate::types::UsageState,
     /// <p>Function package descriptor ID.</p>
     pub vnfd_id: ::std::option::Option<::std::string::String>,
     /// <p>Network function provider.</p>
@@ -30,24 +30,26 @@ pub struct GetSolFunctionPackageOutput {
 }
 impl GetSolFunctionPackageOutput {
     /// <p>Function package ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Function package ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Function package onboarding state.</p>
-    pub fn onboarding_state(&self) -> ::std::option::Option<&crate::types::OnboardingState> {
-        self.onboarding_state.as_ref()
+    pub fn onboarding_state(&self) -> &crate::types::OnboardingState {
+        &self.onboarding_state
     }
     /// <p>Function package operational state.</p>
-    pub fn operational_state(&self) -> ::std::option::Option<&crate::types::OperationalState> {
-        self.operational_state.as_ref()
+    pub fn operational_state(&self) -> &crate::types::OperationalState {
+        &self.operational_state
     }
     /// <p>Function package usage state.</p>
-    pub fn usage_state(&self) -> ::std::option::Option<&crate::types::UsageState> {
-        self.usage_state.as_ref()
+    pub fn usage_state(&self) -> &crate::types::UsageState {
+        &self.usage_state
     }
     /// <p>Function package descriptor ID.</p>
     pub fn vnfd_id(&self) -> ::std::option::Option<&str> {
@@ -124,6 +126,7 @@ pub struct GetSolFunctionPackageOutputBuilder {
 }
 impl GetSolFunctionPackageOutputBuilder {
     /// <p>Function package ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +141,7 @@ impl GetSolFunctionPackageOutputBuilder {
         &self.id
     }
     /// <p>Function package ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +156,7 @@ impl GetSolFunctionPackageOutputBuilder {
         &self.arn
     }
     /// <p>Function package onboarding state.</p>
+    /// This field is required.
     pub fn onboarding_state(mut self, input: crate::types::OnboardingState) -> Self {
         self.onboarding_state = ::std::option::Option::Some(input);
         self
@@ -166,6 +171,7 @@ impl GetSolFunctionPackageOutputBuilder {
         &self.onboarding_state
     }
     /// <p>Function package operational state.</p>
+    /// This field is required.
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
         self.operational_state = ::std::option::Option::Some(input);
         self
@@ -180,6 +186,7 @@ impl GetSolFunctionPackageOutputBuilder {
         &self.operational_state
     }
     /// <p>Function package usage state.</p>
+    /// This field is required.
     pub fn usage_state(mut self, input: crate::types::UsageState) -> Self {
         self.usage_state = ::std::option::Option::Some(input);
         self
@@ -296,13 +303,49 @@ impl GetSolFunctionPackageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageOutput`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput).
-    pub fn build(self) -> crate::operation::get_sol_function_package::GetSolFunctionPackageOutput {
-        crate::operation::get_sol_function_package::GetSolFunctionPackageOutput {
-            id: self.id,
-            arn: self.arn,
-            onboarding_state: self.onboarding_state,
-            operational_state: self.operational_state,
-            usage_state: self.usage_state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::id)
+    /// - [`arn`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::arn)
+    /// - [`onboarding_state`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::onboarding_state)
+    /// - [`operational_state`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::operational_state)
+    /// - [`usage_state`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::usage_state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_sol_function_package::GetSolFunctionPackageOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_sol_function_package::GetSolFunctionPackageOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetSolFunctionPackageOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetSolFunctionPackageOutput",
+                )
+            })?,
+            onboarding_state: self.onboarding_state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "onboarding_state",
+                    "onboarding_state was not specified but it is required when building GetSolFunctionPackageOutput",
+                )
+            })?,
+            operational_state: self.operational_state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operational_state",
+                    "operational_state was not specified but it is required when building GetSolFunctionPackageOutput",
+                )
+            })?,
+            usage_state: self.usage_state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "usage_state",
+                    "usage_state was not specified but it is required when building GetSolFunctionPackageOutput",
+                )
+            })?,
             vnfd_id: self.vnfd_id,
             vnf_provider: self.vnf_provider,
             vnf_product_name: self.vnf_product_name,
@@ -310,7 +353,7 @@ impl GetSolFunctionPackageOutputBuilder {
             metadata: self.metadata,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetSolFunctionPackageOutputBuilder {

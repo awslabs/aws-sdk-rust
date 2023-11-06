@@ -35,6 +35,7 @@ pub struct GamePropertyBuilder {
 }
 impl GamePropertyBuilder {
     /// <p>The game property identifier.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GamePropertyBuilder {
         &self.key
     }
     /// <p>The game property value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

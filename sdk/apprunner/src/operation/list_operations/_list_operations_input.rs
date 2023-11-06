@@ -45,6 +45,7 @@ pub struct ListOperationsInputBuilder {
 }
 impl ListOperationsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
+    /// This field is required.
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,7 @@ impl ListOperationsInputBuilder {
     /// Consumes the builder and constructs a [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_operations::ListOperationsInput {
             service_arn: self.service_arn,
             next_token: self.next_token,

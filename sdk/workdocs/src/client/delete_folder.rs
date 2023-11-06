@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFolder`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`authentication_token(impl Into<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    ///   - [`folder_id(impl Into<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::set_authentication_token):<br>required: **false**<br><p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p><br>
+    ///   - [`folder_id(impl Into<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::set_folder_id):<br>required: **true**<br><p>The ID of the folder.</p><br>
     /// - On success, responds with [`DeleteFolderOutput`](crate::operation::delete_folder::DeleteFolderOutput)
     /// - On failure, responds with [`SdkError<DeleteFolderError>`](crate::operation::delete_folder::DeleteFolderError)
     pub fn delete_folder(&self) -> crate::operation::delete_folder::builders::DeleteFolderFluentBuilder {

@@ -175,9 +175,9 @@ pub(crate) mod shape_retrieve_environment_info;
 
 pub(crate) mod shape_retrieve_environment_info_input;
 
-pub(crate) mod shape_swap_environment_cnam_es;
+pub(crate) mod shape_swap_environment_cnames;
 
-pub(crate) mod shape_swap_environment_cnam_es_input;
+pub(crate) mod shape_swap_environment_cnames_input;
 
 pub(crate) mod shape_terminate_environment;
 

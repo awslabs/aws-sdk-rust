@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaExecutorConfiguration {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
-    pub lambda_function_arn: ::std::option::Option<::std::string::String>,
+    pub lambda_function_arn: ::std::string::String,
 }
 impl LambdaExecutorConfiguration {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
-        self.lambda_function_arn.as_deref()
+    pub fn lambda_function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.lambda_function_arn.deref()
     }
 }
 impl LambdaExecutorConfiguration {
@@ -28,6 +29,7 @@ pub struct LambdaExecutorConfigurationBuilder {
 }
 impl LambdaExecutorConfigurationBuilder {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
+    /// This field is required.
     pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl LambdaExecutorConfigurationBuilder {
         &self.lambda_function_arn
     }
     /// Consumes the builder and constructs a [`LambdaExecutorConfiguration`](crate::types::LambdaExecutorConfiguration).
-    pub fn build(self) -> crate::types::LambdaExecutorConfiguration {
-        crate::types::LambdaExecutorConfiguration {
-            lambda_function_arn: self.lambda_function_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lambda_function_arn`](crate::types::builders::LambdaExecutorConfigurationBuilder::lambda_function_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaExecutorConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaExecutorConfiguration {
+            lambda_function_arn: self.lambda_function_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "lambda_function_arn",
+                    "lambda_function_arn was not specified but it is required when building LambdaExecutorConfiguration",
+                )
+            })?,
+        })
     }
 }

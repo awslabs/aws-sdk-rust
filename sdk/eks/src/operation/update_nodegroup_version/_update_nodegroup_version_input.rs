@@ -71,6 +71,7 @@ pub struct UpdateNodegroupVersionInputBuilder {
 }
 impl UpdateNodegroupVersionInputBuilder {
     /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl UpdateNodegroupVersionInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the managed node group to update.</p>
+    /// This field is required.
     pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nodegroup_name = ::std::option::Option::Some(input.into());
         self
@@ -174,8 +176,10 @@ impl UpdateNodegroupVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNodegroupVersionInput`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_nodegroup_version::UpdateNodegroupVersionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_nodegroup_version::UpdateNodegroupVersionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_nodegroup_version::UpdateNodegroupVersionInput {
             cluster_name: self.cluster_name,
             nodegroup_name: self.nodegroup_name,

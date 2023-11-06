@@ -55,6 +55,7 @@ impl AcceptInvitationInputBuilder {
         &self.administrator_account_id
     }
     /// <p>The unique identifier for the invitation to accept.</p>
+    /// This field is required.
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl AcceptInvitationInputBuilder {
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_invitation::AcceptInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::accept_invitation::AcceptInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_invitation::AcceptInvitationInput {
             administrator_account_id: self.administrator_account_id,
             invitation_id: self.invitation_id,

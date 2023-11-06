@@ -82,6 +82,7 @@ pub struct SetSubscriptionAttributesInputBuilder {
 }
 impl SetSubscriptionAttributesInputBuilder {
     /// <p>The ARN of the subscription to modify.</p>
+    /// This field is required.
     pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +117,7 @@ impl SetSubscriptionAttributesInputBuilder {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -188,7 +190,7 @@ impl SetSubscriptionAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_subscription_attributes::SetSubscriptionAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_subscription_attributes::SetSubscriptionAttributesInput {
             subscription_arn: self.subscription_arn,

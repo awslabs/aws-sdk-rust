@@ -99,6 +99,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
         &self.accept_language
     }
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
+    /// This field is required.
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
     /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn organization_node_type(mut self, input: crate::types::OrganizationNodeType) -> Self {
         self.organization_node_type = ::std::option::Option::Some(input);
         self
@@ -174,7 +176,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessInput {

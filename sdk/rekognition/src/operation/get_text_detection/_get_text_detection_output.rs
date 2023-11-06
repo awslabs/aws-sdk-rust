@@ -37,8 +37,10 @@ impl GetTextDetectionOutput {
         self.video_metadata.as_ref()
     }
     /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
-    pub fn text_detections(&self) -> ::std::option::Option<&[crate::types::TextDetectionResult]> {
-        self.text_detections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_detections.is_none()`.
+    pub fn text_detections(&self) -> &[crate::types::TextDetectionResult] {
+        self.text_detections.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

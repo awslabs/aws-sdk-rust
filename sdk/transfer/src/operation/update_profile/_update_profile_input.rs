@@ -14,8 +14,10 @@ impl UpdateProfileInput {
         self.profile_id.as_deref()
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.certificate_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_ids.is_none()`.
+    pub fn certificate_ids(&self) -> &[::std::string::String] {
+        self.certificate_ids.as_deref().unwrap_or_default()
     }
 }
 impl UpdateProfileInput {
@@ -34,6 +36,7 @@ pub struct UpdateProfileInputBuilder {
 }
 impl UpdateProfileInputBuilder {
     /// <p>The identifier of the profile object that you are updating.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl UpdateProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_profile::UpdateProfileInput {
             profile_id: self.profile_id,
             certificate_ids: self.certificate_ids,

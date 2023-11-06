@@ -2,7 +2,7 @@
 pub fn ser_create_license_manager_report_generator_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.report_generator_name {
         object.key("ReportGeneratorName").string(var_1.as_str());
     }

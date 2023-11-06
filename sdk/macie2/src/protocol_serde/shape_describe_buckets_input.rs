@@ -2,7 +2,7 @@
 pub fn ser_describe_buckets_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_buckets::DescribeBucketsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.criteria {
         #[allow(unused_mut)]
         let mut object_2 = object.key("criteria").start_object();

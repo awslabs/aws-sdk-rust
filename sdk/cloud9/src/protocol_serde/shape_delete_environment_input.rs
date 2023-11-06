@@ -2,7 +2,7 @@
 pub fn ser_delete_environment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_environment::DeleteEnvironmentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.environment_id {
         object.key("environmentId").string(var_1.as_str());
     }

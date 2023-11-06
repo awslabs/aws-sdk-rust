@@ -44,8 +44,10 @@ impl CreateLocationHdfsInput {
         self.subdirectory.as_deref()
     }
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    pub fn name_nodes(&self) -> ::std::option::Option<&[crate::types::HdfsNameNode]> {
-        self.name_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.name_nodes.is_none()`.
+    pub fn name_nodes(&self) -> &[crate::types::HdfsNameNode] {
+        self.name_nodes.as_deref().unwrap_or_default()
     }
     /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
     pub fn block_size(&self) -> ::std::option::Option<i32> {
@@ -92,12 +94,16 @@ impl CreateLocationHdfsInput {
         self.kerberos_krb5_conf.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLocationHdfsInput {
@@ -217,6 +223,7 @@ impl CreateLocationHdfsInputBuilder {
         &self.qop_configuration
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::HdfsAuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self
@@ -353,7 +360,8 @@ impl CreateLocationHdfsInputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationHdfsInput`](crate::operation::create_location_hdfs::CreateLocationHdfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_location_hdfs::CreateLocationHdfsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_location_hdfs::CreateLocationHdfsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_location_hdfs::CreateLocationHdfsInput {
             subdirectory: self.subdirectory,
             name_nodes: self.name_nodes,

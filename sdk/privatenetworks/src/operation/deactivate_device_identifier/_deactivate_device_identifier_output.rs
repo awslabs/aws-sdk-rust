@@ -34,6 +34,7 @@ pub struct DeactivateDeviceIdentifierOutputBuilder {
 }
 impl DeactivateDeviceIdentifierOutputBuilder {
     /// <p>Information about the device identifier.</p>
+    /// This field is required.
     pub fn device_identifier(mut self, input: crate::types::DeviceIdentifier) -> Self {
         self.device_identifier = ::std::option::Option::Some(input);
         self

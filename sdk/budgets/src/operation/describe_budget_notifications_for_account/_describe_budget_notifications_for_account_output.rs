@@ -11,8 +11,10 @@ pub struct DescribeBudgetNotificationsForAccountOutput {
 }
 impl DescribeBudgetNotificationsForAccountOutput {
     /// <p> A list of budget names and associated notifications for an account. </p>
-    pub fn budget_notifications_for_account(&self) -> ::std::option::Option<&[crate::types::BudgetNotificationsForAccount]> {
-        self.budget_notifications_for_account.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.budget_notifications_for_account.is_none()`.
+    pub fn budget_notifications_for_account(&self) -> &[crate::types::BudgetNotificationsForAccount] {
+        self.budget_notifications_for_account.as_deref().unwrap_or_default()
     }
     /// <p> A generic string.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

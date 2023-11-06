@@ -294,6 +294,7 @@ impl EmailChannelResponseBuilder {
         &self.messages_per_second
     }
     /// <p>The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.</p>
+    /// This field is required.
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
         self

@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::set_max_results): <p> Specifies the maximum number of items that should be returned in the result set. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::set_next_token): <p> The pagination token for next page of data. </p>
+    ///   - [`max_results(i32)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::set_max_results):<br>required: **false**<br><p> Specifies the maximum number of items that should be returned in the result set. </p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::set_next_token):<br>required: **false**<br><p> The pagination token for next page of data. </p><br>
     /// - On success, responds with [`ListFlowsOutput`](crate::operation::list_flows::ListFlowsOutput) with field(s):
-    ///   - [`flows(Option<Vec<FlowDefinition>>)`](crate::operation::list_flows::ListFlowsOutput::flows): <p> The list of flows associated with your account. </p>
+    ///   - [`flows(Option<Vec::<FlowDefinition>>)`](crate::operation::list_flows::ListFlowsOutput::flows): <p> The list of flows associated with your account. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_flows::ListFlowsOutput::next_token): <p> The pagination token for next page of data. </p>
     /// - On failure, responds with [`SdkError<ListFlowsError>`](crate::operation::list_flows::ListFlowsError)
     pub fn list_flows(&self) -> crate::operation::list_flows::builders::ListFlowsFluentBuilder {

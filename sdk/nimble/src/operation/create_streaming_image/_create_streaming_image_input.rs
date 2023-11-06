@@ -102,6 +102,7 @@ impl CreateStreamingImageInputBuilder {
         &self.description
     }
     /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
+    /// This field is required.
     pub fn ec2_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_image_id = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +117,7 @@ impl CreateStreamingImageInputBuilder {
         &self.ec2_image_id
     }
     /// <p>A friendly name for a streaming image resource.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +132,7 @@ impl CreateStreamingImageInputBuilder {
         &self.name
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -166,7 +169,7 @@ impl CreateStreamingImageInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamingImageInput`](crate::operation::create_streaming_image::CreateStreamingImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_streaming_image::CreateStreamingImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_streaming_image::CreateStreamingImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_streaming_image::CreateStreamingImageInput {
             client_token: self.client_token,

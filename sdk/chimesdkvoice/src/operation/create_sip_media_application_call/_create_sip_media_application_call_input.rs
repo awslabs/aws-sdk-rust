@@ -66,6 +66,7 @@ pub struct CreateSipMediaApplicationCallInputBuilder {
 }
 impl CreateSipMediaApplicationCallInputBuilder {
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime SDK phone number inventory.</p>
+    /// This field is required.
     pub fn from_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
         &self.from_phone_number
     }
     /// <p>The phone number that the service should call.</p>
+    /// This field is required.
     pub fn to_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
         &self.to_phone_number
     }
     /// <p>The ID of the SIP media application.</p>
+    /// This field is required.
     pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +161,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput {
             from_phone_number: self.from_phone_number,

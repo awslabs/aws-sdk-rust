@@ -24,8 +24,10 @@ impl ListAvailableResourceDimensionsInput {
         self.identifier.as_deref()
     }
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[::std::string::String] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -55,6 +57,7 @@ pub struct ListAvailableResourceDimensionsInputBuilder {
 }
 impl ListAvailableResourceDimensionsInputBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    /// This field is required.
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +72,7 @@ impl ListAvailableResourceDimensionsInputBuilder {
         &self.service_type
     }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -135,7 +139,7 @@ impl ListAvailableResourceDimensionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput {

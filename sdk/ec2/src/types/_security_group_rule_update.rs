@@ -35,6 +35,7 @@ pub struct SecurityGroupRuleUpdateBuilder {
 }
 impl SecurityGroupRuleUpdateBuilder {
     /// <p>The ID of the security group rule.</p>
+    /// This field is required.
     pub fn security_group_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_rule_id = ::std::option::Option::Some(input.into());
         self

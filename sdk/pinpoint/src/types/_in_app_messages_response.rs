@@ -9,8 +9,10 @@ pub struct InAppMessagesResponse {
 }
 impl InAppMessagesResponse {
     /// <p>List of targeted in-app message campaigns.</p>
-    pub fn in_app_message_campaigns(&self) -> ::std::option::Option<&[crate::types::InAppMessageCampaign]> {
-        self.in_app_message_campaigns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.in_app_message_campaigns.is_none()`.
+    pub fn in_app_message_campaigns(&self) -> &[crate::types::InAppMessageCampaign] {
+        self.in_app_message_campaigns.as_deref().unwrap_or_default()
     }
 }
 impl InAppMessagesResponse {

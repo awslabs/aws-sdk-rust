@@ -42,18 +42,24 @@ impl CreateWorkflowInput {
     /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
     /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::WorkflowStep]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::WorkflowStep] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    pub fn on_exception_steps(&self) -> ::std::option::Option<&[crate::types::WorkflowStep]> {
-        self.on_exception_steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_exception_steps.is_none()`.
+    pub fn on_exception_steps(&self) -> &[crate::types::WorkflowStep] {
+        self.on_exception_steps.as_deref().unwrap_or_default()
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateWorkflowInput {
@@ -189,7 +195,7 @@ impl CreateWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workflow::CreateWorkflowInput {
             description: self.description,
             steps: self.steps,

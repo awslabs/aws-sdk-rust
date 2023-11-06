@@ -45,8 +45,10 @@ impl DescribeStorediScsiVolumesOutput {
     /// <li> <p> <code>VolumeStatus</code>: One of the <code>VolumeStatus</code> values that indicates the state of the volume.</p> </li>
     /// <li> <p> <code>VolumeType</code>: One of the enumeration values describing the type of the volume. Currently, only <code>STORED</code> volumes are supported.</p> </li>
     /// </ul>
-    pub fn storedi_scsi_volumes(&self) -> ::std::option::Option<&[crate::types::StorediScsiVolume]> {
-        self.storedi_scsi_volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storedi_scsi_volumes.is_none()`.
+    pub fn storedi_scsi_volumes(&self) -> &[crate::types::StorediScsiVolume] {
+        self.storedi_scsi_volumes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeStorediScsiVolumesOutput {

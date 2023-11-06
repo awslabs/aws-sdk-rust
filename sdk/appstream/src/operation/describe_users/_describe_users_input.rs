@@ -41,6 +41,7 @@ pub struct DescribeUsersInputBuilder {
 }
 impl DescribeUsersInputBuilder {
     /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self
@@ -85,7 +86,7 @@ impl DescribeUsersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_users::DescribeUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_users::DescribeUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_users::DescribeUsersInput {
             authentication_type: self.authentication_type,
             max_results: self.max_results,

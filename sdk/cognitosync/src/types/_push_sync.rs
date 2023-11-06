@@ -11,8 +11,10 @@ pub struct PushSync {
 }
 impl PushSync {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub fn application_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.application_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_arns.is_none()`.
+    pub fn application_arns(&self) -> &[::std::string::String] {
+        self.application_arns.as_deref().unwrap_or_default()
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {

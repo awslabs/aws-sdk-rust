@@ -14,8 +14,10 @@ impl RunPipelineActivityInput {
         self.pipeline_activity.as_ref()
     }
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
-    pub fn payloads(&self) -> ::std::option::Option<&[::aws_smithy_types::Blob]> {
-        self.payloads.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.payloads.is_none()`.
+    pub fn payloads(&self) -> &[::aws_smithy_types::Blob] {
+        self.payloads.as_deref().unwrap_or_default()
     }
 }
 impl RunPipelineActivityInput {
@@ -34,6 +36,7 @@ pub struct RunPipelineActivityInputBuilder {
 }
 impl RunPipelineActivityInputBuilder {
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
+    /// This field is required.
     pub fn pipeline_activity(mut self, input: crate::types::PipelineActivity) -> Self {
         self.pipeline_activity = ::std::option::Option::Some(input);
         self
@@ -70,7 +73,7 @@ impl RunPipelineActivityInputBuilder {
     /// Consumes the builder and constructs a [`RunPipelineActivityInput`](crate::operation::run_pipeline_activity::RunPipelineActivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::run_pipeline_activity::RunPipelineActivityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::run_pipeline_activity::RunPipelineActivityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::run_pipeline_activity::RunPipelineActivityInput {
             pipeline_activity: self.pipeline_activity,

@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalSpecification {
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
-    pub active: ::std::option::Option<bool>,
+    pub active: bool,
     /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
-    pub conditional_branches: ::std::option::Option<::std::vec::Vec<crate::types::ConditionalBranch>>,
+    pub conditional_branches: ::std::vec::Vec<crate::types::ConditionalBranch>,
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
     pub default_branch: ::std::option::Option<crate::types::DefaultConditionalBranch>,
 }
 impl ConditionalSpecification {
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
-    pub fn active(&self) -> ::std::option::Option<bool> {
+    pub fn active(&self) -> bool {
         self.active
     }
     /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
-    pub fn conditional_branches(&self) -> ::std::option::Option<&[crate::types::ConditionalBranch]> {
-        self.conditional_branches.as_deref()
+    pub fn conditional_branches(&self) -> &[crate::types::ConditionalBranch] {
+        use std::ops::Deref;
+        self.conditional_branches.deref()
     }
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
     pub fn default_branch(&self) -> ::std::option::Option<&crate::types::DefaultConditionalBranch> {
@@ -42,6 +43,7 @@ pub struct ConditionalSpecificationBuilder {
 }
 impl ConditionalSpecificationBuilder {
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
+    /// This field is required.
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl ConditionalSpecificationBuilder {
         &self.conditional_branches
     }
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
+    /// This field is required.
     pub fn default_branch(mut self, input: crate::types::DefaultConditionalBranch) -> Self {
         self.default_branch = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,24 @@ impl ConditionalSpecificationBuilder {
         &self.default_branch
     }
     /// Consumes the builder and constructs a [`ConditionalSpecification`](crate::types::ConditionalSpecification).
-    pub fn build(self) -> crate::types::ConditionalSpecification {
-        crate::types::ConditionalSpecification {
-            active: self.active,
-            conditional_branches: self.conditional_branches,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`active`](crate::types::builders::ConditionalSpecificationBuilder::active)
+    /// - [`conditional_branches`](crate::types::builders::ConditionalSpecificationBuilder::conditional_branches)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionalSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConditionalSpecification {
+            active: self.active.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "active",
+                    "active was not specified but it is required when building ConditionalSpecification",
+                )
+            })?,
+            conditional_branches: self.conditional_branches.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "conditional_branches",
+                    "conditional_branches was not specified but it is required when building ConditionalSpecification",
+                )
+            })?,
             default_branch: self.default_branch,
-        }
+        })
     }
 }

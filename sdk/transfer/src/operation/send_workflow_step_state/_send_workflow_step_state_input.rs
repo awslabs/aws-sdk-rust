@@ -48,6 +48,7 @@ pub struct SendWorkflowStepStateInputBuilder {
 }
 impl SendWorkflowStepStateInputBuilder {
     /// <p>A unique identifier for the workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl SendWorkflowStepStateInputBuilder {
         &self.workflow_id
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
+    /// This field is required.
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl SendWorkflowStepStateInputBuilder {
         &self.execution_id
     }
     /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl SendWorkflowStepStateInputBuilder {
         &self.token
     }
     /// <p>Indicates whether the specified step succeeded or failed.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::CustomStepStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -106,7 +110,7 @@ impl SendWorkflowStepStateInputBuilder {
     /// Consumes the builder and constructs a [`SendWorkflowStepStateInput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_workflow_step_state::SendWorkflowStepStateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::send_workflow_step_state::SendWorkflowStepStateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::send_workflow_step_state::SendWorkflowStepStateInput {
             workflow_id: self.workflow_id,

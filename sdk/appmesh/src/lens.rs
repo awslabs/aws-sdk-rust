@@ -82,79 +82,55 @@ pub(crate) fn reflens_list_virtual_services_output_next_token(
 pub(crate) fn lens_list_gateway_routes_output_gateway_routes(
     input: crate::operation::list_gateway_routes::ListGatewayRoutesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewayRouteRef>> {
-    let input = match input.gateway_routes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.gateway_routes;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_meshes_output_meshes(
     input: crate::operation::list_meshes::ListMeshesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MeshRef>> {
-    let input = match input.meshes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.meshes;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_routes_output_routes(
     input: crate::operation::list_routes::ListRoutesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RouteRef>> {
-    let input = match input.routes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.routes;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TagRef>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_virtual_gateways_output_virtual_gateways(
     input: crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayRef>> {
-    let input = match input.virtual_gateways {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.virtual_gateways;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_virtual_nodes_output_virtual_nodes(
     input: crate::operation::list_virtual_nodes::ListVirtualNodesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VirtualNodeRef>> {
-    let input = match input.virtual_nodes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.virtual_nodes;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_virtual_routers_output_virtual_routers(
     input: crate::operation::list_virtual_routers::ListVirtualRoutersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>> {
-    let input = match input.virtual_routers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.virtual_routers;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_virtual_services_output_virtual_services(
     input: crate::operation::list_virtual_services::ListVirtualServicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>> {
-    let input = match input.virtual_services {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.virtual_services;
     ::std::option::Option::Some(input)
 }

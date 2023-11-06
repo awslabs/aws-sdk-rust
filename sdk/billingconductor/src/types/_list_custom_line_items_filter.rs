@@ -13,16 +13,22 @@ pub struct ListCustomLineItemsFilter {
 }
 impl ListCustomLineItemsFilter {
     /// <p>A list of custom line items to retrieve information.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn billing_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.billing_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_groups.is_none()`.
+    pub fn billing_groups(&self) -> &[::std::string::String] {
+        self.billing_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of custom line item ARNs to retrieve information.</p>
-    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
+    pub fn arns(&self) -> &[::std::string::String] {
+        self.arns.as_deref().unwrap_or_default()
     }
 }
 impl ListCustomLineItemsFilter {

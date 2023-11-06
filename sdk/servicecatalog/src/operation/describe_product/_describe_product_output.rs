@@ -19,16 +19,22 @@ impl DescribeProductOutput {
         self.product_view_summary.as_ref()
     }
     /// <p>Information about the provisioning artifacts for the specified product.</p>
-    pub fn provisioning_artifacts(&self) -> ::std::option::Option<&[crate::types::ProvisioningArtifact]> {
-        self.provisioning_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifacts.is_none()`.
+    pub fn provisioning_artifacts(&self) -> &[crate::types::ProvisioningArtifact] {
+        self.provisioning_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> ::std::option::Option<&[crate::types::BudgetDetail]> {
-        self.budgets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.budgets.is_none()`.
+    pub fn budgets(&self) -> &[crate::types::BudgetDetail] {
+        self.budgets.as_deref().unwrap_or_default()
     }
     /// <p>Information about the associated launch paths.</p>
-    pub fn launch_paths(&self) -> ::std::option::Option<&[crate::types::LaunchPath]> {
-        self.launch_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_paths.is_none()`.
+    pub fn launch_paths(&self) -> &[crate::types::LaunchPath] {
+        self.launch_paths.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeProductOutput {

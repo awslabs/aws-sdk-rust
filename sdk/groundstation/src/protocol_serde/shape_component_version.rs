@@ -2,18 +2,18 @@
 pub fn ser_component_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComponentVersion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.component_type {
-        object.key("componentType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("componentType").string(input.component_type.as_str());
     }
-    if let Some(var_2) = &input.versions {
-        let mut array_3 = object.key("versions").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("versions").start_array();
+        for item_2 in &input.versions {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }

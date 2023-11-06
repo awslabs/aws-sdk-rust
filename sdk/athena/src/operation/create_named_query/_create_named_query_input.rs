@@ -66,6 +66,7 @@ pub struct CreateNamedQueryInputBuilder {
 }
 impl CreateNamedQueryInputBuilder {
     /// <p>The query name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl CreateNamedQueryInputBuilder {
         &self.description
     }
     /// <p>The database to which the query belongs.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +110,7 @@ impl CreateNamedQueryInputBuilder {
         &self.database
     }
     /// <p>The contents of the query with all query statements.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +161,7 @@ impl CreateNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`CreateNamedQueryInput`](crate::operation::create_named_query::CreateNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_named_query::CreateNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_named_query::CreateNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_named_query::CreateNamedQueryInput {
             name: self.name,
             description: self.description,

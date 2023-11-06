@@ -5,36 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SenderIdInformation {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-    pub sender_id_arn: ::std::option::Option<::std::string::String>,
+    pub sender_id_arn: ::std::string::String,
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
-    pub sender_id: ::std::option::Option<::std::string::String>,
+    pub sender_id: ::std::string::String,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub iso_country_code: ::std::option::Option<::std::string::String>,
+    pub iso_country_code: ::std::string::String,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub message_types: ::std::option::Option<::std::vec::Vec<crate::types::MessageType>>,
+    pub message_types: ::std::vec::Vec<crate::types::MessageType>,
     /// <p>The monthly leasing price, in US dollars.</p>
-    pub monthly_leasing_price: ::std::option::Option<::std::string::String>,
+    pub monthly_leasing_price: ::std::string::String,
 }
 impl SenderIdInformation {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-    pub fn sender_id_arn(&self) -> ::std::option::Option<&str> {
-        self.sender_id_arn.as_deref()
+    pub fn sender_id_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.sender_id_arn.deref()
     }
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
-    pub fn sender_id(&self) -> ::std::option::Option<&str> {
-        self.sender_id.as_deref()
+    pub fn sender_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sender_id.deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
-        self.iso_country_code.as_deref()
+    pub fn iso_country_code(&self) -> &str {
+        use std::ops::Deref;
+        self.iso_country_code.deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_types(&self) -> ::std::option::Option<&[crate::types::MessageType]> {
-        self.message_types.as_deref()
+    pub fn message_types(&self) -> &[crate::types::MessageType] {
+        use std::ops::Deref;
+        self.message_types.deref()
     }
     /// <p>The monthly leasing price, in US dollars.</p>
-    pub fn monthly_leasing_price(&self) -> ::std::option::Option<&str> {
-        self.monthly_leasing_price.as_deref()
+    pub fn monthly_leasing_price(&self) -> &str {
+        use std::ops::Deref;
+        self.monthly_leasing_price.deref()
     }
 }
 impl SenderIdInformation {
@@ -56,6 +61,7 @@ pub struct SenderIdInformationBuilder {
 }
 impl SenderIdInformationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
+    /// This field is required.
     pub fn sender_id_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +76,7 @@ impl SenderIdInformationBuilder {
         &self.sender_id_arn
     }
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
+    /// This field is required.
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +91,7 @@ impl SenderIdInformationBuilder {
         &self.sender_id
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +126,7 @@ impl SenderIdInformationBuilder {
         &self.message_types
     }
     /// <p>The monthly leasing price, in US dollars.</p>
+    /// This field is required.
     pub fn monthly_leasing_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monthly_leasing_price = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +141,44 @@ impl SenderIdInformationBuilder {
         &self.monthly_leasing_price
     }
     /// Consumes the builder and constructs a [`SenderIdInformation`](crate::types::SenderIdInformation).
-    pub fn build(self) -> crate::types::SenderIdInformation {
-        crate::types::SenderIdInformation {
-            sender_id_arn: self.sender_id_arn,
-            sender_id: self.sender_id,
-            iso_country_code: self.iso_country_code,
-            message_types: self.message_types,
-            monthly_leasing_price: self.monthly_leasing_price,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sender_id_arn`](crate::types::builders::SenderIdInformationBuilder::sender_id_arn)
+    /// - [`sender_id`](crate::types::builders::SenderIdInformationBuilder::sender_id)
+    /// - [`iso_country_code`](crate::types::builders::SenderIdInformationBuilder::iso_country_code)
+    /// - [`message_types`](crate::types::builders::SenderIdInformationBuilder::message_types)
+    /// - [`monthly_leasing_price`](crate::types::builders::SenderIdInformationBuilder::monthly_leasing_price)
+    pub fn build(self) -> ::std::result::Result<crate::types::SenderIdInformation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SenderIdInformation {
+            sender_id_arn: self.sender_id_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sender_id_arn",
+                    "sender_id_arn was not specified but it is required when building SenderIdInformation",
+                )
+            })?,
+            sender_id: self.sender_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sender_id",
+                    "sender_id was not specified but it is required when building SenderIdInformation",
+                )
+            })?,
+            iso_country_code: self.iso_country_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "iso_country_code",
+                    "iso_country_code was not specified but it is required when building SenderIdInformation",
+                )
+            })?,
+            message_types: self.message_types.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_types",
+                    "message_types was not specified but it is required when building SenderIdInformation",
+                )
+            })?,
+            monthly_leasing_price: self.monthly_leasing_price.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "monthly_leasing_price",
+                    "monthly_leasing_price was not specified but it is required when building SenderIdInformation",
+                )
+            })?,
+        })
     }
 }

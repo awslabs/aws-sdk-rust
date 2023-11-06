@@ -46,6 +46,7 @@ pub struct ListPolicyTagsInputBuilder {
 impl ListPolicyTagsInputBuilder {
     /// <p>The ARN of the IAM customer managed policy whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,7 @@ impl ListPolicyTagsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyTagsInput`](crate::operation::list_policy_tags::ListPolicyTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_tags::ListPolicyTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_policy_tags::ListPolicyTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_policy_tags::ListPolicyTagsInput {
             policy_arn: self.policy_arn,
             marker: self.marker,

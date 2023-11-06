@@ -169,16 +169,22 @@ impl CreateSmbFileShareInput {
     /// <p>A list of users or groups in the Active Directory that will be granted administrator privileges on the file share. These users can do all file operations as the super-user. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.</p> <important>
     /// <p>Use this option very carefully, because any user in this list can do anything they like on the file share, regardless of file permissions.</p>
     /// </important>
-    pub fn admin_user_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.admin_user_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin_user_list.is_none()`.
+    pub fn admin_user_list(&self) -> &[::std::string::String] {
+        self.admin_user_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file <code></code> share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn valid_user_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.valid_user_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_user_list.is_none()`.
+    pub fn valid_user_list(&self) -> &[::std::string::String] {
+        self.valid_user_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn invalid_user_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.invalid_user_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_user_list.is_none()`.
+    pub fn invalid_user_list(&self) -> &[::std::string::String] {
+        self.invalid_user_list.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub fn audit_destination_arn(&self) -> ::std::option::Option<&str> {
@@ -196,8 +202,10 @@ impl CreateSmbFileShareInput {
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
@@ -279,6 +287,7 @@ pub struct CreateSmbFileShareInputBuilder {
 }
 impl CreateSmbFileShareInputBuilder {
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -293,6 +302,7 @@ impl CreateSmbFileShareInputBuilder {
         &self.client_token
     }
     /// <p>The ARN of the S3 File Gateway on which you want to create a file share.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -338,6 +348,7 @@ impl CreateSmbFileShareInputBuilder {
         &self.kms_key
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -361,6 +372,7 @@ impl CreateSmbFileShareInputBuilder {
     /// <p>Access point alias:</p>
     /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
     /// </note>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -783,7 +795,7 @@ impl CreateSmbFileShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateSmbFileShareInput`](crate::operation::create_smb_file_share::CreateSmbFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_smb_file_share::CreateSmbFileShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_smb_file_share::CreateSmbFileShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_smb_file_share::CreateSmbFileShareInput {
             client_token: self.client_token,

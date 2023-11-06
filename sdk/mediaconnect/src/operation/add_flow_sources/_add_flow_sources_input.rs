@@ -15,8 +15,10 @@ impl AddFlowSourcesInput {
         self.flow_arn.as_deref()
     }
     /// A list of sources that you want to add.
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::SetSourceRequest]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::SetSourceRequest] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl AddFlowSourcesInput {
@@ -35,6 +37,7 @@ pub struct AddFlowSourcesInputBuilder {
 }
 impl AddFlowSourcesInputBuilder {
     /// The flow that you want to mutate.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl AddFlowSourcesInputBuilder {
     /// Consumes the builder and constructs a [`AddFlowSourcesInput`](crate::operation::add_flow_sources::AddFlowSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_flow_sources::AddFlowSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_flow_sources::AddFlowSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_flow_sources::AddFlowSourcesInput {
             flow_arn: self.flow_arn,
             sources: self.sources,

@@ -22,8 +22,10 @@ impl DescribeChapCredentialsOutput {
     /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
     /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
     /// </ul>
-    pub fn chap_credentials(&self) -> ::std::option::Option<&[crate::types::ChapInfo]> {
-        self.chap_credentials.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.chap_credentials.is_none()`.
+    pub fn chap_credentials(&self) -> &[crate::types::ChapInfo] {
+        self.chap_credentials.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeChapCredentialsOutput {

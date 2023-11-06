@@ -15,8 +15,10 @@ impl TestRepositoryTriggersInput {
         self.repository_name.as_deref()
     }
     /// <p>The list of triggers to test.</p>
-    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::RepositoryTrigger]> {
-        self.triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
+    pub fn triggers(&self) -> &[crate::types::RepositoryTrigger] {
+        self.triggers.as_deref().unwrap_or_default()
     }
 }
 impl TestRepositoryTriggersInput {
@@ -35,6 +37,7 @@ pub struct TestRepositoryTriggersInputBuilder {
 }
 impl TestRepositoryTriggersInputBuilder {
     /// <p>The name of the repository in which to test the triggers.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -71,8 +74,10 @@ impl TestRepositoryTriggersInputBuilder {
     /// Consumes the builder and constructs a [`TestRepositoryTriggersInput`](crate::operation::test_repository_triggers::TestRepositoryTriggersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_repository_triggers::TestRepositoryTriggersInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::test_repository_triggers::TestRepositoryTriggersInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::test_repository_triggers::TestRepositoryTriggersInput {
             repository_name: self.repository_name,
             triggers: self.triggers,

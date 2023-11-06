@@ -41,6 +41,7 @@ pub struct ListListenersInputBuilder {
 }
 impl ListListenersInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
+    /// This field is required.
     pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListListenersInputBuilder {
     /// Consumes the builder and constructs a [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_listeners::ListListenersInput {
             accelerator_arn: self.accelerator_arn,
             max_results: self.max_results,

@@ -34,6 +34,7 @@ pub struct GetMfaDeviceInputBuilder {
 }
 impl GetMfaDeviceInputBuilder {
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
+    /// This field is required.
     pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl GetMfaDeviceInputBuilder {
     /// Consumes the builder and constructs a [`GetMfaDeviceInput`](crate::operation::get_mfa_device::GetMfaDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_mfa_device::GetMfaDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_mfa_device::GetMfaDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_mfa_device::GetMfaDeviceInput {
             serial_number: self.serial_number,
             user_name: self.user_name,

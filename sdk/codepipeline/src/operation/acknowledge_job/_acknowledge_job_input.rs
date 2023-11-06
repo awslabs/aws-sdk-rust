@@ -35,6 +35,7 @@ pub struct AcknowledgeJobInputBuilder {
 }
 impl AcknowledgeJobInputBuilder {
     /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AcknowledgeJobInputBuilder {
         &self.job_id
     }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    /// This field is required.
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl AcknowledgeJobInputBuilder {
     /// Consumes the builder and constructs a [`AcknowledgeJobInput`](crate::operation::acknowledge_job::AcknowledgeJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::acknowledge_job::AcknowledgeJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::acknowledge_job::AcknowledgeJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::acknowledge_job::AcknowledgeJobInput {
             job_id: self.job_id,
             nonce: self.nonce,

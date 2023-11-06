@@ -27,6 +27,7 @@ pub struct DescribeLocationFsxOpenZfsInputBuilder {
 }
 impl DescribeLocationFsxOpenZfsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeLocationFsxOpenZfsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput {
             location_arn: self.location_arn,

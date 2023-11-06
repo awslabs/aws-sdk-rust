@@ -45,6 +45,7 @@ pub struct ListAwsDefaultServiceQuotasInputBuilder {
 }
 impl ListAwsDefaultServiceQuotasInputBuilder {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +98,7 @@ impl ListAwsDefaultServiceQuotasInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput {
             service_code: self.service_code,

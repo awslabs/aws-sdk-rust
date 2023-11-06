@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSharesOutput {
     /// <p> The shares available and their meta details. </p>
-    pub shares: ::std::option::Option<::std::vec::Vec<crate::types::ShareDetails>>,
+    pub shares: ::std::vec::Vec<crate::types::ShareDetails>,
     /// <p> Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSharesOutput {
     /// <p> The shares available and their meta details. </p>
-    pub fn shares(&self) -> ::std::option::Option<&[crate::types::ShareDetails]> {
-        self.shares.as_deref()
+    pub fn shares(&self) -> &[crate::types::ShareDetails] {
+        use std::ops::Deref;
+        self.shares.deref()
     }
     /// <p> Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListSharesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSharesOutput`](crate::operation::list_shares::ListSharesOutput).
-    pub fn build(self) -> crate::operation::list_shares::ListSharesOutput {
-        crate::operation::list_shares::ListSharesOutput {
-            shares: self.shares,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`shares`](crate::operation::list_shares::builders::ListSharesOutputBuilder::shares)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_shares::ListSharesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_shares::ListSharesOutput {
+            shares: self.shares.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "shares",
+                    "shares was not specified but it is required when building ListSharesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

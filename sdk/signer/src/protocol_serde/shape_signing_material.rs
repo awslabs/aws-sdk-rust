@@ -31,7 +31,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::signing_material_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -42,9 +44,9 @@ where
 pub fn ser_signing_material(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SigningMaterial,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.certificate_arn {
-        object.key("certificateArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("certificateArn").string(input.certificate_arn.as_str());
     }
     Ok(())
 }

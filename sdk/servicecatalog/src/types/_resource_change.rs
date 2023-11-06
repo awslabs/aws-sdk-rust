@@ -41,12 +41,16 @@ impl ResourceChange {
         self.replacement.as_ref()
     }
     /// <p>The change scope.</p>
-    pub fn scope(&self) -> ::std::option::Option<&[crate::types::ResourceAttribute]> {
-        self.scope.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scope.is_none()`.
+    pub fn scope(&self) -> &[crate::types::ResourceAttribute] {
+        self.scope.as_deref().unwrap_or_default()
     }
     /// <p>Information about the resource changes.</p>
-    pub fn details(&self) -> ::std::option::Option<&[crate::types::ResourceChangeDetail]> {
-        self.details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
+    pub fn details(&self) -> &[crate::types::ResourceChangeDetail] {
+        self.details.as_deref().unwrap_or_default()
     }
 }
 impl ResourceChange {

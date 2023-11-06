@@ -5,32 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetImportResourceSpecification {
     /// <p>The name of the test set.</p>
-    pub test_set_name: ::std::option::Option<::std::string::String>,
+    pub test_set_name: ::std::string::String,
     /// <p>The description of the test set.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>Contains information about the location that Amazon Lex uses to store the test-set.</p>
     pub storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     /// <p>Contains information about the input location from where test-set should be imported.</p>
     pub import_input_location: ::std::option::Option<crate::types::TestSetImportInputLocation>,
     /// <p>Specifies whether the test-set being imported contains written or spoken data.</p>
-    pub modality: ::std::option::Option<crate::types::TestSetModality>,
+    pub modality: crate::types::TestSetModality,
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     pub test_set_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TestSetImportResourceSpecification {
     /// <p>The name of the test set.</p>
-    pub fn test_set_name(&self) -> ::std::option::Option<&str> {
-        self.test_set_name.as_deref()
+    pub fn test_set_name(&self) -> &str {
+        use std::ops::Deref;
+        self.test_set_name.deref()
     }
     /// <p>The description of the test set.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>Contains information about the location that Amazon Lex uses to store the test-set.</p>
     pub fn storage_location(&self) -> ::std::option::Option<&crate::types::TestSetStorageLocation> {
@@ -41,8 +43,8 @@ impl TestSetImportResourceSpecification {
         self.import_input_location.as_ref()
     }
     /// <p>Specifies whether the test-set being imported contains written or spoken data.</p>
-    pub fn modality(&self) -> ::std::option::Option<&crate::types::TestSetModality> {
-        self.modality.as_ref()
+    pub fn modality(&self) -> &crate::types::TestSetModality {
+        &self.modality
     }
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn test_set_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -70,6 +72,7 @@ pub struct TestSetImportResourceSpecificationBuilder {
 }
 impl TestSetImportResourceSpecificationBuilder {
     /// <p>The name of the test set.</p>
+    /// This field is required.
     pub fn test_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl TestSetImportResourceSpecificationBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl TestSetImportResourceSpecificationBuilder {
         &self.role_arn
     }
     /// <p>Contains information about the location that Amazon Lex uses to store the test-set.</p>
+    /// This field is required.
     pub fn storage_location(mut self, input: crate::types::TestSetStorageLocation) -> Self {
         self.storage_location = ::std::option::Option::Some(input);
         self
@@ -126,6 +131,7 @@ impl TestSetImportResourceSpecificationBuilder {
         &self.storage_location
     }
     /// <p>Contains information about the input location from where test-set should be imported.</p>
+    /// This field is required.
     pub fn import_input_location(mut self, input: crate::types::TestSetImportInputLocation) -> Self {
         self.import_input_location = ::std::option::Option::Some(input);
         self
@@ -140,6 +146,7 @@ impl TestSetImportResourceSpecificationBuilder {
         &self.import_input_location
     }
     /// <p>Specifies whether the test-set being imported contains written or spoken data.</p>
+    /// This field is required.
     pub fn modality(mut self, input: crate::types::TestSetModality) -> Self {
         self.modality = ::std::option::Option::Some(input);
         self
@@ -177,15 +184,34 @@ impl TestSetImportResourceSpecificationBuilder {
         &self.test_set_tags
     }
     /// Consumes the builder and constructs a [`TestSetImportResourceSpecification`](crate::types::TestSetImportResourceSpecification).
-    pub fn build(self) -> crate::types::TestSetImportResourceSpecification {
-        crate::types::TestSetImportResourceSpecification {
-            test_set_name: self.test_set_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`test_set_name`](crate::types::builders::TestSetImportResourceSpecificationBuilder::test_set_name)
+    /// - [`role_arn`](crate::types::builders::TestSetImportResourceSpecificationBuilder::role_arn)
+    /// - [`modality`](crate::types::builders::TestSetImportResourceSpecificationBuilder::modality)
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetImportResourceSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TestSetImportResourceSpecification {
+            test_set_name: self.test_set_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "test_set_name",
+                    "test_set_name was not specified but it is required when building TestSetImportResourceSpecification",
+                )
+            })?,
             description: self.description,
-            role_arn: self.role_arn,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building TestSetImportResourceSpecification",
+                )
+            })?,
             storage_location: self.storage_location,
             import_input_location: self.import_input_location,
-            modality: self.modality,
+            modality: self.modality.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "modality",
+                    "modality was not specified but it is required when building TestSetImportResourceSpecification",
+                )
+            })?,
             test_set_tags: self.test_set_tags,
-        }
+        })
     }
 }

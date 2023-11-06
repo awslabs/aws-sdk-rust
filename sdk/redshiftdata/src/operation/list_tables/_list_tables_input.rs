@@ -20,7 +20,7 @@ pub struct ListTablesInput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
@@ -58,7 +58,7 @@ impl ListTablesInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
@@ -132,6 +132,7 @@ impl ListTablesInputBuilder {
         &self.db_user
     }
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -230,7 +231,7 @@ impl ListTablesInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tables::ListTablesInput {
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,
@@ -240,7 +241,7 @@ impl ListTablesInputBuilder {
             schema_pattern: self.schema_pattern,
             table_pattern: self.table_pattern,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             workgroup_name: self.workgroup_name,
         })
     }

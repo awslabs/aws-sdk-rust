@@ -34,6 +34,7 @@ pub struct DisableImageInputBuilder {
 }
 impl DisableImageInputBuilder {
     /// <p>The ID of the AMI.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,9 @@ impl DisableImageInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisableImageInput`](crate::operation::disable_image::DisableImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable_image::DisableImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::disable_image::DisableImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_image::DisableImageInput {
             image_id: self.image_id,
             dry_run: self.dry_run,

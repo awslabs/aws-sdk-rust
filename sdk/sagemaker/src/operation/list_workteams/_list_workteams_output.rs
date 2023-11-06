@@ -11,8 +11,10 @@ pub struct ListWorkteamsOutput {
 }
 impl ListWorkteamsOutput {
     /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
-    pub fn workteams(&self) -> ::std::option::Option<&[crate::types::Workteam]> {
-        self.workteams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workteams.is_none()`.
+    pub fn workteams(&self) -> &[crate::types::Workteam] {
+        self.workteams.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of work teams, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -39,8 +39,10 @@ impl BrokerNodeInfo {
         self.current_broker_software_info.as_ref()
     }
     /// <p>Endpoints for accessing the broker.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[::std::string::String] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
 }
 impl BrokerNodeInfo {

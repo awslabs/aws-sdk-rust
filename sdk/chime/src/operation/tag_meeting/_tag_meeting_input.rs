@@ -14,8 +14,10 @@ impl TagMeetingInput {
         self.meeting_id.as_deref()
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TagMeetingInput {
@@ -34,6 +36,7 @@ pub struct TagMeetingInputBuilder {
 }
 impl TagMeetingInputBuilder {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +71,7 @@ impl TagMeetingInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagMeetingInput`](crate::operation::tag_meeting::TagMeetingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_meeting::TagMeetingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_meeting::TagMeetingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_meeting::TagMeetingInput {
             meeting_id: self.meeting_id,
             tags: self.tags,

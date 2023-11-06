@@ -27,6 +27,7 @@ pub struct RegisterDataLakeDelegatedAdministratorInputBuilder {
 }
 impl RegisterDataLakeDelegatedAdministratorInputBuilder {
     /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl RegisterDataLakeDelegatedAdministratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput { account_id: self.account_id },

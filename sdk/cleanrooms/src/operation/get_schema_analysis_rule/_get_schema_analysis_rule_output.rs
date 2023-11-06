@@ -34,6 +34,7 @@ pub struct GetSchemaAnalysisRuleOutputBuilder {
 }
 impl GetSchemaAnalysisRuleOutputBuilder {
     /// <p>A specification about how data from the configured table can be used.</p>
+    /// This field is required.
     pub fn analysis_rule(mut self, input: crate::types::AnalysisRule) -> Self {
         self.analysis_rule = ::std::option::Option::Some(input);
         self

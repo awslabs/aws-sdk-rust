@@ -7,11 +7,11 @@ pub struct DevicePosition {
     /// <p>The device whose position you retrieved.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub sample_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub received_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub received_time: ::aws_smithy_types::DateTime,
     /// <p>The last known device position.</p>
-    pub position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub position: ::std::vec::Vec<f64>,
     /// <p>The accuracy of the device position.</p>
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
@@ -23,16 +23,17 @@ impl DevicePosition {
         self.device_id.as_deref()
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.sample_time.as_ref()
+    pub fn sample_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.sample_time
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn received_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.received_time.as_ref()
+    pub fn received_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.received_time
     }
     /// <p>The last known device position.</p>
-    pub fn position(&self) -> ::std::option::Option<&[f64]> {
-        self.position.as_deref()
+    pub fn position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.position.deref()
     }
     /// <p>The accuracy of the device position.</p>
     pub fn accuracy(&self) -> ::std::option::Option<&crate::types::PositionalAccuracy> {
@@ -89,6 +90,7 @@ impl DevicePositionBuilder {
         &self.device_id
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
         self
@@ -103,6 +105,7 @@ impl DevicePositionBuilder {
         &self.sample_time
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn received_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.received_time = ::std::option::Option::Some(input);
         self
@@ -178,15 +181,34 @@ impl DevicePositionBuilder {
         &self.position_properties
     }
     /// Consumes the builder and constructs a [`DevicePosition`](crate::types::DevicePosition).
-    pub fn build(self) -> crate::types::DevicePosition {
-        crate::types::DevicePosition {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sample_time`](crate::types::builders::DevicePositionBuilder::sample_time)
+    /// - [`received_time`](crate::types::builders::DevicePositionBuilder::received_time)
+    /// - [`position`](crate::types::builders::DevicePositionBuilder::position)
+    pub fn build(self) -> ::std::result::Result<crate::types::DevicePosition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DevicePosition {
             device_id: self.device_id,
-            sample_time: self.sample_time,
-            received_time: self.received_time,
-            position: self.position,
+            sample_time: self.sample_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sample_time",
+                    "sample_time was not specified but it is required when building DevicePosition",
+                )
+            })?,
+            received_time: self.received_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "received_time",
+                    "received_time was not specified but it is required when building DevicePosition",
+                )
+            })?,
+            position: self.position.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "position",
+                    "position was not specified but it is required when building DevicePosition",
+                )
+            })?,
             accuracy: self.accuracy,
             position_properties: self.position_properties,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DevicePositionBuilder {

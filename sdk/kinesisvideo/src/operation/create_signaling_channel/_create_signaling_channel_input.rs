@@ -26,8 +26,10 @@ impl CreateSignalingChannelInput {
         self.single_master_configuration.as_ref()
     }
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSignalingChannelInput {
@@ -48,6 +50,7 @@ pub struct CreateSignalingChannelInputBuilder {
 }
 impl CreateSignalingChannelInputBuilder {
     /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -112,8 +115,10 @@ impl CreateSignalingChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateSignalingChannelInput`](crate::operation::create_signaling_channel::CreateSignalingChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_signaling_channel::CreateSignalingChannelInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_signaling_channel::CreateSignalingChannelInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_signaling_channel::CreateSignalingChannelInput {
             channel_name: self.channel_name,
             channel_type: self.channel_type,

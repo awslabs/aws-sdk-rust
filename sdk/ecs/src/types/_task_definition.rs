@@ -114,8 +114,10 @@ impl TaskDefinition {
         self.task_definition_arn.as_deref()
     }
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn container_definitions(&self) -> ::std::option::Option<&[crate::types::ContainerDefinition]> {
-        self.container_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_definitions.is_none()`.
+    pub fn container_definitions(&self) -> &[crate::types::ContainerDefinition] {
+        self.container_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The name of a family that this task definition is registered to. Up to 255 characters are allowed. Letters (both uppercase and lowercase letters), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.</p>
@@ -150,8 +152,10 @@ impl TaskDefinition {
     /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
     /// <p>The <code>host</code> and <code>sourcePath</code> parameters aren't supported for tasks run on Fargate. </p>
     /// </note>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::Volume]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::Volume] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>The status of the task definition.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TaskDefinitionStatus> {
@@ -160,18 +164,24 @@ impl TaskDefinition {
     /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is registered to your cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom attributes. These are specified as key-value pairs using the Amazon ECS console or the <code>PutAttributes</code> API. These attributes are used when determining task placement for tasks hosted on Amazon EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    pub fn requires_attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.requires_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires_attributes.is_none()`.
+    pub fn requires_attributes(&self) -> &[crate::types::Attribute] {
+        self.requires_attributes.as_deref().unwrap_or_default()
     }
     /// <p>An array of placement constraint objects to use for tasks.</p> <note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    pub fn placement_constraints(&self) -> ::std::option::Option<&[crate::types::TaskDefinitionPlacementConstraint]> {
-        self.placement_constraints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
+    pub fn placement_constraints(&self) -> &[crate::types::TaskDefinitionPlacementConstraint] {
+        self.placement_constraints.as_deref().unwrap_or_default()
     }
     /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn compatibilities(&self) -> ::std::option::Option<&[crate::types::Compatibility]> {
-        self.compatibilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatibilities.is_none()`.
+    pub fn compatibilities(&self) -> &[crate::types::Compatibility] {
+        self.compatibilities.as_deref().unwrap_or_default()
     }
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
@@ -179,8 +189,10 @@ impl TaskDefinition {
         self.runtime_platform.as_ref()
     }
     /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn requires_compatibilities(&self) -> ::std::option::Option<&[crate::types::Compatibility]> {
-        self.requires_compatibilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires_compatibilities.is_none()`.
+    pub fn requires_compatibilities(&self) -> &[crate::types::Compatibility] {
+        self.requires_compatibilities.as_deref().unwrap_or_default()
     }
     /// <p>The number of <code>cpu</code> units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the <code>memory</code> parameter.</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
@@ -212,8 +224,10 @@ impl TaskDefinition {
         self.memory.as_deref()
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    pub fn inference_accelerators(&self) -> ::std::option::Option<&[crate::types::InferenceAccelerator]> {
-        self.inference_accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_accelerators.is_none()`.
+    pub fn inference_accelerators(&self) -> &[crate::types::InferenceAccelerator] {
+        self.inference_accelerators.as_deref().unwrap_or_default()
     }
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>

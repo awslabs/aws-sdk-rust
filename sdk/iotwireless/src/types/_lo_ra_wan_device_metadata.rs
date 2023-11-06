@@ -39,8 +39,10 @@ impl LoRaWanDeviceMetadata {
         self.timestamp.as_deref()
     }
     /// <p>Information about the gateways accessed by the device.</p>
-    pub fn gateways(&self) -> ::std::option::Option<&[crate::types::LoRaWanGatewayMetadata]> {
-        self.gateways.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateways.is_none()`.
+    pub fn gateways(&self) -> &[crate::types::LoRaWanGatewayMetadata] {
+        self.gateways.as_deref().unwrap_or_default()
     }
 }
 impl LoRaWanDeviceMetadata {

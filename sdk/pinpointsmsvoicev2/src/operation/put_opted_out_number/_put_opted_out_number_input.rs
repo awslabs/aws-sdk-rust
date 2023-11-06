@@ -34,6 +34,7 @@ pub struct PutOptedOutNumberInputBuilder {
 }
 impl PutOptedOutNumberInputBuilder {
     /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
+    /// This field is required.
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutOptedOutNumberInputBuilder {
         &self.opt_out_list_name
     }
     /// <p>The phone number to add to the OptOutList in E.164 format.</p>
+    /// This field is required.
     pub fn opted_out_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opted_out_number = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl PutOptedOutNumberInputBuilder {
     /// Consumes the builder and constructs a [`PutOptedOutNumberInput`](crate::operation::put_opted_out_number::PutOptedOutNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_opted_out_number::PutOptedOutNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_opted_out_number::PutOptedOutNumberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_opted_out_number::PutOptedOutNumberInput {
             opt_out_list_name: self.opt_out_list_name,
             opted_out_number: self.opted_out_number,

@@ -35,6 +35,7 @@ pub struct AnalysisSchemeStatusBuilder {
 }
 impl AnalysisSchemeStatusBuilder {
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::AnalysisScheme) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AnalysisSchemeStatusBuilder {
         &self.options
     }
     /// <p>The status of domain configuration option.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

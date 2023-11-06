@@ -151,6 +151,7 @@ impl CreateTrackerInputBuilder {
     /// <li> <p>Must be a unique tracker resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -372,7 +373,7 @@ impl CreateTrackerInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrackerInput`](crate::operation::create_tracker::CreateTrackerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_tracker::CreateTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_tracker::CreateTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tracker::CreateTrackerInput {
             tracker_name: self.tracker_name,
             pricing_plan: self.pricing_plan,

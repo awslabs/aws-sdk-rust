@@ -27,6 +27,7 @@ pub struct DeregisterApplicationInputBuilder {
 }
 impl DeregisterApplicationInputBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeregisterApplicationInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterApplicationInput`](crate::operation::deregister_application::DeregisterApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_application::DeregisterApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deregister_application::DeregisterApplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deregister_application::DeregisterApplicationInput {
             application_id: self.application_id,

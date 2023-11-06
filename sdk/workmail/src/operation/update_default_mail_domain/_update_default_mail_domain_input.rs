@@ -34,6 +34,7 @@ pub struct UpdateDefaultMailDomainInputBuilder {
 }
 impl UpdateDefaultMailDomainInputBuilder {
     /// <p>The WorkMail organization for which to list domains.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateDefaultMailDomainInputBuilder {
         &self.organization_id
     }
     /// <p>The domain name that will become the default domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl UpdateDefaultMailDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput {
             organization_id: self.organization_id,

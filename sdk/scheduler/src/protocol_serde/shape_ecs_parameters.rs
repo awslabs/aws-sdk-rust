@@ -2,94 +2,94 @@
 pub fn ser_ecs_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EcsParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.task_definition_arn {
-        object.key("TaskDefinitionArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TaskDefinitionArn").string(input.task_definition_arn.as_str());
     }
-    if let Some(var_2) = &input.task_count {
+    if let Some(var_1) = &input.task_count {
         object.key("TaskCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.launch_type {
-        object.key("LaunchType").string(var_3.as_str());
+    if let Some(var_2) = &input.launch_type {
+        object.key("LaunchType").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.network_configuration {
+    if let Some(var_3) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("NetworkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("NetworkConfiguration").start_object();
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.platform_version {
-        object.key("PlatformVersion").string(var_6.as_str());
+    if let Some(var_5) = &input.platform_version {
+        object.key("PlatformVersion").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.group {
-        object.key("Group").string(var_7.as_str());
+    if let Some(var_6) = &input.group {
+        object.key("Group").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.capacity_provider_strategy {
-        let mut array_9 = object.key("CapacityProviderStrategy").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.capacity_provider_strategy {
+        let mut array_8 = object.key("CapacityProviderStrategy").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_capacity_provider_strategy_item::ser_capacity_provider_strategy_item(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_capacity_provider_strategy_item::ser_capacity_provider_strategy_item(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_12) = &input.enable_ecs_managed_tags {
-        object.key("EnableECSManagedTags").boolean(*var_12);
+    if let Some(var_11) = &input.enable_ecs_managed_tags {
+        object.key("EnableECSManagedTags").boolean(*var_11);
     }
-    if let Some(var_13) = &input.enable_execute_command {
-        object.key("EnableExecuteCommand").boolean(*var_13);
+    if let Some(var_12) = &input.enable_execute_command {
+        object.key("EnableExecuteCommand").boolean(*var_12);
     }
-    if let Some(var_14) = &input.placement_constraints {
-        let mut array_15 = object.key("PlacementConstraints").start_array();
-        for item_16 in var_14 {
+    if let Some(var_13) = &input.placement_constraints {
+        let mut array_14 = object.key("PlacementConstraints").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_placement_constraint::ser_placement_constraint(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_placement_constraint::ser_placement_constraint(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_15.finish();
+        array_14.finish();
     }
-    if let Some(var_18) = &input.placement_strategy {
-        let mut array_19 = object.key("PlacementStrategy").start_array();
-        for item_20 in var_18 {
+    if let Some(var_17) = &input.placement_strategy {
+        let mut array_18 = object.key("PlacementStrategy").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_placement_strategy::ser_placement_strategy(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_placement_strategy::ser_placement_strategy(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_19.finish();
+        array_18.finish();
     }
-    if let Some(var_22) = &input.propagate_tags {
-        object.key("PropagateTags").string(var_22.as_str());
+    if let Some(var_21) = &input.propagate_tags {
+        object.key("PropagateTags").string(var_21.as_str());
     }
-    if let Some(var_23) = &input.reference_id {
-        object.key("ReferenceId").string(var_23.as_str());
+    if let Some(var_22) = &input.reference_id {
+        object.key("ReferenceId").string(var_22.as_str());
     }
-    if let Some(var_24) = &input.tags {
-        let mut array_25 = object.key("Tags").start_array();
-        for item_26 in var_24 {
+    if let Some(var_23) = &input.tags {
+        let mut array_24 = object.key("Tags").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_27 = array_25.value().start_object();
-                for (key_28, value_29) in item_26 {
+                let mut object_26 = array_24.value().start_object();
+                for (key_27, value_28) in item_25 {
                     {
-                        object_27.key(key_28.as_str()).string(value_29.as_str());
+                        object_26.key(key_27.as_str()).string(value_28.as_str());
                     }
                 }
-                object_27.finish();
+                object_26.finish();
             }
         }
-        array_25.finish();
+        array_24.finish();
     }
     Ok(())
 }
@@ -194,7 +194,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ecs_parameters_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

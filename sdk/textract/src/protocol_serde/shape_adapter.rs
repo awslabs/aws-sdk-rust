@@ -2,21 +2,21 @@
 pub fn ser_adapter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Adapter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.adapter_id {
-        object.key("AdapterId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("AdapterId").string(input.adapter_id.as_str());
     }
-    if let Some(var_2) = &input.pages {
-        let mut array_3 = object.key("Pages").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.pages {
+        let mut array_2 = object.key("Pages").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.version {
-        object.key("Version").string(var_5.as_str());
+    {
+        object.key("Version").string(input.version.as_str());
     }
     Ok(())
 }

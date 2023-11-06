@@ -15,8 +15,10 @@ impl AddBridgeOutputsOutput {
         self.bridge_arn.as_deref()
     }
     /// The outputs that you added to this bridge.
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::BridgeOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::BridgeOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AddBridgeOutputsOutput {

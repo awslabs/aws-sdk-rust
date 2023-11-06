@@ -10,7 +10,7 @@ impl RegisterInstanceEventNotificationAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl RegisterInstanceEventNotificationAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributes::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),
@@ -94,22 +97,15 @@ impl RegisterInstanceEventNotificationAttributesFluentBuilder {
         .await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput,
-            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
-        >,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput,
+        crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

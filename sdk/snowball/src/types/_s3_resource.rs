@@ -21,8 +21,10 @@ impl S3Resource {
         self.key_range.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
-    pub fn target_on_device_services(&self) -> ::std::option::Option<&[crate::types::TargetOnDeviceService]> {
-        self.target_on_device_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_on_device_services.is_none()`.
+    pub fn target_on_device_services(&self) -> &[crate::types::TargetOnDeviceService] {
+        self.target_on_device_services.as_deref().unwrap_or_default()
     }
 }
 impl S3Resource {

@@ -8,8 +8,10 @@ pub struct BatchUpdateMemberEc2DeepInspectionStatusInput {
 }
 impl BatchUpdateMemberEc2DeepInspectionStatusInput {
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[crate::types::MemberAccountEc2DeepInspectionStatus]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[crate::types::MemberAccountEc2DeepInspectionStatus] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdateMemberEc2DeepInspectionStatusInput {
@@ -52,7 +54,7 @@ impl BatchUpdateMemberEc2DeepInspectionStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusInput {

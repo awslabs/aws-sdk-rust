@@ -9,8 +9,10 @@ pub struct DescribeExportTasksOutput {
 }
 impl DescribeExportTasksOutput {
     /// <p>Information about the export tasks.</p>
-    pub fn export_tasks(&self) -> ::std::option::Option<&[crate::types::ExportTask]> {
-        self.export_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_tasks.is_none()`.
+    pub fn export_tasks(&self) -> &[crate::types::ExportTask] {
+        self.export_tasks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeExportTasksOutput {

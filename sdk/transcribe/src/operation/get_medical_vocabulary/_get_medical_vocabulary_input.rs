@@ -27,6 +27,7 @@ pub struct GetMedicalVocabularyInputBuilder {
 }
 impl GetMedicalVocabularyInputBuilder {
     /// <p>The name of the custom medical vocabulary you want information about. Custom medical vocabulary names are case sensitive.</p>
+    /// This field is required.
     pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetMedicalVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`GetMedicalVocabularyInput`](crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput {
             vocabulary_name: self.vocabulary_name,

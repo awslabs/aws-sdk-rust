@@ -2,7 +2,7 @@
 pub fn ser_aws_backup_recovery_point_created_by_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsBackupRecoveryPointCreatedByDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.backup_plan_arn {
         object.key("BackupPlanArn").string(var_1.as_str());
     }

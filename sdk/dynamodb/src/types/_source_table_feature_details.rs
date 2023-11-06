@@ -17,12 +17,16 @@ pub struct SourceTableFeatureDetails {
 }
 impl SourceTableFeatureDetails {
     /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup. </p>
-    pub fn local_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::LocalSecondaryIndexInfo]> {
-        self.local_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_secondary_indexes.is_none()`.
+    pub fn local_secondary_indexes(&self) -> &[crate::types::LocalSecondaryIndexInfo] {
+        self.local_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>Represents the GSI properties for the table when the backup was created. It includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup. </p>
-    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndexInfo]> {
-        self.global_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
+    pub fn global_secondary_indexes(&self) -> &[crate::types::GlobalSecondaryIndexInfo] {
+        self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>Stream settings on the table when the backup was created.</p>
     pub fn stream_description(&self) -> ::std::option::Option<&crate::types::StreamSpecification> {

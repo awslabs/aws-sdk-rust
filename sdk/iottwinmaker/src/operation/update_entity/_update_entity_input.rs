@@ -64,6 +64,7 @@ pub struct UpdateEntityInputBuilder {
 }
 impl UpdateEntityInputBuilder {
     /// <p>The ID of the workspace that contains the entity.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +79,7 @@ impl UpdateEntityInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the entity.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -159,7 +161,9 @@ impl UpdateEntityInputBuilder {
         &self.parent_entity_update
     }
     /// Consumes the builder and constructs a [`UpdateEntityInput`](crate::operation::update_entity::UpdateEntityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_entity::UpdateEntityInput {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,

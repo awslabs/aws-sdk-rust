@@ -48,6 +48,7 @@ pub struct ListLaunchActionsInputBuilder {
 }
 impl ListLaunchActionsInputBuilder {
     /// <p>Launch configuration template Id or Source Server Id</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListLaunchActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLaunchActionsInput`](crate::operation::list_launch_actions::ListLaunchActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_launch_actions::ListLaunchActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_launch_actions::ListLaunchActionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_launch_actions::ListLaunchActionsInput {
             resource_id: self.resource_id,
             filters: self.filters,

@@ -41,6 +41,7 @@ pub struct DescribeInstanceAssociationsStatusInputBuilder {
 }
 impl DescribeInstanceAssociationsStatusInputBuilder {
     /// <p>The managed node IDs for which you want association status information.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DescribeInstanceAssociationsStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput {

@@ -64,7 +64,7 @@ impl ListCompatibleImagesInputBuilder {
     /// Consumes the builder and constructs a [`ListCompatibleImagesInput`](crate::operation::list_compatible_images::ListCompatibleImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_compatible_images::ListCompatibleImagesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_compatible_images::ListCompatibleImagesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_compatible_images::ListCompatibleImagesInput {
             max_results: self.max_results,

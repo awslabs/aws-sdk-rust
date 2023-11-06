@@ -10,7 +10,7 @@ impl UpdateFleetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_fleet::UpdateFleetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_fleet::UpdateFleetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -79,12 +79,15 @@ impl UpdateFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet::UpdateFleetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_fleet::UpdateFleetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::update_fleet::UpdateFleet::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -93,20 +96,15 @@ impl UpdateFleetFluentBuilder {
         crate::operation::update_fleet::UpdateFleet::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::update_fleet::UpdateFleetOutput,
-            crate::operation::update_fleet::UpdateFleetError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet::UpdateFleetError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::update_fleet::UpdateFleetOutput,
+        crate::operation::update_fleet::UpdateFleetError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -577,5 +575,19 @@ impl UpdateFleetFluentBuilder {
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
     pub fn get_session_script_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         self.inner.get_session_script_s3_location()
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn max_sessions_per_instance(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_sessions_per_instance(input);
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn set_max_sessions_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_sessions_per_instance(input);
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn get_max_sessions_per_instance(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_sessions_per_instance()
     }
 }

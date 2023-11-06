@@ -2,7 +2,7 @@
 pub fn ser_caption_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_language_code {
         object.key("customLanguageCode").string(var_1.as_str());
     }

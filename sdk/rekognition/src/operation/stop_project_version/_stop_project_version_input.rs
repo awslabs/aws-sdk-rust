@@ -30,6 +30,7 @@ pub struct StopProjectVersionInputBuilder {
 impl StopProjectVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to stop.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
+    /// This field is required.
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,7 +49,8 @@ impl StopProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`StopProjectVersionInput`](crate::operation::stop_project_version::StopProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_project_version::StopProjectVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_project_version::StopProjectVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_project_version::StopProjectVersionInput {
             project_version_arn: self.project_version_arn,
         })

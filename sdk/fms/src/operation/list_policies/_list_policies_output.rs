@@ -11,8 +11,10 @@ pub struct ListPoliciesOutput {
 }
 impl ListPoliciesOutput {
     /// <p>An array of <code>PolicySummary</code> objects.</p>
-    pub fn policy_list(&self) -> ::std::option::Option<&[crate::types::PolicySummary]> {
-        self.policy_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_list.is_none()`.
+    pub fn policy_list(&self) -> &[crate::types::PolicySummary] {
+        self.policy_list.as_deref().unwrap_or_default()
     }
     /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct GetProvisionedModelThroughputInputBuilder {
 }
 impl GetProvisionedModelThroughputInputBuilder {
     /// <p>The ARN or name of the provisioned throughput.</p>
+    /// This field is required.
     pub fn provisioned_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetProvisionedModelThroughputInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputInput {
             provisioned_model_id: self.provisioned_model_id,

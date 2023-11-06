@@ -2,75 +2,75 @@
 pub fn ser_s3_json_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3JsonSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.paths {
-        let mut array_3 = object.key("Paths").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Paths").start_array();
+        for item_2 in &input.paths {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.compression_type {
-        object.key("CompressionType").string(var_5.as_str());
+    if let Some(var_3) = &input.compression_type {
+        object.key("CompressionType").string(var_3.as_str());
     }
-    if let Some(var_6) = &input.exclusions {
-        let mut array_7 = object.key("Exclusions").start_array();
-        for item_8 in var_6 {
+    if let Some(var_4) = &input.exclusions {
+        let mut array_5 = object.key("Exclusions").start_array();
+        for item_6 in var_4 {
             {
-                array_7.value().string(item_8.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.group_size {
-        object.key("GroupSize").string(var_9.as_str());
+    if let Some(var_7) = &input.group_size {
+        object.key("GroupSize").string(var_7.as_str());
     }
-    if let Some(var_10) = &input.group_files {
-        object.key("GroupFiles").string(var_10.as_str());
+    if let Some(var_8) = &input.group_files {
+        object.key("GroupFiles").string(var_8.as_str());
     }
-    if let Some(var_11) = &input.recurse {
-        object.key("Recurse").boolean(*var_11);
+    if let Some(var_9) = &input.recurse {
+        object.key("Recurse").boolean(*var_9);
     }
-    if let Some(var_12) = &input.max_band {
+    if let Some(var_10) = &input.max_band {
         object.key("MaxBand").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_13) = &input.max_files_in_band {
+    if let Some(var_11) = &input.max_files_in_band {
         object.key("MaxFilesInBand").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_14) = &input.additional_options {
+    if let Some(var_12) = &input.additional_options {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("AdditionalOptions").start_object();
-        crate::protocol_serde::shape_s3_direct_source_additional_options::ser_s3_direct_source_additional_options(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_13 = object.key("AdditionalOptions").start_object();
+        crate::protocol_serde::shape_s3_direct_source_additional_options::ser_s3_direct_source_additional_options(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_16) = &input.json_path {
-        object.key("JsonPath").string(var_16.as_str());
+    if let Some(var_14) = &input.json_path {
+        object.key("JsonPath").string(var_14.as_str());
     }
-    if let Some(var_17) = &input.multiline {
-        object.key("Multiline").boolean(*var_17);
+    if let Some(var_15) = &input.multiline {
+        object.key("Multiline").boolean(*var_15);
     }
-    if let Some(var_18) = &input.output_schemas {
-        let mut array_19 = object.key("OutputSchemas").start_array();
-        for item_20 in var_18 {
+    if let Some(var_16) = &input.output_schemas {
+        let mut array_17 = object.key("OutputSchemas").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_19.finish();
+        array_17.finish();
     }
     Ok(())
 }
@@ -172,7 +172,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_json_source_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

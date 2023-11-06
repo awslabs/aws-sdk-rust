@@ -23,32 +23,46 @@ pub struct FindingFilter {
 }
 impl FindingFilter {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
-    pub fn agent_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_ids.is_none()`.
+    pub fn agent_ids(&self) -> &[::std::string::String] {
+        self.agent_ids.as_deref().unwrap_or_default()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
-    pub fn auto_scaling_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_scaling_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_groups.is_none()`.
+    pub fn auto_scaling_groups(&self) -> &[::std::string::String] {
+        self.auto_scaling_groups.as_deref().unwrap_or_default()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
-    pub fn rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rule_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_names.is_none()`.
+    pub fn rule_names(&self) -> &[::std::string::String] {
+        self.rule_names.as_deref().unwrap_or_default()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
-    pub fn severities(&self) -> ::std::option::Option<&[crate::types::Severity]> {
-        self.severities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severities.is_none()`.
+    pub fn severities(&self) -> &[crate::types::Severity] {
+        self.severities.as_deref().unwrap_or_default()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
-    pub fn rules_package_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rules_package_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules_package_arns.is_none()`.
+    pub fn rules_package_arns(&self) -> &[::std::string::String] {
+        self.rules_package_arns.as_deref().unwrap_or_default()
     }
     /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
-    pub fn user_attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.user_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attributes.is_none()`.
+    pub fn user_attributes(&self) -> &[crate::types::Attribute] {
+        self.user_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The time range during which the finding is generated.</p>
     pub fn creation_time_range(&self) -> ::std::option::Option<&crate::types::TimestampRange> {

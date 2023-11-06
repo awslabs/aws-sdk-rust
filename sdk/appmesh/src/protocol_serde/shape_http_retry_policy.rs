@@ -2,36 +2,36 @@
 pub fn ser_http_retry_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpRetryPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.per_retry_timeout {
         #[allow(unused_mut)]
         let mut object_2 = object.key("perRetryTimeout").start_object();
         crate::protocol_serde::shape_duration::ser_duration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.max_retries {
+    {
         object.key("maxRetries").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.max_retries).into()),
         );
     }
-    if let Some(var_4) = &input.http_retry_events {
-        let mut array_5 = object.key("httpRetryEvents").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.http_retry_events {
+        let mut array_4 = object.key("httpRetryEvents").start_array();
+        for item_5 in var_3 {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_7) = &input.tcp_retry_events {
-        let mut array_8 = object.key("tcpRetryEvents").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.tcp_retry_events {
+        let mut array_7 = object.key("tcpRetryEvents").start_array();
+        for item_8 in var_6 {
             {
-                array_8.value().string(item_9.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
     Ok(())
 }
@@ -80,7 +80,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::http_retry_policy_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

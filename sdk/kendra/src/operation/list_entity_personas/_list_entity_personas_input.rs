@@ -48,6 +48,7 @@ pub struct ListEntityPersonasInputBuilder {
 }
 impl ListEntityPersonasInputBuilder {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListEntityPersonasInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,8 @@ impl ListEntityPersonasInputBuilder {
     /// Consumes the builder and constructs a [`ListEntityPersonasInput`](crate::operation::list_entity_personas::ListEntityPersonasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_entity_personas::ListEntityPersonasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_entity_personas::ListEntityPersonasInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_entity_personas::ListEntityPersonasInput {
             id: self.id,
             index_id: self.index_id,

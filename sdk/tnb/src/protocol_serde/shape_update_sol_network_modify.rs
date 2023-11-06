@@ -2,12 +2,12 @@
 pub fn ser_update_sol_network_modify(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateSolNetworkModify,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.vnf_instance_id {
-        object.key("vnfInstanceId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("vnfInstanceId").string(input.vnf_instance_id.as_str());
     }
-    if let Some(var_2) = &input.vnf_configurable_properties {
-        object.key("vnfConfigurableProperties").document(var_2);
+    {
+        object.key("vnfConfigurableProperties").document(&input.vnf_configurable_properties);
     }
     Ok(())
 }

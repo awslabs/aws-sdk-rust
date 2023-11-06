@@ -2,7 +2,7 @@
 pub fn ser_set_user_settings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_user_settings::SetUserSettingsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_token {
         object.key("AccessToken").string(var_1.as_str());
     }

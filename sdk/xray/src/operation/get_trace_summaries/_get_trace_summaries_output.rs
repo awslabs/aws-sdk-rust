@@ -15,8 +15,10 @@ pub struct GetTraceSummariesOutput {
 }
 impl GetTraceSummariesOutput {
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
-    pub fn trace_summaries(&self) -> ::std::option::Option<&[crate::types::TraceSummary]> {
-        self.trace_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trace_summaries.is_none()`.
+    pub fn trace_summaries(&self) -> &[crate::types::TraceSummary] {
+        self.trace_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The start time of this page of results.</p>
     pub fn approximate_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

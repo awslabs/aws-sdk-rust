@@ -48,6 +48,7 @@ pub struct SetPrincipalTagAttributeMapInputBuilder {
 }
 impl SetPrincipalTagAttributeMapInputBuilder {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl SetPrincipalTagAttributeMapInputBuilder {
         &self.identity_pool_id
     }
     /// <p>The provider name you want to use for attribute mappings.</p>
+    /// This field is required.
     pub fn identity_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_name = ::std::option::Option::Some(input.into());
         self
@@ -121,7 +123,7 @@ impl SetPrincipalTagAttributeMapInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapInput {
             identity_pool_id: self.identity_pool_id,

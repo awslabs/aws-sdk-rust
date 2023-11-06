@@ -56,6 +56,7 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the network interface.</p>
+    /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput {
             dry_run: self.dry_run,

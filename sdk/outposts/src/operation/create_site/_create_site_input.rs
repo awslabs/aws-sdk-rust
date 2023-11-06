@@ -69,6 +69,7 @@ pub struct CreateSiteInputBuilder {
 }
 impl CreateSiteInputBuilder {
     /// <p>The name of the site.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -173,7 +174,7 @@ impl CreateSiteInputBuilder {
         &self.rack_physical_properties
     }
     /// Consumes the builder and constructs a [`CreateSiteInput`](crate::operation::create_site::CreateSiteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_site::CreateSiteInput {
             name: self.name,
             description: self.description,

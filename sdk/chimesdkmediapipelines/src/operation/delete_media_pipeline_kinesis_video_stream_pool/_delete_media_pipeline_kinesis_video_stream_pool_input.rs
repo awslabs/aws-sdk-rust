@@ -28,6 +28,7 @@ pub struct DeleteMediaPipelineKinesisVideoStreamPoolInputBuilder {
 }
 impl DeleteMediaPipelineKinesisVideoStreamPoolInputBuilder {
     /// <p>The ID of the pool being deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteMediaPipelineKinesisVideoStreamPoolInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolInput {

@@ -11,8 +11,10 @@ pub struct GetBuiltinIntentsOutput {
 }
 impl GetBuiltinIntentsOutput {
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-    pub fn intents(&self) -> ::std::option::Option<&[crate::types::BuiltinIntentMetadata]> {
-        self.intents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intents.is_none()`.
+    pub fn intents(&self) -> &[crate::types::BuiltinIntentMetadata] {
+        self.intents.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

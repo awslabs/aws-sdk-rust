@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopBottomRankedComputation {
     /// <p>The ID for a computation.</p>
-    pub computation_id: ::std::option::Option<::std::string::String>,
+    pub computation_id: ::std::string::String,
     /// <p>The name of a computation.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The category field that is used in a computation.</p>
@@ -19,12 +19,13 @@ pub struct TopBottomRankedComputation {
     /// <li> <p>TOP: A top ranked computation.</p> </li>
     /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::TopBottomComputationType>,
+    pub r#type: crate::types::TopBottomComputationType,
 }
 impl TopBottomRankedComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> ::std::option::Option<&str> {
-        self.computation_id.as_deref()
+    pub fn computation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.computation_id.deref()
     }
     /// <p>The name of a computation.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -47,8 +48,8 @@ impl TopBottomRankedComputation {
     /// <li> <p>TOP: A top ranked computation.</p> </li>
     /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TopBottomComputationType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::TopBottomComputationType {
+        &self.r#type
     }
 }
 impl TopBottomRankedComputation {
@@ -71,6 +72,7 @@ pub struct TopBottomRankedComputationBuilder {
 }
 impl TopBottomRankedComputationBuilder {
     /// <p>The ID for a computation.</p>
+    /// This field is required.
     pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +147,7 @@ impl TopBottomRankedComputationBuilder {
     /// <li> <p>TOP: A top ranked computation.</p> </li>
     /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::TopBottomComputationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -167,14 +170,27 @@ impl TopBottomRankedComputationBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`TopBottomRankedComputation`](crate::types::TopBottomRankedComputation).
-    pub fn build(self) -> crate::types::TopBottomRankedComputation {
-        crate::types::TopBottomRankedComputation {
-            computation_id: self.computation_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`computation_id`](crate::types::builders::TopBottomRankedComputationBuilder::computation_id)
+    /// - [`r#type`](crate::types::builders::TopBottomRankedComputationBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopBottomRankedComputation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopBottomRankedComputation {
+            computation_id: self.computation_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "computation_id",
+                    "computation_id was not specified but it is required when building TopBottomRankedComputation",
+                )
+            })?,
             name: self.name,
             category: self.category,
             value: self.value,
             result_size: self.result_size,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building TopBottomRankedComputation",
+                )
+            })?,
+        })
     }
 }

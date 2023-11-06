@@ -34,8 +34,10 @@ impl RegexPatternSet {
         self.description.as_deref()
     }
     /// <p>The regular expression patterns in the set.</p>
-    pub fn regular_expression_list(&self) -> ::std::option::Option<&[crate::types::Regex]> {
-        self.regular_expression_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regular_expression_list.is_none()`.
+    pub fn regular_expression_list(&self) -> &[crate::types::Regex] {
+        self.regular_expression_list.as_deref().unwrap_or_default()
     }
 }
 impl RegexPatternSet {

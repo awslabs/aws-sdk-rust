@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DynamicVariables" => {
-                            builder = builder.set_dynamic_variables(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                            builder = builder.set_dynamic_variables(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "EndTime" => {
                             builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -39,7 +39,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::prefetch_retrieval_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -50,7 +52,7 @@ where
 pub fn ser_prefetch_retrieval(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrefetchRetrieval,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dynamic_variables {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DynamicVariables").start_object();
@@ -61,15 +63,15 @@ pub fn ser_prefetch_retrieval(
         }
         object_2.finish();
     }
-    if let Some(var_5) = &input.end_time {
+    {
         object
             .key("EndTime")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.start_time {
+    if let Some(var_5) = &input.start_time {
         object
             .key("StartTime")
-            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

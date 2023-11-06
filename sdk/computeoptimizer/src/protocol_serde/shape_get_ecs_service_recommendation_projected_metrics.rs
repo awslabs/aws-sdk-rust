@@ -38,8 +38,8 @@ pub fn de_get_ecs_service_recommendation_projected_metrics_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalServerException" => crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::InternalServerException({
@@ -54,8 +54,8 @@ pub fn de_get_ecs_service_recommendation_projected_metrics_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValueException" => crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::InvalidParameterValueException({
@@ -70,8 +70,8 @@ pub fn de_get_ecs_service_recommendation_projected_metrics_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "MissingAuthenticationToken" => crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::MissingAuthenticationToken({
@@ -86,8 +86,8 @@ pub fn de_get_ecs_service_recommendation_projected_metrics_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OptInRequiredException" => crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::OptInRequiredException({
@@ -102,8 +102,8 @@ pub fn de_get_ecs_service_recommendation_projected_metrics_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::ResourceNotFoundException({
@@ -118,8 +118,8 @@ pub fn de_get_ecs_service_recommendation_projected_metrics_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::ServiceUnavailableException({
@@ -134,8 +134,8 @@ pub fn de_get_ecs_service_recommendation_projected_metrics_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottlingException" => crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::ThrottlingException({
@@ -146,12 +146,9 @@ pub fn de_get_ecs_service_recommendation_projected_metrics_http_error(
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         _ => crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::generic(generic)
@@ -182,7 +179,7 @@ pub fn de_get_ecs_service_recommendation_projected_metrics_http_response(
 
 pub fn ser_get_ecs_service_recommendation_projected_metrics_input(
     input: &crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_ecs_service_recommendation_projected_metrics_input::ser_get_ecs_service_recommendation_projected_metrics_input(
@@ -190,7 +187,7 @@ pub fn ser_get_ecs_service_recommendation_projected_metrics_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_ecs_service_recommendation_projected_metrics(

@@ -38,6 +38,7 @@ pub struct GetMlModelInputBuilder {
 }
 impl GetMlModelInputBuilder {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +73,7 @@ impl GetMlModelInputBuilder {
         &self.verbose
     }
     /// Consumes the builder and constructs a [`GetMlModelInput`](crate::operation::get_ml_model::GetMlModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_ml_model::GetMlModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ml_model::GetMlModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_model::GetMlModelInput {
             ml_model_id: self.ml_model_id,
             verbose: self.verbose,

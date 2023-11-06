@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcConnectorsOutput {
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub vpc_connectors: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnector>>,
+    pub vpc_connectors: ::std::vec::Vec<crate::types::VpcConnector>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVpcConnectorsOutput {
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn vpc_connectors(&self) -> ::std::option::Option<&[crate::types::VpcConnector]> {
-        self.vpc_connectors.as_deref()
+    pub fn vpc_connectors(&self) -> &[crate::types::VpcConnector] {
+        use std::ops::Deref;
+        self.vpc_connectors.deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListVpcConnectorsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVpcConnectorsOutput`](crate::operation::list_vpc_connectors::ListVpcConnectorsOutput).
-    pub fn build(self) -> crate::operation::list_vpc_connectors::ListVpcConnectorsOutput {
-        crate::operation::list_vpc_connectors::ListVpcConnectorsOutput {
-            vpc_connectors: self.vpc_connectors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vpc_connectors`](crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder::vpc_connectors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_vpc_connectors::ListVpcConnectorsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_vpc_connectors::ListVpcConnectorsOutput {
+            vpc_connectors: self.vpc_connectors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_connectors",
+                    "vpc_connectors was not specified but it is required when building ListVpcConnectorsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

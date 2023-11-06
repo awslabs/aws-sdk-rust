@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableDelegatedAdminAccountOutput {
     /// <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
-    pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
+    pub delegated_admin_account_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl EnableDelegatedAdminAccountOutput {
     /// <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
-    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<&str> {
-        self.delegated_admin_account_id.as_deref()
+    pub fn delegated_admin_account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.delegated_admin_account_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for EnableDelegatedAdminAccountOutput {
@@ -34,6 +35,7 @@ pub struct EnableDelegatedAdminAccountOutputBuilder {
 }
 impl EnableDelegatedAdminAccountOutputBuilder {
     /// <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
+    /// This field is required.
     pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl EnableDelegatedAdminAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableDelegatedAdminAccountOutput`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput).
-    pub fn build(self) -> crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput {
-        crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput {
-            delegated_admin_account_id: self.delegated_admin_account_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`delegated_admin_account_id`](crate::operation::enable_delegated_admin_account::builders::EnableDelegatedAdminAccountOutputBuilder::delegated_admin_account_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput {
+            delegated_admin_account_id: self.delegated_admin_account_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "delegated_admin_account_id",
+                    "delegated_admin_account_id was not specified but it is required when building EnableDelegatedAdminAccountOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

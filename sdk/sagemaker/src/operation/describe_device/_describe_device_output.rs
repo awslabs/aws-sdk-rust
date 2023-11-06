@@ -57,8 +57,10 @@ impl DescribeDeviceOutput {
         self.latest_heartbeat.as_ref()
     }
     /// <p>Models on the device.</p>
-    pub fn models(&self) -> ::std::option::Option<&[crate::types::EdgeModel]> {
-        self.models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
+    pub fn models(&self) -> &[crate::types::EdgeModel] {
+        self.models.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of models.</p>
     pub fn max_models(&self) -> ::std::option::Option<i32> {
@@ -118,6 +120,7 @@ impl DescribeDeviceOutputBuilder {
         &self.device_arn
     }
     /// <p>The unique identifier of the device.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +149,7 @@ impl DescribeDeviceOutputBuilder {
         &self.description
     }
     /// <p>The name of the fleet the device belongs to.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +178,7 @@ impl DescribeDeviceOutputBuilder {
         &self.iot_thing_name
     }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
+    /// This field is required.
     pub fn registration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.registration_time = ::std::option::Option::Some(input);
         self

@@ -9,8 +9,10 @@ pub struct RecommendationRelatedAnomalySourceDetail {
 }
 impl RecommendationRelatedAnomalySourceDetail {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
-    pub fn cloud_watch_metrics(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail]> {
-        self.cloud_watch_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_metrics.is_none()`.
+    pub fn cloud_watch_metrics(&self) -> &[crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail] {
+        self.cloud_watch_metrics.as_deref().unwrap_or_default()
     }
 }
 impl RecommendationRelatedAnomalySourceDetail {

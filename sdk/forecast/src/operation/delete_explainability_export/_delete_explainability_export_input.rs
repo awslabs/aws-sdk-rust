@@ -27,6 +27,7 @@ pub struct DeleteExplainabilityExportInputBuilder {
 }
 impl DeleteExplainabilityExportInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// This field is required.
     pub fn explainability_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_export_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteExplainabilityExportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_explainability_export::DeleteExplainabilityExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_explainability_export::DeleteExplainabilityExportInput {
             explainability_export_arn: self.explainability_export_arn,

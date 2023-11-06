@@ -27,6 +27,7 @@ pub struct DeleteReportPlanInputBuilder {
 }
 impl DeleteReportPlanInputBuilder {
     /// <p>The unique name of a report plan.</p>
+    /// This field is required.
     pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteReportPlanInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReportPlanInput`](crate::operation::delete_report_plan::DeleteReportPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_report_plan::DeleteReportPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_report_plan::DeleteReportPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_report_plan::DeleteReportPlanInput {
             report_plan_name: self.report_plan_name,
         })

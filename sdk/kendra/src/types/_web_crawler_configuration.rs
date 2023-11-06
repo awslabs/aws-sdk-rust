@@ -67,12 +67,16 @@ impl WebCrawlerConfiguration {
         self.max_urls_per_minute_crawl_rate
     }
     /// <p>A list of regular expression patterns to include certain URLs to crawl. URLs that match the patterns are included in the index. URLs that don't match the patterns are excluded from the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    pub fn url_inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.url_inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.url_inclusion_patterns.is_none()`.
+    pub fn url_inclusion_patterns(&self) -> &[::std::string::String] {
+        self.url_inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs that match the patterns are excluded from the index. URLs that don't match the patterns are included in the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index.</p>
-    pub fn url_exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.url_exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.url_exclusion_patterns.is_none()`.
+    pub fn url_exclusion_patterns(&self) -> &[::std::string::String] {
+        self.url_exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information required to connect to your internal websites via a web proxy.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
@@ -113,6 +117,7 @@ impl WebCrawlerConfigurationBuilder {
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
     /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
     /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
+    /// This field is required.
     pub fn urls(mut self, input: crate::types::Urls) -> Self {
         self.urls = ::std::option::Option::Some(input);
         self

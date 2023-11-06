@@ -45,6 +45,7 @@ pub struct SetIdentityHeadersInNotificationsEnabledInputBuilder {
 }
 impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
     /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
         &self.identity
     }
     /// <p>The notification type for which to enable or disable headers in notifications. </p>
+    /// This field is required.
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.notification_type = ::std::option::Option::Some(input);
         self
@@ -74,6 +76,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
     }
     /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.</p>
     /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -94,7 +97,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput {

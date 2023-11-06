@@ -2,7 +2,7 @@
 pub fn ser_fmp4_hls_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Fmp4HlsSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audio_rendition_sets {
         object.key("audioRenditionSets").string(var_1.as_str());
     }

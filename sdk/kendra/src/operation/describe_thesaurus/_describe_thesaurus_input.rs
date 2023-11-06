@@ -34,6 +34,7 @@ pub struct DescribeThesaurusInputBuilder {
 }
 impl DescribeThesaurusInputBuilder {
     /// <p>The identifier of the thesaurus you want to get information on.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeThesaurusInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index for the thesaurus.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThesaurusInput`](crate::operation::describe_thesaurus::DescribeThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_thesaurus::DescribeThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_thesaurus::DescribeThesaurusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_thesaurus::DescribeThesaurusInput {
             id: self.id,
             index_id: self.index_id,

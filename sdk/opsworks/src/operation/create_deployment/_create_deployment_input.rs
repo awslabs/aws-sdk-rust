@@ -30,12 +30,16 @@ impl CreateDeploymentInput {
         self.app_id.as_deref()
     }
     /// <p>The instance IDs for the deployment targets.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The layer IDs for the deployment targets.</p>
-    pub fn layer_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layer_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_ids.is_none()`.
+    pub fn layer_ids(&self) -> &[::std::string::String] {
+        self.layer_ids.as_deref().unwrap_or_default()
     }
     /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
     pub fn command(&self) -> ::std::option::Option<&crate::types::DeploymentCommand> {
@@ -73,6 +77,7 @@ pub struct CreateDeploymentInputBuilder {
 }
 impl CreateDeploymentInputBuilder {
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +146,7 @@ impl CreateDeploymentInputBuilder {
         &self.layer_ids
     }
     /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
+    /// This field is required.
     pub fn command(mut self, input: crate::types::DeploymentCommand) -> Self {
         self.command = ::std::option::Option::Some(input);
         self
@@ -191,7 +197,7 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             stack_id: self.stack_id,
             app_id: self.app_id,

@@ -41,6 +41,7 @@ pub struct DismissUserContactInputBuilder {
 }
 impl DismissUserContactInputBuilder {
     /// <p>The identifier of the user account.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DismissUserContactInputBuilder {
         &self.user_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DismissUserContactInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the contact.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,8 @@ impl DismissUserContactInputBuilder {
     /// Consumes the builder and constructs a [`DismissUserContactInput`](crate::operation::dismiss_user_contact::DismissUserContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::dismiss_user_contact::DismissUserContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::dismiss_user_contact::DismissUserContactInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::dismiss_user_contact::DismissUserContactInput {
             user_id: self.user_id,
             instance_id: self.instance_id,

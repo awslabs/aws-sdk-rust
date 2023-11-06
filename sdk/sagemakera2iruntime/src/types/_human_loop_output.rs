@@ -28,6 +28,7 @@ pub struct HumanLoopOutputBuilder {
 }
 impl HumanLoopOutputBuilder {
     /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
+    /// This field is required.
     pub fn output_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_uri = ::std::option::Option::Some(input.into());
         self

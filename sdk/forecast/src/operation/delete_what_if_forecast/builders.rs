@@ -10,7 +10,7 @@ impl DeleteWhatIfForecastInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_what_if_forecast::DeleteWhatIfForecastOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_what_if_forecast::DeleteWhatIfForecastError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl DeleteWhatIfForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_what_if_forecast::DeleteWhatIfForecastOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_what_if_forecast::DeleteWhatIfForecastError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_what_if_forecast::DeleteWhatIfForecast::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -87,20 +90,15 @@ impl DeleteWhatIfForecastFluentBuilder {
         crate::operation::delete_what_if_forecast::DeleteWhatIfForecast::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::delete_what_if_forecast::DeleteWhatIfForecastOutput,
-            crate::operation::delete_what_if_forecast::DeleteWhatIfForecastError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::delete_what_if_forecast::DeleteWhatIfForecastError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::delete_what_if_forecast::DeleteWhatIfForecastOutput,
+        crate::operation::delete_what_if_forecast::DeleteWhatIfForecastError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

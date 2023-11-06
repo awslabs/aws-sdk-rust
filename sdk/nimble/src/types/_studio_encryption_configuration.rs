@@ -7,7 +7,7 @@ pub struct StudioEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
-    pub key_type: ::std::option::Option<crate::types::StudioEncryptionConfigurationKeyType>,
+    pub key_type: crate::types::StudioEncryptionConfigurationKeyType,
 }
 impl StudioEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
@@ -15,8 +15,8 @@ impl StudioEncryptionConfiguration {
         self.key_arn.as_deref()
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
-    pub fn key_type(&self) -> ::std::option::Option<&crate::types::StudioEncryptionConfigurationKeyType> {
-        self.key_type.as_ref()
+    pub fn key_type(&self) -> &crate::types::StudioEncryptionConfigurationKeyType {
+        &self.key_type
     }
 }
 impl StudioEncryptionConfiguration {
@@ -49,6 +49,7 @@ impl StudioEncryptionConfigurationBuilder {
         &self.key_arn
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
+    /// This field is required.
     pub fn key_type(mut self, input: crate::types::StudioEncryptionConfigurationKeyType) -> Self {
         self.key_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl StudioEncryptionConfigurationBuilder {
         &self.key_type
     }
     /// Consumes the builder and constructs a [`StudioEncryptionConfiguration`](crate::types::StudioEncryptionConfiguration).
-    pub fn build(self) -> crate::types::StudioEncryptionConfiguration {
-        crate::types::StudioEncryptionConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_type`](crate::types::builders::StudioEncryptionConfigurationBuilder::key_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::StudioEncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StudioEncryptionConfiguration {
             key_arn: self.key_arn,
-            key_type: self.key_type,
-        }
+            key_type: self.key_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_type",
+                    "key_type was not specified but it is required when building StudioEncryptionConfiguration",
+                )
+            })?,
+        })
     }
 }

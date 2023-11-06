@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFabricConfiguration {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
-    pub edition: ::std::option::Option<crate::types::Edition>,
+    pub edition: crate::types::Edition,
 }
 impl NetworkFabricConfiguration {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
-    pub fn edition(&self) -> ::std::option::Option<&crate::types::Edition> {
-        self.edition.as_ref()
+    pub fn edition(&self) -> &crate::types::Edition {
+        &self.edition
     }
 }
 impl NetworkFabricConfiguration {
@@ -28,6 +28,7 @@ pub struct NetworkFabricConfigurationBuilder {
 }
 impl NetworkFabricConfigurationBuilder {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
+    /// This field is required.
     pub fn edition(mut self, input: crate::types::Edition) -> Self {
         self.edition = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl NetworkFabricConfigurationBuilder {
         &self.edition
     }
     /// Consumes the builder and constructs a [`NetworkFabricConfiguration`](crate::types::NetworkFabricConfiguration).
-    pub fn build(self) -> crate::types::NetworkFabricConfiguration {
-        crate::types::NetworkFabricConfiguration { edition: self.edition }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`edition`](crate::types::builders::NetworkFabricConfigurationBuilder::edition)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkFabricConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkFabricConfiguration {
+            edition: self.edition.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "edition",
+                    "edition was not specified but it is required when building NetworkFabricConfiguration",
+                )
+            })?,
+        })
     }
 }

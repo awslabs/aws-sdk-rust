@@ -11,8 +11,10 @@ pub struct ListBridgesOutput {
 }
 impl ListBridgesOutput {
     /// A list of bridge summaries.
-    pub fn bridges(&self) -> ::std::option::Option<&[crate::types::ListedBridge]> {
-        self.bridges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bridges.is_none()`.
+    pub fn bridges(&self) -> &[crate::types::ListedBridge] {
+        self.bridges.as_deref().unwrap_or_default()
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

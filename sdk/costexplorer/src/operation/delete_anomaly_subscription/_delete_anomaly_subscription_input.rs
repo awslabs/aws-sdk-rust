@@ -27,6 +27,7 @@ pub struct DeleteAnomalySubscriptionInputBuilder {
 }
 impl DeleteAnomalySubscriptionInputBuilder {
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    /// This field is required.
     pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteAnomalySubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionInput {
             subscription_arn: self.subscription_arn,

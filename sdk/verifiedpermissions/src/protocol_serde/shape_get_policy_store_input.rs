@@ -2,7 +2,7 @@
 pub fn ser_get_policy_store_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_policy_store::GetPolicyStoreInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.policy_store_id {
         object.key("policyStoreId").string(var_1.as_str());
     }

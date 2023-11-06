@@ -35,6 +35,7 @@ pub struct DeleteVpnConnectionRouteInputBuilder {
 }
 impl DeleteVpnConnectionRouteInputBuilder {
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
+    /// This field is required.
     pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteVpnConnectionRouteInputBuilder {
         &self.destination_cidr_block
     }
     /// <p>The ID of the VPN connection.</p>
+    /// This field is required.
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl DeleteVpnConnectionRouteInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput {
             destination_cidr_block: self.destination_cidr_block,

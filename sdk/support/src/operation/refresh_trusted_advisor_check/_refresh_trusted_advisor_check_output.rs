@@ -35,6 +35,7 @@ pub struct RefreshTrustedAdvisorCheckOutputBuilder {
 }
 impl RefreshTrustedAdvisorCheckOutputBuilder {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::TrustedAdvisorCheckRefreshStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

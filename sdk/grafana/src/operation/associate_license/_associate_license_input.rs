@@ -34,6 +34,7 @@ pub struct AssociateLicenseInputBuilder {
 }
 impl AssociateLicenseInputBuilder {
     /// <p>The ID of the workspace to associate the license with.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateLicenseInputBuilder {
         &self.workspace_id
     }
     /// <p>The type of license to associate with the workspace.</p>
+    /// This field is required.
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
         self.license_type = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl AssociateLicenseInputBuilder {
     /// Consumes the builder and constructs a [`AssociateLicenseInput`](crate::operation::associate_license::AssociateLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_license::AssociateLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_license::AssociateLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_license::AssociateLicenseInput {
             workspace_id: self.workspace_id,
             license_type: self.license_type,

@@ -34,6 +34,7 @@ pub struct ExecuteGremlinQueryInputBuilder {
 }
 impl ExecuteGremlinQueryInputBuilder {
     /// <p>Using this API, you can run Gremlin queries in string format much as you can using the HTTP endpoint. The interface is compatible with whatever Gremlin version your DB cluster is using (see the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop client section</a> to determine which Gremlin releases your engine version supports).</p>
+    /// This field is required.
     pub fn gremlin_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gremlin_query = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl ExecuteGremlinQueryInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteGremlinQueryInput`](crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput {
             gremlin_query: self.gremlin_query,

@@ -27,6 +27,7 @@ pub struct GetServiceSyncConfigInputBuilder {
 }
 impl GetServiceSyncConfigInputBuilder {
     /// <p>The name of the service that you want to get the service sync configuration for.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetServiceSyncConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceSyncConfigInput`](crate::operation::get_service_sync_config::GetServiceSyncConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_sync_config::GetServiceSyncConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_service_sync_config::GetServiceSyncConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_service_sync_config::GetServiceSyncConfigInput {
             service_name: self.service_name,

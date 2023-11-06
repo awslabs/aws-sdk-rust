@@ -27,6 +27,7 @@ pub struct DescribeModelQualityJobDefinitionInputBuilder {
 }
 impl DescribeModelQualityJobDefinitionInputBuilder {
     /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeModelQualityJobDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput {

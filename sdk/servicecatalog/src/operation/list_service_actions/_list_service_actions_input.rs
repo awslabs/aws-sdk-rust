@@ -105,7 +105,8 @@ impl ListServiceActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListServiceActionsInput`](crate::operation::list_service_actions::ListServiceActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_service_actions::ListServiceActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_service_actions::ListServiceActionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_service_actions::ListServiceActionsInput {
             accept_language: self.accept_language,
             page_size: self.page_size,

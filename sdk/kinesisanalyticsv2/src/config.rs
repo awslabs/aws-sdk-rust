@@ -39,9 +39,15 @@ impl Config {
             runtime_plugins: self.runtime_plugins.clone(),
         }
     }
-    /// Return the [`SharedHttpConnector`](::aws_smithy_runtime_api::client::connectors::SharedHttpConnector) to use when making requests, if any.
-    pub fn http_connector(&self) -> Option<::aws_smithy_runtime_api::client::connectors::SharedHttpConnector> {
-        self.runtime_components.http_connector()
+    /// Deprecated. Don't use.
+    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
+    pub fn http_connector(&self) -> Option<::aws_smithy_runtime_api::client::http::SharedHttpClient> {
+        self.runtime_components.http_client()
+    }
+
+    /// Return the [`SharedHttpClient`](::aws_smithy_runtime_api::client::http::SharedHttpClient) to use when making requests, if any.
+    pub fn http_client(&self) -> Option<::aws_smithy_runtime_api::client::http::SharedHttpClient> {
+        self.runtime_components.http_client()
     }
     /// Returns the endpoint resolver.
     pub fn endpoint_resolver(&self) -> ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver {
@@ -70,7 +76,10 @@ impl Config {
     pub fn retry_partition(&self) -> ::std::option::Option<&::aws_smithy_runtime::client::retries::RetryPartition> {
         self.config.load::<::aws_smithy_runtime::client::retries::RetryPartition>()
     }
-
+    /// Returns the configured identity cache for auth.
+    pub fn identity_cache(&self) -> ::std::option::Option<::aws_smithy_runtime_api::client::identity::SharedIdentityCache> {
+        self.runtime_components.identity_cache()
+    }
     /// Returns interceptors currently registered by the user.
     pub fn interceptors(&self) -> impl Iterator<Item = ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor> + '_ {
         self.runtime_components.interceptors()
@@ -78,6 +87,10 @@ impl Config {
     /// Return time source used for this service.
     pub fn time_source(&self) -> ::std::option::Option<::aws_smithy_async::time::SharedTimeSource> {
         self.runtime_components.time_source()
+    }
+    /// Returns retry classifiers currently registered by the user.
+    pub fn retry_classifiers(&self) -> impl Iterator<Item = ::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier> + '_ {
+        self.runtime_components.retry_classifiers()
     }
     /// Returns the name of the app that is using the client, if it was provided.
     ///
@@ -99,17 +112,17 @@ impl Config {
     /// The signature version 4 service signing name to use in the credential scope when signing requests.
     ///
     /// The signing service may be overridden by the `Endpoint`, or by specifying a custom
-    /// [`SigningService`](aws_types::SigningService) during operation construction
-    pub fn signing_service(&self) -> &'static str {
+    /// [`SigningName`](aws_types::SigningName) during operation construction
+    pub fn signing_name(&self) -> &'static str {
         "kinesisanalytics"
     }
     /// Returns the AWS region, if it was provided.
     pub fn region(&self) -> ::std::option::Option<&::aws_types::region::Region> {
         self.config.load::<::aws_types::region::Region>()
     }
-    /// Returns the credentials cache.
-    pub fn credentials_cache(&self) -> ::std::option::Option<::aws_credential_types::cache::SharedCredentialsCache> {
-        self.config.load::<::aws_credential_types::cache::SharedCredentialsCache>().cloned()
+    /// Returns the credentials provider for this service
+    pub fn credentials_provider(&self) -> Option<::aws_credential_types::provider::SharedCredentialsProvider> {
+        self.config.load::<::aws_credential_types::provider::SharedCredentialsProvider>().cloned()
     }
 }
 /// Builder for creating a `Config`.
@@ -133,7 +146,19 @@ impl Builder {
     pub fn new() -> Self {
         Self::default()
     }
-    /// Sets the HTTP connector to use when making requests.
+    /// Deprecated. Don't use.
+    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
+    pub fn http_connector(self, http_client: impl ::aws_smithy_runtime_api::client::http::HttpClient + 'static) -> Self {
+        self.http_client(http_client)
+    }
+
+    /// Deprecated. Don't use.
+    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
+    pub fn set_http_connector(&mut self, http_client: Option<::aws_smithy_runtime_api::client::http::SharedHttpClient>) -> &mut Self {
+        self.set_http_client(http_client)
+    }
+
+    /// Sets the HTTP client to use when making requests.
     ///
     /// # Examples
     /// ```no_run
@@ -142,10 +167,8 @@ impl Builder {
     /// # #[test]
     /// # fn example() {
     /// use std::time::Duration;
-    /// use aws_smithy_client::{Client, hyper_ext};
-    /// use aws_smithy_client::erase::DynConnector;
-    /// use aws_smithy_client::http_connector::ConnectorSettings;
     /// use aws_sdk_kinesisanalyticsv2::config::Config;
+    /// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
     ///
     /// let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
     ///     .with_webpki_roots()
@@ -153,23 +176,25 @@ impl Builder {
     ///     .enable_http1()
     ///     .enable_http2()
     ///     .build();
-    /// let smithy_connector = hyper_ext::Adapter::builder()
-    ///     // Optionally set things like timeouts as well
-    ///     .connector_settings(
-    ///         ConnectorSettings::builder()
-    ///             .connect_timeout(Duration::from_secs(5))
-    ///             .build()
-    ///     )
-    ///     .build(https_connector);
+    /// let hyper_client = HyperClientBuilder::new().build(https_connector);
+    ///
+    /// // This connector can then be given to a generated service Config
+    /// let config = my_service_client::Config::builder()
+    ///     .endpoint_url("https://example.com")
+    ///     .http_client(hyper_client)
+    ///     .build();
+    /// let client = my_service_client::Client::from_conf(config);
     /// # }
     /// # }
     /// ```
-    pub fn http_connector(mut self, http_connector: impl Into<::aws_smithy_client::http_connector::HttpConnector>) -> Self {
-        self.set_http_connector(::std::option::Option::Some(http_connector));
+    pub fn http_client(mut self, http_client: impl ::aws_smithy_runtime_api::client::http::HttpClient + 'static) -> Self {
+        self.set_http_client(::std::option::Option::Some(::aws_smithy_runtime_api::shared::IntoShared::into_shared(
+            http_client,
+        )));
         self
     }
 
-    /// Sets the HTTP connector to use when making requests.
+    /// Sets the HTTP client to use when making requests.
     ///
     /// # Examples
     /// ```no_run
@@ -178,93 +203,72 @@ impl Builder {
     /// # #[test]
     /// # fn example() {
     /// use std::time::Duration;
-    /// use aws_smithy_client::hyper_ext;
-    /// use aws_smithy_client::http_connector::ConnectorSettings;
     /// use aws_sdk_kinesisanalyticsv2::config::{Builder, Config};
+    /// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
     ///
-    /// fn override_http_connector(builder: &mut Builder) {
+    /// fn override_http_client(builder: &mut Builder) {
     ///     let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
     ///         .with_webpki_roots()
     ///         .https_only()
     ///         .enable_http1()
     ///         .enable_http2()
     ///         .build();
-    ///     let smithy_connector = hyper_ext::Adapter::builder()
-    ///         // Optionally set things like timeouts as well
-    ///         .connector_settings(
-    ///             ConnectorSettings::builder()
-    ///                 .connect_timeout(Duration::from_secs(5))
-    ///                 .build()
-    ///         )
-    ///         .build(https_connector);
-    ///     builder.set_http_connector(Some(smithy_connector));
+    ///     let hyper_client = HyperClientBuilder::new().build(https_connector);
+    ///     builder.set_http_client(Some(hyper_client));
     /// }
     ///
     /// let mut builder = aws_sdk_kinesisanalyticsv2::Config::builder();
-    /// override_http_connector(&mut builder);
+    /// override_http_client(&mut builder);
     /// let config = builder.build();
     /// # }
     /// # }
     /// ```
-    pub fn set_http_connector(&mut self, http_connector: Option<impl Into<::aws_smithy_client::http_connector::HttpConnector>>) -> &mut Self {
-        http_connector.map(|c| self.config.store_put(c.into()));
+    pub fn set_http_client(&mut self, http_client: Option<::aws_smithy_runtime_api::client::http::SharedHttpClient>) -> &mut Self {
+        self.runtime_components.set_http_client(http_client);
         self
     }
     /// Sets the endpoint resolver to use when making requests.
     ///
-    /// Note: setting an endpoint resolver will replace any endpoint URL that has been set.
-    ///
 
-    ///
     /// When unset, the client will used a generated endpoint resolver based on the endpoint resolution
     /// rules for `aws_sdk_kinesisanalyticsv2`.
+
+    ///
+    /// Note: setting an endpoint resolver will replace any endpoint URL that has been set.
+    /// This method accepts an endpoint resolver [specific to this service](crate::config::endpoint::ResolveEndpoint). If you want to
+    /// provide a shared endpoint resolver, use [`Self::set_endpoint_resolver`].
     ///
     /// # Examples
+    /// Create a custom endpoint resolver that resolves a different endpoing per-stage, e.g. staging vs. production.
     /// ```no_run
-    /// use aws_smithy_http::endpoint;
-    /// use aws_sdk_kinesisanalyticsv2::config::endpoint::{Params as EndpointParams, DefaultResolver};
-    /// /// Endpoint resolver which adds a prefix to the generated endpoint
+    /// use aws_sdk_kinesisanalyticsv2::config::endpoint::{ResolveEndpoint, EndpointFuture, Params, Endpoint};
     /// #[derive(Debug)]
-    /// struct PrefixResolver {
-    ///     base_resolver: DefaultResolver,
-    ///     prefix: String
+    /// struct StageResolver { stage: String }
+    /// impl ResolveEndpoint for StageResolver {
+    ///     fn resolve_endpoint(&self, params: &Params) -> EndpointFuture<'_> {
+    ///         let stage = &self.stage;
+    ///         EndpointFuture::ready(Ok(Endpoint::builder().url(format!("{stage}.myservice.com")).build()))
+    ///     }
     /// }
-    /// impl endpoint::ResolveEndpoint<EndpointParams> for PrefixResolver {
-    ///   fn resolve_endpoint(&self, params: &EndpointParams) -> endpoint::Result {
-    ///        self.base_resolver
-    ///              .resolve_endpoint(params)
-    ///              .map(|ep|{
-    ///                   let url = ep.url().to_string();
-    ///                   ep.into_builder().url(format!("{}.{}", &self.prefix, url)).build()
-    ///               })
-    ///   }
-    /// }
-    /// let prefix_resolver = PrefixResolver {
-    ///     base_resolver: DefaultResolver::new(),
-    ///     prefix: "subdomain".to_string()
-    /// };
-    /// let config = aws_sdk_kinesisanalyticsv2::Config::builder().endpoint_resolver(prefix_resolver);
+    /// let resolver = StageResolver { stage: std::env::var("STAGE").unwrap() };
+    /// let config = aws_sdk_kinesisanalyticsv2::Config::builder().endpoint_resolver(resolver).build();
+    /// let client = aws_sdk_kinesisanalyticsv2::Client::from_conf(config);
     /// ```
-
-    pub fn endpoint_resolver(
-        mut self,
-        endpoint_resolver: impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::config::endpoint::Params> + 'static,
-    ) -> Self {
-        self.set_endpoint_resolver(::std::option::Option::Some(::aws_smithy_http::endpoint::SharedEndpointResolver::new(
-            endpoint_resolver,
-        )));
+    pub fn endpoint_resolver(mut self, endpoint_resolver: impl crate::config::endpoint::ResolveEndpoint + 'static) -> Self {
+        self.set_endpoint_resolver(::std::option::Option::Some(endpoint_resolver.into_shared_resolver()));
         self
     }
 
     /// Sets the endpoint resolver to use when making requests.
     ///
+
     /// When unset, the client will used a generated endpoint resolver based on the endpoint resolution
     /// rules for `aws_sdk_kinesisanalyticsv2`.
     pub fn set_endpoint_resolver(
         &mut self,
-        endpoint_resolver: ::std::option::Option<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::config::endpoint::Params>>,
+        endpoint_resolver: ::std::option::Option<::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver>,
     ) -> &mut Self {
-        self.config.store_or_unset(endpoint_resolver);
+        self.runtime_components.set_endpoint_resolver(endpoint_resolver);
         self
     }
     /// Set the retry_config for the builder
@@ -321,8 +325,8 @@ impl Builder {
     /// let sleep_impl = SharedAsyncSleep::new(ForeverSleep);
     /// let config = Config::builder().sleep_impl(sleep_impl).build();
     /// ```
-    pub fn sleep_impl(mut self, sleep_impl: ::aws_smithy_async::rt::sleep::SharedAsyncSleep) -> Self {
-        self.set_sleep_impl(Some(sleep_impl));
+    pub fn sleep_impl(mut self, sleep_impl: impl ::aws_smithy_async::rt::sleep::AsyncSleep + 'static) -> Self {
+        self.set_sleep_impl(Some(::aws_smithy_runtime_api::shared::IntoShared::into_shared(sleep_impl)));
         self
     }
 
@@ -417,8 +421,101 @@ impl Builder {
         retry_partition.map(|r| self.config.store_put(r));
         self
     }
+    /// Set the identity cache for auth.
+    ///
+    /// The identity cache defaults to a lazy caching implementation that will resolve
+    /// an identity when it is requested, and place it in the cache thereafter. Subsequent
+    /// requests will take the value from the cache while it is still valid. Once it expires,
+    /// the next request will result in refreshing the identity.
+    ///
+    /// This configuration allows you to disable or change the default caching mechanism.
+    /// To use a custom caching mechanism, implement the [`ResolveCachedIdentity`](::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity)
+    /// trait and pass that implementation into this function.
+    ///
+    /// # Examples
+    ///
+    /// Disabling identity caching:
+    /// ```no_run
+    /// use aws_sdk_kinesisanalyticsv2::config::IdentityCache;
+    ///
+    /// let config = aws_sdk_kinesisanalyticsv2::Config::builder()
+    ///     .identity_cache(IdentityCache::no_cache())
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_kinesisanalyticsv2::Client::from_conf(config);
+    /// ```
+    ///
+    /// Customizing lazy caching:
+    /// ```no_run
+    /// use aws_sdk_kinesisanalyticsv2::config::IdentityCache;
+    /// use std::time::Duration;
+    ///
+    /// let config = aws_sdk_kinesisanalyticsv2::Config::builder()
+    ///     .identity_cache(
+    ///         IdentityCache::lazy()
+    ///             // change the load timeout to 10 seconds
+    ///             .load_timeout(Duration::from_secs(10))
+    ///             .build()
+    ///     )
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_kinesisanalyticsv2::Client::from_conf(config);
+    /// ```
 
-    /// Add an [`Interceptor`](::aws_smithy_runtime_api::client::interceptors::Interceptor) that runs at specific stages of the request execution pipeline.
+    pub fn identity_cache(mut self, identity_cache: impl ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity + 'static) -> Self {
+        self.set_identity_cache(identity_cache);
+        self
+    }
+
+    /// Set the identity cache for auth.
+    ///
+    /// The identity cache defaults to a lazy caching implementation that will resolve
+    /// an identity when it is requested, and place it in the cache thereafter. Subsequent
+    /// requests will take the value from the cache while it is still valid. Once it expires,
+    /// the next request will result in refreshing the identity.
+    ///
+    /// This configuration allows you to disable or change the default caching mechanism.
+    /// To use a custom caching mechanism, implement the [`ResolveCachedIdentity`](::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity)
+    /// trait and pass that implementation into this function.
+    ///
+    /// # Examples
+    ///
+    /// Disabling identity caching:
+    /// ```no_run
+    /// use aws_sdk_kinesisanalyticsv2::config::IdentityCache;
+    ///
+    /// let config = aws_sdk_kinesisanalyticsv2::Config::builder()
+    ///     .identity_cache(IdentityCache::no_cache())
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_kinesisanalyticsv2::Client::from_conf(config);
+    /// ```
+    ///
+    /// Customizing lazy caching:
+    /// ```no_run
+    /// use aws_sdk_kinesisanalyticsv2::config::IdentityCache;
+    /// use std::time::Duration;
+    ///
+    /// let config = aws_sdk_kinesisanalyticsv2::Config::builder()
+    ///     .identity_cache(
+    ///         IdentityCache::lazy()
+    ///             // change the load timeout to 10 seconds
+    ///             .load_timeout(Duration::from_secs(10))
+    ///             .build()
+    ///     )
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_kinesisanalyticsv2::Client::from_conf(config);
+    /// ```
+
+    pub fn set_identity_cache(
+        &mut self,
+        identity_cache: impl ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity + 'static,
+    ) -> &mut Self {
+        self.runtime_components.set_identity_cache(::std::option::Option::Some(identity_cache));
+        self
+    }
+    /// Add an [interceptor](::aws_smithy_runtime_api::client::interceptors::Intercept) that runs at specific stages of the request execution pipeline.
     ///
     /// Interceptors targeted at a certain stage are executed according to the pre-defined priority.
     /// The SDK provides a default set of interceptors. An interceptor configured by this method
@@ -442,7 +539,7 @@ impl Builder {
     ///
     /// #[derive(Debug)]
     /// pub struct UriModifierInterceptor;
-    /// impl Interceptor for UriModifierInterceptor {
+    /// impl Intercept for UriModifierInterceptor {
     ///     fn modify_before_signing(
     ///         &self,
     ///         context: &mut InterceptorContext<BeforeTransmit>,
@@ -462,7 +559,7 @@ impl Builder {
     /// # }
     /// # }
     /// ```
-    pub fn interceptor(mut self, interceptor: impl ::aws_smithy_runtime_api::client::interceptors::Interceptor + 'static) -> Self {
+    pub fn interceptor(mut self, interceptor: impl ::aws_smithy_runtime_api::client::interceptors::Intercept + 'static) -> Self {
         self.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(interceptor));
         self
     }
@@ -492,7 +589,7 @@ impl Builder {
     /// fn modify_request_uri(builder: &mut Builder) {
     ///     #[derive(Debug)]
     ///     pub struct UriModifierInterceptor;
-    ///     impl Interceptor for UriModifierInterceptor {
+    ///     impl Intercept for UriModifierInterceptor {
     ///         fn modify_before_signing(
     ///             &self,
     ///             context: &mut InterceptorContext<BeforeTransmit>,
@@ -528,13 +625,209 @@ impl Builder {
         self
     }
     /// Sets the time source used for this service
-    pub fn time_source(mut self, time_source: impl ::std::convert::Into<::aws_smithy_async::time::SharedTimeSource>) -> Self {
-        self.set_time_source(::std::option::Option::Some(time_source.into()));
+    pub fn time_source(mut self, time_source: impl ::aws_smithy_async::time::TimeSource + 'static) -> Self {
+        self.set_time_source(::std::option::Option::Some(::aws_smithy_runtime_api::shared::IntoShared::into_shared(
+            time_source,
+        )));
         self
     }
     /// Sets the time source used for this service
     pub fn set_time_source(&mut self, time_source: ::std::option::Option<::aws_smithy_async::time::SharedTimeSource>) -> &mut Self {
         self.runtime_components.set_time_source(time_source);
+        self
+    }
+    /// Add type implementing [`ClassifyRetry`](::aws_smithy_runtime_api::client::retries::classifiers::ClassifyRetry) that will be used by the
+    /// [`RetryStrategy`](::aws_smithy_runtime_api::client::retries::RetryStrategy) to determine what responses should be retried.
+    ///
+    /// A retry classifier configured by this method will run according to its [priority](::aws_smithy_runtime_api::client::retries::classifiers::RetryClassifierPriority).
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # #[cfg(test)]
+    /// # mod tests {
+    /// # #[test]
+    /// # fn example() {
+    /// use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    /// use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
+    /// use aws_smithy_runtime_api::client::retries::classifiers::{
+    ///     ClassifyRetry, RetryAction, RetryClassifierPriority,
+    /// };
+    /// use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+    /// use aws_smithy_types::retry::ErrorKind;
+    /// use std::error::Error as StdError;
+    /// use std::marker::PhantomData;
+    /// use aws_sdk_kinesisanalyticsv2::config::Config;
+    /// # struct SomeOperationError {}
+    ///
+    /// const RETRYABLE_ERROR_CODES: &[&str] = [
+    ///     // List error codes to be retried here...
+    /// ];
+    ///
+    /// // When classifying at an operation's error type, classifiers require a generic parameter.
+    /// // When classifying the HTTP response alone, no generic is needed.
+    /// #[derive(Debug, Default)]
+    /// pub struct ErrorCodeClassifier<E> {
+    ///     _inner: PhantomData<E>,
+    /// }
+    ///
+    /// impl<E> ExampleErrorCodeClassifier<E> {
+    ///     pub fn new() -> Self {
+    ///         Self {
+    ///             _inner: PhantomData,
+    ///         }
+    ///     }
+    /// }
+    ///
+    /// impl<E> ClassifyRetry for ExampleErrorCodeClassifier<E>
+    /// where
+    ///     // Adding a trait bound for ProvideErrorMetadata allows us to inspect the error code.
+    ///     E: StdError + ProvideErrorMetadata + Send + Sync + 'static,
+    /// {
+    ///     fn classify_retry(&self, ctx: &InterceptorContext) -> RetryAction {
+    ///         // Check for a result
+    ///         let output_or_error = ctx.output_or_error();
+    ///         // Check for an error
+    ///         let error = match output_or_error {
+    ///             Some(Ok(_)) | None => return RetryAction::NoActionIndicated,
+    ///               Some(Err(err)) => err,
+    ///         };
+    ///
+    ///         // Downcast the generic error and extract the code
+    ///         let error_code = OrchestratorError::as_operation_error(error)
+    ///             .and_then(|err| err.downcast_ref::<E>())
+    ///             .and_then(|err| err.code());
+    ///
+    ///         // If this error's code is in our list, return an action that tells the RetryStrategy to retry this request.
+    ///         if let Some(error_code) = error_code {
+    ///             if RETRYABLE_ERROR_CODES.contains(&error_code) {
+    ///                 return RetryAction::transient_error();
+    ///             }
+    ///         }
+    ///
+    ///         // Otherwise, return that no action is indicated i.e. that this classifier doesn't require a retry.
+    ///         // Another classifier may still classify this response as retryable.
+    ///         RetryAction::NoActionIndicated
+    ///     }
+    ///
+    ///     fn name(&self) -> &'static str { "Example Error Code Classifier" }
+    /// }
+    ///
+    /// let config = Config::builder()
+    ///     .retry_classifier(ExampleErrorCodeClassifier::<SomeOperationError>::new())
+    ///     .build();
+    /// # }
+    /// # }
+    /// ```
+    pub fn retry_classifier(
+        mut self,
+        retry_classifier: impl ::aws_smithy_runtime_api::client::retries::classifiers::ClassifyRetry + 'static,
+    ) -> Self {
+        self.push_retry_classifier(::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier::new(
+            retry_classifier,
+        ));
+        self
+    }
+
+    /// Add a [`SharedRetryClassifier`](::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier) that will be used by the
+    /// [`RetryStrategy`](::aws_smithy_runtime_api::client::retries::RetryStrategy) to determine what responses should be retried.
+    ///
+    /// A retry classifier configured by this method will run according to its priority.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # #[cfg(test)]
+    /// # mod tests {
+    /// # #[test]
+    /// # fn example() {
+    /// use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    /// use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
+    /// use aws_smithy_runtime_api::client::retries::classifiers::{
+    ///     ClassifyRetry, RetryAction, RetryClassifierPriority,
+    /// };
+    /// use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+    /// use aws_smithy_types::retry::ErrorKind;
+    /// use std::error::Error as StdError;
+    /// use std::marker::PhantomData;
+    /// use aws_sdk_kinesisanalyticsv2::config::{Builder, Config};
+    /// # struct SomeOperationError {}
+    ///
+    /// const RETRYABLE_ERROR_CODES: &[&str] = [
+    ///     // List error codes to be retried here...
+    /// ];
+    /// fn set_example_error_code_classifier(builder: &mut Builder) {
+    ///     // When classifying at an operation's error type, classifiers require a generic parameter.
+    ///     // When classifying the HTTP response alone, no generic is needed.
+    ///     #[derive(Debug, Default)]
+    ///     pub struct ExampleErrorCodeClassifier<E> {
+    ///         _inner: PhantomData<E>,
+    ///     }
+    ///
+    ///     impl<E> ExampleErrorCodeClassifier<E> {
+    ///         pub fn new() -> Self {
+    ///             Self {
+    ///                 _inner: PhantomData,
+    ///             }
+    ///         }
+    ///     }
+    ///
+    ///     impl<E> ClassifyRetry for ExampleErrorCodeClassifier<E>
+    ///     where
+    ///         // Adding a trait bound for ProvideErrorMetadata allows us to inspect the error code.
+    ///         E: StdError + ProvideErrorMetadata + Send + Sync + 'static,
+    ///     {
+    ///         fn classify_retry(&self, ctx: &InterceptorContext) -> RetryAction {
+    ///             // Check for a result
+    ///             let output_or_error = ctx.output_or_error();
+    ///             // Check for an error
+    ///             let error = match output_or_error {
+    ///                 Some(Ok(_)) | None => return RetryAction::NoActionIndicated,
+    ///                   Some(Err(err)) => err,
+    ///             };
+    ///
+    ///             // Downcast the generic error and extract the code
+    ///             let error_code = OrchestratorError::as_operation_error(error)
+    ///                 .and_then(|err| err.downcast_ref::<E>())
+    ///                 .and_then(|err| err.code());
+    ///
+    ///             // If this error's code is in our list, return an action that tells the RetryStrategy to retry this request.
+    ///             if let Some(error_code) = error_code {
+    ///                 if RETRYABLE_ERROR_CODES.contains(&error_code) {
+    ///                     return RetryAction::transient_error();
+    ///                 }
+    ///             }
+    ///
+    ///             // Otherwise, return that no action is indicated i.e. that this classifier doesn't require a retry.
+    ///             // Another classifier may still classify this response as retryable.
+    ///             RetryAction::NoActionIndicated
+    ///         }
+    ///
+    ///         fn name(&self) -> &'static str { "Example Error Code Classifier" }
+    ///     }
+    ///
+    ///     builder.push_retry_classifier(ExampleErrorCodeClassifier::<SomeOperationError>::new())
+    /// }
+    ///
+    /// let mut builder = Config::builder();
+    /// set_example_error_code_classifier(&mut builder);
+    /// let config = builder.build();
+    /// # }
+    /// # }
+    /// ```
+    pub fn push_retry_classifier(
+        &mut self,
+        retry_classifier: ::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier,
+    ) -> &mut Self {
+        self.runtime_components.push_retry_classifier(retry_classifier);
+        self
+    }
+
+    /// Set [`SharedRetryClassifier`](::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier)s for the builder, replacing any that
+    /// were previously set.
+    pub fn set_retry_classifiers(
+        &mut self,
+        retry_classifiers: impl IntoIterator<Item = ::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier>,
+    ) -> &mut Self {
+        self.runtime_components.set_retry_classifiers(retry_classifiers.into_iter());
         self
     }
     /// Sets the name of the app that is using the client.
@@ -645,16 +938,6 @@ impl Builder {
         self.config.store_or_unset(credentials_provider);
         self
     }
-    /// Sets the credentials cache for this service
-    pub fn credentials_cache(mut self, credentials_cache: ::aws_credential_types::cache::CredentialsCache) -> Self {
-        self.set_credentials_cache(::std::option::Option::Some(credentials_cache));
-        self
-    }
-    /// Sets the credentials cache for this service
-    pub fn set_credentials_cache(&mut self, credentials_cache: ::std::option::Option<::aws_credential_types::cache::CredentialsCache>) -> &mut Self {
-        self.config.store_or_unset(credentials_cache);
-        self
-    }
     /// Adds a runtime plugin to the config.
     #[allow(unused)]
     pub(crate) fn runtime_plugin(mut self, plugin: impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin + 'static) -> Self {
@@ -670,10 +953,11 @@ impl Builder {
     #[cfg(any(feature = "test-util", test))]
     #[allow(unused_mut)]
     /// Apply test defaults to the builder
-    pub fn set_test_defaults(&mut self) -> &mut Self {
+    pub fn apply_test_defaults(&mut self) -> &mut Self {
         self.set_time_source(::std::option::Option::Some(::aws_smithy_async::time::SharedTimeSource::new(
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
+        self.config.store_put(::aws_http::user_agent::AwsUserAgent::for_tests());
         self.set_credentials_provider(Some(::aws_credential_types::provider::SharedCredentialsProvider::new(
             ::aws_credential_types::Credentials::for_tests(),
         )));
@@ -683,90 +967,23 @@ impl Builder {
     #[allow(unused_mut)]
     /// Apply test defaults to the builder
     pub fn with_test_defaults(mut self) -> Self {
-        self.set_test_defaults();
+        self.apply_test_defaults();
         self
     }
     /// Builds a [`Config`].
     #[allow(unused_mut)]
     pub fn build(mut self) -> Config {
         let mut layer = self.config;
-        let mut resolver = ::aws_smithy_runtime::client::config_override::Resolver::initial(&mut layer, &mut self.runtime_components);
-        crate::config::set_connector(&mut resolver);
-        crate::config::set_endpoint_resolver(&mut resolver);
-        if layer.load::<::aws_smithy_types::retry::RetryConfig>().is_none() {
-            layer.store_put(::aws_smithy_types::retry::RetryConfig::disabled());
-        }
-        let retry_config = layer
-            .load::<::aws_smithy_types::retry::RetryConfig>()
-            .expect("set to default above")
-            .clone();
-
-        if layer.load::<::aws_smithy_runtime::client::retries::RetryPartition>().is_none() {
-            layer.store_put(::aws_smithy_runtime::client::retries::RetryPartition::new("kinesisanalyticsv2"));
-        }
-        let retry_partition = layer
-            .load::<::aws_smithy_runtime::client::retries::RetryPartition>()
-            .expect("set to default above")
-            .clone();
-
-        if retry_config.has_retry() {
-            ::tracing::debug!("using retry strategy with partition '{}'", retry_partition);
-        }
-
-        if retry_config.mode() == ::aws_smithy_types::retry::RetryMode::Adaptive {
-            if let ::std::option::Option::Some(time_source) = self.runtime_components.time_source() {
-                let seconds_since_unix_epoch = time_source
-                    .now()
-                    .duration_since(::std::time::SystemTime::UNIX_EPOCH)
-                    .expect("the present takes place after the UNIX_EPOCH")
-                    .as_secs_f64();
-                let client_rate_limiter_partition = ::aws_smithy_runtime::client::retries::ClientRateLimiterPartition::new(retry_partition.clone());
-                let client_rate_limiter = CLIENT_RATE_LIMITER.get_or_init(client_rate_limiter_partition, || {
-                    ::aws_smithy_runtime::client::retries::ClientRateLimiter::new(seconds_since_unix_epoch)
-                });
-                layer.store_put(client_rate_limiter);
-            }
-        }
-
-        // The token bucket is used for both standard AND adaptive retries.
-        let token_bucket_partition = ::aws_smithy_runtime::client::retries::TokenBucketPartition::new(retry_partition);
-        let token_bucket = TOKEN_BUCKET.get_or_init(token_bucket_partition, ::aws_smithy_runtime::client::retries::TokenBucket::default);
-        layer.store_put(token_bucket);
-
-        // TODO(enableNewSmithyRuntimeCleanup): Should not need to provide a default once smithy-rs#2770
-        //  is resolved
-        if layer.load::<::aws_smithy_types::timeout::TimeoutConfig>().is_none() {
-            layer.store_put(::aws_smithy_types::timeout::TimeoutConfig::disabled());
-        }
-
-        self.runtime_components.set_retry_strategy(::std::option::Option::Some(
-            ::aws_smithy_runtime_api::client::retries::SharedRetryStrategy::new(
-                ::aws_smithy_runtime::client::retries::strategy::StandardRetryStrategy::new(&retry_config),
-            ),
-        ));
         if self.runtime_components.time_source().is_none() {
             self.runtime_components
                 .set_time_source(::std::option::Option::Some(::std::default::Default::default()));
         }
         layer.store_put(crate::meta::API_METADATA.clone());
-        layer.store_put(::aws_types::SigningService::from_static("kinesisanalytics"));
+        layer.store_put(::aws_types::SigningName::from_static("kinesisanalytics"));
         layer
             .load::<::aws_types::region::Region>()
             .cloned()
             .map(|r| layer.store_put(::aws_types::region::SigningRegion::from(r)));
-        if let Some(credentials_provider) = layer.load::<::aws_credential_types::provider::SharedCredentialsProvider>().cloned() {
-            let cache_config = layer.load::<::aws_credential_types::cache::CredentialsCache>().cloned().unwrap_or_else({
-                let sleep = self.runtime_components.sleep_impl();
-                || match sleep {
-                    Some(sleep) => ::aws_credential_types::cache::CredentialsCache::lazy_builder()
-                        .sleep(sleep)
-                        .into_credentials_cache(),
-                    None => ::aws_credential_types::cache::CredentialsCache::lazy(),
-                }
-            });
-            let shared_credentials_cache = cache_config.create_cache(credentials_provider);
-            layer.store_put(shared_credentials_cache);
-        }
         Config {
             config: ::aws_smithy_types::config_bag::Layer::from(layer.clone())
                 .with_name("aws_sdk_kinesisanalyticsv2::config::Config")
@@ -787,34 +1004,22 @@ impl ServiceRuntimePlugin {
     pub fn new(_service_config: crate::config::Config) -> Self {
         let config = { None };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_smithy_runtime::client::connectors::connection_poisoning::ConnectionPoisoningInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::request_info::RequestInfoInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::user_agent::UserAgentInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::invocation_id::InvocationIdInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new(),
-        ) as _);
+        runtime_components.set_endpoint_resolver(Some({
+            use crate::config::endpoint::ResolveEndpoint;
+            crate::config::endpoint::DefaultResolver::new().into_shared_resolver()
+        }));
+        runtime_components.push_interceptor(::aws_smithy_runtime::client::http::connection_poisoning::ConnectionPoisoningInterceptor::new());
+        runtime_components.push_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::HttpStatusCodeClassifier::default());
+        runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
+        runtime_components.push_interceptor(::aws_runtime::request_info::RequestInfoInterceptor::new());
+        runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
+        runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
+        runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
-        if let Some(credentials_cache) = _service_config.credentials_cache() {
-            runtime_components.push_identity_resolver(
-                ::aws_runtime::auth::sigv4::SCHEME_ID,
-                ::aws_smithy_runtime_api::client::identity::SharedIdentityResolver::new(
-                    ::aws_runtime::identity::credentials::CredentialsIdentityResolver::new(credentials_cache),
-                ),
-            );
+        if let Some(creds_provider) = _service_config.credentials_provider() {
+            runtime_components.push_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, creds_provider);
         }
         Self { config, runtime_components }
     }
@@ -825,20 +1030,20 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Service
         self.config.clone()
     }
 
-    fn runtime_components(&self) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
+    fn order(&self) -> ::aws_smithy_runtime_api::client::runtime_plugin::Order {
+        ::aws_smithy_runtime_api::client::runtime_plugin::Order::Defaults
+    }
+
+    fn runtime_components(
+        &self,
+        _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
+    ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Borrowed(&self.runtime_components)
     }
 }
 
 /// Cross-operation shared-state singletons
-static TOKEN_BUCKET: ::aws_smithy_runtime::static_partition_map::StaticPartitionMap<
-    ::aws_smithy_runtime::client::retries::TokenBucketPartition,
-    ::aws_smithy_runtime::client::retries::TokenBucket,
-> = ::aws_smithy_runtime::static_partition_map::StaticPartitionMap::new();
-static CLIENT_RATE_LIMITER: ::aws_smithy_runtime::static_partition_map::StaticPartitionMap<
-    ::aws_smithy_runtime::client::retries::ClientRateLimiterPartition,
-    ::aws_smithy_runtime::client::retries::ClientRateLimiter,
-> = ::aws_smithy_runtime::static_partition_map::StaticPartitionMap::new();
+
 /// A plugin that enables configuration for a single operation invocation
 ///
 /// The `config` method will return a `FrozenLayer` by storing values from `config_override`.
@@ -858,40 +1063,15 @@ impl ConfigOverrideRuntimePlugin {
     ) -> Self {
         let mut layer = config_override.config;
         let mut components = config_override.runtime_components;
+        #[allow(unused_mut)]
         let mut resolver =
             ::aws_smithy_runtime::client::config_override::Resolver::overrid(initial_config, initial_components, &mut layer, &mut components);
 
-        crate::config::set_connector(&mut resolver);
-        crate::config::set_endpoint_resolver(&mut resolver);
         resolver
             .config_mut()
             .load::<::aws_types::region::Region>()
             .cloned()
             .map(|r| resolver.config_mut().store_put(::aws_types::region::SigningRegion::from(r)));
-        match (
-            resolver.config_mut().load::<::aws_credential_types::cache::CredentialsCache>().cloned(),
-            resolver
-                .config_mut()
-                .load::<::aws_credential_types::provider::SharedCredentialsProvider>()
-                .cloned(),
-        ) {
-            (::std::option::Option::None, ::std::option::Option::None) => {}
-            (::std::option::Option::None, _) => {
-                panic!("also specify `.credentials_cache` when overriding credentials provider for the operation");
-            }
-            (_, ::std::option::Option::None) => {
-                panic!("also specify `.credentials_provider` when overriding credentials cache for the operation");
-            }
-            (::std::option::Option::Some(credentials_cache), ::std::option::Option::Some(credentials_provider)) => {
-                let credentials_cache = credentials_cache.create_cache(credentials_provider);
-                resolver.runtime_components_mut().push_identity_resolver(
-                    ::aws_runtime::auth::sigv4::SCHEME_ID,
-                    ::aws_smithy_runtime_api::client::identity::SharedIdentityResolver::new(
-                        ::aws_runtime::identity::credentials::CredentialsIdentityResolver::new(credentials_cache),
-                    ),
-                );
-            }
-        }
 
         let _ = resolver;
         Self {
@@ -908,12 +1088,16 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ConfigO
         Some(self.config.clone())
     }
 
-    fn runtime_components(&self) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
+    fn runtime_components(
+        &self,
+        _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
+    ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Borrowed(&self.components)
     }
 }
 
-pub use ::aws_smithy_runtime_api::client::interceptors::Interceptor;
+pub use ::aws_smithy_runtime::client::identity::IdentityCache;
+pub use ::aws_smithy_runtime_api::client::interceptors::Intercept;
 pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
 pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 pub use ::aws_smithy_types::config_bag::ConfigBag;
@@ -925,7 +1109,6 @@ pub use ::aws_types::region::Region;
 impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &::aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
-        builder.set_credentials_cache(input.credentials_cache().cloned());
         builder.set_credentials_provider(input.credentials_provider());
         builder = builder.region(input.region().cloned());
         builder.set_use_fips(input.use_fips());
@@ -936,8 +1119,12 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_timeout_config(input.timeout_config().cloned());
         builder.set_sleep_impl(input.sleep_impl());
 
-        builder.set_http_connector(input.http_connector().cloned());
+        builder.set_http_client(input.http_client());
         builder.set_time_source(input.time_source());
+
+        if let Some(cache) = input.identity_cache() {
+            builder.set_identity_cache(cache);
+        }
         builder.set_app_name(input.app_name().cloned());
 
         builder
@@ -957,12 +1144,19 @@ pub use ::aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
     let mut configured_plugins = ::std::vec::Vec::new();
     ::std::mem::swap(&mut config.runtime_plugins, &mut configured_plugins);
+
     let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
+        // defaults
+        .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
+            ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new().with_retry_partition_name("kinesisanalyticsv2"),
+        ))
+        // user config
         .with_client_plugin(
             ::aws_smithy_runtime_api::client::runtime_plugin::StaticRuntimePlugin::new()
                 .with_config(config.config.clone())
                 .with_runtime_components(config.runtime_components.clone()),
         )
+        // codegen config
         .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config))
         .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new());
     for plugin in configured_plugins {
@@ -971,69 +1165,10 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
     plugins
 }
 
-fn set_connector(resolver: &mut ::aws_smithy_runtime::client::config_override::Resolver<'_>) {
-    // Initial configuration needs to set a default if no connector is given, so it
-    // should always get into the condition below.
-    //
-    // Override configuration should set the connector if the override config
-    // contains a connector, sleep impl, or a timeout config since these are all
-    // incorporated into the final connector.
-    let must_set_connector = resolver.is_initial()
-        || resolver.is_latest_set::<::aws_smithy_client::http_connector::HttpConnector>()
-        || resolver.latest_sleep_impl().is_some()
-        || resolver.is_latest_set::<::aws_smithy_types::timeout::TimeoutConfig>();
-    if must_set_connector {
-        let sleep_impl = resolver.sleep_impl();
-        let timeout_config = resolver
-            .resolve_config::<::aws_smithy_types::timeout::TimeoutConfig>()
-            .cloned()
-            .unwrap_or_else(::aws_smithy_types::timeout::TimeoutConfig::disabled);
-        let connector_settings = ::aws_smithy_client::http_connector::ConnectorSettings::from_timeout_config(&timeout_config);
-        let http_connector = resolver.resolve_config::<::aws_smithy_client::http_connector::HttpConnector>();
-
-        // TODO(enableNewSmithyRuntimeCleanup): Replace the tower-based DynConnector and remove DynConnectorAdapter when deleting the middleware implementation
-        let connector = http_connector
-            .and_then(|c| c.connector(&connector_settings, sleep_impl.clone()))
-            .or_else(|| crate::config::default_connector(&connector_settings, sleep_impl))
-            .map(|c| {
-                ::aws_smithy_runtime_api::client::connectors::SharedHttpConnector::new(
-                    ::aws_smithy_runtime::client::connectors::adapter::DynConnectorAdapter::new(c),
-                )
-            });
-
-        resolver.runtime_components_mut().set_http_connector(connector);
-    }
-}
-
-fn set_endpoint_resolver(resolver: &mut ::aws_smithy_runtime::client::config_override::Resolver<'_>) {
-    let endpoint_resolver = if resolver.is_initial() {
-        Some(
-            resolver
-                .resolve_config::<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::config::endpoint::Params>>()
-                .cloned()
-                .unwrap_or_else(|| ::aws_smithy_http::endpoint::SharedEndpointResolver::new(crate::config::endpoint::DefaultResolver::new())),
-        )
-    } else if resolver.is_latest_set::<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::config::endpoint::Params>>() {
-        resolver
-            .resolve_config::<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::config::endpoint::Params>>()
-            .cloned()
-    } else {
-        None
-    };
-    if let Some(endpoint_resolver) = endpoint_resolver {
-        let shared = ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver::new(
-            ::aws_smithy_runtime::client::orchestrator::endpoints::DefaultEndpointResolver::<crate::config::endpoint::Params>::new(endpoint_resolver),
-        );
-        resolver
-            .runtime_components_mut()
-            .set_endpoint_resolver(::std::option::Option::Some(shared));
-    }
-}
-
 /// Types needed to configure endpoint resolution.
 pub mod endpoint;
 
-/// Types needed to implement [`Interceptor`](crate::config::Interceptor).
+/// Types needed to implement [`Intercept`](crate::config::Intercept).
 pub mod interceptors;
 
 /// Retry configuration.
@@ -1041,19 +1176,3 @@ pub mod retry;
 
 /// Timeout configuration.
 pub mod timeout;
-
-#[cfg(feature = "rustls")]
-fn default_connector(
-    connector_settings: &::aws_smithy_client::http_connector::ConnectorSettings,
-    sleep_impl: ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
-) -> ::std::option::Option<::aws_smithy_client::erase::DynConnector> {
-    ::aws_smithy_client::conns::default_connector(connector_settings, sleep_impl)
-}
-
-#[cfg(not(feature = "rustls"))]
-fn default_connector(
-    _connector_settings: &::aws_smithy_client::http_connector::ConnectorSettings,
-    _sleep_impl: ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
-) -> ::std::option::Option<::aws_smithy_client::erase::DynConnector> {
-    ::std::option::Option::None
-}

@@ -179,8 +179,10 @@ impl CreateCacheClusterInput {
     /// </note>
     /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat the Availability Zone multiple times in the list.</p>
     /// <p>Default: System chosen Availability Zones.</p>
-    pub fn preferred_availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.preferred_availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_availability_zones.is_none()`.
+    pub fn preferred_availability_zones(&self) -> &[::std::string::String] {
+        self.preferred_availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The initial number of cache nodes that the cluster has.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
@@ -243,24 +245,32 @@ impl CreateCacheClusterInput {
     }
     /// <p>A list of security group names to associate with this cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn cache_security_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_security_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_security_group_names.is_none()`.
+    pub fn cache_security_group_names(&self) -> &[::std::string::String] {
+        self.cache_security_group_names.as_deref().unwrap_or_default()
     }
     /// <p>One or more VPC security groups associated with the cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags to be added to this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p> <note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
-    pub fn snapshot_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.snapshot_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_arns.is_none()`.
+    pub fn snapshot_arns(&self) -> &[::std::string::String] {
+        self.snapshot_arns.as_deref().unwrap_or_default()
     }
     /// <p>The name of a Redis snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p> <note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
@@ -321,12 +331,16 @@ impl CreateCacheClusterInput {
         self.preferred_outpost_arn.as_deref()
     }
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    pub fn preferred_outpost_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.preferred_outpost_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_outpost_arns.is_none()`.
+    pub fn preferred_outpost_arns(&self) -> &[::std::string::String] {
+        self.preferred_outpost_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the destination, format and type of the logs. </p>
-    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::LogDeliveryConfigurationRequest]> {
-        self.log_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
+    pub fn log_delivery_configurations(&self) -> &[crate::types::LogDeliveryConfigurationRequest] {
+        self.log_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub fn transit_encryption_enabled(&self) -> ::std::option::Option<bool> {
@@ -391,6 +405,7 @@ impl CreateCacheClusterInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -1083,7 +1098,8 @@ impl CreateCacheClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateCacheClusterInput`](crate::operation::create_cache_cluster::CreateCacheClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cache_cluster::CreateCacheClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_cache_cluster::CreateCacheClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_cache_cluster::CreateCacheClusterInput {
             cache_cluster_id: self.cache_cluster_id,
             replication_group_id: self.replication_group_id,

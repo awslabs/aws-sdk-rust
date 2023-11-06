@@ -2,17 +2,18 @@
 pub fn ser_realtime_metrics_subscription_config(
     input: &crate::types::RealtimeMetricsSubscriptionConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.realtime_metrics_subscription_status {
+    {
         let mut inner_writer = scope.start_el("RealtimeMetricsSubscriptionStatus").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.realtime_metrics_subscription_status.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_realtime_metrics_subscription_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::RealtimeMetricsSubscriptionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -21,7 +22,7 @@ pub fn de_realtime_metrics_subscription_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RealtimeMetricsSubscriptionStatus") /* RealtimeMetricsSubscriptionStatus com.amazonaws.cloudfront#RealtimeMetricsSubscriptionConfig$RealtimeMetricsSubscriptionStatus */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<crate::types::RealtimeMetricsSubscriptionStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::RealtimeMetricsSubscriptionStatus::from(
@@ -31,11 +32,13 @@ pub fn de_realtime_metrics_subscription_config(
                         ?
                     )
                 ;
-                builder = builder.set_realtime_metrics_subscription_status(var_2);
+                builder = builder.set_realtime_metrics_subscription_status(var_1);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::realtime_metrics_subscription_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

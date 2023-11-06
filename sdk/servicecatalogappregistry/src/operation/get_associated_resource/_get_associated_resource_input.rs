@@ -41,6 +41,7 @@ pub struct GetAssociatedResourceInputBuilder {
 }
 impl GetAssociatedResourceInputBuilder {
     /// <p> The name, ID, or ARN of the application. </p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetAssociatedResourceInputBuilder {
         &self.application
     }
     /// <p>The type of resource associated with the application.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl GetAssociatedResourceInputBuilder {
         &self.resource_type
     }
     /// <p>The name or ID of the resource associated with the application.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetAssociatedResourceInputBuilder {
     /// Consumes the builder and constructs a [`GetAssociatedResourceInput`](crate::operation::get_associated_resource::GetAssociatedResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_associated_resource::GetAssociatedResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_associated_resource::GetAssociatedResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_associated_resource::GetAssociatedResourceInput {
             application: self.application,

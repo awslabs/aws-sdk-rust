@@ -13,12 +13,16 @@ pub struct ListAnomaliesForInsightOutput {
 }
 impl ListAnomaliesForInsightOutput {
     /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    pub fn proactive_anomalies(&self) -> ::std::option::Option<&[crate::types::ProactiveAnomalySummary]> {
-        self.proactive_anomalies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.proactive_anomalies.is_none()`.
+    pub fn proactive_anomalies(&self) -> &[crate::types::ProactiveAnomalySummary] {
+        self.proactive_anomalies.as_deref().unwrap_or_default()
     }
     /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    pub fn reactive_anomalies(&self) -> ::std::option::Option<&[crate::types::ReactiveAnomalySummary]> {
-        self.reactive_anomalies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reactive_anomalies.is_none()`.
+    pub fn reactive_anomalies(&self) -> &[crate::types::ReactiveAnomalySummary] {
+        self.reactive_anomalies.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

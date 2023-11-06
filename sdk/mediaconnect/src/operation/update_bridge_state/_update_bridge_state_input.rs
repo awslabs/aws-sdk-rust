@@ -35,6 +35,7 @@ pub struct UpdateBridgeStateInputBuilder {
 }
 impl UpdateBridgeStateInputBuilder {
     /// The ARN of the bridge that you want to update.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateBridgeStateInputBuilder {
         &self.bridge_arn
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,7 @@ impl UpdateBridgeStateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_bridge_state::UpdateBridgeStateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_bridge_state::UpdateBridgeStateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bridge_state::UpdateBridgeStateInput {
             bridge_arn: self.bridge_arn,
             desired_state: self.desired_state,

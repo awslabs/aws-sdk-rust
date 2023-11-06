@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
@@ -27,12 +27,14 @@ pub struct Target {
 }
 impl Target {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
     pub fn dead_letter_config(&self) -> ::std::option::Option<&crate::types::DeadLetterConfig> {
@@ -91,6 +93,7 @@ pub struct TargetBuilder {
 }
 impl TargetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl TargetBuilder {
         &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -231,10 +235,23 @@ impl TargetBuilder {
         &self.sqs_parameters
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
-    pub fn build(self) -> crate::types::Target {
-        crate::types::Target {
-            arn: self.arn,
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::TargetBuilder::arn)
+    /// - [`role_arn`](crate::types::builders::TargetBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Target {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Target",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building Target",
+                )
+            })?,
             dead_letter_config: self.dead_letter_config,
             retry_policy: self.retry_policy,
             input: self.input,
@@ -243,6 +260,6 @@ impl TargetBuilder {
             kinesis_parameters: self.kinesis_parameters,
             sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters,
             sqs_parameters: self.sqs_parameters,
-        }
+        })
     }
 }

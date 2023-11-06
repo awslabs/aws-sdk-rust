@@ -14,8 +14,10 @@ impl PutCorsPolicyInput {
         self.container_name.as_deref()
     }
     /// <p>The CORS policy to apply to the container. </p>
-    pub fn cors_policy(&self) -> ::std::option::Option<&[crate::types::CorsRule]> {
-        self.cors_policy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cors_policy.is_none()`.
+    pub fn cors_policy(&self) -> &[crate::types::CorsRule] {
+        self.cors_policy.as_deref().unwrap_or_default()
     }
 }
 impl PutCorsPolicyInput {
@@ -34,6 +36,7 @@ pub struct PutCorsPolicyInputBuilder {
 }
 impl PutCorsPolicyInputBuilder {
     /// <p>The name of the container that you want to assign the CORS policy to.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl PutCorsPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutCorsPolicyInput`](crate::operation::put_cors_policy::PutCorsPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_cors_policy::PutCorsPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_cors_policy::PutCorsPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_cors_policy::PutCorsPolicyInput {
             container_name: self.container_name,
             cors_policy: self.cors_policy,

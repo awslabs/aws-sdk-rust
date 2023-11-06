@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopThingRegistrationTask`](crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder::set_task_id): <p>The bulk thing provisioning task ID.</p>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder::set_task_id):<br>required: **true**<br><p>The bulk thing provisioning task ID.</p><br>
     /// - On success, responds with [`StopThingRegistrationTaskOutput`](crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput)
     /// - On failure, responds with [`SdkError<StopThingRegistrationTaskError>`](crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError)
     pub fn stop_thing_registration_task(&self) -> crate::operation::stop_thing_registration_task::builders::StopThingRegistrationTaskFluentBuilder {

@@ -32,8 +32,10 @@ impl ListPredictorBacktestExportJobsInput {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListPredictorBacktestExportJobsInput {
@@ -123,7 +125,7 @@ impl ListPredictorBacktestExportJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsInput {

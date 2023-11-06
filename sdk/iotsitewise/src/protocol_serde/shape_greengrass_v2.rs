@@ -2,9 +2,9 @@
 pub fn ser_greengrass_v2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GreengrassV2,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.core_device_thing_name {
-        object.key("coreDeviceThingName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("coreDeviceThingName").string(input.core_device_thing_name.as_str());
     }
     Ok(())
 }
@@ -41,7 +41,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::greengrass_v2_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

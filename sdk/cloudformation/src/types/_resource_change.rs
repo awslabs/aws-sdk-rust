@@ -47,12 +47,16 @@ impl ResourceChange {
         self.replacement.as_ref()
     }
     /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
-    pub fn scope(&self) -> ::std::option::Option<&[crate::types::ResourceAttribute]> {
-        self.scope.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scope.is_none()`.
+    pub fn scope(&self) -> &[crate::types::ResourceAttribute] {
+        self.scope.as_deref().unwrap_or_default()
     }
     /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource.</p>
-    pub fn details(&self) -> ::std::option::Option<&[crate::types::ResourceChangeDetail]> {
-        self.details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
+    pub fn details(&self) -> &[crate::types::ResourceChangeDetail] {
+        self.details.as_deref().unwrap_or_default()
     }
     /// <p>The change set ID of the nested change set.</p>
     pub fn change_set_id(&self) -> ::std::option::Option<&str> {

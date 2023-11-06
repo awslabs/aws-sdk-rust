@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audience" => {
-                            builder = builder.set_audience(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_audience(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "issuer" => {
                             builder = builder.set_issuer(
@@ -45,7 +45,7 @@ where
 pub fn ser_jwt_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JwtConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audience {
         let mut array_2 = object.key("audience").start_array();
         for item_3 in var_1 {

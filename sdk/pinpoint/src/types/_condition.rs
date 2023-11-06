@@ -11,8 +11,10 @@ pub struct Condition {
 }
 impl Condition {
     /// <p>The conditions to evaluate for the activity.</p>
-    pub fn conditions(&self) -> ::std::option::Option<&[crate::types::SimpleCondition]> {
-        self.conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditions.is_none()`.
+    pub fn conditions(&self) -> &[crate::types::SimpleCondition] {
+        self.conditions.as_deref().unwrap_or_default()
     }
     /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {

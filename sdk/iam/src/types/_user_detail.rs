@@ -51,16 +51,22 @@ impl UserDetail {
         self.create_date.as_ref()
     }
     /// <p>A list of the inline policies embedded in the user.</p>
-    pub fn user_policy_list(&self) -> ::std::option::Option<&[crate::types::PolicyDetail]> {
-        self.user_policy_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_policy_list.is_none()`.
+    pub fn user_policy_list(&self) -> &[crate::types::PolicyDetail] {
+        self.user_policy_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of IAM groups that the user is in.</p>
-    pub fn group_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_list.is_none()`.
+    pub fn group_list(&self) -> &[::std::string::String] {
+        self.group_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of the managed policies attached to the user.</p>
-    pub fn attached_managed_policies(&self) -> ::std::option::Option<&[crate::types::AttachedPolicy]> {
-        self.attached_managed_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_managed_policies.is_none()`.
+    pub fn attached_managed_policies(&self) -> &[crate::types::AttachedPolicy] {
+        self.attached_managed_policies.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
@@ -68,8 +74,10 @@ impl UserDetail {
         self.permissions_boundary.as_ref()
     }
     /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl UserDetail {

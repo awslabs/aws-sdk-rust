@@ -4,28 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationVersionOutput {
     /// <p>The name of the application version.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The specific version of the application.</p>
-    pub application_version: ::std::option::Option<i32>,
+    pub application_version: i32,
     /// <p>The application description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
-    pub definition_content: ::std::option::Option<::std::string::String>,
+    pub definition_content: ::std::string::String,
     /// <p>The status of the application version.</p>
-    pub status: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
+    pub status: crate::types::ApplicationVersionLifecycle,
     /// <p>The timestamp when the application version was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The reason for the reported status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetApplicationVersionOutput {
     /// <p>The name of the application version.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The specific version of the application.</p>
-    pub fn application_version(&self) -> ::std::option::Option<i32> {
+    pub fn application_version(&self) -> i32 {
         self.application_version
     }
     /// <p>The application description.</p>
@@ -33,16 +34,17 @@ impl GetApplicationVersionOutput {
         self.description.as_deref()
     }
     /// <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
-    pub fn definition_content(&self) -> ::std::option::Option<&str> {
-        self.definition_content.as_deref()
+    pub fn definition_content(&self) -> &str {
+        use std::ops::Deref;
+        self.definition_content.deref()
     }
     /// <p>The status of the application version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationVersionLifecycle> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ApplicationVersionLifecycle {
+        &self.status
     }
     /// <p>The timestamp when the application version was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
@@ -76,6 +78,7 @@ pub struct GetApplicationVersionOutputBuilder {
 }
 impl GetApplicationVersionOutputBuilder {
     /// <p>The name of the application version.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl GetApplicationVersionOutputBuilder {
         &self.name
     }
     /// <p>The specific version of the application.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
@@ -118,6 +122,7 @@ impl GetApplicationVersionOutputBuilder {
         &self.description
     }
     /// <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
+    /// This field is required.
     pub fn definition_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition_content = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +137,7 @@ impl GetApplicationVersionOutputBuilder {
         &self.definition_content
     }
     /// <p>The status of the application version.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ApplicationVersionLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -146,6 +152,7 @@ impl GetApplicationVersionOutputBuilder {
         &self.status
     }
     /// <p>The timestamp when the application version was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -183,16 +190,50 @@ impl GetApplicationVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetApplicationVersionOutput`](crate::operation::get_application_version::GetApplicationVersionOutput).
-    pub fn build(self) -> crate::operation::get_application_version::GetApplicationVersionOutput {
-        crate::operation::get_application_version::GetApplicationVersionOutput {
-            name: self.name,
-            application_version: self.application_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder::name)
+    /// - [`application_version`](crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder::application_version)
+    /// - [`definition_content`](crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder::definition_content)
+    /// - [`status`](crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder::status)
+    /// - [`creation_time`](crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder::creation_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_application_version::GetApplicationVersionOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_application_version::GetApplicationVersionOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetApplicationVersionOutput",
+                )
+            })?,
+            application_version: self.application_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_version",
+                    "application_version was not specified but it is required when building GetApplicationVersionOutput",
+                )
+            })?,
             description: self.description,
-            definition_content: self.definition_content,
-            status: self.status,
-            creation_time: self.creation_time,
+            definition_content: self.definition_content.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "definition_content",
+                    "definition_content was not specified but it is required when building GetApplicationVersionOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetApplicationVersionOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetApplicationVersionOutput",
+                )
+            })?,
             status_reason: self.status_reason,
             _request_id: self._request_id,
-        }
+        })
     }
 }

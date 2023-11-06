@@ -27,6 +27,7 @@ pub struct DescribeFilterInputBuilder {
 }
 impl DescribeFilterInputBuilder {
     /// <p>The ARN of the filter to describe.</p>
+    /// This field is required.
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeFilterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFilterInput`](crate::operation::describe_filter::DescribeFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_filter::DescribeFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_filter::DescribeFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_filter::DescribeFilterInput { filter_arn: self.filter_arn })
     }
 }

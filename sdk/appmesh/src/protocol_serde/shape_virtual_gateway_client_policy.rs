@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_client_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayClientPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tls {
         #[allow(unused_mut)]
         let mut object_2 = object.key("tls").start_object();

@@ -37,6 +37,7 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,7 @@ impl UpdateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
             application_name: self.application_name,
             description: self.description,

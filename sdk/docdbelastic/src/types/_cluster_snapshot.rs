@@ -5,66 +5,75 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSnapshot {
     /// <p>A list of the IDs of subnets associated with the DB cluster snapshot.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub snapshot_name: ::std::option::Option<::std::string::String>,
+    pub snapshot_name: ::std::string::String,
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
-    pub snapshot_arn: ::std::option::Option<::std::string::String>,
+    pub snapshot_arn: ::std::string::String,
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub snapshot_creation_time: ::std::option::Option<::std::string::String>,
+    pub snapshot_creation_time: ::std::string::String,
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub cluster_arn: ::std::option::Option<::std::string::String>,
+    pub cluster_arn: ::std::string::String,
     /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
-    pub cluster_creation_time: ::std::option::Option<::std::string::String>,
+    pub cluster_creation_time: ::std::string::String,
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
-    pub status: ::std::option::Option<crate::types::Status>,
+    pub status: crate::types::Status,
     /// <p>A list of the IDs of the VPC security groups associated with the cluster snapshot.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    pub admin_user_name: ::std::option::Option<::std::string::String>,
+    pub admin_user_name: ::std::string::String,
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
-    pub kms_key_id: ::std::option::Option<::std::string::String>,
+    pub kms_key_id: ::std::string::String,
 }
 impl ClusterSnapshot {
     /// <p>A list of the IDs of subnets associated with the DB cluster snapshot.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
-        self.snapshot_name.as_deref()
+    pub fn snapshot_name(&self) -> &str {
+        use std::ops::Deref;
+        self.snapshot_name.deref()
     }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
-        self.snapshot_arn.as_deref()
+    pub fn snapshot_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.snapshot_arn.deref()
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub fn snapshot_creation_time(&self) -> ::std::option::Option<&str> {
-        self.snapshot_creation_time.as_deref()
+    pub fn snapshot_creation_time(&self) -> &str {
+        use std::ops::Deref;
+        self.snapshot_creation_time.deref()
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
-        self.cluster_arn.as_deref()
+    pub fn cluster_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_arn.deref()
     }
     /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
-    pub fn cluster_creation_time(&self) -> ::std::option::Option<&str> {
-        self.cluster_creation_time.as_deref()
+    pub fn cluster_creation_time(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_creation_time.deref()
     }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::Status {
+        &self.status
     }
     /// <p>A list of the IDs of the VPC security groups associated with the cluster snapshot.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.vpc_security_group_ids.deref()
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    pub fn admin_user_name(&self) -> ::std::option::Option<&str> {
-        self.admin_user_name.as_deref()
+    pub fn admin_user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.admin_user_name.deref()
     }
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
-        self.kms_key_id.as_deref()
+    pub fn kms_key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.kms_key_id.deref()
     }
 }
 impl ClusterSnapshot {
@@ -111,6 +120,7 @@ impl ClusterSnapshotBuilder {
         &self.subnet_ids
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +135,7 @@ impl ClusterSnapshotBuilder {
         &self.snapshot_name
     }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
+    /// This field is required.
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +150,7 @@ impl ClusterSnapshotBuilder {
         &self.snapshot_arn
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
+    /// This field is required.
     pub fn snapshot_creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_creation_time = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +165,7 @@ impl ClusterSnapshotBuilder {
         &self.snapshot_creation_time
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +180,7 @@ impl ClusterSnapshotBuilder {
         &self.cluster_arn
     }
     /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
+    /// This field is required.
     pub fn cluster_creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_creation_time = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +195,7 @@ impl ClusterSnapshotBuilder {
         &self.cluster_creation_time
     }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -215,6 +230,7 @@ impl ClusterSnapshotBuilder {
         &self.vpc_security_group_ids
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
+    /// This field is required.
     pub fn admin_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_name = ::std::option::Option::Some(input.into());
         self
@@ -229,6 +245,7 @@ impl ClusterSnapshotBuilder {
         &self.admin_user_name
     }
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
@@ -243,18 +260,79 @@ impl ClusterSnapshotBuilder {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`ClusterSnapshot`](crate::types::ClusterSnapshot).
-    pub fn build(self) -> crate::types::ClusterSnapshot {
-        crate::types::ClusterSnapshot {
-            subnet_ids: self.subnet_ids,
-            snapshot_name: self.snapshot_name,
-            snapshot_arn: self.snapshot_arn,
-            snapshot_creation_time: self.snapshot_creation_time,
-            cluster_arn: self.cluster_arn,
-            cluster_creation_time: self.cluster_creation_time,
-            status: self.status,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            admin_user_name: self.admin_user_name,
-            kms_key_id: self.kms_key_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_ids`](crate::types::builders::ClusterSnapshotBuilder::subnet_ids)
+    /// - [`snapshot_name`](crate::types::builders::ClusterSnapshotBuilder::snapshot_name)
+    /// - [`snapshot_arn`](crate::types::builders::ClusterSnapshotBuilder::snapshot_arn)
+    /// - [`snapshot_creation_time`](crate::types::builders::ClusterSnapshotBuilder::snapshot_creation_time)
+    /// - [`cluster_arn`](crate::types::builders::ClusterSnapshotBuilder::cluster_arn)
+    /// - [`cluster_creation_time`](crate::types::builders::ClusterSnapshotBuilder::cluster_creation_time)
+    /// - [`status`](crate::types::builders::ClusterSnapshotBuilder::status)
+    /// - [`vpc_security_group_ids`](crate::types::builders::ClusterSnapshotBuilder::vpc_security_group_ids)
+    /// - [`admin_user_name`](crate::types::builders::ClusterSnapshotBuilder::admin_user_name)
+    /// - [`kms_key_id`](crate::types::builders::ClusterSnapshotBuilder::kms_key_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ClusterSnapshot, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ClusterSnapshot {
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+            snapshot_name: self.snapshot_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "snapshot_name",
+                    "snapshot_name was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+            snapshot_arn: self.snapshot_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "snapshot_arn",
+                    "snapshot_arn was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+            snapshot_creation_time: self.snapshot_creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "snapshot_creation_time",
+                    "snapshot_creation_time was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+            cluster_arn: self.cluster_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cluster_arn",
+                    "cluster_arn was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+            cluster_creation_time: self.cluster_creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cluster_creation_time",
+                    "cluster_creation_time was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+            vpc_security_group_ids: self.vpc_security_group_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "vpc_security_group_ids",
+                    "vpc_security_group_ids was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+            admin_user_name: self.admin_user_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "admin_user_name",
+                    "admin_user_name was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+            kms_key_id: self.kms_key_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "kms_key_id",
+                    "kms_key_id was not specified but it is required when building ClusterSnapshot",
+                )
+            })?,
+        })
     }
 }

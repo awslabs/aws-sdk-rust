@@ -34,6 +34,7 @@ pub struct DescribeProblemInputBuilder {
 }
 impl DescribeProblemInputBuilder {
     /// <p>The ID of the problem.</p>
+    /// This field is required.
     pub fn problem_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.problem_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeProblemInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProblemInput`](crate::operation::describe_problem::DescribeProblemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_problem::DescribeProblemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_problem::DescribeProblemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_problem::DescribeProblemInput {
             problem_id: self.problem_id,
             account_id: self.account_id,

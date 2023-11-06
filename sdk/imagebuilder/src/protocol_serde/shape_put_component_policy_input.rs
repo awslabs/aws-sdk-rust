@@ -2,7 +2,7 @@
 pub fn ser_put_component_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_component_policy::PutComponentPolicyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_arn {
         object.key("componentArn").string(var_1.as_str());
     }

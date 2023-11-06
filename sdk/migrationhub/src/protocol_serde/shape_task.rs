@@ -2,17 +2,17 @@
 pub fn ser_task(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Task,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.status {
-        object.key("Status").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Status").string(input.status.as_str());
     }
-    if let Some(var_2) = &input.status_detail {
-        object.key("StatusDetail").string(var_2.as_str());
+    if let Some(var_1) = &input.status_detail {
+        object.key("StatusDetail").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.progress_percent {
+    if let Some(var_2) = &input.progress_percent {
         object.key("ProgressPercent").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())
@@ -64,7 +64,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::task_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

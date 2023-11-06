@@ -34,6 +34,7 @@ pub struct DeleteWorkflowStepGroupInputBuilder {
 }
 impl DeleteWorkflowStepGroupInputBuilder {
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteWorkflowStepGroupInputBuilder {
         &self.workflow_id
     }
     /// <p>The ID of the step group you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteWorkflowStepGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput {
             workflow_id: self.workflow_id,

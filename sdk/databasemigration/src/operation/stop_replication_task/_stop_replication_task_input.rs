@@ -28,6 +28,7 @@ pub struct StopReplicationTaskInputBuilder {
 }
 impl StopReplicationTaskInputBuilder {
     /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
+    /// This field is required.
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl StopReplicationTaskInputBuilder {
     /// Consumes the builder and constructs a [`StopReplicationTaskInput`](crate::operation::stop_replication_task::StopReplicationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_replication_task::StopReplicationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_replication_task::StopReplicationTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_replication_task::StopReplicationTaskInput {
             replication_task_arn: self.replication_task_arn,

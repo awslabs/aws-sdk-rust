@@ -169,7 +169,7 @@ impl ListEndpointConfigsInputBuilder {
     /// Consumes the builder and constructs a [`ListEndpointConfigsInput`](crate::operation::list_endpoint_configs::ListEndpointConfigsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_endpoint_configs::ListEndpointConfigsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_endpoint_configs::ListEndpointConfigsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_endpoint_configs::ListEndpointConfigsInput {
             sort_by: self.sort_by,

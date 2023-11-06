@@ -67,6 +67,7 @@ pub struct AssociateMacSecKeyInputBuilder {
 impl AssociateMacSecKeyInputBuilder {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -151,7 +152,7 @@ impl AssociateMacSecKeyInputBuilder {
     /// Consumes the builder and constructs a [`AssociateMacSecKeyInput`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput {
             connection_id: self.connection_id,

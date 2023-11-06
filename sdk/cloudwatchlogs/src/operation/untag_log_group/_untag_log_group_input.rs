@@ -15,8 +15,10 @@ impl UntagLogGroupInput {
         self.log_group_name.as_deref()
     }
     /// <p>The tag keys. The corresponding tags are removed from the log group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[::std::string::String] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl UntagLogGroupInput {
@@ -35,6 +37,7 @@ pub struct UntagLogGroupInputBuilder {
 }
 impl UntagLogGroupInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl UntagLogGroupInputBuilder {
     /// Consumes the builder and constructs a [`UntagLogGroupInput`](crate::operation::untag_log_group::UntagLogGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_log_group::UntagLogGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::untag_log_group::UntagLogGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_log_group::UntagLogGroupInput {
             log_group_name: self.log_group_name,
             tags: self.tags,

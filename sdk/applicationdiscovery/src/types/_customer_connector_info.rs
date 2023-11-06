@@ -70,6 +70,7 @@ pub struct CustomerConnectorInfoBuilder {
 }
 impl CustomerConnectorInfoBuilder {
     /// <p>Number of active discovery connectors.</p>
+    /// This field is required.
     pub fn active_connectors(mut self, input: i32) -> Self {
         self.active_connectors = ::std::option::Option::Some(input);
         self
@@ -84,6 +85,7 @@ impl CustomerConnectorInfoBuilder {
         &self.active_connectors
     }
     /// <p>Number of healthy discovery connectors.</p>
+    /// This field is required.
     pub fn healthy_connectors(mut self, input: i32) -> Self {
         self.healthy_connectors = ::std::option::Option::Some(input);
         self
@@ -98,6 +100,7 @@ impl CustomerConnectorInfoBuilder {
         &self.healthy_connectors
     }
     /// <p>Number of blacklisted discovery connectors.</p>
+    /// This field is required.
     pub fn black_listed_connectors(mut self, input: i32) -> Self {
         self.black_listed_connectors = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl CustomerConnectorInfoBuilder {
         &self.black_listed_connectors
     }
     /// <p>Number of discovery connectors with status SHUTDOWN,</p>
+    /// This field is required.
     pub fn shutdown_connectors(mut self, input: i32) -> Self {
         self.shutdown_connectors = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl CustomerConnectorInfoBuilder {
         &self.shutdown_connectors
     }
     /// <p>Number of unhealthy discovery connectors.</p>
+    /// This field is required.
     pub fn unhealthy_connectors(mut self, input: i32) -> Self {
         self.unhealthy_connectors = ::std::option::Option::Some(input);
         self
@@ -140,6 +145,7 @@ impl CustomerConnectorInfoBuilder {
         &self.unhealthy_connectors
     }
     /// <p>Total number of discovery connectors.</p>
+    /// This field is required.
     pub fn total_connectors(mut self, input: i32) -> Self {
         self.total_connectors = ::std::option::Option::Some(input);
         self
@@ -154,6 +160,7 @@ impl CustomerConnectorInfoBuilder {
         &self.total_connectors
     }
     /// <p>Number of unknown discovery connectors.</p>
+    /// This field is required.
     pub fn unknown_connectors(mut self, input: i32) -> Self {
         self.unknown_connectors = ::std::option::Option::Some(input);
         self

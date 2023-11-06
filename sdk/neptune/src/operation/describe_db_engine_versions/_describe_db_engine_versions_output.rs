@@ -15,8 +15,10 @@ impl DescribeDbEngineVersionsOutput {
         self.marker.as_deref()
     }
     /// <p> A list of <code>DBEngineVersion</code> elements.</p>
-    pub fn db_engine_versions(&self) -> ::std::option::Option<&[crate::types::DbEngineVersion]> {
-        self.db_engine_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_engine_versions.is_none()`.
+    pub fn db_engine_versions(&self) -> &[crate::types::DbEngineVersion] {
+        self.db_engine_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDbEngineVersionsOutput {

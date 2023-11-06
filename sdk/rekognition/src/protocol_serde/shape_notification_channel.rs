@@ -2,12 +2,12 @@
 pub fn ser_notification_channel(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationChannel,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.sns_topic_arn {
-        object.key("SNSTopicArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SNSTopicArn").string(input.sns_topic_arn.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("RoleArn").string(var_2.as_str());
+    {
+        object.key("RoleArn").string(input.role_arn.as_str());
     }
     Ok(())
 }

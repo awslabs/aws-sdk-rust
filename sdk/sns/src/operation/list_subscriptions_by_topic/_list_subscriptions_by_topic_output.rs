@@ -12,8 +12,10 @@ pub struct ListSubscriptionsByTopicOutput {
 }
 impl ListSubscriptionsByTopicOutput {
     /// <p>A list of subscriptions.</p>
-    pub fn subscriptions(&self) -> ::std::option::Option<&[crate::types::Subscription]> {
-        self.subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
+    pub fn subscriptions(&self) -> &[crate::types::Subscription] {
+        self.subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

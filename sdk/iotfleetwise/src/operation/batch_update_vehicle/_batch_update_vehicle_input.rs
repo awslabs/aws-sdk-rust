@@ -8,8 +8,10 @@ pub struct BatchUpdateVehicleInput {
 }
 impl BatchUpdateVehicleInput {
     /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn vehicles(&self) -> ::std::option::Option<&[crate::types::UpdateVehicleRequestItem]> {
-        self.vehicles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
+    pub fn vehicles(&self) -> &[crate::types::UpdateVehicleRequestItem] {
+        self.vehicles.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdateVehicleInput {
@@ -49,7 +51,8 @@ impl BatchUpdateVehicleInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateVehicleInput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_update_vehicle::BatchUpdateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_update_vehicle::BatchUpdateVehicleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::batch_update_vehicle::BatchUpdateVehicleInput { vehicles: self.vehicles })
     }
 }

@@ -75,6 +75,8 @@ pub use crate::types::_data_share_association::DataShareAssociation;
 
 pub use crate::types::_data_share_status::DataShareStatus;
 
+pub use crate::types::_resource_policy::ResourcePolicy;
+
 pub use crate::types::_reserved_node::ReservedNode;
 
 pub use crate::types::_reserved_node_offering_type::ReservedNodeOfferingType;
@@ -150,6 +152,12 @@ pub use crate::types::_operator_type::OperatorType;
 pub use crate::types::_node_configuration_options_filter_name::NodeConfigurationOptionsFilterName;
 
 pub use crate::types::_action_type::ActionType;
+
+pub use crate::types::_inbound_integration::InboundIntegration;
+
+pub use crate::types::_integration_error::IntegrationError;
+
+pub use crate::types::_zero_etl_integration_status::ZeroEtlIntegrationStatus;
 
 pub use crate::types::_hsm_configuration::HsmConfiguration;
 
@@ -301,6 +309,10 @@ mod _hsm_configuration;
 
 mod _hsm_status;
 
+mod _inbound_integration;
+
+mod _integration_error;
+
 mod _ip_range;
 
 mod _log_destination_type;
@@ -352,6 +364,8 @@ mod _reserved_node_offering_type;
 mod _resize_cluster_message;
 
 mod _resize_info;
+
+mod _resource_policy;
 
 mod _restore_status;
 
@@ -418,6 +432,8 @@ mod _usage_limit_period;
 mod _vpc_endpoint;
 
 mod _vpc_security_group_membership;
+
+mod _zero_etl_integration_status;
 
 /// Builders
 pub mod builders;

@@ -45,8 +45,10 @@ impl ReplicationGroupPendingModifiedValues {
         self.user_groups.as_ref()
     }
     /// <p>The log delivery configurations being modified </p>
-    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::PendingLogDeliveryConfiguration]> {
-        self.log_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
+    pub fn log_delivery_configurations(&self) -> &[crate::types::PendingLogDeliveryConfiguration] {
+        self.log_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub fn transit_encryption_enabled(&self) -> ::std::option::Option<bool> {

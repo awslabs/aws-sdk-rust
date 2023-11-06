@@ -34,6 +34,7 @@ pub struct DeleteUserPoolDomainInputBuilder {
 }
 impl DeleteUserPoolDomainInputBuilder {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteUserPoolDomainInputBuilder {
         &self.domain
     }
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteUserPoolDomainInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUserPoolDomainInput`](crate::operation::delete_user_pool_domain::DeleteUserPoolDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_user_pool_domain::DeleteUserPoolDomainInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_user_pool_domain::DeleteUserPoolDomainInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_user_pool_domain::DeleteUserPoolDomainInput {
             domain: self.domain,

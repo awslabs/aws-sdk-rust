@@ -69,6 +69,7 @@ impl ListStreamingSessionBackupsInputBuilder {
         &self.owned_by
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListStreamingSessionBackupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsInput {
             next_token: self.next_token,

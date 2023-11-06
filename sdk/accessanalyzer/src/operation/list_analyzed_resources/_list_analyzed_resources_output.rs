@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnalyzedResourcesOutput {
     /// <p>A list of resources that were analyzed.</p>
-    pub analyzed_resources: ::std::option::Option<::std::vec::Vec<crate::types::AnalyzedResourceSummary>>,
+    pub analyzed_resources: ::std::vec::Vec<crate::types::AnalyzedResourceSummary>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAnalyzedResourcesOutput {
     /// <p>A list of resources that were analyzed.</p>
-    pub fn analyzed_resources(&self) -> ::std::option::Option<&[crate::types::AnalyzedResourceSummary]> {
-        self.analyzed_resources.as_deref()
+    pub fn analyzed_resources(&self) -> &[crate::types::AnalyzedResourceSummary] {
+        use std::ops::Deref;
+        self.analyzed_resources.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,21 @@ impl ListAnalyzedResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnalyzedResourcesOutput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput).
-    pub fn build(self) -> crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput {
-        crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput {
-            analyzed_resources: self.analyzed_resources,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analyzed_resources`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesOutputBuilder::analyzed_resources)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput {
+            analyzed_resources: self.analyzed_resources.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analyzed_resources",
+                    "analyzed_resources was not specified but it is required when building ListAnalyzedResourcesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

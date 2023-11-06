@@ -10,52 +10,6 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS SSO OIDC. Each operation on AWS SSO OIDC is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
-/// ## Constructing a `Client`
-///
-/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
-/// crate should be used to automatically resolve this config using
-/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
-/// across multiple different AWS SDK clients. This config resolution process can be customized
-/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
-/// the [builder pattern] to customize the default config.
-///
-/// In the simplest case, creating a client looks as follows:
-/// ```rust,no_run
-/// # async fn wrapper() {
-/// let config = aws_config::load_from_env().await;
-/// let client = aws_sdk_ssooidc::Client::new(&config);
-/// # }
-/// ```
-///
-/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
-/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
-/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
-/// done as follows:
-///
-/// ```rust,no_run
-/// # async fn wrapper() {
-/// let sdk_config = ::aws_config::load_from_env().await;
-/// let config = aws_sdk_ssooidc::config::Builder::from(&sdk_config)
-/// # /*
-///     .some_service_specific_setting("value")
-/// # */
-///     .build();
-/// # }
-/// ```
-///
-/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
-///
-/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
-/// be done once at application start-up.
-///
-/// [`Config`]: crate::Config
-/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
-/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
-/// [`aws-config` docs]: https://docs.rs/aws-config/*
-/// [`aws-config`]: https://crates.io/crates/aws-config
-/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
-/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
-/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
@@ -84,31 +38,22 @@ impl Client {
     ///
     /// # Panics
     ///
-    /// This method will panic if the `conf` has retry or timeouts enabled without a `sleep_impl`.
-    /// If you experience this panic, it can be fixed by setting the `sleep_impl`, or by disabling
-    /// retries and timeouts.
+    /// This method will panic in the following cases:
+    ///
+    /// - Retries or timeouts are enabled without a `sleep_impl` configured.
+    /// - Identity caching is enabled without a `sleep_impl` and `time_source` configured.
+    ///
+    /// The panic message for each of these will have instructions on how to resolve them.
     pub fn from_conf(conf: crate::Config) -> Self {
-        let retry_config = conf
-            .retry_config()
-            .cloned()
-            .unwrap_or_else(::aws_smithy_types::retry::RetryConfig::disabled);
-        let timeout_config = conf
-            .timeout_config()
-            .cloned()
-            .unwrap_or_else(::aws_smithy_types::timeout::TimeoutConfig::disabled);
-        let sleep_impl = conf.sleep_impl();
-        if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
-            panic!(
-                "An async sleep implementation is required for retries or timeouts to work. \
-                                        Set the `sleep_impl` on the Config passed into this function to fix this panic."
-            );
+        let handle = Handle {
+            conf: conf.clone(),
+            runtime_plugins: crate::config::base_client_runtime_plugins(conf),
+        };
+        if let Err(err) = Self::validate_config(&handle) {
+            panic!("Invalid client configuration: {err}");
         }
-
         Self {
-            handle: ::std::sync::Arc::new(Handle {
-                conf: conf.clone(),
-                runtime_plugins: crate::config::base_client_runtime_plugins(conf),
-            }),
+            handle: ::std::sync::Arc::new(handle),
         }
     }
 
@@ -117,20 +62,13 @@ impl Client {
         &self.handle.conf
     }
 
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Creates a client with the given service configuration.
-    pub fn with_config<C, M, R>(_client: ::aws_smithy_client::Client<C, M, R>, conf: crate::Config) -> Self {
-        Self::from_conf(conf)
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Returns the client's configuration.
-    pub fn conf(&self) -> &crate::Config {
-        &self.handle.conf
+    fn validate_config(handle: &Handle) -> Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        let mut cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
+        handle
+            .runtime_plugins
+            .apply_client_configuration(&mut cfg)?
+            .validate_base_client_config(&cfg)?;
+        Ok(())
     }
 }
 
@@ -163,7 +101,6 @@ mod create_token;
 ///
 /// let result = client.create_token()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -57,7 +57,7 @@ where
                         }
                         "ScheduleAdBreaks" => {
                             builder = builder.set_schedule_ad_breaks(
-                                crate::protocol_serde::shape___list_of_schedule_ad_break::de___list_of_schedule_ad_break(tokens)?,
+                                crate::protocol_serde::shape_list_of_schedule_ad_break::de_list_of_schedule_ad_break(tokens)?,
                             );
                         }
                         "ScheduleEntryType" => {
@@ -91,7 +91,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::schedule_entry_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

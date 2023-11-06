@@ -43,6 +43,7 @@ pub struct CreateLogGroupInputBuilder {
 }
 impl CreateLogGroupInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +97,7 @@ impl CreateLogGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateLogGroupInput`](crate::operation::create_log_group::CreateLogGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_log_group::CreateLogGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_log_group::CreateLogGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_log_group::CreateLogGroupInput {
             log_group_name: self.log_group_name,
             kms_key_id: self.kms_key_id,

@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchDetectSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub result_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectSentimentItemResult>>,
+    pub result_list: ::std::vec::Vec<crate::types::BatchDetectSentimentItemResult>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub error_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>,
+    pub error_list: ::std::vec::Vec<crate::types::BatchItemError>,
     _request_id: Option<String>,
 }
 impl BatchDetectSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(&self) -> ::std::option::Option<&[crate::types::BatchDetectSentimentItemResult]> {
-        self.result_list.as_deref()
+    pub fn result_list(&self) -> &[crate::types::BatchDetectSentimentItemResult] {
+        use std::ops::Deref;
+        self.result_list.deref()
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn error_list(&self) -> ::std::option::Option<&[crate::types::BatchItemError]> {
-        self.error_list.as_deref()
+    pub fn error_list(&self) -> &[crate::types::BatchItemError] {
+        use std::ops::Deref;
+        self.error_list.deref()
     }
 }
 impl ::std::fmt::Debug for BatchDetectSentimentOutput {
@@ -99,12 +101,28 @@ impl BatchDetectSentimentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDetectSentimentOutput`](crate::operation::batch_detect_sentiment::BatchDetectSentimentOutput).
-    pub fn build(self) -> crate::operation::batch_detect_sentiment::BatchDetectSentimentOutput {
-        crate::operation::batch_detect_sentiment::BatchDetectSentimentOutput {
-            result_list: self.result_list,
-            error_list: self.error_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`result_list`](crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentOutputBuilder::result_list)
+    /// - [`error_list`](crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentOutputBuilder::error_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::batch_detect_sentiment::BatchDetectSentimentOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_detect_sentiment::BatchDetectSentimentOutput {
+            result_list: self.result_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "result_list",
+                    "result_list was not specified but it is required when building BatchDetectSentimentOutput",
+                )
+            })?,
+            error_list: self.error_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_list",
+                    "error_list was not specified but it is required when building BatchDetectSentimentOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for BatchDetectSentimentOutputBuilder {

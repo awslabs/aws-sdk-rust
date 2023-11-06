@@ -41,6 +41,7 @@ pub struct GetSchemaAnalysisRuleInputBuilder {
 }
 impl GetSchemaAnalysisRuleInputBuilder {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetSchemaAnalysisRuleInputBuilder {
         &self.collaboration_identifier
     }
     /// <p>The name of the schema to retrieve the analysis rule for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetSchemaAnalysisRuleInputBuilder {
         &self.name
     }
     /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AnalysisRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl GetSchemaAnalysisRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaAnalysisRuleInput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput {
             collaboration_identifier: self.collaboration_identifier,

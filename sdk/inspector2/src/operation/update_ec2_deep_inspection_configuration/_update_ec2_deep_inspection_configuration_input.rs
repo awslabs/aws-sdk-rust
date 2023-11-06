@@ -14,8 +14,10 @@ impl UpdateEc2DeepInspectionConfigurationInput {
         self.activate_deep_inspection
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    pub fn package_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.package_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.package_paths.is_none()`.
+    pub fn package_paths(&self) -> &[::std::string::String] {
+        self.package_paths.as_deref().unwrap_or_default()
     }
 }
 impl UpdateEc2DeepInspectionConfigurationInput {
@@ -72,7 +74,7 @@ impl UpdateEc2DeepInspectionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput {

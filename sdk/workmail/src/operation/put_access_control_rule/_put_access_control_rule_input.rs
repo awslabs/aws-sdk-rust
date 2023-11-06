@@ -42,40 +42,56 @@ impl PutAccessControlRuleInput {
         self.description.as_deref()
     }
     /// <p>IPv4 CIDR ranges to include in the rule.</p>
-    pub fn ip_ranges(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
+    pub fn ip_ranges(&self) -> &[::std::string::String] {
+        self.ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
-    pub fn not_ip_ranges(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_ip_ranges.is_none()`.
+    pub fn not_ip_ranges(&self) -> &[::std::string::String] {
+        self.not_ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[::std::string::String] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    pub fn not_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_actions.is_none()`.
+    pub fn not_actions(&self) -> &[::std::string::String] {
+        self.not_actions.as_deref().unwrap_or_default()
     }
     /// <p>User IDs to include in the rule.</p>
-    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
+    pub fn user_ids(&self) -> &[::std::string::String] {
+        self.user_ids.as_deref().unwrap_or_default()
     }
     /// <p>User IDs to exclude from the rule.</p>
-    pub fn not_user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_user_ids.is_none()`.
+    pub fn not_user_ids(&self) -> &[::std::string::String] {
+        self.not_user_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the organization.</p>
     pub fn organization_id(&self) -> ::std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>Impersonation role IDs to include in the rule.</p>
-    pub fn impersonation_role_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.impersonation_role_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.impersonation_role_ids.is_none()`.
+    pub fn impersonation_role_ids(&self) -> &[::std::string::String] {
+        self.impersonation_role_ids.as_deref().unwrap_or_default()
     }
     /// <p>Impersonation role IDs to exclude from the rule.</p>
-    pub fn not_impersonation_role_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_impersonation_role_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_impersonation_role_ids.is_none()`.
+    pub fn not_impersonation_role_ids(&self) -> &[::std::string::String] {
+        self.not_impersonation_role_ids.as_deref().unwrap_or_default()
     }
 }
 impl PutAccessControlRuleInput {
@@ -104,6 +120,7 @@ pub struct PutAccessControlRuleInputBuilder {
 }
 impl PutAccessControlRuleInputBuilder {
     /// <p>The rule name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +135,7 @@ impl PutAccessControlRuleInputBuilder {
         &self.name
     }
     /// <p>The rule effect.</p>
+    /// This field is required.
     pub fn effect(mut self, input: crate::types::AccessControlRuleEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
         self
@@ -132,6 +150,7 @@ impl PutAccessControlRuleInputBuilder {
         &self.effect
     }
     /// <p>The rule description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -266,6 +285,7 @@ impl PutAccessControlRuleInputBuilder {
         &self.not_user_ids
     }
     /// <p>The identifier of the organization.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -322,7 +342,7 @@ impl PutAccessControlRuleInputBuilder {
     /// Consumes the builder and constructs a [`PutAccessControlRuleInput`](crate::operation::put_access_control_rule::PutAccessControlRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_access_control_rule::PutAccessControlRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_access_control_rule::PutAccessControlRuleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_access_control_rule::PutAccessControlRuleInput {
             name: self.name,

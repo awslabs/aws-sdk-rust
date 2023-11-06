@@ -2,7 +2,7 @@
 pub fn ser_radar_chart_series_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RadarChartSeriesSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.area_style_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AreaStyleSettings").start_object();

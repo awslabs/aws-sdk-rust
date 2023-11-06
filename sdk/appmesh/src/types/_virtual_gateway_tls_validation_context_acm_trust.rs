@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub certificate_authority_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub certificate_authority_arns: ::std::vec::Vec<::std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn certificate_authority_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.certificate_authority_arns.as_deref()
+    pub fn certificate_authority_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.certificate_authority_arns.deref()
     }
 }
 impl VirtualGatewayTlsValidationContextAcmTrust {
@@ -48,9 +49,18 @@ impl VirtualGatewayTlsValidationContextAcmTrustBuilder {
         &self.certificate_authority_arns
     }
     /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContextAcmTrust`](crate::types::VirtualGatewayTlsValidationContextAcmTrust).
-    pub fn build(self) -> crate::types::VirtualGatewayTlsValidationContextAcmTrust {
-        crate::types::VirtualGatewayTlsValidationContextAcmTrust {
-            certificate_authority_arns: self.certificate_authority_arns,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_authority_arns`](crate::types::builders::VirtualGatewayTlsValidationContextAcmTrustBuilder::certificate_authority_arns)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextAcmTrust, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualGatewayTlsValidationContextAcmTrust {
+            certificate_authority_arns: self.certificate_authority_arns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "certificate_authority_arns",
+                    "certificate_authority_arns was not specified but it is required when building VirtualGatewayTlsValidationContextAcmTrust",
+                )
+            })?,
+        })
     }
 }

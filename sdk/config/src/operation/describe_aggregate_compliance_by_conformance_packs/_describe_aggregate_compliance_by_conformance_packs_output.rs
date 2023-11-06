@@ -11,8 +11,10 @@ pub struct DescribeAggregateComplianceByConformancePacksOutput {
 }
 impl DescribeAggregateComplianceByConformancePacksOutput {
     /// <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
-    pub fn aggregate_compliance_by_conformance_packs(&self) -> ::std::option::Option<&[crate::types::AggregateComplianceByConformancePack]> {
-        self.aggregate_compliance_by_conformance_packs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregate_compliance_by_conformance_packs.is_none()`.
+    pub fn aggregate_compliance_by_conformance_packs(&self) -> &[crate::types::AggregateComplianceByConformancePack] {
+        self.aggregate_compliance_by_conformance_packs.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

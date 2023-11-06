@@ -53,6 +53,7 @@ pub struct GrantFlowEntitlements420ExceptionBuilder {
 }
 impl GrantFlowEntitlements420ExceptionBuilder {
     /// The error message returned by AWS Elemental MediaConnect.
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

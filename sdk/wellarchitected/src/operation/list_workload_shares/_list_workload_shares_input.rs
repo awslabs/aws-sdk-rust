@@ -56,6 +56,7 @@ pub struct ListWorkloadSharesInputBuilder {
 }
 impl ListWorkloadSharesInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -128,7 +129,8 @@ impl ListWorkloadSharesInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkloadSharesInput`](crate::operation::list_workload_shares::ListWorkloadSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workload_shares::ListWorkloadSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workload_shares::ListWorkloadSharesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_workload_shares::ListWorkloadSharesInput {
             workload_id: self.workload_id,
             shared_with_prefix: self.shared_with_prefix,

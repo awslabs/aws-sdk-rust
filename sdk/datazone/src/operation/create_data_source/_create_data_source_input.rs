@@ -76,8 +76,10 @@ impl CreateDataSourceInput {
         self.publish_on_import
     }
     /// <p>The metadata forms that are to be attached to the assets that this data source works with.</p>
-    pub fn asset_forms_input(&self) -> ::std::option::Option<&[crate::types::FormInput]> {
-        self.asset_forms_input.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_forms_input.is_none()`.
+    pub fn asset_forms_input(&self) -> &[crate::types::FormInput] {
+        self.asset_forms_input.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -130,6 +132,7 @@ pub struct CreateDataSourceInputBuilder {
 }
 impl CreateDataSourceInputBuilder {
     /// <p>The name of the data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +161,7 @@ impl CreateDataSourceInputBuilder {
         &self.description
     }
     /// <p>The ID of the Amazon DataZone domain where the data source is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +176,7 @@ impl CreateDataSourceInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the Amazon DataZone project in which you want to add this data source.</p>
+    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -186,6 +191,7 @@ impl CreateDataSourceInputBuilder {
         &self.project_identifier
     }
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets. </p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +206,7 @@ impl CreateDataSourceInputBuilder {
         &self.environment_identifier
     }
     /// <p>The type of the data source.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -320,7 +327,7 @@ impl CreateDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_source::CreateDataSourceInput {
             name: self.name,
             description: self.description,

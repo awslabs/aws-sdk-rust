@@ -42,6 +42,7 @@ pub struct ArtifactsConfigurationBuilder {
 }
 impl ArtifactsConfigurationBuilder {
     /// <p>The configuration for the audio artifacts.</p>
+    /// This field is required.
     pub fn audio(mut self, input: crate::types::AudioArtifactsConfiguration) -> Self {
         self.audio = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl ArtifactsConfigurationBuilder {
         &self.audio
     }
     /// <p>The configuration for the video artifacts.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::VideoArtifactsConfiguration) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl ArtifactsConfigurationBuilder {
         &self.video
     }
     /// <p>The configuration for the content artifacts.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::ContentArtifactsConfiguration) -> Self {
         self.content = ::std::option::Option::Some(input);
         self

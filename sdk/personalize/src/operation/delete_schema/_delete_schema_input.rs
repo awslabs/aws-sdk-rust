@@ -27,6 +27,7 @@ pub struct DeleteSchemaInputBuilder {
 }
 impl DeleteSchemaInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteSchemaInputBuilder {
         &self.schema_arn
     }
     /// Consumes the builder and constructs a [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_schema::DeleteSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_schema::DeleteSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_schema::DeleteSchemaInput { schema_arn: self.schema_arn })
     }
 }

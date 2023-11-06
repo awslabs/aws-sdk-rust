@@ -28,6 +28,7 @@ pub struct KafkaClusterBuilder {
 }
 impl KafkaClusterBuilder {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
+    /// This field is required.
     pub fn apache_kafka_cluster(mut self, input: crate::types::ApacheKafkaCluster) -> Self {
         self.apache_kafka_cluster = ::std::option::Option::Some(input);
         self

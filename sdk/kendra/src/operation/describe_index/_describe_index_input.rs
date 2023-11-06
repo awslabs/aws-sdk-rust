@@ -27,6 +27,7 @@ pub struct DescribeIndexInputBuilder {
 }
 impl DescribeIndexInputBuilder {
     /// <p>The identifier of the index you want to get information on.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeIndexInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIndexInput`](crate::operation::describe_index::DescribeIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_index::DescribeIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_index::DescribeIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_index::DescribeIndexInput { id: self.id })
     }
 }

@@ -55,6 +55,7 @@ impl StartLifecyclePolicyPreviewInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to be evaluated.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl StartLifecyclePolicyPreviewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput {
             registry_id: self.registry_id,

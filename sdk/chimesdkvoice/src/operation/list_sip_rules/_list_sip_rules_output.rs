@@ -11,8 +11,10 @@ pub struct ListSipRulesOutput {
 }
 impl ListSipRulesOutput {
     /// <p>The list of SIP rules and details.</p>
-    pub fn sip_rules(&self) -> ::std::option::Option<&[crate::types::SipRule]> {
-        self.sip_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sip_rules.is_none()`.
+    pub fn sip_rules(&self) -> &[crate::types::SipRule] {
+        self.sip_rules.as_deref().unwrap_or_default()
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

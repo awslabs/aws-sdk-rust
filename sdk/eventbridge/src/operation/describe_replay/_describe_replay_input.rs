@@ -27,6 +27,7 @@ pub struct DescribeReplayInputBuilder {
 }
 impl DescribeReplayInputBuilder {
     /// <p>The name of the replay to retrieve.</p>
+    /// This field is required.
     pub fn replay_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replay_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeReplayInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReplayInput`](crate::operation::describe_replay::DescribeReplayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_replay::DescribeReplayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_replay::DescribeReplayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_replay::DescribeReplayInput {
             replay_name: self.replay_name,
         })

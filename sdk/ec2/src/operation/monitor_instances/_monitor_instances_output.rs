@@ -9,8 +9,10 @@ pub struct MonitorInstancesOutput {
 }
 impl MonitorInstancesOutput {
     /// <p>The monitoring information.</p>
-    pub fn instance_monitorings(&self) -> ::std::option::Option<&[crate::types::InstanceMonitoring]> {
-        self.instance_monitorings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_monitorings.is_none()`.
+    pub fn instance_monitorings(&self) -> &[crate::types::InstanceMonitoring] {
+        self.instance_monitorings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for MonitorInstancesOutput {

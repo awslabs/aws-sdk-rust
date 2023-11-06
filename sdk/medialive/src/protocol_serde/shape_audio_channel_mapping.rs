@@ -2,7 +2,7 @@
 pub fn ser_audio_channel_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AudioChannelMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input_channel_levels {
         let mut array_2 = object.key("inputChannelLevels").start_array();
         for item_3 in var_1 {
@@ -41,7 +41,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "inputChannelLevels" => {
                             builder = builder.set_input_channel_levels(
-                                crate::protocol_serde::shape___list_of_input_channel_level::de___list_of_input_channel_level(tokens)?,
+                                crate::protocol_serde::shape_list_of_input_channel_level::de_list_of_input_channel_level(tokens)?,
                             );
                         }
                         "outputChannel" => {
@@ -61,7 +61,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::audio_channel_mapping_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

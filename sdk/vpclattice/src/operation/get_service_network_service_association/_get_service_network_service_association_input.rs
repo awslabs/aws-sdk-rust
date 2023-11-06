@@ -27,6 +27,7 @@ pub struct GetServiceNetworkServiceAssociationInputBuilder {
 }
 impl GetServiceNetworkServiceAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// This field is required.
     pub fn service_network_service_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_service_association_identifier = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetServiceNetworkServiceAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput {

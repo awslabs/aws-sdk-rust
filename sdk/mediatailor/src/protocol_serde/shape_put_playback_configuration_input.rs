@@ -2,7 +2,7 @@
 pub fn ser_put_playback_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_playback_configuration::PutPlaybackConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_decision_server_url {
         object.key("AdDecisionServerUrl").string(var_1.as_str());
     }
@@ -62,30 +62,30 @@ pub fn ser_put_playback_configuration_input(
     if let Some(var_21) = &input.name {
         object.key("Name").string(var_21.as_str());
     }
-    if input.personalization_threshold_seconds != 0 {
+    if let Some(var_22) = &input.personalization_threshold_seconds {
         object.key("PersonalizationThresholdSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.personalization_threshold_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if let Some(var_22) = &input.slate_ad_url {
-        object.key("SlateAdUrl").string(var_22.as_str());
+    if let Some(var_23) = &input.slate_ad_url {
+        object.key("SlateAdUrl").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.tags {
+    if let Some(var_24) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("tags").start_object();
-        for (key_25, value_26) in var_23 {
+        let mut object_25 = object.key("tags").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_24.key(key_25.as_str()).string(value_26.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_24.finish();
+        object_25.finish();
     }
-    if let Some(var_27) = &input.transcode_profile_name {
-        object.key("TranscodeProfileName").string(var_27.as_str());
+    if let Some(var_28) = &input.transcode_profile_name {
+        object.key("TranscodeProfileName").string(var_28.as_str());
     }
-    if let Some(var_28) = &input.video_content_source_url {
-        object.key("VideoContentSourceUrl").string(var_28.as_str());
+    if let Some(var_29) = &input.video_content_source_url {
+        object.key("VideoContentSourceUrl").string(var_29.as_str());
     }
     Ok(())
 }

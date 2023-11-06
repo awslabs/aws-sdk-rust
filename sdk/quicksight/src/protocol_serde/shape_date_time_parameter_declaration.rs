@@ -2,36 +2,36 @@
 pub fn ser_date_time_parameter_declaration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DateTimeParameterDeclaration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.default_values {
+    if let Some(var_1) = &input.default_values {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DefaultValues").start_object();
-        crate::protocol_serde::shape_date_time_default_values::ser_date_time_default_values(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("DefaultValues").start_object();
+        crate::protocol_serde::shape_date_time_default_values::ser_date_time_default_values(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.time_granularity {
-        object.key("TimeGranularity").string(var_4.as_str());
+    if let Some(var_3) = &input.time_granularity {
+        object.key("TimeGranularity").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.value_when_unset {
+    if let Some(var_4) = &input.value_when_unset {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ValueWhenUnset").start_object();
-        crate::protocol_serde::shape_date_time_value_when_unset_configuration::ser_date_time_value_when_unset_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("ValueWhenUnset").start_object();
+        crate::protocol_serde::shape_date_time_value_when_unset_configuration::ser_date_time_value_when_unset_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.mapped_data_set_parameters {
-        let mut array_8 = object.key("MappedDataSetParameters").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.mapped_data_set_parameters {
+        let mut array_7 = object.key("MappedDataSetParameters").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_mapped_data_set_parameter::ser_mapped_data_set_parameter(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_mapped_data_set_parameter::ser_mapped_data_set_parameter(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
     Ok(())
 }
@@ -92,7 +92,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::date_time_parameter_declaration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

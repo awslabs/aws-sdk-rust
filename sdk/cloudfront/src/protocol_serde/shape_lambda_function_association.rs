@@ -2,25 +2,26 @@
 pub fn ser_lambda_function_association(
     input: &crate::types::LambdaFunctionAssociation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.lambda_function_arn {
+    {
         let mut inner_writer = scope.start_el("LambdaFunctionARN").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.lambda_function_arn.as_str());
     }
-    if let Some(var_2) = &input.event_type {
+    {
         let mut inner_writer = scope.start_el("EventType").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.event_type.as_str());
     }
-    if let Some(var_3) = &input.include_body {
+    if let Some(var_1) = &input.include_body {
         let mut inner_writer = scope.start_el("IncludeBody").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_lambda_function_association(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LambdaFunctionAssociation, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -29,7 +30,7 @@ pub fn de_lambda_function_association(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LambdaFunctionARN") /* LambdaFunctionARN com.amazonaws.cloudfront#LambdaFunctionAssociation$LambdaFunctionARN */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -38,11 +39,11 @@ pub fn de_lambda_function_association(
                         ?
                     )
                 ;
-                builder = builder.set_lambda_function_arn(var_4);
+                builder = builder.set_lambda_function_arn(var_2);
             }
             ,
             s if s.matches("EventType") /* EventType com.amazonaws.cloudfront#LambdaFunctionAssociation$EventType */ =>  {
-                let var_5 =
+                let var_3 =
                     Some(
                         Result::<crate::types::EventType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::EventType::from(
@@ -52,11 +53,11 @@ pub fn de_lambda_function_association(
                         ?
                     )
                 ;
-                builder = builder.set_event_type(var_5);
+                builder = builder.set_event_type(var_3);
             }
             ,
             s if s.matches("IncludeBody") /* IncludeBody com.amazonaws.cloudfront#LambdaFunctionAssociation$IncludeBody */ =>  {
-                let var_6 =
+                let var_4 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -67,11 +68,13 @@ pub fn de_lambda_function_association(
                         ?
                     )
                 ;
-                builder = builder.set_include_body(var_6);
+                builder = builder.set_include_body(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::lambda_function_association_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

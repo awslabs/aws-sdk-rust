@@ -34,6 +34,7 @@ pub struct AcceptInvitationInputBuilder {
 }
 impl AcceptInvitationInputBuilder {
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// This field is required.
     pub fn master_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AcceptInvitationInputBuilder {
         &self.master_id
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// This field is required.
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl AcceptInvitationInputBuilder {
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_invitation::AcceptInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::accept_invitation::AcceptInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_invitation::AcceptInvitationInput {
             master_id: self.master_id,
             invitation_id: self.invitation_id,

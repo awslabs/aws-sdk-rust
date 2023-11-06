@@ -13,16 +13,22 @@ pub struct AwsElbLoadBalancerPolicies {
 }
 impl AwsElbLoadBalancerPolicies {
     /// <p>The stickiness policies that are created using <code>CreateAppCookieStickinessPolicy</code>.</p>
-    pub fn app_cookie_stickiness_policies(&self) -> ::std::option::Option<&[crate::types::AwsElbAppCookieStickinessPolicy]> {
-        self.app_cookie_stickiness_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_cookie_stickiness_policies.is_none()`.
+    pub fn app_cookie_stickiness_policies(&self) -> &[crate::types::AwsElbAppCookieStickinessPolicy] {
+        self.app_cookie_stickiness_policies.as_deref().unwrap_or_default()
     }
     /// <p>The stickiness policies that are created using <code>CreateLBCookieStickinessPolicy</code>.</p>
-    pub fn lb_cookie_stickiness_policies(&self) -> ::std::option::Option<&[crate::types::AwsElbLbCookieStickinessPolicy]> {
-        self.lb_cookie_stickiness_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lb_cookie_stickiness_policies.is_none()`.
+    pub fn lb_cookie_stickiness_policies(&self) -> &[crate::types::AwsElbLbCookieStickinessPolicy] {
+        self.lb_cookie_stickiness_policies.as_deref().unwrap_or_default()
     }
     /// <p>The policies other than the stickiness policies.</p>
-    pub fn other_policies(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.other_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.other_policies.is_none()`.
+    pub fn other_policies(&self) -> &[::std::string::String] {
+        self.other_policies.as_deref().unwrap_or_default()
     }
 }
 impl AwsElbLoadBalancerPolicies {

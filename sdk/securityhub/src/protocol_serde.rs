@@ -895,7 +895,7 @@ pub(crate) mod shape_aws_ec2_network_acl_entry;
 
 pub(crate) mod shape_aws_ec2_network_interface_attachment;
 
-pub(crate) mod shape_aws_ec2_network_interface_ip_v6_address_detail;
+pub(crate) mod shape_aws_ec2_network_interface_ipv6_address_detail;
 
 pub(crate) mod shape_aws_ec2_network_interface_private_ip_address_detail;
 
@@ -1543,13 +1543,13 @@ pub(crate) mod shape_aws_ec2_launch_template_data_instance_market_options_spot_o
 
 pub(crate) mod shape_aws_ec2_launch_template_data_instance_requirements_accelerator_count_details;
 
-pub(crate) mod shape_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details;
+pub(crate) mod shape_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mib_details;
 
 pub(crate) mod shape_aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details;
 
-pub(crate) mod shape_aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details;
+pub(crate) mod shape_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details;
 
-pub(crate) mod shape_aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details;
+pub(crate) mod shape_aws_ec2_launch_template_data_instance_requirements_memory_mib_details;
 
 pub(crate) mod shape_aws_ec2_launch_template_data_instance_requirements_network_interface_count_details;
 
@@ -1569,7 +1569,7 @@ pub(crate) mod shape_aws_ec2_network_acl_association_list;
 
 pub(crate) mod shape_aws_ec2_network_acl_entry_list;
 
-pub(crate) mod shape_aws_ec2_network_interface_ip_v6_address_list;
+pub(crate) mod shape_aws_ec2_network_interface_ipv6_address_list;
 
 pub(crate) mod shape_aws_ec2_network_interface_private_ip_address_list;
 

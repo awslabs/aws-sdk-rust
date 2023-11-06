@@ -2,7 +2,7 @@
 pub fn ser_serializer(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Serializer,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parquet_ser_de {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ParquetSerDe").start_object();

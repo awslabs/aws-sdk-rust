@@ -41,6 +41,7 @@ pub struct CreateGroupProfileInputBuilder {
 }
 impl CreateGroupProfileInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which the group profile is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateGroupProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the group for which the group profile is created.</p>
+    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,8 @@ impl CreateGroupProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateGroupProfileInput`](crate::operation::create_group_profile::CreateGroupProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_group_profile::CreateGroupProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_group_profile::CreateGroupProfileInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_group_profile::CreateGroupProfileInput {
             domain_identifier: self.domain_identifier,
             group_identifier: self.group_identifier,

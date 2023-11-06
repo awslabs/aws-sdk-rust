@@ -7,13 +7,13 @@ pub struct FlowDefinition {
     /// <p>A description of the flow you want to create.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
-    pub flow_name: ::std::option::Option<::std::string::String>,
+    pub flow_name: ::std::string::String,
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
-    pub kms_arn: ::std::option::Option<::std::string::String>,
+    pub kms_arn: ::std::string::String,
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
     /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
-    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
+    pub tasks: ::std::vec::Vec<crate::types::Task>,
     /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
 }
@@ -23,20 +23,23 @@ impl FlowDefinition {
         self.description.as_deref()
     }
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
-    pub fn flow_name(&self) -> ::std::option::Option<&str> {
-        self.flow_name.as_deref()
+    pub fn flow_name(&self) -> &str {
+        use std::ops::Deref;
+        self.flow_name.deref()
     }
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
-    pub fn kms_arn(&self) -> ::std::option::Option<&str> {
-        self.kms_arn.as_deref()
+    pub fn kms_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.kms_arn.deref()
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn source_flow_config(&self) -> ::std::option::Option<&crate::types::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
     /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::Task]> {
-        self.tasks.as_deref()
+    pub fn tasks(&self) -> &[crate::types::Task] {
+        use std::ops::Deref;
+        self.tasks.deref()
     }
     /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub fn trigger_config(&self) -> ::std::option::Option<&crate::types::TriggerConfig> {
@@ -89,6 +92,7 @@ impl FlowDefinitionBuilder {
         &self.description
     }
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
+    /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +107,7 @@ impl FlowDefinitionBuilder {
         &self.flow_name
     }
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
+    /// This field is required.
     pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_arn = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +122,7 @@ impl FlowDefinitionBuilder {
         &self.kms_arn
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
+    /// This field is required.
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
         self.source_flow_config = ::std::option::Option::Some(input);
         self
@@ -151,6 +157,7 @@ impl FlowDefinitionBuilder {
         &self.tasks
     }
     /// <p>The trigger settings that determine how and when the flow runs.</p>
+    /// This field is required.
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
         self.trigger_config = ::std::option::Option::Some(input);
         self
@@ -165,15 +172,34 @@ impl FlowDefinitionBuilder {
         &self.trigger_config
     }
     /// Consumes the builder and constructs a [`FlowDefinition`](crate::types::FlowDefinition).
-    pub fn build(self) -> crate::types::FlowDefinition {
-        crate::types::FlowDefinition {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`flow_name`](crate::types::builders::FlowDefinitionBuilder::flow_name)
+    /// - [`kms_arn`](crate::types::builders::FlowDefinitionBuilder::kms_arn)
+    /// - [`tasks`](crate::types::builders::FlowDefinitionBuilder::tasks)
+    pub fn build(self) -> ::std::result::Result<crate::types::FlowDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FlowDefinition {
             description: self.description,
-            flow_name: self.flow_name,
-            kms_arn: self.kms_arn,
+            flow_name: self.flow_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "flow_name",
+                    "flow_name was not specified but it is required when building FlowDefinition",
+                )
+            })?,
+            kms_arn: self.kms_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "kms_arn",
+                    "kms_arn was not specified but it is required when building FlowDefinition",
+                )
+            })?,
             source_flow_config: self.source_flow_config,
-            tasks: self.tasks,
+            tasks: self.tasks.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tasks",
+                    "tasks was not specified but it is required when building FlowDefinition",
+                )
+            })?,
             trigger_config: self.trigger_config,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for FlowDefinitionBuilder {

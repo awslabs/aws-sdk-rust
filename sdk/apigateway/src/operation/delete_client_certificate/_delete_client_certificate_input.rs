@@ -28,6 +28,7 @@ pub struct DeleteClientCertificateInputBuilder {
 }
 impl DeleteClientCertificateInputBuilder {
     /// <p>The identifier of the ClientCertificate resource to be deleted.</p>
+    /// This field is required.
     pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteClientCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_client_certificate::DeleteClientCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_client_certificate::DeleteClientCertificateInput {
             client_certificate_id: self.client_certificate_id,

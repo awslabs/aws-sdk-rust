@@ -48,6 +48,7 @@ pub struct DescribeDashboardInputBuilder {
 }
 impl DescribeDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeDashboardInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl DescribeDashboardInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_dashboard::DescribeDashboardInput {
             aws_account_id: self.aws_account_id,
             dashboard_id: self.dashboard_id,

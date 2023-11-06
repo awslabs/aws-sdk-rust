@@ -48,6 +48,7 @@ pub struct UpdateTeamMemberInputBuilder {
 }
 impl UpdateTeamMemberInputBuilder {
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateTeamMemberInputBuilder {
         &self.project_id
     }
     /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl UpdateTeamMemberInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTeamMemberInput`](crate::operation::update_team_member::UpdateTeamMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_team_member::UpdateTeamMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_team_member::UpdateTeamMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_team_member::UpdateTeamMemberInput {
             project_id: self.project_id,
             user_arn: self.user_arn,

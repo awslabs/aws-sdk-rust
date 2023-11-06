@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketRepository {
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
     pub details: ::std::option::Option<crate::types::S3RepositoryDetails>,
 }
 impl S3BucketRepository {
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
     pub fn details(&self) -> ::std::option::Option<&crate::types::S3RepositoryDetails> {
@@ -35,6 +36,7 @@ pub struct S3BucketRepositoryBuilder {
 }
 impl S3BucketRepositoryBuilder {
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl S3BucketRepositoryBuilder {
         &self.details
     }
     /// Consumes the builder and constructs a [`S3BucketRepository`](crate::types::S3BucketRepository).
-    pub fn build(self) -> crate::types::S3BucketRepository {
-        crate::types::S3BucketRepository {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::S3BucketRepositoryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketRepository, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3BucketRepository {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building S3BucketRepository",
+                )
+            })?,
             details: self.details,
-        }
+        })
     }
 }

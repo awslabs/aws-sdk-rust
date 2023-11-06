@@ -12,12 +12,16 @@ pub struct TargetedSentimentEntity {
 }
 impl TargetedSentimentEntity {
     /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
-    pub fn descriptive_mention_index(&self) -> ::std::option::Option<&[i32]> {
-        self.descriptive_mention_index.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.descriptive_mention_index.is_none()`.
+    pub fn descriptive_mention_index(&self) -> &[i32] {
+        self.descriptive_mention_index.as_deref().unwrap_or_default()
     }
     /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
-    pub fn mentions(&self) -> ::std::option::Option<&[crate::types::TargetedSentimentMention]> {
-        self.mentions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mentions.is_none()`.
+    pub fn mentions(&self) -> &[crate::types::TargetedSentimentMention] {
+        self.mentions.as_deref().unwrap_or_default()
     }
 }
 impl TargetedSentimentEntity {

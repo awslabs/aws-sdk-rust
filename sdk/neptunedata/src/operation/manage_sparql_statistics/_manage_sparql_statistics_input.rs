@@ -43,8 +43,10 @@ impl ManageSparqlStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`ManageSparqlStatisticsInput`](crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput { mode: self.mode })
     }
 }

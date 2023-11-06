@@ -11,12 +11,16 @@ pub struct DeleteParametersOutput {
 }
 impl DeleteParametersOutput {
     /// <p>The names of the deleted parameters.</p>
-    pub fn deleted_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deleted_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deleted_parameters.is_none()`.
+    pub fn deleted_parameters(&self) -> &[::std::string::String] {
+        self.deleted_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
-    pub fn invalid_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.invalid_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_parameters.is_none()`.
+    pub fn invalid_parameters(&self) -> &[::std::string::String] {
+        self.invalid_parameters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteParametersOutput {

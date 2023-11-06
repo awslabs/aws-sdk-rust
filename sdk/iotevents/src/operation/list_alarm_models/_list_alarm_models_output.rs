@@ -11,8 +11,10 @@ pub struct ListAlarmModelsOutput {
 }
 impl ListAlarmModelsOutput {
     /// <p>A list that summarizes each alarm model.</p>
-    pub fn alarm_model_summaries(&self) -> ::std::option::Option<&[crate::types::AlarmModelSummary]> {
-        self.alarm_model_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_model_summaries.is_none()`.
+    pub fn alarm_model_summaries(&self) -> &[crate::types::AlarmModelSummary] {
+        self.alarm_model_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

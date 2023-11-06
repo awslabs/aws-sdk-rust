@@ -21,8 +21,10 @@ impl UpsertRedshiftTargetOptions {
         self.connection_name.as_deref()
     }
     /// <p>The keys used to determine whether to perform an update or insert.</p>
-    pub fn upsert_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.upsert_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upsert_keys.is_none()`.
+    pub fn upsert_keys(&self) -> &[::std::string::String] {
+        self.upsert_keys.as_deref().unwrap_or_default()
     }
 }
 impl UpsertRedshiftTargetOptions {

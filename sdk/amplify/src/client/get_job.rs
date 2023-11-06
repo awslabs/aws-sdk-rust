@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJob`](crate::operation::get_job::builders::GetJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_app_id): <p> The unique ID for an Amplify app. </p>
-    ///   - [`branch_name(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_branch_name): <p> The branch name for the job. </p>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_id): <p> The unique ID for the job. </p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_app_id):<br>required: **true**<br><p> The unique ID for an Amplify app. </p><br>
+    ///   - [`branch_name(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_branch_name):<br>required: **true**<br><p> The branch name for the job. </p><br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_id):<br>required: **true**<br><p> The unique ID for the job. </p><br>
     /// - On success, responds with [`GetJobOutput`](crate::operation::get_job::GetJobOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::get_job::GetJobOutput::job): <p> Describes an execution job for an Amplify app. </p>
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::operation::get_job::GetJobError)

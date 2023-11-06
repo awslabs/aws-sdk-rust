@@ -9,8 +9,10 @@ pub struct GetApplicationComponentStrategiesOutput {
 }
 impl GetApplicationComponentStrategiesOutput {
     /// <p> A list of application component strategy recommendations. </p>
-    pub fn application_component_strategies(&self) -> ::std::option::Option<&[crate::types::ApplicationComponentStrategy]> {
-        self.application_component_strategies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_component_strategies.is_none()`.
+    pub fn application_component_strategies(&self) -> &[crate::types::ApplicationComponentStrategy] {
+        self.application_component_strategies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetApplicationComponentStrategiesOutput {

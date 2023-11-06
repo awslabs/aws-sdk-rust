@@ -34,6 +34,7 @@ pub struct DescribeFargateProfileInputBuilder {
 }
 impl DescribeFargateProfileInputBuilder {
     /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFargateProfileInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the Fargate profile to describe.</p>
+    /// This field is required.
     pub fn fargate_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fargate_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -64,8 +66,10 @@ impl DescribeFargateProfileInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFargateProfileInput`](crate::operation::describe_fargate_profile::DescribeFargateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fargate_profile::DescribeFargateProfileInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_fargate_profile::DescribeFargateProfileInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_fargate_profile::DescribeFargateProfileInput {
             cluster_name: self.cluster_name,
             fargate_profile_name: self.fargate_profile_name,

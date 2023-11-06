@@ -68,6 +68,7 @@ impl DescribeCopyProductStatusInputBuilder {
         &self.accept_language
     }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
+    /// This field is required.
     pub fn copy_product_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.copy_product_token = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl DescribeCopyProductStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput {
             accept_language: self.accept_language,

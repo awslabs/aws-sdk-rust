@@ -27,6 +27,7 @@ pub struct GetReviewTemplateInputBuilder {
 }
 impl GetReviewTemplateInputBuilder {
     /// <p>The review template ARN.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetReviewTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetReviewTemplateInput`](crate::operation::get_review_template::GetReviewTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_review_template::GetReviewTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_review_template::GetReviewTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_review_template::GetReviewTemplateInput {
             template_arn: self.template_arn,
         })

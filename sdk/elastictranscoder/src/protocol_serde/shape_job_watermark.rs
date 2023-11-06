@@ -2,7 +2,7 @@
 pub fn ser_job_watermark(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobWatermark,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.preset_watermark_id {
         object.key("PresetWatermarkId").string(var_1.as_str());
     }

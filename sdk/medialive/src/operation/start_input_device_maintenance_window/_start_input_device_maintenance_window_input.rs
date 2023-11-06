@@ -28,6 +28,7 @@ pub struct StartInputDeviceMaintenanceWindowInputBuilder {
 }
 impl StartInputDeviceMaintenanceWindowInputBuilder {
     /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+    /// This field is required.
     pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl StartInputDeviceMaintenanceWindowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowInput {

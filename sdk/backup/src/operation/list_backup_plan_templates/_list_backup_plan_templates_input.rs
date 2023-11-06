@@ -66,7 +66,7 @@ impl ListBackupPlanTemplatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesInput {
             next_token: self.next_token,

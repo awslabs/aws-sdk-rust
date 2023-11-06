@@ -3,16 +3,16 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFleet`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet(impl Into<String>)`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`fleet(impl Into<String>)`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder::set_fleet):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the fleet.</p><br>
     /// - On success, responds with [`DescribeFleetOutput`](crate::operation::describe_fleet::DescribeFleetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_fleet::DescribeFleetOutput::name): <p>The name of the fleet.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_fleet::DescribeFleetOutput::arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    ///   - [`robots(Option<Vec<Robot>>)`](crate::operation::describe_fleet::DescribeFleetOutput::robots): <p>A list of robots.</p>
+    ///   - [`robots(Option<Vec::<Robot>>)`](crate::operation::describe_fleet::DescribeFleetOutput::robots): <p>A list of robots.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_fleet::DescribeFleetOutput::created_at): <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
     ///   - [`last_deployment_status(Option<DeploymentStatus>)`](crate::operation::describe_fleet::DescribeFleetOutput::last_deployment_status): <p>The status of the last deployment.</p>
     ///   - [`last_deployment_job(Option<String>)`](crate::operation::describe_fleet::DescribeFleetOutput::last_deployment_job): <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     ///   - [`last_deployment_time(Option<DateTime>)`](crate::operation::describe_fleet::DescribeFleetOutput::last_deployment_time): <p>The time of the last deployment.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_fleet::DescribeFleetOutput::tags): <p>The list of all tags added to the specified fleet.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_fleet::DescribeFleetOutput::tags): <p>The list of all tags added to the specified fleet.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetError>`](crate::operation::describe_fleet::DescribeFleetError)
     #[deprecated(
         note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."

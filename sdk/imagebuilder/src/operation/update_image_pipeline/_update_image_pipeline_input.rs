@@ -104,6 +104,7 @@ pub struct UpdateImagePipelineInputBuilder {
 }
 impl UpdateImagePipelineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
+    /// This field is required.
     pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +161,7 @@ impl UpdateImagePipelineInputBuilder {
         &self.container_recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
+    /// This field is required.
     pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -244,6 +246,7 @@ impl UpdateImagePipelineInputBuilder {
         &self.status
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -274,7 +277,7 @@ impl UpdateImagePipelineInputBuilder {
     /// Consumes the builder and constructs a [`UpdateImagePipelineInput`](crate::operation::update_image_pipeline::UpdateImagePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_image_pipeline::UpdateImagePipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_image_pipeline::UpdateImagePipelineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_image_pipeline::UpdateImagePipelineInput {
             image_pipeline_arn: self.image_pipeline_arn,

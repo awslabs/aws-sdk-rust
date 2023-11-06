@@ -11,12 +11,16 @@ pub struct EbsVolumeDetails {
 }
 impl EbsVolumeDetails {
     /// <p>List of EBS volumes that were scanned.</p>
-    pub fn scanned_volume_details(&self) -> ::std::option::Option<&[crate::types::VolumeDetail]> {
-        self.scanned_volume_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scanned_volume_details.is_none()`.
+    pub fn scanned_volume_details(&self) -> &[crate::types::VolumeDetail] {
+        self.scanned_volume_details.as_deref().unwrap_or_default()
     }
     /// <p>List of EBS volumes that were skipped from the malware scan.</p>
-    pub fn skipped_volume_details(&self) -> ::std::option::Option<&[crate::types::VolumeDetail]> {
-        self.skipped_volume_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.skipped_volume_details.is_none()`.
+    pub fn skipped_volume_details(&self) -> &[crate::types::VolumeDetail] {
+        self.skipped_volume_details.as_deref().unwrap_or_default()
     }
 }
 impl EbsVolumeDetails {

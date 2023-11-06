@@ -89,6 +89,7 @@ impl PredefinedMetricSpecificationBuilder {
     /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
     /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn predefined_metric_type(mut self, input: crate::types::MetricType) -> Self {
         self.predefined_metric_type = ::std::option::Option::Some(input);
         self

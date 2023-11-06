@@ -9,8 +9,10 @@ pub struct GetBucketAccessKeysOutput {
 }
 impl GetBucketAccessKeysOutput {
     /// <p>An object that describes the access keys for the specified bucket.</p>
-    pub fn access_keys(&self) -> ::std::option::Option<&[crate::types::AccessKey]> {
-        self.access_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_keys.is_none()`.
+    pub fn access_keys(&self) -> &[crate::types::AccessKey] {
+        self.access_keys.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBucketAccessKeysOutput {

@@ -41,8 +41,10 @@ impl LoadBalancerAttributes {
         self.connection_settings.as_ref()
     }
     /// <p>Any additional attributes.</p>
-    pub fn additional_attributes(&self) -> ::std::option::Option<&[crate::types::AdditionalAttribute]> {
-        self.additional_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attributes.is_none()`.
+    pub fn additional_attributes(&self) -> &[crate::types::AdditionalAttribute] {
+        self.additional_attributes.as_deref().unwrap_or_default()
     }
 }
 impl LoadBalancerAttributes {

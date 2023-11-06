@@ -37,6 +37,7 @@ pub struct DeleteEmailIdentityPolicyInputBuilder {
 }
 impl DeleteEmailIdentityPolicyInputBuilder {
     /// <p>The email identity.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
@@ -52,6 +53,7 @@ impl DeleteEmailIdentityPolicyInputBuilder {
     }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +74,7 @@ impl DeleteEmailIdentityPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyInput {
             email_identity: self.email_identity,

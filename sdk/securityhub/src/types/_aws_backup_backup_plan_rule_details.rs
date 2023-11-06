@@ -54,8 +54,10 @@ impl AwsBackupBackupPlanRuleDetails {
         self.completion_window_minutes
     }
     /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
-    pub fn copy_actions(&self) -> ::std::option::Option<&[crate::types::AwsBackupBackupPlanRuleCopyActionsDetails]> {
-        self.copy_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.copy_actions.is_none()`.
+    pub fn copy_actions(&self) -> &[crate::types::AwsBackupBackupPlanRuleCopyActionsDetails] {
+        self.copy_actions.as_deref().unwrap_or_default()
     }
     /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>

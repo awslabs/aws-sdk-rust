@@ -77,8 +77,10 @@ impl UpdateResponsePlanInput {
         self.incident_template_dedupe_string.as_deref()
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn incident_template_notification_targets(&self) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
-        self.incident_template_notification_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.incident_template_notification_targets.is_none()`.
+    pub fn incident_template_notification_targets(&self) -> &[crate::types::NotificationTargetItem] {
+        self.incident_template_notification_targets.as_deref().unwrap_or_default()
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
@@ -86,20 +88,26 @@ impl UpdateResponsePlanInput {
         self.chat_channel.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn engagements(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.engagements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engagements.is_none()`.
+    pub fn engagements(&self) -> &[::std::string::String] {
+        self.engagements.as_deref().unwrap_or_default()
     }
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
     pub fn incident_template_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.incident_template_tags.as_ref()
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn integrations(&self) -> ::std::option::Option<&[crate::types::Integration]> {
-        self.integrations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integrations.is_none()`.
+    pub fn integrations(&self) -> &[crate::types::Integration] {
+        self.integrations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateResponsePlanInput {
@@ -143,6 +151,7 @@ impl UpdateResponsePlanInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -380,7 +389,8 @@ impl UpdateResponsePlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResponsePlanInput`](crate::operation::update_response_plan::UpdateResponsePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_response_plan::UpdateResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_response_plan::UpdateResponsePlanInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_response_plan::UpdateResponsePlanInput {
             client_token: self.client_token,
             arn: self.arn,

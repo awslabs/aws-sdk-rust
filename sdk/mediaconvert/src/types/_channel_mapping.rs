@@ -9,8 +9,10 @@ pub struct ChannelMapping {
 }
 impl ChannelMapping {
     /// In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
-    pub fn output_channels(&self) -> ::std::option::Option<&[crate::types::OutputChannelMapping]> {
-        self.output_channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_channels.is_none()`.
+    pub fn output_channels(&self) -> &[crate::types::OutputChannelMapping] {
+        self.output_channels.as_deref().unwrap_or_default()
     }
 }
 impl ChannelMapping {

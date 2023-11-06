@@ -32,8 +32,10 @@ impl CreateDatastoreInput {
         self.retention_period.as_ref()
     }
     /// <p>Metadata which can be used to manage the data store.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
@@ -66,6 +68,7 @@ pub struct CreateDatastoreInputBuilder {
 }
 impl CreateDatastoreInputBuilder {
     /// <p>The name of the data store.</p>
+    /// This field is required.
     pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self
@@ -164,7 +167,7 @@ impl CreateDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatastoreInput`](crate::operation::create_datastore::CreateDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_datastore::CreateDatastoreInput {
             datastore_name: self.datastore_name,
             datastore_storage: self.datastore_storage,

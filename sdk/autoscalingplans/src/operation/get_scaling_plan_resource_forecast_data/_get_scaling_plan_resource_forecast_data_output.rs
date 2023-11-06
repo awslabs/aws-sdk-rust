@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataOutput {
     /// <p>The data points to return.</p>
-    pub datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
+    pub datapoints: ::std::vec::Vec<crate::types::Datapoint>,
     _request_id: Option<String>,
 }
 impl GetScalingPlanResourceForecastDataOutput {
     /// <p>The data points to return.</p>
-    pub fn datapoints(&self) -> ::std::option::Option<&[crate::types::Datapoint]> {
-        self.datapoints.as_deref()
+    pub fn datapoints(&self) -> &[crate::types::Datapoint] {
+        use std::ops::Deref;
+        self.datapoints.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetScalingPlanResourceForecastDataOutput {
@@ -63,10 +64,24 @@ impl GetScalingPlanResourceForecastDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput).
-    pub fn build(self) -> crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput {
-        crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput {
-            datapoints: self.datapoints,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datapoints`](crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataOutputBuilder::datapoints)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput {
+                datapoints: self.datapoints.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "datapoints",
+                        "datapoints was not specified but it is required when building GetScalingPlanResourceForecastDataOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

@@ -80,6 +80,7 @@ pub struct ResourceBuilder {
 impl ResourceBuilder {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl ResourceBuilder {
         &self.r#type
     }
     /// <p>The canonical identifier for the given resource type.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

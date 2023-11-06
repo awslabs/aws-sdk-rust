@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
-    pub file_name: ::std::option::Option<::std::string::String>,
+    pub file_name: ::std::string::String,
 }
 impl OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
-        self.file_name.as_deref()
+    pub fn file_name(&self) -> &str {
+        use std::ops::Deref;
+        self.file_name.deref()
     }
 }
 impl OutputFileUriValue {
@@ -28,6 +29,7 @@ pub struct OutputFileUriValueBuilder {
 }
 impl OutputFileUriValueBuilder {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
+    /// This field is required.
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl OutputFileUriValueBuilder {
         &self.file_name
     }
     /// Consumes the builder and constructs a [`OutputFileUriValue`](crate::types::OutputFileUriValue).
-    pub fn build(self) -> crate::types::OutputFileUriValue {
-        crate::types::OutputFileUriValue { file_name: self.file_name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_name`](crate::types::builders::OutputFileUriValueBuilder::file_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputFileUriValue, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutputFileUriValue {
+            file_name: self.file_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_name",
+                    "file_name was not specified but it is required when building OutputFileUriValue",
+                )
+            })?,
+        })
     }
 }

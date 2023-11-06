@@ -43,6 +43,7 @@ pub struct DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
 }
 impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
         &self.service_code
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
+    /// This field is required.
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +73,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
         &self.quota_code
     }
     /// <p>Specifies the Amazon Web Services Region for which the request was made.</p>
+    /// This field is required.
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +92,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput {

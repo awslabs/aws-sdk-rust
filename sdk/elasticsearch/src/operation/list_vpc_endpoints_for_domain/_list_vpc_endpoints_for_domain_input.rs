@@ -35,6 +35,7 @@ pub struct ListVpcEndpointsForDomainInputBuilder {
 }
 impl ListVpcEndpointsForDomainInputBuilder {
     /// <p>Name of the ElasticSearch domain whose VPC endpoints are to be listed.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl ListVpcEndpointsForDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput {
             domain_name: self.domain_name,

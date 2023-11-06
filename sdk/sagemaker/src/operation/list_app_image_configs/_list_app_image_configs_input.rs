@@ -211,7 +211,7 @@ impl ListAppImageConfigsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppImageConfigsInput`](crate::operation::list_app_image_configs::ListAppImageConfigsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_image_configs::ListAppImageConfigsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_app_image_configs::ListAppImageConfigsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_app_image_configs::ListAppImageConfigsInput {
             max_results: self.max_results,

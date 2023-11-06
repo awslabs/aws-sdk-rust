@@ -28,6 +28,7 @@ pub struct DefaultGridLayoutConfigurationBuilder {
 }
 impl DefaultGridLayoutConfigurationBuilder {
     /// <p>Determines the screen canvas size options for a grid layout.</p>
+    /// This field is required.
     pub fn canvas_size_options(mut self, input: crate::types::GridLayoutCanvasSizeOptions) -> Self {
         self.canvas_size_options = ::std::option::Option::Some(input);
         self

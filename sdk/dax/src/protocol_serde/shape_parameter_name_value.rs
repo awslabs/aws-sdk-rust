@@ -2,7 +2,7 @@
 pub fn ser_parameter_name_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParameterNameValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parameter_name {
         object.key("ParameterName").string(var_1.as_str());
     }

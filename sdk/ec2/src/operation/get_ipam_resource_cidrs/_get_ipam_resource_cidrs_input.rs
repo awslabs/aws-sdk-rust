@@ -30,8 +30,10 @@ impl GetIpamResourceCidrsInput {
         self.dry_run
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in the request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -152,6 +154,7 @@ impl GetIpamResourceCidrsInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the scope that the resource is in.</p>
+    /// This field is required.
     pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
@@ -238,7 +241,7 @@ impl GetIpamResourceCidrsInputBuilder {
     /// Consumes the builder and constructs a [`GetIpamResourceCidrsInput`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput {
             dry_run: self.dry_run,

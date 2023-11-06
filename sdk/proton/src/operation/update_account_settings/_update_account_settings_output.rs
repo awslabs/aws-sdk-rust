@@ -34,6 +34,7 @@ pub struct UpdateAccountSettingsOutputBuilder {
 }
 impl UpdateAccountSettingsOutputBuilder {
     /// <p>The Proton pipeline service role and repository data shared across the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn account_settings(mut self, input: crate::types::AccountSettings) -> Self {
         self.account_settings = ::std::option::Option::Some(input);
         self

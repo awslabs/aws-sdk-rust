@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPipelineState`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::set_name): <p>The name of the pipeline about which you want to get information.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::set_name):<br>required: **true**<br><p>The name of the pipeline about which you want to get information.</p><br>
     /// - On success, responds with [`GetPipelineStateOutput`](crate::operation::get_pipeline_state::GetPipelineStateOutput) with field(s):
     ///   - [`pipeline_name(Option<String>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::pipeline_name): <p>The name of the pipeline for which you want to get the state.</p>
     ///   - [`pipeline_version(Option<i32>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::pipeline_version): <p>The version number of the pipeline.</p> <note>   <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>  </note>
-    ///   - [`stage_states(Option<Vec<StageState>>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::stage_states): <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
+    ///   - [`stage_states(Option<Vec::<StageState>>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::stage_states): <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
     ///   - [`created(Option<DateTime>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::created): <p>The date and time the pipeline was created, in timestamp format.</p>
     ///   - [`updated(Option<DateTime>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::updated): <p>The date and time the pipeline was last updated, in timestamp format.</p>
     /// - On failure, responds with [`SdkError<GetPipelineStateError>`](crate::operation::get_pipeline_state::GetPipelineStateError)

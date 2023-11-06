@@ -2,9 +2,9 @@
 pub fn ser_custom_vocabulary_entry_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomVocabularyEntryId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.item_id {
-        object.key("itemId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("itemId").string(input.item_id.as_str());
     }
     Ok(())
 }

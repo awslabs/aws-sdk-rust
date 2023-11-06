@@ -3,7 +3,7 @@
 pub fn ser_http_request_method_condition_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::HttpRequestMethodConditionConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Values");
     if let Some(var_2) = &input.values {
@@ -18,6 +18,7 @@ pub fn ser_http_request_method_condition_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_http_request_method_condition_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::HttpRequestMethodConditionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

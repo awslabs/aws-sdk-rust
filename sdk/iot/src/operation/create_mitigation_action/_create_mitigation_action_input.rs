@@ -26,8 +26,10 @@ impl CreateMitigationActionInput {
         self.action_params.as_ref()
     }
     /// <p>Metadata that can be used to manage the mitigation action.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateMitigationActionInput {
@@ -48,6 +50,7 @@ pub struct CreateMitigationActionInputBuilder {
 }
 impl CreateMitigationActionInputBuilder {
     /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateMitigationActionInputBuilder {
         &self.action_name
     }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateMitigationActionInputBuilder {
         &self.role_arn
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
+    /// This field is required.
     pub fn action_params(mut self, input: crate::types::MitigationActionParams) -> Self {
         self.action_params = ::std::option::Option::Some(input);
         self
@@ -112,8 +117,10 @@ impl CreateMitigationActionInputBuilder {
     /// Consumes the builder and constructs a [`CreateMitigationActionInput`](crate::operation::create_mitigation_action::CreateMitigationActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_mitigation_action::CreateMitigationActionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_mitigation_action::CreateMitigationActionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_mitigation_action::CreateMitigationActionInput {
             action_name: self.action_name,
             role_arn: self.role_arn,

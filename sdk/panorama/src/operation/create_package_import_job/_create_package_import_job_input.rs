@@ -32,8 +32,10 @@ impl CreatePackageImportJobInput {
         self.client_token.as_deref()
     }
     /// <p>Tags for the package import job.</p>
-    pub fn job_tags(&self) -> ::std::option::Option<&[crate::types::JobResourceTags]> {
-        self.job_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_tags.is_none()`.
+    pub fn job_tags(&self) -> &[crate::types::JobResourceTags] {
+        self.job_tags.as_deref().unwrap_or_default()
     }
 }
 impl CreatePackageImportJobInput {
@@ -55,6 +57,7 @@ pub struct CreatePackageImportJobInputBuilder {
 }
 impl CreatePackageImportJobInputBuilder {
     /// <p>A job type for the package import job.</p>
+    /// This field is required.
     pub fn job_type(mut self, input: crate::types::PackageImportJobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +72,7 @@ impl CreatePackageImportJobInputBuilder {
         &self.job_type
     }
     /// <p>An input config for the package import job.</p>
+    /// This field is required.
     pub fn input_config(mut self, input: crate::types::PackageImportJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
         self
@@ -83,6 +87,7 @@ impl CreatePackageImportJobInputBuilder {
         &self.input_config
     }
     /// <p>An output config for the package import job.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::PackageImportJobOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -97,6 +102,7 @@ impl CreatePackageImportJobInputBuilder {
         &self.output_config
     }
     /// <p>A client token for the package import job.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -135,7 +141,7 @@ impl CreatePackageImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_package_import_job::CreatePackageImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_package_import_job::CreatePackageImportJobInput {
             job_type: self.job_type,

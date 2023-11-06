@@ -63,16 +63,20 @@ impl CreateWebAclInput {
         self.description.as_deref()
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to manage. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
@@ -93,8 +97,10 @@ impl CreateWebAclInput {
     /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
     /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    pub fn token_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.token_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_domains.is_none()`.
+    pub fn token_domains(&self) -> &[::std::string::String] {
+        self.token_domains.as_deref().unwrap_or_default()
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
     /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes). </p> <note>
@@ -130,6 +136,7 @@ pub struct CreateWebAclInputBuilder {
 }
 impl CreateWebAclInputBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -149,6 +156,7 @@ impl CreateWebAclInputBuilder {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -173,6 +181,7 @@ impl CreateWebAclInputBuilder {
         &self.scope
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
+    /// This field is required.
     pub fn default_action(mut self, input: crate::types::DefaultAction) -> Self {
         self.default_action = ::std::option::Option::Some(input);
         self
@@ -221,6 +230,7 @@ impl CreateWebAclInputBuilder {
         &self.rules
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// This field is required.
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
         self
@@ -365,7 +375,7 @@ impl CreateWebAclInputBuilder {
     /// Consumes the builder and constructs a [`CreateWebAclInput`](crate::operation::create_web_acl::CreateWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_web_acl::CreateWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_web_acl::CreateWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_web_acl::CreateWebAclInput {
             name: self.name,
             scope: self.scope,

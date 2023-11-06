@@ -2,42 +2,42 @@
 pub fn ser_project_environment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProjectEnvironment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.image {
-        object.key("image").string(var_2.as_str());
+    {
+        object.key("image").string(input.image.as_str());
     }
-    if let Some(var_3) = &input.compute_type {
-        object.key("computeType").string(var_3.as_str());
+    {
+        object.key("computeType").string(input.compute_type.as_str());
     }
-    if let Some(var_4) = &input.environment_variables {
-        let mut array_5 = object.key("environmentVariables").start_array();
-        for item_6 in var_4 {
+    if let Some(var_1) = &input.environment_variables {
+        let mut array_2 = object.key("environmentVariables").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_5.finish();
+        array_2.finish();
     }
-    if let Some(var_8) = &input.privileged_mode {
-        object.key("privilegedMode").boolean(*var_8);
+    if let Some(var_5) = &input.privileged_mode {
+        object.key("privilegedMode").boolean(*var_5);
     }
-    if let Some(var_9) = &input.certificate {
-        object.key("certificate").string(var_9.as_str());
+    if let Some(var_6) = &input.certificate {
+        object.key("certificate").string(var_6.as_str());
     }
-    if let Some(var_10) = &input.registry_credential {
+    if let Some(var_7) = &input.registry_credential {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("registryCredential").start_object();
-        crate::protocol_serde::shape_registry_credential::ser_registry_credential(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_8 = object.key("registryCredential").start_object();
+        crate::protocol_serde::shape_registry_credential::ser_registry_credential(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_12) = &input.image_pull_credentials_type {
-        object.key("imagePullCredentialsType").string(var_12.as_str());
+    if let Some(var_9) = &input.image_pull_credentials_type {
+        object.key("imagePullCredentialsType").string(var_9.as_str());
     }
     Ok(())
 }
@@ -113,7 +113,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::project_environment_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelFindingsReportOutput {
     /// <p>The ID of the canceled report.</p>
-    pub report_id: ::std::option::Option<::std::string::String>,
+    pub report_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CancelFindingsReportOutput {
     /// <p>The ID of the canceled report.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
-        self.report_id.as_deref()
+    pub fn report_id(&self) -> &str {
+        use std::ops::Deref;
+        self.report_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelFindingsReportOutput {
@@ -34,6 +35,7 @@ pub struct CancelFindingsReportOutputBuilder {
 }
 impl CancelFindingsReportOutputBuilder {
     /// <p>The ID of the canceled report.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl CancelFindingsReportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelFindingsReportOutput`](crate::operation::cancel_findings_report::CancelFindingsReportOutput).
-    pub fn build(self) -> crate::operation::cancel_findings_report::CancelFindingsReportOutput {
-        crate::operation::cancel_findings_report::CancelFindingsReportOutput {
-            report_id: self.report_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`report_id`](crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder::report_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::cancel_findings_report::CancelFindingsReportOutput {
+            report_id: self.report_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "report_id",
+                    "report_id was not specified but it is required when building CancelFindingsReportOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

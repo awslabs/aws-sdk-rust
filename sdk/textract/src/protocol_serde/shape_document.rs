@@ -2,7 +2,7 @@
 pub fn ser_document(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Document,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bytes {
         object.key("Bytes").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

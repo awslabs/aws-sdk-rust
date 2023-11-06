@@ -27,6 +27,7 @@ pub struct StartCanaryInputBuilder {
 }
 impl StartCanaryInputBuilder {
     /// <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StartCanaryInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartCanaryInput`](crate::operation::start_canary::StartCanaryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_canary::StartCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_canary::StartCanaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_canary::StartCanaryInput { name: self.name })
     }
 }

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p> The name of the S3 bucket.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p> The path of the folder, within the S3 bucket that contains the Dataset.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
 }
 impl S3Location {
     /// <p> The name of the S3 bucket.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p> The path of the folder, within the S3 bucket that contains the Dataset.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
 }
 impl S3Location {
@@ -35,6 +37,7 @@ pub struct S3LocationBuilder {
 }
 impl S3LocationBuilder {
     /// <p> The name of the S3 bucket.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl S3LocationBuilder {
         &self.bucket
     }
     /// <p> The path of the folder, within the S3 bucket that contains the Dataset.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl S3LocationBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
-    pub fn build(self) -> crate::types::S3Location {
-        crate::types::S3Location {
-            bucket: self.bucket,
-            key: self.key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::S3LocationBuilder::bucket)
+    /// - [`key`](crate::types::builders::S3LocationBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Location, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Location {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building S3Location",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building S3Location",
+                )
+            })?,
+        })
     }
 }

@@ -55,6 +55,7 @@ pub struct UpdatePermissionSetInputBuilder {
 }
 impl UpdatePermissionSetInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdatePermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the permission set.</p>
+    /// This field is required.
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +129,7 @@ impl UpdatePermissionSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePermissionSetInput`](crate::operation::update_permission_set::UpdatePermissionSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_permission_set::UpdatePermissionSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_permission_set::UpdatePermissionSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_permission_set::UpdatePermissionSetInput {
             instance_arn: self.instance_arn,

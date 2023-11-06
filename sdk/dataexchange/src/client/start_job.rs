@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartJob`](crate::operation::start_job::builders::StartJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::start_job::builders::StartJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::start_job::builders::StartJobFluentBuilder::set_job_id): <p>The unique identifier for a job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::start_job::builders::StartJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::start_job::builders::StartJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The unique identifier for a job.</p><br>
     /// - On success, responds with [`StartJobOutput`](crate::operation::start_job::StartJobOutput)
     /// - On failure, responds with [`SdkError<StartJobError>`](crate::operation::start_job::StartJobError)
     pub fn start_job(&self) -> crate::operation::start_job::builders::StartJobFluentBuilder {

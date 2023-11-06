@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDevEndpoint`](crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder::set_endpoint_name): <p>The name of the <code>DevEndpoint</code>.</p>
+    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder::set_endpoint_name):<br>required: **true**<br><p>The name of the <code>DevEndpoint</code>.</p><br>
     /// - On success, responds with [`DeleteDevEndpointOutput`](crate::operation::delete_dev_endpoint::DeleteDevEndpointOutput)
     /// - On failure, responds with [`SdkError<DeleteDevEndpointError>`](crate::operation::delete_dev_endpoint::DeleteDevEndpointError)
     pub fn delete_dev_endpoint(&self) -> crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointFluentBuilder {

@@ -42,6 +42,7 @@ pub struct UpdateServiceNetworkInputBuilder {
 }
 impl UpdateServiceNetworkInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// This field is required.
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +61,7 @@ impl UpdateServiceNetworkInputBuilder {
     /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
     /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
@@ -84,7 +86,7 @@ impl UpdateServiceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceNetworkInput`](crate::operation::update_service_network::UpdateServiceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_service_network::UpdateServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_service_network::UpdateServiceNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_network::UpdateServiceNetworkInput {
             service_network_identifier: self.service_network_identifier,

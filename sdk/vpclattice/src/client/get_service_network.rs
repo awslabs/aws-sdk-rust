@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetServiceNetwork`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_network_identifier(impl Into<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::service_network_identifier) / [`set_service_network_identifier(Option<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::set_service_network_identifier): <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    ///   - [`service_network_identifier(impl Into<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::service_network_identifier) / [`set_service_network_identifier(Option<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::set_service_network_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service network.</p><br>
     /// - On success, responds with [`GetServiceNetworkOutput`](crate::operation::get_service_network::GetServiceNetworkOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_service_network::GetServiceNetworkOutput::id): <p>The ID of the service network.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_service_network::GetServiceNetworkOutput::name): <p>The name of the service network.</p>
@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service_network::GetServiceNetworkOutput::last_updated_at): <p>The date and time of the last update, specified in ISO-8601 format.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_service_network::GetServiceNetworkOutput::arn): <p>The Amazon Resource Name (ARN) of the service network.</p>
     ///   - [`auth_type(Option<AuthType>)`](crate::operation::get_service_network::GetServiceNetworkOutput::auth_type): <p>The type of IAM policy.</p>
-    ///   - [`number_of_associated_vp_cs(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_vp_cs): <p>The number of VPCs associated with the service network.</p>
+    ///   - [`number_of_associated_vpcs(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_vpcs): <p>The number of VPCs associated with the service network.</p>
     ///   - [`number_of_associated_services(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_services): <p>The number of services associated with the service network.</p>
     /// - On failure, responds with [`SdkError<GetServiceNetworkError>`](crate::operation::get_service_network::GetServiceNetworkError)
     pub fn get_service_network(&self) -> crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder {

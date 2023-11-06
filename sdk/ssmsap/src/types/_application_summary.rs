@@ -6,6 +6,8 @@
 pub struct ApplicationSummary {
     /// <p>The ID of the application.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the latest discovery.</p>
+    pub discovery_status: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>,
     /// <p>The type of the application.</p>
     pub r#type: ::std::option::Option<crate::types::ApplicationType>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -17,6 +19,10 @@ impl ApplicationSummary {
     /// <p>The ID of the application.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The status of the latest discovery.</p>
+    pub fn discovery_status(&self) -> ::std::option::Option<&crate::types::ApplicationDiscoveryStatus> {
+        self.discovery_status.as_ref()
     }
     /// <p>The type of the application.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
@@ -43,6 +49,7 @@ impl ApplicationSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) discovery_status: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::ApplicationType>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -61,6 +68,20 @@ impl ApplicationSummaryBuilder {
     /// <p>The ID of the application.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The status of the latest discovery.</p>
+    pub fn discovery_status(mut self, input: crate::types::ApplicationDiscoveryStatus) -> Self {
+        self.discovery_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the latest discovery.</p>
+    pub fn set_discovery_status(mut self, input: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>) -> Self {
+        self.discovery_status = input;
+        self
+    }
+    /// <p>The status of the latest discovery.</p>
+    pub fn get_discovery_status(&self) -> &::std::option::Option<crate::types::ApplicationDiscoveryStatus> {
+        &self.discovery_status
     }
     /// <p>The type of the application.</p>
     pub fn r#type(mut self, input: crate::types::ApplicationType) -> Self {
@@ -114,6 +135,7 @@ impl ApplicationSummaryBuilder {
     pub fn build(self) -> crate::types::ApplicationSummary {
         crate::types::ApplicationSummary {
             id: self.id,
+            discovery_status: self.discovery_status,
             r#type: self.r#type,
             arn: self.arn,
             tags: self.tags,

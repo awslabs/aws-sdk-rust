@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtaJobConfig {
     /// <p>The target version of the device software.</p>
-    pub image_version: ::std::option::Option<::std::string::String>,
+    pub image_version: ::std::string::String,
     /// <p>Whether to apply the update if it is a major version change.</p>
     pub allow_major_version_update: bool,
 }
 impl OtaJobConfig {
     /// <p>The target version of the device software.</p>
-    pub fn image_version(&self) -> ::std::option::Option<&str> {
-        self.image_version.as_deref()
+    pub fn image_version(&self) -> &str {
+        use std::ops::Deref;
+        self.image_version.deref()
     }
     /// <p>Whether to apply the update if it is a major version change.</p>
     pub fn allow_major_version_update(&self) -> bool {
@@ -35,6 +36,7 @@ pub struct OtaJobConfigBuilder {
 }
 impl OtaJobConfigBuilder {
     /// <p>The target version of the device software.</p>
+    /// This field is required.
     pub fn image_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_version = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl OtaJobConfigBuilder {
         &self.allow_major_version_update
     }
     /// Consumes the builder and constructs a [`OtaJobConfig`](crate::types::OtaJobConfig).
-    pub fn build(self) -> crate::types::OtaJobConfig {
-        crate::types::OtaJobConfig {
-            image_version: self.image_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_version`](crate::types::builders::OtaJobConfigBuilder::image_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::OtaJobConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OtaJobConfig {
+            image_version: self.image_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_version",
+                    "image_version was not specified but it is required when building OtaJobConfig",
+                )
+            })?,
             allow_major_version_update: self.allow_major_version_update.unwrap_or_default(),
-        }
+        })
     }
 }

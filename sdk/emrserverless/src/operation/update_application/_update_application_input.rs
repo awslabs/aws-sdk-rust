@@ -81,8 +81,10 @@ impl UpdateApplicationInput {
         self.release_label.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
-    pub fn runtime_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.runtime_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_configuration.is_none()`.
+    pub fn runtime_configuration(&self) -> &[crate::types::Configuration] {
+        self.runtime_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The configuration setting for monitoring.</p>
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
@@ -117,6 +119,7 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The ID of the application to update.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +134,7 @@ impl UpdateApplicationInputBuilder {
         &self.application_id
     }
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -333,7 +337,7 @@ impl UpdateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
             application_id: self.application_id,
             client_token: self.client_token,

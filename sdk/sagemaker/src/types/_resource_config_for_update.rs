@@ -28,6 +28,7 @@ pub struct ResourceConfigForUpdateBuilder {
 }
 impl ResourceConfigForUpdateBuilder {
     /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
+    /// This field is required.
     pub fn keep_alive_period_in_seconds(mut self, input: i32) -> Self {
         self.keep_alive_period_in_seconds = ::std::option::Option::Some(input);
         self

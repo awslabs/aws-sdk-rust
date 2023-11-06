@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendMessageBatchResultEntry {
     /// <p>An identifier for the message in this batch.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>An identifier for the message.</p>
-    pub message_id: ::std::option::Option<::std::string::String>,
+    pub message_id: ::std::string::String,
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-    pub md5_of_message_body: ::std::option::Option<::std::string::String>,
+    pub md5_of_message_body: ::std::string::String,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub md5_of_message_attributes: ::std::option::Option<::std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
@@ -21,16 +21,19 @@ pub struct SendMessageBatchResultEntry {
 }
 impl SendMessageBatchResultEntry {
     /// <p>An identifier for the message in this batch.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>An identifier for the message.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
-        self.message_id.as_deref()
+    pub fn message_id(&self) -> &str {
+        use std::ops::Deref;
+        self.message_id.deref()
     }
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-    pub fn md5_of_message_body(&self) -> ::std::option::Option<&str> {
-        self.md5_of_message_body.as_deref()
+    pub fn md5_of_message_body(&self) -> &str {
+        use std::ops::Deref;
+        self.md5_of_message_body.deref()
     }
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub fn md5_of_message_attributes(&self) -> ::std::option::Option<&str> {
@@ -67,6 +70,7 @@ pub struct SendMessageBatchResultEntryBuilder {
 }
 impl SendMessageBatchResultEntryBuilder {
     /// <p>An identifier for the message in this batch.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +85,7 @@ impl SendMessageBatchResultEntryBuilder {
         &self.id
     }
     /// <p>An identifier for the message.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +100,7 @@ impl SendMessageBatchResultEntryBuilder {
         &self.message_id
     }
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    /// This field is required.
     pub fn md5_of_message_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.md5_of_message_body = ::std::option::Option::Some(input.into());
         self
@@ -157,14 +163,33 @@ impl SendMessageBatchResultEntryBuilder {
         &self.sequence_number
     }
     /// Consumes the builder and constructs a [`SendMessageBatchResultEntry`](crate::types::SendMessageBatchResultEntry).
-    pub fn build(self) -> crate::types::SendMessageBatchResultEntry {
-        crate::types::SendMessageBatchResultEntry {
-            id: self.id,
-            message_id: self.message_id,
-            md5_of_message_body: self.md5_of_message_body,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::SendMessageBatchResultEntryBuilder::id)
+    /// - [`message_id`](crate::types::builders::SendMessageBatchResultEntryBuilder::message_id)
+    /// - [`md5_of_message_body`](crate::types::builders::SendMessageBatchResultEntryBuilder::md5_of_message_body)
+    pub fn build(self) -> ::std::result::Result<crate::types::SendMessageBatchResultEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SendMessageBatchResultEntry {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building SendMessageBatchResultEntry",
+                )
+            })?,
+            message_id: self.message_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_id",
+                    "message_id was not specified but it is required when building SendMessageBatchResultEntry",
+                )
+            })?,
+            md5_of_message_body: self.md5_of_message_body.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "md5_of_message_body",
+                    "md5_of_message_body was not specified but it is required when building SendMessageBatchResultEntry",
+                )
+            })?,
             md5_of_message_attributes: self.md5_of_message_attributes,
             md5_of_message_system_attributes: self.md5_of_message_system_attributes,
             sequence_number: self.sequence_number,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_egress_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EgressConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.egress_type {
         object.key("EgressType").string(var_1.as_str());
     }

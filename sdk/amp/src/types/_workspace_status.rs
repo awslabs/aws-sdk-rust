@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceStatus {
     /// Status code of this workspace.
-    pub status_code: ::std::option::Option<crate::types::WorkspaceStatusCode>,
+    pub status_code: crate::types::WorkspaceStatusCode,
 }
 impl WorkspaceStatus {
     /// Status code of this workspace.
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::WorkspaceStatusCode> {
-        self.status_code.as_ref()
+    pub fn status_code(&self) -> &crate::types::WorkspaceStatusCode {
+        &self.status_code
     }
 }
 impl WorkspaceStatus {
@@ -28,6 +28,7 @@ pub struct WorkspaceStatusBuilder {
 }
 impl WorkspaceStatusBuilder {
     /// Status code of this workspace.
+    /// This field is required.
     pub fn status_code(mut self, input: crate::types::WorkspaceStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl WorkspaceStatusBuilder {
         &self.status_code
     }
     /// Consumes the builder and constructs a [`WorkspaceStatus`](crate::types::WorkspaceStatus).
-    pub fn build(self) -> crate::types::WorkspaceStatus {
-        crate::types::WorkspaceStatus {
-            status_code: self.status_code,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status_code`](crate::types::builders::WorkspaceStatusBuilder::status_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkspaceStatus {
+            status_code: self.status_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_code",
+                    "status_code was not specified but it is required when building WorkspaceStatus",
+                )
+            })?,
+        })
     }
 }

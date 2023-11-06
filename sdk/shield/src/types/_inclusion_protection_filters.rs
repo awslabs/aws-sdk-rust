@@ -13,16 +13,22 @@ pub struct InclusionProtectionFilters {
 }
 impl InclusionProtectionFilters {
     /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>The name of the protection that you want to retrieve. </p>
-    pub fn protection_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.protection_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protection_names.is_none()`.
+    pub fn protection_names(&self) -> &[::std::string::String] {
+        self.protection_names.as_deref().unwrap_or_default()
     }
     /// <p>The type of protected resource whose protections you want to retrieve. </p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ProtectedResourceType]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[crate::types::ProtectedResourceType] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
 }
 impl InclusionProtectionFilters {

@@ -11,8 +11,10 @@ pub struct ListDetectMitigationActionsExecutionsOutput {
 }
 impl ListDetectMitigationActionsExecutionsOutput {
     /// <p> List of actions executions. </p>
-    pub fn actions_executions(&self) -> ::std::option::Option<&[crate::types::DetectMitigationActionExecution]> {
-        self.actions_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions_executions.is_none()`.
+    pub fn actions_executions(&self) -> &[crate::types::DetectMitigationActionExecution] {
+        self.actions_executions.as_deref().unwrap_or_default()
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

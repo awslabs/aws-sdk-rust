@@ -34,6 +34,7 @@ pub struct GetLicenseInputBuilder {
 }
 impl GetLicenseInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    /// This field is required.
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl GetLicenseInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetLicenseInput`](crate::operation::get_license::GetLicenseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_license::GetLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_license::GetLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_license::GetLicenseInput {
             license_arn: self.license_arn,
             version: self.version,

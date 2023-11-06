@@ -27,6 +27,7 @@ pub struct DescribeConfigurationInputBuilder {
 }
 impl DescribeConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_configuration::DescribeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_configuration::DescribeConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_configuration::DescribeConfigurationInput { arn: self.arn })
     }

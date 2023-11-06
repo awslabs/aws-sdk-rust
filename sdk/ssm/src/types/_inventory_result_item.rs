@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryResultItem {
     /// <p>The name of the inventory result item type.</p>
-    pub type_name: ::std::option::Option<::std::string::String>,
+    pub type_name: ::std::string::String,
     /// <p>The schema version for the inventory result item/</p>
-    pub schema_version: ::std::option::Option<::std::string::String>,
+    pub schema_version: ::std::string::String,
     /// <p>The time inventory item data was captured.</p>
     pub capture_time: ::std::option::Option<::std::string::String>,
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     pub content_hash: ::std::option::Option<::std::string::String>,
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
-    pub content: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub content: ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl InventoryResultItem {
     /// <p>The name of the inventory result item type.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
-        self.type_name.as_deref()
+    pub fn type_name(&self) -> &str {
+        use std::ops::Deref;
+        self.type_name.deref()
     }
     /// <p>The schema version for the inventory result item/</p>
-    pub fn schema_version(&self) -> ::std::option::Option<&str> {
-        self.schema_version.as_deref()
+    pub fn schema_version(&self) -> &str {
+        use std::ops::Deref;
+        self.schema_version.deref()
     }
     /// <p>The time inventory item data was captured.</p>
     pub fn capture_time(&self) -> ::std::option::Option<&str> {
@@ -33,8 +35,9 @@ impl InventoryResultItem {
         self.content_hash.as_deref()
     }
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
-    pub fn content(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
-        self.content.as_deref()
+    pub fn content(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        use std::ops::Deref;
+        self.content.deref()
     }
 }
 impl InventoryResultItem {
@@ -56,6 +59,7 @@ pub struct InventoryResultItemBuilder {
 }
 impl InventoryResultItemBuilder {
     /// <p>The name of the inventory result item type.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl InventoryResultItemBuilder {
         &self.type_name
     }
     /// <p>The schema version for the inventory result item/</p>
+    /// This field is required.
     pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
@@ -135,13 +140,32 @@ impl InventoryResultItemBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`InventoryResultItem`](crate::types::InventoryResultItem).
-    pub fn build(self) -> crate::types::InventoryResultItem {
-        crate::types::InventoryResultItem {
-            type_name: self.type_name,
-            schema_version: self.schema_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`type_name`](crate::types::builders::InventoryResultItemBuilder::type_name)
+    /// - [`schema_version`](crate::types::builders::InventoryResultItemBuilder::schema_version)
+    /// - [`content`](crate::types::builders::InventoryResultItemBuilder::content)
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryResultItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InventoryResultItem {
+            type_name: self.type_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "type_name",
+                    "type_name was not specified but it is required when building InventoryResultItem",
+                )
+            })?,
+            schema_version: self.schema_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schema_version",
+                    "schema_version was not specified but it is required when building InventoryResultItem",
+                )
+            })?,
             capture_time: self.capture_time,
             content_hash: self.content_hash,
-            content: self.content,
-        }
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building InventoryResultItem",
+                )
+            })?,
+        })
     }
 }

@@ -82,11 +82,10 @@ pub fn de_list_resolver_dnssec_configs_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::InvalidRequestException({
@@ -144,12 +143,12 @@ pub fn de_list_resolver_dnssec_configs_http_response(
 
 pub fn ser_list_resolver_dnssec_configs_input(
     input: &crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_resolver_dnssec_configs_input::ser_list_resolver_dnssec_configs_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_resolver_dnssec_configs(

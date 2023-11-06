@@ -35,6 +35,7 @@ pub struct UpdateApplicationMaintenanceConfigurationInputBuilder {
 }
 impl UpdateApplicationMaintenanceConfigurationInputBuilder {
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateApplicationMaintenanceConfigurationInputBuilder {
         &self.application_name
     }
     /// <p>Describes the application maintenance configuration update.</p>
+    /// This field is required.
     pub fn application_maintenance_configuration_update(mut self, input: crate::types::ApplicationMaintenanceConfigurationUpdate) -> Self {
         self.application_maintenance_configuration_update = ::std::option::Option::Some(input);
         self
@@ -72,7 +74,7 @@ impl UpdateApplicationMaintenanceConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput {

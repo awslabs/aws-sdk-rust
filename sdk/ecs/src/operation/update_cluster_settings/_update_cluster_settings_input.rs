@@ -18,8 +18,10 @@ impl UpdateClusterSettingsInput {
     /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p> <important>
     /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
     /// </important>
-    pub fn settings(&self) -> ::std::option::Option<&[crate::types::ClusterSetting]> {
-        self.settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
+    pub fn settings(&self) -> &[crate::types::ClusterSetting] {
+        self.settings.as_deref().unwrap_or_default()
     }
 }
 impl UpdateClusterSettingsInput {
@@ -38,6 +40,7 @@ pub struct UpdateClusterSettingsInputBuilder {
 }
 impl UpdateClusterSettingsInputBuilder {
     /// <p>The name of the cluster to modify the settings for.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
@@ -80,7 +83,7 @@ impl UpdateClusterSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterSettingsInput`](crate::operation::update_cluster_settings::UpdateClusterSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cluster_settings::UpdateClusterSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_cluster_settings::UpdateClusterSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_cluster_settings::UpdateClusterSettingsInput {
             cluster: self.cluster,

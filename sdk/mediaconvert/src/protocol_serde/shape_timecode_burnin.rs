@@ -2,7 +2,7 @@
 pub fn ser_timecode_burnin(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimecodeBurnin,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.font_size {
         object.key("fontSize").number(
             #[allow(clippy::useless_conversion)]

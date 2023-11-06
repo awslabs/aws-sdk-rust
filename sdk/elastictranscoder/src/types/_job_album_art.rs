@@ -27,8 +27,10 @@ impl JobAlbumArt {
         self.merge_policy.as_deref()
     }
     /// <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code> </p>
-    pub fn artwork(&self) -> ::std::option::Option<&[crate::types::Artwork]> {
-        self.artwork.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.artwork.is_none()`.
+    pub fn artwork(&self) -> &[crate::types::Artwork] {
+        self.artwork.as_deref().unwrap_or_default()
     }
 }
 impl JobAlbumArt {

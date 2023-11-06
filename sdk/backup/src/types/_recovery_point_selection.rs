@@ -14,12 +14,16 @@ pub struct RecoveryPointSelection {
 }
 impl RecoveryPointSelection {
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    pub fn vault_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vault_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vault_names.is_none()`.
+    pub fn vault_names(&self) -> &[::std::string::String] {
+        self.vault_names.as_deref().unwrap_or_default()
     }
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    pub fn resource_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
+    pub fn resource_identifiers(&self) -> &[::std::string::String] {
+        self.resource_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>

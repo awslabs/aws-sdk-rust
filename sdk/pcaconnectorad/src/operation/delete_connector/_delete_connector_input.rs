@@ -27,6 +27,7 @@ pub struct DeleteConnectorInputBuilder {
 }
 impl DeleteConnectorInputBuilder {
     /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConnectorInput`](crate::operation::delete_connector::DeleteConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_connector::DeleteConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_connector::DeleteConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_connector::DeleteConnectorInput {
             connector_arn: self.connector_arn,
         })

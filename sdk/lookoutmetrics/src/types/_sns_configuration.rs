@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnsConfiguration {
     /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The ARN of the target SNS topic.</p>
-    pub sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub sns_topic_arn: ::std::string::String,
     /// <p>The format of the SNS topic.</p>
     /// <ul>
     /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
@@ -18,12 +18,14 @@ pub struct SnsConfiguration {
 }
 impl SnsConfiguration {
     /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The ARN of the target SNS topic.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
-        self.sns_topic_arn.as_deref()
+    pub fn sns_topic_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.sns_topic_arn.deref()
     }
     /// <p>The format of the SNS topic.</p>
     /// <ul>
@@ -52,6 +54,7 @@ pub struct SnsConfigurationBuilder {
 }
 impl SnsConfigurationBuilder {
     /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +69,7 @@ impl SnsConfigurationBuilder {
         &self.role_arn
     }
     /// <p>The ARN of the target SNS topic.</p>
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -109,11 +113,24 @@ impl SnsConfigurationBuilder {
         &self.sns_format
     }
     /// Consumes the builder and constructs a [`SnsConfiguration`](crate::types::SnsConfiguration).
-    pub fn build(self) -> crate::types::SnsConfiguration {
-        crate::types::SnsConfiguration {
-            role_arn: self.role_arn,
-            sns_topic_arn: self.sns_topic_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::SnsConfigurationBuilder::role_arn)
+    /// - [`sns_topic_arn`](crate::types::builders::SnsConfigurationBuilder::sns_topic_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnsConfiguration {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building SnsConfiguration",
+                )
+            })?,
+            sns_topic_arn: self.sns_topic_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sns_topic_arn",
+                    "sns_topic_arn was not specified but it is required when building SnsConfiguration",
+                )
+            })?,
             sns_format: self.sns_format,
-        }
+        })
     }
 }

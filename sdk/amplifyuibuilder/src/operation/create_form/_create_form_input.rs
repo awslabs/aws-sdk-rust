@@ -48,6 +48,7 @@ pub struct CreateFormInputBuilder {
 }
 impl CreateFormInputBuilder {
     /// <p>The unique ID of the Amplify app to associate with the form.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateFormInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreateFormInputBuilder {
         &self.client_token
     }
     /// <p>Represents the configuration of the form to create.</p>
+    /// This field is required.
     pub fn form_to_create(mut self, input: crate::types::CreateFormData) -> Self {
         self.form_to_create = ::std::option::Option::Some(input);
         self
@@ -104,7 +107,7 @@ impl CreateFormInputBuilder {
         &self.form_to_create
     }
     /// Consumes the builder and constructs a [`CreateFormInput`](crate::operation::create_form::CreateFormInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_form::CreateFormInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_form::CreateFormInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_form::CreateFormInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

@@ -34,6 +34,7 @@ pub struct PutManagedScalingPolicyInputBuilder {
 }
 impl PutManagedScalingPolicyInputBuilder {
     /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached. </p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutManagedScalingPolicyInputBuilder {
         &self.cluster_id
     }
     /// <p>Specifies the constraints for the managed scaling policy. </p>
+    /// This field is required.
     pub fn managed_scaling_policy(mut self, input: crate::types::ManagedScalingPolicy) -> Self {
         self.managed_scaling_policy = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl PutManagedScalingPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyInput {
             cluster_id: self.cluster_id,

@@ -95,12 +95,16 @@ impl Nodegroup {
         self.scaling_config.as_ref()
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the instance type that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
-    pub fn instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[::std::string::String] {
+        self.instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The subnets that were specified for the Auto Scaling group that is associated with your node group.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the remote access configuration that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
     pub fn remote_access(&self) -> ::std::option::Option<&crate::types::RemoteAccessConfig> {
@@ -121,8 +125,10 @@ impl Nodegroup {
         self.labels.as_ref()
     }
     /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
-    pub fn taints(&self) -> ::std::option::Option<&[crate::types::Taint]> {
-        self.taints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.taints.is_none()`.
+    pub fn taints(&self) -> &[crate::types::Taint] {
+        self.taints.as_deref().unwrap_or_default()
     }
     /// <p>The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
     pub fn resources(&self) -> ::std::option::Option<&crate::types::NodegroupResources> {

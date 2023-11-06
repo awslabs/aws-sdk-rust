@@ -41,6 +41,7 @@ pub struct ListCoreNetworkPolicyVersionsInputBuilder {
 }
 impl ListCoreNetworkPolicyVersionsInputBuilder {
     /// <p>The ID of a core network.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListCoreNetworkPolicyVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsInput {
             core_network_id: self.core_network_id,

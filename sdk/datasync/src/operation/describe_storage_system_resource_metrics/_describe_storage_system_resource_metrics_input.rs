@@ -69,6 +69,7 @@ pub struct DescribeStorageSystemResourceMetricsInputBuilder {
 }
 impl DescribeStorageSystemResourceMetricsInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
+    /// This field is required.
     pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
         &self.discovery_job_arn
     }
     /// <p>Specifies the kind of storage system resource that you want information about.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::DiscoveryResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -97,6 +99,7 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
         &self.resource_type
     }
     /// <p>Specifies the universally unique identifier (UUID) of the storage system resource that you want information about.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -171,7 +174,7 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsInput {

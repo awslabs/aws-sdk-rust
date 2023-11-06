@@ -11,8 +11,10 @@ pub struct ListWebsiteAuthorizationProvidersOutput {
 }
 impl ListWebsiteAuthorizationProvidersOutput {
     /// <p>The website authorization providers.</p>
-    pub fn website_authorization_providers(&self) -> ::std::option::Option<&[crate::types::WebsiteAuthorizationProviderSummary]> {
-        self.website_authorization_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.website_authorization_providers.is_none()`.
+    pub fn website_authorization_providers(&self) -> &[crate::types::WebsiteAuthorizationProviderSummary] {
+        self.website_authorization_providers.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

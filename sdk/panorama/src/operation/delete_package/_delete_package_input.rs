@@ -6,7 +6,7 @@ pub struct DeletePackageInput {
     /// <p>The package's ID.</p>
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
-    pub force_delete: bool,
+    pub force_delete: ::std::option::Option<bool>,
 }
 impl DeletePackageInput {
     /// <p>The package's ID.</p>
@@ -14,7 +14,7 @@ impl DeletePackageInput {
         self.package_id.as_deref()
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
-    pub fn force_delete(&self) -> bool {
+    pub fn force_delete(&self) -> ::std::option::Option<bool> {
         self.force_delete
     }
 }
@@ -34,6 +34,7 @@ pub struct DeletePackageInputBuilder {
 }
 impl DeletePackageInputBuilder {
     /// <p>The package's ID.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +65,10 @@ impl DeletePackageInputBuilder {
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_package::DeletePackageInput {
             package_id: self.package_id,
-            force_delete: self.force_delete.unwrap_or_default(),
+            force_delete: self.force_delete,
         })
     }
 }

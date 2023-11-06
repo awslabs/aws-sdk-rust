@@ -41,6 +41,7 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>Configuration ID of the application to be updated.</p>
+    /// This field is required.
     pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl UpdateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
             configuration_id: self.configuration_id,
             name: self.name,

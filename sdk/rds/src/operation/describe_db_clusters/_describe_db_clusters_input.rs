@@ -47,8 +47,10 @@ impl DescribeDbClustersInput {
     /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -204,7 +206,8 @@ impl DescribeDbClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbClustersInput`](crate::operation::describe_db_clusters::DescribeDbClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_db_clusters::DescribeDbClustersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_db_clusters::DescribeDbClustersInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_db_clusters::DescribeDbClustersInput {
             db_cluster_identifier: self.db_cluster_identifier,
             filters: self.filters,

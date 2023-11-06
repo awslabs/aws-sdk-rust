@@ -27,6 +27,7 @@ pub struct GetEnvironmentInputBuilder {
 }
 impl GetEnvironmentInputBuilder {
     /// <p>The identifier of the FinSpace environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`GetEnvironmentInput`](crate::operation::get_environment::GetEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_environment::GetEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_environment::GetEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_environment::GetEnvironmentInput {
             environment_id: self.environment_id,
         })

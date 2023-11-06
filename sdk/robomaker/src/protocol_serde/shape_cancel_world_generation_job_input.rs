@@ -2,7 +2,7 @@
 pub fn ser_cancel_world_generation_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job {
         object.key("job").string(var_1.as_str());
     }

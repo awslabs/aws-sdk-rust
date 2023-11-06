@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MemberFabricConfiguration {
     /// <p>The user name for the member's initial administrative user.</p>
-    pub admin_username: ::std::option::Option<::std::string::String>,
+    pub admin_username: ::std::string::String,
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-    pub admin_password: ::std::option::Option<::std::string::String>,
+    pub admin_password: ::std::string::String,
 }
 impl MemberFabricConfiguration {
     /// <p>The user name for the member's initial administrative user.</p>
-    pub fn admin_username(&self) -> ::std::option::Option<&str> {
-        self.admin_username.as_deref()
+    pub fn admin_username(&self) -> &str {
+        use std::ops::Deref;
+        self.admin_username.deref()
     }
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-    pub fn admin_password(&self) -> ::std::option::Option<&str> {
-        self.admin_password.as_deref()
+    pub fn admin_password(&self) -> &str {
+        use std::ops::Deref;
+        self.admin_password.deref()
     }
 }
 impl ::std::fmt::Debug for MemberFabricConfiguration {
@@ -43,6 +45,7 @@ pub struct MemberFabricConfigurationBuilder {
 }
 impl MemberFabricConfigurationBuilder {
     /// <p>The user name for the member's initial administrative user.</p>
+    /// This field is required.
     pub fn admin_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_username = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl MemberFabricConfigurationBuilder {
         &self.admin_username
     }
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
+    /// This field is required.
     pub fn admin_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_password = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl MemberFabricConfigurationBuilder {
         &self.admin_password
     }
     /// Consumes the builder and constructs a [`MemberFabricConfiguration`](crate::types::MemberFabricConfiguration).
-    pub fn build(self) -> crate::types::MemberFabricConfiguration {
-        crate::types::MemberFabricConfiguration {
-            admin_username: self.admin_username,
-            admin_password: self.admin_password,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`admin_username`](crate::types::builders::MemberFabricConfigurationBuilder::admin_username)
+    /// - [`admin_password`](crate::types::builders::MemberFabricConfigurationBuilder::admin_password)
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberFabricConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MemberFabricConfiguration {
+            admin_username: self.admin_username.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "admin_username",
+                    "admin_username was not specified but it is required when building MemberFabricConfiguration",
+                )
+            })?,
+            admin_password: self.admin_password.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "admin_password",
+                    "admin_password was not specified but it is required when building MemberFabricConfiguration",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for MemberFabricConfigurationBuilder {

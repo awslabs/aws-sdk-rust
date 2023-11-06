@@ -303,8 +303,10 @@ impl ContainerDefinition {
     /// </note> <important>
     /// <p>Containers that are collocated on a single container instance may be able to communicate with each other without requiring links or host port mappings. Network isolation is achieved on the container instance using security groups and VPC settings.</p>
     /// </important>
-    pub fn links(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.links.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.links.is_none()`.
+    pub fn links(&self) -> &[::std::string::String] {
+        self.links.as_deref().unwrap_or_default()
     }
     /// <p>The list of port mappings for the container. Port mappings allow containers to access ports on the host container instance to send or receive traffic.</p>
     /// <p>For task definitions that use the <code>awsvpc</code> network mode, only specify the <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.</p>
@@ -312,8 +314,10 @@ impl ContainerDefinition {
     /// <p>This parameter maps to <code>PortBindings</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. If the network mode of a task definition is set to <code>none</code>, then you can't specify port mappings. If the network mode of a task definition is set to <code>host</code>, then host ports must either be undefined or they must match the container port in the port mapping.</p> <note>
     /// <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon ECS console. The assignments are also visible in the <code>networkBindings</code> section <code>DescribeTasks</code> responses.</p>
     /// </note>
-    pub fn port_mappings(&self) -> ::std::option::Option<&[crate::types::PortMapping]> {
-        self.port_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_mappings.is_none()`.
+    pub fn port_mappings(&self) -> &[crate::types::PortMapping] {
+        self.port_mappings.as_deref().unwrap_or_default()
     }
     /// <p>If the <code>essential</code> parameter of a container is marked as <code>true</code>, and that container fails or stops for any reason, all other containers that are part of the task are stopped. If the <code>essential</code> parameter of a container is marked as <code>false</code>, its failure doesn't affect the rest of the containers in a task. If this parameter is omitted, a container is assumed to be essential.</p>
     /// <p>All tasks must have at least one essential container. If you have an application that's composed of multiple containers, group containers that are used for a common purpose into components, and separate the different components into multiple task definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -324,34 +328,46 @@ impl ContainerDefinition {
     /// <p>Early versions of the Amazon ECS container agent don't properly handle <code>entryPoint</code> parameters. If you have problems using <code>entryPoint</code>, update your container agent or enter your commands and arguments as <code>command</code> array items instead.</p>
     /// </important>
     /// <p>The entry point that's passed to the container. This parameter maps to <code>Entrypoint</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--entrypoint</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
-    pub fn entry_point(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entry_point.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entry_point.is_none()`.
+    pub fn entry_point(&self) -> &[::std::string::String] {
+        self.entry_point.as_deref().unwrap_or_default()
     }
     /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>. If there are multiple arguments, each argument is a separated string in the array.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <important>
     /// <p>We don't recommend that you use plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important>
-    pub fn environment(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.environment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
+    pub fn environment(&self) -> &[crate::types::KeyValuePair] {
+        self.environment.as_deref().unwrap_or_default()
     }
     /// <p>A list of files containing the environment variables to pass to a container. This parameter maps to the <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
     /// <p>You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file contains an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information about the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.</p>
     /// <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn environment_files(&self) -> ::std::option::Option<&[crate::types::EnvironmentFile]> {
-        self.environment_files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_files.is_none()`.
+    pub fn environment_files(&self) -> &[crate::types::EnvironmentFile] {
+        self.environment_files.as_deref().unwrap_or_default()
     }
     /// <p>The mount points for data volumes in your container.</p>
     /// <p>This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
     /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives.</p>
-    pub fn mount_points(&self) -> ::std::option::Option<&[crate::types::MountPoint]> {
-        self.mount_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mount_points.is_none()`.
+    pub fn mount_points(&self) -> &[crate::types::MountPoint] {
+        self.mount_points.as_deref().unwrap_or_default()
     }
     /// <p>Data volumes to mount from another container. This parameter maps to <code>VolumesFrom</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volumes-from</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    pub fn volumes_from(&self) -> ::std::option::Option<&[crate::types::VolumeFrom]> {
-        self.volumes_from.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes_from.is_none()`.
+    pub fn volumes_from(&self) -> &[crate::types::VolumeFrom] {
+        self.volumes_from.as_deref().unwrap_or_default()
     }
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities. For more information see <code>KernelCapabilities</code>.</p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
@@ -360,8 +376,10 @@ impl ContainerDefinition {
         self.linux_parameters.as_ref()
     }
     /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn secrets(&self) -> ::std::option::Option<&[crate::types::Secret]> {
-        self.secrets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secrets.is_none()`.
+    pub fn secrets(&self) -> &[crate::types::Secret] {
+        self.secrets.as_deref().unwrap_or_default()
     }
     /// <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies on other containers in a task definition. When a dependency is defined for container startup, for container shutdown it is reversed.</p>
     /// <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to turn on container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -370,8 +388,10 @@ impl ContainerDefinition {
     /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
-    pub fn depends_on(&self) -> ::std::option::Option<&[crate::types::ContainerDependency]> {
-        self.depends_on.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on.is_none()`.
+    pub fn depends_on(&self) -> &[crate::types::ContainerDependency] {
+        self.depends_on.as_deref().unwrap_or_default()
     }
     /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For example, you specify two containers in a task definition with containerA having a dependency on containerB reaching a <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value is specified for containerB and it doesn't reach the desired status within that time then containerA gives up and not start. This results in the task transitioning to a <code>STOPPED</code> state.</p> <note>
     /// <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration variable is used, it's enforced independently from this start timeout value.</p>
@@ -446,20 +466,26 @@ impl ContainerDefinition {
     /// <p>A list of DNS servers that are presented to the container. This parameter maps to <code>Dns</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn dns_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_servers.is_none()`.
+    pub fn dns_servers(&self) -> &[::std::string::String] {
+        self.dns_servers.as_deref().unwrap_or_default()
     }
     /// <p>A list of DNS search domains that are presented to the container. This parameter maps to <code>DnsSearch</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns-search</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn dns_search_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_search_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_search_domains.is_none()`.
+    pub fn dns_search_domains(&self) -> &[::std::string::String] {
+        self.dns_search_domains.as_deref().unwrap_or_default()
     }
     /// <p>A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This parameter maps to <code>ExtraHosts</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter isn't supported for Windows containers or tasks that use the <code>awsvpc</code> network mode.</p>
     /// </note>
-    pub fn extra_hosts(&self) -> ::std::option::Option<&[crate::types::HostEntry]> {
-        self.extra_hosts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extra_hosts.is_none()`.
+    pub fn extra_hosts(&self) -> &[crate::types::HostEntry] {
+        self.extra_hosts.as_deref().unwrap_or_default()
     }
     /// <p>A list of strings to provide custom configuration for multiple security systems. For more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker Run Security Configuration</a>. This field isn't valid for containers in tasks using the Fargate launch type.</p>
     /// <p>For Linux tasks on EC2, this parameter can be used to reference custom labels for SELinux and AppArmor multi-level security systems.</p>
@@ -469,8 +495,10 @@ impl ContainerDefinition {
     /// </note>
     /// <p>For more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker Run Security Configuration</a>. </p>
     /// <p>Valid values: "no-new-privileges" | "apparmor:PROFILE" | "label:value" | "credentialspec:CredentialSpecFilePath"</p>
-    pub fn docker_security_options(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.docker_security_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.docker_security_options.is_none()`.
+    pub fn docker_security_options(&self) -> &[::std::string::String] {
+        self.docker_security_options.as_deref().unwrap_or_default()
     }
     /// <p>When this parameter is <code>true</code>, you can deploy containerized applications that require <code>stdin</code> or a <code>tty</code> to be allocated. This parameter maps to <code>OpenStdin</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--interactive</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
     pub fn interactive(&self) -> ::std::option::Option<bool> {
@@ -489,8 +517,10 @@ impl ContainerDefinition {
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn ulimits(&self) -> ::std::option::Option<&[crate::types::Ulimit]> {
-        self.ulimits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ulimits.is_none()`.
+    pub fn ulimits(&self) -> &[crate::types::Ulimit] {
+        self.ulimits.as_deref().unwrap_or_default()
     }
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the container can use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
@@ -513,12 +543,16 @@ impl ContainerDefinition {
     /// </note> <note>
     /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
-    pub fn system_controls(&self) -> ::std::option::Option<&[crate::types::SystemControl]> {
-        self.system_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_controls.is_none()`.
+    pub fn system_controls(&self) -> &[crate::types::SystemControl] {
+        self.system_controls.as_deref().unwrap_or_default()
     }
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
-    pub fn resource_requirements(&self) -> ::std::option::Option<&[crate::types::ResourceRequirement]> {
-        self.resource_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
+    pub fn resource_requirements(&self) -> &[crate::types::ResourceRequirement] {
+        self.resource_requirements.as_deref().unwrap_or_default()
     }
     /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn firelens_configuration(&self) -> ::std::option::Option<&crate::types::FirelensConfiguration> {
@@ -545,8 +579,10 @@ impl ContainerDefinition {
     /// </dl>
     /// <p>In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
     /// <p>If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
-    pub fn credential_specs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.credential_specs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credential_specs.is_none()`.
+    pub fn credential_specs(&self) -> &[::std::string::String] {
+        self.credential_specs.as_deref().unwrap_or_default()
     }
 }
 impl ContainerDefinition {

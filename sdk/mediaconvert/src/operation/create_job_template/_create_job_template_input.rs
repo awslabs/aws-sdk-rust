@@ -38,8 +38,10 @@ impl CreateJobTemplateInput {
         self.description.as_deref()
     }
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-    pub fn hop_destinations(&self) -> ::std::option::Option<&[crate::types::HopDestination]> {
-        self.hop_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hop_destinations.is_none()`.
+    pub fn hop_destinations(&self) -> &[crate::types::HopDestination] {
+        self.hop_destinations.as_deref().unwrap_or_default()
     }
     /// The name of the job template you are creating.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -152,6 +154,7 @@ impl CreateJobTemplateInputBuilder {
         &self.hop_destinations
     }
     /// The name of the job template you are creating.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -194,6 +197,7 @@ impl CreateJobTemplateInputBuilder {
         &self.queue
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::JobTemplateSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
@@ -244,7 +248,7 @@ impl CreateJobTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_job_template::CreateJobTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_job_template::CreateJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job_template::CreateJobTemplateInput {
             acceleration_settings: self.acceleration_settings,
             category: self.category,

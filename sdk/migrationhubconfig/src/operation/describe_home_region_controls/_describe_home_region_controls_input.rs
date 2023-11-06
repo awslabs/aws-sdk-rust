@@ -129,7 +129,7 @@ impl DescribeHomeRegionControlsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput {
             control_id: self.control_id,

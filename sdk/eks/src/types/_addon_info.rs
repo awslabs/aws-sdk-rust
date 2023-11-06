@@ -27,8 +27,10 @@ impl AddonInfo {
         self.r#type.as_deref()
     }
     /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
-    pub fn addon_versions(&self) -> ::std::option::Option<&[crate::types::AddonVersionInfo]> {
-        self.addon_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addon_versions.is_none()`.
+    pub fn addon_versions(&self) -> &[crate::types::AddonVersionInfo] {
+        self.addon_versions.as_deref().unwrap_or_default()
     }
     /// <p>The publisher of the add-on.</p>
     pub fn publisher(&self) -> ::std::option::Option<&str> {

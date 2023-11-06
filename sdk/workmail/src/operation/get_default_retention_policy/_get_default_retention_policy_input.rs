@@ -27,6 +27,7 @@ pub struct GetDefaultRetentionPolicyInputBuilder {
 }
 impl GetDefaultRetentionPolicyInputBuilder {
     /// <p>The organization ID.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetDefaultRetentionPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyInput {
             organization_id: self.organization_id,

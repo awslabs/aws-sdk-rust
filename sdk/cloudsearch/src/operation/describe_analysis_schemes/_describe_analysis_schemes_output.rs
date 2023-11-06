@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
-    pub analysis_schemes: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
+    pub analysis_schemes: ::std::vec::Vec<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,
 }
 impl DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
-    pub fn analysis_schemes(&self) -> ::std::option::Option<&[crate::types::AnalysisSchemeStatus]> {
-        self.analysis_schemes.as_deref()
+    pub fn analysis_schemes(&self) -> &[crate::types::AnalysisSchemeStatus] {
+        use std::ops::Deref;
+        self.analysis_schemes.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAnalysisSchemesOutput {
@@ -64,10 +65,22 @@ impl DescribeAnalysisSchemesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
-    pub fn build(self) -> crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
-        crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
-            analysis_schemes: self.analysis_schemes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analysis_schemes`](crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder::analysis_schemes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
+            analysis_schemes: self.analysis_schemes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analysis_schemes",
+                    "analysis_schemes was not specified but it is required when building DescribeAnalysisSchemesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

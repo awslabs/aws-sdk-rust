@@ -34,6 +34,7 @@ pub struct RegisterElasticIpInputBuilder {
 }
 impl RegisterElasticIpInputBuilder {
     /// <p>The Elastic IP address.</p>
+    /// This field is required.
     pub fn elastic_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_ip = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RegisterElasticIpInputBuilder {
         &self.elastic_ip
     }
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl RegisterElasticIpInputBuilder {
     /// Consumes the builder and constructs a [`RegisterElasticIpInput`](crate::operation::register_elastic_ip::RegisterElasticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_elastic_ip::RegisterElasticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_elastic_ip::RegisterElasticIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_elastic_ip::RegisterElasticIpInput {
             elastic_ip: self.elastic_ip,
             stack_id: self.stack_id,

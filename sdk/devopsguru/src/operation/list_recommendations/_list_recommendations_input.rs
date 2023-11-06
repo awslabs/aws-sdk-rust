@@ -48,6 +48,7 @@ pub struct ListRecommendationsInputBuilder {
 }
 impl ListRecommendationsInputBuilder {
     /// <p> The ID of the requested insight. </p>
+    /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ListRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_recommendations::ListRecommendationsInput {
             insight_id: self.insight_id,

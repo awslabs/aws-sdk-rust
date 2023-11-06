@@ -34,8 +34,10 @@ impl UpdateWebAclInput {
     /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
     /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::WebAclUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::WebAclUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
     /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
     pub fn default_action(&self) -> ::std::option::Option<&crate::types::WafAction> {
@@ -60,6 +62,7 @@ pub struct UpdateWebAclInputBuilder {
 }
 impl UpdateWebAclInputBuilder {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +77,7 @@ impl UpdateWebAclInputBuilder {
         &self.web_acl_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -142,7 +146,7 @@ impl UpdateWebAclInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_web_acl::UpdateWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_web_acl::UpdateWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_web_acl::UpdateWebAclInput {
             web_acl_id: self.web_acl_id,
             change_token: self.change_token,

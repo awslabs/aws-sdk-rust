@@ -33,8 +33,10 @@ impl ExperiencesSummary {
         self.status.as_ref()
     }
     /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::ExperienceEndpoint]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::ExperienceEndpoint] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
 }
 impl ExperiencesSummary {

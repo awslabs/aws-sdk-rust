@@ -5,30 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Site {
     /// Site ARN.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// The name of the site. Mutable after creation and unique within a given account.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    pub country_code: ::std::option::Option<::std::string::String>,
+    pub country_code: ::std::string::String,
     /// Timestamp at which the resource was created.
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
 }
 impl Site {
     /// Site ARN.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// The name of the site. Mutable after creation and unique within a given account.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    pub fn country_code(&self) -> ::std::option::Option<&str> {
-        self.country_code.as_deref()
+    pub fn country_code(&self) -> &str {
+        use std::ops::Deref;
+        self.country_code.deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
 }
 impl Site {
@@ -49,6 +52,7 @@ pub struct SiteBuilder {
 }
 impl SiteBuilder {
     /// Site ARN.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl SiteBuilder {
         &self.arn
     }
     /// The name of the site. Mutable after creation and unique within a given account.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl SiteBuilder {
         &self.name
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
+    /// This field is required.
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +97,7 @@ impl SiteBuilder {
         &self.country_code
     }
     /// Timestamp at which the resource was created.
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -105,12 +112,34 @@ impl SiteBuilder {
         &self.created_at
     }
     /// Consumes the builder and constructs a [`Site`](crate::types::Site).
-    pub fn build(self) -> crate::types::Site {
-        crate::types::Site {
-            arn: self.arn,
-            name: self.name,
-            country_code: self.country_code,
-            created_at: self.created_at,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::SiteBuilder::arn)
+    /// - [`name`](crate::types::builders::SiteBuilder::name)
+    /// - [`country_code`](crate::types::builders::SiteBuilder::country_code)
+    /// - [`created_at`](crate::types::builders::SiteBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::Site, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Site {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Site")
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Site",
+                )
+            })?,
+            country_code: self.country_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "country_code",
+                    "country_code was not specified but it is required when building Site",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building Site",
+                )
+            })?,
+        })
     }
 }

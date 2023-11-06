@@ -2,7 +2,7 @@
 pub fn ser_resource_data_sync_organizational_unit(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataSyncOrganizationalUnit,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.organizational_unit_id {
         object.key("OrganizationalUnitId").string(var_1.as_str());
     }

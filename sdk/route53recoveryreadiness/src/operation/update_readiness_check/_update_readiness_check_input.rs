@@ -35,6 +35,7 @@ pub struct UpdateReadinessCheckInputBuilder {
 }
 impl UpdateReadinessCheckInputBuilder {
     /// <p>Name of a readiness check.</p>
+    /// This field is required.
     pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateReadinessCheckInputBuilder {
         &self.readiness_check_name
     }
     /// <p>The name of the resource set to be checked.</p>
+    /// This field is required.
     pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl UpdateReadinessCheckInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReadinessCheckInput`](crate::operation::update_readiness_check::UpdateReadinessCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_readiness_check::UpdateReadinessCheckInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_readiness_check::UpdateReadinessCheckInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_readiness_check::UpdateReadinessCheckInput {
             readiness_check_name: self.readiness_check_name,

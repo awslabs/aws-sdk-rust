@@ -32,8 +32,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "CNAMEAlreadyExists" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::CnameAlreadyExists({
@@ -48,8 +48,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
@@ -64,8 +64,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalUpdate" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::IllegalUpdate({
@@ -80,8 +80,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InconsistentQuantities" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InconsistentQuantities({
@@ -96,8 +96,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgument" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidArgument({
@@ -112,8 +112,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidDefaultRootObject" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidDefaultRootObject({
@@ -128,8 +128,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidErrorCode" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidErrorCode({
@@ -144,8 +144,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidForwardCookies" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidForwardCookies({
@@ -160,8 +160,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidFunctionAssociation" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidFunctionAssociation({
@@ -176,8 +176,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidGeoRestrictionParameter" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidGeoRestrictionParameter({
@@ -192,8 +192,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidHeadersForS3Origin" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidHeadersForS3Origin({
@@ -208,8 +208,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidIfMatchVersion" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidIfMatchVersion({
@@ -224,8 +224,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidLambdaFunctionAssociation" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidLambdaFunctionAssociation({
@@ -240,8 +240,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidLocationCode" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidLocationCode({
@@ -256,8 +256,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidMinimumProtocolVersion" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidMinimumProtocolVersion({
@@ -272,8 +272,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidOriginAccessControl" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidOriginAccessControl({
@@ -288,8 +288,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidOriginAccessIdentity" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidOriginAccessIdentity({
@@ -304,8 +304,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidOriginKeepaliveTimeout" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidOriginKeepaliveTimeout({
@@ -320,8 +320,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidOriginReadTimeout" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidOriginReadTimeout({
@@ -336,8 +336,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidQueryStringParameters" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidQueryStringParameters({
@@ -352,8 +352,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRelativePath" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidRelativePath({
@@ -368,8 +368,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRequiredProtocol" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidRequiredProtocol({
@@ -384,8 +384,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidResponseCode" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidResponseCode({
@@ -400,8 +400,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidTTLOrder" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidTtlOrder({
@@ -416,8 +416,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidViewerCertificate" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidViewerCertificate({
@@ -432,8 +432,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidWebACLId" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InvalidWebAclId({
@@ -448,8 +448,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "MissingBody" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::MissingBody({
@@ -464,8 +464,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchCachePolicy" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::NoSuchCachePolicy({
@@ -480,8 +480,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchDistribution" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::NoSuchDistribution({
@@ -496,8 +496,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchFieldLevelEncryptionConfig" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::NoSuchFieldLevelEncryptionConfig({
@@ -512,8 +512,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchOrigin" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::NoSuchOrigin({
@@ -528,8 +528,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchOriginRequestPolicy" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::NoSuchOriginRequestPolicy({
@@ -544,8 +544,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchRealtimeLogConfig" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::NoSuchRealtimeLogConfig({
@@ -560,8 +560,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchResponseHeadersPolicy" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::NoSuchResponseHeadersPolicy({
@@ -576,8 +576,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PreconditionFailed" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::PreconditionFailed({
@@ -592,8 +592,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "RealtimeLogConfigOwnerMismatch" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::RealtimeLogConfigOwnerMismatch({
@@ -608,8 +608,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyCacheBehaviors" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyCacheBehaviors({
@@ -624,8 +624,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyCertificates" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyCertificates({
@@ -640,8 +640,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyCookieNamesInWhiteList" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyCookieNamesInWhiteList({
@@ -656,8 +656,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionCNAMEs" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionCnamEs({
@@ -666,14 +666,14 @@ pub fn de_update_distribution_with_staging_config_http_error(
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionCnamEsBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(_response_body, output).map_err(crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distribution_cnames::de_too_many_distribution_cnames_xml_err(_response_body, output).map_err(crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToCachePolicy" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToCachePolicy({
@@ -688,8 +688,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
@@ -704,8 +704,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToKeyGroup" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToKeyGroup({
@@ -720,8 +720,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToOriginAccessControl" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToOriginAccessControl({
@@ -736,8 +736,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToOriginRequestPolicy({
@@ -752,8 +752,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToResponseHeadersPolicy({
@@ -768,8 +768,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsWithFunctionAssociations" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsWithFunctionAssociations({
@@ -784,8 +784,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsWithLambdaAssociations" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsWithLambdaAssociations({
@@ -800,8 +800,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsWithSingleFunctionARN" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsWithSingleFunctionArn({
@@ -816,8 +816,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyFunctionAssociations" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyFunctionAssociations({
@@ -832,8 +832,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyHeadersInForwardedValues" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyHeadersInForwardedValues({
@@ -848,8 +848,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyKeyGroupsAssociatedToDistribution" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyKeyGroupsAssociatedToDistribution({
@@ -864,8 +864,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyLambdaFunctionAssociations" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyLambdaFunctionAssociations({
@@ -880,8 +880,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyOriginCustomHeaders" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyOriginCustomHeaders({
@@ -896,8 +896,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyOriginGroupsPerDistribution" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyOriginGroupsPerDistribution({
@@ -912,8 +912,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyOrigins" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyOrigins({
@@ -928,8 +928,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyQueryStringParameters" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyQueryStringParameters({
@@ -944,8 +944,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyTrustedSigners" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyTrustedSigners({
@@ -960,8 +960,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TrustedKeyGroupDoesNotExist" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TrustedKeyGroupDoesNotExist({
@@ -976,8 +976,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TrustedSignerDoesNotExist" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TrustedSignerDoesNotExist({
@@ -992,8 +992,8 @@ pub fn de_update_distribution_with_staging_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::generic(generic)
@@ -1030,13 +1030,13 @@ pub fn de_update_distribution_with_staging_config_http_response(
 pub fn ser_update_distribution_with_staging_config_headers(
     input: &crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "if_match",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

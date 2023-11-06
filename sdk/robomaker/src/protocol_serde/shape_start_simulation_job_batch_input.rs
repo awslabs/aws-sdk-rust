@@ -2,7 +2,7 @@
 pub fn ser_start_simulation_job_batch_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_simulation_job_batch::StartSimulationJobBatchInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.batch_policy {
         #[allow(unused_mut)]
         let mut object_2 = object.key("batchPolicy").start_object();

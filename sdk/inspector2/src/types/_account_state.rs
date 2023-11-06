@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountState {
     /// <p>The Amazon Web Services account ID.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
@@ -13,8 +13,9 @@ pub struct AccountState {
 }
 impl AccountState {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
@@ -42,6 +43,7 @@ pub struct AccountStateBuilder {
 }
 impl AccountStateBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl AccountStateBuilder {
         &self.account_id
     }
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl AccountStateBuilder {
         &self.state
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
+    /// This field is required.
     pub fn resource_state(mut self, input: crate::types::ResourceState) -> Self {
         self.resource_state = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,18 @@ impl AccountStateBuilder {
         &self.resource_state
     }
     /// Consumes the builder and constructs a [`AccountState`](crate::types::AccountState).
-    pub fn build(self) -> crate::types::AccountState {
-        crate::types::AccountState {
-            account_id: self.account_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::AccountStateBuilder::account_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountState, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccountState {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building AccountState",
+                )
+            })?,
             state: self.state,
             resource_state: self.resource_state,
-        }
+        })
     }
 }

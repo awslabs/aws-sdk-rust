@@ -34,6 +34,7 @@ pub struct DeleteCollectionInputBuilder {
 }
 impl DeleteCollectionInputBuilder {
     /// <p>The unique identifier of the collection. For example, <code>1iu5usc406kd</code>. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteCollectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCollectionInput`](crate::operation::delete_collection::DeleteCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_collection::DeleteCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_collection::DeleteCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_collection::DeleteCollectionInput {
             id: self.id,
             client_token: self.client_token,

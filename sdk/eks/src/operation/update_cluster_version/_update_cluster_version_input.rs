@@ -41,6 +41,7 @@ pub struct UpdateClusterVersionInputBuilder {
 }
 impl UpdateClusterVersionInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateClusterVersionInputBuilder {
         &self.name
     }
     /// <p>The desired Kubernetes version following a successful update.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl UpdateClusterVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cluster_version::UpdateClusterVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_cluster_version::UpdateClusterVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_cluster_version::UpdateClusterVersionInput {
             name: self.name,

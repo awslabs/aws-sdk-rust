@@ -14,8 +14,10 @@ pub struct UpdateProgramInput {
 }
 impl UpdateProgramInput {
     /// <p>The ad break configuration settings.</p>
-    pub fn ad_breaks(&self) -> ::std::option::Option<&[crate::types::AdBreak]> {
-        self.ad_breaks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_breaks.is_none()`.
+    pub fn ad_breaks(&self) -> &[crate::types::AdBreak] {
+        self.ad_breaks.as_deref().unwrap_or_default()
     }
     /// <p>The name of the channel for this Program.</p>
     pub fn channel_name(&self) -> ::std::option::Option<&str> {
@@ -68,6 +70,7 @@ impl UpdateProgramInputBuilder {
         &self.ad_breaks
     }
     /// <p>The name of the channel for this Program.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +85,7 @@ impl UpdateProgramInputBuilder {
         &self.channel_name
     }
     /// <p>The name of the Program.</p>
+    /// This field is required.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +100,7 @@ impl UpdateProgramInputBuilder {
         &self.program_name
     }
     /// <p>The schedule configuration settings.</p>
+    /// This field is required.
     pub fn schedule_configuration(mut self, input: crate::types::UpdateProgramScheduleConfiguration) -> Self {
         self.schedule_configuration = ::std::option::Option::Some(input);
         self
@@ -112,7 +117,7 @@ impl UpdateProgramInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProgramInput`](crate::operation::update_program::UpdateProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_program::UpdateProgramInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_program::UpdateProgramInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_program::UpdateProgramInput {
             ad_breaks: self.ad_breaks,
             channel_name: self.channel_name,

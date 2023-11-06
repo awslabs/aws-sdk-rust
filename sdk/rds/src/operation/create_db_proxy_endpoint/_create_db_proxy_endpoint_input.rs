@@ -26,20 +26,26 @@ impl CreateDbProxyEndpointInput {
         self.db_proxy_endpoint_name.as_deref()
     }
     /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</p>
-    pub fn vpc_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_subnet_ids.is_none()`.
+    pub fn vpc_subnet_ids(&self) -> &[::std::string::String] {
+        self.vpc_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
     pub fn target_role(&self) -> ::std::option::Option<&crate::types::DbProxyEndpointTargetRole> {
         self.target_role.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDbProxyEndpointInput {
@@ -62,6 +68,7 @@ pub struct CreateDbProxyEndpointInputBuilder {
 }
 impl CreateDbProxyEndpointInputBuilder {
     /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
+    /// This field is required.
     pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +83,7 @@ impl CreateDbProxyEndpointInputBuilder {
         &self.db_proxy_name
     }
     /// <p>The name of the DB proxy endpoint to create.</p>
+    /// This field is required.
     pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -166,7 +174,7 @@ impl CreateDbProxyEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbProxyEndpointInput`](crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput {
             db_proxy_name: self.db_proxy_name,

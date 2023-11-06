@@ -2,7 +2,7 @@
 pub fn ser_candidate_generation_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CandidateGenerationConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.algorithms_config {
         let mut array_2 = object.key("AlgorithmsConfig").start_array();
         for item_3 in var_1 {

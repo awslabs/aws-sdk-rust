@@ -43,12 +43,16 @@ impl Analysis {
         self.status.as_ref()
     }
     /// <p>Errors associated with the analysis.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::AnalysisError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::AnalysisError] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>The ARNs of the datasets of the analysis.</p>
-    pub fn data_set_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_set_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_set_arns.is_none()`.
+    pub fn data_set_arns(&self) -> &[::std::string::String] {
+        self.data_set_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the theme of the analysis.</p>
     pub fn theme_arn(&self) -> ::std::option::Option<&str> {
@@ -63,8 +67,10 @@ impl Analysis {
         self.last_updated_time.as_ref()
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub fn sheets(&self) -> ::std::option::Option<&[crate::types::Sheet]> {
-        self.sheets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheets.is_none()`.
+    pub fn sheets(&self) -> &[crate::types::Sheet] {
+        self.sheets.as_deref().unwrap_or_default()
     }
 }
 impl Analysis {

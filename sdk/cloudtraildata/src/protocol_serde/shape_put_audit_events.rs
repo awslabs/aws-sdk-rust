@@ -125,18 +125,20 @@ pub fn de_put_audit_events_http_response(
         output = crate::protocol_serde::shape_put_audit_events::de_put_audit_events(_response_body, output)
             .map_err(crate::operation::put_audit_events::PutAuditEventsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::put_audit_events_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::put_audit_events::PutAuditEventsError::unhandled)?
     })
 }
 
 pub fn ser_put_audit_events_input(
     input: &crate::operation::put_audit_events::PutAuditEventsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_audit_events_input::ser_put_audit_events_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_put_audit_events(

@@ -16,8 +16,10 @@ impl CreateCellInput {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
-    pub fn cells(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cells.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
+    pub fn cells(&self) -> &[::std::string::String] {
+        self.cells.as_deref().unwrap_or_default()
     }
     /// <p>A collection of tags associated with a resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -41,6 +43,7 @@ pub struct CreateCellInputBuilder {
 }
 impl CreateCellInputBuilder {
     /// <p>The name of the cell to create.</p>
+    /// This field is required.
     pub fn cell_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cell_name = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +98,7 @@ impl CreateCellInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCellInput`](crate::operation::create_cell::CreateCellInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_cell::CreateCellInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cell::CreateCellInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cell::CreateCellInput {
             cell_name: self.cell_name,
             cells: self.cells,

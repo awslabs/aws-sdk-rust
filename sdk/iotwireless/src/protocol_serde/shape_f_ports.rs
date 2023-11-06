@@ -2,7 +2,7 @@
 pub fn ser_f_ports(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FPorts,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fuota {
         object.key("Fuota").number(
             #[allow(clippy::useless_conversion)]

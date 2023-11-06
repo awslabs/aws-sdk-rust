@@ -70,6 +70,7 @@ impl ModelBiasJobInputBuilder {
         &self.batch_transform_input
     }
     /// <p>Location of ground truth labels to use in model bias job.</p>
+    /// This field is required.
     pub fn ground_truth_s3_input(mut self, input: crate::types::MonitoringGroundTruthS3Input) -> Self {
         self.ground_truth_s3_input = ::std::option::Option::Some(input);
         self

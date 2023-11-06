@@ -15,8 +15,10 @@ impl GetResourcesOutput {
         self.pagination_token.as_deref()
     }
     /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
-    pub fn resource_tag_mapping_list(&self) -> ::std::option::Option<&[crate::types::ResourceTagMapping]> {
-        self.resource_tag_mapping_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tag_mapping_list.is_none()`.
+    pub fn resource_tag_mapping_list(&self) -> &[crate::types::ResourceTagMapping] {
+        self.resource_tag_mapping_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetResourcesOutput {

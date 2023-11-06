@@ -11,8 +11,10 @@ pub struct ListMonitoringSchedulesOutput {
 }
 impl ListMonitoringSchedulesOutput {
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
-    pub fn monitoring_schedule_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringScheduleSummary]> {
-        self.monitoring_schedule_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_schedule_summaries.is_none()`.
+    pub fn monitoring_schedule_summaries(&self) -> &[crate::types::MonitoringScheduleSummary] {
+        self.monitoring_schedule_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

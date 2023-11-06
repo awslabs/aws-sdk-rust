@@ -49,7 +49,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::action_type_executor_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -60,23 +62,23 @@ where
 pub fn ser_action_type_executor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionTypeExecutor,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("configuration").start_object();
         crate::protocol_serde::shape_executor_configuration::ser_executor_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("type").string(var_3.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_4) = &input.policy_statements_template {
-        object.key("policyStatementsTemplate").string(var_4.as_str());
+    if let Some(var_3) = &input.policy_statements_template {
+        object.key("policyStatementsTemplate").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.job_timeout {
+    if let Some(var_4) = &input.job_timeout {
         object.key("jobTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

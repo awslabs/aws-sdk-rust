@@ -9,7 +9,7 @@ pub struct CloudWatchLogsConfig {
     /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
-    pub status: ::std::option::Option<crate::types::LogsConfigStatusType>,
+    pub status: crate::types::LogsConfigStatusType,
     /// <p> The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p> The prefix of the stream name of the CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
@@ -21,8 +21,8 @@ impl CloudWatchLogsConfig {
     /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LogsConfigStatusType> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::LogsConfigStatusType {
+        &self.status
     }
     /// <p> The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
@@ -54,6 +54,7 @@ impl CloudWatchLogsConfigBuilder {
     /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::LogsConfigStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -104,11 +105,18 @@ impl CloudWatchLogsConfigBuilder {
         &self.stream_name
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsConfig`](crate::types::CloudWatchLogsConfig).
-    pub fn build(self) -> crate::types::CloudWatchLogsConfig {
-        crate::types::CloudWatchLogsConfig {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::CloudWatchLogsConfigBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogsConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchLogsConfig {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building CloudWatchLogsConfig",
+                )
+            })?,
             group_name: self.group_name,
             stream_name: self.stream_name,
-        }
+        })
     }
 }

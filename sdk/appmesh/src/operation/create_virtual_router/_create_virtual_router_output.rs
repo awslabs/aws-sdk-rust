@@ -34,6 +34,7 @@ pub struct CreateVirtualRouterOutputBuilder {
 }
 impl CreateVirtualRouterOutputBuilder {
     /// <p>The full description of your virtual router following the create call.</p>
+    /// This field is required.
     pub fn virtual_router(mut self, input: crate::types::VirtualRouterData) -> Self {
         self.virtual_router = ::std::option::Option::Some(input);
         self

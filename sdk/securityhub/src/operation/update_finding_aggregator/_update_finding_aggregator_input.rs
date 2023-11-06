@@ -36,8 +36,10 @@ impl UpdateFindingAggregatorInput {
     }
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateFindingAggregatorInput {
@@ -57,6 +59,7 @@ pub struct UpdateFindingAggregatorInputBuilder {
 }
 impl UpdateFindingAggregatorInputBuilder {
     /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    /// This field is required.
     pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_aggregator_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +81,7 @@ impl UpdateFindingAggregatorInputBuilder {
     /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
     /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn region_linking_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_linking_mode = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +137,7 @@ impl UpdateFindingAggregatorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_finding_aggregator::UpdateFindingAggregatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_finding_aggregator::UpdateFindingAggregatorInput {
             finding_aggregator_arn: self.finding_aggregator_arn,

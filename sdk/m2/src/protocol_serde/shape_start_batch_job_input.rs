@@ -2,7 +2,7 @@
 pub fn ser_start_batch_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_batch_job::StartBatchJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.batch_job_identifier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("batchJobIdentifier").start_object();

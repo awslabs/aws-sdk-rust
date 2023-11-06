@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTimelineEventsOutput {
     /// <p>Details about each event that occurred during the incident.</p>
-    pub event_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EventSummary>>,
+    pub event_summaries: ::std::vec::Vec<crate::types::EventSummary>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTimelineEventsOutput {
     /// <p>Details about each event that occurred during the incident.</p>
-    pub fn event_summaries(&self) -> ::std::option::Option<&[crate::types::EventSummary]> {
-        self.event_summaries.as_deref()
+    pub fn event_summaries(&self) -> &[crate::types::EventSummary] {
+        use std::ops::Deref;
+        self.event_summaries.deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListTimelineEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTimelineEventsOutput`](crate::operation::list_timeline_events::ListTimelineEventsOutput).
-    pub fn build(self) -> crate::operation::list_timeline_events::ListTimelineEventsOutput {
-        crate::operation::list_timeline_events::ListTimelineEventsOutput {
-            event_summaries: self.event_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_summaries`](crate::operation::list_timeline_events::builders::ListTimelineEventsOutputBuilder::event_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_timeline_events::ListTimelineEventsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_timeline_events::ListTimelineEventsOutput {
+            event_summaries: self.event_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_summaries",
+                    "event_summaries was not specified but it is required when building ListTimelineEventsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

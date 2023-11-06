@@ -69,6 +69,7 @@ pub struct AdminResetUserPasswordInputBuilder {
 }
 impl AdminResetUserPasswordInputBuilder {
     /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl AdminResetUserPasswordInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name of the user whose password you want to reset.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -155,7 +157,7 @@ impl AdminResetUserPasswordInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_reset_user_password::AdminResetUserPasswordInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_reset_user_password::AdminResetUserPasswordInput {
             user_pool_id: self.user_pool_id,

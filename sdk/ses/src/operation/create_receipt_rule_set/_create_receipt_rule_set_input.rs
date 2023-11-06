@@ -43,6 +43,7 @@ impl CreateReceiptRuleSetInputBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +70,7 @@ impl CreateReceiptRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateReceiptRuleSetInput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput {
             rule_set_name: self.rule_set_name,

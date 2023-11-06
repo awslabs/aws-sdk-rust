@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_security_group_ip_permission(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2SecurityGroupIpPermission,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ip_protocol {
         object.key("IpProtocol").string(var_1.as_str());
     }

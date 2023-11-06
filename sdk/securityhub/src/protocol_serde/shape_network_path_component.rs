@@ -2,7 +2,7 @@
 pub fn ser_network_path_component(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkPathComponent,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_id {
         object.key("ComponentId").string(var_1.as_str());
     }

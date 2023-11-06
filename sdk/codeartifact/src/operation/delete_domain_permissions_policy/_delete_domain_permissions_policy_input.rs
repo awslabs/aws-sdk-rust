@@ -41,6 +41,7 @@ pub struct DeleteDomainPermissionsPolicyInputBuilder {
 }
 impl DeleteDomainPermissionsPolicyInputBuilder {
     /// <p> The name of the domain associated with the resource policy to be deleted. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DeleteDomainPermissionsPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_domain_permissions_policy::DeleteDomainPermissionsPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_domain_permissions_policy::DeleteDomainPermissionsPolicyInput {
             domain: self.domain,

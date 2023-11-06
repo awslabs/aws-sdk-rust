@@ -11,8 +11,10 @@ pub struct AuthenticationConfiguration {
 impl AuthenticationConfiguration {
     /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
     /// <p>The list includes the name and port number of the website host.</p>
-    pub fn basic_authentication(&self) -> ::std::option::Option<&[crate::types::BasicAuthenticationConfiguration]> {
-        self.basic_authentication.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.basic_authentication.is_none()`.
+    pub fn basic_authentication(&self) -> &[crate::types::BasicAuthenticationConfiguration] {
+        self.basic_authentication.as_deref().unwrap_or_default()
     }
 }
 impl AuthenticationConfiguration {

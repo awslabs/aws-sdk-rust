@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "fileBatchJobIdentifier" => Some(crate::types::BatchJobIdentifier::FileBatchJobIdentifier(
                             crate::protocol_serde::shape_file_batch_job_identifier::de_file_batch_job_identifier(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fileBatchJobIdentifier' cannot be null")
@@ -54,7 +59,7 @@ where
 pub fn ser_batch_job_identifier(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchJobIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::BatchJobIdentifier::FileBatchJobIdentifier(inner) => {
             #[allow(unused_mut)]
@@ -69,7 +74,7 @@ pub fn ser_batch_job_identifier(
             object_2.finish();
         }
         crate::types::BatchJobIdentifier::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "BatchJobIdentifier",
             ))
         }

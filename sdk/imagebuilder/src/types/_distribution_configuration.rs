@@ -13,7 +13,7 @@ pub struct DistributionConfiguration {
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
     pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
-    pub timeout_minutes: ::std::option::Option<i32>,
+    pub timeout_minutes: i32,
     /// <p>The date on which this distribution configuration was created.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The date on which this distribution configuration was last updated.</p>
@@ -35,11 +35,13 @@ impl DistributionConfiguration {
         self.description.as_deref()
     }
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
-    pub fn distributions(&self) -> ::std::option::Option<&[crate::types::Distribution]> {
-        self.distributions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.distributions.is_none()`.
+    pub fn distributions(&self) -> &[crate::types::Distribution] {
+        self.distributions.as_deref().unwrap_or_default()
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
-    pub fn timeout_minutes(&self) -> ::std::option::Option<i32> {
+    pub fn timeout_minutes(&self) -> i32 {
         self.timeout_minutes
     }
     /// <p>The date on which this distribution configuration was created.</p>
@@ -139,6 +141,7 @@ impl DistributionConfigurationBuilder {
         &self.distributions
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
+    /// This field is required.
     pub fn timeout_minutes(mut self, input: i32) -> Self {
         self.timeout_minutes = ::std::option::Option::Some(input);
         self
@@ -201,16 +204,23 @@ impl DistributionConfigurationBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DistributionConfiguration`](crate::types::DistributionConfiguration).
-    pub fn build(self) -> crate::types::DistributionConfiguration {
-        crate::types::DistributionConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timeout_minutes`](crate::types::builders::DistributionConfigurationBuilder::timeout_minutes)
+    pub fn build(self) -> ::std::result::Result<crate::types::DistributionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DistributionConfiguration {
             arn: self.arn,
             name: self.name,
             description: self.description,
             distributions: self.distributions,
-            timeout_minutes: self.timeout_minutes,
+            timeout_minutes: self.timeout_minutes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timeout_minutes",
+                    "timeout_minutes was not specified but it is required when building DistributionConfiguration",
+                )
+            })?,
             date_created: self.date_created,
             date_updated: self.date_updated,
             tags: self.tags,
-        }
+        })
     }
 }

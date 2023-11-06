@@ -85,7 +85,7 @@ impl ListConnectorsInputBuilder {
     /// Consumes the builder and constructs a [`ListConnectorsInput`](crate::operation::list_connectors::ListConnectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_connectors::ListConnectorsInput {
             filters: self.filters,
             max_results: self.max_results,

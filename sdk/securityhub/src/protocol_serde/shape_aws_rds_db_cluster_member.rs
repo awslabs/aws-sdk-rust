@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_db_cluster_member(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbClusterMember,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_cluster_writer {
         object.key("IsClusterWriter").boolean(*var_1);
     }

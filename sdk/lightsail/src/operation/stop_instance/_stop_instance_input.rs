@@ -38,6 +38,7 @@ pub struct StopInstanceInputBuilder {
 }
 impl StopInstanceInputBuilder {
     /// <p>The name of the instance (a virtual private server) to stop.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +73,9 @@ impl StopInstanceInputBuilder {
         &self.force
     }
     /// Consumes the builder and constructs a [`StopInstanceInput`](crate::operation::stop_instance::StopInstanceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_instance::StopInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::stop_instance::StopInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_instance::StopInstanceInput {
             instance_name: self.instance_name,
             force: self.force,

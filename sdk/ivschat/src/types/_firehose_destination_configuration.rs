@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirehoseDestinationConfiguration {
     /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
-    pub delivery_stream_name: ::std::option::Option<::std::string::String>,
+    pub delivery_stream_name: ::std::string::String,
 }
 impl FirehoseDestinationConfiguration {
     /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
-    pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
-        self.delivery_stream_name.as_deref()
+    pub fn delivery_stream_name(&self) -> &str {
+        use std::ops::Deref;
+        self.delivery_stream_name.deref()
     }
 }
 impl FirehoseDestinationConfiguration {
@@ -28,6 +29,7 @@ pub struct FirehoseDestinationConfigurationBuilder {
 }
 impl FirehoseDestinationConfigurationBuilder {
     /// <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl FirehoseDestinationConfigurationBuilder {
         &self.delivery_stream_name
     }
     /// Consumes the builder and constructs a [`FirehoseDestinationConfiguration`](crate::types::FirehoseDestinationConfiguration).
-    pub fn build(self) -> crate::types::FirehoseDestinationConfiguration {
-        crate::types::FirehoseDestinationConfiguration {
-            delivery_stream_name: self.delivery_stream_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`delivery_stream_name`](crate::types::builders::FirehoseDestinationConfigurationBuilder::delivery_stream_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FirehoseDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FirehoseDestinationConfiguration {
+            delivery_stream_name: self.delivery_stream_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "delivery_stream_name",
+                    "delivery_stream_name was not specified but it is required when building FirehoseDestinationConfiguration",
+                )
+            })?,
+        })
     }
 }

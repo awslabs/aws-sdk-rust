@@ -69,6 +69,7 @@ pub struct GetManagedEndpointSessionCredentialsInputBuilder {
 }
 impl GetManagedEndpointSessionCredentialsInputBuilder {
     /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
+    /// This field is required.
     pub fn endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
         &self.endpoint_identifier
     }
     /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
+    /// This field is required.
     pub fn virtual_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
         &self.virtual_cluster_identifier
     }
     /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
         &self.execution_role_arn
     }
     /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
+    /// This field is required.
     pub fn credential_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credential_type = ::std::option::Option::Some(input.into());
         self
@@ -171,7 +175,7 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput {

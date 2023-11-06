@@ -44,12 +44,16 @@ impl CreateAssetRevisionInput {
         self.description.as_deref()
     }
     /// <p>The glossary terms to be attached to the asset as part of asset revision.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p>The metadata forms to be attached to the asset as part of asset revision.</p>
-    pub fn forms_input(&self) -> ::std::option::Option<&[crate::types::FormInput]> {
-        self.forms_input.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forms_input.is_none()`.
+    pub fn forms_input(&self) -> &[crate::types::FormInput] {
+        self.forms_input.as_deref().unwrap_or_default()
     }
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     pub fn prediction_configuration(&self) -> ::std::option::Option<&crate::types::PredictionConfiguration> {
@@ -98,6 +102,7 @@ pub struct CreateAssetRevisionInputBuilder {
 }
 impl CreateAssetRevisionInputBuilder {
     /// <p>Te revised name of the asset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +117,7 @@ impl CreateAssetRevisionInputBuilder {
         &self.name
     }
     /// <p>The unique identifier of the domain where the asset is being revised.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +132,7 @@ impl CreateAssetRevisionInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the asset.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -238,7 +245,7 @@ impl CreateAssetRevisionInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssetRevisionInput`](crate::operation::create_asset_revision::CreateAssetRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_asset_revision::CreateAssetRevisionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_asset_revision::CreateAssetRevisionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_asset_revision::CreateAssetRevisionInput {
             name: self.name,

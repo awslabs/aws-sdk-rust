@@ -87,8 +87,10 @@ impl ClientVpnConnection {
         self.connection_end_time.as_deref()
     }
     /// <p>The statuses returned by the client connect handler for posture compliance, if applicable.</p>
-    pub fn posture_compliance_statuses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.posture_compliance_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.posture_compliance_statuses.is_none()`.
+    pub fn posture_compliance_statuses(&self) -> &[::std::string::String] {
+        self.posture_compliance_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ClientVpnConnection {

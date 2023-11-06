@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedInputTypes {
     /// <p>Indicates whether audio input is allowed.</p>
-    pub allow_audio_input: ::std::option::Option<bool>,
+    pub allow_audio_input: bool,
     /// <p>Indicates whether DTMF input is allowed.</p>
-    pub allow_dtmf_input: ::std::option::Option<bool>,
+    pub allow_dtmf_input: bool,
 }
 impl AllowedInputTypes {
     /// <p>Indicates whether audio input is allowed.</p>
-    pub fn allow_audio_input(&self) -> ::std::option::Option<bool> {
+    pub fn allow_audio_input(&self) -> bool {
         self.allow_audio_input
     }
     /// <p>Indicates whether DTMF input is allowed.</p>
-    pub fn allow_dtmf_input(&self) -> ::std::option::Option<bool> {
+    pub fn allow_dtmf_input(&self) -> bool {
         self.allow_dtmf_input
     }
 }
@@ -35,6 +35,7 @@ pub struct AllowedInputTypesBuilder {
 }
 impl AllowedInputTypesBuilder {
     /// <p>Indicates whether audio input is allowed.</p>
+    /// This field is required.
     pub fn allow_audio_input(mut self, input: bool) -> Self {
         self.allow_audio_input = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AllowedInputTypesBuilder {
         &self.allow_audio_input
     }
     /// <p>Indicates whether DTMF input is allowed.</p>
+    /// This field is required.
     pub fn allow_dtmf_input(mut self, input: bool) -> Self {
         self.allow_dtmf_input = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl AllowedInputTypesBuilder {
         &self.allow_dtmf_input
     }
     /// Consumes the builder and constructs a [`AllowedInputTypes`](crate::types::AllowedInputTypes).
-    pub fn build(self) -> crate::types::AllowedInputTypes {
-        crate::types::AllowedInputTypes {
-            allow_audio_input: self.allow_audio_input,
-            allow_dtmf_input: self.allow_dtmf_input,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allow_audio_input`](crate::types::builders::AllowedInputTypesBuilder::allow_audio_input)
+    /// - [`allow_dtmf_input`](crate::types::builders::AllowedInputTypesBuilder::allow_dtmf_input)
+    pub fn build(self) -> ::std::result::Result<crate::types::AllowedInputTypes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AllowedInputTypes {
+            allow_audio_input: self.allow_audio_input.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "allow_audio_input",
+                    "allow_audio_input was not specified but it is required when building AllowedInputTypes",
+                )
+            })?,
+            allow_dtmf_input: self.allow_dtmf_input.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "allow_dtmf_input",
+                    "allow_dtmf_input was not specified but it is required when building AllowedInputTypes",
+                )
+            })?,
+        })
     }
 }

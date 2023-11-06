@@ -48,6 +48,7 @@ pub struct UpdateUserProfileInputBuilder {
 }
 impl UpdateUserProfileInputBuilder {
     /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
+    /// This field is required.
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user_profile::UpdateUserProfileInput {
             iam_user_arn: self.iam_user_arn,
             ssh_username: self.ssh_username,

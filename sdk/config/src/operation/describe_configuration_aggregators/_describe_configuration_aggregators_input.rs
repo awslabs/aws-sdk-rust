@@ -12,8 +12,10 @@ pub struct DescribeConfigurationAggregatorsInput {
 }
 impl DescribeConfigurationAggregatorsInput {
     /// <p>The name of the configuration aggregators.</p>
-    pub fn configuration_aggregator_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_aggregator_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_aggregator_names.is_none()`.
+    pub fn configuration_aggregator_names(&self) -> &[::std::string::String] {
+        self.configuration_aggregator_names.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -93,7 +95,7 @@ impl DescribeConfigurationAggregatorsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsInput {

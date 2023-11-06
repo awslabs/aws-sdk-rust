@@ -34,6 +34,7 @@ pub struct StartOnDemandReplicationRunInputBuilder {
 }
 impl StartOnDemandReplicationRunInputBuilder {
     /// <p>The ID of the replication job.</p>
+    /// This field is required.
     pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl StartOnDemandReplicationRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput {
             replication_job_id: self.replication_job_id,

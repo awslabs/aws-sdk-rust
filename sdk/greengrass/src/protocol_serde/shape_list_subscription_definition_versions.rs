@@ -83,8 +83,9 @@ pub(crate) fn de_list_subscription_definition_versions(
                     );
                 }
                 "Versions" => {
-                    builder =
-                        builder.set_versions(crate::protocol_serde::shape___list_of_version_information::de___list_of_version_information(tokens)?);
+                    builder = builder.set_versions(crate::protocol_serde::shape_list_of_version_information::de_list_of_version_information(
+                        tokens,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

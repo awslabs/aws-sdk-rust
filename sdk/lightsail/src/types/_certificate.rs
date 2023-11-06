@@ -81,12 +81,16 @@ impl Certificate {
         self.serial_number.as_deref()
     }
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) of the certificate.</p>
-    pub fn subject_alternative_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subject_alternative_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
+    pub fn subject_alternative_names(&self) -> &[::std::string::String] {
+        self.subject_alternative_names.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub fn domain_validation_records(&self) -> ::std::option::Option<&[crate::types::DomainValidationRecord]> {
-        self.domain_validation_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_records.is_none()`.
+    pub fn domain_validation_records(&self) -> &[crate::types::DomainValidationRecord] {
+        self.domain_validation_records.as_deref().unwrap_or_default()
     }
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
@@ -147,8 +151,10 @@ impl Certificate {
         self.revocation_reason.as_deref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail certificate. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(&self) -> ::std::option::Option<&str> {

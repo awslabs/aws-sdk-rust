@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditSuppression {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub check_name: ::std::option::Option<::std::string::String>,
+    pub check_name: ::std::string::String,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
@@ -17,8 +17,9 @@ pub struct AuditSuppression {
 }
 impl AuditSuppression {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn check_name(&self) -> ::std::option::Option<&str> {
-        self.check_name.as_deref()
+    pub fn check_name(&self) -> &str {
+        use std::ops::Deref;
+        self.check_name.deref()
     }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(&self) -> ::std::option::Option<&crate::types::ResourceIdentifier> {
@@ -56,6 +57,7 @@ pub struct AuditSuppressionBuilder {
 }
 impl AuditSuppressionBuilder {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    /// This field is required.
     pub fn check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl AuditSuppressionBuilder {
         &self.check_name
     }
     /// <p>Information that identifies the noncompliant resource.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
         self
@@ -126,13 +129,20 @@ impl AuditSuppressionBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`AuditSuppression`](crate::types::AuditSuppression).
-    pub fn build(self) -> crate::types::AuditSuppression {
-        crate::types::AuditSuppression {
-            check_name: self.check_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`check_name`](crate::types::builders::AuditSuppressionBuilder::check_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AuditSuppression, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AuditSuppression {
+            check_name: self.check_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "check_name",
+                    "check_name was not specified but it is required when building AuditSuppression",
+                )
+            })?,
             resource_identifier: self.resource_identifier,
             expiration_date: self.expiration_date,
             suppress_indefinitely: self.suppress_indefinitely,
             description: self.description,
-        }
+        })
     }
 }

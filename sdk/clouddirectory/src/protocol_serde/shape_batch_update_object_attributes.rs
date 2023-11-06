@@ -2,24 +2,24 @@
 pub fn ser_batch_update_object_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchUpdateObjectAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.object_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ObjectReference").start_object();
         crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.attribute_updates {
-        let mut array_4 = object.key("AttributeUpdates").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("AttributeUpdates").start_array();
+        for item_4 in &input.attribute_updates {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_object_attribute_update::ser_object_attribute_update(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_object_attribute_update::ser_object_attribute_update(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }

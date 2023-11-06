@@ -27,6 +27,7 @@ pub struct DeleteDatasetImportJobInputBuilder {
 }
 impl DeleteDatasetImportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
+    /// This field is required.
     pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteDatasetImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput {
             dataset_import_job_arn: self.dataset_import_job_arn,

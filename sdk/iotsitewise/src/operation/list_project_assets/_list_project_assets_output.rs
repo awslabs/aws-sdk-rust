@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectAssetsOutput {
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
-    pub asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub asset_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProjectAssetsOutput {
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
-    pub fn asset_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.asset_ids.as_deref()
+    pub fn asset_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.asset_ids.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListProjectAssetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProjectAssetsOutput`](crate::operation::list_project_assets::ListProjectAssetsOutput).
-    pub fn build(self) -> crate::operation::list_project_assets::ListProjectAssetsOutput {
-        crate::operation::list_project_assets::ListProjectAssetsOutput {
-            asset_ids: self.asset_ids,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_ids`](crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder::asset_ids)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_project_assets::ListProjectAssetsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_project_assets::ListProjectAssetsOutput {
+            asset_ids: self.asset_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_ids",
+                    "asset_ids was not specified but it is required when building ListProjectAssetsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

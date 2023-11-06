@@ -38,8 +38,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgumentException" => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::InvalidArgumentException({
@@ -54,8 +54,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRequestException" => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::InvalidRequestException({
@@ -70,8 +70,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceInUseException" => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::ResourceInUseException({
@@ -86,8 +86,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::ResourceNotFoundException({
@@ -102,8 +102,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::generic(generic)
@@ -137,12 +137,12 @@ pub fn de_delete_application_input_processing_configuration_http_response(
 
 pub fn ser_delete_application_input_processing_configuration_input(
     input: &crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_application_input_processing_configuration_input::ser_delete_application_input_processing_configuration_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_delete_application_input_processing_configuration(

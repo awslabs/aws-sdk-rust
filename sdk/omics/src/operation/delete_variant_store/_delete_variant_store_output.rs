@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVariantStoreOutput {
     /// <p>The store's status.</p>
-    pub status: ::std::option::Option<crate::types::StoreStatus>,
+    pub status: crate::types::StoreStatus,
     _request_id: Option<String>,
 }
 impl DeleteVariantStoreOutput {
     /// <p>The store's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StoreStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StoreStatus {
+        &self.status
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteVariantStoreOutput {
@@ -34,6 +34,7 @@ pub struct DeleteVariantStoreOutputBuilder {
 }
 impl DeleteVariantStoreOutputBuilder {
     /// <p>The store's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,20 @@ impl DeleteVariantStoreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVariantStoreOutput`](crate::operation::delete_variant_store::DeleteVariantStoreOutput).
-    pub fn build(self) -> crate::operation::delete_variant_store::DeleteVariantStoreOutput {
-        crate::operation::delete_variant_store::DeleteVariantStoreOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::delete_variant_store::builders::DeleteVariantStoreOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_variant_store::DeleteVariantStoreOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_variant_store::DeleteVariantStoreOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DeleteVariantStoreOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

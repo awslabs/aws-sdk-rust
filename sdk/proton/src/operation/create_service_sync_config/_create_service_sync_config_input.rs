@@ -55,6 +55,7 @@ pub struct CreateServiceSyncConfigInputBuilder {
 }
 impl CreateServiceSyncConfigInputBuilder {
     /// <p>The name of the service the Proton Ops file is for.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateServiceSyncConfigInputBuilder {
         &self.service_name
     }
     /// <p>The provider type for your repository.</p>
+    /// This field is required.
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl CreateServiceSyncConfigInputBuilder {
         &self.repository_provider
     }
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateServiceSyncConfigInputBuilder {
         &self.repository_name
     }
     /// <p>The repository branch for your Proton Ops file.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl CreateServiceSyncConfigInputBuilder {
         &self.branch
     }
     /// <p>The path to the Proton Ops file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +134,7 @@ impl CreateServiceSyncConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_sync_config::CreateServiceSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_service_sync_config::CreateServiceSyncConfigInput {
             service_name: self.service_name,

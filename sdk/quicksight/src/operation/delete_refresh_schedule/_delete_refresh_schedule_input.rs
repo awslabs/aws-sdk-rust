@@ -41,6 +41,7 @@ pub struct DeleteRefreshScheduleInputBuilder {
 }
 impl DeleteRefreshScheduleInputBuilder {
     /// <p>The ID of the dataset.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteRefreshScheduleInputBuilder {
         &self.data_set_id
     }
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteRefreshScheduleInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the refresh schedule.</p>
+    /// This field is required.
     pub fn schedule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl DeleteRefreshScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRefreshScheduleInput`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput {
             data_set_id: self.data_set_id,

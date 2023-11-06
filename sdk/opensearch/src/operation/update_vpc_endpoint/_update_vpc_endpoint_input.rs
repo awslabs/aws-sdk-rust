@@ -34,6 +34,7 @@ pub struct UpdateVpcEndpointInputBuilder {
 }
 impl UpdateVpcEndpointInputBuilder {
     /// <p>The unique identifier of the endpoint.</p>
+    /// This field is required.
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateVpcEndpointInputBuilder {
         &self.vpc_endpoint_id
     }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+    /// This field is required.
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
         self.vpc_options = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl UpdateVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcEndpointInput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput {
             vpc_endpoint_id: self.vpc_endpoint_id,
             vpc_options: self.vpc_options,

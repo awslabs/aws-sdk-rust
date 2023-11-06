@@ -15,8 +15,10 @@ impl AuthorizeSecurityGroupIngressOutput {
         self.r#return
     }
     /// <p>Information about the inbound (ingress) security group rules that were added.</p>
-    pub fn security_group_rules(&self) -> ::std::option::Option<&[crate::types::SecurityGroupRule]> {
-        self.security_group_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_rules.is_none()`.
+    pub fn security_group_rules(&self) -> &[crate::types::SecurityGroupRule] {
+        self.security_group_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AuthorizeSecurityGroupIngressOutput {

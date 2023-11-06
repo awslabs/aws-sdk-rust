@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GsmNmrObj {
     /// <p>GSM base station identity code (BSIC).</p>
-    pub bsic: ::std::option::Option<i32>,
+    pub bsic: i32,
     /// <p>GSM broadcast control channel.</p>
-    pub bcch: ::std::option::Option<i32>,
+    pub bcch: i32,
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
     pub rx_level: ::std::option::Option<i32>,
     /// <p>Global identity information of the GSM object.</p>
@@ -15,11 +15,11 @@ pub struct GsmNmrObj {
 }
 impl GsmNmrObj {
     /// <p>GSM base station identity code (BSIC).</p>
-    pub fn bsic(&self) -> ::std::option::Option<i32> {
+    pub fn bsic(&self) -> i32 {
         self.bsic
     }
     /// <p>GSM broadcast control channel.</p>
-    pub fn bcch(&self) -> ::std::option::Option<i32> {
+    pub fn bcch(&self) -> i32 {
         self.bcch
     }
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
@@ -49,6 +49,7 @@ pub struct GsmNmrObjBuilder {
 }
 impl GsmNmrObjBuilder {
     /// <p>GSM base station identity code (BSIC).</p>
+    /// This field is required.
     pub fn bsic(mut self, input: i32) -> Self {
         self.bsic = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl GsmNmrObjBuilder {
         &self.bsic
     }
     /// <p>GSM broadcast control channel.</p>
+    /// This field is required.
     pub fn bcch(mut self, input: i32) -> Self {
         self.bcch = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,25 @@ impl GsmNmrObjBuilder {
         &self.global_identity
     }
     /// Consumes the builder and constructs a [`GsmNmrObj`](crate::types::GsmNmrObj).
-    pub fn build(self) -> crate::types::GsmNmrObj {
-        crate::types::GsmNmrObj {
-            bsic: self.bsic,
-            bcch: self.bcch,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bsic`](crate::types::builders::GsmNmrObjBuilder::bsic)
+    /// - [`bcch`](crate::types::builders::GsmNmrObjBuilder::bcch)
+    pub fn build(self) -> ::std::result::Result<crate::types::GsmNmrObj, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GsmNmrObj {
+            bsic: self.bsic.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bsic",
+                    "bsic was not specified but it is required when building GsmNmrObj",
+                )
+            })?,
+            bcch: self.bcch.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bcch",
+                    "bcch was not specified but it is required when building GsmNmrObj",
+                )
+            })?,
             rx_level: self.rx_level,
             global_identity: self.global_identity,
-        }
+        })
     }
 }

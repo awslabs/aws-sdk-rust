@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeConfig {
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
-    pub hub_device_arn: ::std::option::Option<::std::string::String>,
+    pub hub_device_arn: ::std::string::String,
     /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
     pub recorder_config: ::std::option::Option<crate::types::RecorderConfig>,
     /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
@@ -15,8 +15,9 @@ pub struct EdgeConfig {
 }
 impl EdgeConfig {
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
-    pub fn hub_device_arn(&self) -> ::std::option::Option<&str> {
-        self.hub_device_arn.as_deref()
+    pub fn hub_device_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.hub_device_arn.deref()
     }
     /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
     pub fn recorder_config(&self) -> ::std::option::Option<&crate::types::RecorderConfig> {
@@ -49,6 +50,7 @@ pub struct EdgeConfigBuilder {
 }
 impl EdgeConfigBuilder {
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
+    /// This field is required.
     pub fn hub_device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_device_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl EdgeConfigBuilder {
         &self.hub_device_arn
     }
     /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
+    /// This field is required.
     pub fn recorder_config(mut self, input: crate::types::RecorderConfig) -> Self {
         self.recorder_config = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,19 @@ impl EdgeConfigBuilder {
         &self.deletion_config
     }
     /// Consumes the builder and constructs a [`EdgeConfig`](crate::types::EdgeConfig).
-    pub fn build(self) -> crate::types::EdgeConfig {
-        crate::types::EdgeConfig {
-            hub_device_arn: self.hub_device_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hub_device_arn`](crate::types::builders::EdgeConfigBuilder::hub_device_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::EdgeConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EdgeConfig {
+            hub_device_arn: self.hub_device_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "hub_device_arn",
+                    "hub_device_arn was not specified but it is required when building EdgeConfig",
+                )
+            })?,
             recorder_config: self.recorder_config,
             uploader_config: self.uploader_config,
             deletion_config: self.deletion_config,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_update_address(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateAddress,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.address1 {
         object.key("Address1").string(var_1.as_str());
     }

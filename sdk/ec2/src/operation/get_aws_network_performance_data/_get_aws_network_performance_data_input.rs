@@ -18,8 +18,10 @@ pub struct GetAwsNetworkPerformanceDataInput {
 }
 impl GetAwsNetworkPerformanceDataInput {
     /// <p>A list of network performance data queries.</p>
-    pub fn data_queries(&self) -> ::std::option::Option<&[crate::types::DataQuery]> {
-        self.data_queries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_queries.is_none()`.
+    pub fn data_queries(&self) -> &[crate::types::DataQuery] {
+        self.data_queries.as_deref().unwrap_or_default()
     }
     /// <p>The starting time for the performance data request. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -156,7 +158,7 @@ impl GetAwsNetworkPerformanceDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataInput {
             data_queries: self.data_queries,

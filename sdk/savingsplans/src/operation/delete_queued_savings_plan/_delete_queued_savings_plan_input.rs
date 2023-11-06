@@ -27,6 +27,7 @@ pub struct DeleteQueuedSavingsPlanInputBuilder {
 }
 impl DeleteQueuedSavingsPlanInputBuilder {
     /// <p>The ID of the Savings Plan.</p>
+    /// This field is required.
     pub fn savings_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.savings_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteQueuedSavingsPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput {
             savings_plan_id: self.savings_plan_id,

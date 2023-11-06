@@ -41,6 +41,7 @@ pub struct DisassociateIdentityProviderConfigInputBuilder {
 }
 impl DisassociateIdentityProviderConfigInputBuilder {
     /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateIdentityProviderConfigInputBuilder {
         &self.cluster_name
     }
     /// <p>An object representing an identity provider configuration.</p>
+    /// This field is required.
     pub fn identity_provider_config(mut self, input: crate::types::IdentityProviderConfig) -> Self {
         self.identity_provider_config = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl DisassociateIdentityProviderConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigInput {

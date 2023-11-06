@@ -41,6 +41,7 @@ pub struct RevokeSignatureInputBuilder {
 }
 impl RevokeSignatureInputBuilder {
     /// <p>ID of the signing job to be revoked.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl RevokeSignatureInputBuilder {
         &self.job_owner
     }
     /// <p>The reason for revoking the signing job.</p>
+    /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl RevokeSignatureInputBuilder {
     /// Consumes the builder and constructs a [`RevokeSignatureInput`](crate::operation::revoke_signature::RevokeSignatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_signature::RevokeSignatureInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_signature::RevokeSignatureInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_signature::RevokeSignatureInput {
             job_id: self.job_id,
             job_owner: self.job_owner,

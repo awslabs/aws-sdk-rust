@@ -27,6 +27,7 @@ pub struct GetWorkflowStepExecutionInputBuilder {
 }
 impl GetWorkflowStepExecutionInputBuilder {
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
+    /// This field is required.
     pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetWorkflowStepExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput {
             step_execution_id: self.step_execution_id,

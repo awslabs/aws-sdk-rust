@@ -55,6 +55,7 @@ pub struct UpdateVpceConfigurationInputBuilder {
 }
 impl UpdateVpceConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl UpdateVpceConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpce_configuration::UpdateVpceConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_vpce_configuration::UpdateVpceConfigurationInput {
             arn: self.arn,

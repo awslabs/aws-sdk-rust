@@ -27,6 +27,7 @@ pub struct CancelAuditTaskInputBuilder {
 }
 impl CancelAuditTaskInputBuilder {
     /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CancelAuditTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelAuditTaskInput`](crate::operation::cancel_audit_task::CancelAuditTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_audit_task::CancelAuditTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_audit_task::CancelAuditTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_audit_task::CancelAuditTaskInput { task_id: self.task_id })
     }
 }

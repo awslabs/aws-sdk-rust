@@ -27,6 +27,7 @@ pub struct ListGroupCertificateAuthoritiesInputBuilder {
 }
 impl ListGroupCertificateAuthoritiesInputBuilder {
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ListGroupCertificateAuthoritiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesInput { group_id: self.group_id },

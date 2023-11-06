@@ -73,7 +73,9 @@ pub fn de_list_server_certificate_tags_http_response(
         output = crate::protocol_serde::shape_list_server_certificate_tags::de_list_server_certificate_tags(_response_body, output)
             .map_err(crate::operation::list_server_certificate_tags::ListServerCertificateTagsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_server_certificate_tags_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_server_certificate_tags::ListServerCertificateTagsError::unhandled)?
     })
 }
 

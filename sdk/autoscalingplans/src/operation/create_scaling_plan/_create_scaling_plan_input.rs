@@ -24,8 +24,10 @@ impl CreateScalingPlanInput {
     }
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn scaling_instructions(&self) -> ::std::option::Option<&[crate::types::ScalingInstruction]> {
-        self.scaling_instructions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scaling_instructions.is_none()`.
+    pub fn scaling_instructions(&self) -> &[crate::types::ScalingInstruction] {
+        self.scaling_instructions.as_deref().unwrap_or_default()
     }
 }
 impl CreateScalingPlanInput {
@@ -45,6 +47,7 @@ pub struct CreateScalingPlanInputBuilder {
 }
 impl CreateScalingPlanInputBuilder {
     /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
+    /// This field is required.
     pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +63,7 @@ impl CreateScalingPlanInputBuilder {
     }
     /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    /// This field is required.
     pub fn application_source(mut self, input: crate::types::ApplicationSource) -> Self {
         self.application_source = ::std::option::Option::Some(input);
         self
@@ -101,7 +105,7 @@ impl CreateScalingPlanInputBuilder {
     /// Consumes the builder and constructs a [`CreateScalingPlanInput`](crate::operation::create_scaling_plan::CreateScalingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_scaling_plan::CreateScalingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_scaling_plan::CreateScalingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scaling_plan::CreateScalingPlanInput {
             scaling_plan_name: self.scaling_plan_name,
             application_source: self.application_source,

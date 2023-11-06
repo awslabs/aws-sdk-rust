@@ -27,6 +27,7 @@ pub struct GetPortalServiceProviderMetadataInputBuilder {
 }
 impl GetPortalServiceProviderMetadataInputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetPortalServiceProviderMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput { portal_arn: self.portal_arn },

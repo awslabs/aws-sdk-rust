@@ -2,16 +2,16 @@
 pub fn ser_what_if_range_scenario(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WhatIfRangeScenario,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.start_date {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object
             .key("StartDate")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.start_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.end_date {
+    {
         object
             .key("EndDate")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     {
         object.key("Value").number(
@@ -63,7 +63,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::what_if_range_scenario_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

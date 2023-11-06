@@ -34,6 +34,7 @@ pub struct DeleteSchemaInputBuilder {
 }
 impl DeleteSchemaInputBuilder {
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteSchemaInputBuilder {
         &self.registry_name
     }
     /// <p>The name of the schema.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,9 @@ impl DeleteSchemaInputBuilder {
         &self.schema_name
     }
     /// Consumes the builder and constructs a [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_schema::DeleteSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_schema::DeleteSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_schema::DeleteSchemaInput {
             registry_name: self.registry_name,
             schema_name: self.schema_name,

@@ -56,6 +56,7 @@ impl ListAvailableManagedRuleGroupsInputBuilder {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -112,7 +113,7 @@ impl ListAvailableManagedRuleGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsInput {

@@ -21,8 +21,10 @@ impl MutualTlsAuthentication {
         self.truststore_version.as_deref()
     }
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
-    pub fn truststore_warnings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.truststore_warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.truststore_warnings.is_none()`.
+    pub fn truststore_warnings(&self) -> &[::std::string::String] {
+        self.truststore_warnings.as_deref().unwrap_or_default()
     }
 }
 impl MutualTlsAuthentication {

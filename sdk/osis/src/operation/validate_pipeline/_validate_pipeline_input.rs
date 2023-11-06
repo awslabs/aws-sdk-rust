@@ -27,6 +27,7 @@ pub struct ValidatePipelineInputBuilder {
 }
 impl ValidatePipelineInputBuilder {
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
+    /// This field is required.
     pub fn pipeline_configuration_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_configuration_body = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl ValidatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`ValidatePipelineInput`](crate::operation::validate_pipeline::ValidatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_pipeline::ValidatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::validate_pipeline::ValidatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::validate_pipeline::ValidatePipelineInput {
             pipeline_configuration_body: self.pipeline_configuration_body,
         })

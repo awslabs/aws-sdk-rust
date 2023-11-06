@@ -27,6 +27,7 @@ pub struct DeleteAppInstanceUserInputBuilder {
 }
 impl DeleteAppInstanceUserInputBuilder {
     /// <p>The ARN of the user request being deleted.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAppInstanceUserInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppInstanceUserInput`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput {
             app_instance_user_arn: self.app_instance_user_arn,

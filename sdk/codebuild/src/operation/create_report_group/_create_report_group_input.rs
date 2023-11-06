@@ -28,8 +28,10 @@ impl CreateReportGroupInput {
     }
     /// <p> A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateReportGroupInput {
@@ -50,6 +52,7 @@ pub struct CreateReportGroupInputBuilder {
 }
 impl CreateReportGroupInputBuilder {
     /// <p> The name of the report group. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +67,7 @@ impl CreateReportGroupInputBuilder {
         &self.name
     }
     /// <p> The type of report group. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ReportType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -78,6 +82,7 @@ impl CreateReportGroupInputBuilder {
         &self.r#type
     }
     /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+    /// This field is required.
     pub fn export_config(mut self, input: crate::types::ReportExportConfig) -> Self {
         self.export_config = ::std::option::Option::Some(input);
         self
@@ -117,7 +122,7 @@ impl CreateReportGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateReportGroupInput`](crate::operation::create_report_group::CreateReportGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_report_group::CreateReportGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_report_group::CreateReportGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_report_group::CreateReportGroupInput {
             name: self.name,
             r#type: self.r#type,

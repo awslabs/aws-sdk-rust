@@ -31,6 +31,7 @@ pub struct DescribeResizeInputBuilder {
 impl DescribeResizeInputBuilder {
     /// <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>
     /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,7 +50,7 @@ impl DescribeResizeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeResizeInput`](crate::operation::describe_resize::DescribeResizeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_resize::DescribeResizeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_resize::DescribeResizeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_resize::DescribeResizeInput {
             cluster_identifier: self.cluster_identifier,
         })

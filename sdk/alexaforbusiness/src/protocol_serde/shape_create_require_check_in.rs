@@ -2,15 +2,15 @@
 pub fn ser_create_require_check_in(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateRequireCheckIn,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.release_after_minutes {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("ReleaseAfterMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.release_after_minutes).into()),
         );
     }
-    if let Some(var_2) = &input.enabled {
-        object.key("Enabled").boolean(*var_2);
+    {
+        object.key("Enabled").boolean(input.enabled);
     }
     Ok(())
 }

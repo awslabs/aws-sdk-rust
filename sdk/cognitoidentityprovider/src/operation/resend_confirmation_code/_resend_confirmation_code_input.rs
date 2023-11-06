@@ -93,6 +93,7 @@ pub struct ResendConfirmationCodeInputBuilder {
 }
 impl ResendConfirmationCodeInputBuilder {
     /// <p>The ID of the client associated with the user pool.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +136,7 @@ impl ResendConfirmationCodeInputBuilder {
         &self.user_context_data
     }
     /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -219,8 +221,10 @@ impl ResendConfirmationCodeInputBuilder {
     /// Consumes the builder and constructs a [`ResendConfirmationCodeInput`](crate::operation::resend_confirmation_code::ResendConfirmationCodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resend_confirmation_code::ResendConfirmationCodeInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::resend_confirmation_code::ResendConfirmationCodeInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::resend_confirmation_code::ResendConfirmationCodeInput {
             client_id: self.client_id,
             secret_hash: self.secret_hash,

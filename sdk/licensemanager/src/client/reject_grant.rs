@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RejectGrant`](crate::operation::reject_grant::builders::RejectGrantFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`grant_arn(impl Into<String>)`](crate::operation::reject_grant::builders::RejectGrantFluentBuilder::grant_arn) / [`set_grant_arn(Option<String>)`](crate::operation::reject_grant::builders::RejectGrantFluentBuilder::set_grant_arn): <p>Amazon Resource Name (ARN) of the grant.</p>
+    ///   - [`grant_arn(impl Into<String>)`](crate::operation::reject_grant::builders::RejectGrantFluentBuilder::grant_arn) / [`set_grant_arn(Option<String>)`](crate::operation::reject_grant::builders::RejectGrantFluentBuilder::set_grant_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the grant.</p><br>
     /// - On success, responds with [`RejectGrantOutput`](crate::operation::reject_grant::RejectGrantOutput) with field(s):
     ///   - [`grant_arn(Option<String>)`](crate::operation::reject_grant::RejectGrantOutput::grant_arn): <p>Grant ARN.</p>
     ///   - [`status(Option<GrantStatus>)`](crate::operation::reject_grant::RejectGrantOutput::status): <p>Grant status.</p>

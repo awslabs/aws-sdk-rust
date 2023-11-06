@@ -102,7 +102,7 @@ pub(crate) fn de_list_configurations(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "configurations" => {
-                    builder = builder.set_configurations(crate::protocol_serde::shape___list_of_configuration::de___list_of_configuration(tokens)?);
+                    builder = builder.set_configurations(crate::protocol_serde::shape_list_of_configuration::de_list_of_configuration(tokens)?);
                 }
                 "maxResults" => {
                     builder = builder.set_max_results(

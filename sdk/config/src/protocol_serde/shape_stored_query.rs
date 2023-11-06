@@ -59,7 +59,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::stored_query_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -70,21 +72,21 @@ where
 pub fn ser_stored_query(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StoredQuery,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.query_id {
         object.key("QueryId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.query_arn {
         object.key("QueryArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.query_name {
-        object.key("QueryName").string(var_3.as_str());
+    {
+        object.key("QueryName").string(input.query_name.as_str());
     }
-    if let Some(var_4) = &input.description {
-        object.key("Description").string(var_4.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.expression {
-        object.key("Expression").string(var_5.as_str());
+    if let Some(var_4) = &input.expression {
+        object.key("Expression").string(var_4.as_str());
     }
     Ok(())
 }

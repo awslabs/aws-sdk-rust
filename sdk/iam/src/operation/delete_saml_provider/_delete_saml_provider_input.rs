@@ -27,6 +27,7 @@ pub struct DeleteSamlProviderInputBuilder {
 }
 impl DeleteSamlProviderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
+    /// This field is required.
     pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteSamlProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSamlProviderInput`](crate::operation::delete_saml_provider::DeleteSamlProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_saml_provider::DeleteSamlProviderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_saml_provider::DeleteSamlProviderInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_saml_provider::DeleteSamlProviderInput {
             saml_provider_arn: self.saml_provider_arn,
         })

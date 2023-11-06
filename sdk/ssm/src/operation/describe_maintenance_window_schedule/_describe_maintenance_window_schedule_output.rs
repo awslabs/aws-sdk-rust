@@ -11,8 +11,10 @@ pub struct DescribeMaintenanceWindowScheduleOutput {
 }
 impl DescribeMaintenanceWindowScheduleOutput {
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
-    pub fn scheduled_window_executions(&self) -> ::std::option::Option<&[crate::types::ScheduledWindowExecution]> {
-        self.scheduled_window_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_window_executions.is_none()`.
+    pub fn scheduled_window_executions(&self) -> &[crate::types::ScheduledWindowExecution] {
+        self.scheduled_window_executions.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

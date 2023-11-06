@@ -76,8 +76,10 @@ impl GetMlTransformOutput {
         self.last_modified_on.as_ref()
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn input_record_tables(&self) -> ::std::option::Option<&[crate::types::GlueTable]> {
-        self.input_record_tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_record_tables.is_none()`.
+    pub fn input_record_tables(&self) -> &[crate::types::GlueTable] {
+        self.input_record_tables.as_deref().unwrap_or_default()
     }
     /// <p>The configuration parameters that are specific to the algorithm used.</p>
     pub fn parameters(&self) -> ::std::option::Option<&crate::types::TransformParameters> {
@@ -93,8 +95,10 @@ impl GetMlTransformOutput {
     }
     /// <p>The <code>Map
     /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
-    pub fn schema(&self) -> ::std::option::Option<&[crate::types::SchemaColumn]> {
-        self.schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema.is_none()`.
+    pub fn schema(&self) -> &[crate::types::SchemaColumn] {
+        self.schema.as_deref().unwrap_or_default()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub fn role(&self) -> ::std::option::Option<&str> {

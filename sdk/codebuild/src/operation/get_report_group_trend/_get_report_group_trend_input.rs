@@ -187,6 +187,7 @@ pub struct GetReportGroupTrendInputBuilder {
 }
 impl GetReportGroupTrendInputBuilder {
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
+    /// This field is required.
     pub fn report_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -290,6 +291,7 @@ impl GetReportGroupTrendInputBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn trend_field(mut self, input: crate::types::ReportGroupTrendFieldType) -> Self {
         self.trend_field = ::std::option::Option::Some(input);
         self
@@ -450,7 +452,7 @@ impl GetReportGroupTrendInputBuilder {
     /// Consumes the builder and constructs a [`GetReportGroupTrendInput`](crate::operation::get_report_group_trend::GetReportGroupTrendInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_report_group_trend::GetReportGroupTrendInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_report_group_trend::GetReportGroupTrendInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_report_group_trend::GetReportGroupTrendInput {
             report_group_arn: self.report_group_arn,

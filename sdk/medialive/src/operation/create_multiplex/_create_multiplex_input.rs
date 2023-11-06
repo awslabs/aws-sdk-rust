@@ -17,8 +17,10 @@ pub struct CreateMultiplexInput {
 }
 impl CreateMultiplexInput {
     /// A list of availability zones for the multiplex. You must specify exactly two.
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// Configuration for a multiplex event.
     pub fn multiplex_settings(&self) -> ::std::option::Option<&crate::types::MultiplexSettings> {
@@ -76,6 +78,7 @@ impl CreateMultiplexInputBuilder {
         &self.availability_zones
     }
     /// Configuration for a multiplex event.
+    /// This field is required.
     pub fn multiplex_settings(mut self, input: crate::types::MultiplexSettings) -> Self {
         self.multiplex_settings = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl CreateMultiplexInputBuilder {
         &self.multiplex_settings
     }
     /// Name of multiplex.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl CreateMultiplexInputBuilder {
         &self.name
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -140,7 +145,7 @@ impl CreateMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`CreateMultiplexInput`](crate::operation::create_multiplex::CreateMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_multiplex::CreateMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_multiplex::CreateMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_multiplex::CreateMultiplexInput {
             availability_zones: self.availability_zones,
             multiplex_settings: self.multiplex_settings,

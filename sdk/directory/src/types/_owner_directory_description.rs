@@ -27,8 +27,10 @@ impl OwnerDirectoryDescription {
         self.account_id.as_deref()
     }
     /// <p>IP address of the directory’s domain controllers.</p>
-    pub fn dns_ip_addrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ip_addrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addrs.is_none()`.
+    pub fn dns_ip_addrs(&self) -> &[::std::string::String] {
+        self.dns_ip_addrs.as_deref().unwrap_or_default()
     }
     /// <p>Information about the VPC settings for the directory.</p>
     pub fn vpc_settings(&self) -> ::std::option::Option<&crate::types::DirectoryVpcSettingsDescription> {

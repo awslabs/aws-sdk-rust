@@ -2,63 +2,63 @@
 pub fn ser_advanced_field_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdvancedFieldSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field {
-        object.key("Field").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Field").string(input.field.as_str());
     }
-    if let Some(var_2) = &input.equals {
-        let mut array_3 = object.key("Equals").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.equals {
+        let mut array_2 = object.key("Equals").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.starts_with {
-        let mut array_6 = object.key("StartsWith").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.starts_with {
+        let mut array_5 = object.key("StartsWith").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.ends_with {
-        let mut array_9 = object.key("EndsWith").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.ends_with {
+        let mut array_8 = object.key("EndsWith").start_array();
+        for item_9 in var_7 {
             {
-                array_9.value().string(item_10.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_11) = &input.not_equals {
-        let mut array_12 = object.key("NotEquals").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.not_equals {
+        let mut array_11 = object.key("NotEquals").start_array();
+        for item_12 in var_10 {
             {
-                array_12.value().string(item_13.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
-    if let Some(var_14) = &input.not_starts_with {
-        let mut array_15 = object.key("NotStartsWith").start_array();
-        for item_16 in var_14 {
+    if let Some(var_13) = &input.not_starts_with {
+        let mut array_14 = object.key("NotStartsWith").start_array();
+        for item_15 in var_13 {
             {
-                array_15.value().string(item_16.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_15.finish();
+        array_14.finish();
     }
-    if let Some(var_17) = &input.not_ends_with {
-        let mut array_18 = object.key("NotEndsWith").start_array();
-        for item_19 in var_17 {
+    if let Some(var_16) = &input.not_ends_with {
+        let mut array_17 = object.key("NotEndsWith").start_array();
+        for item_18 in var_16 {
             {
-                array_18.value().string(item_19.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_18.finish();
+        array_17.finish();
     }
     Ok(())
 }
@@ -113,7 +113,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::advanced_field_selector_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -34,6 +34,7 @@ pub struct GetQualificationScoreInputBuilder {
 }
 impl GetQualificationScoreInputBuilder {
     /// <p>The ID of the QualificationType.</p>
+    /// This field is required.
     pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetQualificationScoreInputBuilder {
         &self.qualification_type_id
     }
     /// <p>The ID of the Worker whose Qualification is being updated.</p>
+    /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetQualificationScoreInputBuilder {
     /// Consumes the builder and constructs a [`GetQualificationScoreInput`](crate::operation::get_qualification_score::GetQualificationScoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_qualification_score::GetQualificationScoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_qualification_score::GetQualificationScoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_qualification_score::GetQualificationScoreInput {
             qualification_type_id: self.qualification_type_id,

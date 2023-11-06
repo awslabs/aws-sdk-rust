@@ -27,6 +27,7 @@ pub struct DeleteRecoveryInstanceInputBuilder {
 }
 impl DeleteRecoveryInstanceInputBuilder {
     /// <p>The ID of the Recovery Instance to be deleted.</p>
+    /// This field is required.
     pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteRecoveryInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRecoveryInstanceInput`](crate::operation::delete_recovery_instance::DeleteRecoveryInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_recovery_instance::DeleteRecoveryInstanceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_recovery_instance::DeleteRecoveryInstanceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_recovery_instance::DeleteRecoveryInstanceInput {
             recovery_instance_id: self.recovery_instance_id,
         })

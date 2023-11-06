@@ -110,6 +110,7 @@ impl UpdateSubnetChangeProtectionInputBuilder {
         &self.firewall_name
     }
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// This field is required.
     pub fn subnet_change_protection(mut self, input: bool) -> Self {
         self.subnet_change_protection = ::std::option::Option::Some(input);
         self
@@ -128,7 +129,7 @@ impl UpdateSubnetChangeProtectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionInput {
             update_token: self.update_token,

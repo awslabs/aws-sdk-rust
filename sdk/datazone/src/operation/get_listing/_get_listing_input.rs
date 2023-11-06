@@ -41,6 +41,7 @@ pub struct GetListingInputBuilder {
 }
 impl GetListingInputBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetListingInputBuilder {
         &self.domain_identifier
     }
     /// <p></p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl GetListingInputBuilder {
         &self.listing_revision
     }
     /// Consumes the builder and constructs a [`GetListingInput`](crate::operation::get_listing::GetListingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_listing::GetListingInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

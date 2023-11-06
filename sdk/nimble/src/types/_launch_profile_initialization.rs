@@ -30,8 +30,10 @@ impl LaunchProfileInitialization {
         self.active_directory.as_ref()
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn ec2_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ec2_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_security_group_ids.is_none()`.
+    pub fn ec2_security_group_ids(&self) -> &[::std::string::String] {
+        self.ec2_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
@@ -54,12 +56,16 @@ impl LaunchProfileInitialization {
         self.platform.as_ref()
     }
     /// <p>The system initializtion scripts.</p>
-    pub fn system_initialization_scripts(&self) -> ::std::option::Option<&[crate::types::LaunchProfileInitializationScript]> {
-        self.system_initialization_scripts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_initialization_scripts.is_none()`.
+    pub fn system_initialization_scripts(&self) -> &[crate::types::LaunchProfileInitializationScript] {
+        self.system_initialization_scripts.as_deref().unwrap_or_default()
     }
     /// <p>The user initializtion scripts.</p>
-    pub fn user_initialization_scripts(&self) -> ::std::option::Option<&[crate::types::LaunchProfileInitializationScript]> {
-        self.user_initialization_scripts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_initialization_scripts.is_none()`.
+    pub fn user_initialization_scripts(&self) -> &[crate::types::LaunchProfileInitializationScript] {
+        self.user_initialization_scripts.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for LaunchProfileInitialization {

@@ -11,8 +11,10 @@ pub struct ListViewsOutput {
 }
 impl ListViewsOutput {
     /// <p>The list of views available in the Amazon Web Services Region in which you called this operation.</p>
-    pub fn views(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.views.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.views.is_none()`.
+    pub fn views(&self) -> &[::std::string::String] {
+        self.views.as_deref().unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

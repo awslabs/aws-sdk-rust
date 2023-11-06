@@ -27,6 +27,7 @@ pub struct DeleteCoreNetworkInputBuilder {
 }
 impl DeleteCoreNetworkInputBuilder {
     /// <p>The network ID of the deleted core network.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCoreNetworkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCoreNetworkInput`](crate::operation::delete_core_network::DeleteCoreNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_core_network::DeleteCoreNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_core_network::DeleteCoreNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_core_network::DeleteCoreNetworkInput {
             core_network_id: self.core_network_id,
         })

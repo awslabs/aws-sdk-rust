@@ -2,7 +2,7 @@
 pub fn ser_f4v_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::F4vSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.moov_placement {
         object.key("moovPlacement").string(var_1.as_str());
     }

@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReadSetExportJob`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::set_sequence_store_id): <p>The job's sequence store ID.</p>
-    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::set_id): <p>The job's ID.</p>
+    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::set_sequence_store_id):<br>required: **true**<br><p>The job's sequence store ID.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::set_id):<br>required: **true**<br><p>The job's ID.</p><br>
     /// - On success, responds with [`GetReadSetExportJobOutput`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::id): <p>The job's ID.</p>
-    ///   - [`sequence_store_id(Option<String>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::sequence_store_id): <p>The job's sequence store ID.</p>
-    ///   - [`destination(Option<String>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::destination): <p>The job's destination in Amazon S3.</p>
-    ///   - [`status(Option<ReadSetExportJobStatus>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::status): <p>The job's status.</p>
+    ///   - [`id(String)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::id): <p>The job's ID.</p>
+    ///   - [`sequence_store_id(String)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::sequence_store_id): <p>The job's sequence store ID.</p>
+    ///   - [`destination(String)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::destination): <p>The job's destination in Amazon S3.</p>
+    ///   - [`status(ReadSetExportJobStatus)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::status): <p>The job's status.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::status_message): <p>The job's status message.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::creation_time): <p>When the job was created.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::creation_time): <p>When the job was created.</p>
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::completion_time): <p>When the job completed.</p>
-    ///   - [`read_sets(Option<Vec<ExportReadSetDetail>>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::read_sets): <p>The job's read sets.</p>
+    ///   - [`read_sets(Option<Vec::<ExportReadSetDetail>>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::read_sets): <p>The job's read sets.</p>
     /// - On failure, responds with [`SdkError<GetReadSetExportJobError>`](crate::operation::get_read_set_export_job::GetReadSetExportJobError)
     pub fn get_read_set_export_job(&self) -> crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder {
         crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::new(self.handle.clone())

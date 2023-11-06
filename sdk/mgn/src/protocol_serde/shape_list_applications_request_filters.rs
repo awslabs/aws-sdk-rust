@@ -2,8 +2,8 @@
 pub fn ser_list_applications_request_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListApplicationsRequestFilters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.application_i_ds {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.application_ids {
         let mut array_2 = object.key("applicationIDs").start_array();
         for item_3 in var_1 {
             {
@@ -15,7 +15,7 @@ pub fn ser_list_applications_request_filters(
     if let Some(var_4) = &input.is_archived {
         object.key("isArchived").boolean(*var_4);
     }
-    if let Some(var_5) = &input.wave_i_ds {
+    if let Some(var_5) = &input.wave_ids {
         let mut array_6 = object.key("waveIDs").start_array();
         for item_7 in var_5 {
             {

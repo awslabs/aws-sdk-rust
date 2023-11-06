@@ -64,8 +64,10 @@ impl CreateStreamProcessorInput {
         self.kms_key_id.as_deref()
     }
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
-    pub fn regions_of_interest(&self) -> ::std::option::Option<&[crate::types::RegionOfInterest]> {
-        self.regions_of_interest.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions_of_interest.is_none()`.
+    pub fn regions_of_interest(&self) -> &[crate::types::RegionOfInterest] {
+        self.regions_of_interest.as_deref().unwrap_or_default()
     }
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn data_sharing_preference(&self) -> ::std::option::Option<&crate::types::StreamProcessorDataSharingPreference> {
@@ -96,6 +98,7 @@ pub struct CreateStreamProcessorInputBuilder {
 }
 impl CreateStreamProcessorInputBuilder {
     /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream processors.</p>
+    /// This field is required.
     pub fn input(mut self, input: crate::types::StreamProcessorInput) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
@@ -110,6 +113,7 @@ impl CreateStreamProcessorInputBuilder {
         &self.input
     }
     /// <p>Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>. This must be a <code>S3Destination</code> of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data stream ARN for a face search stream processor.</p>
+    /// This field is required.
     pub fn output(mut self, input: crate::types::StreamProcessorOutput) -> Self {
         self.output = ::std::option::Option::Some(input);
         self
@@ -124,6 +128,7 @@ impl CreateStreamProcessorInputBuilder {
         &self.output
     }
     /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. This is required for both face search and label detection stream processors. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +143,7 @@ impl CreateStreamProcessorInputBuilder {
         &self.name
     }
     /// <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::StreamProcessorSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
@@ -152,6 +158,7 @@ impl CreateStreamProcessorInputBuilder {
         &self.settings
     }
     /// <p>The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for both face search and label detection stream processors.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -259,7 +266,7 @@ impl CreateStreamProcessorInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamProcessorInput`](crate::operation::create_stream_processor::CreateStreamProcessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_stream_processor::CreateStreamProcessorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_stream_processor::CreateStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_stream_processor::CreateStreamProcessorInput {
             input: self.input,

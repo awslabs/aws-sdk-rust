@@ -78,6 +78,7 @@ pub struct CreateDeploymentInputBuilder {
 }
 impl CreateDeploymentInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -209,7 +210,7 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             target_arn: self.target_arn,
             deployment_name: self.deployment_name,

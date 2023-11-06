@@ -2,12 +2,12 @@
 pub fn ser_commitment_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CommitmentConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.commitment_length {
-        object.key("commitmentLength").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("commitmentLength").string(input.commitment_length.as_str());
     }
-    if let Some(var_2) = &input.automatic_renewal {
-        object.key("automaticRenewal").boolean(*var_2);
+    {
+        object.key("automaticRenewal").boolean(input.automatic_renewal);
     }
     Ok(())
 }
@@ -47,7 +47,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::commitment_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

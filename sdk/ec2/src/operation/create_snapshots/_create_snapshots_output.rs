@@ -9,8 +9,10 @@ pub struct CreateSnapshotsOutput {
 }
 impl CreateSnapshotsOutput {
     /// <p>List of snapshots.</p>
-    pub fn snapshots(&self) -> ::std::option::Option<&[crate::types::SnapshotInfo]> {
-        self.snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots.is_none()`.
+    pub fn snapshots(&self) -> &[crate::types::SnapshotInfo] {
+        self.snapshots.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateSnapshotsOutput {

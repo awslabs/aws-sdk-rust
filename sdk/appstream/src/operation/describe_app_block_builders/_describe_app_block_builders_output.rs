@@ -11,8 +11,10 @@ pub struct DescribeAppBlockBuildersOutput {
 }
 impl DescribeAppBlockBuildersOutput {
     /// <p>The list that describes one or more app block builders.</p>
-    pub fn app_block_builders(&self) -> ::std::option::Option<&[crate::types::AppBlockBuilder]> {
-        self.app_block_builders.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_block_builders.is_none()`.
+    pub fn app_block_builders(&self) -> &[crate::types::AppBlockBuilder] {
+        self.app_block_builders.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -114,7 +114,7 @@ impl CreateFunctionDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_function_definition::CreateFunctionDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_function_definition::CreateFunctionDefinitionInput {
             amzn_client_token: self.amzn_client_token,

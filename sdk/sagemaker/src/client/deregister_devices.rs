@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterDevices`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::set_device_fleet_name): <p>The name of the fleet the devices belong to.</p>
-    ///   - [`device_names(impl Into<String>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::device_names) / [`set_device_names(Option<Vec<String>>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::set_device_names): <p>The unique IDs of the devices.</p>
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::set_device_fleet_name):<br>required: **true**<br><p>The name of the fleet the devices belong to.</p><br>
+    ///   - [`device_names(impl Into<String>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::device_names) / [`set_device_names(Option<Vec::<String>>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::set_device_names):<br>required: **true**<br><p>The unique IDs of the devices.</p><br>
     /// - On success, responds with [`DeregisterDevicesOutput`](crate::operation::deregister_devices::DeregisterDevicesOutput)
     /// - On failure, responds with [`SdkError<DeregisterDevicesError>`](crate::operation::deregister_devices::DeregisterDevicesError)
     pub fn deregister_devices(&self) -> crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder {

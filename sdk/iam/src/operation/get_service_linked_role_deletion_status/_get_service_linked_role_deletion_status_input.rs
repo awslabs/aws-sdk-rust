@@ -48,6 +48,7 @@ impl GetServiceLinkedRoleDeletionStatusInputBuilder {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
+    /// This field is required.
     pub fn deletion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deletion_task_id = ::std::option::Option::Some(input.into());
         self
@@ -80,7 +81,7 @@ impl GetServiceLinkedRoleDeletionStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput {

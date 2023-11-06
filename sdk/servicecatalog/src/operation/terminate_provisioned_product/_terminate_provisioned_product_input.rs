@@ -98,6 +98,7 @@ impl TerminateProvisionedProductInputBuilder {
         &self.provisioned_product_id
     }
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
+    /// This field is required.
     pub fn terminate_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.terminate_token = ::std::option::Option::Some(input.into());
         self
@@ -170,7 +171,7 @@ impl TerminateProvisionedProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput {
             provisioned_product_name: self.provisioned_product_name,

@@ -28,6 +28,7 @@ pub struct S3LogsConfigurationBuilder {
 }
 impl S3LogsConfigurationBuilder {
     /// <p> The status of S3 data event logs as a data source.</p>
+    /// This field is required.
     pub fn enable(mut self, input: bool) -> Self {
         self.enable = ::std::option::Option::Some(input);
         self

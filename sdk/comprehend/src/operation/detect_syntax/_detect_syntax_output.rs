@@ -9,8 +9,10 @@ pub struct DetectSyntaxOutput {
 }
 impl DetectSyntaxOutput {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-    pub fn syntax_tokens(&self) -> ::std::option::Option<&[crate::types::SyntaxToken]> {
-        self.syntax_tokens.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.syntax_tokens.is_none()`.
+    pub fn syntax_tokens(&self) -> &[crate::types::SyntaxToken] {
+        self.syntax_tokens.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for DetectSyntaxOutput {

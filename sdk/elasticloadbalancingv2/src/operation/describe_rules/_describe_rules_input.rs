@@ -18,8 +18,10 @@ impl DescribeRulesInput {
         self.listener_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the rules.</p>
-    pub fn rule_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rule_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_arns.is_none()`.
+    pub fn rule_arns(&self) -> &[::std::string::String] {
+        self.rule_arns.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -112,7 +114,7 @@ impl DescribeRulesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRulesInput`](crate::operation::describe_rules::DescribeRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_rules::DescribeRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_rules::DescribeRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_rules::DescribeRulesInput {
             listener_arn: self.listener_arn,
             rule_arns: self.rule_arns,

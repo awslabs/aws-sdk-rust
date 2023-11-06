@@ -5,12 +5,9 @@ pub use crate::operation::describe_local_gateway_route_table_virtual_interface_g
 
 impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
                         crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
-                        ::aws_smithy_http::result::SdkError<
+                        ::aws_smithy_runtime_api::client::result::SdkError<
                             crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
                             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
                         >
@@ -30,23 +27,23 @@ pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluent
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-                    crate::client::customize::internal::CustomizableSend<
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
+                    crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
+                > for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
                         crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
                         crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
-                    > for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilder
-                {
-                    fn send(
-                        self,
-                        config_override: crate::config::Builder,
-                    ) -> crate::client::customize::internal::BoxFuture<
-                        crate::client::customize::internal::SendResult<
-                            crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
-                            crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
-                        >,
-                    > {
-                        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-                    }
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
                 }
+            }
 impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilder {
     /// Creates a new `DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -68,31 +65,24 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilde
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>{
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>{
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations::operation_runtime_plugins(
-                                    self.handle.runtime_plugins.clone(),
-                                    &self.handle.conf,
-                                    self.config_override,
-                                );
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
         crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-                            pub async fn customize(
-                                self,
-                            ) -> ::std::result::Result<
-                                crate::client::customize::orchestrator::CustomizableOperation<
-                                    crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
-                                    crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
-                                    Self,
-                                >,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError>,
-                            >
-                            {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput, crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, Self>{
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -105,7 +95,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilde
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator{
         crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator::new(self.handle, self.inner)
     }

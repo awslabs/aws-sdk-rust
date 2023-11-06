@@ -12,12 +12,16 @@ pub struct BatchStopUpdateActionInput {
 }
 impl BatchStopUpdateActionInput {
     /// <p>The replication group IDs</p>
-    pub fn replication_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_group_ids.is_none()`.
+    pub fn replication_group_ids(&self) -> &[::std::string::String] {
+        self.replication_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The cache cluster IDs</p>
-    pub fn cache_cluster_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_cluster_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_cluster_ids.is_none()`.
+    pub fn cache_cluster_ids(&self) -> &[::std::string::String] {
+        self.cache_cluster_ids.as_deref().unwrap_or_default()
     }
     /// <p>The unique ID of the service update</p>
     pub fn service_update_name(&self) -> ::std::option::Option<&str> {
@@ -81,6 +85,7 @@ impl BatchStopUpdateActionInputBuilder {
         &self.cache_cluster_ids
     }
     /// <p>The unique ID of the service update</p>
+    /// This field is required.
     pub fn service_update_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_update_name = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +102,7 @@ impl BatchStopUpdateActionInputBuilder {
     /// Consumes the builder and constructs a [`BatchStopUpdateActionInput`](crate::operation::batch_stop_update_action::BatchStopUpdateActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_stop_update_action::BatchStopUpdateActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_stop_update_action::BatchStopUpdateActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_stop_update_action::BatchStopUpdateActionInput {
             replication_group_ids: self.replication_group_ids,

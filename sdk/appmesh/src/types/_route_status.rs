@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteStatus {
     /// <p>The current status for the route.</p>
-    pub status: ::std::option::Option<crate::types::RouteStatusCode>,
+    pub status: crate::types::RouteStatusCode,
 }
 impl RouteStatus {
     /// <p>The current status for the route.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RouteStatusCode> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::RouteStatusCode {
+        &self.status
     }
 }
 impl RouteStatus {
@@ -28,6 +28,7 @@ pub struct RouteStatusBuilder {
 }
 impl RouteStatusBuilder {
     /// <p>The current status for the route.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RouteStatusCode) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl RouteStatusBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`RouteStatus`](crate::types::RouteStatus).
-    pub fn build(self) -> crate::types::RouteStatus {
-        crate::types::RouteStatus { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::RouteStatusBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::RouteStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RouteStatus {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building RouteStatus",
+                )
+            })?,
+        })
     }
 }

@@ -10,12 +10,16 @@ pub struct DescribeOrganizationHealthInput {
 }
 impl DescribeOrganizationHealthInput {
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_unit_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeOrganizationHealthInput {
@@ -78,7 +82,7 @@ impl DescribeOrganizationHealthInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_health::DescribeOrganizationHealthInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_organization_health::DescribeOrganizationHealthInput {
             account_ids: self.account_ids,

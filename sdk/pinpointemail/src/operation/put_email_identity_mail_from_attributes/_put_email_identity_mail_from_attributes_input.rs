@@ -54,6 +54,7 @@ pub struct PutEmailIdentityMailFromAttributesInputBuilder {
 }
 impl PutEmailIdentityMailFromAttributesInputBuilder {
     /// <p>The verified email identity that you want to set up the custom MAIL FROM domain for.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +119,7 @@ impl PutEmailIdentityMailFromAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesInput {

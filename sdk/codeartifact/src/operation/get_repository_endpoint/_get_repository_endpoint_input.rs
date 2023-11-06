@@ -48,6 +48,7 @@ pub struct GetRepositoryEndpointInputBuilder {
 }
 impl GetRepositoryEndpointInputBuilder {
     /// <p> The name of the domain that contains the repository. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl GetRepositoryEndpointInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl GetRepositoryEndpointInputBuilder {
         &self.repository
     }
     /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl GetRepositoryEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetRepositoryEndpointInput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_repository_endpoint::GetRepositoryEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_repository_endpoint::GetRepositoryEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_repository_endpoint::GetRepositoryEndpointInput {
             domain: self.domain,

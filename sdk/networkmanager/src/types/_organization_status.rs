@@ -27,8 +27,10 @@ impl OrganizationStatus {
         self.slr_deployment_status.as_deref()
     }
     /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
-    pub fn account_status_list(&self) -> ::std::option::Option<&[crate::types::AccountStatus]> {
-        self.account_status_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_status_list.is_none()`.
+    pub fn account_status_list(&self) -> &[crate::types::AccountStatus] {
+        self.account_status_list.as_deref().unwrap_or_default()
     }
 }
 impl OrganizationStatus {

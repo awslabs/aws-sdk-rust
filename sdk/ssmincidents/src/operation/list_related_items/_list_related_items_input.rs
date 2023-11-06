@@ -41,6 +41,7 @@ pub struct ListRelatedItemsInputBuilder {
 }
 impl ListRelatedItemsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListRelatedItemsInputBuilder {
     /// Consumes the builder and constructs a [`ListRelatedItemsInput`](crate::operation::list_related_items::ListRelatedItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_related_items::ListRelatedItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_related_items::ListRelatedItemsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_related_items::ListRelatedItemsInput {
             incident_record_arn: self.incident_record_arn,
             max_results: self.max_results,

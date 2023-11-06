@@ -12,8 +12,10 @@ pub struct GetAnomalyMonitorsInput {
 }
 impl GetAnomalyMonitorsInput {
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn monitor_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.monitor_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitor_arn_list.is_none()`.
+    pub fn monitor_arn_list(&self) -> &[::std::string::String] {
+        self.monitor_arn_list.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {
@@ -91,7 +93,8 @@ impl GetAnomalyMonitorsInputBuilder {
     /// Consumes the builder and constructs a [`GetAnomalyMonitorsInput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput {
             monitor_arn_list: self.monitor_arn_list,
             next_page_token: self.next_page_token,

@@ -104,7 +104,7 @@ impl ListLfTagsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLfTagsInput`](crate::operation::list_lf_tags::ListLfTagsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_lf_tags::ListLfTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_lf_tags::ListLfTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_lf_tags::ListLfTagsInput {
             catalog_id: self.catalog_id,
             resource_share_type: self.resource_share_type,

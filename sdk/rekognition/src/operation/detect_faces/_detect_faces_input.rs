@@ -20,8 +20,10 @@ impl DetectFacesInput {
     /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase response time.</p>
     /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes). </p>
     /// <p>Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code> and <code>GetFaceDetection</code>.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl DetectFacesInput {
@@ -41,6 +43,7 @@ pub struct DetectFacesInputBuilder {
 impl DetectFacesInputBuilder {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// This field is required.
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.image = ::std::option::Option::Some(input);
         self
@@ -83,7 +86,7 @@ impl DetectFacesInputBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`DetectFacesInput`](crate::operation::detect_faces::DetectFacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detect_faces::DetectFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_faces::DetectFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_faces::DetectFacesInput {
             image: self.image,
             attributes: self.attributes,

@@ -15,8 +15,10 @@ impl ScriptBootstrapActionConfig {
         self.path.as_deref()
     }
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    pub fn args(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.args.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.args.is_none()`.
+    pub fn args(&self) -> &[::std::string::String] {
+        self.args.as_deref().unwrap_or_default()
     }
 }
 impl ScriptBootstrapActionConfig {
@@ -35,6 +37,7 @@ pub struct ScriptBootstrapActionConfigBuilder {
 }
 impl ScriptBootstrapActionConfigBuilder {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self

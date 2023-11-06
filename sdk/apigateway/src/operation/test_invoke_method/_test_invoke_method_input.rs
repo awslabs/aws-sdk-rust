@@ -86,6 +86,7 @@ pub struct TestInvokeMethodInputBuilder {
 }
 impl TestInvokeMethodInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +101,7 @@ impl TestInvokeMethodInputBuilder {
         &self.rest_api_id
     }
     /// <p>Specifies a test invoke method request's resource ID.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +116,7 @@ impl TestInvokeMethodInputBuilder {
         &self.resource_id
     }
     /// <p>Specifies a test invoke method request's HTTP method.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
         self
@@ -244,7 +247,7 @@ impl TestInvokeMethodInputBuilder {
     /// Consumes the builder and constructs a [`TestInvokeMethodInput`](crate::operation::test_invoke_method::TestInvokeMethodInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_invoke_method::TestInvokeMethodInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_invoke_method::TestInvokeMethodInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_invoke_method::TestInvokeMethodInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

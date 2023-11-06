@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLineageGroup`](crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lineage_group_name(impl Into<String>)`](crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder::lineage_group_name) / [`set_lineage_group_name(Option<String>)`](crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder::set_lineage_group_name): <p>The name of the lineage group.</p>
+    ///   - [`lineage_group_name(impl Into<String>)`](crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder::lineage_group_name) / [`set_lineage_group_name(Option<String>)`](crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder::set_lineage_group_name):<br>required: **true**<br><p>The name of the lineage group.</p><br>
     /// - On success, responds with [`DescribeLineageGroupOutput`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput) with field(s):
     ///   - [`lineage_group_name(Option<String>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::lineage_group_name): <p>The name of the lineage group.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>

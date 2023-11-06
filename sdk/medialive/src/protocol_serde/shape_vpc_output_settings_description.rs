@@ -15,17 +15,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "availabilityZones" => {
-                            builder = builder.set_availability_zones(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_availability_zones(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "networkInterfaceIds" => {
-                            builder =
-                                builder.set_network_interface_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_network_interface_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "securityGroupIds" => {
-                            builder = builder.set_security_group_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "subnetIds" => {
-                            builder = builder.set_subnet_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

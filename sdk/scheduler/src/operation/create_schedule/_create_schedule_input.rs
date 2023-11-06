@@ -129,6 +129,7 @@ pub struct CreateScheduleInputBuilder {
 }
 impl CreateScheduleInputBuilder {
     /// <p>The name of the schedule that you are creating.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +167,7 @@ impl CreateScheduleInputBuilder {
     /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
     /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
+    /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
@@ -282,6 +284,7 @@ impl CreateScheduleInputBuilder {
         &self.kms_key_arn
     }
     /// <p>The schedule's target.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -296,6 +299,7 @@ impl CreateScheduleInputBuilder {
         &self.target
     }
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
+    /// This field is required.
     pub fn flexible_time_window(mut self, input: crate::types::FlexibleTimeWindow) -> Self {
         self.flexible_time_window = ::std::option::Option::Some(input);
         self
@@ -340,7 +344,7 @@ impl CreateScheduleInputBuilder {
     /// Consumes the builder and constructs a [`CreateScheduleInput`](crate::operation::create_schedule::CreateScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_schedule::CreateScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_schedule::CreateScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_schedule::CreateScheduleInput {
             name: self.name,
             group_name: self.group_name,

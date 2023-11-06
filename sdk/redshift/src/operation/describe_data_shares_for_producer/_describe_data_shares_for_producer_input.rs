@@ -108,7 +108,7 @@ impl DescribeDataSharesForProducerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput {
             producer_arn: self.producer_arn,

@@ -27,6 +27,7 @@ pub struct CreateAccountInputBuilder {
 }
 impl CreateAccountInputBuilder {
     /// <p>The name of the Amazon Chime account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CreateAccountInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccountInput`](crate::operation::create_account::CreateAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_account::CreateAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_account::CreateAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_account::CreateAccountInput { name: self.name })
     }
 }

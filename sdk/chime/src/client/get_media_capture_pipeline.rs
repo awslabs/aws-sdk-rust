@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMediaCapturePipeline`](crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`media_pipeline_id(impl Into<String>)`](crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineFluentBuilder::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineFluentBuilder::set_media_pipeline_id): <p>The ID of the pipeline that you want to get.</p>
+    ///   - [`media_pipeline_id(impl Into<String>)`](crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineFluentBuilder::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineFluentBuilder::set_media_pipeline_id):<br>required: **true**<br><p>The ID of the pipeline that you want to get.</p><br>
     /// - On success, responds with [`GetMediaCapturePipelineOutput`](crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput) with field(s):
     ///   - [`media_capture_pipeline(Option<MediaCapturePipeline>)`](crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput::media_capture_pipeline): <p>The media capture pipeline object.</p>
     /// - On failure, responds with [`SdkError<GetMediaCapturePipelineError>`](crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError)

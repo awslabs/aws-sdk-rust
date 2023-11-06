@@ -20,8 +20,10 @@ impl RegisterClientInput {
         self.client_type.as_deref()
     }
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
-    pub fn scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
+    pub fn scopes(&self) -> &[::std::string::String] {
+        self.scopes.as_deref().unwrap_or_default()
     }
 }
 impl RegisterClientInput {
@@ -41,6 +43,7 @@ pub struct RegisterClientInputBuilder {
 }
 impl RegisterClientInputBuilder {
     /// <p>The friendly name of the client.</p>
+    /// This field is required.
     pub fn client_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl RegisterClientInputBuilder {
         &self.client_name
     }
     /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
+    /// This field is required.
     pub fn client_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_type = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl RegisterClientInputBuilder {
     /// Consumes the builder and constructs a [`RegisterClientInput`](crate::operation::register_client::RegisterClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_client::RegisterClientInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_client::RegisterClientInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_client::RegisterClientInput {
             client_name: self.client_name,
             client_type: self.client_type,

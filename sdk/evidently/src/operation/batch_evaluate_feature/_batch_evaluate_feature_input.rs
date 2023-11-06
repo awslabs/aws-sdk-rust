@@ -14,8 +14,10 @@ impl BatchEvaluateFeatureInput {
         self.project.as_deref()
     }
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-    pub fn requests(&self) -> ::std::option::Option<&[crate::types::EvaluationRequest]> {
-        self.requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requests.is_none()`.
+    pub fn requests(&self) -> &[crate::types::EvaluationRequest] {
+        self.requests.as_deref().unwrap_or_default()
     }
 }
 impl BatchEvaluateFeatureInput {
@@ -34,6 +36,7 @@ pub struct BatchEvaluateFeatureInputBuilder {
 }
 impl BatchEvaluateFeatureInputBuilder {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl BatchEvaluateFeatureInputBuilder {
     /// Consumes the builder and constructs a [`BatchEvaluateFeatureInput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput {
             project: self.project,

@@ -43,7 +43,7 @@ impl StartAppReplicationInputBuilder {
     /// Consumes the builder and constructs a [`StartAppReplicationInput`](crate::operation::start_app_replication::StartAppReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_app_replication::StartAppReplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_app_replication::StartAppReplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_app_replication::StartAppReplicationInput { app_id: self.app_id })
     }

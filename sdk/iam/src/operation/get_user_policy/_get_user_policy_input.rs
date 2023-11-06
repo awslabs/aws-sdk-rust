@@ -39,6 +39,7 @@ pub struct GetUserPolicyInputBuilder {
 impl GetUserPolicyInputBuilder {
     /// <p>The name of the user who the policy is associated with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl GetUserPolicyInputBuilder {
     }
     /// <p>The name of the policy document to get.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +76,7 @@ impl GetUserPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetUserPolicyInput`](crate::operation::get_user_policy::GetUserPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_user_policy::GetUserPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_user_policy::GetUserPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_policy::GetUserPolicyInput {
             user_name: self.user_name,
             policy_name: self.policy_name,

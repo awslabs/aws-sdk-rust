@@ -18,7 +18,7 @@ impl GetAccountBalanceInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountBalanceInput`](crate::operation::get_account_balance::GetAccountBalanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_account_balance::GetAccountBalanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_account_balance::GetAccountBalanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_account_balance::GetAccountBalanceInput {})
     }
 }

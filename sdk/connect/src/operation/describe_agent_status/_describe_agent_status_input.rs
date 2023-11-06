@@ -34,6 +34,7 @@ pub struct DescribeAgentStatusInputBuilder {
 }
 impl DescribeAgentStatusInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeAgentStatusInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the agent status.</p>
+    /// This field is required.
     pub fn agent_status_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_status_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeAgentStatusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAgentStatusInput`](crate::operation::describe_agent_status::DescribeAgentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_agent_status::DescribeAgentStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_agent_status::DescribeAgentStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_agent_status::DescribeAgentStatusInput {
             instance_id: self.instance_id,

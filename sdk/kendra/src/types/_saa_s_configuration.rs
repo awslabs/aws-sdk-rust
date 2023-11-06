@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SaaSConfiguration {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
-    pub organization_name: ::std::option::Option<::std::string::String>,
+    pub organization_name: ::std::string::String,
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
-    pub host_url: ::std::option::Option<::std::string::String>,
+    pub host_url: ::std::string::String,
 }
 impl SaaSConfiguration {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
-    pub fn organization_name(&self) -> ::std::option::Option<&str> {
-        self.organization_name.as_deref()
+    pub fn organization_name(&self) -> &str {
+        use std::ops::Deref;
+        self.organization_name.deref()
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
-    pub fn host_url(&self) -> ::std::option::Option<&str> {
-        self.host_url.as_deref()
+    pub fn host_url(&self) -> &str {
+        use std::ops::Deref;
+        self.host_url.deref()
     }
 }
 impl SaaSConfiguration {
@@ -35,6 +37,7 @@ pub struct SaaSConfigurationBuilder {
 }
 impl SaaSConfigurationBuilder {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+    /// This field is required.
     pub fn organization_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SaaSConfigurationBuilder {
         &self.organization_name
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
+    /// This field is required.
     pub fn host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_url = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SaaSConfigurationBuilder {
         &self.host_url
     }
     /// Consumes the builder and constructs a [`SaaSConfiguration`](crate::types::SaaSConfiguration).
-    pub fn build(self) -> crate::types::SaaSConfiguration {
-        crate::types::SaaSConfiguration {
-            organization_name: self.organization_name,
-            host_url: self.host_url,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`organization_name`](crate::types::builders::SaaSConfigurationBuilder::organization_name)
+    /// - [`host_url`](crate::types::builders::SaaSConfigurationBuilder::host_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::SaaSConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SaaSConfiguration {
+            organization_name: self.organization_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "organization_name",
+                    "organization_name was not specified but it is required when building SaaSConfiguration",
+                )
+            })?,
+            host_url: self.host_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "host_url",
+                    "host_url was not specified but it is required when building SaaSConfiguration",
+                )
+            })?,
+        })
     }
 }

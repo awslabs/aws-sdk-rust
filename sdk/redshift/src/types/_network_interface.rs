@@ -12,6 +12,8 @@ pub struct NetworkInterface {
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone. </p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 address of the network interface within the subnet. </p>
+    pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterface {
     /// <p>The network interface identifier. </p>
@@ -30,6 +32,10 @@ impl NetworkInterface {
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
+    /// <p>The IPv6 address of the network interface within the subnet. </p>
+    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+        self.ipv6_address.as_deref()
+    }
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::types::NetworkInterface).
@@ -46,6 +52,7 @@ pub struct NetworkInterfaceBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterfaceBuilder {
     /// <p>The network interface identifier. </p>
@@ -104,6 +111,20 @@ impl NetworkInterfaceBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
+    /// <p>The IPv6 address of the network interface within the subnet. </p>
+    pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 address of the network interface within the subnet. </p>
+    pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_address = input;
+        self
+    }
+    /// <p>The IPv6 address of the network interface within the subnet. </p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
+    }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
@@ -111,6 +132,7 @@ impl NetworkInterfaceBuilder {
             subnet_id: self.subnet_id,
             private_ip_address: self.private_ip_address,
             availability_zone: self.availability_zone,
+            ipv6_address: self.ipv6_address,
         }
     }
 }

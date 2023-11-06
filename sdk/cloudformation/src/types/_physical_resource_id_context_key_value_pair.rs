@@ -35,6 +35,7 @@ pub struct PhysicalResourceIdContextKeyValuePairBuilder {
 }
 impl PhysicalResourceIdContextKeyValuePairBuilder {
     /// <p>The resource context key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl PhysicalResourceIdContextKeyValuePairBuilder {
         &self.key
     }
     /// <p>The resource context value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

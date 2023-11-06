@@ -49,6 +49,7 @@ impl AutoExportRevisionToS3RequestDetailsBuilder {
         &self.encryption
     }
     /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
+    /// This field is required.
     pub fn revision_destination(mut self, input: crate::types::AutoExportRevisionDestinationEntry) -> Self {
         self.revision_destination = ::std::option::Option::Some(input);
         self

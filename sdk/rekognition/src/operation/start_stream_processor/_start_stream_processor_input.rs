@@ -45,6 +45,7 @@ pub struct StartStreamProcessorInputBuilder {
 }
 impl StartStreamProcessorInputBuilder {
     /// <p>The name of the stream processor to start processing.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +96,7 @@ impl StartStreamProcessorInputBuilder {
     /// Consumes the builder and constructs a [`StartStreamProcessorInput`](crate::operation::start_stream_processor::StartStreamProcessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_stream_processor::StartStreamProcessorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_stream_processor::StartStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_stream_processor::StartStreamProcessorInput {
             name: self.name,

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityUsageSummary {
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
-    pub cid_rs: ::std::option::Option<crate::types::CidrSummary>,
+    pub cidrs: ::std::option::Option<crate::types::CidrSummary>,
 }
 impl CapacityUsageSummary {
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
-    pub fn cid_rs(&self) -> ::std::option::Option<&crate::types::CidrSummary> {
-        self.cid_rs.as_ref()
+    pub fn cidrs(&self) -> ::std::option::Option<&crate::types::CidrSummary> {
+        self.cidrs.as_ref()
     }
 }
 impl CapacityUsageSummary {
@@ -24,25 +24,25 @@ impl CapacityUsageSummary {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityUsageSummaryBuilder {
-    pub(crate) cid_rs: ::std::option::Option<crate::types::CidrSummary>,
+    pub(crate) cidrs: ::std::option::Option<crate::types::CidrSummary>,
 }
 impl CapacityUsageSummaryBuilder {
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
-    pub fn cid_rs(mut self, input: crate::types::CidrSummary) -> Self {
-        self.cid_rs = ::std::option::Option::Some(input);
+    pub fn cidrs(mut self, input: crate::types::CidrSummary) -> Self {
+        self.cidrs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
-    pub fn set_cid_rs(mut self, input: ::std::option::Option<crate::types::CidrSummary>) -> Self {
-        self.cid_rs = input;
+    pub fn set_cidrs(mut self, input: ::std::option::Option<crate::types::CidrSummary>) -> Self {
+        self.cidrs = input;
         self
     }
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
-    pub fn get_cid_rs(&self) -> &::std::option::Option<crate::types::CidrSummary> {
-        &self.cid_rs
+    pub fn get_cidrs(&self) -> &::std::option::Option<crate::types::CidrSummary> {
+        &self.cidrs
     }
     /// Consumes the builder and constructs a [`CapacityUsageSummary`](crate::types::CapacityUsageSummary).
     pub fn build(self) -> crate::types::CapacityUsageSummary {
-        crate::types::CapacityUsageSummary { cid_rs: self.cid_rs }
+        crate::types::CapacityUsageSummary { cidrs: self.cidrs }
     }
 }

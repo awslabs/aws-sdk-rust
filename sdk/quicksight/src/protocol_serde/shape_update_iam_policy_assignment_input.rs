@@ -2,7 +2,7 @@
 pub fn ser_update_iam_policy_assignment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.assignment_status {
         object.key("AssignmentStatus").string(var_1.as_str());
     }

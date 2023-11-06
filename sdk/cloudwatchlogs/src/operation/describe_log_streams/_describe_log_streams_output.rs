@@ -11,8 +11,10 @@ pub struct DescribeLogStreamsOutput {
 }
 impl DescribeLogStreamsOutput {
     /// <p>The log streams.</p>
-    pub fn log_streams(&self) -> ::std::option::Option<&[crate::types::LogStream]> {
-        self.log_streams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_streams.is_none()`.
+    pub fn log_streams(&self) -> &[crate::types::LogStream] {
+        self.log_streams.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

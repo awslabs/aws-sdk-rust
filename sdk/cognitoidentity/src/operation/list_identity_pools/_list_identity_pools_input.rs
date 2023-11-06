@@ -35,6 +35,7 @@ pub struct ListIdentityPoolsInputBuilder {
 }
 impl ListIdentityPoolsInputBuilder {
     /// <p>The maximum number of identities to return.</p>
+    /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
@@ -65,7 +66,7 @@ impl ListIdentityPoolsInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentityPoolsInput`](crate::operation::list_identity_pools::ListIdentityPoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identity_pools::ListIdentityPoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_identity_pools::ListIdentityPoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_identity_pools::ListIdentityPoolsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -48,6 +48,7 @@ pub struct DisassociateUserInputBuilder {
 }
 impl DisassociateUserInputBuilder {
     /// <p>The user name from the identity provider for the user.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DisassociateUserInputBuilder {
         &self.username
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DisassociateUserInputBuilder {
         &self.instance_id
     }
     /// <p>An object that specifies details for the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl DisassociateUserInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateUserInput`](crate::operation::disassociate_user::DisassociateUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_user::DisassociateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_user::DisassociateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_user::DisassociateUserInput {
             username: self.username,
             instance_id: self.instance_id,

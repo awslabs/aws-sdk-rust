@@ -52,12 +52,16 @@ impl SignUpInput {
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    pub fn user_attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
-        self.user_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attributes.is_none()`.
+    pub fn user_attributes(&self) -> &[crate::types::AttributeType] {
+        self.user_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The validation data in the request to register a user.</p>
-    pub fn validation_data(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
-        self.validation_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_data.is_none()`.
+    pub fn validation_data(&self) -> &[crate::types::AttributeType] {
+        self.validation_data.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.</p>
     pub fn analytics_metadata(&self) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
@@ -119,6 +123,7 @@ pub struct SignUpInputBuilder {
 }
 impl SignUpInputBuilder {
     /// <p>The ID of the client associated with the user pool.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +152,7 @@ impl SignUpInputBuilder {
         &self.secret_hash
     }
     /// <p>The user name of the user you want to register.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +167,7 @@ impl SignUpInputBuilder {
         &self.username
     }
     /// <p>The password of the user you want to register.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -300,7 +307,7 @@ impl SignUpInputBuilder {
         &self.client_metadata
     }
     /// Consumes the builder and constructs a [`SignUpInput`](crate::operation::sign_up::SignUpInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::sign_up::SignUpInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign_up::SignUpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign_up::SignUpInput {
             client_id: self.client_id,
             secret_hash: self.secret_hash,

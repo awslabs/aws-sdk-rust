@@ -27,6 +27,7 @@ pub struct DeleteMetricAttributionInputBuilder {
 }
 impl DeleteMetricAttributionInputBuilder {
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn metric_attribution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_attribution_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteMetricAttributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_metric_attribution::DeleteMetricAttributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_metric_attribution::DeleteMetricAttributionInput {
             metric_attribution_arn: self.metric_attribution_arn,

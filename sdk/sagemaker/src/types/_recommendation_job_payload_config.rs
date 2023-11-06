@@ -15,8 +15,10 @@ impl RecommendationJobPayloadConfig {
         self.sample_payload_url.as_deref()
     }
     /// <p>The supported MIME types for the input data.</p>
-    pub fn supported_content_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_content_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_content_types.is_none()`.
+    pub fn supported_content_types(&self) -> &[::std::string::String] {
+        self.supported_content_types.as_deref().unwrap_or_default()
     }
 }
 impl RecommendationJobPayloadConfig {

@@ -15,8 +15,10 @@ impl AnomalyDetectorDataQualityMetric {
         self.start_timestamp.as_ref()
     }
     /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
-    pub fn metric_set_data_quality_metric_list(&self) -> ::std::option::Option<&[crate::types::MetricSetDataQualityMetric]> {
-        self.metric_set_data_quality_metric_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_set_data_quality_metric_list.is_none()`.
+    pub fn metric_set_data_quality_metric_list(&self) -> &[crate::types::MetricSetDataQualityMetric] {
+        self.metric_set_data_quality_metric_list.as_deref().unwrap_or_default()
     }
 }
 impl AnomalyDetectorDataQualityMetric {

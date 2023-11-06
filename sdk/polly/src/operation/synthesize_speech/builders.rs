@@ -10,7 +10,7 @@ impl SynthesizeSpeechInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::synthesize_speech::SynthesizeSpeechError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl SynthesizeSpeechFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::synthesize_speech::SynthesizeSpeechError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::synthesize_speech::SynthesizeSpeech::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl SynthesizeSpeechFluentBuilder {
         crate::operation::synthesize_speech::SynthesizeSpeech::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-            crate::operation::synthesize_speech::SynthesizeSpeechError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::synthesize_speech::SynthesizeSpeechOutput,
+        crate::operation::synthesize_speech::SynthesizeSpeechError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -128,7 +126,7 @@ impl SynthesizeSpeechFluentBuilder {
         presigning_config: crate::presigning::PresigningConfig,
     ) -> ::std::result::Result<
         crate::presigning::PresignedRequest,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::synthesize_speech::SynthesizeSpeechError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -156,7 +154,10 @@ impl SynthesizeSpeechFluentBuilder {
         ))
         .with_operation_plugin(AlternatePresigningSerializerRuntimePlugin);
 
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let mut context = crate::operation::synthesize_speech::SynthesizeSpeech::orchestrate_with_stop_point(
             &runtime_plugins,
             input,
@@ -170,7 +171,7 @@ impl SynthesizeSpeechFluentBuilder {
             })
         })?;
         let request = context.take_request().expect("request set before transmit");
-        Ok(crate::presigning::PresignedRequest::new(request.map(|_| ())))
+        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
     }
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p> <b>NTTS-only voices</b> </p>

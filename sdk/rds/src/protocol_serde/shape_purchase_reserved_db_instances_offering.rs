@@ -32,8 +32,8 @@ pub fn de_purchase_reserved_db_instances_offering_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ReservedDBInstanceQuotaExceeded" => crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError::ReservedDbInstanceQuotaExceededFault({
@@ -48,8 +48,8 @@ pub fn de_purchase_reserved_db_instances_offering_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ReservedDBInstancesOfferingNotFound" => crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError::ReservedDbInstancesOfferingNotFoundFault({
@@ -64,8 +64,8 @@ pub fn de_purchase_reserved_db_instances_offering_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError::generic(generic)

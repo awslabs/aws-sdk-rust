@@ -2,7 +2,7 @@
 pub fn ser_line_series_axis_display_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LineSeriesAxisDisplayOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.axis_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AxisOptions").start_object();

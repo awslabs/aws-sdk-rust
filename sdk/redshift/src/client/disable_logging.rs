@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableLogging`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder::set_cluster_identifier): <p>The identifier of the cluster on which logging is to be stopped.</p>  <p>Example: <code>examplecluster</code> </p>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::disable_logging::builders::DisableLoggingFluentBuilder::set_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster on which logging is to be stopped.</p>  <p>Example: <code>examplecluster</code> </p><br>
     /// - On success, responds with [`DisableLoggingOutput`](crate::operation::disable_logging::DisableLoggingOutput) with field(s):
     ///   - [`logging_enabled(Option<bool>)`](crate::operation::disable_logging::DisableLoggingOutput::logging_enabled): <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     ///   - [`bucket_name(Option<String>)`](crate::operation::disable_logging::DisableLoggingOutput::bucket_name): <p>The name of the S3 bucket where the log files are stored.</p>
@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`last_failure_time(Option<DateTime>)`](crate::operation::disable_logging::DisableLoggingOutput::last_failure_time): <p>The last time when logs failed to be delivered.</p>
     ///   - [`last_failure_message(Option<String>)`](crate::operation::disable_logging::DisableLoggingOutput::last_failure_message): <p>The message indicating that logs failed to be delivered.</p>
     ///   - [`log_destination_type(Option<LogDestinationType>)`](crate::operation::disable_logging::DisableLoggingOutput::log_destination_type): <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    ///   - [`log_exports(Option<Vec<String>>)`](crate::operation::disable_logging::DisableLoggingOutput::log_exports): <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    ///   - [`log_exports(Option<Vec::<String>>)`](crate::operation::disable_logging::DisableLoggingOutput::log_exports): <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     /// - On failure, responds with [`SdkError<DisableLoggingError>`](crate::operation::disable_logging::DisableLoggingError)
     pub fn disable_logging(&self) -> crate::operation::disable_logging::builders::DisableLoggingFluentBuilder {
         crate::operation::disable_logging::builders::DisableLoggingFluentBuilder::new(self.handle.clone())

@@ -27,6 +27,7 @@ pub struct ResumeSessionInputBuilder {
 }
 impl ResumeSessionInputBuilder {
     /// <p>The ID of the disconnected session to resume.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl ResumeSessionInputBuilder {
     /// Consumes the builder and constructs a [`ResumeSessionInput`](crate::operation::resume_session::ResumeSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_session::ResumeSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resume_session::ResumeSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_session::ResumeSessionInput { session_id: self.session_id })
     }
 }

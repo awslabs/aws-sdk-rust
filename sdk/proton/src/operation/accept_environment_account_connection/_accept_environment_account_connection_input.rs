@@ -27,6 +27,7 @@ pub struct AcceptEnvironmentAccountConnectionInputBuilder {
 }
 impl AcceptEnvironmentAccountConnectionInputBuilder {
     /// <p>The ID of the environment account connection.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl AcceptEnvironmentAccountConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput { id: self.id })
     }

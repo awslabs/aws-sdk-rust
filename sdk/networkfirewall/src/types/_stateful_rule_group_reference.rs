@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatefulRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single <code>FirewallPolicy</code>. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
     /// <p>Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     /// <p>You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
@@ -15,8 +15,9 @@ pub struct StatefulRuleGroupReference {
 }
 impl StatefulRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single <code>FirewallPolicy</code>. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
     /// <p>Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
@@ -46,6 +47,7 @@ pub struct StatefulRuleGroupReferenceBuilder {
 }
 impl StatefulRuleGroupReferenceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -94,11 +96,18 @@ impl StatefulRuleGroupReferenceBuilder {
         &self.r#override
     }
     /// Consumes the builder and constructs a [`StatefulRuleGroupReference`](crate::types::StatefulRuleGroupReference).
-    pub fn build(self) -> crate::types::StatefulRuleGroupReference {
-        crate::types::StatefulRuleGroupReference {
-            resource_arn: self.resource_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::StatefulRuleGroupReferenceBuilder::resource_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::StatefulRuleGroupReference, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::StatefulRuleGroupReference {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building StatefulRuleGroupReference",
+                )
+            })?,
             priority: self.priority,
             r#override: self.r#override,
-        }
+        })
     }
 }

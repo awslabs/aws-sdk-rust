@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRulesetOutput {
     /// <p>The unique name of the created ruleset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateRulesetOutput {
     /// <p>The unique name of the created ruleset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateRulesetOutput {
@@ -34,6 +35,7 @@ pub struct CreateRulesetOutputBuilder {
 }
 impl CreateRulesetOutputBuilder {
     /// <p>The unique name of the created ruleset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateRulesetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRulesetOutput`](crate::operation::create_ruleset::CreateRulesetOutput).
-    pub fn build(self) -> crate::operation::create_ruleset::CreateRulesetOutput {
-        crate::operation::create_ruleset::CreateRulesetOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_ruleset::builders::CreateRulesetOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_ruleset::CreateRulesetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_ruleset::CreateRulesetOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateRulesetOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

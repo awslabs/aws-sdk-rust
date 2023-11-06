@@ -5,30 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationVersionSummary {
     /// <p>The application version.</p>
-    pub application_version: ::std::option::Option<i32>,
+    pub application_version: i32,
     /// <p>The status of the application.</p>
-    pub status: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
+    pub status: crate::types::ApplicationVersionLifecycle,
     /// <p>The reason for the reported status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the application version was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
 }
 impl ApplicationVersionSummary {
     /// <p>The application version.</p>
-    pub fn application_version(&self) -> ::std::option::Option<i32> {
+    pub fn application_version(&self) -> i32 {
         self.application_version
     }
     /// <p>The status of the application.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationVersionLifecycle> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ApplicationVersionLifecycle {
+        &self.status
     }
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The timestamp when the application version was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
 }
 impl ApplicationVersionSummary {
@@ -49,6 +49,7 @@ pub struct ApplicationVersionSummaryBuilder {
 }
 impl ApplicationVersionSummaryBuilder {
     /// <p>The application version.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl ApplicationVersionSummaryBuilder {
         &self.application_version
     }
     /// <p>The status of the application.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ApplicationVersionLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl ApplicationVersionSummaryBuilder {
         &self.status_reason
     }
     /// <p>The timestamp when the application version was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,31 @@ impl ApplicationVersionSummaryBuilder {
         &self.creation_time
     }
     /// Consumes the builder and constructs a [`ApplicationVersionSummary`](crate::types::ApplicationVersionSummary).
-    pub fn build(self) -> crate::types::ApplicationVersionSummary {
-        crate::types::ApplicationVersionSummary {
-            application_version: self.application_version,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_version`](crate::types::builders::ApplicationVersionSummaryBuilder::application_version)
+    /// - [`status`](crate::types::builders::ApplicationVersionSummaryBuilder::status)
+    /// - [`creation_time`](crate::types::builders::ApplicationVersionSummaryBuilder::creation_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationVersionSummary {
+            application_version: self.application_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_version",
+                    "application_version was not specified but it is required when building ApplicationVersionSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ApplicationVersionSummary",
+                )
+            })?,
             status_reason: self.status_reason,
-            creation_time: self.creation_time,
-        }
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ApplicationVersionSummary",
+                )
+            })?,
+        })
     }
 }

@@ -33,6 +33,7 @@ pub struct GetDataRetrievalPolicyInputBuilder {
 }
 impl GetDataRetrievalPolicyInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -51,7 +52,7 @@ impl GetDataRetrievalPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput { account_id: self.account_id })
     }

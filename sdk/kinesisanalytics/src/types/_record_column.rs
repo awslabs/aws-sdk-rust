@@ -6,24 +6,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordColumn {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
     pub mapping: ::std::option::Option<::std::string::String>,
     /// <p>Type of column created in the in-application input stream or reference table.</p>
-    pub sql_type: ::std::option::Option<::std::string::String>,
+    pub sql_type: ::std::string::String,
 }
 impl RecordColumn {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
     pub fn mapping(&self) -> ::std::option::Option<&str> {
         self.mapping.as_deref()
     }
     /// <p>Type of column created in the in-application input stream or reference table.</p>
-    pub fn sql_type(&self) -> ::std::option::Option<&str> {
-        self.sql_type.as_deref()
+    pub fn sql_type(&self) -> &str {
+        use std::ops::Deref;
+        self.sql_type.deref()
     }
 }
 impl RecordColumn {
@@ -43,6 +45,7 @@ pub struct RecordColumnBuilder {
 }
 impl RecordColumnBuilder {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +74,7 @@ impl RecordColumnBuilder {
         &self.mapping
     }
     /// <p>Type of column created in the in-application input stream or reference table.</p>
+    /// This field is required.
     pub fn sql_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_type = ::std::option::Option::Some(input.into());
         self
@@ -85,11 +89,24 @@ impl RecordColumnBuilder {
         &self.sql_type
     }
     /// Consumes the builder and constructs a [`RecordColumn`](crate::types::RecordColumn).
-    pub fn build(self) -> crate::types::RecordColumn {
-        crate::types::RecordColumn {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RecordColumnBuilder::name)
+    /// - [`sql_type`](crate::types::builders::RecordColumnBuilder::sql_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecordColumn, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecordColumn {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RecordColumn",
+                )
+            })?,
             mapping: self.mapping,
-            sql_type: self.sql_type,
-        }
+            sql_type: self.sql_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "sql_type",
+                    "sql_type was not specified but it is required when building RecordColumn",
+                )
+            })?,
+        })
     }
 }

@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCollaborationAnalysisTemplateOutput {
     /// <p>The retrieved list of analysis templates within a collaboration.</p>
-    pub collaboration_analysis_templates: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplate>>,
+    pub collaboration_analysis_templates: ::std::vec::Vec<crate::types::CollaborationAnalysisTemplate>,
     /// <p>Error reasons for collaboration analysis templates that could not be retrieved. One error is returned for every collaboration analysis template that could not be retrieved.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCollaborationAnalysisTemplateError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchGetCollaborationAnalysisTemplateError>,
     _request_id: Option<String>,
 }
 impl BatchGetCollaborationAnalysisTemplateOutput {
     /// <p>The retrieved list of analysis templates within a collaboration.</p>
-    pub fn collaboration_analysis_templates(&self) -> ::std::option::Option<&[crate::types::CollaborationAnalysisTemplate]> {
-        self.collaboration_analysis_templates.as_deref()
+    pub fn collaboration_analysis_templates(&self) -> &[crate::types::CollaborationAnalysisTemplate] {
+        use std::ops::Deref;
+        self.collaboration_analysis_templates.deref()
     }
     /// <p>Error reasons for collaboration analysis templates that could not be retrieved. One error is returned for every collaboration analysis template that could not be retrieved.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchGetCollaborationAnalysisTemplateError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchGetCollaborationAnalysisTemplateError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetCollaborationAnalysisTemplateOutput {
@@ -93,11 +95,29 @@ impl BatchGetCollaborationAnalysisTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetCollaborationAnalysisTemplateOutput`](crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput).
-    pub fn build(self) -> crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput {
-        crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput {
-            collaboration_analysis_templates: self.collaboration_analysis_templates,
-            errors: self.errors,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collaboration_analysis_templates`](crate::operation::batch_get_collaboration_analysis_template::builders::BatchGetCollaborationAnalysisTemplateOutputBuilder::collaboration_analysis_templates)
+    /// - [`errors`](crate::operation::batch_get_collaboration_analysis_template::builders::BatchGetCollaborationAnalysisTemplateOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput {
+                collaboration_analysis_templates: self.collaboration_analysis_templates
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_analysis_templates", "collaboration_analysis_templates was not specified but it is required when building BatchGetCollaborationAnalysisTemplateOutput")
+                    )?
+                ,
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchGetCollaborationAnalysisTemplateOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

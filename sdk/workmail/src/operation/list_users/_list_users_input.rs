@@ -48,6 +48,7 @@ pub struct ListUsersInputBuilder {
 }
 impl ListUsersInputBuilder {
     /// <p>The identifier for the organization under which the users exist.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl ListUsersInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
             organization_id: self.organization_id,
             next_token: self.next_token,

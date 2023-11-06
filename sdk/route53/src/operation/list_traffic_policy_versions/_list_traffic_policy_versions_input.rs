@@ -44,6 +44,7 @@ pub struct ListTrafficPolicyVersionsInputBuilder {
 }
 impl ListTrafficPolicyVersionsInputBuilder {
     /// <p>Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +94,7 @@ impl ListTrafficPolicyVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsInput {
             id: self.id,

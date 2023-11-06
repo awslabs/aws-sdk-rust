@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNowConfiguration {
     /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
-    pub host_url: ::std::option::Option<::std::string::String>,
+    pub host_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p>The identifier of the release that the ServiceNow host is running. If the host is not running the <code>LONDON</code> release, use <code>OTHERS</code>.</p>
-    pub service_now_build_version: ::std::option::Option<crate::types::ServiceNowBuildVersionType>,
+    pub service_now_build_version: crate::types::ServiceNowBuildVersionType,
     /// <p>Configuration information for crawling knowledge articles in the ServiceNow site.</p>
     pub knowledge_article_configuration: ::std::option::Option<crate::types::ServiceNowKnowledgeArticleConfiguration>,
     /// <p>Configuration information for crawling service catalogs in the ServiceNow site.</p>
@@ -20,16 +20,18 @@ pub struct ServiceNowConfiguration {
 }
 impl ServiceNowConfiguration {
     /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
-    pub fn host_url(&self) -> ::std::option::Option<&str> {
-        self.host_url.as_deref()
+    pub fn host_url(&self) -> &str {
+        use std::ops::Deref;
+        self.host_url.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p>The identifier of the release that the ServiceNow host is running. If the host is not running the <code>LONDON</code> release, use <code>OTHERS</code>.</p>
-    pub fn service_now_build_version(&self) -> ::std::option::Option<&crate::types::ServiceNowBuildVersionType> {
-        self.service_now_build_version.as_ref()
+    pub fn service_now_build_version(&self) -> &crate::types::ServiceNowBuildVersionType {
+        &self.service_now_build_version
     }
     /// <p>Configuration information for crawling knowledge articles in the ServiceNow site.</p>
     pub fn knowledge_article_configuration(&self) -> ::std::option::Option<&crate::types::ServiceNowKnowledgeArticleConfiguration> {
@@ -65,6 +67,7 @@ pub struct ServiceNowConfigurationBuilder {
 }
 impl ServiceNowConfigurationBuilder {
     /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
+    /// This field is required.
     pub fn host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_url = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +82,7 @@ impl ServiceNowConfigurationBuilder {
         &self.host_url
     }
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +97,7 @@ impl ServiceNowConfigurationBuilder {
         &self.secret_arn
     }
     /// <p>The identifier of the release that the ServiceNow host is running. If the host is not running the <code>LONDON</code> release, use <code>OTHERS</code>.</p>
+    /// This field is required.
     pub fn service_now_build_version(mut self, input: crate::types::ServiceNowBuildVersionType) -> Self {
         self.service_now_build_version = ::std::option::Option::Some(input);
         self
@@ -155,14 +160,33 @@ impl ServiceNowConfigurationBuilder {
         &self.authentication_type
     }
     /// Consumes the builder and constructs a [`ServiceNowConfiguration`](crate::types::ServiceNowConfiguration).
-    pub fn build(self) -> crate::types::ServiceNowConfiguration {
-        crate::types::ServiceNowConfiguration {
-            host_url: self.host_url,
-            secret_arn: self.secret_arn,
-            service_now_build_version: self.service_now_build_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host_url`](crate::types::builders::ServiceNowConfigurationBuilder::host_url)
+    /// - [`secret_arn`](crate::types::builders::ServiceNowConfigurationBuilder::secret_arn)
+    /// - [`service_now_build_version`](crate::types::builders::ServiceNowConfigurationBuilder::service_now_build_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceNowConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceNowConfiguration {
+            host_url: self.host_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "host_url",
+                    "host_url was not specified but it is required when building ServiceNowConfiguration",
+                )
+            })?,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building ServiceNowConfiguration",
+                )
+            })?,
+            service_now_build_version: self.service_now_build_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_now_build_version",
+                    "service_now_build_version was not specified but it is required when building ServiceNowConfiguration",
+                )
+            })?,
             knowledge_article_configuration: self.knowledge_article_configuration,
             service_catalog_configuration: self.service_catalog_configuration,
             authentication_type: self.authentication_type,
-        }
+        })
     }
 }

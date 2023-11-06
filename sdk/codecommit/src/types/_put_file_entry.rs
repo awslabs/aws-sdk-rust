@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFileEntry {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
-    pub file_path: ::std::option::Option<::std::string::String>,
+    pub file_path: ::std::string::String,
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
     /// <p>The content of the file, if a source file is not specified.</p>
@@ -15,8 +15,9 @@ pub struct PutFileEntry {
 }
 impl PutFileEntry {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
-        self.file_path.as_deref()
+    pub fn file_path(&self) -> &str {
+        use std::ops::Deref;
+        self.file_path.deref()
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn file_mode(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
@@ -49,6 +50,7 @@ pub struct PutFileEntryBuilder {
 }
 impl PutFileEntryBuilder {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl PutFileEntryBuilder {
         &self.source_file
     }
     /// Consumes the builder and constructs a [`PutFileEntry`](crate::types::PutFileEntry).
-    pub fn build(self) -> crate::types::PutFileEntry {
-        crate::types::PutFileEntry {
-            file_path: self.file_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_path`](crate::types::builders::PutFileEntryBuilder::file_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::PutFileEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PutFileEntry {
+            file_path: self.file_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_path",
+                    "file_path was not specified but it is required when building PutFileEntry",
+                )
+            })?,
             file_mode: self.file_mode,
             file_content: self.file_content,
             source_file: self.source_file,
-        }
+        })
     }
 }

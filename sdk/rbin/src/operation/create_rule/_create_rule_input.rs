@@ -28,8 +28,10 @@ impl CreateRuleInput {
         self.description.as_deref()
     }
     /// <p>Information about the tags to assign to the retention rule.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
@@ -38,8 +40,10 @@ impl CreateRuleInput {
     /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn lock_configuration(&self) -> ::std::option::Option<&crate::types::LockConfiguration> {
@@ -66,6 +70,7 @@ pub struct CreateRuleInputBuilder {
 }
 impl CreateRuleInputBuilder {
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    /// This field is required.
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
         self
@@ -114,6 +119,7 @@ impl CreateRuleInputBuilder {
         &self.tags
     }
     /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -168,7 +174,7 @@ impl CreateRuleInputBuilder {
         &self.lock_configuration
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
             retention_period: self.retention_period,
             description: self.description,

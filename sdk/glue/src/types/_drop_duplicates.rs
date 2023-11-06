@@ -5,24 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DropDuplicates {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>The name of the columns to be merged or removed if repeating.</p>
     pub columns: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl DropDuplicates {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>The name of the columns to be merged or removed if repeating.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
+    pub fn columns(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.columns.as_deref().unwrap_or_default()
     }
 }
 impl DropDuplicates {
@@ -42,6 +46,7 @@ pub struct DropDuplicatesBuilder {
 }
 impl DropDuplicatesBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +101,24 @@ impl DropDuplicatesBuilder {
         &self.columns
     }
     /// Consumes the builder and constructs a [`DropDuplicates`](crate::types::DropDuplicates).
-    pub fn build(self) -> crate::types::DropDuplicates {
-        crate::types::DropDuplicates {
-            name: self.name,
-            inputs: self.inputs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DropDuplicatesBuilder::name)
+    /// - [`inputs`](crate::types::builders::DropDuplicatesBuilder::inputs)
+    pub fn build(self) -> ::std::result::Result<crate::types::DropDuplicates, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DropDuplicates {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DropDuplicates",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building DropDuplicates",
+                )
+            })?,
             columns: self.columns,
-        }
+        })
     }
 }

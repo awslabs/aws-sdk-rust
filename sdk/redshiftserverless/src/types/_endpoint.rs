@@ -21,8 +21,10 @@ impl Endpoint {
         self.port
     }
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    pub fn vpc_endpoints(&self) -> ::std::option::Option<&[crate::types::VpcEndpoint]> {
-        self.vpc_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoints.is_none()`.
+    pub fn vpc_endpoints(&self) -> &[crate::types::VpcEndpoint] {
+        self.vpc_endpoints.as_deref().unwrap_or_default()
     }
 }
 impl Endpoint {

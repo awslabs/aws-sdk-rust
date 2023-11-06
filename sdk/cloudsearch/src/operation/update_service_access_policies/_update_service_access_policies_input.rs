@@ -35,6 +35,7 @@ pub struct UpdateServiceAccessPoliciesInputBuilder {
 }
 impl UpdateServiceAccessPoliciesInputBuilder {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateServiceAccessPoliciesInputBuilder {
         &self.domain_name
     }
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    /// This field is required.
     pub fn access_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policies = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl UpdateServiceAccessPoliciesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput {
             domain_name: self.domain_name,

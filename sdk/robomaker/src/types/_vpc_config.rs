@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnets: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of one or more security groups IDs in your VPC.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A boolean indicating whether to assign a public IP address.</p>
@@ -13,12 +13,15 @@ pub struct VpcConfig {
 }
 impl VpcConfig {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    pub fn subnets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnets.deref()
     }
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub fn assign_public_ip(&self) -> bool {
@@ -96,11 +99,18 @@ impl VpcConfigBuilder {
         &self.assign_public_ip
     }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
-    pub fn build(self) -> crate::types::VpcConfig {
-        crate::types::VpcConfig {
-            subnets: self.subnets,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnets`](crate::types::builders::VpcConfigBuilder::subnets)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcConfig {
+            subnets: self.subnets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnets",
+                    "subnets was not specified but it is required when building VpcConfig",
+                )
+            })?,
             security_groups: self.security_groups,
             assign_public_ip: self.assign_public_ip.unwrap_or_default(),
-        }
+        })
     }
 }

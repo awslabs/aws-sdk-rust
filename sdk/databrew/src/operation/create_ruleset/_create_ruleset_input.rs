@@ -28,8 +28,10 @@ impl CreateRulesetInput {
         self.target_arn.as_deref()
     }
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>Metadata tags to apply to the ruleset.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -55,6 +57,7 @@ pub struct CreateRulesetInputBuilder {
 }
 impl CreateRulesetInputBuilder {
     /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateRulesetInputBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +143,7 @@ impl CreateRulesetInputBuilder {
     /// Consumes the builder and constructs a [`CreateRulesetInput`](crate::operation::create_ruleset::CreateRulesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ruleset::CreateRulesetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ruleset::CreateRulesetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ruleset::CreateRulesetInput {
             name: self.name,
             description: self.description,

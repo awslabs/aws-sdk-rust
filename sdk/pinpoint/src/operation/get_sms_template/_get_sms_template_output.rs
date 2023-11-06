@@ -34,6 +34,7 @@ pub struct GetSmsTemplateOutputBuilder {
 }
 impl GetSmsTemplateOutputBuilder {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    /// This field is required.
     pub fn sms_template_response(mut self, input: crate::types::SmsTemplateResponse) -> Self {
         self.sms_template_response = ::std::option::Option::Some(input);
         self

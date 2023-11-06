@@ -47,6 +47,7 @@ pub struct GetRelationalDatabaseEventsInputBuilder {
 }
 impl GetRelationalDatabaseEventsInputBuilder {
     /// <p>The name of the database from which to get events.</p>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
@@ -102,7 +103,7 @@ impl GetRelationalDatabaseEventsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput {
             relational_database_name: self.relational_database_name,

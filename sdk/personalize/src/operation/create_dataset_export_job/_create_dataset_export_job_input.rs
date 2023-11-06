@@ -38,8 +38,10 @@ impl CreateDatasetExportJobInput {
         self.job_output.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset export job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDatasetExportJobInput {
@@ -62,6 +64,7 @@ pub struct CreateDatasetExportJobInputBuilder {
 }
 impl CreateDatasetExportJobInputBuilder {
     /// <p>The name for the dataset export job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateDatasetExportJobInputBuilder {
         &self.job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
+    /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl CreateDatasetExportJobInputBuilder {
         &self.ingestion_mode
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl CreateDatasetExportJobInputBuilder {
         &self.role_arn
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
+    /// This field is required.
     pub fn job_output(mut self, input: crate::types::DatasetExportJobOutput) -> Self {
         self.job_output = ::std::option::Option::Some(input);
         self
@@ -156,7 +162,7 @@ impl CreateDatasetExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_export_job::CreateDatasetExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_dataset_export_job::CreateDatasetExportJobInput {
             job_name: self.job_name,

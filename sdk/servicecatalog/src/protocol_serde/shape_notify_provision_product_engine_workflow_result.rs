@@ -38,8 +38,8 @@ pub fn de_notify_provision_product_engine_workflow_result_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError::ResourceNotFoundException({
@@ -54,8 +54,8 @@ pub fn de_notify_provision_product_engine_workflow_result_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError::generic(generic)
@@ -81,7 +81,7 @@ pub fn de_notify_provision_product_engine_workflow_result_http_response(
 
 pub fn ser_notify_provision_product_engine_workflow_result_input(
     input: &crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_notify_provision_product_engine_workflow_result_input::ser_notify_provision_product_engine_workflow_result_input(
@@ -89,5 +89,5 @@ pub fn ser_notify_provision_product_engine_workflow_result_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

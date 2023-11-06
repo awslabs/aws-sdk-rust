@@ -48,6 +48,7 @@ pub struct UpdatePipelineExecutionInputBuilder {
 }
 impl UpdatePipelineExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    /// This field is required.
     pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl UpdatePipelineExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pipeline_execution::UpdatePipelineExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_pipeline_execution::UpdatePipelineExecutionInput {
             pipeline_execution_arn: self.pipeline_execution_arn,

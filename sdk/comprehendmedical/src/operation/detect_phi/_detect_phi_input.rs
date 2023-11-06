@@ -27,6 +27,7 @@ pub struct DetectPhiInputBuilder {
 }
 impl DetectPhiInputBuilder {
     /// <p>A UTF-8 text string containing the clinical content being examined for PHI entities.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DetectPhiInputBuilder {
         &self.text
     }
     /// Consumes the builder and constructs a [`DetectPhiInput`](crate::operation::detect_phi::DetectPhiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detect_phi::DetectPhiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_phi::DetectPhiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_phi::DetectPhiInput { text: self.text })
     }
 }

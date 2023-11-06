@@ -123,6 +123,7 @@ pub struct CreateResolverInputBuilder {
 }
 impl CreateResolverInputBuilder {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +138,7 @@ impl CreateResolverInputBuilder {
         &self.api_id
     }
     /// <p>The name of the <code>Type</code>.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -151,6 +153,7 @@ impl CreateResolverInputBuilder {
         &self.type_name
     }
     /// <p>The name of the field to attach the resolver to.</p>
+    /// This field is required.
     pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_name = ::std::option::Option::Some(input.into());
         self
@@ -325,7 +328,7 @@ impl CreateResolverInputBuilder {
     /// Consumes the builder and constructs a [`CreateResolverInput`](crate::operation::create_resolver::CreateResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resolver::CreateResolverInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_resolver::CreateResolverInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_resolver::CreateResolverInput {
             api_id: self.api_id,
             type_name: self.type_name,

@@ -55,6 +55,7 @@ pub struct CreateSourceRepositoryBranchInputBuilder {
 }
 impl CreateSourceRepositoryBranchInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateSourceRepositoryBranchInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateSourceRepositoryBranchInputBuilder {
         &self.project_name
     }
     /// <p>The name of the repository where you want to create a branch.</p>
+    /// This field is required.
     pub fn source_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_repository_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateSourceRepositoryBranchInputBuilder {
         &self.source_repository_name
     }
     /// <p>The name for the branch you're creating.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +133,7 @@ impl CreateSourceRepositoryBranchInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput {
             space_name: self.space_name,

@@ -10,8 +10,10 @@ pub struct DescribeConditionalForwardersOutput {
 }
 impl DescribeConditionalForwardersOutput {
     /// <p>The list of conditional forwarders that have been created.</p>
-    pub fn conditional_forwarders(&self) -> ::std::option::Option<&[crate::types::ConditionalForwarder]> {
-        self.conditional_forwarders.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditional_forwarders.is_none()`.
+    pub fn conditional_forwarders(&self) -> &[crate::types::ConditionalForwarder] {
+        self.conditional_forwarders.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeConditionalForwardersOutput {

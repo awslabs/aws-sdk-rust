@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureDetails {
     /// <p>The type of the failure.</p>
-    pub r#type: ::std::option::Option<crate::types::FailureType>,
+    pub r#type: crate::types::FailureType,
     /// <p>The message about the failure.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The external ID of the run of the action that failed.</p>
     pub external_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl FailureDetails {
     /// <p>The type of the failure.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FailureType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FailureType {
+        &self.r#type
     }
     /// <p>The message about the failure.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>The external ID of the run of the action that failed.</p>
     pub fn external_execution_id(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct FailureDetailsBuilder {
 }
 impl FailureDetailsBuilder {
     /// <p>The type of the failure.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FailureType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl FailureDetailsBuilder {
         &self.r#type
     }
     /// <p>The message about the failure.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl FailureDetailsBuilder {
         &self.external_execution_id
     }
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).
-    pub fn build(self) -> crate::types::FailureDetails {
-        crate::types::FailureDetails {
-            r#type: self.r#type,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::FailureDetailsBuilder::r#type)
+    /// - [`message`](crate::types::builders::FailureDetailsBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::FailureDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FailureDetails {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FailureDetails",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building FailureDetails",
+                )
+            })?,
             external_execution_id: self.external_execution_id,
-        }
+        })
     }
 }

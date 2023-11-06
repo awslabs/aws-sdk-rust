@@ -69,6 +69,7 @@ impl ListAgreementsInputBuilder {
         &self.next_token
     }
     /// <p>The identifier of the server for which you want a list of agreements.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListAgreementsInputBuilder {
     /// Consumes the builder and constructs a [`ListAgreementsInput`](crate::operation::list_agreements::ListAgreementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_agreements::ListAgreementsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_agreements::ListAgreementsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_agreements::ListAgreementsInput {
             max_results: self.max_results,
             next_token: self.next_token,

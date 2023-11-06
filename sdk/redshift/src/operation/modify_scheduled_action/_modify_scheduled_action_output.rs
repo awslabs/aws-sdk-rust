@@ -56,8 +56,10 @@ impl ModifyScheduledActionOutput {
         self.state.as_ref()
     }
     /// <p>List of times when the scheduled action will run. </p>
-    pub fn next_invocations(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
-        self.next_invocations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next_invocations.is_none()`.
+    pub fn next_invocations(&self) -> &[::aws_smithy_types::DateTime] {
+        self.next_invocations.as_deref().unwrap_or_default()
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

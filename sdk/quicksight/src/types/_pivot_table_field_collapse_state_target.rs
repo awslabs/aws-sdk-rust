@@ -15,8 +15,10 @@ impl PivotTableFieldCollapseStateTarget {
         self.field_id.as_deref()
     }
     /// <p>The data path of the pivot table's header. Used to set the collapse state.</p>
-    pub fn field_data_path_values(&self) -> ::std::option::Option<&[crate::types::DataPathValue]> {
-        self.field_data_path_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_data_path_values.is_none()`.
+    pub fn field_data_path_values(&self) -> &[crate::types::DataPathValue] {
+        self.field_data_path_values.as_deref().unwrap_or_default()
     }
 }
 impl PivotTableFieldCollapseStateTarget {

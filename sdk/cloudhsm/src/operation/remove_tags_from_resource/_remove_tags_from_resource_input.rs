@@ -16,8 +16,10 @@ impl RemoveTagsFromResourceInput {
     }
     /// <p>The tag key or keys to remove.</p>
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    pub fn tag_key_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_key_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_key_list.is_none()`.
+    pub fn tag_key_list(&self) -> &[::std::string::String] {
+        self.tag_key_list.as_deref().unwrap_or_default()
     }
 }
 impl RemoveTagsFromResourceInput {
@@ -36,6 +38,7 @@ pub struct RemoveTagsFromResourceInputBuilder {
 }
 impl RemoveTagsFromResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +80,7 @@ impl RemoveTagsFromResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
             resource_arn: self.resource_arn,

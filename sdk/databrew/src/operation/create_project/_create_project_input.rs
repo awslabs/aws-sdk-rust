@@ -62,6 +62,7 @@ pub struct CreateProjectInputBuilder {
 }
 impl CreateProjectInputBuilder {
     /// <p>The name of an existing dataset to associate this project with.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateProjectInputBuilder {
         &self.dataset_name
     }
     /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreateProjectInputBuilder {
         &self.name
     }
     /// <p>The name of an existing recipe to associate with the project.</p>
+    /// This field is required.
     pub fn recipe_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl CreateProjectInputBuilder {
         &self.sample
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +158,7 @@ impl CreateProjectInputBuilder {
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
             dataset_name: self.dataset_name,
             name: self.name,

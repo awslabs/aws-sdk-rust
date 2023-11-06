@@ -48,8 +48,10 @@ impl ListStackSetOperationResultsInput {
         self.call_as.as_ref()
     }
     /// <p>The filter to apply to operation results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::OperationResultFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::OperationResultFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListStackSetOperationResultsInput {
@@ -72,6 +74,7 @@ pub struct ListStackSetOperationResultsInputBuilder {
 }
 impl ListStackSetOperationResultsInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +89,7 @@ impl ListStackSetOperationResultsInputBuilder {
         &self.stack_set_name
     }
     /// <p>The ID of the stack set operation.</p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
@@ -181,7 +185,7 @@ impl ListStackSetOperationResultsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsInput {
             stack_set_name: self.stack_set_name,

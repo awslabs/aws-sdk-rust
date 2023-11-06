@@ -2,18 +2,18 @@
 pub fn ser_search_devices_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchDevicesFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.values {
-        let mut array_3 = object.key("values").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("values").start_array();
+        for item_2 in &input.values {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }

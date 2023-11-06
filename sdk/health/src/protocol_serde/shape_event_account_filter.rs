@@ -2,12 +2,12 @@
 pub fn ser_event_account_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventAccountFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.event_arn {
-        object.key("eventArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("eventArn").string(input.event_arn.as_str());
     }
-    if let Some(var_2) = &input.aws_account_id {
-        object.key("awsAccountId").string(var_2.as_str());
+    if let Some(var_1) = &input.aws_account_id {
+        object.key("awsAccountId").string(var_1.as_str());
     }
     Ok(())
 }

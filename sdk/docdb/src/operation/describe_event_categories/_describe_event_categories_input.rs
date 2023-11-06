@@ -17,8 +17,10 @@ impl DescribeEventCategoriesInput {
         self.source_type.as_deref()
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl DescribeEventCategoriesInput {
@@ -78,7 +80,7 @@ impl DescribeEventCategoriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_categories::DescribeEventCategoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_event_categories::DescribeEventCategoriesInput {
             source_type: self.source_type,

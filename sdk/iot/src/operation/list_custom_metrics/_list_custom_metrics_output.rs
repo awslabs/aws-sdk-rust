@@ -11,8 +11,10 @@ pub struct ListCustomMetricsOutput {
 }
 impl ListCustomMetricsOutput {
     /// <p> The name of the custom metric. </p>
-    pub fn metric_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metric_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_names.is_none()`.
+    pub fn metric_names(&self) -> &[::std::string::String] {
+        self.metric_names.as_deref().unwrap_or_default()
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -54,6 +54,7 @@ impl GetInsightSelectorsInputBuilder {
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// This field is required.
     pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trail_name = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +89,7 @@ impl GetInsightSelectorsInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightSelectorsInput`](crate::operation::get_insight_selectors::GetInsightSelectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_insight_selectors::GetInsightSelectorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_insight_selectors::GetInsightSelectorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_insight_selectors::GetInsightSelectorsInput { trail_name: self.trail_name })
     }

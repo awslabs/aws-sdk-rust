@@ -9,7 +9,7 @@ pub struct ProvisioningHook {
     pub payload_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
-    pub target_arn: ::std::option::Option<::std::string::String>,
+    pub target_arn: ::std::string::String,
 }
 impl ProvisioningHook {
     /// <p>The payload that was sent to the target function.</p>
@@ -19,8 +19,9 @@ impl ProvisioningHook {
     }
     /// <p>The ARN of the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
-        self.target_arn.as_deref()
+    pub fn target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.target_arn.deref()
     }
 }
 impl ProvisioningHook {
@@ -57,6 +58,7 @@ impl ProvisioningHookBuilder {
     }
     /// <p>The ARN of the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -73,10 +75,17 @@ impl ProvisioningHookBuilder {
         &self.target_arn
     }
     /// Consumes the builder and constructs a [`ProvisioningHook`](crate::types::ProvisioningHook).
-    pub fn build(self) -> crate::types::ProvisioningHook {
-        crate::types::ProvisioningHook {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_arn`](crate::types::builders::ProvisioningHookBuilder::target_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProvisioningHook, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProvisioningHook {
             payload_version: self.payload_version,
-            target_arn: self.target_arn,
-        }
+            target_arn: self.target_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_arn",
+                    "target_arn was not specified but it is required when building ProvisioningHook",
+                )
+            })?,
+        })
     }
 }

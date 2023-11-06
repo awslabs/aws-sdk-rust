@@ -6,19 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelMatchStatement {
     /// <p>Specify whether you want to match using the label name or just the namespace. </p>
-    pub scope: ::std::option::Option<crate::types::LabelMatchScope>,
+    pub scope: crate::types::LabelMatchScope,
     /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting: </p>
     /// <ul>
     /// <li> <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name. </p> </li>
     /// <li> <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p> </li>
     /// </ul>
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
 }
 impl LabelMatchStatement {
     /// <p>Specify whether you want to match using the label name or just the namespace. </p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::LabelMatchScope> {
-        self.scope.as_ref()
+    pub fn scope(&self) -> &crate::types::LabelMatchScope {
+        &self.scope
     }
     /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting: </p>
     /// <ul>
@@ -26,8 +26,9 @@ impl LabelMatchStatement {
     /// <li> <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p> </li>
     /// </ul>
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
 }
 impl LabelMatchStatement {
@@ -46,6 +47,7 @@ pub struct LabelMatchStatementBuilder {
 }
 impl LabelMatchStatementBuilder {
     /// <p>Specify whether you want to match using the label name or just the namespace. </p>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::LabelMatchScope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -65,6 +67,7 @@ impl LabelMatchStatementBuilder {
     /// <li> <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p> </li>
     /// </ul>
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -89,10 +92,23 @@ impl LabelMatchStatementBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`LabelMatchStatement`](crate::types::LabelMatchStatement).
-    pub fn build(self) -> crate::types::LabelMatchStatement {
-        crate::types::LabelMatchStatement {
-            scope: self.scope,
-            key: self.key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scope`](crate::types::builders::LabelMatchStatementBuilder::scope)
+    /// - [`key`](crate::types::builders::LabelMatchStatementBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::LabelMatchStatement, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LabelMatchStatement {
+            scope: self.scope.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scope",
+                    "scope was not specified but it is required when building LabelMatchStatement",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building LabelMatchStatement",
+                )
+            })?,
+        })
     }
 }

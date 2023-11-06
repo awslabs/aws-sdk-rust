@@ -55,6 +55,7 @@ pub struct ListCoverageInputBuilder {
 }
 impl ListCoverageInputBuilder {
     /// <p>The unique ID of the detector whose coverage details you want to retrieve.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +126,9 @@ impl ListCoverageInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_coverage::ListCoverageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_coverage::ListCoverageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_coverage::ListCoverageInput {
             detector_id: self.detector_id,
             next_token: self.next_token,

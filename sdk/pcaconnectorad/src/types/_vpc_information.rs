@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcInformation {
     /// <p>The security groups used with the connector. You can use a maximum of 4 security groups with a connector.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl VpcInformation {
     /// <p>The security groups used with the connector. You can use a maximum of 4 security groups with a connector.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
 }
 impl VpcInformation {
@@ -48,9 +49,16 @@ impl VpcInformationBuilder {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcInformation`](crate::types::VpcInformation).
-    pub fn build(self) -> crate::types::VpcInformation {
-        crate::types::VpcInformation {
-            security_group_ids: self.security_group_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`security_group_ids`](crate::types::builders::VpcInformationBuilder::security_group_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcInformation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcInformation {
+            security_group_ids: self.security_group_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "security_group_ids",
+                    "security_group_ids was not specified but it is required when building VpcInformation",
+                )
+            })?,
+        })
     }
 }

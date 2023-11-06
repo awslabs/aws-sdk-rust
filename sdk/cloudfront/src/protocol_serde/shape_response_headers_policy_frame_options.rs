@@ -2,21 +2,22 @@
 pub fn ser_response_headers_policy_frame_options(
     input: &crate::types::ResponseHeadersPolicyFrameOptions,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.r#override {
+    {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.r#override).encode());
     }
-    if let Some(var_2) = &input.frame_option {
+    {
         let mut inner_writer = scope.start_el("FrameOption").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.frame_option.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_frame_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicyFrameOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_response_headers_policy_frame_options(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Override") /* Override com.amazonaws.cloudfront#ResponseHeadersPolicyFrameOptions$Override */ =>  {
-                let var_3 =
+                let var_1 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -36,11 +37,11 @@ pub fn de_response_headers_policy_frame_options(
                         ?
                     )
                 ;
-                builder = builder.set_override(var_3);
+                builder = builder.set_override(var_1);
             }
             ,
             s if s.matches("FrameOption") /* FrameOption com.amazonaws.cloudfront#ResponseHeadersPolicyFrameOptions$FrameOption */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<crate::types::FrameOptionsList, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::FrameOptionsList::from(
@@ -50,11 +51,13 @@ pub fn de_response_headers_policy_frame_options(
                         ?
                     )
                 ;
-                builder = builder.set_frame_option(var_4);
+                builder = builder.set_frame_option(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::response_headers_policy_frame_options_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

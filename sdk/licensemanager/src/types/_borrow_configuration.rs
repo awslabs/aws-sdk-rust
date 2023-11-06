@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BorrowConfiguration {
     /// <p>Indicates whether early check-ins are allowed.</p>
-    pub allow_early_check_in: ::std::option::Option<bool>,
+    pub allow_early_check_in: bool,
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
-    pub max_time_to_live_in_minutes: ::std::option::Option<i32>,
+    pub max_time_to_live_in_minutes: i32,
 }
 impl BorrowConfiguration {
     /// <p>Indicates whether early check-ins are allowed.</p>
-    pub fn allow_early_check_in(&self) -> ::std::option::Option<bool> {
+    pub fn allow_early_check_in(&self) -> bool {
         self.allow_early_check_in
     }
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
-    pub fn max_time_to_live_in_minutes(&self) -> ::std::option::Option<i32> {
+    pub fn max_time_to_live_in_minutes(&self) -> i32 {
         self.max_time_to_live_in_minutes
     }
 }
@@ -35,6 +35,7 @@ pub struct BorrowConfigurationBuilder {
 }
 impl BorrowConfigurationBuilder {
     /// <p>Indicates whether early check-ins are allowed.</p>
+    /// This field is required.
     pub fn allow_early_check_in(mut self, input: bool) -> Self {
         self.allow_early_check_in = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BorrowConfigurationBuilder {
         &self.allow_early_check_in
     }
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
+    /// This field is required.
     pub fn max_time_to_live_in_minutes(mut self, input: i32) -> Self {
         self.max_time_to_live_in_minutes = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl BorrowConfigurationBuilder {
         &self.max_time_to_live_in_minutes
     }
     /// Consumes the builder and constructs a [`BorrowConfiguration`](crate::types::BorrowConfiguration).
-    pub fn build(self) -> crate::types::BorrowConfiguration {
-        crate::types::BorrowConfiguration {
-            allow_early_check_in: self.allow_early_check_in,
-            max_time_to_live_in_minutes: self.max_time_to_live_in_minutes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allow_early_check_in`](crate::types::builders::BorrowConfigurationBuilder::allow_early_check_in)
+    /// - [`max_time_to_live_in_minutes`](crate::types::builders::BorrowConfigurationBuilder::max_time_to_live_in_minutes)
+    pub fn build(self) -> ::std::result::Result<crate::types::BorrowConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BorrowConfiguration {
+            allow_early_check_in: self.allow_early_check_in.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "allow_early_check_in",
+                    "allow_early_check_in was not specified but it is required when building BorrowConfiguration",
+                )
+            })?,
+            max_time_to_live_in_minutes: self.max_time_to_live_in_minutes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_time_to_live_in_minutes",
+                    "max_time_to_live_in_minutes was not specified but it is required when building BorrowConfiguration",
+                )
+            })?,
+        })
     }
 }

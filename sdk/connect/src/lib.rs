@@ -19,7 +19,7 @@
 //!
 //! Amazon Connect provides metrics and real-time reporting that enable you to optimize contact routing. You can also resolve customer issues more efficiently by getting customers in touch with the appropriate agents.
 //!
-//! There are limits to the number of Amazon Connect resources that you can create. There are also limits to the number of requests that you can make per second. For more information, seeP98941055 [Amazon Connect Service Quotas](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html) in the _Amazon Connect Administrator Guide_.
+//! There are limits to the number of Amazon Connect resources that you can create. There are also limits to the number of requests that you can make per second. For more information, see [Amazon Connect Service Quotas](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html) in the _Amazon Connect Administrator Guide_.
 //!
 //! You can connect programmatically to an Amazon Web Services service by using an endpoint. For a list of Amazon Connect endpoints, see [Amazon Connect Endpoints](https://docs.aws.amazon.com/general/latest/gr/connect_region.html).
 //!
@@ -34,8 +34,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.56.1"
-//! aws-sdk-connect = "0.34.0"
+//! aws-config = "0.57.1"
+//! aws-sdk-connect = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -189,6 +189,8 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+mod auth_plugin;
+
 pub(crate) mod client_idempotency_token;
 
 mod idempotency_token;
@@ -198,6 +200,8 @@ pub(crate) mod protocol_serde;
 mod serialization_settings;
 
 mod lens;
+
+mod serde_util;
 
 mod endpoint_lib;
 

@@ -49,6 +49,7 @@ impl UpdateGatewayInstanceInputBuilder {
         &self.bridge_placement
     }
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
+    /// This field is required.
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl UpdateGatewayInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGatewayInstanceInput`](crate::operation::update_gateway_instance::UpdateGatewayInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_gateway_instance::UpdateGatewayInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_gateway_instance::UpdateGatewayInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_gateway_instance::UpdateGatewayInstanceInput {
             bridge_placement: self.bridge_placement,

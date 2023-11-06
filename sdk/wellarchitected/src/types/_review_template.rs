@@ -34,8 +34,10 @@ impl ReviewTemplate {
         self.description.as_deref()
     }
     /// <p>The lenses applied to the review template.</p>
-    pub fn lenses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses.is_none()`.
+    pub fn lenses(&self) -> &[::std::string::String] {
+        self.lenses.as_deref().unwrap_or_default()
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>

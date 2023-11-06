@@ -25,9 +25,9 @@ pub struct OrganizationCustomPolicyRuleMetadata {
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub tag_value_scope: ::std::option::Option<::std::string::String>,
     /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub policy_runtime: ::std::option::Option<::std::string::String>,
+    pub policy_runtime: ::std::string::String,
     /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
-    pub policy_text: ::std::option::Option<::std::string::String>,
+    pub policy_text: ::std::string::String,
     /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
     pub debug_log_delivery_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,8 +41,10 @@ impl OrganizationCustomPolicyRuleMetadata {
     /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
     /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Initiates an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
     /// </ul>
-    pub fn organization_config_rule_trigger_types(&self) -> ::std::option::Option<&[crate::types::OrganizationConfigRuleTriggerTypeNoSn]> {
-        self.organization_config_rule_trigger_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_config_rule_trigger_types.is_none()`.
+    pub fn organization_config_rule_trigger_types(&self) -> &[crate::types::OrganizationConfigRuleTriggerTypeNoSn] {
+        self.organization_config_rule_trigger_types.as_deref().unwrap_or_default()
     }
     /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
     pub fn input_parameters(&self) -> ::std::option::Option<&str> {
@@ -53,8 +55,10 @@ impl OrganizationCustomPolicyRuleMetadata {
         self.maximum_execution_frequency.as_ref()
     }
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_types_scope(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types_scope.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types_scope.is_none()`.
+    pub fn resource_types_scope(&self) -> &[::std::string::String] {
+        self.resource_types_scope.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn resource_id_scope(&self) -> ::std::option::Option<&str> {
@@ -69,16 +73,20 @@ impl OrganizationCustomPolicyRuleMetadata {
         self.tag_value_scope.as_deref()
     }
     /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub fn policy_runtime(&self) -> ::std::option::Option<&str> {
-        self.policy_runtime.as_deref()
+    pub fn policy_runtime(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_runtime.deref()
     }
     /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
-    pub fn policy_text(&self) -> ::std::option::Option<&str> {
-        self.policy_text.as_deref()
+    pub fn policy_text(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_text.deref()
     }
     /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
-    pub fn debug_log_delivery_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.debug_log_delivery_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.debug_log_delivery_accounts.is_none()`.
+    pub fn debug_log_delivery_accounts(&self) -> &[::std::string::String] {
+        self.debug_log_delivery_accounts.as_deref().unwrap_or_default()
     }
 }
 impl OrganizationCustomPolicyRuleMetadata {
@@ -247,6 +255,7 @@ impl OrganizationCustomPolicyRuleMetadataBuilder {
         &self.tag_value_scope
     }
     /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    /// This field is required.
     pub fn policy_runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_runtime = ::std::option::Option::Some(input.into());
         self
@@ -261,6 +270,7 @@ impl OrganizationCustomPolicyRuleMetadataBuilder {
         &self.policy_runtime
     }
     /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
+    /// This field is required.
     pub fn policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_text = ::std::option::Option::Some(input.into());
         self
@@ -295,8 +305,13 @@ impl OrganizationCustomPolicyRuleMetadataBuilder {
         &self.debug_log_delivery_accounts
     }
     /// Consumes the builder and constructs a [`OrganizationCustomPolicyRuleMetadata`](crate::types::OrganizationCustomPolicyRuleMetadata).
-    pub fn build(self) -> crate::types::OrganizationCustomPolicyRuleMetadata {
-        crate::types::OrganizationCustomPolicyRuleMetadata {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_runtime`](crate::types::builders::OrganizationCustomPolicyRuleMetadataBuilder::policy_runtime)
+    /// - [`policy_text`](crate::types::builders::OrganizationCustomPolicyRuleMetadataBuilder::policy_text)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::OrganizationCustomPolicyRuleMetadata, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrganizationCustomPolicyRuleMetadata {
             description: self.description,
             organization_config_rule_trigger_types: self.organization_config_rule_trigger_types,
             input_parameters: self.input_parameters,
@@ -305,9 +320,19 @@ impl OrganizationCustomPolicyRuleMetadataBuilder {
             resource_id_scope: self.resource_id_scope,
             tag_key_scope: self.tag_key_scope,
             tag_value_scope: self.tag_value_scope,
-            policy_runtime: self.policy_runtime,
-            policy_text: self.policy_text,
+            policy_runtime: self.policy_runtime.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_runtime",
+                    "policy_runtime was not specified but it is required when building OrganizationCustomPolicyRuleMetadata",
+                )
+            })?,
+            policy_text: self.policy_text.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_text",
+                    "policy_text was not specified but it is required when building OrganizationCustomPolicyRuleMetadata",
+                )
+            })?,
             debug_log_delivery_accounts: self.debug_log_delivery_accounts,
-        }
+        })
     }
 }

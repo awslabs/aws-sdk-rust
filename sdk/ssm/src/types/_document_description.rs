@@ -123,12 +123,16 @@ impl DocumentDescription {
         self.description.as_deref()
     }
     /// <p>A description of the parameters for a document.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::DocumentParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::DocumentParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The list of operating system (OS) platforms compatible with this SSM document. </p>
-    pub fn platform_types(&self) -> ::std::option::Option<&[crate::types::PlatformType]> {
-        self.platform_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_types.is_none()`.
+    pub fn platform_types(&self) -> &[crate::types::PlatformType] {
+        self.platform_types.as_deref().unwrap_or_default()
     }
     /// <p>The type of document.</p>
     pub fn document_type(&self) -> ::std::option::Option<&crate::types::DocumentType> {
@@ -155,24 +159,32 @@ impl DocumentDescription {
         self.target_type.as_deref()
     }
     /// <p>The tags, or metadata, that have been applied to the document.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Details about the document attachments, including names, locations, sizes, and so on.</p>
-    pub fn attachments_information(&self) -> ::std::option::Option<&[crate::types::AttachmentInformation]> {
-        self.attachments_information.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments_information.is_none()`.
+    pub fn attachments_information(&self) -> &[crate::types::AttachmentInformation] {
+        self.attachments_information.as_deref().unwrap_or_default()
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn requires(&self) -> ::std::option::Option<&[crate::types::DocumentRequires]> {
-        self.requires.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires.is_none()`.
+    pub fn requires(&self) -> &[crate::types::DocumentRequires] {
+        self.requires.as_deref().unwrap_or_default()
     }
     /// <p>The user in your organization who created the document.</p>
     pub fn author(&self) -> ::std::option::Option<&str> {
         self.author.as_deref()
     }
     /// <p>Details about the review of a document.</p>
-    pub fn review_information(&self) -> ::std::option::Option<&[crate::types::ReviewInformation]> {
-        self.review_information.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.review_information.is_none()`.
+    pub fn review_information(&self) -> &[crate::types::ReviewInformation] {
+        self.review_information.as_deref().unwrap_or_default()
     }
     /// <p>The version of the document currently approved for use in the organization.</p>
     pub fn approved_version(&self) -> ::std::option::Option<&str> {
@@ -187,12 +199,16 @@ impl DocumentDescription {
         self.review_status.as_ref()
     }
     /// <p>The classification of a document to help you identify and categorize its use.</p>
-    pub fn category(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.category.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category.is_none()`.
+    pub fn category(&self) -> &[::std::string::String] {
+        self.category.as_deref().unwrap_or_default()
     }
     /// <p>The value that identifies a document's category.</p>
-    pub fn category_enum(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.category_enum.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category_enum.is_none()`.
+    pub fn category_enum(&self) -> &[::std::string::String] {
+        self.category_enum.as_deref().unwrap_or_default()
     }
 }
 impl DocumentDescription {

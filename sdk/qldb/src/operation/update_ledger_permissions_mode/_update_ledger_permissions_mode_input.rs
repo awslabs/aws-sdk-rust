@@ -46,6 +46,7 @@ pub struct UpdateLedgerPermissionsModeInputBuilder {
 }
 impl UpdateLedgerPermissionsModeInputBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl UpdateLedgerPermissionsModeInputBuilder {
     /// </ul> <note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
+    /// This field is required.
     pub fn permissions_mode(mut self, input: crate::types::PermissionsMode) -> Self {
         self.permissions_mode = ::std::option::Option::Some(input);
         self
@@ -96,7 +98,7 @@ impl UpdateLedgerPermissionsModeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput {
             name: self.name,

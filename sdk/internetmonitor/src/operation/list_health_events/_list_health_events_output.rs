@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHealthEventsOutput {
     /// <p>A list of health events.</p>
-    pub health_events: ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>>,
+    pub health_events: ::std::vec::Vec<crate::types::HealthEvent>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListHealthEventsOutput {
     /// <p>A list of health events.</p>
-    pub fn health_events(&self) -> ::std::option::Option<&[crate::types::HealthEvent]> {
-        self.health_events.as_deref()
+    pub fn health_events(&self) -> &[crate::types::HealthEvent] {
+        use std::ops::Deref;
+        self.health_events.deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListHealthEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListHealthEventsOutput`](crate::operation::list_health_events::ListHealthEventsOutput).
-    pub fn build(self) -> crate::operation::list_health_events::ListHealthEventsOutput {
-        crate::operation::list_health_events::ListHealthEventsOutput {
-            health_events: self.health_events,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`health_events`](crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder::health_events)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_health_events::ListHealthEventsOutput {
+            health_events: self.health_events.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "health_events",
+                    "health_events was not specified but it is required when building ListHealthEventsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

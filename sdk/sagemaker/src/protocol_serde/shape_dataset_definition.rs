@@ -2,7 +2,7 @@
 pub fn ser_dataset_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.athena_dataset_definition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AthenaDatasetDefinition").start_object();

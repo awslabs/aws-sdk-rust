@@ -11,18 +11,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsEnvironmentFile {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::EcsEnvironmentFileType>,
+    pub r#type: crate::types::EcsEnvironmentFileType,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl EcsEnvironmentFile {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EcsEnvironmentFileType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EcsEnvironmentFileType {
+        &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl EcsEnvironmentFile {
@@ -41,6 +42,7 @@ pub struct EcsEnvironmentFileBuilder {
 }
 impl EcsEnvironmentFileBuilder {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EcsEnvironmentFileType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -55,6 +57,7 @@ impl EcsEnvironmentFileBuilder {
         &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl EcsEnvironmentFileBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`EcsEnvironmentFile`](crate::types::EcsEnvironmentFile).
-    pub fn build(self) -> crate::types::EcsEnvironmentFile {
-        crate::types::EcsEnvironmentFile {
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::EcsEnvironmentFileBuilder::r#type)
+    /// - [`value`](crate::types::builders::EcsEnvironmentFileBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::EcsEnvironmentFile, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EcsEnvironmentFile {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building EcsEnvironmentFile",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building EcsEnvironmentFile",
+                )
+            })?,
+        })
     }
 }

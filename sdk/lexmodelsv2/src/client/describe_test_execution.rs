@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTestExecution`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`test_execution_id(impl Into<String>)`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::test_execution_id) / [`set_test_execution_id(Option<String>)`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::set_test_execution_id): <p>The execution Id of the test set execution.</p>
+    ///   - [`test_execution_id(impl Into<String>)`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::test_execution_id) / [`set_test_execution_id(Option<String>)`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::set_test_execution_id):<br>required: **true**<br><p>The execution Id of the test set execution.</p><br>
     /// - On success, responds with [`DescribeTestExecutionOutput`](crate::operation::describe_test_execution::DescribeTestExecutionOutput) with field(s):
     ///   - [`test_execution_id(Option<String>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::test_execution_id): <p>The execution Id for the test set execution.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::creation_date_time): <p>The execution creation date and time for the test set execution.</p>
@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`target(Option<TestExecutionTarget>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::target): <p>The target bot for the test set execution details.</p>
     ///   - [`api_mode(Option<TestExecutionApiMode>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::api_mode): <p>Indicates whether we use streaming or non-streaming APIs are used for the test set execution. For streaming, <code>StartConversation</code> Amazon Lex Runtime API is used. Whereas for non-streaming, <code>RecognizeUtterance</code> and <code>RecognizeText</code> Amazon Lex Runtime API is used.</p>
     ///   - [`test_execution_modality(Option<TestExecutionModality>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::test_execution_modality): <p>Indicates whether test set is audio or text.</p>
-    ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::failure_reasons): <p>Reasons for the failure of the test set execution.</p>
+    ///   - [`failure_reasons(Option<Vec::<String>>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::failure_reasons): <p>Reasons for the failure of the test set execution.</p>
     /// - On failure, responds with [`SdkError<DescribeTestExecutionError>`](crate::operation::describe_test_execution::DescribeTestExecutionError)
     pub fn describe_test_execution(&self) -> crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder {
         crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::new(self.handle.clone())

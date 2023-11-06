@@ -20,8 +20,10 @@ impl UpdateUserInput {
         self.user_id.as_deref()
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::AttributeOperation]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[crate::types::AttributeOperation] {
+        self.operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateUserInput {
@@ -41,6 +43,7 @@ pub struct UpdateUserInputBuilder {
 }
 impl UpdateUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UpdateUserInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +93,7 @@ impl UpdateUserInputBuilder {
         &self.operations
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
             identity_store_id: self.identity_store_id,
             user_id: self.user_id,

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The ID of the project.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the project.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The project's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date the project was created, in Unix epoch time.</p>
@@ -17,12 +17,14 @@ pub struct ProjectSummary {
 }
 impl ProjectSummary {
     /// <p>The ID of the project.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The project's description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -56,6 +58,7 @@ pub struct ProjectSummaryBuilder {
 }
 impl ProjectSummaryBuilder {
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl ProjectSummaryBuilder {
         &self.id
     }
     /// <p>The name of the project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +130,26 @@ impl ProjectSummaryBuilder {
         &self.last_update_date
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
-    pub fn build(self) -> crate::types::ProjectSummary {
-        crate::types::ProjectSummary {
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ProjectSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::ProjectSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ProjectSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ProjectSummary",
+                )
+            })?,
             description: self.description,
             creation_date: self.creation_date,
             last_update_date: self.last_update_date,
-        }
+        })
     }
 }

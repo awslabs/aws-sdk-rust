@@ -2,7 +2,7 @@
 pub fn ser_service_collection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceCollection,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_names {
         let mut array_2 = object.key("ServiceNames").start_array();
         for item_3 in var_1 {

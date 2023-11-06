@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TestWirelessDevice`](crate::operation::test_wireless_device::builders::TestWirelessDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::test_wireless_device::builders::TestWirelessDeviceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::test_wireless_device::builders::TestWirelessDeviceFluentBuilder::set_id): <p>The ID of the wireless device to test.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::test_wireless_device::builders::TestWirelessDeviceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::test_wireless_device::builders::TestWirelessDeviceFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the wireless device to test.</p><br>
     /// - On success, responds with [`TestWirelessDeviceOutput`](crate::operation::test_wireless_device::TestWirelessDeviceOutput) with field(s):
     ///   - [`result(Option<String>)`](crate::operation::test_wireless_device::TestWirelessDeviceOutput::result): <p>The result returned by the test.</p>
     /// - On failure, responds with [`SdkError<TestWirelessDeviceError>`](crate::operation::test_wireless_device::TestWirelessDeviceError)

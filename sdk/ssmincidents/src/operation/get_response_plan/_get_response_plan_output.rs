@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResponsePlanOutput {
     /// <p>The ARN of the response plan.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The short format name of the response plan. The name can't contain spaces.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The long format name of the response plan. Can contain spaces.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Details used to create the incident when using this response plan.</p>
@@ -23,12 +23,14 @@ pub struct GetResponsePlanOutput {
 }
 impl GetResponsePlanOutput {
     /// <p>The ARN of the response plan.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The short format name of the response plan. The name can't contain spaces.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The long format name of the response plan. Can contain spaces.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -43,16 +45,22 @@ impl GetResponsePlanOutput {
         self.chat_channel.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn engagements(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.engagements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engagements.is_none()`.
+    pub fn engagements(&self) -> &[::std::string::String] {
+        self.engagements.as_deref().unwrap_or_default()
     }
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
-    pub fn integrations(&self) -> ::std::option::Option<&[crate::types::Integration]> {
-        self.integrations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integrations.is_none()`.
+    pub fn integrations(&self) -> &[crate::types::Integration] {
+        self.integrations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetResponsePlanOutput {
@@ -83,6 +91,7 @@ pub struct GetResponsePlanOutputBuilder {
 }
 impl GetResponsePlanOutputBuilder {
     /// <p>The ARN of the response plan.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +106,7 @@ impl GetResponsePlanOutputBuilder {
         &self.arn
     }
     /// <p>The short format name of the response plan. The name can't contain spaces.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +135,7 @@ impl GetResponsePlanOutputBuilder {
         &self.display_name
     }
     /// <p>Details used to create the incident when using this response plan.</p>
+    /// This field is required.
     pub fn incident_template(mut self, input: crate::types::IncidentTemplate) -> Self {
         self.incident_template = ::std::option::Option::Some(input);
         self
@@ -222,10 +233,25 @@ impl GetResponsePlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetResponsePlanOutput`](crate::operation::get_response_plan::GetResponsePlanOutput).
-    pub fn build(self) -> crate::operation::get_response_plan::GetResponsePlanOutput {
-        crate::operation::get_response_plan::GetResponsePlanOutput {
-            arn: self.arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder::arn)
+    /// - [`name`](crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_response_plan::GetResponsePlanOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_response_plan::GetResponsePlanOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetResponsePlanOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetResponsePlanOutput",
+                )
+            })?,
             display_name: self.display_name,
             incident_template: self.incident_template,
             chat_channel: self.chat_channel,
@@ -233,6 +259,6 @@ impl GetResponsePlanOutputBuilder {
             actions: self.actions,
             integrations: self.integrations,
             _request_id: self._request_id,
-        }
+        })
     }
 }

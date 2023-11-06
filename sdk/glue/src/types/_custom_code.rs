@@ -5,36 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomCode {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>The custom code that is used to perform the data transformation.</p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
     /// <p>The name defined for the custom code node class.</p>
-    pub class_name: ::std::option::Option<::std::string::String>,
+    pub class_name: ::std::string::String,
     /// <p>Specifies the data schema for the custom code transform.</p>
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl CustomCode {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>The custom code that is used to perform the data transformation.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
     /// <p>The name defined for the custom code node class.</p>
-    pub fn class_name(&self) -> ::std::option::Option<&str> {
-        self.class_name.as_deref()
+    pub fn class_name(&self) -> &str {
+        use std::ops::Deref;
+        self.class_name.deref()
     }
     /// <p>Specifies the data schema for the custom code transform.</p>
-    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
-        self.output_schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
     }
 }
 impl CustomCode {
@@ -56,6 +62,7 @@ pub struct CustomCodeBuilder {
 }
 impl CustomCodeBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +97,7 @@ impl CustomCodeBuilder {
         &self.inputs
     }
     /// <p>The custom code that is used to perform the data transformation.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +112,7 @@ impl CustomCodeBuilder {
         &self.code
     }
     /// <p>The name defined for the custom code node class.</p>
+    /// This field is required.
     pub fn class_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.class_name = ::std::option::Option::Some(input.into());
         self
@@ -138,13 +147,38 @@ impl CustomCodeBuilder {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`CustomCode`](crate::types::CustomCode).
-    pub fn build(self) -> crate::types::CustomCode {
-        crate::types::CustomCode {
-            name: self.name,
-            inputs: self.inputs,
-            code: self.code,
-            class_name: self.class_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CustomCodeBuilder::name)
+    /// - [`inputs`](crate::types::builders::CustomCodeBuilder::inputs)
+    /// - [`code`](crate::types::builders::CustomCodeBuilder::code)
+    /// - [`class_name`](crate::types::builders::CustomCodeBuilder::class_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomCode, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomCode {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CustomCode",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building CustomCode",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building CustomCode",
+                )
+            })?,
+            class_name: self.class_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "class_name",
+                    "class_name was not specified but it is required when building CustomCode",
+                )
+            })?,
             output_schemas: self.output_schemas,
-        }
+        })
     }
 }

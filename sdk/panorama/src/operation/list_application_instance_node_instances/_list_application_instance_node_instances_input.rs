@@ -6,7 +6,7 @@ pub struct ListApplicationInstanceNodeInstancesInput {
     /// <p>The node instances' application instance ID.</p>
     pub application_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of node instances to return in one page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl ListApplicationInstanceNodeInstancesInput {
         self.application_instance_id.as_deref()
     }
     /// <p>The maximum number of node instances to return in one page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -41,6 +41,7 @@ pub struct ListApplicationInstanceNodeInstancesInputBuilder {
 }
 impl ListApplicationInstanceNodeInstancesInputBuilder {
     /// <p>The node instances' application instance ID.</p>
+    /// This field is required.
     pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -87,12 +88,12 @@ impl ListApplicationInstanceNodeInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesInput {
                 application_instance_id: self.application_instance_id,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

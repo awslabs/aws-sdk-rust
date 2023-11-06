@@ -77,6 +77,7 @@ pub struct GetPackageVersionReadmeInputBuilder {
 }
 impl GetPackageVersionReadmeInputBuilder {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl GetPackageVersionReadmeInputBuilder {
         &self.domain_owner
     }
     /// <p> The repository that contains the package with the requested readme file. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +121,7 @@ impl GetPackageVersionReadmeInputBuilder {
         &self.repository
     }
     /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -159,6 +162,7 @@ impl GetPackageVersionReadmeInputBuilder {
         &self.namespace
     }
     /// <p> The name of the package version that contains the requested readme file. </p>
+    /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +177,7 @@ impl GetPackageVersionReadmeInputBuilder {
         &self.package
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -191,7 +196,7 @@ impl GetPackageVersionReadmeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_package_version_readme::GetPackageVersionReadmeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_package_version_readme::GetPackageVersionReadmeInput {
             domain: self.domain,

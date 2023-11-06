@@ -28,6 +28,7 @@ pub struct DeleteClusterSubnetGroupInputBuilder {
 }
 impl DeleteClusterSubnetGroupInputBuilder {
     /// <p>The name of the cluster subnet group name to be deleted.</p>
+    /// This field is required.
     pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteClusterSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput {
             cluster_subnet_group_name: self.cluster_subnet_group_name,

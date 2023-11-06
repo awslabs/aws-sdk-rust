@@ -28,6 +28,7 @@ pub struct DescribeReservationInputBuilder {
 }
 impl DescribeReservationInputBuilder {
     /// Unique reservation ID, e.g. '1234567'
+    /// This field is required.
     pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeReservationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_reservation::DescribeReservationInput {
             reservation_id: self.reservation_id,

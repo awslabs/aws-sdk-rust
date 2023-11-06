@@ -41,6 +41,7 @@ pub struct DeleteChannelMembershipInputBuilder {
 }
 impl DeleteChannelMembershipInputBuilder {
     /// <p>The ARN of the channel from which you want to remove the user.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteChannelMembershipInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the member that you're removing from the channel.</p>
+    /// This field is required.
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl DeleteChannelMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_channel_membership::DeleteChannelMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_channel_membership::DeleteChannelMembershipInput {
             channel_arn: self.channel_arn,

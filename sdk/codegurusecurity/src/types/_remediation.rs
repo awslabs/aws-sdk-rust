@@ -15,8 +15,10 @@ impl Remediation {
         self.recommendation.as_ref()
     }
     /// <p>A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.</p>
-    pub fn suggested_fixes(&self) -> ::std::option::Option<&[crate::types::SuggestedFix]> {
-        self.suggested_fixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggested_fixes.is_none()`.
+    pub fn suggested_fixes(&self) -> &[crate::types::SuggestedFix] {
+        self.suggested_fixes.as_deref().unwrap_or_default()
     }
 }
 impl Remediation {

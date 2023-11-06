@@ -74,6 +74,7 @@ pub struct CreateMediaCapturePipelineInputBuilder {
 }
 impl CreateMediaCapturePipelineInputBuilder {
     /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
+    /// This field is required.
     pub fn source_type(mut self, input: crate::types::MediaPipelineSourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
@@ -88,6 +89,7 @@ impl CreateMediaCapturePipelineInputBuilder {
         &self.source_type
     }
     /// <p>ARN of the source from which the media artifacts are captured.</p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +104,7 @@ impl CreateMediaCapturePipelineInputBuilder {
         &self.source_arn
     }
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    /// This field is required.
     pub fn sink_type(mut self, input: crate::types::MediaPipelineSinkType) -> Self {
         self.sink_type = ::std::option::Option::Some(input);
         self
@@ -116,6 +119,7 @@ impl CreateMediaCapturePipelineInputBuilder {
         &self.sink_type
     }
     /// <p>The ARN of the sink type.</p>
+    /// This field is required.
     pub fn sink_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_arn = ::std::option::Option::Some(input.into());
         self
@@ -162,7 +166,7 @@ impl CreateMediaCapturePipelineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput {
             source_type: self.source_type,

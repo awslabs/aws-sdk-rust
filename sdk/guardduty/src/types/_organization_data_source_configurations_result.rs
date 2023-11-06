@@ -42,6 +42,7 @@ pub struct OrganizationDataSourceConfigurationsResultBuilder {
 }
 impl OrganizationDataSourceConfigurationsResultBuilder {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
+    /// This field is required.
     pub fn s3_logs(mut self, input: crate::types::OrganizationS3LogsConfigurationResult) -> Self {
         self.s3_logs = ::std::option::Option::Some(input);
         self

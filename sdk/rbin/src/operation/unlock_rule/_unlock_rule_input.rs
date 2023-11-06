@@ -27,6 +27,7 @@ pub struct UnlockRuleInputBuilder {
 }
 impl UnlockRuleInputBuilder {
     /// <p>The unique ID of the retention rule.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl UnlockRuleInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`UnlockRuleInput`](crate::operation::unlock_rule::UnlockRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::unlock_rule::UnlockRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unlock_rule::UnlockRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unlock_rule::UnlockRuleInput { identifier: self.identifier })
     }
 }

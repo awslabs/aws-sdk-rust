@@ -43,7 +43,7 @@ impl DeleteWorkspaceBundleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceBundleInput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput { bundle_id: self.bundle_id })
     }

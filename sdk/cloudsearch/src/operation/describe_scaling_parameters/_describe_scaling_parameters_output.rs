@@ -35,6 +35,7 @@ pub struct DescribeScalingParametersOutputBuilder {
 }
 impl DescribeScalingParametersOutputBuilder {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
+    /// This field is required.
     pub fn scaling_parameters(mut self, input: crate::types::ScalingParametersStatus) -> Self {
         self.scaling_parameters = ::std::option::Option::Some(input);
         self

@@ -162,10 +162,10 @@ pub(crate) fn de_describe_input(
                     );
                 }
                 "attachedChannels" => {
-                    builder = builder.set_attached_channels(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_attached_channels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "destinations" => {
-                    builder = builder.set_destinations(crate::protocol_serde::shape___list_of_input_destination::de___list_of_input_destination(
+                    builder = builder.set_destinations(crate::protocol_serde::shape_list_of_input_destination::de_list_of_input_destination(
                         tokens,
                     )?);
                 }
@@ -185,10 +185,10 @@ pub(crate) fn de_describe_input(
                 }
                 "inputDevices" => {
                     builder = builder
-                        .set_input_devices(crate::protocol_serde::shape___list_of_input_device_settings::de___list_of_input_device_settings(tokens)?);
+                        .set_input_devices(crate::protocol_serde::shape_list_of_input_device_settings::de_list_of_input_device_settings(tokens)?);
                 }
                 "inputPartnerIds" => {
-                    builder = builder.set_input_partner_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_input_partner_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "inputSourceType" => {
                     builder = builder.set_input_source_type(
@@ -198,8 +198,9 @@ pub(crate) fn de_describe_input(
                     );
                 }
                 "mediaConnectFlows" => {
-                    builder = builder
-                        .set_media_connect_flows(crate::protocol_serde::shape___list_of_media_connect_flow::de___list_of_media_connect_flow(tokens)?);
+                    builder = builder.set_media_connect_flows(
+                        crate::protocol_serde::shape_list_of_media_connect_flow::de_list_of_media_connect_flow(tokens)?,
+                    );
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -216,10 +217,10 @@ pub(crate) fn de_describe_input(
                     );
                 }
                 "securityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "sources" => {
-                    builder = builder.set_sources(crate::protocol_serde::shape___list_of_input_source::de___list_of_input_source(tokens)?);
+                    builder = builder.set_sources(crate::protocol_serde::shape_list_of_input_source::de_list_of_input_source(tokens)?);
                 }
                 "state" => {
                     builder = builder.set_state(

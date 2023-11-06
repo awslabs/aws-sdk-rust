@@ -10,7 +10,7 @@ impl DescribeTapesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_tapes::DescribeTapesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_tapes::DescribeTapesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DescribeTapesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_tapes::DescribeTapesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_tapes::DescribeTapesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::describe_tapes::DescribeTapes::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl DescribeTapesFluentBuilder {
         crate::operation::describe_tapes::DescribeTapes::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::describe_tapes::DescribeTapesOutput,
-            crate::operation::describe_tapes::DescribeTapesError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::describe_tapes::DescribeTapesError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::describe_tapes::DescribeTapesOutput,
+        crate::operation::describe_tapes::DescribeTapesError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,7 +110,7 @@ impl DescribeTapesFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_tapes::paginator::DescribeTapesPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_tapes::paginator::DescribeTapesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::describe_tapes::paginator::DescribeTapesPaginator {
         crate::operation::describe_tapes::paginator::DescribeTapesPaginator::new(self.handle, self.inner)
     }
@@ -132,21 +130,21 @@ impl DescribeTapesFluentBuilder {
     }
     /// Appends an item to `TapeARNs`.
     ///
-    /// To override the contents of this collection use [`set_tape_ar_ns`](Self::set_tape_ar_ns).
+    /// To override the contents of this collection use [`set_tape_arns`](Self::set_tape_arns).
     ///
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub fn tape_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.tape_ar_ns(input.into());
+    pub fn tape_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tape_arns(input.into());
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub fn set_tape_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_tape_ar_ns(input);
+    pub fn set_tape_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_tape_arns(input);
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub fn get_tape_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_tape_ar_ns()
+    pub fn get_tape_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tape_arns()
     }
     /// <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which page of results to retrieve.</p>
     /// <p>If not specified, the first page of results is retrieved.</p>

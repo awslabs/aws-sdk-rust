@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResetJobBookmark`](crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_name(impl Into<String>)`](crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::set_job_name): <p>The name of the job in question.</p>
-    ///   - [`run_id(impl Into<String>)`](crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::set_run_id): <p>The unique run identifier associated with this job run.</p>
+    ///   - [`job_name(impl Into<String>)`](crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::set_job_name):<br>required: **true**<br><p>The name of the job in question.</p><br>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::set_run_id):<br>required: **false**<br><p>The unique run identifier associated with this job run.</p><br>
     /// - On success, responds with [`ResetJobBookmarkOutput`](crate::operation::reset_job_bookmark::ResetJobBookmarkOutput) with field(s):
     ///   - [`job_bookmark_entry(Option<JobBookmarkEntry>)`](crate::operation::reset_job_bookmark::ResetJobBookmarkOutput::job_bookmark_entry): <p>The reset bookmark entry.</p>
     /// - On failure, responds with [`SdkError<ResetJobBookmarkError>`](crate::operation::reset_job_bookmark::ResetJobBookmarkError)

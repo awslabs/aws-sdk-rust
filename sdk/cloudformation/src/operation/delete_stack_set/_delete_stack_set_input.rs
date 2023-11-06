@@ -44,6 +44,7 @@ pub struct DeleteStackSetInputBuilder {
 }
 impl DeleteStackSetInputBuilder {
     /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value by running <code>ListStackSets</code>.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +90,7 @@ impl DeleteStackSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStackSetInput`](crate::operation::delete_stack_set::DeleteStackSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_stack_set::DeleteStackSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_stack_set::DeleteStackSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stack_set::DeleteStackSetInput {
             stack_set_name: self.stack_set_name,
             call_as: self.call_as,

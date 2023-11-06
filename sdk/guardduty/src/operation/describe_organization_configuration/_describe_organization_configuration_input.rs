@@ -41,6 +41,7 @@ pub struct DescribeOrganizationConfigurationInputBuilder {
 }
 impl DescribeOrganizationConfigurationInputBuilder {
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl DescribeOrganizationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput {

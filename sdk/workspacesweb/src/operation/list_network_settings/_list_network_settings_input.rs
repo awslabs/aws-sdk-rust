@@ -64,7 +64,7 @@ impl ListNetworkSettingsInputBuilder {
     /// Consumes the builder and constructs a [`ListNetworkSettingsInput`](crate::operation::list_network_settings::ListNetworkSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_network_settings::ListNetworkSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_network_settings::ListNetworkSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_network_settings::ListNetworkSettingsInput {
             next_token: self.next_token,

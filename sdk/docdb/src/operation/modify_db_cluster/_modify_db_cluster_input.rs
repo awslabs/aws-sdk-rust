@@ -109,8 +109,10 @@ impl ModifyDbClusterInput {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A list of virtual private cloud (VPC) security groups that the cluster will belong to.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>. </p>
@@ -195,6 +197,7 @@ impl ModifyDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -503,7 +506,7 @@ impl ModifyDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_cluster::ModifyDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_db_cluster::ModifyDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_db_cluster::ModifyDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             new_db_cluster_identifier: self.new_db_cluster_identifier,

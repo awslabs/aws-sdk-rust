@@ -55,6 +55,7 @@ pub struct ListReportsForReportGroupInputBuilder {
 }
 impl ListReportsForReportGroupInputBuilder {
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
+    /// This field is required.
     pub fn report_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl ListReportsForReportGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reports_for_report_group::ListReportsForReportGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_reports_for_report_group::ListReportsForReportGroupInput {
             report_group_arn: self.report_group_arn,

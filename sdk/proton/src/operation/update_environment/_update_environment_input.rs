@@ -164,6 +164,7 @@ pub struct UpdateEnvironmentInputBuilder {
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The name of the environment to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -270,6 +271,7 @@ impl UpdateEnvironmentInputBuilder {
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn deployment_type(mut self, input: crate::types::DeploymentUpdateType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
@@ -395,7 +397,7 @@ impl UpdateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
             name: self.name,
             description: self.description,

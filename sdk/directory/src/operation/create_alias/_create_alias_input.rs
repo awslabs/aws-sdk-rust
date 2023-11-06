@@ -37,6 +37,7 @@ pub struct CreateAliasInputBuilder {
 }
 impl CreateAliasInputBuilder {
     /// <p>The identifier of the directory for which to create the alias.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -52,6 +53,7 @@ impl CreateAliasInputBuilder {
     }
     /// <p>The requested alias.</p>
     /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
@@ -68,7 +70,7 @@ impl CreateAliasInputBuilder {
         &self.alias
     }
     /// Consumes the builder and constructs a [`CreateAliasInput`](crate::operation::create_alias::CreateAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_alias::CreateAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_alias::CreateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_alias::CreateAliasInput {
             directory_id: self.directory_id,
             alias: self.alias,

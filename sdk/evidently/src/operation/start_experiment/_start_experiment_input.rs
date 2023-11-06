@@ -41,6 +41,7 @@ pub struct StartExperimentInputBuilder {
 }
 impl StartExperimentInputBuilder {
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StartExperimentInputBuilder {
         &self.project
     }
     /// <p>The name of the experiment to start.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl StartExperimentInputBuilder {
         &self.experiment
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
+    /// This field is required.
     pub fn analysis_complete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.analysis_complete_time = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl StartExperimentInputBuilder {
     /// Consumes the builder and constructs a [`StartExperimentInput`](crate::operation::start_experiment::StartExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_experiment::StartExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_experiment::StartExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_experiment::StartExperimentInput {
             project: self.project,
             experiment: self.experiment,

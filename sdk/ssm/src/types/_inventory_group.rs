@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryGroup {
     /// <p>The name of the group.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
+    pub filters: ::std::vec::Vec<crate::types::InventoryFilter>,
 }
 impl InventoryGroup {
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::InventoryFilter]> {
-        self.filters.as_deref()
+    pub fn filters(&self) -> &[crate::types::InventoryFilter] {
+        use std::ops::Deref;
+        self.filters.deref()
     }
 }
 impl InventoryGroup {
@@ -35,6 +37,7 @@ pub struct InventoryGroupBuilder {
 }
 impl InventoryGroupBuilder {
     /// <p>The name of the group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl InventoryGroupBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`InventoryGroup`](crate::types::InventoryGroup).
-    pub fn build(self) -> crate::types::InventoryGroup {
-        crate::types::InventoryGroup {
-            name: self.name,
-            filters: self.filters,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::InventoryGroupBuilder::name)
+    /// - [`filters`](crate::types::builders::InventoryGroupBuilder::filters)
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryGroup, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InventoryGroup {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building InventoryGroup",
+                )
+            })?,
+            filters: self.filters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filters",
+                    "filters was not specified but it is required when building InventoryGroup",
+                )
+            })?,
+        })
     }
 }

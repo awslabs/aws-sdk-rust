@@ -40,8 +40,10 @@ impl ExpandedResultItem {
         self.document_uri.as_deref()
     }
     /// <p>An array of document attributes assigned to a document in the search results. For example, the document author ("_author") or the source URI ("_source_uri") of the document.</p>
-    pub fn document_attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
-        self.document_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_attributes.is_none()`.
+    pub fn document_attributes(&self) -> &[crate::types::DocumentAttribute] {
+        self.document_attributes.as_deref().unwrap_or_default()
     }
 }
 impl ExpandedResultItem {

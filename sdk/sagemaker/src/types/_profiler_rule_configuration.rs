@@ -70,6 +70,7 @@ pub struct ProfilerRuleConfigurationBuilder {
 }
 impl ProfilerRuleConfigurationBuilder {
     /// <p>The name of the rule configuration. It must be unique relative to other rule configuration names.</p>
+    /// This field is required.
     pub fn rule_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +113,7 @@ impl ProfilerRuleConfigurationBuilder {
         &self.s3_output_path
     }
     /// <p>The Amazon Elastic Container Registry Image for the managed rule evaluation.</p>
+    /// This field is required.
     pub fn rule_evaluator_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_evaluator_image = ::std::option::Option::Some(input.into());
         self

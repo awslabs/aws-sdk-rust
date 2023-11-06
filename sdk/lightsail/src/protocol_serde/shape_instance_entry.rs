@@ -2,21 +2,21 @@
 pub fn ser_instance_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_name {
-        object.key("sourceName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("sourceName").string(input.source_name.as_str());
     }
-    if let Some(var_2) = &input.instance_type {
-        object.key("instanceType").string(var_2.as_str());
+    {
+        object.key("instanceType").string(input.instance_type.as_str());
     }
-    if let Some(var_3) = &input.port_info_source {
-        object.key("portInfoSource").string(var_3.as_str());
+    {
+        object.key("portInfoSource").string(input.port_info_source.as_str());
     }
-    if let Some(var_4) = &input.user_data {
-        object.key("userData").string(var_4.as_str());
+    if let Some(var_1) = &input.user_data {
+        object.key("userData").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.availability_zone {
-        object.key("availabilityZone").string(var_5.as_str());
+    {
+        object.key("availabilityZone").string(input.availability_zone.as_str());
     }
     Ok(())
 }

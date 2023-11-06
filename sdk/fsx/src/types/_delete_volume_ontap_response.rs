@@ -15,8 +15,10 @@ impl DeleteVolumeOntapResponse {
         self.final_backup_id.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn final_backup_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.final_backup_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.final_backup_tags.is_none()`.
+    pub fn final_backup_tags(&self) -> &[crate::types::Tag] {
+        self.final_backup_tags.as_deref().unwrap_or_default()
     }
 }
 impl DeleteVolumeOntapResponse {

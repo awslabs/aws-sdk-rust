@@ -2,7 +2,7 @@
 pub fn ser_multi_region_access_point_route(
     input: &crate::types::MultiRegionAccessPointRoute,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.bucket {
@@ -13,14 +13,15 @@ pub fn ser_multi_region_access_point_route(
         let mut inner_writer = scope.start_el("Region").finish();
         inner_writer.data(var_2.as_str());
     }
-    if let Some(var_3) = &input.traffic_dial_percentage {
+    {
         let mut inner_writer = scope.start_el("TrafficDialPercentage").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.traffic_dial_percentage).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_multi_region_access_point_route(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MultiRegionAccessPointRoute, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -29,6 +30,19 @@ pub fn de_multi_region_access_point_route(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#MultiRegionAccessPointRoute$Bucket */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bucket(var_3);
+            }
+            ,
+            s if s.matches("Region") /* Region com.amazonaws.s3control#MultiRegionAccessPointRoute$Region */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -38,24 +52,11 @@ pub fn de_multi_region_access_point_route(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_4);
-            }
-            ,
-            s if s.matches("Region") /* Region com.amazonaws.s3control#MultiRegionAccessPointRoute$Region */ =>  {
-                let var_5 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_region(var_5);
+                builder = builder.set_region(var_4);
             }
             ,
             s if s.matches("TrafficDialPercentage") /* TrafficDialPercentage com.amazonaws.s3control#MultiRegionAccessPointRoute$TrafficDialPercentage */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -66,11 +67,13 @@ pub fn de_multi_region_access_point_route(
                         ?
                     )
                 ;
-                builder = builder.set_traffic_dial_percentage(var_6);
+                builder = builder.set_traffic_dial_percentage(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::multi_region_access_point_route_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

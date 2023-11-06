@@ -5,30 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportedRuntimeContextState {
     /// <p>The application's desired state.</p>
-    pub desired_state: ::std::option::Option<crate::types::DesiredState>,
+    pub desired_state: crate::types::DesiredState,
     /// <p>The device's name.</p>
-    pub runtime_context_name: ::std::option::Option<::std::string::String>,
+    pub runtime_context_name: ::std::string::String,
     /// <p>The application's reported status.</p>
-    pub device_reported_status: ::std::option::Option<crate::types::DeviceReportedStatus>,
+    pub device_reported_status: crate::types::DeviceReportedStatus,
     /// <p>When the device reported the application's state.</p>
-    pub device_reported_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub device_reported_time: ::aws_smithy_types::DateTime,
 }
 impl ReportedRuntimeContextState {
     /// <p>The application's desired state.</p>
-    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::DesiredState> {
-        self.desired_state.as_ref()
+    pub fn desired_state(&self) -> &crate::types::DesiredState {
+        &self.desired_state
     }
     /// <p>The device's name.</p>
-    pub fn runtime_context_name(&self) -> ::std::option::Option<&str> {
-        self.runtime_context_name.as_deref()
+    pub fn runtime_context_name(&self) -> &str {
+        use std::ops::Deref;
+        self.runtime_context_name.deref()
     }
     /// <p>The application's reported status.</p>
-    pub fn device_reported_status(&self) -> ::std::option::Option<&crate::types::DeviceReportedStatus> {
-        self.device_reported_status.as_ref()
+    pub fn device_reported_status(&self) -> &crate::types::DeviceReportedStatus {
+        &self.device_reported_status
     }
     /// <p>When the device reported the application's state.</p>
-    pub fn device_reported_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.device_reported_time.as_ref()
+    pub fn device_reported_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.device_reported_time
     }
 }
 impl ReportedRuntimeContextState {
@@ -49,6 +50,7 @@ pub struct ReportedRuntimeContextStateBuilder {
 }
 impl ReportedRuntimeContextStateBuilder {
     /// <p>The application's desired state.</p>
+    /// This field is required.
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
         self
@@ -63,6 +65,7 @@ impl ReportedRuntimeContextStateBuilder {
         &self.desired_state
     }
     /// <p>The device's name.</p>
+    /// This field is required.
     pub fn runtime_context_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_context_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl ReportedRuntimeContextStateBuilder {
         &self.runtime_context_name
     }
     /// <p>The application's reported status.</p>
+    /// This field is required.
     pub fn device_reported_status(mut self, input: crate::types::DeviceReportedStatus) -> Self {
         self.device_reported_status = ::std::option::Option::Some(input);
         self
@@ -91,6 +95,7 @@ impl ReportedRuntimeContextStateBuilder {
         &self.device_reported_status
     }
     /// <p>When the device reported the application's state.</p>
+    /// This field is required.
     pub fn device_reported_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.device_reported_time = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,37 @@ impl ReportedRuntimeContextStateBuilder {
         &self.device_reported_time
     }
     /// Consumes the builder and constructs a [`ReportedRuntimeContextState`](crate::types::ReportedRuntimeContextState).
-    pub fn build(self) -> crate::types::ReportedRuntimeContextState {
-        crate::types::ReportedRuntimeContextState {
-            desired_state: self.desired_state,
-            runtime_context_name: self.runtime_context_name,
-            device_reported_status: self.device_reported_status,
-            device_reported_time: self.device_reported_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`desired_state`](crate::types::builders::ReportedRuntimeContextStateBuilder::desired_state)
+    /// - [`runtime_context_name`](crate::types::builders::ReportedRuntimeContextStateBuilder::runtime_context_name)
+    /// - [`device_reported_status`](crate::types::builders::ReportedRuntimeContextStateBuilder::device_reported_status)
+    /// - [`device_reported_time`](crate::types::builders::ReportedRuntimeContextStateBuilder::device_reported_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportedRuntimeContextState, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReportedRuntimeContextState {
+            desired_state: self.desired_state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "desired_state",
+                    "desired_state was not specified but it is required when building ReportedRuntimeContextState",
+                )
+            })?,
+            runtime_context_name: self.runtime_context_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "runtime_context_name",
+                    "runtime_context_name was not specified but it is required when building ReportedRuntimeContextState",
+                )
+            })?,
+            device_reported_status: self.device_reported_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_reported_status",
+                    "device_reported_status was not specified but it is required when building ReportedRuntimeContextState",
+                )
+            })?,
+            device_reported_time: self.device_reported_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_reported_time",
+                    "device_reported_time was not specified but it is required when building ReportedRuntimeContextState",
+                )
+            })?,
+        })
     }
 }

@@ -86,7 +86,9 @@ pub fn de_list_vpc_association_authorizations_http_response(
         output = crate::protocol_serde::shape_list_vpc_association_authorizations::de_list_vpc_association_authorizations(_response_body, output)
             .map_err(crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_vpc_association_authorizations_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError::unhandled)?
     })
 }
 
@@ -115,11 +117,11 @@ pub fn de_list_vpc_association_authorizations(
             s if s.matches("VPCs") /* VPCs com.amazonaws.route53.synthetic#ListVPCAssociationAuthorizationsOutput$VPCs */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vp_cs::de_vp_cs(&mut tag)
+                        crate::protocol_serde::shape_vpcs::de_vpcs(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vp_cs(var_1);
+                builder = builder.set_vpcs(var_1);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.route53.synthetic#ListVPCAssociationAuthorizationsOutput$NextToken */ =>  {

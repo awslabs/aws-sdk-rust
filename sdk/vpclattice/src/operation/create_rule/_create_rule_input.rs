@@ -76,6 +76,7 @@ pub struct CreateRuleInputBuilder {
 }
 impl CreateRuleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateRuleInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl CreateRuleInputBuilder {
         &self.listener_identifier
     }
     /// <p>The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl CreateRuleInputBuilder {
         &self.name
     }
     /// <p>The rule match.</p>
+    /// This field is required.
     pub fn r#match(mut self, input: crate::types::RuleMatch) -> Self {
         self.r#match = ::std::option::Option::Some(input);
         self
@@ -132,6 +136,7 @@ impl CreateRuleInputBuilder {
         &self.r#match
     }
     /// <p>The priority assigned to the rule. Each rule for a specific listener must have a unique priority. The lower the priority number the higher the priority.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -146,6 +151,7 @@ impl CreateRuleInputBuilder {
         &self.priority
     }
     /// <p>The action for the default rule.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -194,7 +200,7 @@ impl CreateRuleInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

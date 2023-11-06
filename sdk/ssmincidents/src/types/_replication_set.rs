@@ -7,19 +7,19 @@ pub struct ReplicationSet {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
-    pub region_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionInfo>>,
+    pub region_map: ::std::collections::HashMap<::std::string::String, crate::types::RegionInfo>,
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
-    pub status: ::std::option::Option<crate::types::ReplicationSetStatus>,
+    pub status: crate::types::ReplicationSetStatus,
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
-    pub deletion_protected: ::std::option::Option<bool>,
+    pub deletion_protected: bool,
     /// <p>When the replication set was created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>Details about who created the replication set.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>When the replication set was last updated.</p>
-    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>Who last modified the replication set.</p>
-    pub last_modified_by: ::std::option::Option<::std::string::String>,
+    pub last_modified_by: ::std::string::String,
 }
 impl ReplicationSet {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
@@ -27,32 +27,34 @@ impl ReplicationSet {
         self.arn.as_deref()
     }
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
-    pub fn region_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RegionInfo>> {
-        self.region_map.as_ref()
+    pub fn region_map(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::RegionInfo> {
+        &self.region_map
     }
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicationSetStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReplicationSetStatus {
+        &self.status
     }
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
-    pub fn deletion_protected(&self) -> ::std::option::Option<bool> {
+    pub fn deletion_protected(&self) -> bool {
         self.deletion_protected
     }
     /// <p>When the replication set was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>Details about who created the replication set.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>When the replication set was last updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
+    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_time
     }
     /// <p>Who last modified the replication set.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
-        self.last_modified_by.as_deref()
+    pub fn last_modified_by(&self) -> &str {
+        use std::ops::Deref;
+        self.last_modified_by.deref()
     }
 }
 impl ReplicationSet {
@@ -114,6 +116,7 @@ impl ReplicationSetBuilder {
         &self.region_map
     }
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReplicationSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -128,6 +131,7 @@ impl ReplicationSetBuilder {
         &self.status
     }
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
+    /// This field is required.
     pub fn deletion_protected(mut self, input: bool) -> Self {
         self.deletion_protected = ::std::option::Option::Some(input);
         self
@@ -142,6 +146,7 @@ impl ReplicationSetBuilder {
         &self.deletion_protected
     }
     /// <p>When the replication set was created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -156,6 +161,7 @@ impl ReplicationSetBuilder {
         &self.created_time
     }
     /// <p>Details about who created the replication set.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -170,6 +176,7 @@ impl ReplicationSetBuilder {
         &self.created_by
     }
     /// <p>When the replication set was last updated.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -184,6 +191,7 @@ impl ReplicationSetBuilder {
         &self.last_modified_time
     }
     /// <p>Who last modified the replication set.</p>
+    /// This field is required.
     pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
@@ -198,16 +206,59 @@ impl ReplicationSetBuilder {
         &self.last_modified_by
     }
     /// Consumes the builder and constructs a [`ReplicationSet`](crate::types::ReplicationSet).
-    pub fn build(self) -> crate::types::ReplicationSet {
-        crate::types::ReplicationSet {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region_map`](crate::types::builders::ReplicationSetBuilder::region_map)
+    /// - [`status`](crate::types::builders::ReplicationSetBuilder::status)
+    /// - [`deletion_protected`](crate::types::builders::ReplicationSetBuilder::deletion_protected)
+    /// - [`created_time`](crate::types::builders::ReplicationSetBuilder::created_time)
+    /// - [`created_by`](crate::types::builders::ReplicationSetBuilder::created_by)
+    /// - [`last_modified_time`](crate::types::builders::ReplicationSetBuilder::last_modified_time)
+    /// - [`last_modified_by`](crate::types::builders::ReplicationSetBuilder::last_modified_by)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationSet, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicationSet {
             arn: self.arn,
-            region_map: self.region_map,
-            status: self.status,
-            deletion_protected: self.deletion_protected,
-            created_time: self.created_time,
-            created_by: self.created_by,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
-        }
+            region_map: self.region_map.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "region_map",
+                    "region_map was not specified but it is required when building ReplicationSet",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ReplicationSet",
+                )
+            })?,
+            deletion_protected: self.deletion_protected.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "deletion_protected",
+                    "deletion_protected was not specified but it is required when building ReplicationSet",
+                )
+            })?,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building ReplicationSet",
+                )
+            })?,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building ReplicationSet",
+                )
+            })?,
+            last_modified_time: self.last_modified_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_time",
+                    "last_modified_time was not specified but it is required when building ReplicationSet",
+                )
+            })?,
+            last_modified_by: self.last_modified_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "last_modified_by",
+                    "last_modified_by was not specified but it is required when building ReplicationSet",
+                )
+            })?,
+        })
     }
 }

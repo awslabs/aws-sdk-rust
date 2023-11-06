@@ -13,98 +13,100 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "dataTransferSubscriberFeePercent" => {
-                            builder = builder.set_data_transfer_subscriber_fee_percent(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "description" => {
-                            builder = builder.set_description(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "destination" => {
-                            builder = builder.set_destination(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "encryption" => {
-                            builder = builder.set_encryption(crate::protocol_serde::shape_encryption::de_encryption(tokens)?);
-                        }
-                        "entitlementArn" => {
-                            builder = builder.set_entitlement_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "listenerAddress" => {
-                            builder = builder.set_listener_address(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "mediaLiveInputArn" => {
-                            builder = builder.set_media_live_input_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "mediaStreamOutputConfigurations" => {
-                            builder = builder.set_media_stream_output_configurations(
-                                    crate::protocol_serde::shape___list_of_media_stream_output_configuration::de___list_of_media_stream_output_configuration(tokens)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "dataTransferSubscriberFeePercent" => {
+                                builder = builder.set_data_transfer_subscriber_fee_percent(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
                                 );
+                            }
+                            "description" => {
+                                builder = builder.set_description(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "destination" => {
+                                builder = builder.set_destination(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "encryption" => {
+                                builder = builder.set_encryption(crate::protocol_serde::shape_encryption::de_encryption(tokens)?);
+                            }
+                            "entitlementArn" => {
+                                builder = builder.set_entitlement_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "listenerAddress" => {
+                                builder = builder.set_listener_address(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "mediaLiveInputArn" => {
+                                builder = builder.set_media_live_input_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "mediaStreamOutputConfigurations" => {
+                                builder = builder.set_media_stream_output_configurations(
+                                    crate::protocol_serde::shape_list_of_media_stream_output_configuration::de_list_of_media_stream_output_configuration(tokens)?
+                                );
+                            }
+                            "name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "outputArn" => {
+                                builder = builder.set_output_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "port" => {
+                                builder = builder.set_port(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "transport" => {
+                                builder = builder.set_transport(crate::protocol_serde::shape_transport::de_transport(tokens)?);
+                            }
+                            "vpcInterfaceAttachment" => {
+                                builder = builder.set_vpc_interface_attachment(
+                                    crate::protocol_serde::shape_vpc_interface_attachment::de_vpc_interface_attachment(tokens)?,
+                                );
+                            }
+                            "bridgeArn" => {
+                                builder = builder.set_bridge_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "bridgePorts" => {
+                                builder = builder.set_bridge_ports(crate::protocol_serde::shape_list_of_integer::de_list_of_integer(tokens)?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "outputArn" => {
-                            builder = builder.set_output_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "port" => {
-                            builder = builder.set_port(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "transport" => {
-                            builder = builder.set_transport(crate::protocol_serde::shape_transport::de_transport(tokens)?);
-                        }
-                        "vpcInterfaceAttachment" => {
-                            builder = builder.set_vpc_interface_attachment(
-                                crate::protocol_serde::shape_vpc_interface_attachment::de_vpc_interface_attachment(tokens)?,
-                            );
-                        }
-                        "bridgeArn" => {
-                            builder = builder.set_bridge_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "bridgePorts" => {
-                            builder = builder.set_bridge_ports(crate::protocol_serde::shape___list_of__integer::de___list_of__integer(tokens)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {:?}",
@@ -113,7 +115,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::output_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

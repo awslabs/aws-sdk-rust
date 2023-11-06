@@ -28,6 +28,7 @@ pub struct VerifyTrustInputBuilder {
 }
 impl VerifyTrustInputBuilder {
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
+    /// This field is required.
     pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl VerifyTrustInputBuilder {
         &self.trust_id
     }
     /// Consumes the builder and constructs a [`VerifyTrustInput`](crate::operation::verify_trust::VerifyTrustInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::verify_trust::VerifyTrustInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_trust::VerifyTrustInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_trust::VerifyTrustInput { trust_id: self.trust_id })
     }
 }

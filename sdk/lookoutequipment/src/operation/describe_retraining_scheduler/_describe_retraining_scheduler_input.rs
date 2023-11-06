@@ -27,6 +27,7 @@ pub struct DescribeRetrainingSchedulerInputBuilder {
 }
 impl DescribeRetrainingSchedulerInputBuilder {
     /// <p>The name of the model that the retraining scheduler is attached to. </p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeRetrainingSchedulerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerInput { model_name: self.model_name })
     }

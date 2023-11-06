@@ -68,16 +68,20 @@ impl CreateImageRecipeInput {
         self.semantic_version.as_deref()
     }
     /// <p>The components included in the image recipe.</p>
-    pub fn components(&self) -> ::std::option::Option<&[crate::types::ComponentConfiguration]> {
-        self.components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
+    pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
+        self.components.as_deref().unwrap_or_default()
     }
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
     pub fn parent_image(&self) -> ::std::option::Option<&str> {
         self.parent_image.as_deref()
     }
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The tags of the image recipe.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -120,6 +124,7 @@ pub struct CreateImageRecipeInputBuilder {
 }
 impl CreateImageRecipeInputBuilder {
     /// <p>The name of the image recipe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -163,6 +168,7 @@ impl CreateImageRecipeInputBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
+    /// This field is required.
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
@@ -227,6 +233,7 @@ impl CreateImageRecipeInputBuilder {
         &self.components
     }
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+    /// This field is required.
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_image = ::std::option::Option::Some(input.into());
         self
@@ -309,6 +316,7 @@ impl CreateImageRecipeInputBuilder {
         &self.additional_instance_configuration
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -325,7 +333,7 @@ impl CreateImageRecipeInputBuilder {
     /// Consumes the builder and constructs a [`CreateImageRecipeInput`](crate::operation::create_image_recipe::CreateImageRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_image_recipe::CreateImageRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_image_recipe::CreateImageRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_image_recipe::CreateImageRecipeInput {
             name: self.name,
             description: self.description,

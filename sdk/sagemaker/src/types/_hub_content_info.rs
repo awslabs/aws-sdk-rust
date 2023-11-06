@@ -55,8 +55,10 @@ impl HubContentInfo {
         self.hub_content_description.as_deref()
     }
     /// <p>The searchable keywords for the hub content.</p>
-    pub fn hub_content_search_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hub_content_search_keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_content_search_keywords.is_none()`.
+    pub fn hub_content_search_keywords(&self) -> &[::std::string::String] {
+        self.hub_content_search_keywords.as_deref().unwrap_or_default()
     }
     /// <p>The status of the hub content.</p>
     pub fn hub_content_status(&self) -> ::std::option::Option<&crate::types::HubContentStatus> {
@@ -91,6 +93,7 @@ pub struct HubContentInfoBuilder {
 }
 impl HubContentInfoBuilder {
     /// <p>The name of the hub content.</p>
+    /// This field is required.
     pub fn hub_content_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl HubContentInfoBuilder {
         &self.hub_content_name
     }
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
+    /// This field is required.
     pub fn hub_content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +123,7 @@ impl HubContentInfoBuilder {
         &self.hub_content_arn
     }
     /// <p>The version of the hub content.</p>
+    /// This field is required.
     pub fn hub_content_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_version = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +138,7 @@ impl HubContentInfoBuilder {
         &self.hub_content_version
     }
     /// <p>The type of hub content.</p>
+    /// This field is required.
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
         self.hub_content_type = ::std::option::Option::Some(input);
         self
@@ -147,6 +153,7 @@ impl HubContentInfoBuilder {
         &self.hub_content_type
     }
     /// <p>The version of the hub content document schema.</p>
+    /// This field is required.
     pub fn document_schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_schema_version = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +216,7 @@ impl HubContentInfoBuilder {
         &self.hub_content_search_keywords
     }
     /// <p>The status of the hub content.</p>
+    /// This field is required.
     pub fn hub_content_status(mut self, input: crate::types::HubContentStatus) -> Self {
         self.hub_content_status = ::std::option::Option::Some(input);
         self
@@ -223,6 +231,7 @@ impl HubContentInfoBuilder {
         &self.hub_content_status
     }
     /// <p>The date and time that the hub content was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

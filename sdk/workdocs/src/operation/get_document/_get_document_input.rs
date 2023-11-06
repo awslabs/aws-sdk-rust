@@ -64,6 +64,7 @@ impl GetDocumentInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the document.</p>
+    /// This field is required.
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +93,7 @@ impl GetDocumentInputBuilder {
         &self.include_custom_metadata
     }
     /// Consumes the builder and constructs a [`GetDocumentInput`](crate::operation::get_document::GetDocumentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_document::GetDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_document::GetDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_document::GetDocumentInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

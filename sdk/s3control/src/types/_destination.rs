@@ -7,7 +7,7 @@ pub struct Destination {
     /// <p>The destination bucket owner's account ID. </p>
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the access point for the destination bucket where you want S3 on Outposts to store the replication results.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -33,8 +33,9 @@ impl Destination {
         self.account.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access point for the destination bucket where you want S3 on Outposts to store the replication results.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
@@ -100,6 +101,7 @@ impl DestinationBuilder {
         &self.account
     }
     /// <p>The Amazon Resource Name (ARN) of the access point for the destination bucket where you want S3 on Outposts to store the replication results.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -208,15 +210,22 @@ impl DestinationBuilder {
         &self.storage_class
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
-    pub fn build(self) -> crate::types::Destination {
-        crate::types::Destination {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::DestinationBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Destination {
             account: self.account,
-            bucket: self.bucket,
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building Destination",
+                )
+            })?,
             replication_time: self.replication_time,
             access_control_translation: self.access_control_translation,
             encryption_configuration: self.encryption_configuration,
             metrics: self.metrics,
             storage_class: self.storage_class,
-        }
+        })
     }
 }

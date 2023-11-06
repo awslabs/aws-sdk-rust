@@ -27,8 +27,10 @@ impl DescribeClientVpnTargetNetworksInput {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The IDs of the target network associations.</p>
-    pub fn association_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.association_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_ids.is_none()`.
+    pub fn association_ids(&self) -> &[::std::string::String] {
+        self.association_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -44,8 +46,10 @@ impl DescribeClientVpnTargetNetworksInput {
     /// <li> <p> <code>target-network-id</code> - The ID of the subnet specified as the target network.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the target network is located.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -72,6 +76,7 @@ pub struct DescribeClientVpnTargetNetworksInputBuilder {
 }
 impl DescribeClientVpnTargetNetworksInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -187,7 +192,7 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksInput {

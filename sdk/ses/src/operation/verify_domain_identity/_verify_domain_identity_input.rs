@@ -28,6 +28,7 @@ pub struct VerifyDomainIdentityInputBuilder {
 }
 impl VerifyDomainIdentityInputBuilder {
     /// <p>The domain to be verified.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl VerifyDomainIdentityInputBuilder {
     /// Consumes the builder and constructs a [`VerifyDomainIdentityInput`](crate::operation::verify_domain_identity::VerifyDomainIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_domain_identity::VerifyDomainIdentityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::verify_domain_identity::VerifyDomainIdentityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::verify_domain_identity::VerifyDomainIdentityInput { domain: self.domain })
     }

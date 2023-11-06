@@ -34,6 +34,7 @@ pub struct DescribeFaqInputBuilder {
 }
 impl DescribeFaqInputBuilder {
     /// <p>The identifier of the FAQ you want to get information on.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFaqInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index for the FAQ.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DescribeFaqInputBuilder {
         &self.index_id
     }
     /// Consumes the builder and constructs a [`DescribeFaqInput`](crate::operation::describe_faq::DescribeFaqInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_faq::DescribeFaqInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_faq::DescribeFaqInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_faq::DescribeFaqInput {
             id: self.id,
             index_id: self.index_id,

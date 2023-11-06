@@ -75,6 +75,7 @@ pub struct CreateHostedZoneInputBuilder {
 impl CreateHostedZoneInputBuilder {
     /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
     /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl CreateHostedZoneInputBuilder {
         &self.vpc
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -173,7 +175,7 @@ impl CreateHostedZoneInputBuilder {
     /// Consumes the builder and constructs a [`CreateHostedZoneInput`](crate::operation::create_hosted_zone::CreateHostedZoneInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_hosted_zone::CreateHostedZoneInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_hosted_zone::CreateHostedZoneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_hosted_zone::CreateHostedZoneInput {
             name: self.name,
             vpc: self.vpc,

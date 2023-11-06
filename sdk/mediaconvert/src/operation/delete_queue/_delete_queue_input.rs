@@ -27,6 +27,7 @@ pub struct DeleteQueueInputBuilder {
 }
 impl DeleteQueueInputBuilder {
     /// The name of the queue that you want to delete.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteQueueInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::operation::delete_queue::DeleteQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_queue::DeleteQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_queue::DeleteQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_queue::DeleteQueueInput { name: self.name })
     }
 }

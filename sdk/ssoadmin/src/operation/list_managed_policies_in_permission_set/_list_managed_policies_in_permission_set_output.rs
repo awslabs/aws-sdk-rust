@@ -11,8 +11,10 @@ pub struct ListManagedPoliciesInPermissionSetOutput {
 }
 impl ListManagedPoliciesInPermissionSetOutput {
     /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
-    pub fn attached_managed_policies(&self) -> ::std::option::Option<&[crate::types::AttachedManagedPolicy]> {
-        self.attached_managed_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_managed_policies.is_none()`.
+    pub fn attached_managed_policies(&self) -> &[crate::types::AttachedManagedPolicy] {
+        self.attached_managed_policies.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

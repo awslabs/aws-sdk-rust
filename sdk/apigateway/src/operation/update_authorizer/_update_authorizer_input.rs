@@ -21,8 +21,10 @@ impl UpdateAuthorizerInput {
         self.authorizer_id.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
-        self.patch_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
+    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
+        self.patch_operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateAuthorizerInput {
@@ -42,6 +44,7 @@ pub struct UpdateAuthorizerInputBuilder {
 }
 impl UpdateAuthorizerInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl UpdateAuthorizerInputBuilder {
         &self.rest_api_id
     }
     /// <p>The identifier of the Authorizer resource.</p>
+    /// This field is required.
     pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_id = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +96,7 @@ impl UpdateAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_authorizer::UpdateAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_authorizer::UpdateAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_authorizer::UpdateAuthorizerInput {
             rest_api_id: self.rest_api_id,
             authorizer_id: self.authorizer_id,

@@ -89,6 +89,7 @@ pub struct UpdateQualificationTypeInputBuilder {
 }
 impl UpdateQualificationTypeInputBuilder {
     /// <p>The ID of the Qualification type to update.</p>
+    /// This field is required.
     pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
@@ -228,7 +229,7 @@ impl UpdateQualificationTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_qualification_type::UpdateQualificationTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_qualification_type::UpdateQualificationTypeInput {
             qualification_type_id: self.qualification_type_id,

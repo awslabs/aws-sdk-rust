@@ -48,6 +48,7 @@ pub struct DescribeAffectedEntitiesInputBuilder {
 }
 impl DescribeAffectedEntitiesInputBuilder {
     /// <p>Values to narrow the results returned. At least one event ARN is required.</p>
+    /// This field is required.
     pub fn filter(mut self, input: crate::types::EntityFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
@@ -108,7 +109,7 @@ impl DescribeAffectedEntitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_affected_entities::DescribeAffectedEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_affected_entities::DescribeAffectedEntitiesInput {
             filter: self.filter,

@@ -62,6 +62,7 @@ pub struct ListAnomaliesForInsightInputBuilder {
 }
 impl ListAnomaliesForInsightInputBuilder {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
+    /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +151,7 @@ impl ListAnomaliesForInsightInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput {
             insight_id: self.insight_id,

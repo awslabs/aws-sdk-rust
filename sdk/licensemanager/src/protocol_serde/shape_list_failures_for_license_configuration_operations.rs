@@ -38,8 +38,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AuthorizationException" => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::AuthorizationException({
@@ -54,8 +54,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValueException" => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::InvalidParameterValueException({
@@ -70,8 +70,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "RateLimitExceededException" => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::RateLimitExceededException({
@@ -86,8 +86,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServerInternalException" => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::ServerInternalException({
@@ -102,8 +102,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::generic(generic)
@@ -137,12 +137,12 @@ pub fn de_list_failures_for_license_configuration_operations_http_response(
 
 pub fn ser_list_failures_for_license_configuration_operations_input(
     input: &crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_failures_for_license_configuration_operations_input::ser_list_failures_for_license_configuration_operations_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_failures_for_license_configuration_operations(

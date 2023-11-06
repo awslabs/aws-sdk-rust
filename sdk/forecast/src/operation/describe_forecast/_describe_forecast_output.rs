@@ -52,8 +52,10 @@ impl DescribeForecastOutput {
         self.forecast_name.as_deref()
     }
     /// <p>The quantiles at which probabilistic forecasts were generated.</p>
-    pub fn forecast_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.forecast_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
+    pub fn forecast_types(&self) -> &[::std::string::String] {
+        self.forecast_types.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the predictor used to generate the forecast.</p>
     pub fn predictor_arn(&self) -> ::std::option::Option<&str> {

@@ -38,8 +38,10 @@ impl InviteAccountToOrganizationInput {
     /// </important> <note>
     /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for InviteAccountToOrganizationInput {
@@ -73,6 +75,7 @@ impl InviteAccountToOrganizationInputBuilder {
     /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
     /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::HandshakeParty) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -147,7 +150,7 @@ impl InviteAccountToOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput {
             target: self.target,

@@ -8,8 +8,10 @@ pub struct BatchGetFreeTrialInfoInput {
 }
 impl BatchGetFreeTrialInfoInput {
     /// <p>The account IDs to get free trial status for.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetFreeTrialInfoInput {
@@ -49,8 +51,10 @@ impl BatchGetFreeTrialInfoInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoInput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput {
             account_ids: self.account_ids,
         })

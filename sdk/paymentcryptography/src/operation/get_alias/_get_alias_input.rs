@@ -27,6 +27,7 @@ pub struct GetAliasInputBuilder {
 }
 impl GetAliasInputBuilder {
     /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetAliasInputBuilder {
         &self.alias_name
     }
     /// Consumes the builder and constructs a [`GetAliasInput`](crate::operation::get_alias::GetAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_alias::GetAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_alias::GetAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_alias::GetAliasInput { alias_name: self.alias_name })
     }
 }

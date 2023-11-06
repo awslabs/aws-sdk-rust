@@ -28,6 +28,7 @@ pub struct DeleteElasticsearchDomainInputBuilder {
 }
 impl DeleteElasticsearchDomainInputBuilder {
     /// <p>The name of the Elasticsearch domain that you want to permanently delete.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteElasticsearchDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainInput {
             domain_name: self.domain_name,

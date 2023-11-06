@@ -13,16 +13,20 @@ pub struct ListCollectionsOutput {
 }
 impl ListCollectionsOutput {
     /// <p>An array of collection IDs.</p>
-    pub fn collection_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.collection_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collection_ids.is_none()`.
+    pub fn collection_ids(&self) -> &[::std::string::String] {
+        self.collection_ids.as_deref().unwrap_or_default()
     }
     /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
-    pub fn face_model_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.face_model_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_model_versions.is_none()`.
+    pub fn face_model_versions(&self) -> &[::std::string::String] {
+        self.face_model_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCollectionsOutput {

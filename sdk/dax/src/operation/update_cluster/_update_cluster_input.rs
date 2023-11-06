@@ -44,8 +44,10 @@ impl UpdateClusterInput {
         self.parameter_group_name.as_deref()
     }
     /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
 }
 impl UpdateClusterInput {
@@ -69,6 +71,7 @@ pub struct UpdateClusterInputBuilder {
 }
 impl UpdateClusterInputBuilder {
     /// <p>The name of the DAX cluster to be modified.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -175,7 +178,7 @@ impl UpdateClusterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
             cluster_name: self.cluster_name,
             description: self.description,

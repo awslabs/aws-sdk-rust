@@ -41,6 +41,7 @@ pub struct ExportFormsInputBuilder {
 }
 impl ExportFormsInputBuilder {
     /// <p>The unique ID of the Amplify app to export forms to.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ExportFormsInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl ExportFormsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ExportFormsInput`](crate::operation::export_forms::ExportFormsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_forms::ExportFormsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_forms::ExportFormsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_forms::ExportFormsInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

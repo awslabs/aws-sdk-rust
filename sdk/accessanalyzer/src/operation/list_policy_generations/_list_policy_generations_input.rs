@@ -85,7 +85,7 @@ impl ListPolicyGenerationsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyGenerationsInput`](crate::operation::list_policy_generations::ListPolicyGenerationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_generations::ListPolicyGenerationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_policy_generations::ListPolicyGenerationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_policy_generations::ListPolicyGenerationsInput {
             principal_arn: self.principal_arn,

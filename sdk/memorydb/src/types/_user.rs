@@ -33,8 +33,10 @@ impl User {
         self.access_string.as_deref()
     }
     /// <p>The names of the Access Control Lists to which the user belongs</p>
-    pub fn acl_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.acl_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.acl_names.is_none()`.
+    pub fn acl_names(&self) -> &[::std::string::String] {
+        self.acl_names.as_deref().unwrap_or_default()
     }
     /// <p>The minimum engine version supported for the user</p>
     pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {

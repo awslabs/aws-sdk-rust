@@ -34,6 +34,7 @@ pub struct DeleteAccessControlRuleInputBuilder {
 }
 impl DeleteAccessControlRuleInputBuilder {
     /// <p>The identifier for the organization.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAccessControlRuleInputBuilder {
         &self.organization_id
     }
     /// <p>The name of the access control rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteAccessControlRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput {
             organization_id: self.organization_id,

@@ -12,8 +12,10 @@ pub struct ListBundlesOutput {
 }
 impl ListBundlesOutput {
     /// <p> A list of bundles. </p>
-    pub fn bundle_list(&self) -> ::std::option::Option<&[crate::types::BundleDetails]> {
-        self.bundle_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_list.is_none()`.
+    pub fn bundle_list(&self) -> &[crate::types::BundleDetails] {
+        self.bundle_list.as_deref().unwrap_or_default()
     }
     /// <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

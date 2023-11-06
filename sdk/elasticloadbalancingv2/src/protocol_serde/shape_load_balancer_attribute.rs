@@ -3,7 +3,7 @@
 pub fn ser_load_balancer_attribute(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::LoadBalancerAttribute,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {
@@ -17,6 +17,7 @@ pub fn ser_load_balancer_attribute(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_load_balancer_attribute(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LoadBalancerAttribute, ::aws_smithy_xml::decode::XmlDecodeError> {

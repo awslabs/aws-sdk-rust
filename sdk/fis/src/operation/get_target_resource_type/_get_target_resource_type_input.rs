@@ -27,6 +27,7 @@ pub struct GetTargetResourceTypeInputBuilder {
 }
 impl GetTargetResourceTypeInputBuilder {
     /// <p>The resource type.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetTargetResourceTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetTargetResourceTypeInput`](crate::operation::get_target_resource_type::GetTargetResourceTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_target_resource_type::GetTargetResourceTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_target_resource_type::GetTargetResourceTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_target_resource_type::GetTargetResourceTypeInput {
             resource_type: self.resource_type,

@@ -27,6 +27,7 @@ pub struct DeleteInterconnectInputBuilder {
 }
 impl DeleteInterconnectInputBuilder {
     /// <p>The ID of the interconnect.</p>
+    /// This field is required.
     pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteInterconnectInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInterconnectInput`](crate::operation::delete_interconnect::DeleteInterconnectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_interconnect::DeleteInterconnectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_interconnect::DeleteInterconnectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_interconnect::DeleteInterconnectInput {
             interconnect_id: self.interconnect_id,
         })

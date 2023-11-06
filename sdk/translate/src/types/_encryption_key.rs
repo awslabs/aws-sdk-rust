@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionKey {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
-    pub r#type: ::std::option::Option<crate::types::EncryptionKeyType>,
+    pub r#type: crate::types::EncryptionKeyType,
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl EncryptionKey {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionKeyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EncryptionKeyType {
+        &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl EncryptionKey {
@@ -35,6 +36,7 @@ pub struct EncryptionKeyBuilder {
 }
 impl EncryptionKeyBuilder {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EncryptionKeyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl EncryptionKeyBuilder {
         &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl EncryptionKeyBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`EncryptionKey`](crate::types::EncryptionKey).
-    pub fn build(self) -> crate::types::EncryptionKey {
-        crate::types::EncryptionKey {
-            r#type: self.r#type,
-            id: self.id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::EncryptionKeyBuilder::r#type)
+    /// - [`id`](crate::types::builders::EncryptionKeyBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EncryptionKey {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building EncryptionKey",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building EncryptionKey",
+                )
+            })?,
+        })
     }
 }

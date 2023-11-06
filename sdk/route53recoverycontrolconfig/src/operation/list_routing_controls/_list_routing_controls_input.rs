@@ -41,6 +41,7 @@ pub struct ListRoutingControlsInputBuilder {
 }
 impl ListRoutingControlsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    /// This field is required.
     pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListRoutingControlsInputBuilder {
     /// Consumes the builder and constructs a [`ListRoutingControlsInput`](crate::operation::list_routing_controls::ListRoutingControlsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_routing_controls::ListRoutingControlsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_routing_controls::ListRoutingControlsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_routing_controls::ListRoutingControlsInput {
             control_panel_arn: self.control_panel_arn,

@@ -2,7 +2,7 @@
 pub fn ser_evaluation_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.number_of_backtest_windows {
         object.key("NumberOfBacktestWindows").number(
             #[allow(clippy::useless_conversion)]

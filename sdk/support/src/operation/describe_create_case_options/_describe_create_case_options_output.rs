@@ -25,8 +25,10 @@ impl DescribeCreateCaseOptionsOutput {
         self.language_availability.as_deref()
     }
     /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
-    pub fn communication_types(&self) -> ::std::option::Option<&[crate::types::CommunicationTypeOptions]> {
-        self.communication_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.communication_types.is_none()`.
+    pub fn communication_types(&self) -> &[crate::types::CommunicationTypeOptions] {
+        self.communication_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCreateCaseOptionsOutput {

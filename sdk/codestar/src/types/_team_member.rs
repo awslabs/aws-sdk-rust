@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TeamMember {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-    pub user_arn: ::std::option::Option<::std::string::String>,
+    pub user_arn: ::std::string::String,
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
-    pub project_role: ::std::option::Option<::std::string::String>,
+    pub project_role: ::std::string::String,
     /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
     pub remote_access_allowed: ::std::option::Option<bool>,
 }
 impl TeamMember {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
-        self.user_arn.as_deref()
+    pub fn user_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.user_arn.deref()
     }
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
-    pub fn project_role(&self) -> ::std::option::Option<&str> {
-        self.project_role.as_deref()
+    pub fn project_role(&self) -> &str {
+        use std::ops::Deref;
+        self.project_role.deref()
     }
     /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
     pub fn remote_access_allowed(&self) -> ::std::option::Option<bool> {
@@ -42,6 +44,7 @@ pub struct TeamMemberBuilder {
 }
 impl TeamMemberBuilder {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl TeamMemberBuilder {
         &self.user_arn
     }
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
+    /// This field is required.
     pub fn project_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_role = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl TeamMemberBuilder {
         &self.remote_access_allowed
     }
     /// Consumes the builder and constructs a [`TeamMember`](crate::types::TeamMember).
-    pub fn build(self) -> crate::types::TeamMember {
-        crate::types::TeamMember {
-            user_arn: self.user_arn,
-            project_role: self.project_role,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_arn`](crate::types::builders::TeamMemberBuilder::user_arn)
+    /// - [`project_role`](crate::types::builders::TeamMemberBuilder::project_role)
+    pub fn build(self) -> ::std::result::Result<crate::types::TeamMember, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TeamMember {
+            user_arn: self.user_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_arn",
+                    "user_arn was not specified but it is required when building TeamMember",
+                )
+            })?,
+            project_role: self.project_role.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "project_role",
+                    "project_role was not specified but it is required when building TeamMember",
+                )
+            })?,
             remote_access_allowed: self.remote_access_allowed,
-        }
+        })
     }
 }

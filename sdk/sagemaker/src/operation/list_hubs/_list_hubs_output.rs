@@ -11,8 +11,10 @@ pub struct ListHubsOutput {
 }
 impl ListHubsOutput {
     /// <p>The summaries of the listed hubs.</p>
-    pub fn hub_summaries(&self) -> ::std::option::Option<&[crate::types::HubInfo]> {
-        self.hub_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_summaries.is_none()`.
+    pub fn hub_summaries(&self) -> &[crate::types::HubInfo] {
+        self.hub_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hubs, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

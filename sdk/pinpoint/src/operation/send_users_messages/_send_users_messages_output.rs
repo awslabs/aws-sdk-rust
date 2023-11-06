@@ -34,6 +34,7 @@ pub struct SendUsersMessagesOutputBuilder {
 }
 impl SendUsersMessagesOutputBuilder {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
+    /// This field is required.
     pub fn send_users_message_response(mut self, input: crate::types::SendUsersMessageResponse) -> Self {
         self.send_users_message_response = ::std::option::Option::Some(input);
         self

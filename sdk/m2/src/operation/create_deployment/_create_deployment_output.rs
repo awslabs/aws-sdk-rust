@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentOutput {
     /// <p>The unique identifier of the deployment.</p>
-    pub deployment_id: ::std::option::Option<::std::string::String>,
+    pub deployment_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateDeploymentOutput {
     /// <p>The unique identifier of the deployment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
-        self.deployment_id.as_deref()
+    pub fn deployment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.deployment_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateDeploymentOutput {
@@ -34,6 +35,7 @@ pub struct CreateDeploymentOutputBuilder {
 }
 impl CreateDeploymentOutputBuilder {
     /// <p>The unique identifier of the deployment.</p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateDeploymentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
-    pub fn build(self) -> crate::operation::create_deployment::CreateDeploymentOutput {
-        crate::operation::create_deployment::CreateDeploymentOutput {
-            deployment_id: self.deployment_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`deployment_id`](crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::deployment_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentOutput {
+            deployment_id: self.deployment_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "deployment_id",
+                    "deployment_id was not specified but it is required when building CreateDeploymentOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

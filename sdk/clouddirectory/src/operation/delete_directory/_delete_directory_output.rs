@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDirectoryOutput {
     /// <p>The ARN of the deleted directory.</p>
-    pub directory_arn: ::std::option::Option<::std::string::String>,
+    pub directory_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteDirectoryOutput {
     /// <p>The ARN of the deleted directory.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
-        self.directory_arn.as_deref()
+    pub fn directory_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.directory_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteDirectoryOutput {
@@ -34,6 +35,7 @@ pub struct DeleteDirectoryOutputBuilder {
 }
 impl DeleteDirectoryOutputBuilder {
     /// <p>The ARN of the deleted directory.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl DeleteDirectoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDirectoryOutput`](crate::operation::delete_directory::DeleteDirectoryOutput).
-    pub fn build(self) -> crate::operation::delete_directory::DeleteDirectoryOutput {
-        crate::operation::delete_directory::DeleteDirectoryOutput {
-            directory_arn: self.directory_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`directory_arn`](crate::operation::delete_directory::builders::DeleteDirectoryOutputBuilder::directory_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_directory::DeleteDirectoryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_directory::DeleteDirectoryOutput {
+            directory_arn: self.directory_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "directory_arn",
+                    "directory_arn was not specified but it is required when building DeleteDirectoryOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

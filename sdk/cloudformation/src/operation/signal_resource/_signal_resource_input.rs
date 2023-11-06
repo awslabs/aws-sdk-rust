@@ -49,6 +49,7 @@ pub struct SignalResourceInputBuilder {
 }
 impl SignalResourceInputBuilder {
     /// <p>The stack name or unique stack ID that includes the resource that you want to signal.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl SignalResourceInputBuilder {
         &self.stack_name
     }
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
+    /// This field is required.
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl SignalResourceInputBuilder {
         &self.logical_resource_id
     }
     /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
+    /// This field is required.
     pub fn unique_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unique_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl SignalResourceInputBuilder {
         &self.unique_id
     }
     /// <p>The status of the signal, which is either success or failure. A failure signal causes CloudFormation to immediately fail the stack creation or update.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ResourceSignalStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -107,7 +111,7 @@ impl SignalResourceInputBuilder {
     /// Consumes the builder and constructs a [`SignalResourceInput`](crate::operation::signal_resource::SignalResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::signal_resource::SignalResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::signal_resource::SignalResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::signal_resource::SignalResourceInput {
             stack_name: self.stack_name,
             logical_resource_id: self.logical_resource_id,

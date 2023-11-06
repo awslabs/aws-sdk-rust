@@ -43,7 +43,7 @@ where
 pub fn ser_conversation_log_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConversationLogSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text_log_settings {
         let mut array_2 = object.key("textLogSettings").start_array();
         for item_3 in var_1 {

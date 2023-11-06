@@ -28,12 +28,16 @@ impl RestoreClusterFromSnapshotInput {
         self.snapshot_arn.as_deref()
     }
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
@@ -66,6 +70,7 @@ pub struct RestoreClusterFromSnapshotInputBuilder {
 }
 impl RestoreClusterFromSnapshotInputBuilder {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +85,7 @@ impl RestoreClusterFromSnapshotInputBuilder {
         &self.cluster_name
     }
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
         self
@@ -178,7 +184,7 @@ impl RestoreClusterFromSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput {
             cluster_name: self.cluster_name,

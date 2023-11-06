@@ -17,8 +17,10 @@ impl DescribeTableOutput {
         self.table_name.as_deref()
     }
     /// <p>A list of columns in the table. </p>
-    pub fn column_list(&self) -> ::std::option::Option<&[crate::types::ColumnMetadata]> {
-        self.column_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_list.is_none()`.
+    pub fn column_list(&self) -> &[crate::types::ColumnMetadata] {
+        self.column_list.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

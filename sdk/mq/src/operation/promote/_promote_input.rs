@@ -35,6 +35,7 @@ pub struct PromoteInputBuilder {
 }
 impl PromoteInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    /// This field is required.
     pub fn broker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl PromoteInputBuilder {
         &self.broker_id
     }
     /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::PromoteMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
@@ -63,7 +65,7 @@ impl PromoteInputBuilder {
         &self.mode
     }
     /// Consumes the builder and constructs a [`PromoteInput`](crate::operation::promote::PromoteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::promote::PromoteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::promote::PromoteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::promote::PromoteInput {
             broker_id: self.broker_id,
             mode: self.mode,

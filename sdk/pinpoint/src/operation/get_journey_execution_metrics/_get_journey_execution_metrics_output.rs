@@ -34,6 +34,7 @@ pub struct GetJourneyExecutionMetricsOutputBuilder {
 }
 impl GetJourneyExecutionMetricsOutputBuilder {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
+    /// This field is required.
     pub fn journey_execution_metrics_response(mut self, input: crate::types::JourneyExecutionMetricsResponse) -> Self {
         self.journey_execution_metrics_response = ::std::option::Option::Some(input);
         self

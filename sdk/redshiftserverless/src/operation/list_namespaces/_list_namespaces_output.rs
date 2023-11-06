@@ -6,7 +6,7 @@ pub struct ListNamespacesOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of returned namespaces.</p>
-    pub namespaces: ::std::option::Option<::std::vec::Vec<crate::types::Namespace>>,
+    pub namespaces: ::std::vec::Vec<crate::types::Namespace>,
     _request_id: Option<String>,
 }
 impl ListNamespacesOutput {
@@ -15,8 +15,9 @@ impl ListNamespacesOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of returned namespaces.</p>
-    pub fn namespaces(&self) -> ::std::option::Option<&[crate::types::Namespace]> {
-        self.namespaces.as_deref()
+    pub fn namespaces(&self) -> &[crate::types::Namespace] {
+        use std::ops::Deref;
+        self.namespaces.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListNamespacesOutput {
@@ -84,11 +85,20 @@ impl ListNamespacesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
-    pub fn build(self) -> crate::operation::list_namespaces::ListNamespacesOutput {
-        crate::operation::list_namespaces::ListNamespacesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`namespaces`](crate::operation::list_namespaces::builders::ListNamespacesOutputBuilder::namespaces)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_namespaces::ListNamespacesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_namespaces::ListNamespacesOutput {
             next_token: self.next_token,
-            namespaces: self.namespaces,
+            namespaces: self.namespaces.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "namespaces",
+                    "namespaces was not specified but it is required when building ListNamespacesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

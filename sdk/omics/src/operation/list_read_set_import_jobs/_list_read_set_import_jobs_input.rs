@@ -76,6 +76,7 @@ impl ListReadSetImportJobsInputBuilder {
         &self.next_token
     }
     /// <p>The jobs' sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -106,8 +107,10 @@ impl ListReadSetImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListReadSetImportJobsInput`](crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput {
             max_results: self.max_results,
             next_token: self.next_token,

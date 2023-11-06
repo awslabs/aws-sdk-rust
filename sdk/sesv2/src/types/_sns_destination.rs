@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnsDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
-    pub topic_arn: ::std::option::Option<::std::string::String>,
+    pub topic_arn: ::std::string::String,
 }
 impl SnsDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
-        self.topic_arn.as_deref()
+    pub fn topic_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.topic_arn.deref()
     }
 }
 impl SnsDestination {
@@ -28,6 +29,7 @@ pub struct SnsDestinationBuilder {
 }
 impl SnsDestinationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl SnsDestinationBuilder {
         &self.topic_arn
     }
     /// Consumes the builder and constructs a [`SnsDestination`](crate::types::SnsDestination).
-    pub fn build(self) -> crate::types::SnsDestination {
-        crate::types::SnsDestination { topic_arn: self.topic_arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`topic_arn`](crate::types::builders::SnsDestinationBuilder::topic_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnsDestination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnsDestination {
+            topic_arn: self.topic_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "topic_arn",
+                    "topic_arn was not specified but it is required when building SnsDestination",
+                )
+            })?,
+        })
     }
 }

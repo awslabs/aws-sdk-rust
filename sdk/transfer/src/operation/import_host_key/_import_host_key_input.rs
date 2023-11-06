@@ -28,8 +28,10 @@ impl ImportHostKeyInput {
         self.description.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ImportHostKeyInput {
@@ -60,6 +62,7 @@ pub struct ImportHostKeyInputBuilder {
 }
 impl ImportHostKeyInputBuilder {
     /// <p>The identifier of the server that contains the host key that you are importing.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl ImportHostKeyInputBuilder {
     }
     /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    /// This field is required.
     pub fn host_key_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_body = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +131,7 @@ impl ImportHostKeyInputBuilder {
     /// Consumes the builder and constructs a [`ImportHostKeyInput`](crate::operation::import_host_key::ImportHostKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_host_key::ImportHostKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_host_key::ImportHostKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_host_key::ImportHostKeyInput {
             server_id: self.server_id,
             host_key_body: self.host_key_body,

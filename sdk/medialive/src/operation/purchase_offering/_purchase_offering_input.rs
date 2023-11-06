@@ -70,6 +70,7 @@ pub struct PurchaseOfferingInputBuilder {
 }
 impl PurchaseOfferingInputBuilder {
     /// Number of resources
+    /// This field is required.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self
@@ -98,6 +99,7 @@ impl PurchaseOfferingInputBuilder {
         &self.name
     }
     /// Offering to purchase, e.g. '87654321'
+    /// This field is required.
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self
@@ -176,7 +178,7 @@ impl PurchaseOfferingInputBuilder {
     /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
             count: self.count,
             name: self.name,

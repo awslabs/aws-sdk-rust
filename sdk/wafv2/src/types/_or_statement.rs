@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrStatement {
     /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
-    pub statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
+    pub statements: ::std::vec::Vec<crate::types::Statement>,
 }
 impl OrStatement {
     /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
-    pub fn statements(&self) -> ::std::option::Option<&[crate::types::Statement]> {
-        self.statements.as_deref()
+    pub fn statements(&self) -> &[crate::types::Statement] {
+        use std::ops::Deref;
+        self.statements.deref()
     }
 }
 impl OrStatement {
@@ -48,7 +49,16 @@ impl OrStatementBuilder {
         &self.statements
     }
     /// Consumes the builder and constructs a [`OrStatement`](crate::types::OrStatement).
-    pub fn build(self) -> crate::types::OrStatement {
-        crate::types::OrStatement { statements: self.statements }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statements`](crate::types::builders::OrStatementBuilder::statements)
+    pub fn build(self) -> ::std::result::Result<crate::types::OrStatement, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrStatement {
+            statements: self.statements.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "statements",
+                    "statements was not specified but it is required when building OrStatement",
+                )
+            })?,
+        })
     }
 }

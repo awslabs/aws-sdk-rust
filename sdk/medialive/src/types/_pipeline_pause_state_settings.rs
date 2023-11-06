@@ -28,6 +28,7 @@ pub struct PipelinePauseStateSettingsBuilder {
 }
 impl PipelinePauseStateSettingsBuilder {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
+    /// This field is required.
     pub fn pipeline_id(mut self, input: crate::types::PipelineId) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input);
         self

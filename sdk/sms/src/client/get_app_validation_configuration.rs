@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAppValidationConfiguration`](crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationFluentBuilder::set_app_id):<br>required: **true**<br><p>The ID of the application.</p><br>
     /// - On success, responds with [`GetAppValidationConfigurationOutput`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput) with field(s):
-    ///   - [`app_validation_configurations(Option<Vec<AppValidationConfiguration>>)`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput::app_validation_configurations): <p>The configuration for application validation.</p>
-    ///   - [`server_group_validation_configurations(Option<Vec<ServerGroupValidationConfiguration>>)`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput::server_group_validation_configurations): <p>The configuration for instance validation.</p>
+    ///   - [`app_validation_configurations(Option<Vec::<AppValidationConfiguration>>)`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput::app_validation_configurations): <p>The configuration for application validation.</p>
+    ///   - [`server_group_validation_configurations(Option<Vec::<ServerGroupValidationConfiguration>>)`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput::server_group_validation_configurations): <p>The configuration for instance validation.</p>
     /// - On failure, responds with [`SdkError<GetAppValidationConfigurationError>`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError)
     pub fn get_app_validation_configuration(
         &self,

@@ -27,6 +27,7 @@ pub struct DeleteGameSessionQueueInputBuilder {
 }
 impl DeleteGameSessionQueueInputBuilder {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteGameSessionQueueInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput { name: self.name })
     }

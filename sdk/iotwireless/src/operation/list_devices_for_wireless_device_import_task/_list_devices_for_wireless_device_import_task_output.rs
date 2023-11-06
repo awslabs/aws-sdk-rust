@@ -21,8 +21,10 @@ impl ListDevicesForWirelessDeviceImportTaskOutput {
         self.destination_name.as_deref()
     }
     /// <p>List of wireless devices in an import task and their onboarding status.</p>
-    pub fn imported_wireless_device_list(&self) -> ::std::option::Option<&[crate::types::ImportedWirelessDevice]> {
-        self.imported_wireless_device_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.imported_wireless_device_list.is_none()`.
+    pub fn imported_wireless_device_list(&self) -> &[crate::types::ImportedWirelessDevice] {
+        self.imported_wireless_device_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDevicesForWirelessDeviceImportTaskOutput {

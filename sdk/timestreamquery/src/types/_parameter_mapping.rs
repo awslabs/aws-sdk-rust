@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterMapping {
     /// <p>Parameter name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl ParameterMapping {
     /// <p>Parameter name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
@@ -35,6 +36,7 @@ pub struct ParameterMappingBuilder {
 }
 impl ParameterMappingBuilder {
     /// <p>Parameter name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ParameterMappingBuilder {
         &self.name
     }
     /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl ParameterMappingBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ParameterMapping`](crate::types::ParameterMapping).
-    pub fn build(self) -> crate::types::ParameterMapping {
-        crate::types::ParameterMapping {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ParameterMappingBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterMapping, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParameterMapping {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ParameterMapping",
+                )
+            })?,
             r#type: self.r#type,
-        }
+        })
     }
 }

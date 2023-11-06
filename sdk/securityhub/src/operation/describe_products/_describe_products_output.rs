@@ -11,8 +11,10 @@ pub struct DescribeProductsOutput {
 }
 impl DescribeProductsOutput {
     /// <p>A list of products, including details for each product.</p>
-    pub fn products(&self) -> ::std::option::Option<&[crate::types::Product]> {
-        self.products.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.products.is_none()`.
+    pub fn products(&self) -> &[crate::types::Product] {
+        self.products.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

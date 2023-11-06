@@ -88,6 +88,7 @@ impl StepAdjustmentBuilder {
         &self.metric_interval_upper_bound
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
+    /// This field is required.
     pub fn scaling_adjustment(mut self, input: i32) -> Self {
         self.scaling_adjustment = ::std::option::Option::Some(input);
         self

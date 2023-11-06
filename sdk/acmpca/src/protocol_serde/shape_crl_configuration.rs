@@ -2,24 +2,24 @@
 pub fn ser_crl_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CrlConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("Enabled").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.expiration_in_days {
+    if let Some(var_1) = &input.expiration_in_days {
         object.key("ExpirationInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.custom_cname {
-        object.key("CustomCname").string(var_3.as_str());
+    if let Some(var_2) = &input.custom_cname {
+        object.key("CustomCname").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_4.as_str());
+    if let Some(var_3) = &input.s3_bucket_name {
+        object.key("S3BucketName").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.s3_object_acl {
-        object.key("S3ObjectAcl").string(var_5.as_str());
+    if let Some(var_4) = &input.s3_object_acl {
+        object.key("S3ObjectAcl").string(var_4.as_str());
     }
     Ok(())
 }
@@ -80,7 +80,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::crl_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

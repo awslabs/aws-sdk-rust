@@ -5,28 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Union {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The node ID inputs to the transform.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>Indicates the type of Union transform. </p>
     /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
-    pub union_type: ::std::option::Option<crate::types::UnionType>,
+    pub union_type: crate::types::UnionType,
 }
 impl Union {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The node ID inputs to the transform.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>Indicates the type of Union transform. </p>
     /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
-    pub fn union_type(&self) -> ::std::option::Option<&crate::types::UnionType> {
-        self.union_type.as_ref()
+    pub fn union_type(&self) -> &crate::types::UnionType {
+        &self.union_type
     }
 }
 impl Union {
@@ -46,6 +48,7 @@ pub struct UnionBuilder {
 }
 impl UnionBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +85,7 @@ impl UnionBuilder {
     /// <p>Indicates the type of Union transform. </p>
     /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
+    /// This field is required.
     pub fn union_type(mut self, input: crate::types::UnionType) -> Self {
         self.union_type = ::std::option::Option::Some(input);
         self
@@ -100,11 +104,30 @@ impl UnionBuilder {
         &self.union_type
     }
     /// Consumes the builder and constructs a [`Union`](crate::types::Union).
-    pub fn build(self) -> crate::types::Union {
-        crate::types::Union {
-            name: self.name,
-            inputs: self.inputs,
-            union_type: self.union_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::UnionBuilder::name)
+    /// - [`inputs`](crate::types::builders::UnionBuilder::inputs)
+    /// - [`union_type`](crate::types::builders::UnionBuilder::union_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Union, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Union {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Union",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building Union",
+                )
+            })?,
+            union_type: self.union_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "union_type",
+                    "union_type was not specified but it is required when building Union",
+                )
+            })?,
+        })
     }
 }

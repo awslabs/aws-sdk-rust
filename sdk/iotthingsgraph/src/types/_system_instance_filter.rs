@@ -15,8 +15,10 @@ impl SystemInstanceFilter {
         self.name.as_ref()
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value.is_none()`.
+    pub fn value(&self) -> &[::std::string::String] {
+        self.value.as_deref().unwrap_or_default()
     }
 }
 impl SystemInstanceFilter {

@@ -62,6 +62,7 @@ impl DescribePackageVersionInputBuilder {
         &self.owner_account
     }
     /// <p>The version's ID.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DescribePackageVersionInputBuilder {
         &self.package_id
     }
     /// <p>The version's version.</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -106,8 +108,10 @@ impl DescribePackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::operation::describe_package_version::DescribePackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_package_version::DescribePackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_package_version::DescribePackageVersionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_package_version::DescribePackageVersionInput {
             owner_account: self.owner_account,
             package_id: self.package_id,

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotResolutionTestResultItem {
     /// <p>The name of the slot.</p>
-    pub slot_name: ::std::option::Option<::std::string::String>,
+    pub slot_name: ::std::string::String,
     /// <p>A result for slot resolution in the results of a test execution.</p>
     pub result_counts: ::std::option::Option<crate::types::SlotResolutionTestResultItemCounts>,
 }
 impl SlotResolutionTestResultItem {
     /// <p>The name of the slot.</p>
-    pub fn slot_name(&self) -> ::std::option::Option<&str> {
-        self.slot_name.as_deref()
+    pub fn slot_name(&self) -> &str {
+        use std::ops::Deref;
+        self.slot_name.deref()
     }
     /// <p>A result for slot resolution in the results of a test execution.</p>
     pub fn result_counts(&self) -> ::std::option::Option<&crate::types::SlotResolutionTestResultItemCounts> {
@@ -35,6 +36,7 @@ pub struct SlotResolutionTestResultItemBuilder {
 }
 impl SlotResolutionTestResultItemBuilder {
     /// <p>The name of the slot.</p>
+    /// This field is required.
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl SlotResolutionTestResultItemBuilder {
         &self.slot_name
     }
     /// <p>A result for slot resolution in the results of a test execution.</p>
+    /// This field is required.
     pub fn result_counts(mut self, input: crate::types::SlotResolutionTestResultItemCounts) -> Self {
         self.result_counts = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl SlotResolutionTestResultItemBuilder {
         &self.result_counts
     }
     /// Consumes the builder and constructs a [`SlotResolutionTestResultItem`](crate::types::SlotResolutionTestResultItem).
-    pub fn build(self) -> crate::types::SlotResolutionTestResultItem {
-        crate::types::SlotResolutionTestResultItem {
-            slot_name: self.slot_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`slot_name`](crate::types::builders::SlotResolutionTestResultItemBuilder::slot_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotResolutionTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlotResolutionTestResultItem {
+            slot_name: self.slot_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "slot_name",
+                    "slot_name was not specified but it is required when building SlotResolutionTestResultItem",
+                )
+            })?,
             result_counts: self.result_counts,
-        }
+        })
     }
 }

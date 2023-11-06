@@ -27,6 +27,7 @@ pub struct DeleteNetworkSettingsInputBuilder {
 }
 impl DeleteNetworkSettingsInputBuilder {
     /// <p>The ARN of the network settings.</p>
+    /// This field is required.
     pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteNetworkSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkSettingsInput`](crate::operation::delete_network_settings::DeleteNetworkSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_network_settings::DeleteNetworkSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_network_settings::DeleteNetworkSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_network_settings::DeleteNetworkSettingsInput {
             network_settings_arn: self.network_settings_arn,

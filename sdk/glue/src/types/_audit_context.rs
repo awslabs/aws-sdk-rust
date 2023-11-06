@@ -17,8 +17,10 @@ impl AuditContext {
         self.additional_audit_context.as_deref()
     }
     /// <p>The requested columns for audit.</p>
-    pub fn requested_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.requested_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_columns.is_none()`.
+    pub fn requested_columns(&self) -> &[::std::string::String] {
+        self.requested_columns.as_deref().unwrap_or_default()
     }
     /// <p>All columns request for audit.</p>
     pub fn all_columns_requested(&self) -> ::std::option::Option<bool> {

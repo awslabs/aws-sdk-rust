@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The resource's universal resource indicator (URI).</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
     /// <p>The resource's universal resource indicator (URI).</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct ResourceBuilder {
 }
 impl ResourceBuilder {
     /// <p>The resource's universal resource indicator (URI).</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ResourceBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
-    pub fn build(self) -> crate::types::Resource {
-        crate::types::Resource {
-            uri: self.uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::ResourceBuilder::uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Resource {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building Resource",
+                )
+            })?,
             account_id: self.account_id,
-        }
+        })
     }
 }

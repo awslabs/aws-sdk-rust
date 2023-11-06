@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopImport`](crate::operation::stop_import::builders::StopImportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`import_id(impl Into<String>)`](crate::operation::stop_import::builders::StopImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::stop_import::builders::StopImportFluentBuilder::set_import_id): <p> The ID of the import. </p>
+    ///   - [`import_id(impl Into<String>)`](crate::operation::stop_import::builders::StopImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::stop_import::builders::StopImportFluentBuilder::set_import_id):<br>required: **true**<br><p> The ID of the import. </p><br>
     /// - On success, responds with [`StopImportOutput`](crate::operation::stop_import::StopImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::operation::stop_import::StopImportOutput::import_id): <p> The ID for the import. </p>
     ///   - [`import_source(Option<ImportSource>)`](crate::operation::stop_import::StopImportOutput::import_source): <p> The source S3 bucket for the import. </p>
-    ///   - [`destinations(Option<Vec<String>>)`](crate::operation::stop_import::StopImportOutput::destinations): <p> The ARN of the destination event data store. </p>
+    ///   - [`destinations(Option<Vec::<String>>)`](crate::operation::stop_import::StopImportOutput::destinations): <p> The ARN of the destination event data store. </p>
     ///   - [`import_status(Option<ImportStatus>)`](crate::operation::stop_import::StopImportOutput::import_status): <p> The status of the import. </p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::stop_import::StopImportOutput::created_timestamp): <p> The timestamp of the import's creation. </p>
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::operation::stop_import::StopImportOutput::updated_timestamp): <p> The timestamp of the import's last update. </p>

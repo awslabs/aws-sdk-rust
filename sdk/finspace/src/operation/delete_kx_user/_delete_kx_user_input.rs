@@ -34,6 +34,7 @@ pub struct DeleteKxUserInputBuilder {
 }
 impl DeleteKxUserInputBuilder {
     /// <p>A unique identifier for the user that you want to delete.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteKxUserInputBuilder {
         &self.user_name
     }
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteKxUserInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKxUserInput`](crate::operation::delete_kx_user::DeleteKxUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_kx_user::DeleteKxUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_kx_user::DeleteKxUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_kx_user::DeleteKxUserInput {
             user_name: self.user_name,
             environment_id: self.environment_id,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLoggingStatus`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::set_cluster_identifier): <p>The identifier of the cluster from which to get the logging status.</p>  <p>Example: <code>examplecluster</code> </p>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::set_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster from which to get the logging status.</p>  <p>Example: <code>examplecluster</code> </p><br>
     /// - On success, responds with [`DescribeLoggingStatusOutput`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput) with field(s):
     ///   - [`logging_enabled(Option<bool>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::logging_enabled): <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     ///   - [`bucket_name(Option<String>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::bucket_name): <p>The name of the S3 bucket where the log files are stored.</p>
@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`last_failure_time(Option<DateTime>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::last_failure_time): <p>The last time when logs failed to be delivered.</p>
     ///   - [`last_failure_message(Option<String>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::last_failure_message): <p>The message indicating that logs failed to be delivered.</p>
     ///   - [`log_destination_type(Option<LogDestinationType>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::log_destination_type): <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    ///   - [`log_exports(Option<Vec<String>>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::log_exports): <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    ///   - [`log_exports(Option<Vec::<String>>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::log_exports): <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeLoggingStatusError>`](crate::operation::describe_logging_status::DescribeLoggingStatusError)
     pub fn describe_logging_status(&self) -> crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder {
         crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::new(self.handle.clone())

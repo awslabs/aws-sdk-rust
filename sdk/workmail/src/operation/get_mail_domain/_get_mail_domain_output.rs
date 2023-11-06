@@ -17,8 +17,10 @@ pub struct GetMailDomainOutput {
 }
 impl GetMailDomainOutput {
     /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::DnsRecord]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::DnsRecord] {
+        self.records.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
     pub fn is_test_domain(&self) -> bool {

@@ -31,8 +31,10 @@ impl TransitGatewayOptions {
         self.amazon_side_asn
     }
     /// <p>The transit gateway CIDR blocks.</p>
-    pub fn transit_gateway_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.transit_gateway_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_cidr_blocks.is_none()`.
+    pub fn transit_gateway_cidr_blocks(&self) -> &[::std::string::String] {
+        self.transit_gateway_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether attachment requests are automatically accepted.</p>
     pub fn auto_accept_shared_attachments(&self) -> ::std::option::Option<&crate::types::AutoAcceptSharedAttachmentsValue> {

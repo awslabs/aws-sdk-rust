@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectOperation {
     /// <p>Projected columns.</p>
-    pub projected_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub projected_columns: ::std::vec::Vec<::std::string::String>,
 }
 impl ProjectOperation {
     /// <p>Projected columns.</p>
-    pub fn projected_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.projected_columns.as_deref()
+    pub fn projected_columns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.projected_columns.deref()
     }
 }
 impl ProjectOperation {
@@ -48,9 +49,16 @@ impl ProjectOperationBuilder {
         &self.projected_columns
     }
     /// Consumes the builder and constructs a [`ProjectOperation`](crate::types::ProjectOperation).
-    pub fn build(self) -> crate::types::ProjectOperation {
-        crate::types::ProjectOperation {
-            projected_columns: self.projected_columns,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`projected_columns`](crate::types::builders::ProjectOperationBuilder::projected_columns)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectOperation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectOperation {
+            projected_columns: self.projected_columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "projected_columns",
+                    "projected_columns was not specified but it is required when building ProjectOperation",
+                )
+            })?,
+        })
     }
 }

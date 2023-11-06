@@ -48,6 +48,7 @@ pub struct ListSpeakerEnrollmentJobsInputBuilder {
 }
 impl ListSpeakerEnrollmentJobsInputBuilder {
     /// <p>The identifier of the domain that contains the speaker enrollment jobs.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListSpeakerEnrollmentJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput {
             domain_id: self.domain_id,

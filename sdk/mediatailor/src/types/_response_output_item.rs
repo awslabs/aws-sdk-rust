@@ -9,11 +9,11 @@ pub struct ResponseOutputItem {
     /// <p>HLS manifest configuration settings.</p>
     pub hls_playlist_settings: ::std::option::Option<crate::types::HlsPlaylistSettings>,
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
-    pub manifest_name: ::std::option::Option<::std::string::String>,
+    pub manifest_name: ::std::string::String,
     /// <p>The URL used for playback by content players.</p>
-    pub playback_url: ::std::option::Option<::std::string::String>,
+    pub playback_url: ::std::string::String,
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
-    pub source_group: ::std::option::Option<::std::string::String>,
+    pub source_group: ::std::string::String,
 }
 impl ResponseOutputItem {
     /// <p>DASH manifest configuration settings.</p>
@@ -25,16 +25,19 @@ impl ResponseOutputItem {
         self.hls_playlist_settings.as_ref()
     }
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
-    pub fn manifest_name(&self) -> ::std::option::Option<&str> {
-        self.manifest_name.as_deref()
+    pub fn manifest_name(&self) -> &str {
+        use std::ops::Deref;
+        self.manifest_name.deref()
     }
     /// <p>The URL used for playback by content players.</p>
-    pub fn playback_url(&self) -> ::std::option::Option<&str> {
-        self.playback_url.as_deref()
+    pub fn playback_url(&self) -> &str {
+        use std::ops::Deref;
+        self.playback_url.deref()
     }
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
-    pub fn source_group(&self) -> ::std::option::Option<&str> {
-        self.source_group.as_deref()
+    pub fn source_group(&self) -> &str {
+        use std::ops::Deref;
+        self.source_group.deref()
     }
 }
 impl ResponseOutputItem {
@@ -84,6 +87,7 @@ impl ResponseOutputItemBuilder {
         &self.hls_playlist_settings
     }
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
+    /// This field is required.
     pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl ResponseOutputItemBuilder {
         &self.manifest_name
     }
     /// <p>The URL used for playback by content players.</p>
+    /// This field is required.
     pub fn playback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_url = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +117,7 @@ impl ResponseOutputItemBuilder {
         &self.playback_url
     }
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
+    /// This field is required.
     pub fn source_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_group = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +132,32 @@ impl ResponseOutputItemBuilder {
         &self.source_group
     }
     /// Consumes the builder and constructs a [`ResponseOutputItem`](crate::types::ResponseOutputItem).
-    pub fn build(self) -> crate::types::ResponseOutputItem {
-        crate::types::ResponseOutputItem {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`manifest_name`](crate::types::builders::ResponseOutputItemBuilder::manifest_name)
+    /// - [`playback_url`](crate::types::builders::ResponseOutputItemBuilder::playback_url)
+    /// - [`source_group`](crate::types::builders::ResponseOutputItemBuilder::source_group)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseOutputItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseOutputItem {
             dash_playlist_settings: self.dash_playlist_settings,
             hls_playlist_settings: self.hls_playlist_settings,
-            manifest_name: self.manifest_name,
-            playback_url: self.playback_url,
-            source_group: self.source_group,
-        }
+            manifest_name: self.manifest_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "manifest_name",
+                    "manifest_name was not specified but it is required when building ResponseOutputItem",
+                )
+            })?,
+            playback_url: self.playback_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "playback_url",
+                    "playback_url was not specified but it is required when building ResponseOutputItem",
+                )
+            })?,
+            source_group: self.source_group.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_group",
+                    "source_group was not specified but it is required when building ResponseOutputItem",
+                )
+            })?,
+        })
     }
 }

@@ -21,8 +21,10 @@ impl GetAssessmentOutput {
         self.data_collection_details.as_ref()
     }
     /// <p>List of criteria for assessment.</p>
-    pub fn assessment_targets(&self) -> ::std::option::Option<&[crate::types::AssessmentTarget]> {
-        self.assessment_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_targets.is_none()`.
+    pub fn assessment_targets(&self) -> &[crate::types::AssessmentTarget] {
+        self.assessment_targets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAssessmentOutput {

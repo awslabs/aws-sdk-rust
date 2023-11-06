@@ -2,27 +2,27 @@
 pub fn ser_codegen_generic_data_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenGenericDataField,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_type {
-        object.key("dataType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("dataType").string(input.data_type.as_str());
     }
-    if let Some(var_2) = &input.data_type_value {
-        object.key("dataTypeValue").string(var_2.as_str());
+    {
+        object.key("dataTypeValue").string(input.data_type_value.as_str());
     }
-    if let Some(var_3) = &input.required {
-        object.key("required").boolean(*var_3);
+    {
+        object.key("required").boolean(input.required);
     }
-    if let Some(var_4) = &input.read_only {
-        object.key("readOnly").boolean(*var_4);
+    {
+        object.key("readOnly").boolean(input.read_only);
     }
-    if let Some(var_5) = &input.is_array {
-        object.key("isArray").boolean(*var_5);
+    {
+        object.key("isArray").boolean(input.is_array);
     }
-    if let Some(var_6) = &input.relationship {
+    if let Some(var_1) = &input.relationship {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("relationship").start_object();
-        crate::protocol_serde::shape_codegen_generic_data_relationship_type::ser_codegen_generic_data_relationship_type(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_2 = object.key("relationship").start_object();
+        crate::protocol_serde::shape_codegen_generic_data_relationship_type::ser_codegen_generic_data_relationship_type(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -82,7 +82,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::codegen_generic_data_field_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

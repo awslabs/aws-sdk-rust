@@ -2,18 +2,20 @@
 pub fn ser_data_encryption_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataEncryptionMetadata,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.allow_cleartext {
-        object.key("allowCleartext").boolean(*var_1);
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("allowCleartext").boolean(input.allow_cleartext);
     }
-    if let Some(var_2) = &input.allow_duplicates {
-        object.key("allowDuplicates").boolean(*var_2);
+    {
+        object.key("allowDuplicates").boolean(input.allow_duplicates);
     }
-    if let Some(var_3) = &input.allow_joins_on_columns_with_different_names {
-        object.key("allowJoinsOnColumnsWithDifferentNames").boolean(*var_3);
+    {
+        object
+            .key("allowJoinsOnColumnsWithDifferentNames")
+            .boolean(input.allow_joins_on_columns_with_different_names);
     }
-    if let Some(var_4) = &input.preserve_nulls {
-        object.key("preserveNulls").boolean(*var_4);
+    {
+        object.key("preserveNulls").boolean(input.preserve_nulls);
     }
     Ok(())
 }
@@ -57,7 +59,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::data_encryption_metadata_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

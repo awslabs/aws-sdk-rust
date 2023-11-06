@@ -82,79 +82,55 @@ pub(crate) fn reflens_list_schedules_output_next_token(
 pub(crate) fn lens_list_datasets_output_datasets(
     input: crate::operation::list_datasets::ListDatasetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Dataset>> {
-    let input = match input.datasets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.datasets;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_job_runs_output_job_runs(
     input: crate::operation::list_job_runs::ListJobRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobRun>> {
-    let input = match input.job_runs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_runs;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_jobs_output_jobs(
     input: crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Job>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_projects_output_projects(
     input: crate::operation::list_projects::ListProjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Project>> {
-    let input = match input.projects {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.projects;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_recipe_versions_output_recipes(
     input: crate::operation::list_recipe_versions::ListRecipeVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Recipe>> {
-    let input = match input.recipes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recipes;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_recipes_output_recipes(
     input: crate::operation::list_recipes::ListRecipesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Recipe>> {
-    let input = match input.recipes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recipes;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_rulesets_output_rulesets(
     input: crate::operation::list_rulesets::ListRulesetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RulesetItem>> {
-    let input = match input.rulesets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rulesets;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schedules_output_schedules(
     input: crate::operation::list_schedules::ListSchedulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Schedule>> {
-    let input = match input.schedules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schedules;
     ::std::option::Option::Some(input)
 }

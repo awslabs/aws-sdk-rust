@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct File {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl File {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
     pub fn version_id(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct FileBuilder {
 }
 impl FileBuilder {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl FileBuilder {
         &self.bucket
     }
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,21 @@ impl FileBuilder {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`File`](crate::types::File).
-    pub fn build(self) -> crate::types::File {
-        crate::types::File {
-            bucket: self.bucket,
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::FileBuilder::bucket)
+    /// - [`key`](crate::types::builders::FileBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::File, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::File {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building File",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building File")
+            })?,
             version_id: self.version_id,
-        }
+        })
     }
 }

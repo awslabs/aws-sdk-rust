@@ -22,9 +22,6 @@ pub(crate) fn reflens_list_identities_output_next_token(
 pub(crate) fn lens_list_identities_output_identities(
     input: crate::operation::list_identities::ListIdentitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.identities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.identities;
     ::std::option::Option::Some(input)
 }

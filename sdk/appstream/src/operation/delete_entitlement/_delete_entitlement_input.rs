@@ -34,6 +34,7 @@ pub struct DeleteEntitlementInputBuilder {
 }
 impl DeleteEntitlementInputBuilder {
     /// <p>The name of the entitlement.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteEntitlementInputBuilder {
         &self.name
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteEntitlementInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEntitlementInput`](crate::operation::delete_entitlement::DeleteEntitlementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_entitlement::DeleteEntitlementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_entitlement::DeleteEntitlementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_entitlement::DeleteEntitlementInput {
             name: self.name,
             stack_name: self.stack_name,

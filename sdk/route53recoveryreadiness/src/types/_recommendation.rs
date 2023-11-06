@@ -28,6 +28,7 @@ pub struct RecommendationBuilder {
 }
 impl RecommendationBuilder {
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
+    /// This field is required.
     pub fn recommendation_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_text = ::std::option::Option::Some(input.into());
         self

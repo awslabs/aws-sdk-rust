@@ -80,6 +80,7 @@ impl DescribeResourcePermissionsInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -140,7 +141,7 @@ impl DescribeResourcePermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput {
             authentication_token: self.authentication_token,

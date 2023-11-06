@@ -11,8 +11,10 @@ pub struct ListResourcesOutput {
 }
 impl ListResourcesOutput {
     /// <p>An array of resources associated with the project. </p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::Resource] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

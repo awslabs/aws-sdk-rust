@@ -35,6 +35,7 @@ pub struct DeleteChangeSetInputBuilder {
 }
 impl DeleteChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
+    /// This field is required.
     pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl DeleteChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChangeSetInput`](crate::operation::delete_change_set::DeleteChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_change_set::DeleteChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_change_set::DeleteChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_change_set::DeleteChangeSetInput {
             change_set_name: self.change_set_name,
             stack_name: self.stack_name,

@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The S3 bucket name.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>The S3 bucket prefix.</p>
-    pub bucket_prefix: ::std::option::Option<::std::string::String>,
+    pub bucket_prefix: ::std::string::String,
     /// <p>The Amazon S3 encryption configuration.</p>
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl S3Config {
     /// <p>The S3 bucket name.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>The S3 bucket prefix.</p>
-    pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
-        self.bucket_prefix.as_deref()
+    pub fn bucket_prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_prefix.deref()
     }
     /// <p>The Amazon S3 encryption configuration.</p>
     pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
@@ -42,6 +44,7 @@ pub struct S3ConfigBuilder {
 }
 impl S3ConfigBuilder {
     /// <p>The S3 bucket name.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl S3ConfigBuilder {
         &self.bucket_name
     }
     /// <p>The S3 bucket prefix.</p>
+    /// This field is required.
     pub fn bucket_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl S3ConfigBuilder {
         &self.encryption_config
     }
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
-    pub fn build(self) -> crate::types::S3Config {
-        crate::types::S3Config {
-            bucket_name: self.bucket_name,
-            bucket_prefix: self.bucket_prefix,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3ConfigBuilder::bucket_name)
+    /// - [`bucket_prefix`](crate::types::builders::S3ConfigBuilder::bucket_prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Config, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Config {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3Config",
+                )
+            })?,
+            bucket_prefix: self.bucket_prefix.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket_prefix",
+                    "bucket_prefix was not specified but it is required when building S3Config",
+                )
+            })?,
             encryption_config: self.encryption_config,
-        }
+        })
     }
 }

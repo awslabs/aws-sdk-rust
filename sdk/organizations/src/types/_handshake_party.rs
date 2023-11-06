@@ -6,19 +6,20 @@
 pub struct HandshakeParty {
     /// <p>The unique identifier (ID) for the party.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The type of party.</p>
-    pub r#type: ::std::option::Option<crate::types::HandshakePartyType>,
+    pub r#type: crate::types::HandshakePartyType,
 }
 impl HandshakeParty {
     /// <p>The unique identifier (ID) for the party.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The type of party.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HandshakePartyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::HandshakePartyType {
+        &self.r#type
     }
 }
 impl ::std::fmt::Debug for HandshakeParty {
@@ -46,6 +47,7 @@ pub struct HandshakePartyBuilder {
 impl HandshakePartyBuilder {
     /// <p>The unique identifier (ID) for the party.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl HandshakePartyBuilder {
         &self.id
     }
     /// <p>The type of party.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::HandshakePartyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -76,11 +79,24 @@ impl HandshakePartyBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`HandshakeParty`](crate::types::HandshakeParty).
-    pub fn build(self) -> crate::types::HandshakeParty {
-        crate::types::HandshakeParty {
-            id: self.id,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::HandshakePartyBuilder::id)
+    /// - [`r#type`](crate::types::builders::HandshakePartyBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::HandshakeParty, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::HandshakeParty {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building HandshakeParty",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building HandshakeParty",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for HandshakePartyBuilder {

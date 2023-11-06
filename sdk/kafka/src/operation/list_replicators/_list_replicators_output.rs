@@ -15,8 +15,10 @@ impl ListReplicatorsOutput {
         self.next_token.as_deref()
     }
     /// <p>List containing information of each of the replicators in the account.</p>
-    pub fn replicators(&self) -> ::std::option::Option<&[crate::types::ReplicatorSummary]> {
-        self.replicators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicators.is_none()`.
+    pub fn replicators(&self) -> &[crate::types::ReplicatorSummary] {
+        self.replicators.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListReplicatorsOutput {

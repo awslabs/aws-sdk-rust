@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
-    pub enable_code_hook_invocation: ::std::option::Option<bool>,
+    pub enable_code_hook_invocation: bool,
     /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
-    pub active: ::std::option::Option<bool>,
+    pub active: bool,
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
     pub invocation_label: ::std::option::Option<::std::string::String>,
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
@@ -15,11 +15,11 @@ pub struct DialogCodeHookInvocationSetting {
 }
 impl DialogCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
-    pub fn enable_code_hook_invocation(&self) -> ::std::option::Option<bool> {
+    pub fn enable_code_hook_invocation(&self) -> bool {
         self.enable_code_hook_invocation
     }
     /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
-    pub fn active(&self) -> ::std::option::Option<bool> {
+    pub fn active(&self) -> bool {
         self.active
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
@@ -49,6 +49,7 @@ pub struct DialogCodeHookInvocationSettingBuilder {
 }
 impl DialogCodeHookInvocationSettingBuilder {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+    /// This field is required.
     pub fn enable_code_hook_invocation(mut self, input: bool) -> Self {
         self.enable_code_hook_invocation = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl DialogCodeHookInvocationSettingBuilder {
         &self.enable_code_hook_invocation
     }
     /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
+    /// This field is required.
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl DialogCodeHookInvocationSettingBuilder {
         &self.invocation_label
     }
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
+    /// This field is required.
     pub fn post_code_hook_specification(mut self, input: crate::types::PostDialogCodeHookInvocationSpecification) -> Self {
         self.post_code_hook_specification = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,25 @@ impl DialogCodeHookInvocationSettingBuilder {
         &self.post_code_hook_specification
     }
     /// Consumes the builder and constructs a [`DialogCodeHookInvocationSetting`](crate::types::DialogCodeHookInvocationSetting).
-    pub fn build(self) -> crate::types::DialogCodeHookInvocationSetting {
-        crate::types::DialogCodeHookInvocationSetting {
-            enable_code_hook_invocation: self.enable_code_hook_invocation,
-            active: self.active,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enable_code_hook_invocation`](crate::types::builders::DialogCodeHookInvocationSettingBuilder::enable_code_hook_invocation)
+    /// - [`active`](crate::types::builders::DialogCodeHookInvocationSettingBuilder::active)
+    pub fn build(self) -> ::std::result::Result<crate::types::DialogCodeHookInvocationSetting, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DialogCodeHookInvocationSetting {
+            enable_code_hook_invocation: self.enable_code_hook_invocation.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enable_code_hook_invocation",
+                    "enable_code_hook_invocation was not specified but it is required when building DialogCodeHookInvocationSetting",
+                )
+            })?,
+            active: self.active.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "active",
+                    "active was not specified but it is required when building DialogCodeHookInvocationSetting",
+                )
+            })?,
             invocation_label: self.invocation_label,
             post_code_hook_specification: self.post_code_hook_specification,
-        }
+        })
     }
 }

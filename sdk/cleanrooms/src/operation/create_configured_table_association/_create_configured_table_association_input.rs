@@ -62,6 +62,7 @@ pub struct CreateConfiguredTableAssociationInputBuilder {
 }
 impl CreateConfiguredTableAssociationInputBuilder {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateConfiguredTableAssociationInputBuilder {
         &self.description
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl CreateConfiguredTableAssociationInputBuilder {
         &self.membership_identifier
     }
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
+    /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl CreateConfiguredTableAssociationInputBuilder {
         &self.configured_table_identifier
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -156,7 +160,7 @@ impl CreateConfiguredTableAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput {

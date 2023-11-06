@@ -27,6 +27,7 @@ pub struct DescribeBatchInferenceJobInputBuilder {
 }
 impl DescribeBatchInferenceJobInputBuilder {
     /// <p>The ARN of the batch inference job to describe.</p>
+    /// This field is required.
     pub fn batch_inference_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_inference_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeBatchInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput {
             batch_inference_job_arn: self.batch_inference_job_arn,

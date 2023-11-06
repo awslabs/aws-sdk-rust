@@ -9,8 +9,10 @@ pub struct ValidDbInstanceModificationsMessage {
 }
 impl ValidDbInstanceModificationsMessage {
     /// <p>Valid storage options for your DB instance.</p>
-    pub fn storage(&self) -> ::std::option::Option<&[crate::types::ValidStorageOptions]> {
-        self.storage.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage.is_none()`.
+    pub fn storage(&self) -> &[crate::types::ValidStorageOptions] {
+        self.storage.as_deref().unwrap_or_default()
     }
 }
 impl ValidDbInstanceModificationsMessage {

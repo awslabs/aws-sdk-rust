@@ -35,6 +35,7 @@ pub struct ModifyLoadBalancerAttributesInputBuilder {
 }
 impl ModifyLoadBalancerAttributesInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ModifyLoadBalancerAttributesInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The attributes for the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_attributes(mut self, input: crate::types::LoadBalancerAttributes) -> Self {
         self.load_balancer_attributes = ::std::option::Option::Some(input);
         self
@@ -67,7 +69,7 @@ impl ModifyLoadBalancerAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput {
             load_balancer_name: self.load_balancer_name,

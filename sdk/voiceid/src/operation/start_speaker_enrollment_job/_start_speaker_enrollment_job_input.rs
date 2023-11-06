@@ -110,6 +110,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         &self.job_name
     }
     /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +125,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         &self.domain_id
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +154,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         &self.enrollment_config
     }
     /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -166,6 +169,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         &self.input_data_config
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -184,7 +188,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput {
             client_token: self.client_token,

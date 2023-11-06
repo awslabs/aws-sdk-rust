@@ -34,6 +34,7 @@ pub struct GetCaseEventConfigurationOutputBuilder {
 }
 impl GetCaseEventConfigurationOutputBuilder {
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
+    /// This field is required.
     pub fn event_bridge(mut self, input: crate::types::EventBridgeConfiguration) -> Self {
         self.event_bridge = ::std::option::Option::Some(input);
         self

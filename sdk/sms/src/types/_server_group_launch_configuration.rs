@@ -21,8 +21,10 @@ impl ServerGroupLaunchConfiguration {
         self.launch_order
     }
     /// <p>The launch configuration for servers in the server group.</p>
-    pub fn server_launch_configurations(&self) -> ::std::option::Option<&[crate::types::ServerLaunchConfiguration]> {
-        self.server_launch_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_launch_configurations.is_none()`.
+    pub fn server_launch_configurations(&self) -> &[crate::types::ServerLaunchConfiguration] {
+        self.server_launch_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ServerGroupLaunchConfiguration {

@@ -28,7 +28,7 @@
 //! Use the [`ConfigBag`] instead.
 
 use crate::client::orchestrator::{HttpRequest, HttpResponse, OrchestratorError};
-use aws_smithy_http::result::SdkError;
+use crate::client::result::SdkError;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypeErasedError};
 use phase::Phase;
@@ -248,7 +248,7 @@ impl<I, O, E> InterceptorContext<I, O, E> {
             self.request.is_some(),
             "request must be set before calling enter_before_transmit_phase"
         );
-        self.request_checkpoint = try_clone(self.request().expect("checked above"));
+        self.request_checkpoint = self.request().expect("checked above").try_clone();
         self.phase = Phase::BeforeTransmit;
     }
 
@@ -312,7 +312,7 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     #[doc(hidden)]
     pub fn save_checkpoint(&mut self) {
         trace!("saving request checkpoint...");
-        self.request_checkpoint = self.request().and_then(try_clone);
+        self.request_checkpoint = self.request().and_then(|r| r.try_clone());
         match self.request_checkpoint.as_ref() {
             Some(_) => trace!("successfully saved request checkpoint"),
             None => trace!("failed to save request checkpoint: request body could not be cloned"),
@@ -324,24 +324,21 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     pub fn rewind(&mut self, _cfg: &mut ConfigBag) -> RewindResult {
         // If request_checkpoint was never set, but we've already made one attempt,
         // then this is not a retryable request
-        if self.request_checkpoint.is_none() && self.tainted {
-            return RewindResult::Impossible;
-        }
-
-        if !self.tainted {
-            // The first call to rewind() happens before the request is ever touched, so we don't need
-            // to clone it then. However, the request must be marked as tainted so that subsequent calls
-            // to rewind() properly reload the saved request checkpoint.
-            self.tainted = true;
-            return RewindResult::Unnecessary;
-        }
+        let request_checkpoint = match (self.request_checkpoint.as_ref(), self.tainted) {
+            (None, true) => return RewindResult::Impossible,
+            (_, false) => {
+                self.tainted = true;
+                return RewindResult::Unnecessary;
+            }
+            (Some(req), _) => req.try_clone(),
+        };
 
         // Otherwise, rewind to the saved request checkpoint
         self.phase = Phase::BeforeTransmit;
-        self.request = try_clone(self.request_checkpoint.as_ref().expect("checked above"));
+        self.request = request_checkpoint;
         assert!(
             self.request.is_some(),
-            "if the request wasn't cloneable, then we should have already return from this method."
+            "if the request wasn't cloneable, then we should have already returned from this method."
         );
         self.response = None;
         self.output_or_error = None;
@@ -428,25 +425,10 @@ impl fmt::Display for RewindResult {
     }
 }
 
-fn try_clone(request: &HttpRequest) -> Option<HttpRequest> {
-    let cloned_body = request.body().try_clone()?;
-    let mut cloned_request = ::http::Request::builder()
-        .uri(request.uri().clone())
-        .method(request.method());
-    *cloned_request
-        .headers_mut()
-        .expect("builder has not been modified, headers must be valid") = request.headers().clone();
-    Some(
-        cloned_request
-            .body(cloned_body)
-            .expect("a clone of a valid request should be a valid request"),
-    )
-}
-
 #[cfg(all(test, feature = "test-util"))]
 mod tests {
     use super::*;
-    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_types::body::SdkBody;
     use http::header::{AUTHORIZATION, CONTENT_LENGTH};
     use http::{HeaderValue, Uri};
 
@@ -461,7 +443,7 @@ mod tests {
 
         context.enter_serialization_phase();
         let _ = context.take_input();
-        context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        context.set_request(HttpRequest::empty());
 
         context.enter_before_transmit_phase();
         context.request();
@@ -506,6 +488,8 @@ mod tests {
             http::Request::builder()
                 .header("test", "the-original-un-mutated-request")
                 .body(SdkBody::empty())
+                .unwrap()
+                .try_into()
                 .unwrap(),
         );
         context.enter_before_transmit_phase();
@@ -554,14 +538,16 @@ mod tests {
 
     #[test]
     fn try_clone_clones_all_data() {
-        let request = ::http::Request::builder()
+        let request: HttpRequest = http::Request::builder()
             .uri(Uri::from_static("https://www.amazon.com"))
             .method("POST")
             .header(CONTENT_LENGTH, 456)
             .header(AUTHORIZATION, "Token: hello")
             .body(SdkBody::from("hello world!"))
-            .expect("valid request");
-        let cloned = try_clone(&request).expect("request is cloneable");
+            .expect("valid request")
+            .try_into()
+            .unwrap();
+        let cloned = request.try_clone().expect("request is cloneable");
 
         assert_eq!(&Uri::from_static("https://www.amazon.com"), cloned.uri());
         assert_eq!("POST", cloned.method());

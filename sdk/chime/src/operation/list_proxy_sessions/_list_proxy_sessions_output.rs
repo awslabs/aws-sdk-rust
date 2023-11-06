@@ -11,8 +11,10 @@ pub struct ListProxySessionsOutput {
 }
 impl ListProxySessionsOutput {
     /// <p>The proxy session details.</p>
-    pub fn proxy_sessions(&self) -> ::std::option::Option<&[crate::types::ProxySession]> {
-        self.proxy_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.proxy_sessions.is_none()`.
+    pub fn proxy_sessions(&self) -> &[crate::types::ProxySession] {
+        self.proxy_sessions.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

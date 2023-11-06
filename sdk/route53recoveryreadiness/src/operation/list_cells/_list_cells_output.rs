@@ -11,8 +11,10 @@ pub struct ListCellsOutput {
 }
 impl ListCellsOutput {
     /// <p>A list of cells.</p>
-    pub fn cells(&self) -> ::std::option::Option<&[crate::types::CellOutput]> {
-        self.cells.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
+    pub fn cells(&self) -> &[crate::types::CellOutput] {
+        self.cells.as_deref().unwrap_or_default()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

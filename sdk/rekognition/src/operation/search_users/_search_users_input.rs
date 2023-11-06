@@ -55,6 +55,7 @@ pub struct SearchUsersInputBuilder {
 }
 impl SearchUsersInputBuilder {
     /// <p>The ID of an existing collection containing the UserID, used with a UserId or FaceId. If a FaceId is provided, UserId isn’t required to be present in the Collection.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +126,7 @@ impl SearchUsersInputBuilder {
         &self.max_users
     }
     /// Consumes the builder and constructs a [`SearchUsersInput`](crate::operation::search_users::SearchUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_users::SearchUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_users::SearchUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_users::SearchUsersInput {
             collection_id: self.collection_id,
             user_id: self.user_id,

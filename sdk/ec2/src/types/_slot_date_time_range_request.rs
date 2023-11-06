@@ -35,6 +35,7 @@ pub struct SlotDateTimeRangeRequestBuilder {
 }
 impl SlotDateTimeRangeRequestBuilder {
     /// <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
+    /// This field is required.
     pub fn earliest_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.earliest_time = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SlotDateTimeRangeRequestBuilder {
         &self.earliest_time
     }
     /// <p>The latest date and time, in UTC, for the Scheduled Instance to start. This value must be later than or equal to the earliest date and at most three months in the future.</p>
+    /// This field is required.
     pub fn latest_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_time = ::std::option::Option::Some(input);
         self

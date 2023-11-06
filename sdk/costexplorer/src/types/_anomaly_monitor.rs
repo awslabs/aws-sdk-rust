@@ -7,7 +7,7 @@ pub struct AnomalyMonitor {
     /// <p>The Amazon Resource Name (ARN) value. </p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the monitor. </p>
-    pub monitor_name: ::std::option::Option<::std::string::String>,
+    pub monitor_name: ::std::string::String,
     /// <p>The date when the monitor was created. </p>
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The date when the monitor was last updated. </p>
@@ -15,7 +15,7 @@ pub struct AnomalyMonitor {
     /// <p>The date when the monitor last evaluated for anomalies. </p>
     pub last_evaluated_date: ::std::option::Option<::std::string::String>,
     /// <p>The possible type values. </p>
-    pub monitor_type: ::std::option::Option<crate::types::MonitorType>,
+    pub monitor_type: crate::types::MonitorType,
     /// <p>The dimensions to evaluate. </p>
     pub monitor_dimension: ::std::option::Option<crate::types::MonitorDimension>,
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
@@ -65,8 +65,9 @@ impl AnomalyMonitor {
         self.monitor_arn.as_deref()
     }
     /// <p>The name of the monitor. </p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
-        self.monitor_name.as_deref()
+    pub fn monitor_name(&self) -> &str {
+        use std::ops::Deref;
+        self.monitor_name.deref()
     }
     /// <p>The date when the monitor was created. </p>
     pub fn creation_date(&self) -> ::std::option::Option<&str> {
@@ -81,8 +82,8 @@ impl AnomalyMonitor {
         self.last_evaluated_date.as_deref()
     }
     /// <p>The possible type values. </p>
-    pub fn monitor_type(&self) -> ::std::option::Option<&crate::types::MonitorType> {
-        self.monitor_type.as_ref()
+    pub fn monitor_type(&self) -> &crate::types::MonitorType {
+        &self.monitor_type
     }
     /// <p>The dimensions to evaluate. </p>
     pub fn monitor_dimension(&self) -> ::std::option::Option<&crate::types::MonitorDimension> {
@@ -170,6 +171,7 @@ impl AnomalyMonitorBuilder {
         &self.monitor_arn
     }
     /// <p>The name of the monitor. </p>
+    /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -226,6 +228,7 @@ impl AnomalyMonitorBuilder {
         &self.last_evaluated_date
     }
     /// <p>The possible type values. </p>
+    /// This field is required.
     pub fn monitor_type(mut self, input: crate::types::MonitorType) -> Self {
         self.monitor_type = ::std::option::Option::Some(input);
         self
@@ -390,17 +393,30 @@ impl AnomalyMonitorBuilder {
         &self.dimensional_value_count
     }
     /// Consumes the builder and constructs a [`AnomalyMonitor`](crate::types::AnomalyMonitor).
-    pub fn build(self) -> crate::types::AnomalyMonitor {
-        crate::types::AnomalyMonitor {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monitor_name`](crate::types::builders::AnomalyMonitorBuilder::monitor_name)
+    /// - [`monitor_type`](crate::types::builders::AnomalyMonitorBuilder::monitor_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyMonitor, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnomalyMonitor {
             monitor_arn: self.monitor_arn,
-            monitor_name: self.monitor_name,
+            monitor_name: self.monitor_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "monitor_name",
+                    "monitor_name was not specified but it is required when building AnomalyMonitor",
+                )
+            })?,
             creation_date: self.creation_date,
             last_updated_date: self.last_updated_date,
             last_evaluated_date: self.last_evaluated_date,
-            monitor_type: self.monitor_type,
+            monitor_type: self.monitor_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "monitor_type",
+                    "monitor_type was not specified but it is required when building AnomalyMonitor",
+                )
+            })?,
             monitor_dimension: self.monitor_dimension,
             monitor_specification: self.monitor_specification,
             dimensional_value_count: self.dimensional_value_count.unwrap_or_default(),
-        }
+        })
     }
 }

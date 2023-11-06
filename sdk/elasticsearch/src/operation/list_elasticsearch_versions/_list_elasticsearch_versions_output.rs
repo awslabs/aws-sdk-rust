@@ -12,8 +12,10 @@ pub struct ListElasticsearchVersionsOutput {
 }
 impl ListElasticsearchVersionsOutput {
     /// <p>List of supported elastic search versions. </p>
-    pub fn elasticsearch_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.elasticsearch_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elasticsearch_versions.is_none()`.
+    pub fn elasticsearch_versions(&self) -> &[::std::string::String] {
+        self.elasticsearch_versions.as_deref().unwrap_or_default()
     }
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

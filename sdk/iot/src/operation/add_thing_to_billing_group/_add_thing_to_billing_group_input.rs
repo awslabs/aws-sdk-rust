@@ -118,7 +118,7 @@ impl AddThingToBillingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_thing_to_billing_group::AddThingToBillingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_thing_to_billing_group::AddThingToBillingGroupInput {
             billing_group_name: self.billing_group_name,

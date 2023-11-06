@@ -38,8 +38,8 @@ pub fn de_associate_service_action_with_provisioning_artifact_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParametersException" => crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError::InvalidParametersException({
@@ -54,8 +54,8 @@ pub fn de_associate_service_action_with_provisioning_artifact_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "LimitExceededException" => crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError::LimitExceededException({
@@ -70,8 +70,8 @@ pub fn de_associate_service_action_with_provisioning_artifact_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError::ResourceNotFoundException({
@@ -86,8 +86,8 @@ pub fn de_associate_service_action_with_provisioning_artifact_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError::generic(generic)
@@ -113,10 +113,10 @@ pub fn de_associate_service_action_with_provisioning_artifact_http_response(
 
 pub fn ser_associate_service_action_with_provisioning_artifact_input(
     input: &crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_service_action_with_provisioning_artifact_input::ser_associate_service_action_with_provisioning_artifact_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

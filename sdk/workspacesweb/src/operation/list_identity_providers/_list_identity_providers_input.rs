@@ -69,6 +69,7 @@ impl ListIdentityProvidersInputBuilder {
         &self.max_results
     }
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListIdentityProvidersInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentityProvidersInput`](crate::operation::list_identity_providers::ListIdentityProvidersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identity_providers::ListIdentityProvidersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_identity_providers::ListIdentityProvidersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_identity_providers::ListIdentityProvidersInput {
             next_token: self.next_token,

@@ -72,6 +72,7 @@ impl FastLaunchLaunchTemplateSpecificationRequestBuilder {
         &self.launch_template_name
     }
     /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self

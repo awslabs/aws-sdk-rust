@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
     pub format: ::std::option::Option<crate::types::LoggingFormat>,
 }
 impl VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::LoggingFormat> {
@@ -35,6 +36,7 @@ pub struct VirtualGatewayFileAccessLogBuilder {
 }
 impl VirtualGatewayFileAccessLogBuilder {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl VirtualGatewayFileAccessLogBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`VirtualGatewayFileAccessLog`](crate::types::VirtualGatewayFileAccessLog).
-    pub fn build(self) -> crate::types::VirtualGatewayFileAccessLog {
-        crate::types::VirtualGatewayFileAccessLog {
-            path: self.path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::VirtualGatewayFileAccessLogBuilder::path)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayFileAccessLog, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualGatewayFileAccessLog {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building VirtualGatewayFileAccessLog",
+                )
+            })?,
             format: self.format,
-        }
+        })
     }
 }

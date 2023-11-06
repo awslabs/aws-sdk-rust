@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledSplit {
     /// <p>The date and time that this step of the launch starts.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
     /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
@@ -16,8 +16,8 @@ pub struct ScheduledSplit {
 }
 impl ScheduledSplit {
     /// <p>The date and time that this step of the launch starts.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
@@ -27,8 +27,10 @@ impl ScheduledSplit {
     }
     /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
     /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
-    pub fn segment_overrides(&self) -> ::std::option::Option<&[crate::types::SegmentOverride]> {
-        self.segment_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_overrides.is_none()`.
+    pub fn segment_overrides(&self) -> &[crate::types::SegmentOverride] {
+        self.segment_overrides.as_deref().unwrap_or_default()
     }
 }
 impl ScheduledSplit {
@@ -48,6 +50,7 @@ pub struct ScheduledSplitBuilder {
 }
 impl ScheduledSplitBuilder {
     /// <p>The date and time that this step of the launch starts.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -111,11 +114,18 @@ impl ScheduledSplitBuilder {
         &self.segment_overrides
     }
     /// Consumes the builder and constructs a [`ScheduledSplit`](crate::types::ScheduledSplit).
-    pub fn build(self) -> crate::types::ScheduledSplit {
-        crate::types::ScheduledSplit {
-            start_time: self.start_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_time`](crate::types::builders::ScheduledSplitBuilder::start_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledSplit, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduledSplit {
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building ScheduledSplit",
+                )
+            })?,
             group_weights: self.group_weights,
             segment_overrides: self.segment_overrides,
-        }
+        })
     }
 }

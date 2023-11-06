@@ -27,6 +27,7 @@ pub struct DeletePortalInputBuilder {
 }
 impl DeletePortalInputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeletePortalInputBuilder {
         &self.portal_arn
     }
     /// Consumes the builder and constructs a [`DeletePortalInput`](crate::operation::delete_portal::DeletePortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_portal::DeletePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_portal::DeletePortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_portal::DeletePortalInput { portal_arn: self.portal_arn })
     }
 }

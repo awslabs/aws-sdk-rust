@@ -13,12 +13,16 @@ pub struct AssociateFacesOutput {
 }
 impl AssociateFacesOutput {
     /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
-    pub fn associated_faces(&self) -> ::std::option::Option<&[crate::types::AssociatedFace]> {
-        self.associated_faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_faces.is_none()`.
+    pub fn associated_faces(&self) -> &[crate::types::AssociatedFace] {
+        self.associated_faces.as_deref().unwrap_or_default()
     }
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
-    pub fn unsuccessful_face_associations(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceAssociation]> {
-        self.unsuccessful_face_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful_face_associations.is_none()`.
+    pub fn unsuccessful_face_associations(&self) -> &[crate::types::UnsuccessfulFaceAssociation] {
+        self.unsuccessful_face_associations.as_deref().unwrap_or_default()
     }
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
     pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatus> {

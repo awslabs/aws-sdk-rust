@@ -55,6 +55,7 @@ impl GetResourceLfTagsInputBuilder {
         &self.catalog_id
     }
     /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
@@ -85,7 +86,7 @@ impl GetResourceLfTagsInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceLfTagsInput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_lf_tags::GetResourceLfTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_resource_lf_tags::GetResourceLfTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource_lf_tags::GetResourceLfTagsInput {
             catalog_id: self.catalog_id,
             resource: self.resource,

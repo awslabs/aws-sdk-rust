@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryAggregationResponse {
     /// <p>The name of the repository associated with the findings.</p>
-    pub repository: ::std::option::Option<::std::string::String>,
+    pub repository: ::std::string::String,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that represent the count of matched findings per severity.</p>
@@ -15,8 +15,9 @@ pub struct RepositoryAggregationResponse {
 }
 impl RepositoryAggregationResponse {
     /// <p>The name of the repository associated with the findings.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
-        self.repository.as_deref()
+    pub fn repository(&self) -> &str {
+        use std::ops::Deref;
+        self.repository.deref()
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct RepositoryAggregationResponseBuilder {
 }
 impl RepositoryAggregationResponseBuilder {
     /// <p>The name of the repository associated with the findings.</p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl RepositoryAggregationResponseBuilder {
         &self.affected_images
     }
     /// Consumes the builder and constructs a [`RepositoryAggregationResponse`](crate::types::RepositoryAggregationResponse).
-    pub fn build(self) -> crate::types::RepositoryAggregationResponse {
-        crate::types::RepositoryAggregationResponse {
-            repository: self.repository,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`repository`](crate::types::builders::RepositoryAggregationResponseBuilder::repository)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositoryAggregationResponse {
+            repository: self.repository.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "repository",
+                    "repository was not specified but it is required when building RepositoryAggregationResponse",
+                )
+            })?,
             account_id: self.account_id,
             severity_counts: self.severity_counts,
             affected_images: self.affected_images,
-        }
+        })
     }
 }

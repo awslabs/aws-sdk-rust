@@ -145,9 +145,7 @@ pub(crate) fn de_list_application_versions(
                     );
                 }
                 "versions" => {
-                    builder = builder.set_versions(crate::protocol_serde::shape___list_of_version_summary::de___list_of_version_summary(
-                        tokens,
-                    )?);
+                    builder = builder.set_versions(crate::protocol_serde::shape_list_of_version_summary::de_list_of_version_summary(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

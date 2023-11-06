@@ -28,6 +28,7 @@ pub struct DisableApplicationLayerAutomaticResponseInputBuilder {
 }
 impl DisableApplicationLayerAutomaticResponseInputBuilder {
     /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DisableApplicationLayerAutomaticResponseInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput {

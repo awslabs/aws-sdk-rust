@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepublishAction {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The name of the MQTT topic.</p>
-    pub topic: ::std::option::Option<::std::string::String>,
+    pub topic: ::std::string::String,
     /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
     pub qos: ::std::option::Option<i32>,
     /// <p>MQTT Version 5.0 headers information. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT Core Developer Guide.</p>
@@ -15,12 +15,14 @@ pub struct RepublishAction {
 }
 impl RepublishAction {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The name of the MQTT topic.</p>
-    pub fn topic(&self) -> ::std::option::Option<&str> {
-        self.topic.as_deref()
+    pub fn topic(&self) -> &str {
+        use std::ops::Deref;
+        self.topic.deref()
     }
     /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
     pub fn qos(&self) -> ::std::option::Option<i32> {
@@ -49,6 +51,7 @@ pub struct RepublishActionBuilder {
 }
 impl RepublishActionBuilder {
     /// <p>The ARN of the IAM role that grants access.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl RepublishActionBuilder {
         &self.role_arn
     }
     /// <p>The name of the MQTT topic.</p>
+    /// This field is required.
     pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,25 @@ impl RepublishActionBuilder {
         &self.headers
     }
     /// Consumes the builder and constructs a [`RepublishAction`](crate::types::RepublishAction).
-    pub fn build(self) -> crate::types::RepublishAction {
-        crate::types::RepublishAction {
-            role_arn: self.role_arn,
-            topic: self.topic,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::RepublishActionBuilder::role_arn)
+    /// - [`topic`](crate::types::builders::RepublishActionBuilder::topic)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepublishAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepublishAction {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building RepublishAction",
+                )
+            })?,
+            topic: self.topic.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "topic",
+                    "topic was not specified but it is required when building RepublishAction",
+                )
+            })?,
             qos: self.qos,
             headers: self.headers,
-        }
+        })
     }
 }

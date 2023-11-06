@@ -83,6 +83,7 @@ impl ListStageDevicesInputBuilder {
         &self.max_results
     }
     /// <p>The name of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl ListStageDevicesInputBuilder {
         &self.exclude_devices_deployed_in_other_stage
     }
     /// <p>The name of the stage in the deployment.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +129,7 @@ impl ListStageDevicesInputBuilder {
     /// Consumes the builder and constructs a [`ListStageDevicesInput`](crate::operation::list_stage_devices::ListStageDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stage_devices::ListStageDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_stage_devices::ListStageDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stage_devices::ListStageDevicesInput {
             next_token: self.next_token,
             max_results: self.max_results,

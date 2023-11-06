@@ -7,18 +7,20 @@ pub struct PrefetchConsumption {
     /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as <code>scte.event_id</code>, set the avail matching criteria.</p>
     pub avail_matching_criteria: ::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>>,
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
     /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PrefetchConsumption {
     /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as <code>scte.event_id</code>, set the avail matching criteria.</p>
-    pub fn avail_matching_criteria(&self) -> ::std::option::Option<&[crate::types::AvailMatchingCriteria]> {
-        self.avail_matching_criteria.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.avail_matching_criteria.is_none()`.
+    pub fn avail_matching_criteria(&self) -> &[crate::types::AvailMatchingCriteria] {
+        self.avail_matching_criteria.as_deref().unwrap_or_default()
     }
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
     /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -62,6 +64,7 @@ impl PrefetchConsumptionBuilder {
         &self.avail_matching_criteria
     }
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call <code>DeletePrefetchSchedule</code>.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,18 @@ impl PrefetchConsumptionBuilder {
         &self.start_time
     }
     /// Consumes the builder and constructs a [`PrefetchConsumption`](crate::types::PrefetchConsumption).
-    pub fn build(self) -> crate::types::PrefetchConsumption {
-        crate::types::PrefetchConsumption {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`end_time`](crate::types::builders::PrefetchConsumptionBuilder::end_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::PrefetchConsumption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PrefetchConsumption {
             avail_matching_criteria: self.avail_matching_criteria,
-            end_time: self.end_time,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building PrefetchConsumption",
+                )
+            })?,
             start_time: self.start_time,
-        }
+        })
     }
 }

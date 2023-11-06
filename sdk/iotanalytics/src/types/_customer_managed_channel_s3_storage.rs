@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerManagedChannelS3Storage {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl CustomerManagedChannelS3Storage {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub fn key_prefix(&self) -> ::std::option::Option<&str> {
         self.key_prefix.as_deref()
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl CustomerManagedChannelS3Storage {
@@ -42,6 +44,7 @@ pub struct CustomerManagedChannelS3StorageBuilder {
 }
 impl CustomerManagedChannelS3StorageBuilder {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl CustomerManagedChannelS3StorageBuilder {
         &self.key_prefix
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl CustomerManagedChannelS3StorageBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`CustomerManagedChannelS3Storage`](crate::types::CustomerManagedChannelS3Storage).
-    pub fn build(self) -> crate::types::CustomerManagedChannelS3Storage {
-        crate::types::CustomerManagedChannelS3Storage {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::CustomerManagedChannelS3StorageBuilder::bucket)
+    /// - [`role_arn`](crate::types::builders::CustomerManagedChannelS3StorageBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomerManagedChannelS3Storage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomerManagedChannelS3Storage {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building CustomerManagedChannelS3Storage",
+                )
+            })?,
             key_prefix: self.key_prefix,
-            role_arn: self.role_arn,
-        }
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building CustomerManagedChannelS3Storage",
+                )
+            })?,
+        })
     }
 }

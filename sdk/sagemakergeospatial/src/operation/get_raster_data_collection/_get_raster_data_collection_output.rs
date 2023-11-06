@@ -4,51 +4,57 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRasterDataCollectionOutput {
     /// <p>The name of the raster data collection.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The raster data collection type.</p>
-    pub r#type: ::std::option::Option<crate::types::DataCollectionType>,
+    pub r#type: crate::types::DataCollectionType,
     /// <p>A description of the raster data collection.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>The URL of the description page.</p>
-    pub description_page_url: ::std::option::Option<::std::string::String>,
+    pub description_page_url: ::std::string::String,
     /// <p>The filters supported by the raster data collection.</p>
-    pub supported_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub supported_filters: ::std::vec::Vec<crate::types::Filter>,
     /// <p>The list of image source bands in the raster data collection.</p>
-    pub image_source_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub image_source_bands: ::std::vec::Vec<::std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRasterDataCollectionOutput {
     /// <p>The name of the raster data collection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The raster data collection type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataCollectionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::DataCollectionType {
+        &self.r#type
     }
     /// <p>A description of the raster data collection.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>The URL of the description page.</p>
-    pub fn description_page_url(&self) -> ::std::option::Option<&str> {
-        self.description_page_url.as_deref()
+    pub fn description_page_url(&self) -> &str {
+        use std::ops::Deref;
+        self.description_page_url.deref()
     }
     /// <p>The filters supported by the raster data collection.</p>
-    pub fn supported_filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.supported_filters.as_deref()
+    pub fn supported_filters(&self) -> &[crate::types::Filter] {
+        use std::ops::Deref;
+        self.supported_filters.deref()
     }
     /// <p>The list of image source bands in the raster data collection.</p>
-    pub fn image_source_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_source_bands.as_deref()
+    pub fn image_source_bands(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.image_source_bands.deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -83,6 +89,7 @@ pub struct GetRasterDataCollectionOutputBuilder {
 }
 impl GetRasterDataCollectionOutputBuilder {
     /// <p>The name of the raster data collection.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +104,7 @@ impl GetRasterDataCollectionOutputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +119,7 @@ impl GetRasterDataCollectionOutputBuilder {
         &self.arn
     }
     /// <p>The raster data collection type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataCollectionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -125,6 +134,7 @@ impl GetRasterDataCollectionOutputBuilder {
         &self.r#type
     }
     /// <p>A description of the raster data collection.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +149,7 @@ impl GetRasterDataCollectionOutputBuilder {
         &self.description
     }
     /// <p>The URL of the description page.</p>
+    /// This field is required.
     pub fn description_page_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description_page_url = ::std::option::Option::Some(input.into());
         self
@@ -222,17 +233,65 @@ impl GetRasterDataCollectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRasterDataCollectionOutput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput).
-    pub fn build(self) -> crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput {
-        crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput {
-            name: self.name,
-            arn: self.arn,
-            r#type: self.r#type,
-            description: self.description,
-            description_page_url: self.description_page_url,
-            supported_filters: self.supported_filters,
-            image_source_bands: self.image_source_bands,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::name)
+    /// - [`arn`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::arn)
+    /// - [`r#type`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::r#type)
+    /// - [`description`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::description)
+    /// - [`description_page_url`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::description_page_url)
+    /// - [`supported_filters`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::supported_filters)
+    /// - [`image_source_bands`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::image_source_bands)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetRasterDataCollectionOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetRasterDataCollectionOutput",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building GetRasterDataCollectionOutput",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building GetRasterDataCollectionOutput",
+                )
+            })?,
+            description_page_url: self.description_page_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description_page_url",
+                    "description_page_url was not specified but it is required when building GetRasterDataCollectionOutput",
+                )
+            })?,
+            supported_filters: self.supported_filters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "supported_filters",
+                    "supported_filters was not specified but it is required when building GetRasterDataCollectionOutput",
+                )
+            })?,
+            image_source_bands: self.image_source_bands.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "image_source_bands",
+                    "image_source_bands was not specified but it is required when building GetRasterDataCollectionOutput",
+                )
+            })?,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct RemoveKnowledgeBaseTemplateUriInputBuilder {
 }
 impl RemoveKnowledgeBaseTemplateUriInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl RemoveKnowledgeBaseTemplateUriInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput {

@@ -11,8 +11,10 @@ pub struct ListServiceActionsOutput {
 }
 impl ListServiceActionsOutput {
     /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
-    pub fn service_action_summaries(&self) -> ::std::option::Option<&[crate::types::ServiceActionSummary]> {
-        self.service_action_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_action_summaries.is_none()`.
+    pub fn service_action_summaries(&self) -> &[crate::types::ServiceActionSummary] {
+        self.service_action_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

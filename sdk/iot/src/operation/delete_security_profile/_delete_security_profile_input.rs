@@ -34,6 +34,7 @@ pub struct DeleteSecurityProfileInputBuilder {
 }
 impl DeleteSecurityProfileInputBuilder {
     /// <p>The name of the security profile to be deleted.</p>
+    /// This field is required.
     pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteSecurityProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSecurityProfileInput`](crate::operation::delete_security_profile::DeleteSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_security_profile::DeleteSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_security_profile::DeleteSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_security_profile::DeleteSecurityProfileInput {
             security_profile_name: self.security_profile_name,

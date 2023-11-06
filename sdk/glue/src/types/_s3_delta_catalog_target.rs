@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DeltaCatalogTarget {
     /// <p>The name of the data target.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The nodes that are inputs to the data target.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>The name of the table in the database to write to.</p>
-    pub table: ::std::option::Option<::std::string::String>,
+    pub table: ::std::string::String,
     /// <p>The name of the database to write to.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>Specifies additional connection options for the connector.</p>
     pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
@@ -21,24 +21,30 @@ pub struct S3DeltaCatalogTarget {
 }
 impl S3DeltaCatalogTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.partition_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
+    pub fn partition_keys(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.partition_keys.as_deref().unwrap_or_default()
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
-        self.table.as_deref()
+    pub fn table(&self) -> &str {
+        use std::ops::Deref;
+        self.table.deref()
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>Specifies additional connection options for the connector.</p>
     pub fn additional_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -70,6 +76,7 @@ pub struct S3DeltaCatalogTargetBuilder {
 }
 impl S3DeltaCatalogTargetBuilder {
     /// <p>The name of the data target.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +131,7 @@ impl S3DeltaCatalogTargetBuilder {
         &self.partition_keys
     }
     /// <p>The name of the table in the database to write to.</p>
+    /// This field is required.
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +146,7 @@ impl S3DeltaCatalogTargetBuilder {
         &self.table
     }
     /// <p>The name of the database to write to.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -193,15 +202,40 @@ impl S3DeltaCatalogTargetBuilder {
         &self.schema_change_policy
     }
     /// Consumes the builder and constructs a [`S3DeltaCatalogTarget`](crate::types::S3DeltaCatalogTarget).
-    pub fn build(self) -> crate::types::S3DeltaCatalogTarget {
-        crate::types::S3DeltaCatalogTarget {
-            name: self.name,
-            inputs: self.inputs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::S3DeltaCatalogTargetBuilder::name)
+    /// - [`inputs`](crate::types::builders::S3DeltaCatalogTargetBuilder::inputs)
+    /// - [`table`](crate::types::builders::S3DeltaCatalogTargetBuilder::table)
+    /// - [`database`](crate::types::builders::S3DeltaCatalogTargetBuilder::database)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaCatalogTarget, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3DeltaCatalogTarget {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building S3DeltaCatalogTarget",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building S3DeltaCatalogTarget",
+                )
+            })?,
             partition_keys: self.partition_keys,
-            table: self.table,
-            database: self.database,
+            table: self.table.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "table",
+                    "table was not specified but it is required when building S3DeltaCatalogTarget",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building S3DeltaCatalogTarget",
+                )
+            })?,
             additional_options: self.additional_options,
             schema_change_policy: self.schema_change_policy,
-        }
+        })
     }
 }

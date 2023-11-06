@@ -46,12 +46,16 @@ impl CreateFolderInput {
     }
     /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>Tags for the folder.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
     pub fn sharing_model(&self) -> ::std::option::Option<&crate::types::SharingModel> {
@@ -80,6 +84,7 @@ pub struct CreateFolderInputBuilder {
 }
 impl CreateFolderInputBuilder {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +99,7 @@ impl CreateFolderInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the folder.</p>
+    /// This field is required.
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
         self
@@ -210,7 +216,9 @@ impl CreateFolderInputBuilder {
         &self.sharing_model
     }
     /// Consumes the builder and constructs a [`CreateFolderInput`](crate::operation::create_folder::CreateFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_folder::CreateFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_folder::CreateFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_folder::CreateFolderInput {
             aws_account_id: self.aws_account_id,
             folder_id: self.folder_id,

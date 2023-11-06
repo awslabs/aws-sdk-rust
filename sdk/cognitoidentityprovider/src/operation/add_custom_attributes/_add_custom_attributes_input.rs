@@ -15,8 +15,10 @@ impl AddCustomAttributesInput {
         self.user_pool_id.as_deref()
     }
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    pub fn custom_attributes(&self) -> ::std::option::Option<&[crate::types::SchemaAttributeType]> {
-        self.custom_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_attributes.is_none()`.
+    pub fn custom_attributes(&self) -> &[crate::types::SchemaAttributeType] {
+        self.custom_attributes.as_deref().unwrap_or_default()
     }
 }
 impl AddCustomAttributesInput {
@@ -35,6 +37,7 @@ pub struct AddCustomAttributesInputBuilder {
 }
 impl AddCustomAttributesInputBuilder {
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl AddCustomAttributesInputBuilder {
     /// Consumes the builder and constructs a [`AddCustomAttributesInput`](crate::operation::add_custom_attributes::AddCustomAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_custom_attributes::AddCustomAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_custom_attributes::AddCustomAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_custom_attributes::AddCustomAttributesInput {
             user_pool_id: self.user_pool_id,

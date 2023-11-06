@@ -2,7 +2,7 @@
 pub fn ser_resource_data_sync_destination_data_sharing(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataSyncDestinationDataSharing,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_data_sharing_type {
         object.key("DestinationDataSharingType").string(var_1.as_str());
     }

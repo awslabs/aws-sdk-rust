@@ -33,8 +33,10 @@ impl EnvironmentVpc {
         self.account_id.as_deref()
     }
     /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
-    pub fn cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_blocks.is_none()`.
+    pub fn cidr_blocks(&self) -> &[::std::string::String] {
+        self.cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>The name of the VPC at the time it is added to the environment. </p>
     pub fn vpc_name(&self) -> ::std::option::Option<&str> {

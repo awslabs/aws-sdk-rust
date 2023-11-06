@@ -55,6 +55,7 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +90,7 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbSecurityGroupInput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput {
             db_security_group_name: self.db_security_group_name,

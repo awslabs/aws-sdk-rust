@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineDeclaration {
     /// <p>The name of the pipeline.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
@@ -17,7 +17,7 @@ pub struct PipelineDeclaration {
     /// </note>
     pub artifact_stores: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>>,
     /// <p>The stage in which to perform the action.</p>
-    pub stages: ::std::option::Option<::std::vec::Vec<crate::types::StageDeclaration>>,
+    pub stages: ::std::vec::Vec<crate::types::StageDeclaration>,
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
     pub version: ::std::option::Option<i32>,
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
@@ -39,12 +39,14 @@ pub struct PipelineDeclaration {
 }
 impl PipelineDeclaration {
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
@@ -59,8 +61,9 @@ impl PipelineDeclaration {
         self.artifact_stores.as_ref()
     }
     /// <p>The stage in which to perform the action.</p>
-    pub fn stages(&self) -> ::std::option::Option<&[crate::types::StageDeclaration]> {
-        self.stages.as_deref()
+    pub fn stages(&self) -> &[crate::types::StageDeclaration] {
+        use std::ops::Deref;
+        self.stages.deref()
     }
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
     pub fn version(&self) -> ::std::option::Option<i32> {
@@ -81,12 +84,16 @@ impl PipelineDeclaration {
     /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p> <note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
-    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::PipelineTriggerDeclaration]> {
-        self.triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
+    pub fn triggers(&self) -> &[crate::types::PipelineTriggerDeclaration] {
+        self.triggers.as_deref().unwrap_or_default()
     }
     /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    pub fn variables(&self) -> ::std::option::Option<&[crate::types::PipelineVariableDeclaration]> {
-        self.variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
+    pub fn variables(&self) -> &[crate::types::PipelineVariableDeclaration] {
+        self.variables.as_deref().unwrap_or_default()
     }
 }
 impl PipelineDeclaration {
@@ -112,6 +119,7 @@ pub struct PipelineDeclarationBuilder {
 }
 impl PipelineDeclarationBuilder {
     /// <p>The name of the pipeline.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +134,7 @@ impl PipelineDeclarationBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -307,17 +316,36 @@ impl PipelineDeclarationBuilder {
         &self.variables
     }
     /// Consumes the builder and constructs a [`PipelineDeclaration`](crate::types::PipelineDeclaration).
-    pub fn build(self) -> crate::types::PipelineDeclaration {
-        crate::types::PipelineDeclaration {
-            name: self.name,
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::PipelineDeclarationBuilder::name)
+    /// - [`role_arn`](crate::types::builders::PipelineDeclarationBuilder::role_arn)
+    /// - [`stages`](crate::types::builders::PipelineDeclarationBuilder::stages)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipelineDeclaration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipelineDeclaration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PipelineDeclaration",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building PipelineDeclaration",
+                )
+            })?,
             artifact_store: self.artifact_store,
             artifact_stores: self.artifact_stores,
-            stages: self.stages,
+            stages: self.stages.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stages",
+                    "stages was not specified but it is required when building PipelineDeclaration",
+                )
+            })?,
             version: self.version,
             pipeline_type: self.pipeline_type,
             triggers: self.triggers,
             variables: self.variables,
-        }
+        })
     }
 }

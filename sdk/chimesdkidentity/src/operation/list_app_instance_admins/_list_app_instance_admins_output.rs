@@ -17,8 +17,10 @@ impl ListAppInstanceAdminsOutput {
         self.app_instance_arn.as_deref()
     }
     /// <p>The information for each administrator.</p>
-    pub fn app_instance_admins(&self) -> ::std::option::Option<&[crate::types::AppInstanceAdminSummary]> {
-        self.app_instance_admins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_instance_admins.is_none()`.
+    pub fn app_instance_admins(&self) -> &[crate::types::AppInstanceAdminSummary] {
+        self.app_instance_admins.as_deref().unwrap_or_default()
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

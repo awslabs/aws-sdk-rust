@@ -37,16 +37,20 @@ impl Pattern {
         self.resolution_steps.as_deref()
     }
     /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
-    pub fn target_frames(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.target_frames.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_frames.is_none()`.
+    pub fn target_frames(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.target_frames.as_deref().unwrap_or_default()
     }
     /// <p> The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis. </p>
     pub fn threshold_percent(&self) -> f64 {
         self.threshold_percent
     }
     /// <p> A list of the different counters used to determine if there is a match. </p>
-    pub fn counters_to_aggregate(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.counters_to_aggregate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.counters_to_aggregate.is_none()`.
+    pub fn counters_to_aggregate(&self) -> &[::std::string::String] {
+        self.counters_to_aggregate.as_deref().unwrap_or_default()
     }
 }
 impl Pattern {

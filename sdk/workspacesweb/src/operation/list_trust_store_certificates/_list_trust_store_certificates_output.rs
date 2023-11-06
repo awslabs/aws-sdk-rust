@@ -6,19 +6,22 @@ pub struct ListTrustStoreCertificatesOutput {
     /// <p>The certificate list.</p>
     pub certificate_list: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
     /// <p>The ARN of the trust store.</p>
-    pub trust_store_arn: ::std::option::Option<::std::string::String>,
+    pub trust_store_arn: ::std::string::String,
     /// <p>The pagination token used to retrieve the next page of results for this operation.&gt;</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTrustStoreCertificatesOutput {
     /// <p>The certificate list.</p>
-    pub fn certificate_list(&self) -> ::std::option::Option<&[crate::types::CertificateSummary]> {
-        self.certificate_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_list.is_none()`.
+    pub fn certificate_list(&self) -> &[crate::types::CertificateSummary] {
+        self.certificate_list.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
-        self.trust_store_arn.as_deref()
+    pub fn trust_store_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.trust_store_arn.deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.&gt;</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -68,6 +71,7 @@ impl ListTrustStoreCertificatesOutputBuilder {
         &self.certificate_list
     }
     /// <p>The ARN of the trust store.</p>
+    /// This field is required.
     pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,24 @@ impl ListTrustStoreCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTrustStoreCertificatesOutput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput).
-    pub fn build(self) -> crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput {
-        crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`trust_store_arn`](crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesOutputBuilder::trust_store_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput {
             certificate_list: self.certificate_list,
-            trust_store_arn: self.trust_store_arn,
+            trust_store_arn: self.trust_store_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "trust_store_arn",
+                    "trust_store_arn was not specified but it is required when building ListTrustStoreCertificatesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

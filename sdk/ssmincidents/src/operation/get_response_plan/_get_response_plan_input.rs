@@ -27,6 +27,7 @@ pub struct GetResponsePlanInputBuilder {
 }
 impl GetResponsePlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetResponsePlanInputBuilder {
     /// Consumes the builder and constructs a [`GetResponsePlanInput`](crate::operation::get_response_plan::GetResponsePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_response_plan::GetResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_response_plan::GetResponsePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_response_plan::GetResponsePlanInput { arn: self.arn })
     }
 }

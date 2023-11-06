@@ -43,6 +43,7 @@ pub struct UpdateUserAccessLoggingSettingsInputBuilder {
 }
 impl UpdateUserAccessLoggingSettingsInputBuilder {
     /// <p>The ARN of the user access logging settings.</p>
+    /// This field is required.
     pub fn user_access_logging_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -92,7 +93,7 @@ impl UpdateUserAccessLoggingSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsInput {

@@ -2,7 +2,7 @@
 pub fn ser_describe_flywheel_iteration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.flywheel_arn {
         object.key("FlywheelArn").string(var_1.as_str());
     }

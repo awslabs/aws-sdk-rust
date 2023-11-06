@@ -6,18 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowOrigins {
     /// <p>The number of origins in the list.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>The list of origins (domain names). You can specify <code>*</code> to allow all origins.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub items: ::std::vec::Vec<::std::string::String>,
 }
 impl ResponseHeadersPolicyAccessControlAllowOrigins {
     /// <p>The number of origins in the list.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The list of origins (domain names). You can specify <code>*</code> to allow all origins.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl ResponseHeadersPolicyAccessControlAllowOrigins {
@@ -36,6 +37,7 @@ pub struct ResponseHeadersPolicyAccessControlAllowOriginsBuilder {
 }
 impl ResponseHeadersPolicyAccessControlAllowOriginsBuilder {
     /// <p>The number of origins in the list.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -70,10 +72,25 @@ impl ResponseHeadersPolicyAccessControlAllowOriginsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::types::ResponseHeadersPolicyAccessControlAllowOrigins).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyAccessControlAllowOrigins {
-        crate::types::ResponseHeadersPolicyAccessControlAllowOrigins {
-            quantity: self.quantity,
-            items: self.items,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::ResponseHeadersPolicyAccessControlAllowOriginsBuilder::quantity)
+    /// - [`items`](crate::types::builders::ResponseHeadersPolicyAccessControlAllowOriginsBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyAccessControlAllowOrigins {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowOrigins",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowOrigins",
+                )
+            })?,
+        })
     }
 }

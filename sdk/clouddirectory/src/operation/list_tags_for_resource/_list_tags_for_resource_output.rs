@@ -11,8 +11,10 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tag key value pairs that are associated with the response.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

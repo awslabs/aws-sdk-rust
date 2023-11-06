@@ -2,21 +2,21 @@
 pub fn ser_redshift_data_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftDataParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.secret_manager_arn {
         object.key("SecretManagerArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.database {
-        object.key("Database").string(var_2.as_str());
+    {
+        object.key("Database").string(input.database.as_str());
     }
-    if let Some(var_3) = &input.db_user {
-        object.key("DbUser").string(var_3.as_str());
+    if let Some(var_2) = &input.db_user {
+        object.key("DbUser").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.sql {
-        object.key("Sql").string(var_4.as_str());
+    {
+        object.key("Sql").string(input.sql.as_str());
     }
-    if let Some(var_5) = &input.statement_name {
-        object.key("StatementName").string(var_5.as_str());
+    if let Some(var_3) = &input.statement_name {
+        object.key("StatementName").string(var_3.as_str());
     }
     if input.with_event {
         object.key("WithEvent").boolean(input.with_event);
@@ -87,7 +87,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::redshift_data_parameters_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -42,6 +42,7 @@ pub struct UpdateStreamingDistributionInputBuilder {
 }
 impl UpdateStreamingDistributionInputBuilder {
     /// <p>The streaming distribution's configuration information.</p>
+    /// This field is required.
     pub fn streaming_distribution_config(mut self, input: crate::types::StreamingDistributionConfig) -> Self {
         self.streaming_distribution_config = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl UpdateStreamingDistributionInputBuilder {
         &self.streaming_distribution_config
     }
     /// <p>The streaming distribution's id.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +90,7 @@ impl UpdateStreamingDistributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_streaming_distribution::UpdateStreamingDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_streaming_distribution::UpdateStreamingDistributionInput {
             streaming_distribution_config: self.streaming_distribution_config,

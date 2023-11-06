@@ -34,6 +34,7 @@ pub struct UpdateConnectionAliasPermissionInputBuilder {
 }
 impl UpdateConnectionAliasPermissionInputBuilder {
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateConnectionAliasPermissionInputBuilder {
         &self.alias_id
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
+    /// This field is required.
     pub fn connection_alias_permission(mut self, input: crate::types::ConnectionAliasPermission) -> Self {
         self.connection_alias_permission = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateConnectionAliasPermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput {

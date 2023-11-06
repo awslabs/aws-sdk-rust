@@ -127,7 +127,8 @@ impl GetInventorySchemaInputBuilder {
     /// Consumes the builder and constructs a [`GetInventorySchemaInput`](crate::operation::get_inventory_schema::GetInventorySchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_inventory_schema::GetInventorySchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_inventory_schema::GetInventorySchemaInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_inventory_schema::GetInventorySchemaInput {
             type_name: self.type_name,
             next_token: self.next_token,

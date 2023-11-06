@@ -181,7 +181,7 @@ pub fn de_enable_hosted_zone_dnssec_http_response(
         output = crate::protocol_serde::shape_enable_hosted_zone_dnssec::de_enable_hosted_zone_dnssec(_response_body, output)
             .map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::enable_hosted_zone_dnssec_output_correct_errors(output).build()
     })
 }
 

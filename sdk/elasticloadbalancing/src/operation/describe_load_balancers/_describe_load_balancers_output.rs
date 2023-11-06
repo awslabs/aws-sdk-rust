@@ -12,8 +12,10 @@ pub struct DescribeLoadBalancersOutput {
 }
 impl DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
-    pub fn load_balancer_descriptions(&self) -> ::std::option::Option<&[crate::types::LoadBalancerDescription]> {
-        self.load_balancer_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_descriptions.is_none()`.
+    pub fn load_balancer_descriptions(&self) -> &[crate::types::LoadBalancerDescription] {
+        self.load_balancer_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

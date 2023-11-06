@@ -13,9 +13,9 @@ pub struct DescribeEnvironmentStatusOutput {
     /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
     /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
-    pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
+    pub status: crate::types::EnvironmentStatus,
     /// <p>Any informational message about the status of the environment.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentStatusOutput {
@@ -29,12 +29,13 @@ impl DescribeEnvironmentStatusOutput {
     /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
     /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::EnvironmentStatus {
+        &self.status
     }
     /// <p>Any informational message about the status of the environment.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEnvironmentStatusOutput {
@@ -68,6 +69,7 @@ impl DescribeEnvironmentStatusOutputBuilder {
     /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
     /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -100,6 +102,7 @@ impl DescribeEnvironmentStatusOutputBuilder {
         &self.status
     }
     /// <p>Any informational message about the status of the environment.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -123,11 +126,29 @@ impl DescribeEnvironmentStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentStatusOutput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput).
-    pub fn build(self) -> crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
-        crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
-            status: self.status,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder::status)
+    /// - [`message`](crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder::message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DescribeEnvironmentStatusOutput",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building DescribeEnvironmentStatusOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

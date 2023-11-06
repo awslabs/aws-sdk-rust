@@ -27,6 +27,7 @@ pub struct GetContactInputBuilder {
 }
 impl GetContactInputBuilder {
     /// <p>The ARN of the contact for which to request details.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetContactInputBuilder {
         &self.contact_arn
     }
     /// Consumes the builder and constructs a [`GetContactInput`](crate::operation::get_contact::GetContactInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_contact::GetContactInput {
             contact_arn: self.contact_arn,
         })

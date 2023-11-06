@@ -2,7 +2,7 @@
 pub fn ser_automatic_input_failover_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutomaticInputFailoverSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.error_clear_time_msec {
         object.key("errorClearTimeMsec").number(
             #[allow(clippy::useless_conversion)]
@@ -54,7 +54,7 @@ where
                         }
                         "failoverConditions" => {
                             builder = builder.set_failover_conditions(
-                                crate::protocol_serde::shape___list_of_failover_condition::de___list_of_failover_condition(tokens)?,
+                                crate::protocol_serde::shape_list_of_failover_condition::de_list_of_failover_condition(tokens)?,
                             );
                         }
                         "inputPreference" => {
@@ -81,7 +81,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::automatic_input_failover_settings_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

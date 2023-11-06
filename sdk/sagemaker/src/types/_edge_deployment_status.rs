@@ -63,6 +63,7 @@ pub struct EdgeDeploymentStatusBuilder {
 }
 impl EdgeDeploymentStatusBuilder {
     /// <p>The general status of the current stage.</p>
+    /// This field is required.
     pub fn stage_status(mut self, input: crate::types::StageStatus) -> Self {
         self.stage_status = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl EdgeDeploymentStatusBuilder {
         &self.stage_status
     }
     /// <p>The number of edge devices with the successful deployment in the current stage.</p>
+    /// This field is required.
     pub fn edge_deployment_success_in_stage(mut self, input: i32) -> Self {
         self.edge_deployment_success_in_stage = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl EdgeDeploymentStatusBuilder {
         &self.edge_deployment_success_in_stage
     }
     /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
+    /// This field is required.
     pub fn edge_deployment_pending_in_stage(mut self, input: i32) -> Self {
         self.edge_deployment_pending_in_stage = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl EdgeDeploymentStatusBuilder {
         &self.edge_deployment_pending_in_stage
     }
     /// <p>The number of edge devices that failed the deployment in current stage.</p>
+    /// This field is required.
     pub fn edge_deployment_failed_in_stage(mut self, input: i32) -> Self {
         self.edge_deployment_failed_in_stage = ::std::option::Option::Some(input);
         self

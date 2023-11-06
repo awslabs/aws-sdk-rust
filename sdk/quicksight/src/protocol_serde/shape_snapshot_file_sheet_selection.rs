@@ -2,21 +2,21 @@
 pub fn ser_snapshot_file_sheet_selection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnapshotFileSheetSelection,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.sheet_id {
-        object.key("SheetId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SheetId").string(input.sheet_id.as_str());
     }
-    if let Some(var_2) = &input.selection_scope {
-        object.key("SelectionScope").string(var_2.as_str());
+    {
+        object.key("SelectionScope").string(input.selection_scope.as_str());
     }
-    if let Some(var_3) = &input.visual_ids {
-        let mut array_4 = object.key("VisualIds").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.visual_ids {
+        let mut array_2 = object.key("VisualIds").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -65,7 +65,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::snapshot_file_sheet_selection_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

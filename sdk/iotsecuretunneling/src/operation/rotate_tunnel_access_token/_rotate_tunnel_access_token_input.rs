@@ -41,6 +41,7 @@ pub struct RotateTunnelAccessTokenInputBuilder {
 }
 impl RotateTunnelAccessTokenInputBuilder {
     /// <p>The tunnel for which you want to rotate the access tokens.</p>
+    /// This field is required.
     pub fn tunnel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RotateTunnelAccessTokenInputBuilder {
         &self.tunnel_id
     }
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+    /// This field is required.
     pub fn client_mode(mut self, input: crate::types::ClientMode) -> Self {
         self.client_mode = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl RotateTunnelAccessTokenInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput {
             tunnel_id: self.tunnel_id,

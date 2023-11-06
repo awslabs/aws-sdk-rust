@@ -71,8 +71,10 @@ impl UpdateUserPoolInput {
         self.lambda_config.as_ref()
     }
     /// <p>The attributes that are automatically verified when Amazon Cognito requests to update user pools.</p>
-    pub fn auto_verified_attributes(&self) -> ::std::option::Option<&[crate::types::VerifiedAttributeType]> {
-        self.auto_verified_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_verified_attributes.is_none()`.
+    pub fn auto_verified_attributes(&self) -> &[crate::types::VerifiedAttributeType] {
+        self.auto_verified_attributes.as_deref().unwrap_or_default()
     }
     /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn sms_verification_message(&self) -> ::std::option::Option<&str> {
@@ -172,6 +174,7 @@ pub struct UpdateUserPoolInputBuilder {
 }
 impl UpdateUserPoolInputBuilder {
     /// <p>The user pool ID for the user pool you want to update.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -486,7 +489,7 @@ impl UpdateUserPoolInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserPoolInput`](crate::operation::update_user_pool::UpdateUserPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_user_pool::UpdateUserPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_user_pool::UpdateUserPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user_pool::UpdateUserPoolInput {
             user_pool_id: self.user_pool_id,
             policies: self.policies,

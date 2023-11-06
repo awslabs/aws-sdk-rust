@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
     pub db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,
 }
 impl ModifyDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
     pub fn db_cluster(&self) -> ::std::option::Option<&crate::types::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -36,19 +36,19 @@ pub struct ModifyDbClusterOutputBuilder {
 }
 impl ModifyDbClusterOutputBuilder {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
     pub fn db_cluster(mut self, input: crate::types::DbCluster) -> Self {
         self.db_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
     pub fn set_db_cluster(mut self, input: ::std::option::Option<crate::types::DbCluster>) -> Self {
         self.db_cluster = input;
         self
     }
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
     pub fn get_db_cluster(&self) -> &::std::option::Option<crate::types::DbCluster> {
         &self.db_cluster
     }

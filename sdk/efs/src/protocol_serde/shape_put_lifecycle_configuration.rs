@@ -32,7 +32,9 @@ pub fn de_put_lifecycle_configuration_http_error(
                 output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(_response_body, output)
                     .map_err(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -47,7 +49,9 @@ pub fn de_put_lifecycle_configuration_http_error(
                 output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(_response_body, output)
                     .map_err(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::file_system_not_found_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -66,7 +70,9 @@ pub fn de_put_lifecycle_configuration_http_error(
                     )
                     .map_err(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::incorrect_file_system_life_cycle_state_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -82,7 +88,9 @@ pub fn de_put_lifecycle_configuration_http_error(
                 output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
                     .map_err(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -114,12 +122,12 @@ pub fn de_put_lifecycle_configuration_http_response(
 
 pub fn ser_put_lifecycle_configuration_input(
     input: &crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_lifecycle_configuration_input::ser_put_lifecycle_configuration_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_put_lifecycle_configuration(

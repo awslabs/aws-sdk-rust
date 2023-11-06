@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableInput {
     /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A description of the table.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
@@ -50,8 +50,9 @@ pub struct TableInput {
 }
 impl TableInput {
     /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A description of the table.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -80,8 +81,10 @@ impl TableInput {
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
-    pub fn partition_keys(&self) -> ::std::option::Option<&[crate::types::Column]> {
-        self.partition_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
+    pub fn partition_keys(&self) -> &[crate::types::Column] {
+        self.partition_keys.as_deref().unwrap_or_default()
     }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     pub fn view_original_text(&self) -> ::std::option::Option<&str> {
@@ -146,6 +149,7 @@ pub struct TableInputBuilder {
 }
 impl TableInputBuilder {
     /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -391,9 +395,16 @@ impl TableInputBuilder {
         &self.target_table
     }
     /// Consumes the builder and constructs a [`TableInput`](crate::types::TableInput).
-    pub fn build(self) -> crate::types::TableInput {
-        crate::types::TableInput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TableInputBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableInput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TableInput",
+                )
+            })?,
             description: self.description,
             owner: self.owner,
             last_access_time: self.last_access_time,
@@ -406,6 +417,6 @@ impl TableInputBuilder {
             table_type: self.table_type,
             parameters: self.parameters,
             target_table: self.target_table,
-        }
+        })
     }
 }

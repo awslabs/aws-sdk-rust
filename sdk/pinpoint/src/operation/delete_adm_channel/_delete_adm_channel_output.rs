@@ -34,6 +34,7 @@ pub struct DeleteAdmChannelOutputBuilder {
 }
 impl DeleteAdmChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    /// This field is required.
     pub fn adm_channel_response(mut self, input: crate::types::AdmChannelResponse) -> Self {
         self.adm_channel_response = ::std::option::Option::Some(input);
         self

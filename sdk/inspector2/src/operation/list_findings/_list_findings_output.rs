@@ -15,8 +15,10 @@ impl ListFindingsOutput {
         self.next_token.as_deref()
     }
     /// <p>Contains details on the findings in your environment.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::Finding]> {
-        self.findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.findings.is_none()`.
+    pub fn findings(&self) -> &[crate::types::Finding] {
+        self.findings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFindingsOutput {

@@ -34,6 +34,7 @@ pub struct GetServiceInstanceSyncStatusInputBuilder {
 }
 impl GetServiceInstanceSyncStatusInputBuilder {
     /// <p>The name of the service that the service instance belongs to.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetServiceInstanceSyncStatusInputBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance that you want the sync status input for.</p>
+    /// This field is required.
     pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetServiceInstanceSyncStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput {
             service_name: self.service_name,

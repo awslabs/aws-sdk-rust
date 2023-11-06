@@ -38,8 +38,10 @@ impl CreateSiteInput {
         self.location.as_ref()
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateSiteInput {
@@ -70,6 +72,7 @@ pub struct CreateSiteInputBuilder {
 }
 impl CreateSiteInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +153,7 @@ impl CreateSiteInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSiteInput`](crate::operation::create_site::CreateSiteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_site::CreateSiteInput {
             global_network_id: self.global_network_id,
             description: self.description,

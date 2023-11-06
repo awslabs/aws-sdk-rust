@@ -75,6 +75,7 @@ impl DownloadDbLogFilePortionInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl DownloadDbLogFilePortionInputBuilder {
         &self.db_instance_identifier
     }
     /// <p>The name of the log file to be downloaded.</p>
+    /// This field is required.
     pub fn log_file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_file_name = ::std::option::Option::Some(input.into());
         self
@@ -164,7 +166,7 @@ impl DownloadDbLogFilePortionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput {
             db_instance_identifier: self.db_instance_identifier,

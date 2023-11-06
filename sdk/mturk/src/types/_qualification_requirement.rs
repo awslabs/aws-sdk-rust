@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QualificationRequirement {
     /// <p> The ID of the Qualification type for the requirement.</p>
-    pub qualification_type_id: ::std::option::Option<::std::string::String>,
+    pub qualification_type_id: ::std::string::String,
     /// <p>The kind of comparison to make against a Qualification's value. You can compare a Qualification's value to an IntegerValue to see if it is LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, or NotEqualTo the IntegerValue. You can compare it to a LocaleValue to see if it is EqualTo, or NotEqualTo the LocaleValue. You can check to see if the value is In or NotIn a set of IntegerValue or LocaleValue values. Lastly, a Qualification requirement can also test if a Qualification Exists or DoesNotExist in the user's profile, regardless of its value. </p>
-    pub comparator: ::std::option::Option<crate::types::Comparator>,
+    pub comparator: crate::types::Comparator,
     /// <p> The integer value to compare against the Qualification's value. IntegerValue must not be present if Comparator is Exists or DoesNotExist. IntegerValue can only be used if the Qualification type has an integer value; it cannot be used with the Worker_Locale QualificationType ID. When performing a set comparison by using the In or the NotIn comparator, you can use up to 15 IntegerValue elements in a QualificationRequirement data structure. </p>
     pub integer_values: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p> The locale value to compare against the Qualification's value. The local value must be a valid ISO 3166 country code or supports ISO 3166-2 subdivisions. LocaleValue can only be used with a Worker_Locale QualificationType ID. LocaleValue can only be used with the EqualTo, NotEqualTo, In, and NotIn comparators. You must only use a single LocaleValue element when using the EqualTo or NotEqualTo comparators. When performing a set comparison by using the In or the NotIn comparator, you can use up to 30 LocaleValue elements in a QualificationRequirement data structure. </p>
@@ -20,20 +20,25 @@ pub struct QualificationRequirement {
 }
 impl QualificationRequirement {
     /// <p> The ID of the Qualification type for the requirement.</p>
-    pub fn qualification_type_id(&self) -> ::std::option::Option<&str> {
-        self.qualification_type_id.as_deref()
+    pub fn qualification_type_id(&self) -> &str {
+        use std::ops::Deref;
+        self.qualification_type_id.deref()
     }
     /// <p>The kind of comparison to make against a Qualification's value. You can compare a Qualification's value to an IntegerValue to see if it is LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, or NotEqualTo the IntegerValue. You can compare it to a LocaleValue to see if it is EqualTo, or NotEqualTo the LocaleValue. You can check to see if the value is In or NotIn a set of IntegerValue or LocaleValue values. Lastly, a Qualification requirement can also test if a Qualification Exists or DoesNotExist in the user's profile, regardless of its value. </p>
-    pub fn comparator(&self) -> ::std::option::Option<&crate::types::Comparator> {
-        self.comparator.as_ref()
+    pub fn comparator(&self) -> &crate::types::Comparator {
+        &self.comparator
     }
     /// <p> The integer value to compare against the Qualification's value. IntegerValue must not be present if Comparator is Exists or DoesNotExist. IntegerValue can only be used if the Qualification type has an integer value; it cannot be used with the Worker_Locale QualificationType ID. When performing a set comparison by using the In or the NotIn comparator, you can use up to 15 IntegerValue elements in a QualificationRequirement data structure. </p>
-    pub fn integer_values(&self) -> ::std::option::Option<&[i32]> {
-        self.integer_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integer_values.is_none()`.
+    pub fn integer_values(&self) -> &[i32] {
+        self.integer_values.as_deref().unwrap_or_default()
     }
     /// <p> The locale value to compare against the Qualification's value. The local value must be a valid ISO 3166 country code or supports ISO 3166-2 subdivisions. LocaleValue can only be used with a Worker_Locale QualificationType ID. LocaleValue can only be used with the EqualTo, NotEqualTo, In, and NotIn comparators. You must only use a single LocaleValue element when using the EqualTo or NotEqualTo comparators. When performing a set comparison by using the In or the NotIn comparator, you can use up to 30 LocaleValue elements in a QualificationRequirement data structure. </p>
-    pub fn locale_values(&self) -> ::std::option::Option<&[crate::types::Locale]> {
-        self.locale_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locale_values.is_none()`.
+    pub fn locale_values(&self) -> &[crate::types::Locale] {
+        self.locale_values.as_deref().unwrap_or_default()
     }
     /// <p> DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where RequiredToPreview is true (or if there are no such requirements), but does not meet all of the requirements for the HIT, the Worker will be allowed to preview the HIT's question data, but will not be allowed to accept and complete the HIT. The default is false. This should not be used in combination with the <code>ActionsGuarded</code> field. </p>
     #[deprecated]
@@ -65,6 +70,7 @@ pub struct QualificationRequirementBuilder {
 }
 impl QualificationRequirementBuilder {
     /// <p> The ID of the Qualification type for the requirement.</p>
+    /// This field is required.
     pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +85,7 @@ impl QualificationRequirementBuilder {
         &self.qualification_type_id
     }
     /// <p>The kind of comparison to make against a Qualification's value. You can compare a Qualification's value to an IntegerValue to see if it is LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, or NotEqualTo the IntegerValue. You can compare it to a LocaleValue to see if it is EqualTo, or NotEqualTo the LocaleValue. You can check to see if the value is In or NotIn a set of IntegerValue or LocaleValue values. Lastly, a Qualification requirement can also test if a Qualification Exists or DoesNotExist in the user's profile, regardless of its value. </p>
+    /// This field is required.
     pub fn comparator(mut self, input: crate::types::Comparator) -> Self {
         self.comparator = ::std::option::Option::Some(input);
         self
@@ -164,14 +171,27 @@ impl QualificationRequirementBuilder {
         &self.actions_guarded
     }
     /// Consumes the builder and constructs a [`QualificationRequirement`](crate::types::QualificationRequirement).
-    pub fn build(self) -> crate::types::QualificationRequirement {
-        crate::types::QualificationRequirement {
-            qualification_type_id: self.qualification_type_id,
-            comparator: self.comparator,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`qualification_type_id`](crate::types::builders::QualificationRequirementBuilder::qualification_type_id)
+    /// - [`comparator`](crate::types::builders::QualificationRequirementBuilder::comparator)
+    pub fn build(self) -> ::std::result::Result<crate::types::QualificationRequirement, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::QualificationRequirement {
+            qualification_type_id: self.qualification_type_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "qualification_type_id",
+                    "qualification_type_id was not specified but it is required when building QualificationRequirement",
+                )
+            })?,
+            comparator: self.comparator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comparator",
+                    "comparator was not specified but it is required when building QualificationRequirement",
+                )
+            })?,
             integer_values: self.integer_values,
             locale_values: self.locale_values,
             required_to_preview: self.required_to_preview,
             actions_guarded: self.actions_guarded,
-        }
+        })
     }
 }

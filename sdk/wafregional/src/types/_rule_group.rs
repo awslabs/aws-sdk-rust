@@ -16,7 +16,7 @@
 pub struct RuleGroup {
     /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
     /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub rule_group_id: ::std::option::Option<::std::string::String>,
+    pub rule_group_id: ::std::string::String,
     /// <p>The friendly name or description for the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
@@ -25,8 +25,9 @@ pub struct RuleGroup {
 impl RuleGroup {
     /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
     /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn rule_group_id(&self) -> ::std::option::Option<&str> {
-        self.rule_group_id.as_deref()
+    pub fn rule_group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_group_id.deref()
     }
     /// <p>The friendly name or description for the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -55,6 +56,7 @@ pub struct RuleGroupBuilder {
 impl RuleGroupBuilder {
     /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
     /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    /// This field is required.
     pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
@@ -99,11 +101,18 @@ impl RuleGroupBuilder {
         &self.metric_name
     }
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).
-    pub fn build(self) -> crate::types::RuleGroup {
-        crate::types::RuleGroup {
-            rule_group_id: self.rule_group_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_group_id`](crate::types::builders::RuleGroupBuilder::rule_group_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroup, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleGroup {
+            rule_group_id: self.rule_group_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_group_id",
+                    "rule_group_id was not specified but it is required when building RuleGroup",
+                )
+            })?,
             name: self.name,
             metric_name: self.metric_name,
-        }
+        })
     }
 }

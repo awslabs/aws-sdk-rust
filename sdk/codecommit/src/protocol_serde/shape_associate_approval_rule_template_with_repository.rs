@@ -38,8 +38,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ApprovalRuleTemplateNameRequiredException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::ApprovalRuleTemplateNameRequiredException({
@@ -54,8 +54,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionIntegrityChecksFailedException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionIntegrityChecksFailedException({
@@ -70,8 +70,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyAccessDeniedException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyAccessDeniedException({
@@ -86,8 +86,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyDisabledException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyDisabledException({
@@ -102,8 +102,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyNotFoundException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyNotFoundException({
@@ -118,8 +118,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyUnavailableException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyUnavailableException({
@@ -134,8 +134,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApprovalRuleTemplateNameException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::InvalidApprovalRuleTemplateNameException({
@@ -150,8 +150,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRepositoryNameException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::InvalidRepositoryNameException({
@@ -166,8 +166,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "MaximumRuleTemplatesAssociatedWithRepositoryException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::MaximumRuleTemplatesAssociatedWithRepositoryException({
@@ -182,8 +182,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "RepositoryDoesNotExistException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::RepositoryDoesNotExistException({
@@ -198,8 +198,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "RepositoryNameRequiredException" => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::RepositoryNameRequiredException({
@@ -214,8 +214,8 @@ pub fn de_associate_approval_rule_template_with_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::generic(generic)
@@ -241,7 +241,7 @@ pub fn de_associate_approval_rule_template_with_repository_http_response(
 
 pub fn ser_associate_approval_rule_template_with_repository_input(
     input: &crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_approval_rule_template_with_repository_input::ser_associate_approval_rule_template_with_repository_input(
@@ -249,5 +249,5 @@ pub fn ser_associate_approval_rule_template_with_repository_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

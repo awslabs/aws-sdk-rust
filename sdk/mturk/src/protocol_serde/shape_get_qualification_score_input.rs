@@ -2,7 +2,7 @@
 pub fn ser_get_qualification_score_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_qualification_score::GetQualificationScoreInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.qualification_type_id {
         object.key("QualificationTypeId").string(var_1.as_str());
     }

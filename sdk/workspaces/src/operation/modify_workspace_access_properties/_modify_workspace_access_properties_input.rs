@@ -34,6 +34,7 @@ pub struct ModifyWorkspaceAccessPropertiesInputBuilder {
 }
 impl ModifyWorkspaceAccessPropertiesInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyWorkspaceAccessPropertiesInputBuilder {
         &self.resource_id
     }
     /// <p>The device types and operating systems to enable or disable for access.</p>
+    /// This field is required.
     pub fn workspace_access_properties(mut self, input: crate::types::WorkspaceAccessProperties) -> Self {
         self.workspace_access_properties = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl ModifyWorkspaceAccessPropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesInput {

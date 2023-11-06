@@ -26,8 +26,10 @@ impl DescribeVolumesInput {
         self.raid_array_id.as_deref()
     }
     /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
-    pub fn volume_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.volume_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_ids.is_none()`.
+    pub fn volume_ids(&self) -> &[::std::string::String] {
+        self.volume_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeVolumesInput {
@@ -112,7 +114,7 @@ impl DescribeVolumesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_volumes::DescribeVolumesInput {
             instance_id: self.instance_id,
             stack_id: self.stack_id,

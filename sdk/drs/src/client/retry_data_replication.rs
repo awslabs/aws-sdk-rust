@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RetryDataReplication`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::set_source_server_id): <p>The ID of the Source Server whose data replication should be retried.</p>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::set_source_server_id):<br>required: **true**<br><p>The ID of the Source Server whose data replication should be retried.</p><br>
     /// - On success, responds with [`RetryDataReplicationOutput`](crate::operation::retry_data_replication::RetryDataReplicationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::source_server_id): <p>The ID of the Source Server.</p>
     ///   - [`arn(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::arn): <p>The ARN of the Source Server.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::tags): <p>The tags associated with the Source Server.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::tags): <p>The tags associated with the Source Server.</p>
     ///   - [`recovery_instance_id(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::recovery_instance_id): <p>The ID of the Recovery Instance associated with this Source Server.</p>
     ///   - [`last_launch_result(Option<LastLaunchResult>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::last_launch_result): <p>The status of the last recovery launch of this Source Server.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::data_replication_info): <p>The Data Replication Info of the Source Server.</p>

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogicalResourceId {
     /// <p>Identifier of the resource.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
     pub logical_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group that this resource belongs to.</p>
@@ -19,8 +19,9 @@ pub struct LogicalResourceId {
 }
 impl LogicalResourceId {
     /// <p>Identifier of the resource.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
     pub fn logical_stack_name(&self) -> ::std::option::Option<&str> {
@@ -60,6 +61,7 @@ pub struct LogicalResourceIdBuilder {
 }
 impl LogicalResourceIdBuilder {
     /// <p>Identifier of the resource.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -136,13 +138,20 @@ impl LogicalResourceIdBuilder {
         &self.eks_source_name
     }
     /// Consumes the builder and constructs a [`LogicalResourceId`](crate::types::LogicalResourceId).
-    pub fn build(self) -> crate::types::LogicalResourceId {
-        crate::types::LogicalResourceId {
-            identifier: self.identifier,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::types::builders::LogicalResourceIdBuilder::identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::LogicalResourceId, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LogicalResourceId {
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building LogicalResourceId",
+                )
+            })?,
             logical_stack_name: self.logical_stack_name,
             resource_group_name: self.resource_group_name,
             terraform_source_name: self.terraform_source_name,
             eks_source_name: self.eks_source_name,
-        }
+        })
     }
 }

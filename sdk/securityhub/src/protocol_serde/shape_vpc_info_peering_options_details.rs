@@ -2,7 +2,7 @@
 pub fn ser_vpc_info_peering_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcInfoPeeringOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_dns_resolution_from_remote_vpc {
         object.key("AllowDnsResolutionFromRemoteVpc").boolean(*var_1);
     }

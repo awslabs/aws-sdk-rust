@@ -10,8 +10,10 @@ pub struct BatchDeleteDelegationByAssessmentInput {
 }
 impl BatchDeleteDelegationByAssessmentInput {
     /// <p> The identifiers for the delegations. </p>
-    pub fn delegation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.delegation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delegation_ids.is_none()`.
+    pub fn delegation_ids(&self) -> &[::std::string::String] {
+        self.delegation_ids.as_deref().unwrap_or_default()
     }
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl BatchDeleteDelegationByAssessmentInputBuilder {
         &self.delegation_ids
     }
     /// <p> The identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl BatchDeleteDelegationByAssessmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentInput {

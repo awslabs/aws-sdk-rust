@@ -11,8 +11,10 @@ pub struct DescribeFlowLogsOutput {
 }
 impl DescribeFlowLogsOutput {
     /// <p>Information about the flow logs.</p>
-    pub fn flow_logs(&self) -> ::std::option::Option<&[crate::types::FlowLog]> {
-        self.flow_logs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flow_logs.is_none()`.
+    pub fn flow_logs(&self) -> &[crate::types::FlowLog] {
+        self.flow_logs.as_deref().unwrap_or_default()
     }
     /// <p>The token to request the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
-    pub r#type: ::std::option::Option<crate::types::DestinationType>,
+    pub r#type: crate::types::DestinationType,
     /// <p> For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
-    pub location: ::std::option::Option<::std::string::String>,
+    pub location: ::std::string::String,
 }
 impl Destination {
     /// <p>The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DestinationType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::DestinationType {
+        &self.r#type
     }
     /// <p> For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
-        self.location.as_deref()
+    pub fn location(&self) -> &str {
+        use std::ops::Deref;
+        self.location.deref()
     }
 }
 impl Destination {
@@ -35,6 +36,7 @@ pub struct DestinationBuilder {
 }
 impl DestinationBuilder {
     /// <p>The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DestinationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl DestinationBuilder {
         &self.r#type
     }
     /// <p> For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl DestinationBuilder {
         &self.location
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
-    pub fn build(self) -> crate::types::Destination {
-        crate::types::Destination {
-            r#type: self.r#type,
-            location: self.location,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::DestinationBuilder::r#type)
+    /// - [`location`](crate::types::builders::DestinationBuilder::location)
+    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Destination {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Destination",
+                )
+            })?,
+            location: self.location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "location",
+                    "location was not specified but it is required when building Destination",
+                )
+            })?,
+        })
     }
 }

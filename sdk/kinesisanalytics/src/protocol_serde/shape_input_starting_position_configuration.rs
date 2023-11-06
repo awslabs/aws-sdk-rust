@@ -2,7 +2,7 @@
 pub fn ser_input_starting_position_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputStartingPositionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input_starting_position {
         object.key("InputStartingPosition").string(var_1.as_str());
     }

@@ -5,36 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceSummary {
     /// <p>The ARN of the device.</p>
-    pub device_arn: ::std::option::Option<::std::string::String>,
+    pub device_arn: ::std::string::String,
     /// <p>The name of the device.</p>
-    pub device_name: ::std::option::Option<::std::string::String>,
+    pub device_name: ::std::string::String,
     /// <p>The provider of the device.</p>
-    pub provider_name: ::std::option::Option<::std::string::String>,
+    pub provider_name: ::std::string::String,
     /// <p>The type of the device.</p>
-    pub device_type: ::std::option::Option<crate::types::DeviceType>,
+    pub device_type: crate::types::DeviceType,
     /// <p>The status of the device.</p>
-    pub device_status: ::std::option::Option<crate::types::DeviceStatus>,
+    pub device_status: crate::types::DeviceStatus,
 }
 impl DeviceSummary {
     /// <p>The ARN of the device.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
-        self.device_arn.as_deref()
+    pub fn device_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.device_arn.deref()
     }
     /// <p>The name of the device.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
-        self.device_name.as_deref()
+    pub fn device_name(&self) -> &str {
+        use std::ops::Deref;
+        self.device_name.deref()
     }
     /// <p>The provider of the device.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
-        self.provider_name.as_deref()
+    pub fn provider_name(&self) -> &str {
+        use std::ops::Deref;
+        self.provider_name.deref()
     }
     /// <p>The type of the device.</p>
-    pub fn device_type(&self) -> ::std::option::Option<&crate::types::DeviceType> {
-        self.device_type.as_ref()
+    pub fn device_type(&self) -> &crate::types::DeviceType {
+        &self.device_type
     }
     /// <p>The status of the device.</p>
-    pub fn device_status(&self) -> ::std::option::Option<&crate::types::DeviceStatus> {
-        self.device_status.as_ref()
+    pub fn device_status(&self) -> &crate::types::DeviceStatus {
+        &self.device_status
     }
 }
 impl DeviceSummary {
@@ -56,6 +59,7 @@ pub struct DeviceSummaryBuilder {
 }
 impl DeviceSummaryBuilder {
     /// <p>The ARN of the device.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl DeviceSummaryBuilder {
         &self.device_arn
     }
     /// <p>The name of the device.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +89,7 @@ impl DeviceSummaryBuilder {
         &self.device_name
     }
     /// <p>The provider of the device.</p>
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl DeviceSummaryBuilder {
         &self.provider_name
     }
     /// <p>The type of the device.</p>
+    /// This field is required.
     pub fn device_type(mut self, input: crate::types::DeviceType) -> Self {
         self.device_type = ::std::option::Option::Some(input);
         self
@@ -112,6 +119,7 @@ impl DeviceSummaryBuilder {
         &self.device_type
     }
     /// <p>The status of the device.</p>
+    /// This field is required.
     pub fn device_status(mut self, input: crate::types::DeviceStatus) -> Self {
         self.device_status = ::std::option::Option::Some(input);
         self
@@ -126,13 +134,44 @@ impl DeviceSummaryBuilder {
         &self.device_status
     }
     /// Consumes the builder and constructs a [`DeviceSummary`](crate::types::DeviceSummary).
-    pub fn build(self) -> crate::types::DeviceSummary {
-        crate::types::DeviceSummary {
-            device_arn: self.device_arn,
-            device_name: self.device_name,
-            provider_name: self.provider_name,
-            device_type: self.device_type,
-            device_status: self.device_status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_arn`](crate::types::builders::DeviceSummaryBuilder::device_arn)
+    /// - [`device_name`](crate::types::builders::DeviceSummaryBuilder::device_name)
+    /// - [`provider_name`](crate::types::builders::DeviceSummaryBuilder::provider_name)
+    /// - [`device_type`](crate::types::builders::DeviceSummaryBuilder::device_type)
+    /// - [`device_status`](crate::types::builders::DeviceSummaryBuilder::device_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeviceSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeviceSummary {
+            device_arn: self.device_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_arn",
+                    "device_arn was not specified but it is required when building DeviceSummary",
+                )
+            })?,
+            device_name: self.device_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_name",
+                    "device_name was not specified but it is required when building DeviceSummary",
+                )
+            })?,
+            provider_name: self.provider_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "provider_name",
+                    "provider_name was not specified but it is required when building DeviceSummary",
+                )
+            })?,
+            device_type: self.device_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_type",
+                    "device_type was not specified but it is required when building DeviceSummary",
+                )
+            })?,
+            device_status: self.device_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "device_status",
+                    "device_status was not specified but it is required when building DeviceSummary",
+                )
+            })?,
+        })
     }
 }

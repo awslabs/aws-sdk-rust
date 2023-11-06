@@ -11,8 +11,10 @@ pub struct ProcessingOutputConfig {
 }
 impl ProcessingOutputConfig {
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::ProcessingOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::ProcessingOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {

@@ -48,6 +48,7 @@ pub struct ListBotsInputBuilder {
 }
 impl ListBotsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl ListBotsInputBuilder {
         &self.max_results
     }
     /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
+    /// This field is required.
     pub fn lex_version(mut self, input: crate::types::LexVersion) -> Self {
         self.lex_version = ::std::option::Option::Some(input);
         self
@@ -104,7 +106,7 @@ impl ListBotsInputBuilder {
         &self.lex_version
     }
     /// Consumes the builder and constructs a [`ListBotsInput`](crate::operation::list_bots::ListBotsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_bots::ListBotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bots::ListBotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bots::ListBotsInput {
             instance_id: self.instance_id,
             next_token: self.next_token,

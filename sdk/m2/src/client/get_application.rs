@@ -3,24 +3,24 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_id): <p>The identifier of the application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier of the application.</p><br>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::name): <p>The unique identifier of the application.</p>
+    ///   - [`name(String)`](crate::operation::get_application::GetApplicationOutput::name): <p>The unique identifier of the application.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_application::GetApplicationOutput::description): <p>The description of the application.</p>
-    ///   - [`application_id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::application_id): <p>The identifier of the application.</p>
-    ///   - [`application_arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`status(Option<ApplicationLifecycle>)`](crate::operation::get_application::GetApplicationOutput::status): <p>The status of the application.</p>
+    ///   - [`application_id(String)`](crate::operation::get_application::GetApplicationOutput::application_id): <p>The identifier of the application.</p>
+    ///   - [`application_arn(String)`](crate::operation::get_application::GetApplicationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
+    ///   - [`status(ApplicationLifecycle)`](crate::operation::get_application::GetApplicationOutput::status): <p>The status of the application.</p>
     ///   - [`latest_version(Option<ApplicationVersionSummary>)`](crate::operation::get_application::GetApplicationOutput::latest_version): <p>The latest version of the application.</p>
     ///   - [`deployed_version(Option<DeployedVersionSummary>)`](crate::operation::get_application::GetApplicationOutput::deployed_version): <p>The version of the application that is deployed.</p>
-    ///   - [`engine_type(Option<EngineType>)`](crate::operation::get_application::GetApplicationOutput::engine_type): <p>The type of the target platform for the application.</p>
-    ///   - [`log_groups(Option<Vec<LogGroupSummary>>)`](crate::operation::get_application::GetApplicationOutput::log_groups): <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::creation_time): <p>The timestamp when this application was created.</p>
+    ///   - [`engine_type(EngineType)`](crate::operation::get_application::GetApplicationOutput::engine_type): <p>The type of the target platform for the application.</p>
+    ///   - [`log_groups(Option<Vec::<LogGroupSummary>>)`](crate::operation::get_application::GetApplicationOutput::log_groups): <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_application::GetApplicationOutput::creation_time): <p>The timestamp when this application was created.</p>
     ///   - [`last_start_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_start_time): <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>A list of tags associated with the application.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>A list of tags associated with the application.</p>
     ///   - [`environment_id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::environment_id): <p>The identifier of the runtime environment where you want to deploy the application.</p>
-    ///   - [`target_group_arns(Option<Vec<String>>)`](crate::operation::get_application::GetApplicationOutput::target_group_arns): <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
-    ///   - [`listener_arns(Option<Vec<String>>)`](crate::operation::get_application::GetApplicationOutput::listener_arns): <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
-    ///   - [`listener_ports(Option<Vec<i32>>)`](crate::operation::get_application::GetApplicationOutput::listener_ports): <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
+    ///   - [`target_group_arns(Option<Vec::<String>>)`](crate::operation::get_application::GetApplicationOutput::target_group_arns): <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
+    ///   - [`listener_arns(Option<Vec::<String>>)`](crate::operation::get_application::GetApplicationOutput::listener_arns): <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
+    ///   - [`listener_ports(Option<Vec::<i32>>)`](crate::operation::get_application::GetApplicationOutput::listener_ports): <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
     ///   - [`load_balancer_dns_name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::load_balancer_dns_name): <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::get_application::GetApplicationOutput::status_reason): <p>The reason for the reported status.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::kms_key_id): <p>The identifier of a customer managed key.</p>

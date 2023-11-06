@@ -7,7 +7,7 @@ pub struct DataSourceSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose data sources you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the data sources you are searching for. For example, <code>"Name":"DATASOURCE_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASOURCE_NAME</code>.</p>
-    pub operator: ::std::option::Option<crate::types::FilterOperator>,
+    pub operator: crate::types::FilterOperator,
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "DIRECT_QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
@@ -16,16 +16,16 @@ pub struct DataSourceSearchFilter {
     /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p> </li>
     /// <li> <p> <code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<crate::types::DataSourceFilterAttribute>,
+    pub name: crate::types::DataSourceFilterAttribute,
     /// <p>The value of the named item, for example <code>DIRECT_QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl DataSourceSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose data sources you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the data sources you are searching for. For example, <code>"Name":"DATASOURCE_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASOURCE_NAME</code>.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::FilterOperator {
+        &self.operator
     }
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "DIRECT_QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -35,12 +35,13 @@ impl DataSourceSearchFilter {
     /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p> </li>
     /// <li> <p> <code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::DataSourceFilterAttribute> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::DataSourceFilterAttribute {
+        &self.name
     }
     /// <p>The value of the named item, for example <code>DIRECT_QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl DataSourceSearchFilter {
@@ -62,6 +63,7 @@ impl DataSourceSearchFilterBuilder {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose data sources you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the data sources you are searching for. For example, <code>"Name":"DATASOURCE_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASOURCE_NAME</code>.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::FilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -87,6 +89,7 @@ impl DataSourceSearchFilterBuilder {
     /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p> </li>
     /// <li> <p> <code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::DataSourceFilterAttribute) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -115,6 +118,7 @@ impl DataSourceSearchFilterBuilder {
         &self.name
     }
     /// <p>The value of the named item, for example <code>DIRECT_QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -129,11 +133,30 @@ impl DataSourceSearchFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`DataSourceSearchFilter`](crate::types::DataSourceSearchFilter).
-    pub fn build(self) -> crate::types::DataSourceSearchFilter {
-        crate::types::DataSourceSearchFilter {
-            operator: self.operator,
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`operator`](crate::types::builders::DataSourceSearchFilterBuilder::operator)
+    /// - [`name`](crate::types::builders::DataSourceSearchFilterBuilder::name)
+    /// - [`value`](crate::types::builders::DataSourceSearchFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceSearchFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSourceSearchFilter {
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building DataSourceSearchFilter",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DataSourceSearchFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building DataSourceSearchFilter",
+                )
+            })?,
+        })
     }
 }

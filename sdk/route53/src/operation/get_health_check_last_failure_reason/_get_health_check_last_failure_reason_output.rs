@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReasonOutput {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
-    pub health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
+    pub health_check_observations: ::std::vec::Vec<crate::types::HealthCheckObservation>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckLastFailureReasonOutput {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
-    pub fn health_check_observations(&self) -> ::std::option::Option<&[crate::types::HealthCheckObservation]> {
-        self.health_check_observations.as_deref()
+    pub fn health_check_observations(&self) -> &[crate::types::HealthCheckObservation] {
+        use std::ops::Deref;
+        self.health_check_observations.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetHealthCheckLastFailureReasonOutput {
@@ -64,10 +65,24 @@ impl GetHealthCheckLastFailureReasonOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetHealthCheckLastFailureReasonOutput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput).
-    pub fn build(self) -> crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput {
-        crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput {
-            health_check_observations: self.health_check_observations,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`health_check_observations`](crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonOutputBuilder::health_check_observations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput {
+                health_check_observations: self.health_check_observations.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "health_check_observations",
+                        "health_check_observations was not specified but it is required when building GetHealthCheckLastFailureReasonOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

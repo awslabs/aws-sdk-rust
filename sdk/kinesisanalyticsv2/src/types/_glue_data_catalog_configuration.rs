@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueDataCatalogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub database_arn: ::std::option::Option<::std::string::String>,
+    pub database_arn: ::std::string::String,
 }
 impl GlueDataCatalogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn(&self) -> ::std::option::Option<&str> {
-        self.database_arn.as_deref()
+    pub fn database_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.database_arn.deref()
     }
 }
 impl GlueDataCatalogConfiguration {
@@ -28,6 +29,7 @@ pub struct GlueDataCatalogConfigurationBuilder {
 }
 impl GlueDataCatalogConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    /// This field is required.
     pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl GlueDataCatalogConfigurationBuilder {
         &self.database_arn
     }
     /// Consumes the builder and constructs a [`GlueDataCatalogConfiguration`](crate::types::GlueDataCatalogConfiguration).
-    pub fn build(self) -> crate::types::GlueDataCatalogConfiguration {
-        crate::types::GlueDataCatalogConfiguration {
-            database_arn: self.database_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_arn`](crate::types::builders::GlueDataCatalogConfigurationBuilder::database_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::GlueDataCatalogConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GlueDataCatalogConfiguration {
+            database_arn: self.database_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database_arn",
+                    "database_arn was not specified but it is required when building GlueDataCatalogConfiguration",
+                )
+            })?,
+        })
     }
 }

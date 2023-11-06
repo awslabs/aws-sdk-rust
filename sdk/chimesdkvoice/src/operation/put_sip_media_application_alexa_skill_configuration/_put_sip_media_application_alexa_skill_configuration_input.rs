@@ -38,6 +38,7 @@ pub struct PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
 }
 impl PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
     /// <p>The SIP media application ID.</p>
+    /// This field is required.
     pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
@@ -75,7 +76,7 @@ impl PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_sip_media_application_alexa_skill_configuration::PutSipMediaApplicationAlexaSkillConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_sip_media_application_alexa_skill_configuration::PutSipMediaApplicationAlexaSkillConfigurationInput {

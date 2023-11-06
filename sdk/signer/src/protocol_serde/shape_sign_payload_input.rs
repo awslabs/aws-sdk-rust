@@ -2,7 +2,7 @@
 pub fn ser_sign_payload_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::sign_payload::SignPayloadInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.payload {
         object.key("payload").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

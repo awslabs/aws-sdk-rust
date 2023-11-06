@@ -152,10 +152,7 @@ pub(crate) fn lens_list_function_event_invoke_configs_output_function_event_invo
 pub(crate) fn lens_list_function_url_configs_output_function_url_configs(
     input: crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>> {
-    let input = match input.function_url_configs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.function_url_configs;
     ::std::option::Option::Some(input)
 }
 

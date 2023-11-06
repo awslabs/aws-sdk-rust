@@ -48,6 +48,7 @@ impl DeleteIpamScopeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the scope to delete.</p>
+    /// This field is required.
     pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteIpamScopeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIpamScopeInput`](crate::operation::delete_ipam_scope::DeleteIpamScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ipam_scope::DeleteIpamScopeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ipam_scope::DeleteIpamScopeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ipam_scope::DeleteIpamScopeInput {
             dry_run: self.dry_run,
             ipam_scope_id: self.ipam_scope_id,

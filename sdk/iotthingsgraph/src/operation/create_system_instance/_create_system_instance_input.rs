@@ -20,8 +20,10 @@ pub struct CreateSystemInstanceInput {
 }
 impl CreateSystemInstanceInput {
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A document that defines an entity. </p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
@@ -89,6 +91,7 @@ impl CreateSystemInstanceInputBuilder {
         &self.tags
     }
     /// <p>A document that defines an entity. </p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
@@ -103,6 +106,7 @@ impl CreateSystemInstanceInputBuilder {
         &self.definition
     }
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::DeploymentTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -175,7 +179,7 @@ impl CreateSystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateSystemInstanceInput`](crate::operation::create_system_instance::CreateSystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_system_instance::CreateSystemInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_system_instance::CreateSystemInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_system_instance::CreateSystemInstanceInput {
             tags: self.tags,

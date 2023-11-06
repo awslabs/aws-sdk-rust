@@ -129,18 +129,20 @@ pub fn de_create_schema_mapping_http_response(
         output = crate::protocol_serde::shape_create_schema_mapping::de_create_schema_mapping(_response_body, output)
             .map_err(crate::operation::create_schema_mapping::CreateSchemaMappingError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_schema_mapping_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_schema_mapping::CreateSchemaMappingError::unhandled)?
     })
 }
 
 pub fn ser_create_schema_mapping_input(
     input: &crate::operation::create_schema_mapping::CreateSchemaMappingInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_schema_mapping_input::ser_create_schema_mapping_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_schema_mapping(

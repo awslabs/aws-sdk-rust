@@ -20,8 +20,10 @@ impl UnlabelParameterVersionInput {
         self.parameter_version
     }
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
 }
 impl UnlabelParameterVersionInput {
@@ -41,6 +43,7 @@ pub struct UnlabelParameterVersionInputBuilder {
 }
 impl UnlabelParameterVersionInputBuilder {
     /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UnlabelParameterVersionInputBuilder {
         &self.name
     }
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
+    /// This field is required.
     pub fn parameter_version(mut self, input: i64) -> Self {
         self.parameter_version = ::std::option::Option::Some(input);
         self
@@ -93,7 +97,7 @@ impl UnlabelParameterVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput {
             name: self.name,

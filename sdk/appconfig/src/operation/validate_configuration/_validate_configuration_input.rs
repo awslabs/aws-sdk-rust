@@ -41,6 +41,7 @@ pub struct ValidateConfigurationInputBuilder {
 }
 impl ValidateConfigurationInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ValidateConfigurationInputBuilder {
         &self.application_id
     }
     /// <p>The configuration profile ID.</p>
+    /// This field is required.
     pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl ValidateConfigurationInputBuilder {
         &self.configuration_profile_id
     }
     /// <p>The version of the configuration to validate.</p>
+    /// This field is required.
     pub fn configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_version = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl ValidateConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`ValidateConfigurationInput`](crate::operation::validate_configuration::ValidateConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_configuration::ValidateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::validate_configuration::ValidateConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::validate_configuration::ValidateConfigurationInput {
             application_id: self.application_id,

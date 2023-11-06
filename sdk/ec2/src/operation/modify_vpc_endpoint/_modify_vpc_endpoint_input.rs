@@ -50,28 +50,40 @@ impl ModifyVpcEndpointInput {
         self.policy_document.as_deref()
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to associate with the endpoint.</p>
-    pub fn add_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_route_table_ids.is_none()`.
+    pub fn add_route_table_ids(&self) -> &[::std::string::String] {
+        self.add_route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.</p>
-    pub fn remove_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_route_table_ids.is_none()`.
+    pub fn remove_route_table_ids(&self) -> &[::std::string::String] {
+        self.remove_route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    pub fn add_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_subnet_ids.is_none()`.
+    pub fn add_subnet_ids(&self) -> &[::std::string::String] {
+        self.add_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
-    pub fn remove_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_subnet_ids.is_none()`.
+    pub fn remove_subnet_ids(&self) -> &[::std::string::String] {
+        self.remove_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.</p>
-    pub fn add_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_security_group_ids.is_none()`.
+    pub fn add_security_group_ids(&self) -> &[::std::string::String] {
+        self.add_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.</p>
-    pub fn remove_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_security_group_ids.is_none()`.
+    pub fn remove_security_group_ids(&self) -> &[::std::string::String] {
+        self.remove_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
@@ -86,8 +98,10 @@ impl ModifyVpcEndpointInput {
         self.private_dns_enabled
     }
     /// <p>The subnet configurations for the endpoint.</p>
-    pub fn subnet_configurations(&self) -> ::std::option::Option<&[crate::types::SubnetConfiguration]> {
-        self.subnet_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_configurations.is_none()`.
+    pub fn subnet_configurations(&self) -> &[crate::types::SubnetConfiguration] {
+        self.subnet_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ModifyVpcEndpointInput {
@@ -132,6 +146,7 @@ impl ModifyVpcEndpointInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the endpoint.</p>
+    /// This field is required.
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -358,7 +373,7 @@ impl ModifyVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVpcEndpointInput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput {
             dry_run: self.dry_run,
             vpc_endpoint_id: self.vpc_endpoint_id,

@@ -8,9 +8,9 @@ pub struct SendMessageBatchRequestEntry {
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The body of the message.</p>
-    pub message_body: ::std::option::Option<::std::string::String>,
+    pub message_body: ::std::string::String,
     /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue is applied. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
@@ -63,12 +63,14 @@ impl SendMessageBatchRequestEntry {
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The body of the message.</p>
-    pub fn message_body(&self) -> ::std::option::Option<&str> {
-        self.message_body.as_deref()
+    pub fn message_body(&self) -> &str {
+        use std::ops::Deref;
+        self.message_body.deref()
     }
     /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue is applied. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
@@ -157,6 +159,7 @@ impl SendMessageBatchRequestEntryBuilder {
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -177,6 +180,7 @@ impl SendMessageBatchRequestEntryBuilder {
         &self.id
     }
     /// <p>The body of the message.</p>
+    /// This field is required.
     pub fn message_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_body = ::std::option::Option::Some(input.into());
         self
@@ -393,15 +397,28 @@ impl SendMessageBatchRequestEntryBuilder {
         &self.message_group_id
     }
     /// Consumes the builder and constructs a [`SendMessageBatchRequestEntry`](crate::types::SendMessageBatchRequestEntry).
-    pub fn build(self) -> crate::types::SendMessageBatchRequestEntry {
-        crate::types::SendMessageBatchRequestEntry {
-            id: self.id,
-            message_body: self.message_body,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::SendMessageBatchRequestEntryBuilder::id)
+    /// - [`message_body`](crate::types::builders::SendMessageBatchRequestEntryBuilder::message_body)
+    pub fn build(self) -> ::std::result::Result<crate::types::SendMessageBatchRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SendMessageBatchRequestEntry {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building SendMessageBatchRequestEntry",
+                )
+            })?,
+            message_body: self.message_body.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_body",
+                    "message_body was not specified but it is required when building SendMessageBatchRequestEntry",
+                )
+            })?,
             delay_seconds: self.delay_seconds.unwrap_or_default(),
             message_attributes: self.message_attributes,
             message_system_attributes: self.message_system_attributes,
             message_deduplication_id: self.message_deduplication_id,
             message_group_id: self.message_group_id,
-        }
+        })
     }
 }

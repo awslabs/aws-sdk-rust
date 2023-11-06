@@ -406,18 +406,20 @@ pub fn de_delete_file_http_response(
         output = crate::protocol_serde::shape_delete_file::de_delete_file(_response_body, output)
             .map_err(crate::operation::delete_file::DeleteFileError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_file_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::delete_file::DeleteFileError::unhandled)?
     })
 }
 
 pub fn ser_delete_file_input(
     input: &crate::operation::delete_file::DeleteFileInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_file_input::ser_delete_file_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_delete_file(

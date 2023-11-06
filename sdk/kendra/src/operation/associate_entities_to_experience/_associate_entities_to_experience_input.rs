@@ -20,8 +20,10 @@ impl AssociateEntitiesToExperienceInput {
         self.index_id.as_deref()
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub fn entity_list(&self) -> ::std::option::Option<&[crate::types::EntityConfiguration]> {
-        self.entity_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_list.is_none()`.
+    pub fn entity_list(&self) -> &[crate::types::EntityConfiguration] {
+        self.entity_list.as_deref().unwrap_or_default()
     }
 }
 impl AssociateEntitiesToExperienceInput {
@@ -41,6 +43,7 @@ pub struct AssociateEntitiesToExperienceInputBuilder {
 }
 impl AssociateEntitiesToExperienceInputBuilder {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl AssociateEntitiesToExperienceInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +97,7 @@ impl AssociateEntitiesToExperienceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput {
             id: self.id,

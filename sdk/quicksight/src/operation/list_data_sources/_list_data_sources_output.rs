@@ -15,8 +15,10 @@ pub struct ListDataSourcesOutput {
 }
 impl ListDataSourcesOutput {
     /// <p>A list of data sources.</p>
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::DataSource]> {
-        self.data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
+    pub fn data_sources(&self) -> &[crate::types::DataSource] {
+        self.data_sources.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

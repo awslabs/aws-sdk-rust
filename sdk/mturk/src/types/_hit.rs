@@ -113,8 +113,10 @@ impl Hit {
         self.requester_annotation.as_deref()
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(&self) -> ::std::option::Option<&[crate::types::QualificationRequirement]> {
-        self.qualification_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualification_requirements.is_none()`.
+    pub fn qualification_requirements(&self) -> &[crate::types::QualificationRequirement] {
+        self.qualification_requirements.as_deref().unwrap_or_default()
     }
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
     pub fn hit_review_status(&self) -> ::std::option::Option<&crate::types::HitReviewStatus> {

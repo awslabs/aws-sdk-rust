@@ -12,8 +12,10 @@ pub struct ListHsmsOutput {
 }
 impl ListHsmsOutput {
     /// <p>The list of ARNs that identify the HSMs.</p>
-    pub fn hsm_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hsm_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hsm_list.is_none()`.
+    pub fn hsm_list(&self) -> &[::std::string::String] {
+        self.hsm_list.as_deref().unwrap_or_default()
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

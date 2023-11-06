@@ -83,8 +83,10 @@ impl PipelineExecution {
         self.parallelism_configuration.as_ref()
     }
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-    pub fn pipeline_parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.pipeline_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_parameters.is_none()`.
+    pub fn pipeline_parameters(&self) -> &[crate::types::Parameter] {
+        self.pipeline_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The selective execution configuration applied to the pipeline run.</p>
     pub fn selective_execution_config(&self) -> ::std::option::Option<&crate::types::SelectiveExecutionConfig> {

@@ -2,7 +2,7 @@
 pub fn ser_delete_metric_attribution_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_metric_attribution::DeleteMetricAttributionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.metric_attribution_arn {
         object.key("metricAttributionArn").string(var_1.as_str());
     }

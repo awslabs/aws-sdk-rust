@@ -20,8 +20,10 @@ impl BatchUpdateRuleInput {
         self.listener_identifier.as_deref()
     }
     /// <p>The rules for the specified listener.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::RuleUpdate]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::RuleUpdate] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdateRuleInput {
@@ -41,6 +43,7 @@ pub struct BatchUpdateRuleInputBuilder {
 }
 impl BatchUpdateRuleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl BatchUpdateRuleInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl BatchUpdateRuleInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateRuleInput`](crate::operation::batch_update_rule::BatchUpdateRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_update_rule::BatchUpdateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_update_rule::BatchUpdateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_update_rule::BatchUpdateRuleInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

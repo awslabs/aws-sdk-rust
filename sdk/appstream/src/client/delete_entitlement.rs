@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEntitlement`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::set_name): <p>The name of the entitlement.</p>
-    ///   - [`stack_name(impl Into<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::stack_name) / [`set_stack_name(Option<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::set_stack_name): <p>The name of the stack with which the entitlement is associated.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::set_name):<br>required: **true**<br><p>The name of the entitlement.</p><br>
+    ///   - [`stack_name(impl Into<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::stack_name) / [`set_stack_name(Option<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::set_stack_name):<br>required: **true**<br><p>The name of the stack with which the entitlement is associated.</p><br>
     /// - On success, responds with [`DeleteEntitlementOutput`](crate::operation::delete_entitlement::DeleteEntitlementOutput)
     /// - On failure, responds with [`SdkError<DeleteEntitlementError>`](crate::operation::delete_entitlement::DeleteEntitlementError)
     pub fn delete_entitlement(&self) -> crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder {

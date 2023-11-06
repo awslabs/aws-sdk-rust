@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoveredResource {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
-    pub configuration_id: ::std::option::Option<::std::string::String>,
+    pub configuration_id: ::std::string::String,
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl DiscoveredResource {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
-    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
-        self.configuration_id.as_deref()
+    pub fn configuration_id(&self) -> &str {
+        use std::ops::Deref;
+        self.configuration_id.deref()
     }
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct DiscoveredResourceBuilder {
 }
 impl DiscoveredResourceBuilder {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
+    /// This field is required.
     pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DiscoveredResourceBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`DiscoveredResource`](crate::types::DiscoveredResource).
-    pub fn build(self) -> crate::types::DiscoveredResource {
-        crate::types::DiscoveredResource {
-            configuration_id: self.configuration_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configuration_id`](crate::types::builders::DiscoveredResourceBuilder::configuration_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DiscoveredResource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DiscoveredResource {
+            configuration_id: self.configuration_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "configuration_id",
+                    "configuration_id was not specified but it is required when building DiscoveredResource",
+                )
+            })?,
             description: self.description,
-        }
+        })
     }
 }

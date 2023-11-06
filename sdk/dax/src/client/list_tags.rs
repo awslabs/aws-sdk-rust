@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListTags`](crate::operation::list_tags::builders::ListTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_name(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_resource_name): <p>The name of the DAX resource to which the tags belong.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_resource_name):<br>required: **true**<br><p>The name of the DAX resource to which the tags belong.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p><br>
     /// - On success, responds with [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_tags::ListTagsOutput::tags): <p>A list of tags currently associated with the DAX cluster.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::list_tags::ListTagsOutput::tags): <p>A list of tags currently associated with the DAX cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags::ListTagsOutput::next_token): <p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::operation::list_tags::ListTagsError)
     pub fn list_tags(&self) -> crate::operation::list_tags::builders::ListTagsFluentBuilder {

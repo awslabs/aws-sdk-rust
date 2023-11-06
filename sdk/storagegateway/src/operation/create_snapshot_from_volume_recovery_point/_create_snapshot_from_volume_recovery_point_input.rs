@@ -24,8 +24,10 @@ impl CreateSnapshotFromVolumeRecoveryPointInput {
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSnapshotFromVolumeRecoveryPointInput {
@@ -45,6 +47,7 @@ pub struct CreateSnapshotFromVolumeRecoveryPointInputBuilder {
 }
 impl CreateSnapshotFromVolumeRecoveryPointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    /// This field is required.
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +62,7 @@ impl CreateSnapshotFromVolumeRecoveryPointInputBuilder {
         &self.volume_arn
     }
     /// <p>Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field.</p>
+    /// This field is required.
     pub fn snapshot_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_description = ::std::option::Option::Some(input.into());
         self
@@ -103,7 +107,7 @@ impl CreateSnapshotFromVolumeRecoveryPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointInput {

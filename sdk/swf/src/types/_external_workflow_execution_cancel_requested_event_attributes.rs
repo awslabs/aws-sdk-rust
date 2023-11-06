@@ -35,6 +35,7 @@ pub struct ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder {
 }
 impl ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder {
     /// <p>The external workflow execution to which the cancellation request was delivered.</p>
+    /// This field is required.
     pub fn workflow_execution(mut self, input: crate::types::WorkflowExecution) -> Self {
         self.workflow_execution = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder {
         &self.workflow_execution
     }
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn initiated_event_id(mut self, input: i64) -> Self {
         self.initiated_event_id = ::std::option::Option::Some(input);
         self

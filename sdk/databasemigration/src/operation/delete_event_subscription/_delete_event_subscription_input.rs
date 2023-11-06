@@ -28,6 +28,7 @@ pub struct DeleteEventSubscriptionInputBuilder {
 }
 impl DeleteEventSubscriptionInputBuilder {
     /// <p>The name of the DMS event notification subscription to be deleted.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteEventSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_subscription::DeleteEventSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_event_subscription::DeleteEventSubscriptionInput {
             subscription_name: self.subscription_name,

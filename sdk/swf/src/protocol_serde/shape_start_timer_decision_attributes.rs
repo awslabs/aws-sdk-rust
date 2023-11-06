@@ -2,15 +2,15 @@
 pub fn ser_start_timer_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartTimerDecisionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.timer_id {
-        object.key("timerId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("timerId").string(input.timer_id.as_str());
     }
-    if let Some(var_2) = &input.control {
-        object.key("control").string(var_2.as_str());
+    if let Some(var_1) = &input.control {
+        object.key("control").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.start_to_fire_timeout {
-        object.key("startToFireTimeout").string(var_3.as_str());
+    {
+        object.key("startToFireTimeout").string(input.start_to_fire_timeout.as_str());
     }
     Ok(())
 }

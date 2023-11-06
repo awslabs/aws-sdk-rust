@@ -35,6 +35,7 @@ pub struct GetStagesInputBuilder {
 }
 impl GetStagesInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +64,7 @@ impl GetStagesInputBuilder {
         &self.deployment_id
     }
     /// Consumes the builder and constructs a [`GetStagesInput`](crate::operation::get_stages::GetStagesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_stages::GetStagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stages::GetStagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stages::GetStagesInput {
             rest_api_id: self.rest_api_id,
             deployment_id: self.deployment_id,

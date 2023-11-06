@@ -27,6 +27,7 @@ pub struct GetTelemetryMetadataInputBuilder {
 }
 impl GetTelemetryMetadataInputBuilder {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
+    /// This field is required.
     pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetTelemetryMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetTelemetryMetadataInput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput {
             assessment_run_arn: self.assessment_run_arn,

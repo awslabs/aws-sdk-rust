@@ -27,8 +27,10 @@ impl Mapping {
         self.to_key.as_deref()
     }
     /// <p>The table or column to be modified.</p>
-    pub fn from_path(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.from_path.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.from_path.is_none()`.
+    pub fn from_path(&self) -> &[::std::string::String] {
+        self.from_path.as_deref().unwrap_or_default()
     }
     /// <p>The type of the data to be modified.</p>
     pub fn from_type(&self) -> ::std::option::Option<&str> {
@@ -47,8 +49,10 @@ impl Mapping {
     /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
     /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
-    pub fn children(&self) -> ::std::option::Option<&[crate::types::Mapping]> {
-        self.children.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.children.is_none()`.
+    pub fn children(&self) -> &[crate::types::Mapping] {
+        self.children.as_deref().unwrap_or_default()
     }
 }
 impl Mapping {

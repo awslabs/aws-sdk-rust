@@ -6,7 +6,7 @@ pub struct ListSecurityPoliciesOutput {
     /// <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of security policies that were listed.</p>
-    pub security_policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_policy_names: ::std::vec::Vec<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSecurityPoliciesOutput {
@@ -15,8 +15,9 @@ impl ListSecurityPoliciesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of security policies that were listed.</p>
-    pub fn security_policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_policy_names.as_deref()
+    pub fn security_policy_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_policy_names.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSecurityPoliciesOutput {
@@ -84,11 +85,21 @@ impl ListSecurityPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSecurityPoliciesOutput`](crate::operation::list_security_policies::ListSecurityPoliciesOutput).
-    pub fn build(self) -> crate::operation::list_security_policies::ListSecurityPoliciesOutput {
-        crate::operation::list_security_policies::ListSecurityPoliciesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`security_policy_names`](crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder::security_policy_names)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_security_policies::ListSecurityPoliciesOutput {
             next_token: self.next_token,
-            security_policy_names: self.security_policy_names,
+            security_policy_names: self.security_policy_names.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "security_policy_names",
+                    "security_policy_names was not specified but it is required when building ListSecurityPoliciesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

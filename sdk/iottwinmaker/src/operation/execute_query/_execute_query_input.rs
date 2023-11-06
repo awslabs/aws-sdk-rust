@@ -50,6 +50,7 @@ pub struct ExecuteQueryInputBuilder {
 }
 impl ExecuteQueryInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl ExecuteQueryInputBuilder {
         &self.workspace_id
     }
     /// <p>The query statement.</p>
+    /// This field is required.
     pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_statement = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +111,9 @@ impl ExecuteQueryInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ExecuteQueryInput`](crate::operation::execute_query::ExecuteQueryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::execute_query::ExecuteQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::execute_query::ExecuteQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_query::ExecuteQueryInput {
             workspace_id: self.workspace_id,
             query_statement: self.query_statement,

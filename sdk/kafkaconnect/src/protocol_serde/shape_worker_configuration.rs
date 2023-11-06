@@ -2,15 +2,15 @@
 pub fn ser_worker_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkerConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("revision").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.revision).into()),
         );
     }
-    if let Some(var_1) = &input.worker_configuration_arn {
-        object.key("workerConfigurationArn").string(var_1.as_str());
+    {
+        object.key("workerConfigurationArn").string(input.worker_configuration_arn.as_str());
     }
     Ok(())
 }

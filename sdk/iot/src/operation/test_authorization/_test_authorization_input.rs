@@ -26,20 +26,26 @@ impl TestAuthorizationInput {
         self.cognito_identity_pool_id.as_deref()
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub fn auth_infos(&self) -> ::std::option::Option<&[crate::types::AuthInfo]> {
-        self.auth_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth_infos.is_none()`.
+    pub fn auth_infos(&self) -> &[crate::types::AuthInfo] {
+        self.auth_infos.as_deref().unwrap_or_default()
     }
     /// <p>The MQTT client ID.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn policy_names_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_names_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names_to_add.is_none()`.
+    pub fn policy_names_to_add(&self) -> &[::std::string::String] {
+        self.policy_names_to_add.as_deref().unwrap_or_default()
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn policy_names_to_skip(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_names_to_skip.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names_to_skip.is_none()`.
+    pub fn policy_names_to_skip(&self) -> &[::std::string::String] {
+        self.policy_names_to_skip.as_deref().unwrap_or_default()
     }
 }
 impl TestAuthorizationInput {
@@ -166,7 +172,7 @@ impl TestAuthorizationInputBuilder {
     /// Consumes the builder and constructs a [`TestAuthorizationInput`](crate::operation::test_authorization::TestAuthorizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_authorization::TestAuthorizationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_authorization::TestAuthorizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_authorization::TestAuthorizationInput {
             principal: self.principal,
             cognito_identity_pool_id: self.cognito_identity_pool_id,

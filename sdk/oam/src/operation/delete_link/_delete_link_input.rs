@@ -27,6 +27,7 @@ pub struct DeleteLinkInputBuilder {
 }
 impl DeleteLinkInputBuilder {
     /// <p>The ARN of the link to delete.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteLinkInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteLinkInput`](crate::operation::delete_link::DeleteLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_link::DeleteLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_link::DeleteLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_link::DeleteLinkInput { identifier: self.identifier })
     }
 }

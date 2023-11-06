@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetMapping {
     /// <p>The unique identifier for the subnet. </p>
-    pub subnet_id: ::std::option::Option<::std::string::String>,
+    pub subnet_id: ::std::string::String,
     /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl SubnetMapping {
     /// <p>The unique identifier for the subnet. </p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
-        self.subnet_id.as_deref()
+    pub fn subnet_id(&self) -> &str {
+        use std::ops::Deref;
+        self.subnet_id.deref()
     }
     /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
@@ -35,6 +36,7 @@ pub struct SubnetMappingBuilder {
 }
 impl SubnetMappingBuilder {
     /// <p>The unique identifier for the subnet. </p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl SubnetMappingBuilder {
         &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`SubnetMapping`](crate::types::SubnetMapping).
-    pub fn build(self) -> crate::types::SubnetMapping {
-        crate::types::SubnetMapping {
-            subnet_id: self.subnet_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_id`](crate::types::builders::SubnetMappingBuilder::subnet_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubnetMapping, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubnetMapping {
+            subnet_id: self.subnet_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnet_id",
+                    "subnet_id was not specified but it is required when building SubnetMapping",
+                )
+            })?,
             ip_address_type: self.ip_address_type,
-        }
+        })
     }
 }

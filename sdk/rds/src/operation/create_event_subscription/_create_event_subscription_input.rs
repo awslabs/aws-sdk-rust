@@ -48,8 +48,10 @@ impl CreateEventSubscriptionInput {
         self.source_type.as_deref()
     }
     /// <p>A list of event categories for a particular source type (<code>SourceType</code>) that you want to subscribe to. You can see a list of the categories for a given source type in the "Amazon RDS event categories and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html"> <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html"> <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the <code>DescribeEventCategories</code> operation.</p>
-    pub fn event_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
+    pub fn event_categories(&self) -> &[::std::string::String] {
+        self.event_categories.as_deref().unwrap_or_default()
     }
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
@@ -63,16 +65,20 @@ impl CreateEventSubscriptionInput {
     /// <li> <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p> </li>
     /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
     /// </ul>
-    pub fn source_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ids.is_none()`.
+    pub fn source_ids(&self) -> &[::std::string::String] {
+        self.source_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to activate the subscription. If the event notification subscription isn't activated, the subscription is created but not active.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateEventSubscriptionInput {
@@ -97,6 +103,7 @@ pub struct CreateEventSubscriptionInputBuilder {
 impl CreateEventSubscriptionInputBuilder {
     /// <p>The name of the subscription.</p>
     /// <p>Constraints: The name must be less than 255 characters.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +120,7 @@ impl CreateEventSubscriptionInputBuilder {
         &self.subscription_name
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -255,7 +263,7 @@ impl CreateEventSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_subscription::CreateEventSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_event_subscription::CreateEventSubscriptionInput {
             subscription_name: self.subscription_name,

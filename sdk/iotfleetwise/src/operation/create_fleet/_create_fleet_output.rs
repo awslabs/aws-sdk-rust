@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetOutput {
     /// <p> The ID of the created fleet. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p> The ARN of the created fleet. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateFleetOutput {
     /// <p> The ID of the created fleet. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p> The ARN of the created fleet. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateFleetOutput {
@@ -41,6 +43,7 @@ pub struct CreateFleetOutputBuilder {
 }
 impl CreateFleetOutputBuilder {
     /// <p> The ID of the created fleet. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateFleetOutputBuilder {
         &self.id
     }
     /// <p> The ARN of the created fleet. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,24 @@ impl CreateFleetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateFleetOutput`](crate::operation::create_fleet::CreateFleetOutput).
-    pub fn build(self) -> crate::operation::create_fleet::CreateFleetOutput {
-        crate::operation::create_fleet::CreateFleetOutput {
-            id: self.id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_fleet::builders::CreateFleetOutputBuilder::id)
+    /// - [`arn`](crate::operation::create_fleet::builders::CreateFleetOutputBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateFleetOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateFleetOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

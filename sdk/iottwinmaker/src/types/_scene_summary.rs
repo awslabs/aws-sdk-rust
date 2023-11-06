@@ -5,38 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SceneSummary {
     /// <p>The ID of the scene.</p>
-    pub scene_id: ::std::option::Option<::std::string::String>,
+    pub scene_id: ::std::string::String,
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub content_location: ::std::option::Option<::std::string::String>,
+    pub content_location: ::std::string::String,
     /// <p>The ARN of the scene.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time when the scene was created.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the scene was last updated.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
     /// <p>The scene description.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl SceneSummary {
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> ::std::option::Option<&str> {
-        self.scene_id.as_deref()
+    pub fn scene_id(&self) -> &str {
+        use std::ops::Deref;
+        self.scene_id.deref()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(&self) -> ::std::option::Option<&str> {
-        self.content_location.as_deref()
+    pub fn content_location(&self) -> &str {
+        use std::ops::Deref;
+        self.content_location.deref()
     }
     /// <p>The ARN of the scene.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time when the scene was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
     /// <p>The date and time when the scene was last updated.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
     /// <p>The scene description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -63,6 +66,7 @@ pub struct SceneSummaryBuilder {
 }
 impl SceneSummaryBuilder {
     /// <p>The ID of the scene.</p>
+    /// This field is required.
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl SceneSummaryBuilder {
         &self.scene_id
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
+    /// This field is required.
     pub fn content_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_location = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl SceneSummaryBuilder {
         &self.content_location
     }
     /// <p>The ARN of the scene.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl SceneSummaryBuilder {
         &self.arn
     }
     /// <p>The date and time when the scene was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -119,6 +126,7 @@ impl SceneSummaryBuilder {
         &self.creation_date_time
     }
     /// <p>The date and time when the scene was last updated.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -147,14 +155,45 @@ impl SceneSummaryBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`SceneSummary`](crate::types::SceneSummary).
-    pub fn build(self) -> crate::types::SceneSummary {
-        crate::types::SceneSummary {
-            scene_id: self.scene_id,
-            content_location: self.content_location,
-            arn: self.arn,
-            creation_date_time: self.creation_date_time,
-            update_date_time: self.update_date_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scene_id`](crate::types::builders::SceneSummaryBuilder::scene_id)
+    /// - [`content_location`](crate::types::builders::SceneSummaryBuilder::content_location)
+    /// - [`arn`](crate::types::builders::SceneSummaryBuilder::arn)
+    /// - [`creation_date_time`](crate::types::builders::SceneSummaryBuilder::creation_date_time)
+    /// - [`update_date_time`](crate::types::builders::SceneSummaryBuilder::update_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::SceneSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SceneSummary {
+            scene_id: self.scene_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scene_id",
+                    "scene_id was not specified but it is required when building SceneSummary",
+                )
+            })?,
+            content_location: self.content_location.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content_location",
+                    "content_location was not specified but it is required when building SceneSummary",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building SceneSummary",
+                )
+            })?,
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building SceneSummary",
+                )
+            })?,
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building SceneSummary",
+                )
+            })?,
             description: self.description,
-        }
+        })
     }
 }

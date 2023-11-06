@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_instance_network_interfaces_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2InstanceNetworkInterfacesDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.network_interface_id {
         object.key("NetworkInterfaceId").string(var_1.as_str());
     }

@@ -117,7 +117,7 @@ pub(crate) fn de_list_nodes(
                     );
                 }
                 "nodeInfoList" => {
-                    builder = builder.set_node_info_list(crate::protocol_serde::shape___list_of_node_info::de___list_of_node_info(tokens)?);
+                    builder = builder.set_node_info_list(crate::protocol_serde::shape_list_of_node_info::de_list_of_node_info(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

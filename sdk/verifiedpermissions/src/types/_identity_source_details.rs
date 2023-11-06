@@ -18,8 +18,10 @@ pub struct IdentitySourceDetails {
 }
 impl IdentitySourceDetails {
     /// <p>The application client IDs associated with the specified Amazon Cognito user pool that are enabled for this identity source.</p>
-    pub fn client_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.client_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_ids.is_none()`.
+    pub fn client_ids(&self) -> &[::std::string::String] {
+        self.client_ids.as_deref().unwrap_or_default()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
     pub fn user_pool_arn(&self) -> ::std::option::Option<&str> {

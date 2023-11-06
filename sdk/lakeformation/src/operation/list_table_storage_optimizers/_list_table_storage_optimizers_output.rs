@@ -11,8 +11,10 @@ pub struct ListTableStorageOptimizersOutput {
 }
 impl ListTableStorageOptimizersOutput {
     /// <p>A list of the storage optimizers associated with a table.</p>
-    pub fn storage_optimizer_list(&self) -> ::std::option::Option<&[crate::types::StorageOptimizer]> {
-        self.storage_optimizer_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_optimizer_list.is_none()`.
+    pub fn storage_optimizer_list(&self) -> &[crate::types::StorageOptimizer] {
+        self.storage_optimizer_list.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

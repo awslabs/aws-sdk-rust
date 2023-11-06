@@ -10,8 +10,10 @@ pub struct DescribeAgentVersionsOutput {
 }
 impl DescribeAgentVersionsOutput {
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
-    pub fn agent_versions(&self) -> ::std::option::Option<&[crate::types::AgentVersion]> {
-        self.agent_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_versions.is_none()`.
+    pub fn agent_versions(&self) -> &[crate::types::AgentVersion] {
+        self.agent_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAgentVersionsOutput {

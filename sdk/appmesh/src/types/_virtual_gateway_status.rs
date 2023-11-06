@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayStatus {
     /// <p>The current status.</p>
-    pub status: ::std::option::Option<crate::types::VirtualGatewayStatusCode>,
+    pub status: crate::types::VirtualGatewayStatusCode,
 }
 impl VirtualGatewayStatus {
     /// <p>The current status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VirtualGatewayStatusCode> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::VirtualGatewayStatusCode {
+        &self.status
     }
 }
 impl VirtualGatewayStatus {
@@ -28,6 +28,7 @@ pub struct VirtualGatewayStatusBuilder {
 }
 impl VirtualGatewayStatusBuilder {
     /// <p>The current status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::VirtualGatewayStatusCode) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl VirtualGatewayStatusBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`VirtualGatewayStatus`](crate::types::VirtualGatewayStatus).
-    pub fn build(self) -> crate::types::VirtualGatewayStatus {
-        crate::types::VirtualGatewayStatus { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::VirtualGatewayStatusBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualGatewayStatus {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building VirtualGatewayStatus",
+                )
+            })?,
+        })
     }
 }

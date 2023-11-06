@@ -2,14 +2,14 @@
 pub fn ser_cors_configuration(
     input: &crate::types::CorsConfiguration,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.cors_rules {
-        for list_item_2 in var_1 {
+    {
+        for list_item_1 in &input.cors_rules {
             {
                 let inner_writer = scope.start_el("CORSRule");
-                crate::protocol_serde::shape_cors_rule::ser_cors_rule(list_item_2, inner_writer)?
+                crate::protocol_serde::shape_cors_rule::ser_cors_rule(list_item_1, inner_writer)?
             }
         }
     }

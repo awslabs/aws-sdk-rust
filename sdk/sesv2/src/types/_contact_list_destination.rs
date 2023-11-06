@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactListDestination {
     /// <p>The name of the contact list.</p>
-    pub contact_list_name: ::std::option::Option<::std::string::String>,
+    pub contact_list_name: ::std::string::String,
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
-    pub contact_list_import_action: ::std::option::Option<crate::types::ContactListImportAction>,
+    pub contact_list_import_action: crate::types::ContactListImportAction,
 }
 impl ContactListDestination {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> ::std::option::Option<&str> {
-        self.contact_list_name.as_deref()
+    pub fn contact_list_name(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_list_name.deref()
     }
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
-    pub fn contact_list_import_action(&self) -> ::std::option::Option<&crate::types::ContactListImportAction> {
-        self.contact_list_import_action.as_ref()
+    pub fn contact_list_import_action(&self) -> &crate::types::ContactListImportAction {
+        &self.contact_list_import_action
     }
 }
 impl ContactListDestination {
@@ -43,6 +44,7 @@ pub struct ContactListDestinationBuilder {
 }
 impl ContactListDestinationBuilder {
     /// <p>The name of the contact list.</p>
+    /// This field is required.
     pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +63,7 @@ impl ContactListDestinationBuilder {
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn contact_list_import_action(mut self, input: crate::types::ContactListImportAction) -> Self {
         self.contact_list_import_action = ::std::option::Option::Some(input);
         self
@@ -83,10 +86,23 @@ impl ContactListDestinationBuilder {
         &self.contact_list_import_action
     }
     /// Consumes the builder and constructs a [`ContactListDestination`](crate::types::ContactListDestination).
-    pub fn build(self) -> crate::types::ContactListDestination {
-        crate::types::ContactListDestination {
-            contact_list_name: self.contact_list_name,
-            contact_list_import_action: self.contact_list_import_action,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_list_name`](crate::types::builders::ContactListDestinationBuilder::contact_list_name)
+    /// - [`contact_list_import_action`](crate::types::builders::ContactListDestinationBuilder::contact_list_import_action)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContactListDestination, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContactListDestination {
+            contact_list_name: self.contact_list_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_list_name",
+                    "contact_list_name was not specified but it is required when building ContactListDestination",
+                )
+            })?,
+            contact_list_import_action: self.contact_list_import_action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_list_import_action",
+                    "contact_list_import_action was not specified but it is required when building ContactListDestination",
+                )
+            })?,
+        })
     }
 }

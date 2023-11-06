@@ -199,54 +199,6 @@ pub(crate) mod shape_update_flow_source_input;
 
 pub(crate) mod shape_update_gateway_instance_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_bridge_output;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_bridge_source;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_entitlement;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_listed_bridge;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_listed_entitlement;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_listed_flow;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_listed_gateway;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_listed_gateway_instance;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_media_stream;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_offering;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_reservation;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_source;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_vpc_interface;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string;
-
 pub(crate) mod shape_add_bridge_output_request;
 
 pub(crate) mod shape_add_bridge_source_request;
@@ -280,6 +232,38 @@ pub(crate) mod shape_gateway_instance;
 pub(crate) mod shape_gateway_network;
 
 pub(crate) mod shape_grant_entitlement_request;
+
+pub(crate) mod shape_list_of_bridge_output;
+
+pub(crate) mod shape_list_of_bridge_source;
+
+pub(crate) mod shape_list_of_entitlement;
+
+pub(crate) mod shape_list_of_listed_bridge;
+
+pub(crate) mod shape_list_of_listed_entitlement;
+
+pub(crate) mod shape_list_of_listed_flow;
+
+pub(crate) mod shape_list_of_listed_gateway;
+
+pub(crate) mod shape_list_of_listed_gateway_instance;
+
+pub(crate) mod shape_list_of_media_stream;
+
+pub(crate) mod shape_list_of_offering;
+
+pub(crate) mod shape_list_of_output;
+
+pub(crate) mod shape_list_of_reservation;
+
+pub(crate) mod shape_list_of_source;
+
+pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_list_of_vpc_interface;
+
+pub(crate) mod shape_map_of_string;
 
 pub(crate) mod shape_media_stream;
 
@@ -323,21 +307,6 @@ pub(crate) mod shape_vpc_interface_attachment;
 
 pub(crate) mod shape_vpc_interface_request;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__integer;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_gateway_network;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_media_stream_output_configuration;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_media_stream_source_configuration;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_message_detail;
-
 pub(crate) mod shape_add_bridge_flow_source_request;
 
 pub(crate) mod shape_add_bridge_network_output_request;
@@ -367,6 +336,16 @@ pub(crate) mod shape_gateway_bridge_source;
 pub(crate) mod shape_ingress_gateway_bridge;
 
 pub(crate) mod shape_input_configuration_request;
+
+pub(crate) mod shape_list_of_gateway_network;
+
+pub(crate) mod shape_list_of_integer;
+
+pub(crate) mod shape_list_of_media_stream_output_configuration;
+
+pub(crate) mod shape_list_of_media_stream_source_configuration;
+
+pub(crate) mod shape_list_of_message_detail;
 
 pub(crate) mod shape_listed_bridge;
 
@@ -402,13 +381,11 @@ pub(crate) mod shape_media_stream_source_configuration;
 
 pub(crate) mod shape_message_detail;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_destination_configuration;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_configuration;
-
 pub(crate) mod shape_encoding_parameters;
+
+pub(crate) mod shape_list_of_destination_configuration;
+
+pub(crate) mod shape_list_of_input_configuration;
 
 pub(crate) mod shape_destination_configuration;
 

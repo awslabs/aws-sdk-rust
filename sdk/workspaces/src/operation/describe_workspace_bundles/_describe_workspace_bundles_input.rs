@@ -13,8 +13,10 @@ pub struct DescribeWorkspaceBundlesInput {
 }
 impl DescribeWorkspaceBundlesInput {
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    pub fn bundle_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bundle_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_ids.is_none()`.
+    pub fn bundle_ids(&self) -> &[::std::string::String] {
+        self.bundle_ids.as_deref().unwrap_or_default()
     }
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
     /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
@@ -98,7 +100,7 @@ impl DescribeWorkspaceBundlesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput {
             bundle_ids: self.bundle_ids,

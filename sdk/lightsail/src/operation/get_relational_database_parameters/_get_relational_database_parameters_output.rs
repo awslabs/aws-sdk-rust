@@ -13,8 +13,10 @@ pub struct GetRelationalDatabaseParametersOutput {
 }
 impl GetRelationalDatabaseParametersOutput {
     /// <p>An object describing the result of your get relational database parameters request.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::RelationalDatabaseParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::RelationalDatabaseParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

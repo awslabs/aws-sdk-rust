@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
-    pub enable_answer_machine_detection: ::std::option::Option<bool>,
+    pub enable_answer_machine_detection: bool,
 }
 impl AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
-    pub fn enable_answer_machine_detection(&self) -> ::std::option::Option<bool> {
+    pub fn enable_answer_machine_detection(&self) -> bool {
         self.enable_answer_machine_detection
     }
 }
@@ -28,6 +28,7 @@ pub struct AnswerMachineDetectionConfigBuilder {
 }
 impl AnswerMachineDetectionConfigBuilder {
     /// Enable or disable answering machine detection
+    /// This field is required.
     pub fn enable_answer_machine_detection(mut self, input: bool) -> Self {
         self.enable_answer_machine_detection = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl AnswerMachineDetectionConfigBuilder {
         &self.enable_answer_machine_detection
     }
     /// Consumes the builder and constructs a [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
-    pub fn build(self) -> crate::types::AnswerMachineDetectionConfig {
-        crate::types::AnswerMachineDetectionConfig {
-            enable_answer_machine_detection: self.enable_answer_machine_detection,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enable_answer_machine_detection`](crate::types::builders::AnswerMachineDetectionConfigBuilder::enable_answer_machine_detection)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnswerMachineDetectionConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnswerMachineDetectionConfig {
+            enable_answer_machine_detection: self.enable_answer_machine_detection.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enable_answer_machine_detection",
+                    "enable_answer_machine_detection was not specified but it is required when building AnswerMachineDetectionConfig",
+                )
+            })?,
+        })
     }
 }

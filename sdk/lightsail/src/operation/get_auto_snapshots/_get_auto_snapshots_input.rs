@@ -27,6 +27,7 @@ pub struct GetAutoSnapshotsInputBuilder {
 }
 impl GetAutoSnapshotsInputBuilder {
     /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetAutoSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`GetAutoSnapshotsInput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_auto_snapshots::GetAutoSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_auto_snapshots::GetAutoSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_auto_snapshots::GetAutoSnapshotsInput {
             resource_name: self.resource_name,
         })

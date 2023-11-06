@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionalBucket {
     /// <p></p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the regional bucket</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>The Outposts ID of the regional bucket.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
 impl RegionalBucket {
     /// <p></p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
     pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
@@ -29,8 +30,8 @@ impl RegionalBucket {
         self.public_access_block_enabled
     }
     /// <p>The creation date of the regional bucket</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
     /// <p>The Outposts ID of the regional bucket.</p>
     pub fn outpost_id(&self) -> ::std::option::Option<&str> {
@@ -56,6 +57,7 @@ pub struct RegionalBucketBuilder {
 }
 impl RegionalBucketBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl RegionalBucketBuilder {
         &self.bucket_arn
     }
     /// <p></p>
+    /// This field is required.
     pub fn public_access_block_enabled(mut self, input: bool) -> Self {
         self.public_access_block_enabled = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl RegionalBucketBuilder {
         &self.public_access_block_enabled
     }
     /// <p>The creation date of the regional bucket</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -126,13 +130,26 @@ impl RegionalBucketBuilder {
         &self.outpost_id
     }
     /// Consumes the builder and constructs a [`RegionalBucket`](crate::types::RegionalBucket).
-    pub fn build(self) -> crate::types::RegionalBucket {
-        crate::types::RegionalBucket {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::RegionalBucketBuilder::bucket)
+    /// - [`creation_date`](crate::types::builders::RegionalBucketBuilder::creation_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::RegionalBucket, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RegionalBucket {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building RegionalBucket",
+                )
+            })?,
             bucket_arn: self.bucket_arn,
             public_access_block_enabled: self.public_access_block_enabled.unwrap_or_default(),
-            creation_date: self.creation_date,
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building RegionalBucket",
+                )
+            })?,
             outpost_id: self.outpost_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct PutConfigurationInputBuilder {
 }
 impl PutConfigurationInputBuilder {
     /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::AppRegistryConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl PutConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`PutConfigurationInput`](crate::operation::put_configuration::PutConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_configuration::PutConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_configuration::PutConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_configuration::PutConfigurationInput {
             configuration: self.configuration,
         })

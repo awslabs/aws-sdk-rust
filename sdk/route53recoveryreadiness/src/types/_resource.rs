@@ -23,8 +23,10 @@ impl Resource {
         self.dns_target_resource.as_ref()
     }
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    pub fn readiness_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.readiness_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.readiness_scopes.is_none()`.
+    pub fn readiness_scopes(&self) -> &[::std::string::String] {
+        self.readiness_scopes.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {

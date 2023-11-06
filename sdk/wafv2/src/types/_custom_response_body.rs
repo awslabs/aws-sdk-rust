@@ -5,22 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomResponseBody {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
-    pub content_type: ::std::option::Option<crate::types::ResponseContentType>,
+    pub content_type: crate::types::ResponseContentType,
     /// <p>The payload of the custom response. </p>
     /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub content: ::std::option::Option<::std::string::String>,
+    pub content: ::std::string::String,
 }
 impl CustomResponseBody {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::ResponseContentType> {
-        self.content_type.as_ref()
+    pub fn content_type(&self) -> &crate::types::ResponseContentType {
+        &self.content_type
     }
     /// <p>The payload of the custom response. </p>
     /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
-        self.content.as_deref()
+    pub fn content(&self) -> &str {
+        use std::ops::Deref;
+        self.content.deref()
     }
 }
 impl CustomResponseBody {
@@ -39,6 +40,7 @@ pub struct CustomResponseBodyBuilder {
 }
 impl CustomResponseBodyBuilder {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: crate::types::ResponseContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self
@@ -55,6 +57,7 @@ impl CustomResponseBodyBuilder {
     /// <p>The payload of the custom response. </p>
     /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -73,10 +76,23 @@ impl CustomResponseBodyBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`CustomResponseBody`](crate::types::CustomResponseBody).
-    pub fn build(self) -> crate::types::CustomResponseBody {
-        crate::types::CustomResponseBody {
-            content_type: self.content_type,
-            content: self.content,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`content_type`](crate::types::builders::CustomResponseBodyBuilder::content_type)
+    /// - [`content`](crate::types::builders::CustomResponseBodyBuilder::content)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomResponseBody, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomResponseBody {
+            content_type: self.content_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content_type",
+                    "content_type was not specified but it is required when building CustomResponseBody",
+                )
+            })?,
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building CustomResponseBody",
+                )
+            })?,
+        })
     }
 }

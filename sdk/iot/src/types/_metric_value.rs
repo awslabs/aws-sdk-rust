@@ -23,24 +23,32 @@ impl MetricValue {
         self.count
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidrs.is_none()`.
+    pub fn cidrs(&self) -> &[::std::string::String] {
+        self.cidrs.as_deref().unwrap_or_default()
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn ports(&self) -> ::std::option::Option<&[i32]> {
-        self.ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ports.is_none()`.
+    pub fn ports(&self) -> &[i32] {
+        self.ports.as_deref().unwrap_or_default()
     }
     /// <p> The numeral value of a metric. </p>
     pub fn number(&self) -> ::std::option::Option<f64> {
         self.number
     }
     /// <p> The numeral values of a metric. </p>
-    pub fn numbers(&self) -> ::std::option::Option<&[f64]> {
-        self.numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.numbers.is_none()`.
+    pub fn numbers(&self) -> &[f64] {
+        self.numbers.as_deref().unwrap_or_default()
     }
     /// <p> The string values of a metric. </p>
-    pub fn strings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.strings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.strings.is_none()`.
+    pub fn strings(&self) -> &[::std::string::String] {
+        self.strings.as_deref().unwrap_or_default()
     }
 }
 impl MetricValue {

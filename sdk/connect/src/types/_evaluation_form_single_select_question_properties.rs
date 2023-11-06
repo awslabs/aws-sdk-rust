@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSingleSelectQuestionProperties {
     /// <p>The answer options of the single select question.</p>
-    pub options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>>,
+    pub options: ::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>,
     /// <p>The display mode of the single select question.</p>
     pub display_as: ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode>,
     /// <p>The display mode of the single select question.</p>
@@ -13,8 +13,9 @@ pub struct EvaluationFormSingleSelectQuestionProperties {
 }
 impl EvaluationFormSingleSelectQuestionProperties {
     /// <p>The answer options of the single select question.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::EvaluationFormSingleSelectQuestionOption]> {
-        self.options.as_deref()
+    pub fn options(&self) -> &[crate::types::EvaluationFormSingleSelectQuestionOption] {
+        use std::ops::Deref;
+        self.options.deref()
     }
     /// <p>The display mode of the single select question.</p>
     pub fn display_as(&self) -> ::std::option::Option<&crate::types::EvaluationFormSingleSelectQuestionDisplayMode> {
@@ -90,11 +91,20 @@ impl EvaluationFormSingleSelectQuestionPropertiesBuilder {
         &self.automation
     }
     /// Consumes the builder and constructs a [`EvaluationFormSingleSelectQuestionProperties`](crate::types::EvaluationFormSingleSelectQuestionProperties).
-    pub fn build(self) -> crate::types::EvaluationFormSingleSelectQuestionProperties {
-        crate::types::EvaluationFormSingleSelectQuestionProperties {
-            options: self.options,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`options`](crate::types::builders::EvaluationFormSingleSelectQuestionPropertiesBuilder::options)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::EvaluationFormSingleSelectQuestionProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationFormSingleSelectQuestionProperties {
+            options: self.options.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "options",
+                    "options was not specified but it is required when building EvaluationFormSingleSelectQuestionProperties",
+                )
+            })?,
             display_as: self.display_as,
             automation: self.automation,
-        }
+        })
     }
 }

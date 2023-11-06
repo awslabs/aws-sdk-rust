@@ -55,6 +55,7 @@ pub struct ListProfileSharesInputBuilder {
 }
 impl ListProfileSharesInputBuilder {
     /// <p>The profile ARN.</p>
+    /// This field is required.
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl ListProfileSharesInputBuilder {
     /// Consumes the builder and constructs a [`ListProfileSharesInput`](crate::operation::list_profile_shares::ListProfileSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_profile_shares::ListProfileSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_profile_shares::ListProfileSharesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_profile_shares::ListProfileSharesInput {
             profile_arn: self.profile_arn,
             shared_with_prefix: self.shared_with_prefix,

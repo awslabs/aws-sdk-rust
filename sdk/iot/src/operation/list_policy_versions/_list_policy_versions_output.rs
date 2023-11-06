@@ -10,8 +10,10 @@ pub struct ListPolicyVersionsOutput {
 }
 impl ListPolicyVersionsOutput {
     /// <p>The policy versions.</p>
-    pub fn policy_versions(&self) -> ::std::option::Option<&[crate::types::PolicyVersion]> {
-        self.policy_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_versions.is_none()`.
+    pub fn policy_versions(&self) -> &[crate::types::PolicyVersion] {
+        self.policy_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPolicyVersionsOutput {

@@ -36,8 +36,10 @@ impl CreateProjectInput {
         self.client_request_token.as_deref()
     }
     /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
-    pub fn source_code(&self) -> ::std::option::Option<&[crate::types::Code]> {
-        self.source_code.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_code.is_none()`.
+    pub fn source_code(&self) -> &[crate::types::Code] {
+        self.source_code.as_deref().unwrap_or_default()
     }
     /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
     pub fn toolchain(&self) -> ::std::option::Option<&crate::types::Toolchain> {
@@ -82,6 +84,7 @@ pub struct CreateProjectInputBuilder {
 }
 impl CreateProjectInputBuilder {
     /// <p>The display name for the project to be created in AWS CodeStar.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl CreateProjectInputBuilder {
         &self.name
     }
     /// <p>The ID of the project to be created in AWS CodeStar.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -194,7 +198,7 @@ impl CreateProjectInputBuilder {
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
             name: self.name,
             id: self.id,

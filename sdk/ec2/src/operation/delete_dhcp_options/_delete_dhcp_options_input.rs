@@ -34,6 +34,7 @@ pub struct DeleteDhcpOptionsInputBuilder {
 }
 impl DeleteDhcpOptionsInputBuilder {
     /// <p>The ID of the DHCP options set.</p>
+    /// This field is required.
     pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dhcp_options_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteDhcpOptionsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDhcpOptionsInput`](crate::operation::delete_dhcp_options::DeleteDhcpOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dhcp_options::DeleteDhcpOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dhcp_options::DeleteDhcpOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dhcp_options::DeleteDhcpOptionsInput {
             dhcp_options_id: self.dhcp_options_id,
             dry_run: self.dry_run,

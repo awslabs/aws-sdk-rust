@@ -2,7 +2,7 @@
 pub fn ser_video_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.color_space {
         object.key("colorSpace").string(var_1.as_str());
     }

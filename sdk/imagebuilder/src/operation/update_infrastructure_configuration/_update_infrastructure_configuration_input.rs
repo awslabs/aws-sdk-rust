@@ -46,16 +46,20 @@ impl UpdateInfrastructureConfigurationInput {
         self.description.as_deref()
     }
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    pub fn instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[::std::string::String] {
+        self.instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
@@ -123,6 +127,7 @@ pub struct UpdateInfrastructureConfigurationInputBuilder {
 }
 impl UpdateInfrastructureConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
+    /// This field is required.
     pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -171,6 +176,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
         &self.instance_types
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    /// This field is required.
     pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -281,6 +287,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
         &self.sns_topic_arn
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -348,7 +355,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationInput {

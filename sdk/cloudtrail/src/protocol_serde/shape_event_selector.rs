@@ -2,7 +2,7 @@
 pub fn ser_event_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.read_write_type {
         object.key("ReadWriteType").string(var_1.as_str());
     }

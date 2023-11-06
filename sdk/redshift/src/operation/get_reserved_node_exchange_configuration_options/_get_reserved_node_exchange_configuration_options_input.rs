@@ -57,6 +57,7 @@ pub struct GetReservedNodeExchangeConfigurationOptionsInputBuilder {
 }
 impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
+    /// This field is required.
     pub fn action_type(mut self, input: crate::types::ReservedNodeExchangeActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
         self
@@ -131,7 +132,7 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput {

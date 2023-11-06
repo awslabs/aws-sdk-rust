@@ -41,6 +41,7 @@ pub struct ListThingGroupsForThingInputBuilder {
 }
 impl ListThingGroupsForThingInputBuilder {
     /// <p>The thing name.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListThingGroupsForThingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingInput {
             thing_name: self.thing_name,

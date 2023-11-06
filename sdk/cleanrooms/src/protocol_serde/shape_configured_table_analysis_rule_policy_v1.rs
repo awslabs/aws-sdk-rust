@@ -2,7 +2,7 @@
 pub fn ser_configured_table_analysis_rule_policy_v1(
     object_1: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfiguredTableAnalysisRulePolicyV1,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ConfiguredTableAnalysisRulePolicyV1::List(inner) => {
             #[allow(unused_mut)]
@@ -23,7 +23,7 @@ pub fn ser_configured_table_analysis_rule_policy_v1(
             object_3.finish();
         }
         crate::types::ConfiguredTableAnalysisRulePolicyV1::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConfiguredTableAnalysisRulePolicyV1",
             ))
         }
@@ -44,12 +44,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "list" => Some(crate::types::ConfiguredTableAnalysisRulePolicyV1::List(
                             crate::protocol_serde::shape_analysis_rule_list::de_analysis_rule_list(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'list' cannot be null"))?,

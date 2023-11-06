@@ -27,6 +27,7 @@ pub struct GetEnvironmentAccountConnectionInputBuilder {
 }
 impl GetEnvironmentAccountConnectionInputBuilder {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetEnvironmentAccountConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput { id: self.id })
     }

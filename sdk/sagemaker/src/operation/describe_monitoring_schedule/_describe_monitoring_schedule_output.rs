@@ -109,6 +109,7 @@ pub struct DescribeMonitoringScheduleOutputBuilder {
 }
 impl DescribeMonitoringScheduleOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_arn = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +124,7 @@ impl DescribeMonitoringScheduleOutputBuilder {
         &self.monitoring_schedule_arn
     }
     /// <p>Name of the monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +139,7 @@ impl DescribeMonitoringScheduleOutputBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>The status of an monitoring job.</p>
+    /// This field is required.
     pub fn monitoring_schedule_status(mut self, input: crate::types::ScheduleStatus) -> Self {
         self.monitoring_schedule_status = ::std::option::Option::Some(input);
         self
@@ -197,6 +200,7 @@ impl DescribeMonitoringScheduleOutputBuilder {
         &self.failure_reason
     }
     /// <p>The time at which the monitoring job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -211,6 +215,7 @@ impl DescribeMonitoringScheduleOutputBuilder {
         &self.creation_time
     }
     /// <p>The time at which the monitoring job was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -225,6 +230,7 @@ impl DescribeMonitoringScheduleOutputBuilder {
         &self.last_modified_time
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    /// This field is required.
     pub fn monitoring_schedule_config(mut self, input: crate::types::MonitoringScheduleConfig) -> Self {
         self.monitoring_schedule_config = ::std::option::Option::Some(input);
         self

@@ -3,17 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use tokio_stream::StreamExt;
-
 use aws_sdk_ec2::{config::Credentials, config::Region, types::InstanceType, Client, Config};
-use aws_smithy_client::http_connector::HttpConnector;
-use aws_smithy_client::test_connection::TestConnection;
+use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_runtime_api::client::http::HttpClient;
+use aws_smithy_types::body::SdkBody;
 
-fn stub_config(conn: impl Into<HttpConnector>) -> Config {
+fn stub_config(http_client: impl HttpClient + 'static) -> Config {
     Config::builder()
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
-        .http_connector(conn)
+        .http_client(http_client)
         .build()
 }
 
@@ -29,17 +28,17 @@ async fn paginators_handle_empty_tokens() {
             <spotPriceHistorySet/>
             <nextToken></nextToken>
         </DescribeSpotPriceHistoryResponse>"#;
-    let conn = TestConnection::<&str>::new(vec![(
+    let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
         http::Request::builder()
             .uri("https://ec2.us-east-1.amazonaws.com/")
             .body(request.into())
             .unwrap(),
         http::Response::builder()
             .status(200)
-            .body(response)
+            .body(SdkBody::from(response))
             .unwrap(),
     )]);
-    let client = Client::from_conf(stub_config(conn.clone()));
+    let client = Client::from_conf(stub_config(http_client.clone()));
     let instance_type = InstanceType::from("g5.48xlarge");
     let mut paginator = client
         .describe_spot_price_history()
@@ -51,7 +50,7 @@ async fn paginators_handle_empty_tokens() {
         .send();
     let first_item = paginator.try_next().await.expect("success");
     assert_eq!(first_item, None);
-    conn.assert_requests_match(&[]);
+    http_client.assert_requests_match(&[]);
 }
 
 /// See https://github.com/awslabs/aws-sdk-rust/issues/405
@@ -65,17 +64,17 @@ async fn paginators_handle_unset_tokens() {
             <requestId>edf3e86c-4baf-47c1-9228-9a5ea09542e8</requestId>
             <spotPriceHistorySet/>
         </DescribeSpotPriceHistoryResponse>"#;
-    let conn = TestConnection::<&str>::new(vec![(
+    let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
         http::Request::builder()
             .uri("https://ec2.us-east-1.amazonaws.com/")
             .body(request.into())
             .unwrap(),
         http::Response::builder()
             .status(200)
-            .body(response)
+            .body(SdkBody::from(response))
             .unwrap(),
     )]);
-    let client = Client::from_conf(stub_config(conn.clone()));
+    let client = Client::from_conf(stub_config(http_client.clone()));
     let instance_type = InstanceType::from("g5.48xlarge");
     let mut paginator = client
         .describe_spot_price_history()
@@ -87,5 +86,5 @@ async fn paginators_handle_unset_tokens() {
         .send();
     let first_item = paginator.try_next().await.expect("success");
     assert_eq!(first_item, None);
-    conn.assert_requests_match(&[]);
+    http_client.assert_requests_match(&[]);
 }

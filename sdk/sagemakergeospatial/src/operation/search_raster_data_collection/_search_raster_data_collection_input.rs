@@ -50,6 +50,7 @@ pub struct SearchRasterDataCollectionInputBuilder {
 }
 impl SearchRasterDataCollectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl SearchRasterDataCollectionInputBuilder {
         &self.arn
     }
     /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
+    /// This field is required.
     pub fn raster_data_collection_query(mut self, input: crate::types::RasterDataCollectionQueryWithBandFilterInput) -> Self {
         self.raster_data_collection_query = ::std::option::Option::Some(input);
         self
@@ -99,7 +101,7 @@ impl SearchRasterDataCollectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput {
             arn: self.arn,

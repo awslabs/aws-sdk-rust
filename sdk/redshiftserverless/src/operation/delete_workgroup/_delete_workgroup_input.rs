@@ -27,6 +27,7 @@ pub struct DeleteWorkgroupInputBuilder {
 }
 impl DeleteWorkgroupInputBuilder {
     /// <p>The name of the workgroup to be deleted.</p>
+    /// This field is required.
     pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteWorkgroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkgroupInput`](crate::operation::delete_workgroup::DeleteWorkgroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workgroup::DeleteWorkgroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_workgroup::DeleteWorkgroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workgroup::DeleteWorkgroupInput {
             workgroup_name: self.workgroup_name,
         })

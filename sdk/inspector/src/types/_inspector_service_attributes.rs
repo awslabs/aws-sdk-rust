@@ -42,6 +42,7 @@ pub struct InspectorServiceAttributesBuilder {
 }
 impl InspectorServiceAttributesBuilder {
     /// <p>The schema version of this data type.</p>
+    /// This field is required.
     pub fn schema_version(mut self, input: i32) -> Self {
         self.schema_version = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct GetConfiguredTableAssociationOutputBuilder {
 }
 impl GetConfiguredTableAssociationOutputBuilder {
     /// <p>The entire configured table association object.</p>
+    /// This field is required.
     pub fn configured_table_association(mut self, input: crate::types::ConfiguredTableAssociation) -> Self {
         self.configured_table_association = ::std::option::Option::Some(input);
         self

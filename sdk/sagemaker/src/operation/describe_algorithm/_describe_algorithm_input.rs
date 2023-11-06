@@ -27,6 +27,7 @@ pub struct DescribeAlgorithmInputBuilder {
 }
 impl DescribeAlgorithmInputBuilder {
     /// <p>The name of the algorithm to describe.</p>
+    /// This field is required.
     pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeAlgorithmInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAlgorithmInput`](crate::operation::describe_algorithm::DescribeAlgorithmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_algorithm::DescribeAlgorithmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_algorithm::DescribeAlgorithmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_algorithm::DescribeAlgorithmInput {
             algorithm_name: self.algorithm_name,
         })

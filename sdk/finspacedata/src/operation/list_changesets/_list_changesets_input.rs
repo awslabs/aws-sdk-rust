@@ -42,6 +42,7 @@ pub struct ListChangesetsInputBuilder {
 }
 impl ListChangesetsInputBuilder {
     /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListChangesetsInputBuilder {
     /// Consumes the builder and constructs a [`ListChangesetsInput`](crate::operation::list_changesets::ListChangesetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_changesets::ListChangesetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_changesets::ListChangesetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_changesets::ListChangesetsInput {
             dataset_id: self.dataset_id,
             max_results: self.max_results,

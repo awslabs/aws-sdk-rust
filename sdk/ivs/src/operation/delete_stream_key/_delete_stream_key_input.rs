@@ -27,6 +27,7 @@ pub struct DeleteStreamKeyInputBuilder {
 }
 impl DeleteStreamKeyInputBuilder {
     /// <p>ARN of the stream key to be deleted.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteStreamKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamKeyInput`](crate::operation::delete_stream_key::DeleteStreamKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_stream_key::DeleteStreamKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_stream_key::DeleteStreamKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stream_key::DeleteStreamKeyInput { arn: self.arn })
     }
 }

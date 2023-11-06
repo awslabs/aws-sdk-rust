@@ -2,7 +2,7 @@
 pub fn ser_update_directory_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_directory_config::UpdateDirectoryConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.directory_name {
         object.key("DirectoryName").string(var_1.as_str());
     }

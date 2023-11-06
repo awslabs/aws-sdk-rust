@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSite`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`site_id(impl Into<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::set_site_id):<br>required: **true**<br><p> The ID or the Amazon Resource Name (ARN) of the site. </p><br>
     /// - On success, responds with [`DeleteSiteOutput`](crate::operation::delete_site::DeleteSiteOutput)
     /// - On failure, responds with [`SdkError<DeleteSiteError>`](crate::operation::delete_site::DeleteSiteError)
     pub fn delete_site(&self) -> crate::operation::delete_site::builders::DeleteSiteFluentBuilder {

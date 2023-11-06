@@ -34,6 +34,7 @@ pub struct CreateEventActionInputBuilder {
 }
 impl CreateEventActionInputBuilder {
     /// <p>What occurs after a certain event.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl CreateEventActionInputBuilder {
         &self.action
     }
     /// <p>What occurs to start an action.</p>
+    /// This field is required.
     pub fn event(mut self, input: crate::types::Event) -> Self {
         self.event = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl CreateEventActionInputBuilder {
     /// Consumes the builder and constructs a [`CreateEventActionInput`](crate::operation::create_event_action::CreateEventActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_event_action::CreateEventActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_event_action::CreateEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_event_action::CreateEventActionInput {
             action: self.action,
             event: self.event,

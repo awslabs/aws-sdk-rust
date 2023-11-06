@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrCollectionChange {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
-    pub location_name: ::std::option::Option<::std::string::String>,
+    pub location_name: ::std::string::String,
     /// <p>CIDR collection change action. </p>
-    pub action: ::std::option::Option<crate::types::CidrCollectionChangeAction>,
+    pub action: crate::types::CidrCollectionChangeAction,
     /// <p>List of CIDR blocks.</p>
-    pub cidr_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cidr_list: ::std::vec::Vec<::std::string::String>,
 }
 impl CidrCollectionChange {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
-    pub fn location_name(&self) -> ::std::option::Option<&str> {
-        self.location_name.as_deref()
+    pub fn location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.location_name.deref()
     }
     /// <p>CIDR collection change action. </p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::CidrCollectionChangeAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::CidrCollectionChangeAction {
+        &self.action
     }
     /// <p>List of CIDR blocks.</p>
-    pub fn cidr_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidr_list.as_deref()
+    pub fn cidr_list(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.cidr_list.deref()
     }
 }
 impl CidrCollectionChange {
@@ -42,6 +44,7 @@ pub struct CidrCollectionChangeBuilder {
 }
 impl CidrCollectionChangeBuilder {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
+    /// This field is required.
     pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl CidrCollectionChangeBuilder {
         &self.location_name
     }
     /// <p>CIDR collection change action. </p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::CidrCollectionChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,30 @@ impl CidrCollectionChangeBuilder {
         &self.cidr_list
     }
     /// Consumes the builder and constructs a [`CidrCollectionChange`](crate::types::CidrCollectionChange).
-    pub fn build(self) -> crate::types::CidrCollectionChange {
-        crate::types::CidrCollectionChange {
-            location_name: self.location_name,
-            action: self.action,
-            cidr_list: self.cidr_list,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`location_name`](crate::types::builders::CidrCollectionChangeBuilder::location_name)
+    /// - [`action`](crate::types::builders::CidrCollectionChangeBuilder::action)
+    /// - [`cidr_list`](crate::types::builders::CidrCollectionChangeBuilder::cidr_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::CidrCollectionChange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CidrCollectionChange {
+            location_name: self.location_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "location_name",
+                    "location_name was not specified but it is required when building CidrCollectionChange",
+                )
+            })?,
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building CidrCollectionChange",
+                )
+            })?,
+            cidr_list: self.cidr_list.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "cidr_list",
+                    "cidr_list was not specified but it is required when building CidrCollectionChange",
+                )
+            })?,
+        })
     }
 }

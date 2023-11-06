@@ -70,8 +70,10 @@ impl MediaInsightsPipeline {
         self.created_timestamp.as_ref()
     }
     /// <p>The statuses that the elements in a media insights pipeline can have during data processing.</p>
-    pub fn element_statuses(&self) -> ::std::option::Option<&[crate::types::MediaInsightsPipelineElementStatus]> {
-        self.element_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.element_statuses.is_none()`.
+    pub fn element_statuses(&self) -> &[crate::types::MediaInsightsPipelineElementStatus] {
+        self.element_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for MediaInsightsPipeline {

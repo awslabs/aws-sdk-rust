@@ -65,6 +65,7 @@ pub struct UpdateRetrainingSchedulerInputBuilder {
 }
 impl UpdateRetrainingSchedulerInputBuilder {
     /// <p>The name of the model whose retraining scheduler you want to update. </p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +155,7 @@ impl UpdateRetrainingSchedulerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_retraining_scheduler::UpdateRetrainingSchedulerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_retraining_scheduler::UpdateRetrainingSchedulerInput {
             model_name: self.model_name,

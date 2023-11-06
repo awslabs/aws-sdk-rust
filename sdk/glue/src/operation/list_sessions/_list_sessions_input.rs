@@ -110,7 +110,9 @@ impl ListSessionsInputBuilder {
         &self.request_origin
     }
     /// Consumes the builder and constructs a [`ListSessionsInput`](crate::operation::list_sessions::ListSessionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_sessions::ListSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_sessions::ListSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sessions::ListSessionsInput {
             next_token: self.next_token,
             max_results: self.max_results,

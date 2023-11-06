@@ -15,8 +15,10 @@ impl LambdaResource {
         self.lambda_arn.as_deref()
     }
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
-    pub fn event_triggers(&self) -> ::std::option::Option<&[crate::types::EventTriggerDefinition]> {
-        self.event_triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_triggers.is_none()`.
+    pub fn event_triggers(&self) -> &[crate::types::EventTriggerDefinition] {
+        self.event_triggers.as_deref().unwrap_or_default()
     }
 }
 impl LambdaResource {

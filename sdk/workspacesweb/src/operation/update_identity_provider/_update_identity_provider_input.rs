@@ -148,6 +148,7 @@ pub struct UpdateIdentityProviderInputBuilder {
 }
 impl UpdateIdentityProviderInputBuilder {
     /// <p>The ARN of the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -356,8 +357,10 @@ impl UpdateIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`UpdateIdentityProviderInput`](crate::operation::update_identity_provider::UpdateIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_identity_provider::UpdateIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_identity_provider::UpdateIdentityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_identity_provider::UpdateIdentityProviderInput {
             identity_provider_arn: self.identity_provider_arn,
             identity_provider_name: self.identity_provider_name,

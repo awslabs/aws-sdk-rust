@@ -12,8 +12,10 @@ pub struct TerminateInstancesInput {
 impl TerminateInstancesInput {
     /// <p>The IDs of the instances.</p>
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -75,7 +77,7 @@ impl TerminateInstancesInputBuilder {
     /// Consumes the builder and constructs a [`TerminateInstancesInput`](crate::operation::terminate_instances::TerminateInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::terminate_instances::TerminateInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::terminate_instances::TerminateInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_instances::TerminateInstancesInput {
             instance_ids: self.instance_ids,
             dry_run: self.dry_run,

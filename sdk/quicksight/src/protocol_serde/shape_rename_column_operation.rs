@@ -2,12 +2,12 @@
 pub fn ser_rename_column_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RenameColumnOperation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.column_name {
-        object.key("ColumnName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ColumnName").string(input.column_name.as_str());
     }
-    if let Some(var_2) = &input.new_column_name {
-        object.key("NewColumnName").string(var_2.as_str());
+    {
+        object.key("NewColumnName").string(input.new_column_name.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::rename_column_operation_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

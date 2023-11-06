@@ -27,6 +27,7 @@ pub struct GetDataIntegrationInputBuilder {
 }
 impl GetDataIntegrationInputBuilder {
     /// <p>A unique identifier.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetDataIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`GetDataIntegrationInput`](crate::operation::get_data_integration::GetDataIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_integration::GetDataIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_data_integration::GetDataIntegrationInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_data_integration::GetDataIntegrationInput { identifier: self.identifier })
     }
 }

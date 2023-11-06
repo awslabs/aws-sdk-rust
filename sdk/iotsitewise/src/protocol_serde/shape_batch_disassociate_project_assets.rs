@@ -29,11 +29,10 @@ pub fn de_batch_disassociate_project_assets_http_error(
                     output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                         .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_failure_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -46,11 +45,10 @@ pub fn de_batch_disassociate_project_assets_http_error(
                     output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                         .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_request_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -64,11 +62,10 @@ pub fn de_batch_disassociate_project_assets_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -80,11 +77,10 @@ pub fn de_batch_disassociate_project_assets_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsError::generic(generic),
@@ -112,12 +108,12 @@ pub fn de_batch_disassociate_project_assets_http_response(
 
 pub fn ser_batch_disassociate_project_assets_input(
     input: &crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_disassociate_project_assets_input::ser_batch_disassociate_project_assets_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_batch_disassociate_project_assets(

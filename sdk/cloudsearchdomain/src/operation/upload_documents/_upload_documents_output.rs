@@ -28,8 +28,10 @@ impl UploadDocumentsOutput {
         self.deletes
     }
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::DocumentServiceWarning]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[crate::types::DocumentServiceWarning] {
+        self.warnings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UploadDocumentsOutput {

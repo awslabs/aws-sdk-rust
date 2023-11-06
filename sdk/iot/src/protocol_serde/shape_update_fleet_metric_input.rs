@@ -2,7 +2,7 @@
 pub fn ser_update_fleet_metric_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_fleet_metric::UpdateFleetMetricInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aggregation_field {
         object.key("aggregationField").string(var_1.as_str());
     }

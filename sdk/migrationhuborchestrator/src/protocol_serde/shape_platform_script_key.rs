@@ -49,7 +49,7 @@ where
 pub fn ser_platform_script_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PlatformScriptKey,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.linux {
         object.key("linux").string(var_1.as_str());
     }

@@ -11,12 +11,16 @@ pub struct BatchCreateVehicleOutput {
 }
 impl BatchCreateVehicleOutput {
     /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
-    pub fn vehicles(&self) -> ::std::option::Option<&[crate::types::CreateVehicleResponseItem]> {
-        self.vehicles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
+    pub fn vehicles(&self) -> &[crate::types::CreateVehicleResponseItem] {
+        self.vehicles.as_deref().unwrap_or_default()
     }
     /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::CreateVehicleError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::CreateVehicleError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchCreateVehicleOutput {

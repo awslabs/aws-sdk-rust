@@ -127,44 +127,31 @@ pub(crate) mod shape_update_resource_set_input;
 
 pub(crate) mod shape_validation_exception;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
+pub(crate) mod shape_list_of_cell_output;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cell_output;
+pub(crate) mod shape_list_of_cross_account_authorization;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cross_account_authorization;
+pub(crate) mod shape_list_of_list_rules_output;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_list_rules_output;
+pub(crate) mod shape_list_of_message;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_message;
+pub(crate) mod shape_list_of_readiness_check_output;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_readiness_check_output;
+pub(crate) mod shape_list_of_readiness_check_summary;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_readiness_check_summary;
+pub(crate) mod shape_list_of_recommendation;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_recommendation;
+pub(crate) mod shape_list_of_recovery_group_output;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_recovery_group_output;
+pub(crate) mod shape_list_of_resource;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_resource;
+pub(crate) mod shape_list_of_resource_result;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_resource_result;
+pub(crate) mod shape_list_of_resource_set_output;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_resource_set_output;
+pub(crate) mod shape_list_of_rule_result;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_rule_result;
+pub(crate) mod shape_list_of_string;
 
 pub(crate) mod shape_resource;
 

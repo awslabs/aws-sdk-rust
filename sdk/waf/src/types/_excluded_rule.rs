@@ -9,12 +9,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExcludedRule {
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
-    pub rule_id: ::std::option::Option<::std::string::String>,
+    pub rule_id: ::std::string::String,
 }
 impl ExcludedRule {
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
-        self.rule_id.as_deref()
+    pub fn rule_id(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_id.deref()
     }
 }
 impl ExcludedRule {
@@ -32,6 +33,7 @@ pub struct ExcludedRuleBuilder {
 }
 impl ExcludedRuleBuilder {
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +48,16 @@ impl ExcludedRuleBuilder {
         &self.rule_id
     }
     /// Consumes the builder and constructs a [`ExcludedRule`](crate::types::ExcludedRule).
-    pub fn build(self) -> crate::types::ExcludedRule {
-        crate::types::ExcludedRule { rule_id: self.rule_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_id`](crate::types::builders::ExcludedRuleBuilder::rule_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExcludedRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExcludedRule {
+            rule_id: self.rule_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_id",
+                    "rule_id was not specified but it is required when building ExcludedRule",
+                )
+            })?,
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_output(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Output,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audio_description_names {
         let mut array_2 = object.key("audioDescriptionNames").start_array();
         for item_3 in var_1 {
@@ -52,12 +52,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioDescriptionNames" => {
-                            builder =
-                                builder.set_audio_description_names(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_audio_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "captionDescriptionNames" => {
-                            builder =
-                                builder.set_caption_description_names(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_caption_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "outputName" => {
                             builder = builder.set_output_name(
@@ -86,7 +84,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::output_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

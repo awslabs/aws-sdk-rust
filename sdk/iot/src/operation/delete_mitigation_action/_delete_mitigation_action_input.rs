@@ -27,6 +27,7 @@ pub struct DeleteMitigationActionInputBuilder {
 }
 impl DeleteMitigationActionInputBuilder {
     /// <p>The name of the mitigation action that you want to delete.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteMitigationActionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMitigationActionInput`](crate::operation::delete_mitigation_action::DeleteMitigationActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_mitigation_action::DeleteMitigationActionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_mitigation_action::DeleteMitigationActionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_mitigation_action::DeleteMitigationActionInput {
             action_name: self.action_name,
         })

@@ -14,8 +14,10 @@ impl UpdateBandwidthRateLimitScheduleInput {
         self.gateway_arn.as_deref()
     }
     /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
-    pub fn bandwidth_rate_limit_intervals(&self) -> ::std::option::Option<&[crate::types::BandwidthRateLimitInterval]> {
-        self.bandwidth_rate_limit_intervals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bandwidth_rate_limit_intervals.is_none()`.
+    pub fn bandwidth_rate_limit_intervals(&self) -> &[crate::types::BandwidthRateLimitInterval] {
+        self.bandwidth_rate_limit_intervals.as_deref().unwrap_or_default()
     }
 }
 impl UpdateBandwidthRateLimitScheduleInput {
@@ -34,6 +36,7 @@ pub struct UpdateBandwidthRateLimitScheduleInputBuilder {
 }
 impl UpdateBandwidthRateLimitScheduleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,7 +78,7 @@ impl UpdateBandwidthRateLimitScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput {

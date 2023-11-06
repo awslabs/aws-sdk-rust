@@ -8,8 +8,10 @@ pub struct DescribeAssessmentTemplatesInput {
 }
 impl DescribeAssessmentTemplatesInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn assessment_template_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.assessment_template_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_template_arns.is_none()`.
+    pub fn assessment_template_arns(&self) -> &[::std::string::String] {
+        self.assessment_template_arns.as_deref().unwrap_or_default()
     }
 }
 impl DescribeAssessmentTemplatesInput {
@@ -50,7 +52,7 @@ impl DescribeAssessmentTemplatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput {
             assessment_template_arns: self.assessment_template_arns,

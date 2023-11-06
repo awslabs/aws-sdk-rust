@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRulesetsOutput {
     /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
-    pub rulesets: ::std::option::Option<::std::vec::Vec<crate::types::RulesetItem>>,
+    pub rulesets: ::std::vec::Vec<crate::types::RulesetItem>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRulesetsOutput {
     /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
-    pub fn rulesets(&self) -> ::std::option::Option<&[crate::types::RulesetItem]> {
-        self.rulesets.as_deref()
+    pub fn rulesets(&self) -> &[crate::types::RulesetItem] {
+        use std::ops::Deref;
+        self.rulesets.deref()
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListRulesetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRulesetsOutput`](crate::operation::list_rulesets::ListRulesetsOutput).
-    pub fn build(self) -> crate::operation::list_rulesets::ListRulesetsOutput {
-        crate::operation::list_rulesets::ListRulesetsOutput {
-            rulesets: self.rulesets,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rulesets`](crate::operation::list_rulesets::builders::ListRulesetsOutputBuilder::rulesets)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_rulesets::ListRulesetsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_rulesets::ListRulesetsOutput {
+            rulesets: self.rulesets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rulesets",
+                    "rulesets was not specified but it is required when building ListRulesetsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

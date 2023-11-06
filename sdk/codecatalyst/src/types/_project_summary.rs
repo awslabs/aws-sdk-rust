@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The name of the project in the space.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project.</p>
@@ -13,8 +13,9 @@ pub struct ProjectSummary {
 }
 impl ProjectSummary {
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct ProjectSummaryBuilder {
 }
 impl ProjectSummaryBuilder {
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl ProjectSummaryBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
-    pub fn build(self) -> crate::types::ProjectSummary {
-        crate::types::ProjectSummary {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ProjectSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectSummary {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ProjectSummary",
+                )
+            })?,
             display_name: self.display_name,
             description: self.description,
-        }
+        })
     }
 }

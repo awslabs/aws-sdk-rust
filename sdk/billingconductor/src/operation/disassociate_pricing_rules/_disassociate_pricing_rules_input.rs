@@ -14,8 +14,10 @@ impl DisassociatePricingRulesInput {
         self.arn.as_deref()
     }
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    pub fn pricing_rule_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pricing_rule_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_rule_arns.is_none()`.
+    pub fn pricing_rule_arns(&self) -> &[::std::string::String] {
+        self.pricing_rule_arns.as_deref().unwrap_or_default()
     }
 }
 impl DisassociatePricingRulesInput {
@@ -34,6 +36,7 @@ pub struct DisassociatePricingRulesInputBuilder {
 }
 impl DisassociatePricingRulesInputBuilder {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl DisassociatePricingRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput {
             arn: self.arn,

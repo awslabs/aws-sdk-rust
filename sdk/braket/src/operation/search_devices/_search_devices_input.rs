@@ -20,8 +20,10 @@ impl SearchDevicesInput {
         self.max_results
     }
     /// <p>The filter values to use to search for a device.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SearchDevicesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SearchDevicesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl SearchDevicesInput {
@@ -91,7 +93,7 @@ impl SearchDevicesInputBuilder {
     /// Consumes the builder and constructs a [`SearchDevicesInput`](crate::operation::search_devices::SearchDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_devices::SearchDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_devices::SearchDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_devices::SearchDevicesInput {
             next_token: self.next_token,
             max_results: self.max_results,

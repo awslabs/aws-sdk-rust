@@ -2,7 +2,7 @@
 pub fn ser_resource_data_container(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataContainer,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.local_device_resource_data {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LocalDeviceResourceData").start_object();

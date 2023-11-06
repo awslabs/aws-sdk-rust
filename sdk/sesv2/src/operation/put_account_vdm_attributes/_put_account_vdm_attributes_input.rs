@@ -28,6 +28,7 @@ pub struct PutAccountVdmAttributesInputBuilder {
 }
 impl PutAccountVdmAttributesInputBuilder {
     /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
+    /// This field is required.
     pub fn vdm_attributes(mut self, input: crate::types::VdmAttributes) -> Self {
         self.vdm_attributes = ::std::option::Option::Some(input);
         self
@@ -46,7 +47,7 @@ impl PutAccountVdmAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput {
             vdm_attributes: self.vdm_attributes,

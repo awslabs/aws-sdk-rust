@@ -2,7 +2,7 @@
 pub fn ser_update_event_destination_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_event_destination::UpdateEventDestinationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configuration_set_name {
         object.key("ConfigurationSetName").string(var_1.as_str());
     }

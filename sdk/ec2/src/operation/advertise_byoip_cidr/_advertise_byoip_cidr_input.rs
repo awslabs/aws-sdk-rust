@@ -34,6 +34,7 @@ pub struct AdvertiseByoipCidrInputBuilder {
 }
 impl AdvertiseByoipCidrInputBuilder {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl AdvertiseByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`AdvertiseByoipCidrInput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput {
             cidr: self.cidr,
             dry_run: self.dry_run,

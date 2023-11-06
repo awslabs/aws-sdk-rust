@@ -2,15 +2,15 @@
 pub fn ser_update_global_secondary_index_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateGlobalSecondaryIndexAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.index_name {
-        object.key("IndexName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("IndexName").string(input.index_name.as_str());
     }
-    if let Some(var_2) = &input.provisioned_throughput {
+    if let Some(var_1) = &input.provisioned_throughput {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("ProvisionedThroughput").start_object();
-        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("ProvisionedThroughput").start_object();
+        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

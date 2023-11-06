@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExponentialRolloutRate {
     /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
-    pub base_rate_per_minute: ::std::option::Option<i32>,
+    pub base_rate_per_minute: i32,
     /// <p>The exponential factor to increase the rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
-    pub increment_factor: ::std::option::Option<f64>,
+    pub increment_factor: f64,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     pub rate_increase_criteria: ::std::option::Option<crate::types::RateIncreaseCriteria>,
 }
 impl ExponentialRolloutRate {
     /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
-    pub fn base_rate_per_minute(&self) -> ::std::option::Option<i32> {
+    pub fn base_rate_per_minute(&self) -> i32 {
         self.base_rate_per_minute
     }
     /// <p>The exponential factor to increase the rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
-    pub fn increment_factor(&self) -> ::std::option::Option<f64> {
+    pub fn increment_factor(&self) -> f64 {
         self.increment_factor
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
@@ -44,6 +44,7 @@ pub struct ExponentialRolloutRateBuilder {
 }
 impl ExponentialRolloutRateBuilder {
     /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
+    /// This field is required.
     pub fn base_rate_per_minute(mut self, input: i32) -> Self {
         self.base_rate_per_minute = ::std::option::Option::Some(input);
         self
@@ -59,6 +60,7 @@ impl ExponentialRolloutRateBuilder {
     }
     /// <p>The exponential factor to increase the rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+    /// This field is required.
     pub fn increment_factor(mut self, input: f64) -> Self {
         self.increment_factor = ::std::option::Option::Some(input);
         self
@@ -75,6 +77,7 @@ impl ExponentialRolloutRateBuilder {
         &self.increment_factor
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
+    /// This field is required.
     pub fn rate_increase_criteria(mut self, input: crate::types::RateIncreaseCriteria) -> Self {
         self.rate_increase_criteria = ::std::option::Option::Some(input);
         self
@@ -89,11 +92,24 @@ impl ExponentialRolloutRateBuilder {
         &self.rate_increase_criteria
     }
     /// Consumes the builder and constructs a [`ExponentialRolloutRate`](crate::types::ExponentialRolloutRate).
-    pub fn build(self) -> crate::types::ExponentialRolloutRate {
-        crate::types::ExponentialRolloutRate {
-            base_rate_per_minute: self.base_rate_per_minute,
-            increment_factor: self.increment_factor,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`base_rate_per_minute`](crate::types::builders::ExponentialRolloutRateBuilder::base_rate_per_minute)
+    /// - [`increment_factor`](crate::types::builders::ExponentialRolloutRateBuilder::increment_factor)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExponentialRolloutRate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExponentialRolloutRate {
+            base_rate_per_minute: self.base_rate_per_minute.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "base_rate_per_minute",
+                    "base_rate_per_minute was not specified but it is required when building ExponentialRolloutRate",
+                )
+            })?,
+            increment_factor: self.increment_factor.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "increment_factor",
+                    "increment_factor was not specified but it is required when building ExponentialRolloutRate",
+                )
+            })?,
             rate_increase_criteria: self.rate_increase_criteria,
-        }
+        })
     }
 }

@@ -25,8 +25,10 @@ impl RemediationExecutionStatus {
         self.state.as_ref()
     }
     /// <p>Details of every step.</p>
-    pub fn step_details(&self) -> ::std::option::Option<&[crate::types::RemediationExecutionStep]> {
-        self.step_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_details.is_none()`.
+    pub fn step_details(&self) -> &[crate::types::RemediationExecutionStep] {
+        self.step_details.as_deref().unwrap_or_default()
     }
     /// <p>Start time when the remediation was executed.</p>
     pub fn invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

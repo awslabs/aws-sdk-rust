@@ -66,6 +66,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the environment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl CreateEnvironmentInputBuilder {
         &self.description
     }
     /// <p>The network fabric type of the environment.</p>
+    /// This field is required.
     pub fn network_fabric_type(mut self, input: crate::types::NetworkFabricType) -> Self {
         self.network_fabric_type = ::std::option::Option::Some(input);
         self
@@ -144,7 +146,7 @@ impl CreateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
             name: self.name,
             description: self.description,

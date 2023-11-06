@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataIntegration`](crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_integration_identifier(impl Into<String>)`](crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder::data_integration_identifier) / [`set_data_integration_identifier(Option<String>)`](crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder::set_data_integration_identifier): <p>A unique identifier for the DataIntegration.</p>
+    ///   - [`data_integration_identifier(impl Into<String>)`](crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder::data_integration_identifier) / [`set_data_integration_identifier(Option<String>)`](crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder::set_data_integration_identifier):<br>required: **true**<br><p>A unique identifier for the DataIntegration.</p><br>
     /// - On success, responds with [`DeleteDataIntegrationOutput`](crate::operation::delete_data_integration::DeleteDataIntegrationOutput)
     /// - On failure, responds with [`SdkError<DeleteDataIntegrationError>`](crate::operation::delete_data_integration::DeleteDataIntegrationError)
     pub fn delete_data_integration(&self) -> crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder {

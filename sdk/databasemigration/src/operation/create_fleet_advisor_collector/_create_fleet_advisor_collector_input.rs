@@ -48,6 +48,7 @@ pub struct CreateFleetAdvisorCollectorInputBuilder {
 }
 impl CreateFleetAdvisorCollectorInputBuilder {
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+    /// This field is required.
     pub fn collector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collector_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateFleetAdvisorCollectorInputBuilder {
         &self.description
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreateFleetAdvisorCollectorInputBuilder {
         &self.service_access_role_arn
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl CreateFleetAdvisorCollectorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput {
             collector_name: self.collector_name,

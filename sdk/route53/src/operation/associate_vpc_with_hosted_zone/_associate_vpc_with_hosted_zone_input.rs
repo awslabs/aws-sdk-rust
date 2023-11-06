@@ -45,6 +45,7 @@ pub struct AssociateVpcWithHostedZoneInputBuilder {
 impl AssociateVpcWithHostedZoneInputBuilder {
     /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
     /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +62,7 @@ impl AssociateVpcWithHostedZoneInputBuilder {
         &self.hosted_zone_id
     }
     /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
+    /// This field is required.
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
         self
@@ -93,7 +95,7 @@ impl AssociateVpcWithHostedZoneInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneInput {
             hosted_zone_id: self.hosted_zone_id,

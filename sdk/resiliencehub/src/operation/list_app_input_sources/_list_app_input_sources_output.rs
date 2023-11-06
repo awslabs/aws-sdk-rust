@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppInputSourcesOutput {
     /// <p>The list of Resilience Hub application input sources.</p>
-    pub app_input_sources: ::std::option::Option<::std::vec::Vec<crate::types::AppInputSource>>,
+    pub app_input_sources: ::std::vec::Vec<crate::types::AppInputSource>,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppInputSourcesOutput {
     /// <p>The list of Resilience Hub application input sources.</p>
-    pub fn app_input_sources(&self) -> ::std::option::Option<&[crate::types::AppInputSource]> {
-        self.app_input_sources.as_deref()
+    pub fn app_input_sources(&self) -> &[crate::types::AppInputSource] {
+        use std::ops::Deref;
+        self.app_input_sources.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListAppInputSourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppInputSourcesOutput`](crate::operation::list_app_input_sources::ListAppInputSourcesOutput).
-    pub fn build(self) -> crate::operation::list_app_input_sources::ListAppInputSourcesOutput {
-        crate::operation::list_app_input_sources::ListAppInputSourcesOutput {
-            app_input_sources: self.app_input_sources,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_input_sources`](crate::operation::list_app_input_sources::builders::ListAppInputSourcesOutputBuilder::app_input_sources)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_app_input_sources::ListAppInputSourcesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_app_input_sources::ListAppInputSourcesOutput {
+            app_input_sources: self.app_input_sources.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "app_input_sources",
+                    "app_input_sources was not specified but it is required when building ListAppInputSourcesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

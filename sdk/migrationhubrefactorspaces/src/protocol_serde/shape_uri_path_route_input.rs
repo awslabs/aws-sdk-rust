@@ -47,7 +47,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::uri_path_route_input_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -58,27 +60,27 @@ where
 pub fn ser_uri_path_route_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UriPathRouteInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_path {
-        object.key("SourcePath").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SourcePath").string(input.source_path.as_str());
     }
-    if let Some(var_2) = &input.activation_state {
-        object.key("ActivationState").string(var_2.as_str());
+    {
+        object.key("ActivationState").string(input.activation_state.as_str());
     }
-    if let Some(var_3) = &input.methods {
-        let mut array_4 = object.key("Methods").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.methods {
+        let mut array_2 = object.key("Methods").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.include_child_paths {
-        object.key("IncludeChildPaths").boolean(*var_6);
+    if let Some(var_4) = &input.include_child_paths {
+        object.key("IncludeChildPaths").boolean(*var_4);
     }
-    if let Some(var_7) = &input.append_source_path {
-        object.key("AppendSourcePath").boolean(*var_7);
+    if let Some(var_5) = &input.append_source_path {
+        object.key("AppendSourcePath").boolean(*var_5);
     }
     Ok(())
 }

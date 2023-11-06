@@ -42,8 +42,10 @@ impl ListTimelineEventsInput {
     /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::TimelineEventSort> {
@@ -82,6 +84,7 @@ pub struct ListTimelineEventsInputBuilder {
 }
 impl ListTimelineEventsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -204,7 +207,8 @@ impl ListTimelineEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListTimelineEventsInput`](crate::operation::list_timeline_events::ListTimelineEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_timeline_events::ListTimelineEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_timeline_events::ListTimelineEventsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_timeline_events::ListTimelineEventsInput {
             incident_record_arn: self.incident_record_arn,
             filters: self.filters,

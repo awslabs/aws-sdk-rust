@@ -55,6 +55,7 @@ pub struct ExportEarthObservationJobInputBuilder {
 }
 impl ExportEarthObservationJobInputBuilder {
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ExportEarthObservationJobInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl ExportEarthObservationJobInputBuilder {
         &self.execution_role_arn
     }
     /// <p>An object containing information about the output file.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfigInput) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -129,7 +132,7 @@ impl ExportEarthObservationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_earth_observation_job::ExportEarthObservationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_earth_observation_job::ExportEarthObservationJobInput {
             arn: self.arn,

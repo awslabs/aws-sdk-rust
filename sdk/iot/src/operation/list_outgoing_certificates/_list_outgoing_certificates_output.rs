@@ -12,8 +12,10 @@ pub struct ListOutgoingCertificatesOutput {
 }
 impl ListOutgoingCertificatesOutput {
     /// <p>The certificates that are being transferred but not yet accepted.</p>
-    pub fn outgoing_certificates(&self) -> ::std::option::Option<&[crate::types::OutgoingCertificate]> {
-        self.outgoing_certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outgoing_certificates.is_none()`.
+    pub fn outgoing_certificates(&self) -> &[crate::types::OutgoingCertificate] {
+        self.outgoing_certificates.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

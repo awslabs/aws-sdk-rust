@@ -27,6 +27,7 @@ pub struct GetControlOperationInputBuilder {
 }
 impl GetControlOperationInputBuilder {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
+    /// This field is required.
     pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetControlOperationInputBuilder {
     /// Consumes the builder and constructs a [`GetControlOperationInput`](crate::operation::get_control_operation::GetControlOperationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_control_operation::GetControlOperationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_control_operation::GetControlOperationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_control_operation::GetControlOperationInput {
             operation_identifier: self.operation_identifier,

@@ -55,6 +55,7 @@ impl AssociateInstanceEventWindowInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the event window.</p>
+    /// This field is required.
     pub fn instance_event_window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_event_window_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl AssociateInstanceEventWindowInputBuilder {
         &self.instance_event_window_id
     }
     /// <p>One or more targets associated with the specified event window.</p>
+    /// This field is required.
     pub fn association_target(mut self, input: crate::types::InstanceEventWindowAssociationRequest) -> Self {
         self.association_target = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl AssociateInstanceEventWindowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_instance_event_window::AssociateInstanceEventWindowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_instance_event_window::AssociateInstanceEventWindowInput {
             dry_run: self.dry_run,

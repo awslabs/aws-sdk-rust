@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionConfigurationProperty {
     /// <p>The name of the action configuration property.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Whether the configuration property is a required value.</p>
     pub required: bool,
     /// <p>Whether the configuration property is a key.</p>
@@ -23,8 +23,9 @@ pub struct ActionConfigurationProperty {
 }
 impl ActionConfigurationProperty {
     /// <p>The name of the action configuration property.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Whether the configuration property is a required value.</p>
     pub fn required(&self) -> bool {
@@ -74,6 +75,7 @@ pub struct ActionConfigurationPropertyBuilder {
 }
 impl ActionConfigurationPropertyBuilder {
     /// <p>The name of the action configuration property.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +90,7 @@ impl ActionConfigurationPropertyBuilder {
         &self.name
     }
     /// <p>Whether the configuration property is a required value.</p>
+    /// This field is required.
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
         self
@@ -102,6 +105,7 @@ impl ActionConfigurationPropertyBuilder {
         &self.required
     }
     /// <p>Whether the configuration property is a key.</p>
+    /// This field is required.
     pub fn key(mut self, input: bool) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -117,6 +121,7 @@ impl ActionConfigurationPropertyBuilder {
     }
     /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
     /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
+    /// This field is required.
     pub fn secret(mut self, input: bool) -> Self {
         self.secret = ::std::option::Option::Some(input);
         self
@@ -178,15 +183,22 @@ impl ActionConfigurationPropertyBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ActionConfigurationProperty`](crate::types::ActionConfigurationProperty).
-    pub fn build(self) -> crate::types::ActionConfigurationProperty {
-        crate::types::ActionConfigurationProperty {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ActionConfigurationPropertyBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionConfigurationProperty, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActionConfigurationProperty {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ActionConfigurationProperty",
+                )
+            })?,
             required: self.required.unwrap_or_default(),
             key: self.key.unwrap_or_default(),
             secret: self.secret.unwrap_or_default(),
             queryable: self.queryable.unwrap_or_default(),
             description: self.description,
             r#type: self.r#type,
-        }
+        })
     }
 }

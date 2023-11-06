@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSchemaMapping`](crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_name(impl Into<String>)`](crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder::schema_name) / [`set_schema_name(Option<String>)`](crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder::set_schema_name): <p>The name of the schema to delete.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder::schema_name) / [`set_schema_name(Option<String>)`](crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder::set_schema_name):<br>required: **true**<br><p>The name of the schema to delete.</p><br>
     /// - On success, responds with [`DeleteSchemaMappingOutput`](crate::operation::delete_schema_mapping::DeleteSchemaMappingOutput) with field(s):
-    ///   - [`message(Option<String>)`](crate::operation::delete_schema_mapping::DeleteSchemaMappingOutput::message): <p>A successful operation message.</p>
+    ///   - [`message(String)`](crate::operation::delete_schema_mapping::DeleteSchemaMappingOutput::message): <p>A successful operation message.</p>
     /// - On failure, responds with [`SdkError<DeleteSchemaMappingError>`](crate::operation::delete_schema_mapping::DeleteSchemaMappingError)
     pub fn delete_schema_mapping(&self) -> crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder {
         crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingFluentBuilder::new(self.handle.clone())

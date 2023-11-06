@@ -2,9 +2,9 @@
 pub fn ser_tag_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TagFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.tag {
-        object.key("tag").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("tag").string(input.tag.as_str());
     }
     Ok(())
 }

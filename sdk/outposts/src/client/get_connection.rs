@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConnection`](crate::operation::get_connection::builders::GetConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::set_connection_id): <p> The ID of the connection. </p>
+    ///   - [`connection_id(impl Into<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::set_connection_id):<br>required: **true**<br><p> The ID of the connection. </p><br>
     /// - On success, responds with [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput) with field(s):
     ///   - [`connection_id(Option<String>)`](crate::operation::get_connection::GetConnectionOutput::connection_id): <p> The ID of the connection. </p>
     ///   - [`connection_details(Option<ConnectionDetails>)`](crate::operation::get_connection::GetConnectionOutput::connection_details): <p> Information about the connection. </p>

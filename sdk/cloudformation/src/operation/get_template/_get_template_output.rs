@@ -18,8 +18,10 @@ impl GetTemplateOutput {
         self.template_body.as_deref()
     }
     /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
-    pub fn stages_available(&self) -> ::std::option::Option<&[crate::types::TemplateStage]> {
-        self.stages_available.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stages_available.is_none()`.
+    pub fn stages_available(&self) -> &[crate::types::TemplateStage] {
+        self.stages_available.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTemplateOutput {

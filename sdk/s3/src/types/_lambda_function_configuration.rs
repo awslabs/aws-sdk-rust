@@ -7,9 +7,9 @@ pub struct LambdaFunctionConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
-    pub lambda_function_arn: ::std::option::Option<::std::string::String>,
+    pub lambda_function_arn: ::std::string::String,
     /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::vec::Vec<crate::types::Event>,
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: ::std::option::Option<crate::types::NotificationConfigurationFilter>,
 }
@@ -19,12 +19,14 @@ impl LambdaFunctionConfiguration {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
-        self.lambda_function_arn.as_deref()
+    pub fn lambda_function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.lambda_function_arn.deref()
     }
     /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::Event] {
+        use std::ops::Deref;
+        self.events.deref()
     }
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::NotificationConfigurationFilter> {
@@ -63,6 +65,7 @@ impl LambdaFunctionConfigurationBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
+    /// This field is required.
     pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +114,25 @@ impl LambdaFunctionConfigurationBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`LambdaFunctionConfiguration`](crate::types::LambdaFunctionConfiguration).
-    pub fn build(self) -> crate::types::LambdaFunctionConfiguration {
-        crate::types::LambdaFunctionConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lambda_function_arn`](crate::types::builders::LambdaFunctionConfigurationBuilder::lambda_function_arn)
+    /// - [`events`](crate::types::builders::LambdaFunctionConfigurationBuilder::events)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaFunctionConfiguration {
             id: self.id,
-            lambda_function_arn: self.lambda_function_arn,
-            events: self.events,
+            lambda_function_arn: self.lambda_function_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "lambda_function_arn",
+                    "lambda_function_arn was not specified but it is required when building LambdaFunctionConfiguration",
+                )
+            })?,
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building LambdaFunctionConfiguration",
+                )
+            })?,
             filter: self.filter,
-        }
+        })
     }
 }

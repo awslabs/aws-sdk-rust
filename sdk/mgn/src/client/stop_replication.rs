@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopReplication`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::set_source_server_id): <p>Stop Replication Request source server ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::set_account_id): <p>Stop Replication Request account ID.</p>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::set_source_server_id):<br>required: **true**<br><p>Stop Replication Request source server ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::stop_replication::builders::StopReplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>Stop Replication Request account ID.</p><br>
     /// - On success, responds with [`StopReplicationOutput`](crate::operation::stop_replication::StopReplicationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::stop_replication::StopReplicationOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::stop_replication::StopReplicationOutput::arn): <p>Source server ARN.</p>
     ///   - [`is_archived(Option<bool>)`](crate::operation::stop_replication::StopReplicationOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::stop_replication::StopReplicationOutput::tags): <p>Source server Tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::stop_replication::StopReplicationOutput::tags): <p>Source server Tags.</p>
     ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::operation::stop_replication::StopReplicationOutput::launched_instance): <p>Source server launched instance.</p>
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::operation::stop_replication::StopReplicationOutput::data_replication_info): <p>Source server data replication info.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::operation::stop_replication::StopReplicationOutput::life_cycle): <p>Source server lifecycle state.</p>

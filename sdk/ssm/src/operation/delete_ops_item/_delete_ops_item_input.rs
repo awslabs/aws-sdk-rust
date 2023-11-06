@@ -27,6 +27,7 @@ pub struct DeleteOpsItemInputBuilder {
 }
 impl DeleteOpsItemInputBuilder {
     /// <p>The ID of the OpsItem that you want to delete.</p>
+    /// This field is required.
     pub fn ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteOpsItemInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOpsItemInput`](crate::operation::delete_ops_item::DeleteOpsItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ops_item::DeleteOpsItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ops_item::DeleteOpsItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ops_item::DeleteOpsItemInput {
             ops_item_id: self.ops_item_id,
         })

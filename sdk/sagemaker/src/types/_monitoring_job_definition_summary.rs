@@ -49,6 +49,7 @@ pub struct MonitoringJobDefinitionSummaryBuilder {
 }
 impl MonitoringJobDefinitionSummaryBuilder {
     /// <p>The name of the monitoring job.</p>
+    /// This field is required.
     pub fn monitoring_job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl MonitoringJobDefinitionSummaryBuilder {
         &self.monitoring_job_definition_name
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
+    /// This field is required.
     pub fn monitoring_job_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_job_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl MonitoringJobDefinitionSummaryBuilder {
         &self.monitoring_job_definition_arn
     }
     /// <p>The time that the monitoring job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl MonitoringJobDefinitionSummaryBuilder {
         &self.creation_time
     }
     /// <p>The name of the endpoint that the job monitors.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self

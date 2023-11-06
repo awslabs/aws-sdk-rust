@@ -4,19 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAccountStatusOutput {
     /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountState>>,
+    pub accounts: ::std::vec::Vec<crate::types::AccountState>,
     /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
     pub failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,
     _request_id: Option<String>,
 }
 impl BatchGetAccountStatusOutput {
     /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[crate::types::AccountState]> {
-        self.accounts.as_deref()
+    pub fn accounts(&self) -> &[crate::types::AccountState] {
+        use std::ops::Deref;
+        self.accounts.deref()
     }
     /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
-    pub fn failed_accounts(&self) -> ::std::option::Option<&[crate::types::FailedAccount]> {
-        self.failed_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_accounts.is_none()`.
+    pub fn failed_accounts(&self) -> &[crate::types::FailedAccount] {
+        self.failed_accounts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetAccountStatusOutput {
@@ -90,11 +93,23 @@ impl BatchGetAccountStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetAccountStatusOutput`](crate::operation::batch_get_account_status::BatchGetAccountStatusOutput).
-    pub fn build(self) -> crate::operation::batch_get_account_status::BatchGetAccountStatusOutput {
-        crate::operation::batch_get_account_status::BatchGetAccountStatusOutput {
-            accounts: self.accounts,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`accounts`](crate::operation::batch_get_account_status::builders::BatchGetAccountStatusOutputBuilder::accounts)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_account_status::BatchGetAccountStatusOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_get_account_status::BatchGetAccountStatusOutput {
+            accounts: self.accounts.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "accounts",
+                    "accounts was not specified but it is required when building BatchGetAccountStatusOutput",
+                )
+            })?,
             failed_accounts: self.failed_accounts,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinInstruction {
     /// <p>The operand on the left side of a join.</p>
-    pub left_operand: ::std::option::Option<::std::string::String>,
+    pub left_operand: ::std::string::String,
     /// <p>The operand on the right side of a join.</p>
-    pub right_operand: ::std::option::Option<::std::string::String>,
+    pub right_operand: ::std::string::String,
     /// <p>Join key properties of the left operand.</p>
     pub left_join_key_properties: ::std::option::Option<crate::types::JoinKeyProperties>,
     /// <p>Join key properties of the right operand.</p>
     pub right_join_key_properties: ::std::option::Option<crate::types::JoinKeyProperties>,
     /// <p>The type of join that it is.</p>
-    pub r#type: ::std::option::Option<crate::types::JoinType>,
+    pub r#type: crate::types::JoinType,
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
-    pub on_clause: ::std::option::Option<::std::string::String>,
+    pub on_clause: ::std::string::String,
 }
 impl JoinInstruction {
     /// <p>The operand on the left side of a join.</p>
-    pub fn left_operand(&self) -> ::std::option::Option<&str> {
-        self.left_operand.as_deref()
+    pub fn left_operand(&self) -> &str {
+        use std::ops::Deref;
+        self.left_operand.deref()
     }
     /// <p>The operand on the right side of a join.</p>
-    pub fn right_operand(&self) -> ::std::option::Option<&str> {
-        self.right_operand.as_deref()
+    pub fn right_operand(&self) -> &str {
+        use std::ops::Deref;
+        self.right_operand.deref()
     }
     /// <p>Join key properties of the left operand.</p>
     pub fn left_join_key_properties(&self) -> ::std::option::Option<&crate::types::JoinKeyProperties> {
@@ -35,12 +37,13 @@ impl JoinInstruction {
         self.right_join_key_properties.as_ref()
     }
     /// <p>The type of join that it is.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::JoinType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::JoinType {
+        &self.r#type
     }
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
-    pub fn on_clause(&self) -> ::std::option::Option<&str> {
-        self.on_clause.as_deref()
+    pub fn on_clause(&self) -> &str {
+        use std::ops::Deref;
+        self.on_clause.deref()
     }
 }
 impl JoinInstruction {
@@ -63,6 +66,7 @@ pub struct JoinInstructionBuilder {
 }
 impl JoinInstructionBuilder {
     /// <p>The operand on the left side of a join.</p>
+    /// This field is required.
     pub fn left_operand(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.left_operand = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl JoinInstructionBuilder {
         &self.left_operand
     }
     /// <p>The operand on the right side of a join.</p>
+    /// This field is required.
     pub fn right_operand(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.right_operand = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +124,7 @@ impl JoinInstructionBuilder {
         &self.right_join_key_properties
     }
     /// <p>The type of join that it is.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::JoinType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -133,6 +139,7 @@ impl JoinInstructionBuilder {
         &self.r#type
     }
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
+    /// This field is required.
     pub fn on_clause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_clause = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +154,39 @@ impl JoinInstructionBuilder {
         &self.on_clause
     }
     /// Consumes the builder and constructs a [`JoinInstruction`](crate::types::JoinInstruction).
-    pub fn build(self) -> crate::types::JoinInstruction {
-        crate::types::JoinInstruction {
-            left_operand: self.left_operand,
-            right_operand: self.right_operand,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`left_operand`](crate::types::builders::JoinInstructionBuilder::left_operand)
+    /// - [`right_operand`](crate::types::builders::JoinInstructionBuilder::right_operand)
+    /// - [`r#type`](crate::types::builders::JoinInstructionBuilder::r#type)
+    /// - [`on_clause`](crate::types::builders::JoinInstructionBuilder::on_clause)
+    pub fn build(self) -> ::std::result::Result<crate::types::JoinInstruction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JoinInstruction {
+            left_operand: self.left_operand.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "left_operand",
+                    "left_operand was not specified but it is required when building JoinInstruction",
+                )
+            })?,
+            right_operand: self.right_operand.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "right_operand",
+                    "right_operand was not specified but it is required when building JoinInstruction",
+                )
+            })?,
             left_join_key_properties: self.left_join_key_properties,
             right_join_key_properties: self.right_join_key_properties,
-            r#type: self.r#type,
-            on_clause: self.on_clause,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building JoinInstruction",
+                )
+            })?,
+            on_clause: self.on_clause.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "on_clause",
+                    "on_clause was not specified but it is required when building JoinInstruction",
+                )
+            })?,
+        })
     }
 }

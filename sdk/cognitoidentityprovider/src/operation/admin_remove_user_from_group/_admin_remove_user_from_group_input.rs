@@ -50,6 +50,7 @@ pub struct AdminRemoveUserFromGroupInputBuilder {
 }
 impl AdminRemoveUserFromGroupInputBuilder {
     /// <p>The user pool ID for the user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl AdminRemoveUserFromGroupInputBuilder {
         &self.user_pool_id
     }
     /// <p>The username for the user.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl AdminRemoveUserFromGroupInputBuilder {
         &self.username
     }
     /// <p>The group name.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +99,7 @@ impl AdminRemoveUserFromGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput {
             user_pool_id: self.user_pool_id,

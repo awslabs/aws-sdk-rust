@@ -21,8 +21,10 @@ impl PersonMatch {
         self.person.as_ref()
     }
     /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
-    pub fn face_matches(&self) -> ::std::option::Option<&[crate::types::FaceMatch]> {
-        self.face_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_matches.is_none()`.
+    pub fn face_matches(&self) -> &[crate::types::FaceMatch] {
+        self.face_matches.as_deref().unwrap_or_default()
     }
 }
 impl PersonMatch {

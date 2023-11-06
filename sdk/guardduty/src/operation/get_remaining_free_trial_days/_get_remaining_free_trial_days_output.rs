@@ -11,12 +11,16 @@ pub struct GetRemainingFreeTrialDaysOutput {
 }
 impl GetRemainingFreeTrialDaysOutput {
     /// <p>The member accounts which were included in a request and were processed successfully.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[crate::types::AccountFreeTrialInfo]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[crate::types::AccountFreeTrialInfo] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>The member account that was included in a request but for which the request could not be processed.</p>
-    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
-        self.unprocessed_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
+    pub fn unprocessed_accounts(&self) -> &[crate::types::UnprocessedAccount] {
+        self.unprocessed_accounts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRemainingFreeTrialDaysOutput {

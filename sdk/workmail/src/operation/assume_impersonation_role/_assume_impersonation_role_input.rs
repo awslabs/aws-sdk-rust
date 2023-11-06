@@ -34,6 +34,7 @@ pub struct AssumeImpersonationRoleInputBuilder {
 }
 impl AssumeImpersonationRoleInputBuilder {
     /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssumeImpersonationRoleInputBuilder {
         &self.organization_id
     }
     /// <p>The impersonation role ID to assume.</p>
+    /// This field is required.
     pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssumeImpersonationRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_impersonation_role::AssumeImpersonationRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::assume_impersonation_role::AssumeImpersonationRoleInput {
             organization_id: self.organization_id,

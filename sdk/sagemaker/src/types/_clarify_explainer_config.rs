@@ -70,6 +70,7 @@ impl ClarifyExplainerConfigBuilder {
         &self.inference_config
     }
     /// <p>The configuration for SHAP analysis.</p>
+    /// This field is required.
     pub fn shap_config(mut self, input: crate::types::ClarifyShapConfig) -> Self {
         self.shap_config = ::std::option::Option::Some(input);
         self

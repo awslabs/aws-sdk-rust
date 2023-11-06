@@ -34,6 +34,7 @@ pub struct GetExperimentInputBuilder {
 }
 impl GetExperimentInputBuilder {
     /// <p>The name or ARN of the project that contains the experiment.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetExperimentInputBuilder {
         &self.project
     }
     /// <p>The name of the experiment that you want to see the details of.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetExperimentInputBuilder {
     /// Consumes the builder and constructs a [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_experiment::GetExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_experiment::GetExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_experiment::GetExperimentInput {
             project: self.project,
             experiment: self.experiment,

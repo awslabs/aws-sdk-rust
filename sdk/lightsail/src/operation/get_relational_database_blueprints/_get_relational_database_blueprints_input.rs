@@ -50,7 +50,7 @@ impl GetRelationalDatabaseBlueprintsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsInput { page_token: self.page_token },

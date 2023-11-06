@@ -35,6 +35,7 @@ pub struct DeleteLoadBalancerPolicyInputBuilder {
 }
 impl DeleteLoadBalancerPolicyInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteLoadBalancerPolicyInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The name of the policy.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl DeleteLoadBalancerPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput {
             load_balancer_name: self.load_balancer_name,

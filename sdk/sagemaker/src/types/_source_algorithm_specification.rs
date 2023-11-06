@@ -9,8 +9,10 @@ pub struct SourceAlgorithmSpecification {
 }
 impl SourceAlgorithmSpecification {
     /// <p>A list of the algorithms that were used to create a model package.</p>
-    pub fn source_algorithms(&self) -> ::std::option::Option<&[crate::types::SourceAlgorithm]> {
-        self.source_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_algorithms.is_none()`.
+    pub fn source_algorithms(&self) -> &[crate::types::SourceAlgorithm] {
+        self.source_algorithms.as_deref().unwrap_or_default()
     }
 }
 impl SourceAlgorithmSpecification {

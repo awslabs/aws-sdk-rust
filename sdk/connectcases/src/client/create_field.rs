@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateField`](crate::operation::create_field::builders::CreateFieldFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::set_domain_id): <p>The unique identifier of the Cases domain. </p>
-    ///   - [`name(impl Into<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::set_name): <p>The name of the field.</p>
-    ///   - [`r#type(FieldType)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::type) / [`set_type(Option<FieldType>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::set_type): <p>Defines the data type, some system constraints, and default display of the field.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::set_description): <p>The description of the field.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::set_name):<br>required: **true**<br><p>The name of the field.</p><br>
+    ///   - [`r#type(FieldType)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::type) / [`set_type(Option<FieldType>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::set_type):<br>required: **true**<br><p>Defines the data type, some system constraints, and default display of the field.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_field::builders::CreateFieldFluentBuilder::set_description):<br>required: **false**<br><p>The description of the field.</p><br>
     /// - On success, responds with [`CreateFieldOutput`](crate::operation::create_field::CreateFieldOutput) with field(s):
-    ///   - [`field_id(Option<String>)`](crate::operation::create_field::CreateFieldOutput::field_id): <p>The unique identifier of a field.</p>
-    ///   - [`field_arn(Option<String>)`](crate::operation::create_field::CreateFieldOutput::field_arn): <p>The Amazon Resource Name (ARN) of the field.</p>
+    ///   - [`field_id(String)`](crate::operation::create_field::CreateFieldOutput::field_id): <p>The unique identifier of a field.</p>
+    ///   - [`field_arn(String)`](crate::operation::create_field::CreateFieldOutput::field_arn): <p>The Amazon Resource Name (ARN) of the field.</p>
     /// - On failure, responds with [`SdkError<CreateFieldError>`](crate::operation::create_field::CreateFieldError)
     pub fn create_field(&self) -> crate::operation::create_field::builders::CreateFieldFluentBuilder {
         crate::operation::create_field::builders::CreateFieldFluentBuilder::new(self.handle.clone())

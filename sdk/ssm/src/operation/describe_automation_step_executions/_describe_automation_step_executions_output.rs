@@ -11,8 +11,10 @@ pub struct DescribeAutomationStepExecutionsOutput {
 }
 impl DescribeAutomationStepExecutionsOutput {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
-    pub fn step_executions(&self) -> ::std::option::Option<&[crate::types::StepExecution]> {
-        self.step_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_executions.is_none()`.
+    pub fn step_executions(&self) -> &[crate::types::StepExecution] {
+        self.step_executions.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

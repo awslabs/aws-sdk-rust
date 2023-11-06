@@ -11,8 +11,10 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

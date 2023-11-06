@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupsNamespaceStatus {
     /// Status code of this namespace.
-    pub status_code: ::std::option::Option<crate::types::RuleGroupsNamespaceStatusCode>,
+    pub status_code: crate::types::RuleGroupsNamespaceStatusCode,
     /// The reason for failure if any.
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupsNamespaceStatus {
     /// Status code of this namespace.
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::RuleGroupsNamespaceStatusCode> {
-        self.status_code.as_ref()
+    pub fn status_code(&self) -> &crate::types::RuleGroupsNamespaceStatusCode {
+        &self.status_code
     }
     /// The reason for failure if any.
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct RuleGroupsNamespaceStatusBuilder {
 }
 impl RuleGroupsNamespaceStatusBuilder {
     /// Status code of this namespace.
+    /// This field is required.
     pub fn status_code(mut self, input: crate::types::RuleGroupsNamespaceStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl RuleGroupsNamespaceStatusBuilder {
         &self.status_reason
     }
     /// Consumes the builder and constructs a [`RuleGroupsNamespaceStatus`](crate::types::RuleGroupsNamespaceStatus).
-    pub fn build(self) -> crate::types::RuleGroupsNamespaceStatus {
-        crate::types::RuleGroupsNamespaceStatus {
-            status_code: self.status_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status_code`](crate::types::builders::RuleGroupsNamespaceStatusBuilder::status_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroupsNamespaceStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleGroupsNamespaceStatus {
+            status_code: self.status_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_code",
+                    "status_code was not specified but it is required when building RuleGroupsNamespaceStatus",
+                )
+            })?,
             status_reason: self.status_reason,
-        }
+        })
     }
 }

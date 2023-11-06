@@ -64,6 +64,7 @@ impl RenderUiTemplateInputBuilder {
         &self.ui_template
     }
     /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
+    /// This field is required.
     pub fn task(mut self, input: crate::types::RenderableTask) -> Self {
         self.task = ::std::option::Option::Some(input);
         self
@@ -78,6 +79,7 @@ impl RenderUiTemplateInputBuilder {
         &self.task
     }
     /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +113,7 @@ impl RenderUiTemplateInputBuilder {
     /// Consumes the builder and constructs a [`RenderUiTemplateInput`](crate::operation::render_ui_template::RenderUiTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::render_ui_template::RenderUiTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::render_ui_template::RenderUiTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::render_ui_template::RenderUiTemplateInput {
             ui_template: self.ui_template,
             task: self.task,

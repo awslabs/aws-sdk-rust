@@ -28,6 +28,7 @@ pub struct DeleteHapgInputBuilder {
 }
 impl DeleteHapgInputBuilder {
     /// <p>The ARN of the high-availability partition group to delete.</p>
+    /// This field is required.
     pub fn hapg_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hapg_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl DeleteHapgInputBuilder {
         &self.hapg_arn
     }
     /// Consumes the builder and constructs a [`DeleteHapgInput`](crate::operation::delete_hapg::DeleteHapgInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hapg::DeleteHapgInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hapg::DeleteHapgInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hapg::DeleteHapgInput { hapg_arn: self.hapg_arn })
     }
 }

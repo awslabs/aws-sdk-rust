@@ -41,6 +41,7 @@ pub struct GetAssetInputBuilder {
 }
 impl GetAssetInputBuilder {
     /// <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetAssetInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the Amazon DataZone asset.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,7 @@ impl GetAssetInputBuilder {
         &self.revision
     }
     /// Consumes the builder and constructs a [`GetAssetInput`](crate::operation::get_asset::GetAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset::GetAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset::GetAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_asset::GetAssetInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

@@ -2,7 +2,7 @@
 pub fn ser_instance_fleet_modify_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceFleetModifyConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_fleet_id {
         object.key("InstanceFleetId").string(var_1.as_str());
     }

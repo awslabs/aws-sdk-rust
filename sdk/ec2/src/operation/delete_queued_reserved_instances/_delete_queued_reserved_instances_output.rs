@@ -11,12 +11,16 @@ pub struct DeleteQueuedReservedInstancesOutput {
 }
 impl DeleteQueuedReservedInstancesOutput {
     /// <p>Information about the queued purchases that were successfully deleted.</p>
-    pub fn successful_queued_purchase_deletions(&self) -> ::std::option::Option<&[crate::types::SuccessfulQueuedPurchaseDeletion]> {
-        self.successful_queued_purchase_deletions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_queued_purchase_deletions.is_none()`.
+    pub fn successful_queued_purchase_deletions(&self) -> &[crate::types::SuccessfulQueuedPurchaseDeletion] {
+        self.successful_queued_purchase_deletions.as_deref().unwrap_or_default()
     }
     /// <p>Information about the queued purchases that could not be deleted.</p>
-    pub fn failed_queued_purchase_deletions(&self) -> ::std::option::Option<&[crate::types::FailedQueuedPurchaseDeletion]> {
-        self.failed_queued_purchase_deletions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_queued_purchase_deletions.is_none()`.
+    pub fn failed_queued_purchase_deletions(&self) -> &[crate::types::FailedQueuedPurchaseDeletion] {
+        self.failed_queued_purchase_deletions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteQueuedReservedInstancesOutput {

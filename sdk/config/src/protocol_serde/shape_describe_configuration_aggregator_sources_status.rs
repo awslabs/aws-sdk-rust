@@ -38,8 +38,8 @@ pub fn de_describe_configuration_aggregator_sources_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError::InvalidNextTokenException({
@@ -54,8 +54,8 @@ pub fn de_describe_configuration_aggregator_sources_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValueException" => crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError::InvalidParameterValueException({
@@ -70,8 +70,8 @@ pub fn de_describe_configuration_aggregator_sources_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchConfigurationAggregatorException" => crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError::NoSuchConfigurationAggregatorException({
@@ -86,8 +86,8 @@ pub fn de_describe_configuration_aggregator_sources_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError::generic(generic)
@@ -118,7 +118,7 @@ pub fn de_describe_configuration_aggregator_sources_status_http_response(
 
 pub fn ser_describe_configuration_aggregator_sources_status_input(
     input: &crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_configuration_aggregator_sources_status_input::ser_describe_configuration_aggregator_sources_status_input(
@@ -126,7 +126,7 @@ pub fn ser_describe_configuration_aggregator_sources_status_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_configuration_aggregator_sources_status(

@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImageSet`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`datastore_id(impl Into<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::set_datastore_id): <p>The data store identifier.</p>
-    ///   - [`image_set_id(impl Into<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::image_set_id) / [`set_image_set_id(Option<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::set_image_set_id): <p>The image set identifier.</p>
-    ///   - [`version_id(impl Into<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::set_version_id): <p>The image set version identifier.</p>
+    ///   - [`datastore_id(impl Into<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The data store identifier.</p><br>
+    ///   - [`image_set_id(impl Into<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::image_set_id) / [`set_image_set_id(Option<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::set_image_set_id):<br>required: **true**<br><p>The image set identifier.</p><br>
+    ///   - [`version_id(impl Into<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::get_image_set::builders::GetImageSetFluentBuilder::set_version_id):<br>required: **false**<br><p>The image set version identifier.</p><br>
     /// - On success, responds with [`GetImageSetOutput`](crate::operation::get_image_set::GetImageSetOutput) with field(s):
-    ///   - [`datastore_id(Option<String>)`](crate::operation::get_image_set::GetImageSetOutput::datastore_id): <p>The data store identifier.</p>
-    ///   - [`image_set_id(Option<String>)`](crate::operation::get_image_set::GetImageSetOutput::image_set_id): <p>The image set identifier.</p>
-    ///   - [`version_id(Option<String>)`](crate::operation::get_image_set::GetImageSetOutput::version_id): <p>The image set version identifier.</p>
-    ///   - [`image_set_state(Option<ImageSetState>)`](crate::operation::get_image_set::GetImageSetOutput::image_set_state): <p>The image set state.</p>
+    ///   - [`datastore_id(String)`](crate::operation::get_image_set::GetImageSetOutput::datastore_id): <p>The data store identifier.</p>
+    ///   - [`image_set_id(String)`](crate::operation::get_image_set::GetImageSetOutput::image_set_id): <p>The image set identifier.</p>
+    ///   - [`version_id(String)`](crate::operation::get_image_set::GetImageSetOutput::version_id): <p>The image set version identifier.</p>
+    ///   - [`image_set_state(ImageSetState)`](crate::operation::get_image_set::GetImageSetOutput::image_set_state): <p>The image set state.</p>
     ///   - [`image_set_workflow_status(Option<ImageSetWorkflowStatus>)`](crate::operation::get_image_set::GetImageSetOutput::image_set_workflow_status): <p>The image set workflow status.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_image_set::GetImageSetOutput::created_at): <p>The timestamp when image set properties were created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_image_set::GetImageSetOutput::updated_at): <p>The timestamp when image set properties were updated.</p>

@@ -28,6 +28,7 @@ pub struct DescribeTaskInputBuilder {
 }
 impl DescribeTaskInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// This field is required.
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,9 @@ impl DescribeTaskInputBuilder {
         &self.task_arn
     }
     /// Consumes the builder and constructs a [`DescribeTaskInput`](crate::operation::describe_task::DescribeTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_task::DescribeTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_task::DescribeTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_task::DescribeTaskInput { task_arn: self.task_arn })
     }
 }

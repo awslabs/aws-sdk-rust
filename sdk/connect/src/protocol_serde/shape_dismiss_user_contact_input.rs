@@ -2,7 +2,7 @@
 pub fn ser_dismiss_user_contact_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::dismiss_user_contact::DismissUserContactInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_id {
         object.key("ContactId").string(var_1.as_str());
     }

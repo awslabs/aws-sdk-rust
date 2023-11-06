@@ -10,8 +10,10 @@ pub struct CancelSpotInstanceRequestsOutput {
 }
 impl CancelSpotInstanceRequestsOutput {
     /// <p>The Spot Instance requests.</p>
-    pub fn cancelled_spot_instance_requests(&self) -> ::std::option::Option<&[crate::types::CancelledSpotInstanceRequest]> {
-        self.cancelled_spot_instance_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cancelled_spot_instance_requests.is_none()`.
+    pub fn cancelled_spot_instance_requests(&self) -> &[crate::types::CancelledSpotInstanceRequest] {
+        self.cancelled_spot_instance_requests.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelSpotInstanceRequestsOutput {

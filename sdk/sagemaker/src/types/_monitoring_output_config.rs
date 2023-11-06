@@ -11,8 +11,10 @@ pub struct MonitoringOutputConfig {
 }
 impl MonitoringOutputConfig {
     /// <p>Monitoring outputs for monitoring jobs. This is where the output of the periodic monitoring jobs is uploaded.</p>
-    pub fn monitoring_outputs(&self) -> ::std::option::Option<&[crate::types::MonitoringOutput]> {
-        self.monitoring_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_outputs.is_none()`.
+    pub fn monitoring_outputs(&self) -> &[crate::types::MonitoringOutput] {
+        self.monitoring_outputs.as_deref().unwrap_or_default()
     }
     /// <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {

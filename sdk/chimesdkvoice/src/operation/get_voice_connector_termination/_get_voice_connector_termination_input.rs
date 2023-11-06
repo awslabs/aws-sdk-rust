@@ -27,6 +27,7 @@ pub struct GetVoiceConnectorTerminationInputBuilder {
 }
 impl GetVoiceConnectorTerminationInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetVoiceConnectorTerminationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationInput {
             voice_connector_id: self.voice_connector_id,

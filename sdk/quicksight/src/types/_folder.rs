@@ -39,8 +39,10 @@ impl Folder {
         self.folder_type.as_ref()
     }
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    pub fn folder_path(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.folder_path.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_path.is_none()`.
+    pub fn folder_path(&self) -> &[::std::string::String] {
+        self.folder_path.as_deref().unwrap_or_default()
     }
     /// <p>The time that the folder was created.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

@@ -11,8 +11,10 @@ pub struct EmailRecipients {
 }
 impl EmailRecipients {
     /// <p>Specifies one or more recipients who receive the email.</p>
-    pub fn to(&self) -> ::std::option::Option<&[crate::types::RecipientDetail]> {
-        self.to.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.to.is_none()`.
+    pub fn to(&self) -> &[crate::types::RecipientDetail] {
+        self.to.as_deref().unwrap_or_default()
     }
 }
 impl EmailRecipients {

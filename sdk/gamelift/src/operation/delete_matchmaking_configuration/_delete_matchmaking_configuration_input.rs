@@ -27,6 +27,7 @@ pub struct DeleteMatchmakingConfigurationInputBuilder {
 }
 impl DeleteMatchmakingConfigurationInputBuilder {
     /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteMatchmakingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationInput { name: self.name })
     }

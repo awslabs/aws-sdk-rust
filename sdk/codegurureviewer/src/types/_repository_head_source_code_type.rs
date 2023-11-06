@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryHeadSourceCodeType {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
-    pub branch_name: ::std::option::Option<::std::string::String>,
+    pub branch_name: ::std::string::String,
 }
 impl RepositoryHeadSourceCodeType {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
-        self.branch_name.as_deref()
+    pub fn branch_name(&self) -> &str {
+        use std::ops::Deref;
+        self.branch_name.deref()
     }
 }
 impl RepositoryHeadSourceCodeType {
@@ -28,6 +29,7 @@ pub struct RepositoryHeadSourceCodeTypeBuilder {
 }
 impl RepositoryHeadSourceCodeTypeBuilder {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl RepositoryHeadSourceCodeTypeBuilder {
         &self.branch_name
     }
     /// Consumes the builder and constructs a [`RepositoryHeadSourceCodeType`](crate::types::RepositoryHeadSourceCodeType).
-    pub fn build(self) -> crate::types::RepositoryHeadSourceCodeType {
-        crate::types::RepositoryHeadSourceCodeType {
-            branch_name: self.branch_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`branch_name`](crate::types::builders::RepositoryHeadSourceCodeTypeBuilder::branch_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryHeadSourceCodeType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositoryHeadSourceCodeType {
+            branch_name: self.branch_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "branch_name",
+                    "branch_name was not specified but it is required when building RepositoryHeadSourceCodeType",
+                )
+            })?,
+        })
     }
 }

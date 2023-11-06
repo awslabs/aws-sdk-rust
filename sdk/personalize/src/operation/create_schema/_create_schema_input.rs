@@ -41,6 +41,7 @@ pub struct CreateSchemaInputBuilder {
 }
 impl CreateSchemaInputBuilder {
     /// <p>The name for the schema.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateSchemaInputBuilder {
         &self.name
     }
     /// <p>A schema in Avro JSON format.</p>
+    /// This field is required.
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +85,9 @@ impl CreateSchemaInputBuilder {
         &self.domain
     }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_schema::CreateSchemaInput {
             name: self.name,
             schema: self.schema,

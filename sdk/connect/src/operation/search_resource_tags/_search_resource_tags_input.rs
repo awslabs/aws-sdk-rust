@@ -20,8 +20,10 @@ impl SearchResourceTagsInput {
         self.instance_id.as_deref()
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[::std::string::String] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct SearchResourceTagsInputBuilder {
 }
 impl SearchResourceTagsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,8 @@ impl SearchResourceTagsInputBuilder {
     /// Consumes the builder and constructs a [`SearchResourceTagsInput`](crate::operation::search_resource_tags::SearchResourceTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_resource_tags::SearchResourceTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_resource_tags::SearchResourceTagsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::search_resource_tags::SearchResourceTagsInput {
             instance_id: self.instance_id,
             resource_types: self.resource_types,

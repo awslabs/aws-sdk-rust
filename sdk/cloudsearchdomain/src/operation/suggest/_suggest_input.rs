@@ -42,6 +42,7 @@ pub struct SuggestInputBuilder {
 }
 impl SuggestInputBuilder {
     /// <p>Specifies the string for which you want to get suggestions.</p>
+    /// This field is required.
     pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl SuggestInputBuilder {
         &self.query
     }
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
+    /// This field is required.
     pub fn suggester(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suggester = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +86,7 @@ impl SuggestInputBuilder {
         &self.size
     }
     /// Consumes the builder and constructs a [`SuggestInput`](crate::operation::suggest::SuggestInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::suggest::SuggestInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::suggest::SuggestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::suggest::SuggestInput {
             query: self.query,
             suggester: self.suggester,

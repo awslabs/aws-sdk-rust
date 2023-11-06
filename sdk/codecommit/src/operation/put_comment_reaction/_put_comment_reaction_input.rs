@@ -34,6 +34,7 @@ pub struct PutCommentReactionInputBuilder {
 }
 impl PutCommentReactionInputBuilder {
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
+    /// This field is required.
     pub fn comment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutCommentReactionInputBuilder {
         &self.comment_id
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit User Guide</a>.</p>
+    /// This field is required.
     pub fn reaction_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reaction_value = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl PutCommentReactionInputBuilder {
     /// Consumes the builder and constructs a [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_comment_reaction::PutCommentReactionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_comment_reaction::PutCommentReactionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_comment_reaction::PutCommentReactionInput {
             comment_id: self.comment_id,
             reaction_value: self.reaction_value,

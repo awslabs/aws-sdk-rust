@@ -34,6 +34,7 @@ pub struct DeleteIpSetInputBuilder {
 }
 impl DeleteIpSetInputBuilder {
     /// <p>The unique ID of the detector associated with the IPSet.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteIpSetInputBuilder {
         &self.detector_id
     }
     /// <p>The unique ID of the IPSet to delete.</p>
+    /// This field is required.
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteIpSetInputBuilder {
         &self.ip_set_id
     }
     /// Consumes the builder and constructs a [`DeleteIpSetInput`](crate::operation::delete_ip_set::DeleteIpSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ip_set::DeleteIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ip_set::DeleteIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ip_set::DeleteIpSetInput {
             detector_id: self.detector_id,
             ip_set_id: self.ip_set_id,

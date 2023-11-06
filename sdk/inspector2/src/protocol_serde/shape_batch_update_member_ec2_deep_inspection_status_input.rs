@@ -2,7 +2,7 @@
 pub fn ser_batch_update_member_ec2_deep_inspection_status_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_ids {
         let mut array_2 = object.key("accountIds").start_array();
         for item_3 in var_1 {

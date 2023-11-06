@@ -80,6 +80,7 @@ impl ListAttributesInputBuilder {
         &self.cluster
     }
     /// <p>The type of the target to list attributes with.</p>
+    /// This field is required.
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
         self
@@ -158,7 +159,7 @@ impl ListAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ListAttributesInput`](crate::operation::list_attributes::ListAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_attributes::ListAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_attributes::ListAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_attributes::ListAttributesInput {
             cluster: self.cluster,
             target_type: self.target_type,

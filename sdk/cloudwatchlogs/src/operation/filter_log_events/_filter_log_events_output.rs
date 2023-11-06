@@ -14,13 +14,17 @@ pub struct FilterLogEventsOutput {
 }
 impl FilterLogEventsOutput {
     /// <p>The matched events.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::FilteredLogEvent]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::FilteredLogEvent] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.</p>
     /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
-    pub fn searched_log_streams(&self) -> ::std::option::Option<&[crate::types::SearchedLogStream]> {
-        self.searched_log_streams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.searched_log_streams.is_none()`.
+    pub fn searched_log_streams(&self) -> &[crate::types::SearchedLogStream] {
+        self.searched_log_streams.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

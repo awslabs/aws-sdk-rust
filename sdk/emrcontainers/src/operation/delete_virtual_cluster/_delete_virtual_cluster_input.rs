@@ -27,6 +27,7 @@ pub struct DeleteVirtualClusterInputBuilder {
 }
 impl DeleteVirtualClusterInputBuilder {
     /// <p>The ID of the virtual cluster that will be deleted.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteVirtualClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualClusterInput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput { id: self.id })
     }

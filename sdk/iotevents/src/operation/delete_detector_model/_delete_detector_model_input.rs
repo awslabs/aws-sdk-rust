@@ -27,6 +27,7 @@ pub struct DeleteDetectorModelInputBuilder {
 }
 impl DeleteDetectorModelInputBuilder {
     /// <p>The name of the detector model to be deleted.</p>
+    /// This field is required.
     pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteDetectorModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDetectorModelInput`](crate::operation::delete_detector_model::DeleteDetectorModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_detector_model::DeleteDetectorModelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_detector_model::DeleteDetectorModelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_detector_model::DeleteDetectorModelInput {
             detector_model_name: self.detector_model_name,

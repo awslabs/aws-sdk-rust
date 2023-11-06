@@ -34,6 +34,7 @@ pub struct DeleteDatasetContentInputBuilder {
 }
 impl DeleteDatasetContentInputBuilder {
     /// <p>The name of the dataset whose content is deleted.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteDatasetContentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatasetContentInput`](crate::operation::delete_dataset_content::DeleteDatasetContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dataset_content::DeleteDatasetContentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_dataset_content::DeleteDatasetContentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_dataset_content::DeleteDatasetContentInput {
             dataset_name: self.dataset_name,

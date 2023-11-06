@@ -41,6 +41,7 @@ pub struct ListCustomRoutingEndpointGroupsInputBuilder {
 }
 impl ListCustomRoutingEndpointGroupsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListCustomRoutingEndpointGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput {

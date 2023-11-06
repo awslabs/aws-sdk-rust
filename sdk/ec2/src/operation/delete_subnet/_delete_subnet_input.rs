@@ -34,6 +34,7 @@ pub struct DeleteSubnetInputBuilder {
 }
 impl DeleteSubnetInputBuilder {
     /// <p>The ID of the subnet.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,9 @@ impl DeleteSubnetInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteSubnetInput`](crate::operation::delete_subnet::DeleteSubnetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_subnet::DeleteSubnetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_subnet::DeleteSubnetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_subnet::DeleteSubnetInput {
             subnet_id: self.subnet_id,
             dry_run: self.dry_run,

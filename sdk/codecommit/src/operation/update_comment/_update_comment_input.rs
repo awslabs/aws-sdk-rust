@@ -34,6 +34,7 @@ pub struct UpdateCommentInputBuilder {
 }
 impl UpdateCommentInputBuilder {
     /// <p>The system-generated ID of the comment you want to update. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    /// This field is required.
     pub fn comment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateCommentInputBuilder {
         &self.comment_id
     }
     /// <p>The updated content to replace the existing content of the comment.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl UpdateCommentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCommentInput`](crate::operation::update_comment::UpdateCommentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_comment::UpdateCommentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_comment::UpdateCommentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_comment::UpdateCommentInput {
             comment_id: self.comment_id,
             content: self.content,

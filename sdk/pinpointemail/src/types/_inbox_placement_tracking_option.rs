@@ -15,8 +15,10 @@ impl InboxPlacementTrackingOption {
         self.global
     }
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
-    pub fn tracked_isps(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tracked_isps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tracked_isps.is_none()`.
+    pub fn tracked_isps(&self) -> &[::std::string::String] {
+        self.tracked_isps.as_deref().unwrap_or_default()
     }
 }
 impl InboxPlacementTrackingOption {

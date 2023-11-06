@@ -57,8 +57,10 @@ impl WorkspaceProperties {
     /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
     /// </ul>
     /// </note>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::Protocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::Protocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>The name of the operating system.</p>
     pub fn operating_system_name(&self) -> ::std::option::Option<&crate::types::OperatingSystemName> {

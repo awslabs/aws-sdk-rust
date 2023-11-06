@@ -16,7 +16,7 @@ pub struct UpdateSecurityProfileInput {
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
     pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of the third party application's metadata.</p>
+    /// <p>A list of the third-party application's metadata.</p>
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
 }
 impl UpdateSecurityProfileInput {
@@ -25,8 +25,10 @@ impl UpdateSecurityProfileInput {
         self.description.as_deref()
     }
     /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[::std::string::String] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>The identifier for the security profle.</p>
     pub fn security_profile_id(&self) -> ::std::option::Option<&str> {
@@ -41,13 +43,17 @@ impl UpdateSecurityProfileInput {
         self.allowed_access_control_tags.as_ref()
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub fn tag_restricted_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_restricted_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_restricted_resources.is_none()`.
+    pub fn tag_restricted_resources(&self) -> &[::std::string::String] {
+        self.tag_restricted_resources.as_deref().unwrap_or_default()
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of the third party application's metadata.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::Application]> {
-        self.applications.as_deref()
+    /// <p>A list of the third-party application's metadata.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[crate::types::Application] {
+        self.applications.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSecurityProfileInput {
@@ -105,6 +111,7 @@ impl UpdateSecurityProfileInputBuilder {
         &self.permissions
     }
     /// <p>The identifier for the security profle.</p>
+    /// This field is required.
     pub fn security_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +126,7 @@ impl UpdateSecurityProfileInputBuilder {
         &self.security_profile_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -186,7 +194,7 @@ impl UpdateSecurityProfileInputBuilder {
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of the third party application's metadata.</p>
+    /// <p>A list of the third-party application's metadata.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         let mut v = self.applications.unwrap_or_default();
         v.push(input);
@@ -194,20 +202,20 @@ impl UpdateSecurityProfileInputBuilder {
         self
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of the third party application's metadata.</p>
+    /// <p>A list of the third-party application's metadata.</p>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of the third party application's metadata.</p>
+    /// <p>A list of the third-party application's metadata.</p>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         &self.applications
     }
     /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_security_profile::UpdateSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_security_profile::UpdateSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_security_profile::UpdateSecurityProfileInput {
             description: self.description,

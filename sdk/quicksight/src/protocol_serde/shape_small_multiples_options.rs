@@ -2,7 +2,7 @@
 pub fn ser_small_multiples_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SmallMultiplesOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_visible_rows {
         object.key("MaxVisibleRows").number(
             #[allow(clippy::useless_conversion)]

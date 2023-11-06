@@ -11,8 +11,10 @@ pub struct DescribeStorageSystemResourceMetricsOutput {
 }
 impl DescribeStorageSystemResourceMetricsOutput {
     /// <p>The details that your discovery job collected about your storage system resource.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::ResourceMetrics]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::ResourceMetrics] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

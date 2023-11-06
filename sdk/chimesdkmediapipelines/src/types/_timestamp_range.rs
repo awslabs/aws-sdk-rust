@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampRange {
     /// <p>The starting timestamp for the specified range.</p>
-    pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The ending timestamp for the specified range.</p>
-    pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_timestamp: ::aws_smithy_types::DateTime,
 }
 impl TimestampRange {
     /// <p>The starting timestamp for the specified range.</p>
-    pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_timestamp.as_ref()
+    pub fn start_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_timestamp
     }
     /// <p>The ending timestamp for the specified range.</p>
-    pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_timestamp.as_ref()
+    pub fn end_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_timestamp
     }
 }
 impl TimestampRange {
@@ -35,6 +35,7 @@ pub struct TimestampRangeBuilder {
 }
 impl TimestampRangeBuilder {
     /// <p>The starting timestamp for the specified range.</p>
+    /// This field is required.
     pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_timestamp = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TimestampRangeBuilder {
         &self.start_timestamp
     }
     /// <p>The ending timestamp for the specified range.</p>
+    /// This field is required.
     pub fn end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_timestamp = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl TimestampRangeBuilder {
         &self.end_timestamp
     }
     /// Consumes the builder and constructs a [`TimestampRange`](crate::types::TimestampRange).
-    pub fn build(self) -> crate::types::TimestampRange {
-        crate::types::TimestampRange {
-            start_timestamp: self.start_timestamp,
-            end_timestamp: self.end_timestamp,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_timestamp`](crate::types::builders::TimestampRangeBuilder::start_timestamp)
+    /// - [`end_timestamp`](crate::types::builders::TimestampRangeBuilder::end_timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestampRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimestampRange {
+            start_timestamp: self.start_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "start_timestamp",
+                    "start_timestamp was not specified but it is required when building TimestampRange",
+                )
+            })?,
+            end_timestamp: self.end_timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_timestamp",
+                    "end_timestamp was not specified but it is required when building TimestampRange",
+                )
+            })?,
+        })
     }
 }

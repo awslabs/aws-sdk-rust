@@ -9,8 +9,10 @@ pub struct DocumentMetadataResponseInfo {
 }
 impl DocumentMetadataResponseInfo {
     /// <p>Details about a reviewer's response to a document review request.</p>
-    pub fn reviewer_response(&self) -> ::std::option::Option<&[crate::types::DocumentReviewerResponseSource]> {
-        self.reviewer_response.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reviewer_response.is_none()`.
+    pub fn reviewer_response(&self) -> &[crate::types::DocumentReviewerResponseSource] {
+        self.reviewer_response.as_deref().unwrap_or_default()
     }
 }
 impl DocumentMetadataResponseInfo {

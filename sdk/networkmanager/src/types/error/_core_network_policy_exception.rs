@@ -5,30 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkPolicyException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>Describes a core network policy exception.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl CoreNetworkPolicyException {
     /// <p>Describes a core network policy exception.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::CoreNetworkPolicyError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::CoreNetworkPolicyError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl CoreNetworkPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for CoreNetworkPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "CoreNetworkPolicyException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -62,6 +62,7 @@ pub struct CoreNetworkPolicyExceptionBuilder {
 }
 impl CoreNetworkPolicyExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -107,11 +108,18 @@ impl CoreNetworkPolicyExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CoreNetworkPolicyException`](crate::types::error::CoreNetworkPolicyException).
-    pub fn build(self) -> crate::types::error::CoreNetworkPolicyException {
-        crate::types::error::CoreNetworkPolicyException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::CoreNetworkPolicyExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::CoreNetworkPolicyException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::CoreNetworkPolicyException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building CoreNetworkPolicyException",
+                )
+            })?,
             errors: self.errors,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

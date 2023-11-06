@@ -8,8 +8,3 @@ pub(crate) mod standard;
 
 pub use never::NeverRetryStrategy;
 pub use standard::StandardRetryStrategy;
-
-#[cfg(feature = "test-util")]
-mod fixed_delay;
-#[cfg(feature = "test-util")]
-pub use fixed_delay::FixedDelayRetryStrategy;

@@ -35,6 +35,7 @@ pub struct HandOffTimeBuilder {
 }
 impl HandOffTimeBuilder {
     /// <p>The hour when an on-call rotation shift begins or ends.</p>
+    /// This field is required.
     pub fn hour_of_day(mut self, input: i32) -> Self {
         self.hour_of_day = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl HandOffTimeBuilder {
         &self.hour_of_day
     }
     /// <p>The minute when an on-call rotation shift begins or ends.</p>
+    /// This field is required.
     pub fn minute_of_hour(mut self, input: i32) -> Self {
         self.minute_of_hour = ::std::option::Option::Some(input);
         self

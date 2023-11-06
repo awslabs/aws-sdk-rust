@@ -27,6 +27,7 @@ pub struct DescribeTaskInputBuilder {
 }
 impl DescribeTaskInputBuilder {
     /// <p>The ID of the task to be described.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DescribeTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`DescribeTaskInput`](crate::operation::describe_task::DescribeTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_task::DescribeTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_task::DescribeTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_task::DescribeTaskInput { task_id: self.task_id })
     }
 }

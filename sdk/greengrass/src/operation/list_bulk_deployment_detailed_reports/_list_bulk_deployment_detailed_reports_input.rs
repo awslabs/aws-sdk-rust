@@ -41,6 +41,7 @@ pub struct ListBulkDeploymentDetailedReportsInputBuilder {
 }
 impl ListBulkDeploymentDetailedReportsInputBuilder {
     /// The ID of the bulk deployment.
+    /// This field is required.
     pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListBulkDeploymentDetailedReportsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput {

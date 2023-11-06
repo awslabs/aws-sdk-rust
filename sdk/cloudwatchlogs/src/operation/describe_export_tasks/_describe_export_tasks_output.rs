@@ -11,8 +11,10 @@ pub struct DescribeExportTasksOutput {
 }
 impl DescribeExportTasksOutput {
     /// <p>The export tasks.</p>
-    pub fn export_tasks(&self) -> ::std::option::Option<&[crate::types::ExportTask]> {
-        self.export_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_tasks.is_none()`.
+    pub fn export_tasks(&self) -> &[crate::types::ExportTask] {
+        self.export_tasks.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

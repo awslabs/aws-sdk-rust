@@ -89,6 +89,7 @@ pub struct PutFileInputBuilder {
 }
 impl PutFileInputBuilder {
     /// <p>The name of the repository where you want to add or update the file.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +104,7 @@ impl PutFileInputBuilder {
         &self.repository_name
     }
     /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +119,7 @@ impl PutFileInputBuilder {
         &self.branch_name
     }
     /// <p>The content of the file, in binary object format. </p>
+    /// This field is required.
     pub fn file_content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.file_content = ::std::option::Option::Some(input);
         self
@@ -133,6 +136,7 @@ impl PutFileInputBuilder {
     /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -224,7 +228,7 @@ impl PutFileInputBuilder {
         &self.email
     }
     /// Consumes the builder and constructs a [`PutFileInput`](crate::operation::put_file::PutFileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_file::PutFileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_file::PutFileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_file::PutFileInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

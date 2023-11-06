@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeComponent`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::set_arn):<br>required: **true**<br><p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p><br>
     /// - On success, responds with [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_component::DescribeComponentOutput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     ///   - [`component_name(Option<String>)`](crate::operation::describe_component::DescribeComponentOutput::component_name): <p>The name of the component.</p>
@@ -12,8 +12,8 @@ impl super::Client {
     ///   - [`publisher(Option<String>)`](crate::operation::describe_component::DescribeComponentOutput::publisher): <p>The publisher of the component version.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_component::DescribeComponentOutput::description): <p>The description of the component version.</p>
     ///   - [`status(Option<CloudComponentStatus>)`](crate::operation::describe_component::DescribeComponentOutput::status): <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
-    ///   - [`platforms(Option<Vec<ComponentPlatform>>)`](crate::operation::describe_component::DescribeComponentOutput::platforms): <p>The platforms that the component version supports.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_component::DescribeComponentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    ///   - [`platforms(Option<Vec::<ComponentPlatform>>)`](crate::operation::describe_component::DescribeComponentOutput::platforms): <p>The platforms that the component version supports.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_component::DescribeComponentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DescribeComponentError>`](crate::operation::describe_component::DescribeComponentError)
     pub fn describe_component(&self) -> crate::operation::describe_component::builders::DescribeComponentFluentBuilder {
         crate::operation::describe_component::builders::DescribeComponentFluentBuilder::new(self.handle.clone())

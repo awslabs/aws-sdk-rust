@@ -34,6 +34,7 @@ pub struct GetDicomImportJobOutputBuilder {
 }
 impl GetDicomImportJobOutputBuilder {
     /// <p>The properties of the import job.</p>
+    /// This field is required.
     pub fn job_properties(mut self, input: crate::types::DicomImportJobProperties) -> Self {
         self.job_properties = ::std::option::Option::Some(input);
         self

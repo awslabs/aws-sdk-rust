@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutpostConfigResponse {
     /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
-    pub outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub outpost_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
-    pub control_plane_instance_type: ::std::option::Option<::std::string::String>,
+    pub control_plane_instance_type: ::std::string::String,
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub control_plane_placement: ::std::option::Option<crate::types::ControlPlanePlacementResponse>,
 }
 impl OutpostConfigResponse {
     /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
-    pub fn outpost_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.outpost_arns.as_deref()
+    pub fn outpost_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.outpost_arns.deref()
     }
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
-    pub fn control_plane_instance_type(&self) -> ::std::option::Option<&str> {
-        self.control_plane_instance_type.as_deref()
+    pub fn control_plane_instance_type(&self) -> &str {
+        use std::ops::Deref;
+        self.control_plane_instance_type.deref()
     }
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn control_plane_placement(&self) -> ::std::option::Option<&crate::types::ControlPlanePlacementResponse> {
@@ -62,6 +64,7 @@ impl OutpostConfigResponseBuilder {
         &self.outpost_arns
     }
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
+    /// This field is required.
     pub fn control_plane_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_plane_instance_type = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +93,24 @@ impl OutpostConfigResponseBuilder {
         &self.control_plane_placement
     }
     /// Consumes the builder and constructs a [`OutpostConfigResponse`](crate::types::OutpostConfigResponse).
-    pub fn build(self) -> crate::types::OutpostConfigResponse {
-        crate::types::OutpostConfigResponse {
-            outpost_arns: self.outpost_arns,
-            control_plane_instance_type: self.control_plane_instance_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`outpost_arns`](crate::types::builders::OutpostConfigResponseBuilder::outpost_arns)
+    /// - [`control_plane_instance_type`](crate::types::builders::OutpostConfigResponseBuilder::control_plane_instance_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutpostConfigResponse, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutpostConfigResponse {
+            outpost_arns: self.outpost_arns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "outpost_arns",
+                    "outpost_arns was not specified but it is required when building OutpostConfigResponse",
+                )
+            })?,
+            control_plane_instance_type: self.control_plane_instance_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "control_plane_instance_type",
+                    "control_plane_instance_type was not specified but it is required when building OutpostConfigResponse",
+                )
+            })?,
             control_plane_placement: self.control_plane_placement,
-        }
+        })
     }
 }

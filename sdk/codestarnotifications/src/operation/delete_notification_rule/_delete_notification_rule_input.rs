@@ -27,6 +27,7 @@ pub struct DeleteNotificationRuleInputBuilder {
 }
 impl DeleteNotificationRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteNotificationRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotificationRuleInput`](crate::operation::delete_notification_rule::DeleteNotificationRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_notification_rule::DeleteNotificationRuleInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_notification_rule::DeleteNotificationRuleInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_notification_rule::DeleteNotificationRuleInput { arn: self.arn })
     }
 }

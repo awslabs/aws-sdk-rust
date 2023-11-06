@@ -10,8 +10,10 @@ pub struct BatchGetDeploymentsOutput {
 }
 impl BatchGetDeploymentsOutput {
     /// <p> Information about the deployments. </p>
-    pub fn deployments_info(&self) -> ::std::option::Option<&[crate::types::DeploymentInfo]> {
-        self.deployments_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployments_info.is_none()`.
+    pub fn deployments_info(&self) -> &[crate::types::DeploymentInfo] {
+        self.deployments_info.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetDeploymentsOutput {

@@ -34,6 +34,7 @@ pub struct DeleteSkillAuthorizationInputBuilder {
 }
 impl DeleteSkillAuthorizationInputBuilder {
     /// <p>The unique identifier of a skill.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteSkillAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput {
             skill_id: self.skill_id,

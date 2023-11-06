@@ -17,12 +17,16 @@ impl ResourceIdentifierSummary {
         self.resource_type.as_deref()
     }
     /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
-    pub fn logical_resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.logical_resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logical_resource_ids.is_none()`.
+    pub fn logical_resource_ids(&self) -> &[::std::string::String] {
+        self.logical_resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
-    pub fn resource_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
+    pub fn resource_identifiers(&self) -> &[::std::string::String] {
+        self.resource_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl ResourceIdentifierSummary {

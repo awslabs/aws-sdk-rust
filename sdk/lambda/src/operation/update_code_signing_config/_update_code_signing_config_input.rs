@@ -48,6 +48,7 @@ pub struct UpdateCodeSigningConfigInputBuilder {
 }
 impl UpdateCodeSigningConfigInputBuilder {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    /// This field is required.
     pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_signing_config_arn = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl UpdateCodeSigningConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_code_signing_config::UpdateCodeSigningConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_code_signing_config::UpdateCodeSigningConfigInput {
             code_signing_config_arn: self.code_signing_config_arn,

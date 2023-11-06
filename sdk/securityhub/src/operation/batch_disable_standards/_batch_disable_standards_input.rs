@@ -8,8 +8,10 @@ pub struct BatchDisableStandardsInput {
 }
 impl BatchDisableStandardsInput {
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    pub fn standards_subscription_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.standards_subscription_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_subscription_arns.is_none()`.
+    pub fn standards_subscription_arns(&self) -> &[::std::string::String] {
+        self.standards_subscription_arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchDisableStandardsInput {
@@ -49,7 +51,7 @@ impl BatchDisableStandardsInputBuilder {
     /// Consumes the builder and constructs a [`BatchDisableStandardsInput`](crate::operation::batch_disable_standards::BatchDisableStandardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_disable_standards::BatchDisableStandardsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_disable_standards::BatchDisableStandardsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_disable_standards::BatchDisableStandardsInput {
             standards_subscription_arns: self.standards_subscription_arns,

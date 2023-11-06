@@ -27,6 +27,7 @@ pub struct DescribeApplicationInputBuilder {
 }
 impl DescribeApplicationInputBuilder {
     /// <p>The unique Id of the web application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeApplicationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_application::DescribeApplicationInput {
             application_id: self.application_id,

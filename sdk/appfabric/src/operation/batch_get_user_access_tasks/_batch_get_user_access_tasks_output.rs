@@ -9,8 +9,10 @@ pub struct BatchGetUserAccessTasksOutput {
 }
 impl BatchGetUserAccessTasksOutput {
     /// <p>Contains a list of user access results.</p>
-    pub fn user_access_results_list(&self) -> ::std::option::Option<&[crate::types::UserAccessResultItem]> {
-        self.user_access_results_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_access_results_list.is_none()`.
+    pub fn user_access_results_list(&self) -> &[crate::types::UserAccessResultItem] {
+        self.user_access_results_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetUserAccessTasksOutput {

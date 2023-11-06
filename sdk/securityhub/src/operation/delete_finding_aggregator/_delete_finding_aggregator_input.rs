@@ -27,6 +27,7 @@ pub struct DeleteFindingAggregatorInputBuilder {
 }
 impl DeleteFindingAggregatorInputBuilder {
     /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    /// This field is required.
     pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_aggregator_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteFindingAggregatorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput {
             finding_aggregator_arn: self.finding_aggregator_arn,

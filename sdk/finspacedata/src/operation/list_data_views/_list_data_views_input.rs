@@ -42,6 +42,7 @@ pub struct ListDataViewsInputBuilder {
 }
 impl ListDataViewsInputBuilder {
     /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListDataViewsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataViewsInput`](crate::operation::list_data_views::ListDataViewsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_views::ListDataViewsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_views::ListDataViewsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_views::ListDataViewsInput {
             dataset_id: self.dataset_id,
             next_token: self.next_token,

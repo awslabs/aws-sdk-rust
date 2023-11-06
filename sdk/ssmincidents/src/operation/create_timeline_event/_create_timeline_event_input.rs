@@ -38,8 +38,10 @@ impl CreateTimelineEventInput {
         self.event_data.as_deref()
     }
     /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
-    pub fn event_references(&self) -> ::std::option::Option<&[crate::types::EventReference]> {
-        self.event_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_references.is_none()`.
+    pub fn event_references(&self) -> &[crate::types::EventReference] {
+        self.event_references.as_deref().unwrap_or_default()
     }
 }
 impl CreateTimelineEventInput {
@@ -76,6 +78,7 @@ impl CreateTimelineEventInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateTimelineEventInputBuilder {
         &self.incident_record_arn
     }
     /// <p>The time that the event occurred.</p>
+    /// This field is required.
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_time = ::std::option::Option::Some(input);
         self
@@ -104,6 +108,7 @@ impl CreateTimelineEventInputBuilder {
         &self.event_time
     }
     /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
+    /// This field is required.
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl CreateTimelineEventInputBuilder {
         &self.event_type
     }
     /// <p>A short description of the event.</p>
+    /// This field is required.
     pub fn event_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +160,7 @@ impl CreateTimelineEventInputBuilder {
     /// Consumes the builder and constructs a [`CreateTimelineEventInput`](crate::operation::create_timeline_event::CreateTimelineEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_timeline_event::CreateTimelineEventInput {
             client_token: self.client_token,

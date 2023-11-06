@@ -11,8 +11,10 @@ pub struct ListMatchingWorkflowsOutput {
 }
 impl ListMatchingWorkflowsOutput {
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
-    pub fn workflow_summaries(&self) -> ::std::option::Option<&[crate::types::MatchingWorkflowSummary]> {
-        self.workflow_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_summaries.is_none()`.
+    pub fn workflow_summaries(&self) -> &[crate::types::MatchingWorkflowSummary] {
+        self.workflow_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

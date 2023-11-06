@@ -20,8 +20,10 @@ impl BatchPutFieldOptionsInput {
         self.field_id.as_deref()
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::FieldOption]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::FieldOption] {
+        self.options.as_deref().unwrap_or_default()
     }
 }
 impl BatchPutFieldOptionsInput {
@@ -41,6 +43,7 @@ pub struct BatchPutFieldOptionsInputBuilder {
 }
 impl BatchPutFieldOptionsInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl BatchPutFieldOptionsInputBuilder {
         &self.domain_id
     }
     /// <p>The unique identifier of a field.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +95,7 @@ impl BatchPutFieldOptionsInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutFieldOptionsInput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_put_field_options::BatchPutFieldOptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_put_field_options::BatchPutFieldOptionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_put_field_options::BatchPutFieldOptionsInput {
             domain_id: self.domain_id,

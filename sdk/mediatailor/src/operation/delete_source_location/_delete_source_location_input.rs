@@ -27,6 +27,7 @@ pub struct DeleteSourceLocationInputBuilder {
 }
 impl DeleteSourceLocationInputBuilder {
     /// <p>The name of the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteSourceLocationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSourceLocationInput`](crate::operation::delete_source_location::DeleteSourceLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_source_location::DeleteSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_source_location::DeleteSourceLocationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_source_location::DeleteSourceLocationInput {
             source_location_name: self.source_location_name,

@@ -62,6 +62,7 @@ impl CreatePartitionIndexInputBuilder {
         &self.catalog_id
     }
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreatePartitionIndexInputBuilder {
         &self.database_name
     }
     /// <p>Specifies the name of a table in which you want to create a partition index.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreatePartitionIndexInputBuilder {
         &self.table_name
     }
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
+    /// This field is required.
     pub fn partition_index(mut self, input: crate::types::PartitionIndex) -> Self {
         self.partition_index = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl CreatePartitionIndexInputBuilder {
     /// Consumes the builder and constructs a [`CreatePartitionIndexInput`](crate::operation::create_partition_index::CreatePartitionIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_partition_index::CreatePartitionIndexInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_partition_index::CreatePartitionIndexInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_partition_index::CreatePartitionIndexInput {
             catalog_id: self.catalog_id,

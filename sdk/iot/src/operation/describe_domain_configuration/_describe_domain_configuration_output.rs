@@ -39,8 +39,10 @@ impl DescribeDomainConfigurationOutput {
         self.domain_name.as_deref()
     }
     /// <p>A list containing summary information about the server certificate included in the domain configuration.</p>
-    pub fn server_certificates(&self) -> ::std::option::Option<&[crate::types::ServerCertificateSummary]> {
-        self.server_certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_certificates.is_none()`.
+    pub fn server_certificates(&self) -> &[crate::types::ServerCertificateSummary] {
+        self.server_certificates.as_deref().unwrap_or_default()
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub fn authorizer_config(&self) -> ::std::option::Option<&crate::types::AuthorizerConfig> {

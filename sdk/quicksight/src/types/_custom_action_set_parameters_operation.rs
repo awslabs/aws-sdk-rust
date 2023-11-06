@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionSetParametersOperation {
     /// <p>The parameter that determines the value configuration.</p>
-    pub parameter_value_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
+    pub parameter_value_configurations: ::std::vec::Vec<crate::types::SetParameterValueConfiguration>,
 }
 impl CustomActionSetParametersOperation {
     /// <p>The parameter that determines the value configuration.</p>
-    pub fn parameter_value_configurations(&self) -> ::std::option::Option<&[crate::types::SetParameterValueConfiguration]> {
-        self.parameter_value_configurations.as_deref()
+    pub fn parameter_value_configurations(&self) -> &[crate::types::SetParameterValueConfiguration] {
+        use std::ops::Deref;
+        self.parameter_value_configurations.deref()
     }
 }
 impl CustomActionSetParametersOperation {
@@ -51,9 +52,16 @@ impl CustomActionSetParametersOperationBuilder {
         &self.parameter_value_configurations
     }
     /// Consumes the builder and constructs a [`CustomActionSetParametersOperation`](crate::types::CustomActionSetParametersOperation).
-    pub fn build(self) -> crate::types::CustomActionSetParametersOperation {
-        crate::types::CustomActionSetParametersOperation {
-            parameter_value_configurations: self.parameter_value_configurations,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_value_configurations`](crate::types::builders::CustomActionSetParametersOperationBuilder::parameter_value_configurations)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomActionSetParametersOperation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomActionSetParametersOperation {
+            parameter_value_configurations: self.parameter_value_configurations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameter_value_configurations",
+                    "parameter_value_configurations was not specified but it is required when building CustomActionSetParametersOperation",
+                )
+            })?,
+        })
     }
 }

@@ -11,12 +11,16 @@ pub struct LendingDocument {
 }
 impl LendingDocument {
     /// <p>An array of LendingField objects.</p>
-    pub fn lending_fields(&self) -> ::std::option::Option<&[crate::types::LendingField]> {
-        self.lending_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lending_fields.is_none()`.
+    pub fn lending_fields(&self) -> &[crate::types::LendingField] {
+        self.lending_fields.as_deref().unwrap_or_default()
     }
     /// <p>A list of signatures detected in a lending document.</p>
-    pub fn signature_detections(&self) -> ::std::option::Option<&[crate::types::SignatureDetection]> {
-        self.signature_detections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signature_detections.is_none()`.
+    pub fn signature_detections(&self) -> &[crate::types::SignatureDetection] {
+        self.signature_detections.as_deref().unwrap_or_default()
     }
 }
 impl LendingDocument {

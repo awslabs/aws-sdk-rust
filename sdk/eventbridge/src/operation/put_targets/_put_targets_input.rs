@@ -20,8 +20,10 @@ impl PutTargetsInput {
         self.event_bus_name.as_deref()
     }
     /// <p>The targets to update or add to the rule.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
 }
 impl PutTargetsInput {
@@ -41,6 +43,7 @@ pub struct PutTargetsInputBuilder {
 }
 impl PutTargetsInputBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule = ::std::option::Option::Some(input.into());
         self
@@ -89,7 +92,7 @@ impl PutTargetsInputBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`PutTargetsInput`](crate::operation::put_targets::PutTargetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_targets::PutTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_targets::PutTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_targets::PutTargetsInput {
             rule: self.rule,
             event_bus_name: self.event_bus_name,

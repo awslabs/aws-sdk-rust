@@ -74,18 +74,18 @@ pub fn de_count_pending_decision_tasks_http_response(
         output = crate::protocol_serde::shape_count_pending_decision_tasks::de_count_pending_decision_tasks(_response_body, output)
             .map_err(crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::count_pending_decision_tasks_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_count_pending_decision_tasks_input(
     input: &crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_count_pending_decision_tasks_input::ser_count_pending_decision_tasks_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_count_pending_decision_tasks(

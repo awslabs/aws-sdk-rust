@@ -80,6 +80,7 @@ pub struct UpdateFirewallPolicyInputBuilder {
 impl UpdateFirewallPolicyInputBuilder {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    /// This field is required.
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +131,7 @@ impl UpdateFirewallPolicyInputBuilder {
         &self.firewall_policy_name
     }
     /// <p>The updated firewall policy to use for the firewall. You can't add or remove a <code>TLSInspectionConfiguration</code> after you create a firewall policy. However, you can replace an existing TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.</p>
+    /// This field is required.
     pub fn firewall_policy(mut self, input: crate::types::FirewallPolicy) -> Self {
         self.firewall_policy = ::std::option::Option::Some(input);
         self
@@ -194,7 +196,7 @@ impl UpdateFirewallPolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFirewallPolicyInput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_firewall_policy::UpdateFirewallPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_firewall_policy::UpdateFirewallPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_firewall_policy::UpdateFirewallPolicyInput {
             update_token: self.update_token,

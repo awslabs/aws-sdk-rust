@@ -27,6 +27,7 @@ pub struct StopStreamInputBuilder {
 }
 impl StopStreamInputBuilder {
     /// <p>ARN of the channel for which the stream is to be stopped.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StopStreamInputBuilder {
         &self.channel_arn
     }
     /// Consumes the builder and constructs a [`StopStreamInput`](crate::operation::stop_stream::StopStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_stream::StopStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_stream::StopStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_stream::StopStreamInput {
             channel_arn: self.channel_arn,
         })

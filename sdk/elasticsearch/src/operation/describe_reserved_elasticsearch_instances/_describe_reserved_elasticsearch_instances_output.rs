@@ -16,8 +16,10 @@ impl DescribeReservedElasticsearchInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>List of reserved Elasticsearch instances.</p>
-    pub fn reserved_elasticsearch_instances(&self) -> ::std::option::Option<&[crate::types::ReservedElasticsearchInstance]> {
-        self.reserved_elasticsearch_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_elasticsearch_instances.is_none()`.
+    pub fn reserved_elasticsearch_instances(&self) -> &[crate::types::ReservedElasticsearchInstance] {
+        self.reserved_elasticsearch_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReservedElasticsearchInstancesOutput {

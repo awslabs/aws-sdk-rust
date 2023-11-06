@@ -11,12 +11,16 @@ pub struct ModelPackageStatusDetails {
 }
 impl ModelPackageStatusDetails {
     /// <p>The validation status of the model package.</p>
-    pub fn validation_statuses(&self) -> ::std::option::Option<&[crate::types::ModelPackageStatusItem]> {
-        self.validation_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_statuses.is_none()`.
+    pub fn validation_statuses(&self) -> &[crate::types::ModelPackageStatusItem] {
+        self.validation_statuses.as_deref().unwrap_or_default()
     }
     /// <p>The status of the scan of the Docker image container for the model package.</p>
-    pub fn image_scan_statuses(&self) -> ::std::option::Option<&[crate::types::ModelPackageStatusItem]> {
-        self.image_scan_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_scan_statuses.is_none()`.
+    pub fn image_scan_statuses(&self) -> &[crate::types::ModelPackageStatusItem] {
+        self.image_scan_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ModelPackageStatusDetails {

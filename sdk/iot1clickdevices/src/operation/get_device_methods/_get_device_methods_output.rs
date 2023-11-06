@@ -9,8 +9,10 @@ pub struct GetDeviceMethodsOutput {
 }
 impl GetDeviceMethodsOutput {
     /// <p>List of available device APIs.</p>
-    pub fn device_methods(&self) -> ::std::option::Option<&[crate::types::DeviceMethod]> {
-        self.device_methods.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_methods.is_none()`.
+    pub fn device_methods(&self) -> &[crate::types::DeviceMethod] {
+        self.device_methods.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDeviceMethodsOutput {

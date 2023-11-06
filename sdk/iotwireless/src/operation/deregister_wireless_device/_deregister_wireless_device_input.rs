@@ -34,6 +34,7 @@ pub struct DeregisterWirelessDeviceInputBuilder {
 }
 impl DeregisterWirelessDeviceInputBuilder {
     /// <p>The identifier of the wireless device to deregister from AWS IoT Wireless.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeregisterWirelessDeviceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput {
             identifier: self.identifier,

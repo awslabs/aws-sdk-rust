@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableIoTLoggingParams {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-    pub role_arn_for_logging: ::std::option::Option<::std::string::String>,
+    pub role_arn_for_logging: ::std::string::String,
     /// <p>Specifies the type of information to be logged.</p>
-    pub log_level: ::std::option::Option<crate::types::LogLevel>,
+    pub log_level: crate::types::LogLevel,
 }
 impl EnableIoTLoggingParams {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-    pub fn role_arn_for_logging(&self) -> ::std::option::Option<&str> {
-        self.role_arn_for_logging.as_deref()
+    pub fn role_arn_for_logging(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn_for_logging.deref()
     }
     /// <p>Specifies the type of information to be logged.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
-        self.log_level.as_ref()
+    pub fn log_level(&self) -> &crate::types::LogLevel {
+        &self.log_level
     }
 }
 impl EnableIoTLoggingParams {
@@ -35,6 +36,7 @@ pub struct EnableIoTLoggingParamsBuilder {
 }
 impl EnableIoTLoggingParamsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
+    /// This field is required.
     pub fn role_arn_for_logging(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn_for_logging = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl EnableIoTLoggingParamsBuilder {
         &self.role_arn_for_logging
     }
     /// <p>Specifies the type of information to be logged.</p>
+    /// This field is required.
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl EnableIoTLoggingParamsBuilder {
         &self.log_level
     }
     /// Consumes the builder and constructs a [`EnableIoTLoggingParams`](crate::types::EnableIoTLoggingParams).
-    pub fn build(self) -> crate::types::EnableIoTLoggingParams {
-        crate::types::EnableIoTLoggingParams {
-            role_arn_for_logging: self.role_arn_for_logging,
-            log_level: self.log_level,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn_for_logging`](crate::types::builders::EnableIoTLoggingParamsBuilder::role_arn_for_logging)
+    /// - [`log_level`](crate::types::builders::EnableIoTLoggingParamsBuilder::log_level)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnableIoTLoggingParams, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnableIoTLoggingParams {
+            role_arn_for_logging: self.role_arn_for_logging.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn_for_logging",
+                    "role_arn_for_logging was not specified but it is required when building EnableIoTLoggingParams",
+                )
+            })?,
+            log_level: self.log_level.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_level",
+                    "log_level was not specified but it is required when building EnableIoTLoggingParams",
+                )
+            })?,
+        })
     }
 }

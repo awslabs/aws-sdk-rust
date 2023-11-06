@@ -32,11 +32,10 @@ pub fn de_describe_storage_configuration_http_error(
                     )
                     .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -49,11 +48,10 @@ pub fn de_describe_storage_configuration_http_error(
                     output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                         .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_failure_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -65,11 +63,10 @@ pub fn de_describe_storage_configuration_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "LimitExceededException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::LimitExceededException({
@@ -80,11 +77,10 @@ pub fn de_describe_storage_configuration_http_error(
                 output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => {
@@ -97,11 +93,10 @@ pub fn de_describe_storage_configuration_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -113,11 +108,10 @@ pub fn de_describe_storage_configuration_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::generic(generic),
@@ -139,7 +133,9 @@ pub fn de_describe_storage_configuration_http_response(
         output = crate::protocol_serde::shape_describe_storage_configuration::de_describe_storage_configuration(_response_body, output)
             .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_storage_configuration_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?
     })
 }
 

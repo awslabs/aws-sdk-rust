@@ -20,8 +20,10 @@ impl GetDevicesInput {
         self.global_network_id.as_deref()
     }
     /// <p>One or more device IDs. The maximum is 10.</p>
-    pub fn device_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_ids.is_none()`.
+    pub fn device_ids(&self) -> &[::std::string::String] {
+        self.device_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the site.</p>
     pub fn site_id(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct GetDevicesInputBuilder {
 }
 impl GetDevicesInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +134,7 @@ impl GetDevicesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetDevicesInput`](crate::operation::get_devices::GetDevicesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_devices::GetDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_devices::GetDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_devices::GetDevicesInput {
             global_network_id: self.global_network_id,
             device_ids: self.device_ids,

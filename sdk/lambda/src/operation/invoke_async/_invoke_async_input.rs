@@ -14,7 +14,7 @@ pub struct InvokeAsyncInput {
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-    pub invoke_args: ::aws_smithy_http::byte_stream::ByteStream,
+    pub invoke_args: ::aws_smithy_types::byte_stream::ByteStream,
 }
 impl InvokeAsyncInput {
     /// <p>The name of the Lambda function.</p>
@@ -29,7 +29,7 @@ impl InvokeAsyncInput {
         self.function_name.as_deref()
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-    pub fn invoke_args(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn invoke_args(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.invoke_args
     }
 }
@@ -45,7 +45,7 @@ impl InvokeAsyncInput {
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct InvokeAsyncInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
-    pub(crate) invoke_args: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) invoke_args: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
 }
 impl InvokeAsyncInputBuilder {
     /// <p>The name of the Lambda function.</p>
@@ -56,6 +56,7 @@ impl InvokeAsyncInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -84,21 +85,22 @@ impl InvokeAsyncInputBuilder {
         &self.function_name
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-    pub fn invoke_args(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    /// This field is required.
+    pub fn invoke_args(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.invoke_args = ::std::option::Option::Some(input);
         self
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-    pub fn set_invoke_args(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_invoke_args(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.invoke_args = input;
         self
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-    pub fn get_invoke_args(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_invoke_args(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.invoke_args
     }
     /// Consumes the builder and constructs a [`InvokeAsyncInput`](crate::operation::invoke_async::InvokeAsyncInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_async::InvokeAsyncInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_async::InvokeAsyncInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_async::InvokeAsyncInput {
             function_name: self.function_name,
             invoke_args: self.invoke_args.unwrap_or_default(),

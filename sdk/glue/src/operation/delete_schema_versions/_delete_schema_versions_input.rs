@@ -42,6 +42,7 @@ pub struct DeleteSchemaVersionsInputBuilder {
 }
 impl DeleteSchemaVersionsInputBuilder {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = ::std::option::Option::Some(input);
         self
@@ -60,6 +61,7 @@ impl DeleteSchemaVersionsInputBuilder {
     /// <li> <p>a single version number, 5</p> </li>
     /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.versions = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +86,7 @@ impl DeleteSchemaVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSchemaVersionsInput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_schema_versions::DeleteSchemaVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_schema_versions::DeleteSchemaVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_schema_versions::DeleteSchemaVersionsInput {
             schema_id: self.schema_id,

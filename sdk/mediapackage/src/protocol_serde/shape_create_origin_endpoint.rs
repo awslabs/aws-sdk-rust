@@ -138,12 +138,12 @@ pub fn de_create_origin_endpoint_http_response(
 
 pub fn ser_create_origin_endpoint_input(
     input: &crate::operation::create_origin_endpoint::CreateOriginEndpointInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_origin_endpoint_input::ser_create_origin_endpoint_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_origin_endpoint(
@@ -249,7 +249,7 @@ pub(crate) fn de_create_origin_endpoint(
                     );
                 }
                 "whitelist" => {
-                    builder = builder.set_whitelist(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_whitelist(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

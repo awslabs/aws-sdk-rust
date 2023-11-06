@@ -33,8 +33,10 @@ impl CreateLinkInput {
         self.label_template.as_deref()
     }
     /// <p>An array of strings that define which types of data that the source account shares with the monitoring account.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ResourceType]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[crate::types::ResourceType] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the sink to use to create this link. You can use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListSinks.html">ListSinks</a> to find the ARNs of sinks.</p>
     /// <p>For more information about sinks, see <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html">CreateSink</a>.</p>
@@ -72,6 +74,7 @@ impl CreateLinkInputBuilder {
     /// <li> <p> <code>$AccountEmail</code> is the globally unique email address of the account</p> </li>
     /// <li> <p> <code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn label_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_template = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl CreateLinkInputBuilder {
     }
     /// <p>The ARN of the sink to use to create this link. You can use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListSinks.html">ListSinks</a> to find the ARNs of sinks.</p>
     /// <p>For more information about sinks, see <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html">CreateSink</a>.</p>
+    /// This field is required.
     pub fn sink_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_identifier = ::std::option::Option::Some(input.into());
         self
@@ -161,7 +165,7 @@ impl CreateLinkInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_link::CreateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_link::CreateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_link::CreateLinkInput {
             label_template: self.label_template,
             resource_types: self.resource_types,

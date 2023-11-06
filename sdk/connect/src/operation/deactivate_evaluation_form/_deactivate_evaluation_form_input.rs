@@ -41,6 +41,7 @@ pub struct DeactivateEvaluationFormInputBuilder {
 }
 impl DeactivateEvaluationFormInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeactivateEvaluationFormInputBuilder {
         &self.instance_id
     }
     /// <p>The unique identifier for the evaluation form.</p>
+    /// This field is required.
     pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeactivateEvaluationFormInputBuilder {
         &self.evaluation_form_id
     }
     /// <p>A version of the evaluation form. If the version property is not provided, the latest version of the evaluation form is deactivated.</p>
+    /// This field is required.
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
         self.evaluation_form_version = ::std::option::Option::Some(input);
         self
@@ -87,7 +90,7 @@ impl DeactivateEvaluationFormInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput {
             instance_id: self.instance_id,

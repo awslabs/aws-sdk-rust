@@ -34,8 +34,10 @@ impl ListBatchJobExecutionsInput {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn execution_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.execution_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_ids.is_none()`.
+    pub fn execution_ids(&self) -> &[::std::string::String] {
+        self.execution_ids.as_deref().unwrap_or_default()
     }
     /// <p>The name of each batch job execution.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
@@ -104,6 +106,7 @@ impl ListBatchJobExecutionsInputBuilder {
         &self.max_results
     }
     /// <p>The unique identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -198,7 +201,7 @@ impl ListBatchJobExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput {
             next_token: self.next_token,

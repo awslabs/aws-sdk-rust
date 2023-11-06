@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobTemplateData {
     /// <p>The execution role ARN of the job run.</p>
-    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub execution_role_arn: ::std::string::String,
     /// <p> The release version of Amazon EMR.</p>
-    pub release_label: ::std::option::Option<::std::string::String>,
+    pub release_label: ::std::string::String,
     /// <p> The configuration settings that are used to override defaults configuration.</p>
     pub configuration_overrides: ::std::option::Option<crate::types::ParametricConfigurationOverrides>,
     /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
@@ -20,12 +20,14 @@ pub struct JobTemplateData {
 }
 impl JobTemplateData {
     /// <p>The execution role ARN of the job run.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_role_arn.as_deref()
+    pub fn execution_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_role_arn.deref()
     }
     /// <p> The release version of Amazon EMR.</p>
-    pub fn release_label(&self) -> ::std::option::Option<&str> {
-        self.release_label.as_deref()
+    pub fn release_label(&self) -> &str {
+        use std::ops::Deref;
+        self.release_label.deref()
     }
     /// <p> The configuration settings that are used to override defaults configuration.</p>
     pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::ParametricConfigurationOverrides> {
@@ -67,6 +69,7 @@ pub struct JobTemplateDataBuilder {
 }
 impl JobTemplateDataBuilder {
     /// <p>The execution role ARN of the job run.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl JobTemplateDataBuilder {
         &self.execution_role_arn
     }
     /// <p> The release version of Amazon EMR.</p>
+    /// This field is required.
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +113,7 @@ impl JobTemplateDataBuilder {
         &self.configuration_overrides
     }
     /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
+    /// This field is required.
     pub fn job_driver(mut self, input: crate::types::JobDriver) -> Self {
         self.job_driver = ::std::option::Option::Some(input);
         self
@@ -172,14 +177,27 @@ impl JobTemplateDataBuilder {
         &self.job_tags
     }
     /// Consumes the builder and constructs a [`JobTemplateData`](crate::types::JobTemplateData).
-    pub fn build(self) -> crate::types::JobTemplateData {
-        crate::types::JobTemplateData {
-            execution_role_arn: self.execution_role_arn,
-            release_label: self.release_label,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`execution_role_arn`](crate::types::builders::JobTemplateDataBuilder::execution_role_arn)
+    /// - [`release_label`](crate::types::builders::JobTemplateDataBuilder::release_label)
+    pub fn build(self) -> ::std::result::Result<crate::types::JobTemplateData, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JobTemplateData {
+            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "execution_role_arn",
+                    "execution_role_arn was not specified but it is required when building JobTemplateData",
+                )
+            })?,
+            release_label: self.release_label.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "release_label",
+                    "release_label was not specified but it is required when building JobTemplateData",
+                )
+            })?,
             configuration_overrides: self.configuration_overrides,
             job_driver: self.job_driver,
             parameter_configuration: self.parameter_configuration,
             job_tags: self.job_tags,
-        }
+        })
     }
 }

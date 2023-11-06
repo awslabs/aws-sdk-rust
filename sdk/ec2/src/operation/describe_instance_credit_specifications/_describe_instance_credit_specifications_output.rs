@@ -11,8 +11,10 @@ pub struct DescribeInstanceCreditSpecificationsOutput {
 }
 impl DescribeInstanceCreditSpecificationsOutput {
     /// <p>Information about the credit option for CPU usage of an instance.</p>
-    pub fn instance_credit_specifications(&self) -> ::std::option::Option<&[crate::types::InstanceCreditSpecification]> {
-        self.instance_credit_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_credit_specifications.is_none()`.
+    pub fn instance_credit_specifications(&self) -> &[crate::types::InstanceCreditSpecification] {
+        self.instance_credit_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

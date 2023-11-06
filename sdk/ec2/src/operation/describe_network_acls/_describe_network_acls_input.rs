@@ -71,8 +71,10 @@ impl DescribeNetworkAclsInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -80,8 +82,10 @@ impl DescribeNetworkAclsInput {
     }
     /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
-    pub fn network_acl_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_acl_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_acl_ids.is_none()`.
+    pub fn network_acl_ids(&self) -> &[::std::string::String] {
+        self.network_acl_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -279,7 +283,7 @@ impl DescribeNetworkAclsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeNetworkAclsInput`](crate::operation::describe_network_acls::DescribeNetworkAclsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_network_acls::DescribeNetworkAclsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_network_acls::DescribeNetworkAclsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_network_acls::DescribeNetworkAclsInput {
             filters: self.filters,

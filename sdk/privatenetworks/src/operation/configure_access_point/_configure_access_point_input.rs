@@ -74,6 +74,7 @@ pub struct ConfigureAccessPointInputBuilder {
 }
 impl ConfigureAccessPointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
+    /// This field is required.
     pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +161,7 @@ impl ConfigureAccessPointInputBuilder {
     /// Consumes the builder and constructs a [`ConfigureAccessPointInput`](crate::operation::configure_access_point::ConfigureAccessPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::configure_access_point::ConfigureAccessPointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::configure_access_point::ConfigureAccessPointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::configure_access_point::ConfigureAccessPointInput {
             access_point_arn: self.access_point_arn,

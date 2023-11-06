@@ -14,8 +14,10 @@ pub struct QueryObjectsOutput {
 }
 impl QueryObjectsOutput {
     /// <p>The identifiers that match the query selectors.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

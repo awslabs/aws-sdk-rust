@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAsset`](crate::operation::get_asset::builders::GetAssetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`asset_id(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_asset_id): <p>The unique identifier for an asset.</p>
-    ///   - [`data_set_id(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_data_set_id): <p>The unique identifier for a data set.</p>
-    ///   - [`revision_id(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_revision_id): <p>The unique identifier for a revision.</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_asset_id):<br>required: **true**<br><p>The unique identifier for an asset.</p><br>
+    ///   - [`data_set_id(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The unique identifier for a data set.</p><br>
+    ///   - [`revision_id(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_revision_id):<br>required: **true**<br><p>The unique identifier for a revision.</p><br>
     /// - On success, responds with [`GetAssetOutput`](crate::operation::get_asset::GetAssetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_asset::GetAssetOutput::arn): <p>The ARN for the asset.</p>
     ///   - [`asset_details(Option<AssetDetails>)`](crate::operation::get_asset::GetAssetOutput::asset_details): <p>Details about the asset.</p>

@@ -49,8 +49,10 @@ impl SimpleScopeTerm {
     /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl SimpleScopeTerm {

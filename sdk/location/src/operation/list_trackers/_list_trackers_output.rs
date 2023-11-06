@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrackersOutput {
     /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::ListTrackersResponseEntry>>,
+    pub entries: ::std::vec::Vec<crate::types::ListTrackersResponseEntry>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTrackersOutput {
     /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::ListTrackersResponseEntry]> {
-        self.entries.as_deref()
+    pub fn entries(&self) -> &[crate::types::ListTrackersResponseEntry] {
+        use std::ops::Deref;
+        self.entries.deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListTrackersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTrackersOutput`](crate::operation::list_trackers::ListTrackersOutput).
-    pub fn build(self) -> crate::operation::list_trackers::ListTrackersOutput {
-        crate::operation::list_trackers::ListTrackersOutput {
-            entries: self.entries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entries`](crate::operation::list_trackers::builders::ListTrackersOutputBuilder::entries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_trackers::ListTrackersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_trackers::ListTrackersOutput {
+            entries: self.entries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "entries",
+                    "entries was not specified but it is required when building ListTrackersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

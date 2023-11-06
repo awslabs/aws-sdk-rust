@@ -2,7 +2,7 @@
 pub fn ser_get_pull_request_approval_states_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pull_request_id {
         object.key("pullRequestId").string(var_1.as_str());
     }

@@ -18,7 +18,7 @@ impl GetAccountAliasInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountAliasInput`](crate::operation::get_account_alias::GetAccountAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_account_alias::GetAccountAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_account_alias::GetAccountAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_account_alias::GetAccountAliasInput {})
     }
 }

@@ -28,6 +28,7 @@ pub struct TrainingRepositoryAuthConfigBuilder {
 }
 impl TrainingRepositoryAuthConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
+    /// This field is required.
     pub fn training_repository_credentials_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_repository_credentials_provider_arn = ::std::option::Option::Some(input.into());
         self

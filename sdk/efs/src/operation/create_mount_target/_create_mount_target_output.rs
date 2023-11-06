@@ -7,13 +7,13 @@ pub struct CreateMountTargetOutput {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>System-assigned mount target ID.</p>
-    pub mount_target_id: ::std::option::Option<::std::string::String>,
+    pub mount_target_id: ::std::string::String,
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    pub file_system_id: ::std::option::Option<::std::string::String>,
+    pub file_system_id: ::std::string::String,
     /// <p>The ID of the mount target's subnet.</p>
-    pub subnet_id: ::std::option::Option<::std::string::String>,
+    pub subnet_id: ::std::string::String,
     /// <p>Lifecycle state of the mount target.</p>
-    pub life_cycle_state: ::std::option::Option<crate::types::LifeCycleState>,
+    pub life_cycle_state: crate::types::LifeCycleState,
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
@@ -32,20 +32,23 @@ impl CreateMountTargetOutput {
         self.owner_id.as_deref()
     }
     /// <p>System-assigned mount target ID.</p>
-    pub fn mount_target_id(&self) -> ::std::option::Option<&str> {
-        self.mount_target_id.as_deref()
+    pub fn mount_target_id(&self) -> &str {
+        use std::ops::Deref;
+        self.mount_target_id.deref()
     }
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
-        self.file_system_id.as_deref()
+    pub fn file_system_id(&self) -> &str {
+        use std::ops::Deref;
+        self.file_system_id.deref()
     }
     /// <p>The ID of the mount target's subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
-        self.subnet_id.as_deref()
+    pub fn subnet_id(&self) -> &str {
+        use std::ops::Deref;
+        self.subnet_id.deref()
     }
     /// <p>Lifecycle state of the mount target.</p>
-    pub fn life_cycle_state(&self) -> ::std::option::Option<&crate::types::LifeCycleState> {
-        self.life_cycle_state.as_ref()
+    pub fn life_cycle_state(&self) -> &crate::types::LifeCycleState {
+        &self.life_cycle_state
     }
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
@@ -112,6 +115,7 @@ impl CreateMountTargetOutputBuilder {
         &self.owner_id
     }
     /// <p>System-assigned mount target ID.</p>
+    /// This field is required.
     pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +130,7 @@ impl CreateMountTargetOutputBuilder {
         &self.mount_target_id
     }
     /// <p>The ID of the file system for which the mount target is intended.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +145,7 @@ impl CreateMountTargetOutputBuilder {
         &self.file_system_id
     }
     /// <p>The ID of the mount target's subnet.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +160,7 @@ impl CreateMountTargetOutputBuilder {
         &self.subnet_id
     }
     /// <p>Lifecycle state of the mount target.</p>
+    /// This field is required.
     pub fn life_cycle_state(mut self, input: crate::types::LifeCycleState) -> Self {
         self.life_cycle_state = ::std::option::Option::Some(input);
         self
@@ -247,19 +254,46 @@ impl CreateMountTargetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateMountTargetOutput`](crate::operation::create_mount_target::CreateMountTargetOutput).
-    pub fn build(self) -> crate::operation::create_mount_target::CreateMountTargetOutput {
-        crate::operation::create_mount_target::CreateMountTargetOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mount_target_id`](crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder::mount_target_id)
+    /// - [`file_system_id`](crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder::file_system_id)
+    /// - [`subnet_id`](crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder::subnet_id)
+    /// - [`life_cycle_state`](crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder::life_cycle_state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_mount_target::CreateMountTargetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_mount_target::CreateMountTargetOutput {
             owner_id: self.owner_id,
-            mount_target_id: self.mount_target_id,
-            file_system_id: self.file_system_id,
-            subnet_id: self.subnet_id,
-            life_cycle_state: self.life_cycle_state,
+            mount_target_id: self.mount_target_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mount_target_id",
+                    "mount_target_id was not specified but it is required when building CreateMountTargetOutput",
+                )
+            })?,
+            file_system_id: self.file_system_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_system_id",
+                    "file_system_id was not specified but it is required when building CreateMountTargetOutput",
+                )
+            })?,
+            subnet_id: self.subnet_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnet_id",
+                    "subnet_id was not specified but it is required when building CreateMountTargetOutput",
+                )
+            })?,
+            life_cycle_state: self.life_cycle_state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "life_cycle_state",
+                    "life_cycle_state was not specified but it is required when building CreateMountTargetOutput",
+                )
+            })?,
             ip_address: self.ip_address,
             network_interface_id: self.network_interface_id,
             availability_zone_id: self.availability_zone_id,
             availability_zone_name: self.availability_zone_name,
             vpc_id: self.vpc_id,
             _request_id: self._request_id,
-        }
+        })
     }
 }

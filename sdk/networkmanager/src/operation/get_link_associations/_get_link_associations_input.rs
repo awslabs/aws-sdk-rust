@@ -55,6 +55,7 @@ pub struct GetLinkAssociationsInputBuilder {
 }
 impl GetLinkAssociationsInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl GetLinkAssociationsInputBuilder {
     /// Consumes the builder and constructs a [`GetLinkAssociationsInput`](crate::operation::get_link_associations::GetLinkAssociationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_link_associations::GetLinkAssociationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_link_associations::GetLinkAssociationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_link_associations::GetLinkAssociationsInput {
             global_network_id: self.global_network_id,

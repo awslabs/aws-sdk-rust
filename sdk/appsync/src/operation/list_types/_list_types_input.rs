@@ -48,6 +48,7 @@ pub struct ListTypesInputBuilder {
 }
 impl ListTypesInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListTypesInputBuilder {
         &self.api_id
     }
     /// <p>The type format: SDL or JSON.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -104,7 +106,7 @@ impl ListTypesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTypesInput`](crate::operation::list_types::ListTypesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_types::ListTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_types::ListTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_types::ListTypesInput {
             api_id: self.api_id,
             format: self.format,

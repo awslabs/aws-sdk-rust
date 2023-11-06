@@ -6,7 +6,7 @@ pub struct ListServersOutput {
     /// <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of servers that were listed.</p>
-    pub servers: ::std::option::Option<::std::vec::Vec<crate::types::ListedServer>>,
+    pub servers: ::std::vec::Vec<crate::types::ListedServer>,
     _request_id: Option<String>,
 }
 impl ListServersOutput {
@@ -15,8 +15,9 @@ impl ListServersOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of servers that were listed.</p>
-    pub fn servers(&self) -> ::std::option::Option<&[crate::types::ListedServer]> {
-        self.servers.as_deref()
+    pub fn servers(&self) -> &[crate::types::ListedServer] {
+        use std::ops::Deref;
+        self.servers.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServersOutput {
@@ -84,11 +85,18 @@ impl ListServersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServersOutput`](crate::operation::list_servers::ListServersOutput).
-    pub fn build(self) -> crate::operation::list_servers::ListServersOutput {
-        crate::operation::list_servers::ListServersOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`servers`](crate::operation::list_servers::builders::ListServersOutputBuilder::servers)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_servers::ListServersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_servers::ListServersOutput {
             next_token: self.next_token,
-            servers: self.servers,
+            servers: self.servers.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "servers",
+                    "servers was not specified but it is required when building ListServersOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

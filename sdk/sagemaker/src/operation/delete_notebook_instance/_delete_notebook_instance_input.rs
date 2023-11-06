@@ -27,6 +27,7 @@ pub struct DeleteNotebookInstanceInputBuilder {
 }
 impl DeleteNotebookInstanceInputBuilder {
     /// <p>The name of the SageMaker notebook instance to delete.</p>
+    /// This field is required.
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteNotebookInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotebookInstanceInput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput {
             notebook_instance_name: self.notebook_instance_name,
         })

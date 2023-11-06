@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContactEvaluationOutput {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub evaluation_id: ::std::option::Option<::std::string::String>,
+    pub evaluation_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub evaluation_arn: ::std::option::Option<::std::string::String>,
+    pub evaluation_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateContactEvaluationOutput {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
-        self.evaluation_id.as_deref()
+    pub fn evaluation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluation_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(&self) -> ::std::option::Option<&str> {
-        self.evaluation_arn.as_deref()
+    pub fn evaluation_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluation_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateContactEvaluationOutput {
@@ -41,6 +43,7 @@ pub struct UpdateContactEvaluationOutputBuilder {
 }
 impl UpdateContactEvaluationOutputBuilder {
     /// <p>A unique identifier for the contact evaluation.</p>
+    /// This field is required.
     pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UpdateContactEvaluationOutputBuilder {
         &self.evaluation_id
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
+    /// This field is required.
     pub fn evaluation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,29 @@ impl UpdateContactEvaluationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateContactEvaluationOutput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput).
-    pub fn build(self) -> crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
-        crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
-            evaluation_id: self.evaluation_id,
-            evaluation_arn: self.evaluation_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`evaluation_id`](crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder::evaluation_id)
+    /// - [`evaluation_arn`](crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder::evaluation_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
+            evaluation_id: self.evaluation_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "evaluation_id",
+                    "evaluation_id was not specified but it is required when building UpdateContactEvaluationOutput",
+                )
+            })?,
+            evaluation_arn: self.evaluation_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "evaluation_arn",
+                    "evaluation_arn was not specified but it is required when building UpdateContactEvaluationOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_create_bridge_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_bridge::CreateBridgeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.egress_gateway_bridge {
         #[allow(unused_mut)]
         let mut object_2 = object.key("egressGatewayBridge").start_object();

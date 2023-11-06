@@ -11,8 +11,10 @@ pub struct ListInferenceRecommendationsJobStepsOutput {
 }
 impl ListInferenceRecommendationsJobStepsOutput {
     /// <p>A list of all subtask details in Inference Recommender.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::InferenceRecommendationsJobStep]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::InferenceRecommendationsJobStep] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>A token that you can specify in your next request to return more results from the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

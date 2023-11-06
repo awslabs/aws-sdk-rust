@@ -79,6 +79,7 @@ pub struct CreateBotAliasInputBuilder {
 }
 impl CreateBotAliasInputBuilder {
     /// <p>The alias to create. The name must be unique for the bot.</p>
+    /// This field is required.
     pub fn bot_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_name = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +175,7 @@ impl CreateBotAliasInputBuilder {
         &self.sentiment_analysis_settings
     }
     /// <p>The unique identifier of the bot that the alias applies to.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -210,7 +212,7 @@ impl CreateBotAliasInputBuilder {
     /// Consumes the builder and constructs a [`CreateBotAliasInput`](crate::operation::create_bot_alias::CreateBotAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_bot_alias::CreateBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_bot_alias::CreateBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot_alias::CreateBotAliasInput {
             bot_alias_name: self.bot_alias_name,
             description: self.description,

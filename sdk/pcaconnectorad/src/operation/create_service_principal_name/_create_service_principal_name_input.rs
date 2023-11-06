@@ -41,6 +41,7 @@ pub struct CreateServicePrincipalNameInputBuilder {
 }
 impl CreateServicePrincipalNameInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
+    /// This field is required.
     pub fn directory_registration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_registration_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateServicePrincipalNameInputBuilder {
         &self.directory_registration_arn
     }
     /// <p> The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl CreateServicePrincipalNameInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_principal_name::CreateServicePrincipalNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_service_principal_name::CreateServicePrincipalNameInput {
             directory_registration_arn: self.directory_registration_arn,

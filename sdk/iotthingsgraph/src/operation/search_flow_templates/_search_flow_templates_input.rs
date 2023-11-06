@@ -12,8 +12,10 @@ pub struct SearchFlowTemplatesInput {
 }
 impl SearchFlowTemplatesInput {
     /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::FlowTemplateFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::FlowTemplateFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -91,7 +93,7 @@ impl SearchFlowTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`SearchFlowTemplatesInput`](crate::operation::search_flow_templates::SearchFlowTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_flow_templates::SearchFlowTemplatesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_flow_templates::SearchFlowTemplatesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_flow_templates::SearchFlowTemplatesInput {
             filters: self.filters,

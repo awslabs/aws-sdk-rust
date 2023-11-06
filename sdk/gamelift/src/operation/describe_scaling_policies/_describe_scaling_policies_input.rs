@@ -73,6 +73,7 @@ pub struct DescribeScalingPoliciesInputBuilder {
 }
 impl DescribeScalingPoliciesInputBuilder {
     /// <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -174,7 +175,7 @@ impl DescribeScalingPoliciesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput {
             fleet_id: self.fleet_id,

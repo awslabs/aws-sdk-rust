@@ -2,7 +2,7 @@
 pub fn ser_create_data_cells_filter_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_data_cells_filter::CreateDataCellsFilterInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.table_data {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TableData").start_object();

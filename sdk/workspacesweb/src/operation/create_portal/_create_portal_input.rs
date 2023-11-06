@@ -25,8 +25,10 @@ impl CreatePortalInput {
         self.display_name.as_deref()
     }
     /// <p>The tags to add to the web portal. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The customer managed key of the web portal.</p>
     pub fn customer_managed_key(&self) -> ::std::option::Option<&str> {
@@ -194,7 +196,9 @@ impl CreatePortalInputBuilder {
         &self.authentication_type
     }
     /// Consumes the builder and constructs a [`CreatePortalInput`](crate::operation::create_portal::CreatePortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_portal::CreatePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_portal::CreatePortalInput {
             display_name: self.display_name,
             tags: self.tags,

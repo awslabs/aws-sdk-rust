@@ -2,23 +2,23 @@
 pub fn ser_create_open_zfs_volume_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateOpenZfsVolumeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parent_volume_id {
         object.key("ParentVolumeId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.storage_capacity_reservation_gi_b {
+    if let Some(var_2) = &input.storage_capacity_reservation_gib {
         object.key("StorageCapacityReservationGiB").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.storage_capacity_quota_gi_b {
+    if let Some(var_3) = &input.storage_capacity_quota_gib {
         object.key("StorageCapacityQuotaGiB").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.record_size_ki_b {
+    if let Some(var_4) = &input.record_size_kib {
         object.key("RecordSizeKiB").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),

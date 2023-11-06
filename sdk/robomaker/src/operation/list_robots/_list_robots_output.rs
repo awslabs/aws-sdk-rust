@@ -14,8 +14,10 @@ pub struct ListRobotsOutput {
 }
 impl ListRobotsOutput {
     /// <p>A list of robots that meet the criteria of the request.</p>
-    pub fn robots(&self) -> ::std::option::Option<&[crate::types::Robot]> {
-        self.robots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.robots.is_none()`.
+    pub fn robots(&self) -> &[crate::types::Robot] {
+        self.robots.as_deref().unwrap_or_default()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

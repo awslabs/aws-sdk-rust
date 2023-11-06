@@ -9,8 +9,10 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListTagsForResourceOutput {

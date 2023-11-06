@@ -7,9 +7,9 @@ pub struct ContinuousDeploymentPolicyList {
     /// <p>Indicates the next page of continuous deployment policies. To get the next page of the list, use this value in the <code>Marker</code> field of your request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of continuous deployment policies that were specified in your request.</p>
-    pub max_items: ::std::option::Option<i32>,
+    pub max_items: i32,
     /// <p>The total number of continuous deployment policies in your Amazon Web Services account, regardless of the <code>MaxItems</code> value.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A list of continuous deployment policy items.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>,
 }
@@ -19,16 +19,18 @@ impl ContinuousDeploymentPolicyList {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of continuous deployment policies that were specified in your request.</p>
-    pub fn max_items(&self) -> ::std::option::Option<i32> {
+    pub fn max_items(&self) -> i32 {
         self.max_items
     }
     /// <p>The total number of continuous deployment policies in your Amazon Web Services account, regardless of the <code>MaxItems</code> value.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A list of continuous deployment policy items.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ContinuousDeploymentPolicySummary]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ContinuousDeploymentPolicySummary] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl ContinuousDeploymentPolicyList {
@@ -63,6 +65,7 @@ impl ContinuousDeploymentPolicyListBuilder {
         &self.next_marker
     }
     /// <p>The maximum number of continuous deployment policies that were specified in your request.</p>
+    /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl ContinuousDeploymentPolicyListBuilder {
         &self.max_items
     }
     /// <p>The total number of continuous deployment policies in your Amazon Web Services account, regardless of the <code>MaxItems</code> value.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -111,12 +115,25 @@ impl ContinuousDeploymentPolicyListBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicyList`](crate::types::ContinuousDeploymentPolicyList).
-    pub fn build(self) -> crate::types::ContinuousDeploymentPolicyList {
-        crate::types::ContinuousDeploymentPolicyList {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`max_items`](crate::types::builders::ContinuousDeploymentPolicyListBuilder::max_items)
+    /// - [`quantity`](crate::types::builders::ContinuousDeploymentPolicyListBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContinuousDeploymentPolicyList, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContinuousDeploymentPolicyList {
             next_marker: self.next_marker,
-            max_items: self.max_items,
-            quantity: self.quantity,
+            max_items: self.max_items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_items",
+                    "max_items was not specified but it is required when building ContinuousDeploymentPolicyList",
+                )
+            })?,
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building ContinuousDeploymentPolicyList",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

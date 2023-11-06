@@ -2,7 +2,7 @@
 pub fn ser_cache_behavior_per_path(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CacheBehaviorPerPath,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.path {
         object.key("path").string(var_1.as_str());
     }

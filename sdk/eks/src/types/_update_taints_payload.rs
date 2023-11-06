@@ -11,12 +11,16 @@ pub struct UpdateTaintsPayload {
 }
 impl UpdateTaintsPayload {
     /// <p>Kubernetes taints to be added or updated.</p>
-    pub fn add_or_update_taints(&self) -> ::std::option::Option<&[crate::types::Taint]> {
-        self.add_or_update_taints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_or_update_taints.is_none()`.
+    pub fn add_or_update_taints(&self) -> &[crate::types::Taint] {
+        self.add_or_update_taints.as_deref().unwrap_or_default()
     }
     /// <p>Kubernetes taints to remove.</p>
-    pub fn remove_taints(&self) -> ::std::option::Option<&[crate::types::Taint]> {
-        self.remove_taints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_taints.is_none()`.
+    pub fn remove_taints(&self) -> &[crate::types::Taint] {
+        self.remove_taints.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTaintsPayload {

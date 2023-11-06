@@ -5,48 +5,55 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRuleAggregation {
     /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
-    pub aggregate_columns: ::std::option::Option<::std::vec::Vec<crate::types::AggregateColumn>>,
+    pub aggregate_columns: ::std::vec::Vec<crate::types::AggregateColumn>,
     /// <p>Columns in configured table that can be used in join statements and/or as aggregate columns. They can never be outputted directly.</p>
-    pub join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub join_columns: ::std::vec::Vec<::std::string::String>,
     /// <p>Control that requires member who runs query to do a join with their configured table and/or other configured table in query.</p>
     pub join_required: ::std::option::Option<crate::types::JoinRequiredOption>,
     /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
     pub allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
     /// <p>The columns that query runners are allowed to select, group by, or filter by.</p>
-    pub dimension_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dimension_columns: ::std::vec::Vec<::std::string::String>,
     /// <p>Set of scalar functions that are allowed to be used on dimension columns and the output of aggregation of metrics.</p>
-    pub scalar_functions: ::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>>,
+    pub scalar_functions: ::std::vec::Vec<crate::types::ScalarFunctions>,
     /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
-    pub output_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>>,
+    pub output_constraints: ::std::vec::Vec<crate::types::AggregationConstraint>,
 }
 impl AnalysisRuleAggregation {
     /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
-    pub fn aggregate_columns(&self) -> ::std::option::Option<&[crate::types::AggregateColumn]> {
-        self.aggregate_columns.as_deref()
+    pub fn aggregate_columns(&self) -> &[crate::types::AggregateColumn] {
+        use std::ops::Deref;
+        self.aggregate_columns.deref()
     }
     /// <p>Columns in configured table that can be used in join statements and/or as aggregate columns. They can never be outputted directly.</p>
-    pub fn join_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.join_columns.as_deref()
+    pub fn join_columns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.join_columns.deref()
     }
     /// <p>Control that requires member who runs query to do a join with their configured table and/or other configured table in query.</p>
     pub fn join_required(&self) -> ::std::option::Option<&crate::types::JoinRequiredOption> {
         self.join_required.as_ref()
     }
     /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    pub fn allowed_join_operators(&self) -> ::std::option::Option<&[crate::types::JoinOperator]> {
-        self.allowed_join_operators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_join_operators.is_none()`.
+    pub fn allowed_join_operators(&self) -> &[crate::types::JoinOperator] {
+        self.allowed_join_operators.as_deref().unwrap_or_default()
     }
     /// <p>The columns that query runners are allowed to select, group by, or filter by.</p>
-    pub fn dimension_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dimension_columns.as_deref()
+    pub fn dimension_columns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.dimension_columns.deref()
     }
     /// <p>Set of scalar functions that are allowed to be used on dimension columns and the output of aggregation of metrics.</p>
-    pub fn scalar_functions(&self) -> ::std::option::Option<&[crate::types::ScalarFunctions]> {
-        self.scalar_functions.as_deref()
+    pub fn scalar_functions(&self) -> &[crate::types::ScalarFunctions] {
+        use std::ops::Deref;
+        self.scalar_functions.deref()
     }
     /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
-    pub fn output_constraints(&self) -> ::std::option::Option<&[crate::types::AggregationConstraint]> {
-        self.output_constraints.as_deref()
+    pub fn output_constraints(&self) -> &[crate::types::AggregationConstraint] {
+        use std::ops::Deref;
+        self.output_constraints.deref()
     }
 }
 impl AnalysisRuleAggregation {
@@ -204,15 +211,46 @@ impl AnalysisRuleAggregationBuilder {
         &self.output_constraints
     }
     /// Consumes the builder and constructs a [`AnalysisRuleAggregation`](crate::types::AnalysisRuleAggregation).
-    pub fn build(self) -> crate::types::AnalysisRuleAggregation {
-        crate::types::AnalysisRuleAggregation {
-            aggregate_columns: self.aggregate_columns,
-            join_columns: self.join_columns,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`aggregate_columns`](crate::types::builders::AnalysisRuleAggregationBuilder::aggregate_columns)
+    /// - [`join_columns`](crate::types::builders::AnalysisRuleAggregationBuilder::join_columns)
+    /// - [`dimension_columns`](crate::types::builders::AnalysisRuleAggregationBuilder::dimension_columns)
+    /// - [`scalar_functions`](crate::types::builders::AnalysisRuleAggregationBuilder::scalar_functions)
+    /// - [`output_constraints`](crate::types::builders::AnalysisRuleAggregationBuilder::output_constraints)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleAggregation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalysisRuleAggregation {
+            aggregate_columns: self.aggregate_columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "aggregate_columns",
+                    "aggregate_columns was not specified but it is required when building AnalysisRuleAggregation",
+                )
+            })?,
+            join_columns: self.join_columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "join_columns",
+                    "join_columns was not specified but it is required when building AnalysisRuleAggregation",
+                )
+            })?,
             join_required: self.join_required,
             allowed_join_operators: self.allowed_join_operators,
-            dimension_columns: self.dimension_columns,
-            scalar_functions: self.scalar_functions,
-            output_constraints: self.output_constraints,
-        }
+            dimension_columns: self.dimension_columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dimension_columns",
+                    "dimension_columns was not specified but it is required when building AnalysisRuleAggregation",
+                )
+            })?,
+            scalar_functions: self.scalar_functions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "scalar_functions",
+                    "scalar_functions was not specified but it is required when building AnalysisRuleAggregation",
+                )
+            })?,
+            output_constraints: self.output_constraints.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "output_constraints",
+                    "output_constraints was not specified but it is required when building AnalysisRuleAggregation",
+                )
+            })?,
+        })
     }
 }

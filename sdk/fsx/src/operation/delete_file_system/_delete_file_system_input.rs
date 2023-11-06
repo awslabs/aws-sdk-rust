@@ -56,6 +56,7 @@ pub struct DeleteFileSystemInputBuilder {
 }
 impl DeleteFileSystemInputBuilder {
     /// <p>The ID of the file system that you want to delete.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -128,7 +129,7 @@ impl DeleteFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_file_system::DeleteFileSystemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_file_system::DeleteFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_file_system::DeleteFileSystemInput {
             file_system_id: self.file_system_id,
             client_request_token: self.client_request_token,

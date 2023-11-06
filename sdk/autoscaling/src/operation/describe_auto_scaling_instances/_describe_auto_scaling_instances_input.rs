@@ -14,8 +14,10 @@ pub struct DescribeAutoScalingInstancesInput {
 impl DescribeAutoScalingInstancesInput {
     /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
@@ -98,7 +100,7 @@ impl DescribeAutoScalingInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput {
             instance_ids: self.instance_ids,

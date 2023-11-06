@@ -75,7 +75,7 @@ where
 pub fn ser_asset_bundle_import_job_override_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobOverrideParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_id_override_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ResourceIdOverrideConfiguration").start_object();

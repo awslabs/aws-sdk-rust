@@ -27,8 +27,10 @@ impl CreateNotificationInput {
         self.notification.as_ref()
     }
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-    pub fn subscribers(&self) -> ::std::option::Option<&[crate::types::Subscriber]> {
-        self.subscribers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribers.is_none()`.
+    pub fn subscribers(&self) -> &[crate::types::Subscriber] {
+        self.subscribers.as_deref().unwrap_or_default()
     }
 }
 impl CreateNotificationInput {
@@ -49,6 +51,7 @@ pub struct CreateNotificationInputBuilder {
 }
 impl CreateNotificationInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl CreateNotificationInputBuilder {
         &self.account_id
     }
     /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl CreateNotificationInputBuilder {
         &self.budget_name
     }
     /// <p>The notification that you want to create.</p>
+    /// This field is required.
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.notification = ::std::option::Option::Some(input);
         self
@@ -113,7 +118,7 @@ impl CreateNotificationInputBuilder {
     /// Consumes the builder and constructs a [`CreateNotificationInput`](crate::operation::create_notification::CreateNotificationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_notification::CreateNotificationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_notification::CreateNotificationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_notification::CreateNotificationInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

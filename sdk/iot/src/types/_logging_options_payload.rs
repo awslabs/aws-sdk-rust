@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingOptionsPayload {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The log level.</p>
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl LoggingOptionsPayload {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The log level.</p>
     pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
@@ -35,6 +36,7 @@ pub struct LoggingOptionsPayloadBuilder {
 }
 impl LoggingOptionsPayloadBuilder {
     /// <p>The ARN of the IAM role that grants access.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl LoggingOptionsPayloadBuilder {
         &self.log_level
     }
     /// Consumes the builder and constructs a [`LoggingOptionsPayload`](crate::types::LoggingOptionsPayload).
-    pub fn build(self) -> crate::types::LoggingOptionsPayload {
-        crate::types::LoggingOptionsPayload {
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::LoggingOptionsPayloadBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingOptionsPayload, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LoggingOptionsPayload {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building LoggingOptionsPayload",
+                )
+            })?,
             log_level: self.log_level,
-        }
+        })
     }
 }

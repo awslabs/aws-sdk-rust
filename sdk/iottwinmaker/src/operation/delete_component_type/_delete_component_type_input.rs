@@ -34,6 +34,7 @@ pub struct DeleteComponentTypeInputBuilder {
 }
 impl DeleteComponentTypeInputBuilder {
     /// <p>The ID of the workspace that contains the component type.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteComponentTypeInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the component type to delete.</p>
+    /// This field is required.
     pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteComponentTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteComponentTypeInput`](crate::operation::delete_component_type::DeleteComponentTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_component_type::DeleteComponentTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_component_type::DeleteComponentTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_component_type::DeleteComponentTypeInput {
             workspace_id: self.workspace_id,

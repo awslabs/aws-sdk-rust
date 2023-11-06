@@ -27,6 +27,7 @@ pub struct CancelZonalShiftInputBuilder {
 }
 impl CancelZonalShiftInputBuilder {
     /// <p>The internally-generated identifier of a zonal shift.</p>
+    /// This field is required.
     pub fn zonal_shift_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zonal_shift_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl CancelZonalShiftInputBuilder {
     /// Consumes the builder and constructs a [`CancelZonalShiftInput`](crate::operation::cancel_zonal_shift::CancelZonalShiftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_zonal_shift::CancelZonalShiftInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_zonal_shift::CancelZonalShiftInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_zonal_shift::CancelZonalShiftInput {
             zonal_shift_id: self.zonal_shift_id,
         })

@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "booleanValues" => Some(crate::types::ArrayValue::BooleanValues(
                             crate::protocol_serde::shape_boolean_array::de_boolean_array(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'booleanValues' cannot be null")
@@ -69,7 +74,7 @@ where
 pub fn ser_array_value(
     object_1: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ArrayValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ArrayValue::BooleanValues(inner) => {
             let mut array_1 = object_1.key("booleanValues").start_array();
@@ -125,7 +130,7 @@ pub fn ser_array_value(
             }
             array_9.finish();
         }
-        crate::types::ArrayValue::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("ArrayValue")),
+        crate::types::ArrayValue::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ArrayValue")),
     }
     Ok(())
 }

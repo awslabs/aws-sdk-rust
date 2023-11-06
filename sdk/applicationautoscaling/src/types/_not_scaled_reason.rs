@@ -13,7 +13,7 @@ pub struct NotScaledReason {
     /// <li> <p>AlreadyAtMinCapacity</p> </li>
     /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
     /// </ul>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
     /// <p>The maximum capacity.</p>
     pub max_capacity: ::std::option::Option<i32>,
     /// <p>The minimum capacity.</p>
@@ -31,8 +31,9 @@ impl NotScaledReason {
     /// <li> <p>AlreadyAtMinCapacity</p> </li>
     /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
     /// <p>The maximum capacity.</p>
     pub fn max_capacity(&self) -> ::std::option::Option<i32> {
@@ -73,6 +74,7 @@ impl NotScaledReasonBuilder {
     /// <li> <p>AlreadyAtMinCapacity</p> </li>
     /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -145,12 +147,19 @@ impl NotScaledReasonBuilder {
         &self.current_capacity
     }
     /// Consumes the builder and constructs a [`NotScaledReason`](crate::types::NotScaledReason).
-    pub fn build(self) -> crate::types::NotScaledReason {
-        crate::types::NotScaledReason {
-            code: self.code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code`](crate::types::builders::NotScaledReasonBuilder::code)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotScaledReason, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotScaledReason {
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building NotScaledReason",
+                )
+            })?,
             max_capacity: self.max_capacity,
             min_capacity: self.min_capacity,
             current_capacity: self.current_capacity,
-        }
+        })
     }
 }

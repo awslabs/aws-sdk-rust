@@ -42,6 +42,7 @@ pub struct ApplyArchiveRuleInputBuilder {
 }
 impl ApplyArchiveRuleInputBuilder {
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ApplyArchiveRuleInputBuilder {
         &self.analyzer_arn
     }
     /// <p>The name of the rule to apply.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl ApplyArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`ApplyArchiveRuleInput`](crate::operation::apply_archive_rule::ApplyArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::apply_archive_rule::ApplyArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::apply_archive_rule::ApplyArchiveRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::apply_archive_rule::ApplyArchiveRuleInput {
             analyzer_arn: self.analyzer_arn,
             rule_name: self.rule_name,

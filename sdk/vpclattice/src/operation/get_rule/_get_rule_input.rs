@@ -41,6 +41,7 @@ pub struct GetRuleInputBuilder {
 }
 impl GetRuleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetRuleInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetRuleInputBuilder {
         &self.listener_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
+    /// This field is required.
     pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +86,7 @@ impl GetRuleInputBuilder {
         &self.rule_identifier
     }
     /// Consumes the builder and constructs a [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rule::GetRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rule::GetRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rule::GetRuleInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

@@ -27,16 +27,20 @@ impl BrokerNodeGroupInfo {
         self.broker_az_distribution.as_ref()
     }
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
-    pub fn client_subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.client_subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_subnets.is_none()`.
+    pub fn client_subnets(&self) -> &[::std::string::String] {
+        self.client_subnets.as_deref().unwrap_or_default()
     }
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
     pub fn storage_info(&self) -> ::std::option::Option<&crate::types::StorageInfo> {
@@ -47,8 +51,10 @@ impl BrokerNodeGroupInfo {
         self.connectivity_info.as_ref()
     }
     /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
-    pub fn zone_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.zone_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.zone_ids.is_none()`.
+    pub fn zone_ids(&self) -> &[::std::string::String] {
+        self.zone_ids.as_deref().unwrap_or_default()
     }
 }
 impl BrokerNodeGroupInfo {
@@ -109,6 +115,7 @@ impl BrokerNodeGroupInfoBuilder {
         &self.client_subnets
     }
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self

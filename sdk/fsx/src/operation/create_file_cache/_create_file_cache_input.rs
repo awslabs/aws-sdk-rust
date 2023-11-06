@@ -52,16 +52,22 @@ impl CreateFileCacheInput {
         self.storage_capacity
     }
     /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
     pub fn copy_tags_to_data_repository_associations(&self) -> ::std::option::Option<bool> {
@@ -82,8 +88,10 @@ impl CreateFileCacheInput {
     /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
-    pub fn data_repository_associations(&self) -> ::std::option::Option<&[crate::types::FileCacheDataRepositoryAssociation]> {
-        self.data_repository_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_repository_associations.is_none()`.
+    pub fn data_repository_associations(&self) -> &[crate::types::FileCacheDataRepositoryAssociation] {
+        self.data_repository_associations.as_deref().unwrap_or_default()
     }
 }
 impl CreateFileCacheInput {
@@ -128,6 +136,7 @@ impl CreateFileCacheInputBuilder {
         &self.client_request_token
     }
     /// <p>The type of cache that you're creating, which must be <code>LUSTRE</code>.</p>
+    /// This field is required.
     pub fn file_cache_type(mut self, input: crate::types::FileCacheType) -> Self {
         self.file_cache_type = ::std::option::Option::Some(input);
         self
@@ -142,6 +151,7 @@ impl CreateFileCacheInputBuilder {
         &self.file_cache_type
     }
     /// <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
+    /// This field is required.
     pub fn file_cache_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_cache_type_version = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +166,7 @@ impl CreateFileCacheInputBuilder {
         &self.file_cache_type_version
     }
     /// <p>The storage capacity of the cache in gibibytes (GiB). Valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
+    /// This field is required.
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
@@ -315,7 +326,7 @@ impl CreateFileCacheInputBuilder {
     /// Consumes the builder and constructs a [`CreateFileCacheInput`](crate::operation::create_file_cache::CreateFileCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_file_cache::CreateFileCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_file_cache::CreateFileCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_file_cache::CreateFileCacheInput {
             client_request_token: self.client_request_token,
             file_cache_type: self.file_cache_type,

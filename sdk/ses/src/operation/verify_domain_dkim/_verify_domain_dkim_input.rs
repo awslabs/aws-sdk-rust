@@ -28,6 +28,7 @@ pub struct VerifyDomainDkimInputBuilder {
 }
 impl VerifyDomainDkimInputBuilder {
     /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl VerifyDomainDkimInputBuilder {
     /// Consumes the builder and constructs a [`VerifyDomainDkimInput`](crate::operation::verify_domain_dkim::VerifyDomainDkimInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_domain_dkim::VerifyDomainDkimInput { domain: self.domain })
     }
 }

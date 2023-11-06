@@ -34,6 +34,7 @@ pub struct DescribeGroupInputBuilder {
 }
 impl DescribeGroupInputBuilder {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeGroupInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a group in the identity store.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::operation::describe_group::DescribeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_group::DescribeGroupInput {
             identity_store_id: self.identity_store_id,
             group_id: self.group_id,

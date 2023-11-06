@@ -2,7 +2,7 @@
 pub fn ser_ingress_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngressConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.is_publicly_accessible {
         object.key("IsPubliclyAccessible").boolean(input.is_publicly_accessible);
     }

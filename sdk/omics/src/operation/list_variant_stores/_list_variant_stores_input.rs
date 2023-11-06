@@ -18,8 +18,10 @@ impl ListVariantStoresInput {
         self.max_results
     }
     /// <p>A list of store IDs.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -112,7 +114,7 @@ impl ListVariantStoresInputBuilder {
     /// Consumes the builder and constructs a [`ListVariantStoresInput`](crate::operation::list_variant_stores::ListVariantStoresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_variant_stores::ListVariantStoresInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_variant_stores::ListVariantStoresInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_variant_stores::ListVariantStoresInput {
             max_results: self.max_results,
             ids: self.ids,

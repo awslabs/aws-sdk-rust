@@ -32,13 +32,17 @@ impl Captions {
         self.merge_policy.as_deref()
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_sources.is_none()`.
     #[deprecated]
-    pub fn caption_sources(&self) -> ::std::option::Option<&[crate::types::CaptionSource]> {
-        self.caption_sources.as_deref()
+    pub fn caption_sources(&self) -> &[crate::types::CaptionSource] {
+        self.caption_sources.as_deref().unwrap_or_default()
     }
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
-    pub fn caption_formats(&self) -> ::std::option::Option<&[crate::types::CaptionFormat]> {
-        self.caption_formats.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_formats.is_none()`.
+    pub fn caption_formats(&self) -> &[crate::types::CaptionFormat] {
+        self.caption_formats.as_deref().unwrap_or_default()
     }
 }
 impl Captions {

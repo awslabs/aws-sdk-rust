@@ -34,6 +34,7 @@ pub struct GetApplicationVersionInputBuilder {
 }
 impl GetApplicationVersionInputBuilder {
     /// <p>The unique identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetApplicationVersionInputBuilder {
         &self.application_id
     }
     /// <p>The specific version of the application.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl GetApplicationVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetApplicationVersionInput`](crate::operation::get_application_version::GetApplicationVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_application_version::GetApplicationVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_application_version::GetApplicationVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_application_version::GetApplicationVersionInput {
             application_id: self.application_id,

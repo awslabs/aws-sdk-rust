@@ -42,8 +42,10 @@ impl ListIntentPathsInput {
         self.intent_path.as_deref()
     }
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::AnalyticsPathFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::AnalyticsPathFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListIntentPathsInput {
@@ -65,6 +67,7 @@ pub struct ListIntentPathsInputBuilder {
 }
 impl ListIntentPathsInputBuilder {
     /// <p>The identifier for the bot for which you want to retrieve intent path metrics.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +82,7 @@ impl ListIntentPathsInputBuilder {
         &self.bot_id
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
+    /// This field is required.
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
         self
@@ -93,6 +97,7 @@ impl ListIntentPathsInputBuilder {
         &self.start_date_time
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
+    /// This field is required.
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +117,7 @@ impl ListIntentPathsInputBuilder {
     /// <li> <p>/BookCar/BookHotel</p> </li>
     /// <li> <p>/BookHotel/BookCar</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn intent_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_path = ::std::option::Option::Some(input.into());
         self
@@ -158,7 +164,7 @@ impl ListIntentPathsInputBuilder {
     /// Consumes the builder and constructs a [`ListIntentPathsInput`](crate::operation::list_intent_paths::ListIntentPathsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_intent_paths::ListIntentPathsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_intent_paths::ListIntentPathsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_intent_paths::ListIntentPathsInput {
             bot_id: self.bot_id,
             start_date_time: self.start_date_time,

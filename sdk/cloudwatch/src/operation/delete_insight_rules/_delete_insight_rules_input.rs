@@ -8,8 +8,10 @@ pub struct DeleteInsightRulesInput {
 }
 impl DeleteInsightRulesInput {
     /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rule_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_names.is_none()`.
+    pub fn rule_names(&self) -> &[::std::string::String] {
+        self.rule_names.as_deref().unwrap_or_default()
     }
 }
 impl DeleteInsightRulesInput {
@@ -49,7 +51,8 @@ impl DeleteInsightRulesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInsightRulesInput`](crate::operation::delete_insight_rules::DeleteInsightRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_insight_rules::DeleteInsightRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_insight_rules::DeleteInsightRulesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_insight_rules::DeleteInsightRulesInput { rule_names: self.rule_names })
     }
 }

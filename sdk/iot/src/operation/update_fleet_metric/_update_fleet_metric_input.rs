@@ -90,6 +90,7 @@ pub struct UpdateFleetMetricInputBuilder {
 }
 impl UpdateFleetMetricInputBuilder {
     /// <p>The name of the fleet metric to update.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +189,7 @@ impl UpdateFleetMetricInputBuilder {
         &self.query_version
     }
     /// <p>The name of the index to search.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -232,7 +234,7 @@ impl UpdateFleetMetricInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFleetMetricInput`](crate::operation::update_fleet_metric::UpdateFleetMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_fleet_metric::UpdateFleetMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_fleet_metric::UpdateFleetMetricInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_fleet_metric::UpdateFleetMetricInput {
             metric_name: self.metric_name,
             query_string: self.query_string,

@@ -41,6 +41,7 @@ pub struct UpdateVoiceConnectorInputBuilder {
 }
 impl UpdateVoiceConnectorInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateVoiceConnectorInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The name of the Voice Connector.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateVoiceConnectorInputBuilder {
         &self.name
     }
     /// <p>When enabled, requires encryption for the Voice Connector.</p>
+    /// This field is required.
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.require_encryption = ::std::option::Option::Some(input);
         self
@@ -85,7 +88,7 @@ impl UpdateVoiceConnectorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVoiceConnectorInput`](crate::operation::update_voice_connector::UpdateVoiceConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_voice_connector::UpdateVoiceConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_voice_connector::UpdateVoiceConnectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_voice_connector::UpdateVoiceConnectorInput {
             voice_connector_id: self.voice_connector_id,

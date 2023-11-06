@@ -25,8 +25,10 @@ impl DescribeLabelGroupOutput {
         self.label_group_arn.as_deref()
     }
     /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
-    pub fn fault_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fault_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fault_codes.is_none()`.
+    pub fn fault_codes(&self) -> &[::std::string::String] {
+        self.fault_codes.as_deref().unwrap_or_default()
     }
     /// <p> The time at which the label group was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

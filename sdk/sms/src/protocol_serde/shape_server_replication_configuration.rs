@@ -2,7 +2,7 @@
 pub fn ser_server_replication_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServerReplicationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.server {
         #[allow(unused_mut)]
         let mut object_2 = object.key("server").start_object();

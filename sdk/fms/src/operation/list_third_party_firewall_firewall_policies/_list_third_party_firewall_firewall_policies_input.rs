@@ -43,6 +43,7 @@ pub struct ListThirdPartyFirewallFirewallPoliciesInputBuilder {
 }
 impl ListThirdPartyFirewallFirewallPoliciesInputBuilder {
     /// <p>The name of the third-party firewall vendor.</p>
+    /// This field is required.
     pub fn third_party_firewall(mut self, input: crate::types::ThirdPartyFirewall) -> Self {
         self.third_party_firewall = ::std::option::Option::Some(input);
         self
@@ -74,6 +75,7 @@ impl ListThirdPartyFirewallFirewallPoliciesInputBuilder {
         &self.next_token
     }
     /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+    /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
@@ -92,7 +94,7 @@ impl ListThirdPartyFirewallFirewallPoliciesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesInput {

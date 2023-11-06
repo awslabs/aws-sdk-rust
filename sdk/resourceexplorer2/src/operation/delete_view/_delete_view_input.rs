@@ -27,6 +27,7 @@ pub struct DeleteViewInputBuilder {
 }
 impl DeleteViewInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to delete.</p>
+    /// This field is required.
     pub fn view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteViewInputBuilder {
         &self.view_arn
     }
     /// Consumes the builder and constructs a [`DeleteViewInput`](crate::operation::delete_view::DeleteViewInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_view::DeleteViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_view::DeleteViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_view::DeleteViewInput { view_arn: self.view_arn })
     }
 }

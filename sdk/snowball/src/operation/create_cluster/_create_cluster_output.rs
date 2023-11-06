@@ -15,8 +15,10 @@ impl CreateClusterOutput {
         self.cluster_id.as_deref()
     }
     /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
-    pub fn job_list_entries(&self) -> ::std::option::Option<&[crate::types::JobListEntry]> {
-        self.job_list_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_list_entries.is_none()`.
+    pub fn job_list_entries(&self) -> &[crate::types::JobListEntry] {
+        self.job_list_entries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateClusterOutput {

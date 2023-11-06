@@ -34,6 +34,7 @@ pub struct DeleteFaqInputBuilder {
 }
 impl DeleteFaqInputBuilder {
     /// <p>The identifier of the FAQ you want to remove.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteFaqInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index for the FAQ.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteFaqInputBuilder {
         &self.index_id
     }
     /// Consumes the builder and constructs a [`DeleteFaqInput`](crate::operation::delete_faq::DeleteFaqInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_faq::DeleteFaqInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_faq::DeleteFaqInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_faq::DeleteFaqInput {
             id: self.id,
             index_id: self.index_id,

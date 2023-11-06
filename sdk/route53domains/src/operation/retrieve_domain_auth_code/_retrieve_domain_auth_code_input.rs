@@ -28,6 +28,7 @@ pub struct RetrieveDomainAuthCodeInputBuilder {
 }
 impl RetrieveDomainAuthCodeInputBuilder {
     /// <p>The name of the domain that you want to get an authorization code for.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl RetrieveDomainAuthCodeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput {
             domain_name: self.domain_name,

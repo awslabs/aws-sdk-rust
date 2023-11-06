@@ -59,6 +59,7 @@ pub struct UpdateVehicleInputBuilder {
 }
 impl UpdateVehicleInputBuilder {
     /// <p>The unique ID of the vehicle to update.</p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -143,7 +144,7 @@ impl UpdateVehicleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVehicleInput`](crate::operation::update_vehicle::UpdateVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vehicle::UpdateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_vehicle::UpdateVehicleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vehicle::UpdateVehicleInput {
             vehicle_name: self.vehicle_name,
             model_manifest_arn: self.model_manifest_arn,

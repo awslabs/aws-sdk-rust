@@ -69,6 +69,7 @@ pub struct ImportClientBrandingInputBuilder {
 }
 impl ImportClientBrandingInputBuilder {
     /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -169,7 +170,7 @@ impl ImportClientBrandingInputBuilder {
     /// Consumes the builder and constructs a [`ImportClientBrandingInput`](crate::operation::import_client_branding::ImportClientBrandingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_client_branding::ImportClientBrandingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_client_branding::ImportClientBrandingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_client_branding::ImportClientBrandingInput {
             resource_id: self.resource_id,

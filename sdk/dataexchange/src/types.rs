@@ -57,6 +57,28 @@ pub use crate::types::_redshift_data_share_asset::RedshiftDataShareAsset;
 
 pub use crate::types::_s3_snapshot_asset::S3SnapshotAsset;
 
+pub use crate::types::_notification_type::NotificationType;
+
+pub use crate::types::_notification_details::NotificationDetails;
+
+pub use crate::types::_schema_change_request_details::SchemaChangeRequestDetails;
+
+pub use crate::types::_schema_change_details::SchemaChangeDetails;
+
+pub use crate::types::_schema_change_type::SchemaChangeType;
+
+pub use crate::types::_deprecation_request_details::DeprecationRequestDetails;
+
+pub use crate::types::_data_update_request_details::DataUpdateRequestDetails;
+
+pub use crate::types::_scope_details::ScopeDetails;
+
+pub use crate::types::_s3_data_access_details::S3DataAccessDetails;
+
+pub use crate::types::_redshift_data_share_details::RedshiftDataShareDetails;
+
+pub use crate::types::_lake_formation_tag_policy_details::LakeFormationTagPolicyDetails;
+
 pub use crate::types::_asset_entry::AssetEntry;
 
 pub use crate::types::_job_entry::JobEntry;
@@ -169,11 +191,15 @@ mod _create_s3_data_access_from_s3_bucket_response_details;
 
 mod _data_set_entry;
 
+mod _data_update_request_details;
+
 mod _database_lf_tag_policy;
 
 mod _database_lf_tag_policy_and_permissions;
 
 mod _database_lf_tag_policy_permission;
+
+mod _deprecation_request_details;
 
 mod _details;
 
@@ -235,6 +261,8 @@ mod _lake_formation_data_permission_details;
 
 mod _lake_formation_data_permission_type;
 
+mod _lake_formation_tag_policy_details;
+
 mod _lf_permission;
 
 mod _lf_resource_details;
@@ -247,6 +275,10 @@ mod _lf_tag_policy_details;
 
 mod _limit_name;
 
+mod _notification_details;
+
+mod _notification_type;
+
 mod _origin;
 
 mod _origin_details;
@@ -256,6 +288,8 @@ mod _protocol_type;
 mod _redshift_data_share_asset;
 
 mod _redshift_data_share_asset_source_entry;
+
+mod _redshift_data_share_details;
 
 mod _request_details;
 
@@ -273,7 +307,17 @@ mod _s3_data_access_asset;
 
 mod _s3_data_access_asset_source_entry;
 
+mod _s3_data_access_details;
+
 mod _s3_snapshot_asset;
+
+mod _schema_change_details;
+
+mod _schema_change_request_details;
+
+mod _schema_change_type;
+
+mod _scope_details;
 
 mod _server_side_encryption_types;
 

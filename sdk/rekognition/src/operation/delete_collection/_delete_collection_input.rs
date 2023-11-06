@@ -27,6 +27,7 @@ pub struct DeleteCollectionInputBuilder {
 }
 impl DeleteCollectionInputBuilder {
     /// <p>ID of the collection to delete.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCollectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCollectionInput`](crate::operation::delete_collection::DeleteCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_collection::DeleteCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_collection::DeleteCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_collection::DeleteCollectionInput {
             collection_id: self.collection_id,
         })

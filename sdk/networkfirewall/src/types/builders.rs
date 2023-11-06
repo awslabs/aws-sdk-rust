@@ -11,6 +11,8 @@ pub use crate::types::_tls_inspection_configuration::TlsInspectionConfigurationB
 
 pub use crate::types::_server_certificate_configuration::ServerCertificateConfigurationBuilder;
 
+pub use crate::types::_check_certificate_revocation_status_actions::CheckCertificateRevocationStatusActionsBuilder;
+
 pub use crate::types::_server_certificate_scope::ServerCertificateScopeBuilder;
 
 pub use crate::types::_port_range::PortRangeBuilder;

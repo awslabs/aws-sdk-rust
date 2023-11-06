@@ -30,8 +30,10 @@ impl UpdateSizeConstraintSetInput {
     /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::SizeConstraintSetUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::SizeConstraintSetUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSizeConstraintSetInput {
@@ -51,6 +53,7 @@ pub struct UpdateSizeConstraintSetInputBuilder {
 }
 impl UpdateSizeConstraintSetInputBuilder {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    /// This field is required.
     pub fn size_constraint_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.size_constraint_set_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +68,7 @@ impl UpdateSizeConstraintSetInputBuilder {
         &self.size_constraint_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +122,7 @@ impl UpdateSizeConstraintSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_size_constraint_set::UpdateSizeConstraintSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_size_constraint_set::UpdateSizeConstraintSetInput {
             size_constraint_set_id: self.size_constraint_set_id,

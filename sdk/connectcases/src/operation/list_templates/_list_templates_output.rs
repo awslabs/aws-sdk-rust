@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplatesOutput {
     /// <p>List of template summary objects.</p>
-    pub templates: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub templates: ::std::vec::Vec<crate::types::TemplateSummary>,
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTemplatesOutput {
     /// <p>List of template summary objects.</p>
-    pub fn templates(&self) -> ::std::option::Option<&[crate::types::TemplateSummary]> {
-        self.templates.as_deref()
+    pub fn templates(&self) -> &[crate::types::TemplateSummary] {
+        use std::ops::Deref;
+        self.templates.deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_templates::ListTemplatesOutput {
-        crate::operation::list_templates::ListTemplatesOutput {
-            templates: self.templates,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`templates`](crate::operation::list_templates::builders::ListTemplatesOutputBuilder::templates)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesOutput {
+            templates: self.templates.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "templates",
+                    "templates was not specified but it is required when building ListTemplatesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

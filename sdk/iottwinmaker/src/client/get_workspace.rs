@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkspace`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::set_workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace.</p><br>
     /// - On success, responds with [`GetWorkspaceOutput`](crate::operation::get_workspace::GetWorkspaceOutput) with field(s):
-    ///   - [`workspace_id(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::workspace_id): <p>The ID of the workspace.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::arn): <p>The ARN of the workspace.</p>
+    ///   - [`workspace_id(String)`](crate::operation::get_workspace::GetWorkspaceOutput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`arn(String)`](crate::operation::get_workspace::GetWorkspaceOutput::arn): <p>The ARN of the workspace.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::description): <p>The description of the workspace.</p>
-    ///   - [`s3_location(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::s3_location): <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    ///   - [`role(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::role): <p>The ARN of the execution role associated with the workspace.</p>
-    ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::get_workspace::GetWorkspaceOutput::creation_date_time): <p>The date and time when the workspace was created.</p>
-    ///   - [`update_date_time(Option<DateTime>)`](crate::operation::get_workspace::GetWorkspaceOutput::update_date_time): <p>The date and time when the workspace was last updated.</p>
+    ///   - [`s3_location(String)`](crate::operation::get_workspace::GetWorkspaceOutput::s3_location): <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    ///   - [`role(String)`](crate::operation::get_workspace::GetWorkspaceOutput::role): <p>The ARN of the execution role associated with the workspace.</p>
+    ///   - [`creation_date_time(DateTime)`](crate::operation::get_workspace::GetWorkspaceOutput::creation_date_time): <p>The date and time when the workspace was created.</p>
+    ///   - [`update_date_time(DateTime)`](crate::operation::get_workspace::GetWorkspaceOutput::update_date_time): <p>The date and time when the workspace was last updated.</p>
     /// - On failure, responds with [`SdkError<GetWorkspaceError>`](crate::operation::get_workspace::GetWorkspaceError)
     pub fn get_workspace(&self) -> crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder {
         crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::new(self.handle.clone())

@@ -27,6 +27,7 @@ pub struct ClaimDevicesByClaimCodeInputBuilder {
 }
 impl ClaimDevicesByClaimCodeInputBuilder {
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
+    /// This field is required.
     pub fn claim_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.claim_code = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl ClaimDevicesByClaimCodeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput { claim_code: self.claim_code })
     }

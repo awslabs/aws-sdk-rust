@@ -48,6 +48,7 @@ pub struct ListLaunchesInputBuilder {
 }
 impl ListLaunchesInputBuilder {
     /// <p>The name or ARN of the project to return the launch list from.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,9 @@ impl ListLaunchesInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListLaunchesInput`](crate::operation::list_launches::ListLaunchesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_launches::ListLaunchesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_launches::ListLaunchesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_launches::ListLaunchesInput {
             project: self.project,
             max_results: self.max_results,

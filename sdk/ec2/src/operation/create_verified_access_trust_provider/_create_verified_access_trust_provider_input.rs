@@ -56,8 +56,10 @@ impl CreateVerifiedAccessTrustProviderInput {
         self.description.as_deref()
     }
     /// <p>The tags to assign to the Verified Access trust provider.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -97,6 +99,7 @@ pub struct CreateVerifiedAccessTrustProviderInputBuilder {
 }
 impl CreateVerifiedAccessTrustProviderInputBuilder {
     /// <p>The type of trust provider.</p>
+    /// This field is required.
     pub fn trust_provider_type(mut self, input: crate::types::TrustProviderType) -> Self {
         self.trust_provider_type = ::std::option::Option::Some(input);
         self
@@ -167,6 +170,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
         &self.device_options
     }
     /// <p>The identifier to be used when working with policy rules.</p>
+    /// This field is required.
     pub fn policy_reference_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_reference_name = ::std::option::Option::Some(input.into());
         self
@@ -261,7 +265,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderInput {

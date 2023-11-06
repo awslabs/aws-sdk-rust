@@ -41,6 +41,7 @@ pub struct SetDesiredCapacityInputBuilder {
 }
 impl SetDesiredCapacityInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl SetDesiredCapacityInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
+    /// This field is required.
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.desired_capacity = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,8 @@ impl SetDesiredCapacityInputBuilder {
     /// Consumes the builder and constructs a [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_desired_capacity::SetDesiredCapacityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_desired_capacity::SetDesiredCapacityInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::set_desired_capacity::SetDesiredCapacityInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             desired_capacity: self.desired_capacity,

@@ -2,52 +2,52 @@
 pub fn ser_batch_get_asset_property_aggregates_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchGetAssetPropertyAggregatesEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.entry_id {
-        object.key("entryId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("entryId").string(input.entry_id.as_str());
     }
-    if let Some(var_2) = &input.asset_id {
-        object.key("assetId").string(var_2.as_str());
+    if let Some(var_1) = &input.asset_id {
+        object.key("assetId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.property_id {
-        object.key("propertyId").string(var_3.as_str());
+    if let Some(var_2) = &input.property_id {
+        object.key("propertyId").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.property_alias {
-        object.key("propertyAlias").string(var_4.as_str());
+    if let Some(var_3) = &input.property_alias {
+        object.key("propertyAlias").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.aggregate_types {
-        let mut array_6 = object.key("aggregateTypes").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_4 = object.key("aggregateTypes").start_array();
+        for item_5 in &input.aggregate_types {
             {
-                array_6.value().string(item_7.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.resolution {
-        object.key("resolution").string(var_8.as_str());
+    {
+        object.key("resolution").string(input.resolution.as_str());
     }
-    if let Some(var_9) = &input.start_date {
+    {
         object
             .key("startDate")
-            .date_time(var_9, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.start_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_10) = &input.end_date {
+    {
         object
             .key("endDate")
-            .date_time(var_10, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_11) = &input.qualities {
-        let mut array_12 = object.key("qualities").start_array();
-        for item_13 in var_11 {
+    if let Some(var_6) = &input.qualities {
+        let mut array_7 = object.key("qualities").start_array();
+        for item_8 in var_6 {
             {
-                array_12.value().string(item_13.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_12.finish();
+        array_7.finish();
     }
-    if let Some(var_14) = &input.time_ordering {
-        object.key("timeOrdering").string(var_14.as_str());
+    if let Some(var_9) = &input.time_ordering {
+        object.key("timeOrdering").string(var_9.as_str());
     }
     Ok(())
 }

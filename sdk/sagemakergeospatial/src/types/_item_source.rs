@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ItemSource {
     /// <p>A unique Id for the source item.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The item Geometry in GeoJson format.</p>
     pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
     pub assets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetValue>>,
     /// <p>The searchable date and time of the item, in UTC.</p>
-    pub date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub date_time: ::aws_smithy_types::DateTime,
     /// <p>This field contains additional properties of the item.</p>
     pub properties: ::std::option::Option<crate::types::Properties>,
 }
 impl ItemSource {
     /// <p>A unique Id for the source item.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The item Geometry in GeoJson format.</p>
     pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
@@ -29,8 +30,8 @@ impl ItemSource {
         self.assets.as_ref()
     }
     /// <p>The searchable date and time of the item, in UTC.</p>
-    pub fn date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.date_time.as_ref()
+    pub fn date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.date_time
     }
     /// <p>This field contains additional properties of the item.</p>
     pub fn properties(&self) -> ::std::option::Option<&crate::types::Properties> {
@@ -56,6 +57,7 @@ pub struct ItemSourceBuilder {
 }
 impl ItemSourceBuilder {
     /// <p>A unique Id for the source item.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ItemSourceBuilder {
         &self.id
     }
     /// <p>The item Geometry in GeoJson format.</p>
+    /// This field is required.
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl ItemSourceBuilder {
         &self.assets
     }
     /// <p>The searchable date and time of the item, in UTC.</p>
+    /// This field is required.
     pub fn date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_time = ::std::option::Option::Some(input);
         self
@@ -132,13 +136,26 @@ impl ItemSourceBuilder {
         &self.properties
     }
     /// Consumes the builder and constructs a [`ItemSource`](crate::types::ItemSource).
-    pub fn build(self) -> crate::types::ItemSource {
-        crate::types::ItemSource {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ItemSourceBuilder::id)
+    /// - [`date_time`](crate::types::builders::ItemSourceBuilder::date_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ItemSource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ItemSource {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ItemSource",
+                )
+            })?,
             geometry: self.geometry,
             assets: self.assets,
-            date_time: self.date_time,
+            date_time: self.date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "date_time",
+                    "date_time was not specified but it is required when building ItemSource",
+                )
+            })?,
             properties: self.properties,
-        }
+        })
     }
 }

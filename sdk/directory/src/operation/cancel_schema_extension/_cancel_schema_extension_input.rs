@@ -34,6 +34,7 @@ pub struct CancelSchemaExtensionInputBuilder {
 }
 impl CancelSchemaExtensionInputBuilder {
     /// <p>The identifier of the directory whose schema extension will be canceled.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CancelSchemaExtensionInputBuilder {
         &self.directory_id
     }
     /// <p>The identifier of the schema extension that will be canceled.</p>
+    /// This field is required.
     pub fn schema_extension_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_extension_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl CancelSchemaExtensionInputBuilder {
     /// Consumes the builder and constructs a [`CancelSchemaExtensionInput`](crate::operation::cancel_schema_extension::CancelSchemaExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_schema_extension::CancelSchemaExtensionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_schema_extension::CancelSchemaExtensionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_schema_extension::CancelSchemaExtensionInput {
             directory_id: self.directory_id,

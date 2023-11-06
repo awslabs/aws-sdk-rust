@@ -2,7 +2,7 @@
 pub fn ser_sftp_connector_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SftpConnectorConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.user_secret_id {
         object.key("UserSecretId").string(var_1.as_str());
     }

@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "httpMatch" => Some(crate::types::RuleMatch::HttpMatch(
                             crate::protocol_serde::shape_http_match::de_http_match(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'httpMatch' cannot be null")
@@ -49,7 +54,7 @@ where
 pub fn ser_rule_match(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleMatch,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RuleMatch::HttpMatch(inner) => {
             #[allow(unused_mut)]
@@ -57,7 +62,7 @@ pub fn ser_rule_match(
             crate::protocol_serde::shape_http_match::ser_http_match(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::RuleMatch::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("RuleMatch")),
+        crate::types::RuleMatch::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("RuleMatch")),
     }
     Ok(())
 }

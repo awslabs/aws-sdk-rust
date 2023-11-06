@@ -42,6 +42,7 @@ pub struct UpdateLoggingConfigurationInputBuilder {
 }
 impl UpdateLoggingConfigurationInputBuilder {
     /// The ID of the workspace to vend logs to.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl UpdateLoggingConfigurationInputBuilder {
         &self.workspace_id
     }
     /// The ARN of the CW log group to which the vended log data will be published.
+    /// This field is required.
     pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -88,7 +90,7 @@ impl UpdateLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput {
             workspace_id: self.workspace_id,

@@ -64,6 +64,7 @@ pub struct CreateAssessmentReportInputBuilder {
 }
 impl CreateAssessmentReportInputBuilder {
     /// <p> The name of the new assessment report. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl CreateAssessmentReportInputBuilder {
         &self.description
     }
     /// <p> The identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -131,8 +133,10 @@ impl CreateAssessmentReportInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssessmentReportInput`](crate::operation::create_assessment_report::CreateAssessmentReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_assessment_report::CreateAssessmentReportInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_assessment_report::CreateAssessmentReportInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_assessment_report::CreateAssessmentReportInput {
             name: self.name,
             description: self.description,

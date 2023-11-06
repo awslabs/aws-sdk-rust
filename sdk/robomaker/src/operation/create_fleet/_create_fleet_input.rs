@@ -37,6 +37,7 @@ pub struct CreateFleetInputBuilder {
 }
 impl CreateFleetInputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +72,7 @@ impl CreateFleetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetInput {
             name: self.name,
             tags: self.tags,

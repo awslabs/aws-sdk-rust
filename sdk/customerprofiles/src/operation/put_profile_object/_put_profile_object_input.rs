@@ -50,6 +50,7 @@ pub struct PutProfileObjectInputBuilder {
 }
 impl PutProfileObjectInputBuilder {
     /// <p>The name of the profile object type.</p>
+    /// This field is required.
     pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl PutProfileObjectInputBuilder {
         &self.object_type_name
     }
     /// <p>A string that is serialized from a JSON object.</p>
+    /// This field is required.
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl PutProfileObjectInputBuilder {
         &self.object
     }
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl PutProfileObjectInputBuilder {
     /// Consumes the builder and constructs a [`PutProfileObjectInput`](crate::operation::put_profile_object::PutProfileObjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_profile_object::PutProfileObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_profile_object::PutProfileObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_profile_object::PutProfileObjectInput {
             object_type_name: self.object_type_name,
             object: self.object,

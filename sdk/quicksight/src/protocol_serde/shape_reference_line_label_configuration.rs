@@ -2,7 +2,7 @@
 pub fn ser_reference_line_label_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReferenceLineLabelConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.value_label_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ValueLabelConfiguration").start_object();

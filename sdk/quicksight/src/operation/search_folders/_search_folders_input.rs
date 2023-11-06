@@ -18,8 +18,10 @@ impl SearchFoldersInput {
         self.aws_account_id.as_deref()
     }
     /// <p>The filters to apply to the search. Currently, you can search only by the parent folder ARN. For example, <code>"Filters": [ { "Name": "PARENT_FOLDER_ARN", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:folder/folderId" } ]</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::FolderSearchFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::FolderSearchFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct SearchFoldersInputBuilder {
 }
 impl SearchFoldersInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl SearchFoldersInputBuilder {
     /// Consumes the builder and constructs a [`SearchFoldersInput`](crate::operation::search_folders::SearchFoldersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_folders::SearchFoldersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_folders::SearchFoldersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_folders::SearchFoldersInput {
             aws_account_id: self.aws_account_id,
             filters: self.filters,

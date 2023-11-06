@@ -28,6 +28,7 @@ pub struct OrganizationKubernetesConfigurationResultBuilder {
 }
 impl OrganizationKubernetesConfigurationResultBuilder {
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
+    /// This field is required.
     pub fn audit_logs(mut self, input: crate::types::OrganizationKubernetesAuditLogsConfigurationResult) -> Self {
         self.audit_logs = ::std::option::Option::Some(input);
         self

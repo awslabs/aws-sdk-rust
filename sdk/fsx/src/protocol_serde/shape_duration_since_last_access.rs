@@ -2,7 +2,7 @@
 pub fn ser_duration_since_last_access(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DurationSinceLastAccess,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.unit {
         object.key("Unit").string(var_1.as_str());
     }

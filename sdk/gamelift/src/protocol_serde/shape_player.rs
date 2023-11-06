@@ -2,7 +2,7 @@
 pub fn ser_player(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Player,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.player_id {
         object.key("PlayerId").string(var_1.as_str());
     }

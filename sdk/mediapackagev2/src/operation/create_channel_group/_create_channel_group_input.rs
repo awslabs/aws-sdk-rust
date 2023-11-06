@@ -52,6 +52,7 @@ pub struct CreateChannelGroupInputBuilder {
 }
 impl CreateChannelGroupInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can't use spaces in the name. You can't change the name after you create the channel group.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +123,8 @@ impl CreateChannelGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelGroupInput`](crate::operation::create_channel_group::CreateChannelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_channel_group::CreateChannelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_channel_group::CreateChannelGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_channel_group::CreateChannelGroupInput {
             channel_group_name: self.channel_group_name,
             client_token: self.client_token,

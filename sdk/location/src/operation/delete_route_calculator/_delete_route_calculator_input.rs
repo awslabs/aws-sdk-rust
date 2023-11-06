@@ -27,6 +27,7 @@ pub struct DeleteRouteCalculatorInputBuilder {
 }
 impl DeleteRouteCalculatorInputBuilder {
     /// <p>The name of the route calculator resource to be deleted.</p>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteRouteCalculatorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRouteCalculatorInput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_route_calculator::DeleteRouteCalculatorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_route_calculator::DeleteRouteCalculatorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_route_calculator::DeleteRouteCalculatorInput {
             calculator_name: self.calculator_name,

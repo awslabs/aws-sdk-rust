@@ -34,6 +34,7 @@ pub struct DescribeEntityInputBuilder {
 }
 impl DescribeEntityInputBuilder {
     /// <p>The identifier for the organization under which the entity exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeEntityInputBuilder {
         &self.organization_id
     }
     /// <p>The email under which the entity exists.</p>
+    /// This field is required.
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeEntityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::operation::describe_entity::DescribeEntityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_entity::DescribeEntityInput {
             organization_id: self.organization_id,
             email: self.email,

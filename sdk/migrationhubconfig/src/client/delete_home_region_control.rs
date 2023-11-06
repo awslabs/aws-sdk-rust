@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteHomeRegionControl`](crate::operation::delete_home_region_control::builders::DeleteHomeRegionControlFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`control_id(impl Into<String>)`](crate::operation::delete_home_region_control::builders::DeleteHomeRegionControlFluentBuilder::control_id) / [`set_control_id(Option<String>)`](crate::operation::delete_home_region_control::builders::DeleteHomeRegionControlFluentBuilder::set_control_id): <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
+    ///   - [`control_id(impl Into<String>)`](crate::operation::delete_home_region_control::builders::DeleteHomeRegionControlFluentBuilder::control_id) / [`set_control_id(Option<String>)`](crate::operation::delete_home_region_control::builders::DeleteHomeRegionControlFluentBuilder::set_control_id):<br>required: **true**<br><p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p><br>
     /// - On success, responds with [`DeleteHomeRegionControlOutput`](crate::operation::delete_home_region_control::DeleteHomeRegionControlOutput)
     /// - On failure, responds with [`SdkError<DeleteHomeRegionControlError>`](crate::operation::delete_home_region_control::DeleteHomeRegionControlError)
     pub fn delete_home_region_control(&self) -> crate::operation::delete_home_region_control::builders::DeleteHomeRegionControlFluentBuilder {

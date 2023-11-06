@@ -21,12 +21,16 @@ pub struct NetworkAcl {
 }
 impl NetworkAcl {
     /// <p>Any associations between the network ACL and one or more subnets</p>
-    pub fn associations(&self) -> ::std::option::Option<&[crate::types::NetworkAclAssociation]> {
-        self.associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::NetworkAclAssociation] {
+        self.associations.as_deref().unwrap_or_default()
     }
     /// <p>The entries (rules) in the network ACL.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::NetworkAclEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::NetworkAclEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether this is the default network ACL for the VPC.</p>
     pub fn is_default(&self) -> ::std::option::Option<bool> {
@@ -37,8 +41,10 @@ impl NetworkAcl {
         self.network_acl_id.as_deref()
     }
     /// <p>Any tags assigned to the network ACL.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC for the network ACL.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

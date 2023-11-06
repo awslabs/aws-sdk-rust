@@ -11,8 +11,10 @@ pub struct ListChannelsOutput {
 }
 impl ListChannelsOutput {
     /// <p>The information about each channel.</p>
-    pub fn channels(&self) -> ::std::option::Option<&[crate::types::ChannelSummary]> {
-        self.channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
+    pub fn channels(&self) -> &[crate::types::ChannelSummary] {
+        self.channels.as_deref().unwrap_or_default()
     }
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

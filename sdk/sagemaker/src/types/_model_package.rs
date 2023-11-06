@@ -173,12 +173,16 @@ impl ModelPackage {
         self.sample_payload_url.as_deref()
     }
     /// <p>An array of additional Inference Specification objects.</p>
-    pub fn additional_inference_specifications(&self) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
-        self.additional_inference_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_inference_specifications.is_none()`.
+    pub fn additional_inference_specifications(&self) -> &[crate::types::AdditionalInferenceSpecificationDefinition] {
+        self.additional_inference_specifications.as_deref().unwrap_or_default()
     }
     /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The metadata properties for the model package. </p>
     pub fn customer_metadata_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

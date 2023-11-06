@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterSliderControl {
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
-    pub filter_control_id: ::std::option::Option<::std::string::String>,
+    pub filter_control_id: ::std::string::String,
     /// <p>The title of the <code>FilterSliderControl</code>.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The source filter ID of the <code>FilterSliderControl</code>.</p>
-    pub source_filter_id: ::std::option::Option<::std::string::String>,
+    pub source_filter_id: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
@@ -27,16 +27,19 @@ pub struct FilterSliderControl {
 }
 impl FilterSliderControl {
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
-    pub fn filter_control_id(&self) -> ::std::option::Option<&str> {
-        self.filter_control_id.as_deref()
+    pub fn filter_control_id(&self) -> &str {
+        use std::ops::Deref;
+        self.filter_control_id.deref()
     }
     /// <p>The title of the <code>FilterSliderControl</code>.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The source filter ID of the <code>FilterSliderControl</code>.</p>
-    pub fn source_filter_id(&self) -> ::std::option::Option<&str> {
-        self.source_filter_id.as_deref()
+    pub fn source_filter_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_filter_id.deref()
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::SliderControlDisplayOptions> {
@@ -85,6 +88,7 @@ pub struct FilterSliderControlBuilder {
 }
 impl FilterSliderControlBuilder {
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
+    /// This field is required.
     pub fn filter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_control_id = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +103,7 @@ impl FilterSliderControlBuilder {
         &self.filter_control_id
     }
     /// <p>The title of the <code>FilterSliderControl</code>.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +118,7 @@ impl FilterSliderControlBuilder {
         &self.title
     }
     /// <p>The source filter ID of the <code>FilterSliderControl</code>.</p>
+    /// This field is required.
     pub fn source_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_filter_id = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +173,7 @@ impl FilterSliderControlBuilder {
         &self.r#type
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// This field is required.
     pub fn maximum_value(mut self, input: f64) -> Self {
         self.maximum_value = ::std::option::Option::Some(input);
         self
@@ -181,6 +188,7 @@ impl FilterSliderControlBuilder {
         &self.maximum_value
     }
     /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// This field is required.
     pub fn minimum_value(mut self, input: f64) -> Self {
         self.minimum_value = ::std::option::Option::Some(input);
         self
@@ -195,6 +203,7 @@ impl FilterSliderControlBuilder {
         &self.minimum_value
     }
     /// <p>The number of increments that the slider bar is divided into.</p>
+    /// This field is required.
     pub fn step_size(mut self, input: f64) -> Self {
         self.step_size = ::std::option::Option::Some(input);
         self
@@ -209,16 +218,35 @@ impl FilterSliderControlBuilder {
         &self.step_size
     }
     /// Consumes the builder and constructs a [`FilterSliderControl`](crate::types::FilterSliderControl).
-    pub fn build(self) -> crate::types::FilterSliderControl {
-        crate::types::FilterSliderControl {
-            filter_control_id: self.filter_control_id,
-            title: self.title,
-            source_filter_id: self.source_filter_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter_control_id`](crate::types::builders::FilterSliderControlBuilder::filter_control_id)
+    /// - [`title`](crate::types::builders::FilterSliderControlBuilder::title)
+    /// - [`source_filter_id`](crate::types::builders::FilterSliderControlBuilder::source_filter_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterSliderControl, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilterSliderControl {
+            filter_control_id: self.filter_control_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filter_control_id",
+                    "filter_control_id was not specified but it is required when building FilterSliderControl",
+                )
+            })?,
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building FilterSliderControl",
+                )
+            })?,
+            source_filter_id: self.source_filter_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_filter_id",
+                    "source_filter_id was not specified but it is required when building FilterSliderControl",
+                )
+            })?,
             display_options: self.display_options,
             r#type: self.r#type,
             maximum_value: self.maximum_value.unwrap_or_default(),
             minimum_value: self.minimum_value.unwrap_or_default(),
             step_size: self.step_size.unwrap_or_default(),
-        }
+        })
     }
 }

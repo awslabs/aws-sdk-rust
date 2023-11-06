@@ -5,34 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Component {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub app_id: ::std::option::Option<::std::string::String>,
+    pub app_id: ::std::string::String,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the component.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the component.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    pub component_type: ::std::option::Option<::std::string::String>,
+    pub component_type: ::std::string::String,
     /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
+    pub properties: ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
     /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
-    pub variants: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>,
+    pub variants: ::std::vec::Vec<crate::types::ComponentVariant>,
     /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    pub overrides: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub overrides: ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
     /// <p></p>
-    pub binding_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>>,
+    pub binding_properties: ::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>,
     /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
     pub collection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDataConfiguration>>,
     /// <p>The time that the component was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time that the component was modified.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>One or more key-value pairs to use when tagging the component.</p>
@@ -44,55 +42,59 @@ pub struct Component {
 }
 impl Component {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
-        self.app_id.as_deref()
+    pub fn app_id(&self) -> &str {
+        use std::ops::Deref;
+        self.app_id.deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
     pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
     /// <p>The unique ID of the component.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn component_type(&self) -> ::std::option::Option<&str> {
-        self.component_type.as_deref()
+    pub fn component_type(&self) -> &str {
+        use std::ops::Deref;
+        self.component_type.deref()
     }
     /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>> {
-        self.properties.as_ref()
+    pub fn properties(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty> {
+        &self.properties
     }
     /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
-    pub fn children(&self) -> ::std::option::Option<&[crate::types::ComponentChild]> {
-        self.children.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.children.is_none()`.
+    pub fn children(&self) -> &[crate::types::ComponentChild] {
+        self.children.as_deref().unwrap_or_default()
     }
     /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
-    pub fn variants(&self) -> ::std::option::Option<&[crate::types::ComponentVariant]> {
-        self.variants.as_deref()
+    pub fn variants(&self) -> &[crate::types::ComponentVariant] {
+        use std::ops::Deref;
+        self.variants.deref()
     }
     /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     pub fn overrides(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
-        self.overrides.as_ref()
+    ) -> &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.overrides
     }
     /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
     /// <p></p>
-    pub fn binding_properties(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>> {
-        self.binding_properties.as_ref()
+    pub fn binding_properties(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue> {
+        &self.binding_properties
     }
     /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
     pub fn collection_properties(
@@ -101,8 +103,8 @@ impl Component {
         self.collection_properties.as_ref()
     }
     /// <p>The time that the component was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time that the component was modified.</p>
     pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -156,6 +158,7 @@ pub struct ComponentBuilder {
 }
 impl ComponentBuilder {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -170,6 +173,7 @@ impl ComponentBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -198,6 +202,7 @@ impl ComponentBuilder {
         &self.source_id
     }
     /// <p>The unique ID of the component.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +217,7 @@ impl ComponentBuilder {
         &self.id
     }
     /// <p>The name of the component.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -226,6 +232,7 @@ impl ComponentBuilder {
         &self.name
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
+    /// This field is required.
     pub fn component_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type = ::std::option::Option::Some(input.into());
         self
@@ -393,6 +400,7 @@ impl ComponentBuilder {
         &self.collection_properties
     }
     /// <p>The time that the component was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -478,25 +486,86 @@ impl ComponentBuilder {
         &self.schema_version
     }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
-    pub fn build(self) -> crate::types::Component {
-        crate::types::Component {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_id`](crate::types::builders::ComponentBuilder::app_id)
+    /// - [`environment_name`](crate::types::builders::ComponentBuilder::environment_name)
+    /// - [`id`](crate::types::builders::ComponentBuilder::id)
+    /// - [`name`](crate::types::builders::ComponentBuilder::name)
+    /// - [`component_type`](crate::types::builders::ComponentBuilder::component_type)
+    /// - [`properties`](crate::types::builders::ComponentBuilder::properties)
+    /// - [`variants`](crate::types::builders::ComponentBuilder::variants)
+    /// - [`overrides`](crate::types::builders::ComponentBuilder::overrides)
+    /// - [`binding_properties`](crate::types::builders::ComponentBuilder::binding_properties)
+    /// - [`created_at`](crate::types::builders::ComponentBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::Component, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Component {
+            app_id: self.app_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "app_id",
+                    "app_id was not specified but it is required when building Component",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building Component",
+                )
+            })?,
             source_id: self.source_id,
-            id: self.id,
-            name: self.name,
-            component_type: self.component_type,
-            properties: self.properties,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Component",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Component",
+                )
+            })?,
+            component_type: self.component_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "component_type",
+                    "component_type was not specified but it is required when building Component",
+                )
+            })?,
+            properties: self.properties.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "properties",
+                    "properties was not specified but it is required when building Component",
+                )
+            })?,
             children: self.children,
-            variants: self.variants,
-            overrides: self.overrides,
-            binding_properties: self.binding_properties,
+            variants: self.variants.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "variants",
+                    "variants was not specified but it is required when building Component",
+                )
+            })?,
+            overrides: self.overrides.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "overrides",
+                    "overrides was not specified but it is required when building Component",
+                )
+            })?,
+            binding_properties: self.binding_properties.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "binding_properties",
+                    "binding_properties was not specified but it is required when building Component",
+                )
+            })?,
             collection_properties: self.collection_properties,
-            created_at: self.created_at,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building Component",
+                )
+            })?,
             modified_at: self.modified_at,
             tags: self.tags,
             events: self.events,
             schema_version: self.schema_version,
-        }
+        })
     }
 }

@@ -21,8 +21,10 @@ impl BulkEmailDestination {
         self.destination.as_ref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn replacement_tags(&self) -> ::std::option::Option<&[crate::types::MessageTag]> {
-        self.replacement_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replacement_tags.is_none()`.
+    pub fn replacement_tags(&self) -> &[crate::types::MessageTag] {
+        self.replacement_tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn replacement_template_data(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ impl BulkEmailDestinationBuilder {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p>
     /// </note>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

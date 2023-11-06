@@ -17,12 +17,16 @@ pub struct Output {
 }
 impl Output {
     /// The names of the AudioDescriptions used as audio sources for this output.
-    pub fn audio_description_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.audio_description_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_description_names.is_none()`.
+    pub fn audio_description_names(&self) -> &[::std::string::String] {
+        self.audio_description_names.as_deref().unwrap_or_default()
     }
     /// The names of the CaptionDescriptions used as caption sources for this output.
-    pub fn caption_description_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.caption_description_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_description_names.is_none()`.
+    pub fn caption_description_names(&self) -> &[::std::string::String] {
+        self.caption_description_names.as_deref().unwrap_or_default()
     }
     /// The name used to identify an output.
     pub fn output_name(&self) -> ::std::option::Option<&str> {
@@ -110,6 +114,7 @@ impl OutputBuilder {
         &self.output_name
     }
     /// Output type-specific settings.
+    /// This field is required.
     pub fn output_settings(mut self, input: crate::types::OutputSettings) -> Self {
         self.output_settings = ::std::option::Option::Some(input);
         self

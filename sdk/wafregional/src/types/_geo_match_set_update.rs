@@ -9,14 +9,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMatchSetUpdate {
     /// <p>Specifies whether to insert or delete a country with <code>UpdateGeoMatchSet</code>.</p>
-    pub action: ::std::option::Option<crate::types::ChangeAction>,
+    pub action: crate::types::ChangeAction,
     /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
     pub geo_match_constraint: ::std::option::Option<crate::types::GeoMatchConstraint>,
 }
 impl GeoMatchSetUpdate {
     /// <p>Specifies whether to insert or delete a country with <code>UpdateGeoMatchSet</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::ChangeAction {
+        &self.action
     }
     /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
     pub fn geo_match_constraint(&self) -> ::std::option::Option<&crate::types::GeoMatchConstraint> {
@@ -39,6 +39,7 @@ pub struct GeoMatchSetUpdateBuilder {
 }
 impl GeoMatchSetUpdateBuilder {
     /// <p>Specifies whether to insert or delete a country with <code>UpdateGeoMatchSet</code>.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -53,6 +54,7 @@ impl GeoMatchSetUpdateBuilder {
         &self.action
     }
     /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
+    /// This field is required.
     pub fn geo_match_constraint(mut self, input: crate::types::GeoMatchConstraint) -> Self {
         self.geo_match_constraint = ::std::option::Option::Some(input);
         self
@@ -67,10 +69,17 @@ impl GeoMatchSetUpdateBuilder {
         &self.geo_match_constraint
     }
     /// Consumes the builder and constructs a [`GeoMatchSetUpdate`](crate::types::GeoMatchSetUpdate).
-    pub fn build(self) -> crate::types::GeoMatchSetUpdate {
-        crate::types::GeoMatchSetUpdate {
-            action: self.action,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::GeoMatchSetUpdateBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchSetUpdate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GeoMatchSetUpdate {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building GeoMatchSetUpdate",
+                )
+            })?,
             geo_match_constraint: self.geo_match_constraint,
-        }
+        })
     }
 }

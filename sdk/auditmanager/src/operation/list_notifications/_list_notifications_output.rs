@@ -11,8 +11,10 @@ pub struct ListNotificationsOutput {
 }
 impl ListNotificationsOutput {
     /// <p> The returned list of notifications. </p>
-    pub fn notifications(&self) -> ::std::option::Option<&[crate::types::Notification]> {
-        self.notifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notifications.is_none()`.
+    pub fn notifications(&self) -> &[crate::types::Notification] {
+        self.notifications.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

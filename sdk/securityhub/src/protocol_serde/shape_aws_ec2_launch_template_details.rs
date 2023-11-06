@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.launch_template_name {
         object.key("LaunchTemplateName").string(var_1.as_str());
     }

@@ -65,6 +65,7 @@ pub struct StartZonalShiftInputBuilder {
 impl StartZonalShiftInputBuilder {
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +82,7 @@ impl StartZonalShiftInputBuilder {
         &self.resource_identifier
     }
     /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// This field is required.
     pub fn away_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.away_from = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +104,7 @@ impl StartZonalShiftInputBuilder {
     /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li>
     /// </ul>
     /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
+    /// This field is required.
     pub fn expires_in(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expires_in = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +133,7 @@ impl StartZonalShiftInputBuilder {
         &self.expires_in
     }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
+    /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
@@ -146,7 +150,7 @@ impl StartZonalShiftInputBuilder {
     /// Consumes the builder and constructs a [`StartZonalShiftInput`](crate::operation::start_zonal_shift::StartZonalShiftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_zonal_shift::StartZonalShiftInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_zonal_shift::StartZonalShiftInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_zonal_shift::StartZonalShiftInput {
             resource_identifier: self.resource_identifier,
             away_from: self.away_from,

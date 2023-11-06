@@ -9,8 +9,10 @@ pub struct BatchRevokePermissionsOutput {
 }
 impl BatchRevokePermissionsOutput {
     /// <p>A list of failures to revoke permissions to the resources.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::BatchPermissionsFailureEntry]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::BatchPermissionsFailureEntry] {
+        self.failures.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchRevokePermissionsOutput {

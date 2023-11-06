@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PoolFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub name: ::std::option::Option<crate::types::PoolFilterName>,
+    pub name: crate::types::PoolFilterName,
     /// <p>An array values to filter for.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl PoolFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::PoolFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::PoolFilterName {
+        &self.name
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl PoolFilter {
@@ -35,6 +36,7 @@ pub struct PoolFilterBuilder {
 }
 impl PoolFilterBuilder {
     /// <p>The name of the attribute to filter on.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::PoolFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl PoolFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`PoolFilter`](crate::types::PoolFilter).
-    pub fn build(self) -> crate::types::PoolFilter {
-        crate::types::PoolFilter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::PoolFilterBuilder::name)
+    /// - [`values`](crate::types::builders::PoolFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::PoolFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PoolFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PoolFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building PoolFilter",
+                )
+            })?,
+        })
     }
 }

@@ -57,8 +57,10 @@ impl M3u8Settings {
         self.audio_frames_per_pes
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
-    pub fn audio_pids(&self) -> ::std::option::Option<&[i32]> {
-        self.audio_pids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_pids.is_none()`.
+    pub fn audio_pids(&self) -> &[i32] {
+        self.audio_pids.as_deref().unwrap_or_default()
     }
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value AUTO to allow all PTS values.
     pub fn data_pts_control(&self) -> ::std::option::Option<&crate::types::M3u8DataPtsControl> {

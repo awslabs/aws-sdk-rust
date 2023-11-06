@@ -78,16 +78,20 @@ impl CreateOpsItemInput {
         self.operational_data.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn notifications(&self) -> ::std::option::Option<&[crate::types::OpsItemNotification]> {
-        self.notifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notifications.is_none()`.
+    pub fn notifications(&self) -> &[crate::types::OpsItemNotification] {
+        self.notifications.as_deref().unwrap_or_default()
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    pub fn related_ops_items(&self) -> ::std::option::Option<&[crate::types::RelatedOpsItem]> {
-        self.related_ops_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_ops_items.is_none()`.
+    pub fn related_ops_items(&self) -> &[crate::types::RelatedOpsItem] {
+        self.related_ops_items.as_deref().unwrap_or_default()
     }
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
     /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>. </p>
@@ -104,8 +108,10 @@ impl CreateOpsItemInput {
     /// <p> <code>Key=Department,Value=Finance</code> </p> <important>
     /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
     /// </important>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specify a category to assign to an OpsItem. </p>
     pub fn category(&self) -> ::std::option::Option<&str> {
@@ -168,6 +174,7 @@ impl CreateOpsItemInputBuilder {
     /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
     /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p>
     /// </note>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -306,6 +313,7 @@ impl CreateOpsItemInputBuilder {
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
     /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>. </p>
     /// </note>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -324,6 +332,7 @@ impl CreateOpsItemInputBuilder {
         &self.source
     }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -470,7 +479,7 @@ impl CreateOpsItemInputBuilder {
     /// Consumes the builder and constructs a [`CreateOpsItemInput`](crate::operation::create_ops_item::CreateOpsItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ops_item::CreateOpsItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ops_item::CreateOpsItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ops_item::CreateOpsItemInput {
             description: self.description,
             ops_item_type: self.ops_item_type,

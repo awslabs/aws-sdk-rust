@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAdapter`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`adapter_id(impl Into<String>)`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder::adapter_id) / [`set_adapter_id(Option<String>)`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder::set_adapter_id): <p>A string containing a unique ID for the adapter.</p>
+    ///   - [`adapter_id(impl Into<String>)`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder::adapter_id) / [`set_adapter_id(Option<String>)`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder::set_adapter_id):<br>required: **true**<br><p>A string containing a unique ID for the adapter.</p><br>
     /// - On success, responds with [`GetAdapterOutput`](crate::operation::get_adapter::GetAdapterOutput) with field(s):
     ///   - [`adapter_id(Option<String>)`](crate::operation::get_adapter::GetAdapterOutput::adapter_id): <p>A string identifying the adapter that information has been retrieved for.</p>
     ///   - [`adapter_name(Option<String>)`](crate::operation::get_adapter::GetAdapterOutput::adapter_name): <p>The name of the requested adapter.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_adapter::GetAdapterOutput::creation_time): <p>The date and time the requested adapter was created at.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_adapter::GetAdapterOutput::description): <p>The description for the requested adapter.</p>
-    ///   - [`feature_types(Option<Vec<FeatureType>>)`](crate::operation::get_adapter::GetAdapterOutput::feature_types): <p>List of the targeted feature types for the requested adapter.</p>
+    ///   - [`feature_types(Option<Vec::<FeatureType>>)`](crate::operation::get_adapter::GetAdapterOutput::feature_types): <p>List of the targeted feature types for the requested adapter.</p>
     ///   - [`auto_update(Option<AutoUpdate>)`](crate::operation::get_adapter::GetAdapterOutput::auto_update): <p>Binary value indicating if the adapter is being automatically updated or not.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_adapter::GetAdapterOutput::tags): <p>A set of tags (key-value pairs) associated with the adapter that has been retrieved.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_adapter::GetAdapterOutput::tags): <p>A set of tags (key-value pairs) associated with the adapter that has been retrieved.</p>
     /// - On failure, responds with [`SdkError<GetAdapterError>`](crate::operation::get_adapter::GetAdapterError)
     pub fn get_adapter(&self) -> crate::operation::get_adapter::builders::GetAdapterFluentBuilder {
         crate::operation::get_adapter::builders::GetAdapterFluentBuilder::new(self.handle.clone())

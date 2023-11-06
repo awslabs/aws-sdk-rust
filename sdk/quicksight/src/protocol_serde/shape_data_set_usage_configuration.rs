@@ -2,7 +2,7 @@
 pub fn ser_data_set_usage_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSetUsageConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.disable_use_as_direct_query_source {
         object
             .key("DisableUseAsDirectQuerySource")

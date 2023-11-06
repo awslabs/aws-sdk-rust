@@ -34,6 +34,7 @@ pub struct GetDataSetDetailsInputBuilder {
 }
 impl GetDataSetDetailsInputBuilder {
     /// <p>The unique identifier of the application that this data set is associated with.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDataSetDetailsInputBuilder {
         &self.application_id
     }
     /// <p>The name of the data set.</p>
+    /// This field is required.
     pub fn data_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl GetDataSetDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetDataSetDetailsInput`](crate::operation::get_data_set_details::GetDataSetDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_set_details::GetDataSetDetailsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_data_set_details::GetDataSetDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_set_details::GetDataSetDetailsInput {
             application_id: self.application_id,
             data_set_name: self.data_set_name,

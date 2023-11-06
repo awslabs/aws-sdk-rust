@@ -27,6 +27,7 @@ pub struct PauseServiceInputBuilder {
 }
 impl PauseServiceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
+    /// This field is required.
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl PauseServiceInputBuilder {
         &self.service_arn
     }
     /// Consumes the builder and constructs a [`PauseServiceInput`](crate::operation::pause_service::PauseServiceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::pause_service::PauseServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::pause_service::PauseServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::pause_service::PauseServiceInput {
             service_arn: self.service_arn,
         })

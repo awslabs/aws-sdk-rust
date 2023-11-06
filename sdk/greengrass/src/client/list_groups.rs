@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListGroups`](crate::operation::list_groups::builders::ListGroupsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_max_results): The maximum number of results to be returned per request.
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`max_results(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::max_results) / [`set_max_results(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of results to be returned per request.<br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_next_token):<br>required: **false**<br>The token for the next set of results, or ''null'' if there are no additional results.<br>
     /// - On success, responds with [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput) with field(s):
-    ///   - [`groups(Option<Vec<GroupInformation>>)`](crate::operation::list_groups::ListGroupsOutput::groups): Information about a group.
+    ///   - [`groups(Option<Vec::<GroupInformation>>)`](crate::operation::list_groups::ListGroupsOutput::groups): Information about a group.
     ///   - [`next_token(Option<String>)`](crate::operation::list_groups::ListGroupsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::operation::list_groups::ListGroupsError)
     pub fn list_groups(&self) -> crate::operation::list_groups::builders::ListGroupsFluentBuilder {

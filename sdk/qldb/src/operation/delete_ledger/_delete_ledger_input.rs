@@ -27,6 +27,7 @@ pub struct DeleteLedgerInputBuilder {
 }
 impl DeleteLedgerInputBuilder {
     /// <p>The name of the ledger that you want to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,9 @@ impl DeleteLedgerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteLedgerInput`](crate::operation::delete_ledger::DeleteLedgerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ledger::DeleteLedgerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_ledger::DeleteLedgerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ledger::DeleteLedgerInput { name: self.name })
     }
 }

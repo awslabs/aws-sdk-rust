@@ -2,7 +2,7 @@
 pub fn ser_put_channel_expiration_settings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.expiration_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ExpirationSettings").start_object();

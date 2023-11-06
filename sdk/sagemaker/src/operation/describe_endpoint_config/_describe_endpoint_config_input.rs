@@ -27,6 +27,7 @@ pub struct DescribeEndpointConfigInputBuilder {
 }
 impl DescribeEndpointConfigInputBuilder {
     /// <p>The name of the endpoint configuration.</p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeEndpointConfigInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointConfigInput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoint_config::DescribeEndpointConfigInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_endpoint_config::DescribeEndpointConfigInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_endpoint_config::DescribeEndpointConfigInput {
             endpoint_config_name: self.endpoint_config_name,
         })

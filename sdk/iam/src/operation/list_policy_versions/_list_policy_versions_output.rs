@@ -16,8 +16,10 @@ pub struct ListPolicyVersionsOutput {
 impl ListPolicyVersionsOutput {
     /// <p>A list of policy versions.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn versions(&self) -> ::std::option::Option<&[crate::types::PolicyVersion]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[crate::types::PolicyVersion] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {

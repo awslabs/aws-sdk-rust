@@ -49,6 +49,7 @@ pub struct StringColumnStatisticsDataBuilder {
 }
 impl StringColumnStatisticsDataBuilder {
     /// <p>The size of the longest string in the column.</p>
+    /// This field is required.
     pub fn maximum_length(mut self, input: i64) -> Self {
         self.maximum_length = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl StringColumnStatisticsDataBuilder {
         &self.maximum_length
     }
     /// <p>The average string length in the column.</p>
+    /// This field is required.
     pub fn average_length(mut self, input: f64) -> Self {
         self.average_length = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl StringColumnStatisticsDataBuilder {
         &self.average_length
     }
     /// <p>The number of null values in the column.</p>
+    /// This field is required.
     pub fn number_of_nulls(mut self, input: i64) -> Self {
         self.number_of_nulls = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl StringColumnStatisticsDataBuilder {
         &self.number_of_nulls
     }
     /// <p>The number of distinct values in a column.</p>
+    /// This field is required.
     pub fn number_of_distinct_values(mut self, input: i64) -> Self {
         self.number_of_distinct_values = ::std::option::Option::Some(input);
         self

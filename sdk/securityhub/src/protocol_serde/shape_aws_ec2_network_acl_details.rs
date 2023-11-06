@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_network_acl_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2NetworkAclDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_default {
         object.key("IsDefault").boolean(*var_1);
     }

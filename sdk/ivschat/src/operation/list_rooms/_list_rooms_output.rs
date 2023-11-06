@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRoomsOutput {
     /// <p>List of the matching rooms (summary information only).</p>
-    pub rooms: ::std::option::Option<::std::vec::Vec<crate::types::RoomSummary>>,
+    pub rooms: ::std::vec::Vec<crate::types::RoomSummary>,
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRoomsOutput {
     /// <p>List of the matching rooms (summary information only).</p>
-    pub fn rooms(&self) -> ::std::option::Option<&[crate::types::RoomSummary]> {
-        self.rooms.as_deref()
+    pub fn rooms(&self) -> &[crate::types::RoomSummary] {
+        use std::ops::Deref;
+        self.rooms.deref()
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListRoomsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
-    pub fn build(self) -> crate::operation::list_rooms::ListRoomsOutput {
-        crate::operation::list_rooms::ListRoomsOutput {
-            rooms: self.rooms,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rooms`](crate::operation::list_rooms::builders::ListRoomsOutputBuilder::rooms)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rooms::ListRoomsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_rooms::ListRoomsOutput {
+            rooms: self.rooms.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rooms",
+                    "rooms was not specified but it is required when building ListRoomsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

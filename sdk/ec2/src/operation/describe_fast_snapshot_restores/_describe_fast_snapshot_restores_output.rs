@@ -11,8 +11,10 @@ pub struct DescribeFastSnapshotRestoresOutput {
 }
 impl DescribeFastSnapshotRestoresOutput {
     /// <p>Information about the state of fast snapshot restores.</p>
-    pub fn fast_snapshot_restores(&self) -> ::std::option::Option<&[crate::types::DescribeFastSnapshotRestoreSuccessItem]> {
-        self.fast_snapshot_restores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fast_snapshot_restores.is_none()`.
+    pub fn fast_snapshot_restores(&self) -> &[crate::types::DescribeFastSnapshotRestoreSuccessItem] {
+        self.fast_snapshot_restores.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

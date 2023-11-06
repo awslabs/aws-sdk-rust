@@ -41,6 +41,7 @@ pub struct ChangeServerLifeCycleStateInputBuilder {
 }
 impl ChangeServerLifeCycleStateInputBuilder {
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ChangeServerLifeCycleStateInputBuilder {
         &self.source_server_id
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
+    /// This field is required.
     pub fn life_cycle(mut self, input: crate::types::ChangeServerLifeCycleStateSourceServerLifecycle) -> Self {
         self.life_cycle = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl ChangeServerLifeCycleStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput {
             source_server_id: self.source_server_id,

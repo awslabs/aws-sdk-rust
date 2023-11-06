@@ -27,6 +27,7 @@ pub struct DeletePackagingConfigurationInputBuilder {
 }
 impl DeletePackagingConfigurationInputBuilder {
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeletePackagingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput { id: self.id })
     }

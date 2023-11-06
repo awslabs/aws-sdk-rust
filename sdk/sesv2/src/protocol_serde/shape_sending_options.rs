@@ -2,7 +2,7 @@
 pub fn ser_sending_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SendingOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.sending_enabled {
         object.key("SendingEnabled").boolean(input.sending_enabled);
     }

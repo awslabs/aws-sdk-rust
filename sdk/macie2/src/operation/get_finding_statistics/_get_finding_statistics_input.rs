@@ -80,6 +80,7 @@ impl GetFindingStatisticsInputBuilder {
     /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn group_by(mut self, input: crate::types::GroupBy) -> Self {
         self.group_by = ::std::option::Option::Some(input);
         self
@@ -136,7 +137,7 @@ impl GetFindingStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingStatisticsInput`](crate::operation::get_finding_statistics::GetFindingStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_finding_statistics::GetFindingStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_finding_statistics::GetFindingStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_finding_statistics::GetFindingStatisticsInput {
             finding_criteria: self.finding_criteria,

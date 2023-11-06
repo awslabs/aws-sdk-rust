@@ -2,53 +2,53 @@
 pub fn ser_bandwidth_rate_limit_interval(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BandwidthRateLimitInterval,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.start_hour_of_day {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("StartHourOfDay").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.start_hour_of_day).into()),
         );
     }
-    if let Some(var_2) = &input.start_minute_of_hour {
+    {
         object.key("StartMinuteOfHour").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.start_minute_of_hour).into()),
         );
     }
-    if let Some(var_3) = &input.end_hour_of_day {
+    {
         object.key("EndHourOfDay").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.end_hour_of_day).into()),
+        );
+    }
+    {
+        object.key("EndMinuteOfHour").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.end_minute_of_hour).into()),
+        );
+    }
+    {
+        let mut array_1 = object.key("DaysOfWeek").start_array();
+        for item_2 in &input.days_of_week {
+            {
+                array_1.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_2).into()),
+                );
+            }
+        }
+        array_1.finish();
+    }
+    if let Some(var_3) = &input.average_upload_rate_limit_in_bits_per_sec {
+        object.key("AverageUploadRateLimitInBitsPerSec").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.end_minute_of_hour {
-        object.key("EndMinuteOfHour").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
-        );
-    }
-    if let Some(var_5) = &input.days_of_week {
-        let mut array_6 = object.key("DaysOfWeek").start_array();
-        for item_7 in var_5 {
-            {
-                array_6.value().number(
-                    #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_7).into()),
-                );
-            }
-        }
-        array_6.finish();
-    }
-    if let Some(var_8) = &input.average_upload_rate_limit_in_bits_per_sec {
-        object.key("AverageUploadRateLimitInBitsPerSec").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
-        );
-    }
-    if let Some(var_9) = &input.average_download_rate_limit_in_bits_per_sec {
+    if let Some(var_4) = &input.average_download_rate_limit_in_bits_per_sec {
         object.key("AverageDownloadRateLimitInBitsPerSec").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())
@@ -124,7 +124,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::bandwidth_rate_limit_interval_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

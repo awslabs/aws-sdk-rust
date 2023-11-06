@@ -76,6 +76,7 @@ impl ListSchemasInputBuilder {
         &self.next_token
     }
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +105,7 @@ impl ListSchemasInputBuilder {
         &self.schema_name_prefix
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
             limit: self.limit,
             next_token: self.next_token,

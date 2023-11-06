@@ -27,6 +27,7 @@ pub struct DescribeListenerInputBuilder {
 }
 impl DescribeListenerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeListenerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeListenerInput`](crate::operation::describe_listener::DescribeListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_listener::DescribeListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_listener::DescribeListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_listener::DescribeListenerInput {
             listener_arn: self.listener_arn,
         })

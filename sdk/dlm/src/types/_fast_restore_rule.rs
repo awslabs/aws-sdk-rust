@@ -27,8 +27,10 @@ impl FastRestoreRule {
         self.interval_unit.as_ref()
     }
     /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
 }
 impl FastRestoreRule {

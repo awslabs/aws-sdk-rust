@@ -35,6 +35,7 @@ pub struct UpdateCampaignNameInputBuilder {
 }
 impl UpdateCampaignNameInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateCampaignNameInputBuilder {
         &self.id
     }
     /// The name of an Amazon Connect Campaign name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,8 @@ impl UpdateCampaignNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCampaignNameInput`](crate::operation::update_campaign_name::UpdateCampaignNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_campaign_name::UpdateCampaignNameInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_campaign_name::UpdateCampaignNameInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_campaign_name::UpdateCampaignNameInput {
             id: self.id,
             name: self.name,

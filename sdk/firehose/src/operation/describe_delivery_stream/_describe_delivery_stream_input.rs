@@ -41,6 +41,7 @@ pub struct DescribeDeliveryStreamInputBuilder {
 }
 impl DescribeDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +86,10 @@ impl DescribeDeliveryStreamInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeliveryStreamInput`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput {
             delivery_stream_name: self.delivery_stream_name,
             limit: self.limit,

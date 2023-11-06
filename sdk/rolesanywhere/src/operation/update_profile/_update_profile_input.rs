@@ -30,12 +30,16 @@ impl UpdateProfileInput {
         self.session_policy.as_deref()
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub fn role_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.role_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_arns.is_none()`.
+    pub fn role_arns(&self) -> &[::std::string::String] {
+        self.role_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn managed_policy_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.managed_policy_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_policy_arns.is_none()`.
+    pub fn managed_policy_arns(&self) -> &[::std::string::String] {
+        self.managed_policy_arns.as_deref().unwrap_or_default()
     }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
@@ -62,6 +66,7 @@ pub struct UpdateProfileInputBuilder {
 }
 impl UpdateProfileInputBuilder {
     /// <p>The unique identifier of the profile.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +165,7 @@ impl UpdateProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_profile::UpdateProfileInput {
             profile_id: self.profile_id,
             name: self.name,

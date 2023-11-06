@@ -27,6 +27,7 @@ pub struct DescribeRepositoryAssociationInputBuilder {
 }
 impl DescribeRepositoryAssociationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
+    /// This field is required.
     pub fn association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeRepositoryAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_repository_association::DescribeRepositoryAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_repository_association::DescribeRepositoryAssociationInput {
             association_arn: self.association_arn,

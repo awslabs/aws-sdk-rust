@@ -42,6 +42,7 @@ pub struct EnableStageTransitionInputBuilder {
 }
 impl EnableStageTransitionInputBuilder {
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl EnableStageTransitionInputBuilder {
         &self.pipeline_name
     }
     /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl EnableStageTransitionInputBuilder {
         &self.stage_name
     }
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
+    /// This field is required.
     pub fn transition_type(mut self, input: crate::types::StageTransitionType) -> Self {
         self.transition_type = ::std::option::Option::Some(input);
         self
@@ -86,7 +89,7 @@ impl EnableStageTransitionInputBuilder {
     /// Consumes the builder and constructs a [`EnableStageTransitionInput`](crate::operation::enable_stage_transition::EnableStageTransitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_stage_transition::EnableStageTransitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::enable_stage_transition::EnableStageTransitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::enable_stage_transition::EnableStageTransitionInput {
             pipeline_name: self.pipeline_name,

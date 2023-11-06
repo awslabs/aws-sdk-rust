@@ -38,6 +38,7 @@ pub struct GetDataSourceInputBuilder {
 }
 impl GetDataSourceInputBuilder {
     /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +75,7 @@ impl GetDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_source::GetDataSourceInput {
             data_source_id: self.data_source_id,
             verbose: self.verbose,

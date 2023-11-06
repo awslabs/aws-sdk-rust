@@ -2,7 +2,7 @@
 pub fn ser_answer_machine_detection_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnswerMachineDetectionConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.enable_answer_machine_detection {
         object.key("EnableAnswerMachineDetection").boolean(input.enable_answer_machine_detection);
     }

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampStructure {
     /// <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub value: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub value: ::aws_smithy_types::DateTime,
 }
 impl TimestampStructure {
     /// <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.value.as_ref()
+    pub fn value(&self) -> &::aws_smithy_types::DateTime {
+        &self.value
     }
 }
 impl TimestampStructure {
@@ -28,6 +28,7 @@ pub struct TimestampStructureBuilder {
 }
 impl TimestampStructureBuilder {
     /// <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// This field is required.
     pub fn value(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl TimestampStructureBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`TimestampStructure`](crate::types::TimestampStructure).
-    pub fn build(self) -> crate::types::TimestampStructure {
-        crate::types::TimestampStructure { value: self.value }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::TimestampStructureBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestampStructure, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimestampStructure {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building TimestampStructure",
+                )
+            })?,
+        })
     }
 }

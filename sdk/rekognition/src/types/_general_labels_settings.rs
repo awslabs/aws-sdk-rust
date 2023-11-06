@@ -15,20 +15,28 @@ pub struct GeneralLabelsSettings {
 }
 impl GeneralLabelsSettings {
     /// <p>The labels that should be included in the return from DetectLabels.</p>
-    pub fn label_inclusion_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.label_inclusion_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_inclusion_filters.is_none()`.
+    pub fn label_inclusion_filters(&self) -> &[::std::string::String] {
+        self.label_inclusion_filters.as_deref().unwrap_or_default()
     }
     /// <p>The labels that should be excluded from the return from DetectLabels.</p>
-    pub fn label_exclusion_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.label_exclusion_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_exclusion_filters.is_none()`.
+    pub fn label_exclusion_filters(&self) -> &[::std::string::String] {
+        self.label_exclusion_filters.as_deref().unwrap_or_default()
     }
     /// <p>The label categories that should be included in the return from DetectLabels.</p>
-    pub fn label_category_inclusion_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.label_category_inclusion_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_category_inclusion_filters.is_none()`.
+    pub fn label_category_inclusion_filters(&self) -> &[::std::string::String] {
+        self.label_category_inclusion_filters.as_deref().unwrap_or_default()
     }
     /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
-    pub fn label_category_exclusion_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.label_category_exclusion_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_category_exclusion_filters.is_none()`.
+    pub fn label_category_exclusion_filters(&self) -> &[::std::string::String] {
+        self.label_category_exclusion_filters.as_deref().unwrap_or_default()
     }
 }
 impl GeneralLabelsSettings {

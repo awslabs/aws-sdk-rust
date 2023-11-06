@@ -85,7 +85,7 @@ impl ListGatewayInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListGatewayInstancesInput`](crate::operation::list_gateway_instances::ListGatewayInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_gateway_instances::ListGatewayInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_gateway_instances::ListGatewayInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_gateway_instances::ListGatewayInstancesInput {
             filter_arn: self.filter_arn,

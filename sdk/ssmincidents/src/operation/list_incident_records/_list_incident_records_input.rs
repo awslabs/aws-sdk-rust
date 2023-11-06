@@ -36,8 +36,10 @@ impl ListIncidentRecordsInput {
     /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -151,7 +153,7 @@ impl ListIncidentRecordsInputBuilder {
     /// Consumes the builder and constructs a [`ListIncidentRecordsInput`](crate::operation::list_incident_records::ListIncidentRecordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_incident_records::ListIncidentRecordsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_incident_records::ListIncidentRecordsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_incident_records::ListIncidentRecordsInput {
             filters: self.filters,

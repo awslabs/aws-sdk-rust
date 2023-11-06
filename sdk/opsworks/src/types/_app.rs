@@ -57,8 +57,10 @@ impl App {
         self.description.as_deref()
     }
     /// <p>The app's data sources.</p>
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::DataSource]> {
-        self.data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
+    pub fn data_sources(&self) -> &[crate::types::DataSource] {
+        self.data_sources.as_deref().unwrap_or_default()
     }
     /// <p>The app type.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AppType> {
@@ -69,8 +71,10 @@ impl App {
         self.app_source.as_ref()
     }
     /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
-    pub fn domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[::std::string::String] {
+        self.domains.as_deref().unwrap_or_default()
     }
     /// <p>Whether to enable SSL for the app.</p>
     pub fn enable_ssl(&self) -> ::std::option::Option<bool> {
@@ -91,8 +95,10 @@ impl App {
     /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
     /// </note>
-    pub fn environment(&self) -> ::std::option::Option<&[crate::types::EnvironmentVariable]> {
-        self.environment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
+    pub fn environment(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment.as_deref().unwrap_or_default()
     }
 }
 impl App {

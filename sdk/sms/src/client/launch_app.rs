@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`LaunchApp`](crate::operation::launch_app::builders::LaunchAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::launch_app::builders::LaunchAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::launch_app::builders::LaunchAppFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::launch_app::builders::LaunchAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::launch_app::builders::LaunchAppFluentBuilder::set_app_id):<br>required: **false**<br><p>The ID of the application.</p><br>
     /// - On success, responds with [`LaunchAppOutput`](crate::operation::launch_app::LaunchAppOutput)
     /// - On failure, responds with [`SdkError<LaunchAppError>`](crate::operation::launch_app::LaunchAppError)
     pub fn launch_app(&self) -> crate::operation::launch_app::builders::LaunchAppFluentBuilder {

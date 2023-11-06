@@ -13,12 +13,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelTimerDecisionAttributes {
     /// <p> The unique ID of the timer to cancel.</p>
-    pub timer_id: ::std::option::Option<::std::string::String>,
+    pub timer_id: ::std::string::String,
 }
 impl CancelTimerDecisionAttributes {
     /// <p> The unique ID of the timer to cancel.</p>
-    pub fn timer_id(&self) -> ::std::option::Option<&str> {
-        self.timer_id.as_deref()
+    pub fn timer_id(&self) -> &str {
+        use std::ops::Deref;
+        self.timer_id.deref()
     }
 }
 impl CancelTimerDecisionAttributes {
@@ -36,6 +37,7 @@ pub struct CancelTimerDecisionAttributesBuilder {
 }
 impl CancelTimerDecisionAttributesBuilder {
     /// <p> The unique ID of the timer to cancel.</p>
+    /// This field is required.
     pub fn timer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timer_id = ::std::option::Option::Some(input.into());
         self
@@ -50,7 +52,16 @@ impl CancelTimerDecisionAttributesBuilder {
         &self.timer_id
     }
     /// Consumes the builder and constructs a [`CancelTimerDecisionAttributes`](crate::types::CancelTimerDecisionAttributes).
-    pub fn build(self) -> crate::types::CancelTimerDecisionAttributes {
-        crate::types::CancelTimerDecisionAttributes { timer_id: self.timer_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timer_id`](crate::types::builders::CancelTimerDecisionAttributesBuilder::timer_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::CancelTimerDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CancelTimerDecisionAttributes {
+            timer_id: self.timer_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timer_id",
+                    "timer_id was not specified but it is required when building CancelTimerDecisionAttributes",
+                )
+            })?,
+        })
     }
 }

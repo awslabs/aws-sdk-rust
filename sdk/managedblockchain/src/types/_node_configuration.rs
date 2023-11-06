@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeConfiguration {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
-    pub instance_type: ::std::option::Option<::std::string::String>,
+    pub instance_type: ::std::string::String,
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
@@ -16,8 +16,9 @@ pub struct NodeConfiguration {
 }
 impl NodeConfiguration {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
-        self.instance_type.as_deref()
+    pub fn instance_type(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_type.deref()
     }
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -51,6 +52,7 @@ pub struct NodeConfigurationBuilder {
 }
 impl NodeConfigurationBuilder {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -110,12 +112,19 @@ impl NodeConfigurationBuilder {
         &self.state_db
     }
     /// Consumes the builder and constructs a [`NodeConfiguration`](crate::types::NodeConfiguration).
-    pub fn build(self) -> crate::types::NodeConfiguration {
-        crate::types::NodeConfiguration {
-            instance_type: self.instance_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_type`](crate::types::builders::NodeConfigurationBuilder::instance_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::NodeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NodeConfiguration {
+            instance_type: self.instance_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instance_type",
+                    "instance_type was not specified but it is required when building NodeConfiguration",
+                )
+            })?,
             availability_zone: self.availability_zone,
             log_publishing_configuration: self.log_publishing_configuration,
             state_db: self.state_db,
-        }
+        })
     }
 }

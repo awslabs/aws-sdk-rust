@@ -30,8 +30,10 @@ pub struct HyperParameterTuningJobWarmStartConfig {
 impl HyperParameterTuningJobWarmStartConfig {
     /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
     /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
-    pub fn parent_hyper_parameter_tuning_jobs(&self) -> ::std::option::Option<&[crate::types::ParentHyperParameterTuningJob]> {
-        self.parent_hyper_parameter_tuning_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_hyper_parameter_tuning_jobs.is_none()`.
+    pub fn parent_hyper_parameter_tuning_jobs(&self) -> &[crate::types::ParentHyperParameterTuningJob] {
+        self.parent_hyper_parameter_tuning_jobs.as_deref().unwrap_or_default()
     }
     /// <p>Specifies one of the following:</p>
     /// <dl>
@@ -108,6 +110,7 @@ impl HyperParameterTuningJobWarmStartConfigBuilder {
     /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn warm_start_type(mut self, input: crate::types::HyperParameterTuningJobWarmStartType) -> Self {
         self.warm_start_type = ::std::option::Option::Some(input);
         self

@@ -2,7 +2,7 @@
 pub fn ser_node(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Node,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Node::Branch(inner) => {
             #[allow(unused_mut)]
@@ -28,7 +28,7 @@ pub fn ser_node(
             crate::protocol_serde::shape_attribute::ser_attribute(&mut object_4, inner)?;
             object_4.finish();
         }
-        crate::types::Node::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Node")),
+        crate::types::Node::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Node")),
     }
     Ok(())
 }
@@ -46,12 +46,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "branch" => Some(crate::types::Node::Branch(
                             crate::protocol_serde::shape_branch::de_branch(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'branch' cannot be null")

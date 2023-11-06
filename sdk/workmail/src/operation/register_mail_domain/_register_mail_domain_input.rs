@@ -55,6 +55,7 @@ impl RegisterMailDomainInputBuilder {
         &self.client_token
     }
     /// <p>The WorkMail organization under which you're creating the domain.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl RegisterMailDomainInputBuilder {
         &self.organization_id
     }
     /// <p>The name of the mail domain to create in WorkMail and SES.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,8 @@ impl RegisterMailDomainInputBuilder {
     /// Consumes the builder and constructs a [`RegisterMailDomainInput`](crate::operation::register_mail_domain::RegisterMailDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_mail_domain::RegisterMailDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_mail_domain::RegisterMailDomainInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::register_mail_domain::RegisterMailDomainInput {
             client_token: self.client_token,
             organization_id: self.organization_id,

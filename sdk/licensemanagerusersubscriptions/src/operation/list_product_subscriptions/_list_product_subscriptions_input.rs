@@ -28,8 +28,10 @@ impl ListProductSubscriptionsInput {
         self.max_results
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct ListProductSubscriptionsInputBuilder {
 }
 impl ListProductSubscriptionsInputBuilder {
     /// <p>The name of the user-based subscription product.</p>
+    /// This field is required.
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl ListProductSubscriptionsInputBuilder {
         &self.product
     }
     /// <p>An object that specifies details for the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
@@ -135,7 +139,7 @@ impl ListProductSubscriptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_product_subscriptions::ListProductSubscriptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_product_subscriptions::ListProductSubscriptionsInput {
             product: self.product,

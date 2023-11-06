@@ -14,8 +14,10 @@ impl CreateSampleFindingsInput {
         self.detector_id.as_deref()
     }
     /// <p>The types of sample findings to generate.</p>
-    pub fn finding_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.finding_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_types.is_none()`.
+    pub fn finding_types(&self) -> &[::std::string::String] {
+        self.finding_types.as_deref().unwrap_or_default()
     }
 }
 impl CreateSampleFindingsInput {
@@ -34,6 +36,7 @@ pub struct CreateSampleFindingsInputBuilder {
 }
 impl CreateSampleFindingsInputBuilder {
     /// <p>The ID of the detector to create sample findings for.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +73,7 @@ impl CreateSampleFindingsInputBuilder {
     /// Consumes the builder and constructs a [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sample_findings::CreateSampleFindingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_sample_findings::CreateSampleFindingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_sample_findings::CreateSampleFindingsInput {
             detector_id: self.detector_id,

@@ -27,8 +27,10 @@ impl BlockReference {
         self.end_offset
     }
     /// <p>List of child blocks within this block.</p>
-    pub fn child_blocks(&self) -> ::std::option::Option<&[crate::types::ChildBlock]> {
-        self.child_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.child_blocks.is_none()`.
+    pub fn child_blocks(&self) -> &[crate::types::ChildBlock] {
+        self.child_blocks.as_deref().unwrap_or_default()
     }
 }
 impl BlockReference {

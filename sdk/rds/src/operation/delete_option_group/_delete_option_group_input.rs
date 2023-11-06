@@ -34,6 +34,7 @@ impl DeleteOptionGroupInputBuilder {
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
+    /// This field is required.
     pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
@@ -54,7 +55,7 @@ impl DeleteOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_option_group::DeleteOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_option_group::DeleteOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_option_group::DeleteOptionGroupInput {
             option_group_name: self.option_group_name,
         })

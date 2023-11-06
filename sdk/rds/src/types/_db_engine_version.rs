@@ -80,6 +80,8 @@ pub struct DbEngineVersion {
     /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub supports_local_write_forwarding: ::std::option::Option<bool>,
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub supports_integrations: ::std::option::Option<bool>,
 }
 impl DbEngineVersion {
     /// <p>The name of the database engine.</p>
@@ -115,24 +117,34 @@ impl DbEngineVersion {
         self.db_engine_media_type.as_deref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn supported_character_sets(&self) -> ::std::option::Option<&[crate::types::CharacterSet]> {
-        self.supported_character_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_character_sets.is_none()`.
+    pub fn supported_character_sets(&self) -> &[crate::types::CharacterSet] {
+        self.supported_character_sets.as_deref().unwrap_or_default()
     }
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn supported_nchar_character_sets(&self) -> ::std::option::Option<&[crate::types::CharacterSet]> {
-        self.supported_nchar_character_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_nchar_character_sets.is_none()`.
+    pub fn supported_nchar_character_sets(&self) -> &[crate::types::CharacterSet] {
+        self.supported_nchar_character_sets.as_deref().unwrap_or_default()
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub fn valid_upgrade_target(&self) -> ::std::option::Option<&[crate::types::UpgradeTarget]> {
-        self.valid_upgrade_target.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_upgrade_target.is_none()`.
+    pub fn valid_upgrade_target(&self) -> &[crate::types::UpgradeTarget] {
+        self.valid_upgrade_target.as_deref().unwrap_or_default()
     }
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    pub fn supported_timezones(&self) -> ::std::option::Option<&[crate::types::Timezone]> {
-        self.supported_timezones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_timezones.is_none()`.
+    pub fn supported_timezones(&self) -> &[crate::types::Timezone] {
+        self.supported_timezones.as_deref().unwrap_or_default()
     }
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    pub fn exportable_log_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exportable_log_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exportable_log_types.is_none()`.
+    pub fn exportable_log_types(&self) -> &[::std::string::String] {
+        self.exportable_log_types.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(&self) -> ::std::option::Option<bool> {
@@ -143,8 +155,10 @@ impl DbEngineVersion {
         self.supports_read_replica
     }
     /// <p>A list of the supported DB engine modes.</p>
-    pub fn supported_engine_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_engine_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_engine_modes.is_none()`.
+    pub fn supported_engine_modes(&self) -> &[::std::string::String] {
+        self.supported_engine_modes.as_deref().unwrap_or_default()
     }
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
@@ -157,8 +171,10 @@ impl DbEngineVersion {
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-    pub fn supported_feature_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_feature_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_feature_names.is_none()`.
+    pub fn supported_feature_names(&self) -> &[::std::string::String] {
+        self.supported_feature_names.as_deref().unwrap_or_default()
     }
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
@@ -197,8 +213,10 @@ impl DbEngineVersion {
         self.create_time.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn supports_babelfish(&self) -> ::std::option::Option<bool> {
@@ -214,13 +232,19 @@ impl DbEngineVersion {
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn supported_ca_certificate_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_ca_certificate_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_ca_certificate_identifiers.is_none()`.
+    pub fn supported_ca_certificate_identifiers(&self) -> &[::std::string::String] {
+        self.supported_ca_certificate_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn supports_local_write_forwarding(&self) -> ::std::option::Option<bool> {
         self.supports_local_write_forwarding
+    }
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub fn supports_integrations(&self) -> ::std::option::Option<bool> {
+        self.supports_integrations
     }
 }
 impl DbEngineVersion {
@@ -266,6 +290,7 @@ pub struct DbEngineVersionBuilder {
     pub(crate) supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
     pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supports_local_write_forwarding: ::std::option::Option<bool>,
+    pub(crate) supports_integrations: ::std::option::Option<bool>,
 }
 impl DbEngineVersionBuilder {
     /// <p>The name of the database engine.</p>
@@ -806,6 +831,20 @@ impl DbEngineVersionBuilder {
     pub fn get_supports_local_write_forwarding(&self) -> &::std::option::Option<bool> {
         &self.supports_local_write_forwarding
     }
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub fn supports_integrations(mut self, input: bool) -> Self {
+        self.supports_integrations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub fn set_supports_integrations(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_integrations = input;
+        self
+    }
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub fn get_supports_integrations(&self) -> &::std::option::Option<bool> {
+        &self.supports_integrations
+    }
     /// Consumes the builder and constructs a [`DbEngineVersion`](crate::types::DbEngineVersion).
     pub fn build(self) -> crate::types::DbEngineVersion {
         crate::types::DbEngineVersion {
@@ -841,6 +880,7 @@ impl DbEngineVersionBuilder {
             supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart,
             supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
             supports_local_write_forwarding: self.supports_local_write_forwarding,
+            supports_integrations: self.supports_integrations,
         }
     }
 }

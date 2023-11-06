@@ -48,6 +48,7 @@ pub struct ListLaunchProfileMembersInputBuilder {
 }
 impl ListLaunchProfileMembersInputBuilder {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    /// This field is required.
     pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl ListLaunchProfileMembersInputBuilder {
         &self.next_token
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl ListLaunchProfileMembersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_launch_profile_members::ListLaunchProfileMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_launch_profile_members::ListLaunchProfileMembersInput {
             launch_profile_id: self.launch_profile_id,

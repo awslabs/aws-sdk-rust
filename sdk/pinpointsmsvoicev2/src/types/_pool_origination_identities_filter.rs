@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PoolOriginationIdentitiesFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub name: ::std::option::Option<crate::types::PoolOriginationIdentitiesFilterName>,
+    pub name: crate::types::PoolOriginationIdentitiesFilterName,
     /// <p>An array values to filter for.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl PoolOriginationIdentitiesFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::PoolOriginationIdentitiesFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::PoolOriginationIdentitiesFilterName {
+        &self.name
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl PoolOriginationIdentitiesFilter {
@@ -35,6 +36,7 @@ pub struct PoolOriginationIdentitiesFilterBuilder {
 }
 impl PoolOriginationIdentitiesFilterBuilder {
     /// <p>The name of the attribute to filter on.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::PoolOriginationIdentitiesFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl PoolOriginationIdentitiesFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`PoolOriginationIdentitiesFilter`](crate::types::PoolOriginationIdentitiesFilter).
-    pub fn build(self) -> crate::types::PoolOriginationIdentitiesFilter {
-        crate::types::PoolOriginationIdentitiesFilter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::PoolOriginationIdentitiesFilterBuilder::name)
+    /// - [`values`](crate::types::builders::PoolOriginationIdentitiesFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::PoolOriginationIdentitiesFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PoolOriginationIdentitiesFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PoolOriginationIdentitiesFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building PoolOriginationIdentitiesFilter",
+                )
+            })?,
+        })
     }
 }

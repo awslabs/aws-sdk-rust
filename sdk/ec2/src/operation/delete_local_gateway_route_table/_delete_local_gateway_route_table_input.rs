@@ -34,6 +34,7 @@ pub struct DeleteLocalGatewayRouteTableInputBuilder {
 }
 impl DeleteLocalGatewayRouteTableInputBuilder {
     /// <p> The ID of the local gateway route table. </p>
+    /// This field is required.
     pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteLocalGatewayRouteTableInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput {
             local_gateway_route_table_id: self.local_gateway_route_table_id,

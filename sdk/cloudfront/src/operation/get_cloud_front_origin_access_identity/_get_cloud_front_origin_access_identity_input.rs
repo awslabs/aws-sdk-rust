@@ -28,6 +28,7 @@ pub struct GetCloudFrontOriginAccessIdentityInputBuilder {
 }
 impl GetCloudFrontOriginAccessIdentityInputBuilder {
     /// <p>The identity's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetCloudFrontOriginAccessIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput { id: self.id })
     }

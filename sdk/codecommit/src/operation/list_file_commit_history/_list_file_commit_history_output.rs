@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFileCommitHistoryOutput {
     /// <p>An array of FileVersion objects that form a directed acyclic graph (DAG) of the changes to the file made by the commits that changed the file.</p>
-    pub revision_dag: ::std::option::Option<::std::vec::Vec<crate::types::FileVersion>>,
+    pub revision_dag: ::std::vec::Vec<crate::types::FileVersion>,
     /// <p>An enumeration token that can be used to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFileCommitHistoryOutput {
     /// <p>An array of FileVersion objects that form a directed acyclic graph (DAG) of the changes to the file made by the commits that changed the file.</p>
-    pub fn revision_dag(&self) -> ::std::option::Option<&[crate::types::FileVersion]> {
-        self.revision_dag.as_deref()
+    pub fn revision_dag(&self) -> &[crate::types::FileVersion] {
+        use std::ops::Deref;
+        self.revision_dag.deref()
     }
     /// <p>An enumeration token that can be used to return the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListFileCommitHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFileCommitHistoryOutput`](crate::operation::list_file_commit_history::ListFileCommitHistoryOutput).
-    pub fn build(self) -> crate::operation::list_file_commit_history::ListFileCommitHistoryOutput {
-        crate::operation::list_file_commit_history::ListFileCommitHistoryOutput {
-            revision_dag: self.revision_dag,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`revision_dag`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryOutputBuilder::revision_dag)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_file_commit_history::ListFileCommitHistoryOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_file_commit_history::ListFileCommitHistoryOutput {
+            revision_dag: self.revision_dag.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision_dag",
+                    "revision_dag was not specified but it is required when building ListFileCommitHistoryOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

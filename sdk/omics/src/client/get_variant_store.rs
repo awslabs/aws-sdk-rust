@@ -3,20 +3,20 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVariantStore`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::set_name): <p>The store's name.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::set_name):<br>required: **true**<br><p>The store's name.</p><br>
     /// - On success, responds with [`GetVariantStoreOutput`](crate::operation::get_variant_store::GetVariantStoreOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::id): <p>The store's ID.</p>
+    ///   - [`id(String)`](crate::operation::get_variant_store::GetVariantStoreOutput::id): <p>The store's ID.</p>
     ///   - [`reference(Option<ReferenceItem>)`](crate::operation::get_variant_store::GetVariantStoreOutput::reference): <p>The store's genome reference.</p>
-    ///   - [`status(Option<StoreStatus>)`](crate::operation::get_variant_store::GetVariantStoreOutput::status): <p>The store's status.</p>
-    ///   - [`store_arn(Option<String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::store_arn): <p>The store's ARN.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::name): <p>The store's name.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::description): <p>The store's description.</p>
+    ///   - [`status(StoreStatus)`](crate::operation::get_variant_store::GetVariantStoreOutput::status): <p>The store's status.</p>
+    ///   - [`store_arn(String)`](crate::operation::get_variant_store::GetVariantStoreOutput::store_arn): <p>The store's ARN.</p>
+    ///   - [`name(String)`](crate::operation::get_variant_store::GetVariantStoreOutput::name): <p>The store's name.</p>
+    ///   - [`description(String)`](crate::operation::get_variant_store::GetVariantStoreOutput::description): <p>The store's description.</p>
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::get_variant_store::GetVariantStoreOutput::sse_config): <p>The store's server-side encryption (SSE) settings.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_variant_store::GetVariantStoreOutput::creation_time): <p>When the store was created.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::operation::get_variant_store::GetVariantStoreOutput::update_time): <p>When the store was updated.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_variant_store::GetVariantStoreOutput::tags): <p>The store's tags.</p>
-    ///   - [`status_message(Option<String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::status_message): <p>The store's status message.</p>
-    ///   - [`store_size_bytes(Option<i64>)`](crate::operation::get_variant_store::GetVariantStoreOutput::store_size_bytes): <p>The store's size in bytes.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_variant_store::GetVariantStoreOutput::creation_time): <p>When the store was created.</p>
+    ///   - [`update_time(DateTime)`](crate::operation::get_variant_store::GetVariantStoreOutput::update_time): <p>When the store was updated.</p>
+    ///   - [`tags(HashMap::<String, String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::tags): <p>The store's tags.</p>
+    ///   - [`status_message(String)`](crate::operation::get_variant_store::GetVariantStoreOutput::status_message): <p>The store's status message.</p>
+    ///   - [`store_size_bytes(i64)`](crate::operation::get_variant_store::GetVariantStoreOutput::store_size_bytes): <p>The store's size in bytes.</p>
     /// - On failure, responds with [`SdkError<GetVariantStoreError>`](crate::operation::get_variant_store::GetVariantStoreError)
     pub fn get_variant_store(&self) -> crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder {
         crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::new(self.handle.clone())

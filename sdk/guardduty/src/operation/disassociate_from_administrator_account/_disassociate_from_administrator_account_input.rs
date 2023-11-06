@@ -27,6 +27,7 @@ pub struct DisassociateFromAdministratorAccountInputBuilder {
 }
 impl DisassociateFromAdministratorAccountInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DisassociateFromAdministratorAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput {

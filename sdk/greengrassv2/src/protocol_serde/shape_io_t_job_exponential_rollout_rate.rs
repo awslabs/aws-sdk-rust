@@ -2,24 +2,24 @@
 pub fn ser_io_t_job_exponential_rollout_rate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IoTJobExponentialRolloutRate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.base_rate_per_minute {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("baseRatePerMinute").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.base_rate_per_minute).into()),
         );
     }
-    if let Some(var_2) = &input.increment_factor {
+    {
         object.key("incrementFactor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_2).into()),
+            ::aws_smithy_types::Number::Float((input.increment_factor).into()),
         );
     }
-    if let Some(var_3) = &input.rate_increase_criteria {
+    if let Some(var_1) = &input.rate_increase_criteria {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("rateIncreaseCriteria").start_object();
-        crate::protocol_serde::shape_io_t_job_rate_increase_criteria::ser_io_t_job_rate_increase_criteria(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("rateIncreaseCriteria").start_object();
+        crate::protocol_serde::shape_io_t_job_rate_increase_criteria::ser_io_t_job_rate_increase_criteria(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -66,7 +66,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::io_t_job_exponential_rollout_rate_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -47,6 +47,7 @@ impl ResetInstanceAttributeInputBuilder {
     /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -79,6 +80,7 @@ impl ResetInstanceAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -95,8 +97,10 @@ impl ResetInstanceAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetInstanceAttributeInput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_instance_attribute::ResetInstanceAttributeInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::reset_instance_attribute::ResetInstanceAttributeInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::reset_instance_attribute::ResetInstanceAttributeInput {
             attribute: self.attribute,
             dry_run: self.dry_run,

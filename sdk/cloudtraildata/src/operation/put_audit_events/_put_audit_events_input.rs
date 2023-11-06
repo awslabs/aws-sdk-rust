@@ -12,8 +12,10 @@ pub struct PutAuditEventsInput {
 }
 impl PutAuditEventsInput {
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub fn audit_events(&self) -> ::std::option::Option<&[crate::types::AuditEvent]> {
-        self.audit_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audit_events.is_none()`.
+    pub fn audit_events(&self) -> &[crate::types::AuditEvent] {
+        self.audit_events.as_deref().unwrap_or_default()
     }
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
     pub fn channel_arn(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl PutAuditEventsInputBuilder {
         &self.audit_events
     }
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl PutAuditEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutAuditEventsInput`](crate::operation::put_audit_events::PutAuditEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_audit_events::PutAuditEventsInput {
             audit_events: self.audit_events,
             channel_arn: self.channel_arn,

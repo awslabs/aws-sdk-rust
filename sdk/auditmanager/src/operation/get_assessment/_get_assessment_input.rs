@@ -27,6 +27,7 @@ pub struct GetAssessmentInputBuilder {
 }
 impl GetAssessmentInputBuilder {
     /// <p>The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_assessment::GetAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_assessment::GetAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_assessment::GetAssessmentInput {
             assessment_id: self.assessment_id,
         })

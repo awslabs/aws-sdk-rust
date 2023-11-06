@@ -67,7 +67,7 @@ impl ListMediaPipelineKinesisVideoStreamPoolsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsInput {

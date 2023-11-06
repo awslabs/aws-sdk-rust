@@ -49,6 +49,7 @@ pub struct AthenaIntegrationBuilder {
 }
 impl AthenaIntegrationBuilder {
     /// <p>The location in Amazon S3 to store the generated CloudFormation template.</p>
+    /// This field is required.
     pub fn integration_result_s3_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_result_s3_destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl AthenaIntegrationBuilder {
         &self.integration_result_s3_destination_arn
     }
     /// <p>The schedule for adding new partitions to the table.</p>
+    /// This field is required.
     pub fn partition_load_frequency(mut self, input: crate::types::PartitionLoadFrequency) -> Self {
         self.partition_load_frequency = ::std::option::Option::Some(input);
         self

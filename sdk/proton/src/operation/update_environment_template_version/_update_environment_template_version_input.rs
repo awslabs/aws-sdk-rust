@@ -66,6 +66,7 @@ pub struct UpdateEnvironmentTemplateVersionInputBuilder {
 }
 impl UpdateEnvironmentTemplateVersionInputBuilder {
     /// <p>The name of the environment template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
+    /// This field is required.
     pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
         &self.major_version
     }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
+    /// This field is required.
     pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
@@ -140,7 +143,7 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput {

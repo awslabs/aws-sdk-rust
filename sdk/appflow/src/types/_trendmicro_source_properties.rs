@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrendmicroSourceProperties {
     /// <p> The object specified in the Trend Micro flow source. </p>
-    pub object: ::std::option::Option<::std::string::String>,
+    pub object: ::std::string::String,
 }
 impl TrendmicroSourceProperties {
     /// <p> The object specified in the Trend Micro flow source. </p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
-        self.object.as_deref()
+    pub fn object(&self) -> &str {
+        use std::ops::Deref;
+        self.object.deref()
     }
 }
 impl TrendmicroSourceProperties {
@@ -28,6 +29,7 @@ pub struct TrendmicroSourcePropertiesBuilder {
 }
 impl TrendmicroSourcePropertiesBuilder {
     /// <p> The object specified in the Trend Micro flow source. </p>
+    /// This field is required.
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl TrendmicroSourcePropertiesBuilder {
         &self.object
     }
     /// Consumes the builder and constructs a [`TrendmicroSourceProperties`](crate::types::TrendmicroSourceProperties).
-    pub fn build(self) -> crate::types::TrendmicroSourceProperties {
-        crate::types::TrendmicroSourceProperties { object: self.object }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object`](crate::types::builders::TrendmicroSourcePropertiesBuilder::object)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrendmicroSourceProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrendmicroSourceProperties {
+            object: self.object.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object",
+                    "object was not specified but it is required when building TrendmicroSourceProperties",
+                )
+            })?,
+        })
     }
 }

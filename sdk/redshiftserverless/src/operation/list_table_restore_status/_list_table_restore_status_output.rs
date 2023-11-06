@@ -15,8 +15,10 @@ impl ListTableRestoreStatusOutput {
         self.next_token.as_deref()
     }
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    pub fn table_restore_statuses(&self) -> ::std::option::Option<&[crate::types::TableRestoreStatus]> {
-        self.table_restore_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_restore_statuses.is_none()`.
+    pub fn table_restore_statuses(&self) -> &[crate::types::TableRestoreStatus] {
+        self.table_restore_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListTableRestoreStatusOutput {

@@ -41,6 +41,7 @@ pub struct CreateVpcEndpointInputBuilder {
 }
 impl CreateVpcEndpointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
+    /// This field is required.
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateVpcEndpointInputBuilder {
         &self.domain_arn
     }
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+    /// This field is required.
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
         self.vpc_options = ::std::option::Option::Some(input);
         self
@@ -85,7 +87,7 @@ impl CreateVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
             domain_arn: self.domain_arn,
             vpc_options: self.vpc_options,

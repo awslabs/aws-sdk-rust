@@ -27,6 +27,7 @@ pub struct GetPermissionPolicyInputBuilder {
 }
 impl GetPermissionPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetPermissionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetPermissionPolicyInput`](crate::operation::get_permission_policy::GetPermissionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_permission_policy::GetPermissionPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_permission_policy::GetPermissionPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_permission_policy::GetPermissionPolicyInput {
             resource_arn: self.resource_arn,

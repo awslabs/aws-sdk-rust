@@ -27,6 +27,7 @@ pub struct DeleteBatchPredictionInputBuilder {
 }
 impl DeleteBatchPredictionInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    /// This field is required.
     pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBatchPredictionInput`](crate::operation::delete_batch_prediction::DeleteBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_batch_prediction::DeleteBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_batch_prediction::DeleteBatchPredictionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_batch_prediction::DeleteBatchPredictionInput {
             batch_prediction_id: self.batch_prediction_id,

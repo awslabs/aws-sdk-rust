@@ -41,6 +41,7 @@ pub struct DisassociateGlobalReplicationGroupInputBuilder {
 }
 impl DisassociateGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
+    /// This field is required.
     pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateGlobalReplicationGroupInputBuilder {
         &self.global_replication_group_id
     }
     /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DisassociateGlobalReplicationGroupInputBuilder {
         &self.replication_group_id
     }
     /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
+    /// This field is required.
     pub fn replication_group_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_region = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl DisassociateGlobalReplicationGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupInput {

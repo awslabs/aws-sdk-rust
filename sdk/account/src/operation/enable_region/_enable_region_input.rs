@@ -63,6 +63,7 @@ impl EnableRegionInputBuilder {
         &self.account_id
     }
     /// <p>Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs actions to prepare your account in that Region, such as distributing your IAM resources to the Region. This process takes a few minutes for most accounts, but it can take several hours. You cannot use the Region until this process is complete. Furthermore, you cannot disable the Region until the enabling process is fully completed.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -77,7 +78,9 @@ impl EnableRegionInputBuilder {
         &self.region_name
     }
     /// Consumes the builder and constructs a [`EnableRegionInput`](crate::operation::enable_region::EnableRegionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_region::EnableRegionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::enable_region::EnableRegionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_region::EnableRegionInput {
             account_id: self.account_id,
             region_name: self.region_name,

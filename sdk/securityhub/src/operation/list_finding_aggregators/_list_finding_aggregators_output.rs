@@ -12,8 +12,10 @@ pub struct ListFindingAggregatorsOutput {
 }
 impl ListFindingAggregatorsOutput {
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
-    pub fn finding_aggregators(&self) -> ::std::option::Option<&[crate::types::FindingAggregator]> {
-        self.finding_aggregators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_aggregators.is_none()`.
+    pub fn finding_aggregators(&self) -> &[crate::types::FindingAggregator] {
+        self.finding_aggregators.as_deref().unwrap_or_default()
     }
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
     /// <p>This operation currently only returns a single result. </p>

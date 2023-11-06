@@ -22,16 +22,22 @@ pub struct SearchExpression {
 }
 impl SearchExpression {
     /// <p>A list of filter objects.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>A list of nested filter objects.</p>
-    pub fn nested_filters(&self) -> ::std::option::Option<&[crate::types::NestedFilters]> {
-        self.nested_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nested_filters.is_none()`.
+    pub fn nested_filters(&self) -> &[crate::types::NestedFilters] {
+        self.nested_filters.as_deref().unwrap_or_default()
     }
     /// <p>A list of search expression objects.</p>
-    pub fn sub_expressions(&self) -> ::std::option::Option<&[crate::types::SearchExpression]> {
-        self.sub_expressions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_expressions.is_none()`.
+    pub fn sub_expressions(&self) -> &[crate::types::SearchExpression] {
+        self.sub_expressions.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::BooleanOperator> {

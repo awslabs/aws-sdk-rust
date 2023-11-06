@@ -49,6 +49,7 @@ impl DescribeEffectivePolicyInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn policy_type(mut self, input: crate::types::EffectivePolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self
@@ -91,7 +92,7 @@ impl DescribeEffectivePolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_effective_policy::DescribeEffectivePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_effective_policy::DescribeEffectivePolicyInput {
             policy_type: self.policy_type,

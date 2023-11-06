@@ -132,8 +132,10 @@ impl OracleSettings {
     /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
     /// <p> <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
     /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless it's necessary. For more information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
-    pub fn extra_archived_log_dest_ids(&self) -> ::std::option::Option<&[i32]> {
-        self.extra_archived_log_dest_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extra_archived_log_dest_ids.is_none()`.
+    pub fn extra_archived_log_dest_ids(&self) -> &[i32] {
+        self.extra_archived_log_dest_ids.as_deref().unwrap_or_default()
     }
     /// <p>Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested tables or defined types.</p>
     pub fn allow_select_nested_tables(&self) -> ::std::option::Option<bool> {

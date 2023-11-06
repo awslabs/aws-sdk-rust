@@ -11,12 +11,16 @@ pub struct AlgorithmStatusDetails {
 }
 impl AlgorithmStatusDetails {
     /// <p>The status of algorithm validation.</p>
-    pub fn validation_statuses(&self) -> ::std::option::Option<&[crate::types::AlgorithmStatusItem]> {
-        self.validation_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_statuses.is_none()`.
+    pub fn validation_statuses(&self) -> &[crate::types::AlgorithmStatusItem] {
+        self.validation_statuses.as_deref().unwrap_or_default()
     }
     /// <p>The status of the scan of the algorithm's Docker image container.</p>
-    pub fn image_scan_statuses(&self) -> ::std::option::Option<&[crate::types::AlgorithmStatusItem]> {
-        self.image_scan_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_scan_statuses.is_none()`.
+    pub fn image_scan_statuses(&self) -> &[crate::types::AlgorithmStatusItem] {
+        self.image_scan_statuses.as_deref().unwrap_or_default()
     }
 }
 impl AlgorithmStatusDetails {

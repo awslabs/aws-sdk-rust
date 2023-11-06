@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisAction {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The name of the Amazon Kinesis stream.</p>
-    pub stream_name: ::std::option::Option<::std::string::String>,
+    pub stream_name: ::std::string::String,
     /// <p>The partition key.</p>
     pub partition_key: ::std::option::Option<::std::string::String>,
 }
 impl KinesisAction {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The name of the Amazon Kinesis stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
-        self.stream_name.as_deref()
+    pub fn stream_name(&self) -> &str {
+        use std::ops::Deref;
+        self.stream_name.deref()
     }
     /// <p>The partition key.</p>
     pub fn partition_key(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct KinesisActionBuilder {
 }
 impl KinesisActionBuilder {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl KinesisActionBuilder {
         &self.role_arn
     }
     /// <p>The name of the Amazon Kinesis stream.</p>
+    /// This field is required.
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl KinesisActionBuilder {
         &self.partition_key
     }
     /// Consumes the builder and constructs a [`KinesisAction`](crate::types::KinesisAction).
-    pub fn build(self) -> crate::types::KinesisAction {
-        crate::types::KinesisAction {
-            role_arn: self.role_arn,
-            stream_name: self.stream_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::KinesisActionBuilder::role_arn)
+    /// - [`stream_name`](crate::types::builders::KinesisActionBuilder::stream_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisAction, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::KinesisAction {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building KinesisAction",
+                )
+            })?,
+            stream_name: self.stream_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_name",
+                    "stream_name was not specified but it is required when building KinesisAction",
+                )
+            })?,
             partition_key: self.partition_key,
-        }
+        })
     }
 }

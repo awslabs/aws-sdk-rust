@@ -42,6 +42,7 @@ pub struct DescribeDomainOutputBuilder {
 }
 impl DescribeDomainOutputBuilder {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
+    /// This field is required.
     pub fn domain_info(mut self, input: crate::types::DomainInfo) -> Self {
         self.domain_info = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl DescribeDomainOutputBuilder {
         &self.domain_info
     }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::DomainConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

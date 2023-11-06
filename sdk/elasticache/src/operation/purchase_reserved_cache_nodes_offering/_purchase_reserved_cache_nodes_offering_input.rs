@@ -37,8 +37,10 @@ impl PurchaseReservedCacheNodesOfferingInput {
         self.cache_node_count
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PurchaseReservedCacheNodesOfferingInput {
@@ -60,6 +62,7 @@ pub struct PurchaseReservedCacheNodesOfferingInputBuilder {
 impl PurchaseReservedCacheNodesOfferingInputBuilder {
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
+    /// This field is required.
     pub fn reserved_cache_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_cache_nodes_offering_id = ::std::option::Option::Some(input.into());
         self
@@ -140,7 +143,7 @@ impl PurchaseReservedCacheNodesOfferingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput {

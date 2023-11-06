@@ -2,7 +2,7 @@
 pub fn ser_enable_security_hub_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::enable_security_hub::EnableSecurityHubInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.control_finding_generator {
         object.key("ControlFindingGenerator").string(var_1.as_str());
     }

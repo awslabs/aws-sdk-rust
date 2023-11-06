@@ -42,6 +42,7 @@ pub struct CreateStreamInputBuilder {
 }
 impl CreateStreamInputBuilder {
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
+    /// This field is required.
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,9 @@ impl CreateStreamInputBuilder {
         &self.stream_mode_details
     }
     /// Consumes the builder and constructs a [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stream::CreateStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_stream::CreateStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stream::CreateStreamInput {
             stream_name: self.stream_name,
             shard_count: self.shard_count,

@@ -34,8 +34,8 @@ pub fn de_get_aggregate_discovered_resource_counts_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::InvalidNextTokenException({
@@ -50,8 +50,8 @@ pub fn de_get_aggregate_discovered_resource_counts_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchConfigurationAggregatorException" => crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::NoSuchConfigurationAggregatorException({
@@ -66,8 +66,8 @@ pub fn de_get_aggregate_discovered_resource_counts_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::ValidationException({
@@ -82,8 +82,8 @@ pub fn de_get_aggregate_discovered_resource_counts_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::generic(generic)
@@ -109,13 +109,13 @@ pub fn de_get_aggregate_discovered_resource_counts_http_response(
         )
         .map_err(crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_aggregate_discovered_resource_counts_output_correct_errors(output).build()
     })
 }
 
 pub fn ser_get_aggregate_discovered_resource_counts_input(
     input: &crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_aggregate_discovered_resource_counts_input::ser_get_aggregate_discovered_resource_counts_input(
@@ -123,7 +123,7 @@ pub fn ser_get_aggregate_discovered_resource_counts_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_aggregate_discovered_resource_counts(

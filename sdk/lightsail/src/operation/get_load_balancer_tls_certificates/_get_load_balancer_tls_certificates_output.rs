@@ -9,8 +9,10 @@ pub struct GetLoadBalancerTlsCertificatesOutput {
 }
 impl GetLoadBalancerTlsCertificatesOutput {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    pub fn tls_certificates(&self) -> ::std::option::Option<&[crate::types::LoadBalancerTlsCertificate]> {
-        self.tls_certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tls_certificates.is_none()`.
+    pub fn tls_certificates(&self) -> &[crate::types::LoadBalancerTlsCertificate] {
+        self.tls_certificates.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetLoadBalancerTlsCertificatesOutput {

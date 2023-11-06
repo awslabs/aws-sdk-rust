@@ -86,6 +86,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
         &self.client_request_token
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
+    /// This field is required.
     pub fn storage_virtual_machine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +119,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput {
             active_directory_configuration: self.active_directory_configuration,

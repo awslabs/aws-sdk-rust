@@ -28,6 +28,7 @@ pub struct LocationConfigurationBuilder {
 }
 impl LocationConfigurationBuilder {
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self

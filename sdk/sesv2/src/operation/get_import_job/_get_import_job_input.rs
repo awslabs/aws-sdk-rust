@@ -28,6 +28,7 @@ pub struct GetImportJobInputBuilder {
 }
 impl GetImportJobInputBuilder {
     /// <p>The ID of the import job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetImportJobInputBuilder {
     /// Consumes the builder and constructs a [`GetImportJobInput`](crate::operation::get_import_job::GetImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_import_job::GetImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_import_job::GetImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_import_job::GetImportJobInput { job_id: self.job_id })
     }
 }

@@ -42,6 +42,7 @@ pub struct UpdateMultiplexInputBuilder {
 }
 impl UpdateMultiplexInputBuilder {
     /// ID of the multiplex to update.
+    /// This field is required.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multiplex_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl UpdateMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMultiplexInput`](crate::operation::update_multiplex::UpdateMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_multiplex::UpdateMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_multiplex::UpdateMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_multiplex::UpdateMultiplexInput {
             multiplex_id: self.multiplex_id,
             multiplex_settings: self.multiplex_settings,

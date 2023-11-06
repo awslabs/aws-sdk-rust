@@ -2,21 +2,21 @@
 pub fn ser_redshift_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.database {
-        object.key("Database").string(var_2.as_str());
+    {
+        object.key("Database").string(input.database.as_str());
     }
-    if let Some(var_3) = &input.table {
-        object.key("Table").string(var_3.as_str());
+    {
+        object.key("Table").string(input.table.as_str());
     }
-    if let Some(var_4) = &input.redshift_tmp_dir {
-        object.key("RedshiftTmpDir").string(var_4.as_str());
+    if let Some(var_1) = &input.redshift_tmp_dir {
+        object.key("RedshiftTmpDir").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.tmp_dir_iam_role {
-        object.key("TmpDirIAMRole").string(var_5.as_str());
+    if let Some(var_2) = &input.tmp_dir_iam_role {
+        object.key("TmpDirIAMRole").string(var_2.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::redshift_source_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -155,7 +155,7 @@ pub(crate) mod shape_create_grant_input;
 
 pub(crate) mod shape_create_key_input;
 
-pub(crate) mod shape_custom_key_store_has_cm_ks_exception;
+pub(crate) mod shape_custom_key_store_has_cmks_exception;
 
 pub(crate) mod shape_custom_key_store_invalid_state_exception;
 

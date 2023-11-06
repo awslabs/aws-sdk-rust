@@ -35,12 +35,16 @@ impl DescribeEnvironmentsInput {
         self.version_label.as_deref()
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
-    pub fn environment_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.environment_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_ids.is_none()`.
+    pub fn environment_ids(&self) -> &[::std::string::String] {
+        self.environment_ids.as_deref().unwrap_or_default()
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
-    pub fn environment_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.environment_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_names.is_none()`.
+    pub fn environment_names(&self) -> &[::std::string::String] {
+        self.environment_names.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to include deleted environments:</p>
     /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
@@ -223,7 +227,7 @@ impl DescribeEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_environments::DescribeEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_environments::DescribeEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_environments::DescribeEnvironmentsInput {
             application_name: self.application_name,

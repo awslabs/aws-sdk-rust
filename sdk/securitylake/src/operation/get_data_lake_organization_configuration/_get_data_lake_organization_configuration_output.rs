@@ -9,8 +9,10 @@ pub struct GetDataLakeOrganizationConfigurationOutput {
 }
 impl GetDataLakeOrganizationConfigurationOutput {
     /// <p>The configuration for new accounts.</p>
-    pub fn auto_enable_new_account(&self) -> ::std::option::Option<&[crate::types::DataLakeAutoEnableNewAccountConfiguration]> {
-        self.auto_enable_new_account.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_enable_new_account.is_none()`.
+    pub fn auto_enable_new_account(&self) -> &[crate::types::DataLakeAutoEnableNewAccountConfiguration] {
+        self.auto_enable_new_account.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDataLakeOrganizationConfigurationOutput {

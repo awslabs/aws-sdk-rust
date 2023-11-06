@@ -40,8 +40,10 @@ impl CreateWorkflowInput {
         self.input_parameters.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.step_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_targets.is_none()`.
+    pub fn step_targets(&self) -> &[::std::string::String] {
+        self.step_targets.as_deref().unwrap_or_default()
     }
     /// <p>The tags to add on a migration workflow.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -82,6 +84,7 @@ pub struct CreateWorkflowInputBuilder {
 }
 impl CreateWorkflowInputBuilder {
     /// <p>The name of the migration workflow.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +113,7 @@ impl CreateWorkflowInputBuilder {
         &self.description
     }
     /// <p>The ID of the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +128,7 @@ impl CreateWorkflowInputBuilder {
         &self.template_id
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
+    /// This field is required.
     pub fn application_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -203,7 +208,7 @@ impl CreateWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workflow::CreateWorkflowInput {
             name: self.name,
             description: self.description,

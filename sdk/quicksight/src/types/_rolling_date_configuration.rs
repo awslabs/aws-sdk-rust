@@ -7,7 +7,7 @@ pub struct RollingDateConfiguration {
     /// <p>The data set that is used in the rolling date configuration.</p>
     pub data_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The expression of the rolling date configuration.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
 }
 impl RollingDateConfiguration {
     /// <p>The data set that is used in the rolling date configuration.</p>
@@ -15,8 +15,9 @@ impl RollingDateConfiguration {
         self.data_set_identifier.as_deref()
     }
     /// <p>The expression of the rolling date configuration.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
 }
 impl ::std::fmt::Debug for RollingDateConfiguration {
@@ -57,6 +58,7 @@ impl RollingDateConfigurationBuilder {
         &self.data_set_identifier
     }
     /// <p>The expression of the rolling date configuration.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +73,18 @@ impl RollingDateConfigurationBuilder {
         &self.expression
     }
     /// Consumes the builder and constructs a [`RollingDateConfiguration`](crate::types::RollingDateConfiguration).
-    pub fn build(self) -> crate::types::RollingDateConfiguration {
-        crate::types::RollingDateConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::RollingDateConfigurationBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::RollingDateConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RollingDateConfiguration {
             data_set_identifier: self.data_set_identifier,
-            expression: self.expression,
-        }
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building RollingDateConfiguration",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for RollingDateConfigurationBuilder {

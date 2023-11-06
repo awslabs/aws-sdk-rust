@@ -45,6 +45,7 @@ impl DeleteObjectInputBuilder {
     /// <file name></file>
     /// </folder>
     /// </folder></p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +72,9 @@ impl DeleteObjectInputBuilder {
         &self.path
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::operation::delete_object::DeleteObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_object::DeleteObjectInput { path: self.path })
     }
 }

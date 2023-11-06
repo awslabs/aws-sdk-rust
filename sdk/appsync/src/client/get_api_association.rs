@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApiAssociation`](crate::operation::get_api_association::builders::GetApiAssociationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_api_association::builders::GetApiAssociationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_api_association::builders::GetApiAssociationFluentBuilder::set_domain_name): <p>The domain name.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_api_association::builders::GetApiAssociationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_api_association::builders::GetApiAssociationFluentBuilder::set_domain_name):<br>required: **true**<br><p>The domain name.</p><br>
     /// - On success, responds with [`GetApiAssociationOutput`](crate::operation::get_api_association::GetApiAssociationOutput) with field(s):
     ///   - [`api_association(Option<ApiAssociation>)`](crate::operation::get_api_association::GetApiAssociationOutput::api_association): <p>The <code>ApiAssociation</code> object.</p>
     /// - On failure, responds with [`SdkError<GetApiAssociationError>`](crate::operation::get_api_association::GetApiAssociationError)

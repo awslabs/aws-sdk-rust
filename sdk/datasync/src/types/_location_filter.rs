@@ -6,24 +6,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
-    pub name: ::std::option::Option<crate::types::LocationFilterName>,
+    pub name: crate::types::LocationFilterName,
     /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
-    pub operator: ::std::option::Option<crate::types::Operator>,
+    pub operator: crate::types::Operator,
 }
 impl LocationFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::LocationFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::LocationFilterName {
+        &self.name
     }
     /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::Operator {
+        &self.operator
     }
 }
 impl LocationFilter {
@@ -43,6 +44,7 @@ pub struct LocationFilterBuilder {
 }
 impl LocationFilterBuilder {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::LocationFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl LocationFilterBuilder {
         &self.values
     }
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -91,11 +94,30 @@ impl LocationFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`LocationFilter`](crate::types::LocationFilter).
-    pub fn build(self) -> crate::types::LocationFilter {
-        crate::types::LocationFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::LocationFilterBuilder::name)
+    /// - [`values`](crate::types::builders::LocationFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::LocationFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::LocationFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LocationFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building LocationFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building LocationFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building LocationFilter",
+                )
+            })?,
+        })
     }
 }

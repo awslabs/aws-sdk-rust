@@ -56,6 +56,7 @@ impl DeleteSigningCertificateInputBuilder {
     }
     /// <p>The ID of the signing certificate to delete.</p>
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +77,7 @@ impl DeleteSigningCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_signing_certificate::DeleteSigningCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_signing_certificate::DeleteSigningCertificateInput {
             user_name: self.user_name,

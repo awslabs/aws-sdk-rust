@@ -28,6 +28,7 @@ pub struct AudioPidSelectionBuilder {
 }
 impl AudioPidSelectionBuilder {
     /// Selects a specific PID from within a source.
+    /// This field is required.
     pub fn pid(mut self, input: i32) -> Self {
         self.pid = ::std::option::Option::Some(input);
         self

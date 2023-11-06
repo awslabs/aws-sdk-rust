@@ -2,37 +2,37 @@
 pub fn ser_member_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MemberConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.framework_configuration {
+    if let Some(var_2) = &input.framework_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("FrameworkConfiguration").start_object();
-        crate::protocol_serde::shape_member_framework_configuration::ser_member_framework_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("FrameworkConfiguration").start_object();
+        crate::protocol_serde::shape_member_framework_configuration::ser_member_framework_configuration(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.log_publishing_configuration {
+    if let Some(var_4) = &input.log_publishing_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("LogPublishingConfiguration").start_object();
-        crate::protocol_serde::shape_member_log_publishing_configuration::ser_member_log_publishing_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("LogPublishingConfiguration").start_object();
+        crate::protocol_serde::shape_member_log_publishing_configuration::ser_member_log_publishing_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_7 = object.key("Tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_8.finish();
+        object_7.finish();
     }
-    if let Some(var_11) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_11.as_str());
+    if let Some(var_10) = &input.kms_key_arn {
+        object.key("KmsKeyArn").string(var_10.as_str());
     }
     Ok(())
 }

@@ -6,7 +6,7 @@ pub struct ListRevisionAssetsInput {
     /// <p>The unique identifier for a data set.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results returned by a single call.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a revision.</p>
@@ -18,7 +18,7 @@ impl ListRevisionAssetsInput {
         self.data_set_id.as_deref()
     }
     /// <p>The maximum number of results returned by a single call.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -48,6 +48,7 @@ pub struct ListRevisionAssetsInputBuilder {
 }
 impl ListRevisionAssetsInputBuilder {
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl ListRevisionAssetsInputBuilder {
         &self.next_token
     }
     /// <p>The unique identifier for a revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -106,10 +108,11 @@ impl ListRevisionAssetsInputBuilder {
     /// Consumes the builder and constructs a [`ListRevisionAssetsInput`](crate::operation::list_revision_assets::ListRevisionAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_revision_assets::ListRevisionAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_revision_assets::ListRevisionAssetsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_revision_assets::ListRevisionAssetsInput {
             data_set_id: self.data_set_id,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             revision_id: self.revision_id,
         })

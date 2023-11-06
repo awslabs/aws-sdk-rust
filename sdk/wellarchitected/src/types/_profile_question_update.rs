@@ -15,8 +15,10 @@ impl ProfileQuestionUpdate {
         self.question_id.as_deref()
     }
     /// <p>The selected choices.</p>
-    pub fn selected_choice_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.selected_choice_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_choice_ids.is_none()`.
+    pub fn selected_choice_ids(&self) -> &[::std::string::String] {
+        self.selected_choice_ids.as_deref().unwrap_or_default()
     }
 }
 impl ProfileQuestionUpdate {

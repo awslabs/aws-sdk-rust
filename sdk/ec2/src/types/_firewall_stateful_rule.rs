@@ -27,20 +27,28 @@ impl FirewallStatefulRule {
         self.rule_group_arn.as_deref()
     }
     /// <p>The source IP addresses, in CIDR notation.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[::std::string::String] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[::std::string::String] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>The source ports.</p>
-    pub fn source_ports(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.source_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ports.is_none()`.
+    pub fn source_ports(&self) -> &[crate::types::PortRange] {
+        self.source_ports.as_deref().unwrap_or_default()
     }
     /// <p>The destination ports.</p>
-    pub fn destination_ports(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.destination_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_ports.is_none()`.
+    pub fn destination_ports(&self) -> &[crate::types::PortRange] {
+        self.destination_ports.as_deref().unwrap_or_default()
     }
     /// <p>The protocol.</p>
     pub fn protocol(&self) -> ::std::option::Option<&str> {

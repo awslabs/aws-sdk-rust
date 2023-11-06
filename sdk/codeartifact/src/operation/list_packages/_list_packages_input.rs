@@ -104,6 +104,7 @@ pub struct ListPackagesInputBuilder {
 }
 impl ListPackagesInputBuilder {
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +133,7 @@ impl ListPackagesInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository that contains the requested packages. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -265,7 +267,9 @@ impl ListPackagesInputBuilder {
         &self.upstream
     }
     /// Consumes the builder and constructs a [`ListPackagesInput`](crate::operation::list_packages::ListPackagesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_packages::ListPackagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_packages::ListPackagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_packages::ListPackagesInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

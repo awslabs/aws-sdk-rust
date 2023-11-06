@@ -36,7 +36,7 @@ pub struct DnsConfig {
     /// </dl>
     pub routing_policy: ::std::option::Option<crate::types::RoutingPolicy>,
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
-    pub dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
+    pub dns_records: ::std::vec::Vec<crate::types::DnsRecord>,
 }
 impl DnsConfig {
     /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
@@ -73,8 +73,9 @@ impl DnsConfig {
         self.routing_policy.as_ref()
     }
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
-    pub fn dns_records(&self) -> ::std::option::Option<&[crate::types::DnsRecord]> {
-        self.dns_records.as_deref()
+    pub fn dns_records(&self) -> &[crate::types::DnsRecord] {
+        use std::ops::Deref;
+        self.dns_records.deref()
     }
 }
 impl DnsConfig {
@@ -217,11 +218,18 @@ impl DnsConfigBuilder {
         &self.dns_records
     }
     /// Consumes the builder and constructs a [`DnsConfig`](crate::types::DnsConfig).
-    pub fn build(self) -> crate::types::DnsConfig {
-        crate::types::DnsConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dns_records`](crate::types::builders::DnsConfigBuilder::dns_records)
+    pub fn build(self) -> ::std::result::Result<crate::types::DnsConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DnsConfig {
             namespace_id: self.namespace_id,
             routing_policy: self.routing_policy,
-            dns_records: self.dns_records,
-        }
+            dns_records: self.dns_records.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "dns_records",
+                    "dns_records was not specified but it is required when building DnsConfig",
+                )
+            })?,
+        })
     }
 }

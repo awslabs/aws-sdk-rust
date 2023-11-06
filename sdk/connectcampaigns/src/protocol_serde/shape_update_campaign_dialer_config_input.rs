@@ -2,7 +2,7 @@
 pub fn ser_update_campaign_dialer_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dialer_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("dialerConfig").start_object();

@@ -17,8 +17,10 @@ impl CellInput {
         self.fact.as_deref()
     }
     /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
-    pub fn facts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.facts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.facts.is_none()`.
+    pub fn facts(&self) -> &[::std::string::String] {
+        self.facts.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CellInput {

@@ -15,20 +15,28 @@ pub struct Parameters {
 }
 impl Parameters {
     /// <p>The parameters that have a data type of string.</p>
-    pub fn string_parameters(&self) -> ::std::option::Option<&[crate::types::StringParameter]> {
-        self.string_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_parameters.is_none()`.
+    pub fn string_parameters(&self) -> &[crate::types::StringParameter] {
+        self.string_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The parameters that have a data type of integer.</p>
-    pub fn integer_parameters(&self) -> ::std::option::Option<&[crate::types::IntegerParameter]> {
-        self.integer_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integer_parameters.is_none()`.
+    pub fn integer_parameters(&self) -> &[crate::types::IntegerParameter] {
+        self.integer_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The parameters that have a data type of decimal.</p>
-    pub fn decimal_parameters(&self) -> ::std::option::Option<&[crate::types::DecimalParameter]> {
-        self.decimal_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.decimal_parameters.is_none()`.
+    pub fn decimal_parameters(&self) -> &[crate::types::DecimalParameter] {
+        self.decimal_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The parameters that have a data type of date-time.</p>
-    pub fn date_time_parameters(&self) -> ::std::option::Option<&[crate::types::DateTimeParameter]> {
-        self.date_time_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.date_time_parameters.is_none()`.
+    pub fn date_time_parameters(&self) -> &[crate::types::DateTimeParameter] {
+        self.date_time_parameters.as_deref().unwrap_or_default()
     }
 }
 impl Parameters {

@@ -6,33 +6,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DedicatedIp {
     /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
-    pub ip: ::std::option::Option<::std::string::String>,
+    pub ip: ::std::string::String,
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
     /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
-    pub warmup_status: ::std::option::Option<crate::types::WarmupStatus>,
+    pub warmup_status: crate::types::WarmupStatus,
     /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
-    pub warmup_percentage: ::std::option::Option<i32>,
+    pub warmup_percentage: i32,
     /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
     pub pool_name: ::std::option::Option<::std::string::String>,
 }
 impl DedicatedIp {
     /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
-    pub fn ip(&self) -> ::std::option::Option<&str> {
-        self.ip.as_deref()
+    pub fn ip(&self) -> &str {
+        use std::ops::Deref;
+        self.ip.deref()
     }
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
     /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
-    pub fn warmup_status(&self) -> ::std::option::Option<&crate::types::WarmupStatus> {
-        self.warmup_status.as_ref()
+    pub fn warmup_status(&self) -> &crate::types::WarmupStatus {
+        &self.warmup_status
     }
     /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
-    pub fn warmup_percentage(&self) -> ::std::option::Option<i32> {
+    pub fn warmup_percentage(&self) -> i32 {
         self.warmup_percentage
     }
     /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
@@ -58,6 +59,7 @@ pub struct DedicatedIpBuilder {
 }
 impl DedicatedIpBuilder {
     /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
+    /// This field is required.
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DedicatedIpBuilder {
     /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
     /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn warmup_status(mut self, input: crate::types::WarmupStatus) -> Self {
         self.warmup_status = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl DedicatedIpBuilder {
         &self.warmup_status
     }
     /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
+    /// This field is required.
     pub fn warmup_percentage(mut self, input: i32) -> Self {
         self.warmup_percentage = ::std::option::Option::Some(input);
         self
@@ -126,12 +130,31 @@ impl DedicatedIpBuilder {
         &self.pool_name
     }
     /// Consumes the builder and constructs a [`DedicatedIp`](crate::types::DedicatedIp).
-    pub fn build(self) -> crate::types::DedicatedIp {
-        crate::types::DedicatedIp {
-            ip: self.ip,
-            warmup_status: self.warmup_status,
-            warmup_percentage: self.warmup_percentage,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ip`](crate::types::builders::DedicatedIpBuilder::ip)
+    /// - [`warmup_status`](crate::types::builders::DedicatedIpBuilder::warmup_status)
+    /// - [`warmup_percentage`](crate::types::builders::DedicatedIpBuilder::warmup_percentage)
+    pub fn build(self) -> ::std::result::Result<crate::types::DedicatedIp, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DedicatedIp {
+            ip: self.ip.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ip",
+                    "ip was not specified but it is required when building DedicatedIp",
+                )
+            })?,
+            warmup_status: self.warmup_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "warmup_status",
+                    "warmup_status was not specified but it is required when building DedicatedIp",
+                )
+            })?,
+            warmup_percentage: self.warmup_percentage.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "warmup_percentage",
+                    "warmup_percentage was not specified but it is required when building DedicatedIp",
+                )
+            })?,
             pool_name: self.pool_name,
-        }
+        })
     }
 }

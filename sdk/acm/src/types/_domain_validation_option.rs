@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainValidationOption {
     /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
     /// <li> <p>admin@example.com</p> </li>
@@ -14,12 +14,13 @@ pub struct DomainValidationOption {
     /// <li> <p>postmaster@example.com</p> </li>
     /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
-    pub validation_domain: ::std::option::Option<::std::string::String>,
+    pub validation_domain: ::std::string::String,
 }
 impl DomainValidationOption {
     /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
@@ -29,8 +30,9 @@ impl DomainValidationOption {
     /// <li> <p>postmaster@example.com</p> </li>
     /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
-    pub fn validation_domain(&self) -> ::std::option::Option<&str> {
-        self.validation_domain.as_deref()
+    pub fn validation_domain(&self) -> &str {
+        use std::ops::Deref;
+        self.validation_domain.deref()
     }
 }
 impl DomainValidationOption {
@@ -49,6 +51,7 @@ pub struct DomainValidationOptionBuilder {
 }
 impl DomainValidationOptionBuilder {
     /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl DomainValidationOptionBuilder {
     /// <li> <p>postmaster@example.com</p> </li>
     /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn validation_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_domain = ::std::option::Option::Some(input.into());
         self
@@ -98,10 +102,23 @@ impl DomainValidationOptionBuilder {
         &self.validation_domain
     }
     /// Consumes the builder and constructs a [`DomainValidationOption`](crate::types::DomainValidationOption).
-    pub fn build(self) -> crate::types::DomainValidationOption {
-        crate::types::DomainValidationOption {
-            domain_name: self.domain_name,
-            validation_domain: self.validation_domain,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_name`](crate::types::builders::DomainValidationOptionBuilder::domain_name)
+    /// - [`validation_domain`](crate::types::builders::DomainValidationOptionBuilder::validation_domain)
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainValidationOption, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DomainValidationOption {
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building DomainValidationOption",
+                )
+            })?,
+            validation_domain: self.validation_domain.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "validation_domain",
+                    "validation_domain was not specified but it is required when building DomainValidationOption",
+                )
+            })?,
+        })
     }
 }

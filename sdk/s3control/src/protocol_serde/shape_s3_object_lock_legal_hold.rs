@@ -2,17 +2,18 @@
 pub fn ser_s3_object_lock_legal_hold(
     input: &crate::types::S3ObjectLockLegalHold,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.status {
+    {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.status.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_object_lock_legal_hold(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3ObjectLockLegalHold, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -21,7 +22,7 @@ pub fn de_s3_object_lock_legal_hold(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3control#S3ObjectLockLegalHold$Status */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<crate::types::S3ObjectLockLegalHoldStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::S3ObjectLockLegalHoldStatus::from(
@@ -31,11 +32,13 @@ pub fn de_s3_object_lock_legal_hold(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_2);
+                builder = builder.set_status(var_1);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::s3_object_lock_legal_hold_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

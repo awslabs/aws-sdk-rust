@@ -50,11 +50,10 @@ pub fn de_list_tags_for_resource_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException({
@@ -87,11 +86,10 @@ pub fn de_list_tags_for_resource_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException({

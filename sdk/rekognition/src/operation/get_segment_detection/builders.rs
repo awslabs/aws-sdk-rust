@@ -10,7 +10,7 @@ impl GetSegmentDetectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_segment_detection::GetSegmentDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_segment_detection::GetSegmentDetectionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -77,12 +77,15 @@ impl GetSegmentDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_segment_detection::GetSegmentDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_segment_detection::GetSegmentDetectionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::get_segment_detection::GetSegmentDetection::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -91,20 +94,15 @@ impl GetSegmentDetectionFluentBuilder {
         crate::operation::get_segment_detection::GetSegmentDetection::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::get_segment_detection::GetSegmentDetectionOutput,
-            crate::operation::get_segment_detection::GetSegmentDetectionError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_segment_detection::GetSegmentDetectionError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::get_segment_detection::GetSegmentDetectionOutput,
+        crate::operation::get_segment_detection::GetSegmentDetectionError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -117,7 +115,7 @@ impl GetSegmentDetectionFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator {
         crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::new(self.handle, self.inner)
     }

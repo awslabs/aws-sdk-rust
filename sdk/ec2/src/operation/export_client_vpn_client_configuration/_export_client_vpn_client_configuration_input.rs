@@ -34,6 +34,7 @@ pub struct ExportClientVpnClientConfigurationInputBuilder {
 }
 impl ExportClientVpnClientConfigurationInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl ExportClientVpnClientConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationInput {

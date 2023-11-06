@@ -82,6 +82,7 @@ pub struct CreateHostedConfigurationVersionInputBuilder {
 }
 impl CreateHostedConfigurationVersionInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl CreateHostedConfigurationVersionInputBuilder {
         &self.application_id
     }
     /// <p>The configuration profile ID.</p>
+    /// This field is required.
     pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +126,7 @@ impl CreateHostedConfigurationVersionInputBuilder {
         &self.description
     }
     /// <p>The content of the configuration or the configuration data.</p>
+    /// This field is required.
     pub fn content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -138,6 +141,7 @@ impl CreateHostedConfigurationVersionInputBuilder {
         &self.content
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -184,7 +188,7 @@ impl CreateHostedConfigurationVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput {

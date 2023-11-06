@@ -12,7 +12,7 @@ pub struct ListHealthEventsInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of health event objects that you want to return with this call. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The status of a health event.</p>
     pub event_status: ::std::option::Option<crate::types::HealthEventStatus>,
 }
@@ -34,7 +34,7 @@ impl ListHealthEventsInput {
         self.next_token.as_deref()
     }
     /// <p>The number of health event objects that you want to return with this call. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The status of a health event.</p>
@@ -62,6 +62,7 @@ pub struct ListHealthEventsInputBuilder {
 }
 impl ListHealthEventsInputBuilder {
     /// <p>The name of the monitor.</p>
+    /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -148,13 +149,13 @@ impl ListHealthEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_health_events::ListHealthEventsInput {
             monitor_name: self.monitor_name,
             start_time: self.start_time,
             end_time: self.end_time,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             event_status: self.event_status,
         })
     }

@@ -106,7 +106,7 @@ impl ListHarvestJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListHarvestJobsInput`](crate::operation::list_harvest_jobs::ListHarvestJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_harvest_jobs::ListHarvestJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_harvest_jobs::ListHarvestJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_harvest_jobs::ListHarvestJobsInput {
             include_channel_id: self.include_channel_id,
             include_status: self.include_status,

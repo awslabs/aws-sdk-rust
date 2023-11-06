@@ -74,6 +74,7 @@ pub struct UpdatePricingRuleInputBuilder {
 }
 impl UpdatePricingRuleInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +161,7 @@ impl UpdatePricingRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePricingRuleInput`](crate::operation::update_pricing_rule::UpdatePricingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_pricing_rule::UpdatePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_pricing_rule::UpdatePricingRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pricing_rule::UpdatePricingRuleInput {
             arn: self.arn,
             name: self.name,

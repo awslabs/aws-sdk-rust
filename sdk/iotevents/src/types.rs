@@ -31,7 +31,7 @@ pub use crate::types::_asset_property_timestamp::AssetPropertyTimestamp;
 
 pub use crate::types::_asset_property_variant::AssetPropertyVariant;
 
-pub use crate::types::_dynamo_d_bv2_action::DynamoDBv2Action;
+pub use crate::types::_dynamo_dbv2_action::DynamoDBv2Action;
 
 pub use crate::types::_payload::Payload;
 
@@ -195,9 +195,9 @@ mod _detector_model_version_status;
 
 mod _detector_model_version_summary;
 
-mod _dynamo_d_bv2_action;
-
 mod _dynamo_db_action;
+
+mod _dynamo_dbv2_action;
 
 mod _email_configuration;
 

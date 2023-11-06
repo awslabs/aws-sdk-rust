@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisSourceTemplate {
     /// <p>The dataset references of the source template of an analysis.</p>
-    pub data_set_references: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
+    pub data_set_references: ::std::vec::Vec<crate::types::DataSetReference>,
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl AnalysisSourceTemplate {
     /// <p>The dataset references of the source template of an analysis.</p>
-    pub fn data_set_references(&self) -> ::std::option::Option<&[crate::types::DataSetReference]> {
-        self.data_set_references.as_deref()
+    pub fn data_set_references(&self) -> &[crate::types::DataSetReference] {
+        use std::ops::Deref;
+        self.data_set_references.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl AnalysisSourceTemplate {
@@ -55,6 +57,7 @@ impl AnalysisSourceTemplateBuilder {
         &self.data_set_references
     }
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl AnalysisSourceTemplateBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`AnalysisSourceTemplate`](crate::types::AnalysisSourceTemplate).
-    pub fn build(self) -> crate::types::AnalysisSourceTemplate {
-        crate::types::AnalysisSourceTemplate {
-            data_set_references: self.data_set_references,
-            arn: self.arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_references`](crate::types::builders::AnalysisSourceTemplateBuilder::data_set_references)
+    /// - [`arn`](crate::types::builders::AnalysisSourceTemplateBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisSourceTemplate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalysisSourceTemplate {
+            data_set_references: self.data_set_references.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_set_references",
+                    "data_set_references was not specified but it is required when building AnalysisSourceTemplate",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building AnalysisSourceTemplate",
+                )
+            })?,
+        })
     }
 }

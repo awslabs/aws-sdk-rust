@@ -12,8 +12,10 @@ pub struct ListUploadsOutput {
 }
 impl ListUploadsOutput {
     /// <p>Information about the uploads.</p>
-    pub fn uploads(&self) -> ::std::option::Option<&[crate::types::Upload]> {
-        self.uploads.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.uploads.is_none()`.
+    pub fn uploads(&self) -> &[crate::types::Upload] {
+        self.uploads.as_deref().unwrap_or_default()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

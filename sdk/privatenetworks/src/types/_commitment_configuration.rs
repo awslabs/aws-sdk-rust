@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitmentConfiguration {
     /// <p>The duration of the commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.</p>
-    pub commitment_length: ::std::option::Option<crate::types::CommitmentLength>,
+    pub commitment_length: crate::types::CommitmentLength,
     /// <p>Determines whether the commitment period for a radio unit is set to automatically renew for an additional 1 year after your current commitment period expires.</p>
     /// <p>Set to <code>True</code>, if you want your commitment period to automatically renew. Set to <code>False</code> if you do not want your commitment to automatically renew.</p>
     /// <p>You can do the following:</p>
@@ -16,12 +16,12 @@ pub struct CommitmentConfiguration {
     /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment.</p> </li>
     /// </ul>
     /// <p>You cannot use the automatic-renewal option for a 60-day commitment.</p>
-    pub automatic_renewal: ::std::option::Option<bool>,
+    pub automatic_renewal: bool,
 }
 impl CommitmentConfiguration {
     /// <p>The duration of the commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.</p>
-    pub fn commitment_length(&self) -> ::std::option::Option<&crate::types::CommitmentLength> {
-        self.commitment_length.as_ref()
+    pub fn commitment_length(&self) -> &crate::types::CommitmentLength {
+        &self.commitment_length
     }
     /// <p>Determines whether the commitment period for a radio unit is set to automatically renew for an additional 1 year after your current commitment period expires.</p>
     /// <p>Set to <code>True</code>, if you want your commitment period to automatically renew. Set to <code>False</code> if you do not want your commitment to automatically renew.</p>
@@ -32,7 +32,7 @@ impl CommitmentConfiguration {
     /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment.</p> </li>
     /// </ul>
     /// <p>You cannot use the automatic-renewal option for a 60-day commitment.</p>
-    pub fn automatic_renewal(&self) -> ::std::option::Option<bool> {
+    pub fn automatic_renewal(&self) -> bool {
         self.automatic_renewal
     }
 }
@@ -52,6 +52,7 @@ pub struct CommitmentConfigurationBuilder {
 }
 impl CommitmentConfigurationBuilder {
     /// <p>The duration of the commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.</p>
+    /// This field is required.
     pub fn commitment_length(mut self, input: crate::types::CommitmentLength) -> Self {
         self.commitment_length = ::std::option::Option::Some(input);
         self
@@ -74,6 +75,7 @@ impl CommitmentConfigurationBuilder {
     /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment.</p> </li>
     /// </ul>
     /// <p>You cannot use the automatic-renewal option for a 60-day commitment.</p>
+    /// This field is required.
     pub fn automatic_renewal(mut self, input: bool) -> Self {
         self.automatic_renewal = ::std::option::Option::Some(input);
         self
@@ -104,10 +106,23 @@ impl CommitmentConfigurationBuilder {
         &self.automatic_renewal
     }
     /// Consumes the builder and constructs a [`CommitmentConfiguration`](crate::types::CommitmentConfiguration).
-    pub fn build(self) -> crate::types::CommitmentConfiguration {
-        crate::types::CommitmentConfiguration {
-            commitment_length: self.commitment_length,
-            automatic_renewal: self.automatic_renewal,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`commitment_length`](crate::types::builders::CommitmentConfigurationBuilder::commitment_length)
+    /// - [`automatic_renewal`](crate::types::builders::CommitmentConfigurationBuilder::automatic_renewal)
+    pub fn build(self) -> ::std::result::Result<crate::types::CommitmentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CommitmentConfiguration {
+            commitment_length: self.commitment_length.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "commitment_length",
+                    "commitment_length was not specified but it is required when building CommitmentConfiguration",
+                )
+            })?,
+            automatic_renewal: self.automatic_renewal.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "automatic_renewal",
+                    "automatic_renewal was not specified but it is required when building CommitmentConfiguration",
+                )
+            })?,
+        })
     }
 }

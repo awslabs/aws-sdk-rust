@@ -27,6 +27,7 @@ pub struct DeleteDimensionInputBuilder {
 }
 impl DeleteDimensionInputBuilder {
     /// <p>The unique identifier for the dimension that you want to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteDimensionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDimensionInput`](crate::operation::delete_dimension::DeleteDimensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dimension::DeleteDimensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dimension::DeleteDimensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dimension::DeleteDimensionInput { name: self.name })
     }
 }

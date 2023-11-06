@@ -37,6 +37,7 @@ pub struct DetachPrincipalPolicyInputBuilder {
 }
 impl DetachPrincipalPolicyInputBuilder {
     /// <p>The name of the policy to detach.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -52,6 +53,7 @@ impl DetachPrincipalPolicyInputBuilder {
     }
     /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +72,7 @@ impl DetachPrincipalPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DetachPrincipalPolicyInput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_principal_policy::DetachPrincipalPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_principal_policy::DetachPrincipalPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_principal_policy::DetachPrincipalPolicyInput {
             policy_name: self.policy_name,

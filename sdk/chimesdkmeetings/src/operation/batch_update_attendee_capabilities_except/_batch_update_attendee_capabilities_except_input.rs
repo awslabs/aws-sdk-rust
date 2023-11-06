@@ -16,8 +16,10 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
         self.meeting_id.as_deref()
     }
     /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-    pub fn excluded_attendee_ids(&self) -> ::std::option::Option<&[crate::types::AttendeeIdItem]> {
-        self.excluded_attendee_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_attendee_ids.is_none()`.
+    pub fn excluded_attendee_ids(&self) -> &[crate::types::AttendeeIdItem] {
+        self.excluded_attendee_ids.as_deref().unwrap_or_default()
     }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::AttendeeCapabilities> {
@@ -41,6 +43,7 @@ pub struct BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
 }
 impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
     /// <p>The ID of the meeting associated with the update request.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
         &self.excluded_attendee_ids
     }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
+    /// This field is required.
     pub fn capabilities(mut self, input: crate::types::AttendeeCapabilities) -> Self {
         self.capabilities = ::std::option::Option::Some(input);
         self
@@ -93,7 +97,7 @@ impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput {

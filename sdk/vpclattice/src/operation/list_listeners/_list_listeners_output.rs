@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListListenersOutput {
     /// <p>Information about the listeners.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ListenerSummary>>,
+    pub items: ::std::vec::Vec<crate::types::ListenerSummary>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListListenersOutput {
     /// <p>Information about the listeners.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListenerSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::ListenerSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListListenersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListListenersOutput`](crate::operation::list_listeners::ListListenersOutput).
-    pub fn build(self) -> crate::operation::list_listeners::ListListenersOutput {
-        crate::operation::list_listeners::ListListenersOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_listeners::builders::ListListenersOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_listeners::ListListenersOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListListenersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

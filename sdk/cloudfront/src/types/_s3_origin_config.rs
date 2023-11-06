@@ -11,7 +11,7 @@ pub struct S3OriginConfig {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub origin_access_identity: ::std::option::Option<::std::string::String>,
+    pub origin_access_identity: ::std::string::String,
 }
 impl S3OriginConfig {
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
@@ -21,8 +21,9 @@ impl S3OriginConfig {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_access_identity(&self) -> ::std::option::Option<&str> {
-        self.origin_access_identity.as_deref()
+    pub fn origin_access_identity(&self) -> &str {
+        use std::ops::Deref;
+        self.origin_access_identity.deref()
     }
 }
 impl S3OriginConfig {
@@ -46,6 +47,7 @@ impl S3OriginConfigBuilder {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// This field is required.
     pub fn origin_access_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_access_identity = ::std::option::Option::Some(input.into());
         self
@@ -72,9 +74,16 @@ impl S3OriginConfigBuilder {
         &self.origin_access_identity
     }
     /// Consumes the builder and constructs a [`S3OriginConfig`](crate::types::S3OriginConfig).
-    pub fn build(self) -> crate::types::S3OriginConfig {
-        crate::types::S3OriginConfig {
-            origin_access_identity: self.origin_access_identity,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`origin_access_identity`](crate::types::builders::S3OriginConfigBuilder::origin_access_identity)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3OriginConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3OriginConfig {
+            origin_access_identity: self.origin_access_identity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "origin_access_identity",
+                    "origin_access_identity was not specified but it is required when building S3OriginConfig",
+                )
+            })?,
+        })
     }
 }

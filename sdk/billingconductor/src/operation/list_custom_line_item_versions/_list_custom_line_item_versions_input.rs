@@ -48,6 +48,7 @@ pub struct ListCustomLineItemVersionsInputBuilder {
 }
 impl ListCustomLineItemVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListCustomLineItemVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput {
             arn: self.arn,

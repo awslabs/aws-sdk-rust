@@ -22,8 +22,10 @@ impl ListSimulationJobsInput {
     }
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListSimulationJobsInput {
@@ -96,7 +98,8 @@ impl ListSimulationJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListSimulationJobsInput`](crate::operation::list_simulation_jobs::ListSimulationJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_simulation_jobs::ListSimulationJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_simulation_jobs::ListSimulationJobsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_simulation_jobs::ListSimulationJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,

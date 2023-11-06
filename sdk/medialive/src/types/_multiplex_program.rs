@@ -29,8 +29,10 @@ impl MultiplexProgram {
         self.packet_identifiers_map.as_ref()
     }
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-    pub fn pipeline_details(&self) -> ::std::option::Option<&[crate::types::MultiplexProgramPipelineDetail]> {
-        self.pipeline_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_details.is_none()`.
+    pub fn pipeline_details(&self) -> &[crate::types::MultiplexProgramPipelineDetail] {
+        self.pipeline_details.as_deref().unwrap_or_default()
     }
     /// The name of the multiplex program.
     pub fn program_name(&self) -> ::std::option::Option<&str> {

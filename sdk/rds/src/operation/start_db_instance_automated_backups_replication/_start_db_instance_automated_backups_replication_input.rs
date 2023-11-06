@@ -57,6 +57,7 @@ pub struct StartDbInstanceAutomatedBackupsReplicationInputBuilder {
 }
 impl StartDbInstanceAutomatedBackupsReplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
+    /// This field is required.
     pub fn source_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl StartDbInstanceAutomatedBackupsReplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationInput {

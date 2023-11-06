@@ -15,8 +15,10 @@ impl StartApplicationInput {
         self.application_name.as_deref()
     }
     /// <p>Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts reading the streaming source associated with the input. You can also specify where in the streaming source you want Amazon Kinesis Analytics to start reading.</p>
-    pub fn input_configurations(&self) -> ::std::option::Option<&[crate::types::InputConfiguration]> {
-        self.input_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_configurations.is_none()`.
+    pub fn input_configurations(&self) -> &[crate::types::InputConfiguration] {
+        self.input_configurations.as_deref().unwrap_or_default()
     }
 }
 impl StartApplicationInput {
@@ -35,6 +37,7 @@ pub struct StartApplicationInputBuilder {
 }
 impl StartApplicationInputBuilder {
     /// <p>Name of the application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl StartApplicationInputBuilder {
     /// Consumes the builder and constructs a [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_application::StartApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_application::StartApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_application::StartApplicationInput {
             application_name: self.application_name,
             input_configurations: self.input_configurations,

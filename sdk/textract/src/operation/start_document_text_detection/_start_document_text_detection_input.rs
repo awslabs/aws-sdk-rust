@@ -62,6 +62,7 @@ pub struct StartDocumentTextDetectionInputBuilder {
 }
 impl StartDocumentTextDetectionInputBuilder {
     /// <p>The location of the document to be processed.</p>
+    /// This field is required.
     pub fn document_location(mut self, input: crate::types::DocumentLocation) -> Self {
         self.document_location = ::std::option::Option::Some(input);
         self
@@ -150,7 +151,7 @@ impl StartDocumentTextDetectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_document_text_detection::StartDocumentTextDetectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_document_text_detection::StartDocumentTextDetectionInput {
             document_location: self.document_location,

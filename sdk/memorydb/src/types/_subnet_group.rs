@@ -34,8 +34,10 @@ impl SubnetGroup {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnets associated with the subnet group.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::Subnet]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[crate::types::Subnet] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The ARN (Amazon Resource Name) of the subnet group.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {

@@ -2,27 +2,27 @@
 pub fn ser_aws_ground_station_agent_endpoint(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsGroundStationAgentEndpoint,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.egress_address {
+    if let Some(var_1) = &input.egress_address {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("egressAddress").start_object();
-        crate::protocol_serde::shape_connection_details::ser_connection_details(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("egressAddress").start_object();
+        crate::protocol_serde::shape_connection_details::ser_connection_details(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.ingress_address {
+    if let Some(var_3) = &input.ingress_address {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ingressAddress").start_object();
-        crate::protocol_serde::shape_ranged_connection_details::ser_ranged_connection_details(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("ingressAddress").start_object();
+        crate::protocol_serde::shape_ranged_connection_details::ser_ranged_connection_details(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.agent_status {
-        object.key("agentStatus").string(var_6.as_str());
+    if let Some(var_5) = &input.agent_status {
+        object.key("agentStatus").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.audit_results {
-        object.key("auditResults").string(var_7.as_str());
+    if let Some(var_6) = &input.audit_results {
+        object.key("auditResults").string(var_6.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::aws_ground_station_agent_endpoint_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -156,12 +156,16 @@ impl SpotFleetRequestConfigData {
         self.iam_fleet_role.as_deref()
     }
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn launch_specifications(&self) -> ::std::option::Option<&[crate::types::SpotFleetLaunchSpecification]> {
-        self.launch_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_specifications.is_none()`.
+    pub fn launch_specifications(&self) -> &[crate::types::SpotFleetLaunchSpecification] {
+        self.launch_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn launch_template_configs(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateConfig]> {
-        self.launch_template_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_configs.is_none()`.
+    pub fn launch_template_configs(&self) -> &[crate::types::LaunchTemplateConfig] {
+        self.launch_template_configs.as_deref().unwrap_or_default()
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
@@ -233,8 +237,10 @@ impl SpotFleetRequestConfigData {
         self.target_capacity_unit_type.as_ref()
     }
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl SpotFleetRequestConfigData {
@@ -459,6 +465,7 @@ impl SpotFleetRequestConfigDataBuilder {
         &self.on_demand_fulfilled_capacity
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
+    /// This field is required.
     pub fn iam_fleet_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_fleet_role = ::std::option::Option::Some(input.into());
         self
@@ -533,6 +540,7 @@ impl SpotFleetRequestConfigDataBuilder {
         &self.spot_price
     }
     /// <p>The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
+    /// This field is required.
     pub fn target_capacity(mut self, input: i32) -> Self {
         self.target_capacity = ::std::option::Option::Some(input);
         self

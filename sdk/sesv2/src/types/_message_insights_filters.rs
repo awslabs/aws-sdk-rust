@@ -23,29 +23,41 @@ pub struct MessageInsightsFilters {
 }
 impl MessageInsightsFilters {
     /// <p>The from address used to send the message.</p>
-    pub fn from_email_address(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.from_email_address.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.from_email_address.is_none()`.
+    pub fn from_email_address(&self) -> &[::std::string::String] {
+        self.from_email_address.as_deref().unwrap_or_default()
     }
     /// <p>The recipient's email address.</p>
-    pub fn destination(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination.is_none()`.
+    pub fn destination(&self) -> &[::std::string::String] {
+        self.destination.as_deref().unwrap_or_default()
     }
     /// <p>The subject line of the message.</p>
-    pub fn subject(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subject.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject.is_none()`.
+    pub fn subject(&self) -> &[::std::string::String] {
+        self.subject.as_deref().unwrap_or_default()
     }
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
-    pub fn isp(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.isp.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.isp.is_none()`.
+    pub fn isp(&self) -> &[::std::string::String] {
+        self.isp.as_deref().unwrap_or_default()
     }
     /// <p> The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>. </p>
-    pub fn last_delivery_event(&self) -> ::std::option::Option<&[crate::types::DeliveryEventType]> {
-        self.last_delivery_event.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_delivery_event.is_none()`.
+    pub fn last_delivery_event(&self) -> &[crate::types::DeliveryEventType] {
+        self.last_delivery_event.as_deref().unwrap_or_default()
     }
     /// <p> The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>. </p>
     /// <p> Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled. </p>
-    pub fn last_engagement_event(&self) -> ::std::option::Option<&[crate::types::EngagementEventType]> {
-        self.last_engagement_event.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_engagement_event.is_none()`.
+    pub fn last_engagement_event(&self) -> &[crate::types::EngagementEventType] {
+        self.last_engagement_event.as_deref().unwrap_or_default()
     }
 }
 impl MessageInsightsFilters {

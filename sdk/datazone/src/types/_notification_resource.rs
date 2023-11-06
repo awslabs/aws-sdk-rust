@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationResource {
     /// <p>The type of the resource mentioned in a notification.</p>
-    pub r#type: ::std::option::Option<crate::types::NotificationResourceType>,
+    pub r#type: crate::types::NotificationResourceType,
     /// <p>The ID of the resource mentioned in a notification.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the resource mentioned in a notification.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl NotificationResource {
     /// <p>The type of the resource mentioned in a notification.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotificationResourceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::NotificationResourceType {
+        &self.r#type
     }
     /// <p>The ID of the resource mentioned in a notification.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the resource mentioned in a notification.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct NotificationResourceBuilder {
 }
 impl NotificationResourceBuilder {
     /// <p>The type of the resource mentioned in a notification.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::NotificationResourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl NotificationResourceBuilder {
         &self.r#type
     }
     /// <p>The ID of the resource mentioned in a notification.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl NotificationResourceBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`NotificationResource`](crate::types::NotificationResource).
-    pub fn build(self) -> crate::types::NotificationResource {
-        crate::types::NotificationResource {
-            r#type: self.r#type,
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::NotificationResourceBuilder::r#type)
+    /// - [`id`](crate::types::builders::NotificationResourceBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationResource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotificationResource {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building NotificationResource",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building NotificationResource",
+                )
+            })?,
             name: self.name,
-        }
+        })
     }
 }

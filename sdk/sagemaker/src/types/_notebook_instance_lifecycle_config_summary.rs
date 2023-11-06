@@ -49,6 +49,7 @@ pub struct NotebookInstanceLifecycleConfigSummaryBuilder {
 }
 impl NotebookInstanceLifecycleConfigSummaryBuilder {
     /// <p>The name of the lifecycle configuration.</p>
+    /// This field is required.
     pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl NotebookInstanceLifecycleConfigSummaryBuilder {
         &self.notebook_instance_lifecycle_config_name
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
+    /// This field is required.
     pub fn notebook_instance_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self

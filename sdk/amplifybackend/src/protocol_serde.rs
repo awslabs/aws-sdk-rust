@@ -159,12 +159,11 @@ pub(crate) mod shape_create_backend_storage_resource_config;
 
 pub(crate) mod shape_get_backend_storage_resource_config;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape_list_of__string;
-
 pub(crate) mod shape_list_of_backend_job_resp_obj;
 
 pub(crate) mod shape_list_of_s3_bucket_info;
+
+pub(crate) mod shape_list_of_string;
 
 pub(crate) mod shape_login_auth_config_req_obj;
 

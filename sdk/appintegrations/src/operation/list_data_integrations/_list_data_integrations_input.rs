@@ -64,7 +64,7 @@ impl ListDataIntegrationsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataIntegrationsInput`](crate::operation::list_data_integrations::ListDataIntegrationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_integrations::ListDataIntegrationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_data_integrations::ListDataIntegrationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_data_integrations::ListDataIntegrationsInput {
             next_token: self.next_token,

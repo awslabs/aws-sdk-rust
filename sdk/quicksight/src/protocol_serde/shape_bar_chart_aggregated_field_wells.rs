@@ -2,7 +2,7 @@
 pub fn ser_bar_chart_aggregated_field_wells(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BarChartAggregatedFieldWells,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.category {
         let mut array_2 = object.key("Category").start_array();
         for item_3 in var_1 {

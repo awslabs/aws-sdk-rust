@@ -41,6 +41,7 @@ pub struct ListMembersInputBuilder {
 }
 impl ListMembersInputBuilder {
     /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListMembersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_members::ListMembersInput {
             graph_arn: self.graph_arn,
             next_token: self.next_token,

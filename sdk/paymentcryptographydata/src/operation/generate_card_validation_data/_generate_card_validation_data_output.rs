@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateCardValidationDataOutput {
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate CVV or CSC.</p>
-    pub key_arn: ::std::option::Option<::std::string::String>,
+    pub key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub key_check_value: ::std::option::Option<::std::string::String>,
+    pub key_check_value: ::std::string::String,
     /// <p>The CVV or CSC value that Amazon Web Services Payment Cryptography generates for the card.</p>
-    pub validation_data: ::std::option::Option<::std::string::String>,
+    pub validation_data: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GenerateCardValidationDataOutput {
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate CVV or CSC.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
-        self.key_arn.as_deref()
+    pub fn key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn key_check_value(&self) -> ::std::option::Option<&str> {
-        self.key_check_value.as_deref()
+    pub fn key_check_value(&self) -> &str {
+        use std::ops::Deref;
+        self.key_check_value.deref()
     }
     /// <p>The CVV or CSC value that Amazon Web Services Payment Cryptography generates for the card.</p>
-    pub fn validation_data(&self) -> ::std::option::Option<&str> {
-        self.validation_data.as_deref()
+    pub fn validation_data(&self) -> &str {
+        use std::ops::Deref;
+        self.validation_data.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GenerateCardValidationDataOutput {
@@ -48,6 +51,7 @@ pub struct GenerateCardValidationDataOutputBuilder {
 }
 impl GenerateCardValidationDataOutputBuilder {
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate CVV or CSC.</p>
+    /// This field is required.
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl GenerateCardValidationDataOutputBuilder {
         &self.key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// This field is required.
     pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl GenerateCardValidationDataOutputBuilder {
         &self.key_check_value
     }
     /// <p>The CVV or CSC value that Amazon Web Services Payment Cryptography generates for the card.</p>
+    /// This field is required.
     pub fn validation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_data = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +105,36 @@ impl GenerateCardValidationDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateCardValidationDataOutput`](crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput).
-    pub fn build(self) -> crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput {
-        crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput {
-            key_arn: self.key_arn,
-            key_check_value: self.key_check_value,
-            validation_data: self.validation_data,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_arn`](crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder::key_arn)
+    /// - [`key_check_value`](crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder::key_check_value)
+    /// - [`validation_data`](crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder::validation_data)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput {
+            key_arn: self.key_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_arn",
+                    "key_arn was not specified but it is required when building GenerateCardValidationDataOutput",
+                )
+            })?,
+            key_check_value: self.key_check_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_check_value",
+                    "key_check_value was not specified but it is required when building GenerateCardValidationDataOutput",
+                )
+            })?,
+            validation_data: self.validation_data.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "validation_data",
+                    "validation_data was not specified but it is required when building GenerateCardValidationDataOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

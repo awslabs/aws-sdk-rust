@@ -27,6 +27,7 @@ pub struct DeleteCrawlerInputBuilder {
 }
 impl DeleteCrawlerInputBuilder {
     /// <p>The name of the crawler to remove.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCrawlerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCrawlerInput`](crate::operation::delete_crawler::DeleteCrawlerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_crawler::DeleteCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_crawler::DeleteCrawlerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_crawler::DeleteCrawlerInput { name: self.name })
     }
 }

@@ -2,21 +2,21 @@
 pub fn ser_aggregate_resource_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AggregateResourceIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_account_id {
-        object.key("SourceAccountId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("SourceAccountId").string(input.source_account_id.as_str());
     }
-    if let Some(var_2) = &input.source_region {
-        object.key("SourceRegion").string(var_2.as_str());
+    {
+        object.key("SourceRegion").string(input.source_region.as_str());
     }
-    if let Some(var_3) = &input.resource_id {
-        object.key("ResourceId").string(var_3.as_str());
+    {
+        object.key("ResourceId").string(input.resource_id.as_str());
     }
-    if let Some(var_4) = &input.resource_type {
-        object.key("ResourceType").string(var_4.as_str());
+    {
+        object.key("ResourceType").string(input.resource_type.as_str());
     }
-    if let Some(var_5) = &input.resource_name {
-        object.key("ResourceName").string(var_5.as_str());
+    if let Some(var_1) = &input.resource_name {
+        object.key("ResourceName").string(var_1.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::aggregate_resource_identifier_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

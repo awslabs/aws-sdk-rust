@@ -65,6 +65,7 @@ pub struct DeleteMailboxPermissionsInputBuilder {
 }
 impl DeleteMailboxPermissionsInputBuilder {
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl DeleteMailboxPermissionsInputBuilder {
     /// <li> <p>Email address: entity@domain.tld</p> </li>
     /// <li> <p>Entity name: entity</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +119,7 @@ impl DeleteMailboxPermissionsInputBuilder {
     /// <li> <p>Email address: grantee@domain.tld</p> </li>
     /// <li> <p>Grantee name: grantee</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn grantee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_id = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +150,7 @@ impl DeleteMailboxPermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput {
             organization_id: self.organization_id,

@@ -126,6 +126,7 @@ pub struct FindingBuilder {
 }
 impl FindingBuilder {
     /// <p>The ID of the account in which the finding was generated.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +141,7 @@ impl FindingBuilder {
         &self.account_id
     }
     /// <p>The ARN of the finding.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +170,7 @@ impl FindingBuilder {
         &self.confidence
     }
     /// <p>The time and date when the finding was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +199,7 @@ impl FindingBuilder {
         &self.description
     }
     /// <p>The ID of the finding.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -224,6 +228,7 @@ impl FindingBuilder {
         &self.partition
     }
     /// <p>The Region where the finding was generated.</p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -238,6 +243,7 @@ impl FindingBuilder {
         &self.region
     }
     /// <p>Contains information about the Amazon Web Services resource associated with the activity that prompted GuardDuty to generate a finding.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
@@ -252,6 +258,7 @@ impl FindingBuilder {
         &self.resource
     }
     /// <p>The version of the schema used for the finding.</p>
+    /// This field is required.
     pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
@@ -280,6 +287,7 @@ impl FindingBuilder {
         &self.service
     }
     /// <p>The severity of the finding.</p>
+    /// This field is required.
     pub fn severity(mut self, input: f64) -> Self {
         self.severity = ::std::option::Option::Some(input);
         self
@@ -308,6 +316,7 @@ impl FindingBuilder {
         &self.title
     }
     /// <p>The type of finding.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -322,6 +331,7 @@ impl FindingBuilder {
         &self.r#type
     }
     /// <p>The time and date when the finding was last updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_at = ::std::option::Option::Some(input.into());
         self

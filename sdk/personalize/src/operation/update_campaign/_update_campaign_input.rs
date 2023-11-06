@@ -48,6 +48,7 @@ pub struct UpdateCampaignInputBuilder {
 }
 impl UpdateCampaignInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    /// This field is required.
     pub fn campaign_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_arn = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl UpdateCampaignInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_campaign::UpdateCampaignInput {
             campaign_arn: self.campaign_arn,
             solution_version_arn: self.solution_version_arn,

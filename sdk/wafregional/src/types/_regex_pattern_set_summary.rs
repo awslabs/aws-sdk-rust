@@ -10,19 +10,21 @@
 pub struct RegexPatternSetSummary {
     /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub regex_pattern_set_id: ::std::option::Option<::std::string::String>,
+    pub regex_pattern_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl RegexPatternSetSummary {
     /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(&self) -> ::std::option::Option<&str> {
-        self.regex_pattern_set_id.as_deref()
+    pub fn regex_pattern_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.regex_pattern_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl RegexPatternSetSummary {
@@ -42,6 +44,7 @@ pub struct RegexPatternSetSummaryBuilder {
 impl RegexPatternSetSummaryBuilder {
     /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    /// This field is required.
     pub fn regex_pattern_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_pattern_set_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl RegexPatternSetSummaryBuilder {
         &self.regex_pattern_set_id
     }
     /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,10 +76,23 @@ impl RegexPatternSetSummaryBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`RegexPatternSetSummary`](crate::types::RegexPatternSetSummary).
-    pub fn build(self) -> crate::types::RegexPatternSetSummary {
-        crate::types::RegexPatternSetSummary {
-            regex_pattern_set_id: self.regex_pattern_set_id,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`regex_pattern_set_id`](crate::types::builders::RegexPatternSetSummaryBuilder::regex_pattern_set_id)
+    /// - [`name`](crate::types::builders::RegexPatternSetSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RegexPatternSetSummary {
+            regex_pattern_set_id: self.regex_pattern_set_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "regex_pattern_set_id",
+                    "regex_pattern_set_id was not specified but it is required when building RegexPatternSetSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RegexPatternSetSummary",
+                )
+            })?,
+        })
     }
 }

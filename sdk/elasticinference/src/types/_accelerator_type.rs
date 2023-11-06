@@ -21,8 +21,10 @@ impl AcceleratorType {
         self.memory_info.as_ref()
     }
     /// <p> The throughput information of the Elastic Inference Accelerator type. </p>
-    pub fn throughput_info(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.throughput_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.throughput_info.is_none()`.
+    pub fn throughput_info(&self) -> &[crate::types::KeyValuePair] {
+        self.throughput_info.as_deref().unwrap_or_default()
     }
 }
 impl AcceleratorType {

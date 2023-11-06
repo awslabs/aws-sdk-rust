@@ -11,8 +11,10 @@ pub struct DescribeAcceleratorsOutput {
 }
 impl DescribeAcceleratorsOutput {
     /// <p> The details of the Elastic Inference Accelerators. </p>
-    pub fn accelerator_set(&self) -> ::std::option::Option<&[crate::types::ElasticInferenceAccelerator]> {
-        self.accelerator_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_set.is_none()`.
+    pub fn accelerator_set(&self) -> &[crate::types::ElasticInferenceAccelerator] {
+        self.accelerator_set.as_deref().unwrap_or_default()
     }
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

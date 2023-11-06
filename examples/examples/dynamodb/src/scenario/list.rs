@@ -4,7 +4,6 @@
  */
 
 use aws_sdk_dynamodb::{Client, Error};
-use tokio_stream::StreamExt;
 
 // List your tables.
 // snippet-start:[dynamodb.rust.list-tables]
@@ -51,7 +50,7 @@ pub async fn list_tables_limit_10(
 
     println!("Tables:");
 
-    let names = resp.table_names().unwrap_or_default();
+    let names = resp.table_names();
 
     for name in names {
         println!("  {}", name);
@@ -120,8 +119,8 @@ mod test_list_more_tables {
     async fn test_list_tables_iterative() {
         let client = aws_sdk_dynamodb::Client::from_conf(
             sdk_examples_test_utils::client_config!(aws_sdk_dynamodb)
-                .http_connector(aws_smithy_client::test_connection::TestConnection::new(
-                    vec![
+                .http_client(
+                    aws_smithy_runtime::client::http::test_util::StaticReplayClient::new(vec![
                         test_event!(
                             "",
                             (
@@ -137,8 +136,8 @@ mod test_list_more_tables {
                             )
                         ),
                         test_event!("", (200, r#"{"TableNames":["g","h"]}"#)),
-                    ],
-                ))
+                    ]),
+                )
                 .build(),
         );
 
@@ -158,7 +157,7 @@ pub async fn list_tables_are_more(client: &Client) -> Result<(), Error> {
 
     println!("Tables:");
 
-    let names = resp.table_names().unwrap_or_default();
+    let names = resp.table_names();
 
     for name in names {
         println!("  {}", name);

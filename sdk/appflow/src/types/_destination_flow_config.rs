@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
+    pub connector_type: crate::types::ConnectorType,
     /// <p>The API version that the destination connector uses.</p>
     pub api_version: ::std::option::Option<::std::string::String>,
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
@@ -15,8 +15,8 @@ pub struct DestinationFlowConfig {
 }
 impl DestinationFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
-        self.connector_type.as_ref()
+    pub fn connector_type(&self) -> &crate::types::ConnectorType {
+        &self.connector_type
     }
     /// <p>The API version that the destination connector uses.</p>
     pub fn api_version(&self) -> ::std::option::Option<&str> {
@@ -49,6 +49,7 @@ pub struct DestinationFlowConfigBuilder {
 }
 impl DestinationFlowConfigBuilder {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    /// This field is required.
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl DestinationFlowConfigBuilder {
         &self.connector_profile_name
     }
     /// <p> This stores the information that is required to query a particular connector. </p>
+    /// This field is required.
     pub fn destination_connector_properties(mut self, input: crate::types::DestinationConnectorProperties) -> Self {
         self.destination_connector_properties = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,19 @@ impl DestinationFlowConfigBuilder {
         &self.destination_connector_properties
     }
     /// Consumes the builder and constructs a [`DestinationFlowConfig`](crate::types::DestinationFlowConfig).
-    pub fn build(self) -> crate::types::DestinationFlowConfig {
-        crate::types::DestinationFlowConfig {
-            connector_type: self.connector_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connector_type`](crate::types::builders::DestinationFlowConfigBuilder::connector_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DestinationFlowConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DestinationFlowConfig {
+            connector_type: self.connector_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "connector_type",
+                    "connector_type was not specified but it is required when building DestinationFlowConfig",
+                )
+            })?,
             api_version: self.api_version,
             connector_profile_name: self.connector_profile_name,
             destination_connector_properties: self.destination_connector_properties,
-        }
+        })
     }
 }

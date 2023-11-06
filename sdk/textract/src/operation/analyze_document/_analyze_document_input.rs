@@ -22,8 +22,10 @@ impl AnalyzeDocumentInput {
         self.document.as_ref()
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn feature_types(&self) -> ::std::option::Option<&[crate::types::FeatureType]> {
-        self.feature_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
+    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
+        self.feature_types.as_deref().unwrap_or_default()
     }
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
     pub fn human_loop_config(&self) -> ::std::option::Option<&crate::types::HumanLoopConfig> {
@@ -58,6 +60,7 @@ pub struct AnalyzeDocumentInputBuilder {
 impl AnalyzeDocumentInputBuilder {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
+    /// This field is required.
     pub fn document(mut self, input: crate::types::Document) -> Self {
         self.document = ::std::option::Option::Some(input);
         self
@@ -138,7 +141,7 @@ impl AnalyzeDocumentInputBuilder {
     /// Consumes the builder and constructs a [`AnalyzeDocumentInput`](crate::operation::analyze_document::AnalyzeDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::analyze_document::AnalyzeDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::analyze_document::AnalyzeDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::analyze_document::AnalyzeDocumentInput {
             document: self.document,
             feature_types: self.feature_types,

@@ -125,7 +125,9 @@ impl ListArchivesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListArchivesInput`](crate::operation::list_archives::ListArchivesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_archives::ListArchivesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_archives::ListArchivesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_archives::ListArchivesInput {
             name_prefix: self.name_prefix,
             event_source_arn: self.event_source_arn,

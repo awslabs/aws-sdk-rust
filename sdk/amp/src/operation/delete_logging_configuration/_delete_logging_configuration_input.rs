@@ -35,6 +35,7 @@ pub struct DeleteLoggingConfigurationInputBuilder {
 }
 impl DeleteLoggingConfigurationInputBuilder {
     /// The ID of the workspace to vend logs to.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl DeleteLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput {
             workspace_id: self.workspace_id,

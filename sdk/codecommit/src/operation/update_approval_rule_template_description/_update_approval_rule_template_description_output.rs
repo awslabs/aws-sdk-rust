@@ -34,6 +34,7 @@ pub struct UpdateApprovalRuleTemplateDescriptionOutputBuilder {
 }
 impl UpdateApprovalRuleTemplateDescriptionOutputBuilder {
     /// <p>The structure and content of the updated approval rule template.</p>
+    /// This field is required.
     pub fn approval_rule_template(mut self, input: crate::types::ApprovalRuleTemplate) -> Self {
         self.approval_rule_template = ::std::option::Option::Some(input);
         self

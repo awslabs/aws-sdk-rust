@@ -2,7 +2,7 @@
 pub fn ser_delete_marker_replication(
     input: &crate::types::DeleteMarkerReplication,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.status {
@@ -13,6 +13,7 @@ pub fn ser_delete_marker_replication(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_delete_marker_replication(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DeleteMarkerReplication, ::aws_smithy_xml::decode::XmlDecodeError> {

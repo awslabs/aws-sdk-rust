@@ -26,8 +26,10 @@ impl UpdateMediaInsightsPipelineConfigurationInput {
         self.real_time_alert_configuration.as_ref()
     }
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream..</p>
-    pub fn elements(&self) -> ::std::option::Option<&[crate::types::MediaInsightsPipelineConfigurationElement]> {
-        self.elements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
+    pub fn elements(&self) -> &[crate::types::MediaInsightsPipelineConfigurationElement] {
+        self.elements.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateMediaInsightsPipelineConfigurationInput {
@@ -59,6 +61,7 @@ pub struct UpdateMediaInsightsPipelineConfigurationInputBuilder {
 }
 impl UpdateMediaInsightsPipelineConfigurationInputBuilder {
     /// <p>The unique identifier for the resource to be updated. Valid values include the name and ARN of the media insights pipeline configuration.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +76,7 @@ impl UpdateMediaInsightsPipelineConfigurationInputBuilder {
         &self.identifier
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources.</p>
+    /// This field is required.
     pub fn resource_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +129,7 @@ impl UpdateMediaInsightsPipelineConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationInput {

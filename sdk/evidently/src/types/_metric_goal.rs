@@ -37,6 +37,7 @@ pub struct MetricGoalBuilder {
 }
 impl MetricGoalBuilder {
     /// <p>A structure that contains details about the metric.</p>
+    /// This field is required.
     pub fn metric_definition(mut self, input: crate::types::MetricDefinition) -> Self {
         self.metric_definition = ::std::option::Option::Some(input);
         self

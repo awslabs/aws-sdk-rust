@@ -15,8 +15,10 @@ impl ListRoutingControlsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of routing controls.</p>
-    pub fn routing_controls(&self) -> ::std::option::Option<&[crate::types::RoutingControl]> {
-        self.routing_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_controls.is_none()`.
+    pub fn routing_controls(&self) -> &[crate::types::RoutingControl] {
+        self.routing_controls.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRoutingControlsOutput {

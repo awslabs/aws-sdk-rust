@@ -42,6 +42,7 @@ pub struct BatchLookupPolicyBuilder {
 }
 impl BatchLookupPolicyBuilder {
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

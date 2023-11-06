@@ -45,7 +45,7 @@ impl DisableImageBlockPublicAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessInput { dry_run: self.dry_run })
     }

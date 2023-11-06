@@ -27,6 +27,7 @@ pub struct GetRoutingControlStateInputBuilder {
 }
 impl GetRoutingControlStateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
+    /// This field is required.
     pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetRoutingControlStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_routing_control_state::GetRoutingControlStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_routing_control_state::GetRoutingControlStateInput {
             routing_control_arn: self.routing_control_arn,

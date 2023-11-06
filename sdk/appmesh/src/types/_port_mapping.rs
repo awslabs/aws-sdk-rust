@@ -7,7 +7,7 @@ pub struct PortMapping {
     /// <p>The port used for the port mapping.</p>
     pub port: i32,
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-    pub protocol: ::std::option::Option<crate::types::PortProtocol>,
+    pub protocol: crate::types::PortProtocol,
 }
 impl PortMapping {
     /// <p>The port used for the port mapping.</p>
@@ -15,8 +15,8 @@ impl PortMapping {
         self.port
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::PortProtocol> {
-        self.protocol.as_ref()
+    pub fn protocol(&self) -> &crate::types::PortProtocol {
+        &self.protocol
     }
 }
 impl PortMapping {
@@ -35,6 +35,7 @@ pub struct PortMappingBuilder {
 }
 impl PortMappingBuilder {
     /// <p>The port used for the port mapping.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PortMappingBuilder {
         &self.port
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::PortProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl PortMappingBuilder {
         &self.protocol
     }
     /// Consumes the builder and constructs a [`PortMapping`](crate::types::PortMapping).
-    pub fn build(self) -> crate::types::PortMapping {
-        crate::types::PortMapping {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`protocol`](crate::types::builders::PortMappingBuilder::protocol)
+    pub fn build(self) -> ::std::result::Result<crate::types::PortMapping, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PortMapping {
             port: self.port.unwrap_or_default(),
-            protocol: self.protocol,
-        }
+            protocol: self.protocol.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "protocol",
+                    "protocol was not specified but it is required when building PortMapping",
+                )
+            })?,
+        })
     }
 }

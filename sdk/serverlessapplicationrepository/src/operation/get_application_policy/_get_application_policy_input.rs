@@ -27,6 +27,7 @@ pub struct GetApplicationPolicyInputBuilder {
 }
 impl GetApplicationPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetApplicationPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetApplicationPolicyInput`](crate::operation::get_application_policy::GetApplicationPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_application_policy::GetApplicationPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_application_policy::GetApplicationPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_application_policy::GetApplicationPolicyInput {
             application_id: self.application_id,

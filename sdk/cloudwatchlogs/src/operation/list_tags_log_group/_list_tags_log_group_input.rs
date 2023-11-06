@@ -28,6 +28,7 @@ pub struct ListTagsLogGroupInputBuilder {
 }
 impl ListTagsLogGroupInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl ListTagsLogGroupInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsLogGroupInput`](crate::operation::list_tags_log_group::ListTagsLogGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_log_group::ListTagsLogGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_tags_log_group::ListTagsLogGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags_log_group::ListTagsLogGroupInput {
             log_group_name: self.log_group_name,
         })

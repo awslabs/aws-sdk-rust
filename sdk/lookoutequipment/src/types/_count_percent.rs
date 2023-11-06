@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CountPercent {
     /// <p> Indicates the count of occurences of the given statistic. </p>
-    pub count: ::std::option::Option<i32>,
+    pub count: i32,
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
     pub percentage: f32,
 }
 impl CountPercent {
     /// <p> Indicates the count of occurences of the given statistic. </p>
-    pub fn count(&self) -> ::std::option::Option<i32> {
+    pub fn count(&self) -> i32 {
         self.count
     }
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
@@ -35,6 +35,7 @@ pub struct CountPercentBuilder {
 }
 impl CountPercentBuilder {
     /// <p> Indicates the count of occurences of the given statistic. </p>
+    /// This field is required.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CountPercentBuilder {
         &self.count
     }
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
+    /// This field is required.
     pub fn percentage(mut self, input: f32) -> Self {
         self.percentage = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl CountPercentBuilder {
         &self.percentage
     }
     /// Consumes the builder and constructs a [`CountPercent`](crate::types::CountPercent).
-    pub fn build(self) -> crate::types::CountPercent {
-        crate::types::CountPercent {
-            count: self.count,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`count`](crate::types::builders::CountPercentBuilder::count)
+    pub fn build(self) -> ::std::result::Result<crate::types::CountPercent, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CountPercent {
+            count: self.count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "count",
+                    "count was not specified but it is required when building CountPercent",
+                )
+            })?,
             percentage: self.percentage.unwrap_or_default(),
-        }
+        })
     }
 }

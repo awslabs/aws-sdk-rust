@@ -7,7 +7,7 @@ pub struct AwsVpcConfiguration {
     /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
-    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnets: ::std::vec::Vec<::std::string::String>,
     /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
@@ -19,14 +19,17 @@ impl AwsVpcConfiguration {
     /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    pub fn subnets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnets.deref()
     }
     /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
     pub fn assign_public_ip(&self) -> ::std::option::Option<&crate::types::AssignPublicIp> {
@@ -116,11 +119,18 @@ impl AwsVpcConfigurationBuilder {
         &self.assign_public_ip
     }
     /// Consumes the builder and constructs a [`AwsVpcConfiguration`](crate::types::AwsVpcConfiguration).
-    pub fn build(self) -> crate::types::AwsVpcConfiguration {
-        crate::types::AwsVpcConfiguration {
-            subnets: self.subnets,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnets`](crate::types::builders::AwsVpcConfigurationBuilder::subnets)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsVpcConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsVpcConfiguration {
+            subnets: self.subnets.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "subnets",
+                    "subnets was not specified but it is required when building AwsVpcConfiguration",
+                )
+            })?,
             security_groups: self.security_groups,
             assign_public_ip: self.assign_public_ip,
-        }
+        })
     }
 }

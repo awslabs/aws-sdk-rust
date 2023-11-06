@@ -2,7 +2,7 @@
 pub fn ser_raster_data_collection_query_with_band_filter_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RasterDataCollectionQueryWithBandFilterInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.time_range_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TimeRangeFilter").start_object();

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConstraint`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::set_id): <p>The identifier of the constraint.</p>
+    ///   - [`accept_language(impl Into<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::set_accept_language):<br>required: **false**<br><p>The language code.</p>  <ul>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the constraint.</p><br>
     /// - On success, responds with [`DeleteConstraintOutput`](crate::operation::delete_constraint::DeleteConstraintOutput)
     /// - On failure, responds with [`SdkError<DeleteConstraintError>`](crate::operation::delete_constraint::DeleteConstraintError)
     pub fn delete_constraint(&self) -> crate::operation::delete_constraint::builders::DeleteConstraintFluentBuilder {

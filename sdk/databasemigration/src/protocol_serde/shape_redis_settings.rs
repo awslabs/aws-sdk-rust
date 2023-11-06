@@ -2,9 +2,9 @@
 pub fn ser_redis_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedisSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.server_name {
-        object.key("ServerName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ServerName").string(input.server_name.as_str());
     }
     {
         object.key("Port").number(
@@ -12,20 +12,20 @@ pub fn ser_redis_settings(
             ::aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_2) = &input.ssl_security_protocol {
-        object.key("SslSecurityProtocol").string(var_2.as_str());
+    if let Some(var_1) = &input.ssl_security_protocol {
+        object.key("SslSecurityProtocol").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.auth_type {
-        object.key("AuthType").string(var_3.as_str());
+    if let Some(var_2) = &input.auth_type {
+        object.key("AuthType").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.auth_user_name {
-        object.key("AuthUserName").string(var_4.as_str());
+    if let Some(var_3) = &input.auth_user_name {
+        object.key("AuthUserName").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.auth_password {
-        object.key("AuthPassword").string(var_5.as_str());
+    if let Some(var_4) = &input.auth_password {
+        object.key("AuthPassword").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.ssl_ca_certificate_arn {
-        object.key("SslCaCertificateArn").string(var_6.as_str());
+    if let Some(var_5) = &input.ssl_ca_certificate_arn {
+        object.key("SslCaCertificateArn").string(var_5.as_str());
     }
     Ok(())
 }
@@ -104,7 +104,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::redis_settings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

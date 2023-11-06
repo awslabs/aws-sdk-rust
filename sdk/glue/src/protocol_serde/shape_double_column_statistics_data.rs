@@ -2,7 +2,7 @@
 pub fn ser_double_column_statistics_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DoubleColumnStatisticsData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.minimum_value != 0.0 {
         object.key("MinimumValue").number(
             #[allow(clippy::useless_conversion)]
@@ -79,7 +79,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::double_column_statistics_data_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

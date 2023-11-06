@@ -35,8 +35,10 @@ impl DescribePlacementGroupsInput {
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -44,12 +46,16 @@ impl DescribePlacementGroupsInput {
     }
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    pub fn group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
+    pub fn group_names(&self) -> &[::std::string::String] {
+        self.group_names.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the placement groups.</p>
-    pub fn group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
+    pub fn group_ids(&self) -> &[::std::string::String] {
+        self.group_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribePlacementGroupsInput {
@@ -181,7 +187,7 @@ impl DescribePlacementGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_placement_groups::DescribePlacementGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_placement_groups::DescribePlacementGroupsInput {
             filters: self.filters,

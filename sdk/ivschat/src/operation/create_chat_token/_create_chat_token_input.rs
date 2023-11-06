@@ -10,7 +10,7 @@ pub struct CreateChatTokenInput {
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ChatTokenCapability>>,
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
-    pub session_duration_in_minutes: i32,
+    pub session_duration_in_minutes: ::std::option::Option<i32>,
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -24,11 +24,13 @@ impl CreateChatTokenInput {
         self.user_id.as_deref()
     }
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::ChatTokenCapability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::ChatTokenCapability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
-    pub fn session_duration_in_minutes(&self) -> i32 {
+    pub fn session_duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.session_duration_in_minutes
     }
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
@@ -55,6 +57,7 @@ pub struct CreateChatTokenInputBuilder {
 }
 impl CreateChatTokenInputBuilder {
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
+    /// This field is required.
     pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl CreateChatTokenInputBuilder {
         &self.room_identifier
     }
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -139,12 +143,12 @@ impl CreateChatTokenInputBuilder {
     /// Consumes the builder and constructs a [`CreateChatTokenInput`](crate::operation::create_chat_token::CreateChatTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_chat_token::CreateChatTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_chat_token::CreateChatTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_chat_token::CreateChatTokenInput {
             room_identifier: self.room_identifier,
             user_id: self.user_id,
             capabilities: self.capabilities,
-            session_duration_in_minutes: self.session_duration_in_minutes.unwrap_or_default(),
+            session_duration_in_minutes: self.session_duration_in_minutes,
             attributes: self.attributes,
         })
     }

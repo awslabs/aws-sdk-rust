@@ -41,6 +41,7 @@ pub struct ListAssetBundleImportJobsInputBuilder {
 }
 impl ListAssetBundleImportJobsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that the import jobs were executed in.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListAssetBundleImportJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsInput {
             aws_account_id: self.aws_account_id,

@@ -11,8 +11,10 @@ pub struct ListDevicesJobsOutput {
 }
 impl ListDevicesJobsOutput {
     /// <p>A list of jobs.</p>
-    pub fn device_jobs(&self) -> ::std::option::Option<&[crate::types::DeviceJob]> {
-        self.device_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_jobs.is_none()`.
+    pub fn device_jobs(&self) -> &[crate::types::DeviceJob] {
+        self.device_jobs.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

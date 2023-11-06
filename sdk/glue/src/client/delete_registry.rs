@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRegistry`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`registry_id(RegistryId)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::set_registry_id): <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    ///   - [`registry_id(RegistryId)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::set_registry_id):<br>required: **true**<br><p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p><br>
     /// - On success, responds with [`DeleteRegistryOutput`](crate::operation::delete_registry::DeleteRegistryOutput) with field(s):
     ///   - [`registry_name(Option<String>)`](crate::operation::delete_registry::DeleteRegistryOutput::registry_name): <p>The name of the registry being deleted.</p>
     ///   - [`registry_arn(Option<String>)`](crate::operation::delete_registry::DeleteRegistryOutput::registry_arn): <p>The Amazon Resource Name (ARN) of the registry being deleted.</p>

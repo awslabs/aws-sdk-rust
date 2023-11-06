@@ -41,6 +41,7 @@ pub struct DeleteMessageInputBuilder {
 }
 impl DeleteMessageInputBuilder {
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    /// This field is required.
     pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteMessageInputBuilder {
         &self.room_identifier
     }
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteMessageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_message::DeleteMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_message::DeleteMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_message::DeleteMessageInput {
             room_identifier: self.room_identifier,
             id: self.id,

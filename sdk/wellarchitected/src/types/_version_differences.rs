@@ -9,8 +9,10 @@ pub struct VersionDifferences {
 }
 impl VersionDifferences {
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn pillar_differences(&self) -> ::std::option::Option<&[crate::types::PillarDifference]> {
-        self.pillar_differences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillar_differences.is_none()`.
+    pub fn pillar_differences(&self) -> &[crate::types::PillarDifference] {
+        self.pillar_differences.as_deref().unwrap_or_default()
     }
 }
 impl VersionDifferences {

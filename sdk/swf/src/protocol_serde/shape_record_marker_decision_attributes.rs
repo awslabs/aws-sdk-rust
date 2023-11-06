@@ -2,12 +2,12 @@
 pub fn ser_record_marker_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecordMarkerDecisionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.marker_name {
-        object.key("markerName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("markerName").string(input.marker_name.as_str());
     }
-    if let Some(var_2) = &input.details {
-        object.key("details").string(var_2.as_str());
+    if let Some(var_1) = &input.details {
+        object.key("details").string(var_1.as_str());
     }
     Ok(())
 }

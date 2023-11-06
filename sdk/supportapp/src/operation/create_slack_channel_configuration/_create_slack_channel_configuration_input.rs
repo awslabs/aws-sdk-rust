@@ -104,6 +104,7 @@ pub struct CreateSlackChannelConfigurationInputBuilder {
 }
 impl CreateSlackChannelConfigurationInputBuilder {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    /// This field is required.
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl CreateSlackChannelConfigurationInputBuilder {
         &self.team_id
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +204,7 @@ impl CreateSlackChannelConfigurationInputBuilder {
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn notify_on_case_severity(mut self, input: crate::types::NotificationSeverityLevel) -> Self {
         self.notify_on_case_severity = ::std::option::Option::Some(input);
         self
@@ -244,6 +247,7 @@ impl CreateSlackChannelConfigurationInputBuilder {
         &self.notify_on_case_severity
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
+    /// This field is required.
     pub fn channel_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -262,7 +266,7 @@ impl CreateSlackChannelConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationInput {

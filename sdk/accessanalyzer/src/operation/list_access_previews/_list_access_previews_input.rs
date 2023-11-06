@@ -41,6 +41,7 @@ pub struct ListAccessPreviewsInputBuilder {
 }
 impl ListAccessPreviewsInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,8 @@ impl ListAccessPreviewsInputBuilder {
     /// Consumes the builder and constructs a [`ListAccessPreviewsInput`](crate::operation::list_access_previews::ListAccessPreviewsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_access_previews::ListAccessPreviewsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_access_previews::ListAccessPreviewsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_access_previews::ListAccessPreviewsInput {
             analyzer_arn: self.analyzer_arn,
             next_token: self.next_token,

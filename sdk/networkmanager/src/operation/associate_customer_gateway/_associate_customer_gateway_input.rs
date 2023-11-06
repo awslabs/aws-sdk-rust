@@ -48,6 +48,7 @@ pub struct AssociateCustomerGatewayInputBuilder {
 }
 impl AssociateCustomerGatewayInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    /// This field is required.
     pub fn customer_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateCustomerGatewayInputBuilder {
         &self.customer_gateway_arn
     }
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl AssociateCustomerGatewayInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the device.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +111,7 @@ impl AssociateCustomerGatewayInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput {
             customer_gateway_arn: self.customer_gateway_arn,

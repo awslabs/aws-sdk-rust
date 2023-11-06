@@ -2,7 +2,7 @@
 pub fn ser_auto_ml_security_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoMlSecurityConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.volume_kms_key_id {
         object.key("VolumeKmsKeyId").string(var_1.as_str());
     }

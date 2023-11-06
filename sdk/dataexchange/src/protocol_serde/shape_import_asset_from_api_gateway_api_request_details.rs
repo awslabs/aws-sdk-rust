@@ -2,33 +2,33 @@
 pub fn ser_import_asset_from_api_gateway_api_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportAssetFromApiGatewayApiRequestDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_description {
         object.key("ApiDescription").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.api_id {
-        object.key("ApiId").string(var_2.as_str());
+    {
+        object.key("ApiId").string(input.api_id.as_str());
     }
-    if let Some(var_3) = &input.api_key {
-        object.key("ApiKey").string(var_3.as_str());
+    if let Some(var_2) = &input.api_key {
+        object.key("ApiKey").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.api_name {
-        object.key("ApiName").string(var_4.as_str());
+    {
+        object.key("ApiName").string(input.api_name.as_str());
     }
-    if let Some(var_5) = &input.api_specification_md5_hash {
-        object.key("ApiSpecificationMd5Hash").string(var_5.as_str());
+    {
+        object.key("ApiSpecificationMd5Hash").string(input.api_specification_md5_hash.as_str());
     }
-    if let Some(var_6) = &input.data_set_id {
-        object.key("DataSetId").string(var_6.as_str());
+    {
+        object.key("DataSetId").string(input.data_set_id.as_str());
     }
-    if let Some(var_7) = &input.protocol_type {
-        object.key("ProtocolType").string(var_7.as_str());
+    {
+        object.key("ProtocolType").string(input.protocol_type.as_str());
     }
-    if let Some(var_8) = &input.revision_id {
-        object.key("RevisionId").string(var_8.as_str());
+    {
+        object.key("RevisionId").string(input.revision_id.as_str());
     }
-    if let Some(var_9) = &input.stage {
-        object.key("Stage").string(var_9.as_str());
+    {
+        object.key("Stage").string(input.stage.as_str());
     }
     Ok(())
 }

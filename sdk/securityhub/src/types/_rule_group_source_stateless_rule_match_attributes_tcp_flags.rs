@@ -11,12 +11,16 @@ pub struct RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
     /// <p>Defines the flags from the <code>Masks</code> setting that must be set in order for the packet to match. Flags that are listed must be set. Flags that are not listed must not be set.</p>
-    pub fn flags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.flags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flags.is_none()`.
+    pub fn flags(&self) -> &[::std::string::String] {
+        self.flags.as_deref().unwrap_or_default()
     }
     /// <p>The set of flags to consider in the inspection. If not specified, then all flags are inspected.</p>
-    pub fn masks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.masks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.masks.is_none()`.
+    pub fn masks(&self) -> &[::std::string::String] {
+        self.masks.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {

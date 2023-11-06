@@ -42,6 +42,7 @@ pub struct GetAuthorizersInputBuilder {
 }
 impl GetAuthorizersInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl GetAuthorizersInputBuilder {
     /// Consumes the builder and constructs a [`GetAuthorizersInput`](crate::operation::get_authorizers::GetAuthorizersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_authorizers::GetAuthorizersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_authorizers::GetAuthorizersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_authorizers::GetAuthorizersInput {
             rest_api_id: self.rest_api_id,
             position: self.position,

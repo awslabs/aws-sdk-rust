@@ -35,8 +35,10 @@ impl SendBounceInput {
         self.message_dsn.as_ref()
     }
     /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
-    pub fn bounced_recipient_info_list(&self) -> ::std::option::Option<&[crate::types::BouncedRecipientInfo]> {
-        self.bounced_recipient_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bounced_recipient_info_list.is_none()`.
+    pub fn bounced_recipient_info_list(&self) -> &[crate::types::BouncedRecipientInfo] {
+        self.bounced_recipient_info_list.as_deref().unwrap_or_default()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn bounce_sender_arn(&self) -> ::std::option::Option<&str> {
@@ -63,6 +65,7 @@ pub struct SendBounceInputBuilder {
 }
 impl SendBounceInputBuilder {
     /// <p>The message ID of the message to be bounced.</p>
+    /// This field is required.
     pub fn original_message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_message_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl SendBounceInputBuilder {
         &self.original_message_id
     }
     /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
+    /// This field is required.
     pub fn bounce_sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bounce_sender = ::std::option::Option::Some(input.into());
         self
@@ -153,7 +157,7 @@ impl SendBounceInputBuilder {
         &self.bounce_sender_arn
     }
     /// Consumes the builder and constructs a [`SendBounceInput`](crate::operation::send_bounce::SendBounceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_bounce::SendBounceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_bounce::SendBounceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_bounce::SendBounceInput {
             original_message_id: self.original_message_id,
             bounce_sender: self.bounce_sender,

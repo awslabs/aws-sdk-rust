@@ -127,7 +127,7 @@ impl ListJobTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_job_templates::ListJobTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_job_templates::ListJobTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_job_templates::ListJobTemplatesInput {
             category: self.category,
             list_by: self.list_by,

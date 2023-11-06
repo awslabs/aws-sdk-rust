@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMembership`](crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl Into<String>)`](crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder::set_membership_identifier): <p>The identifier for a membership resource.</p>
+    ///   - [`membership_identifier(impl Into<String>)`](crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder::set_membership_identifier):<br>required: **true**<br><p>The identifier for a membership resource.</p><br>
     /// - On success, responds with [`DeleteMembershipOutput`](crate::operation::delete_membership::DeleteMembershipOutput)
     /// - On failure, responds with [`SdkError<DeleteMembershipError>`](crate::operation::delete_membership::DeleteMembershipError)
     pub fn delete_membership(&self) -> crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder {

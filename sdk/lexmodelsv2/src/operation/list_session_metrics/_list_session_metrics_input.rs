@@ -41,24 +41,32 @@ impl ListSessionMetricsInput {
         self.end_date_time.as_ref()
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::AnalyticsSessionMetric]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::AnalyticsSessionMetric] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn bin_by(&self) -> ::std::option::Option<&[crate::types::AnalyticsBinBySpecification]> {
-        self.bin_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bin_by.is_none()`.
+    pub fn bin_by(&self) -> &[crate::types::AnalyticsBinBySpecification] {
+        self.bin_by.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
     /// <li> <p> <code>ConversationEndState</code> – The final state of the conversation. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-conversations">Key definitions</a> in the user guide.</p> </li>
     /// <li> <p> <code>LocaleId</code> – The unique identifier of the bot locale.</p> </li>
     /// </ul>
-    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::AnalyticsSessionGroupBySpecification]> {
-        self.group_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
+    pub fn group_by(&self) -> &[crate::types::AnalyticsSessionGroupBySpecification] {
+        self.group_by.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::AnalyticsSessionFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::AnalyticsSessionFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -93,6 +101,7 @@ pub struct ListSessionMetricsInputBuilder {
 }
 impl ListSessionMetricsInputBuilder {
     /// <p>The identifier for the bot for which you want to retrieve session metrics.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +116,7 @@ impl ListSessionMetricsInputBuilder {
         &self.bot_id
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see session metrics.</p>
+    /// This field is required.
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
         self
@@ -121,6 +131,7 @@ impl ListSessionMetricsInputBuilder {
         &self.start_date_time
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see session metrics.</p>
+    /// This field is required.
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
         self
@@ -260,7 +271,8 @@ impl ListSessionMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListSessionMetricsInput`](crate::operation::list_session_metrics::ListSessionMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_session_metrics::ListSessionMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_session_metrics::ListSessionMetricsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_session_metrics::ListSessionMetricsInput {
             bot_id: self.bot_id,
             start_date_time: self.start_date_time,

@@ -41,6 +41,7 @@ pub struct DeleteEvaluationFormInputBuilder {
 }
 impl DeleteEvaluationFormInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteEvaluationFormInputBuilder {
         &self.instance_id
     }
     /// <p>The unique identifier for the evaluation form.</p>
+    /// This field is required.
     pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteEvaluationFormInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEvaluationFormInput`](crate::operation::delete_evaluation_form::DeleteEvaluationFormInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_evaluation_form::DeleteEvaluationFormInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_evaluation_form::DeleteEvaluationFormInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_evaluation_form::DeleteEvaluationFormInput {
             instance_id: self.instance_id,

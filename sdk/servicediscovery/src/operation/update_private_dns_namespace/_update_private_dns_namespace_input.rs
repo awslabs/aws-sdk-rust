@@ -41,6 +41,7 @@ pub struct UpdatePrivateDnsNamespaceInputBuilder {
 }
 impl UpdatePrivateDnsNamespaceInputBuilder {
     /// <p>The ID of the namespace that you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdatePrivateDnsNamespaceInputBuilder {
         &self.updater_request_id
     }
     /// <p>Updated properties for the private DNS namespace.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: crate::types::PrivateDnsNamespaceChange) -> Self {
         self.namespace = ::std::option::Option::Some(input);
         self
@@ -87,7 +89,7 @@ impl UpdatePrivateDnsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceInput {
             id: self.id,

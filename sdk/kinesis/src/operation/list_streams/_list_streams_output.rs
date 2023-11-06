@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamsOutput {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub stream_names: ::std::vec::Vec<::std::string::String>,
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
-    pub has_more_streams: ::std::option::Option<bool>,
+    pub has_more_streams: bool,
     /// <p></p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -16,11 +16,12 @@ pub struct ListStreamsOutput {
 }
 impl ListStreamsOutput {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub fn stream_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stream_names.as_deref()
+    pub fn stream_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.stream_names.deref()
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
-    pub fn has_more_streams(&self) -> ::std::option::Option<bool> {
+    pub fn has_more_streams(&self) -> bool {
         self.has_more_streams
     }
     /// <p></p>
@@ -28,8 +29,10 @@ impl ListStreamsOutput {
         self.next_token.as_deref()
     }
     /// <p></p>
-    pub fn stream_summaries(&self) -> ::std::option::Option<&[crate::types::StreamSummary]> {
-        self.stream_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stream_summaries.is_none()`.
+    pub fn stream_summaries(&self) -> &[crate::types::StreamSummary] {
+        self.stream_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListStreamsOutput {
@@ -76,6 +79,7 @@ impl ListStreamsOutputBuilder {
         &self.stream_names
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
+    /// This field is required.
     pub fn has_more_streams(mut self, input: bool) -> Self {
         self.has_more_streams = ::std::option::Option::Some(input);
         self
@@ -133,13 +137,26 @@ impl ListStreamsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
-    pub fn build(self) -> crate::operation::list_streams::ListStreamsOutput {
-        crate::operation::list_streams::ListStreamsOutput {
-            stream_names: self.stream_names,
-            has_more_streams: self.has_more_streams,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_names`](crate::operation::list_streams::builders::ListStreamsOutputBuilder::stream_names)
+    /// - [`has_more_streams`](crate::operation::list_streams::builders::ListStreamsOutputBuilder::has_more_streams)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsOutput {
+            stream_names: self.stream_names.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "stream_names",
+                    "stream_names was not specified but it is required when building ListStreamsOutput",
+                )
+            })?,
+            has_more_streams: self.has_more_streams.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "has_more_streams",
+                    "has_more_streams was not specified but it is required when building ListStreamsOutput",
+                )
+            })?,
             next_token: self.next_token,
             stream_summaries: self.stream_summaries,
             _request_id: self._request_id,
-        }
+        })
     }
 }

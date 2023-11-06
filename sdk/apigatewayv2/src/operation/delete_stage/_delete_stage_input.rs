@@ -34,6 +34,7 @@ pub struct DeleteStageInputBuilder {
 }
 impl DeleteStageInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteStageInputBuilder {
         &self.api_id
     }
     /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl DeleteStageInputBuilder {
         &self.stage_name
     }
     /// Consumes the builder and constructs a [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stage::DeleteStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stage::DeleteStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stage::DeleteStageInput {
             api_id: self.api_id,
             stage_name: self.stage_name,

@@ -52,14 +52,18 @@ impl DescribeInstanceStatusInput {
     /// <li> <p> <code>system-status.reachability</code> - Filters on system status where the name is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code> | <code>insufficient-data</code>).</p> </li>
     /// <li> <p> <code>system-status.status</code> - The system status of the instance (<code>ok</code> | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code> | <code>not-applicable</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     /// <p>You cannot specify this parameter and the instance IDs parameter in the same request.</p>
@@ -255,8 +259,10 @@ impl DescribeInstanceStatusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstanceStatusInput`](crate::operation::describe_instance_status::DescribeInstanceStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_instance_status::DescribeInstanceStatusInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_status::DescribeInstanceStatusInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_instance_status::DescribeInstanceStatusInput {
             filters: self.filters,
             instance_ids: self.instance_ids,

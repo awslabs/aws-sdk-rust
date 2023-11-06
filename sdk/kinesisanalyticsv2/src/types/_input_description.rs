@@ -33,8 +33,10 @@ impl InputDescription {
         self.name_prefix.as_deref()
     }
     /// <p>Returns the in-application stream names that are mapped to the stream source. </p>
-    pub fn in_app_stream_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.in_app_stream_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.in_app_stream_names.is_none()`.
+    pub fn in_app_stream_names(&self) -> &[::std::string::String] {
+        self.in_app_stream_names.as_deref().unwrap_or_default()
     }
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run. </p>
     pub fn input_processing_configuration_description(&self) -> ::std::option::Option<&crate::types::InputProcessingConfigurationDescription> {

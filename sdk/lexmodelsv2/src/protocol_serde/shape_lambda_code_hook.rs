@@ -2,12 +2,12 @@
 pub fn ser_lambda_code_hook(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaCodeHook,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.lambda_arn {
-        object.key("lambdaARN").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("lambdaARN").string(input.lambda_arn.as_str());
     }
-    if let Some(var_2) = &input.code_hook_interface_version {
-        object.key("codeHookInterfaceVersion").string(var_2.as_str());
+    {
+        object.key("codeHookInterfaceVersion").string(input.code_hook_interface_version.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::lambda_code_hook_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

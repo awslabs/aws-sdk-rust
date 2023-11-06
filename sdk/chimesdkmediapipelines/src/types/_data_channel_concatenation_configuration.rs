@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataChannelConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
+    pub state: crate::types::ArtifactsConcatenationState,
 }
 impl DataChannelConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ArtifactsConcatenationState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ArtifactsConcatenationState {
+        &self.state
     }
 }
 impl DataChannelConcatenationConfiguration {
@@ -28,6 +28,7 @@ pub struct DataChannelConcatenationConfigurationBuilder {
 }
 impl DataChannelConcatenationConfigurationBuilder {
     /// <p>Enables or disables the configuration object.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ArtifactsConcatenationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,18 @@ impl DataChannelConcatenationConfigurationBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`DataChannelConcatenationConfiguration`](crate::types::DataChannelConcatenationConfiguration).
-    pub fn build(self) -> crate::types::DataChannelConcatenationConfiguration {
-        crate::types::DataChannelConcatenationConfiguration { state: self.state }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::DataChannelConcatenationConfigurationBuilder::state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::DataChannelConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataChannelConcatenationConfiguration {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building DataChannelConcatenationConfiguration",
+                )
+            })?,
+        })
     }
 }

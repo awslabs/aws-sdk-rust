@@ -6,9 +6,9 @@ pub struct ListAccessesOutput {
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
-    pub server_id: ::std::option::Option<::std::string::String>,
+    pub server_id: ::std::string::String,
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub accesses: ::std::option::Option<::std::vec::Vec<crate::types::ListedAccess>>,
+    pub accesses: ::std::vec::Vec<crate::types::ListedAccess>,
     _request_id: Option<String>,
 }
 impl ListAccessesOutput {
@@ -17,12 +17,14 @@ impl ListAccessesOutput {
         self.next_token.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
-        self.server_id.as_deref()
+    pub fn server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.server_id.deref()
     }
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn accesses(&self) -> ::std::option::Option<&[crate::types::ListedAccess]> {
-        self.accesses.as_deref()
+    pub fn accesses(&self) -> &[crate::types::ListedAccess] {
+        use std::ops::Deref;
+        self.accesses.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAccessesOutput {
@@ -62,6 +64,7 @@ impl ListAccessesOutputBuilder {
         &self.next_token
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +108,27 @@ impl ListAccessesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessesOutput`](crate::operation::list_accesses::ListAccessesOutput).
-    pub fn build(self) -> crate::operation::list_accesses::ListAccessesOutput {
-        crate::operation::list_accesses::ListAccessesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_id`](crate::operation::list_accesses::builders::ListAccessesOutputBuilder::server_id)
+    /// - [`accesses`](crate::operation::list_accesses::builders::ListAccessesOutputBuilder::accesses)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_accesses::ListAccessesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_accesses::ListAccessesOutput {
             next_token: self.next_token,
-            server_id: self.server_id,
-            accesses: self.accesses,
+            server_id: self.server_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "server_id",
+                    "server_id was not specified but it is required when building ListAccessesOutput",
+                )
+            })?,
+            accesses: self.accesses.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "accesses",
+                    "accesses was not specified but it is required when building ListAccessesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -91,6 +91,7 @@ pub struct HyperParameterTuningJobSummaryBuilder {
 }
 impl HyperParameterTuningJobSummaryBuilder {
     /// <p>The name of the tuning job.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl HyperParameterTuningJobSummaryBuilder {
         &self.hyper_parameter_tuning_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +121,7 @@ impl HyperParameterTuningJobSummaryBuilder {
         &self.hyper_parameter_tuning_job_arn
     }
     /// <p>The status of the tuning job.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_status(mut self, input: crate::types::HyperParameterTuningJobStatus) -> Self {
         self.hyper_parameter_tuning_job_status = ::std::option::Option::Some(input);
         self
@@ -133,6 +136,7 @@ impl HyperParameterTuningJobSummaryBuilder {
         &self.hyper_parameter_tuning_job_status
     }
     /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
+    /// This field is required.
     pub fn strategy(mut self, input: crate::types::HyperParameterTuningJobStrategyType) -> Self {
         self.strategy = ::std::option::Option::Some(input);
         self
@@ -147,6 +151,7 @@ impl HyperParameterTuningJobSummaryBuilder {
         &self.strategy
     }
     /// <p>The date and time that the tuning job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -189,6 +194,7 @@ impl HyperParameterTuningJobSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status, that this tuning job launched.</p>
+    /// This field is required.
     pub fn training_job_status_counters(mut self, input: crate::types::TrainingJobStatusCounters) -> Self {
         self.training_job_status_counters = ::std::option::Option::Some(input);
         self
@@ -203,6 +209,7 @@ impl HyperParameterTuningJobSummaryBuilder {
         &self.training_job_status_counters
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective metric status, that this tuning job launched.</p>
+    /// This field is required.
     pub fn objective_status_counters(mut self, input: crate::types::ObjectiveStatusCounters) -> Self {
         self.objective_status_counters = ::std::option::Option::Some(input);
         self

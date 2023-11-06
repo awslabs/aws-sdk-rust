@@ -27,6 +27,7 @@ pub struct CancelEnvironmentDeploymentInputBuilder {
 }
 impl CancelEnvironmentDeploymentInputBuilder {
     /// <p>The name of the environment with the deployment to cancel.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl CancelEnvironmentDeploymentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput {
             environment_name: self.environment_name,

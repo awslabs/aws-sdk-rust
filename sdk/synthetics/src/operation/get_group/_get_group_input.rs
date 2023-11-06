@@ -27,6 +27,7 @@ pub struct GetGroupInputBuilder {
 }
 impl GetGroupInputBuilder {
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetGroupInputBuilder {
         &self.group_identifier
     }
     /// Consumes the builder and constructs a [`GetGroupInput`](crate::operation::get_group::GetGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_group::GetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_group::GetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group::GetGroupInput {
             group_identifier: self.group_identifier,
         })

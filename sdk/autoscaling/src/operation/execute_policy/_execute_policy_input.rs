@@ -77,6 +77,7 @@ impl ExecutePolicyInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The name or ARN of the policy.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -147,7 +148,7 @@ impl ExecutePolicyInputBuilder {
     /// Consumes the builder and constructs a [`ExecutePolicyInput`](crate::operation::execute_policy::ExecutePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_policy::ExecutePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::execute_policy::ExecutePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_policy::ExecutePolicyInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             policy_name: self.policy_name,

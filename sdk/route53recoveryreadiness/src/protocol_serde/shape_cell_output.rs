@@ -29,11 +29,10 @@ where
                             );
                         }
                         "cells" => {
-                            builder = builder.set_cells(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_cells(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "parentReadinessScopes" => {
-                            builder =
-                                builder.set_parent_readiness_scopes(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_parent_readiness_scopes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
@@ -48,7 +47,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::cell_output_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

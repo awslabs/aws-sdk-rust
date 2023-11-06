@@ -2,21 +2,21 @@
 pub fn ser_https_notification_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpsNotificationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.endpoint {
-        object.key("endpoint").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("endpoint").string(input.endpoint.as_str());
     }
-    if let Some(var_2) = &input.authorization_api_key_name {
-        object.key("authorizationApiKeyName").string(var_2.as_str());
+    if let Some(var_1) = &input.authorization_api_key_name {
+        object.key("authorizationApiKeyName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.authorization_api_key_value {
-        object.key("authorizationApiKeyValue").string(var_3.as_str());
+    if let Some(var_2) = &input.authorization_api_key_value {
+        object.key("authorizationApiKeyValue").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.http_method {
-        object.key("httpMethod").string(var_4.as_str());
+    if let Some(var_3) = &input.http_method {
+        object.key("httpMethod").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.target_role_arn {
-        object.key("targetRoleArn").string(var_5.as_str());
+    {
+        object.key("targetRoleArn").string(input.target_role_arn.as_str());
     }
     Ok(())
 }

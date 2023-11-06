@@ -34,6 +34,7 @@ pub struct DeleteImpersonationRoleInputBuilder {
 }
 impl DeleteImpersonationRoleInputBuilder {
     /// <p>The WorkMail organization from which to delete the impersonation role.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteImpersonationRoleInputBuilder {
         &self.organization_id
     }
     /// <p>The ID of the impersonation role to delete.</p>
+    /// This field is required.
     pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DeleteImpersonationRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_impersonation_role::DeleteImpersonationRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_impersonation_role::DeleteImpersonationRoleInput {
             organization_id: self.organization_id,

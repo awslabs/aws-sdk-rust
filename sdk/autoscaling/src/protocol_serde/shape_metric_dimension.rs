@@ -3,7 +3,7 @@
 pub fn ser_metric_dimension(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MetricDimension,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
     if let Some(var_2) = &input.name {
@@ -17,6 +17,7 @@ pub fn ser_metric_dimension(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_metric_dimension(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MetricDimension, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -53,5 +54,5 @@ pub fn de_metric_dimension(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::metric_dimension_correct_errors(builder).build())
 }

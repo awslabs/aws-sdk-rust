@@ -16,8 +16,10 @@ impl CancelFlowExecutionsInput {
     }
     /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
     /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
-    pub fn execution_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.execution_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_ids.is_none()`.
+    pub fn execution_ids(&self) -> &[::std::string::String] {
+        self.execution_ids.as_deref().unwrap_or_default()
     }
 }
 impl CancelFlowExecutionsInput {
@@ -36,6 +38,7 @@ pub struct CancelFlowExecutionsInputBuilder {
 }
 impl CancelFlowExecutionsInputBuilder {
     /// <p>The name of a flow with active runs that you want to cancel.</p>
+    /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
@@ -75,7 +78,7 @@ impl CancelFlowExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`CancelFlowExecutionsInput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_flow_executions::CancelFlowExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_flow_executions::CancelFlowExecutionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_flow_executions::CancelFlowExecutionsInput {
             flow_name: self.flow_name,

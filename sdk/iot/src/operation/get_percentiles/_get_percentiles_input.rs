@@ -32,8 +32,10 @@ impl GetPercentilesInput {
         self.query_version.as_deref()
     }
     /// <p>The percentile groups returned.</p>
-    pub fn percents(&self) -> ::std::option::Option<&[f64]> {
-        self.percents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.percents.is_none()`.
+    pub fn percents(&self) -> &[f64] {
+        self.percents.as_deref().unwrap_or_default()
     }
 }
 impl GetPercentilesInput {
@@ -69,6 +71,7 @@ impl GetPercentilesInputBuilder {
         &self.index_name
     }
     /// <p>The search query string.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,7 @@ impl GetPercentilesInputBuilder {
     /// Consumes the builder and constructs a [`GetPercentilesInput`](crate::operation::get_percentiles::GetPercentilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_percentiles::GetPercentilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_percentiles::GetPercentilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_percentiles::GetPercentilesInput {
             index_name: self.index_name,
             query_string: self.query_string,

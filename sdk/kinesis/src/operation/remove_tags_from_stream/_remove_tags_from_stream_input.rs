@@ -17,8 +17,10 @@ impl RemoveTagsFromStreamInput {
         self.stream_name.as_deref()
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
@@ -92,7 +94,7 @@ impl RemoveTagsFromStreamInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput {
             stream_name: self.stream_name,

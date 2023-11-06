@@ -110,9 +110,7 @@ pub(crate) fn de_describe_broker(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionsRequired" => {
-                    builder = builder.set_actions_required(crate::protocol_serde::shape___list_of_action_required::de___list_of_action_required(
-                        tokens,
-                    )?);
+                    builder = builder.set_actions_required(crate::protocol_serde::shape_list_of_action_required::de_list_of_action_required(tokens)?);
                 }
                 "authenticationStrategy" => {
                     builder = builder.set_authentication_strategy(
@@ -139,9 +137,7 @@ pub(crate) fn de_describe_broker(
                     );
                 }
                 "brokerInstances" => {
-                    builder = builder.set_broker_instances(crate::protocol_serde::shape___list_of_broker_instance::de___list_of_broker_instance(
-                        tokens,
-                    )?);
+                    builder = builder.set_broker_instances(crate::protocol_serde::shape_list_of_broker_instance::de_list_of_broker_instance(tokens)?);
                 }
                 "brokerName" => {
                     builder = builder.set_broker_name(
@@ -260,13 +256,13 @@ pub(crate) fn de_describe_broker(
                     );
                 }
                 "pendingSecurityGroups" => {
-                    builder = builder.set_pending_security_groups(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_pending_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "publiclyAccessible" => {
                     builder = builder.set_publicly_accessible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "securityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "storageType" => {
                     builder = builder.set_storage_type(
@@ -276,13 +272,13 @@ pub(crate) fn de_describe_broker(
                     );
                 }
                 "subnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                 }
                 "users" => {
-                    builder = builder.set_users(crate::protocol_serde::shape___list_of_user_summary::de___list_of_user_summary(tokens)?);
+                    builder = builder.set_users(crate::protocol_serde::shape_list_of_user_summary::de_list_of_user_summary(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

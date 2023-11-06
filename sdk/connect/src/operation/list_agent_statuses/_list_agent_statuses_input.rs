@@ -26,8 +26,10 @@ impl ListAgentStatusesInput {
         self.max_results
     }
     /// <p>Available agent status types.</p>
-    pub fn agent_status_types(&self) -> ::std::option::Option<&[crate::types::AgentStatusType]> {
-        self.agent_status_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_status_types.is_none()`.
+    pub fn agent_status_types(&self) -> &[crate::types::AgentStatusType] {
+        self.agent_status_types.as_deref().unwrap_or_default()
     }
 }
 impl ListAgentStatusesInput {
@@ -48,6 +50,7 @@ pub struct ListAgentStatusesInputBuilder {
 }
 impl ListAgentStatusesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl ListAgentStatusesInputBuilder {
     /// Consumes the builder and constructs a [`ListAgentStatusesInput`](crate::operation::list_agent_statuses::ListAgentStatusesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_agent_statuses::ListAgentStatusesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_agent_statuses::ListAgentStatusesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_agent_statuses::ListAgentStatusesInput {
             instance_id: self.instance_id,
             next_token: self.next_token,

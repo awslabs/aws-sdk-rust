@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Portal {
     /// <p>The ARN of the web portal.</p>
-    pub portal_arn: ::std::option::Option<::std::string::String>,
+    pub portal_arn: ::std::string::String,
     /// <p>The renderer that is used in streaming sessions.</p>
     pub renderer_type: ::std::option::Option<crate::types::RendererType>,
     /// <p>The browser that users see when using a streaming session.</p>
@@ -39,8 +39,9 @@ pub struct Portal {
 }
 impl Portal {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
-        self.portal_arn.as_deref()
+    pub fn portal_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_arn.deref()
     }
     /// <p>The renderer that is used in streaming sessions.</p>
     pub fn renderer_type(&self) -> ::std::option::Option<&crate::types::RendererType> {
@@ -151,6 +152,7 @@ pub struct PortalBuilder {
 }
 impl PortalBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -367,9 +369,16 @@ impl PortalBuilder {
         &self.ip_access_settings_arn
     }
     /// Consumes the builder and constructs a [`Portal`](crate::types::Portal).
-    pub fn build(self) -> crate::types::Portal {
-        crate::types::Portal {
-            portal_arn: self.portal_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`portal_arn`](crate::types::builders::PortalBuilder::portal_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Portal, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Portal {
+            portal_arn: self.portal_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "portal_arn",
+                    "portal_arn was not specified but it is required when building Portal",
+                )
+            })?,
             renderer_type: self.renderer_type,
             browser_type: self.browser_type,
             portal_status: self.portal_status,
@@ -384,7 +393,7 @@ impl PortalBuilder {
             user_access_logging_settings_arn: self.user_access_logging_settings_arn,
             authentication_type: self.authentication_type,
             ip_access_settings_arn: self.ip_access_settings_arn,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PortalBuilder {

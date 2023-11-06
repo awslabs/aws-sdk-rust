@@ -28,6 +28,7 @@ pub struct VirtualNodeHttp2ConnectionPoolBuilder {
 }
 impl VirtualNodeHttp2ConnectionPoolBuilder {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
+    /// This field is required.
     pub fn max_requests(mut self, input: i32) -> Self {
         self.max_requests = ::std::option::Option::Some(input);
         self

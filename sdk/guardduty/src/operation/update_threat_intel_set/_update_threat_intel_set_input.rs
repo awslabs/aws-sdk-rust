@@ -55,6 +55,7 @@ pub struct UpdateThreatIntelSetInputBuilder {
 }
 impl UpdateThreatIntelSetInputBuilder {
     /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateThreatIntelSetInputBuilder {
         &self.detector_id
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    /// This field is required.
     pub fn threat_intel_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threat_intel_set_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +129,7 @@ impl UpdateThreatIntelSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThreatIntelSetInput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput {
             detector_id: self.detector_id,

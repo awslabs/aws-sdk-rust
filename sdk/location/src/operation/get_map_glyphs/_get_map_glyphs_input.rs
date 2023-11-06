@@ -104,6 +104,7 @@ pub struct GetMapGlyphsInputBuilder {
 }
 impl GetMapGlyphsInputBuilder {
     /// <p>The map resource associated with the glyph ﬁle.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +142,7 @@ impl GetMapGlyphsInputBuilder {
     /// </ul> <note>
     /// <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn font_stack(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.font_stack = ::std::option::Option::Some(input.into());
         self
@@ -201,6 +203,7 @@ impl GetMapGlyphsInputBuilder {
         &self.font_stack
     }
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
+    /// This field is required.
     pub fn font_unicode_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.font_unicode_range = ::std::option::Option::Some(input.into());
         self
@@ -231,7 +234,7 @@ impl GetMapGlyphsInputBuilder {
     /// Consumes the builder and constructs a [`GetMapGlyphsInput`](crate::operation::get_map_glyphs::GetMapGlyphsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_map_glyphs::GetMapGlyphsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_map_glyphs::GetMapGlyphsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_glyphs::GetMapGlyphsInput {
             map_name: self.map_name,
             font_stack: self.font_stack,

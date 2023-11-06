@@ -2,30 +2,30 @@
 pub fn ser_resource_data_sync_s3_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataSyncS3Destination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket_name {
-        object.key("BucketName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("BucketName").string(input.bucket_name.as_str());
     }
-    if let Some(var_2) = &input.prefix {
-        object.key("Prefix").string(var_2.as_str());
+    if let Some(var_1) = &input.prefix {
+        object.key("Prefix").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.sync_format {
-        object.key("SyncFormat").string(var_3.as_str());
+    {
+        object.key("SyncFormat").string(input.sync_format.as_str());
     }
-    if let Some(var_4) = &input.region {
-        object.key("Region").string(var_4.as_str());
+    {
+        object.key("Region").string(input.region.as_str());
     }
-    if let Some(var_5) = &input.awskms_key_arn {
-        object.key("AWSKMSKeyARN").string(var_5.as_str());
+    if let Some(var_2) = &input.awskms_key_arn {
+        object.key("AWSKMSKeyARN").string(var_2.as_str());
     }
-    if let Some(var_6) = &input.destination_data_sharing {
+    if let Some(var_3) = &input.destination_data_sharing {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("DestinationDataSharing").start_object();
+        let mut object_4 = object.key("DestinationDataSharing").start_object();
         crate::protocol_serde::shape_resource_data_sync_destination_data_sharing::ser_resource_data_sync_destination_data_sharing(
-            &mut object_7,
-            var_6,
+            &mut object_4,
+            var_3,
         )?;
-        object_7.finish();
+        object_4.finish();
     }
     Ok(())
 }
@@ -95,7 +95,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::resource_data_sync_s3_destination_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

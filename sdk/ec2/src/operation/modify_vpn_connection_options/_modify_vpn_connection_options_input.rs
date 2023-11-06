@@ -70,6 +70,7 @@ pub struct ModifyVpnConnectionOptionsInputBuilder {
 }
 impl ModifyVpnConnectionOptionsInputBuilder {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
+    /// This field is required.
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
@@ -170,7 +171,7 @@ impl ModifyVpnConnectionOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput {
             vpn_connection_id: self.vpn_connection_id,

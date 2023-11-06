@@ -34,6 +34,7 @@ pub struct CreateImageBuilderStreamingUrlInputBuilder {
 }
 impl CreateImageBuilderStreamingUrlInputBuilder {
     /// <p>The name of the image builder.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl CreateImageBuilderStreamingUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput {

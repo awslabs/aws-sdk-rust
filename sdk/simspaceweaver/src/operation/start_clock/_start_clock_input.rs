@@ -27,6 +27,7 @@ pub struct StartClockInputBuilder {
 }
 impl StartClockInputBuilder {
     /// <p>The name of the simulation.</p>
+    /// This field is required.
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StartClockInputBuilder {
         &self.simulation
     }
     /// Consumes the builder and constructs a [`StartClockInput`](crate::operation::start_clock::StartClockInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_clock::StartClockInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_clock::StartClockInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_clock::StartClockInput { simulation: self.simulation })
     }
 }

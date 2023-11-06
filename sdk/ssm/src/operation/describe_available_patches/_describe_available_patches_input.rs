@@ -72,8 +72,10 @@ impl DescribeAvailablePatchesInput {
     /// <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>
     /// <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::PatchOrchestratorFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::PatchOrchestratorFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -243,7 +245,7 @@ impl DescribeAvailablePatchesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_available_patches::DescribeAvailablePatchesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_available_patches::DescribeAvailablePatchesInput {
             filters: self.filters,

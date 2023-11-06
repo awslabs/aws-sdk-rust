@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterSliderControl {
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
-    pub parameter_control_id: ::std::option::Option<::std::string::String>,
+    pub parameter_control_id: ::std::string::String,
     /// <p>The title of the <code>ParameterSliderControl</code>.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
-    pub source_parameter_name: ::std::option::Option<::std::string::String>,
+    pub source_parameter_name: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
     /// <p>The smaller value that is displayed at the left of the slider.</p>
@@ -21,16 +21,19 @@ pub struct ParameterSliderControl {
 }
 impl ParameterSliderControl {
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
-    pub fn parameter_control_id(&self) -> ::std::option::Option<&str> {
-        self.parameter_control_id.as_deref()
+    pub fn parameter_control_id(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_control_id.deref()
     }
     /// <p>The title of the <code>ParameterSliderControl</code>.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
-    pub fn source_parameter_name(&self) -> ::std::option::Option<&str> {
-        self.source_parameter_name.as_deref()
+    pub fn source_parameter_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_parameter_name.deref()
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::SliderControlDisplayOptions> {
@@ -70,6 +73,7 @@ pub struct ParameterSliderControlBuilder {
 }
 impl ParameterSliderControlBuilder {
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
+    /// This field is required.
     pub fn parameter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_control_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl ParameterSliderControlBuilder {
         &self.parameter_control_id
     }
     /// <p>The title of the <code>ParameterSliderControl</code>.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl ParameterSliderControlBuilder {
         &self.title
     }
     /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
+    /// This field is required.
     pub fn source_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_parameter_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +132,7 @@ impl ParameterSliderControlBuilder {
         &self.display_options
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// This field is required.
     pub fn maximum_value(mut self, input: f64) -> Self {
         self.maximum_value = ::std::option::Option::Some(input);
         self
@@ -140,6 +147,7 @@ impl ParameterSliderControlBuilder {
         &self.maximum_value
     }
     /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// This field is required.
     pub fn minimum_value(mut self, input: f64) -> Self {
         self.minimum_value = ::std::option::Option::Some(input);
         self
@@ -154,6 +162,7 @@ impl ParameterSliderControlBuilder {
         &self.minimum_value
     }
     /// <p>The number of increments that the slider bar is divided into.</p>
+    /// This field is required.
     pub fn step_size(mut self, input: f64) -> Self {
         self.step_size = ::std::option::Option::Some(input);
         self
@@ -168,15 +177,34 @@ impl ParameterSliderControlBuilder {
         &self.step_size
     }
     /// Consumes the builder and constructs a [`ParameterSliderControl`](crate::types::ParameterSliderControl).
-    pub fn build(self) -> crate::types::ParameterSliderControl {
-        crate::types::ParameterSliderControl {
-            parameter_control_id: self.parameter_control_id,
-            title: self.title,
-            source_parameter_name: self.source_parameter_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_control_id`](crate::types::builders::ParameterSliderControlBuilder::parameter_control_id)
+    /// - [`title`](crate::types::builders::ParameterSliderControlBuilder::title)
+    /// - [`source_parameter_name`](crate::types::builders::ParameterSliderControlBuilder::source_parameter_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterSliderControl, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParameterSliderControl {
+            parameter_control_id: self.parameter_control_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameter_control_id",
+                    "parameter_control_id was not specified but it is required when building ParameterSliderControl",
+                )
+            })?,
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building ParameterSliderControl",
+                )
+            })?,
+            source_parameter_name: self.source_parameter_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_parameter_name",
+                    "source_parameter_name was not specified but it is required when building ParameterSliderControl",
+                )
+            })?,
             display_options: self.display_options,
             maximum_value: self.maximum_value.unwrap_or_default(),
             minimum_value: self.minimum_value.unwrap_or_default(),
             step_size: self.step_size.unwrap_or_default(),
-        }
+        })
     }
 }

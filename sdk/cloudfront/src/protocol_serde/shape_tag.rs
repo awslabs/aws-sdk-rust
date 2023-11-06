@@ -2,27 +2,41 @@
 pub fn ser_tag(
     input: &crate::types::Tag,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.key {
+    {
         let mut inner_writer = scope.start_el("Key").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.key.as_str());
     }
-    if let Some(var_2) = &input.value {
+    if let Some(var_1) = &input.value {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(var_1.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_tag(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Tag, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Tag::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.cloudfront#Tag$Key */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key(var_2);
+            }
+            ,
+            s if s.matches("Value") /* Value com.amazonaws.cloudfront#Tag$Value */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -32,24 +46,13 @@ pub fn de_tag(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<c
                         ?
                     )
                 ;
-                builder = builder.set_key(var_3);
-            }
-            ,
-            s if s.matches("Value") /* Value com.amazonaws.cloudfront#Tag$Value */ =>  {
-                let var_4 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_value(var_4);
+                builder = builder.set_value(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::tag_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

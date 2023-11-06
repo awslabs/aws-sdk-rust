@@ -35,6 +35,7 @@ pub struct GetGatewayResponseInputBuilder {
 }
 impl GetGatewayResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetGatewayResponseInputBuilder {
         &self.rest_api_id
     }
     /// <p>The response type of the associated GatewayResponse.</p>
+    /// This field is required.
     pub fn response_type(mut self, input: crate::types::GatewayResponseType) -> Self {
         self.response_type = ::std::option::Option::Some(input);
         self
@@ -65,7 +67,8 @@ impl GetGatewayResponseInputBuilder {
     /// Consumes the builder and constructs a [`GetGatewayResponseInput`](crate::operation::get_gateway_response::GetGatewayResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_gateway_response::GetGatewayResponseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_gateway_response::GetGatewayResponseInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_gateway_response::GetGatewayResponseInput {
             rest_api_id: self.rest_api_id,
             response_type: self.response_type,

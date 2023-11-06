@@ -104,6 +104,7 @@ pub struct UpdateNetworkProfileInputBuilder {
 }
 impl UpdateNetworkProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -274,7 +275,7 @@ impl UpdateNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNetworkProfileInput`](crate::operation::update_network_profile::UpdateNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_network_profile::UpdateNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_network_profile::UpdateNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_network_profile::UpdateNetworkProfileInput {
             arn: self.arn,

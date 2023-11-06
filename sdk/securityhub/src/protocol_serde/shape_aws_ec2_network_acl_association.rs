@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_network_acl_association(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2NetworkAclAssociation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.network_acl_association_id {
         object.key("NetworkAclAssociationId").string(var_1.as_str());
     }

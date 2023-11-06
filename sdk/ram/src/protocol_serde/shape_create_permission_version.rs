@@ -37,11 +37,10 @@ pub fn de_create_permission_version_http_error(
                         )
                         .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::idempotent_parameter_mismatch_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -54,11 +53,10 @@ pub fn de_create_permission_version_http_error(
                     crate::protocol_serde::shape_invalid_client_token_exception::de_invalid_client_token_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_client_token_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidParameterException" => crate::operation::create_permission_version::CreatePermissionVersionError::InvalidParameterException({
@@ -69,11 +67,10 @@ pub fn de_create_permission_version_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidPolicyException" => crate::operation::create_permission_version::CreatePermissionVersionError::InvalidPolicyException({
@@ -84,11 +81,10 @@ pub fn de_create_permission_version_http_error(
                 output = crate::protocol_serde::shape_invalid_policy_exception::de_invalid_policy_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_policy_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "MalformedArnException" => crate::operation::create_permission_version::CreatePermissionVersionError::MalformedArnException({
@@ -99,11 +95,10 @@ pub fn de_create_permission_version_http_error(
                 output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::malformed_arn_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "MalformedPolicyTemplateException" => {
@@ -118,11 +113,10 @@ pub fn de_create_permission_version_http_error(
                     )
                     .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::malformed_policy_template_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -134,11 +128,10 @@ pub fn de_create_permission_version_http_error(
                     let mut output = crate::types::error::builders::PermissionVersionsLimitExceededExceptionBuilder::default();
                     output = crate::protocol_serde::shape_permission_versions_limit_exceeded_exception::de_permission_versions_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::permission_versions_limit_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -150,11 +143,10 @@ pub fn de_create_permission_version_http_error(
                 output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::server_internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::create_permission_version::CreatePermissionVersionError::ServiceUnavailableException({
@@ -166,11 +158,10 @@ pub fn de_create_permission_version_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UnknownResourceException" => crate::operation::create_permission_version::CreatePermissionVersionError::UnknownResourceException({
@@ -181,11 +172,10 @@ pub fn de_create_permission_version_http_error(
                 output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unknown_resource_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_permission_version::CreatePermissionVersionError::generic(generic),
@@ -213,12 +203,12 @@ pub fn de_create_permission_version_http_response(
 
 pub fn ser_create_permission_version_input(
     input: &crate::operation::create_permission_version::CreatePermissionVersionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_permission_version_input::ser_create_permission_version_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_permission_version(

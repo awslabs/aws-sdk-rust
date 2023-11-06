@@ -6,7 +6,7 @@
 pub struct InputDataConfig {
     /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
     /// <li> <p> <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p> </li>
@@ -19,8 +19,9 @@ pub struct InputDataConfig {
 impl InputDataConfig {
     /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
@@ -53,6 +54,7 @@ pub struct InputDataConfigBuilder {
 impl InputDataConfigBuilder {
     /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files. </p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -109,11 +111,18 @@ impl InputDataConfigBuilder {
         &self.document_reader_config
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
-    pub fn build(self) -> crate::types::InputDataConfig {
-        crate::types::InputDataConfig {
-            s3_uri: self.s3_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::InputDataConfigBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputDataConfig {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building InputDataConfig",
+                )
+            })?,
             input_format: self.input_format,
             document_reader_config: self.document_reader_config,
-        }
+        })
     }
 }

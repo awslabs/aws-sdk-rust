@@ -36,8 +36,10 @@ impl UpdateLicenseManagerReportGeneratorInput {
     /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
     /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&[crate::types::ReportType]> {
-        self.r#type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.r#type.is_none()`.
+    pub fn r#type(&self) -> &[crate::types::ReportType] {
+        self.r#type.as_deref().unwrap_or_default()
     }
     /// <p>The report context.</p>
     pub fn report_context(&self) -> ::std::option::Option<&crate::types::ReportContext> {
@@ -77,6 +79,7 @@ pub struct UpdateLicenseManagerReportGeneratorInputBuilder {
 }
 impl UpdateLicenseManagerReportGeneratorInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
+    /// This field is required.
     pub fn license_manager_report_generator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_manager_report_generator_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         &self.license_manager_report_generator_arn
     }
     /// <p>Name of the report generator.</p>
+    /// This field is required.
     pub fn report_generator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_generator_name = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +141,7 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         &self.r#type
     }
     /// <p>The report context.</p>
+    /// This field is required.
     pub fn report_context(mut self, input: crate::types::ReportContext) -> Self {
         self.report_context = ::std::option::Option::Some(input);
         self
@@ -151,6 +156,7 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         &self.report_context
     }
     /// <p>Frequency by which reports are generated.</p>
+    /// This field is required.
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
         self.report_frequency = ::std::option::Option::Some(input);
         self
@@ -165,6 +171,7 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         &self.report_frequency
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -197,7 +204,7 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput {

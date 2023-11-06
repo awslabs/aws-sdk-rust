@@ -41,6 +41,7 @@ pub struct ListComponentBuildVersionsInputBuilder {
 }
 impl ListComponentBuildVersionsInputBuilder {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// This field is required.
     pub fn component_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListComponentBuildVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_build_versions::ListComponentBuildVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_component_build_versions::ListComponentBuildVersionsInput {
             component_version_arn: self.component_version_arn,

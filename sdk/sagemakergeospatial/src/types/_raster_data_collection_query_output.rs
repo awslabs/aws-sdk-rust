@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RasterDataCollectionQueryOutput {
     /// <p>The ARN of the Raster Data Collection against which the search is done.</p>
-    pub raster_data_collection_arn: ::std::option::Option<::std::string::String>,
+    pub raster_data_collection_arn: ::std::string::String,
     /// <p>The name of the raster data collection.</p>
-    pub raster_data_collection_name: ::std::option::Option<::std::string::String>,
+    pub raster_data_collection_name: ::std::string::String,
     /// <p>The TimeRange filter used in the search.</p>
     pub time_range_filter: ::std::option::Option<crate::types::TimeRangeFilterOutput>,
     /// <p>The Area of Interest used in the search.</p>
@@ -17,12 +17,14 @@ pub struct RasterDataCollectionQueryOutput {
 }
 impl RasterDataCollectionQueryOutput {
     /// <p>The ARN of the Raster Data Collection against which the search is done.</p>
-    pub fn raster_data_collection_arn(&self) -> ::std::option::Option<&str> {
-        self.raster_data_collection_arn.as_deref()
+    pub fn raster_data_collection_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.raster_data_collection_arn.deref()
     }
     /// <p>The name of the raster data collection.</p>
-    pub fn raster_data_collection_name(&self) -> ::std::option::Option<&str> {
-        self.raster_data_collection_name.as_deref()
+    pub fn raster_data_collection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.raster_data_collection_name.deref()
     }
     /// <p>The TimeRange filter used in the search.</p>
     pub fn time_range_filter(&self) -> ::std::option::Option<&crate::types::TimeRangeFilterOutput> {
@@ -67,6 +69,7 @@ pub struct RasterDataCollectionQueryOutputBuilder {
 }
 impl RasterDataCollectionQueryOutputBuilder {
     /// <p>The ARN of the Raster Data Collection against which the search is done.</p>
+    /// This field is required.
     pub fn raster_data_collection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raster_data_collection_arn = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl RasterDataCollectionQueryOutputBuilder {
         &self.raster_data_collection_arn
     }
     /// <p>The name of the raster data collection.</p>
+    /// This field is required.
     pub fn raster_data_collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raster_data_collection_name = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +99,7 @@ impl RasterDataCollectionQueryOutputBuilder {
         &self.raster_data_collection_name
     }
     /// <p>The TimeRange filter used in the search.</p>
+    /// This field is required.
     pub fn time_range_filter(mut self, input: crate::types::TimeRangeFilterOutput) -> Self {
         self.time_range_filter = ::std::option::Option::Some(input);
         self
@@ -137,14 +142,27 @@ impl RasterDataCollectionQueryOutputBuilder {
         &self.property_filters
     }
     /// Consumes the builder and constructs a [`RasterDataCollectionQueryOutput`](crate::types::RasterDataCollectionQueryOutput).
-    pub fn build(self) -> crate::types::RasterDataCollectionQueryOutput {
-        crate::types::RasterDataCollectionQueryOutput {
-            raster_data_collection_arn: self.raster_data_collection_arn,
-            raster_data_collection_name: self.raster_data_collection_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`raster_data_collection_arn`](crate::types::builders::RasterDataCollectionQueryOutputBuilder::raster_data_collection_arn)
+    /// - [`raster_data_collection_name`](crate::types::builders::RasterDataCollectionQueryOutputBuilder::raster_data_collection_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RasterDataCollectionQueryOutput {
+            raster_data_collection_arn: self.raster_data_collection_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "raster_data_collection_arn",
+                    "raster_data_collection_arn was not specified but it is required when building RasterDataCollectionQueryOutput",
+                )
+            })?,
+            raster_data_collection_name: self.raster_data_collection_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "raster_data_collection_name",
+                    "raster_data_collection_name was not specified but it is required when building RasterDataCollectionQueryOutput",
+                )
+            })?,
             time_range_filter: self.time_range_filter,
             area_of_interest: self.area_of_interest,
             property_filters: self.property_filters,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for RasterDataCollectionQueryOutputBuilder {

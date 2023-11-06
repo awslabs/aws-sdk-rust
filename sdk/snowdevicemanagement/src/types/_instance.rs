@@ -69,12 +69,16 @@ impl Instance {
         self.updated_at.as_ref()
     }
     /// <p>Any block device mapping entries for the instance.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The security groups for the instance.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroupIdentifier]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::SecurityGroupIdentifier] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The CPU options for the instance.</p>
     pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::CpuOptions> {

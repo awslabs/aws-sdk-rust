@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchemasOutput {
     /// <p>The retrieved list of schemas.</p>
-    pub schema_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>>,
+    pub schema_summaries: ::std::vec::Vec<crate::types::SchemaSummary>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSchemasOutput {
     /// <p>The retrieved list of schemas.</p>
-    pub fn schema_summaries(&self) -> ::std::option::Option<&[crate::types::SchemaSummary]> {
-        self.schema_summaries.as_deref()
+    pub fn schema_summaries(&self) -> &[crate::types::SchemaSummary] {
+        use std::ops::Deref;
+        self.schema_summaries.deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListSchemasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput).
-    pub fn build(self) -> crate::operation::list_schemas::ListSchemasOutput {
-        crate::operation::list_schemas::ListSchemasOutput {
-            schema_summaries: self.schema_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schema_summaries`](crate::operation::list_schemas::builders::ListSchemasOutputBuilder::schema_summaries)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasOutput {
+            schema_summaries: self.schema_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "schema_summaries",
+                    "schema_summaries was not specified but it is required when building ListSchemasOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

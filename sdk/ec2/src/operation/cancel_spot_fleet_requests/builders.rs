@@ -10,7 +10,7 @@ impl CancelSpotFleetRequestsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl CancelSpotFleetRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequests::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -88,20 +91,15 @@ impl CancelSpotFleetRequestsFluentBuilder {
         crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequests::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
+        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

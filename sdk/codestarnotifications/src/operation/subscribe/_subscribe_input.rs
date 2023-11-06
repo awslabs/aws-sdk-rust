@@ -41,6 +41,7 @@ pub struct SubscribeInputBuilder {
 }
 impl SubscribeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl SubscribeInputBuilder {
         &self.arn
     }
     /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -83,7 +85,7 @@ impl SubscribeInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SubscribeInput`](crate::operation::subscribe::SubscribeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::subscribe::SubscribeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::subscribe::SubscribeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::subscribe::SubscribeInput {
             arn: self.arn,
             target: self.target,

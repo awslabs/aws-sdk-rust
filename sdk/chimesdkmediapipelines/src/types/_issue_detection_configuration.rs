@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IssueDetectionConfiguration {
     /// <p>The name of the issue detection rule.</p>
-    pub rule_name: ::std::option::Option<::std::string::String>,
+    pub rule_name: ::std::string::String,
 }
 impl IssueDetectionConfiguration {
     /// <p>The name of the issue detection rule.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
-        self.rule_name.as_deref()
+    pub fn rule_name(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_name.deref()
     }
 }
 impl IssueDetectionConfiguration {
@@ -28,6 +29,7 @@ pub struct IssueDetectionConfigurationBuilder {
 }
 impl IssueDetectionConfigurationBuilder {
     /// <p>The name of the issue detection rule.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl IssueDetectionConfigurationBuilder {
         &self.rule_name
     }
     /// Consumes the builder and constructs a [`IssueDetectionConfiguration`](crate::types::IssueDetectionConfiguration).
-    pub fn build(self) -> crate::types::IssueDetectionConfiguration {
-        crate::types::IssueDetectionConfiguration { rule_name: self.rule_name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_name`](crate::types::builders::IssueDetectionConfigurationBuilder::rule_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::IssueDetectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IssueDetectionConfiguration {
+            rule_name: self.rule_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_name",
+                    "rule_name was not specified but it is required when building IssueDetectionConfiguration",
+                )
+            })?,
+        })
     }
 }

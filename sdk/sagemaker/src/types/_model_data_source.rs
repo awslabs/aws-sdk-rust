@@ -28,6 +28,7 @@ pub struct ModelDataSourceBuilder {
 }
 impl ModelDataSourceBuilder {
     /// <p>Specifies the S3 location of ML model data to deploy.</p>
+    /// This field is required.
     pub fn s3_data_source(mut self, input: crate::types::S3ModelDataSource) -> Self {
         self.s3_data_source = ::std::option::Option::Some(input);
         self

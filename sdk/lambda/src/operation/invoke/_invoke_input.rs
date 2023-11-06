@@ -107,6 +107,7 @@ impl InvokeInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -223,7 +224,7 @@ impl InvokeInputBuilder {
         &self.qualifier
     }
     /// Consumes the builder and constructs a [`InvokeInput`](crate::operation::invoke::InvokeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::invoke::InvokeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke::InvokeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke::InvokeInput {
             function_name: self.function_name,
             invocation_type: self.invocation_type,

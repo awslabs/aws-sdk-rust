@@ -2,12 +2,12 @@
 pub fn ser_experiment_template_s3_log_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExperimentTemplateS3LogConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket_name {
-        object.key("bucketName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("bucketName").string(input.bucket_name.as_str());
     }
-    if let Some(var_2) = &input.prefix {
-        object.key("prefix").string(var_2.as_str());
+    if let Some(var_1) = &input.prefix {
+        object.key("prefix").string(var_1.as_str());
     }
     Ok(())
 }

@@ -6,24 +6,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl Condition {
     /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl Condition {
@@ -43,6 +46,7 @@ pub struct ConditionBuilder {
 }
 impl ConditionBuilder {
     /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +61,7 @@ impl ConditionBuilder {
         &self.r#type
     }
     /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +76,7 @@ impl ConditionBuilder {
         &self.key
     }
     /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -85,11 +91,30 @@ impl ConditionBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
-    pub fn build(self) -> crate::types::Condition {
-        crate::types::Condition {
-            r#type: self.r#type,
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ConditionBuilder::r#type)
+    /// - [`key`](crate::types::builders::ConditionBuilder::key)
+    /// - [`value`](crate::types::builders::ConditionBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Condition {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Condition",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building Condition",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Condition",
+                )
+            })?,
+        })
     }
 }

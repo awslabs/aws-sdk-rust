@@ -21,8 +21,10 @@ impl Service {
         self.name.as_deref()
     }
     /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to Amazon Web Services Support when you call <code>CreateCase</code>.</p>
-    pub fn categories(&self) -> ::std::option::Option<&[crate::types::Category]> {
-        self.categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
+    pub fn categories(&self) -> &[crate::types::Category] {
+        self.categories.as_deref().unwrap_or_default()
     }
 }
 impl Service {

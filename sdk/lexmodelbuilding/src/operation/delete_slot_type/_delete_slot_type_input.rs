@@ -27,6 +27,7 @@ pub struct DeleteSlotTypeInputBuilder {
 }
 impl DeleteSlotTypeInputBuilder {
     /// <p>The name of the slot type. The name is case sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteSlotTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSlotTypeInput`](crate::operation::delete_slot_type::DeleteSlotTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_slot_type::DeleteSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_slot_type::DeleteSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_slot_type::DeleteSlotTypeInput { name: self.name })
     }
 }

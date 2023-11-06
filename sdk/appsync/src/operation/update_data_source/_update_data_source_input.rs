@@ -106,6 +106,7 @@ pub struct UpdateDataSourceInputBuilder {
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +121,7 @@ impl UpdateDataSourceInputBuilder {
         &self.api_id
     }
     /// <p>The new name for the data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +150,7 @@ impl UpdateDataSourceInputBuilder {
         &self.description
     }
     /// <p>The new data source type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -279,7 +282,7 @@ impl UpdateDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceInput {
             api_id: self.api_id,
             name: self.name,

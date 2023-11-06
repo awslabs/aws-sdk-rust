@@ -11,8 +11,10 @@ pub struct ListSignalCatalogsOutput {
 }
 impl ListSignalCatalogsOutput {
     /// <p> A list of information about each signal catalog. </p>
-    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::SignalCatalogSummary]> {
-        self.summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
+    pub fn summaries(&self) -> &[crate::types::SignalCatalogSummary] {
+        self.summaries.as_deref().unwrap_or_default()
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

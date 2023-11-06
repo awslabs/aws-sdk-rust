@@ -9,8 +9,10 @@ pub struct DescribeLifecycleHooksOutput {
 }
 impl DescribeLifecycleHooksOutput {
     /// <p>The lifecycle hooks for the specified group.</p>
-    pub fn lifecycle_hooks(&self) -> ::std::option::Option<&[crate::types::LifecycleHook]> {
-        self.lifecycle_hooks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_hooks.is_none()`.
+    pub fn lifecycle_hooks(&self) -> &[crate::types::LifecycleHook] {
+        self.lifecycle_hooks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeLifecycleHooksOutput {

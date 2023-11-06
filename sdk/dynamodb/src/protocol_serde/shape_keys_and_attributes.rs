@@ -2,50 +2,50 @@
 pub fn ser_keys_and_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeysAndAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.keys {
-        let mut array_2 = object.key("Keys").start_array();
-        for item_3 in var_1 {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        let mut array_1 = object.key("Keys").start_array();
+        for item_2 in &input.keys {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                for (key_5, value_6) in item_3 {
+                let mut object_3 = array_1.value().start_object();
+                for (key_4, value_5) in item_2 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                        crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_7, value_6)?;
-                        object_7.finish();
+                        let mut object_6 = object_3.key(key_4.as_str()).start_object();
+                        crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_6, value_5)?;
+                        object_6.finish();
                     }
                 }
-                object_4.finish();
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_8) = &input.attributes_to_get {
-        let mut array_9 = object.key("AttributesToGet").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.attributes_to_get {
+        let mut array_8 = object.key("AttributesToGet").start_array();
+        for item_9 in var_7 {
             {
-                array_9.value().string(item_10.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_11) = &input.consistent_read {
-        object.key("ConsistentRead").boolean(*var_11);
+    if let Some(var_10) = &input.consistent_read {
+        object.key("ConsistentRead").boolean(*var_10);
     }
-    if let Some(var_12) = &input.projection_expression {
-        object.key("ProjectionExpression").string(var_12.as_str());
+    if let Some(var_11) = &input.projection_expression {
+        object.key("ProjectionExpression").string(var_11.as_str());
     }
-    if let Some(var_13) = &input.expression_attribute_names {
+    if let Some(var_12) = &input.expression_attribute_names {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("ExpressionAttributeNames").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_13 = object.key("ExpressionAttributeNames").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_14.finish();
+        object_13.finish();
     }
     Ok(())
 }
@@ -97,7 +97,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::keys_and_attributes_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -35,6 +35,7 @@ pub struct EdgeDeploymentModelConfigBuilder {
 }
 impl EdgeDeploymentModelConfigBuilder {
     /// <p>The name the device application uses to reference this model.</p>
+    /// This field is required.
     pub fn model_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_handle = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl EdgeDeploymentModelConfigBuilder {
         &self.model_handle
     }
     /// <p>The edge packaging job associated with this deployment.</p>
+    /// This field is required.
     pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self

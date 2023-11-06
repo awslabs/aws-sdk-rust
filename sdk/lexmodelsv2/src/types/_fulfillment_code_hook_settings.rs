@@ -49,6 +49,7 @@ pub struct FulfillmentCodeHookSettingsBuilder {
 }
 impl FulfillmentCodeHookSettingsBuilder {
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DescribeModelInputBuilder {
 }
 impl DescribeModelInputBuilder {
     /// <p>The name of the machine learning model to be described. </p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeModelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeModelInput`](crate::operation::describe_model::DescribeModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_model::DescribeModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_model::DescribeModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_model::DescribeModelInput { model_name: self.model_name })
     }
 }

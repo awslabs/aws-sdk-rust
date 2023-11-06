@@ -18,8 +18,10 @@ impl CreateOrderInput {
         self.outpost_identifier.as_deref()
     }
     /// <p>The line items that make up the order.</p>
-    pub fn line_items(&self) -> ::std::option::Option<&[crate::types::LineItemRequest]> {
-        self.line_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_items.is_none()`.
+    pub fn line_items(&self) -> &[crate::types::LineItemRequest] {
+        self.line_items.as_deref().unwrap_or_default()
     }
     /// <p>The payment option.</p>
     pub fn payment_option(&self) -> ::std::option::Option<&crate::types::PaymentOption> {
@@ -48,6 +50,7 @@ pub struct CreateOrderInputBuilder {
 }
 impl CreateOrderInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// This field is required.
     pub fn outpost_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_identifier = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +85,7 @@ impl CreateOrderInputBuilder {
         &self.line_items
     }
     /// <p>The payment option.</p>
+    /// This field is required.
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
         self.payment_option = ::std::option::Option::Some(input);
         self
@@ -110,7 +114,7 @@ impl CreateOrderInputBuilder {
         &self.payment_term
     }
     /// Consumes the builder and constructs a [`CreateOrderInput`](crate::operation::create_order::CreateOrderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_order::CreateOrderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_order::CreateOrderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_order::CreateOrderInput {
             outpost_identifier: self.outpost_identifier,
             line_items: self.line_items,

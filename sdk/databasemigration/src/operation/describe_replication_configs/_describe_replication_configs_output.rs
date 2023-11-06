@@ -16,8 +16,10 @@ impl DescribeReplicationConfigsOutput {
         self.marker.as_deref()
     }
     /// <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
-    pub fn replication_configs(&self) -> ::std::option::Option<&[crate::types::ReplicationConfig]> {
-        self.replication_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_configs.is_none()`.
+    pub fn replication_configs(&self) -> &[crate::types::ReplicationConfig] {
+        self.replication_configs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReplicationConfigsOutput {

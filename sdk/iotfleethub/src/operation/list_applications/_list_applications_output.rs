@@ -11,8 +11,10 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>An array of objects that provide summaries of information about the web applications in the list.</p>
-    pub fn application_summaries(&self) -> ::std::option::Option<&[crate::types::ApplicationSummary]> {
-        self.application_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_summaries.is_none()`.
+    pub fn application_summaries(&self) -> &[crate::types::ApplicationSummary] {
+        self.application_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token used to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -2,7 +2,7 @@
 pub fn ser_monthly_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonthlySchedule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.day_of_month {
         object.key("dayOfMonth").number(
             #[allow(clippy::useless_conversion)]

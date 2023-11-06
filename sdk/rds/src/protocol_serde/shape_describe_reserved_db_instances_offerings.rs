@@ -34,8 +34,8 @@ pub fn de_describe_reserved_db_instances_offerings_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDBInstancesOfferingsError::generic(generic)

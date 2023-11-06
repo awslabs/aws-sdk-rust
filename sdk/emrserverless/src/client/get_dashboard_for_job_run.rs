@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDashboardForJobRun`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder::set_application_id): <p>The ID of the application.</p>
-    ///   - [`job_run_id(impl Into<String>)`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder::job_run_id) / [`set_job_run_id(Option<String>)`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder::set_job_run_id): <p>The ID of the job run.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder::set_application_id):<br>required: **true**<br><p>The ID of the application.</p><br>
+    ///   - [`job_run_id(impl Into<String>)`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder::job_run_id) / [`set_job_run_id(Option<String>)`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder::set_job_run_id):<br>required: **true**<br><p>The ID of the job run.</p><br>
     /// - On success, responds with [`GetDashboardForJobRunOutput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput) with field(s):
     ///   - [`url(Option<String>)`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput::url): <p>The URL to view job run's dashboard.</p>
     /// - On failure, responds with [`SdkError<GetDashboardForJobRunError>`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError)

@@ -35,6 +35,7 @@ pub struct UpdateTrafficPolicyInstanceOutputBuilder {
 }
 impl UpdateTrafficPolicyInstanceOutputBuilder {
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
+    /// This field is required.
     pub fn traffic_policy_instance(mut self, input: crate::types::TrafficPolicyInstance) -> Self {
         self.traffic_policy_instance = ::std::option::Option::Some(input);
         self

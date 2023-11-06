@@ -28,6 +28,7 @@ pub struct DeleteHsmClientCertificateInputBuilder {
 }
 impl DeleteHsmClientCertificateInputBuilder {
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
+    /// This field is required.
     pub fn hsm_client_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_client_certificate_identifier = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteHsmClientCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput {
             hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,

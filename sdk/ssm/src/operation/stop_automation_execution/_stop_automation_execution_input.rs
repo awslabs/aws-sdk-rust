@@ -34,6 +34,7 @@ pub struct StopAutomationExecutionInputBuilder {
 }
 impl StopAutomationExecutionInputBuilder {
     /// <p>The execution ID of the Automation to stop.</p>
+    /// This field is required.
     pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl StopAutomationExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_automation_execution::StopAutomationExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_automation_execution::StopAutomationExecutionInput {
             automation_execution_id: self.automation_execution_id,

@@ -35,6 +35,7 @@ pub struct GetModelTemplateInputBuilder {
 }
 impl GetModelTemplateInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetModelTemplateInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name of the model for which to generate a template.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl GetModelTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetModelTemplateInput`](crate::operation::get_model_template::GetModelTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_model_template::GetModelTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_model_template::GetModelTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model_template::GetModelTemplateInput {
             rest_api_id: self.rest_api_id,
             model_name: self.model_name,

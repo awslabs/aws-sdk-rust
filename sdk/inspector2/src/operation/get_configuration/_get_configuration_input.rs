@@ -18,7 +18,7 @@ impl GetConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetConfigurationInput`](crate::operation::get_configuration::GetConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_configuration::GetConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_configuration::GetConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_configuration::GetConfigurationInput {})
     }
 }

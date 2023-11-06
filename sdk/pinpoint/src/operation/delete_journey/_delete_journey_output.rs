@@ -34,6 +34,7 @@ pub struct DeleteJourneyOutputBuilder {
 }
 impl DeleteJourneyOutputBuilder {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
+    /// This field is required.
     pub fn journey_response(mut self, input: crate::types::JourneyResponse) -> Self {
         self.journey_response = ::std::option::Option::Some(input);
         self

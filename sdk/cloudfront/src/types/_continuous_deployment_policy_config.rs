@@ -7,7 +7,7 @@ pub struct ContinuousDeploymentPolicyConfig {
     /// <p>The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub staging_distribution_dns_names: ::std::option::Option<crate::types::StagingDistributionDnsNames>,
     /// <p>A Boolean that indicates whether this continuous deployment policy is enabled (in effect). When this value is <code>true</code>, this policy is enabled and in effect. When this value is <code>false</code>, this policy is not enabled and has no effect.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>Contains the parameters for routing production traffic from your primary to staging distributions.</p>
     pub traffic_config: ::std::option::Option<crate::types::TrafficConfig>,
 }
@@ -17,7 +17,7 @@ impl ContinuousDeploymentPolicyConfig {
         self.staging_distribution_dns_names.as_ref()
     }
     /// <p>A Boolean that indicates whether this continuous deployment policy is enabled (in effect). When this value is <code>true</code>, this policy is enabled and in effect. When this value is <code>false</code>, this policy is not enabled and has no effect.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Contains the parameters for routing production traffic from your primary to staging distributions.</p>
@@ -42,6 +42,7 @@ pub struct ContinuousDeploymentPolicyConfigBuilder {
 }
 impl ContinuousDeploymentPolicyConfigBuilder {
     /// <p>The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
+    /// This field is required.
     pub fn staging_distribution_dns_names(mut self, input: crate::types::StagingDistributionDnsNames) -> Self {
         self.staging_distribution_dns_names = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl ContinuousDeploymentPolicyConfigBuilder {
         &self.staging_distribution_dns_names
     }
     /// <p>A Boolean that indicates whether this continuous deployment policy is enabled (in effect). When this value is <code>true</code>, this policy is enabled and in effect. When this value is <code>false</code>, this policy is not enabled and has no effect.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,18 @@ impl ContinuousDeploymentPolicyConfigBuilder {
         &self.traffic_config
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicyConfig`](crate::types::ContinuousDeploymentPolicyConfig).
-    pub fn build(self) -> crate::types::ContinuousDeploymentPolicyConfig {
-        crate::types::ContinuousDeploymentPolicyConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::ContinuousDeploymentPolicyConfigBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContinuousDeploymentPolicyConfig {
             staging_distribution_dns_names: self.staging_distribution_dns_names,
-            enabled: self.enabled,
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building ContinuousDeploymentPolicyConfig",
+                )
+            })?,
             traffic_config: self.traffic_config,
-        }
+        })
     }
 }

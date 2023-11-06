@@ -13,19 +13,19 @@ pub struct Cluster {
     /// <p>Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
     pub ec2_instance_attributes: ::std::option::Option<crate::types::Ec2InstanceAttributes>,
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
     pub instance_collection_type: ::std::option::Option<crate::types::InstanceCollectionType>,
     /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
     pub log_uri: ::std::option::Option<::std::string::String>,
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
     pub log_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The AMI version requested for this cluster.</p>
     pub requested_ami_version: ::std::option::Option<::std::string::String>,
     /// <p>The AMI version running on this cluster.</p>
     pub running_ami_version: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
+    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and higher. Earlier versions use <code>AmiVersion</code>.</p>
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the cluster should terminate after completing all steps.</p>
     pub auto_terminate: ::std::option::Option<bool>,
@@ -44,17 +44,17 @@ pub struct Cluster {
     pub normalized_instance_hours: ::std::option::Option<i32>,
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
     pub master_public_dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR cluster.</p>
+    /// <p>Applies only to Amazon EMR releases 4.x and higher. The list of configurations that are supplied to the Amazon EMR cluster.</p>
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The name of the security configuration applied to the cluster.</p>
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.</p>
     pub auto_scaling_role: ::std::option::Option<::std::string::String>,
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and higher, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
     pub scale_down_behavior: ::std::option::Option<crate::types::ScaleDownBehavior>,
-    /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+    /// <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
-    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.</p>
+    /// <p>The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and higher.</p>
     pub ebs_root_volume_size: ::std::option::Option<i32>,
     /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI package repositories apply when an instance boots using the AMI.</p>
     pub repo_upgrade_on_boot: ::std::option::Option<crate::types::RepoUpgradeOnBoot>,
@@ -70,6 +70,10 @@ pub struct Cluster {
     pub placement_groups: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>,
     /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
     pub os_release_label: ::std::option::Option<::std::string::String>,
+    /// <p>The IOPS, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub ebs_root_volume_iops: ::std::option::Option<i32>,
+    /// <p>The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub ebs_root_volume_throughput: ::std::option::Option<i32>,
 }
 impl Cluster {
     /// <p>The unique identifier for the cluster.</p>
@@ -89,7 +93,7 @@ impl Cluster {
         self.ec2_instance_attributes.as_ref()
     }
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
     pub fn instance_collection_type(&self) -> ::std::option::Option<&crate::types::InstanceCollectionType> {
@@ -99,7 +103,7 @@ impl Cluster {
     pub fn log_uri(&self) -> ::std::option::Option<&str> {
         self.log_uri.as_deref()
     }
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
     pub fn log_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.log_encryption_kms_key_id.as_deref()
     }
@@ -111,7 +115,7 @@ impl Cluster {
     pub fn running_ami_version(&self) -> ::std::option::Option<&str> {
         self.running_ami_version.as_deref()
     }
-    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
+    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and higher. Earlier versions use <code>AmiVersion</code>.</p>
     pub fn release_label(&self) -> ::std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -129,12 +133,16 @@ impl Cluster {
         self.visible_to_all_users
     }
     /// <p>The applications installed on this cluster.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::Application]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[crate::types::Application] {
+        self.applications.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags associated with a cluster.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
     pub fn service_role(&self) -> ::std::option::Option<&str> {
@@ -148,9 +156,11 @@ impl Cluster {
     pub fn master_public_dns_name(&self) -> ::std::option::Option<&str> {
         self.master_public_dns_name.as_deref()
     }
-    /// <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR cluster.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.configurations.as_deref()
+    /// <p>Applies only to Amazon EMR releases 4.x and higher. The list of configurations that are supplied to the Amazon EMR cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the security configuration applied to the cluster.</p>
     pub fn security_configuration(&self) -> ::std::option::Option<&str> {
@@ -160,15 +170,15 @@ impl Cluster {
     pub fn auto_scaling_role(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_role.as_deref()
     }
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and higher, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
     pub fn scale_down_behavior(&self) -> ::std::option::Option<&crate::types::ScaleDownBehavior> {
         self.scale_down_behavior.as_ref()
     }
-    /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+    /// <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
     pub fn custom_ami_id(&self) -> ::std::option::Option<&str> {
         self.custom_ami_id.as_deref()
     }
-    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.</p>
+    /// <p>The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and higher.</p>
     pub fn ebs_root_volume_size(&self) -> ::std::option::Option<i32> {
         self.ebs_root_volume_size
     }
@@ -193,12 +203,22 @@ impl Cluster {
         self.step_concurrency_level
     }
     /// <p>Placement group configured for an Amazon EMR cluster.</p>
-    pub fn placement_groups(&self) -> ::std::option::Option<&[crate::types::PlacementGroupConfig]> {
-        self.placement_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_groups.is_none()`.
+    pub fn placement_groups(&self) -> &[crate::types::PlacementGroupConfig] {
+        self.placement_groups.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
     pub fn os_release_label(&self) -> ::std::option::Option<&str> {
         self.os_release_label.as_deref()
+    }
+    /// <p>The IOPS, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub fn ebs_root_volume_iops(&self) -> ::std::option::Option<i32> {
+        self.ebs_root_volume_iops
+    }
+    /// <p>The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub fn ebs_root_volume_throughput(&self) -> ::std::option::Option<i32> {
+        self.ebs_root_volume_throughput
     }
 }
 impl Cluster {
@@ -243,6 +263,8 @@ pub struct ClusterBuilder {
     pub(crate) step_concurrency_level: ::std::option::Option<i32>,
     pub(crate) placement_groups: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>,
     pub(crate) os_release_label: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs_root_volume_iops: ::std::option::Option<i32>,
+    pub(crate) ebs_root_volume_throughput: ::std::option::Option<i32>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier for the cluster.</p>
@@ -302,7 +324,7 @@ impl ClusterBuilder {
         &self.ec2_instance_attributes
     }
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
     pub fn instance_collection_type(mut self, input: crate::types::InstanceCollectionType) -> Self {
@@ -310,7 +332,7 @@ impl ClusterBuilder {
         self
     }
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
     pub fn set_instance_collection_type(mut self, input: ::std::option::Option<crate::types::InstanceCollectionType>) -> Self {
@@ -318,7 +340,7 @@ impl ClusterBuilder {
         self
     }
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
     pub fn get_instance_collection_type(&self) -> &::std::option::Option<crate::types::InstanceCollectionType> {
@@ -338,17 +360,17 @@ impl ClusterBuilder {
     pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_uri
     }
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
     pub fn log_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
     pub fn set_log_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = input;
         self
     }
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. </p>
     pub fn get_log_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_encryption_kms_key_id
     }
@@ -380,17 +402,17 @@ impl ClusterBuilder {
     pub fn get_running_ami_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.running_ami_version
     }
-    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
+    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and higher. Earlier versions use <code>AmiVersion</code>.</p>
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
+    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and higher. Earlier versions use <code>AmiVersion</code>.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
-    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
+    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and higher. Earlier versions use <code>AmiVersion</code>.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_label
     }
@@ -525,19 +547,19 @@ impl ClusterBuilder {
     ///
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
-    /// <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR cluster.</p>
+    /// <p>Applies only to Amazon EMR releases 4.x and higher. The list of configurations that are supplied to the Amazon EMR cluster.</p>
     pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.configurations.unwrap_or_default();
         v.push(input);
         self.configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR cluster.</p>
+    /// <p>Applies only to Amazon EMR releases 4.x and higher. The list of configurations that are supplied to the Amazon EMR cluster.</p>
     pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
         self.configurations = input;
         self
     }
-    /// <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR cluster.</p>
+    /// <p>Applies only to Amazon EMR releases 4.x and higher. The list of configurations that are supplied to the Amazon EMR cluster.</p>
     pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.configurations
     }
@@ -569,45 +591,45 @@ impl ClusterBuilder {
     pub fn get_auto_scaling_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_role
     }
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and higher, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
     pub fn scale_down_behavior(mut self, input: crate::types::ScaleDownBehavior) -> Self {
         self.scale_down_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and higher, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
     pub fn set_scale_down_behavior(mut self, input: ::std::option::Option<crate::types::ScaleDownBehavior>) -> Self {
         self.scale_down_behavior = input;
         self
     }
-    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
+    /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and higher and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and higher, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
     pub fn get_scale_down_behavior(&self) -> &::std::option::Option<crate::types::ScaleDownBehavior> {
         &self.scale_down_behavior
     }
-    /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+    /// <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
     pub fn custom_ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_ami_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+    /// <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
     pub fn set_custom_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_ami_id = input;
         self
     }
-    /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+    /// <p>Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
     pub fn get_custom_ami_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_ami_id
     }
-    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.</p>
+    /// <p>The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and higher.</p>
     pub fn ebs_root_volume_size(mut self, input: i32) -> Self {
         self.ebs_root_volume_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.</p>
+    /// <p>The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and higher.</p>
     pub fn set_ebs_root_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ebs_root_volume_size = input;
         self
     }
-    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.</p>
+    /// <p>The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and higher.</p>
     pub fn get_ebs_root_volume_size(&self) -> &::std::option::Option<i32> {
         &self.ebs_root_volume_size
     }
@@ -715,6 +737,34 @@ impl ClusterBuilder {
     pub fn get_os_release_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.os_release_label
     }
+    /// <p>The IOPS, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub fn ebs_root_volume_iops(mut self, input: i32) -> Self {
+        self.ebs_root_volume_iops = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IOPS, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub fn set_ebs_root_volume_iops(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ebs_root_volume_iops = input;
+        self
+    }
+    /// <p>The IOPS, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub fn get_ebs_root_volume_iops(&self) -> &::std::option::Option<i32> {
+        &self.ebs_root_volume_iops
+    }
+    /// <p>The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub fn ebs_root_volume_throughput(mut self, input: i32) -> Self {
+        self.ebs_root_volume_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub fn set_ebs_root_volume_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ebs_root_volume_throughput = input;
+        self
+    }
+    /// <p>The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux AMI that each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.</p>
+    pub fn get_ebs_root_volume_throughput(&self) -> &::std::option::Option<i32> {
+        &self.ebs_root_volume_throughput
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -749,6 +799,8 @@ impl ClusterBuilder {
             step_concurrency_level: self.step_concurrency_level,
             placement_groups: self.placement_groups,
             os_release_label: self.os_release_label,
+            ebs_root_volume_iops: self.ebs_root_volume_iops,
+            ebs_root_volume_throughput: self.ebs_root_volume_throughput,
         }
     }
 }

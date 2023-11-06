@@ -8,8 +8,10 @@ pub struct DeleteParametersInput {
 }
 impl DeleteParametersInput {
     /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
 }
 impl DeleteParametersInput {
@@ -49,7 +51,7 @@ impl DeleteParametersInputBuilder {
     /// Consumes the builder and constructs a [`DeleteParametersInput`](crate::operation::delete_parameters::DeleteParametersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_parameters::DeleteParametersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_parameters::DeleteParametersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_parameters::DeleteParametersInput { names: self.names })
     }
 }

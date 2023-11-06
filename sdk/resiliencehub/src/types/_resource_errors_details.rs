@@ -11,8 +11,10 @@ pub struct ResourceErrorsDetails {
 }
 impl ResourceErrorsDetails {
     /// <p> A list of errors retrieving an application's resources. </p>
-    pub fn resource_errors(&self) -> ::std::option::Option<&[crate::types::ResourceError]> {
-        self.resource_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_errors.is_none()`.
+    pub fn resource_errors(&self) -> &[crate::types::ResourceError] {
+        self.resource_errors.as_deref().unwrap_or_default()
     }
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
     pub fn has_more_errors(&self) -> ::std::option::Option<bool> {

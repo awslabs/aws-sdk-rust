@@ -34,8 +34,10 @@ impl CreateBackupInput {
     /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
     /// <li> <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateBackupInput {
@@ -55,6 +57,7 @@ pub struct CreateBackupInputBuilder {
 }
 impl CreateBackupInputBuilder {
     /// <p>The name of the server that you want to back up. </p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
@@ -124,7 +127,9 @@ impl CreateBackupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBackupInput`](crate::operation::create_backup::CreateBackupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_backup::CreateBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_backup::CreateBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_backup::CreateBackupInput {
             server_name: self.server_name,
             description: self.description,

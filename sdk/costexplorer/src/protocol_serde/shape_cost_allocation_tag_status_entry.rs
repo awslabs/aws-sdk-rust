@@ -2,12 +2,12 @@
 pub fn ser_cost_allocation_tag_status_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CostAllocationTagStatusEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.tag_key {
-        object.key("TagKey").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("TagKey").string(input.tag_key.as_str());
     }
-    if let Some(var_2) = &input.status {
-        object.key("Status").string(var_2.as_str());
+    {
+        object.key("Status").string(input.status.as_str());
     }
     Ok(())
 }

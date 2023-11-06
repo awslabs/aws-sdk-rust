@@ -24,8 +24,10 @@ impl PutLogEventsInput {
         self.log_stream_name.as_deref()
     }
     /// <p>The log events.</p>
-    pub fn log_events(&self) -> ::std::option::Option<&[crate::types::InputLogEvent]> {
-        self.log_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_events.is_none()`.
+    pub fn log_events(&self) -> &[crate::types::InputLogEvent] {
+        self.log_events.as_deref().unwrap_or_default()
     }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
@@ -52,6 +54,7 @@ pub struct PutLogEventsInputBuilder {
 }
 impl PutLogEventsInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +69,7 @@ impl PutLogEventsInputBuilder {
         &self.log_group_name
     }
     /// <p>The name of the log stream.</p>
+    /// This field is required.
     pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +126,7 @@ impl PutLogEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutLogEventsInput`](crate::operation::put_log_events::PutLogEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_log_events::PutLogEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_log_events::PutLogEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_log_events::PutLogEventsInput {
             log_group_name: self.log_group_name,
             log_stream_name: self.log_stream_name,

@@ -34,6 +34,7 @@ pub struct DeleteVariantStoreInputBuilder {
 }
 impl DeleteVariantStoreInputBuilder {
     /// <p>The store's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl DeleteVariantStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_variant_store::DeleteVariantStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_variant_store::DeleteVariantStoreInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_variant_store::DeleteVariantStoreInput {
             name: self.name,
             force: self.force,

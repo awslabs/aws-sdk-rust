@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicesForAutoScalingConfigurationOutput {
     /// <p>A list of service ARN records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub service_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub service_arn_list: ::std::vec::Vec<::std::string::String>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListServicesForAutoScalingConfigurationOutput {
     /// <p>A list of service ARN records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn service_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.service_arn_list.as_deref()
+    pub fn service_arn_list(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.service_arn_list.deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,25 @@ impl ListServicesForAutoScalingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServicesForAutoScalingConfigurationOutput`](crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput).
-    pub fn build(self) -> crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput {
-        crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput {
-            service_arn_list: self.service_arn_list,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_arn_list`](crate::operation::list_services_for_auto_scaling_configuration::builders::ListServicesForAutoScalingConfigurationOutputBuilder::service_arn_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput {
+                service_arn_list: self.service_arn_list.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "service_arn_list",
+                        "service_arn_list was not specified but it is required when building ListServicesForAutoScalingConfigurationOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

@@ -44,8 +44,10 @@ impl CreatePipelineInput {
         self.vpc_options.as_ref()
     }
     /// <p>List of tags to add to the pipeline upon creation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreatePipelineInput {
@@ -69,6 +71,7 @@ pub struct CreatePipelineInputBuilder {
 }
 impl CreatePipelineInputBuilder {
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreatePipelineInputBuilder {
         &self.pipeline_name
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
+    /// This field is required.
     pub fn min_units(mut self, input: i32) -> Self {
         self.min_units = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl CreatePipelineInputBuilder {
         &self.min_units
     }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
+    /// This field is required.
     pub fn max_units(mut self, input: i32) -> Self {
         self.max_units = ::std::option::Option::Some(input);
         self
@@ -111,6 +116,7 @@ impl CreatePipelineInputBuilder {
         &self.max_units
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
+    /// This field is required.
     pub fn pipeline_configuration_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_configuration_body = ::std::option::Option::Some(input.into());
         self
@@ -175,7 +181,7 @@ impl CreatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pipeline::CreatePipelineInput {
             pipeline_name: self.pipeline_name,
             min_units: self.min_units,

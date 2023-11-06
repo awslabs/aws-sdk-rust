@@ -11,8 +11,10 @@ pub struct ListEnvironmentsOutput {
 }
 impl ListEnvironmentsOutput {
     /// <p>A list of all of your FinSpace environments.</p>
-    pub fn environments(&self) -> ::std::option::Option<&[crate::types::Environment]> {
-        self.environments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environments.is_none()`.
+    pub fn environments(&self) -> &[crate::types::Environment] {
+        self.environments.as_deref().unwrap_or_default()
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

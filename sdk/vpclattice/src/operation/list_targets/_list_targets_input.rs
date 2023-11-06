@@ -26,8 +26,10 @@ impl ListTargetsInput {
         self.next_token.as_deref()
     }
     /// <p>The targets to list.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
 }
 impl ListTargetsInput {
@@ -48,6 +50,7 @@ pub struct ListTargetsInputBuilder {
 }
 impl ListTargetsInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +113,7 @@ impl ListTargetsInputBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`ListTargetsInput`](crate::operation::list_targets::ListTargetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_targets::ListTargetsInput {
             target_group_identifier: self.target_group_identifier,
             max_results: self.max_results,

@@ -75,16 +75,22 @@ impl LicenseRecommendation {
     /// <li> <p> <code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p> </li>
     /// <li> <p> <code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error. </p> </li>
     /// </ul>
-    pub fn finding_reason_codes(&self) -> ::std::option::Option<&[crate::types::LicenseFindingReasonCode]> {
-        self.finding_reason_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_reason_codes.is_none()`.
+    pub fn finding_reason_codes(&self) -> &[crate::types::LicenseFindingReasonCode] {
+        self.finding_reason_codes.as_deref().unwrap_or_default()
     }
     /// <p> An array of objects that describe the license recommendation options. </p>
-    pub fn license_recommendation_options(&self) -> ::std::option::Option<&[crate::types::LicenseRecommendationOption]> {
-        self.license_recommendation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_recommendation_options.is_none()`.
+    pub fn license_recommendation_options(&self) -> &[crate::types::LicenseRecommendationOption] {
+        self.license_recommendation_options.as_deref().unwrap_or_default()
     }
     /// <p> A list of tags assigned to an EC2 instance. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl LicenseRecommendation {

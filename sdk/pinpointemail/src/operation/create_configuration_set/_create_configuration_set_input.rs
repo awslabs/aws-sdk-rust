@@ -39,8 +39,10 @@ impl CreateConfigurationSetInput {
         self.sending_options.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateConfigurationSetInput {
@@ -63,6 +65,7 @@ pub struct CreateConfigurationSetInputBuilder {
 }
 impl CreateConfigurationSetInputBuilder {
     /// <p>The name of the configuration set.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -155,8 +158,10 @@ impl CreateConfigurationSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration_set::CreateConfigurationSetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_configuration_set::CreateConfigurationSetInput {
             configuration_set_name: self.configuration_set_name,
             tracking_options: self.tracking_options,

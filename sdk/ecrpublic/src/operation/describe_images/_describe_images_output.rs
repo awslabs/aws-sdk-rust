@@ -11,8 +11,10 @@ pub struct DescribeImagesOutput {
 }
 impl DescribeImagesOutput {
     /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
-    pub fn image_details(&self) -> ::std::option::Option<&[crate::types::ImageDetail]> {
-        self.image_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_details.is_none()`.
+    pub fn image_details(&self) -> &[crate::types::ImageDetail] {
+        self.image_details.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

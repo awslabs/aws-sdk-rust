@@ -36,7 +36,7 @@ pub struct CreateReplicationGroupInput {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub preferred_cache_cluster_a_zs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub preferred_cache_cluster_azs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
     /// <p>Default: 1</p>
     pub num_node_groups: ::std::option::Option<i32>,
@@ -224,8 +224,10 @@ impl CreateReplicationGroupInput {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn preferred_cache_cluster_a_zs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.preferred_cache_cluster_a_zs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_cache_cluster_azs.is_none()`.
+    pub fn preferred_cache_cluster_azs(&self) -> &[::std::string::String] {
+        self.preferred_cache_cluster_azs.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
     /// <p>Default: 1</p>
@@ -238,8 +240,10 @@ impl CreateReplicationGroupInput {
     }
     /// <p>A list of node group (shard) configuration options. Each node group (shard) configuration has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and <code>Slots</code>.</p>
     /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter because you must specify the slots for each node group.</p>
-    pub fn node_group_configuration(&self) -> ::std::option::Option<&[crate::types::NodeGroupConfiguration]> {
-        self.node_group_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_group_configuration.is_none()`.
+    pub fn node_group_configuration(&self) -> &[crate::types::NodeGroupConfiguration] {
+        self.node_group_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -298,22 +302,30 @@ impl CreateReplicationGroupInput {
         self.cache_subnet_group_name.as_deref()
     }
     /// <p>A list of cache security group names to associate with this replication group.</p>
-    pub fn cache_security_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_security_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_security_group_names.is_none()`.
+    pub fn cache_security_group_names(&self) -> &[::std::string::String] {
+        self.cache_security_group_names.as_deref().unwrap_or_default()
     }
     /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
     /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication group will have the number of node groups (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
-    pub fn snapshot_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.snapshot_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_arns.is_none()`.
+    pub fn snapshot_arns(&self) -> &[::std::string::String] {
+        self.snapshot_arns.as_deref().unwrap_or_default()
     }
     /// <p>The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to <code>restoring</code> while the new replication group is being created.</p>
     pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
@@ -396,12 +408,16 @@ impl CreateReplicationGroupInput {
         self.kms_key_id.as_deref()
     }
     /// <p>The user group to associate with the replication group.</p>
-    pub fn user_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_group_ids.is_none()`.
+    pub fn user_group_ids(&self) -> &[::std::string::String] {
+        self.user_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::LogDeliveryConfigurationRequest]> {
-        self.log_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
+    pub fn log_delivery_configurations(&self) -> &[crate::types::LogDeliveryConfigurationRequest] {
+        self.log_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
     pub fn data_tiering_enabled(&self) -> ::std::option::Option<bool> {
@@ -445,7 +461,7 @@ pub struct CreateReplicationGroupInputBuilder {
     pub(crate) automatic_failover_enabled: ::std::option::Option<bool>,
     pub(crate) multi_az_enabled: ::std::option::Option<bool>,
     pub(crate) num_cache_clusters: ::std::option::Option<i32>,
-    pub(crate) preferred_cache_cluster_a_zs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) preferred_cache_cluster_azs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) num_node_groups: ::std::option::Option<i32>,
     pub(crate) replicas_per_node_group: ::std::option::Option<i32>,
     pub(crate) node_group_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>,
@@ -485,6 +501,7 @@ impl CreateReplicationGroupInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -511,6 +528,7 @@ impl CreateReplicationGroupInputBuilder {
         &self.replication_group_id
     }
     /// <p>A user-created description for the replication group.</p>
+    /// This field is required.
     pub fn replication_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_description = ::std::option::Option::Some(input.into());
         self
@@ -612,9 +630,9 @@ impl CreateReplicationGroupInputBuilder {
     pub fn get_num_cache_clusters(&self) -> &::std::option::Option<i32> {
         &self.num_cache_clusters
     }
-    /// Appends an item to `preferred_cache_cluster_a_zs`.
+    /// Appends an item to `preferred_cache_cluster_azs`.
     ///
-    /// To override the contents of this collection use [`set_preferred_cache_cluster_a_zs`](Self::set_preferred_cache_cluster_a_zs).
+    /// To override the contents of this collection use [`set_preferred_cache_cluster_azs`](Self::set_preferred_cache_cluster_azs).
     ///
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
     /// <p>This parameter is not used if there is more than one node group (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
@@ -622,10 +640,10 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn preferred_cache_cluster_a_zs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.preferred_cache_cluster_a_zs.unwrap_or_default();
+    pub fn preferred_cache_cluster_azs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.preferred_cache_cluster_azs.unwrap_or_default();
         v.push(input.into());
-        self.preferred_cache_cluster_a_zs = ::std::option::Option::Some(v);
+        self.preferred_cache_cluster_azs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
@@ -634,8 +652,8 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn set_preferred_cache_cluster_a_zs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.preferred_cache_cluster_a_zs = input;
+    pub fn set_preferred_cache_cluster_azs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.preferred_cache_cluster_azs = input;
         self
     }
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
@@ -644,8 +662,8 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn get_preferred_cache_cluster_a_zs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.preferred_cache_cluster_a_zs
+    pub fn get_preferred_cache_cluster_azs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.preferred_cache_cluster_azs
     }
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
     /// <p>Default: 1</p>
@@ -1352,8 +1370,10 @@ impl CreateReplicationGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateReplicationGroupInput`](crate::operation::create_replication_group::CreateReplicationGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_replication_group::CreateReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_replication_group::CreateReplicationGroupInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_replication_group::CreateReplicationGroupInput {
             replication_group_id: self.replication_group_id,
             replication_group_description: self.replication_group_description,
@@ -1362,7 +1382,7 @@ impl CreateReplicationGroupInputBuilder {
             automatic_failover_enabled: self.automatic_failover_enabled,
             multi_az_enabled: self.multi_az_enabled,
             num_cache_clusters: self.num_cache_clusters,
-            preferred_cache_cluster_a_zs: self.preferred_cache_cluster_a_zs,
+            preferred_cache_cluster_azs: self.preferred_cache_cluster_azs,
             num_node_groups: self.num_node_groups,
             replicas_per_node_group: self.replicas_per_node_group,
             node_group_configuration: self.node_group_configuration,

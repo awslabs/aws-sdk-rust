@@ -42,16 +42,20 @@ impl CreateCostCategoryDefinitionInput {
         self.rule_version.as_ref()
     }
     /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::CostCategoryRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::CostCategoryRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>The default value for the cost category.</p>
     pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn split_charge_rules(&self) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRule]> {
-        self.split_charge_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.split_charge_rules.is_none()`.
+    pub fn split_charge_rules(&self) -> &[crate::types::CostCategorySplitChargeRule] {
+        self.split_charge_rules.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
@@ -64,8 +68,10 @@ impl CreateCostCategoryDefinitionInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateCostCategoryDefinitionInput {
@@ -89,6 +95,7 @@ pub struct CreateCostCategoryDefinitionInputBuilder {
 }
 impl CreateCostCategoryDefinitionInputBuilder {
     /// <p>The unique name of the Cost Category.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +124,7 @@ impl CreateCostCategoryDefinitionInputBuilder {
         &self.effective_start
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
+    /// This field is required.
     pub fn rule_version(mut self, input: crate::types::CostCategoryRuleVersion) -> Self {
         self.rule_version = ::std::option::Option::Some(input);
         self
@@ -239,7 +247,7 @@ impl CreateCostCategoryDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput {
             name: self.name,

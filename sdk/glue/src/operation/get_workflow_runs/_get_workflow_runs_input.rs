@@ -48,6 +48,7 @@ pub struct GetWorkflowRunsInputBuilder {
 }
 impl GetWorkflowRunsInputBuilder {
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl GetWorkflowRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowRunsInput`](crate::operation::get_workflow_runs::GetWorkflowRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_workflow_runs::GetWorkflowRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_workflow_runs::GetWorkflowRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workflow_runs::GetWorkflowRunsInput {
             name: self.name,
             include_graph: self.include_graph,

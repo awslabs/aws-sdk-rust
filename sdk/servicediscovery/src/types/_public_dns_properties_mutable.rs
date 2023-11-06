@@ -28,6 +28,7 @@ pub struct PublicDnsPropertiesMutableBuilder {
 }
 impl PublicDnsPropertiesMutableBuilder {
     /// <p>Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
+    /// This field is required.
     pub fn soa(mut self, input: crate::types::Soa) -> Self {
         self.soa = ::std::option::Option::Some(input);
         self

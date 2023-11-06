@@ -11,7 +11,7 @@ pub struct SmsConfiguration {
     /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
-    pub recipients: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
+    pub recipients: ::std::vec::Vec<crate::types::RecipientDetail>,
 }
 impl SmsConfiguration {
     /// <p>The sender ID.</p>
@@ -25,8 +25,9 @@ impl SmsConfiguration {
     /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
-    pub fn recipients(&self) -> ::std::option::Option<&[crate::types::RecipientDetail]> {
-        self.recipients.as_deref()
+    pub fn recipients(&self) -> &[crate::types::RecipientDetail] {
+        use std::ops::Deref;
+        self.recipients.deref()
     }
 }
 impl SmsConfiguration {
@@ -100,11 +101,18 @@ impl SmsConfigurationBuilder {
         &self.recipients
     }
     /// Consumes the builder and constructs a [`SmsConfiguration`](crate::types::SmsConfiguration).
-    pub fn build(self) -> crate::types::SmsConfiguration {
-        crate::types::SmsConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recipients`](crate::types::builders::SmsConfigurationBuilder::recipients)
+    pub fn build(self) -> ::std::result::Result<crate::types::SmsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SmsConfiguration {
             sender_id: self.sender_id,
             additional_message: self.additional_message,
-            recipients: self.recipients,
-        }
+            recipients: self.recipients.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "recipients",
+                    "recipients was not specified but it is required when building SmsConfiguration",
+                )
+            })?,
+        })
     }
 }

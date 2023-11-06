@@ -34,6 +34,7 @@ pub struct GetSuiteDefinitionInputBuilder {
 }
 impl GetSuiteDefinitionInputBuilder {
     /// <p>Suite definition ID of the test suite to get.</p>
+    /// This field is required.
     pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl GetSuiteDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetSuiteDefinitionInput`](crate::operation::get_suite_definition::GetSuiteDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_suite_definition::GetSuiteDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_suite_definition::GetSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_suite_definition::GetSuiteDefinitionInput {
             suite_definition_id: self.suite_definition_id,
             suite_definition_version: self.suite_definition_version,

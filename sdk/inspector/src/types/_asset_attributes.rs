@@ -43,16 +43,22 @@ impl AssetAttributes {
         self.hostname.as_deref()
     }
     /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
-    pub fn ipv4_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipv4_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_addresses.is_none()`.
+    pub fn ipv4_addresses(&self) -> &[::std::string::String] {
+        self.ipv4_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The tags related to the EC2 instance where the finding is generated.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
 }
 impl AssetAttributes {
@@ -77,6 +83,7 @@ pub struct AssetAttributesBuilder {
 }
 impl AssetAttributesBuilder {
     /// <p>The schema version of this data type.</p>
+    /// This field is required.
     pub fn schema_version(mut self, input: i32) -> Self {
         self.schema_version = ::std::option::Option::Some(input);
         self

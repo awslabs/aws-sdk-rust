@@ -2,30 +2,30 @@
 pub fn ser_table_with_columns_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableWithColumnsResource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("DatabaseName").string(var_2.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_4) = &input.column_names {
-        let mut array_5 = object.key("ColumnNames").start_array();
-        for item_6 in var_4 {
+    if let Some(var_2) = &input.column_names {
+        let mut array_3 = object.key("ColumnNames").start_array();
+        for item_4 in var_2 {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.column_wildcard {
+    if let Some(var_5) = &input.column_wildcard {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("ColumnWildcard").start_object();
-        crate::protocol_serde::shape_column_wildcard::ser_column_wildcard(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_6 = object.key("ColumnWildcard").start_object();
+        crate::protocol_serde::shape_column_wildcard::ser_column_wildcard(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }
@@ -82,7 +82,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::table_with_columns_resource_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

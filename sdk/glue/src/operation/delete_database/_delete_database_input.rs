@@ -48,6 +48,7 @@ impl DeleteDatabaseInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatabaseInput`](crate::operation::delete_database::DeleteDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_database::DeleteDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_database::DeleteDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_database::DeleteDatabaseInput {
             catalog_id: self.catalog_id,
             name: self.name,

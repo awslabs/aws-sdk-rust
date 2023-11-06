@@ -34,6 +34,7 @@ pub struct DeleteDashboardInputBuilder {
 }
 impl DeleteDashboardInputBuilder {
     /// <p>The ID of the dashboard to delete.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteDashboardInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDashboardInput`](crate::operation::delete_dashboard::DeleteDashboardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dashboard::DeleteDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dashboard::DeleteDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dashboard::DeleteDashboardInput {
             dashboard_id: self.dashboard_id,
             client_token: self.client_token,

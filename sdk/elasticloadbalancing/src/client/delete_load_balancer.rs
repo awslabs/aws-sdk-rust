@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLoadBalancer`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::set_load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder::set_load_balancer_name):<br>required: **true**<br><p>The name of the load balancer.</p><br>
     /// - On success, responds with [`DeleteLoadBalancerOutput`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput)
     /// - On failure, responds with [`SdkError<DeleteLoadBalancerError>`](crate::operation::delete_load_balancer::DeleteLoadBalancerError)
     pub fn delete_load_balancer(&self) -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerFluentBuilder {

@@ -34,6 +34,7 @@ pub struct PutCaseEventConfigurationInputBuilder {
 }
 impl PutCaseEventConfigurationInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutCaseEventConfigurationInputBuilder {
         &self.domain_id
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
+    /// This field is required.
     pub fn event_bridge(mut self, input: crate::types::EventBridgeConfiguration) -> Self {
         self.event_bridge = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl PutCaseEventConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput {
             domain_id: self.domain_id,

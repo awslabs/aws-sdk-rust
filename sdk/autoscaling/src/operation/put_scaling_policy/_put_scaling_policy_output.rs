@@ -16,8 +16,10 @@ impl PutScalingPolicyOutput {
         self.policy_arn.as_deref()
     }
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
-        self.alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
+    pub fn alarms(&self) -> &[crate::types::Alarm] {
+        self.alarms.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutScalingPolicyOutput {

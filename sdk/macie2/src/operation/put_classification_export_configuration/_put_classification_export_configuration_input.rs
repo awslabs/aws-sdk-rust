@@ -27,6 +27,7 @@ pub struct PutClassificationExportConfigurationInputBuilder {
 }
 impl PutClassificationExportConfigurationInputBuilder {
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::ClassificationExportConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl PutClassificationExportConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationInput {

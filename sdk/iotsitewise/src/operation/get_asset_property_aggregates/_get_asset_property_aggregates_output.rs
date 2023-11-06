@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssetPropertyAggregatesOutput {
     /// <p>The requested aggregated values.</p>
-    pub aggregated_values: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>>,
+    pub aggregated_values: ::std::vec::Vec<crate::types::AggregatedValue>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAssetPropertyAggregatesOutput {
     /// <p>The requested aggregated values.</p>
-    pub fn aggregated_values(&self) -> ::std::option::Option<&[crate::types::AggregatedValue]> {
-        self.aggregated_values.as_deref()
+    pub fn aggregated_values(&self) -> &[crate::types::AggregatedValue] {
+        use std::ops::Deref;
+        self.aggregated_values.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl GetAssetPropertyAggregatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAssetPropertyAggregatesOutput`](crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput).
-    pub fn build(self) -> crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput {
-        crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput {
-            aggregated_values: self.aggregated_values,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`aggregated_values`](crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesOutputBuilder::aggregated_values)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput {
+            aggregated_values: self.aggregated_values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "aggregated_values",
+                    "aggregated_values was not specified but it is required when building GetAssetPropertyAggregatesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

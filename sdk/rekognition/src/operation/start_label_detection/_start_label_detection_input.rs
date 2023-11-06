@@ -42,8 +42,10 @@ impl StartLabelDetectionInput {
         self.job_tag.as_deref()
     }
     /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::LabelDetectionFeatureName]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::LabelDetectionFeatureName] {
+        self.features.as_deref().unwrap_or_default()
     }
     /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::LabelDetectionSettings> {
@@ -71,6 +73,7 @@ pub struct StartLabelDetectionInputBuilder {
 }
 impl StartLabelDetectionInputBuilder {
     /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
@@ -180,7 +183,7 @@ impl StartLabelDetectionInputBuilder {
     /// Consumes the builder and constructs a [`StartLabelDetectionInput`](crate::operation::start_label_detection::StartLabelDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_label_detection::StartLabelDetectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_label_detection::StartLabelDetectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_label_detection::StartLabelDetectionInput {
             video: self.video,

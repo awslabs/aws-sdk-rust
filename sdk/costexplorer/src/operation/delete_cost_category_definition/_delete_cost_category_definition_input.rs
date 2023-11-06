@@ -27,6 +27,7 @@ pub struct DeleteCostCategoryDefinitionInputBuilder {
 }
 impl DeleteCostCategoryDefinitionInputBuilder {
     /// <p>The unique identifier for your Cost Category. </p>
+    /// This field is required.
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteCostCategoryDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput {
             cost_category_arn: self.cost_category_arn,

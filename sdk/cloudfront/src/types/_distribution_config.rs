@@ -7,7 +7,7 @@ pub struct DistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    pub caller_reference: ::std::option::Option<::std::string::String>,
+    pub caller_reference: ::std::string::String,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
     pub aliases: ::std::option::Option<crate::types::Aliases>,
     /// <p>The object that you want CloudFront to request from your origin (for example, <code>index.html</code>) when a viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead of an object in your distribution (<code>https://www.example.com/product-description.html</code>). Specifying a default root object avoids exposing the contents of your distribution.</p>
@@ -33,7 +33,7 @@ pub struct DistributionConfig {
     /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub custom_error_responses: ::std::option::Option<crate::types::CustomErrorResponses>,
     /// <p>A comment to describe the distribution. The comment cannot be longer than 128 characters.</p>
-    pub comment: ::std::option::Option<::std::string::String>,
+    pub comment: ::std::string::String,
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
     /// <p>For more information about logging, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub logging: ::std::option::Option<crate::types::LoggingConfig>,
@@ -42,7 +42,7 @@ pub struct DistributionConfig {
     /// <p>For more information about price classes, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.</p>
     pub price_class: ::std::option::Option<crate::types::PriceClass>,
     /// <p>From this field, you can enable or disable the selected distribution.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
     pub viewer_certificate: ::std::option::Option<crate::types::ViewerCertificate>,
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
@@ -73,8 +73,9 @@ impl DistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
-        self.caller_reference.as_deref()
+    pub fn caller_reference(&self) -> &str {
+        use std::ops::Deref;
+        self.caller_reference.deref()
     }
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
     pub fn aliases(&self) -> ::std::option::Option<&crate::types::Aliases> {
@@ -115,8 +116,9 @@ impl DistributionConfig {
         self.custom_error_responses.as_ref()
     }
     /// <p>A comment to describe the distribution. The comment cannot be longer than 128 characters.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
-        self.comment.as_deref()
+    pub fn comment(&self) -> &str {
+        use std::ops::Deref;
+        self.comment.deref()
     }
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
     /// <p>For more information about logging, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -130,7 +132,7 @@ impl DistributionConfig {
         self.price_class.as_ref()
     }
     /// <p>From this field, you can enable or disable the selected distribution.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
@@ -233,6 +235,7 @@ impl DistributionConfigBuilder {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -294,6 +297,7 @@ impl DistributionConfigBuilder {
         &self.default_root_object
     }
     /// <p>A complex type that contains information about origins for this distribution.</p>
+    /// This field is required.
     pub fn origins(mut self, input: crate::types::Origins) -> Self {
         self.origins = ::std::option::Option::Some(input);
         self
@@ -322,6 +326,7 @@ impl DistributionConfigBuilder {
         &self.origin_groups
     }
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
+    /// This field is required.
     pub fn default_cache_behavior(mut self, input: crate::types::DefaultCacheBehavior) -> Self {
         self.default_cache_behavior = ::std::option::Option::Some(input);
         self
@@ -379,6 +384,7 @@ impl DistributionConfigBuilder {
         &self.custom_error_responses
     }
     /// <p>A comment to describe the distribution. The comment cannot be longer than 128 characters.</p>
+    /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
@@ -430,6 +436,7 @@ impl DistributionConfigBuilder {
         &self.price_class
     }
     /// <p>From this field, you can enable or disable the selected distribution.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -575,9 +582,18 @@ impl DistributionConfigBuilder {
         &self.staging
     }
     /// Consumes the builder and constructs a [`DistributionConfig`](crate::types::DistributionConfig).
-    pub fn build(self) -> crate::types::DistributionConfig {
-        crate::types::DistributionConfig {
-            caller_reference: self.caller_reference,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`caller_reference`](crate::types::builders::DistributionConfigBuilder::caller_reference)
+    /// - [`comment`](crate::types::builders::DistributionConfigBuilder::comment)
+    /// - [`enabled`](crate::types::builders::DistributionConfigBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::DistributionConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DistributionConfig {
+            caller_reference: self.caller_reference.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "caller_reference",
+                    "caller_reference was not specified but it is required when building DistributionConfig",
+                )
+            })?,
             aliases: self.aliases,
             default_root_object: self.default_root_object,
             origins: self.origins,
@@ -585,10 +601,20 @@ impl DistributionConfigBuilder {
             default_cache_behavior: self.default_cache_behavior,
             cache_behaviors: self.cache_behaviors,
             custom_error_responses: self.custom_error_responses,
-            comment: self.comment,
+            comment: self.comment.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comment",
+                    "comment was not specified but it is required when building DistributionConfig",
+                )
+            })?,
             logging: self.logging,
             price_class: self.price_class,
-            enabled: self.enabled,
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building DistributionConfig",
+                )
+            })?,
             viewer_certificate: self.viewer_certificate,
             restrictions: self.restrictions,
             web_acl_id: self.web_acl_id,
@@ -596,7 +622,7 @@ impl DistributionConfigBuilder {
             is_ipv6_enabled: self.is_ipv6_enabled,
             continuous_deployment_policy_id: self.continuous_deployment_policy_id,
             staging: self.staging,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DistributionConfigBuilder {

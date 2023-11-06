@@ -28,6 +28,7 @@ pub struct CodeRepositoryBuilder {
 }
 impl CodeRepositoryBuilder {
     /// <p>The URL of the Git repository.</p>
+    /// This field is required.
     pub fn repository_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_url = ::std::option::Option::Some(input.into());
         self

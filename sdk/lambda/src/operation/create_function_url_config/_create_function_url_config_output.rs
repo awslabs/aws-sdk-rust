@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFunctionUrlConfigOutput {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub function_url: ::std::option::Option<::std::string::String>,
+    pub function_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub function_arn: ::std::option::Option<::std::string::String>,
+    pub function_arn: ::std::string::String,
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
+    pub auth_type: crate::types::FunctionUrlAuthType,
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub cors: ::std::option::Option<crate::types::Cors>,
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub creation_time: ::std::option::Option<::std::string::String>,
+    pub creation_time: ::std::string::String,
     /// <p>Use one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p> </li>
@@ -23,24 +23,27 @@ pub struct CreateFunctionUrlConfigOutput {
 }
 impl CreateFunctionUrlConfigOutput {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub fn function_url(&self) -> ::std::option::Option<&str> {
-        self.function_url.as_deref()
+    pub fn function_url(&self) -> &str {
+        use std::ops::Deref;
+        self.function_url.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
-        self.function_arn.as_deref()
+    pub fn function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.function_arn.deref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::FunctionUrlAuthType> {
-        self.auth_type.as_ref()
+    pub fn auth_type(&self) -> &crate::types::FunctionUrlAuthType {
+        &self.auth_type
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn cors(&self) -> ::std::option::Option<&crate::types::Cors> {
         self.cors.as_ref()
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&str> {
-        self.creation_time.as_deref()
+    pub fn creation_time(&self) -> &str {
+        use std::ops::Deref;
+        self.creation_time.deref()
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
@@ -77,6 +80,7 @@ pub struct CreateFunctionUrlConfigOutputBuilder {
 }
 impl CreateFunctionUrlConfigOutputBuilder {
     /// <p>The HTTP URL endpoint for your function.</p>
+    /// This field is required.
     pub fn function_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_url = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl CreateFunctionUrlConfigOutputBuilder {
         &self.function_url
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    /// This field is required.
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl CreateFunctionUrlConfigOutputBuilder {
         &self.function_arn
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    /// This field is required.
     pub fn auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
@@ -133,6 +139,7 @@ impl CreateFunctionUrlConfigOutputBuilder {
         &self.cors
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
@@ -182,15 +189,45 @@ impl CreateFunctionUrlConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateFunctionUrlConfigOutput`](crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput).
-    pub fn build(self) -> crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput {
-        crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput {
-            function_url: self.function_url,
-            function_arn: self.function_arn,
-            auth_type: self.auth_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`function_url`](crate::operation::create_function_url_config::builders::CreateFunctionUrlConfigOutputBuilder::function_url)
+    /// - [`function_arn`](crate::operation::create_function_url_config::builders::CreateFunctionUrlConfigOutputBuilder::function_arn)
+    /// - [`auth_type`](crate::operation::create_function_url_config::builders::CreateFunctionUrlConfigOutputBuilder::auth_type)
+    /// - [`creation_time`](crate::operation::create_function_url_config::builders::CreateFunctionUrlConfigOutputBuilder::creation_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput {
+            function_url: self.function_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "function_url",
+                    "function_url was not specified but it is required when building CreateFunctionUrlConfigOutput",
+                )
+            })?,
+            function_arn: self.function_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "function_arn",
+                    "function_arn was not specified but it is required when building CreateFunctionUrlConfigOutput",
+                )
+            })?,
+            auth_type: self.auth_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "auth_type",
+                    "auth_type was not specified but it is required when building CreateFunctionUrlConfigOutput",
+                )
+            })?,
             cors: self.cors,
-            creation_time: self.creation_time,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building CreateFunctionUrlConfigOutput",
+                )
+            })?,
             invoke_mode: self.invoke_mode,
             _request_id: self._request_id,
-        }
+        })
     }
 }

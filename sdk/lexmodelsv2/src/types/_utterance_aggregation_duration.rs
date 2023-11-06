@@ -28,6 +28,7 @@ pub struct UtteranceAggregationDurationBuilder {
 }
 impl UtteranceAggregationDurationBuilder {
     /// <p>The desired time window for aggregating utterances. </p>
+    /// This field is required.
     pub fn relative_aggregation_duration(mut self, input: crate::types::RelativeAggregationDuration) -> Self {
         self.relative_aggregation_duration = ::std::option::Option::Some(input);
         self

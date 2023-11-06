@@ -2,24 +2,24 @@
 pub fn ser_mac_algorithm_emv(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MacAlgorithmEmv,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.major_key_derivation_mode {
-        object.key("MajorKeyDerivationMode").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("MajorKeyDerivationMode").string(input.major_key_derivation_mode.as_str());
     }
-    if let Some(var_2) = &input.primary_account_number {
-        object.key("PrimaryAccountNumber").string(var_2.as_str());
+    {
+        object.key("PrimaryAccountNumber").string(input.primary_account_number.as_str());
     }
-    if let Some(var_3) = &input.pan_sequence_number {
-        object.key("PanSequenceNumber").string(var_3.as_str());
+    {
+        object.key("PanSequenceNumber").string(input.pan_sequence_number.as_str());
     }
-    if let Some(var_4) = &input.session_key_derivation_mode {
-        object.key("SessionKeyDerivationMode").string(var_4.as_str());
+    {
+        object.key("SessionKeyDerivationMode").string(input.session_key_derivation_mode.as_str());
     }
-    if let Some(var_5) = &input.session_key_derivation_value {
+    if let Some(var_1) = &input.session_key_derivation_value {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("SessionKeyDerivationValue").start_object();
-        crate::protocol_serde::shape_session_key_derivation_value::ser_session_key_derivation_value(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_2 = object.key("SessionKeyDerivationValue").start_object();
+        crate::protocol_serde::shape_session_key_derivation_value::ser_session_key_derivation_value(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

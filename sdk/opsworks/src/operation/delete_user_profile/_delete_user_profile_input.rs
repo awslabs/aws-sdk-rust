@@ -27,6 +27,7 @@ pub struct DeleteUserProfileInputBuilder {
 }
 impl DeleteUserProfileInputBuilder {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    /// This field is required.
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_user_profile::DeleteUserProfileInput {
             iam_user_arn: self.iam_user_arn,
         })

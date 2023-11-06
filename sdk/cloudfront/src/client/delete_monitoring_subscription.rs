@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMonitoringSubscription`](crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl Into<String>)`](crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder::distribution_id) / [`set_distribution_id(Option<String>)`](crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder::set_distribution_id): <p>The ID of the distribution that you are disabling metrics for.</p>
+    ///   - [`distribution_id(impl Into<String>)`](crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder::distribution_id) / [`set_distribution_id(Option<String>)`](crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder::set_distribution_id):<br>required: **true**<br><p>The ID of the distribution that you are disabling metrics for.</p><br>
     /// - On success, responds with [`DeleteMonitoringSubscriptionOutput`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteMonitoringSubscriptionError>`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError)
     pub fn delete_monitoring_subscription(

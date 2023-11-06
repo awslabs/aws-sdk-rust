@@ -79,8 +79,10 @@ impl ResourceConfig {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    pub fn instance_groups(&self) -> ::std::option::Option<&[crate::types::InstanceGroup]> {
-        self.instance_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
+    pub fn instance_groups(&self) -> &[crate::types::InstanceGroup] {
+        self.instance_groups.as_deref().unwrap_or_default()
     }
     /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
     pub fn keep_alive_period_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -164,6 +166,7 @@ impl ResourceConfigBuilder {
     /// <p>When using an ML instance with the EBS-only storage option and without instance storage, you must define the size of EBS volume through <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example, ML instance families that use EBS volumes include <code>ml.c5</code> and <code>ml.p2</code>. </p>
     /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
     /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
+    /// This field is required.
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.volume_size_in_gb = ::std::option::Option::Some(input);
         self

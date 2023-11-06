@@ -2,7 +2,7 @@
 pub fn ser_stop_inference_recommendations_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_name {
         object.key("JobName").string(var_1.as_str());
     }

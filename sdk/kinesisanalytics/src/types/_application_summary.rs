@@ -8,24 +8,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>Name of the application.</p>
-    pub application_name: ::std::option::Option<::std::string::String>,
+    pub application_name: ::std::string::String,
     /// <p>ARN of the application.</p>
-    pub application_arn: ::std::option::Option<::std::string::String>,
+    pub application_arn: ::std::string::String,
     /// <p>Status of the application.</p>
-    pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
+    pub application_status: crate::types::ApplicationStatus,
 }
 impl ApplicationSummary {
     /// <p>Name of the application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
-        self.application_name.as_deref()
+    pub fn application_name(&self) -> &str {
+        use std::ops::Deref;
+        self.application_name.deref()
     }
     /// <p>ARN of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
-        self.application_arn.as_deref()
+    pub fn application_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.application_arn.deref()
     }
     /// <p>Status of the application.</p>
-    pub fn application_status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
-        self.application_status.as_ref()
+    pub fn application_status(&self) -> &crate::types::ApplicationStatus {
+        &self.application_status
     }
 }
 impl ApplicationSummary {
@@ -45,6 +47,7 @@ pub struct ApplicationSummaryBuilder {
 }
 impl ApplicationSummaryBuilder {
     /// <p>Name of the application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +62,7 @@ impl ApplicationSummaryBuilder {
         &self.application_name
     }
     /// <p>ARN of the application.</p>
+    /// This field is required.
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +77,7 @@ impl ApplicationSummaryBuilder {
         &self.application_arn
     }
     /// <p>Status of the application.</p>
+    /// This field is required.
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
         self
@@ -87,11 +92,30 @@ impl ApplicationSummaryBuilder {
         &self.application_status
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
-    pub fn build(self) -> crate::types::ApplicationSummary {
-        crate::types::ApplicationSummary {
-            application_name: self.application_name,
-            application_arn: self.application_arn,
-            application_status: self.application_status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_name`](crate::types::builders::ApplicationSummaryBuilder::application_name)
+    /// - [`application_arn`](crate::types::builders::ApplicationSummaryBuilder::application_arn)
+    /// - [`application_status`](crate::types::builders::ApplicationSummaryBuilder::application_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationSummary {
+            application_name: self.application_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_name",
+                    "application_name was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
+            application_arn: self.application_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_arn",
+                    "application_arn was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
+            application_status: self.application_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "application_status",
+                    "application_status was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
+        })
     }
 }

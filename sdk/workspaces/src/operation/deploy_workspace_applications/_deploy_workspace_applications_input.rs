@@ -34,6 +34,7 @@ pub struct DeployWorkspaceApplicationsInputBuilder {
 }
 impl DeployWorkspaceApplicationsInputBuilder {
     /// <p>The identifier of the WorkSpace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeployWorkspaceApplicationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsInput {
             workspace_id: self.workspace_id,

@@ -26,7 +26,9 @@ pub fn de_delete_mount_target_http_error(
                 output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(_response_body, output)
                     .map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -41,7 +43,9 @@ pub fn de_delete_mount_target_http_error(
                 output = crate::protocol_serde::shape_dependency_timeout::de_dependency_timeout_json_err(_response_body, output)
                     .map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::dependency_timeout_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -56,7 +60,9 @@ pub fn de_delete_mount_target_http_error(
                 output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
                     .map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -71,7 +77,9 @@ pub fn de_delete_mount_target_http_error(
                 output = crate::protocol_serde::shape_mount_target_not_found::de_mount_target_not_found_json_err(_response_body, output)
                     .map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::mount_target_not_found_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;

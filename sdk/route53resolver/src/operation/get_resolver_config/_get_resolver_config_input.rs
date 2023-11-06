@@ -27,6 +27,7 @@ pub struct GetResolverConfigInputBuilder {
 }
 impl GetResolverConfigInputBuilder {
     /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetResolverConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetResolverConfigInput`](crate::operation::get_resolver_config::GetResolverConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resolver_config::GetResolverConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_resolver_config::GetResolverConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resolver_config::GetResolverConfigInput {
             resource_id: self.resource_id,
         })

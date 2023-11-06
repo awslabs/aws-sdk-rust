@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeImport`](crate::operation::describe_import::builders::DescribeImportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`import_id(impl Into<String>)`](crate::operation::describe_import::builders::DescribeImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::describe_import::builders::DescribeImportFluentBuilder::set_import_id): <p>The unique identifier of the import to describe.</p>
+    ///   - [`import_id(impl Into<String>)`](crate::operation::describe_import::builders::DescribeImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::describe_import::builders::DescribeImportFluentBuilder::set_import_id):<br>required: **true**<br><p>The unique identifier of the import to describe.</p><br>
     /// - On success, responds with [`DescribeImportOutput`](crate::operation::describe_import::DescribeImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::operation::describe_import::DescribeImportOutput::import_id): <p>The unique identifier of the described import.</p>
     ///   - [`resource_specification(Option<ImportResourceSpecification>)`](crate::operation::describe_import::DescribeImportOutput::resource_specification): <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`imported_resource_name(Option<String>)`](crate::operation::describe_import::DescribeImportOutput::imported_resource_name): <p>The name of the imported resource.</p>
     ///   - [`merge_strategy(Option<MergeStrategy>)`](crate::operation::describe_import::DescribeImportOutput::merge_strategy): <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     ///   - [`import_status(Option<ImportStatus>)`](crate::operation::describe_import::DescribeImportOutput::import_status): <p>The status of the import process. When the status is <code>Completed</code> the resource is imported and ready for use.</p>
-    ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_import::DescribeImportOutput::failure_reasons): <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
+    ///   - [`failure_reasons(Option<Vec::<String>>)`](crate::operation::describe_import::DescribeImportOutput::failure_reasons): <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_import::DescribeImportOutput::creation_date_time): <p>The date and time that the import was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_import::DescribeImportOutput::last_updated_date_time): <p>The date and time that the import was last updated.</p>
     /// - On failure, responds with [`SdkError<DescribeImportError>`](crate::operation::describe_import::DescribeImportError)

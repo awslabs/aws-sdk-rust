@@ -17,8 +17,10 @@ impl DescribeInstanceProfilesOutput {
         self.marker.as_deref()
     }
     /// <p>A description of instance profiles.</p>
-    pub fn instance_profiles(&self) -> ::std::option::Option<&[crate::types::InstanceProfile]> {
-        self.instance_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_profiles.is_none()`.
+    pub fn instance_profiles(&self) -> &[crate::types::InstanceProfile] {
+        self.instance_profiles.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeInstanceProfilesOutput {

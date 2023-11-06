@@ -29,8 +29,10 @@ pub struct GetTemplateSummaryOutput {
 }
 impl GetTemplateSummaryOutput {
     /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::ParameterDeclaration]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::ParameterDeclaration] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -38,16 +40,20 @@ impl GetTemplateSummaryOutput {
     }
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
     pub fn capabilities_reason(&self) -> ::std::option::Option<&str> {
         self.capabilities_reason.as_deref()
     }
     /// <p>A list of all the template resource types that are defined in the template, such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[::std::string::String] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
@@ -58,12 +64,16 @@ impl GetTemplateSummaryOutput {
         self.metadata.as_deref()
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn declared_transforms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.declared_transforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.declared_transforms.is_none()`.
+    pub fn declared_transforms(&self) -> &[::std::string::String] {
+        self.declared_transforms.as_deref().unwrap_or_default()
     }
     /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
-    pub fn resource_identifier_summaries(&self) -> ::std::option::Option<&[crate::types::ResourceIdentifierSummary]> {
-        self.resource_identifier_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifier_summaries.is_none()`.
+    pub fn resource_identifier_summaries(&self) -> &[crate::types::ResourceIdentifierSummary] {
+        self.resource_identifier_summaries.as_deref().unwrap_or_default()
     }
     /// <p>An object containing any warnings returned.</p>
     pub fn warnings(&self) -> ::std::option::Option<&crate::types::Warnings> {

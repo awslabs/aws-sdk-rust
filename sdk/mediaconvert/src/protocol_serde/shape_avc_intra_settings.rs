@@ -2,7 +2,7 @@
 pub fn ser_avc_intra_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AvcIntraSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.avc_intra_class {
         object.key("avcIntraClass").string(var_1.as_str());
     }

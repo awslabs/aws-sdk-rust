@@ -30,8 +30,10 @@ impl CreateConfiguredTableInput {
         self.table_reference.as_ref()
     }
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    pub fn allowed_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_columns.is_none()`.
+    pub fn allowed_columns(&self) -> &[::std::string::String] {
+        self.allowed_columns.as_deref().unwrap_or_default()
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
     pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
@@ -62,6 +64,7 @@ pub struct CreateConfiguredTableInputBuilder {
 }
 impl CreateConfiguredTableInputBuilder {
     /// <p>The name of the configured table.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateConfiguredTableInputBuilder {
         &self.description
     }
     /// <p>A reference to the Glue table being configured.</p>
+    /// This field is required.
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
         self.table_reference = ::std::option::Option::Some(input);
         self
@@ -124,6 +128,7 @@ impl CreateConfiguredTableInputBuilder {
         &self.allowed_columns
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// This field is required.
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
         self
@@ -160,7 +165,7 @@ impl CreateConfiguredTableInputBuilder {
     /// Consumes the builder and constructs a [`CreateConfiguredTableInput`](crate::operation::create_configured_table::CreateConfiguredTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_configured_table::CreateConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_configured_table::CreateConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_configured_table::CreateConfiguredTableInput {
             name: self.name,

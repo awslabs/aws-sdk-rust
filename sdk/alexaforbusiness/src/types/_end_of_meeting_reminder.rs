@@ -13,8 +13,10 @@ pub struct EndOfMeetingReminder {
 }
 impl EndOfMeetingReminder {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub fn reminder_at_minutes(&self) -> ::std::option::Option<&[i32]> {
-        self.reminder_at_minutes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reminder_at_minutes.is_none()`.
+    pub fn reminder_at_minutes(&self) -> &[i32] {
+        self.reminder_at_minutes.as_deref().unwrap_or_default()
     }
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
     pub fn reminder_type(&self) -> ::std::option::Option<&crate::types::EndOfMeetingReminderType> {

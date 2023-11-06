@@ -59,12 +59,16 @@ impl ProfileDetail {
         self.session_policy.as_deref()
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub fn role_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.role_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_arns.is_none()`.
+    pub fn role_arns(&self) -> &[::std::string::String] {
+        self.role_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn managed_policy_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.managed_policy_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_policy_arns.is_none()`.
+    pub fn managed_policy_arns(&self) -> &[::std::string::String] {
+        self.managed_policy_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ISO-8601 timestamp when the profile was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

@@ -28,6 +28,7 @@ pub struct DeleteReplicationInstanceInputBuilder {
 }
 impl DeleteReplicationInstanceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
+    /// This field is required.
     pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteReplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_instance::DeleteReplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_replication_instance::DeleteReplicationInstanceInput {
             replication_instance_arn: self.replication_instance_arn,

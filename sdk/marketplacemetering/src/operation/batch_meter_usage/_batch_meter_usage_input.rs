@@ -11,8 +11,10 @@ pub struct BatchMeterUsageInput {
 }
 impl BatchMeterUsageInput {
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    pub fn usage_records(&self) -> ::std::option::Option<&[crate::types::UsageRecord]> {
-        self.usage_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_records.is_none()`.
+    pub fn usage_records(&self) -> &[crate::types::UsageRecord] {
+        self.usage_records.as_deref().unwrap_or_default()
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn product_code(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ impl BatchMeterUsageInputBuilder {
         &self.usage_records
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// This field is required.
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl BatchMeterUsageInputBuilder {
     /// Consumes the builder and constructs a [`BatchMeterUsageInput`](crate::operation::batch_meter_usage::BatchMeterUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_meter_usage::BatchMeterUsageInput {
             usage_records: self.usage_records,
             product_code: self.product_code,

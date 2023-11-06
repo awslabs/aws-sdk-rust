@@ -92,89 +92,62 @@ pub(crate) fn reflens_list_schemas_output_next_token(
 pub(crate) fn lens_list_analysis_templates_output_analysis_template_summaries(
     input: crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateSummary>> {
-    let input = match input.analysis_template_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.analysis_template_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_collaboration_analysis_templates_output_collaboration_analysis_template_summaries(
     input: crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplateSummary>> {
-    let input = match input.collaboration_analysis_template_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.collaboration_analysis_template_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_collaborations_output_collaboration_list(
     input: crate::operation::list_collaborations::ListCollaborationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>> {
-    let input = match input.collaboration_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.collaboration_list;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_configured_table_associations_output_configured_table_association_summaries(
     input: crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationSummary>> {
-    let input = match input.configured_table_association_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.configured_table_association_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_configured_tables_output_configured_table_summaries(
     input: crate::operation::list_configured_tables::ListConfiguredTablesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>> {
-    let input = match input.configured_table_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.configured_table_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_members_output_member_summaries(
     input: crate::operation::list_members::ListMembersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>> {
-    let input = match input.member_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.member_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_memberships_output_membership_summaries(
     input: crate::operation::list_memberships::ListMembershipsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>> {
-    let input = match input.membership_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.membership_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_protected_queries_output_protected_queries(
     input: crate::operation::list_protected_queries::ListProtectedQueriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>> {
-    let input = match input.protected_queries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.protected_queries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schemas_output_schema_summaries(
     input: crate::operation::list_schemas::ListSchemasOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>> {
-    let input = match input.schema_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schema_summaries;
     ::std::option::Option::Some(input)
 }

@@ -37,6 +37,7 @@ pub struct LaunchTemplateElasticInferenceAcceleratorBuilder {
 }
 impl LaunchTemplateElasticInferenceAcceleratorBuilder {
     /// <p> The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self

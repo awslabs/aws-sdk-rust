@@ -34,6 +34,7 @@ pub struct DescribePlacementOutputBuilder {
 }
 impl DescribePlacementOutputBuilder {
     /// <p>An object describing the placement.</p>
+    /// This field is required.
     pub fn placement(mut self, input: crate::types::PlacementDescription) -> Self {
         self.placement = ::std::option::Option::Some(input);
         self

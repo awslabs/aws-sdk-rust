@@ -41,6 +41,7 @@ pub struct DeleteTemplateInputBuilder {
 }
 impl DeleteTemplateInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteTemplateInputBuilder {
         &self.aws_account_id
     }
     /// <p>An ID for the template you want to delete.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTemplateInput`](crate::operation::delete_template::DeleteTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_template::DeleteTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_template::DeleteTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_template::DeleteTemplateInput {
             aws_account_id: self.aws_account_id,
             template_id: self.template_id,

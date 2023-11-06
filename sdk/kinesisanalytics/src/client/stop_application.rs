@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopApplication`](crate::operation::stop_application::builders::StopApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::set_application_name): <p>Name of the running application to stop.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::set_application_name):<br>required: **true**<br><p>Name of the running application to stop.</p><br>
     /// - On success, responds with [`StopApplicationOutput`](crate::operation::stop_application::StopApplicationOutput)
     /// - On failure, responds with [`SdkError<StopApplicationError>`](crate::operation::stop_application::StopApplicationError)
     pub fn stop_application(&self) -> crate::operation::stop_application::builders::StopApplicationFluentBuilder {

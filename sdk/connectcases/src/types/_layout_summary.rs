@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayoutSummary {
     /// <p>The unique identifier for of the layout.</p>
-    pub layout_id: ::std::option::Option<::std::string::String>,
+    pub layout_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
-    pub layout_arn: ::std::option::Option<::std::string::String>,
+    pub layout_arn: ::std::string::String,
     /// <p>The name of the layout.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl LayoutSummary {
     /// <p>The unique identifier for of the layout.</p>
-    pub fn layout_id(&self) -> ::std::option::Option<&str> {
-        self.layout_id.as_deref()
+    pub fn layout_id(&self) -> &str {
+        use std::ops::Deref;
+        self.layout_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
-    pub fn layout_arn(&self) -> ::std::option::Option<&str> {
-        self.layout_arn.as_deref()
+    pub fn layout_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.layout_arn.deref()
     }
     /// <p>The name of the layout.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl LayoutSummary {
@@ -42,6 +45,7 @@ pub struct LayoutSummaryBuilder {
 }
 impl LayoutSummaryBuilder {
     /// <p>The unique identifier for of the layout.</p>
+    /// This field is required.
     pub fn layout_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layout_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl LayoutSummaryBuilder {
         &self.layout_id
     }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
+    /// This field is required.
     pub fn layout_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layout_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl LayoutSummaryBuilder {
         &self.layout_arn
     }
     /// <p>The name of the layout.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl LayoutSummaryBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`LayoutSummary`](crate::types::LayoutSummary).
-    pub fn build(self) -> crate::types::LayoutSummary {
-        crate::types::LayoutSummary {
-            layout_id: self.layout_id,
-            layout_arn: self.layout_arn,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`layout_id`](crate::types::builders::LayoutSummaryBuilder::layout_id)
+    /// - [`layout_arn`](crate::types::builders::LayoutSummaryBuilder::layout_arn)
+    /// - [`name`](crate::types::builders::LayoutSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::LayoutSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::LayoutSummary {
+            layout_id: self.layout_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "layout_id",
+                    "layout_id was not specified but it is required when building LayoutSummary",
+                )
+            })?,
+            layout_arn: self.layout_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "layout_arn",
+                    "layout_arn was not specified but it is required when building LayoutSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building LayoutSummary",
+                )
+            })?,
+        })
     }
 }

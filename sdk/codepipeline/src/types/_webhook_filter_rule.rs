@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebhookFilterRule {
     /// <p>A JsonPath expression that is applied to the body/payload of the webhook. The value selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code> field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.</p>
-    pub json_path: ::std::option::Option<::std::string::String>,
+    pub json_path: ::std::string::String,
     /// <p>The value selected by the <code>JsonPath</code> expression must match what is supplied in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties from the target action configuration can be included as placeholders in this value by surrounding the action configuration key with curly brackets. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of "main", the <code>MatchEquals</code> value is evaluated as "refs/heads/main". For a list of action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
     pub match_equals: ::std::option::Option<::std::string::String>,
 }
 impl WebhookFilterRule {
     /// <p>A JsonPath expression that is applied to the body/payload of the webhook. The value selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code> field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.</p>
-    pub fn json_path(&self) -> ::std::option::Option<&str> {
-        self.json_path.as_deref()
+    pub fn json_path(&self) -> &str {
+        use std::ops::Deref;
+        self.json_path.deref()
     }
     /// <p>The value selected by the <code>JsonPath</code> expression must match what is supplied in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties from the target action configuration can be included as placeholders in this value by surrounding the action configuration key with curly brackets. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of "main", the <code>MatchEquals</code> value is evaluated as "refs/heads/main". For a list of action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
     pub fn match_equals(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct WebhookFilterRuleBuilder {
 }
 impl WebhookFilterRuleBuilder {
     /// <p>A JsonPath expression that is applied to the body/payload of the webhook. The value selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code> field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.</p>
+    /// This field is required.
     pub fn json_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.json_path = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl WebhookFilterRuleBuilder {
         &self.match_equals
     }
     /// Consumes the builder and constructs a [`WebhookFilterRule`](crate::types::WebhookFilterRule).
-    pub fn build(self) -> crate::types::WebhookFilterRule {
-        crate::types::WebhookFilterRule {
-            json_path: self.json_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`json_path`](crate::types::builders::WebhookFilterRuleBuilder::json_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::WebhookFilterRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::WebhookFilterRule {
+            json_path: self.json_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "json_path",
+                    "json_path was not specified but it is required when building WebhookFilterRule",
+                )
+            })?,
             match_equals: self.match_equals,
-        }
+        })
     }
 }

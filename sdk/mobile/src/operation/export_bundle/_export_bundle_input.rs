@@ -42,6 +42,7 @@ pub struct ExportBundleInputBuilder {
 }
 impl ExportBundleInputBuilder {
     /// <p> Unique bundle identifier. </p>
+    /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,9 @@ impl ExportBundleInputBuilder {
         &self.platform
     }
     /// Consumes the builder and constructs a [`ExportBundleInput`](crate::operation::export_bundle::ExportBundleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_bundle::ExportBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::export_bundle::ExportBundleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_bundle::ExportBundleInput {
             bundle_id: self.bundle_id,
             project_id: self.project_id,

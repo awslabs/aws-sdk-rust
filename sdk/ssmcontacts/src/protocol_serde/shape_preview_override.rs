@@ -2,7 +2,7 @@
 pub fn ser_preview_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PreviewOverride,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.new_members {
         let mut array_2 = object.key("NewMembers").start_array();
         for item_3 in var_1 {

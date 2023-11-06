@@ -6,7 +6,7 @@ pub struct ListEngagementsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    pub engagements: ::std::option::Option<::std::vec::Vec<crate::types::Engagement>>,
+    pub engagements: ::std::vec::Vec<crate::types::Engagement>,
     _request_id: Option<String>,
 }
 impl ListEngagementsOutput {
@@ -15,8 +15,9 @@ impl ListEngagementsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    pub fn engagements(&self) -> ::std::option::Option<&[crate::types::Engagement]> {
-        self.engagements.as_deref()
+    pub fn engagements(&self) -> &[crate::types::Engagement] {
+        use std::ops::Deref;
+        self.engagements.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEngagementsOutput {
@@ -84,11 +85,20 @@ impl ListEngagementsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEngagementsOutput`](crate::operation::list_engagements::ListEngagementsOutput).
-    pub fn build(self) -> crate::operation::list_engagements::ListEngagementsOutput {
-        crate::operation::list_engagements::ListEngagementsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`engagements`](crate::operation::list_engagements::builders::ListEngagementsOutputBuilder::engagements)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_engagements::ListEngagementsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_engagements::ListEngagementsOutput {
             next_token: self.next_token,
-            engagements: self.engagements,
+            engagements: self.engagements.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "engagements",
+                    "engagements was not specified but it is required when building ListEngagementsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

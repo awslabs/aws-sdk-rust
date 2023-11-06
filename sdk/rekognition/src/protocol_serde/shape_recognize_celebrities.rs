@@ -167,12 +167,12 @@ pub fn de_recognize_celebrities_http_response(
 
 pub fn ser_recognize_celebrities_input(
     input: &crate::operation::recognize_celebrities::RecognizeCelebritiesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_recognize_celebrities_input::ser_recognize_celebrities_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_recognize_celebrities(

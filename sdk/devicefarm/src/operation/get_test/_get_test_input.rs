@@ -28,6 +28,7 @@ pub struct GetTestInputBuilder {
 }
 impl GetTestInputBuilder {
     /// <p>The test's ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl GetTestInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetTestInput`](crate::operation::get_test::GetTestInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_test::GetTestInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_test::GetTestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_test::GetTestInput { arn: self.arn })
     }
 }

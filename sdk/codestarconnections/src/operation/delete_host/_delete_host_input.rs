@@ -27,6 +27,7 @@ pub struct DeleteHostInputBuilder {
 }
 impl DeleteHostInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
+    /// This field is required.
     pub fn host_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteHostInputBuilder {
         &self.host_arn
     }
     /// Consumes the builder and constructs a [`DeleteHostInput`](crate::operation::delete_host::DeleteHostInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_host::DeleteHostInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_host::DeleteHostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_host::DeleteHostInput { host_arn: self.host_arn })
     }
 }

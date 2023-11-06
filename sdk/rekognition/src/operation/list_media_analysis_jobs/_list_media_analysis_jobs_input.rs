@@ -64,7 +64,7 @@ impl ListMediaAnalysisJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListMediaAnalysisJobsInput`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput {
             next_token: self.next_token,

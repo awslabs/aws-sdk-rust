@@ -27,6 +27,7 @@ pub struct GetLoggingConfigurationInputBuilder {
 }
 impl GetLoggingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_logging_configuration::GetLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_logging_configuration::GetLoggingConfigurationInput {
             resource_arn: self.resource_arn,

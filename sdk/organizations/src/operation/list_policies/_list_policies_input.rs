@@ -59,6 +59,7 @@ impl ListPoliciesInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn filter(mut self, input: crate::types::PolicyType) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
@@ -113,7 +114,9 @@ impl ListPoliciesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPoliciesInput`](crate::operation::list_policies::ListPoliciesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_policies::ListPoliciesInput {
             filter: self.filter,
             next_token: self.next_token,

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
-    pub file_path: ::std::option::Option<::std::string::String>,
+    pub file_path: ::std::string::String,
 }
 impl DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
-        self.file_path.as_deref()
+    pub fn file_path(&self) -> &str {
+        use std::ops::Deref;
+        self.file_path.deref()
     }
 }
 impl DeleteFileEntry {
@@ -28,6 +29,7 @@ pub struct DeleteFileEntryBuilder {
 }
 impl DeleteFileEntryBuilder {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl DeleteFileEntryBuilder {
         &self.file_path
     }
     /// Consumes the builder and constructs a [`DeleteFileEntry`](crate::types::DeleteFileEntry).
-    pub fn build(self) -> crate::types::DeleteFileEntry {
-        crate::types::DeleteFileEntry { file_path: self.file_path }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_path`](crate::types::builders::DeleteFileEntryBuilder::file_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteFileEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeleteFileEntry {
+            file_path: self.file_path.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_path",
+                    "file_path was not specified but it is required when building DeleteFileEntry",
+                )
+            })?,
+        })
     }
 }

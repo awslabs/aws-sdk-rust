@@ -89,8 +89,10 @@ impl ScalingPolicy {
         self.cooldown
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
-    pub fn step_adjustments(&self) -> ::std::option::Option<&[crate::types::StepAdjustment]> {
-        self.step_adjustments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_adjustments.is_none()`.
+    pub fn step_adjustments(&self) -> &[crate::types::StepAdjustment] {
+        self.step_adjustments.as_deref().unwrap_or_default()
     }
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
     pub fn metric_aggregation_type(&self) -> ::std::option::Option<&str> {
@@ -101,8 +103,10 @@ impl ScalingPolicy {
         self.estimated_instance_warmup
     }
     /// <p>The CloudWatch alarms related to the policy.</p>
-    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
-        self.alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
+    pub fn alarms(&self) -> &[crate::types::Alarm] {
+        self.alarms.as_deref().unwrap_or_default()
     }
     /// <p>A target tracking scaling policy.</p>
     pub fn target_tracking_configuration(&self) -> ::std::option::Option<&crate::types::TargetTrackingConfiguration> {

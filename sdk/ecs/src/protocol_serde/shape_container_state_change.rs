@@ -2,7 +2,7 @@
 pub fn ser_container_state_change(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContainerStateChange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.container_name {
         object.key("containerName").string(var_1.as_str());
     }

@@ -69,8 +69,10 @@ impl PutMethodInput {
         self.request_validator_id.as_deref()
     }
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
-    pub fn authorization_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.authorization_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorization_scopes.is_none()`.
+    pub fn authorization_scopes(&self) -> &[::std::string::String] {
+        self.authorization_scopes.as_deref().unwrap_or_default()
     }
 }
 impl PutMethodInput {
@@ -98,6 +100,7 @@ pub struct PutMethodInputBuilder {
 }
 impl PutMethodInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +115,7 @@ impl PutMethodInputBuilder {
         &self.rest_api_id
     }
     /// <p>The Resource identifier for the new Method resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +130,7 @@ impl PutMethodInputBuilder {
         &self.resource_id
     }
     /// <p>Specifies the method request's HTTP method type.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +145,7 @@ impl PutMethodInputBuilder {
         &self.http_method
     }
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    /// This field is required.
     pub fn authorization_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_type = ::std::option::Option::Some(input.into());
         self
@@ -277,7 +283,7 @@ impl PutMethodInputBuilder {
         &self.authorization_scopes
     }
     /// Consumes the builder and constructs a [`PutMethodInput`](crate::operation::put_method::PutMethodInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_method::PutMethodInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_method::PutMethodInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_method::PutMethodInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

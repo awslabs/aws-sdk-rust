@@ -11,8 +11,10 @@ pub struct ListZonalShiftsOutput {
 }
 impl ListZonalShiftsOutput {
     /// <p>The items in the response list.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ZonalShiftSummary]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ZonalShiftSummary] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -32,11 +32,10 @@ pub fn de_disassociate_resource_share_permission_http_error(
                     )
                     .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_client_token_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -50,11 +49,10 @@ pub fn de_disassociate_resource_share_permission_http_error(
                         crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                             .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -70,11 +68,10 @@ pub fn de_disassociate_resource_share_permission_http_error(
                     )
                     .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_state_transition_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -87,11 +84,10 @@ pub fn de_disassociate_resource_share_permission_http_error(
                     output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(_response_body, output)
                         .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::malformed_arn_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -107,11 +103,10 @@ pub fn de_disassociate_resource_share_permission_http_error(
                     )
                     .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::operation_not_permitted_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -124,11 +119,10 @@ pub fn de_disassociate_resource_share_permission_http_error(
                     output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output)
                         .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::server_internal_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -142,11 +136,10 @@ pub fn de_disassociate_resource_share_permission_http_error(
                         crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                             .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -159,11 +152,10 @@ pub fn de_disassociate_resource_share_permission_http_error(
                     output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(_response_body, output)
                         .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::unknown_resource_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -194,12 +186,12 @@ pub fn de_disassociate_resource_share_permission_http_response(
 
 pub fn ser_disassociate_resource_share_permission_input(
     input: &crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_resource_share_permission_input::ser_disassociate_resource_share_permission_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_disassociate_resource_share_permission(

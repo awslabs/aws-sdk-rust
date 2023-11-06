@@ -10,7 +10,7 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,17 +74,20 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJob::operation_runtime_plugins(
-                                    self.handle.runtime_plugins.clone(),
-                                    &self.handle.conf,
-                                    self.config_override,
-                                );
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
         crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJob::orchestrate(
             &runtime_plugins,
             input,
@@ -92,22 +95,15 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
         .await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput,
-            crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobError,
-        >,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput,
+        crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -120,7 +116,7 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(
         self,
     ) -> crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator {

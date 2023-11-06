@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JiraConfiguration {
     /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
-    pub jira_account_url: ::std::option::Option<::std::string::String>,
+    pub jira_account_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>jiraId—The Jira user name or email.</p> </li>
     /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
     /// </ul>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub use_change_log: bool,
     /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
@@ -41,64 +41,88 @@ pub struct JiraConfiguration {
 }
 impl JiraConfiguration {
     /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
-    pub fn jira_account_url(&self) -> ::std::option::Option<&str> {
-        self.jira_account_url.as_deref()
+    pub fn jira_account_url(&self) -> &str {
+        use std::ops::Deref;
+        self.jira_account_url.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>jiraId—The Jira user name or email.</p> </li>
     /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
     /// </ul>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub fn use_change_log(&self) -> bool {
         self.use_change_log
     }
     /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
-    pub fn project(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.project.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project.is_none()`.
+    pub fn project(&self) -> &[::std::string::String] {
+        self.project.as_deref().unwrap_or_default()
     }
     /// <p>Specify which issue types to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
-    pub fn issue_type(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.issue_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issue_type.is_none()`.
+    pub fn issue_type(&self) -> &[::std::string::String] {
+        self.issue_type.as_deref().unwrap_or_default()
     }
     /// <p>Specify which statuses to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
-    pub fn status(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
+    pub fn status(&self) -> &[::std::string::String] {
+        self.status.as_deref().unwrap_or_default()
     }
     /// <p>Specify whether to crawl comments, attachments, and work logs. You can specify one or more of these options.</p>
-    pub fn issue_sub_entity_filter(&self) -> ::std::option::Option<&[crate::types::IssueSubEntity]> {
-        self.issue_sub_entity_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issue_sub_entity_filter.is_none()`.
+    pub fn issue_sub_entity_filter(&self) -> &[crate::types::IssueSubEntity] {
+        self.issue_sub_entity_filter.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
-    pub fn attachment_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.attachment_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_field_mappings.is_none()`.
+    pub fn attachment_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.attachment_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
-    pub fn comment_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.comment_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comment_field_mappings.is_none()`.
+    pub fn comment_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.comment_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
-    pub fn issue_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.issue_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issue_field_mappings.is_none()`.
+    pub fn issue_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.issue_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
-    pub fn project_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.project_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project_field_mappings.is_none()`.
+    pub fn project_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.project_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
-    pub fn work_log_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.work_log_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.work_log_field_mappings.is_none()`.
+    pub fn work_log_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.work_log_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to include certain file paths, file names, and file types in your Jira data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
+    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain file paths, file names, and file types in your Jira data source. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
+    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
@@ -134,6 +158,7 @@ pub struct JiraConfigurationBuilder {
 }
 impl JiraConfigurationBuilder {
     /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
+    /// This field is required.
     pub fn jira_account_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.jira_account_url = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +177,7 @@ impl JiraConfigurationBuilder {
     /// <li> <p>jiraId—The Jira user name or email.</p> </li>
     /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -425,10 +451,23 @@ impl JiraConfigurationBuilder {
         &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`JiraConfiguration`](crate::types::JiraConfiguration).
-    pub fn build(self) -> crate::types::JiraConfiguration {
-        crate::types::JiraConfiguration {
-            jira_account_url: self.jira_account_url,
-            secret_arn: self.secret_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`jira_account_url`](crate::types::builders::JiraConfigurationBuilder::jira_account_url)
+    /// - [`secret_arn`](crate::types::builders::JiraConfigurationBuilder::secret_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::JiraConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JiraConfiguration {
+            jira_account_url: self.jira_account_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "jira_account_url",
+                    "jira_account_url was not specified but it is required when building JiraConfiguration",
+                )
+            })?,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building JiraConfiguration",
+                )
+            })?,
             use_change_log: self.use_change_log.unwrap_or_default(),
             project: self.project,
             issue_type: self.issue_type,
@@ -442,6 +481,6 @@ impl JiraConfigurationBuilder {
             inclusion_patterns: self.inclusion_patterns,
             exclusion_patterns: self.exclusion_patterns,
             vpc_configuration: self.vpc_configuration,
-        }
+        })
     }
 }

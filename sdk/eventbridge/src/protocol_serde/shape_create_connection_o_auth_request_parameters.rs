@@ -2,7 +2,7 @@
 pub fn ser_create_connection_o_auth_request_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateConnectionOAuthRequestParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_parameters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ClientParameters").start_object();
@@ -12,17 +12,17 @@ pub fn ser_create_connection_o_auth_request_parameters(
         )?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.authorization_endpoint {
-        object.key("AuthorizationEndpoint").string(var_3.as_str());
+    {
+        object.key("AuthorizationEndpoint").string(input.authorization_endpoint.as_str());
     }
-    if let Some(var_4) = &input.http_method {
-        object.key("HttpMethod").string(var_4.as_str());
+    {
+        object.key("HttpMethod").string(input.http_method.as_str());
     }
-    if let Some(var_5) = &input.o_auth_http_parameters {
+    if let Some(var_3) = &input.o_auth_http_parameters {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("OAuthHttpParameters").start_object();
-        crate::protocol_serde::shape_connection_http_parameters::ser_connection_http_parameters(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_4 = object.key("OAuthHttpParameters").start_object();
+        crate::protocol_serde::shape_connection_http_parameters::ser_connection_http_parameters(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

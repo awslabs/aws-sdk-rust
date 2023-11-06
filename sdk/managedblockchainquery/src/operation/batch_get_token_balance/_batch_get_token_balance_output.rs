@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetTokenBalanceOutput {
     /// <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.</p>
-    pub token_balances: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>>,
+    pub token_balances: ::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>,
     /// <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>,
     _request_id: Option<String>,
 }
 impl BatchGetTokenBalanceOutput {
     /// <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.</p>
-    pub fn token_balances(&self) -> ::std::option::Option<&[crate::types::BatchGetTokenBalanceOutputItem]> {
-        self.token_balances.as_deref()
+    pub fn token_balances(&self) -> &[crate::types::BatchGetTokenBalanceOutputItem] {
+        use std::ops::Deref;
+        self.token_balances.deref()
     }
     /// <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchGetTokenBalanceErrorItem]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchGetTokenBalanceErrorItem] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetTokenBalanceOutput {
@@ -90,11 +92,27 @@ impl BatchGetTokenBalanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetTokenBalanceOutput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput).
-    pub fn build(self) -> crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput {
-        crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput {
-            token_balances: self.token_balances,
-            errors: self.errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`token_balances`](crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceOutputBuilder::token_balances)
+    /// - [`errors`](crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput {
+            token_balances: self.token_balances.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "token_balances",
+                    "token_balances was not specified but it is required when building BatchGetTokenBalanceOutput",
+                )
+            })?,
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building BatchGetTokenBalanceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

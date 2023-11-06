@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMetricStream`](crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder::set_name): <p>The name of the metric stream to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder::set_name):<br>required: **true**<br><p>The name of the metric stream to delete.</p><br>
     /// - On success, responds with [`DeleteMetricStreamOutput`](crate::operation::delete_metric_stream::DeleteMetricStreamOutput)
     /// - On failure, responds with [`SdkError<DeleteMetricStreamError>`](crate::operation::delete_metric_stream::DeleteMetricStreamError)
     pub fn delete_metric_stream(&self) -> crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder {

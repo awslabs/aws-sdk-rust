@@ -6,7 +6,7 @@ pub struct ListMembersOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of members returned by the ListMembers operation.</p>
-    pub member_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>,
+    pub member_summaries: ::std::vec::Vec<crate::types::MemberSummary>,
     _request_id: Option<String>,
 }
 impl ListMembersOutput {
@@ -15,8 +15,9 @@ impl ListMembersOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of members returned by the ListMembers operation.</p>
-    pub fn member_summaries(&self) -> ::std::option::Option<&[crate::types::MemberSummary]> {
-        self.member_summaries.as_deref()
+    pub fn member_summaries(&self) -> &[crate::types::MemberSummary] {
+        use std::ops::Deref;
+        self.member_summaries.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListMembersOutput {
@@ -84,11 +85,18 @@ impl ListMembersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
-    pub fn build(self) -> crate::operation::list_members::ListMembersOutput {
-        crate::operation::list_members::ListMembersOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`member_summaries`](crate::operation::list_members::builders::ListMembersOutputBuilder::member_summaries)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_members::ListMembersOutput {
             next_token: self.next_token,
-            member_summaries: self.member_summaries,
+            member_summaries: self.member_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "member_summaries",
+                    "member_summaries was not specified but it is required when building ListMembersOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

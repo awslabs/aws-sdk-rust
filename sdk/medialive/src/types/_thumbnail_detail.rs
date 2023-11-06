@@ -15,8 +15,10 @@ impl ThumbnailDetail {
         self.pipeline_id.as_deref()
     }
     /// thumbnails of a single pipeline
-    pub fn thumbnails(&self) -> ::std::option::Option<&[crate::types::Thumbnail]> {
-        self.thumbnails.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thumbnails.is_none()`.
+    pub fn thumbnails(&self) -> &[crate::types::Thumbnail] {
+        self.thumbnails.as_deref().unwrap_or_default()
     }
 }
 impl ThumbnailDetail {

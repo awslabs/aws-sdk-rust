@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BadRequest {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl BadRequest {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
 }
 impl BadRequest {
@@ -62,6 +63,7 @@ pub struct BadRequestBuilder {
 }
 impl BadRequestBuilder {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +103,18 @@ impl BadRequestBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BadRequest`](crate::types::error::BadRequest).
-    pub fn build(self) -> crate::types::error::BadRequest {
-        crate::types::error::BadRequest {
-            error_code: self.error_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::error::builders::BadRequestBuilder::error_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::BadRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::BadRequest {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building BadRequest",
+                )
+            })?,
             message: self.message,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

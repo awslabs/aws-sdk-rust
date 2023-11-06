@@ -11,8 +11,10 @@ pub struct ListContactsOutput {
 }
 impl ListContactsOutput {
     /// <p>The contacts present in a specific contact list.</p>
-    pub fn contacts(&self) -> ::std::option::Option<&[crate::types::Contact]> {
-        self.contacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contacts.is_none()`.
+    pub fn contacts(&self) -> &[crate::types::Contact] {
+        self.contacts.as_deref().unwrap_or_default()
     }
     /// <p>A string token indicating that there might be additional contacts available to be listed. Copy this token to a subsequent call to <code>ListContacts</code> with the same parameters to retrieve the next page of contacts.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

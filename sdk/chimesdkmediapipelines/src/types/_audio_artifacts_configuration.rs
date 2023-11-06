@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
-    pub mux_type: ::std::option::Option<crate::types::AudioMuxType>,
+    pub mux_type: crate::types::AudioMuxType,
 }
 impl AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
-    pub fn mux_type(&self) -> ::std::option::Option<&crate::types::AudioMuxType> {
-        self.mux_type.as_ref()
+    pub fn mux_type(&self) -> &crate::types::AudioMuxType {
+        &self.mux_type
     }
 }
 impl AudioArtifactsConfiguration {
@@ -28,6 +28,7 @@ pub struct AudioArtifactsConfigurationBuilder {
 }
 impl AudioArtifactsConfigurationBuilder {
     /// <p>The MUX type of the audio artifact configuration object.</p>
+    /// This field is required.
     pub fn mux_type(mut self, input: crate::types::AudioMuxType) -> Self {
         self.mux_type = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl AudioArtifactsConfigurationBuilder {
         &self.mux_type
     }
     /// Consumes the builder and constructs a [`AudioArtifactsConfiguration`](crate::types::AudioArtifactsConfiguration).
-    pub fn build(self) -> crate::types::AudioArtifactsConfiguration {
-        crate::types::AudioArtifactsConfiguration { mux_type: self.mux_type }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mux_type`](crate::types::builders::AudioArtifactsConfigurationBuilder::mux_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AudioArtifactsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AudioArtifactsConfiguration {
+            mux_type: self.mux_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mux_type",
+                    "mux_type was not specified but it is required when building AudioArtifactsConfiguration",
+                )
+            })?,
+        })
     }
 }

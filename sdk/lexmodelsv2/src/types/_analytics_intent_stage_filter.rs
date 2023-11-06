@@ -32,7 +32,7 @@ pub struct AnalyticsIntentStageFilter {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentStageName</code> – The stage in the intent.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<crate::types::AnalyticsIntentStageFilterName>,
+    pub name: crate::types::AnalyticsIntentStageFilterName,
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
     /// <li> <p> <code>CO</code> – Contains</p> </li>
@@ -52,9 +52,9 @@ pub struct AnalyticsIntentStageFilter {
     /// <li> <p> <code>IntentName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// <li> <p> <code>IntentStageName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// </ul>
-    pub operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
+    pub operator: crate::types::AnalyticsFilterOperator,
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl AnalyticsIntentStageFilter {
     /// <p>The category by which to filter the intent stages. The descriptions for each option are as follows:</p>
@@ -69,8 +69,8 @@ impl AnalyticsIntentStageFilter {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentStageName</code> – The stage in the intent.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsIntentStageFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsIntentStageFilterName {
+        &self.name
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
@@ -91,12 +91,13 @@ impl AnalyticsIntentStageFilter {
     /// <li> <p> <code>IntentName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// <li> <p> <code>IntentStageName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// </ul>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::AnalyticsFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::AnalyticsFilterOperator {
+        &self.operator
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl AnalyticsIntentStageFilter {
@@ -127,6 +128,7 @@ impl AnalyticsIntentStageFilterBuilder {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentStageName</code> – The stage in the intent.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsIntentStageFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -181,6 +183,7 @@ impl AnalyticsIntentStageFilterBuilder {
     /// <li> <p> <code>IntentName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// <li> <p> <code>IntentStageName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::AnalyticsFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -251,11 +254,30 @@ impl AnalyticsIntentStageFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentStageFilter`](crate::types::AnalyticsIntentStageFilter).
-    pub fn build(self) -> crate::types::AnalyticsIntentStageFilter {
-        crate::types::AnalyticsIntentStageFilter {
-            name: self.name,
-            operator: self.operator,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalyticsIntentStageFilterBuilder::name)
+    /// - [`operator`](crate::types::builders::AnalyticsIntentStageFilterBuilder::operator)
+    /// - [`values`](crate::types::builders::AnalyticsIntentStageFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsIntentStageFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsIntentStageFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalyticsIntentStageFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building AnalyticsIntentStageFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building AnalyticsIntentStageFilter",
+                )
+            })?,
+        })
     }
 }

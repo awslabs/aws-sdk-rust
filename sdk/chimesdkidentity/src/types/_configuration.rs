@@ -28,6 +28,7 @@ pub struct ConfigurationBuilder {
 }
 impl ConfigurationBuilder {
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
+    /// This field is required.
     pub fn lex(mut self, input: crate::types::LexConfiguration) -> Self {
         self.lex = ::std::option::Option::Some(input);
         self

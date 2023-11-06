@@ -49,6 +49,7 @@ pub struct ListCertificatesByCaInputBuilder {
 }
 impl ListCertificatesByCaInputBuilder {
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
+    /// This field is required.
     pub fn ca_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +108,7 @@ impl ListCertificatesByCaInputBuilder {
     /// Consumes the builder and constructs a [`ListCertificatesByCaInput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_certificates_by_ca::ListCertificatesByCaInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_certificates_by_ca::ListCertificatesByCaInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_certificates_by_ca::ListCertificatesByCaInput {
             ca_certificate_id: self.ca_certificate_id,

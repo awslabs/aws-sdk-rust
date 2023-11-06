@@ -2,12 +2,12 @@
 pub fn ser_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Content,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data {
-        object.key("Data").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Data").string(input.data.as_str());
     }
-    if let Some(var_2) = &input.charset {
-        object.key("Charset").string(var_2.as_str());
+    if let Some(var_1) = &input.charset {
+        object.key("Charset").string(var_1.as_str());
     }
     Ok(())
 }

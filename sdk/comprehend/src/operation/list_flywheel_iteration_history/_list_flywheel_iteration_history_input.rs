@@ -48,6 +48,7 @@ pub struct ListFlywheelIterationHistoryInputBuilder {
 }
 impl ListFlywheelIterationHistoryInputBuilder {
     /// <p>The ARN of the flywheel.</p>
+    /// This field is required.
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_arn = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListFlywheelIterationHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput {
             flywheel_arn: self.flywheel_arn,

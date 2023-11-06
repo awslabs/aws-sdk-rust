@@ -3,7 +3,7 @@
 pub fn ser_classic_load_balancer(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ClassicLoadBalancer,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
     if let Some(var_2) = &input.name {
@@ -12,6 +12,7 @@ pub fn ser_classic_load_balancer(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_classic_load_balancer(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ClassicLoadBalancer, ::aws_smithy_xml::decode::XmlDecodeError> {

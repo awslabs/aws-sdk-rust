@@ -5,78 +5,86 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Schema {
     /// <p>The columns for the relation this schema represents.</p>
-    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
+    pub columns: ::std::vec::Vec<crate::types::Column>,
     /// <p>The partition keys for the dataset underlying this schema.</p>
-    pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
+    pub partition_keys: ::std::vec::Vec<crate::types::Column>,
     /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
-    pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
+    pub analysis_rule_types: ::std::vec::Vec<crate::types::AnalysisRuleType>,
     /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
-    pub creator_account_id: ::std::option::Option<::std::string::String>,
+    pub creator_account_id: ::std::string::String,
     /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-    pub collaboration_id: ::std::option::Option<::std::string::String>,
+    pub collaboration_id: ::std::string::String,
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-    pub collaboration_arn: ::std::option::Option<::std::string::String>,
+    pub collaboration_arn: ::std::string::String,
     /// <p>A description for the schema.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>The time the schema was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the schema was last updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
-    pub r#type: ::std::option::Option<crate::types::SchemaType>,
+    pub r#type: crate::types::SchemaType,
 }
 impl Schema {
     /// <p>The columns for the relation this schema represents.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::Column]> {
-        self.columns.as_deref()
+    pub fn columns(&self) -> &[crate::types::Column] {
+        use std::ops::Deref;
+        self.columns.deref()
     }
     /// <p>The partition keys for the dataset underlying this schema.</p>
-    pub fn partition_keys(&self) -> ::std::option::Option<&[crate::types::Column]> {
-        self.partition_keys.as_deref()
+    pub fn partition_keys(&self) -> &[crate::types::Column] {
+        use std::ops::Deref;
+        self.partition_keys.deref()
     }
     /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
-    pub fn analysis_rule_types(&self) -> ::std::option::Option<&[crate::types::AnalysisRuleType]> {
-        self.analysis_rule_types.as_deref()
+    pub fn analysis_rule_types(&self) -> &[crate::types::AnalysisRuleType] {
+        use std::ops::Deref;
+        self.analysis_rule_types.deref()
     }
     /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
     pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
-    pub fn creator_account_id(&self) -> ::std::option::Option<&str> {
-        self.creator_account_id.as_deref()
+    pub fn creator_account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.creator_account_id.deref()
     }
     /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
-        self.collaboration_id.as_deref()
+    pub fn collaboration_id(&self) -> &str {
+        use std::ops::Deref;
+        self.collaboration_id.deref()
     }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_arn(&self) -> ::std::option::Option<&str> {
-        self.collaboration_arn.as_deref()
+    pub fn collaboration_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.collaboration_arn.deref()
     }
     /// <p>A description for the schema.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>The time the schema was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The time the schema was last updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SchemaType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SchemaType {
+        &self.r#type
     }
 }
 impl Schema {
@@ -179,6 +187,7 @@ impl SchemaBuilder {
         &self.analysis_method
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
+    /// This field is required.
     pub fn creator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_account_id = ::std::option::Option::Some(input.into());
         self
@@ -193,6 +202,7 @@ impl SchemaBuilder {
         &self.creator_account_id
     }
     /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -207,6 +217,7 @@ impl SchemaBuilder {
         &self.name
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
+    /// This field is required.
     pub fn collaboration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_id = ::std::option::Option::Some(input.into());
         self
@@ -221,6 +232,7 @@ impl SchemaBuilder {
         &self.collaboration_id
     }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
+    /// This field is required.
     pub fn collaboration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_arn = ::std::option::Option::Some(input.into());
         self
@@ -235,6 +247,7 @@ impl SchemaBuilder {
         &self.collaboration_arn
     }
     /// <p>A description for the schema.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -249,6 +262,7 @@ impl SchemaBuilder {
         &self.description
     }
     /// <p>The time the schema was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -263,6 +277,7 @@ impl SchemaBuilder {
         &self.create_time
     }
     /// <p>The time the schema was last updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -277,6 +292,7 @@ impl SchemaBuilder {
         &self.update_time
     }
     /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SchemaType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -291,20 +307,87 @@ impl SchemaBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`Schema`](crate::types::Schema).
-    pub fn build(self) -> crate::types::Schema {
-        crate::types::Schema {
-            columns: self.columns,
-            partition_keys: self.partition_keys,
-            analysis_rule_types: self.analysis_rule_types,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`columns`](crate::types::builders::SchemaBuilder::columns)
+    /// - [`partition_keys`](crate::types::builders::SchemaBuilder::partition_keys)
+    /// - [`analysis_rule_types`](crate::types::builders::SchemaBuilder::analysis_rule_types)
+    /// - [`creator_account_id`](crate::types::builders::SchemaBuilder::creator_account_id)
+    /// - [`name`](crate::types::builders::SchemaBuilder::name)
+    /// - [`collaboration_id`](crate::types::builders::SchemaBuilder::collaboration_id)
+    /// - [`collaboration_arn`](crate::types::builders::SchemaBuilder::collaboration_arn)
+    /// - [`description`](crate::types::builders::SchemaBuilder::description)
+    /// - [`create_time`](crate::types::builders::SchemaBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::SchemaBuilder::update_time)
+    /// - [`r#type`](crate::types::builders::SchemaBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Schema, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Schema {
+            columns: self.columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "columns",
+                    "columns was not specified but it is required when building Schema",
+                )
+            })?,
+            partition_keys: self.partition_keys.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "partition_keys",
+                    "partition_keys was not specified but it is required when building Schema",
+                )
+            })?,
+            analysis_rule_types: self.analysis_rule_types.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analysis_rule_types",
+                    "analysis_rule_types was not specified but it is required when building Schema",
+                )
+            })?,
             analysis_method: self.analysis_method,
-            creator_account_id: self.creator_account_id,
-            name: self.name,
-            collaboration_id: self.collaboration_id,
-            collaboration_arn: self.collaboration_arn,
-            description: self.description,
-            create_time: self.create_time,
-            update_time: self.update_time,
-            r#type: self.r#type,
-        }
+            creator_account_id: self.creator_account_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creator_account_id",
+                    "creator_account_id was not specified but it is required when building Schema",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Schema",
+                )
+            })?,
+            collaboration_id: self.collaboration_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "collaboration_id",
+                    "collaboration_id was not specified but it is required when building Schema",
+                )
+            })?,
+            collaboration_arn: self.collaboration_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "collaboration_arn",
+                    "collaboration_arn was not specified but it is required when building Schema",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building Schema",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building Schema",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building Schema",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Schema",
+                )
+            })?,
+        })
     }
 }

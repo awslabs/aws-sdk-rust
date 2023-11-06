@@ -166,6 +166,7 @@ impl CreateAnnotationStoreInputBuilder {
         &self.sse_config
     }
     /// <p>The annotation file format of the store.</p>
+    /// This field is required.
     pub fn store_format(mut self, input: crate::types::StoreFormat) -> Self {
         self.store_format = ::std::option::Option::Some(input);
         self
@@ -196,7 +197,7 @@ impl CreateAnnotationStoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateAnnotationStoreInput`](crate::operation::create_annotation_store::CreateAnnotationStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_annotation_store::CreateAnnotationStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_annotation_store::CreateAnnotationStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_annotation_store::CreateAnnotationStoreInput {
             reference: self.reference,

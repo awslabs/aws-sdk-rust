@@ -5,10 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateAuthorityConfiguration {
     /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
-    pub key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
+    pub key_algorithm: crate::types::KeyAlgorithm,
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
-    pub signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithm>,
+    pub signing_algorithm: crate::types::SigningAlgorithm,
     /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
     pub subject: ::std::option::Option<crate::types::Asn1Subject>,
     /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
@@ -16,13 +16,13 @@ pub struct CertificateAuthorityConfiguration {
 }
 impl CertificateAuthorityConfiguration {
     /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
-    pub fn key_algorithm(&self) -> ::std::option::Option<&crate::types::KeyAlgorithm> {
-        self.key_algorithm.as_ref()
+    pub fn key_algorithm(&self) -> &crate::types::KeyAlgorithm {
+        &self.key_algorithm
     }
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
-    pub fn signing_algorithm(&self) -> ::std::option::Option<&crate::types::SigningAlgorithm> {
-        self.signing_algorithm.as_ref()
+    pub fn signing_algorithm(&self) -> &crate::types::SigningAlgorithm {
+        &self.signing_algorithm
     }
     /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
     pub fn subject(&self) -> ::std::option::Option<&crate::types::Asn1Subject> {
@@ -51,6 +51,7 @@ pub struct CertificateAuthorityConfigurationBuilder {
 }
 impl CertificateAuthorityConfigurationBuilder {
     /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
+    /// This field is required.
     pub fn key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.key_algorithm = ::std::option::Option::Some(input);
         self
@@ -66,6 +67,7 @@ impl CertificateAuthorityConfigurationBuilder {
     }
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
+    /// This field is required.
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithm) -> Self {
         self.signing_algorithm = ::std::option::Option::Some(input);
         self
@@ -82,6 +84,7 @@ impl CertificateAuthorityConfigurationBuilder {
         &self.signing_algorithm
     }
     /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
+    /// This field is required.
     pub fn subject(mut self, input: crate::types::Asn1Subject) -> Self {
         self.subject = ::std::option::Option::Some(input);
         self
@@ -110,12 +113,25 @@ impl CertificateAuthorityConfigurationBuilder {
         &self.csr_extensions
     }
     /// Consumes the builder and constructs a [`CertificateAuthorityConfiguration`](crate::types::CertificateAuthorityConfiguration).
-    pub fn build(self) -> crate::types::CertificateAuthorityConfiguration {
-        crate::types::CertificateAuthorityConfiguration {
-            key_algorithm: self.key_algorithm,
-            signing_algorithm: self.signing_algorithm,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_algorithm`](crate::types::builders::CertificateAuthorityConfigurationBuilder::key_algorithm)
+    /// - [`signing_algorithm`](crate::types::builders::CertificateAuthorityConfigurationBuilder::signing_algorithm)
+    pub fn build(self) -> ::std::result::Result<crate::types::CertificateAuthorityConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CertificateAuthorityConfiguration {
+            key_algorithm: self.key_algorithm.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key_algorithm",
+                    "key_algorithm was not specified but it is required when building CertificateAuthorityConfiguration",
+                )
+            })?,
+            signing_algorithm: self.signing_algorithm.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "signing_algorithm",
+                    "signing_algorithm was not specified but it is required when building CertificateAuthorityConfiguration",
+                )
+            })?,
             subject: self.subject,
             csr_extensions: self.csr_extensions,
-        }
+        })
     }
 }

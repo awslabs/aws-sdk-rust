@@ -36,8 +36,10 @@ impl DescribeEnvironmentMembershipsInput {
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     /// <p>If no value is specified, information about all environment members are returned.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permissions]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::Permissions] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -165,7 +167,7 @@ impl DescribeEnvironmentMembershipsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsInput {
             user_arn: self.user_arn,

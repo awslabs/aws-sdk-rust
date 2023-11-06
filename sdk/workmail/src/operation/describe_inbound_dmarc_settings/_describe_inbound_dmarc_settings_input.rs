@@ -27,6 +27,7 @@ pub struct DescribeInboundDmarcSettingsInputBuilder {
 }
 impl DescribeInboundDmarcSettingsInputBuilder {
     /// <p>Lists the ID of the given organization.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeInboundDmarcSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput {
             organization_id: self.organization_id,

@@ -43,8 +43,10 @@ impl DescribeSeverityLevelsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSeverityLevelsInput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_severity_levels::DescribeSeverityLevelsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_severity_levels::DescribeSeverityLevelsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_severity_levels::DescribeSeverityLevelsInput { language: self.language })
     }
 }

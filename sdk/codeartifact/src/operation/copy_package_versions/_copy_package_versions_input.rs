@@ -74,8 +74,10 @@ impl CopyPackageVersionsInput {
     /// <p> The versions of the package to be copied. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    pub fn versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[::std::string::String] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
@@ -117,6 +119,7 @@ pub struct CopyPackageVersionsInputBuilder {
 }
 impl CopyPackageVersionsInputBuilder {
     /// <p> The name of the domain that contains the source and destination repositories. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +148,7 @@ impl CopyPackageVersionsInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository that contains the package versions to be copied. </p>
+    /// This field is required.
     pub fn source_repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_repository = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +163,7 @@ impl CopyPackageVersionsInputBuilder {
         &self.source_repository
     }
     /// <p> The name of the repository into which package versions are copied. </p>
+    /// This field is required.
     pub fn destination_repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_repository = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +178,7 @@ impl CopyPackageVersionsInputBuilder {
         &self.destination_repository
     }
     /// <p> The format of the package versions to be copied. </p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -219,6 +225,7 @@ impl CopyPackageVersionsInputBuilder {
         &self.namespace
     }
     /// <p> The name of the package that contains the versions to be copied. </p>
+    /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
@@ -322,7 +329,7 @@ impl CopyPackageVersionsInputBuilder {
     /// Consumes the builder and constructs a [`CopyPackageVersionsInput`](crate::operation::copy_package_versions::CopyPackageVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_package_versions::CopyPackageVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::copy_package_versions::CopyPackageVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::copy_package_versions::CopyPackageVersionsInput {
             domain: self.domain,

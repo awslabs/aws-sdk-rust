@@ -11,8 +11,10 @@ pub struct AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
-    pub fn items(&self) -> ::std::option::Option<&[i32]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[i32] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The number of status codes that can cause a failover.</p>
     pub fn quantity(&self) -> ::std::option::Option<i32> {

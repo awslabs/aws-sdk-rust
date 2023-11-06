@@ -42,6 +42,7 @@ pub struct ListPackagesForDomainInputBuilder {
 }
 impl ListPackagesForDomainInputBuilder {
     /// <p>The name of the domain for which you want to list associated packages.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListPackagesForDomainInputBuilder {
     /// Consumes the builder and constructs a [`ListPackagesForDomainInput`](crate::operation::list_packages_for_domain::ListPackagesForDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_packages_for_domain::ListPackagesForDomainInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_packages_for_domain::ListPackagesForDomainInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_packages_for_domain::ListPackagesForDomainInput {
             domain_name: self.domain_name,

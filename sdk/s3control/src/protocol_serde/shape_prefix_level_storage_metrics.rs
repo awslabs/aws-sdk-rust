@@ -2,7 +2,7 @@
 pub fn ser_prefix_level_storage_metrics(
     input: &crate::types::PrefixLevelStorageMetrics,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.is_enabled {
@@ -17,6 +17,7 @@ pub fn ser_prefix_level_storage_metrics(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_prefix_level_storage_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PrefixLevelStorageMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -46,6 +46,7 @@ pub struct DeregisterFromWorkMailInputBuilder {
 }
 impl DeregisterFromWorkMailInputBuilder {
     /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl DeregisterFromWorkMailInputBuilder {
     /// <li> <p>Email address: entity@domain.tld</p> </li>
     /// <li> <p>Entity name: entity</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +98,7 @@ impl DeregisterFromWorkMailInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput {
             organization_id: self.organization_id,

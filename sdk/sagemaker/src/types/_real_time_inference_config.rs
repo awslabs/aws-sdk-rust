@@ -35,6 +35,7 @@ pub struct RealTimeInferenceConfigBuilder {
 }
 impl RealTimeInferenceConfigBuilder {
     /// <p>The instance type the model is deployed to.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl RealTimeInferenceConfigBuilder {
         &self.instance_type
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct ListInputRoutingsOutput {
 }
 impl ListInputRoutingsOutput {
     /// <p> Summary information about the routed resources. </p>
-    pub fn routed_resources(&self) -> ::std::option::Option<&[crate::types::RoutedResource]> {
-        self.routed_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routed_resources.is_none()`.
+    pub fn routed_resources(&self) -> &[crate::types::RoutedResource] {
+        self.routed_resources.as_deref().unwrap_or_default()
     }
     /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

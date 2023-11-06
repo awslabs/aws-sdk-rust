@@ -27,6 +27,7 @@ pub struct ConfirmConnectionInputBuilder {
 }
 impl ConfirmConnectionInputBuilder {
     /// <p>The ID of the hosted connection.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl ConfirmConnectionInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmConnectionInput`](crate::operation::confirm_connection::ConfirmConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::confirm_connection::ConfirmConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::confirm_connection::ConfirmConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::confirm_connection::ConfirmConnectionInput {
             connection_id: self.connection_id,
         })

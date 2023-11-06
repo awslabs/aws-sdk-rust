@@ -34,6 +34,7 @@ pub struct CreatePrivateVirtualInterfaceInputBuilder {
 }
 impl CreatePrivateVirtualInterfaceInputBuilder {
     /// <p>The ID of the connection.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreatePrivateVirtualInterfaceInputBuilder {
         &self.connection_id
     }
     /// <p>Information about the private virtual interface.</p>
+    /// This field is required.
     pub fn new_private_virtual_interface(mut self, input: crate::types::NewPrivateVirtualInterface) -> Self {
         self.new_private_virtual_interface = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl CreatePrivateVirtualInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceInput {
             connection_id: self.connection_id,

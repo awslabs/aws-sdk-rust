@@ -55,6 +55,7 @@ pub struct ListAliasesInputBuilder {
 }
 impl ListAliasesInputBuilder {
     /// <p>The name of the image.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +126,7 @@ impl ListAliasesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_aliases::ListAliasesInput {
             image_name: self.image_name,
             alias: self.alias,

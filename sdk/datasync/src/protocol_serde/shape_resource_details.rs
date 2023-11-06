@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NetAppONTAPSVMs" => {
-                            builder = builder.set_net_app_ontapsv_ms(crate::protocol_serde::shape_net_app_ontapsv_ms::de_net_app_ontapsv_ms(tokens)?);
+                            builder = builder.set_net_app_ontapsvms(crate::protocol_serde::shape_net_app_ontapsvms::de_net_app_ontapsvms(tokens)?);
                         }
                         "NetAppONTAPVolumes" => {
                             builder = builder

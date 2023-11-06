@@ -13,8 +13,10 @@ pub struct SearchSecurityProfilesOutput {
 }
 impl SearchSecurityProfilesOutput {
     /// <p>Information about the security profiles.</p>
-    pub fn security_profiles(&self) -> ::std::option::Option<&[crate::types::SecurityProfileSearchSummary]> {
-        self.security_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_profiles.is_none()`.
+    pub fn security_profiles(&self) -> &[crate::types::SecurityProfileSearchSummary] {
+        self.security_profiles.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

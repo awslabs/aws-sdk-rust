@@ -46,6 +46,7 @@ pub struct ListOpenIdConnectProviderTagsInputBuilder {
 impl ListOpenIdConnectProviderTagsInputBuilder {
     /// <p>The ARN of the OpenID Connect (OIDC) identity provider whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_connect_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +98,7 @@ impl ListOpenIdConnectProviderTagsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsInput {
             open_id_connect_provider_arn: self.open_id_connect_provider_arn,

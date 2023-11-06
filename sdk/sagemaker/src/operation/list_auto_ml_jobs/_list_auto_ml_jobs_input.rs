@@ -232,7 +232,7 @@ impl ListAutoMlJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListAutoMlJobsInput`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

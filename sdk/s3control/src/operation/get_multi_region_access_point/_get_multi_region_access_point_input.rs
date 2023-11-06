@@ -34,6 +34,7 @@ pub struct GetMultiRegionAccessPointInputBuilder {
 }
 impl GetMultiRegionAccessPointInputBuilder {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetMultiRegionAccessPointInputBuilder {
         &self.account_id
     }
     /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetMultiRegionAccessPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointInput {
             account_id: self.account_id,

@@ -2,12 +2,12 @@
 pub fn ser_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Filter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attribute_path {
-        object.key("AttributePath").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("AttributePath").string(input.attribute_path.as_str());
     }
-    if let Some(var_2) = &input.attribute_value {
-        object.key("AttributeValue").string(var_2.as_str());
+    {
+        object.key("AttributeValue").string(input.attribute_value.as_str());
     }
     Ok(())
 }

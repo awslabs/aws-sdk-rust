@@ -11,8 +11,10 @@ pub struct AdminListUserAuthEventsOutput {
 }
 impl AdminListUserAuthEventsOutput {
     /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
-    pub fn auth_events(&self) -> ::std::option::Option<&[crate::types::AuthEventType]> {
-        self.auth_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth_events.is_none()`.
+    pub fn auth_events(&self) -> &[crate::types::AuthEventType] {
+        self.auth_events.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

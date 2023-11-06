@@ -34,6 +34,7 @@ pub struct DeleteRemediationConfigurationInputBuilder {
 }
 impl DeleteRemediationConfigurationInputBuilder {
     /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
+    /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteRemediationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput {
             config_rule_name: self.config_rule_name,

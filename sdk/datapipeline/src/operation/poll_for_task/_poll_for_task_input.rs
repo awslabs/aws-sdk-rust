@@ -42,6 +42,7 @@ pub struct PollForTaskInputBuilder {
 }
 impl PollForTaskInputBuilder {
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    /// This field is required.
     pub fn worker_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_group = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,7 @@ impl PollForTaskInputBuilder {
         &self.instance_identity
     }
     /// Consumes the builder and constructs a [`PollForTaskInput`](crate::operation::poll_for_task::PollForTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_task::PollForTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_task::PollForTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::poll_for_task::PollForTaskInput {
             worker_group: self.worker_group,
             hostname: self.hostname,

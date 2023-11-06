@@ -27,6 +27,7 @@ pub struct DeleteMetricStreamInputBuilder {
 }
 impl DeleteMetricStreamInputBuilder {
     /// <p>The name of the metric stream to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteMetricStreamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMetricStreamInput`](crate::operation::delete_metric_stream::DeleteMetricStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_metric_stream::DeleteMetricStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_metric_stream::DeleteMetricStreamInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_metric_stream::DeleteMetricStreamInput { name: self.name })
     }
 }

@@ -48,6 +48,7 @@ pub struct GetInsightImpactGraphInputBuilder {
 }
 impl GetInsightImpactGraphInputBuilder {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetInsightImpactGraphInputBuilder {
         &self.insight_id
     }
     /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl GetInsightImpactGraphInputBuilder {
         &self.start_time
     }
     /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl GetInsightImpactGraphInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightImpactGraphInput`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput {
             insight_id: self.insight_id,

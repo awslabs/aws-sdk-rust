@@ -12,12 +12,16 @@ pub struct ImportDocumentationPartsOutput {
 }
 impl ImportDocumentationPartsOutput {
     /// <p>A list of the returned documentation part identifiers.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of warning messages reported during import of documentation parts.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[::std::string::String] {
+        self.warnings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ImportDocumentationPartsOutput {

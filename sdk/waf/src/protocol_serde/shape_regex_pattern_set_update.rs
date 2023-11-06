@@ -2,12 +2,12 @@
 pub fn ser_regex_pattern_set_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegexPatternSetUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action {
-        object.key("Action").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Action").string(input.action.as_str());
     }
-    if let Some(var_2) = &input.regex_pattern_string {
-        object.key("RegexPatternString").string(var_2.as_str());
+    {
+        object.key("RegexPatternString").string(input.regex_pattern_string.as_str());
     }
     Ok(())
 }

@@ -14,12 +14,16 @@ pub struct DescribeStorageVirtualMachinesInput {
 }
 impl DescribeStorageVirtualMachinesInput {
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
-    pub fn storage_virtual_machine_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.storage_virtual_machine_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_virtual_machine_ids.is_none()`.
+    pub fn storage_virtual_machine_ids(&self) -> &[::std::string::String] {
+        self.storage_virtual_machine_ids.as_deref().unwrap_or_default()
     }
     /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::StorageVirtualMachineFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::StorageVirtualMachineFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -120,7 +124,7 @@ impl DescribeStorageVirtualMachinesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput {
             storage_virtual_machine_ids: self.storage_virtual_machine_ids,

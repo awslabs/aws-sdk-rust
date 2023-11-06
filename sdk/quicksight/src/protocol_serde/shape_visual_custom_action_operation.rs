@@ -2,7 +2,7 @@
 pub fn ser_visual_custom_action_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VisualCustomActionOperation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter_operation {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FilterOperation").start_object();

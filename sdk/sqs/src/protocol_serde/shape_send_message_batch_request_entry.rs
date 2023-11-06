@@ -3,60 +3,60 @@
 pub fn ser_send_message_batch_request_entry(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::SendMessageBatchRequestEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");
-    if let Some(var_2) = &input.id {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.id);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("MessageBody");
-    if let Some(var_4) = &input.message_body {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("MessageBody");
+    {
+        scope_2.string(&input.message_body);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DelaySeconds");
+    let mut scope_3 = writer.prefix("DelaySeconds");
     if input.delay_seconds != 0 {
-        scope_5.number(
+        scope_3.number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.delay_seconds).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("MessageAttribute");
-    if let Some(var_7) = &input.message_attributes {
-        let mut map_8 = scope_6.start_map(true, "Name", "Value");
-        for (key_9, value_10) in var_7 {
+    let mut scope_4 = writer.prefix("MessageAttribute");
+    if let Some(var_5) = &input.message_attributes {
+        let mut map_6 = scope_4.start_map(true, "Name", "Value");
+        for (key_7, value_8) in var_5 {
             #[allow(unused_mut)]
-            let mut entry_11 = map_8.entry(key_9);
+            let mut entry_9 = map_6.entry(key_7);
             {
-                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(entry_11, value_10)?;
+                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(entry_9, value_8)?;
             }
         }
-        map_8.finish();
+        map_6.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("MessageSystemAttribute");
-    if let Some(var_13) = &input.message_system_attributes {
-        let mut map_14 = scope_12.start_map(true, "Name", "Value");
-        for (key_15, value_16) in var_13 {
+    let mut scope_10 = writer.prefix("MessageSystemAttribute");
+    if let Some(var_11) = &input.message_system_attributes {
+        let mut map_12 = scope_10.start_map(true, "Name", "Value");
+        for (key_13, value_14) in var_11 {
             #[allow(unused_mut)]
-            let mut entry_17 = map_14.entry(key_15.as_str());
+            let mut entry_15 = map_12.entry(key_13.as_str());
             {
-                crate::protocol_serde::shape_message_system_attribute_value::ser_message_system_attribute_value(entry_17, value_16)?;
+                crate::protocol_serde::shape_message_system_attribute_value::ser_message_system_attribute_value(entry_15, value_14)?;
             }
         }
-        map_14.finish();
+        map_12.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("MessageDeduplicationId");
-    if let Some(var_19) = &input.message_deduplication_id {
+    let mut scope_16 = writer.prefix("MessageDeduplicationId");
+    if let Some(var_17) = &input.message_deduplication_id {
+        scope_16.string(var_17);
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("MessageGroupId");
+    if let Some(var_19) = &input.message_group_id {
         scope_18.string(var_19);
-    }
-    #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("MessageGroupId");
-    if let Some(var_21) = &input.message_group_id {
-        scope_20.string(var_21);
     }
     Ok(())
 }

@@ -11,8 +11,10 @@ pub struct ListInstanceProfilesOutput {
 }
 impl ListInstanceProfilesOutput {
     /// <p>An object that contains information about your instance profiles.</p>
-    pub fn instance_profiles(&self) -> ::std::option::Option<&[crate::types::InstanceProfile]> {
-        self.instance_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_profiles.is_none()`.
+    pub fn instance_profiles(&self) -> &[crate::types::InstanceProfile] {
+        self.instance_profiles.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

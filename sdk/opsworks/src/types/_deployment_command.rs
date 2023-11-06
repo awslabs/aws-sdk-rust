@@ -23,7 +23,7 @@ pub struct DeploymentCommand {
     /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
     /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<crate::types::DeploymentCommandName>,
+    pub name: crate::types::DeploymentCommandName,
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
     /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
@@ -55,8 +55,8 @@ impl DeploymentCommand {
     /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
     /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::DeploymentCommandName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::DeploymentCommandName {
+        &self.name
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
     /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
@@ -105,6 +105,7 @@ impl DeploymentCommandBuilder {
     /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
     /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::DeploymentCommandName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -202,10 +203,17 @@ impl DeploymentCommandBuilder {
         &self.args
     }
     /// Consumes the builder and constructs a [`DeploymentCommand`](crate::types::DeploymentCommand).
-    pub fn build(self) -> crate::types::DeploymentCommand {
-        crate::types::DeploymentCommand {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DeploymentCommandBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentCommand, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeploymentCommand {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeploymentCommand",
+                )
+            })?,
             args: self.args,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteClusterInputBuilder {
 }
 impl DeleteClusterInputBuilder {
     /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput { cluster_id: self.cluster_id })
     }
 }

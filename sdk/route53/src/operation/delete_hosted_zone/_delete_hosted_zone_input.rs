@@ -28,6 +28,7 @@ pub struct DeleteHostedZoneInputBuilder {
 }
 impl DeleteHostedZoneInputBuilder {
     /// <p>The ID of the hosted zone you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteHostedZoneInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHostedZoneInput`](crate::operation::delete_hosted_zone::DeleteHostedZoneInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_hosted_zone::DeleteHostedZoneInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_hosted_zone::DeleteHostedZoneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hosted_zone::DeleteHostedZoneInput { id: self.id })
     }
 }

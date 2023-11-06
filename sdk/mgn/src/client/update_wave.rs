@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWave`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_name): <p>Wave name.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_description): <p>Wave description.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_account_id): <p>Account ID.</p>
+    ///   - [`wave_id(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_wave_id):<br>required: **true**<br><p>Wave ID.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_name):<br>required: **false**<br><p>Wave name.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_description):<br>required: **false**<br><p>Wave description.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID.</p><br>
     /// - On success, responds with [`UpdateWaveOutput`](crate::operation::update_wave::UpdateWaveOutput) with field(s):
     ///   - [`wave_id(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::wave_id): <p>Wave ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::arn): <p>Wave ARN.</p>
@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::operation::update_wave::UpdateWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
     ///   - [`creation_date_time(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
     ///   - [`last_modified_date_time(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_wave::UpdateWaveOutput::tags): <p>Wave tags.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_wave::UpdateWaveOutput::tags): <p>Wave tags.</p>
     /// - On failure, responds with [`SdkError<UpdateWaveError>`](crate::operation::update_wave::UpdateWaveError)
     pub fn update_wave(&self) -> crate::operation::update_wave::builders::UpdateWaveFluentBuilder {
         crate::operation::update_wave::builders::UpdateWaveFluentBuilder::new(self.handle.clone())

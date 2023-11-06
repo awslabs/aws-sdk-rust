@@ -52,6 +52,7 @@ pub struct TestEventPatternInputBuilder {
 }
 impl TestEventPatternInputBuilder {
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// This field is required.
     pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_pattern = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl TestEventPatternInputBuilder {
     /// <li> <p> <code>resources</code> </p> </li>
     /// <li> <p> <code>detail-type</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +111,7 @@ impl TestEventPatternInputBuilder {
     /// Consumes the builder and constructs a [`TestEventPatternInput`](crate::operation::test_event_pattern::TestEventPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_event_pattern::TestEventPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_event_pattern::TestEventPatternInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_event_pattern::TestEventPatternInput {
             event_pattern: self.event_pattern,
             event: self.event,

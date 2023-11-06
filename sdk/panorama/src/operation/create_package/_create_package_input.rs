@@ -34,6 +34,7 @@ pub struct CreatePackageInputBuilder {
 }
 impl CreatePackageInputBuilder {
     /// <p>A name for the package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -70,7 +71,7 @@ impl CreatePackageInputBuilder {
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_package::CreatePackageInput {
             package_name: self.package_name,
             tags: self.tags,

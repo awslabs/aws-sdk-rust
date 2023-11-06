@@ -15,8 +15,10 @@ pub struct IceServer {
 }
 impl IceServer {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    pub fn uris(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.uris.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.uris.is_none()`.
+    pub fn uris(&self) -> &[::std::string::String] {
+        self.uris.as_deref().unwrap_or_default()
     }
     /// <p>A username to login to the ICE server.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {

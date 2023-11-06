@@ -41,6 +41,7 @@ pub struct UpdateIpRestrictionInputBuilder {
 }
 impl UpdateIpRestrictionInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -98,7 +99,7 @@ impl UpdateIpRestrictionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateIpRestrictionInput`](crate::operation::update_ip_restriction::UpdateIpRestrictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ip_restriction::UpdateIpRestrictionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_ip_restriction::UpdateIpRestrictionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_ip_restriction::UpdateIpRestrictionInput {
             aws_account_id: self.aws_account_id,

@@ -34,6 +34,7 @@ pub struct DeleteDynamicThingGroupInputBuilder {
 }
 impl DeleteDynamicThingGroupInputBuilder {
     /// <p>The name of the dynamic thing group to delete.</p>
+    /// This field is required.
     pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl DeleteDynamicThingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput {
             thing_group_name: self.thing_group_name,

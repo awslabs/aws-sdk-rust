@@ -43,8 +43,10 @@ impl PlacementGroup {
         self.group_id.as_deref()
     }
     /// <p>Any tags applied to the placement group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the placement group.</p>
     pub fn group_arn(&self) -> ::std::option::Option<&str> {

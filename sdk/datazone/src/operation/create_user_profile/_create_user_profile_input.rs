@@ -48,6 +48,7 @@ pub struct CreateUserProfileInputBuilder {
 }
 impl CreateUserProfileInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateUserProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the user for which the user profile is created.</p>
+    /// This field is required.
     pub fn user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_identifier = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl CreateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user_profile::CreateUserProfileInput {
             domain_identifier: self.domain_identifier,
             user_identifier: self.user_identifier,

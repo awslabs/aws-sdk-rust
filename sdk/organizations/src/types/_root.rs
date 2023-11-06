@@ -37,8 +37,10 @@ impl Root {
     /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
-    pub fn policy_types(&self) -> ::std::option::Option<&[crate::types::PolicyTypeSummary]> {
-        self.policy_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_types.is_none()`.
+    pub fn policy_types(&self) -> &[crate::types::PolicyTypeSummary] {
+        self.policy_types.as_deref().unwrap_or_default()
     }
 }
 impl Root {

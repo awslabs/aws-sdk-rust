@@ -17,8 +17,10 @@ impl AssociateLensesInput {
     }
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lens_aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lens_aliases.is_none()`.
+    pub fn lens_aliases(&self) -> &[::std::string::String] {
+        self.lens_aliases.as_deref().unwrap_or_default()
     }
 }
 impl AssociateLensesInput {
@@ -37,6 +39,7 @@ pub struct AssociateLensesInputBuilder {
 }
 impl AssociateLensesInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +79,7 @@ impl AssociateLensesInputBuilder {
     /// Consumes the builder and constructs a [`AssociateLensesInput`](crate::operation::associate_lenses::AssociateLensesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_lenses::AssociateLensesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_lenses::AssociateLensesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_lenses::AssociateLensesInput {
             workload_id: self.workload_id,
             lens_aliases: self.lens_aliases,

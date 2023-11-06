@@ -48,6 +48,7 @@ pub struct ListSharesInputBuilder {
 }
 impl ListSharesInputBuilder {
     /// <p> The account that owns the analytics store shared. </p>
+    /// This field is required.
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.resource_owner = ::std::option::Option::Some(input);
         self
@@ -104,7 +105,7 @@ impl ListSharesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSharesInput`](crate::operation::list_shares::ListSharesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_shares::ListSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_shares::ListSharesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_shares::ListSharesInput {
             resource_owner: self.resource_owner,
             filter: self.filter,

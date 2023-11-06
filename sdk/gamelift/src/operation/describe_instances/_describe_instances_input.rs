@@ -55,6 +55,7 @@ pub struct DescribeInstancesInputBuilder {
 }
 impl DescribeInstancesInputBuilder {
     /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +128,7 @@ impl DescribeInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_instances::DescribeInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_instances::DescribeInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_instances::DescribeInstancesInput {
             fleet_id: self.fleet_id,
             instance_id: self.instance_id,

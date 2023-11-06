@@ -116,12 +116,12 @@ pub fn de_update_resource_set_http_response(
 
 pub fn ser_update_resource_set_input(
     input: &crate::operation::update_resource_set::UpdateResourceSetInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_resource_set_input::ser_update_resource_set_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_resource_set(
@@ -158,7 +158,7 @@ pub(crate) fn de_update_resource_set(
                     );
                 }
                 "resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape___list_of_resource::de___list_of_resource(tokens)?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_list_of_resource::de_list_of_resource(tokens)?);
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);

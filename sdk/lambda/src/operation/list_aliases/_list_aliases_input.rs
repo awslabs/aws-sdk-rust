@@ -69,6 +69,7 @@ impl ListAliasesInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +140,7 @@ impl ListAliasesInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_aliases::ListAliasesInput {
             function_name: self.function_name,
             function_version: self.function_version,

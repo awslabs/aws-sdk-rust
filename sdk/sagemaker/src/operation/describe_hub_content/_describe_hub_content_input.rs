@@ -48,6 +48,7 @@ pub struct DescribeHubContentInputBuilder {
 }
 impl DescribeHubContentInputBuilder {
     /// <p>The name of the hub that contains the content to describe.</p>
+    /// This field is required.
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeHubContentInputBuilder {
         &self.hub_name
     }
     /// <p>The type of content in the hub.</p>
+    /// This field is required.
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
         self.hub_content_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl DescribeHubContentInputBuilder {
         &self.hub_content_type
     }
     /// <p>The name of the content to describe.</p>
+    /// This field is required.
     pub fn hub_content_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,8 @@ impl DescribeHubContentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHubContentInput`](crate::operation::describe_hub_content::DescribeHubContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_hub_content::DescribeHubContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_hub_content::DescribeHubContentInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_hub_content::DescribeHubContentInput {
             hub_name: self.hub_name,
             hub_content_type: self.hub_content_type,

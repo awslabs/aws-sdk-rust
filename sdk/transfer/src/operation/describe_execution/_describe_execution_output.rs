@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExecutionOutput {
     /// <p>A unique identifier for the workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>The structure that contains the details of the workflow' execution.</p>
     pub execution: ::std::option::Option<crate::types::DescribedExecution>,
     _request_id: Option<String>,
 }
 impl DescribeExecutionOutput {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>The structure that contains the details of the workflow' execution.</p>
     pub fn execution(&self) -> ::std::option::Option<&crate::types::DescribedExecution> {
@@ -41,6 +42,7 @@ pub struct DescribeExecutionOutputBuilder {
 }
 impl DescribeExecutionOutputBuilder {
     /// <p>A unique identifier for the workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl DescribeExecutionOutputBuilder {
         &self.workflow_id
     }
     /// <p>The structure that contains the details of the workflow' execution.</p>
+    /// This field is required.
     pub fn execution(mut self, input: crate::types::DescribedExecution) -> Self {
         self.execution = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,20 @@ impl DescribeExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
-    pub fn build(self) -> crate::operation::describe_execution::DescribeExecutionOutput {
-        crate::operation::describe_execution::DescribeExecutionOutput {
-            workflow_id: self.workflow_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::workflow_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionOutput {
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building DescribeExecutionOutput",
+                )
+            })?,
             execution: self.execution,
             _request_id: self._request_id,
-        }
+        })
     }
 }

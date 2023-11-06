@@ -54,11 +54,10 @@ pub fn de_describe_recovery_snapshots_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError::ThrottlingException({
@@ -76,11 +75,10 @@ pub fn de_describe_recovery_snapshots_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => {
@@ -143,12 +141,12 @@ pub fn de_describe_recovery_snapshots_http_response(
 
 pub fn ser_describe_recovery_snapshots_input(
     input: &crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_recovery_snapshots_input::ser_describe_recovery_snapshots_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_recovery_snapshots(

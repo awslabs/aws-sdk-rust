@@ -48,6 +48,7 @@ pub struct AssociateAssetsInputBuilder {
 }
 impl AssociateAssetsInputBuilder {
     /// <p>The ID of the parent asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateAssetsInputBuilder {
         &self.asset_id
     }
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// This field is required.
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl AssociateAssetsInputBuilder {
         &self.hierarchy_id
     }
     /// <p>The ID of the child asset to be associated.</p>
+    /// This field is required.
     pub fn child_asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_asset_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,7 @@ impl AssociateAssetsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateAssetsInput`](crate::operation::associate_assets::AssociateAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_assets::AssociateAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_assets::AssociateAssetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_assets::AssociateAssetsInput {
             asset_id: self.asset_id,
             hierarchy_id: self.hierarchy_id,

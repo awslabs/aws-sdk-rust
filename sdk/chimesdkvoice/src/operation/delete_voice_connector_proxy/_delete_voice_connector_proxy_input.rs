@@ -27,6 +27,7 @@ pub struct DeleteVoiceConnectorProxyInputBuilder {
 }
 impl DeleteVoiceConnectorProxyInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteVoiceConnectorProxyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyInput {
             voice_connector_id: self.voice_connector_id,

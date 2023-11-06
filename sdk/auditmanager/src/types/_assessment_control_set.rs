@@ -35,16 +35,22 @@ impl AssessmentControlSet {
         self.status.as_ref()
     }
     /// <p> The roles that are associated with the control set. </p>
-    pub fn roles(&self) -> ::std::option::Option<&[crate::types::Role]> {
-        self.roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
+    pub fn roles(&self) -> &[crate::types::Role] {
+        self.roles.as_deref().unwrap_or_default()
     }
     /// <p> The list of controls that's contained with the control set. </p>
-    pub fn controls(&self) -> ::std::option::Option<&[crate::types::AssessmentControl]> {
-        self.controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.controls.is_none()`.
+    pub fn controls(&self) -> &[crate::types::AssessmentControl] {
+        self.controls.as_deref().unwrap_or_default()
     }
     /// <p> The delegations that are associated with the control set. </p>
-    pub fn delegations(&self) -> ::std::option::Option<&[crate::types::Delegation]> {
-        self.delegations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delegations.is_none()`.
+    pub fn delegations(&self) -> &[crate::types::Delegation] {
+        self.delegations.as_deref().unwrap_or_default()
     }
     /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
     pub fn system_evidence_count(&self) -> i32 {

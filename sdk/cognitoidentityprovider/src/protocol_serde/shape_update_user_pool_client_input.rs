@@ -2,7 +2,7 @@
 pub fn ser_update_user_pool_client_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_user_pool_client::UpdateUserPoolClientInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.user_pool_id {
         object.key("UserPoolId").string(var_1.as_str());
     }
@@ -72,7 +72,7 @@ pub fn ser_update_user_pool_client_input(
         }
         array_19.finish();
     }
-    if let Some(var_21) = &input.callback_ur_ls {
+    if let Some(var_21) = &input.callback_urls {
         let mut array_22 = object.key("CallbackURLs").start_array();
         for item_23 in var_21 {
             {
@@ -81,7 +81,7 @@ pub fn ser_update_user_pool_client_input(
         }
         array_22.finish();
     }
-    if let Some(var_24) = &input.logout_ur_ls {
+    if let Some(var_24) = &input.logout_urls {
         let mut array_25 = object.key("LogoutURLs").start_array();
         for item_26 in var_24 {
             {

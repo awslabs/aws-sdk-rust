@@ -43,6 +43,7 @@ impl PromoteReadReplicaDbClusterInputBuilder {
     /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-replica1</code> </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +72,7 @@ impl PromoteReadReplicaDbClusterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,

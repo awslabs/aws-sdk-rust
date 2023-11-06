@@ -15,8 +15,10 @@ impl SalesforceStandardObjectAttachmentConfiguration {
         self.document_title_field_name.as_deref()
     }
     /// <p>One or more objects that map fields in attachments to Amazon Kendra index fields.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
 }
 impl SalesforceStandardObjectAttachmentConfiguration {

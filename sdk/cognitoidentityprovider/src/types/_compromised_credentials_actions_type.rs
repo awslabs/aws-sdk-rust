@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompromisedCredentialsActionsType {
     /// <p>The event action.</p>
-    pub event_action: ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
+    pub event_action: crate::types::CompromisedCredentialsEventActionType,
 }
 impl CompromisedCredentialsActionsType {
     /// <p>The event action.</p>
-    pub fn event_action(&self) -> ::std::option::Option<&crate::types::CompromisedCredentialsEventActionType> {
-        self.event_action.as_ref()
+    pub fn event_action(&self) -> &crate::types::CompromisedCredentialsEventActionType {
+        &self.event_action
     }
 }
 impl CompromisedCredentialsActionsType {
@@ -28,6 +28,7 @@ pub struct CompromisedCredentialsActionsTypeBuilder {
 }
 impl CompromisedCredentialsActionsTypeBuilder {
     /// <p>The event action.</p>
+    /// This field is required.
     pub fn event_action(mut self, input: crate::types::CompromisedCredentialsEventActionType) -> Self {
         self.event_action = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl CompromisedCredentialsActionsTypeBuilder {
         &self.event_action
     }
     /// Consumes the builder and constructs a [`CompromisedCredentialsActionsType`](crate::types::CompromisedCredentialsActionsType).
-    pub fn build(self) -> crate::types::CompromisedCredentialsActionsType {
-        crate::types::CompromisedCredentialsActionsType {
-            event_action: self.event_action,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_action`](crate::types::builders::CompromisedCredentialsActionsTypeBuilder::event_action)
+    pub fn build(self) -> ::std::result::Result<crate::types::CompromisedCredentialsActionsType, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CompromisedCredentialsActionsType {
+            event_action: self.event_action.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "event_action",
+                    "event_action was not specified but it is required when building CompromisedCredentialsActionsType",
+                )
+            })?,
+        })
     }
 }

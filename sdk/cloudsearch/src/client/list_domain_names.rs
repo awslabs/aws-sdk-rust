@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::send) it.
     /// - On success, responds with [`ListDomainNamesOutput`](crate::operation::list_domain_names::ListDomainNamesOutput) with field(s):
-    ///   - [`domain_names(Option<HashMap<String, String>>)`](crate::operation::list_domain_names::ListDomainNamesOutput::domain_names): <p>The names of the search domains owned by an account.</p>
+    ///   - [`domain_names(Option<HashMap::<String, String>>)`](crate::operation::list_domain_names::ListDomainNamesOutput::domain_names): <p>The names of the search domains owned by an account.</p>
     /// - On failure, responds with [`SdkError<ListDomainNamesError>`](crate::operation::list_domain_names::ListDomainNamesError)
     pub fn list_domain_names(&self) -> crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder {
         crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::new(self.handle.clone())

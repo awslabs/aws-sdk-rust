@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkGroup`](crate::operation::get_work_group::builders::GetWorkGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`work_group(impl Into<String>)`](crate::operation::get_work_group::builders::GetWorkGroupFluentBuilder::work_group) / [`set_work_group(Option<String>)`](crate::operation::get_work_group::builders::GetWorkGroupFluentBuilder::set_work_group): <p>The name of the workgroup.</p>
+    ///   - [`work_group(impl Into<String>)`](crate::operation::get_work_group::builders::GetWorkGroupFluentBuilder::work_group) / [`set_work_group(Option<String>)`](crate::operation::get_work_group::builders::GetWorkGroupFluentBuilder::set_work_group):<br>required: **true**<br><p>The name of the workgroup.</p><br>
     /// - On success, responds with [`GetWorkGroupOutput`](crate::operation::get_work_group::GetWorkGroupOutput) with field(s):
     ///   - [`work_group(Option<WorkGroup>)`](crate::operation::get_work_group::GetWorkGroupOutput::work_group): <p>Information about the workgroup.</p>
     /// - On failure, responds with [`SdkError<GetWorkGroupError>`](crate::operation::get_work_group::GetWorkGroupError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEndpointAccess`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::set_endpoint_name): <p>The Redshift-managed VPC endpoint to delete.</p>
+    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::set_endpoint_name):<br>required: **true**<br><p>The Redshift-managed VPC endpoint to delete.</p><br>
     /// - On success, responds with [`DeleteEndpointAccessOutput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput) with field(s):
     ///   - [`cluster_identifier(Option<String>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::cluster_identifier): <p>The cluster identifier of the cluster associated with the endpoint.</p>
     ///   - [`resource_owner(Option<String>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::resource_owner): <p>The Amazon Web Services account ID of the owner of the cluster.</p>
@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`endpoint_create_time(Option<DateTime>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::endpoint_create_time): <p>The time (UTC) that the endpoint was created.</p>
     ///   - [`port(Option<i32>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::port): <p>The port number on which the cluster accepts incoming connections.</p>
     ///   - [`address(Option<String>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::address): <p>The DNS address of the endpoint.</p>
-    ///   - [`vpc_security_groups(Option<Vec<VpcSecurityGroupMembership>>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
+    ///   - [`vpc_security_groups(Option<Vec::<VpcSecurityGroupMembership>>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
     ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::vpc_endpoint): <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     /// - On failure, responds with [`SdkError<DeleteEndpointAccessError>`](crate::operation::delete_endpoint_access::DeleteEndpointAccessError)
     pub fn delete_endpoint_access(&self) -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder {

@@ -27,6 +27,7 @@ pub struct StopInferenceRecommendationsJobInputBuilder {
 }
 impl StopInferenceRecommendationsJobInputBuilder {
     /// <p>The name of the job you want to stop.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopInferenceRecommendationsJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput { job_name: self.job_name },

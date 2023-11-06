@@ -34,6 +34,7 @@ pub struct MigrateWorkspaceInputBuilder {
 }
 impl MigrateWorkspaceInputBuilder {
     /// <p>The identifier of the WorkSpace to migrate from.</p>
+    /// This field is required.
     pub fn source_workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl MigrateWorkspaceInputBuilder {
         &self.source_workspace_id
     }
     /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
+    /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl MigrateWorkspaceInputBuilder {
     /// Consumes the builder and constructs a [`MigrateWorkspaceInput`](crate::operation::migrate_workspace::MigrateWorkspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::migrate_workspace::MigrateWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::migrate_workspace::MigrateWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::migrate_workspace::MigrateWorkspaceInput {
             source_workspace_id: self.source_workspace_id,
             bundle_id: self.bundle_id,

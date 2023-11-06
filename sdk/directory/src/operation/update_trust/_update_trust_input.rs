@@ -34,6 +34,7 @@ pub struct UpdateTrustInputBuilder {
 }
 impl UpdateTrustInputBuilder {
     /// <p>Identifier of the trust relationship.</p>
+    /// This field is required.
     pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,7 @@ impl UpdateTrustInputBuilder {
         &self.selective_auth
     }
     /// Consumes the builder and constructs a [`UpdateTrustInput`](crate::operation::update_trust::UpdateTrustInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_trust::UpdateTrustInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_trust::UpdateTrustInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_trust::UpdateTrustInput {
             trust_id: self.trust_id,
             selective_auth: self.selective_auth,

@@ -35,8 +35,10 @@ impl EcsServiceRecommendationFilter {
     /// <li> <p>If you specify the <code>name</code> parameter as <code>Finding</code>, specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code>.</p> </li>
     /// <li> <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p> </li>
     /// </ul>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl EcsServiceRecommendationFilter {

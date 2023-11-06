@@ -41,6 +41,7 @@ pub struct InvokeDeviceMethodInputBuilder {
 }
 impl InvokeDeviceMethodInputBuilder {
     /// <p>The unique identifier of the device.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,8 @@ impl InvokeDeviceMethodInputBuilder {
     /// Consumes the builder and constructs a [`InvokeDeviceMethodInput`](crate::operation::invoke_device_method::InvokeDeviceMethodInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::invoke_device_method::InvokeDeviceMethodInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::invoke_device_method::InvokeDeviceMethodInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::invoke_device_method::InvokeDeviceMethodInput {
             device_id: self.device_id,
             device_method: self.device_method,

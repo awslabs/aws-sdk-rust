@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyOutput {
     /// <p>The object lifecycle policy that is assigned to the container.</p>
-    pub lifecycle_policy: ::std::option::Option<::std::string::String>,
+    pub lifecycle_policy: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetLifecyclePolicyOutput {
     /// <p>The object lifecycle policy that is assigned to the container.</p>
-    pub fn lifecycle_policy(&self) -> ::std::option::Option<&str> {
-        self.lifecycle_policy.as_deref()
+    pub fn lifecycle_policy(&self) -> &str {
+        use std::ops::Deref;
+        self.lifecycle_policy.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetLifecyclePolicyOutput {
@@ -34,6 +35,7 @@ pub struct GetLifecyclePolicyOutputBuilder {
 }
 impl GetLifecyclePolicyOutputBuilder {
     /// <p>The object lifecycle policy that is assigned to the container.</p>
+    /// This field is required.
     pub fn lifecycle_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl GetLifecyclePolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLifecyclePolicyOutput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput).
-    pub fn build(self) -> crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput {
-        crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput {
-            lifecycle_policy: self.lifecycle_policy,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lifecycle_policy`](crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyOutputBuilder::lifecycle_policy)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput {
+            lifecycle_policy: self.lifecycle_policy.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "lifecycle_policy",
+                    "lifecycle_policy was not specified but it is required when building GetLifecyclePolicyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

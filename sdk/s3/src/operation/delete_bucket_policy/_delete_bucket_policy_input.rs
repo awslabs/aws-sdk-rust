@@ -34,6 +34,7 @@ pub struct DeleteBucketPolicyInputBuilder {
 }
 impl DeleteBucketPolicyInputBuilder {
     /// <p>The bucket name.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,8 @@ impl DeleteBucketPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketPolicyInput`](crate::operation::delete_bucket_policy::DeleteBucketPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket_policy::DeleteBucketPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_bucket_policy::DeleteBucketPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_bucket_policy::DeleteBucketPolicyInput {
             bucket: self.bucket,
             expected_bucket_owner: self.expected_bucket_owner,

@@ -12,8 +12,10 @@ pub struct ListChangeSetsOutput {
 }
 impl ListChangeSetsOutput {
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::ChangeSetSummary]> {
-        self.summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
+    pub fn summaries(&self) -> &[crate::types::ChangeSetSummary] {
+        self.summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

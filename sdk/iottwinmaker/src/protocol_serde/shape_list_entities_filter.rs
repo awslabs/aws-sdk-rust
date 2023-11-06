@@ -2,7 +2,7 @@
 pub fn ser_list_entities_filter(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListEntitiesFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ListEntitiesFilter::ParentEntityId(inner) => {
             object_4.key("parentEntityId").string(inner.as_str());
@@ -14,7 +14,7 @@ pub fn ser_list_entities_filter(
             object_4.key("externalId").string(inner.as_str());
         }
         crate::types::ListEntitiesFilter::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ListEntitiesFilter",
             ))
         }

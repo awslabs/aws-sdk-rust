@@ -22,7 +22,6 @@ pub struct ManualTimeSource {
     log: Arc<Mutex<Vec<Duration>>>,
 }
 
-#[cfg(feature = "test-util")]
 impl ManualTimeSource {
     /// Get the number of seconds since the UNIX Epoch as an f64.
     ///
@@ -137,6 +136,13 @@ impl InstantSleep {
     /// Given a shared log for sleep durations, create a new `InstantSleep`.
     pub fn new(log: Arc<Mutex<Vec<Duration>>>) -> Self {
         Self { log }
+    }
+
+    /// Create an `InstantSleep` without passing in a shared log.
+    pub fn unlogged() -> Self {
+        Self {
+            log: Default::default(),
+        }
     }
 
     /// Return the sleep durations that were logged by this `InstantSleep`.

@@ -62,6 +62,7 @@ pub struct TestInvokeAuthorizerInputBuilder {
 }
 impl TestInvokeAuthorizerInputBuilder {
     /// <p>The custom authorizer name.</p>
+    /// This field is required.
     pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_name = ::std::option::Option::Some(input.into());
         self
@@ -148,7 +149,7 @@ impl TestInvokeAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`TestInvokeAuthorizerInput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput {
             authorizer_name: self.authorizer_name,

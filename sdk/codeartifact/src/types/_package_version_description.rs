@@ -81,8 +81,10 @@ impl PackageVersionDescription {
         self.published_time.as_ref()
     }
     /// <p> Information about licenses associated with the package version. </p>
-    pub fn licenses(&self) -> ::std::option::Option<&[crate::types::LicenseInfo]> {
-        self.licenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.licenses.is_none()`.
+    pub fn licenses(&self) -> &[crate::types::LicenseInfo] {
+        self.licenses.as_deref().unwrap_or_default()
     }
     /// <p> The revision of the package version. </p>
     pub fn revision(&self) -> ::std::option::Option<&str> {

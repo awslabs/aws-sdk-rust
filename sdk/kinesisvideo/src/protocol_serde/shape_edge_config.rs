@@ -40,7 +40,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::edge_config_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -51,27 +53,27 @@ where
 pub fn ser_edge_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EdgeConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.hub_device_arn {
-        object.key("HubDeviceArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("HubDeviceArn").string(input.hub_device_arn.as_str());
     }
-    if let Some(var_2) = &input.recorder_config {
+    if let Some(var_1) = &input.recorder_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("RecorderConfig").start_object();
-        crate::protocol_serde::shape_recorder_config::ser_recorder_config(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("RecorderConfig").start_object();
+        crate::protocol_serde::shape_recorder_config::ser_recorder_config(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.uploader_config {
+    if let Some(var_3) = &input.uploader_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("UploaderConfig").start_object();
-        crate::protocol_serde::shape_uploader_config::ser_uploader_config(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("UploaderConfig").start_object();
+        crate::protocol_serde::shape_uploader_config::ser_uploader_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.deletion_config {
+    if let Some(var_5) = &input.deletion_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("DeletionConfig").start_object();
-        crate::protocol_serde::shape_deletion_config::ser_deletion_config(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("DeletionConfig").start_object();
+        crate::protocol_serde::shape_deletion_config::ser_deletion_config(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

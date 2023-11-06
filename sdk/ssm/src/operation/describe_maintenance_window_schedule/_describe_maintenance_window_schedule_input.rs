@@ -22,16 +22,20 @@ impl DescribeMaintenanceWindowScheduleInput {
         self.window_id.as_deref()
     }
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::PatchOrchestratorFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::PatchOrchestratorFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -162,7 +166,7 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput {

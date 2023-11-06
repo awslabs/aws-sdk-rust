@@ -11,8 +11,10 @@ pub struct ListCommandsOutput {
 }
 impl ListCommandsOutput {
     /// <p>(Optional) The list of commands requested by the user. </p>
-    pub fn commands(&self) -> ::std::option::Option<&[crate::types::Command]> {
-        self.commands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.commands.is_none()`.
+    pub fn commands(&self) -> &[crate::types::Command] {
+        self.commands.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -55,6 +55,7 @@ impl DeleteStreamingImageInputBuilder {
         &self.client_token
     }
     /// <p>The streaming image ID.</p>
+    /// This field is required.
     pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_image_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeleteStreamingImageInputBuilder {
         &self.streaming_image_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl DeleteStreamingImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamingImageInput`](crate::operation::delete_streaming_image::DeleteStreamingImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_streaming_image::DeleteStreamingImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_streaming_image::DeleteStreamingImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_streaming_image::DeleteStreamingImageInput {
             client_token: self.client_token,

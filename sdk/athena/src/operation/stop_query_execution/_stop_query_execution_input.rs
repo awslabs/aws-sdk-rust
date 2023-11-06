@@ -27,6 +27,7 @@ pub struct StopQueryExecutionInputBuilder {
 }
 impl StopQueryExecutionInputBuilder {
     /// <p>The unique ID of the query execution to stop.</p>
+    /// This field is required.
     pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl StopQueryExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopQueryExecutionInput`](crate::operation::stop_query_execution::StopQueryExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_query_execution::StopQueryExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_query_execution::StopQueryExecutionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_query_execution::StopQueryExecutionInput {
             query_execution_id: self.query_execution_id,
         })

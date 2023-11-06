@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnabledControlsOutput {
     /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
-    pub enabled_controls: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>,
+    pub enabled_controls: ::std::vec::Vec<crate::types::EnabledControlSummary>,
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnabledControlsOutput {
     /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
-    pub fn enabled_controls(&self) -> ::std::option::Option<&[crate::types::EnabledControlSummary]> {
-        self.enabled_controls.as_deref()
+    pub fn enabled_controls(&self) -> &[crate::types::EnabledControlSummary] {
+        use std::ops::Deref;
+        self.enabled_controls.deref()
     }
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListEnabledControlsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnabledControlsOutput`](crate::operation::list_enabled_controls::ListEnabledControlsOutput).
-    pub fn build(self) -> crate::operation::list_enabled_controls::ListEnabledControlsOutput {
-        crate::operation::list_enabled_controls::ListEnabledControlsOutput {
-            enabled_controls: self.enabled_controls,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled_controls`](crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder::enabled_controls)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_enabled_controls::ListEnabledControlsOutput {
+            enabled_controls: self.enabled_controls.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "enabled_controls",
+                    "enabled_controls was not specified but it is required when building ListEnabledControlsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

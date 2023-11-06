@@ -21,8 +21,10 @@ impl DescribeApplicationVersionsInput {
         self.application_name.as_deref()
     }
     /// <p>Specify a version label to show a specific application version.</p>
-    pub fn version_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.version_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_labels.is_none()`.
+    pub fn version_labels(&self) -> &[::std::string::String] {
+        self.version_labels.as_deref().unwrap_or_default()
     }
     /// <p>For a paginated request. Specify a maximum number of application versions to include in each response.</p>
     /// <p>If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single response.</p>
@@ -125,7 +127,7 @@ impl DescribeApplicationVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_application_versions::DescribeApplicationVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_application_versions::DescribeApplicationVersionsInput {
             application_name: self.application_name,

@@ -24,8 +24,10 @@ impl CreateCoreNetworkInput {
         self.description.as_deref()
     }
     /// <p>Key-value tags associated with a core network request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The policy document for creating a core network.</p>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct CreateCoreNetworkInputBuilder {
 }
 impl CreateCoreNetworkInputBuilder {
     /// <p>The ID of the global network that a core network will be a part of. </p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,7 @@ impl CreateCoreNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateCoreNetworkInput`](crate::operation::create_core_network::CreateCoreNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_core_network::CreateCoreNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_core_network::CreateCoreNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_core_network::CreateCoreNetworkInput {
             global_network_id: self.global_network_id,
             description: self.description,

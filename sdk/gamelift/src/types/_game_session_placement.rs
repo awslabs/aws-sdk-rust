@@ -85,8 +85,10 @@ impl GameSessionPlacement {
         self.status.as_ref()
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_properties(&self) -> ::std::option::Option<&[crate::types::GameProperty]> {
-        self.game_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_properties.is_none()`.
+    pub fn game_properties(&self) -> &[crate::types::GameProperty] {
+        self.game_properties.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn maximum_player_session_count(&self) -> ::std::option::Option<i32> {
@@ -109,8 +111,10 @@ impl GameSessionPlacement {
         self.game_session_region.as_deref()
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
-    pub fn player_latencies(&self) -> ::std::option::Option<&[crate::types::PlayerLatency]> {
-        self.player_latencies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_latencies.is_none()`.
+    pub fn player_latencies(&self) -> &[crate::types::PlayerLatency] {
+        self.player_latencies.as_deref().unwrap_or_default()
     }
     /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -147,8 +151,10 @@ impl GameSessionPlacement {
         self.port
     }
     /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only after a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID, provided in the placement request, and a corresponding player session ID.</p>
-    pub fn placed_player_sessions(&self) -> ::std::option::Option<&[crate::types::PlacedPlayerSession]> {
-        self.placed_player_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placed_player_sessions.is_none()`.
+    pub fn placed_player_sessions(&self) -> &[crate::types::PlacedPlayerSession] {
+        self.placed_player_sessions.as_deref().unwrap_or_default()
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_session_data(&self) -> ::std::option::Option<&str> {

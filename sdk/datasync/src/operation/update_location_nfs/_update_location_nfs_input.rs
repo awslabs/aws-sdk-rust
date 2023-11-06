@@ -50,6 +50,7 @@ pub struct UpdateLocationNfsInputBuilder {
 }
 impl UpdateLocationNfsInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +112,7 @@ impl UpdateLocationNfsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLocationNfsInput`](crate::operation::update_location_nfs::UpdateLocationNfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_location_nfs::UpdateLocationNfsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_location_nfs::UpdateLocationNfsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_location_nfs::UpdateLocationNfsInput {
             location_arn: self.location_arn,
             subdirectory: self.subdirectory,

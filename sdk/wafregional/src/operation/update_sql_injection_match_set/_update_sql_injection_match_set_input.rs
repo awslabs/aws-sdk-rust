@@ -31,8 +31,10 @@ impl UpdateSqlInjectionMatchSetInput {
     /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::SqlInjectionMatchSetUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::SqlInjectionMatchSetUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSqlInjectionMatchSetInput {
@@ -52,6 +54,7 @@ pub struct UpdateSqlInjectionMatchSetInputBuilder {
 }
 impl UpdateSqlInjectionMatchSetInputBuilder {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    /// This field is required.
     pub fn sql_injection_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_injection_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +69,7 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
         &self.sql_injection_match_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -119,7 +123,7 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput {
             sql_injection_match_set_id: self.sql_injection_match_set_id,

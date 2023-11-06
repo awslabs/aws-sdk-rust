@@ -7,9 +7,9 @@ pub struct Anomaly {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
     pub metric: ::std::option::Option<crate::types::Metric>,
     /// <p>The reason for which metric was flagged as anomalous.</p>
-    pub reason: ::std::option::Option<::std::string::String>,
+    pub reason: ::std::string::String,
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
-    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>>,
+    pub instances: ::std::vec::Vec<crate::types::AnomalyInstance>,
 }
 impl Anomaly {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
@@ -17,12 +17,14 @@ impl Anomaly {
         self.metric.as_ref()
     }
     /// <p>The reason for which metric was flagged as anomalous.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
-        self.reason.as_deref()
+    pub fn reason(&self) -> &str {
+        use std::ops::Deref;
+        self.reason.deref()
     }
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::AnomalyInstance]> {
-        self.instances.as_deref()
+    pub fn instances(&self) -> &[crate::types::AnomalyInstance] {
+        use std::ops::Deref;
+        self.instances.deref()
     }
 }
 impl Anomaly {
@@ -42,6 +44,7 @@ pub struct AnomalyBuilder {
 }
 impl AnomalyBuilder {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
+    /// This field is required.
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl AnomalyBuilder {
         &self.metric
     }
     /// <p>The reason for which metric was flagged as anomalous.</p>
+    /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,24 @@ impl AnomalyBuilder {
         &self.instances
     }
     /// Consumes the builder and constructs a [`Anomaly`](crate::types::Anomaly).
-    pub fn build(self) -> crate::types::Anomaly {
-        crate::types::Anomaly {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`reason`](crate::types::builders::AnomalyBuilder::reason)
+    /// - [`instances`](crate::types::builders::AnomalyBuilder::instances)
+    pub fn build(self) -> ::std::result::Result<crate::types::Anomaly, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Anomaly {
             metric: self.metric,
-            reason: self.reason,
-            instances: self.instances,
-        }
+            reason: self.reason.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "reason",
+                    "reason was not specified but it is required when building Anomaly",
+                )
+            })?,
+            instances: self.instances.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instances",
+                    "instances was not specified but it is required when building Anomaly",
+                )
+            })?,
+        })
     }
 }

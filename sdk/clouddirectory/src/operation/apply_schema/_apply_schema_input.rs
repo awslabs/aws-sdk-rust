@@ -34,6 +34,7 @@ pub struct ApplySchemaInputBuilder {
 }
 impl ApplySchemaInputBuilder {
     /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn published_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.published_schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ApplySchemaInputBuilder {
         &self.published_schema_arn
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl ApplySchemaInputBuilder {
         &self.directory_arn
     }
     /// Consumes the builder and constructs a [`ApplySchemaInput`](crate::operation::apply_schema::ApplySchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::apply_schema::ApplySchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::apply_schema::ApplySchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::apply_schema::ApplySchemaInput {
             published_schema_arn: self.published_schema_arn,
             directory_arn: self.directory_arn,

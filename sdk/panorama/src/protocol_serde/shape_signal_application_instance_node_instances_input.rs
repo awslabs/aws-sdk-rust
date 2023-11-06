@@ -2,7 +2,7 @@
 pub fn ser_signal_application_instance_node_instances_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.node_signals {
         let mut array_2 = object.key("NodeSignals").start_array();
         for item_3 in var_1 {

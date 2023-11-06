@@ -7,7 +7,7 @@ pub struct FrameMetricDatum {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
     pub frame_metric: ::std::option::Option<crate::types::FrameMetric>,
     /// <p> A list of values that are associated with a frame metric. </p>
-    pub values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub values: ::std::vec::Vec<f64>,
 }
 impl FrameMetricDatum {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
@@ -15,8 +15,9 @@ impl FrameMetricDatum {
         self.frame_metric.as_ref()
     }
     /// <p> A list of values that are associated with a frame metric. </p>
-    pub fn values(&self) -> ::std::option::Option<&[f64]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl FrameMetricDatum {
@@ -35,6 +36,7 @@ pub struct FrameMetricDatumBuilder {
 }
 impl FrameMetricDatumBuilder {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
+    /// This field is required.
     pub fn frame_metric(mut self, input: crate::types::FrameMetric) -> Self {
         self.frame_metric = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl FrameMetricDatumBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`FrameMetricDatum`](crate::types::FrameMetricDatum).
-    pub fn build(self) -> crate::types::FrameMetricDatum {
-        crate::types::FrameMetricDatum {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`values`](crate::types::builders::FrameMetricDatumBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::FrameMetricDatum, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FrameMetricDatum {
             frame_metric: self.frame_metric,
-            values: self.values,
-        }
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building FrameMetricDatum",
+                )
+            })?,
+        })
     }
 }

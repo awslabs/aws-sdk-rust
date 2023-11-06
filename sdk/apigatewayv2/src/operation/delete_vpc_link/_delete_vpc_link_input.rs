@@ -27,6 +27,7 @@ pub struct DeleteVpcLinkInputBuilder {
 }
 impl DeleteVpcLinkInputBuilder {
     /// <p>The ID of the VPC link.</p>
+    /// This field is required.
     pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_link_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteVpcLinkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpcLinkInput`](crate::operation::delete_vpc_link::DeleteVpcLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vpc_link::DeleteVpcLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_vpc_link::DeleteVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vpc_link::DeleteVpcLinkInput {
             vpc_link_id: self.vpc_link_id,
         })

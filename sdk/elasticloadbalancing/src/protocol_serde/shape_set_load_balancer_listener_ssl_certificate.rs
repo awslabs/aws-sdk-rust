@@ -34,8 +34,8 @@ pub fn de_set_load_balancer_listener_ssl_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "CertificateNotFound" => crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError::CertificateNotFoundException({
@@ -50,8 +50,8 @@ pub fn de_set_load_balancer_listener_ssl_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidConfigurationRequest" => crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError::InvalidConfigurationRequestException({
@@ -66,8 +66,8 @@ pub fn de_set_load_balancer_listener_ssl_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ListenerNotFound" => crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError::ListenerNotFoundException({
@@ -82,8 +82,8 @@ pub fn de_set_load_balancer_listener_ssl_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedProtocol" => crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError::UnsupportedProtocolException({
@@ -98,8 +98,8 @@ pub fn de_set_load_balancer_listener_ssl_certificate_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError::generic(generic)

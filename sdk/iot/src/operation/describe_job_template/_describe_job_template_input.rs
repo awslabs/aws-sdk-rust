@@ -27,6 +27,7 @@ pub struct DescribeJobTemplateInputBuilder {
 }
 impl DescribeJobTemplateInputBuilder {
     /// <p>The unique identifier of the job template.</p>
+    /// This field is required.
     pub fn job_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_template_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeJobTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobTemplateInput`](crate::operation::describe_job_template::DescribeJobTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_template::DescribeJobTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_job_template::DescribeJobTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_job_template::DescribeJobTemplateInput {
             job_template_id: self.job_template_id,

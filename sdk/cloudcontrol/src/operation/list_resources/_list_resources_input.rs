@@ -78,6 +78,7 @@ pub struct ListResourcesInputBuilder {
 }
 impl ListResourcesInputBuilder {
     /// <p>The name of the resource type.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -170,7 +171,7 @@ impl ListResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_resources::ListResourcesInput {
             type_name: self.type_name,
             type_version_id: self.type_version_id,

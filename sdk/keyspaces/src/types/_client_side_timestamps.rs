@@ -6,12 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientSideTimestamps {
     /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
-    pub status: ::std::option::Option<crate::types::ClientSideTimestampsStatus>,
+    pub status: crate::types::ClientSideTimestampsStatus,
 }
 impl ClientSideTimestamps {
     /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ClientSideTimestampsStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ClientSideTimestampsStatus {
+        &self.status
     }
 }
 impl ClientSideTimestamps {
@@ -29,6 +29,7 @@ pub struct ClientSideTimestampsBuilder {
 }
 impl ClientSideTimestampsBuilder {
     /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ClientSideTimestampsStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,16 @@ impl ClientSideTimestampsBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ClientSideTimestamps`](crate::types::ClientSideTimestamps).
-    pub fn build(self) -> crate::types::ClientSideTimestamps {
-        crate::types::ClientSideTimestamps { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::ClientSideTimestampsBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ClientSideTimestamps, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ClientSideTimestamps {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ClientSideTimestamps",
+                )
+            })?,
+        })
     }
 }

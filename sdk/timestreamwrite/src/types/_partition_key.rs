@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionKey {
     /// <p> The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key). </p>
-    pub r#type: ::std::option::Option<crate::types::PartitionKeyType>,
+    pub r#type: crate::types::PartitionKeyType,
     /// <p> The name of the attribute used for a dimension key. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified). </p>
@@ -13,8 +13,8 @@ pub struct PartitionKey {
 }
 impl PartitionKey {
     /// <p> The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key). </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PartitionKeyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PartitionKeyType {
+        &self.r#type
     }
     /// <p> The name of the attribute used for a dimension key. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +42,7 @@ pub struct PartitionKeyBuilder {
 }
 impl PartitionKeyBuilder {
     /// <p> The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key). </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PartitionKeyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl PartitionKeyBuilder {
         &self.enforcement_in_record
     }
     /// Consumes the builder and constructs a [`PartitionKey`](crate::types::PartitionKey).
-    pub fn build(self) -> crate::types::PartitionKey {
-        crate::types::PartitionKey {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::PartitionKeyBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PartitionKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PartitionKey {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building PartitionKey",
+                )
+            })?,
             name: self.name,
             enforcement_in_record: self.enforcement_in_record,
-        }
+        })
     }
 }

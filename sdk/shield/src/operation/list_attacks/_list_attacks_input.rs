@@ -20,8 +20,10 @@ pub struct ListAttacksInput {
 }
 impl ListAttacksInput {
     /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this blank, all applicable resources for this account will be included.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
     pub fn start_time(&self) -> ::std::option::Option<&crate::types::TimeRange> {
@@ -151,7 +153,7 @@ impl ListAttacksInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAttacksInput`](crate::operation::list_attacks::ListAttacksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_attacks::ListAttacksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_attacks::ListAttacksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_attacks::ListAttacksInput {
             resource_arns: self.resource_arns,
             start_time: self.start_time,

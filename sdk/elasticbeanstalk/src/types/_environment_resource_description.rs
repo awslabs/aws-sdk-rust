@@ -27,32 +27,46 @@ impl EnvironmentResourceDescription {
         self.environment_name.as_deref()
     }
     /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
-    pub fn auto_scaling_groups(&self) -> ::std::option::Option<&[crate::types::AutoScalingGroup]> {
-        self.auto_scaling_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_groups.is_none()`.
+    pub fn auto_scaling_groups(&self) -> &[crate::types::AutoScalingGroup] {
+        self.auto_scaling_groups.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 instances used by this environment.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The Auto Scaling launch configurations in use by this environment.</p>
-    pub fn launch_configurations(&self) -> ::std::option::Option<&[crate::types::LaunchConfiguration]> {
-        self.launch_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_configurations.is_none()`.
+    pub fn launch_configurations(&self) -> &[crate::types::LaunchConfiguration] {
+        self.launch_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 launch templates in use by this environment.</p>
-    pub fn launch_templates(&self) -> ::std::option::Option<&[crate::types::LaunchTemplate]> {
-        self.launch_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_templates.is_none()`.
+    pub fn launch_templates(&self) -> &[crate::types::LaunchTemplate] {
+        self.launch_templates.as_deref().unwrap_or_default()
     }
     /// <p>The LoadBalancers in use by this environment.</p>
-    pub fn load_balancers(&self) -> ::std::option::Option<&[crate::types::LoadBalancer]> {
-        self.load_balancers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
+    pub fn load_balancers(&self) -> &[crate::types::LoadBalancer] {
+        self.load_balancers.as_deref().unwrap_or_default()
     }
     /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
-    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::Trigger]> {
-        self.triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
+    pub fn triggers(&self) -> &[crate::types::Trigger] {
+        self.triggers.as_deref().unwrap_or_default()
     }
     /// <p>The queues used by this environment.</p>
-    pub fn queues(&self) -> ::std::option::Option<&[crate::types::Queue]> {
-        self.queues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
+    pub fn queues(&self) -> &[crate::types::Queue] {
+        self.queues.as_deref().unwrap_or_default()
     }
 }
 impl EnvironmentResourceDescription {

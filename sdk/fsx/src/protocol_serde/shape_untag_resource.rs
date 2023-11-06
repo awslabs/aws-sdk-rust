@@ -55,7 +55,7 @@ pub fn de_untag_resource_http_error(
                 output = crate::protocol_serde::shape_not_service_resource_error::de_not_service_resource_error_json_err(_response_body, output)
                     .map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_service_resource_error_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -73,7 +73,7 @@ pub fn de_untag_resource_http_error(
                 )
                 .map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_does_not_support_tagging_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -88,7 +88,7 @@ pub fn de_untag_resource_http_error(
                 output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_json_err(_response_body, output)
                     .map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -115,10 +115,10 @@ pub fn de_untag_resource_http_response(
 
 pub fn ser_untag_resource_input(
     input: &crate::operation::untag_resource::UntagResourceInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_untag_resource_input::ser_untag_resource_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

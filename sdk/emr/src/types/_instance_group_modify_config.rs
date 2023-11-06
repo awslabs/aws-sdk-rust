@@ -27,8 +27,10 @@ impl InstanceGroupModifyConfig {
         self.instance_count
     }
     /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
-    pub fn ec2_instance_ids_to_terminate(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ec2_instance_ids_to_terminate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_ids_to_terminate.is_none()`.
+    pub fn ec2_instance_ids_to_terminate(&self) -> &[::std::string::String] {
+        self.ec2_instance_ids_to_terminate.as_deref().unwrap_or_default()
     }
     /// <p>Policy for customizing shrink operations.</p>
     pub fn shrink_policy(&self) -> ::std::option::Option<&crate::types::ShrinkPolicy> {
@@ -39,8 +41,10 @@ impl InstanceGroupModifyConfig {
         self.reconfiguration_type.as_ref()
     }
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
 }
 impl InstanceGroupModifyConfig {
@@ -63,6 +67,7 @@ pub struct InstanceGroupModifyConfigBuilder {
 }
 impl InstanceGroupModifyConfigBuilder {
     /// <p>Unique ID of the instance group to modify.</p>
+    /// This field is required.
     pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_id = ::std::option::Option::Some(input.into());
         self

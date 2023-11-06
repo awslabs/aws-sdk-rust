@@ -2,7 +2,7 @@
 pub fn ser_aws_events_endpoint_routing_config_failover_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.primary {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Primary").start_object();

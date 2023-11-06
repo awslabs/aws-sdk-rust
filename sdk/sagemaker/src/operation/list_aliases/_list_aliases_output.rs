@@ -11,8 +11,10 @@ pub struct ListAliasesOutput {
 }
 impl ListAliasesOutput {
     /// <p>A list of SageMaker image version aliases.</p>
-    pub fn sage_maker_image_version_aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sage_maker_image_version_aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sage_maker_image_version_aliases.is_none()`.
+    pub fn sage_maker_image_version_aliases(&self) -> &[::std::string::String] {
+        self.sage_maker_image_version_aliases.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of aliases, if more aliases exist.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

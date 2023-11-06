@@ -11,8 +11,10 @@ pub struct ListModelPackagesOutput {
 }
 impl ListModelPackagesOutput {
     /// <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
-    pub fn model_package_summary_list(&self) -> ::std::option::Option<&[crate::types::ModelPackageSummary]> {
-        self.model_package_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_package_summary_list.is_none()`.
+    pub fn model_package_summary_list(&self) -> &[crate::types::ModelPackageSummary] {
+        self.model_package_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

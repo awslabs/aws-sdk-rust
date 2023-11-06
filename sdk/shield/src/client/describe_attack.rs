@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAttack`](crate::operation::describe_attack::builders::DescribeAttackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`attack_id(impl Into<String>)`](crate::operation::describe_attack::builders::DescribeAttackFluentBuilder::attack_id) / [`set_attack_id(Option<String>)`](crate::operation::describe_attack::builders::DescribeAttackFluentBuilder::set_attack_id): <p>The unique identifier (ID) for the attack.</p>
+    ///   - [`attack_id(impl Into<String>)`](crate::operation::describe_attack::builders::DescribeAttackFluentBuilder::attack_id) / [`set_attack_id(Option<String>)`](crate::operation::describe_attack::builders::DescribeAttackFluentBuilder::set_attack_id):<br>required: **true**<br><p>The unique identifier (ID) for the attack.</p><br>
     /// - On success, responds with [`DescribeAttackOutput`](crate::operation::describe_attack::DescribeAttackOutput) with field(s):
     ///   - [`attack(Option<AttackDetail>)`](crate::operation::describe_attack::DescribeAttackOutput::attack): <p>The attack that you requested. </p>
     /// - On failure, responds with [`SdkError<DescribeAttackError>`](crate::operation::describe_attack::DescribeAttackError)

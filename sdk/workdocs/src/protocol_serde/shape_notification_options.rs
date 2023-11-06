@@ -2,7 +2,7 @@
 pub fn ser_notification_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.send_email {
         object.key("SendEmail").boolean(input.send_email);
     }

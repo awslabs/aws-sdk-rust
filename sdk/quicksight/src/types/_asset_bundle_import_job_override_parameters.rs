@@ -27,32 +27,46 @@ impl AssetBundleImportJobOverrideParameters {
         self.resource_id_override_configuration.as_ref()
     }
     /// <p>A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn vpc_connections(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobVpcConnectionOverrideParameters]> {
-        self.vpc_connections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_connections.is_none()`.
+    pub fn vpc_connections(&self) -> &[crate::types::AssetBundleImportJobVpcConnectionOverrideParameters] {
+        self.vpc_connections.as_deref().unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn refresh_schedules(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters]> {
-        self.refresh_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.refresh_schedules.is_none()`.
+    pub fn refresh_schedules(&self) -> &[crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters] {
+        self.refresh_schedules.as_deref().unwrap_or_default()
     }
     /// <p> A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobDataSourceOverrideParameters]> {
-        self.data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
+    pub fn data_sources(&self) -> &[crate::types::AssetBundleImportJobDataSourceOverrideParameters] {
+        self.data_sources.as_deref().unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn data_sets(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobDataSetOverrideParameters]> {
-        self.data_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sets.is_none()`.
+    pub fn data_sets(&self) -> &[crate::types::AssetBundleImportJobDataSetOverrideParameters] {
+        self.data_sets.as_deref().unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn themes(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobThemeOverrideParameters]> {
-        self.themes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.themes.is_none()`.
+    pub fn themes(&self) -> &[crate::types::AssetBundleImportJobThemeOverrideParameters] {
+        self.themes.as_deref().unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn analyses(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobAnalysisOverrideParameters]> {
-        self.analyses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analyses.is_none()`.
+    pub fn analyses(&self) -> &[crate::types::AssetBundleImportJobAnalysisOverrideParameters] {
+        self.analyses.as_deref().unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn dashboards(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobDashboardOverrideParameters]> {
-        self.dashboards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboards.is_none()`.
+    pub fn dashboards(&self) -> &[crate::types::AssetBundleImportJobDashboardOverrideParameters] {
+        self.dashboards.as_deref().unwrap_or_default()
     }
 }
 impl AssetBundleImportJobOverrideParameters {

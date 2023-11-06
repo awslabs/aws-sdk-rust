@@ -34,6 +34,7 @@ pub struct PutContactPolicyInputBuilder {
 }
 impl PutContactPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutContactPolicyInputBuilder {
         &self.contact_arn
     }
     /// <p>Details of the resource policy.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl PutContactPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutContactPolicyInput`](crate::operation::put_contact_policy::PutContactPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_contact_policy::PutContactPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_contact_policy::PutContactPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_contact_policy::PutContactPolicyInput {
             contact_arn: self.contact_arn,
             policy: self.policy,

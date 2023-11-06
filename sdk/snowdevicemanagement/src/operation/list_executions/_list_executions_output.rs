@@ -11,8 +11,10 @@ pub struct ListExecutionsOutput {
 }
 impl ListExecutionsOutput {
     /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
-    pub fn executions(&self) -> ::std::option::Option<&[crate::types::ExecutionSummary]> {
-        self.executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.executions.is_none()`.
+    pub fn executions(&self) -> &[crate::types::ExecutionSummary] {
+        self.executions.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token to continue to the next page of executions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

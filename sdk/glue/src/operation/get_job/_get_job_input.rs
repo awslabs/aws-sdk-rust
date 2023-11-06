@@ -27,6 +27,7 @@ pub struct GetJobInputBuilder {
 }
 impl GetJobInputBuilder {
     /// <p>The name of the job definition to retrieve.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetJobInputBuilder {
         &self.job_name
     }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job::GetJobInput { job_name: self.job_name })
     }
 }

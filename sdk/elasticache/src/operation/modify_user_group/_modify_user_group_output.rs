@@ -35,8 +35,10 @@ impl ModifyUserGroupOutput {
         self.engine.as_deref()
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
+    pub fn user_ids(&self) -> &[::std::string::String] {
+        self.user_ids.as_deref().unwrap_or_default()
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
     pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {
@@ -47,8 +49,10 @@ impl ModifyUserGroupOutput {
         self.pending_changes.as_ref()
     }
     /// <p>A list of replication groups that the user group can access.</p>
-    pub fn replication_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_groups.is_none()`.
+    pub fn replication_groups(&self) -> &[::std::string::String] {
+        self.replication_groups.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {

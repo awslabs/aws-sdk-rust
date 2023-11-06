@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags for the target resources.</p>
@@ -19,26 +19,31 @@ pub struct CreateExperimentTemplateTargetInput {
     /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
     /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
     /// </ul>
-    pub selection_mode: ::std::option::Option<::std::string::String>,
+    pub selection_mode: ::std::string::String,
     /// <p>The resource type parameters.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>The tags for the target resources.</p>
     pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ExperimentTemplateTargetInputFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ExperimentTemplateTargetInputFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
@@ -46,8 +51,9 @@ impl CreateExperimentTemplateTargetInput {
     /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
     /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
     /// </ul>
-    pub fn selection_mode(&self) -> ::std::option::Option<&str> {
-        self.selection_mode.as_deref()
+    pub fn selection_mode(&self) -> &str {
+        use std::ops::Deref;
+        self.selection_mode.deref()
     }
     /// <p>The resource type parameters.</p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -74,6 +80,7 @@ pub struct CreateExperimentTemplateTargetInputBuilder {
 }
 impl CreateExperimentTemplateTargetInputBuilder {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +163,7 @@ impl CreateExperimentTemplateTargetInputBuilder {
     /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
     /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn selection_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_mode = ::std::option::Option::Some(input.into());
         self
@@ -200,14 +208,27 @@ impl CreateExperimentTemplateTargetInputBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`CreateExperimentTemplateTargetInput`](crate::types::CreateExperimentTemplateTargetInput).
-    pub fn build(self) -> crate::types::CreateExperimentTemplateTargetInput {
-        crate::types::CreateExperimentTemplateTargetInput {
-            resource_type: self.resource_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::CreateExperimentTemplateTargetInputBuilder::resource_type)
+    /// - [`selection_mode`](crate::types::builders::CreateExperimentTemplateTargetInputBuilder::selection_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateExperimentTemplateTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateExperimentTemplateTargetInput {
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building CreateExperimentTemplateTargetInput",
+                )
+            })?,
             resource_arns: self.resource_arns,
             resource_tags: self.resource_tags,
             filters: self.filters,
-            selection_mode: self.selection_mode,
+            selection_mode: self.selection_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "selection_mode",
+                    "selection_mode was not specified but it is required when building CreateExperimentTemplateTargetInput",
+                )
+            })?,
             parameters: self.parameters,
-        }
+        })
     }
 }

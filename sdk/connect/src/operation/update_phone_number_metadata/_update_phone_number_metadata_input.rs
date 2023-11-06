@@ -41,6 +41,7 @@ pub struct UpdatePhoneNumberMetadataInputBuilder {
 }
 impl UpdatePhoneNumberMetadataInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or resource ID of the phone number.</p>
+    /// This field is required.
     pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl UpdatePhoneNumberMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataInput {
             phone_number_id: self.phone_number_id,

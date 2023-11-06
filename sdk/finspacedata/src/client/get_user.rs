@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUser`](crate::operation::get_user::builders::GetUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_id(impl Into<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::set_user_id): <p>The unique identifier of the user to get data for.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::set_user_id):<br>required: **true**<br><p>The unique identifier of the user to get data for.</p><br>
     /// - On success, responds with [`GetUserOutput`](crate::operation::get_user::GetUserOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::operation::get_user::GetUserOutput::user_id): <p>The unique identifier for the user that is retrieved.</p>
     ///   - [`status(Option<UserStatus>)`](crate::operation::get_user::GetUserOutput::status): <p>The current status of the user. </p>  <ul>   <li> <p> <code>CREATING</code> – The creation is in progress.</p> </li>   <li> <p> <code>ENABLED</code> – The user is created and is currently active.</p> </li>   <li> <p> <code>DISABLED</code> – The user is currently inactive.</p> </li>  </ul>

@@ -11,8 +11,10 @@ pub struct ListExplainabilitiesOutput {
 }
 impl ListExplainabilitiesOutput {
     /// <p>An array of objects that summarize the properties of each Explainability resource.</p>
-    pub fn explainabilities(&self) -> ::std::option::Option<&[crate::types::ExplainabilitySummary]> {
-        self.explainabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.explainabilities.is_none()`.
+    pub fn explainabilities(&self) -> &[crate::types::ExplainabilitySummary] {
+        self.explainabilities.as_deref().unwrap_or_default()
     }
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

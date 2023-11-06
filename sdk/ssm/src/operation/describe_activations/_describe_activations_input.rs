@@ -12,8 +12,10 @@ pub struct DescribeActivationsInput {
 }
 impl DescribeActivationsInput {
     /// <p>A filter to view information about your activations.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::DescribeActivationsFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::DescribeActivationsFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -91,7 +93,7 @@ impl DescribeActivationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActivationsInput`](crate::operation::describe_activations::DescribeActivationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_activations::DescribeActivationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_activations::DescribeActivationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_activations::DescribeActivationsInput {
             filters: self.filters,

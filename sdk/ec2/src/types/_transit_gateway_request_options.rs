@@ -51,8 +51,10 @@ impl TransitGatewayRequestOptions {
         self.multicast_support.as_ref()
     }
     /// <p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
-    pub fn transit_gateway_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.transit_gateway_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_cidr_blocks.is_none()`.
+    pub fn transit_gateway_cidr_blocks(&self) -> &[::std::string::String] {
+        self.transit_gateway_cidr_blocks.as_deref().unwrap_or_default()
     }
 }
 impl TransitGatewayRequestOptions {

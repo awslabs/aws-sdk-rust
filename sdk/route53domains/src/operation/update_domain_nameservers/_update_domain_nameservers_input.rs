@@ -24,8 +24,10 @@ impl UpdateDomainNameserversInput {
         self.fi_auth_key.as_deref()
     }
     /// <p>A list of new name servers for the domain.</p>
-    pub fn nameservers(&self) -> ::std::option::Option<&[crate::types::Nameserver]> {
-        self.nameservers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nameservers.is_none()`.
+    pub fn nameservers(&self) -> &[crate::types::Nameserver] {
+        self.nameservers.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateDomainNameserversInput {
@@ -54,6 +56,7 @@ pub struct UpdateDomainNameserversInputBuilder {
 }
 impl UpdateDomainNameserversInputBuilder {
     /// <p>The name of the domain that you want to change name servers for.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +112,7 @@ impl UpdateDomainNameserversInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_nameservers::UpdateDomainNameserversInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_domain_nameservers::UpdateDomainNameserversInput {
             domain_name: self.domain_name,

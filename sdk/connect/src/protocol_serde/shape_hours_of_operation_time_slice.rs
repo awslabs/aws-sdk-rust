@@ -2,17 +2,17 @@
 pub fn ser_hours_of_operation_time_slice(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HoursOfOperationTimeSlice,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.hours {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("Hours").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.hours).into()),
         );
     }
-    if let Some(var_2) = &input.minutes {
+    {
         object.key("Minutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.minutes).into()),
         );
     }
     Ok(())
@@ -57,7 +57,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::hours_of_operation_time_slice_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

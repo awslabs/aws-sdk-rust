@@ -7,7 +7,7 @@ pub struct DataSetSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose datasets you want to search in the <code>"Value"</code> field. For example, <code>"Name":"QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east- 1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the datasets you are searching for. For example, <code>"Name":"DATASET_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASET_NAME</code>.</p>
-    pub operator: ::std::option::Option<crate::types::FilterOperator>,
+    pub operator: crate::types::FilterOperator,
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
@@ -18,16 +18,16 @@ pub struct DataSetSearchFilter {
     /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any datasets with that ARN listed as one of the owners or viewers of the dataset are returned. Implicit permissions from folders or groups are not considered.</p> </li>
     /// <li> <p> <code>DATASET_NAME</code>: Any datasets whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<crate::types::DataSetFilterAttribute>,
+    pub name: crate::types::DataSetFilterAttribute,
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl DataSetSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose datasets you want to search in the <code>"Value"</code> field. For example, <code>"Name":"QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east- 1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the datasets you are searching for. For example, <code>"Name":"DATASET_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASET_NAME</code>.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::FilterOperator {
+        &self.operator
     }
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -39,12 +39,13 @@ impl DataSetSearchFilter {
     /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any datasets with that ARN listed as one of the owners or viewers of the dataset are returned. Implicit permissions from folders or groups are not considered.</p> </li>
     /// <li> <p> <code>DATASET_NAME</code>: Any datasets whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::DataSetFilterAttribute> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::DataSetFilterAttribute {
+        &self.name
     }
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl DataSetSearchFilter {
@@ -66,6 +67,7 @@ impl DataSetSearchFilterBuilder {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose datasets you want to search in the <code>"Value"</code> field. For example, <code>"Name":"QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east- 1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the datasets you are searching for. For example, <code>"Name":"DATASET_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASET_NAME</code>.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::FilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -93,6 +95,7 @@ impl DataSetSearchFilterBuilder {
     /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any datasets with that ARN listed as one of the owners or viewers of the dataset are returned. Implicit permissions from folders or groups are not considered.</p> </li>
     /// <li> <p> <code>DATASET_NAME</code>: Any datasets whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::DataSetFilterAttribute) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -125,6 +128,7 @@ impl DataSetSearchFilterBuilder {
         &self.name
     }
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -139,11 +143,30 @@ impl DataSetSearchFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`DataSetSearchFilter`](crate::types::DataSetSearchFilter).
-    pub fn build(self) -> crate::types::DataSetSearchFilter {
-        crate::types::DataSetSearchFilter {
-            operator: self.operator,
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`operator`](crate::types::builders::DataSetSearchFilterBuilder::operator)
+    /// - [`name`](crate::types::builders::DataSetSearchFilterBuilder::name)
+    /// - [`value`](crate::types::builders::DataSetSearchFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSetSearchFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSetSearchFilter {
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building DataSetSearchFilter",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DataSetSearchFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building DataSetSearchFilter",
+                )
+            })?,
+        })
     }
 }

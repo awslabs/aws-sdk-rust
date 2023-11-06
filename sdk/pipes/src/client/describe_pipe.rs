@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePipe`](crate::operation::describe_pipe::builders::DescribePipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_pipe::builders::DescribePipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_pipe::builders::DescribePipeFluentBuilder::set_name): <p>The name of the pipe.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_pipe::builders::DescribePipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_pipe::builders::DescribePipeFluentBuilder::set_name):<br>required: **true**<br><p>The name of the pipe.</p><br>
     /// - On success, responds with [`DescribePipeOutput`](crate::operation::describe_pipe::DescribePipeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_pipe::DescribePipeOutput::arn): <p>The ARN of the pipe.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_pipe::DescribePipeOutput::name): <p>The name of the pipe.</p>
@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`target(Option<String>)`](crate::operation::describe_pipe::DescribePipeOutput::target): <p>The ARN of the target resource.</p>
     ///   - [`target_parameters(Option<PipeTargetParameters>)`](crate::operation::describe_pipe::DescribePipeOutput::target_parameters): <p>The parameters required to set up a target for your pipe.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_pipe::DescribePipeOutput::role_arn): <p>The ARN of the role that allows the pipe to send data to the target.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_pipe::DescribePipeOutput::tags): <p>The list of key-value pairs to associate with the pipe.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_pipe::DescribePipeOutput::tags): <p>The list of key-value pairs to associate with the pipe.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_pipe::DescribePipeOutput::creation_time): <p>The time the pipe was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_pipe::DescribePipeOutput::last_modified_time): <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     /// - On failure, responds with [`SdkError<DescribePipeError>`](crate::operation::describe_pipe::DescribePipeError)

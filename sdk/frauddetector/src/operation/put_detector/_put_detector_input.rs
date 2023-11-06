@@ -26,8 +26,10 @@ impl PutDetectorInput {
         self.event_type_name.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutDetectorInput {
@@ -48,6 +50,7 @@ pub struct PutDetectorInputBuilder {
 }
 impl PutDetectorInputBuilder {
     /// <p>The detector ID. </p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl PutDetectorInputBuilder {
         &self.description
     }
     /// <p>The name of the event type.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +114,7 @@ impl PutDetectorInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutDetectorInput`](crate::operation::put_detector::PutDetectorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_detector::PutDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_detector::PutDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_detector::PutDetectorInput {
             detector_id: self.detector_id,
             description: self.description,

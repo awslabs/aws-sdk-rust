@@ -2,7 +2,7 @@
 pub fn ser_off_peak_window(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OffPeakWindow,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.window_start_time {
         #[allow(unused_mut)]
         let mut object_2 = object.key("WindowStartTime").start_object();

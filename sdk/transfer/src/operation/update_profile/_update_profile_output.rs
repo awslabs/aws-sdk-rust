@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfileOutput {
     /// <p>Returns the identifier for the profile that's being updated.</p>
-    pub profile_id: ::std::option::Option<::std::string::String>,
+    pub profile_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateProfileOutput {
     /// <p>Returns the identifier for the profile that's being updated.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
-        self.profile_id.as_deref()
+    pub fn profile_id(&self) -> &str {
+        use std::ops::Deref;
+        self.profile_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateProfileOutput {
@@ -34,6 +35,7 @@ pub struct UpdateProfileOutputBuilder {
 }
 impl UpdateProfileOutputBuilder {
     /// <p>Returns the identifier for the profile that's being updated.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl UpdateProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateProfileOutput`](crate::operation::update_profile::UpdateProfileOutput).
-    pub fn build(self) -> crate::operation::update_profile::UpdateProfileOutput {
-        crate::operation::update_profile::UpdateProfileOutput {
-            profile_id: self.profile_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profile_id`](crate::operation::update_profile::builders::UpdateProfileOutputBuilder::profile_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_profile::UpdateProfileOutput {
+            profile_id: self.profile_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "profile_id",
+                    "profile_id was not specified but it is required when building UpdateProfileOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

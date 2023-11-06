@@ -20,32 +20,18 @@ use crate::box_error::BoxError;
 use crate::client::interceptors::context::phase::Phase;
 use crate::client::interceptors::context::Error;
 use crate::client::interceptors::InterceptorError;
-use aws_smithy_async::future::now_or_later::NowOrLater;
-use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::result::{ConnectorError, SdkError};
+use crate::client::result::{ConnectorError, SdkError};
+use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use bytes::Bytes;
-use std::fmt::Debug;
-use std::future::Future as StdFuture;
-use std::pin::Pin;
+use std::error::Error as StdError;
+use std::fmt;
 
 /// Type alias for the HTTP request type that the orchestrator uses.
-pub type HttpRequest = http::Request<SdkBody>;
+pub type HttpRequest = crate::client::http::request::Request;
 
 /// Type alias for the HTTP response type that the orchestrator uses.
 pub type HttpResponse = http::Response<SdkBody>;
-
-/// Type alias for boxed futures that are returned from several traits since async trait functions are not stable yet (as of 2023-07-21).
-///
-/// See [the Rust blog](https://blog.rust-lang.org/inside-rust/2023/05/03/stabilizing-async-fn-in-trait.html) for
-/// more information on async functions in traits.
-pub type BoxFuture<T> = Pin<Box<dyn StdFuture<Output = Result<T, BoxError>> + Send>>;
-
-/// Type alias for futures that are returned from several traits since async trait functions are not stable yet (as of 2023-07-21).
-///
-/// See [the Rust blog](https://blog.rust-lang.org/inside-rust/2023/05/03/stabilizing-async-fn-in-trait.html) for
-/// more information on async functions in traits.
-pub type Future<T> = NowOrLater<Result<T, BoxError>, BoxFuture<T>>;
 
 /// Informs the orchestrator on whether or not the request body needs to be loaded into memory before transmit.
 ///
@@ -68,6 +54,14 @@ pub enum LoadedRequestBody {
 }
 
 impl Storable for LoadedRequestBody {
+    type Storer = StoreReplace<Self>;
+}
+
+/// Marker type stored in the config bag to indicate that a response body should be redacted.
+#[derive(Debug)]
+pub struct SensitiveOutput;
+
+impl Storable for SensitiveOutput {
     type Storer = StoreReplace<Self>;
 }
 
@@ -220,6 +214,49 @@ impl<E> OrchestratorError<E> {
             }
         }
     }
+
+    /// Maps the error type in `ErrorKind::Operation`
+    #[doc(hidden)]
+    pub fn map_operation_error<E2>(self, map: impl FnOnce(E) -> E2) -> OrchestratorError<E2> {
+        let kind = match self.kind {
+            ErrorKind::Connector { source } => ErrorKind::Connector { source },
+            ErrorKind::Operation { err } => ErrorKind::Operation { err: map(err) },
+            ErrorKind::Interceptor { source } => ErrorKind::Interceptor { source },
+            ErrorKind::Response { source } => ErrorKind::Response { source },
+            ErrorKind::Timeout { source } => ErrorKind::Timeout { source },
+            ErrorKind::Other { source } => ErrorKind::Other { source },
+        };
+        OrchestratorError { kind }
+    }
+}
+
+impl<E> StdError for OrchestratorError<E>
+where
+    E: StdError + 'static,
+{
+    fn source(&self) -> Option<&(dyn StdError + 'static)> {
+        Some(match &self.kind {
+            ErrorKind::Connector { source } => source as _,
+            ErrorKind::Operation { err } => err as _,
+            ErrorKind::Interceptor { source } => source as _,
+            ErrorKind::Response { source } => source.as_ref(),
+            ErrorKind::Timeout { source } => source.as_ref(),
+            ErrorKind::Other { source } => source.as_ref(),
+        })
+    }
+}
+
+impl<E> fmt::Display for OrchestratorError<E> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(match self.kind {
+            ErrorKind::Connector { .. } => "connector error",
+            ErrorKind::Operation { .. } => "operation error",
+            ErrorKind::Interceptor { .. } => "interceptor error",
+            ErrorKind::Response { .. } => "response error",
+            ErrorKind::Timeout { .. } => "timeout",
+            ErrorKind::Other { .. } => "an unknown error occurred",
+        })
+    }
 }
 
 fn convert_dispatch_error<O>(
@@ -240,7 +277,7 @@ fn convert_dispatch_error<O>(
 
 impl<E> From<InterceptorError> for OrchestratorError<E>
 where
-    E: Debug + std::error::Error + 'static,
+    E: fmt::Debug + std::error::Error + 'static,
 {
     fn from(err: InterceptorError) -> Self {
         Self::interceptor(err)

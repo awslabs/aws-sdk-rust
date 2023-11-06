@@ -30,12 +30,16 @@ impl CreateMediaInsightsPipelineConfigurationInput {
         self.real_time_alert_configuration.as_ref()
     }
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
-    pub fn elements(&self) -> ::std::option::Option<&[crate::types::MediaInsightsPipelineConfigurationElement]> {
-        self.elements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
+    pub fn elements(&self) -> &[crate::types::MediaInsightsPipelineConfigurationElement] {
+        self.elements.as_deref().unwrap_or_default()
     }
     /// <p>The tags assigned to the media insights pipeline configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier for the media insights pipeline configuration request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -78,6 +82,7 @@ pub struct CreateMediaInsightsPipelineConfigurationInputBuilder {
 }
 impl CreateMediaInsightsPipelineConfigurationInputBuilder {
     /// <p>The name of the media insights pipeline configuration.</p>
+    /// This field is required.
     pub fn media_insights_pipeline_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_insights_pipeline_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +97,7 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
         &self.media_insights_pipeline_configuration_name
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
+    /// This field is required.
     pub fn resource_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -178,7 +184,7 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationInput {

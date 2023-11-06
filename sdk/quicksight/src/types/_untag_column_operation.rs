@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagColumnOperation {
     /// <p>The column that this operation acts on.</p>
-    pub column_name: ::std::option::Option<::std::string::String>,
+    pub column_name: ::std::string::String,
     /// <p>The column tags to remove from this column.</p>
-    pub tag_names: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTagName>>,
+    pub tag_names: ::std::vec::Vec<crate::types::ColumnTagName>,
 }
 impl UntagColumnOperation {
     /// <p>The column that this operation acts on.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
-        self.column_name.as_deref()
+    pub fn column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.column_name.deref()
     }
     /// <p>The column tags to remove from this column.</p>
-    pub fn tag_names(&self) -> ::std::option::Option<&[crate::types::ColumnTagName]> {
-        self.tag_names.as_deref()
+    pub fn tag_names(&self) -> &[crate::types::ColumnTagName] {
+        use std::ops::Deref;
+        self.tag_names.deref()
     }
 }
 impl UntagColumnOperation {
@@ -35,6 +37,7 @@ pub struct UntagColumnOperationBuilder {
 }
 impl UntagColumnOperationBuilder {
     /// <p>The column that this operation acts on.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl UntagColumnOperationBuilder {
         &self.tag_names
     }
     /// Consumes the builder and constructs a [`UntagColumnOperation`](crate::types::UntagColumnOperation).
-    pub fn build(self) -> crate::types::UntagColumnOperation {
-        crate::types::UntagColumnOperation {
-            column_name: self.column_name,
-            tag_names: self.tag_names,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column_name`](crate::types::builders::UntagColumnOperationBuilder::column_name)
+    /// - [`tag_names`](crate::types::builders::UntagColumnOperationBuilder::tag_names)
+    pub fn build(self) -> ::std::result::Result<crate::types::UntagColumnOperation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UntagColumnOperation {
+            column_name: self.column_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "column_name",
+                    "column_name was not specified but it is required when building UntagColumnOperation",
+                )
+            })?,
+            tag_names: self.tag_names.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tag_names",
+                    "tag_names was not specified but it is required when building UntagColumnOperation",
+                )
+            })?,
+        })
     }
 }

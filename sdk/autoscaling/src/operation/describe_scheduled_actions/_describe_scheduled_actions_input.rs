@@ -24,8 +24,10 @@ impl DescribeScheduledActionsInput {
     }
     /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 actions.</p>
-    pub fn scheduled_action_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scheduled_action_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_action_names.is_none()`.
+    pub fn scheduled_action_names(&self) -> &[::std::string::String] {
+        self.scheduled_action_names.as_deref().unwrap_or_default()
     }
     /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -161,7 +163,7 @@ impl DescribeScheduledActionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

@@ -49,6 +49,7 @@ impl TypedLinkAttributeRangeBuilder {
         &self.attribute_name
     }
     /// <p>The range of attribute values that are being selected.</p>
+    /// This field is required.
     pub fn range(mut self, input: crate::types::TypedAttributeValueRange) -> Self {
         self.range = ::std::option::Option::Some(input);
         self

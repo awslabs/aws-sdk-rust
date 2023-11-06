@@ -14,8 +14,10 @@ impl GetEntitiesInput {
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(&self) -> ::std::option::Option<i64> {
@@ -78,7 +80,7 @@ impl GetEntitiesInputBuilder {
         &self.namespace_version
     }
     /// Consumes the builder and constructs a [`GetEntitiesInput`](crate::operation::get_entities::GetEntitiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_entities::GetEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_entities::GetEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entities::GetEntitiesInput {
             ids: self.ids,
             namespace_version: self.namespace_version,

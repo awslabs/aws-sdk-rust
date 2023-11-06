@@ -35,6 +35,7 @@ pub struct GetServerCertificateOutputBuilder {
 }
 impl GetServerCertificateOutputBuilder {
     /// <p>A structure containing details about the server certificate.</p>
+    /// This field is required.
     pub fn server_certificate(mut self, input: crate::types::ServerCertificate) -> Self {
         self.server_certificate = ::std::option::Option::Some(input);
         self

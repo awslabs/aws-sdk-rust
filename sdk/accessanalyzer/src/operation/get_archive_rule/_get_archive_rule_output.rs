@@ -35,6 +35,7 @@ pub struct GetArchiveRuleOutputBuilder {
 }
 impl GetArchiveRuleOutputBuilder {
     /// <p>Contains information about an archive rule.</p>
+    /// This field is required.
     pub fn archive_rule(mut self, input: crate::types::ArchiveRuleSummary) -> Self {
         self.archive_rule = ::std::option::Option::Some(input);
         self

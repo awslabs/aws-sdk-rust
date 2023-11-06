@@ -27,6 +27,7 @@ pub struct GetMetricsSummaryInputBuilder {
 }
 impl GetMetricsSummaryInputBuilder {
     /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.</p>
+    /// This field is required.
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl GetMetricsSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricsSummaryInput`](crate::operation::get_metrics_summary::GetMetricsSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_metrics_summary::GetMetricsSummaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_metrics_summary::GetMetricsSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_metrics_summary::GetMetricsSummaryInput { date: self.date })
     }
 }

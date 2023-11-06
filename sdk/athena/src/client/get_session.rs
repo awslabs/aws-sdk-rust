@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSession`](crate::operation::get_session::builders::GetSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`session_id(impl Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_session_id): <p>The session ID.</p>
+    ///   - [`session_id(impl Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_session_id):<br>required: **true**<br><p>The session ID.</p><br>
     /// - On success, responds with [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::operation::get_session::GetSessionOutput::session_id): <p>The session ID.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_session::GetSessionOutput::description): <p>The session description.</p>

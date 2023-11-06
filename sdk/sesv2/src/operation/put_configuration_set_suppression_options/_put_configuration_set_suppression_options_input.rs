@@ -23,8 +23,10 @@ impl PutConfigurationSetSuppressionOptionsInput {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn suppressed_reasons(&self) -> ::std::option::Option<&[crate::types::SuppressionListReason]> {
-        self.suppressed_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suppressed_reasons.is_none()`.
+    pub fn suppressed_reasons(&self) -> &[crate::types::SuppressionListReason] {
+        self.suppressed_reasons.as_deref().unwrap_or_default()
     }
 }
 impl PutConfigurationSetSuppressionOptionsInput {
@@ -43,6 +45,7 @@ pub struct PutConfigurationSetSuppressionOptionsInputBuilder {
 }
 impl PutConfigurationSetSuppressionOptionsInputBuilder {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput {

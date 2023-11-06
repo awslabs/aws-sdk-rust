@@ -58,8 +58,10 @@ impl GetInsightRuleReportInput {
     /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
     /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
     /// </ul>
-    pub fn metrics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[::std::string::String] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and <code>Maximum</code>.</p>
     pub fn order_by(&self) -> ::std::option::Option<&str> {
@@ -87,6 +89,7 @@ pub struct GetInsightRuleReportInputBuilder {
 }
 impl GetInsightRuleReportInputBuilder {
     /// <p>The name of the rule that you want to see data from.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +104,7 @@ impl GetInsightRuleReportInputBuilder {
         &self.rule_name
     }
     /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -115,6 +119,7 @@ impl GetInsightRuleReportInputBuilder {
         &self.start_time
     }
     /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -129,6 +134,7 @@ impl GetInsightRuleReportInputBuilder {
         &self.end_time
     }
     /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -220,7 +226,7 @@ impl GetInsightRuleReportInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightRuleReportInput`](crate::operation::get_insight_rule_report::GetInsightRuleReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_insight_rule_report::GetInsightRuleReportInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_insight_rule_report::GetInsightRuleReportInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_insight_rule_report::GetInsightRuleReportInput {
             rule_name: self.rule_name,

@@ -34,6 +34,7 @@ pub struct ListEnvironmentProvisionedResourcesInputBuilder {
 }
 impl ListEnvironmentProvisionedResourcesInputBuilder {
     /// <p>The environment name.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl ListEnvironmentProvisionedResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesInput {

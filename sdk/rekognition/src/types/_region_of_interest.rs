@@ -16,8 +16,10 @@ impl RegionOfInterest {
         self.bounding_box.as_ref()
     }
     /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
-    pub fn polygon(&self) -> ::std::option::Option<&[crate::types::Point]> {
-        self.polygon.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
+    pub fn polygon(&self) -> &[crate::types::Point] {
+        self.polygon.as_deref().unwrap_or_default()
     }
 }
 impl RegionOfInterest {

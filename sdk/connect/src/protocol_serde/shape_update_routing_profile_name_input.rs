@@ -2,7 +2,7 @@
 pub fn ser_update_routing_profile_name_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_routing_profile_name::UpdateRoutingProfileNameInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }

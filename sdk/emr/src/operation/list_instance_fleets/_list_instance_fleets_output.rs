@@ -11,8 +11,10 @@ pub struct ListInstanceFleetsOutput {
 }
 impl ListInstanceFleetsOutput {
     /// <p>The list of instance fleets for the cluster and given filters.</p>
-    pub fn instance_fleets(&self) -> ::std::option::Option<&[crate::types::InstanceFleet]> {
-        self.instance_fleets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_fleets.is_none()`.
+    pub fn instance_fleets(&self) -> &[crate::types::InstanceFleet] {
+        self.instance_fleets.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

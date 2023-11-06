@@ -34,6 +34,7 @@ pub struct DeleteFunctionInputBuilder {
 }
 impl DeleteFunctionInputBuilder {
     /// <p>The GraphQL API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteFunctionInputBuilder {
         &self.api_id
     }
     /// <p>The <code>Function</code> ID.</p>
+    /// This field is required.
     pub fn function_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteFunctionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFunctionInput`](crate::operation::delete_function::DeleteFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_function::DeleteFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_function::DeleteFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_function::DeleteFunctionInput {
             api_id: self.api_id,
             function_id: self.function_id,

@@ -11,8 +11,10 @@ pub struct DescribeAccountAttributesOutput {
 }
 impl DescribeAccountAttributesOutput {
     /// <p>An array of AccountAttributes objects.</p>
-    pub fn account_attributes(&self) -> ::std::option::Option<&[crate::types::AccountAttribute]> {
-        self.account_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_attributes.is_none()`.
+    pub fn account_attributes(&self) -> &[crate::types::AccountAttribute] {
+        self.account_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

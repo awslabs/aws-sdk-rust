@@ -34,6 +34,7 @@ pub struct DescribeFunctionInputBuilder {
 }
 impl DescribeFunctionInputBuilder {
     /// <p>The name of the function that you are getting information about.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeFunctionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_function::DescribeFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_function::DescribeFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_function::DescribeFunctionInput {
             name: self.name,
             stage: self.stage,

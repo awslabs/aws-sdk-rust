@@ -11,8 +11,10 @@ pub struct ColumnStatisticsConfiguration {
 }
 impl ColumnStatisticsConfiguration {
     /// <p>List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. </p>
-    pub fn selectors(&self) -> ::std::option::Option<&[crate::types::ColumnSelector]> {
-        self.selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selectors.is_none()`.
+    pub fn selectors(&self) -> &[crate::types::ColumnSelector] {
+        self.selectors.as_deref().unwrap_or_default()
     }
     /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
     pub fn statistics(&self) -> ::std::option::Option<&crate::types::StatisticsConfiguration> {
@@ -55,6 +57,7 @@ impl ColumnStatisticsConfigurationBuilder {
         &self.selectors
     }
     /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
+    /// This field is required.
     pub fn statistics(mut self, input: crate::types::StatisticsConfiguration) -> Self {
         self.statistics = ::std::option::Option::Some(input);
         self

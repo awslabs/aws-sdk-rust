@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfigurationUpdate {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
-    pub log_level_update: ::std::option::Option<crate::types::LogLevel>,
+    pub log_level_update: crate::types::LogLevel,
 }
 impl ZeppelinMonitoringConfigurationUpdate {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
-    pub fn log_level_update(&self) -> ::std::option::Option<&crate::types::LogLevel> {
-        self.log_level_update.as_ref()
+    pub fn log_level_update(&self) -> &crate::types::LogLevel {
+        &self.log_level_update
     }
 }
 impl ZeppelinMonitoringConfigurationUpdate {
@@ -28,6 +28,7 @@ pub struct ZeppelinMonitoringConfigurationUpdateBuilder {
 }
 impl ZeppelinMonitoringConfigurationUpdateBuilder {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
+    /// This field is required.
     pub fn log_level_update(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level_update = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,18 @@ impl ZeppelinMonitoringConfigurationUpdateBuilder {
         &self.log_level_update
     }
     /// Consumes the builder and constructs a [`ZeppelinMonitoringConfigurationUpdate`](crate::types::ZeppelinMonitoringConfigurationUpdate).
-    pub fn build(self) -> crate::types::ZeppelinMonitoringConfigurationUpdate {
-        crate::types::ZeppelinMonitoringConfigurationUpdate {
-            log_level_update: self.log_level_update,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_level_update`](crate::types::builders::ZeppelinMonitoringConfigurationUpdateBuilder::log_level_update)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ZeppelinMonitoringConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ZeppelinMonitoringConfigurationUpdate {
+            log_level_update: self.log_level_update.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "log_level_update",
+                    "log_level_update was not specified but it is required when building ZeppelinMonitoringConfigurationUpdate",
+                )
+            })?,
+        })
     }
 }

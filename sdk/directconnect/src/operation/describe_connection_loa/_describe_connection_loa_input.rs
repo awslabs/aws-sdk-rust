@@ -41,6 +41,7 @@ pub struct DescribeConnectionLoaInputBuilder {
 }
 impl DescribeConnectionLoaInputBuilder {
     /// <p>The ID of the connection.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl DescribeConnectionLoaInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConnectionLoaInput`](crate::operation::describe_connection_loa::DescribeConnectionLoaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_connection_loa::DescribeConnectionLoaInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_connection_loa::DescribeConnectionLoaInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_connection_loa::DescribeConnectionLoaInput {
             connection_id: self.connection_id,

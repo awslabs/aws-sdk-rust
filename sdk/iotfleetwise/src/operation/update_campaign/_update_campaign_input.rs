@@ -30,8 +30,10 @@ impl UpdateCampaignInput {
     }
     /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
-    pub fn data_extra_dimensions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_extra_dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_extra_dimensions.is_none()`.
+    pub fn data_extra_dimensions(&self) -> &[::std::string::String] {
+        self.data_extra_dimensions.as_deref().unwrap_or_default()
     }
     /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
     /// <ul>
@@ -62,6 +64,7 @@ pub struct UpdateCampaignInputBuilder {
 }
 impl UpdateCampaignInputBuilder {
     /// <p> The name of the campaign to update. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl UpdateCampaignInputBuilder {
     /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
     /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::UpdateCampaignAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -147,7 +151,7 @@ impl UpdateCampaignInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_campaign::UpdateCampaignInput {
             name: self.name,
             description: self.description,

@@ -2,7 +2,7 @@
 pub fn ser_delete_capacity_provider_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_capacity_provider::DeleteCapacityProviderInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.capacity_provider {
         object.key("capacityProvider").string(var_1.as_str());
     }

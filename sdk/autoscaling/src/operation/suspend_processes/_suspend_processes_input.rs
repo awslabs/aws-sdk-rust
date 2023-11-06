@@ -38,8 +38,10 @@ impl SuspendProcessesInput {
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
-    pub fn scaling_processes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scaling_processes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scaling_processes.is_none()`.
+    pub fn scaling_processes(&self) -> &[::std::string::String] {
+        self.scaling_processes.as_deref().unwrap_or_default()
     }
 }
 impl SuspendProcessesInput {
@@ -58,6 +60,7 @@ pub struct SuspendProcessesInputBuilder {
 }
 impl SuspendProcessesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -130,7 +133,7 @@ impl SuspendProcessesInputBuilder {
     /// Consumes the builder and constructs a [`SuspendProcessesInput`](crate::operation::suspend_processes::SuspendProcessesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::suspend_processes::SuspendProcessesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::suspend_processes::SuspendProcessesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::suspend_processes::SuspendProcessesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             scaling_processes: self.scaling_processes,

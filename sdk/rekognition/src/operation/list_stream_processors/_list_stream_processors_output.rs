@@ -15,8 +15,10 @@ impl ListStreamProcessorsOutput {
         self.next_token.as_deref()
     }
     /// <p>List of stream processors that you have created.</p>
-    pub fn stream_processors(&self) -> ::std::option::Option<&[crate::types::StreamProcessor]> {
-        self.stream_processors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stream_processors.is_none()`.
+    pub fn stream_processors(&self) -> &[crate::types::StreamProcessor] {
+        self.stream_processors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListStreamProcessorsOutput {

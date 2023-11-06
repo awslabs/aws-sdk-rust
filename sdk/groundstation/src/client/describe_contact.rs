@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeContact`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_id(impl Into<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::set_contact_id): <p>UUID of a contact.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::set_contact_id):<br>required: **true**<br><p>UUID of a contact.</p><br>
     /// - On success, responds with [`DescribeContactOutput`](crate::operation::describe_contact::DescribeContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::contact_id): <p>UUID of a contact.</p>
     ///   - [`mission_profile_arn(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::mission_profile_arn): <p>ARN of a mission profile.</p>
@@ -16,9 +16,9 @@ impl super::Client {
     ///   - [`contact_status(Option<ContactStatus>)`](crate::operation::describe_contact::DescribeContactOutput::contact_status): <p>Status of a contact.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::error_message): <p>Error message for a contact.</p>
     ///   - [`maximum_elevation(Option<Elevation>)`](crate::operation::describe_contact::DescribeContactOutput::maximum_elevation): <p>Maximum elevation angle of a contact.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_contact::DescribeContactOutput::tags): <p>Tags assigned to a contact.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_contact::DescribeContactOutput::tags): <p>Tags assigned to a contact.</p>
     ///   - [`region(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::region): <p>Region of a contact.</p>
-    ///   - [`dataflow_list(Option<Vec<DataflowDetail>>)`](crate::operation::describe_contact::DescribeContactOutput::dataflow_list): <p>List describing source and destination details for each dataflow edge.</p>
+    ///   - [`dataflow_list(Option<Vec::<DataflowDetail>>)`](crate::operation::describe_contact::DescribeContactOutput::dataflow_list): <p>List describing source and destination details for each dataflow edge.</p>
     /// - On failure, responds with [`SdkError<DescribeContactError>`](crate::operation::describe_contact::DescribeContactError)
     pub fn describe_contact(&self) -> crate::operation::describe_contact::builders::DescribeContactFluentBuilder {
         crate::operation::describe_contact::builders::DescribeContactFluentBuilder::new(self.handle.clone())

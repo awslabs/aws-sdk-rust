@@ -48,6 +48,7 @@ pub struct ClaimGameServerInputBuilder {
 }
 impl ClaimGameServerInputBuilder {
     /// <p>A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim. </p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl ClaimGameServerInputBuilder {
     /// Consumes the builder and constructs a [`ClaimGameServerInput`](crate::operation::claim_game_server::ClaimGameServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::claim_game_server::ClaimGameServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::claim_game_server::ClaimGameServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::claim_game_server::ClaimGameServerInput {
             game_server_group_name: self.game_server_group_name,
             game_server_id: self.game_server_id,

@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_tags_for_resource_output_next_token(
 pub(crate) fn lens_list_aliases_output_aliases(
     input: crate::operation::list_aliases::ListAliasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Alias>> {
-    let input = match input.aliases {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.aliases;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_keys_output_keys(
     input: crate::operation::list_keys::ListKeysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KeySummary>> {
-    let input = match input.keys {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.keys;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags;
     ::std::option::Option::Some(input)
 }

@@ -67,7 +67,7 @@ impl ListSqlInjectionMatchSetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsInput {
             next_marker: self.next_marker,

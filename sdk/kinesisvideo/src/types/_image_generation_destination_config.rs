@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageGenerationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
     /// <p>The Amazon Web Services Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-    pub destination_region: ::std::option::Option<::std::string::String>,
+    pub destination_region: ::std::string::String,
 }
 impl ImageGenerationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
     /// <p>The Amazon Web Services Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-    pub fn destination_region(&self) -> ::std::option::Option<&str> {
-        self.destination_region.as_deref()
+    pub fn destination_region(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_region.deref()
     }
 }
 impl ImageGenerationDestinationConfig {
@@ -35,6 +37,7 @@ pub struct ImageGenerationDestinationConfigBuilder {
 }
 impl ImageGenerationDestinationConfigBuilder {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ImageGenerationDestinationConfigBuilder {
         &self.uri
     }
     /// <p>The Amazon Web Services Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
+    /// This field is required.
     pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ImageGenerationDestinationConfigBuilder {
         &self.destination_region
     }
     /// Consumes the builder and constructs a [`ImageGenerationDestinationConfig`](crate::types::ImageGenerationDestinationConfig).
-    pub fn build(self) -> crate::types::ImageGenerationDestinationConfig {
-        crate::types::ImageGenerationDestinationConfig {
-            uri: self.uri,
-            destination_region: self.destination_region,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::ImageGenerationDestinationConfigBuilder::uri)
+    /// - [`destination_region`](crate::types::builders::ImageGenerationDestinationConfigBuilder::destination_region)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageGenerationDestinationConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImageGenerationDestinationConfig {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building ImageGenerationDestinationConfig",
+                )
+            })?,
+            destination_region: self.destination_region.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "destination_region",
+                    "destination_region was not specified but it is required when building ImageGenerationDestinationConfig",
+                )
+            })?,
+        })
     }
 }

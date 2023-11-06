@@ -29,8 +29,10 @@ pub struct CreateSubnetInput {
 }
 impl CreateSubnetInput {
     /// <p>The tags to assign to the subnet.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone or Local Zone for the subnet.</p>
     /// <p>Default: Amazon Web Services selects one for you. If you create more than one subnet in your VPC, we do not necessarily select a different zone for each subnet.</p>
@@ -198,6 +200,7 @@ impl CreateSubnetInputBuilder {
         &self.outpost_arn
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -240,7 +243,9 @@ impl CreateSubnetInputBuilder {
         &self.ipv6_native
     }
     /// Consumes the builder and constructs a [`CreateSubnetInput`](crate::operation::create_subnet::CreateSubnetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_subnet::CreateSubnetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_subnet::CreateSubnetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_subnet::CreateSubnetInput {
             tag_specifications: self.tag_specifications,
             availability_zone: self.availability_zone,

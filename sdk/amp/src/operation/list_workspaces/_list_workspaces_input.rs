@@ -86,7 +86,7 @@ impl ListWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkspacesInput`](crate::operation::list_workspaces::ListWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workspaces::ListWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workspaces::ListWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workspaces::ListWorkspacesInput {
             next_token: self.next_token,
             alias: self.alias,

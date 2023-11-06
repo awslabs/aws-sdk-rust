@@ -27,6 +27,7 @@ pub struct DescribeSourceLocationInputBuilder {
 }
 impl DescribeSourceLocationInputBuilder {
     /// <p>The name of the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DescribeSourceLocationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_source_location::DescribeSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_source_location::DescribeSourceLocationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_source_location::DescribeSourceLocationInput {
             source_location_name: self.source_location_name,
         })

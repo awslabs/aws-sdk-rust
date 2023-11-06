@@ -2,24 +2,24 @@
 pub fn ser_filter_date_time_picker_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterDateTimePickerControl,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.filter_control_id {
-        object.key("FilterControlId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("FilterControlId").string(input.filter_control_id.as_str());
     }
-    if let Some(var_2) = &input.title {
-        object.key("Title").string(var_2.as_str());
+    {
+        object.key("Title").string(input.title.as_str());
     }
-    if let Some(var_3) = &input.source_filter_id {
-        object.key("SourceFilterId").string(var_3.as_str());
+    {
+        object.key("SourceFilterId").string(input.source_filter_id.as_str());
     }
-    if let Some(var_4) = &input.display_options {
+    if let Some(var_1) = &input.display_options {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("DisplayOptions").start_object();
-        crate::protocol_serde::shape_date_time_picker_control_display_options::ser_date_time_picker_control_display_options(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("DisplayOptions").start_object();
+        crate::protocol_serde::shape_date_time_picker_control_display_options::ser_date_time_picker_control_display_options(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_6) = &input.r#type {
-        object.key("Type").string(var_6.as_str());
+    if let Some(var_3) = &input.r#type {
+        object.key("Type").string(var_3.as_str());
     }
     Ok(())
 }
@@ -84,7 +84,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::filter_date_time_picker_control_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

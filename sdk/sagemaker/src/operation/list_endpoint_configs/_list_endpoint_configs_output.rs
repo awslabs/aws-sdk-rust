@@ -11,8 +11,10 @@ pub struct ListEndpointConfigsOutput {
 }
 impl ListEndpointConfigsOutput {
     /// <p>An array of endpoint configurations.</p>
-    pub fn endpoint_configs(&self) -> ::std::option::Option<&[crate::types::EndpointConfigSummary]> {
-        self.endpoint_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_configs.is_none()`.
+    pub fn endpoint_configs(&self) -> &[crate::types::EndpointConfigSummary] {
+        self.endpoint_configs.as_deref().unwrap_or_default()
     }
     /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

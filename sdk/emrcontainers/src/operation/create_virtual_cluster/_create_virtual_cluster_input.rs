@@ -48,6 +48,7 @@ pub struct CreateVirtualClusterInputBuilder {
 }
 impl CreateVirtualClusterInputBuilder {
     /// <p>The specified name of the virtual cluster.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateVirtualClusterInputBuilder {
         &self.name
     }
     /// <p>The container provider of the virtual cluster.</p>
+    /// This field is required.
     pub fn container_provider(mut self, input: crate::types::ContainerProvider) -> Self {
         self.container_provider = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl CreateVirtualClusterInputBuilder {
         &self.container_provider
     }
     /// <p>The client token of the virtual cluster.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl CreateVirtualClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_virtual_cluster::CreateVirtualClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_virtual_cluster::CreateVirtualClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_virtual_cluster::CreateVirtualClusterInput {
             name: self.name,

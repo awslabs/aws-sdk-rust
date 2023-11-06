@@ -27,6 +27,7 @@ pub struct GetAccountSettingsInputBuilder {
 }
 impl GetAccountSettingsInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl GetAccountSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountSettingsInput`](crate::operation::get_account_settings::GetAccountSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_account_settings::GetAccountSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_account_settings::GetAccountSettingsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_account_settings::GetAccountSettingsInput { account_id: self.account_id })
     }
 }

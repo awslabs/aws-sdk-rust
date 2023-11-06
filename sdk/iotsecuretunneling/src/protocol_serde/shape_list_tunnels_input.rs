@@ -2,7 +2,7 @@
 pub fn ser_list_tunnels_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_tunnels::ListTunnelsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.thing_name {
         object.key("thingName").string(var_1.as_str());
     }

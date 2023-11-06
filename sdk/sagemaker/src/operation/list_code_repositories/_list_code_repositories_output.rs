@@ -25,8 +25,10 @@ impl ListCodeRepositoriesOutput {
     /// <li> <p>Last modified time</p> </li>
     /// <li> <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p> </li>
     /// </ul>
-    pub fn code_repository_summary_list(&self) -> ::std::option::Option<&[crate::types::CodeRepositorySummary]> {
-        self.code_repository_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repository_summary_list.is_none()`.
+    pub fn code_repository_summary_list(&self) -> &[crate::types::CodeRepositorySummary] {
+        self.code_repository_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

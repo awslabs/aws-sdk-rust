@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
-    pub status: ::std::option::Option<crate::types::GatewayRouteStatusCode>,
+    pub status: crate::types::GatewayRouteStatusCode,
 }
 impl GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GatewayRouteStatusCode> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::GatewayRouteStatusCode {
+        &self.status
     }
 }
 impl GatewayRouteStatus {
@@ -28,6 +28,7 @@ pub struct GatewayRouteStatusBuilder {
 }
 impl GatewayRouteStatusBuilder {
     /// <p>The current status for the gateway route.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::GatewayRouteStatusCode) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl GatewayRouteStatusBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`GatewayRouteStatus`](crate::types::GatewayRouteStatus).
-    pub fn build(self) -> crate::types::GatewayRouteStatus {
-        crate::types::GatewayRouteStatus { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::GatewayRouteStatusBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::GatewayRouteStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GatewayRouteStatus {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GatewayRouteStatus",
+                )
+            })?,
+        })
     }
 }

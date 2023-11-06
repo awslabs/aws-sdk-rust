@@ -9,8 +9,10 @@ pub struct NotificationConfiguration {
 }
 impl NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    pub fn channels(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
+    pub fn channels(&self) -> &[crate::types::Channel] {
+        self.channels.as_deref().unwrap_or_default()
     }
 }
 impl NotificationConfiguration {

@@ -4,78 +4,83 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVariantStoreOutput {
     /// <p>The store's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The store's genome reference.</p>
     pub reference: ::std::option::Option<crate::types::ReferenceItem>,
     /// <p>The store's status.</p>
-    pub status: ::std::option::Option<crate::types::StoreStatus>,
+    pub status: crate::types::StoreStatus,
     /// <p>The store's ARN.</p>
-    pub store_arn: ::std::option::Option<::std::string::String>,
+    pub store_arn: ::std::string::String,
     /// <p>The store's name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The store's description.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>The store's server-side encryption (SSE) settings.</p>
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>When the store was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>When the store was updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The store's tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>The store's status message.</p>
-    pub status_message: ::std::option::Option<::std::string::String>,
+    pub status_message: ::std::string::String,
     /// <p>The store's size in bytes.</p>
-    pub store_size_bytes: ::std::option::Option<i64>,
+    pub store_size_bytes: i64,
     _request_id: Option<String>,
 }
 impl GetVariantStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The store's genome reference.</p>
     pub fn reference(&self) -> ::std::option::Option<&crate::types::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StoreStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StoreStatus {
+        &self.status
     }
     /// <p>The store's ARN.</p>
-    pub fn store_arn(&self) -> ::std::option::Option<&str> {
-        self.store_arn.as_deref()
+    pub fn store_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.store_arn.deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
     pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>The store's tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.tags.as_ref()
+    pub fn tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.tags
     }
     /// <p>The store's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
-        self.status_message.as_deref()
+    pub fn status_message(&self) -> &str {
+        use std::ops::Deref;
+        self.status_message.deref()
     }
     /// <p>The store's size in bytes.</p>
-    pub fn store_size_bytes(&self) -> ::std::option::Option<i64> {
+    pub fn store_size_bytes(&self) -> i64 {
         self.store_size_bytes
     }
 }
@@ -111,6 +116,7 @@ pub struct GetVariantStoreOutputBuilder {
 }
 impl GetVariantStoreOutputBuilder {
     /// <p>The store's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,7 @@ impl GetVariantStoreOutputBuilder {
         &self.id
     }
     /// <p>The store's genome reference.</p>
+    /// This field is required.
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
         self.reference = ::std::option::Option::Some(input);
         self
@@ -139,6 +146,7 @@ impl GetVariantStoreOutputBuilder {
         &self.reference
     }
     /// <p>The store's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -153,6 +161,7 @@ impl GetVariantStoreOutputBuilder {
         &self.status
     }
     /// <p>The store's ARN.</p>
+    /// This field is required.
     pub fn store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.store_arn = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +176,7 @@ impl GetVariantStoreOutputBuilder {
         &self.store_arn
     }
     /// <p>The store's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +191,7 @@ impl GetVariantStoreOutputBuilder {
         &self.name
     }
     /// <p>The store's description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +206,7 @@ impl GetVariantStoreOutputBuilder {
         &self.description
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
+    /// This field is required.
     pub fn sse_config(mut self, input: crate::types::SseConfig) -> Self {
         self.sse_config = ::std::option::Option::Some(input);
         self
@@ -209,6 +221,7 @@ impl GetVariantStoreOutputBuilder {
         &self.sse_config
     }
     /// <p>When the store was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -223,6 +236,7 @@ impl GetVariantStoreOutputBuilder {
         &self.creation_time
     }
     /// <p>When the store was updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -257,6 +271,7 @@ impl GetVariantStoreOutputBuilder {
         &self.tags
     }
     /// <p>The store's status message.</p>
+    /// This field is required.
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
@@ -271,6 +286,7 @@ impl GetVariantStoreOutputBuilder {
         &self.status_message
     }
     /// <p>The store's size in bytes.</p>
+    /// This field is required.
     pub fn store_size_bytes(mut self, input: i64) -> Self {
         self.store_size_bytes = ::std::option::Option::Some(input);
         self
@@ -294,21 +310,84 @@ impl GetVariantStoreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVariantStoreOutput`](crate::operation::get_variant_store::GetVariantStoreOutput).
-    pub fn build(self) -> crate::operation::get_variant_store::GetVariantStoreOutput {
-        crate::operation::get_variant_store::GetVariantStoreOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::id)
+    /// - [`status`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::status)
+    /// - [`store_arn`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::store_arn)
+    /// - [`name`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::name)
+    /// - [`description`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::description)
+    /// - [`creation_time`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::creation_time)
+    /// - [`update_time`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::update_time)
+    /// - [`tags`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::tags)
+    /// - [`status_message`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::status_message)
+    /// - [`store_size_bytes`](crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::store_size_bytes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_variant_store::GetVariantStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_variant_store::GetVariantStoreOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
             reference: self.reference,
-            status: self.status,
-            store_arn: self.store_arn,
-            name: self.name,
-            description: self.description,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
+            store_arn: self.store_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "store_arn",
+                    "store_arn was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
             sse_config: self.sse_config,
-            creation_time: self.creation_time,
-            update_time: self.update_time,
-            tags: self.tags,
-            status_message: self.status_message,
-            store_size_bytes: self.store_size_bytes,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
+            status_message: self.status_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status_message",
+                    "status_message was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
+            store_size_bytes: self.store_size_bytes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "store_size_bytes",
+                    "store_size_bytes was not specified but it is required when building GetVariantStoreOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

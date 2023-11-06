@@ -12,8 +12,10 @@ pub struct ConformancePackComplianceFilters {
 }
 impl ConformancePackComplianceFilters {
     /// <p>Filters the results by Config rule names.</p>
-    pub fn config_rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.config_rule_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rule_names.is_none()`.
+    pub fn config_rule_names(&self) -> &[::std::string::String] {
+        self.config_rule_names.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>

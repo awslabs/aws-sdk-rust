@@ -11,8 +11,10 @@ pub struct GetTransitGatewayConnectPeerAssociationsOutput {
 }
 impl GetTransitGatewayConnectPeerAssociationsOutput {
     /// <p>Information about the transit gateway Connect peer associations.</p>
-    pub fn transit_gateway_connect_peer_associations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayConnectPeerAssociation]> {
-        self.transit_gateway_connect_peer_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_connect_peer_associations.is_none()`.
+    pub fn transit_gateway_connect_peer_associations(&self) -> &[crate::types::TransitGatewayConnectPeerAssociation] {
+        self.transit_gateway_connect_peer_associations.as_deref().unwrap_or_default()
     }
     /// <p>The token to use for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

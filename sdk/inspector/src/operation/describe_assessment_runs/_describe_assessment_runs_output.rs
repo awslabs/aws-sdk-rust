@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssessmentRunsOutput {
     /// <p>Information about the assessment run.</p>
-    pub assessment_runs: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRun>>,
+    pub assessment_runs: ::std::vec::Vec<crate::types::AssessmentRun>,
     /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
-    pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
+    pub failed_items: ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
     _request_id: Option<String>,
 }
 impl DescribeAssessmentRunsOutput {
     /// <p>Information about the assessment run.</p>
-    pub fn assessment_runs(&self) -> ::std::option::Option<&[crate::types::AssessmentRun]> {
-        self.assessment_runs.as_deref()
+    pub fn assessment_runs(&self) -> &[crate::types::AssessmentRun] {
+        use std::ops::Deref;
+        self.assessment_runs.deref()
     }
     /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
-        self.failed_items.as_ref()
+    pub fn failed_items(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails> {
+        &self.failed_items
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAssessmentRunsOutput {
@@ -93,11 +94,29 @@ impl DescribeAssessmentRunsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAssessmentRunsOutput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput).
-    pub fn build(self) -> crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput {
-        crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput {
-            assessment_runs: self.assessment_runs,
-            failed_items: self.failed_items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assessment_runs`](crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsOutputBuilder::assessment_runs)
+    /// - [`failed_items`](crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsOutputBuilder::failed_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput {
+            assessment_runs: self.assessment_runs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "assessment_runs",
+                    "assessment_runs was not specified but it is required when building DescribeAssessmentRunsOutput",
+                )
+            })?,
+            failed_items: self.failed_items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "failed_items",
+                    "failed_items was not specified but it is required when building DescribeAssessmentRunsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

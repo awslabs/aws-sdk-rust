@@ -46,6 +46,7 @@ pub struct DescribeDefaultClusterParametersInputBuilder {
 }
 impl DescribeDefaultClusterParametersInputBuilder {
     /// <p>The name of the cluster parameter group family.</p>
+    /// This field is required.
     pub fn parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_family = ::std::option::Option::Some(input.into());
         self
@@ -98,7 +99,7 @@ impl DescribeDefaultClusterParametersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersInput {

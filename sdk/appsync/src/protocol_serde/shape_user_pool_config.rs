@@ -2,18 +2,18 @@
 pub fn ser_user_pool_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserPoolConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.user_pool_id {
-        object.key("userPoolId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("userPoolId").string(input.user_pool_id.as_str());
     }
-    if let Some(var_2) = &input.aws_region {
-        object.key("awsRegion").string(var_2.as_str());
+    {
+        object.key("awsRegion").string(input.aws_region.as_str());
     }
-    if let Some(var_3) = &input.default_action {
-        object.key("defaultAction").string(var_3.as_str());
+    {
+        object.key("defaultAction").string(input.default_action.as_str());
     }
-    if let Some(var_4) = &input.app_id_client_regex {
-        object.key("appIdClientRegex").string(var_4.as_str());
+    if let Some(var_1) = &input.app_id_client_regex {
+        object.key("appIdClientRegex").string(var_1.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::user_pool_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

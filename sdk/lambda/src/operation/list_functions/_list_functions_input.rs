@@ -106,7 +106,7 @@ impl ListFunctionsInputBuilder {
     /// Consumes the builder and constructs a [`ListFunctionsInput`](crate::operation::list_functions::ListFunctionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_functions::ListFunctionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_functions::ListFunctionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_functions::ListFunctionsInput {
             master_region: self.master_region,
             function_version: self.function_version,

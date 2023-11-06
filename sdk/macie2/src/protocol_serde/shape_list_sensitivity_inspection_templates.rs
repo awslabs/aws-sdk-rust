@@ -155,7 +155,7 @@ pub(crate) fn de_list_sensitivity_inspection_templates(
                 }
                 "sensitivityInspectionTemplates" => {
                     builder = builder.set_sensitivity_inspection_templates(
-                            crate::protocol_serde::shape___list_of_sensitivity_inspection_templates_entry::de___list_of_sensitivity_inspection_templates_entry(tokens)?
+                            crate::protocol_serde::shape_list_of_sensitivity_inspection_templates_entry::de_list_of_sensitivity_inspection_templates_entry(tokens)?
                         );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

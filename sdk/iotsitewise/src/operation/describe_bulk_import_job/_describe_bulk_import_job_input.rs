@@ -27,6 +27,7 @@ pub struct DescribeBulkImportJobInputBuilder {
 }
 impl DescribeBulkImportJobInputBuilder {
     /// <p>The ID of the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeBulkImportJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBulkImportJobInput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput { job_id: self.job_id })
     }

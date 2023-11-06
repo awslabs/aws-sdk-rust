@@ -2,7 +2,7 @@
 pub fn ser_permission_group_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PermissionGroupParams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.permission_group_id {
         object.key("permissionGroupId").string(var_1.as_str());
     }

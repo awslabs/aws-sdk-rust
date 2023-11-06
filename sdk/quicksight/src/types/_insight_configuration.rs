@@ -11,8 +11,10 @@ pub struct InsightConfiguration {
 }
 impl InsightConfiguration {
     /// <p>The computations configurations of the insight visual</p>
-    pub fn computations(&self) -> ::std::option::Option<&[crate::types::Computation]> {
-        self.computations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.computations.is_none()`.
+    pub fn computations(&self) -> &[crate::types::Computation] {
+        self.computations.as_deref().unwrap_or_default()
     }
     /// <p>The custom narrative of the insight visual.</p>
     pub fn custom_narrative(&self) -> ::std::option::Option<&crate::types::CustomNarrativeOptions> {

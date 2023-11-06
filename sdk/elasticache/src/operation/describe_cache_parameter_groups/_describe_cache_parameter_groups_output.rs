@@ -16,8 +16,10 @@ impl DescribeCacheParameterGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    pub fn cache_parameter_groups(&self) -> ::std::option::Option<&[crate::types::CacheParameterGroup]> {
-        self.cache_parameter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_parameter_groups.is_none()`.
+    pub fn cache_parameter_groups(&self) -> &[crate::types::CacheParameterGroup] {
+        self.cache_parameter_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCacheParameterGroupsOutput {

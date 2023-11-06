@@ -2,12 +2,12 @@
 pub fn ser_intent_sort_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntentSortBy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attribute {
-        object.key("attribute").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("attribute").string(input.attribute.as_str());
     }
-    if let Some(var_2) = &input.order {
-        object.key("order").string(var_2.as_str());
+    {
+        object.key("order").string(input.order.as_str());
     }
     Ok(())
 }

@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-    pub domain_deliverability_campaigns: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>>,
+    pub domain_deliverability_campaigns: ::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>,
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-    pub fn domain_deliverability_campaigns(&self) -> ::std::option::Option<&[crate::types::DomainDeliverabilityCampaign]> {
-        self.domain_deliverability_campaigns.as_deref()
+    pub fn domain_deliverability_campaigns(&self) -> &[crate::types::DomainDeliverabilityCampaign] {
+        use std::ops::Deref;
+        self.domain_deliverability_campaigns.deref()
     }
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -88,11 +89,25 @@ impl ListDomainDeliverabilityCampaignsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDomainDeliverabilityCampaignsOutput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput).
-    pub fn build(self) -> crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput {
-        crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput {
-            domain_deliverability_campaigns: self.domain_deliverability_campaigns,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_deliverability_campaigns`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsOutputBuilder::domain_deliverability_campaigns)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput {
+                domain_deliverability_campaigns: self.domain_deliverability_campaigns.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "domain_deliverability_campaigns",
+                        "domain_deliverability_campaigns was not specified but it is required when building ListDomainDeliverabilityCampaignsOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

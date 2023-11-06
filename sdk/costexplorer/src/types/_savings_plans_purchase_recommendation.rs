@@ -41,8 +41,10 @@ impl SavingsPlansPurchaseRecommendation {
         self.lookback_period_in_days.as_ref()
     }
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
-    pub fn savings_plans_purchase_recommendation_details(&self) -> ::std::option::Option<&[crate::types::SavingsPlansPurchaseRecommendationDetail]> {
-        self.savings_plans_purchase_recommendation_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plans_purchase_recommendation_details.is_none()`.
+    pub fn savings_plans_purchase_recommendation_details(&self) -> &[crate::types::SavingsPlansPurchaseRecommendationDetail] {
+        self.savings_plans_purchase_recommendation_details.as_deref().unwrap_or_default()
     }
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
     pub fn savings_plans_purchase_recommendation_summary(&self) -> ::std::option::Option<&crate::types::SavingsPlansPurchaseRecommendationSummary> {

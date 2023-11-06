@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountPermissionsOutput {
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions: ::std::vec::Vec<crate::types::Permission>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAccountPermissionsOutput {
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions.as_deref()
+    pub fn permissions(&self) -> &[crate::types::Permission] {
+        use std::ops::Deref;
+        self.permissions.deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListAccountPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccountPermissionsOutput`](crate::operation::list_account_permissions::ListAccountPermissionsOutput).
-    pub fn build(self) -> crate::operation::list_account_permissions::ListAccountPermissionsOutput {
-        crate::operation::list_account_permissions::ListAccountPermissionsOutput {
-            permissions: self.permissions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`permissions`](crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder::permissions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_permissions::ListAccountPermissionsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_account_permissions::ListAccountPermissionsOutput {
+            permissions: self.permissions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "permissions",
+                    "permissions was not specified but it is required when building ListAccountPermissionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

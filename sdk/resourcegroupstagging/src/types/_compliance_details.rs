@@ -13,12 +13,16 @@ pub struct ComplianceDetails {
 }
 impl ComplianceDetails {
     /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
-    pub fn noncompliant_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.noncompliant_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.noncompliant_keys.is_none()`.
+    pub fn noncompliant_keys(&self) -> &[::std::string::String] {
+        self.noncompliant_keys.as_deref().unwrap_or_default()
     }
     /// <p>These are keys defined in the effective policy that are on the resource with either incorrect case treatment or noncompliant values. </p>
-    pub fn keys_with_noncompliant_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keys_with_noncompliant_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys_with_noncompliant_values.is_none()`.
+    pub fn keys_with_noncompliant_values(&self) -> &[::std::string::String] {
+        self.keys_with_noncompliant_values.as_deref().unwrap_or_default()
     }
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
     pub fn compliance_status(&self) -> ::std::option::Option<bool> {

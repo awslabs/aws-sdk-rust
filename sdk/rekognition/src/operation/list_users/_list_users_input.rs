@@ -41,6 +41,7 @@ pub struct ListUsersInputBuilder {
 }
 impl ListUsersInputBuilder {
     /// <p>The ID of an existing collection.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListUsersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
             collection_id: self.collection_id,
             max_results: self.max_results,

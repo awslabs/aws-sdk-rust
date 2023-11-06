@@ -15,8 +15,10 @@ impl PropertyValueEntry {
         self.entity_property_reference.as_ref()
     }
     /// <p>A list of objects that specify time series property values.</p>
-    pub fn property_values(&self) -> ::std::option::Option<&[crate::types::PropertyValue]> {
-        self.property_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_values.is_none()`.
+    pub fn property_values(&self) -> &[crate::types::PropertyValue] {
+        self.property_values.as_deref().unwrap_or_default()
     }
 }
 impl PropertyValueEntry {
@@ -35,6 +37,7 @@ pub struct PropertyValueEntryBuilder {
 }
 impl PropertyValueEntryBuilder {
     /// <p>An object that contains information about the entity that has the property.</p>
+    /// This field is required.
     pub fn entity_property_reference(mut self, input: crate::types::EntityPropertyReference) -> Self {
         self.entity_property_reference = ::std::option::Option::Some(input);
         self

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GoogleAnalyticsConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
-    pub client_id: ::std::option::Option<::std::string::String>,
+    pub client_id: ::std::string::String,
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
-    pub client_secret: ::std::option::Option<::std::string::String>,
+    pub client_secret: ::std::string::String,
     /// <p> The credentials used to access protected Google Analytics resources. </p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2 access tokens, and is not required for OAuth1 access tokens. </p>
@@ -17,12 +17,14 @@ pub struct GoogleAnalyticsConnectorProfileCredentials {
 }
 impl GoogleAnalyticsConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
-        self.client_id.as_deref()
+    pub fn client_id(&self) -> &str {
+        use std::ops::Deref;
+        self.client_id.deref()
     }
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
-        self.client_secret.as_deref()
+    pub fn client_secret(&self) -> &str {
+        use std::ops::Deref;
+        self.client_secret.deref()
     }
     /// <p> The credentials used to access protected Google Analytics resources. </p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
@@ -67,6 +69,7 @@ pub struct GoogleAnalyticsConnectorProfileCredentialsBuilder {
 }
 impl GoogleAnalyticsConnectorProfileCredentialsBuilder {
     /// <p> The identifier for the desired client. </p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl GoogleAnalyticsConnectorProfileCredentialsBuilder {
         &self.client_id
     }
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
+    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -137,14 +141,29 @@ impl GoogleAnalyticsConnectorProfileCredentialsBuilder {
         &self.o_auth_request
     }
     /// Consumes the builder and constructs a [`GoogleAnalyticsConnectorProfileCredentials`](crate::types::GoogleAnalyticsConnectorProfileCredentials).
-    pub fn build(self) -> crate::types::GoogleAnalyticsConnectorProfileCredentials {
-        crate::types::GoogleAnalyticsConnectorProfileCredentials {
-            client_id: self.client_id,
-            client_secret: self.client_secret,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`client_id`](crate::types::builders::GoogleAnalyticsConnectorProfileCredentialsBuilder::client_id)
+    /// - [`client_secret`](crate::types::builders::GoogleAnalyticsConnectorProfileCredentialsBuilder::client_secret)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::GoogleAnalyticsConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::GoogleAnalyticsConnectorProfileCredentials {
+            client_id: self.client_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "client_id",
+                    "client_id was not specified but it is required when building GoogleAnalyticsConnectorProfileCredentials",
+                )
+            })?,
+            client_secret: self.client_secret.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "client_secret",
+                    "client_secret was not specified but it is required when building GoogleAnalyticsConnectorProfileCredentials",
+                )
+            })?,
             access_token: self.access_token,
             refresh_token: self.refresh_token,
             o_auth_request: self.o_auth_request,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GoogleAnalyticsConnectorProfileCredentialsBuilder {

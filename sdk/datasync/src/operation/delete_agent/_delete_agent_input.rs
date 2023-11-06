@@ -28,6 +28,7 @@ pub struct DeleteAgentInputBuilder {
 }
 impl DeleteAgentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn agent_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl DeleteAgentInputBuilder {
         &self.agent_arn
     }
     /// Consumes the builder and constructs a [`DeleteAgentInput`](crate::operation::delete_agent::DeleteAgentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_agent::DeleteAgentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_agent::DeleteAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_agent::DeleteAgentInput { agent_arn: self.agent_arn })
     }
 }

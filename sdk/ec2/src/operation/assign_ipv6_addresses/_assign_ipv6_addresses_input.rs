@@ -20,16 +20,20 @@ impl AssignIpv6AddressesInput {
         self.ipv6_address_count
     }
     /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code> option.</p>
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_prefix_count
     }
     /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
+    pub fn ipv6_prefixes(&self) -> &[::std::string::String] {
+        self.ipv6_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
@@ -123,6 +127,7 @@ impl AssignIpv6AddressesInputBuilder {
         &self.ipv6_prefixes
     }
     /// <p>The ID of the network interface.</p>
+    /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +144,7 @@ impl AssignIpv6AddressesInputBuilder {
     /// Consumes the builder and constructs a [`AssignIpv6AddressesInput`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput {
             ipv6_address_count: self.ipv6_address_count,

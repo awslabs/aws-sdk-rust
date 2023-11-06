@@ -2,7 +2,7 @@
 pub fn ser_backend_api_resource_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackendApiResourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_auth_types {
         let mut array_2 = object.key("additionalAuthTypes").start_array();
         for item_3 in var_1 {

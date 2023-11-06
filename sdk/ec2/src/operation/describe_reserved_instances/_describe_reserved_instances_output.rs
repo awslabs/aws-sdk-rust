@@ -10,8 +10,10 @@ pub struct DescribeReservedInstancesOutput {
 }
 impl DescribeReservedInstancesOutput {
     /// <p>A list of Reserved Instances.</p>
-    pub fn reserved_instances(&self) -> ::std::option::Option<&[crate::types::ReservedInstances]> {
-        self.reserved_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances.is_none()`.
+    pub fn reserved_instances(&self) -> &[crate::types::ReservedInstances] {
+        self.reserved_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReservedInstancesOutput {

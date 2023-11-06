@@ -2,21 +2,21 @@
 pub fn ser_template_linked_policy_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateLinkedPolicyDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.policy_template_id {
-        object.key("policyTemplateId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("policyTemplateId").string(input.policy_template_id.as_str());
     }
-    if let Some(var_2) = &input.principal {
+    if let Some(var_1) = &input.principal {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("principal").start_object();
-        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("principal").start_object();
+        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.resource {
+    if let Some(var_3) = &input.resource {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("resource").start_object();
-        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("resource").start_object();
+        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

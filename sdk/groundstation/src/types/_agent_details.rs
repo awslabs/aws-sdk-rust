@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentDetails {
     /// <p>Current agent version.</p>
-    pub agent_version: ::std::option::Option<::std::string::String>,
+    pub agent_version: ::std::string::String,
     /// <p>ID of EC2 instance agent is running on.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
+    pub instance_id: ::std::string::String,
     /// <p>Type of EC2 instance agent is running on.</p>
-    pub instance_type: ::std::option::Option<::std::string::String>,
+    pub instance_type: ::std::string::String,
     /// <note>
     /// <p>This field should not be used. Use agentCpuCores instead.</p>
     /// </note>
@@ -18,35 +18,43 @@ pub struct AgentDetails {
     /// <p>List of CPU cores reserved for the agent.</p>
     pub agent_cpu_cores: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>List of versions being used by agent components.</p>
-    pub component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
+    pub component_versions: ::std::vec::Vec<crate::types::ComponentVersion>,
 }
 impl AgentDetails {
     /// <p>Current agent version.</p>
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
-        self.agent_version.as_deref()
+    pub fn agent_version(&self) -> &str {
+        use std::ops::Deref;
+        self.agent_version.deref()
     }
     /// <p>ID of EC2 instance agent is running on.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
+    pub fn instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_id.deref()
     }
     /// <p>Type of EC2 instance agent is running on.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
-        self.instance_type.as_deref()
+    pub fn instance_type(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_type.deref()
     }
     /// <note>
     /// <p>This field should not be used. Use agentCpuCores instead.</p>
     /// </note>
     /// <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>
-    pub fn reserved_cpu_cores(&self) -> ::std::option::Option<&[i32]> {
-        self.reserved_cpu_cores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_cpu_cores.is_none()`.
+    pub fn reserved_cpu_cores(&self) -> &[i32] {
+        self.reserved_cpu_cores.as_deref().unwrap_or_default()
     }
     /// <p>List of CPU cores reserved for the agent.</p>
-    pub fn agent_cpu_cores(&self) -> ::std::option::Option<&[i32]> {
-        self.agent_cpu_cores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_cpu_cores.is_none()`.
+    pub fn agent_cpu_cores(&self) -> &[i32] {
+        self.agent_cpu_cores.as_deref().unwrap_or_default()
     }
     /// <p>List of versions being used by agent components.</p>
-    pub fn component_versions(&self) -> ::std::option::Option<&[crate::types::ComponentVersion]> {
-        self.component_versions.as_deref()
+    pub fn component_versions(&self) -> &[crate::types::ComponentVersion] {
+        use std::ops::Deref;
+        self.component_versions.deref()
     }
 }
 impl AgentDetails {
@@ -69,6 +77,7 @@ pub struct AgentDetailsBuilder {
 }
 impl AgentDetailsBuilder {
     /// <p>Current agent version.</p>
+    /// This field is required.
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +92,7 @@ impl AgentDetailsBuilder {
         &self.agent_version
     }
     /// <p>ID of EC2 instance agent is running on.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +107,7 @@ impl AgentDetailsBuilder {
         &self.instance_id
     }
     /// <p>Type of EC2 instance agent is running on.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -180,14 +191,39 @@ impl AgentDetailsBuilder {
         &self.component_versions
     }
     /// Consumes the builder and constructs a [`AgentDetails`](crate::types::AgentDetails).
-    pub fn build(self) -> crate::types::AgentDetails {
-        crate::types::AgentDetails {
-            agent_version: self.agent_version,
-            instance_id: self.instance_id,
-            instance_type: self.instance_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_version`](crate::types::builders::AgentDetailsBuilder::agent_version)
+    /// - [`instance_id`](crate::types::builders::AgentDetailsBuilder::instance_id)
+    /// - [`instance_type`](crate::types::builders::AgentDetailsBuilder::instance_type)
+    /// - [`component_versions`](crate::types::builders::AgentDetailsBuilder::component_versions)
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AgentDetails {
+            agent_version: self.agent_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agent_version",
+                    "agent_version was not specified but it is required when building AgentDetails",
+                )
+            })?,
+            instance_id: self.instance_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instance_id",
+                    "instance_id was not specified but it is required when building AgentDetails",
+                )
+            })?,
+            instance_type: self.instance_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instance_type",
+                    "instance_type was not specified but it is required when building AgentDetails",
+                )
+            })?,
             reserved_cpu_cores: self.reserved_cpu_cores,
             agent_cpu_cores: self.agent_cpu_cores,
-            component_versions: self.component_versions,
-        }
+            component_versions: self.component_versions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "component_versions",
+                    "component_versions was not specified but it is required when building AgentDetails",
+                )
+            })?,
+        })
     }
 }

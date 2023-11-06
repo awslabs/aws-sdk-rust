@@ -11,8 +11,10 @@ pub struct ListDatasetsOutput {
 }
 impl ListDatasetsOutput {
     /// <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
-    pub fn datasets(&self) -> ::std::option::Option<&[crate::types::DatasetSummary]> {
-        self.datasets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasets.is_none()`.
+    pub fn datasets(&self) -> &[crate::types::DatasetSummary] {
+        self.datasets.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of datasets (if they exist).</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -41,6 +41,7 @@ pub struct UnsubscribeFromEventInputBuilder {
 }
 impl UnsubscribeFromEventInputBuilder {
     /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UnsubscribeFromEventInputBuilder {
         &self.resource_arn
     }
     /// <p>The event for which you want to stop receiving SNS notifications.</p>
+    /// This field is required.
     pub fn event(mut self, input: crate::types::InspectorEvent) -> Self {
         self.event = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl UnsubscribeFromEventInputBuilder {
         &self.event
     }
     /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl UnsubscribeFromEventInputBuilder {
     /// Consumes the builder and constructs a [`UnsubscribeFromEventInput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput {
             resource_arn: self.resource_arn,

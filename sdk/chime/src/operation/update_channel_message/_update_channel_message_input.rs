@@ -66,6 +66,7 @@ pub struct UpdateChannelMessageInputBuilder {
 }
 impl UpdateChannelMessageInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl UpdateChannelMessageInputBuilder {
         &self.channel_arn
     }
     /// <p>The ID string of the message being updated.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -138,7 +140,7 @@ impl UpdateChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelMessageInput`](crate::operation::update_channel_message::UpdateChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel_message::UpdateChannelMessageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_channel_message::UpdateChannelMessageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_channel_message::UpdateChannelMessageInput {
             channel_arn: self.channel_arn,

@@ -6,7 +6,7 @@ pub struct DescribeSourceServersInput {
     /// <p>A set of filters by which to return Source Servers.</p>
     pub filters: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>,
     /// <p>Maximum number of Source Servers to retrieve.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token of the next Source Server to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl DescribeSourceServersInput {
         self.filters.as_ref()
     }
     /// <p>Maximum number of Source Servers to retrieve.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token of the next Source Server to retrieve.</p>
@@ -85,11 +85,11 @@ impl DescribeSourceServersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceServersInput`](crate::operation::describe_source_servers::DescribeSourceServersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_source_servers::DescribeSourceServersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_source_servers::DescribeSourceServersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_source_servers::DescribeSourceServersInput {
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

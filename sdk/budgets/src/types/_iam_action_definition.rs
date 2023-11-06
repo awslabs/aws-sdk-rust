@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamActionDefinition {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
-    pub policy_arn: ::std::option::Option<::std::string::String>,
+    pub policy_arn: ::std::string::String,
     /// <p>A list of roles to be attached. There must be at least one role. </p>
     pub roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of groups to be attached. There must be at least one group. </p>
@@ -15,20 +15,27 @@ pub struct IamActionDefinition {
 }
 impl IamActionDefinition {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
-        self.policy_arn.as_deref()
+    pub fn policy_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_arn.deref()
     }
     /// <p>A list of roles to be attached. There must be at least one role. </p>
-    pub fn roles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
+    pub fn roles(&self) -> &[::std::string::String] {
+        self.roles.as_deref().unwrap_or_default()
     }
     /// <p>A list of groups to be attached. There must be at least one group. </p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of users to be attached. There must be at least one user. </p>
-    pub fn users(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[::std::string::String] {
+        self.users.as_deref().unwrap_or_default()
     }
 }
 impl IamActionDefinition {
@@ -49,6 +56,7 @@ pub struct IamActionDefinitionBuilder {
 }
 impl IamActionDefinitionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
+    /// This field is required.
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -123,12 +131,19 @@ impl IamActionDefinitionBuilder {
         &self.users
     }
     /// Consumes the builder and constructs a [`IamActionDefinition`](crate::types::IamActionDefinition).
-    pub fn build(self) -> crate::types::IamActionDefinition {
-        crate::types::IamActionDefinition {
-            policy_arn: self.policy_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_arn`](crate::types::builders::IamActionDefinitionBuilder::policy_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::IamActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IamActionDefinition {
+            policy_arn: self.policy_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "policy_arn",
+                    "policy_arn was not specified but it is required when building IamActionDefinition",
+                )
+            })?,
             roles: self.roles,
             groups: self.groups,
             users: self.users,
-        }
+        })
     }
 }

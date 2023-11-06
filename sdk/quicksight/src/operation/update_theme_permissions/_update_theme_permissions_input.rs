@@ -22,12 +22,16 @@ impl UpdateThemePermissionsInput {
         self.theme_id.as_deref()
     }
     /// <p>A list of resource permissions to be granted for the theme.</p>
-    pub fn grant_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.grant_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_permissions.is_none()`.
+    pub fn grant_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.grant_permissions.as_deref().unwrap_or_default()
     }
     /// <p>A list of resource permissions to be revoked from the theme.</p>
-    pub fn revoke_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.revoke_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoke_permissions.is_none()`.
+    pub fn revoke_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.revoke_permissions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateThemePermissionsInput {
@@ -48,6 +52,7 @@ pub struct UpdateThemePermissionsInputBuilder {
 }
 impl UpdateThemePermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl UpdateThemePermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the theme.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self
@@ -118,8 +124,10 @@ impl UpdateThemePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThemePermissionsInput`](crate::operation::update_theme_permissions::UpdateThemePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_theme_permissions::UpdateThemePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_theme_permissions::UpdateThemePermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_theme_permissions::UpdateThemePermissionsInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

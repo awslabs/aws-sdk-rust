@@ -23,8 +23,10 @@ impl NodeProperties {
         self.main_node
     }
     /// <p>A list of node ranges and their properties that are associated with a multi-node parallel job.</p>
-    pub fn node_range_properties(&self) -> ::std::option::Option<&[crate::types::NodeRangeProperty]> {
-        self.node_range_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_range_properties.is_none()`.
+    pub fn node_range_properties(&self) -> &[crate::types::NodeRangeProperty] {
+        self.node_range_properties.as_deref().unwrap_or_default()
     }
 }
 impl NodeProperties {
@@ -44,6 +46,7 @@ pub struct NodePropertiesBuilder {
 }
 impl NodePropertiesBuilder {
     /// <p>The number of nodes that are associated with a multi-node parallel job.</p>
+    /// This field is required.
     pub fn num_nodes(mut self, input: i32) -> Self {
         self.num_nodes = ::std::option::Option::Some(input);
         self
@@ -58,6 +61,7 @@ impl NodePropertiesBuilder {
         &self.num_nodes
     }
     /// <p>Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than the number of nodes.</p>
+    /// This field is required.
     pub fn main_node(mut self, input: i32) -> Self {
         self.main_node = ::std::option::Option::Some(input);
         self

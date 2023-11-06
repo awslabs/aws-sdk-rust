@@ -2,12 +2,12 @@
 pub fn ser_asset_target_name_map(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetTargetNameMap,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.asset_id {
-        object.key("assetId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("assetId").string(input.asset_id.as_str());
     }
-    if let Some(var_2) = &input.target_name {
-        object.key("targetName").string(var_2.as_str());
+    {
+        object.key("targetName").string(input.target_name.as_str());
     }
     Ok(())
 }

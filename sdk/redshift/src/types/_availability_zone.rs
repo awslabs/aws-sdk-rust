@@ -15,8 +15,10 @@ impl AvailabilityZone {
         self.name.as_deref()
     }
     /// <p></p>
-    pub fn supported_platforms(&self) -> ::std::option::Option<&[crate::types::SupportedPlatform]> {
-        self.supported_platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_platforms.is_none()`.
+    pub fn supported_platforms(&self) -> &[crate::types::SupportedPlatform] {
+        self.supported_platforms.as_deref().unwrap_or_default()
     }
 }
 impl AvailabilityZone {

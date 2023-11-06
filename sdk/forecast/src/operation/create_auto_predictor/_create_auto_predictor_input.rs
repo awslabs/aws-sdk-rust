@@ -68,13 +68,17 @@ impl CreateAutoPredictorInput {
         self.forecast_horizon
     }
     /// <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    pub fn forecast_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.forecast_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
+    pub fn forecast_types(&self) -> &[::std::string::String] {
+        self.forecast_types.as_deref().unwrap_or_default()
     }
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
-    pub fn forecast_dimensions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.forecast_dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_dimensions.is_none()`.
+    pub fn forecast_dimensions(&self) -> &[::std::string::String] {
+        self.forecast_dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
@@ -123,8 +127,10 @@ impl CreateAutoPredictorInput {
     /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor monitoring.</p>
     /// <p>Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>.</p>
@@ -163,6 +169,7 @@ pub struct CreateAutoPredictorInputBuilder {
 }
 impl CreateAutoPredictorInputBuilder {
     /// <p>A unique name for the predictor</p>
+    /// This field is required.
     pub fn predictor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_name = ::std::option::Option::Some(input.into());
         self
@@ -443,7 +450,7 @@ impl CreateAutoPredictorInputBuilder {
     /// Consumes the builder and constructs a [`CreateAutoPredictorInput`](crate::operation::create_auto_predictor::CreateAutoPredictorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_auto_predictor::CreateAutoPredictorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_auto_predictor::CreateAutoPredictorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_auto_predictor::CreateAutoPredictorInput {
             predictor_name: self.predictor_name,

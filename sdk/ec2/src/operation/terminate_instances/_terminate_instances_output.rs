@@ -9,8 +9,10 @@ pub struct TerminateInstancesOutput {
 }
 impl TerminateInstancesOutput {
     /// <p>Information about the terminated instances.</p>
-    pub fn terminating_instances(&self) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
-        self.terminating_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terminating_instances.is_none()`.
+    pub fn terminating_instances(&self) -> &[crate::types::InstanceStateChange] {
+        self.terminating_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for TerminateInstancesOutput {

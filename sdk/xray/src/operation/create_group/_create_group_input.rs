@@ -52,8 +52,10 @@ impl CreateGroupInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateGroupInput {
@@ -74,6 +76,7 @@ pub struct CreateGroupInputBuilder {
 }
 impl CreateGroupInputBuilder {
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -175,7 +178,7 @@ impl CreateGroupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
             group_name: self.group_name,
             filter_expression: self.filter_expression,

@@ -35,6 +35,7 @@ pub struct DescribeRouterConfigurationInputBuilder {
 }
 impl DescribeRouterConfigurationInputBuilder {
     /// <p>The ID of the virtual interface.</p>
+    /// This field is required.
     pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +68,7 @@ impl DescribeRouterConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_router_configuration::DescribeRouterConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_router_configuration::DescribeRouterConfigurationInput {
             virtual_interface_id: self.virtual_interface_id,

@@ -55,6 +55,7 @@ pub struct RegisterGameServerInputBuilder {
 }
 impl RegisterGameServerInputBuilder {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl RegisterGameServerInputBuilder {
         &self.game_server_group_name
     }
     /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl RegisterGameServerInputBuilder {
         &self.game_server_id
     }
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +130,8 @@ impl RegisterGameServerInputBuilder {
     /// Consumes the builder and constructs a [`RegisterGameServerInput`](crate::operation::register_game_server::RegisterGameServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_game_server::RegisterGameServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_game_server::RegisterGameServerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::register_game_server::RegisterGameServerInput {
             game_server_group_name: self.game_server_group_name,
             game_server_id: self.game_server_id,

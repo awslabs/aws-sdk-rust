@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::step_functions_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -56,15 +58,15 @@ where
 pub fn ser_step_functions_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StepFunctionsAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.execution_name_prefix {
         object.key("executionNamePrefix").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.state_machine_name {
-        object.key("stateMachineName").string(var_2.as_str());
+    {
+        object.key("stateMachineName").string(input.state_machine_name.as_str());
     }
-    if let Some(var_3) = &input.role_arn {
-        object.key("roleArn").string(var_3.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
     Ok(())
 }

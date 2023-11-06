@@ -136,8 +136,10 @@ impl GetCostCategoriesInput {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&[crate::types::SortDefinition]> {
-        self.sort_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_by.is_none()`.
+    pub fn sort_by(&self) -> &[crate::types::SortDefinition] {
+        self.sort_by.as_deref().unwrap_or_default()
     }
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
     /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
@@ -188,6 +190,7 @@ impl GetCostCategoriesInputBuilder {
         &self.search_string
     }
     /// <p>The time period of the request. </p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
@@ -430,7 +433,7 @@ impl GetCostCategoriesInputBuilder {
     /// Consumes the builder and constructs a [`GetCostCategoriesInput`](crate::operation::get_cost_categories::GetCostCategoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cost_categories::GetCostCategoriesInput {
             search_string: self.search_string,
             time_period: self.time_period,

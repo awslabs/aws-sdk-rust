@@ -2,7 +2,7 @@
 pub fn ser_s3_object_metadata(
     input: &crate::types::S3ObjectMetadata,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.cache_control {
@@ -63,6 +63,7 @@ pub fn ser_s3_object_metadata(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_object_metadata(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3ObjectMetadata, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFiltersOutput {
     /// <p>Contains details on the filters associated with your account.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::vec::Vec<crate::types::Filter>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFiltersOutput {
     /// <p>Contains details on the filters associated with your account.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        use std::ops::Deref;
+        self.filters.deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListFiltersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFiltersOutput`](crate::operation::list_filters::ListFiltersOutput).
-    pub fn build(self) -> crate::operation::list_filters::ListFiltersOutput {
-        crate::operation::list_filters::ListFiltersOutput {
-            filters: self.filters,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filters`](crate::operation::list_filters::builders::ListFiltersOutputBuilder::filters)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_filters::ListFiltersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_filters::ListFiltersOutput {
+            filters: self.filters.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filters",
+                    "filters was not specified but it is required when building ListFiltersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

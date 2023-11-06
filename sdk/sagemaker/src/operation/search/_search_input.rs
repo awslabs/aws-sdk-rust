@@ -69,6 +69,7 @@ pub struct SearchInputBuilder {
 }
 impl SearchInputBuilder {
     /// <p>The name of the SageMaker resource to search for.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::ResourceType) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
@@ -167,7 +168,7 @@ impl SearchInputBuilder {
         &self.cross_account_filter_option
     }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search::SearchInput {
             resource: self.resource,
             search_expression: self.search_expression,

@@ -11,12 +11,16 @@ pub struct BatchCheckLayerAvailabilityOutput {
 }
 impl BatchCheckLayerAvailabilityOutput {
     /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
-    pub fn layers(&self) -> ::std::option::Option<&[crate::types::Layer]> {
-        self.layers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layers.is_none()`.
+    pub fn layers(&self) -> &[crate::types::Layer] {
+        self.layers.as_deref().unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::LayerFailure]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::LayerFailure] {
+        self.failures.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchCheckLayerAvailabilityOutput {

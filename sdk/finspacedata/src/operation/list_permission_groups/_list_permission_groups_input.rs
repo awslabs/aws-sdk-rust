@@ -48,6 +48,7 @@ impl ListPermissionGroupsInputBuilder {
         &self.next_token
     }
     /// <p>The maximum number of results per page.</p>
+    /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
@@ -64,7 +65,7 @@ impl ListPermissionGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionGroupsInput`](crate::operation::list_permission_groups::ListPermissionGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_permission_groups::ListPermissionGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_permission_groups::ListPermissionGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_permission_groups::ListPermissionGroupsInput {
             next_token: self.next_token,

@@ -27,6 +27,7 @@ pub struct StopQueryInputBuilder {
 }
 impl StopQueryInputBuilder {
     /// <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl StopQueryInputBuilder {
         &self.query_id
     }
     /// Consumes the builder and constructs a [`StopQueryInput`](crate::operation::stop_query::StopQueryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_query::StopQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_query::StopQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_query::StopQueryInput { query_id: self.query_id })
     }
 }

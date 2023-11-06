@@ -169,8 +169,10 @@ impl HumanLoopConfig {
         self.task_time_limit_in_seconds
     }
     /// <p>Keywords used to describe the task so that workers can discover the task.</p>
-    pub fn task_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.task_keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_keywords.is_none()`.
+    pub fn task_keywords(&self) -> &[::std::string::String] {
+        self.task_keywords.as_deref().unwrap_or_default()
     }
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
     /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
@@ -310,6 +312,7 @@ pub struct HumanLoopConfigBuilder {
 }
 impl HumanLoopConfigBuilder {
     /// <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you can create and use with Amazon A2I, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage Workforces</a>.</p>
+    /// This field is required.
     pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_arn = ::std::option::Option::Some(input.into());
         self
@@ -327,6 +330,7 @@ impl HumanLoopConfigBuilder {
     /// <p>You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template to create a human task UI.</p>
     /// <p>To learn how to create a custom HTML template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task Template</a>.</p>
     /// <p>To learn how to create a human task UI, which is a worker task template that can be used in a flow definition, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete a Worker Task Templates</a>.</p>
+    /// This field is required.
     pub fn human_task_ui_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self
@@ -347,6 +351,7 @@ impl HumanLoopConfigBuilder {
         &self.human_task_ui_arn
     }
     /// <p>A title for the human worker task.</p>
+    /// This field is required.
     pub fn task_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_title = ::std::option::Option::Some(input.into());
         self
@@ -361,6 +366,7 @@ impl HumanLoopConfigBuilder {
         &self.task_title
     }
     /// <p>A description for the human worker task.</p>
+    /// This field is required.
     pub fn task_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_description = ::std::option::Option::Some(input.into());
         self
@@ -375,6 +381,7 @@ impl HumanLoopConfigBuilder {
         &self.task_description
     }
     /// <p>The number of distinct workers who will perform the same task on each object. For example, if <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.</p>
+    /// This field is required.
     pub fn task_count(mut self, input: i32) -> Self {
         self.task_count = ::std::option::Option::Some(input);
         self

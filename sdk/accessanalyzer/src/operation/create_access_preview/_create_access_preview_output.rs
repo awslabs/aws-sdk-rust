@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPreviewOutput {
     /// <p>The unique ID for the access preview.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateAccessPreviewOutput {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAccessPreviewOutput {
@@ -34,6 +35,7 @@ pub struct CreateAccessPreviewOutputBuilder {
 }
 impl CreateAccessPreviewOutputBuilder {
     /// <p>The unique ID for the access preview.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl CreateAccessPreviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput).
-    pub fn build(self) -> crate::operation::create_access_preview::CreateAccessPreviewOutput {
-        crate::operation::create_access_preview::CreateAccessPreviewOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder::id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_access_preview::CreateAccessPreviewOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateAccessPreviewOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

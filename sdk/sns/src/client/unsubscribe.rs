@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`Unsubscribe`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`subscription_arn(impl Into<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::subscription_arn) / [`set_subscription_arn(Option<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::set_subscription_arn): <p>The ARN of the subscription to be deleted.</p>
+    ///   - [`subscription_arn(impl Into<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::subscription_arn) / [`set_subscription_arn(Option<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::set_subscription_arn):<br>required: **true**<br><p>The ARN of the subscription to be deleted.</p><br>
     /// - On success, responds with [`UnsubscribeOutput`](crate::operation::unsubscribe::UnsubscribeOutput)
     /// - On failure, responds with [`SdkError<UnsubscribeError>`](crate::operation::unsubscribe::UnsubscribeError)
     pub fn unsubscribe(&self) -> crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder {

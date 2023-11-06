@@ -22,8 +22,10 @@ impl RegisterTransitGatewayMulticastGroupMembersInput {
         self.group_ip_address.as_deref()
     }
     /// <p>The group members' network interface IDs to register with the transit gateway multicast group.</p>
-    pub fn network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_interface_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_ids.is_none()`.
+    pub fn network_interface_ids(&self) -> &[::std::string::String] {
+        self.network_interface_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -50,6 +52,7 @@ pub struct RegisterTransitGatewayMulticastGroupMembersInputBuilder {
 }
 impl RegisterTransitGatewayMulticastGroupMembersInputBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
+    /// This field is required.
     pub fn transit_gateway_multicast_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = ::std::option::Option::Some(input.into());
         self
@@ -116,7 +119,7 @@ impl RegisterTransitGatewayMulticastGroupMembersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersInput {

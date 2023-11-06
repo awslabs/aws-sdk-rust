@@ -94,9 +94,9 @@ pub struct DeviceFilter {
     /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
-    pub attribute: ::std::option::Option<crate::types::DeviceFilterAttribute>,
+    pub attribute: crate::types::DeviceFilterAttribute,
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
-    pub operator: ::std::option::Option<crate::types::RuleOperator>,
+    pub operator: crate::types::RuleOperator,
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
@@ -110,7 +110,7 @@ pub struct DeviceFilter {
     /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl DeviceFilter {
     /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
@@ -202,12 +202,12 @@ impl DeviceFilter {
     /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::DeviceFilterAttribute> {
-        self.attribute.as_ref()
+    pub fn attribute(&self) -> &crate::types::DeviceFilterAttribute {
+        &self.attribute
     }
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::RuleOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::RuleOperator {
+        &self.operator
     }
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"> <b>Operator Values</b> </p>
@@ -222,8 +222,9 @@ impl DeviceFilter {
     /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl DeviceFilter {
@@ -331,6 +332,7 @@ impl DeviceFilterBuilder {
     /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::DeviceFilterAttribute) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -521,6 +523,7 @@ impl DeviceFilterBuilder {
         &self.attribute
     }
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::RuleOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -591,11 +594,30 @@ impl DeviceFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`DeviceFilter`](crate::types::DeviceFilter).
-    pub fn build(self) -> crate::types::DeviceFilter {
-        crate::types::DeviceFilter {
-            attribute: self.attribute,
-            operator: self.operator,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute`](crate::types::builders::DeviceFilterBuilder::attribute)
+    /// - [`operator`](crate::types::builders::DeviceFilterBuilder::operator)
+    /// - [`values`](crate::types::builders::DeviceFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeviceFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeviceFilter {
+            attribute: self.attribute.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute",
+                    "attribute was not specified but it is required when building DeviceFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building DeviceFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building DeviceFilter",
+                )
+            })?,
+        })
     }
 }

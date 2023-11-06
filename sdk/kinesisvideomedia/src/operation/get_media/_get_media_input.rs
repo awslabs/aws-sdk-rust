@@ -69,6 +69,7 @@ impl GetMediaInputBuilder {
         &self.stream_arn
     }
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    /// This field is required.
     pub fn start_selector(mut self, input: crate::types::StartSelector) -> Self {
         self.start_selector = ::std::option::Option::Some(input);
         self
@@ -83,7 +84,7 @@ impl GetMediaInputBuilder {
         &self.start_selector
     }
     /// Consumes the builder and constructs a [`GetMediaInput`](crate::operation::get_media::GetMediaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_media::GetMediaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_media::GetMediaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_media::GetMediaInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

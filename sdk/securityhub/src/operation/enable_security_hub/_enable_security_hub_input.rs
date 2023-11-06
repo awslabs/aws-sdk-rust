@@ -101,7 +101,7 @@ impl EnableSecurityHubInputBuilder {
     /// Consumes the builder and constructs a [`EnableSecurityHubInput`](crate::operation::enable_security_hub::EnableSecurityHubInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_security_hub::EnableSecurityHubInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_security_hub::EnableSecurityHubInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_security_hub::EnableSecurityHubInput {
             tags: self.tags,
             enable_default_standards: self.enable_default_standards,

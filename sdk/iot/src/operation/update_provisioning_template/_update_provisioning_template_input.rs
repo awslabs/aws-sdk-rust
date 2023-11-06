@@ -69,6 +69,7 @@ pub struct UpdateProvisioningTemplateInputBuilder {
 }
 impl UpdateProvisioningTemplateInputBuilder {
     /// <p>The name of the provisioning template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -171,7 +172,7 @@ impl UpdateProvisioningTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput {
             template_name: self.template_name,

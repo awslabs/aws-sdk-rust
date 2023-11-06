@@ -2,56 +2,56 @@
 pub fn ser_create_experiment_template_target_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateExperimentTemplateTargetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_type {
-        object.key("resourceType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("resourceType").string(input.resource_type.as_str());
     }
-    if let Some(var_2) = &input.resource_arns {
-        let mut array_3 = object.key("resourceArns").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.resource_arns {
+        let mut array_2 = object.key("resourceArns").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.resource_tags {
+    if let Some(var_4) = &input.resource_tags {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("resourceTags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_5 = object.key("resourceTags").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_6.finish();
+        object_5.finish();
     }
-    if let Some(var_9) = &input.filters {
-        let mut array_10 = object.key("filters").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.filters {
+        let mut array_9 = object.key("filters").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
+                let mut object_11 = array_9.value().start_object();
                 crate::protocol_serde::shape_experiment_template_target_input_filter::ser_experiment_template_target_input_filter(
-                    &mut object_12,
-                    item_11,
+                    &mut object_11,
+                    item_10,
                 )?;
-                object_12.finish();
+                object_11.finish();
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.selection_mode {
-        object.key("selectionMode").string(var_13.as_str());
+    {
+        object.key("selectionMode").string(input.selection_mode.as_str());
     }
-    if let Some(var_14) = &input.parameters {
+    if let Some(var_12) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("parameters").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_13 = object.key("parameters").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_15.finish();
+        object_13.finish();
     }
     Ok(())
 }

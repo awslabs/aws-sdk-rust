@@ -55,6 +55,7 @@ pub struct UpdateVirtualNodeInputBuilder {
 }
 impl UpdateVirtualNodeInputBuilder {
     /// <p>The name of the virtual node to update.</p>
+    /// This field is required.
     pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateVirtualNodeInputBuilder {
         &self.virtual_node_name
     }
     /// <p>The name of the service mesh that the virtual node resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl UpdateVirtualNodeInputBuilder {
         &self.mesh_name
     }
     /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::VirtualNodeSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -127,7 +130,7 @@ impl UpdateVirtualNodeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVirtualNodeInput`](crate::operation::update_virtual_node::UpdateVirtualNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_virtual_node::UpdateVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_virtual_node::UpdateVirtualNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_virtual_node::UpdateVirtualNodeInput {
             virtual_node_name: self.virtual_node_name,
             mesh_name: self.mesh_name,

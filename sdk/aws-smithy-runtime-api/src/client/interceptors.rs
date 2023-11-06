@@ -15,16 +15,17 @@ use crate::client::interceptors::context::{
     BeforeTransmitInterceptorContextRef, FinalizerInterceptorContextMut,
     FinalizerInterceptorContextRef,
 };
+use crate::client::runtime_components::sealed::ValidateConfig;
 use crate::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::fmt;
 use std::marker::PhantomData;
-use std::ops::Deref;
 use std::sync::Arc;
 
 pub mod context;
 pub mod error;
 
+use crate::impl_shared_conversions;
 pub use error::InterceptorError;
 
 macro_rules! interceptor_trait_fn {
@@ -54,6 +55,9 @@ macro_rules! interceptor_trait_fn {
     };
 }
 
+#[deprecated(note = "Renamed to Intercept.")]
+pub use Intercept as Interceptor;
+
 /// An interceptor allows injecting code into the SDK ’s request execution pipeline.
 ///
 /// ## Terminology:
@@ -64,7 +68,7 @@ macro_rules! interceptor_trait_fn {
 ///   of the SDK ’s request execution pipeline. Hooks are either "read" hooks, which make it possible
 ///   to read in-flight request or response messages, or "read/write" hooks, which make it possible
 ///   to modify in-flight request or output messages.
-pub trait Interceptor: fmt::Debug + Send + Sync {
+pub trait Intercept: fmt::Debug + Send + Sync {
     /// The name of this interceptor, used in error messages for debugging.
     fn name(&self) -> &'static str;
 
@@ -589,7 +593,7 @@ pub trait Interceptor: fmt::Debug + Send + Sync {
 /// Interceptor wrapper that may be shared
 #[derive(Clone)]
 pub struct SharedInterceptor {
-    interceptor: Arc<dyn Interceptor>,
+    interceptor: Arc<dyn Intercept>,
     check_enabled: Arc<dyn Fn(&ConfigBag) -> bool + Send + Sync>,
 }
 
@@ -603,7 +607,7 @@ impl fmt::Debug for SharedInterceptor {
 
 impl SharedInterceptor {
     /// Create a new `SharedInterceptor` from `Interceptor`.
-    pub fn new<T: Interceptor + 'static>(interceptor: T) -> Self {
+    pub fn new<T: Intercept + 'static>(interceptor: T) -> Self {
         Self {
             interceptor: Arc::new(interceptor),
             check_enabled: Arc::new(|conf: &ConfigBag| {
@@ -618,18 +622,203 @@ impl SharedInterceptor {
     }
 }
 
-impl AsRef<dyn Interceptor> for SharedInterceptor {
-    fn as_ref(&self) -> &(dyn Interceptor + 'static) {
-        self.interceptor.as_ref()
+impl ValidateConfig for SharedInterceptor {}
+
+impl Intercept for SharedInterceptor {
+    fn name(&self) -> &'static str {
+        self.interceptor.name()
+    }
+
+    fn modify_before_attempt_completion(
+        &self,
+        context: &mut FinalizerInterceptorContextMut<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .modify_before_attempt_completion(context, runtime_components, cfg)
+    }
+
+    fn modify_before_completion(
+        &self,
+        context: &mut FinalizerInterceptorContextMut<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .modify_before_completion(context, runtime_components, cfg)
+    }
+
+    fn modify_before_deserialization(
+        &self,
+        context: &mut BeforeDeserializationInterceptorContextMut<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .modify_before_deserialization(context, runtime_components, cfg)
+    }
+
+    fn modify_before_retry_loop(
+        &self,
+        context: &mut BeforeTransmitInterceptorContextMut<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .modify_before_retry_loop(context, runtime_components, cfg)
+    }
+
+    fn modify_before_serialization(
+        &self,
+        context: &mut BeforeSerializationInterceptorContextMut<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .modify_before_serialization(context, runtime_components, cfg)
+    }
+
+    fn modify_before_signing(
+        &self,
+        context: &mut BeforeTransmitInterceptorContextMut<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .modify_before_signing(context, runtime_components, cfg)
+    }
+
+    fn modify_before_transmit(
+        &self,
+        context: &mut BeforeTransmitInterceptorContextMut<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .modify_before_transmit(context, runtime_components, cfg)
+    }
+
+    fn read_after_attempt(
+        &self,
+        context: &FinalizerInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_after_attempt(context, runtime_components, cfg)
+    }
+
+    fn read_after_deserialization(
+        &self,
+        context: &AfterDeserializationInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_after_deserialization(context, runtime_components, cfg)
+    }
+
+    fn read_after_execution(
+        &self,
+        context: &FinalizerInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_after_execution(context, runtime_components, cfg)
+    }
+
+    fn read_after_serialization(
+        &self,
+        context: &BeforeTransmitInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_after_serialization(context, runtime_components, cfg)
+    }
+
+    fn read_after_signing(
+        &self,
+        context: &BeforeTransmitInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_after_signing(context, runtime_components, cfg)
+    }
+
+    fn read_after_transmit(
+        &self,
+        context: &BeforeDeserializationInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_after_transmit(context, runtime_components, cfg)
+    }
+
+    fn read_before_attempt(
+        &self,
+        context: &BeforeTransmitInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_before_attempt(context, runtime_components, cfg)
+    }
+
+    fn read_before_deserialization(
+        &self,
+        context: &BeforeDeserializationInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_before_deserialization(context, runtime_components, cfg)
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &BeforeSerializationInterceptorContextRef<'_>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor.read_before_execution(context, cfg)
+    }
+
+    fn read_before_serialization(
+        &self,
+        context: &BeforeSerializationInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_before_serialization(context, runtime_components, cfg)
+    }
+
+    fn read_before_signing(
+        &self,
+        context: &BeforeTransmitInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_before_signing(context, runtime_components, cfg)
+    }
+
+    fn read_before_transmit(
+        &self,
+        context: &BeforeTransmitInterceptorContextRef<'_>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        self.interceptor
+            .read_before_transmit(context, runtime_components, cfg)
     }
 }
 
-impl Deref for SharedInterceptor {
-    type Target = Arc<dyn Interceptor>;
-    fn deref(&self) -> &Self::Target {
-        &self.interceptor
-    }
-}
+impl_shared_conversions!(convert SharedInterceptor from Intercept using SharedInterceptor::new);
 
 /// Generalized interceptor disabling interface
 ///
@@ -650,7 +839,7 @@ where
 }
 
 /// Disable an interceptor with a given cause
-pub fn disable_interceptor<T: Interceptor>(cause: &'static str) -> DisableInterceptor<T> {
+pub fn disable_interceptor<T: Intercept>(cause: &'static str) -> DisableInterceptor<T> {
     DisableInterceptor {
         _t: PhantomData::default(),
         cause,

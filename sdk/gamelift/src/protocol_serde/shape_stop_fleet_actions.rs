@@ -114,12 +114,12 @@ pub fn de_stop_fleet_actions_http_response(
 
 pub fn ser_stop_fleet_actions_input(
     input: &crate::operation::stop_fleet_actions::StopFleetActionsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_fleet_actions_input::ser_stop_fleet_actions_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_stop_fleet_actions(

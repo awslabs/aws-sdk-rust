@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JiraParameters {
     /// <p>The base URL of the Jira site.</p>
-    pub site_base_url: ::std::option::Option<::std::string::String>,
+    pub site_base_url: ::std::string::String,
 }
 impl JiraParameters {
     /// <p>The base URL of the Jira site.</p>
-    pub fn site_base_url(&self) -> ::std::option::Option<&str> {
-        self.site_base_url.as_deref()
+    pub fn site_base_url(&self) -> &str {
+        use std::ops::Deref;
+        self.site_base_url.deref()
     }
 }
 impl JiraParameters {
@@ -28,6 +29,7 @@ pub struct JiraParametersBuilder {
 }
 impl JiraParametersBuilder {
     /// <p>The base URL of the Jira site.</p>
+    /// This field is required.
     pub fn site_base_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_base_url = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl JiraParametersBuilder {
         &self.site_base_url
     }
     /// Consumes the builder and constructs a [`JiraParameters`](crate::types::JiraParameters).
-    pub fn build(self) -> crate::types::JiraParameters {
-        crate::types::JiraParameters {
-            site_base_url: self.site_base_url,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`site_base_url`](crate::types::builders::JiraParametersBuilder::site_base_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::JiraParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JiraParameters {
+            site_base_url: self.site_base_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "site_base_url",
+                    "site_base_url was not specified but it is required when building JiraParameters",
+                )
+            })?,
+        })
     }
 }

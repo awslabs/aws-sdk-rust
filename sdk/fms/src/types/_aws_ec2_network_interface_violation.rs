@@ -15,8 +15,10 @@ impl AwsEc2NetworkInterfaceViolation {
         self.violation_target.as_deref()
     }
     /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
-    pub fn violating_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.violating_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violating_security_groups.is_none()`.
+    pub fn violating_security_groups(&self) -> &[::std::string::String] {
+        self.violating_security_groups.as_deref().unwrap_or_default()
     }
 }
 impl AwsEc2NetworkInterfaceViolation {

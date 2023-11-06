@@ -11,8 +11,10 @@ pub struct ListSpeakerEnrollmentJobsOutput {
 }
 impl ListSpeakerEnrollmentJobsOutput {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
-    pub fn job_summaries(&self) -> ::std::option::Option<&[crate::types::SpeakerEnrollmentJobSummary]> {
-        self.job_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_summaries.is_none()`.
+    pub fn job_summaries(&self) -> &[crate::types::SpeakerEnrollmentJobSummary] {
+        self.job_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

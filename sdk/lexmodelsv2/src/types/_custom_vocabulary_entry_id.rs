@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomVocabularyEntryId {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
-    pub item_id: ::std::option::Option<::std::string::String>,
+    pub item_id: ::std::string::String,
 }
 impl CustomVocabularyEntryId {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
-    pub fn item_id(&self) -> ::std::option::Option<&str> {
-        self.item_id.as_deref()
+    pub fn item_id(&self) -> &str {
+        use std::ops::Deref;
+        self.item_id.deref()
     }
 }
 impl CustomVocabularyEntryId {
@@ -28,6 +29,7 @@ pub struct CustomVocabularyEntryIdBuilder {
 }
 impl CustomVocabularyEntryIdBuilder {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
+    /// This field is required.
     pub fn item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.item_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl CustomVocabularyEntryIdBuilder {
         &self.item_id
     }
     /// Consumes the builder and constructs a [`CustomVocabularyEntryId`](crate::types::CustomVocabularyEntryId).
-    pub fn build(self) -> crate::types::CustomVocabularyEntryId {
-        crate::types::CustomVocabularyEntryId { item_id: self.item_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`item_id`](crate::types::builders::CustomVocabularyEntryIdBuilder::item_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomVocabularyEntryId, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomVocabularyEntryId {
+            item_id: self.item_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "item_id",
+                    "item_id was not specified but it is required when building CustomVocabularyEntryId",
+                )
+            })?,
+        })
     }
 }

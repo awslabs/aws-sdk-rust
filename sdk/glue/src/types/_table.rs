@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the table.</p>
@@ -66,8 +66,9 @@ pub struct Table {
 }
 impl Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
@@ -108,8 +109,10 @@ impl Table {
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
-    pub fn partition_keys(&self) -> ::std::option::Option<&[crate::types::Column]> {
-        self.partition_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
+    pub fn partition_keys(&self) -> &[crate::types::Column] {
+        self.partition_keys.as_deref().unwrap_or_default()
     }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     pub fn view_original_text(&self) -> ::std::option::Option<&str> {
@@ -202,6 +205,7 @@ pub struct TableBuilder {
 }
 impl TableBuilder {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -559,9 +563,16 @@ impl TableBuilder {
         &self.federated_table
     }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
-    pub fn build(self) -> crate::types::Table {
-        crate::types::Table {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TableBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Table, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Table {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Table",
+                )
+            })?,
             database_name: self.database_name,
             description: self.description,
             owner: self.owner,
@@ -582,6 +593,6 @@ impl TableBuilder {
             catalog_id: self.catalog_id,
             version_id: self.version_id,
             federated_table: self.federated_table,
-        }
+        })
     }
 }

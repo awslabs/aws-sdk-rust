@@ -2,46 +2,46 @@
 pub fn ser_lambda_function_recipe_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaFunctionRecipeSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.lambda_arn {
-        object.key("lambdaArn").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("lambdaArn").string(input.lambda_arn.as_str());
     }
-    if let Some(var_2) = &input.component_name {
-        object.key("componentName").string(var_2.as_str());
+    if let Some(var_1) = &input.component_name {
+        object.key("componentName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.component_version {
-        object.key("componentVersion").string(var_3.as_str());
+    if let Some(var_2) = &input.component_version {
+        object.key("componentVersion").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.component_platforms {
-        let mut array_5 = object.key("componentPlatforms").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.component_platforms {
+        let mut array_4 = object.key("componentPlatforms").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_component_platform::ser_component_platform(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_component_platform::ser_component_platform(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.component_dependencies {
+    if let Some(var_7) = &input.component_dependencies {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("componentDependencies").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_8 = object.key("componentDependencies").start_object();
+        for (key_9, value_10) in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = object_9.key(key_10.as_str()).start_object();
-                crate::protocol_serde::shape_component_dependency_requirement::ser_component_dependency_requirement(&mut object_12, value_11)?;
-                object_12.finish();
+                let mut object_11 = object_8.key(key_9.as_str()).start_object();
+                crate::protocol_serde::shape_component_dependency_requirement::ser_component_dependency_requirement(&mut object_11, value_10)?;
+                object_11.finish();
             }
         }
-        object_9.finish();
+        object_8.finish();
     }
-    if let Some(var_13) = &input.component_lambda_parameters {
+    if let Some(var_12) = &input.component_lambda_parameters {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("componentLambdaParameters").start_object();
-        crate::protocol_serde::shape_lambda_execution_parameters::ser_lambda_execution_parameters(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_13 = object.key("componentLambdaParameters").start_object();
+        crate::protocol_serde::shape_lambda_execution_parameters::ser_lambda_execution_parameters(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

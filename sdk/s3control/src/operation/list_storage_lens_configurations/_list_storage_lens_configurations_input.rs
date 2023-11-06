@@ -34,6 +34,7 @@ pub struct ListStorageLensConfigurationsInputBuilder {
 }
 impl ListStorageLensConfigurationsInputBuilder {
     /// <p>The account ID of the requester.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +67,7 @@ impl ListStorageLensConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsInput {
             account_id: self.account_id,

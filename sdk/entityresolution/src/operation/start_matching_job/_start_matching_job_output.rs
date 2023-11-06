@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMatchingJobOutput {
     /// <p>The ID of the job.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartMatchingJobOutput {
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartMatchingJobOutput {
@@ -34,6 +35,7 @@ pub struct StartMatchingJobOutputBuilder {
 }
 impl StartMatchingJobOutputBuilder {
     /// <p>The ID of the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl StartMatchingJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartMatchingJobOutput`](crate::operation::start_matching_job::StartMatchingJobOutput).
-    pub fn build(self) -> crate::operation::start_matching_job::StartMatchingJobOutput {
-        crate::operation::start_matching_job::StartMatchingJobOutput {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::start_matching_job::builders::StartMatchingJobOutputBuilder::job_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_matching_job::StartMatchingJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_matching_job::StartMatchingJobOutput {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building StartMatchingJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

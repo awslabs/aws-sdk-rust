@@ -48,6 +48,7 @@ pub struct CreateIngestionInputBuilder {
 }
 impl CreateIngestionInputBuilder {
     /// <p>The ID of the dataset used in the ingestion.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateIngestionInputBuilder {
         &self.data_set_id
     }
     /// <p>An ID for the ingestion.</p>
+    /// This field is required.
     pub fn ingestion_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateIngestionInputBuilder {
         &self.ingestion_id
     }
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +109,7 @@ impl CreateIngestionInputBuilder {
     /// Consumes the builder and constructs a [`CreateIngestionInput`](crate::operation::create_ingestion::CreateIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ingestion::CreateIngestionInput {
             data_set_id: self.data_set_id,
             ingestion_id: self.ingestion_id,

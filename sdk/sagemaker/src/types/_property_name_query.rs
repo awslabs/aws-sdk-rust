@@ -28,6 +28,7 @@ pub struct PropertyNameQueryBuilder {
 }
 impl PropertyNameQueryBuilder {
     /// <p>Text that begins a property's name.</p>
+    /// This field is required.
     pub fn property_name_hint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_name_hint = ::std::option::Option::Some(input.into());
         self

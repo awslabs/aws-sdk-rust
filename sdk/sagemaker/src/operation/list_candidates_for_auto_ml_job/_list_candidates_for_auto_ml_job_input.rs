@@ -69,6 +69,7 @@ pub struct ListCandidatesForAutoMlJobInputBuilder {
 }
 impl ListCandidatesForAutoMlJobInputBuilder {
     /// <p>List the candidates created for the job by providing the job's name.</p>
+    /// This field is required.
     pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
@@ -171,7 +172,7 @@ impl ListCandidatesForAutoMlJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput {
             auto_ml_job_name: self.auto_ml_job_name,

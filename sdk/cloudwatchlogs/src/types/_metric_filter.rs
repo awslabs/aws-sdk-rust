@@ -25,8 +25,10 @@ impl MetricFilter {
         self.filter_pattern.as_deref()
     }
     /// <p>The metric transformations.</p>
-    pub fn metric_transformations(&self) -> ::std::option::Option<&[crate::types::MetricTransformation]> {
-        self.metric_transformations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_transformations.is_none()`.
+    pub fn metric_transformations(&self) -> &[crate::types::MetricTransformation] {
+        self.metric_transformations.as_deref().unwrap_or_default()
     }
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(&self) -> ::std::option::Option<i64> {

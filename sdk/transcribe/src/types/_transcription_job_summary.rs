@@ -105,12 +105,16 @@ impl TranscriptionJobSummary {
         self.identified_language_score
     }
     /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification, the singular version of this parameter, <code>LanguageCode</code>, is present.</p>
-    pub fn language_codes(&self) -> ::std::option::Option<&[crate::types::LanguageCodeItem]> {
-        self.language_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_codes.is_none()`.
+    pub fn language_codes(&self) -> &[crate::types::LanguageCodeItem] {
+        self.language_codes.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether toxicity detection was enabled for the specified transcription job.</p>
-    pub fn toxicity_detection(&self) -> ::std::option::Option<&[crate::types::ToxicityDetectionSettings]> {
-        self.toxicity_detection.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.toxicity_detection.is_none()`.
+    pub fn toxicity_detection(&self) -> &[crate::types::ToxicityDetectionSettings] {
+        self.toxicity_detection.as_deref().unwrap_or_default()
     }
 }
 impl TranscriptionJobSummary {

@@ -9,8 +9,10 @@ pub struct CategoryDetails {
 }
 impl CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
-    pub fn points_of_interest(&self) -> ::std::option::Option<&[crate::types::PointOfInterest]> {
-        self.points_of_interest.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.points_of_interest.is_none()`.
+    pub fn points_of_interest(&self) -> &[crate::types::PointOfInterest] {
+        self.points_of_interest.as_deref().unwrap_or_default()
     }
 }
 impl CategoryDetails {

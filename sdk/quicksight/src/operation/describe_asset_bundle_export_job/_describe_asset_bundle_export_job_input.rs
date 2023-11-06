@@ -34,6 +34,7 @@ pub struct DescribeAssetBundleExportJobInputBuilder {
 }
 impl DescribeAssetBundleExportJobInputBuilder {
     /// <p>The ID of the Amazon Web Services account the export job is executed in. </p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeAssetBundleExportJobInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
+    /// This field is required.
     pub fn asset_bundle_export_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_bundle_export_job_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DescribeAssetBundleExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobInput {
             aws_account_id: self.aws_account_id,

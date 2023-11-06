@@ -43,6 +43,7 @@ pub struct ListSyncJobsInputBuilder {
 }
 impl ListSyncJobsInputBuilder {
     /// <p>The ID of the workspace that contains the sync job.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +91,7 @@ impl ListSyncJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListSyncJobsInput`](crate::operation::list_sync_jobs::ListSyncJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_sync_jobs::ListSyncJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_sync_jobs::ListSyncJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sync_jobs::ListSyncJobsInput {
             workspace_id: self.workspace_id,
             max_results: self.max_results,

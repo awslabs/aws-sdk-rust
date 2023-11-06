@@ -9,8 +9,10 @@ pub struct PivotTableSortConfiguration {
 }
 impl PivotTableSortConfiguration {
     /// <p>The field sort options for a pivot table sort configuration.</p>
-    pub fn field_sort_options(&self) -> ::std::option::Option<&[crate::types::PivotFieldSortOptions]> {
-        self.field_sort_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_sort_options.is_none()`.
+    pub fn field_sort_options(&self) -> &[crate::types::PivotFieldSortOptions] {
+        self.field_sort_options.as_deref().unwrap_or_default()
     }
 }
 impl PivotTableSortConfiguration {

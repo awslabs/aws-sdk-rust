@@ -104,6 +104,7 @@ pub struct DescribeModelBiasJobDefinitionOutputBuilder {
 }
 impl DescribeModelBiasJobDefinitionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model bias job.</p>
+    /// This field is required.
     pub fn job_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl DescribeModelBiasJobDefinitionOutputBuilder {
         &self.job_definition_arn
     }
     /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +134,7 @@ impl DescribeModelBiasJobDefinitionOutputBuilder {
         &self.job_definition_name
     }
     /// <p>The time at which the model bias job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -160,6 +163,7 @@ impl DescribeModelBiasJobDefinitionOutputBuilder {
         &self.model_bias_baseline_config
     }
     /// <p>Configures the model bias job to run a specified Docker container image.</p>
+    /// This field is required.
     pub fn model_bias_app_specification(mut self, input: crate::types::ModelBiasAppSpecification) -> Self {
         self.model_bias_app_specification = ::std::option::Option::Some(input);
         self
@@ -174,6 +178,7 @@ impl DescribeModelBiasJobDefinitionOutputBuilder {
         &self.model_bias_app_specification
     }
     /// <p>Inputs for the model bias job.</p>
+    /// This field is required.
     pub fn model_bias_job_input(mut self, input: crate::types::ModelBiasJobInput) -> Self {
         self.model_bias_job_input = ::std::option::Option::Some(input);
         self
@@ -188,6 +193,7 @@ impl DescribeModelBiasJobDefinitionOutputBuilder {
         &self.model_bias_job_input
     }
     /// <p>The output configuration for monitoring jobs.</p>
+    /// This field is required.
     pub fn model_bias_job_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
         self.model_bias_job_output_config = ::std::option::Option::Some(input);
         self
@@ -202,6 +208,7 @@ impl DescribeModelBiasJobDefinitionOutputBuilder {
         &self.model_bias_job_output_config
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    /// This field is required.
     pub fn job_resources(mut self, input: crate::types::MonitoringResources) -> Self {
         self.job_resources = ::std::option::Option::Some(input);
         self
@@ -230,6 +237,7 @@ impl DescribeModelBiasJobDefinitionOutputBuilder {
         &self.network_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

@@ -32,11 +32,10 @@ pub fn de_describe_assessment_targets_http_error(
                 output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidInputException" => crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError::InvalidInputException({
@@ -47,11 +46,10 @@ pub fn de_describe_assessment_targets_http_error(
                 output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_input_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError::generic(generic),
@@ -73,18 +71,20 @@ pub fn de_describe_assessment_targets_http_response(
         output = crate::protocol_serde::shape_describe_assessment_targets::de_describe_assessment_targets(_response_body, output)
             .map_err(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_assessment_targets_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError::unhandled)?
     })
 }
 
 pub fn ser_describe_assessment_targets_input(
     input: &crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_assessment_targets_input::ser_describe_assessment_targets_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_describe_assessment_targets(

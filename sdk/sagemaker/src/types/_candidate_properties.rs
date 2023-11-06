@@ -15,8 +15,10 @@ impl CandidateProperties {
         self.candidate_artifact_locations.as_ref()
     }
     /// <p>Information about the candidate metrics for an AutoML job.</p>
-    pub fn candidate_metrics(&self) -> ::std::option::Option<&[crate::types::MetricDatum]> {
-        self.candidate_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.candidate_metrics.is_none()`.
+    pub fn candidate_metrics(&self) -> &[crate::types::MetricDatum] {
+        self.candidate_metrics.as_deref().unwrap_or_default()
     }
 }
 impl CandidateProperties {

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampPartition {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
-    pub attribute_name: ::std::option::Option<::std::string::String>,
+    pub attribute_name: ::std::string::String,
     /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub timestamp_format: ::std::option::Option<::std::string::String>,
 }
 impl TimestampPartition {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
-        self.attribute_name.as_deref()
+    pub fn attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_name.deref()
     }
     /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn timestamp_format(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct TimestampPartitionBuilder {
 }
 impl TimestampPartitionBuilder {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl TimestampPartitionBuilder {
         &self.timestamp_format
     }
     /// Consumes the builder and constructs a [`TimestampPartition`](crate::types::TimestampPartition).
-    pub fn build(self) -> crate::types::TimestampPartition {
-        crate::types::TimestampPartition {
-            attribute_name: self.attribute_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_name`](crate::types::builders::TimestampPartitionBuilder::attribute_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestampPartition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimestampPartition {
+            attribute_name: self.attribute_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_name",
+                    "attribute_name was not specified but it is required when building TimestampPartition",
+                )
+            })?,
             timestamp_format: self.timestamp_format,
-        }
+        })
     }
 }

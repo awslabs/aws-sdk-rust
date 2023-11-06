@@ -117,7 +117,12 @@ pub fn de_restore_db_cluster_from_snapshot_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
-                    output = crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_a_zs::de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(_response_body, output).map_err(crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_azs::de_db_subnet_group_does_not_cover_enough_azs_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

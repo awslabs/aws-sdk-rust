@@ -24,16 +24,22 @@ impl UpdateSignalCatalogInput {
         self.description.as_deref()
     }
     /// <p> A list of information about nodes to add to the signal catalog. </p>
-    pub fn nodes_to_add(&self) -> ::std::option::Option<&[crate::types::Node]> {
-        self.nodes_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_add.is_none()`.
+    pub fn nodes_to_add(&self) -> &[crate::types::Node] {
+        self.nodes_to_add.as_deref().unwrap_or_default()
     }
     /// <p> A list of information about nodes to update in the signal catalog. </p>
-    pub fn nodes_to_update(&self) -> ::std::option::Option<&[crate::types::Node]> {
-        self.nodes_to_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_update.is_none()`.
+    pub fn nodes_to_update(&self) -> &[crate::types::Node] {
+        self.nodes_to_update.as_deref().unwrap_or_default()
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn nodes_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.nodes_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_remove.is_none()`.
+    pub fn nodes_to_remove(&self) -> &[::std::string::String] {
+        self.nodes_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSignalCatalogInput {
@@ -55,6 +61,7 @@ pub struct UpdateSignalCatalogInputBuilder {
 }
 impl UpdateSignalCatalogInputBuilder {
     /// <p> The name of the signal catalog to update. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -145,7 +152,7 @@ impl UpdateSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSignalCatalogInput`](crate::operation::update_signal_catalog::UpdateSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_signal_catalog::UpdateSignalCatalogInput {
             name: self.name,

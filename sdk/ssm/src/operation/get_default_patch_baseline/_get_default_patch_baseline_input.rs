@@ -45,7 +45,7 @@ impl GetDefaultPatchBaselineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput {
             operating_system: self.operating_system,

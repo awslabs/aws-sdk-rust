@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentVersionArtifactOutput {
     /// <p>The URL of the artifact.</p>
-    pub pre_signed_url: ::std::option::Option<::std::string::String>,
+    pub pre_signed_url: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetComponentVersionArtifactOutput {
     /// <p>The URL of the artifact.</p>
-    pub fn pre_signed_url(&self) -> ::std::option::Option<&str> {
-        self.pre_signed_url.as_deref()
+    pub fn pre_signed_url(&self) -> &str {
+        use std::ops::Deref;
+        self.pre_signed_url.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetComponentVersionArtifactOutput {
@@ -34,6 +35,7 @@ pub struct GetComponentVersionArtifactOutputBuilder {
 }
 impl GetComponentVersionArtifactOutputBuilder {
     /// <p>The URL of the artifact.</p>
+    /// This field is required.
     pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_signed_url = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl GetComponentVersionArtifactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetComponentVersionArtifactOutput`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput).
-    pub fn build(self) -> crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput {
-        crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput {
-            pre_signed_url: self.pre_signed_url,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pre_signed_url`](crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactOutputBuilder::pre_signed_url)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput {
+            pre_signed_url: self.pre_signed_url.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pre_signed_url",
+                    "pre_signed_url was not specified but it is required when building GetComponentVersionArtifactOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

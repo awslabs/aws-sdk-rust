@@ -24,8 +24,10 @@ pub struct BatchExecuteStatementInput {
 }
 impl BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    pub fn sqls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sqls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sqls.is_none()`.
+    pub fn sqls(&self) -> &[::std::string::String] {
+        self.sqls.as_deref().unwrap_or_default()
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -145,6 +147,7 @@ impl BatchExecuteStatementInputBuilder {
         &self.db_user
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -217,7 +220,7 @@ impl BatchExecuteStatementInputBuilder {
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_execute_statement::BatchExecuteStatementInput {
             sqls: self.sqls,

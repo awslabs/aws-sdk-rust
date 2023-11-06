@@ -73,8 +73,10 @@ impl SetSourceRequest {
         self.max_sync_buffer
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(&self) -> ::std::option::Option<&[crate::types::MediaStreamSourceConfigurationRequest]> {
-        self.media_stream_source_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_stream_source_configurations.is_none()`.
+    pub fn media_stream_source_configurations(&self) -> &[crate::types::MediaStreamSourceConfigurationRequest] {
+        self.media_stream_source_configurations.as_deref().unwrap_or_default()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn min_latency(&self) -> ::std::option::Option<i32> {

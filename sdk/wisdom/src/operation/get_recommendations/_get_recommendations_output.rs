@@ -4,19 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationsOutput {
     /// <p>The recommendations.</p>
-    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationData>>,
+    pub recommendations: ::std::vec::Vec<crate::types::RecommendationData>,
     /// <p>The triggers corresponding to recommendations.</p>
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTrigger>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationsOutput {
     /// <p>The recommendations.</p>
-    pub fn recommendations(&self) -> ::std::option::Option<&[crate::types::RecommendationData]> {
-        self.recommendations.as_deref()
+    pub fn recommendations(&self) -> &[crate::types::RecommendationData] {
+        use std::ops::Deref;
+        self.recommendations.deref()
     }
     /// <p>The triggers corresponding to recommendations.</p>
-    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::RecommendationTrigger]> {
-        self.triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
+    pub fn triggers(&self) -> &[crate::types::RecommendationTrigger] {
+        self.triggers.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRecommendationsOutput {
@@ -90,11 +93,21 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
-    pub fn build(self) -> crate::operation::get_recommendations::GetRecommendationsOutput {
-        crate::operation::get_recommendations::GetRecommendationsOutput {
-            recommendations: self.recommendations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recommendations`](crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::recommendations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsOutput {
+            recommendations: self.recommendations.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "recommendations",
+                    "recommendations was not specified but it is required when building GetRecommendationsOutput",
+                )
+            })?,
             triggers: self.triggers,
             _request_id: self._request_id,
-        }
+        })
     }
 }

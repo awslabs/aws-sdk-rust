@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p>An object containing the list of projects.</p>
-    pub projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
+    pub projects: ::std::vec::Vec<crate::types::ProjectSummary>,
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProjectsOutput {
     /// <p>An object containing the list of projects.</p>
-    pub fn projects(&self) -> ::std::option::Option<&[crate::types::ProjectSummary]> {
-        self.projects.as_deref()
+    pub fn projects(&self) -> &[crate::types::ProjectSummary] {
+        use std::ops::Deref;
+        self.projects.deref()
     }
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListProjectsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
-    pub fn build(self) -> crate::operation::list_projects::ListProjectsOutput {
-        crate::operation::list_projects::ListProjectsOutput {
-            projects: self.projects,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`projects`](crate::operation::list_projects::builders::ListProjectsOutputBuilder::projects)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_projects::ListProjectsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsOutput {
+            projects: self.projects.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "projects",
+                    "projects was not specified but it is required when building ListProjectsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

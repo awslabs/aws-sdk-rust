@@ -27,6 +27,7 @@ pub struct JoinStorageSessionInputBuilder {
 }
 impl JoinStorageSessionInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl JoinStorageSessionInputBuilder {
     /// Consumes the builder and constructs a [`JoinStorageSessionInput`](crate::operation::join_storage_session::JoinStorageSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::join_storage_session::JoinStorageSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::join_storage_session::JoinStorageSessionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::join_storage_session::JoinStorageSessionInput {
             channel_arn: self.channel_arn,
         })

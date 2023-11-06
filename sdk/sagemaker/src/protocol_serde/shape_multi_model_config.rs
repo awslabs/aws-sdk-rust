@@ -2,7 +2,7 @@
 pub fn ser_multi_model_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiModelConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_cache_setting {
         object.key("ModelCacheSetting").string(var_1.as_str());
     }

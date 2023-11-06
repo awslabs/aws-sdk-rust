@@ -127,8 +127,10 @@ impl DescribeEngineVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEngineVersionsInput`](crate::operation::describe_engine_versions::DescribeEngineVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_engine_versions::DescribeEngineVersionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_engine_versions::DescribeEngineVersionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_engine_versions::DescribeEngineVersionsInput {
             engine_version: self.engine_version,
             parameter_group_family: self.parameter_group_family,

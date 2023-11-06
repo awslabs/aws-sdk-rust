@@ -27,6 +27,7 @@ pub struct GetDiskSnapshotInputBuilder {
 }
 impl GetDiskSnapshotInputBuilder {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// This field is required.
     pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetDiskSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`GetDiskSnapshotInput`](crate::operation::get_disk_snapshot::GetDiskSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_disk_snapshot::GetDiskSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_disk_snapshot::GetDiskSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_disk_snapshot::GetDiskSnapshotInput {
             disk_snapshot_name: self.disk_snapshot_name,
         })

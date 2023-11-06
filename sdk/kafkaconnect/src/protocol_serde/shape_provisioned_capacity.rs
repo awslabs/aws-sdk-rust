@@ -2,7 +2,7 @@
 pub fn ser_provisioned_capacity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProvisionedCapacity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("mcuCount").number(
             #[allow(clippy::useless_conversion)]

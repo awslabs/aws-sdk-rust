@@ -135,6 +135,7 @@ pub struct RespondToAuthChallengeInputBuilder {
 }
 impl RespondToAuthChallengeInputBuilder {
     /// <p>The app client ID.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +151,7 @@ impl RespondToAuthChallengeInputBuilder {
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
+    /// This field is required.
     pub fn challenge_name(mut self, input: crate::types::ChallengeNameType) -> Self {
         self.challenge_name = ::std::option::Option::Some(input);
         self
@@ -341,7 +343,7 @@ impl RespondToAuthChallengeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput {
             client_id: self.client_id,

@@ -11,8 +11,10 @@ pub struct ListNotificationsOutput {
 }
 impl ListNotificationsOutput {
     /// <p>The results of the <code>ListNotifications</code> action.</p>
-    pub fn notifications(&self) -> ::std::option::Option<&[crate::types::NotificationOutput]> {
-        self.notifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notifications.is_none()`.
+    pub fn notifications(&self) -> &[crate::types::NotificationOutput] {
+        self.notifications.as_deref().unwrap_or_default()
     }
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

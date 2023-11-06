@@ -41,6 +41,7 @@ pub struct DescribeCustomVocabularyMetadataInputBuilder {
 }
 impl DescribeCustomVocabularyMetadataInputBuilder {
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
         &self.bot_id
     }
     /// <p>The bot version of the bot to return metadata for.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
         &self.bot_version
     }
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput {

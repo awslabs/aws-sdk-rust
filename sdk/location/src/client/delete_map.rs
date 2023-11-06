@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMap`](crate::operation::delete_map::builders::DeleteMapFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::operation::delete_map::builders::DeleteMapFluentBuilder::map_name) / [`set_map_name(Option<String>)`](crate::operation::delete_map::builders::DeleteMapFluentBuilder::set_map_name): <p>The name of the map resource to be deleted.</p>
+    ///   - [`map_name(impl Into<String>)`](crate::operation::delete_map::builders::DeleteMapFluentBuilder::map_name) / [`set_map_name(Option<String>)`](crate::operation::delete_map::builders::DeleteMapFluentBuilder::set_map_name):<br>required: **true**<br><p>The name of the map resource to be deleted.</p><br>
     /// - On success, responds with [`DeleteMapOutput`](crate::operation::delete_map::DeleteMapOutput)
     /// - On failure, responds with [`SdkError<DeleteMapError>`](crate::operation::delete_map::DeleteMapError)
     pub fn delete_map(&self) -> crate::operation::delete_map::builders::DeleteMapFluentBuilder {

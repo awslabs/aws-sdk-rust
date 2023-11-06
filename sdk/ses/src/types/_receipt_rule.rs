@@ -12,7 +12,7 @@ pub struct ReceiptRule {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.</p>
     pub enabled: bool,
     /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
@@ -31,8 +31,9 @@ impl ReceiptRule {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.</p>
     pub fn enabled(&self) -> bool {
@@ -43,12 +44,16 @@ impl ReceiptRule {
         self.tls_policy.as_ref()
     }
     /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
-    pub fn recipients(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recipients.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recipients.is_none()`.
+    pub fn recipients(&self) -> &[::std::string::String] {
+        self.recipients.as_deref().unwrap_or_default()
     }
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::ReceiptAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::ReceiptAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is <code>false</code>.</p>
     pub fn scan_enabled(&self) -> bool {
@@ -80,6 +85,7 @@ impl ReceiptRuleBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -186,14 +192,21 @@ impl ReceiptRuleBuilder {
         &self.scan_enabled
     }
     /// Consumes the builder and constructs a [`ReceiptRule`](crate::types::ReceiptRule).
-    pub fn build(self) -> crate::types::ReceiptRule {
-        crate::types::ReceiptRule {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ReceiptRuleBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReceiptRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReceiptRule {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ReceiptRule",
+                )
+            })?,
             enabled: self.enabled.unwrap_or_default(),
             tls_policy: self.tls_policy,
             recipients: self.recipients,
             actions: self.actions,
             scan_enabled: self.scan_enabled.unwrap_or_default(),
-        }
+        })
     }
 }

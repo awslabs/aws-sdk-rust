@@ -42,9 +42,6 @@ pub(crate) fn reflens_list_profiling_groups_output_next_token(
 pub(crate) fn lens_list_profile_times_output_profile_times(
     input: crate::operation::list_profile_times::ListProfileTimesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>> {
-    let input = match input.profile_times {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.profile_times;
     ::std::option::Option::Some(input)
 }

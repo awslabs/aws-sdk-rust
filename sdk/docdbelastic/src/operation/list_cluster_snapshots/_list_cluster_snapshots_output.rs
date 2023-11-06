@@ -12,8 +12,10 @@ pub struct ListClusterSnapshotsOutput {
 }
 impl ListClusterSnapshotsOutput {
     /// <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
-    pub fn snapshots(&self) -> ::std::option::Option<&[crate::types::ClusterSnapshotInList]> {
-        self.snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots.is_none()`.
+    pub fn snapshots(&self) -> &[crate::types::ClusterSnapshotInList] {
+        self.snapshots.as_deref().unwrap_or_default()
     }
     /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
     /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>

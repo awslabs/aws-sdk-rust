@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ReleasePhoneNumber`](crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`phone_number_id(impl Into<String>)`](crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::set_phone_number_id): <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
+    ///   - [`phone_number_id(impl Into<String>)`](crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::set_phone_number_id):<br>required: **true**<br><p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p><br>
     /// - On success, responds with [`ReleasePhoneNumberOutput`](crate::operation::release_phone_number::ReleasePhoneNumberOutput) with field(s):
     ///   - [`phone_number_arn(Option<String>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::phone_number_arn): <p>The PhoneNumberArn of the phone number that was released.</p>
     ///   - [`phone_number_id(Option<String>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::phone_number_id): <p>The PhoneNumberId of the phone number that was released.</p>
@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`status(Option<NumberStatus>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::status): <p>The current status of the request.</p>
     ///   - [`iso_country_code(Option<String>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::iso_country_code): <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     ///   - [`message_type(Option<MessageType>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::message_type): <p>The message type that was associated with the phone number.</p>
-    ///   - [`number_capabilities(Option<Vec<NumberCapability>>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::number_capabilities): <p>Specifies if the number could be used for text messages, voice, or both.</p>
+    ///   - [`number_capabilities(Option<Vec::<NumberCapability>>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::number_capabilities): <p>Specifies if the number could be used for text messages, voice, or both.</p>
     ///   - [`number_type(Option<NumberType>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::number_type): <p>The type of number that was released.</p>
     ///   - [`monthly_leasing_price(Option<String>)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::monthly_leasing_price): <p>The monthly price of the phone number, in US dollars.</p>
     ///   - [`two_way_enabled(bool)`](crate::operation::release_phone_number::ReleasePhoneNumberOutput::two_way_enabled): <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>

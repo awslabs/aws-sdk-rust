@@ -34,6 +34,7 @@ pub struct DeleteOptedOutNumberInputBuilder {
 }
 impl DeleteOptedOutNumberInputBuilder {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
+    /// This field is required.
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteOptedOutNumberInputBuilder {
         &self.opt_out_list_name
     }
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
+    /// This field is required.
     pub fn opted_out_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opted_out_number = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteOptedOutNumberInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOptedOutNumberInput`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_opted_out_number::DeleteOptedOutNumberInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_opted_out_number::DeleteOptedOutNumberInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_opted_out_number::DeleteOptedOutNumberInput {
             opt_out_list_name: self.opt_out_list_name,

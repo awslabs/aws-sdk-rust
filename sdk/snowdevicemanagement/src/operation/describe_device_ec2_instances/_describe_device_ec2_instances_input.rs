@@ -14,8 +14,10 @@ impl DescribeDeviceEc2InstancesInput {
         self.managed_device_id.as_deref()
     }
     /// <p>A list of instance IDs associated with the managed device.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeDeviceEc2InstancesInput {
@@ -34,6 +36,7 @@ pub struct DescribeDeviceEc2InstancesInputBuilder {
 }
 impl DescribeDeviceEc2InstancesInputBuilder {
     /// <p>The ID of the managed device.</p>
+    /// This field is required.
     pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl DescribeDeviceEc2InstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput {
             managed_device_id: self.managed_device_id,

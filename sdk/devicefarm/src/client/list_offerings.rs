@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
     /// - On success, responds with [`ListOfferingsOutput`](crate::operation::list_offerings::ListOfferingsOutput) with field(s):
-    ///   - [`offerings(Option<Vec<Offering>>)`](crate::operation::list_offerings::ListOfferingsOutput::offerings): <p>A value that represents the list offering results.</p>
+    ///   - [`offerings(Option<Vec::<Offering>>)`](crate::operation::list_offerings::ListOfferingsOutput::offerings): <p>A value that represents the list offering results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_offerings::ListOfferingsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListOfferingsError>`](crate::operation::list_offerings::ListOfferingsError)
     pub fn list_offerings(&self) -> crate::operation::list_offerings::builders::ListOfferingsFluentBuilder {

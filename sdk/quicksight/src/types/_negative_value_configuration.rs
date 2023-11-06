@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NegativeValueConfiguration {
     /// <p>Determines the display mode of the negative value configuration.</p>
-    pub display_mode: ::std::option::Option<crate::types::NegativeValueDisplayMode>,
+    pub display_mode: crate::types::NegativeValueDisplayMode,
 }
 impl NegativeValueConfiguration {
     /// <p>Determines the display mode of the negative value configuration.</p>
-    pub fn display_mode(&self) -> ::std::option::Option<&crate::types::NegativeValueDisplayMode> {
-        self.display_mode.as_ref()
+    pub fn display_mode(&self) -> &crate::types::NegativeValueDisplayMode {
+        &self.display_mode
     }
 }
 impl NegativeValueConfiguration {
@@ -28,6 +28,7 @@ pub struct NegativeValueConfigurationBuilder {
 }
 impl NegativeValueConfigurationBuilder {
     /// <p>Determines the display mode of the negative value configuration.</p>
+    /// This field is required.
     pub fn display_mode(mut self, input: crate::types::NegativeValueDisplayMode) -> Self {
         self.display_mode = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl NegativeValueConfigurationBuilder {
         &self.display_mode
     }
     /// Consumes the builder and constructs a [`NegativeValueConfiguration`](crate::types::NegativeValueConfiguration).
-    pub fn build(self) -> crate::types::NegativeValueConfiguration {
-        crate::types::NegativeValueConfiguration {
-            display_mode: self.display_mode,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`display_mode`](crate::types::builders::NegativeValueConfigurationBuilder::display_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::NegativeValueConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::NegativeValueConfiguration {
+            display_mode: self.display_mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "display_mode",
+                    "display_mode was not specified but it is required when building NegativeValueConfiguration",
+                )
+            })?,
+        })
     }
 }

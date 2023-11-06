@@ -15,12 +15,16 @@ pub struct ControlScope {
 }
 impl ControlScope {
     /// <p>The ID of the only Amazon Web Services resource that you want your control scope to contain.</p>
-    pub fn compliance_resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.compliance_resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_resource_ids.is_none()`.
+    pub fn compliance_resource_ids(&self) -> &[::std::string::String] {
+        self.compliance_resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>Describes whether the control scope includes one or more types of resources, such as <code>EFS</code> or <code>RDS</code>.</p>
-    pub fn compliance_resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.compliance_resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_resource_types.is_none()`.
+    pub fn compliance_resource_types(&self) -> &[::std::string::String] {
+        self.compliance_resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag value is optional, but it cannot be an empty string. The structure to assign a tag is: <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

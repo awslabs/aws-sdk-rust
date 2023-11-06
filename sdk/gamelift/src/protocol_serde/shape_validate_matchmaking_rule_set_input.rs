@@ -2,7 +2,7 @@
 pub fn ser_validate_matchmaking_rule_set_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rule_set_body {
         object.key("RuleSetBody").string(var_1.as_str());
     }

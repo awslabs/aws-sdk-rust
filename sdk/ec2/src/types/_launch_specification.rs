@@ -42,16 +42,20 @@ impl LaunchSpecification {
         self.user_data.as_deref()
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Deprecated.</p>
     pub fn addressing_type(&self) -> ::std::option::Option<&str> {
         self.addressing_type.as_deref()
     }
     /// <p>The block device mapping entries.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
@@ -79,8 +83,10 @@ impl LaunchSpecification {
         self.key_name.as_deref()
     }
     /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::InstanceNetworkInterfaceSpecification] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The placement information for the instance.</p>
     pub fn placement(&self) -> ::std::option::Option<&crate::types::SpotPlacement> {

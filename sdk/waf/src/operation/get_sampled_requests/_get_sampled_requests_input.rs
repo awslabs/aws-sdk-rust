@@ -56,6 +56,7 @@ pub struct GetSampledRequestsInputBuilder {
 }
 impl GetSampledRequestsInputBuilder {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +75,7 @@ impl GetSampledRequestsInputBuilder {
     /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
     /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +98,7 @@ impl GetSampledRequestsInputBuilder {
         &self.rule_id
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    /// This field is required.
     pub fn time_window(mut self, input: crate::types::TimeWindow) -> Self {
         self.time_window = ::std::option::Option::Some(input);
         self
@@ -110,6 +113,7 @@ impl GetSampledRequestsInputBuilder {
         &self.time_window
     }
     /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
+    /// This field is required.
     pub fn max_items(mut self, input: i64) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -126,7 +130,8 @@ impl GetSampledRequestsInputBuilder {
     /// Consumes the builder and constructs a [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sampled_requests::GetSampledRequestsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sampled_requests::GetSampledRequestsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_sampled_requests::GetSampledRequestsInput {
             web_acl_id: self.web_acl_id,
             rule_id: self.rule_id,

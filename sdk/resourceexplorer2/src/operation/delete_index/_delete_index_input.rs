@@ -27,6 +27,7 @@ pub struct DeleteIndexInputBuilder {
 }
 impl DeleteIndexInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to delete.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteIndexInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteIndexInput`](crate::operation::delete_index::DeleteIndexInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_index::DeleteIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_index::DeleteIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_index::DeleteIndexInput { arn: self.arn })
     }
 }

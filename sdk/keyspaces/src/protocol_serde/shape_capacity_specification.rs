@@ -2,20 +2,20 @@
 pub fn ser_capacity_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CapacitySpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.throughput_mode {
-        object.key("throughputMode").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("throughputMode").string(input.throughput_mode.as_str());
     }
-    if let Some(var_2) = &input.read_capacity_units {
+    if let Some(var_1) = &input.read_capacity_units {
         object.key("readCapacityUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.write_capacity_units {
+    if let Some(var_2) = &input.write_capacity_units {
         object.key("writeCapacityUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

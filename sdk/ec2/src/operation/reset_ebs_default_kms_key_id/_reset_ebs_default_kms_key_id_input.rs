@@ -45,7 +45,7 @@ impl ResetEbsDefaultKmsKeyIdInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdInput { dry_run: self.dry_run })
     }

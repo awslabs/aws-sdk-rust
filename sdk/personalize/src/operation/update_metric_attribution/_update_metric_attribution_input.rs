@@ -14,12 +14,16 @@ pub struct UpdateMetricAttributionInput {
 }
 impl UpdateMetricAttributionInput {
     /// <p>Add new metric attributes to the metric attribution.</p>
-    pub fn add_metrics(&self) -> ::std::option::Option<&[crate::types::MetricAttribute]> {
-        self.add_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_metrics.is_none()`.
+    pub fn add_metrics(&self) -> &[crate::types::MetricAttribute] {
+        self.add_metrics.as_deref().unwrap_or_default()
     }
     /// <p>Remove metric attributes from the metric attribution.</p>
-    pub fn remove_metrics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_metrics.is_none()`.
+    pub fn remove_metrics(&self) -> &[::std::string::String] {
+        self.remove_metrics.as_deref().unwrap_or_default()
     }
     /// <p>An output config for the metric attribution.</p>
     pub fn metrics_output_config(&self) -> ::std::option::Option<&crate::types::MetricAttributionOutput> {
@@ -120,7 +124,7 @@ impl UpdateMetricAttributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_metric_attribution::UpdateMetricAttributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_metric_attribution::UpdateMetricAttributionInput {
             add_metrics: self.add_metrics,

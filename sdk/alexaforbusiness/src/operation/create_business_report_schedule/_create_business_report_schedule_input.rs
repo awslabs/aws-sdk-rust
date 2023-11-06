@@ -50,8 +50,10 @@ impl CreateBusinessReportScheduleInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the business report schedule.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateBusinessReportScheduleInput {
@@ -118,6 +120,7 @@ impl CreateBusinessReportScheduleInputBuilder {
         &self.s3_key_prefix
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::BusinessReportFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -132,6 +135,7 @@ impl CreateBusinessReportScheduleInputBuilder {
         &self.format
     }
     /// <p>The content range of the reports.</p>
+    /// This field is required.
     pub fn content_range(mut self, input: crate::types::BusinessReportContentRange) -> Self {
         self.content_range = ::std::option::Option::Some(input);
         self
@@ -198,7 +202,7 @@ impl CreateBusinessReportScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_business_report_schedule::CreateBusinessReportScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_business_report_schedule::CreateBusinessReportScheduleInput {
             schedule_name: self.schedule_name,

@@ -45,6 +45,7 @@ pub struct AssociateEntityToThingInputBuilder {
 }
 impl AssociateEntityToThingInputBuilder {
     /// <p>The name of the thing to which the entity is to be associated.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +62,7 @@ impl AssociateEntityToThingInputBuilder {
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +99,7 @@ impl AssociateEntityToThingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_entity_to_thing::AssociateEntityToThingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_entity_to_thing::AssociateEntityToThingInput {
             thing_name: self.thing_name,

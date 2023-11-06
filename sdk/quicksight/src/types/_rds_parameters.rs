@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsParameters {
     /// <p>Instance ID.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
+    pub instance_id: ::std::string::String,
     /// <p>Database.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
 }
 impl RdsParameters {
     /// <p>Instance ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
+    pub fn instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_id.deref()
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
 }
 impl RdsParameters {
@@ -35,6 +37,7 @@ pub struct RdsParametersBuilder {
 }
 impl RdsParametersBuilder {
     /// <p>Instance ID.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl RdsParametersBuilder {
         &self.instance_id
     }
     /// <p>Database.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl RdsParametersBuilder {
         &self.database
     }
     /// Consumes the builder and constructs a [`RdsParameters`](crate::types::RdsParameters).
-    pub fn build(self) -> crate::types::RdsParameters {
-        crate::types::RdsParameters {
-            instance_id: self.instance_id,
-            database: self.database,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_id`](crate::types::builders::RdsParametersBuilder::instance_id)
+    /// - [`database`](crate::types::builders::RdsParametersBuilder::database)
+    pub fn build(self) -> ::std::result::Result<crate::types::RdsParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RdsParameters {
+            instance_id: self.instance_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instance_id",
+                    "instance_id was not specified but it is required when building RdsParameters",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building RdsParameters",
+                )
+            })?,
+        })
     }
 }

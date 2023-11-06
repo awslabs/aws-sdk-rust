@@ -85,7 +85,7 @@ impl ListDataCellsFilterInputBuilder {
     /// Consumes the builder and constructs a [`ListDataCellsFilterInput`](crate::operation::list_data_cells_filter::ListDataCellsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_cells_filter::ListDataCellsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_data_cells_filter::ListDataCellsFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_data_cells_filter::ListDataCellsFilterInput {
             table: self.table,

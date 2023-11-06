@@ -34,6 +34,7 @@ pub struct DeleteObjectInputBuilder {
 }
 impl DeleteObjectInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteObjectInputBuilder {
         &self.directory_arn
     }
     /// <p>A reference that identifies the object.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self
@@ -62,7 +64,9 @@ impl DeleteObjectInputBuilder {
         &self.object_reference
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::operation::delete_object::DeleteObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_object::DeleteObjectInput {
             directory_arn: self.directory_arn,
             object_reference: self.object_reference,

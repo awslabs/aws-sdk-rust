@@ -41,6 +41,7 @@ pub struct UpdateHostInputBuilder {
 }
 impl UpdateHostInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
+    /// This field is required.
     pub fn host_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl UpdateHostInputBuilder {
         &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`UpdateHostInput`](crate::operation::update_host::UpdateHostInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_host::UpdateHostInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_host::UpdateHostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_host::UpdateHostInput {
             host_arn: self.host_arn,
             provider_endpoint: self.provider_endpoint,

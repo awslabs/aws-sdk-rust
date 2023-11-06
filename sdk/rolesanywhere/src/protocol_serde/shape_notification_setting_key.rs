@@ -2,12 +2,12 @@
 pub fn ser_notification_setting_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationSettingKey,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.event {
-        object.key("event").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("event").string(input.event.as_str());
     }
-    if let Some(var_2) = &input.channel {
-        object.key("channel").string(var_2.as_str());
+    if let Some(var_1) = &input.channel {
+        object.key("channel").string(var_1.as_str());
     }
     Ok(())
 }

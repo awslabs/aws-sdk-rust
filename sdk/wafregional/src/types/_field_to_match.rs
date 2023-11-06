@@ -18,7 +18,7 @@ pub struct FieldToMatch {
     /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
     /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::MatchFieldType>,
+    pub r#type: crate::types::MatchFieldType,
     /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p>
     /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p>
     /// <p>If the value of <code>Type</code> is any other value, omit <code>Data</code>.</p>
@@ -35,8 +35,8 @@ impl FieldToMatch {
     /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
     /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MatchFieldType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::MatchFieldType {
+        &self.r#type
     }
     /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p>
     /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p>
@@ -70,6 +70,7 @@ impl FieldToMatchBuilder {
     /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
     /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::MatchFieldType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -122,10 +123,17 @@ impl FieldToMatchBuilder {
         &self.data
     }
     /// Consumes the builder and constructs a [`FieldToMatch`](crate::types::FieldToMatch).
-    pub fn build(self) -> crate::types::FieldToMatch {
-        crate::types::FieldToMatch {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::FieldToMatchBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldToMatch, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldToMatch {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FieldToMatch",
+                )
+            })?,
             data: self.data,
-        }
+        })
     }
 }

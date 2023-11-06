@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelemetryRecord {
     /// <p></p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
     /// <p></p>
     pub segments_received_count: ::std::option::Option<i32>,
     /// <p></p>
@@ -19,8 +19,8 @@ pub struct TelemetryRecord {
 }
 impl TelemetryRecord {
     /// <p></p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
     /// <p></p>
     pub fn segments_received_count(&self) -> ::std::option::Option<i32> {
@@ -63,6 +63,7 @@ pub struct TelemetryRecordBuilder {
 }
 impl TelemetryRecordBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -147,14 +148,21 @@ impl TelemetryRecordBuilder {
         &self.backend_connection_errors
     }
     /// Consumes the builder and constructs a [`TelemetryRecord`](crate::types::TelemetryRecord).
-    pub fn build(self) -> crate::types::TelemetryRecord {
-        crate::types::TelemetryRecord {
-            timestamp: self.timestamp,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timestamp`](crate::types::builders::TelemetryRecordBuilder::timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::TelemetryRecord, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TelemetryRecord {
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building TelemetryRecord",
+                )
+            })?,
             segments_received_count: self.segments_received_count,
             segments_sent_count: self.segments_sent_count,
             segments_spillover_count: self.segments_spillover_count,
             segments_rejected_count: self.segments_rejected_count,
             backend_connection_errors: self.backend_connection_errors,
-        }
+        })
     }
 }

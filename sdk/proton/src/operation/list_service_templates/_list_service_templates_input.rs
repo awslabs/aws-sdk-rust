@@ -64,7 +64,7 @@ impl ListServiceTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListServiceTemplatesInput`](crate::operation::list_service_templates::ListServiceTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_service_templates::ListServiceTemplatesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_service_templates::ListServiceTemplatesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_service_templates::ListServiceTemplatesInput {
             next_token: self.next_token,

@@ -41,6 +41,7 @@ pub struct GetUserProfileInputBuilder {
 }
 impl GetUserProfileInputBuilder {
     /// <p>the ID of the Amazon DataZone domain the data portal of which you want to get.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetUserProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the user for which you want to get the user profile.</p>
+    /// This field is required.
     pub fn user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl GetUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetUserProfileInput`](crate::operation::get_user_profile::GetUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_user_profile::GetUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_user_profile::GetUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_profile::GetUserProfileInput {
             domain_identifier: self.domain_identifier,
             user_identifier: self.user_identifier,

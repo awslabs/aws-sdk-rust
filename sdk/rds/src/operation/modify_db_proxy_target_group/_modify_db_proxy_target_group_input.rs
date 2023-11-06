@@ -48,6 +48,7 @@ pub struct ModifyDbProxyTargetGroupInputBuilder {
 }
 impl ModifyDbProxyTargetGroupInputBuilder {
     /// <p>The name of the target group to modify.</p>
+    /// This field is required.
     pub fn target_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ModifyDbProxyTargetGroupInputBuilder {
         &self.target_group_name
     }
     /// <p>The name of the proxy.</p>
+    /// This field is required.
     pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl ModifyDbProxyTargetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupInput {
             target_group_name: self.target_group_name,

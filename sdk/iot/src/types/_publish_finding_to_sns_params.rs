@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
-    pub topic_arn: ::std::option::Option<::std::string::String>,
+    pub topic_arn: ::std::string::String,
 }
 impl PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
-        self.topic_arn.as_deref()
+    pub fn topic_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.topic_arn.deref()
     }
 }
 impl PublishFindingToSnsParams {
@@ -28,6 +29,7 @@ pub struct PublishFindingToSnsParamsBuilder {
 }
 impl PublishFindingToSnsParamsBuilder {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl PublishFindingToSnsParamsBuilder {
         &self.topic_arn
     }
     /// Consumes the builder and constructs a [`PublishFindingToSnsParams`](crate::types::PublishFindingToSnsParams).
-    pub fn build(self) -> crate::types::PublishFindingToSnsParams {
-        crate::types::PublishFindingToSnsParams { topic_arn: self.topic_arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`topic_arn`](crate::types::builders::PublishFindingToSnsParamsBuilder::topic_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::PublishFindingToSnsParams, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::PublishFindingToSnsParams {
+            topic_arn: self.topic_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "topic_arn",
+                    "topic_arn was not specified but it is required when building PublishFindingToSnsParams",
+                )
+            })?,
+        })
     }
 }

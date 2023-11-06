@@ -42,6 +42,7 @@ pub struct InferenceExperimentDataStorageConfigBuilder {
 }
 impl InferenceExperimentDataStorageConfigBuilder {
     /// <p>The Amazon S3 bucket where the inference request and response data is stored. </p>
+    /// This field is required.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
         self

@@ -2,7 +2,7 @@
 pub fn ser_model_bias_baseline_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelBiasBaselineConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.baselining_job_name {
         object.key("BaseliningJobName").string(var_1.as_str());
     }

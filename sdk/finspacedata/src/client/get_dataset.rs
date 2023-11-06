@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataset`](crate::operation::get_dataset::builders::GetDatasetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_id(impl Into<String>)`](crate::operation::get_dataset::builders::GetDatasetFluentBuilder::dataset_id) / [`set_dataset_id(Option<String>)`](crate::operation::get_dataset::builders::GetDatasetFluentBuilder::set_dataset_id): <p>The unique identifier for a Dataset.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::operation::get_dataset::builders::GetDatasetFluentBuilder::dataset_id) / [`set_dataset_id(Option<String>)`](crate::operation::get_dataset::builders::GetDatasetFluentBuilder::set_dataset_id):<br>required: **true**<br><p>The unique identifier for a Dataset.</p><br>
     /// - On success, responds with [`GetDatasetOutput`](crate::operation::get_dataset::GetDatasetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::operation::get_dataset::GetDatasetOutput::dataset_id): <p>The unique identifier for a Dataset.</p>
     ///   - [`dataset_arn(Option<String>)`](crate::operation::get_dataset::GetDatasetOutput::dataset_arn): <p>The ARN identifier of the Dataset.</p>

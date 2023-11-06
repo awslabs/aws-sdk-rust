@@ -27,6 +27,7 @@ pub struct InferSnomedctInputBuilder {
 }
 impl InferSnomedctInputBuilder {
     /// <p>The input text to be analyzed using InferSNOMEDCT.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl InferSnomedctInputBuilder {
     /// Consumes the builder and constructs a [`InferSnomedctInput`](crate::operation::infer_snomedct::InferSnomedctInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::infer_snomedct::InferSnomedctInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::infer_snomedct::InferSnomedctInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::infer_snomedct::InferSnomedctInput { text: self.text })
     }
 }

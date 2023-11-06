@@ -10,24 +10,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Secret {
     /// <p>The name of the secret.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
     /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
     /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
-    pub value_from: ::std::option::Option<::std::string::String>,
+    pub value_from: ::std::string::String,
 }
 impl Secret {
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
     /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
     /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
-    pub fn value_from(&self) -> ::std::option::Option<&str> {
-        self.value_from.as_deref()
+    pub fn value_from(&self) -> &str {
+        use std::ops::Deref;
+        self.value_from.deref()
     }
 }
 impl Secret {
@@ -46,6 +48,7 @@ pub struct SecretBuilder {
 }
 impl SecretBuilder {
     /// <p>The name of the secret.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl SecretBuilder {
     /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
     /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
+    /// This field is required.
     pub fn value_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value_from = ::std::option::Option::Some(input.into());
         self
@@ -83,10 +87,23 @@ impl SecretBuilder {
         &self.value_from
     }
     /// Consumes the builder and constructs a [`Secret`](crate::types::Secret).
-    pub fn build(self) -> crate::types::Secret {
-        crate::types::Secret {
-            name: self.name,
-            value_from: self.value_from,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SecretBuilder::name)
+    /// - [`value_from`](crate::types::builders::SecretBuilder::value_from)
+    pub fn build(self) -> ::std::result::Result<crate::types::Secret, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Secret {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Secret",
+                )
+            })?,
+            value_from: self.value_from.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "value_from",
+                    "value_from was not specified but it is required when building Secret",
+                )
+            })?,
+        })
     }
 }

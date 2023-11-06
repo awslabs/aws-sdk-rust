@@ -11,8 +11,10 @@ pub struct IndexAttachment {
 }
 impl IndexAttachment {
     /// <p>The indexed attribute values.</p>
-    pub fn indexed_attributes(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
-        self.indexed_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.indexed_attributes.is_none()`.
+    pub fn indexed_attributes(&self) -> &[crate::types::AttributeKeyAndValue] {
+        self.indexed_attributes.as_deref().unwrap_or_default()
     }
     /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
     pub fn object_identifier(&self) -> ::std::option::Option<&str> {

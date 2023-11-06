@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelMessageCallback {
     /// <p>The message ID.</p>
-    pub message_id: ::std::option::Option<::std::string::String>,
+    pub message_id: ::std::string::String,
     /// <p>The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The message metadata.</p>
@@ -21,8 +21,9 @@ pub struct ChannelMessageCallback {
 }
 impl ChannelMessageCallback {
     /// <p>The message ID.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
-        self.message_id.as_deref()
+    pub fn message_id(&self) -> &str {
+        use std::ops::Deref;
+        self.message_id.deref()
     }
     /// <p>The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
@@ -85,6 +86,7 @@ pub struct ChannelMessageCallbackBuilder {
 }
 impl ChannelMessageCallbackBuilder {
     /// <p>The message ID.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -194,16 +196,23 @@ impl ChannelMessageCallbackBuilder {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`ChannelMessageCallback`](crate::types::ChannelMessageCallback).
-    pub fn build(self) -> crate::types::ChannelMessageCallback {
-        crate::types::ChannelMessageCallback {
-            message_id: self.message_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message_id`](crate::types::builders::ChannelMessageCallbackBuilder::message_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChannelMessageCallback, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChannelMessageCallback {
+            message_id: self.message_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message_id",
+                    "message_id was not specified but it is required when building ChannelMessageCallback",
+                )
+            })?,
             content: self.content,
             metadata: self.metadata,
             push_notification: self.push_notification,
             message_attributes: self.message_attributes,
             sub_channel_id: self.sub_channel_id,
             content_type: self.content_type,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ChannelMessageCallbackBuilder {

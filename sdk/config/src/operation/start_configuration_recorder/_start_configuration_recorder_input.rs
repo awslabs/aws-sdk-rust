@@ -28,6 +28,7 @@ pub struct StartConfigurationRecorderInputBuilder {
 }
 impl StartConfigurationRecorderInputBuilder {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    /// This field is required.
     pub fn configuration_recorder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_recorder_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl StartConfigurationRecorderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_configuration_recorder::StartConfigurationRecorderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_configuration_recorder::StartConfigurationRecorderInput {
             configuration_recorder_name: self.configuration_recorder_name,

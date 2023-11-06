@@ -9,8 +9,10 @@ pub struct DeleteIdentitiesInput {
 }
 impl DeleteIdentitiesInput {
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub fn identity_ids_to_delete(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.identity_ids_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_ids_to_delete.is_none()`.
+    pub fn identity_ids_to_delete(&self) -> &[::std::string::String] {
+        self.identity_ids_to_delete.as_deref().unwrap_or_default()
     }
 }
 impl DeleteIdentitiesInput {
@@ -50,7 +52,7 @@ impl DeleteIdentitiesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentitiesInput`](crate::operation::delete_identities::DeleteIdentitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_identities::DeleteIdentitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_identities::DeleteIdentitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_identities::DeleteIdentitiesInput {
             identity_ids_to_delete: self.identity_ids_to_delete,
         })

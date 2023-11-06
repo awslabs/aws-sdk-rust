@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationStrategy {
     /// <p>The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
-    pub mode: ::std::option::Option<crate::types::ValidationStrategyMode>,
+    pub mode: crate::types::ValidationStrategyMode,
 }
 impl ValidationStrategy {
     /// <p>The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::ValidationStrategyMode> {
-        self.mode.as_ref()
+    pub fn mode(&self) -> &crate::types::ValidationStrategyMode {
+        &self.mode
     }
 }
 impl ValidationStrategy {
@@ -28,6 +28,7 @@ pub struct ValidationStrategyBuilder {
 }
 impl ValidationStrategyBuilder {
     /// <p>The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::ValidationStrategyMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl ValidationStrategyBuilder {
         &self.mode
     }
     /// Consumes the builder and constructs a [`ValidationStrategy`](crate::types::ValidationStrategy).
-    pub fn build(self) -> crate::types::ValidationStrategy {
-        crate::types::ValidationStrategy { mode: self.mode }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mode`](crate::types::builders::ValidationStrategyBuilder::mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationStrategy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ValidationStrategy {
+            mode: self.mode.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mode",
+                    "mode was not specified but it is required when building ValidationStrategy",
+                )
+            })?,
+        })
     }
 }

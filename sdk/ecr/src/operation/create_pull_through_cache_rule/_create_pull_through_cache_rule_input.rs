@@ -41,6 +41,7 @@ pub struct CreatePullThroughCacheRuleInputBuilder {
 }
 impl CreatePullThroughCacheRuleInputBuilder {
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
+    /// This field is required.
     pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecr_repository_prefix = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreatePullThroughCacheRuleInputBuilder {
         &self.ecr_repository_prefix
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
+    /// This field is required.
     pub fn upstream_registry_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upstream_registry_url = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +89,7 @@ impl CreatePullThroughCacheRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput {
             ecr_repository_prefix: self.ecr_repository_prefix,

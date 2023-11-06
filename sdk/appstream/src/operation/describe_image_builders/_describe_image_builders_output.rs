@@ -11,8 +11,10 @@ pub struct DescribeImageBuildersOutput {
 }
 impl DescribeImageBuildersOutput {
     /// <p>Information about the image builders.</p>
-    pub fn image_builders(&self) -> ::std::option::Option<&[crate::types::ImageBuilder]> {
-        self.image_builders.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_builders.is_none()`.
+    pub fn image_builders(&self) -> &[crate::types::ImageBuilder] {
+        self.image_builders.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

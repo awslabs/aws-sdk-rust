@@ -2,7 +2,7 @@
 pub fn ser_open_x_json_ser_de(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpenXJsonSerDe,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.convert_dots_in_json_keys_to_underscores {
         object.key("ConvertDotsInJsonKeysToUnderscores").boolean(*var_1);
     }

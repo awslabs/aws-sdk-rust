@@ -5,32 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateResourceIdentifier {
     /// <p>The 12-digit account ID of the source account.</p>
-    pub source_account_id: ::std::option::Option<::std::string::String>,
+    pub source_account_id: ::std::string::String,
     /// <p>The source region where data is aggregated.</p>
-    pub source_region: ::std::option::Option<::std::string::String>,
+    pub source_region: ::std::string::String,
     /// <p>The ID of the Amazon Web Services resource.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The type of the Amazon Web Services resource.</p>
-    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub resource_type: crate::types::ResourceType,
     /// <p>The name of the Amazon Web Services resource.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl AggregateResourceIdentifier {
     /// <p>The 12-digit account ID of the source account.</p>
-    pub fn source_account_id(&self) -> ::std::option::Option<&str> {
-        self.source_account_id.as_deref()
+    pub fn source_account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_account_id.deref()
     }
     /// <p>The source region where data is aggregated.</p>
-    pub fn source_region(&self) -> ::std::option::Option<&str> {
-        self.source_region.as_deref()
+    pub fn source_region(&self) -> &str {
+        use std::ops::Deref;
+        self.source_region.deref()
     }
     /// <p>The ID of the Amazon Web Services resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The type of the Amazon Web Services resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
-        self.resource_type.as_ref()
+    pub fn resource_type(&self) -> &crate::types::ResourceType {
+        &self.resource_type
     }
     /// <p>The name of the Amazon Web Services resource.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
@@ -56,6 +59,7 @@ pub struct AggregateResourceIdentifierBuilder {
 }
 impl AggregateResourceIdentifierBuilder {
     /// <p>The 12-digit account ID of the source account.</p>
+    /// This field is required.
     pub fn source_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_account_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl AggregateResourceIdentifierBuilder {
         &self.source_account_id
     }
     /// <p>The source region where data is aggregated.</p>
+    /// This field is required.
     pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +89,7 @@ impl AggregateResourceIdentifierBuilder {
         &self.source_region
     }
     /// <p>The ID of the Amazon Web Services resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl AggregateResourceIdentifierBuilder {
         &self.resource_id
     }
     /// <p>The type of the Amazon Web Services resource.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -126,13 +133,38 @@ impl AggregateResourceIdentifierBuilder {
         &self.resource_name
     }
     /// Consumes the builder and constructs a [`AggregateResourceIdentifier`](crate::types::AggregateResourceIdentifier).
-    pub fn build(self) -> crate::types::AggregateResourceIdentifier {
-        crate::types::AggregateResourceIdentifier {
-            source_account_id: self.source_account_id,
-            source_region: self.source_region,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_account_id`](crate::types::builders::AggregateResourceIdentifierBuilder::source_account_id)
+    /// - [`source_region`](crate::types::builders::AggregateResourceIdentifierBuilder::source_region)
+    /// - [`resource_id`](crate::types::builders::AggregateResourceIdentifierBuilder::resource_id)
+    /// - [`resource_type`](crate::types::builders::AggregateResourceIdentifierBuilder::resource_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregateResourceIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AggregateResourceIdentifier {
+            source_account_id: self.source_account_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_account_id",
+                    "source_account_id was not specified but it is required when building AggregateResourceIdentifier",
+                )
+            })?,
+            source_region: self.source_region.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "source_region",
+                    "source_region was not specified but it is required when building AggregateResourceIdentifier",
+                )
+            })?,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building AggregateResourceIdentifier",
+                )
+            })?,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building AggregateResourceIdentifier",
+                )
+            })?,
             resource_name: self.resource_name,
-        }
+        })
     }
 }

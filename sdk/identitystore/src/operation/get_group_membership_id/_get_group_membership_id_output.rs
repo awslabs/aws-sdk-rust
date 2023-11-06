@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupMembershipIdOutput {
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub membership_id: ::std::option::Option<::std::string::String>,
+    pub membership_id: ::std::string::String,
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetGroupMembershipIdOutput {
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub fn membership_id(&self) -> ::std::option::Option<&str> {
-        self.membership_id.as_deref()
+    pub fn membership_id(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_id.deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetGroupMembershipIdOutput {
@@ -41,6 +43,7 @@ pub struct GetGroupMembershipIdOutputBuilder {
 }
 impl GetGroupMembershipIdOutputBuilder {
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    /// This field is required.
     pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl GetGroupMembershipIdOutputBuilder {
         &self.membership_id
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,27 @@ impl GetGroupMembershipIdOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetGroupMembershipIdOutput`](crate::operation::get_group_membership_id::GetGroupMembershipIdOutput).
-    pub fn build(self) -> crate::operation::get_group_membership_id::GetGroupMembershipIdOutput {
-        crate::operation::get_group_membership_id::GetGroupMembershipIdOutput {
-            membership_id: self.membership_id,
-            identity_store_id: self.identity_store_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`membership_id`](crate::operation::get_group_membership_id::builders::GetGroupMembershipIdOutputBuilder::membership_id)
+    /// - [`identity_store_id`](crate::operation::get_group_membership_id::builders::GetGroupMembershipIdOutputBuilder::identity_store_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_group_membership_id::GetGroupMembershipIdOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_group_membership_id::GetGroupMembershipIdOutput {
+            membership_id: self.membership_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "membership_id",
+                    "membership_id was not specified but it is required when building GetGroupMembershipIdOutput",
+                )
+            })?,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building GetGroupMembershipIdOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

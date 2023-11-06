@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSchema`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_arn(impl Into<String>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
+    ///   - [`schema_arn(impl Into<String>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::set_schema_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p><br>
     /// - On success, responds with [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::operation::delete_schema::DeleteSchemaOutput::schema_arn): <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteSchemaError>`](crate::operation::delete_schema::DeleteSchemaError)

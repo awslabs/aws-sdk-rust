@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemEventFilter {
     /// <p>The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.</p>
-    pub key: ::std::option::Option<crate::types::OpsItemEventFilterKey>,
+    pub key: crate::types::OpsItemEventFilterKey,
     /// <p>The values for the filter, consisting of one or more OpsItem IDs.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>
-    pub operator: ::std::option::Option<crate::types::OpsItemEventFilterOperator>,
+    pub operator: crate::types::OpsItemEventFilterOperator,
 }
 impl OpsItemEventFilter {
     /// <p>The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::OpsItemEventFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::OpsItemEventFilterKey {
+        &self.key
     }
     /// <p>The values for the filter, consisting of one or more OpsItem IDs.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::OpsItemEventFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::OpsItemEventFilterOperator {
+        &self.operator
     }
 }
 impl OpsItemEventFilter {
@@ -42,6 +43,7 @@ pub struct OpsItemEventFilterBuilder {
 }
 impl OpsItemEventFilterBuilder {
     /// <p>The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::OpsItemEventFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl OpsItemEventFilterBuilder {
         &self.values
     }
     /// <p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::OpsItemEventFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl OpsItemEventFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`OpsItemEventFilter`](crate::types::OpsItemEventFilter).
-    pub fn build(self) -> crate::types::OpsItemEventFilter {
-        crate::types::OpsItemEventFilter {
-            key: self.key,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::OpsItemEventFilterBuilder::key)
+    /// - [`values`](crate::types::builders::OpsItemEventFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::OpsItemEventFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::OpsItemEventFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OpsItemEventFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building OpsItemEventFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building OpsItemEventFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building OpsItemEventFilter",
+                )
+            })?,
+        })
     }
 }

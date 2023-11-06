@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShiftDetails {
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub overridden_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub overridden_contact_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl ShiftDetails {
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub fn overridden_contact_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.overridden_contact_ids.as_deref()
+    pub fn overridden_contact_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.overridden_contact_ids.deref()
     }
 }
 impl ShiftDetails {
@@ -48,9 +49,16 @@ impl ShiftDetailsBuilder {
         &self.overridden_contact_ids
     }
     /// Consumes the builder and constructs a [`ShiftDetails`](crate::types::ShiftDetails).
-    pub fn build(self) -> crate::types::ShiftDetails {
-        crate::types::ShiftDetails {
-            overridden_contact_ids: self.overridden_contact_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`overridden_contact_ids`](crate::types::builders::ShiftDetailsBuilder::overridden_contact_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::ShiftDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ShiftDetails {
+            overridden_contact_ids: self.overridden_contact_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "overridden_contact_ids",
+                    "overridden_contact_ids was not specified but it is required when building ShiftDetails",
+                )
+            })?,
+        })
     }
 }

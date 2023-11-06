@@ -14,7 +14,7 @@ pub struct ShardFilter {
     /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li>
     /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::ShardFilterType>,
+    pub r#type: crate::types::ShardFilterType,
     /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
     pub shard_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
@@ -31,8 +31,8 @@ impl ShardFilter {
     /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li>
     /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ShardFilterType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ShardFilterType {
+        &self.r#type
     }
     /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
     pub fn shard_id(&self) -> ::std::option::Option<&str> {
@@ -69,6 +69,7 @@ impl ShardFilterBuilder {
     /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li>
     /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ShardFilterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -129,11 +130,18 @@ impl ShardFilterBuilder {
         &self.timestamp
     }
     /// Consumes the builder and constructs a [`ShardFilter`](crate::types::ShardFilter).
-    pub fn build(self) -> crate::types::ShardFilter {
-        crate::types::ShardFilter {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ShardFilterBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ShardFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ShardFilter {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ShardFilter",
+                )
+            })?,
             shard_id: self.shard_id,
             timestamp: self.timestamp,
-        }
+        })
     }
 }

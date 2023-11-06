@@ -16,8 +16,10 @@ impl DescribeReplicationTasksOutput {
         self.marker.as_deref()
     }
     /// <p>A description of the replication tasks.</p>
-    pub fn replication_tasks(&self) -> ::std::option::Option<&[crate::types::ReplicationTask]> {
-        self.replication_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_tasks.is_none()`.
+    pub fn replication_tasks(&self) -> &[crate::types::ReplicationTask] {
+        self.replication_tasks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReplicationTasksOutput {

@@ -28,6 +28,7 @@ pub struct PrefixLevelBuilder {
 }
 impl PrefixLevelBuilder {
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
+    /// This field is required.
     pub fn storage_metrics(mut self, input: crate::types::PrefixLevelStorageMetrics) -> Self {
         self.storage_metrics = ::std::option::Option::Some(input);
         self

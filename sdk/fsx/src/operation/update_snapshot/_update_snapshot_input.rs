@@ -55,6 +55,7 @@ impl UpdateSnapshotInputBuilder {
         &self.client_request_token
     }
     /// <p>The name of the snapshot to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateSnapshotInputBuilder {
         &self.name
     }
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl UpdateSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSnapshotInput`](crate::operation::update_snapshot::UpdateSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_snapshot::UpdateSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_snapshot::UpdateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_snapshot::UpdateSnapshotInput {
             client_request_token: self.client_request_token,
             name: self.name,

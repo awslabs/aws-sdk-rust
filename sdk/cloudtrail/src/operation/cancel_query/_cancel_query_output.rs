@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQueryOutput {
     /// <p>The ID of the canceled query.</p>
-    pub query_id: ::std::option::Option<::std::string::String>,
+    pub query_id: ::std::string::String,
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
-    pub query_status: ::std::option::Option<crate::types::QueryStatus>,
+    pub query_status: crate::types::QueryStatus,
     _request_id: Option<String>,
 }
 impl CancelQueryOutput {
     /// <p>The ID of the canceled query.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
-        self.query_id.as_deref()
+    pub fn query_id(&self) -> &str {
+        use std::ops::Deref;
+        self.query_id.deref()
     }
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
-    pub fn query_status(&self) -> ::std::option::Option<&crate::types::QueryStatus> {
-        self.query_status.as_ref()
+    pub fn query_status(&self) -> &crate::types::QueryStatus {
+        &self.query_status
     }
 }
 impl ::aws_http::request_id::RequestId for CancelQueryOutput {
@@ -41,6 +42,7 @@ pub struct CancelQueryOutputBuilder {
 }
 impl CancelQueryOutputBuilder {
     /// <p>The ID of the canceled query.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl CancelQueryOutputBuilder {
         &self.query_id
     }
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
+    /// This field is required.
     pub fn query_status(mut self, input: crate::types::QueryStatus) -> Self {
         self.query_status = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,24 @@ impl CancelQueryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelQueryOutput`](crate::operation::cancel_query::CancelQueryOutput).
-    pub fn build(self) -> crate::operation::cancel_query::CancelQueryOutput {
-        crate::operation::cancel_query::CancelQueryOutput {
-            query_id: self.query_id,
-            query_status: self.query_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_id`](crate::operation::cancel_query::builders::CancelQueryOutputBuilder::query_id)
+    /// - [`query_status`](crate::operation::cancel_query::builders::CancelQueryOutputBuilder::query_status)
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_query::CancelQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_query::CancelQueryOutput {
+            query_id: self.query_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_id",
+                    "query_id was not specified but it is required when building CancelQueryOutput",
+                )
+            })?,
+            query_status: self.query_status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "query_status",
+                    "query_status was not specified but it is required when building CancelQueryOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

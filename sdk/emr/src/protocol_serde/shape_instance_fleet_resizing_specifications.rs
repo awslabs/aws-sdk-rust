@@ -2,7 +2,7 @@
 pub fn ser_instance_fleet_resizing_specifications(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceFleetResizingSpecifications,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.spot_resize_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SpotResizeSpecification").start_object();

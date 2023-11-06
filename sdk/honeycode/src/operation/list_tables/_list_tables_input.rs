@@ -46,6 +46,7 @@ pub struct ListTablesInputBuilder {
 impl ListTablesInputBuilder {
     /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +94,7 @@ impl ListTablesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tables::ListTablesInput {
             workbook_id: self.workbook_id,
             max_results: self.max_results,

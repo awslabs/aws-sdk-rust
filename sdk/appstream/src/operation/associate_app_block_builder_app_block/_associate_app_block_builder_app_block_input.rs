@@ -34,6 +34,7 @@ pub struct AssociateAppBlockBuilderAppBlockInputBuilder {
 }
 impl AssociateAppBlockBuilderAppBlockInputBuilder {
     /// <p>The ARN of the app block.</p>
+    /// This field is required.
     pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateAppBlockBuilderAppBlockInputBuilder {
         &self.app_block_arn
     }
     /// <p>The name of the app block builder.</p>
+    /// This field is required.
     pub fn app_block_builder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_builder_name = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateAppBlockBuilderAppBlockInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput {

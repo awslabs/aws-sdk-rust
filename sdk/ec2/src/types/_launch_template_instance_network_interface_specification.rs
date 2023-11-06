@@ -69,8 +69,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecification {
         self.device_index
     }
     /// <p>The IDs of one or more security groups.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The type of network interface.</p>
     pub fn interface_type(&self) -> ::std::option::Option<&str> {
@@ -81,8 +83,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecification {
         self.ipv6_address_count
     }
     /// <p>The IPv6 addresses for the network interface.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::InstanceIpv6Address]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[crate::types::InstanceIpv6Address] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
@@ -93,8 +97,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecification {
         self.private_ip_address.as_deref()
     }
     /// <p>One or more private IPv4 addresses.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::PrivateIpAddressSpecification]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[crate::types::PrivateIpAddressSpecification] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The number of secondary private IPv4 addresses for the network interface.</p>
     pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {
@@ -109,16 +115,20 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecification {
         self.network_card_index
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
-    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecificationResponse]> {
-        self.ipv4_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[crate::types::Ipv4PrefixSpecificationResponse] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigned to the network interface.</p>
     pub fn ipv4_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv4_prefix_count
     }
     /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
-    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv6PrefixSpecificationResponse]> {
-        self.ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
+    pub fn ipv6_prefixes(&self) -> &[crate::types::Ipv6PrefixSpecificationResponse] {
+        self.ipv6_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned to the network interface.</p>
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {

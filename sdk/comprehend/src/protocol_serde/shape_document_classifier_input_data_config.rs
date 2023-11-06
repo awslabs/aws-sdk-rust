@@ -2,7 +2,7 @@
 pub fn ser_document_classifier_input_data_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentClassifierInputDataConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_format {
         object.key("DataFormat").string(var_1.as_str());
     }

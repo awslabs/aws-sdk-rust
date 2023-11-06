@@ -69,6 +69,7 @@ pub struct AddLayerVersionPermissionInputBuilder {
 }
 impl AddLayerVersionPermissionInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    /// This field is required.
     pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl AddLayerVersionPermissionInputBuilder {
         &self.layer_name
     }
     /// <p>The version number.</p>
+    /// This field is required.
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
@@ -97,6 +99,7 @@ impl AddLayerVersionPermissionInputBuilder {
         &self.version_number
     }
     /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
+    /// This field is required.
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl AddLayerVersionPermissionInputBuilder {
         &self.statement_id
     }
     /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
+    /// This field is required.
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +129,7 @@ impl AddLayerVersionPermissionInputBuilder {
         &self.action
     }
     /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer. </p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -171,7 +176,7 @@ impl AddLayerVersionPermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput {
             layer_name: self.layer_name,

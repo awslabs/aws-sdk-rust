@@ -5,42 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentsAlreadyRunningAssessmentException {
     /// <p>Details of the exception error.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p></p>
-    pub agents: ::std::option::Option<::std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,
+    pub agents: ::std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>,
     /// <p></p>
-    pub agents_truncated: ::std::option::Option<bool>,
+    pub agents_truncated: bool,
     /// <p>You can immediately retry your request.</p>
-    pub can_retry: ::std::option::Option<bool>,
+    pub can_retry: bool,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl AgentsAlreadyRunningAssessmentException {
     /// <p></p>
-    pub fn agents(&self) -> ::std::option::Option<&[crate::types::AgentAlreadyRunningAssessment]> {
-        self.agents.as_deref()
+    pub fn agents(&self) -> &[crate::types::AgentAlreadyRunningAssessment] {
+        use std::ops::Deref;
+        self.agents.deref()
     }
     /// <p></p>
-    pub fn agents_truncated(&self) -> ::std::option::Option<bool> {
+    pub fn agents_truncated(&self) -> bool {
         self.agents_truncated
     }
     /// <p>You can immediately retry your request.</p>
-    pub fn can_retry(&self) -> ::std::option::Option<bool> {
+    pub fn can_retry(&self) -> bool {
         self.can_retry
     }
 }
 impl AgentsAlreadyRunningAssessmentException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for AgentsAlreadyRunningAssessmentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "AgentsAlreadyRunningAssessmentException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -76,6 +75,7 @@ pub struct AgentsAlreadyRunningAssessmentExceptionBuilder {
 }
 impl AgentsAlreadyRunningAssessmentExceptionBuilder {
     /// <p>Details of the exception error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +110,7 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
         &self.agents
     }
     /// <p></p>
+    /// This field is required.
     pub fn agents_truncated(mut self, input: bool) -> Self {
         self.agents_truncated = ::std::option::Option::Some(input);
         self
@@ -124,6 +125,7 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
         &self.agents_truncated
     }
     /// <p>You can immediately retry your request.</p>
+    /// This field is required.
     pub fn can_retry(mut self, input: bool) -> Self {
         self.can_retry = ::std::option::Option::Some(input);
         self
@@ -149,13 +151,40 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AgentsAlreadyRunningAssessmentException`](crate::types::error::AgentsAlreadyRunningAssessmentException).
-    pub fn build(self) -> crate::types::error::AgentsAlreadyRunningAssessmentException {
-        crate::types::error::AgentsAlreadyRunningAssessmentException {
-            message: self.message,
-            agents: self.agents,
-            agents_truncated: self.agents_truncated,
-            can_retry: self.can_retry,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::AgentsAlreadyRunningAssessmentExceptionBuilder::message)
+    /// - [`agents`](crate::types::error::builders::AgentsAlreadyRunningAssessmentExceptionBuilder::agents)
+    /// - [`agents_truncated`](crate::types::error::builders::AgentsAlreadyRunningAssessmentExceptionBuilder::agents_truncated)
+    /// - [`can_retry`](crate::types::error::builders::AgentsAlreadyRunningAssessmentExceptionBuilder::can_retry)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::error::AgentsAlreadyRunningAssessmentException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::AgentsAlreadyRunningAssessmentException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building AgentsAlreadyRunningAssessmentException",
+                )
+            })?,
+            agents: self.agents.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agents",
+                    "agents was not specified but it is required when building AgentsAlreadyRunningAssessmentException",
+                )
+            })?,
+            agents_truncated: self.agents_truncated.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "agents_truncated",
+                    "agents_truncated was not specified but it is required when building AgentsAlreadyRunningAssessmentException",
+                )
+            })?,
+            can_retry: self.can_retry.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "can_retry",
+                    "can_retry was not specified but it is required when building AgentsAlreadyRunningAssessmentException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

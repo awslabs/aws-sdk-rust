@@ -15,8 +15,10 @@ impl TeletextDestinationSettings {
         self.page_number.as_deref()
     }
     /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
-    pub fn page_types(&self) -> ::std::option::Option<&[crate::types::TeletextPageType]> {
-        self.page_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.page_types.is_none()`.
+    pub fn page_types(&self) -> &[crate::types::TeletextPageType] {
+        self.page_types.as_deref().unwrap_or_default()
     }
 }
 impl TeletextDestinationSettings {

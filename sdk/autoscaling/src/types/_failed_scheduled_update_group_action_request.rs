@@ -42,6 +42,7 @@ pub struct FailedScheduledUpdateGroupActionRequestBuilder {
 }
 impl FailedScheduledUpdateGroupActionRequestBuilder {
     /// <p>The name of the scheduled action.</p>
+    /// This field is required.
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self

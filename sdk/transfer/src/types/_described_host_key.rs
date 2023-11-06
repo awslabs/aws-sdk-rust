@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedHostKey {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A unique identifier for the host key.</p>
     pub host_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
@@ -28,8 +28,9 @@ pub struct DescribedHostKey {
 }
 impl DescribedHostKey {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A unique identifier for the host key.</p>
     pub fn host_key_id(&self) -> ::std::option::Option<&str> {
@@ -59,8 +60,10 @@ impl DescribedHostKey {
         self.date_imported.as_ref()
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl DescribedHostKey {
@@ -84,6 +87,7 @@ pub struct DescribedHostKeyBuilder {
 }
 impl DescribedHostKeyBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -209,15 +213,22 @@ impl DescribedHostKeyBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedHostKey`](crate::types::DescribedHostKey).
-    pub fn build(self) -> crate::types::DescribedHostKey {
-        crate::types::DescribedHostKey {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::DescribedHostKeyBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedHostKey, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DescribedHostKey {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DescribedHostKey",
+                )
+            })?,
             host_key_id: self.host_key_id,
             host_key_fingerprint: self.host_key_fingerprint,
             description: self.description,
             r#type: self.r#type,
             date_imported: self.date_imported,
             tags: self.tags,
-        }
+        })
     }
 }

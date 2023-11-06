@@ -11,8 +11,10 @@ pub struct ListFeaturesOutput {
 }
 impl ListFeaturesOutput {
     /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::FeatureSummary]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::FeatureSummary] {
+        self.features.as_deref().unwrap_or_default()
     }
     /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

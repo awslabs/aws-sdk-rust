@@ -56,8 +56,10 @@ impl Association {
         self.document_version.as_deref()
     }
     /// <p>The managed nodes targeted by the request to create an association. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The date on which the association was last run.</p>
     pub fn last_execution_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -80,10 +82,10 @@ impl Association {
         self.schedule_offset
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn target_maps(
-        &self,
-    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>]> {
-        self.target_maps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
+    pub fn target_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>] {
+        self.target_maps.as_deref().unwrap_or_default()
     }
 }
 impl Association {

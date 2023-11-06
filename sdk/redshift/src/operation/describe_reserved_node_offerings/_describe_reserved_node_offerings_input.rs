@@ -98,7 +98,7 @@ impl DescribeReservedNodeOfferingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsInput {
             reserved_node_offering_id: self.reserved_node_offering_id,

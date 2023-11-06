@@ -32,8 +32,10 @@ impl SearchRelatedItemsInput {
         self.next_token.as_deref()
     }
     /// <p>The list of types of related items and their parameters to use for filtering.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::RelatedItemTypeFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::RelatedItemTypeFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl SearchRelatedItemsInput {
@@ -55,6 +57,7 @@ pub struct SearchRelatedItemsInputBuilder {
 }
 impl SearchRelatedItemsInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl SearchRelatedItemsInputBuilder {
         &self.domain_id
     }
     /// <p>A unique identifier of the case.</p>
+    /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +137,8 @@ impl SearchRelatedItemsInputBuilder {
     /// Consumes the builder and constructs a [`SearchRelatedItemsInput`](crate::operation::search_related_items::SearchRelatedItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::search_related_items::SearchRelatedItemsInput {
             domain_id: self.domain_id,
             case_id: self.case_id,

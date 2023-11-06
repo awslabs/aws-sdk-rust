@@ -2,21 +2,22 @@
 pub fn ser_response_headers_policy_server_timing_headers_config(
     input: &crate::types::ResponseHeadersPolicyServerTimingHeadersConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.enabled {
+    {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.enabled).encode());
     }
-    if let Some(var_2) = &input.sampling_rate {
+    if let Some(var_1) = &input.sampling_rate {
         let mut inner_writer = scope.start_el("SamplingRate").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_server_timing_headers_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_response_headers_policy_server_timing_headers_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#ResponseHeadersPolicyServerTimingHeadersConfig$Enabled */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -36,11 +37,11 @@ pub fn de_response_headers_policy_server_timing_headers_config(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_3);
+                builder = builder.set_enabled(var_2);
             }
             ,
             s if s.matches("SamplingRate") /* SamplingRate com.amazonaws.cloudfront#ResponseHeadersPolicyServerTimingHeadersConfig$SamplingRate */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                          {
                             <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -51,11 +52,15 @@ pub fn de_response_headers_policy_server_timing_headers_config(
                         ?
                     )
                 ;
-                builder = builder.set_sampling_rate(var_4);
+                builder = builder.set_sampling_rate(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(
+        crate::serde_util::response_headers_policy_server_timing_headers_config_correct_errors(builder)
+            .build()
+            .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?,
+    )
 }

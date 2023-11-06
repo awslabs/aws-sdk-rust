@@ -35,6 +35,7 @@ pub struct WindowStartTimeBuilder {
 }
 impl WindowStartTimeBuilder {
     /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
+    /// This field is required.
     pub fn hours(mut self, input: i64) -> Self {
         self.hours = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl WindowStartTimeBuilder {
         &self.hours
     }
     /// <p>The start minute of the window, in UTC.</p>
+    /// This field is required.
     pub fn minutes(mut self, input: i64) -> Self {
         self.minutes = ::std::option::Option::Some(input);
         self

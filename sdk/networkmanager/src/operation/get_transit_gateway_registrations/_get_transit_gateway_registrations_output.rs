@@ -11,8 +11,10 @@ pub struct GetTransitGatewayRegistrationsOutput {
 }
 impl GetTransitGatewayRegistrationsOutput {
     /// <p>The transit gateway registrations.</p>
-    pub fn transit_gateway_registrations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayRegistration]> {
-        self.transit_gateway_registrations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_registrations.is_none()`.
+    pub fn transit_gateway_registrations(&self) -> &[crate::types::TransitGatewayRegistration] {
+        self.transit_gateway_registrations.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

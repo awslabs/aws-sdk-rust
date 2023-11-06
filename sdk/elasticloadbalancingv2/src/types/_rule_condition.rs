@@ -75,8 +75,10 @@ impl RuleCondition {
     /// <li> <p>* (matches 0 or more characters)</p> </li>
     /// <li> <p>? (matches exactly 1 character)</p> </li>
     /// </ul>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
     pub fn host_header_config(&self) -> ::std::option::Option<&crate::types::HostHeaderConditionConfig> {

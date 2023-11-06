@@ -69,16 +69,20 @@ impl Ipam {
     }
     /// <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn operating_regions(&self) -> ::std::option::Option<&[crate::types::IpamOperatingRegion]> {
-        self.operating_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_regions.is_none()`.
+    pub fn operating_regions(&self) -> &[crate::types::IpamOperatingRegion] {
+        self.operating_regions.as_deref().unwrap_or_default()
     }
     /// <p>The state of the IPAM.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::IpamState> {
         self.state.as_ref()
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The IPAM's default resource discovery ID.</p>
     pub fn default_resource_discovery_id(&self) -> ::std::option::Option<&str> {

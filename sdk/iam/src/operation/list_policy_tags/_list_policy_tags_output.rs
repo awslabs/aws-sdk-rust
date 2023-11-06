@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPolicyTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM customer managed policy. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::vec::Vec<crate::types::Tag>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -13,8 +13,9 @@ pub struct ListPolicyTagsOutput {
 }
 impl ListPolicyTagsOutput {
     /// <p>The list of tags that are currently attached to the IAM customer managed policy. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tags.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -105,12 +106,21 @@ impl ListPolicyTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPolicyTagsOutput`](crate::operation::list_policy_tags::ListPolicyTagsOutput).
-    pub fn build(self) -> crate::operation::list_policy_tags::ListPolicyTagsOutput {
-        crate::operation::list_policy_tags::ListPolicyTagsOutput {
-            tags: self.tags,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tags`](crate::operation::list_policy_tags::builders::ListPolicyTagsOutputBuilder::tags)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_policy_tags::ListPolicyTagsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_policy_tags::ListPolicyTagsOutput {
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building ListPolicyTagsOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -37,8 +37,10 @@ impl CreateSnapshotCopyGrantInput {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSnapshotCopyGrantInput {
@@ -66,6 +68,7 @@ impl CreateSnapshotCopyGrantInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +137,7 @@ impl CreateSnapshotCopyGrantInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput {
             snapshot_copy_grant_name: self.snapshot_copy_grant_name,

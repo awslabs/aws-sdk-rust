@@ -156,9 +156,7 @@ pub(crate) fn de_describe_asset(
                     );
                 }
                 "egressEndpoints" => {
-                    builder = builder.set_egress_endpoints(crate::protocol_serde::shape___list_of_egress_endpoint::de___list_of_egress_endpoint(
-                        tokens,
-                    )?);
+                    builder = builder.set_egress_endpoints(crate::protocol_serde::shape_list_of_egress_endpoint::de_list_of_egress_endpoint(tokens)?);
                 }
                 "id" => {
                     builder = builder.set_id(

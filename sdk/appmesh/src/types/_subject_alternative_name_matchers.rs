@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
-    pub exact: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exact: ::std::vec::Vec<::std::string::String>,
 }
 impl SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
-    pub fn exact(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exact.as_deref()
+    pub fn exact(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.exact.deref()
     }
 }
 impl SubjectAlternativeNameMatchers {
@@ -48,7 +49,16 @@ impl SubjectAlternativeNameMatchersBuilder {
         &self.exact
     }
     /// Consumes the builder and constructs a [`SubjectAlternativeNameMatchers`](crate::types::SubjectAlternativeNameMatchers).
-    pub fn build(self) -> crate::types::SubjectAlternativeNameMatchers {
-        crate::types::SubjectAlternativeNameMatchers { exact: self.exact }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`exact`](crate::types::builders::SubjectAlternativeNameMatchersBuilder::exact)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubjectAlternativeNameMatchers, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubjectAlternativeNameMatchers {
+            exact: self.exact.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "exact",
+                    "exact was not specified but it is required when building SubjectAlternativeNameMatchers",
+                )
+            })?,
+        })
     }
 }

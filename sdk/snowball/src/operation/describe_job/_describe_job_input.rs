@@ -27,6 +27,7 @@ pub struct DescribeJobInputBuilder {
 }
 impl DescribeJobInputBuilder {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DescribeJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeJobInput`](crate::operation::describe_job::DescribeJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job::DescribeJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job::DescribeJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job::DescribeJobInput { job_id: self.job_id })
     }
 }

@@ -27,6 +27,7 @@ pub struct StopKeyUsageInputBuilder {
 }
 impl StopKeyUsageInputBuilder {
     /// <p>The <code>KeyArn</code> of the key.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl StopKeyUsageInputBuilder {
     /// Consumes the builder and constructs a [`StopKeyUsageInput`](crate::operation::stop_key_usage::StopKeyUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_key_usage::StopKeyUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_key_usage::StopKeyUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_key_usage::StopKeyUsageInput {
             key_identifier: self.key_identifier,
         })

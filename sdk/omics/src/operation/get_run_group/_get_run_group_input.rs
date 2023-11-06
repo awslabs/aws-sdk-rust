@@ -27,6 +27,7 @@ pub struct GetRunGroupInputBuilder {
 }
 impl GetRunGroupInputBuilder {
     /// <p>The group's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetRunGroupInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetRunGroupInput`](crate::operation::get_run_group::GetRunGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_run_group::GetRunGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_run_group::GetRunGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_run_group::GetRunGroupInput { id: self.id })
     }
 }

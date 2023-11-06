@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteComponentTypeOutput {
     /// <p>The current state of the component type to be deleted.</p>
-    pub state: ::std::option::Option<crate::types::State>,
+    pub state: crate::types::State,
     _request_id: Option<String>,
 }
 impl DeleteComponentTypeOutput {
     /// <p>The current state of the component type to be deleted.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::State {
+        &self.state
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteComponentTypeOutput {
@@ -34,6 +34,7 @@ pub struct DeleteComponentTypeOutputBuilder {
 }
 impl DeleteComponentTypeOutputBuilder {
     /// <p>The current state of the component type to be deleted.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,20 @@ impl DeleteComponentTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteComponentTypeOutput`](crate::operation::delete_component_type::DeleteComponentTypeOutput).
-    pub fn build(self) -> crate::operation::delete_component_type::DeleteComponentTypeOutput {
-        crate::operation::delete_component_type::DeleteComponentTypeOutput {
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::operation::delete_component_type::builders::DeleteComponentTypeOutputBuilder::state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_component_type::DeleteComponentTypeOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_component_type::DeleteComponentTypeOutput {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building DeleteComponentTypeOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

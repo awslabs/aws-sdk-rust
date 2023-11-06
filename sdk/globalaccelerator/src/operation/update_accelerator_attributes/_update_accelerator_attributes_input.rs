@@ -54,6 +54,7 @@ pub struct UpdateAcceleratorAttributesInputBuilder {
 }
 impl UpdateAcceleratorAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
+    /// This field is required.
     pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
@@ -123,7 +124,7 @@ impl UpdateAcceleratorAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesInput {
             accelerator_arn: self.accelerator_arn,

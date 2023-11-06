@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImpersonationRule {
     /// <p>The identifier of the rule.</p>
-    pub impersonation_rule_id: ::std::option::Option<::std::string::String>,
+    pub impersonation_rule_id: ::std::string::String,
     /// <p>The rule name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub effect: ::std::option::Option<crate::types::AccessEffect>,
+    pub effect: crate::types::AccessEffect,
     /// <p>A list of user IDs that match the rule.</p>
     pub target_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of user IDs that don't match the rule.</p>
@@ -19,8 +19,9 @@ pub struct ImpersonationRule {
 }
 impl ImpersonationRule {
     /// <p>The identifier of the rule.</p>
-    pub fn impersonation_rule_id(&self) -> ::std::option::Option<&str> {
-        self.impersonation_rule_id.as_deref()
+    pub fn impersonation_rule_id(&self) -> &str {
+        use std::ops::Deref;
+        self.impersonation_rule_id.deref()
     }
     /// <p>The rule name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -31,16 +32,20 @@ impl ImpersonationRule {
         self.description.as_deref()
     }
     /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn effect(&self) -> ::std::option::Option<&crate::types::AccessEffect> {
-        self.effect.as_ref()
+    pub fn effect(&self) -> &crate::types::AccessEffect {
+        &self.effect
     }
     /// <p>A list of user IDs that match the rule.</p>
-    pub fn target_users(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_users.is_none()`.
+    pub fn target_users(&self) -> &[::std::string::String] {
+        self.target_users.as_deref().unwrap_or_default()
     }
     /// <p>A list of user IDs that don't match the rule.</p>
-    pub fn not_target_users(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_target_users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_target_users.is_none()`.
+    pub fn not_target_users(&self) -> &[::std::string::String] {
+        self.not_target_users.as_deref().unwrap_or_default()
     }
 }
 impl ImpersonationRule {
@@ -63,6 +68,7 @@ pub struct ImpersonationRuleBuilder {
 }
 impl ImpersonationRuleBuilder {
     /// <p>The identifier of the rule.</p>
+    /// This field is required.
     pub fn impersonation_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_rule_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl ImpersonationRuleBuilder {
         &self.description
     }
     /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    /// This field is required.
     pub fn effect(mut self, input: crate::types::AccessEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
         self
@@ -159,14 +166,27 @@ impl ImpersonationRuleBuilder {
         &self.not_target_users
     }
     /// Consumes the builder and constructs a [`ImpersonationRule`](crate::types::ImpersonationRule).
-    pub fn build(self) -> crate::types::ImpersonationRule {
-        crate::types::ImpersonationRule {
-            impersonation_rule_id: self.impersonation_rule_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`impersonation_rule_id`](crate::types::builders::ImpersonationRuleBuilder::impersonation_rule_id)
+    /// - [`effect`](crate::types::builders::ImpersonationRuleBuilder::effect)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImpersonationRule, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImpersonationRule {
+            impersonation_rule_id: self.impersonation_rule_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "impersonation_rule_id",
+                    "impersonation_rule_id was not specified but it is required when building ImpersonationRule",
+                )
+            })?,
             name: self.name,
             description: self.description,
-            effect: self.effect,
+            effect: self.effect.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "effect",
+                    "effect was not specified but it is required when building ImpersonationRule",
+                )
+            })?,
             target_users: self.target_users,
             not_target_users: self.not_target_users,
-        }
+        })
     }
 }

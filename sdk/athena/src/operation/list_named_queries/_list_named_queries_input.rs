@@ -85,7 +85,7 @@ impl ListNamedQueriesInputBuilder {
     /// Consumes the builder and constructs a [`ListNamedQueriesInput`](crate::operation::list_named_queries::ListNamedQueriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_named_queries::ListNamedQueriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_named_queries::ListNamedQueriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_named_queries::ListNamedQueriesInput {
             next_token: self.next_token,
             max_results: self.max_results,

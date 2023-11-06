@@ -16,8 +16,10 @@ pub struct DescribeAddressesAttributeInput {
 }
 impl DescribeAddressesAttributeInput {
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub fn allocation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allocation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allocation_ids.is_none()`.
+    pub fn allocation_ids(&self) -> &[::std::string::String] {
+        self.allocation_ids.as_deref().unwrap_or_default()
     }
     /// <p>The attribute of the IP address.</p>
     pub fn attribute(&self) -> ::std::option::Option<&crate::types::AddressAttributeName> {
@@ -135,7 +137,7 @@ impl DescribeAddressesAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput {
             allocation_ids: self.allocation_ids,

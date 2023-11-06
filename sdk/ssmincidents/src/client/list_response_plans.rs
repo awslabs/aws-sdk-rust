@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::set_max_results): <p>The maximum number of response plans per page.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::set_next_token): <p>The pagination token to continue to the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of response plans per page.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to continue to the next page of results.</p><br>
     /// - On success, responds with [`ListResponsePlansOutput`](crate::operation::list_response_plans::ListResponsePlansOutput) with field(s):
-    ///   - [`response_plan_summaries(Option<Vec<ResponsePlanSummary>>)`](crate::operation::list_response_plans::ListResponsePlansOutput::response_plan_summaries): <p>Details of each response plan.</p>
+    ///   - [`response_plan_summaries(Vec::<ResponsePlanSummary>)`](crate::operation::list_response_plans::ListResponsePlansOutput::response_plan_summaries): <p>Details of each response plan.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_response_plans::ListResponsePlansOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListResponsePlansError>`](crate::operation::list_response_plans::ListResponsePlansError)
     pub fn list_response_plans(&self) -> crate::operation::list_response_plans::builders::ListResponsePlansFluentBuilder {

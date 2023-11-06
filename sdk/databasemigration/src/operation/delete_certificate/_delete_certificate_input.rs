@@ -27,6 +27,7 @@ pub struct DeleteCertificateInputBuilder {
 }
 impl DeleteCertificateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_certificate::DeleteCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_certificate::DeleteCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_certificate::DeleteCertificateInput {
             certificate_arn: self.certificate_arn,
         })

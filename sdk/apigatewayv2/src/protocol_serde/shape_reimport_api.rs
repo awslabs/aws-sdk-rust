@@ -99,12 +99,12 @@ pub fn de_reimport_api_http_response(
 
 pub fn ser_reimport_api_input(
     input: &crate::operation::reimport_api::ReimportApiInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_reimport_api_input::ser_reimport_api_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_reimport_api(
@@ -165,7 +165,7 @@ pub(crate) fn de_reimport_api(
                     builder = builder.set_disable_schema_validation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "importInfo" => {
-                    builder = builder.set_import_info(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_import_info(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -199,7 +199,7 @@ pub(crate) fn de_reimport_api(
                     );
                 }
                 "warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

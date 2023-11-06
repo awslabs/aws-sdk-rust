@@ -15,8 +15,10 @@ impl ListSlackWorkspaceConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The configurations for a Slack workspace.</p>
-    pub fn slack_workspace_configurations(&self) -> ::std::option::Option<&[crate::types::SlackWorkspaceConfiguration]> {
-        self.slack_workspace_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slack_workspace_configurations.is_none()`.
+    pub fn slack_workspace_configurations(&self) -> &[crate::types::SlackWorkspaceConfiguration] {
+        self.slack_workspace_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSlackWorkspaceConfigurationsOutput {

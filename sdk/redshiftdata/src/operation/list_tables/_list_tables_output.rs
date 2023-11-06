@@ -11,8 +11,10 @@ pub struct ListTablesOutput {
 }
 impl ListTablesOutput {
     /// <p>The tables that match the request pattern. </p>
-    pub fn tables(&self) -> ::std::option::Option<&[crate::types::TableMember]> {
-        self.tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tables.is_none()`.
+    pub fn tables(&self) -> &[crate::types::TableMember] {
+        self.tables.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The ARN of the resource that you are viewing.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The ARN of the resource that you are viewing.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.tags.as_ref()
+    pub fn tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.tags
     }
 }
 impl ::aws_http::request_id::RequestId for ListTagsForResourceOutput {
@@ -41,6 +42,7 @@ pub struct ListTagsForResourceOutputBuilder {
 }
 impl ListTagsForResourceOutputBuilder {
     /// <p>The ARN of the resource that you are viewing.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,27 @@ impl ListTagsForResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
-    pub fn build(self) -> crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-        crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-            resource_arn: self.resource_arn,
-            tags: self.tags,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::resource_arn)
+    /// - [`tags`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::tags)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building ListTagsForResourceOutput",
+                )
+            })?,
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building ListTagsForResourceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

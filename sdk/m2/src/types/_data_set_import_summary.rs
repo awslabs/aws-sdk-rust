@@ -56,6 +56,7 @@ pub struct DataSetImportSummaryBuilder {
 }
 impl DataSetImportSummaryBuilder {
     /// <p>The total number of data set imports.</p>
+    /// This field is required.
     pub fn total(mut self, input: i32) -> Self {
         self.total = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl DataSetImportSummaryBuilder {
         &self.total
     }
     /// <p>The number of data set imports that have succeeded.</p>
+    /// This field is required.
     pub fn succeeded(mut self, input: i32) -> Self {
         self.succeeded = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl DataSetImportSummaryBuilder {
         &self.succeeded
     }
     /// <p>The number of data set imports that have failed.</p>
+    /// This field is required.
     pub fn failed(mut self, input: i32) -> Self {
         self.failed = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl DataSetImportSummaryBuilder {
         &self.failed
     }
     /// <p>The number of data set imports that are pending.</p>
+    /// This field is required.
     pub fn pending(mut self, input: i32) -> Self {
         self.pending = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl DataSetImportSummaryBuilder {
         &self.pending
     }
     /// <p>The number of data set imports that are in progress.</p>
+    /// This field is required.
     pub fn in_progress(mut self, input: i32) -> Self {
         self.in_progress = ::std::option::Option::Some(input);
         self

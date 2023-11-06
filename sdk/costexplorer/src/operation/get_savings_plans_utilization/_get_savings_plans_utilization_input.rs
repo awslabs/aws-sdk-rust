@@ -86,6 +86,7 @@ pub struct GetSavingsPlansUtilizationInputBuilder {
 }
 impl GetSavingsPlansUtilizationInputBuilder {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
@@ -203,7 +204,7 @@ impl GetSavingsPlansUtilizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput {
             time_period: self.time_period,

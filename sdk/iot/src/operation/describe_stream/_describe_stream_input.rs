@@ -27,6 +27,7 @@ pub struct DescribeStreamInputBuilder {
 }
 impl DescribeStreamInputBuilder {
     /// <p>The stream ID.</p>
+    /// This field is required.
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeStreamInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stream::DescribeStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_stream::DescribeStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_stream::DescribeStreamInput { stream_id: self.stream_id })
     }
 }

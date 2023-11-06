@@ -2,7 +2,7 @@
 pub fn ser_customization_feature_content_moderation_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomizationFeatureContentModerationConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.confidence_threshold {
         object.key("ConfidenceThreshold").number(
             #[allow(clippy::useless_conversion)]

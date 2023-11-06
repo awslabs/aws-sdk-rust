@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEngineVersionsOutput {
     /// <p>Returns the engine versions.</p>
-    pub engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>>,
+    pub engine_versions: ::std::vec::Vec<crate::types::EngineVersionsSummary>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEngineVersionsOutput {
     /// <p>Returns the engine versions.</p>
-    pub fn engine_versions(&self) -> ::std::option::Option<&[crate::types::EngineVersionsSummary]> {
-        self.engine_versions.as_deref()
+    pub fn engine_versions(&self) -> &[crate::types::EngineVersionsSummary] {
+        use std::ops::Deref;
+        self.engine_versions.deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListEngineVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEngineVersionsOutput`](crate::operation::list_engine_versions::ListEngineVersionsOutput).
-    pub fn build(self) -> crate::operation::list_engine_versions::ListEngineVersionsOutput {
-        crate::operation::list_engine_versions::ListEngineVersionsOutput {
-            engine_versions: self.engine_versions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`engine_versions`](crate::operation::list_engine_versions::builders::ListEngineVersionsOutputBuilder::engine_versions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_engine_versions::ListEngineVersionsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_engine_versions::ListEngineVersionsOutput {
+            engine_versions: self.engine_versions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "engine_versions",
+                    "engine_versions was not specified but it is required when building ListEngineVersionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

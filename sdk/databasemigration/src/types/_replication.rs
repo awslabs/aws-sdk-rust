@@ -107,8 +107,10 @@ impl Replication {
         self.stop_reason.as_deref()
     }
     /// <p>Error and other information about why a serverless replication failed.</p>
-    pub fn failure_messages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failure_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_messages.is_none()`.
+    pub fn failure_messages(&self) -> &[::std::string::String] {
+        self.failure_messages.as_deref().unwrap_or_default()
     }
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
     pub fn replication_stats(&self) -> ::std::option::Option<&crate::types::ReplicationStats> {

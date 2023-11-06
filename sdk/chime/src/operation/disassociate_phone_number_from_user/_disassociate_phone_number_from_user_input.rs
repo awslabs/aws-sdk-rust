@@ -34,6 +34,7 @@ pub struct DisassociatePhoneNumberFromUserInputBuilder {
 }
 impl DisassociatePhoneNumberFromUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociatePhoneNumberFromUserInputBuilder {
         &self.account_id
     }
     /// <p>The user ID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DisassociatePhoneNumberFromUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput {

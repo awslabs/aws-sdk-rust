@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApps`](crate::operation::get_apps::builders::GetAppsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`page_size(impl Into<String>)`](crate::operation::get_apps::builders::GetAppsFluentBuilder::page_size) / [`set_page_size(Option<String>)`](crate::operation::get_apps::builders::GetAppsFluentBuilder::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(impl Into<String>)`](crate::operation::get_apps::builders::GetAppsFluentBuilder::token) / [`set_token(Option<String>)`](crate::operation::get_apps::builders::GetAppsFluentBuilder::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::operation::get_apps::builders::GetAppsFluentBuilder::page_size) / [`set_page_size(Option<String>)`](crate::operation::get_apps::builders::GetAppsFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p><br>
+    ///   - [`token(impl Into<String>)`](crate::operation::get_apps::builders::GetAppsFluentBuilder::token) / [`set_token(Option<String>)`](crate::operation::get_apps::builders::GetAppsFluentBuilder::set_token):<br>required: **false**<br><p>The NextToken string that specifies which page of results to return in a paginated response.</p><br>
     /// - On success, responds with [`GetAppsOutput`](crate::operation::get_apps::GetAppsOutput) with field(s):
     ///   - [`applications_response(Option<ApplicationsResponse>)`](crate::operation::get_apps::GetAppsOutput::applications_response): <p>Provides information about all of your applications.</p>
     /// - On failure, responds with [`SdkError<GetAppsError>`](crate::operation::get_apps::GetAppsError)

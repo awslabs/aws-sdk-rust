@@ -21,8 +21,10 @@ impl CacheParameterGroupStatus {
         self.parameter_apply_status.as_deref()
     }
     /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    pub fn cache_node_ids_to_reboot(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_node_ids_to_reboot.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_node_ids_to_reboot.is_none()`.
+    pub fn cache_node_ids_to_reboot(&self) -> &[::std::string::String] {
+        self.cache_node_ids_to_reboot.as_deref().unwrap_or_default()
     }
 }
 impl CacheParameterGroupStatus {

@@ -28,6 +28,7 @@ pub struct DeleteEndpointInputBuilder {
 }
 impl DeleteEndpointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::operation::delete_endpoint::DeleteEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_endpoint::DeleteEndpointInput {
             endpoint_arn: self.endpoint_arn,
         })

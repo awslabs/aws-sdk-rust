@@ -35,6 +35,7 @@ pub struct DomainEndpointOptionsStatusBuilder {
 }
 impl DomainEndpointOptionsStatusBuilder {
     /// <p>Options to configure endpoint for the Elasticsearch domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl DomainEndpointOptionsStatusBuilder {
         &self.options
     }
     /// <p>The status of the endpoint options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

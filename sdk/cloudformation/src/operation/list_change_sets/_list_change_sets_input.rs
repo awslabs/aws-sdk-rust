@@ -35,6 +35,7 @@ pub struct ListChangeSetsInputBuilder {
 }
 impl ListChangeSetsInputBuilder {
     /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +66,7 @@ impl ListChangeSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_change_sets::ListChangeSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_change_sets::ListChangeSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_change_sets::ListChangeSetsInput {
             stack_name: self.stack_name,
             next_token: self.next_token,

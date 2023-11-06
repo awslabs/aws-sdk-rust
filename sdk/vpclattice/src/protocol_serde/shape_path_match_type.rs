@@ -12,23 +12,30 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "exact" => Some(crate::types::PathMatchType::Exact(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'exact' cannot be null"))?,
                         )),
                         "prefix" => Some(crate::types::PathMatchType::Prefix(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'prefix' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
@@ -56,7 +63,7 @@ where
 pub fn ser_path_match_type(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PathMatchType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PathMatchType::Exact(inner) => {
             object_2.key("exact").string(inner.as_str());
@@ -65,7 +72,7 @@ pub fn ser_path_match_type(
             object_2.key("prefix").string(inner.as_str());
         }
         crate::types::PathMatchType::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("PathMatchType"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("PathMatchType"))
         }
     }
     Ok(())

@@ -11,8 +11,10 @@ pub struct ListAccountIntegrationsOutput {
 }
 impl ListAccountIntegrationsOutput {
     /// <p>The list of ListAccountIntegration instances.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListIntegrationItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ListIntegrationItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -38,13 +38,13 @@ pub fn de_list_storage_lens_configurations_http_response(
 pub fn ser_list_storage_lens_configurations_headers(
     input: &crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "account_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -80,7 +80,7 @@ pub fn de_list_storage_lens_configurations(
             s if s.matches("StorageLensConfigurationList") /* StorageLensConfigurationList com.amazonaws.s3control.synthetic#ListStorageLensConfigurationsOutput$StorageLensConfigurationList */ =>  {
                 let var_3 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::ListStorageLensConfigurationEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.storage_lens_configuration_list.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_list_storage_lens_configuration_entry::de_list_storage_lens_configuration_entry(&mut tag)

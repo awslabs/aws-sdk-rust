@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceSpoofingRisk {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
-    pub risk_score: ::std::option::Option<i32>,
+    pub risk_score: i32,
 }
 impl VoiceSpoofingRisk {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
-    pub fn risk_score(&self) -> ::std::option::Option<i32> {
+    pub fn risk_score(&self) -> i32 {
         self.risk_score
     }
 }
@@ -28,6 +28,7 @@ pub struct VoiceSpoofingRiskBuilder {
 }
 impl VoiceSpoofingRiskBuilder {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
+    /// This field is required.
     pub fn risk_score(mut self, input: i32) -> Self {
         self.risk_score = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl VoiceSpoofingRiskBuilder {
         &self.risk_score
     }
     /// Consumes the builder and constructs a [`VoiceSpoofingRisk`](crate::types::VoiceSpoofingRisk).
-    pub fn build(self) -> crate::types::VoiceSpoofingRisk {
-        crate::types::VoiceSpoofingRisk { risk_score: self.risk_score }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`risk_score`](crate::types::builders::VoiceSpoofingRiskBuilder::risk_score)
+    pub fn build(self) -> ::std::result::Result<crate::types::VoiceSpoofingRisk, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VoiceSpoofingRisk {
+            risk_score: self.risk_score.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "risk_score",
+                    "risk_score was not specified but it is required when building VoiceSpoofingRisk",
+                )
+            })?,
+        })
     }
 }

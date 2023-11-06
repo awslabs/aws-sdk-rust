@@ -11,8 +11,10 @@ pub struct GetCoreNetworkChangeSetOutput {
 }
 impl GetCoreNetworkChangeSetOutput {
     /// <p>Describes a core network changes.</p>
-    pub fn core_network_changes(&self) -> ::std::option::Option<&[crate::types::CoreNetworkChange]> {
-        self.core_network_changes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.core_network_changes.is_none()`.
+    pub fn core_network_changes(&self) -> &[crate::types::CoreNetworkChange] {
+        self.core_network_changes.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

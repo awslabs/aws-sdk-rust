@@ -2,43 +2,43 @@
 pub fn ser_incident_template(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IncidentTemplate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.title {
-        object.key("title").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("title").string(input.title.as_str());
     }
-    if let Some(var_2) = &input.impact {
+    {
         object.key("impact").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.impact).into()),
         );
     }
-    if let Some(var_3) = &input.summary {
-        object.key("summary").string(var_3.as_str());
+    if let Some(var_1) = &input.summary {
+        object.key("summary").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.dedupe_string {
-        object.key("dedupeString").string(var_4.as_str());
+    if let Some(var_2) = &input.dedupe_string {
+        object.key("dedupeString").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.notification_targets {
-        let mut array_6 = object.key("notificationTargets").start_array();
-        for item_7 in var_5 {
+    if let Some(var_3) = &input.notification_targets {
+        let mut array_4 = object.key("notificationTargets").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_notification_target_item::ser_notification_target_item(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_notification_target_item::ser_notification_target_item(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_9) = &input.incident_tags {
+    if let Some(var_7) = &input.incident_tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("incidentTags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_8 = object.key("incidentTags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_10.finish();
+        object_8.finish();
     }
     Ok(())
 }
@@ -103,7 +103,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::incident_template_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -49,6 +49,7 @@ pub struct StatisticSetBuilder {
 }
 impl StatisticSetBuilder {
     /// <p>The number of samples used for the statistic set.</p>
+    /// This field is required.
     pub fn sample_count(mut self, input: f64) -> Self {
         self.sample_count = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl StatisticSetBuilder {
         &self.sample_count
     }
     /// <p>The sum of values for the sample set.</p>
+    /// This field is required.
     pub fn sum(mut self, input: f64) -> Self {
         self.sum = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl StatisticSetBuilder {
         &self.sum
     }
     /// <p>The minimum value of the sample set.</p>
+    /// This field is required.
     pub fn minimum(mut self, input: f64) -> Self {
         self.minimum = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl StatisticSetBuilder {
         &self.minimum
     }
     /// <p>The maximum value of the sample set.</p>
+    /// This field is required.
     pub fn maximum(mut self, input: f64) -> Self {
         self.maximum = ::std::option::Option::Some(input);
         self

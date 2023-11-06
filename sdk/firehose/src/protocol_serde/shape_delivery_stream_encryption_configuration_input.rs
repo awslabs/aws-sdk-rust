@@ -2,12 +2,12 @@
 pub fn ser_delivery_stream_encryption_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeliveryStreamEncryptionConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_arn {
         object.key("KeyARN").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.key_type {
-        object.key("KeyType").string(var_2.as_str());
+    {
+        object.key("KeyType").string(input.key_type.as_str());
     }
     Ok(())
 }

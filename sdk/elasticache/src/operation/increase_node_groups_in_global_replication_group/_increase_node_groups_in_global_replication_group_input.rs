@@ -22,8 +22,10 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         self.node_group_count
     }
     /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
-    pub fn regional_configurations(&self) -> ::std::option::Option<&[crate::types::RegionalConfiguration]> {
-        self.regional_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regional_configurations.is_none()`.
+    pub fn regional_configurations(&self) -> &[crate::types::RegionalConfiguration] {
+        self.regional_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
@@ -50,6 +52,7 @@ pub struct IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
+    /// This field is required.
     pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +67,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         &self.global_replication_group_id
     }
     /// <p>Total number of node groups you want</p>
+    /// This field is required.
     pub fn node_group_count(mut self, input: i32) -> Self {
         self.node_group_count = ::std::option::Option::Some(input);
         self
@@ -98,6 +102,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         &self.regional_configurations
     }
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
+    /// This field is required.
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self
@@ -116,7 +121,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput {

@@ -11,12 +11,16 @@ pub struct GitTagFilterCriteria {
 }
 impl GitTagFilterCriteria {
     /// <p>The list of patterns of Git tags that, when pushed, are to be included as criteria that starts the pipeline.</p>
-    pub fn includes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.includes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
+    pub fn includes(&self) -> &[::std::string::String] {
+        self.includes.as_deref().unwrap_or_default()
     }
     /// <p>The list of patterns of Git tags that, when pushed, are to be excluded from starting the pipeline.</p>
-    pub fn excludes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excludes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
+    pub fn excludes(&self) -> &[::std::string::String] {
+        self.excludes.as_deref().unwrap_or_default()
     }
 }
 impl GitTagFilterCriteria {

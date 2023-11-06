@@ -33,8 +33,10 @@ impl Cvss {
         self.source.as_deref()
     }
     /// <p>Adjustments to the CVSS metrics.</p>
-    pub fn adjustments(&self) -> ::std::option::Option<&[crate::types::Adjustment]> {
-        self.adjustments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adjustments.is_none()`.
+    pub fn adjustments(&self) -> &[crate::types::Adjustment] {
+        self.adjustments.as_deref().unwrap_or_default()
     }
 }
 impl Cvss {

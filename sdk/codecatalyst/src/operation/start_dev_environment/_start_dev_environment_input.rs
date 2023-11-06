@@ -14,7 +14,7 @@ pub struct StartDevEnvironmentInput {
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    pub inactivity_timeout_minutes: i32,
+    pub inactivity_timeout_minutes: ::std::option::Option<i32>,
 }
 impl StartDevEnvironmentInput {
     /// <p>The name of the space.</p>
@@ -30,15 +30,17 @@ impl StartDevEnvironmentInput {
         self.id.as_deref()
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
-    pub fn ides(&self) -> ::std::option::Option<&[crate::types::IdeConfiguration]> {
-        self.ides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ides.is_none()`.
+    pub fn ides(&self) -> &[crate::types::IdeConfiguration] {
+        self.ides.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    pub fn inactivity_timeout_minutes(&self) -> i32 {
+    pub fn inactivity_timeout_minutes(&self) -> ::std::option::Option<i32> {
         self.inactivity_timeout_minutes
     }
 }
@@ -62,6 +64,7 @@ pub struct StartDevEnvironmentInputBuilder {
 }
 impl StartDevEnvironmentInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl StartDevEnvironmentInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl StartDevEnvironmentInputBuilder {
         &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +159,7 @@ impl StartDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`StartDevEnvironmentInput`](crate::operation::start_dev_environment::StartDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_dev_environment::StartDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_dev_environment::StartDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_dev_environment::StartDevEnvironmentInput {
             space_name: self.space_name,
@@ -162,7 +167,7 @@ impl StartDevEnvironmentInputBuilder {
             id: self.id,
             ides: self.ides,
             instance_type: self.instance_type,
-            inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
+            inactivity_timeout_minutes: self.inactivity_timeout_minutes,
         })
     }
 }

@@ -41,6 +41,7 @@ pub struct GetDocumentAnalysisInputBuilder {
 }
 impl GetDocumentAnalysisInputBuilder {
     /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl GetDocumentAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentAnalysisInput`](crate::operation::get_document_analysis::GetDocumentAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_document_analysis::GetDocumentAnalysisInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_document_analysis::GetDocumentAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_document_analysis::GetDocumentAnalysisInput {
             job_id: self.job_id,

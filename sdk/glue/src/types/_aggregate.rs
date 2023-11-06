@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Aggregate {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies the fields to group by.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub groups: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
-    pub aggs: ::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>>,
+    pub aggs: ::std::vec::Vec<crate::types::AggregateOperation>,
 }
 impl Aggregate {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>Specifies the fields to group by.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.groups.as_deref()
+    pub fn groups(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        use std::ops::Deref;
+        self.groups.deref()
     }
     /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
-    pub fn aggs(&self) -> ::std::option::Option<&[crate::types::AggregateOperation]> {
-        self.aggs.as_deref()
+    pub fn aggs(&self) -> &[crate::types::AggregateOperation] {
+        use std::ops::Deref;
+        self.aggs.deref()
     }
 }
 impl Aggregate {
@@ -49,6 +53,7 @@ pub struct AggregateBuilder {
 }
 impl AggregateBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -123,12 +128,37 @@ impl AggregateBuilder {
         &self.aggs
     }
     /// Consumes the builder and constructs a [`Aggregate`](crate::types::Aggregate).
-    pub fn build(self) -> crate::types::Aggregate {
-        crate::types::Aggregate {
-            name: self.name,
-            inputs: self.inputs,
-            groups: self.groups,
-            aggs: self.aggs,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AggregateBuilder::name)
+    /// - [`inputs`](crate::types::builders::AggregateBuilder::inputs)
+    /// - [`groups`](crate::types::builders::AggregateBuilder::groups)
+    /// - [`aggs`](crate::types::builders::AggregateBuilder::aggs)
+    pub fn build(self) -> ::std::result::Result<crate::types::Aggregate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Aggregate {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Aggregate",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building Aggregate",
+                )
+            })?,
+            groups: self.groups.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "groups",
+                    "groups was not specified but it is required when building Aggregate",
+                )
+            })?,
+            aggs: self.aggs.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "aggs",
+                    "aggs was not specified but it is required when building Aggregate",
+                )
+            })?,
+        })
     }
 }

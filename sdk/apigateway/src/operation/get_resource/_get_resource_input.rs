@@ -21,8 +21,10 @@ impl GetResourceInput {
         self.resource_id.as_deref()
     }
     /// <p>A query parameter to retrieve the specified resources embedded in the returned Resource representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
-    pub fn embed(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.embed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.embed.is_none()`.
+    pub fn embed(&self) -> &[::std::string::String] {
+        self.embed.as_deref().unwrap_or_default()
     }
 }
 impl GetResourceInput {
@@ -42,6 +44,7 @@ pub struct GetResourceInputBuilder {
 }
 impl GetResourceInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl GetResourceInputBuilder {
         &self.rest_api_id
     }
     /// <p>The identifier for the Resource resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -90,7 +94,7 @@ impl GetResourceInputBuilder {
         &self.embed
     }
     /// Consumes the builder and constructs a [`GetResourceInput`](crate::operation::get_resource::GetResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource::GetResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource::GetResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource::GetResourceInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

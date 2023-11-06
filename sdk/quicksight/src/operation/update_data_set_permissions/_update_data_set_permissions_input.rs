@@ -22,12 +22,16 @@ impl UpdateDataSetPermissionsInput {
         self.data_set_id.as_deref()
     }
     /// <p>The resource permissions that you want to grant to the dataset.</p>
-    pub fn grant_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.grant_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_permissions.is_none()`.
+    pub fn grant_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.grant_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The resource permissions that you want to revoke from the dataset.</p>
-    pub fn revoke_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.revoke_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoke_permissions.is_none()`.
+    pub fn revoke_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.revoke_permissions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDataSetPermissionsInput {
@@ -48,6 +52,7 @@ pub struct UpdateDataSetPermissionsInputBuilder {
 }
 impl UpdateDataSetPermissionsInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl UpdateDataSetPermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -120,7 +126,7 @@ impl UpdateDataSetPermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_set_permissions::UpdateDataSetPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_data_set_permissions::UpdateDataSetPermissionsInput {
             aws_account_id: self.aws_account_id,

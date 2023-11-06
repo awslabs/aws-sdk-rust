@@ -2,33 +2,33 @@
 pub fn ser_service_now_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceNowConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.host_url {
-        object.key("HostUrl").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("HostUrl").string(input.host_url.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("SecretArn").string(var_2.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
-    if let Some(var_3) = &input.service_now_build_version {
-        object.key("ServiceNowBuildVersion").string(var_3.as_str());
+    {
+        object.key("ServiceNowBuildVersion").string(input.service_now_build_version.as_str());
     }
-    if let Some(var_4) = &input.knowledge_article_configuration {
+    if let Some(var_1) = &input.knowledge_article_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("KnowledgeArticleConfiguration").start_object();
+        let mut object_2 = object.key("KnowledgeArticleConfiguration").start_object();
         crate::protocol_serde::shape_service_now_knowledge_article_configuration::ser_service_now_knowledge_article_configuration(
-            &mut object_5,
-            var_4,
+            &mut object_2,
+            var_1,
         )?;
-        object_5.finish();
+        object_2.finish();
     }
-    if let Some(var_6) = &input.service_catalog_configuration {
+    if let Some(var_3) = &input.service_catalog_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ServiceCatalogConfiguration").start_object();
-        crate::protocol_serde::shape_service_now_service_catalog_configuration::ser_service_now_service_catalog_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_4 = object.key("ServiceCatalogConfiguration").start_object();
+        crate::protocol_serde::shape_service_now_service_catalog_configuration::ser_service_now_service_catalog_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_8) = &input.authentication_type {
-        object.key("AuthenticationType").string(var_8.as_str());
+    if let Some(var_5) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_5.as_str());
     }
     Ok(())
 }
@@ -98,7 +98,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::service_now_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

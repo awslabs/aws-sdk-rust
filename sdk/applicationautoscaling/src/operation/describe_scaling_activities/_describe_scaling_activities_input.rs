@@ -148,6 +148,7 @@ pub struct DescribeScalingActivitiesInputBuilder {
 }
 impl DescribeScalingActivitiesInputBuilder {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
+    /// This field is required.
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.service_namespace = ::std::option::Option::Some(input);
         self
@@ -365,7 +366,7 @@ impl DescribeScalingActivitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput {
             service_namespace: self.service_namespace,

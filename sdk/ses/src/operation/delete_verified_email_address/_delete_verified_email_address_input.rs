@@ -28,6 +28,7 @@ pub struct DeleteVerifiedEmailAddressInputBuilder {
 }
 impl DeleteVerifiedEmailAddressInputBuilder {
     /// <p>An email address to be removed from the list of verified addresses.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl DeleteVerifiedEmailAddressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput {
             email_address: self.email_address,

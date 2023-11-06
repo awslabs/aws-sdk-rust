@@ -2,12 +2,12 @@
 pub fn ser_add_object_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddObjectInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.uri {
-        object.key("Uri").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Uri").string(input.uri.as_str());
     }
-    if let Some(var_2) = &input.e_tag {
-        object.key("ETag").string(var_2.as_str());
+    {
+        object.key("ETag").string(input.e_tag.as_str());
     }
     {
         object.key("Size").number(
@@ -15,14 +15,14 @@ pub fn ser_add_object_input(
             ::aws_smithy_types::Number::NegInt((input.size).into()),
         );
     }
-    if let Some(var_3) = &input.partition_values {
-        let mut array_4 = object.key("PartitionValues").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.partition_values {
+        let mut array_2 = object.key("PartitionValues").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }

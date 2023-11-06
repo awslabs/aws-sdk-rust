@@ -41,6 +41,7 @@ pub struct StartBatchJobInputBuilder {
 }
 impl StartBatchJobInputBuilder {
     /// <p>The unique identifier of the application associated with this batch job.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StartBatchJobInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier of the batch job.</p>
+    /// This field is required.
     pub fn batch_job_identifier(mut self, input: crate::types::BatchJobIdentifier) -> Self {
         self.batch_job_identifier = ::std::option::Option::Some(input);
         self
@@ -91,7 +93,7 @@ impl StartBatchJobInputBuilder {
     /// Consumes the builder and constructs a [`StartBatchJobInput`](crate::operation::start_batch_job::StartBatchJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_batch_job::StartBatchJobInput {
             application_id: self.application_id,
             batch_job_identifier: self.batch_job_identifier,

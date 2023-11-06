@@ -34,6 +34,7 @@ pub struct DescribeCertificateInputBuilder {
 }
 impl DescribeCertificateInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeCertificateInputBuilder {
         &self.directory_id
     }
     /// <p>The identifier of the certificate.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_certificate::DescribeCertificateInput {
             directory_id: self.directory_id,

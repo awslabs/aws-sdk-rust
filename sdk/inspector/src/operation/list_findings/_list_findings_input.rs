@@ -15,8 +15,10 @@ pub struct ListFindingsInput {
 }
 impl ListFindingsInput {
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    pub fn assessment_run_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.assessment_run_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_run_arns.is_none()`.
+    pub fn assessment_run_arns(&self) -> &[::std::string::String] {
+        self.assessment_run_arns.as_deref().unwrap_or_default()
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
@@ -115,7 +117,9 @@ impl ListFindingsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
             assessment_run_arns: self.assessment_run_arns,
             filter: self.filter,

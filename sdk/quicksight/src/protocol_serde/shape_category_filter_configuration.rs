@@ -2,7 +2,7 @@
 pub fn ser_category_filter_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CategoryFilterConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter_list_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FilterListConfiguration").start_object();

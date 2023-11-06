@@ -132,8 +132,10 @@ impl CreateCustomDbEngineVersionInput {
         self.manifest.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Reserved for future use.</p>
     pub fn source_custom_db_engine_version_identifier(&self) -> ::std::option::Option<&str> {
@@ -169,6 +171,7 @@ pub struct CreateCustomDbEngineVersionInputBuilder {
 }
 impl CreateCustomDbEngineVersionInputBuilder {
     /// <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
+    /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
@@ -183,6 +186,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
         &self.engine
     }
     /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+    /// This field is required.
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
@@ -441,7 +445,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput {
             engine: self.engine,

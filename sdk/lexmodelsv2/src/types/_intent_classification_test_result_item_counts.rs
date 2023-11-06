@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentClassificationTestResultItemCounts {
     /// <p>The total number of results in the intent classification test.</p>
-    pub total_result_count: ::std::option::Option<i32>,
+    pub total_result_count: i32,
     /// <p>The number of matched, mismatched, and execution error results for speech transcription for the intent.</p>
     pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     /// <p>The number of matched and mismatched results for intent recognition for the intent.</p>
-    pub intent_match_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
+    pub intent_match_result_counts: ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
 }
 impl IntentClassificationTestResultItemCounts {
     /// <p>The total number of results in the intent classification test.</p>
-    pub fn total_result_count(&self) -> ::std::option::Option<i32> {
+    pub fn total_result_count(&self) -> i32 {
         self.total_result_count
     }
     /// <p>The number of matched, mismatched, and execution error results for speech transcription for the intent.</p>
@@ -23,8 +23,8 @@ impl IntentClassificationTestResultItemCounts {
         self.speech_transcription_result_counts.as_ref()
     }
     /// <p>The number of matched and mismatched results for intent recognition for the intent.</p>
-    pub fn intent_match_result_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
-        self.intent_match_result_counts.as_ref()
+    pub fn intent_match_result_counts(&self) -> &::std::collections::HashMap<crate::types::TestResultMatchStatus, i32> {
+        &self.intent_match_result_counts
     }
 }
 impl IntentClassificationTestResultItemCounts {
@@ -44,6 +44,7 @@ pub struct IntentClassificationTestResultItemCountsBuilder {
 }
 impl IntentClassificationTestResultItemCountsBuilder {
     /// <p>The total number of results in the intent classification test.</p>
+    /// This field is required.
     pub fn total_result_count(mut self, input: i32) -> Self {
         self.total_result_count = ::std::option::Option::Some(input);
         self
@@ -106,11 +107,26 @@ impl IntentClassificationTestResultItemCountsBuilder {
         &self.intent_match_result_counts
     }
     /// Consumes the builder and constructs a [`IntentClassificationTestResultItemCounts`](crate::types::IntentClassificationTestResultItemCounts).
-    pub fn build(self) -> crate::types::IntentClassificationTestResultItemCounts {
-        crate::types::IntentClassificationTestResultItemCounts {
-            total_result_count: self.total_result_count,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`total_result_count`](crate::types::builders::IntentClassificationTestResultItemCountsBuilder::total_result_count)
+    /// - [`intent_match_result_counts`](crate::types::builders::IntentClassificationTestResultItemCountsBuilder::intent_match_result_counts)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::IntentClassificationTestResultItemCounts, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntentClassificationTestResultItemCounts {
+            total_result_count: self.total_result_count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "total_result_count",
+                    "total_result_count was not specified but it is required when building IntentClassificationTestResultItemCounts",
+                )
+            })?,
             speech_transcription_result_counts: self.speech_transcription_result_counts,
-            intent_match_result_counts: self.intent_match_result_counts,
-        }
+            intent_match_result_counts: self.intent_match_result_counts.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "intent_match_result_counts",
+                    "intent_match_result_counts was not specified but it is required when building IntentClassificationTestResultItemCounts",
+                )
+            })?,
+        })
     }
 }

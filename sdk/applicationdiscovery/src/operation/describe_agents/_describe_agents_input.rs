@@ -15,13 +15,17 @@ pub struct DescribeAgentsInput {
 }
 impl DescribeAgentsInput {
     /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
-    pub fn agent_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_ids.is_none()`.
+    pub fn agent_ids(&self) -> &[::std::string::String] {
+        self.agent_ids.as_deref().unwrap_or_default()
     }
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -123,7 +127,7 @@ impl DescribeAgentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAgentsInput`](crate::operation::describe_agents::DescribeAgentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_agents::DescribeAgentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_agents::DescribeAgentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_agents::DescribeAgentsInput {
             agent_ids: self.agent_ids,
             filters: self.filters,

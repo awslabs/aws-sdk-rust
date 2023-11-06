@@ -4,17 +4,19 @@
  */
 
 use super::repr::{self, BaseProvider};
+#[cfg(feature = "credentials-process")]
 use crate::credential_process::CredentialProcessProvider;
 use crate::profile::credentials::ProfileFileError;
 use crate::provider_config::ProviderConfig;
-#[cfg(feature = "credentials-sso")]
-use crate::sso::{SsoCredentialsProvider, SsoProviderConfig};
 use crate::sts;
 use crate::web_identity_token::{StaticConfiguration, WebIdentityTokenCredentialsProvider};
-use aws_credential_types::provider::{self, error::CredentialsError, ProvideCredentials};
-use aws_sdk_sts::config::{Builder as StsConfigBuilder, Credentials};
+use aws_credential_types::provider::{
+    self, error::CredentialsError, ProvideCredentials, SharedCredentialsProvider,
+};
+use aws_sdk_sts::config::Credentials;
 use aws_sdk_sts::Client as StsClient;
 use aws_smithy_async::time::SharedTimeSource;
+use aws_types::SdkConfig;
 use std::fmt::Debug;
 use std::sync::Arc;
 
@@ -30,13 +32,13 @@ impl AssumeRoleProvider {
     pub(super) async fn credentials(
         &self,
         input_credentials: Credentials,
-        sts_config: &StsConfigBuilder,
+        sdk_config: &SdkConfig,
     ) -> provider::Result {
-        let config = sts_config
-            .clone()
-            .credentials_provider(input_credentials)
+        let config = sdk_config
+            .to_builder()
+            .credentials_provider(SharedCredentialsProvider::new(input_credentials))
             .build();
-        let client = StsClient::from_conf(config);
+        let client = StsClient::new(&config);
         let session_name = &self.session_name.as_ref().cloned().unwrap_or_else(|| {
             sts::util::default_session_name("assume-role-from-profile", self.time_source.now())
         });
@@ -84,9 +86,22 @@ impl ProviderChain {
                     })?
             }
             BaseProvider::AccessKey(key) => Arc::new(key.clone()),
-            BaseProvider::CredentialProcess(credential_process) => Arc::new(
-                CredentialProcessProvider::new(credential_process.unredacted().into()),
-            ),
+            BaseProvider::CredentialProcess(_credential_process) => {
+                #[cfg(feature = "credentials-process")]
+                {
+                    Arc::new(CredentialProcessProvider::from_command(_credential_process))
+                }
+                #[cfg(not(feature = "credentials-process"))]
+                {
+                    Err(ProfileFileError::FeatureNotEnabled {
+                        feature: "credentials-process".into(),
+                        message: Some(
+                            "In order to spawn a subprocess, the `credentials-process` feature must be enabled."
+                                .into(),
+                        ),
+                    })?
+                }
+            }
             BaseProvider::WebIdentityTokenRole {
                 role_arn,
                 web_identity_token_file,
@@ -116,21 +131,26 @@ impl ProviderChain {
                 sso_role_name,
                 sso_start_url,
             } => {
-                #[cfg(feature = "credentials-sso")]
+                #[cfg(feature = "sso")]
                 {
+                    use crate::sso::{credentials::SsoProviderConfig, SsoCredentialsProvider};
                     use aws_types::region::Region;
+
                     let sso_config = SsoProviderConfig {
                         account_id: sso_account_id.to_string(),
                         role_name: sso_role_name.to_string(),
                         start_url: sso_start_url.to_string(),
                         region: Region::new(sso_region.to_string()),
+                        // TODO(https://github.com/awslabs/aws-sdk-rust/issues/703): Implement sso_session_name profile property
+                        session_name: None,
                     };
                     Arc::new(SsoCredentialsProvider::new(provider_config, sso_config))
                 }
-                #[cfg(not(feature = "credentials-sso"))]
+                #[cfg(not(feature = "sso"))]
                 {
                     Err(ProfileFileError::FeatureNotEnabled {
-                        feature: "credentials-sso".into(),
+                        feature: "sso".into(),
+                        message: None,
                     })?
                 }
             }
@@ -143,8 +163,8 @@ impl ProviderChain {
                 tracing::info!(role_arn = ?role_arn, "which will be used to assume a role");
                 AssumeRoleProvider {
                     role_arn: role_arn.role_arn.into(),
-                    external_id: role_arn.external_id.map(|id| id.into()),
-                    session_name: role_arn.session_name.map(|id| id.into()),
+                    external_id: role_arn.external_id.map(Into::into),
+                    session_name: role_arn.session_name.map(Into::into),
                     time_source: provider_config.time_source(),
                 }
             })
@@ -195,7 +215,7 @@ mod test {
     use crate::profile::credentials::exec::ProviderChain;
     use crate::profile::credentials::repr::{BaseProvider, ProfileChain};
     use crate::provider_config::ProviderConfig;
-    use crate::test_case::no_traffic_connector;
+    use crate::test_case::no_traffic_client;
 
     use aws_credential_types::Credentials;
     use std::collections::HashMap;
@@ -219,7 +239,7 @@ mod test {
     fn error_on_unknown_provider() {
         let factory = NamedProviderFactory::new(HashMap::new());
         let chain = ProviderChain::from_repr(
-            &ProviderConfig::empty().with_http_connector(no_traffic_connector()),
+            &ProviderConfig::empty().with_http_client(no_traffic_client()),
             ProfileChain {
                 base: BaseProvider::NamedSource("floozle"),
                 chain: vec![],

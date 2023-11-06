@@ -24,8 +24,10 @@ impl ListContactReferencesInput {
         self.contact_id.as_deref()
     }
     /// <p>The type of reference.</p>
-    pub fn reference_types(&self) -> ::std::option::Option<&[crate::types::ReferenceType]> {
-        self.reference_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_types.is_none()`.
+    pub fn reference_types(&self) -> &[crate::types::ReferenceType] {
+        self.reference_types.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
@@ -52,6 +54,7 @@ pub struct ListContactReferencesInputBuilder {
 }
 impl ListContactReferencesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +69,7 @@ impl ListContactReferencesInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the initial contact.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -122,7 +126,7 @@ impl ListContactReferencesInputBuilder {
     /// Consumes the builder and constructs a [`ListContactReferencesInput`](crate::operation::list_contact_references::ListContactReferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_contact_references::ListContactReferencesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_contact_references::ListContactReferencesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_contact_references::ListContactReferencesInput {
             instance_id: self.instance_id,

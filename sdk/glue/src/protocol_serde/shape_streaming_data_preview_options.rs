@@ -2,7 +2,7 @@
 pub fn ser_streaming_data_preview_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamingDataPreviewOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.polling_time {
         object.key("PollingTime").number(
             #[allow(clippy::useless_conversion)]

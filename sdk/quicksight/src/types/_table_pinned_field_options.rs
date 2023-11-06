@@ -9,8 +9,10 @@ pub struct TablePinnedFieldOptions {
 }
 impl TablePinnedFieldOptions {
     /// <p>A list of columns to be pinned to the left of a table visual.</p>
-    pub fn pinned_left_fields(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pinned_left_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pinned_left_fields.is_none()`.
+    pub fn pinned_left_fields(&self) -> &[::std::string::String] {
+        self.pinned_left_fields.as_deref().unwrap_or_default()
     }
 }
 impl TablePinnedFieldOptions {

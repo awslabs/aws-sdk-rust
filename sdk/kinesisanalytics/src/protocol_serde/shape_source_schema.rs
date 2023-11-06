@@ -37,7 +37,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::source_schema_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -48,7 +50,7 @@ where
 pub fn ser_source_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceSchema,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.record_format {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RecordFormat").start_object();
@@ -58,17 +60,17 @@ pub fn ser_source_schema(
     if let Some(var_3) = &input.record_encoding {
         object.key("RecordEncoding").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.record_columns {
-        let mut array_5 = object.key("RecordColumns").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_4 = object.key("RecordColumns").start_array();
+        for item_5 in &input.record_columns {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_record_column::ser_record_column(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_record_column::ser_record_column(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
     Ok(())
 }

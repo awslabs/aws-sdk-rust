@@ -56,8 +56,10 @@ impl UpdateTaskTemplateInput {
         self.status.as_ref()
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::TaskTemplateField]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::TaskTemplateField] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTaskTemplateInput {
@@ -83,6 +85,7 @@ pub struct UpdateTaskTemplateInputBuilder {
 }
 impl UpdateTaskTemplateInputBuilder {
     /// <p>A unique identifier for the task template.</p>
+    /// This field is required.
     pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_template_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl UpdateTaskTemplateInputBuilder {
         &self.task_template_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -217,7 +221,8 @@ impl UpdateTaskTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTaskTemplateInput`](crate::operation::update_task_template::UpdateTaskTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_task_template::UpdateTaskTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_task_template::UpdateTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_task_template::UpdateTaskTemplateInput {
             task_template_id: self.task_template_id,
             instance_id: self.instance_id,

@@ -35,6 +35,7 @@ pub struct RecorderConfigBuilder {
 }
 impl RecorderConfigBuilder {
     /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
+    /// This field is required.
     pub fn media_source_config(mut self, input: crate::types::MediaSourceConfig) -> Self {
         self.media_source_config = ::std::option::Option::Some(input);
         self

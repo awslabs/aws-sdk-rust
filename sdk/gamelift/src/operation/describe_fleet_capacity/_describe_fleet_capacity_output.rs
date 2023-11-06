@@ -11,8 +11,10 @@ pub struct DescribeFleetCapacityOutput {
 }
 impl DescribeFleetCapacityOutput {
     /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
-    pub fn fleet_capacity(&self) -> ::std::option::Option<&[crate::types::FleetCapacity]> {
-        self.fleet_capacity.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_capacity.is_none()`.
+    pub fn fleet_capacity(&self) -> &[crate::types::FleetCapacity] {
+        self.fleet_capacity.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

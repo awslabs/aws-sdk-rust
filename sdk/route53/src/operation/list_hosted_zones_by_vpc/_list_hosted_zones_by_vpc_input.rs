@@ -53,6 +53,7 @@ pub struct ListHostedZonesByVpcInputBuilder {
 }
 impl ListHostedZonesByVpcInputBuilder {
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +68,7 @@ impl ListHostedZonesByVpcInputBuilder {
         &self.vpc_id
     }
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
+    /// This field is required.
     pub fn vpc_region(mut self, input: crate::types::VpcRegion) -> Self {
         self.vpc_region = ::std::option::Option::Some(input);
         self
@@ -117,7 +119,7 @@ impl ListHostedZonesByVpcInputBuilder {
     /// Consumes the builder and constructs a [`ListHostedZonesByVpcInput`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput {
             vpc_id: self.vpc_id,

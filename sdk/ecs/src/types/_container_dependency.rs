@@ -12,7 +12,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerDependency {
     /// <p>The name of a container.</p>
-    pub container_name: ::std::option::Option<::std::string::String>,
+    pub container_name: ::std::string::String,
     /// <p>The dependency condition of the container. The following are the available conditions and their behavior:</p>
     /// <ul>
     /// <li> <p> <code>START</code> - This condition emulates the behavior of links and volumes today. It validates that a dependent container is started before permitting other containers to start.</p> </li>
@@ -20,12 +20,13 @@ pub struct ContainerDependency {
     /// <li> <p> <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the container exits with a <code>zero</code> status. This condition can't be set on an essential container.</p> </li>
     /// <li> <p> <code>HEALTHY</code> - This condition validates that the dependent container passes its Docker health check before permitting other containers to start. This requires that the dependent container has health checks configured. This condition is confirmed only at task startup.</p> </li>
     /// </ul>
-    pub condition: ::std::option::Option<crate::types::ContainerCondition>,
+    pub condition: crate::types::ContainerCondition,
 }
 impl ContainerDependency {
     /// <p>The name of a container.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
-        self.container_name.as_deref()
+    pub fn container_name(&self) -> &str {
+        use std::ops::Deref;
+        self.container_name.deref()
     }
     /// <p>The dependency condition of the container. The following are the available conditions and their behavior:</p>
     /// <ul>
@@ -34,8 +35,8 @@ impl ContainerDependency {
     /// <li> <p> <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the container exits with a <code>zero</code> status. This condition can't be set on an essential container.</p> </li>
     /// <li> <p> <code>HEALTHY</code> - This condition validates that the dependent container passes its Docker health check before permitting other containers to start. This requires that the dependent container has health checks configured. This condition is confirmed only at task startup.</p> </li>
     /// </ul>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::ContainerCondition> {
-        self.condition.as_ref()
+    pub fn condition(&self) -> &crate::types::ContainerCondition {
+        &self.condition
     }
 }
 impl ContainerDependency {
@@ -54,6 +55,7 @@ pub struct ContainerDependencyBuilder {
 }
 impl ContainerDependencyBuilder {
     /// <p>The name of a container.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +76,7 @@ impl ContainerDependencyBuilder {
     /// <li> <p> <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the container exits with a <code>zero</code> status. This condition can't be set on an essential container.</p> </li>
     /// <li> <p> <code>HEALTHY</code> - This condition validates that the dependent container passes its Docker health check before permitting other containers to start. This requires that the dependent container has health checks configured. This condition is confirmed only at task startup.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn condition(mut self, input: crate::types::ContainerCondition) -> Self {
         self.condition = ::std::option::Option::Some(input);
         self
@@ -100,10 +103,23 @@ impl ContainerDependencyBuilder {
         &self.condition
     }
     /// Consumes the builder and constructs a [`ContainerDependency`](crate::types::ContainerDependency).
-    pub fn build(self) -> crate::types::ContainerDependency {
-        crate::types::ContainerDependency {
-            container_name: self.container_name,
-            condition: self.condition,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`container_name`](crate::types::builders::ContainerDependencyBuilder::container_name)
+    /// - [`condition`](crate::types::builders::ContainerDependencyBuilder::condition)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContainerDependency, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContainerDependency {
+            container_name: self.container_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "container_name",
+                    "container_name was not specified but it is required when building ContainerDependency",
+                )
+            })?,
+            condition: self.condition.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "condition",
+                    "condition was not specified but it is required when building ContainerDependency",
+                )
+            })?,
+        })
     }
 }

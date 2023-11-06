@@ -16,8 +16,10 @@ impl DescribeEventsOutput {
         self.marker.as_deref()
     }
     /// <p>Detailed information about one or more events. </p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::Event] {
+        self.events.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEventsOutput {

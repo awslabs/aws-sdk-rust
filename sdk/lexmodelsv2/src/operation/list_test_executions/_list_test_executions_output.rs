@@ -11,8 +11,10 @@ pub struct ListTestExecutionsOutput {
 }
 impl ListTestExecutionsOutput {
     /// <p>The list of test executions.</p>
-    pub fn test_executions(&self) -> ::std::option::Option<&[crate::types::TestExecutionSummary]> {
-        self.test_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.test_executions.is_none()`.
+    pub fn test_executions(&self) -> &[crate::types::TestExecutionSummary] {
+        self.test_executions.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

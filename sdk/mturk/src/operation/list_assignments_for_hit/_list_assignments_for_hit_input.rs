@@ -26,8 +26,10 @@ impl ListAssignmentsForHitInput {
         self.max_results
     }
     /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
-    pub fn assignment_statuses(&self) -> ::std::option::Option<&[crate::types::AssignmentStatus]> {
-        self.assignment_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assignment_statuses.is_none()`.
+    pub fn assignment_statuses(&self) -> &[crate::types::AssignmentStatus] {
+        self.assignment_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ListAssignmentsForHitInput {
@@ -48,6 +50,7 @@ pub struct ListAssignmentsForHitInputBuilder {
 }
 impl ListAssignmentsForHitInputBuilder {
     /// <p>The ID of the HIT.</p>
+    /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl ListAssignmentsForHitInputBuilder {
     /// Consumes the builder and constructs a [`ListAssignmentsForHitInput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput {
             hit_id: self.hit_id,

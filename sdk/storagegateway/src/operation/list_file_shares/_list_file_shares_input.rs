@@ -86,7 +86,7 @@ impl ListFileSharesInputBuilder {
     /// Consumes the builder and constructs a [`ListFileSharesInput`](crate::operation::list_file_shares::ListFileSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_file_shares::ListFileSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_file_shares::ListFileSharesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_file_shares::ListFileSharesInput {
             gateway_arn: self.gateway_arn,
             limit: self.limit,

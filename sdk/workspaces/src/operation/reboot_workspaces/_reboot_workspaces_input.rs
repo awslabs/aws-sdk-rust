@@ -8,8 +8,10 @@ pub struct RebootWorkspacesInput {
 }
 impl RebootWorkspacesInput {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    pub fn reboot_workspace_requests(&self) -> ::std::option::Option<&[crate::types::RebootRequest]> {
-        self.reboot_workspace_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reboot_workspace_requests.is_none()`.
+    pub fn reboot_workspace_requests(&self) -> &[crate::types::RebootRequest] {
+        self.reboot_workspace_requests.as_deref().unwrap_or_default()
     }
 }
 impl RebootWorkspacesInput {
@@ -49,7 +51,7 @@ impl RebootWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`RebootWorkspacesInput`](crate::operation::reboot_workspaces::RebootWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reboot_workspaces::RebootWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reboot_workspaces::RebootWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_workspaces::RebootWorkspacesInput {
             reboot_workspace_requests: self.reboot_workspace_requests,
         })

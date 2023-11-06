@@ -11,8 +11,10 @@ pub struct GetBotChannelAssociationsOutput {
 }
 impl GetBotChannelAssociationsOutput {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
-    pub fn bot_channel_associations(&self) -> ::std::option::Option<&[crate::types::BotChannelAssociation]> {
-        self.bot_channel_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_channel_associations.is_none()`.
+    pub fn bot_channel_associations(&self) -> &[crate::types::BotChannelAssociation] {
+        self.bot_channel_associations.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

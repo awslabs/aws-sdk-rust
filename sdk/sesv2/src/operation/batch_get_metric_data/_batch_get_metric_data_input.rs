@@ -9,8 +9,10 @@ pub struct BatchGetMetricDataInput {
 }
 impl BatchGetMetricDataInput {
     /// <p>A list of queries for metrics to be retrieved.</p>
-    pub fn queries(&self) -> ::std::option::Option<&[crate::types::BatchGetMetricDataQuery]> {
-        self.queries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queries.is_none()`.
+    pub fn queries(&self) -> &[crate::types::BatchGetMetricDataQuery] {
+        self.queries.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetMetricDataInput {
@@ -50,7 +52,7 @@ impl BatchGetMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetMetricDataInput`](crate::operation::batch_get_metric_data::BatchGetMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_metric_data::BatchGetMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_metric_data::BatchGetMetricDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_metric_data::BatchGetMetricDataInput { queries: self.queries })
     }

@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAnnotationStore`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::set_name): <p>The store's name.</p>
-    ///   - [`force(bool)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::force) / [`set_force(Option<bool>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::set_force): <p>Whether to force deletion.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::set_name):<br>required: **true**<br><p>The store's name.</p><br>
+    ///   - [`force(bool)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::force) / [`set_force(Option<bool>)`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::set_force):<br>required: **false**<br><p>Whether to force deletion.</p><br>
     /// - On success, responds with [`DeleteAnnotationStoreOutput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput) with field(s):
-    ///   - [`status(Option<StoreStatus>)`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput::status): <p>The store's status.</p>
+    ///   - [`status(StoreStatus)`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput::status): <p>The store's status.</p>
     /// - On failure, responds with [`SdkError<DeleteAnnotationStoreError>`](crate::operation::delete_annotation_store::DeleteAnnotationStoreError)
     pub fn delete_annotation_store(&self) -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder {
         crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreFluentBuilder::new(self.handle.clone())

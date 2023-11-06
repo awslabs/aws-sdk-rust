@@ -2,7 +2,7 @@
 pub fn ser_analyze_document_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::analyze_document::AnalyzeDocumentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Document").start_object();

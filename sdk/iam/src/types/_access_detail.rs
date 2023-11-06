@@ -6,10 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessDetail {
     /// <p>The name of the service in which access was attempted.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub service_namespace: ::std::option::Option<::std::string::String>,
+    pub service_namespace: ::std::string::String,
     /// <p>The Region where the last service access attempt occurred.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub region: ::std::option::Option<::std::string::String>,
@@ -24,13 +24,15 @@ pub struct AccessDetail {
 }
 impl AccessDetail {
     /// <p>The name of the service in which access was attempted.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&str> {
-        self.service_namespace.as_deref()
+    pub fn service_namespace(&self) -> &str {
+        use std::ops::Deref;
+        self.service_namespace.deref()
     }
     /// <p>The Region where the last service access attempt occurred.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
@@ -72,6 +74,7 @@ pub struct AccessDetailBuilder {
 }
 impl AccessDetailBuilder {
     /// <p>The name of the service in which access was attempted.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +90,7 @@ impl AccessDetailBuilder {
     }
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn service_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_namespace = ::std::option::Option::Some(input.into());
         self
@@ -168,14 +172,27 @@ impl AccessDetailBuilder {
         &self.total_authenticated_entities
     }
     /// Consumes the builder and constructs a [`AccessDetail`](crate::types::AccessDetail).
-    pub fn build(self) -> crate::types::AccessDetail {
-        crate::types::AccessDetail {
-            service_name: self.service_name,
-            service_namespace: self.service_namespace,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_name`](crate::types::builders::AccessDetailBuilder::service_name)
+    /// - [`service_namespace`](crate::types::builders::AccessDetailBuilder::service_namespace)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessDetail, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessDetail {
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building AccessDetail",
+                )
+            })?,
+            service_namespace: self.service_namespace.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "service_namespace",
+                    "service_namespace was not specified but it is required when building AccessDetail",
+                )
+            })?,
             region: self.region,
             entity_path: self.entity_path,
             last_authenticated_time: self.last_authenticated_time,
             total_authenticated_entities: self.total_authenticated_entities,
-        }
+        })
     }
 }

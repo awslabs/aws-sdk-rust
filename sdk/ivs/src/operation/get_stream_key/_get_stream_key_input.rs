@@ -27,6 +27,7 @@ pub struct GetStreamKeyInputBuilder {
 }
 impl GetStreamKeyInputBuilder {
     /// <p>ARN for the stream key to be retrieved.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl GetStreamKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetStreamKeyInput`](crate::operation::get_stream_key::GetStreamKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_stream_key::GetStreamKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_stream_key::GetStreamKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stream_key::GetStreamKeyInput { arn: self.arn })
     }
 }

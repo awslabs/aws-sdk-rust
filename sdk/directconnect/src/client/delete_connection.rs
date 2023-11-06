@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConnection`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_id(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_id):<br>required: **true**<br><p>The ID of the connection.</p><br>
     /// - On success, responds with [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput) with field(s):
     ///   - [`owner_account(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
     ///   - [`connection_id(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::connection_id): <p>The ID of the connection.</p>
@@ -21,12 +21,12 @@ impl super::Client {
     ///   - [`aws_device_v2(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
     ///   - [`aws_logical_device_id(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::operation::delete_connection::DeleteConnectionOutput::has_logical_redundancy): <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::delete_connection::DeleteConnectionOutput::tags): <p>The tags associated with the connection.</p>
+    ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::delete_connection::DeleteConnectionOutput::tags): <p>The tags associated with the connection.</p>
     ///   - [`provider_name(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::provider_name): <p>The name of the service provider associated with the connection.</p>
     ///   - [`mac_sec_capable(Option<bool>)`](crate::operation::delete_connection::DeleteConnectionOutput::mac_sec_capable): <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     ///   - [`port_encryption_status(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p>  <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     ///   - [`encryption_mode(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::delete_connection::DeleteConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    ///   - [`mac_sec_keys(Option<Vec::<MacSecKey>>)`](crate::operation::delete_connection::DeleteConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::operation::delete_connection::DeleteConnectionError)
     pub fn delete_connection(&self) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
         crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(self.handle.clone())

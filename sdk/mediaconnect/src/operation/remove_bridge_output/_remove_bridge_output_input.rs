@@ -34,6 +34,7 @@ pub struct RemoveBridgeOutputInputBuilder {
 }
 impl RemoveBridgeOutputInputBuilder {
     /// The ARN of the bridge that you want to update.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveBridgeOutputInputBuilder {
         &self.bridge_arn
     }
     /// The name of the bridge output that you want to remove.
+    /// This field is required.
     pub fn output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,8 @@ impl RemoveBridgeOutputInputBuilder {
     /// Consumes the builder and constructs a [`RemoveBridgeOutputInput`](crate::operation::remove_bridge_output::RemoveBridgeOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_bridge_output::RemoveBridgeOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_bridge_output::RemoveBridgeOutputInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::remove_bridge_output::RemoveBridgeOutputInput {
             bridge_arn: self.bridge_arn,
             output_name: self.output_name,

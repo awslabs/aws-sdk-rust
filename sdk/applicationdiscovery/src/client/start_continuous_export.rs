@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`s3_bucket(Option<String>)`](crate::operation::start_continuous_export::StartContinuousExportOutput::s3_bucket): <p>The name of the s3 bucket where the export data parquet files are stored.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::start_continuous_export::StartContinuousExportOutput::start_time): <p>The timestamp representing when the continuous export was started.</p>
     ///   - [`data_source(Option<DataSource>)`](crate::operation::start_continuous_export::StartContinuousExportOutput::data_source): <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
-    ///   - [`schema_storage_config(Option<HashMap<String, String>>)`](crate::operation::start_continuous_export::StartContinuousExportOutput::schema_storage_config): <p>A dictionary which describes how the data is stored.</p>  <ul>   <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>  </ul>
+    ///   - [`schema_storage_config(Option<HashMap::<String, String>>)`](crate::operation::start_continuous_export::StartContinuousExportOutput::schema_storage_config): <p>A dictionary which describes how the data is stored.</p>  <ul>   <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<StartContinuousExportError>`](crate::operation::start_continuous_export::StartContinuousExportError)
     pub fn start_continuous_export(&self) -> crate::operation::start_continuous_export::builders::StartContinuousExportFluentBuilder {
         crate::operation::start_continuous_export::builders::StartContinuousExportFluentBuilder::new(self.handle.clone())

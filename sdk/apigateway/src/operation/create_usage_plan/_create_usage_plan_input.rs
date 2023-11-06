@@ -27,8 +27,10 @@ impl CreateUsagePlanInput {
         self.description.as_deref()
     }
     /// <p>The associated API stages of the usage plan.</p>
-    pub fn api_stages(&self) -> ::std::option::Option<&[crate::types::ApiStage]> {
-        self.api_stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.api_stages.is_none()`.
+    pub fn api_stages(&self) -> &[crate::types::ApiStage] {
+        self.api_stages.as_deref().unwrap_or_default()
     }
     /// <p>The throttling limits of the usage plan.</p>
     pub fn throttle(&self) -> ::std::option::Option<&crate::types::ThrottleSettings> {
@@ -63,6 +65,7 @@ pub struct CreateUsagePlanInputBuilder {
 }
 impl CreateUsagePlanInputBuilder {
     /// <p>The name of the usage plan.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -161,7 +164,7 @@ impl CreateUsagePlanInputBuilder {
     /// Consumes the builder and constructs a [`CreateUsagePlanInput`](crate::operation::create_usage_plan::CreateUsagePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_usage_plan::CreateUsagePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_usage_plan::CreateUsagePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_usage_plan::CreateUsagePlanInput {
             name: self.name,
             description: self.description,

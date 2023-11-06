@@ -2,7 +2,7 @@
 pub fn ser_search_resources_tag_criterion(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchResourcesTagCriterion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.comparator {
         object.key("comparator").string(var_1.as_str());
     }

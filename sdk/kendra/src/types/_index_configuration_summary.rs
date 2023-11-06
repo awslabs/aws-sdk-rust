@@ -11,11 +11,11 @@ pub struct IndexConfigurationSummary {
     /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
     pub edition: ::std::option::Option<crate::types::IndexEdition>,
     /// <p>The Unix timestamp when the index was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The Unix timestamp when the index was last updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
-    pub status: ::std::option::Option<crate::types::IndexStatus>,
+    pub status: crate::types::IndexStatus,
 }
 impl IndexConfigurationSummary {
     /// <p>The name of the index.</p>
@@ -31,16 +31,16 @@ impl IndexConfigurationSummary {
         self.edition.as_ref()
     }
     /// <p>The Unix timestamp when the index was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The Unix timestamp when the index was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IndexStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::IndexStatus {
+        &self.status
     }
 }
 impl IndexConfigurationSummary {
@@ -105,6 +105,7 @@ impl IndexConfigurationSummaryBuilder {
         &self.edition
     }
     /// <p>The Unix timestamp when the index was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -119,6 +120,7 @@ impl IndexConfigurationSummaryBuilder {
         &self.created_at
     }
     /// <p>The Unix timestamp when the index was last updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -133,6 +135,7 @@ impl IndexConfigurationSummaryBuilder {
         &self.updated_at
     }
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::IndexStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -147,14 +150,33 @@ impl IndexConfigurationSummaryBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`IndexConfigurationSummary`](crate::types::IndexConfigurationSummary).
-    pub fn build(self) -> crate::types::IndexConfigurationSummary {
-        crate::types::IndexConfigurationSummary {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`created_at`](crate::types::builders::IndexConfigurationSummaryBuilder::created_at)
+    /// - [`updated_at`](crate::types::builders::IndexConfigurationSummaryBuilder::updated_at)
+    /// - [`status`](crate::types::builders::IndexConfigurationSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::IndexConfigurationSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IndexConfigurationSummary {
             name: self.name,
             id: self.id,
             edition: self.edition,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            status: self.status,
-        }
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building IndexConfigurationSummary",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building IndexConfigurationSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building IndexConfigurationSummary",
+                )
+            })?,
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct DescribeExecutionInputBuilder {
 }
 impl DescribeExecutionInputBuilder {
     /// <p>The ID of the task that the action is describing.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeExecutionInputBuilder {
         &self.task_id
     }
     /// <p>The ID of the managed device.</p>
+    /// This field is required.
     pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DescribeExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionInput {
             task_id: self.task_id,
             managed_device_id: self.managed_device_id,

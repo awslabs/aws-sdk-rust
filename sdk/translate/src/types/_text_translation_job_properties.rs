@@ -57,16 +57,22 @@ impl TextTranslationJobProperties {
         self.source_language_code.as_deref()
     }
     /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    pub fn target_language_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_language_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_language_codes.is_none()`.
+    pub fn target_language_codes(&self) -> &[::std::string::String] {
+        self.target_language_codes.as_deref().unwrap_or_default()
     }
     /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
-    pub fn terminology_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.terminology_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terminology_names.is_none()`.
+    pub fn terminology_names(&self) -> &[::std::string::String] {
+        self.terminology_names.as_deref().unwrap_or_default()
     }
     /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
-    pub fn parallel_data_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parallel_data_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parallel_data_names.is_none()`.
+    pub fn parallel_data_names(&self) -> &[::std::string::String] {
+        self.parallel_data_names.as_deref().unwrap_or_default()
     }
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {

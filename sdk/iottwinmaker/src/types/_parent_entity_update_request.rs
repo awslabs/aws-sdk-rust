@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParentEntityUpdateRequest {
     /// <p>The type of the update.</p>
-    pub update_type: ::std::option::Option<crate::types::ParentEntityUpdateType>,
+    pub update_type: crate::types::ParentEntityUpdateType,
     /// <p>The ID of the parent entity.</p>
     pub parent_entity_id: ::std::option::Option<::std::string::String>,
 }
 impl ParentEntityUpdateRequest {
     /// <p>The type of the update.</p>
-    pub fn update_type(&self) -> ::std::option::Option<&crate::types::ParentEntityUpdateType> {
-        self.update_type.as_ref()
+    pub fn update_type(&self) -> &crate::types::ParentEntityUpdateType {
+        &self.update_type
     }
     /// <p>The ID of the parent entity.</p>
     pub fn parent_entity_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct ParentEntityUpdateRequestBuilder {
 }
 impl ParentEntityUpdateRequestBuilder {
     /// <p>The type of the update.</p>
+    /// This field is required.
     pub fn update_type(mut self, input: crate::types::ParentEntityUpdateType) -> Self {
         self.update_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl ParentEntityUpdateRequestBuilder {
         &self.parent_entity_id
     }
     /// Consumes the builder and constructs a [`ParentEntityUpdateRequest`](crate::types::ParentEntityUpdateRequest).
-    pub fn build(self) -> crate::types::ParentEntityUpdateRequest {
-        crate::types::ParentEntityUpdateRequest {
-            update_type: self.update_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`update_type`](crate::types::builders::ParentEntityUpdateRequestBuilder::update_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParentEntityUpdateRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParentEntityUpdateRequest {
+            update_type: self.update_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_type",
+                    "update_type was not specified but it is required when building ParentEntityUpdateRequest",
+                )
+            })?,
             parent_entity_id: self.parent_entity_id,
-        }
+        })
     }
 }

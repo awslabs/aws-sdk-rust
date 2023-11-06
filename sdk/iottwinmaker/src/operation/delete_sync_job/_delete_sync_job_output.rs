@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSyncJobOutput {
     /// <p>The SyncJob response state.</p>
-    pub state: ::std::option::Option<crate::types::SyncJobState>,
+    pub state: crate::types::SyncJobState,
     _request_id: Option<String>,
 }
 impl DeleteSyncJobOutput {
     /// <p>The SyncJob response state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SyncJobState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::SyncJobState {
+        &self.state
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteSyncJobOutput {
@@ -34,6 +34,7 @@ pub struct DeleteSyncJobOutputBuilder {
 }
 impl DeleteSyncJobOutputBuilder {
     /// <p>The SyncJob response state.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::SyncJobState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,19 @@ impl DeleteSyncJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSyncJobOutput`](crate::operation::delete_sync_job::DeleteSyncJobOutput).
-    pub fn build(self) -> crate::operation::delete_sync_job::DeleteSyncJobOutput {
-        crate::operation::delete_sync_job::DeleteSyncJobOutput {
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::operation::delete_sync_job::builders::DeleteSyncJobOutputBuilder::state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_sync_job::DeleteSyncJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_sync_job::DeleteSyncJobOutput {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building DeleteSyncJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

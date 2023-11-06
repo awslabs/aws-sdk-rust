@@ -11,8 +11,10 @@ pub struct ListDomainNamesOutput {
 }
 impl ListDomainNamesOutput {
     /// <p>Lists configurations for multiple domain names.</p>
-    pub fn domain_name_configs(&self) -> ::std::option::Option<&[crate::types::DomainNameConfig]> {
-        self.domain_name_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_name_configs.is_none()`.
+    pub fn domain_name_configs(&self) -> &[crate::types::DomainNameConfig] {
+        self.domain_name_configs.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

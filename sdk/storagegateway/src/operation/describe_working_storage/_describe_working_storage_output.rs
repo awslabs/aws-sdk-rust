@@ -20,8 +20,10 @@ impl DescribeWorkingStorageOutput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    pub fn disk_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.disk_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disk_ids.is_none()`.
+    pub fn disk_ids(&self) -> &[::std::string::String] {
+        self.disk_ids.as_deref().unwrap_or_default()
     }
     /// <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     pub fn working_storage_used_in_bytes(&self) -> i64 {

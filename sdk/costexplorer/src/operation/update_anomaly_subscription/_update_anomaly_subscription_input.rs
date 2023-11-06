@@ -48,12 +48,16 @@ impl UpdateAnomalySubscriptionInput {
         self.frequency.as_ref()
     }
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn monitor_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.monitor_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitor_arn_list.is_none()`.
+    pub fn monitor_arn_list(&self) -> &[::std::string::String] {
+        self.monitor_arn_list.as_deref().unwrap_or_default()
     }
     /// <p>The update to the subscriber list. </p>
-    pub fn subscribers(&self) -> ::std::option::Option<&[crate::types::Subscriber]> {
-        self.subscribers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribers.is_none()`.
+    pub fn subscribers(&self) -> &[crate::types::Subscriber] {
+        self.subscribers.as_deref().unwrap_or_default()
     }
     /// <p>The new name of the subscription. </p>
     pub fn subscription_name(&self) -> ::std::option::Option<&str> {
@@ -93,6 +97,7 @@ pub struct UpdateAnomalySubscriptionInputBuilder {
 }
 impl UpdateAnomalySubscriptionInputBuilder {
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
+    /// This field is required.
     pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
@@ -243,7 +248,7 @@ impl UpdateAnomalySubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput {
             subscription_arn: self.subscription_arn,

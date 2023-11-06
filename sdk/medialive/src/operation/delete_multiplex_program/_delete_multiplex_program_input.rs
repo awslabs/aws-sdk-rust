@@ -35,6 +35,7 @@ pub struct DeleteMultiplexProgramInputBuilder {
 }
 impl DeleteMultiplexProgramInputBuilder {
     /// The ID of the multiplex that the program belongs to.
+    /// This field is required.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multiplex_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteMultiplexProgramInputBuilder {
         &self.multiplex_id
     }
     /// The multiplex program name.
+    /// This field is required.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
         self
@@ -65,8 +67,10 @@ impl DeleteMultiplexProgramInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMultiplexProgramInput`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput {
             multiplex_id: self.multiplex_id,
             program_name: self.program_name,

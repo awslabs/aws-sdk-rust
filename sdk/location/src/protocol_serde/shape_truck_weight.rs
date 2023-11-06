@@ -2,7 +2,7 @@
 pub fn ser_truck_weight(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TruckWeight,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.total {
         object.key("Total").number(
             #[allow(clippy::useless_conversion)]

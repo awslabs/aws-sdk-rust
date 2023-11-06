@@ -49,6 +49,7 @@ pub struct CreateApiMappingInputBuilder {
 }
 impl CreateApiMappingInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl CreateApiMappingInputBuilder {
         &self.api_mapping_key
     }
     /// <p>The domain name.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl CreateApiMappingInputBuilder {
         &self.domain_name
     }
     /// <p>The API stage.</p>
+    /// This field is required.
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +110,7 @@ impl CreateApiMappingInputBuilder {
     /// Consumes the builder and constructs a [`CreateApiMappingInput`](crate::operation::create_api_mapping::CreateApiMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_api_mapping::CreateApiMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_api_mapping::CreateApiMappingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_api_mapping::CreateApiMappingInput {
             api_id: self.api_id,
             api_mapping_key: self.api_mapping_key,

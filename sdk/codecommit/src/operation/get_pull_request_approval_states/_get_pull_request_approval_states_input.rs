@@ -34,6 +34,7 @@ pub struct GetPullRequestApprovalStatesInputBuilder {
 }
 impl GetPullRequestApprovalStatesInputBuilder {
     /// <p>The system-generated ID for the pull request.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetPullRequestApprovalStatesInputBuilder {
         &self.pull_request_id
     }
     /// <p>The system-generated ID for the pull request revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl GetPullRequestApprovalStatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesInput {
             pull_request_id: self.pull_request_id,

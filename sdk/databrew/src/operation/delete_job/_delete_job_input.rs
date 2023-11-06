@@ -27,6 +27,7 @@ pub struct DeleteJobInputBuilder {
 }
 impl DeleteJobInputBuilder {
     /// <p>The name of the job to be deleted.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteJobInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_job::DeleteJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_job::DeleteJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_job::DeleteJobInput { name: self.name })
     }
 }

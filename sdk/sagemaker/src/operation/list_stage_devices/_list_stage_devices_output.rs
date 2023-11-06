@@ -11,8 +11,10 @@ pub struct ListStageDevicesOutput {
 }
 impl ListStageDevicesOutput {
     /// <p>List of summaries of devices allocated to the stage.</p>
-    pub fn device_deployment_summaries(&self) -> ::std::option::Option<&[crate::types::DeviceDeploymentSummary]> {
-        self.device_deployment_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_deployment_summaries.is_none()`.
+    pub fn device_deployment_summaries(&self) -> &[crate::types::DeviceDeploymentSummary] {
+        self.device_deployment_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when calling the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

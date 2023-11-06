@@ -25,6 +25,8 @@ pub struct UpgradeTarget {
     /// <p>Indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub supports_local_write_forwarding: ::std::option::Option<bool>,
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub supports_integrations: ::std::option::Option<bool>,
 }
 impl UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
@@ -48,8 +50,10 @@ impl UpgradeTarget {
         self.is_major_version_upgrade
     }
     /// <p>A list of the supported DB engine modes for the target engine version.</p>
-    pub fn supported_engine_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_engine_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_engine_modes.is_none()`.
+    pub fn supported_engine_modes(&self) -> &[::std::string::String] {
+        self.supported_engine_modes.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether you can use Aurora parallel query with the target engine version.</p>
     pub fn supports_parallel_query(&self) -> ::std::option::Option<bool> {
@@ -67,6 +71,10 @@ impl UpgradeTarget {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn supports_local_write_forwarding(&self) -> ::std::option::Option<bool> {
         self.supports_local_write_forwarding
+    }
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub fn supports_integrations(&self) -> ::std::option::Option<bool> {
+        self.supports_integrations
     }
 }
 impl UpgradeTarget {
@@ -90,6 +98,7 @@ pub struct UpgradeTargetBuilder {
     pub(crate) supports_global_databases: ::std::option::Option<bool>,
     pub(crate) supports_babelfish: ::std::option::Option<bool>,
     pub(crate) supports_local_write_forwarding: ::std::option::Option<bool>,
+    pub(crate) supports_integrations: ::std::option::Option<bool>,
 }
 impl UpgradeTargetBuilder {
     /// <p>The name of the upgrade target database engine.</p>
@@ -241,6 +250,20 @@ impl UpgradeTargetBuilder {
     pub fn get_supports_local_write_forwarding(&self) -> &::std::option::Option<bool> {
         &self.supports_local_write_forwarding
     }
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub fn supports_integrations(mut self, input: bool) -> Self {
+        self.supports_integrations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub fn set_supports_integrations(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_integrations = input;
+        self
+    }
+    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    pub fn get_supports_integrations(&self) -> &::std::option::Option<bool> {
+        &self.supports_integrations
+    }
     /// Consumes the builder and constructs a [`UpgradeTarget`](crate::types::UpgradeTarget).
     pub fn build(self) -> crate::types::UpgradeTarget {
         crate::types::UpgradeTarget {
@@ -254,6 +277,7 @@ impl UpgradeTargetBuilder {
             supports_global_databases: self.supports_global_databases,
             supports_babelfish: self.supports_babelfish,
             supports_local_write_forwarding: self.supports_local_write_forwarding,
+            supports_integrations: self.supports_integrations,
         }
     }
 }

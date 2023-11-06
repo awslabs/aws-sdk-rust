@@ -34,6 +34,7 @@ pub struct RemoveFlowOutputInputBuilder {
 }
 impl RemoveFlowOutputInputBuilder {
     /// The flow that you want to remove an output from.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveFlowOutputInputBuilder {
         &self.flow_arn
     }
     /// The ARN of the output that you want to remove.
+    /// This field is required.
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl RemoveFlowOutputInputBuilder {
     /// Consumes the builder and constructs a [`RemoveFlowOutputInput`](crate::operation::remove_flow_output::RemoveFlowOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_flow_output::RemoveFlowOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_flow_output::RemoveFlowOutputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_flow_output::RemoveFlowOutputInput {
             flow_arn: self.flow_arn,
             output_arn: self.output_arn,

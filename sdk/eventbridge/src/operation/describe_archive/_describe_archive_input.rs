@@ -27,6 +27,7 @@ pub struct DescribeArchiveInputBuilder {
 }
 impl DescribeArchiveInputBuilder {
     /// <p>The name of the archive to retrieve.</p>
+    /// This field is required.
     pub fn archive_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeArchiveInputBuilder {
     /// Consumes the builder and constructs a [`DescribeArchiveInput`](crate::operation::describe_archive::DescribeArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_archive::DescribeArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_archive::DescribeArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_archive::DescribeArchiveInput {
             archive_name: self.archive_name,
         })

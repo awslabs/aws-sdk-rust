@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftServerlessStorage {
     /// <p>The name of the Amazon Redshift Serverless workgroup.</p>
-    pub workgroup_name: ::std::option::Option<::std::string::String>,
+    pub workgroup_name: ::std::string::String,
 }
 impl RedshiftServerlessStorage {
     /// <p>The name of the Amazon Redshift Serverless workgroup.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
-        self.workgroup_name.as_deref()
+    pub fn workgroup_name(&self) -> &str {
+        use std::ops::Deref;
+        self.workgroup_name.deref()
     }
 }
 impl RedshiftServerlessStorage {
@@ -28,6 +29,7 @@ pub struct RedshiftServerlessStorageBuilder {
 }
 impl RedshiftServerlessStorageBuilder {
     /// <p>The name of the Amazon Redshift Serverless workgroup.</p>
+    /// This field is required.
     pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl RedshiftServerlessStorageBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`RedshiftServerlessStorage`](crate::types::RedshiftServerlessStorage).
-    pub fn build(self) -> crate::types::RedshiftServerlessStorage {
-        crate::types::RedshiftServerlessStorage {
-            workgroup_name: self.workgroup_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workgroup_name`](crate::types::builders::RedshiftServerlessStorageBuilder::workgroup_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftServerlessStorage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftServerlessStorage {
+            workgroup_name: self.workgroup_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workgroup_name",
+                    "workgroup_name was not specified but it is required when building RedshiftServerlessStorage",
+                )
+            })?,
+        })
     }
 }

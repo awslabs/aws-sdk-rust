@@ -2,7 +2,7 @@
 pub fn ser_create_instance_access_control_attribute_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_arn {
         object.key("InstanceArn").string(var_1.as_str());
     }

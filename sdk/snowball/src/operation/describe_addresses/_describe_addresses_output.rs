@@ -11,8 +11,10 @@ pub struct DescribeAddressesOutput {
 }
 impl DescribeAddressesOutput {
     /// <p>The Snow device shipping addresses that were created for this account.</p>
-    pub fn addresses(&self) -> ::std::option::Option<&[crate::types::Address]> {
-        self.addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
+    pub fn addresses(&self) -> &[crate::types::Address] {
+        self.addresses.as_deref().unwrap_or_default()
     }
     /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

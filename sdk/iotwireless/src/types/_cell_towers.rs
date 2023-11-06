@@ -17,24 +17,34 @@ pub struct CellTowers {
 }
 impl CellTowers {
     /// <p>GSM object information.</p>
-    pub fn gsm(&self) -> ::std::option::Option<&[crate::types::GsmObj]> {
-        self.gsm.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gsm.is_none()`.
+    pub fn gsm(&self) -> &[crate::types::GsmObj] {
+        self.gsm.as_deref().unwrap_or_default()
     }
     /// <p>WCDMA object information.</p>
-    pub fn wcdma(&self) -> ::std::option::Option<&[crate::types::WcdmaObj]> {
-        self.wcdma.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wcdma.is_none()`.
+    pub fn wcdma(&self) -> &[crate::types::WcdmaObj] {
+        self.wcdma.as_deref().unwrap_or_default()
     }
     /// <p>TD-SCDMA object information.</p>
-    pub fn tdscdma(&self) -> ::std::option::Option<&[crate::types::TdscdmaObj]> {
-        self.tdscdma.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tdscdma.is_none()`.
+    pub fn tdscdma(&self) -> &[crate::types::TdscdmaObj] {
+        self.tdscdma.as_deref().unwrap_or_default()
     }
     /// <p>LTE object information.</p>
-    pub fn lte(&self) -> ::std::option::Option<&[crate::types::LteObj]> {
-        self.lte.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lte.is_none()`.
+    pub fn lte(&self) -> &[crate::types::LteObj] {
+        self.lte.as_deref().unwrap_or_default()
     }
     /// <p>CDMA object information.</p>
-    pub fn cdma(&self) -> ::std::option::Option<&[crate::types::CdmaObj]> {
-        self.cdma.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cdma.is_none()`.
+    pub fn cdma(&self) -> &[crate::types::CdmaObj] {
+        self.cdma.as_deref().unwrap_or_default()
     }
 }
 impl CellTowers {

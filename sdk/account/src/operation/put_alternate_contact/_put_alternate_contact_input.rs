@@ -84,6 +84,7 @@ pub struct PutAlternateContactInputBuilder {
 }
 impl PutAlternateContactInputBuilder {
     /// <p>Specifies a name for the alternate contact.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl PutAlternateContactInputBuilder {
         &self.name
     }
     /// <p>Specifies a title for the alternate contact.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl PutAlternateContactInputBuilder {
         &self.title
     }
     /// <p>Specifies an email address for the alternate contact. </p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +129,7 @@ impl PutAlternateContactInputBuilder {
         &self.email_address
     }
     /// <p>Specifies a phone number for the alternate contact.</p>
+    /// This field is required.
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl PutAlternateContactInputBuilder {
         &self.phone_number
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
+    /// This field is required.
     pub fn alternate_contact_type(mut self, input: crate::types::AlternateContactType) -> Self {
         self.alternate_contact_type = ::std::option::Option::Some(input);
         self
@@ -185,7 +190,7 @@ impl PutAlternateContactInputBuilder {
     /// Consumes the builder and constructs a [`PutAlternateContactInput`](crate::operation::put_alternate_contact::PutAlternateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_alternate_contact::PutAlternateContactInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_alternate_contact::PutAlternateContactInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_alternate_contact::PutAlternateContactInput {
             name: self.name,

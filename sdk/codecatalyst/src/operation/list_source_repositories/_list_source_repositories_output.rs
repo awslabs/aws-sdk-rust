@@ -11,8 +11,10 @@ pub struct ListSourceRepositoriesOutput {
 }
 impl ListSourceRepositoriesOutput {
     /// <p>Information about the source repositories.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListSourceRepositoriesItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ListSourceRepositoriesItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

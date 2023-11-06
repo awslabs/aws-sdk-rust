@@ -15,8 +15,10 @@ impl ScheduledActionFilter {
         self.name.as_ref()
     }
     /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl ScheduledActionFilter {
@@ -35,6 +37,7 @@ pub struct ScheduledActionFilterBuilder {
 }
 impl ScheduledActionFilterBuilder {
     /// <p>The type of element to filter. </p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ScheduledActionFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self

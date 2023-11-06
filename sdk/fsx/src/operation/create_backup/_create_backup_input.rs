@@ -23,8 +23,10 @@ impl CreateBackupInput {
         self.client_request_token.as_deref()
     }
     /// <p>(Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify one or more tags using the <code>CreateBackup</code> operation, no existing file system tags are copied from the file system to the backup.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
@@ -111,7 +113,9 @@ impl CreateBackupInputBuilder {
         &self.volume_id
     }
     /// Consumes the builder and constructs a [`CreateBackupInput`](crate::operation::create_backup::CreateBackupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_backup::CreateBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_backup::CreateBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_backup::CreateBackupInput {
             file_system_id: self.file_system_id,
             client_request_token: self.client_request_token,

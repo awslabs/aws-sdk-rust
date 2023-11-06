@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetVoiceMessageSpendLimitOverride`](crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monthly_limit(i64)`](crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideFluentBuilder::monthly_limit) / [`set_monthly_limit(Option<i64>)`](crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideFluentBuilder::set_monthly_limit): <p>The new monthly limit to enforce on voice messages.</p>
+    ///   - [`monthly_limit(i64)`](crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideFluentBuilder::monthly_limit) / [`set_monthly_limit(Option<i64>)`](crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideFluentBuilder::set_monthly_limit):<br>required: **true**<br><p>The new monthly limit to enforce on voice messages.</p><br>
     /// - On success, responds with [`SetVoiceMessageSpendLimitOverrideOutput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput) with field(s):
     ///   - [`monthly_limit(Option<i64>)`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput::monthly_limit): <p>The current monthly limit to enforce on sending voice messages.</p>
     /// - On failure, responds with [`SdkError<SetVoiceMessageSpendLimitOverrideError>`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError)

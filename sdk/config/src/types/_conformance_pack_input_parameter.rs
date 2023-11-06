@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackInputParameter {
     /// <p>One part of a key-value pair.</p>
-    pub parameter_name: ::std::option::Option<::std::string::String>,
+    pub parameter_name: ::std::string::String,
     /// <p>Another part of the key-value pair. </p>
-    pub parameter_value: ::std::option::Option<::std::string::String>,
+    pub parameter_value: ::std::string::String,
 }
 impl ConformancePackInputParameter {
     /// <p>One part of a key-value pair.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
-        self.parameter_name.as_deref()
+    pub fn parameter_name(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_name.deref()
     }
     /// <p>Another part of the key-value pair. </p>
-    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
-        self.parameter_value.as_deref()
+    pub fn parameter_value(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_value.deref()
     }
 }
 impl ConformancePackInputParameter {
@@ -35,6 +37,7 @@ pub struct ConformancePackInputParameterBuilder {
 }
 impl ConformancePackInputParameterBuilder {
     /// <p>One part of a key-value pair.</p>
+    /// This field is required.
     pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ConformancePackInputParameterBuilder {
         &self.parameter_name
     }
     /// <p>Another part of the key-value pair. </p>
+    /// This field is required.
     pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ConformancePackInputParameterBuilder {
         &self.parameter_value
     }
     /// Consumes the builder and constructs a [`ConformancePackInputParameter`](crate::types::ConformancePackInputParameter).
-    pub fn build(self) -> crate::types::ConformancePackInputParameter {
-        crate::types::ConformancePackInputParameter {
-            parameter_name: self.parameter_name,
-            parameter_value: self.parameter_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_name`](crate::types::builders::ConformancePackInputParameterBuilder::parameter_name)
+    /// - [`parameter_value`](crate::types::builders::ConformancePackInputParameterBuilder::parameter_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackInputParameter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConformancePackInputParameter {
+            parameter_name: self.parameter_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameter_name",
+                    "parameter_name was not specified but it is required when building ConformancePackInputParameter",
+                )
+            })?,
+            parameter_value: self.parameter_value.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "parameter_value",
+                    "parameter_value was not specified but it is required when building ConformancePackInputParameter",
+                )
+            })?,
+        })
     }
 }

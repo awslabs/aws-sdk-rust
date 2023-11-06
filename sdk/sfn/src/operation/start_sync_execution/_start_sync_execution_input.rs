@@ -66,6 +66,7 @@ pub struct StartSyncExecutionInputBuilder {
 }
 impl StartSyncExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -136,7 +137,8 @@ impl StartSyncExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartSyncExecutionInput`](crate::operation::start_sync_execution::StartSyncExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_sync_execution::StartSyncExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_sync_execution::StartSyncExecutionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_sync_execution::StartSyncExecutionInput {
             state_machine_arn: self.state_machine_arn,
             name: self.name,

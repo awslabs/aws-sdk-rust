@@ -27,6 +27,7 @@ pub struct GetOpenCypherQueryStatusInputBuilder {
 }
 impl GetOpenCypherQueryStatusInputBuilder {
     /// <p>The unique ID of the openCypher query for which to retrieve the query status.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetOpenCypherQueryStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusInput { query_id: self.query_id })
     }

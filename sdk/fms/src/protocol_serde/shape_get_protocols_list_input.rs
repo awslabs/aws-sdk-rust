@@ -2,7 +2,7 @@
 pub fn ser_get_protocols_list_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_protocols_list::GetProtocolsListInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.list_id {
         object.key("ListId").string(var_1.as_str());
     }

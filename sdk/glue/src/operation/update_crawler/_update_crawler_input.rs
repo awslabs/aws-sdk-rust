@@ -58,8 +58,10 @@ impl UpdateCrawlerInput {
         self.schedule.as_deref()
     }
     /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
-    pub fn classifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.classifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classifiers.is_none()`.
+    pub fn classifiers(&self) -> &[::std::string::String] {
+        self.classifiers.as_deref().unwrap_or_default()
     }
     /// <p>The table prefix used for catalog tables that are created.</p>
     pub fn table_prefix(&self) -> ::std::option::Option<&str> {
@@ -118,6 +120,7 @@ pub struct UpdateCrawlerInputBuilder {
 }
 impl UpdateCrawlerInputBuilder {
     /// <p>Name of the new crawler.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -322,7 +325,7 @@ impl UpdateCrawlerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCrawlerInput`](crate::operation::update_crawler::UpdateCrawlerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_crawler::UpdateCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_crawler::UpdateCrawlerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_crawler::UpdateCrawlerInput {
             name: self.name,
             role: self.role,

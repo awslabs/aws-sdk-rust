@@ -18,8 +18,10 @@ impl ListPoolOriginationIdentitiesInput {
         self.pool_id.as_deref()
     }
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::PoolOriginationIdentitiesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::PoolOriginationIdentitiesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListPoolOriginationIdentitiesInputBuilder {
 }
 impl ListPoolOriginationIdentitiesInputBuilder {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput {
             pool_id: self.pool_id,

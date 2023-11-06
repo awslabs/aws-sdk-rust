@@ -2,7 +2,7 @@
 pub fn ser_create_experiment_template_log_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateExperimentTemplateLogConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_logs_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("cloudWatchLogsConfiguration").start_object();
@@ -18,10 +18,10 @@ pub fn ser_create_experiment_template_log_configuration_input(
         )?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.log_schema_version {
+    {
         object.key("logSchemaVersion").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((input.log_schema_version).into()),
         );
     }
     Ok(())

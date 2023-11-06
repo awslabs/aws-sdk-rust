@@ -15,8 +15,10 @@ impl DescribeClustersOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of clusters</p>
-    pub fn clusters(&self) -> ::std::option::Option<&[crate::types::Cluster]> {
-        self.clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
+    pub fn clusters(&self) -> &[crate::types::Cluster] {
+        self.clusters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeClustersOutput {

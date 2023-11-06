@@ -36,8 +36,10 @@ impl ListCommandsInput {
         self.next_token.as_deref()
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::CommandFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::CommandFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListCommandsInput {
@@ -141,7 +143,9 @@ impl ListCommandsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListCommandsInput`](crate::operation::list_commands::ListCommandsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_commands::ListCommandsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_commands::ListCommandsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_commands::ListCommandsInput {
             command_id: self.command_id,
             instance_id: self.instance_id,

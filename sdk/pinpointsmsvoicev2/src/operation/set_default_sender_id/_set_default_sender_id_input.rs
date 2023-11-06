@@ -34,6 +34,7 @@ pub struct SetDefaultSenderIdInputBuilder {
 }
 impl SetDefaultSenderIdInputBuilder {
     /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl SetDefaultSenderIdInputBuilder {
         &self.configuration_set_name
     }
     /// <p>The current sender ID for the configuration set. When sending a text message to a destination country which supports SenderIds, the default sender ID on the configuration set specified on <code>SendTextMessage</code> will be used if no dedicated origination phone numbers or registered SenderIds are available in your account, instead of a generic sender ID, such as 'NOTICE'.</p>
+    /// This field is required.
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl SetDefaultSenderIdInputBuilder {
     /// Consumes the builder and constructs a [`SetDefaultSenderIdInput`](crate::operation::set_default_sender_id::SetDefaultSenderIdInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_default_sender_id::SetDefaultSenderIdInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_default_sender_id::SetDefaultSenderIdInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_default_sender_id::SetDefaultSenderIdInput {
             configuration_set_name: self.configuration_set_name,

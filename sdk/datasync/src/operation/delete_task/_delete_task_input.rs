@@ -28,6 +28,7 @@ pub struct DeleteTaskInputBuilder {
 }
 impl DeleteTaskInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
+    /// This field is required.
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +43,7 @@ impl DeleteTaskInputBuilder {
         &self.task_arn
     }
     /// Consumes the builder and constructs a [`DeleteTaskInput`](crate::operation::delete_task::DeleteTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_task::DeleteTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_task::DeleteTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_task::DeleteTaskInput { task_arn: self.task_arn })
     }
 }

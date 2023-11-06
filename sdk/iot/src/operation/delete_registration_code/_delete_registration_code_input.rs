@@ -19,8 +19,10 @@ impl DeleteRegistrationCodeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegistrationCodeInput`](crate::operation::delete_registration_code::DeleteRegistrationCodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_registration_code::DeleteRegistrationCodeInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_registration_code::DeleteRegistrationCodeInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_registration_code::DeleteRegistrationCodeInput {})
     }
 }

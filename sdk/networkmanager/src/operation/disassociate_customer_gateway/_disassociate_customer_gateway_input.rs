@@ -34,6 +34,7 @@ pub struct DisassociateCustomerGatewayInputBuilder {
 }
 impl DisassociateCustomerGatewayInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateCustomerGatewayInputBuilder {
         &self.global_network_id
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    /// This field is required.
     pub fn customer_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DisassociateCustomerGatewayInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayInput {
             global_network_id: self.global_network_id,

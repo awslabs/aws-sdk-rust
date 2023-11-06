@@ -13,16 +13,22 @@ pub struct TaskTemplateConstraints {
 }
 impl TaskTemplateConstraints {
     /// <p>Lists the fields that are required to be filled by agents.</p>
-    pub fn required_fields(&self) -> ::std::option::Option<&[crate::types::RequiredFieldInfo]> {
-        self.required_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_fields.is_none()`.
+    pub fn required_fields(&self) -> &[crate::types::RequiredFieldInfo] {
+        self.required_fields.as_deref().unwrap_or_default()
     }
     /// <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
-    pub fn read_only_fields(&self) -> ::std::option::Option<&[crate::types::ReadOnlyFieldInfo]> {
-        self.read_only_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_only_fields.is_none()`.
+    pub fn read_only_fields(&self) -> &[crate::types::ReadOnlyFieldInfo] {
+        self.read_only_fields.as_deref().unwrap_or_default()
     }
     /// <p>Lists the fields that are invisible to agents.</p>
-    pub fn invisible_fields(&self) -> ::std::option::Option<&[crate::types::InvisibleFieldInfo]> {
-        self.invisible_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invisible_fields.is_none()`.
+    pub fn invisible_fields(&self) -> &[crate::types::InvisibleFieldInfo] {
+        self.invisible_fields.as_deref().unwrap_or_default()
     }
 }
 impl TaskTemplateConstraints {

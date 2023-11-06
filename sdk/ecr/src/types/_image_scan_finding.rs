@@ -33,8 +33,10 @@ impl ImageScanFinding {
         self.severity.as_ref()
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl ImageScanFinding {

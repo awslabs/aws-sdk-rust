@@ -2,7 +2,7 @@
 pub fn ser_output_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("id").string(var_1.as_str());
     }
@@ -69,7 +69,7 @@ where
                         }
                         "mediaPackageSettings" => {
                             builder = builder.set_media_package_settings(
-                                    crate::protocol_serde::shape___list_of_media_package_output_destination_settings::de___list_of_media_package_output_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_list_of_media_package_output_destination_settings::de_list_of_media_package_output_destination_settings(tokens)?
                                 );
                         }
                         "multiplexSettings" => {
@@ -79,7 +79,7 @@ where
                         }
                         "settings" => {
                             builder = builder.set_settings(
-                                crate::protocol_serde::shape___list_of_output_destination_settings::de___list_of_output_destination_settings(tokens)?,
+                                crate::protocol_serde::shape_list_of_output_destination_settings::de_list_of_output_destination_settings(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

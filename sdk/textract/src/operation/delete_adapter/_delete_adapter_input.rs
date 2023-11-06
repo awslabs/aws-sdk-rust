@@ -27,6 +27,7 @@ pub struct DeleteAdapterInputBuilder {
 }
 impl DeleteAdapterInputBuilder {
     /// <p>A string containing a unique ID for the adapter to be deleted.</p>
+    /// This field is required.
     pub fn adapter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteAdapterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAdapterInput`](crate::operation::delete_adapter::DeleteAdapterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_adapter::DeleteAdapterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_adapter::DeleteAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_adapter::DeleteAdapterInput { adapter_id: self.adapter_id })
     }
 }

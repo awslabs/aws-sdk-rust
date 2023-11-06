@@ -49,6 +49,7 @@ pub struct PutActionRevisionInputBuilder {
 }
 impl PutActionRevisionInputBuilder {
     /// <p>The name of the pipeline that starts processing the revision to the source.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl PutActionRevisionInputBuilder {
         &self.pipeline_name
     }
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl PutActionRevisionInputBuilder {
         &self.stage_name
     }
     /// <p>The name of the action that processes the revision.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl PutActionRevisionInputBuilder {
         &self.action_name
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
+    /// This field is required.
     pub fn action_revision(mut self, input: crate::types::ActionRevision) -> Self {
         self.action_revision = ::std::option::Option::Some(input);
         self
@@ -107,7 +111,7 @@ impl PutActionRevisionInputBuilder {
     /// Consumes the builder and constructs a [`PutActionRevisionInput`](crate::operation::put_action_revision::PutActionRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_action_revision::PutActionRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_action_revision::PutActionRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_action_revision::PutActionRevisionInput {
             pipeline_name: self.pipeline_name,
             stage_name: self.stage_name,

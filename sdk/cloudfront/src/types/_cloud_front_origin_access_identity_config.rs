@@ -8,21 +8,23 @@ pub struct CloudFrontOriginAccessIdentityConfig {
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.</p>
     /// <p>If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white space), the response includes the same information returned to the original request.</p>
     /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-    pub caller_reference: ::std::option::Option<::std::string::String>,
+    pub caller_reference: ::std::string::String,
     /// <p>A comment to describe the origin access identity. The comment cannot be longer than 128 characters.</p>
-    pub comment: ::std::option::Option<::std::string::String>,
+    pub comment: ::std::string::String,
 }
 impl CloudFrontOriginAccessIdentityConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.</p>
     /// <p>If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white space), the response includes the same information returned to the original request.</p>
     /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
-        self.caller_reference.as_deref()
+    pub fn caller_reference(&self) -> &str {
+        use std::ops::Deref;
+        self.caller_reference.deref()
     }
     /// <p>A comment to describe the origin access identity. The comment cannot be longer than 128 characters.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
-        self.comment.as_deref()
+    pub fn comment(&self) -> &str {
+        use std::ops::Deref;
+        self.comment.deref()
     }
 }
 impl CloudFrontOriginAccessIdentityConfig {
@@ -44,6 +46,7 @@ impl CloudFrontOriginAccessIdentityConfigBuilder {
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.</p>
     /// <p>If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white space), the response includes the same information returned to the original request.</p>
     /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +67,7 @@ impl CloudFrontOriginAccessIdentityConfigBuilder {
         &self.caller_reference
     }
     /// <p>A comment to describe the origin access identity. The comment cannot be longer than 128 characters.</p>
+    /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
@@ -78,10 +82,25 @@ impl CloudFrontOriginAccessIdentityConfigBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentityConfig`](crate::types::CloudFrontOriginAccessIdentityConfig).
-    pub fn build(self) -> crate::types::CloudFrontOriginAccessIdentityConfig {
-        crate::types::CloudFrontOriginAccessIdentityConfig {
-            caller_reference: self.caller_reference,
-            comment: self.comment,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`caller_reference`](crate::types::builders::CloudFrontOriginAccessIdentityConfigBuilder::caller_reference)
+    /// - [`comment`](crate::types::builders::CloudFrontOriginAccessIdentityConfigBuilder::comment)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentityConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudFrontOriginAccessIdentityConfig {
+            caller_reference: self.caller_reference.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "caller_reference",
+                    "caller_reference was not specified but it is required when building CloudFrontOriginAccessIdentityConfig",
+                )
+            })?,
+            comment: self.comment.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "comment",
+                    "comment was not specified but it is required when building CloudFrontOriginAccessIdentityConfig",
+                )
+            })?,
+        })
     }
 }

@@ -10,7 +10,7 @@ impl TerminateRecoveryInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl TerminateRecoveryInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::terminate_recovery_instances::TerminateRecoveryInstances::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl TerminateRecoveryInstancesFluentBuilder {
         crate::operation::terminate_recovery_instances::TerminateRecoveryInstances::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput,
-            crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput,
+        crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,20 +110,20 @@ impl TerminateRecoveryInstancesFluentBuilder {
     }
     /// Appends an item to `recoveryInstanceIDs`.
     ///
-    /// To override the contents of this collection use [`set_recovery_instance_i_ds`](Self::set_recovery_instance_i_ds).
+    /// To override the contents of this collection use [`set_recovery_instance_ids`](Self::set_recovery_instance_ids).
     ///
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn recovery_instance_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.recovery_instance_i_ds(input.into());
+    pub fn recovery_instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.recovery_instance_ids(input.into());
         self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn set_recovery_instance_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_recovery_instance_i_ds(input);
+    pub fn set_recovery_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_recovery_instance_ids(input);
         self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn get_recovery_instance_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_recovery_instance_i_ds()
+    pub fn get_recovery_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_recovery_instance_ids()
     }
 }

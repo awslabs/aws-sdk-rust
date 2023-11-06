@@ -26,16 +26,20 @@ impl CreateVpcAttachmentInput {
         self.vpc_arn.as_deref()
     }
     /// <p>The subnet ARN of the VPC attachment.</p>
-    pub fn subnet_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_arns.is_none()`.
+    pub fn subnet_arns(&self) -> &[::std::string::String] {
+        self.subnet_arns.as_deref().unwrap_or_default()
     }
     /// <p>Options for the VPC attachment.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
         self.options.as_ref()
     }
     /// <p>The key-value tags associated with the request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +66,7 @@ pub struct CreateVpcAttachmentInputBuilder {
 }
 impl CreateVpcAttachmentInputBuilder {
     /// <p>The ID of a core network for the VPC attachment.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl CreateVpcAttachmentInputBuilder {
         &self.core_network_id
     }
     /// <p>The ARN of the VPC.</p>
+    /// This field is required.
     pub fn vpc_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_arn = ::std::option::Option::Some(input.into());
         self
@@ -160,7 +166,7 @@ impl CreateVpcAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcAttachmentInput`](crate::operation::create_vpc_attachment::CreateVpcAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_attachment::CreateVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_vpc_attachment::CreateVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_vpc_attachment::CreateVpcAttachmentInput {
             core_network_id: self.core_network_id,

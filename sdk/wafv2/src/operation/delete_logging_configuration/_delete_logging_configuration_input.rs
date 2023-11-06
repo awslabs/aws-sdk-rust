@@ -27,6 +27,7 @@ pub struct DeleteLoggingConfigurationInputBuilder {
 }
 impl DeleteLoggingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput {
             resource_arn: self.resource_arn,

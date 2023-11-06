@@ -41,6 +41,7 @@ pub struct ImportMigrationTaskInputBuilder {
 }
 impl ImportMigrationTaskInputBuilder {
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
+    /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ImportMigrationTaskInputBuilder {
         &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl ImportMigrationTaskInputBuilder {
     /// Consumes the builder and constructs a [`ImportMigrationTaskInput`](crate::operation::import_migration_task::ImportMigrationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_migration_task::ImportMigrationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_migration_task::ImportMigrationTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_migration_task::ImportMigrationTaskInput {
             progress_update_stream: self.progress_update_stream,

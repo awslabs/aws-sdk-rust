@@ -11,8 +11,10 @@ pub struct ListOrganizationsOutput {
 }
 impl ListOrganizationsOutput {
     /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
-    pub fn organization_summaries(&self) -> ::std::option::Option<&[crate::types::OrganizationSummary]> {
-        self.organization_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_summaries.is_none()`.
+    pub fn organization_summaries(&self) -> &[crate::types::OrganizationSummary] {
+        self.organization_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

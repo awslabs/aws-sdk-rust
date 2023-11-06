@@ -3,7 +3,7 @@
 pub fn ser_request_filter_port_range(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RequestFilterPortRange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("FromPort");
     if let Some(var_2) = &input.from_port {

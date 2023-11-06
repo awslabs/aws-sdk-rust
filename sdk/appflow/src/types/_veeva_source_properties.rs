@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
-    pub object: ::std::option::Option<::std::string::String>,
+    pub object: ::std::string::String,
     /// <p>The document type specified in the Veeva document extract flow.</p>
     pub document_type: ::std::option::Option<::std::string::String>,
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
@@ -17,8 +17,9 @@ pub struct VeevaSourceProperties {
 }
 impl VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
-        self.object.as_deref()
+    pub fn object(&self) -> &str {
+        use std::ops::Deref;
+        self.object.deref()
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
     pub fn document_type(&self) -> ::std::option::Option<&str> {
@@ -56,6 +57,7 @@ pub struct VeevaSourcePropertiesBuilder {
 }
 impl VeevaSourcePropertiesBuilder {
     /// <p> The object specified in the Veeva flow source. </p>
+    /// This field is required.
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +128,20 @@ impl VeevaSourcePropertiesBuilder {
         &self.include_all_versions
     }
     /// Consumes the builder and constructs a [`VeevaSourceProperties`](crate::types::VeevaSourceProperties).
-    pub fn build(self) -> crate::types::VeevaSourceProperties {
-        crate::types::VeevaSourceProperties {
-            object: self.object,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object`](crate::types::builders::VeevaSourcePropertiesBuilder::object)
+    pub fn build(self) -> ::std::result::Result<crate::types::VeevaSourceProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VeevaSourceProperties {
+            object: self.object.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object",
+                    "object was not specified but it is required when building VeevaSourceProperties",
+                )
+            })?,
             document_type: self.document_type,
             include_source_files: self.include_source_files.unwrap_or_default(),
             include_renditions: self.include_renditions.unwrap_or_default(),
             include_all_versions: self.include_all_versions.unwrap_or_default(),
-        }
+        })
     }
 }

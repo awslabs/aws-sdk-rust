@@ -18,8 +18,10 @@ impl DescribeProjectVersionsInput {
         self.project_arn.as_deref()
     }
     /// <p>A list of model or project version names that you want to describe. You can add up to 10 model or project version names to the list. If you don't specify a value, all project version descriptions are returned. A version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
-    pub fn version_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.version_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_names.is_none()`.
+    pub fn version_names(&self) -> &[::std::string::String] {
+        self.version_names.as_deref().unwrap_or_default()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct DescribeProjectVersionsInputBuilder {
 }
 impl DescribeProjectVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +117,7 @@ impl DescribeProjectVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_project_versions::DescribeProjectVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_project_versions::DescribeProjectVersionsInput {
             project_arn: self.project_arn,

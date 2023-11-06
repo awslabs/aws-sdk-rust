@@ -10,7 +10,7 @@ impl CreateAutoMlJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_auto_ml_job::CreateAutoMlJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_auto_ml_job::CreateAutoMLJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -24,7 +24,7 @@ impl CreateAutoMlJobInputBuilder {
 ///
 /// <p>Creates an Autopilot job also referred to as Autopilot experiment or AutoML job.</p> <note>
 /// <p>We recommend using the new versions <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>, which offer backward compatibility.</p>
-/// <p> <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version <code>CreateAutoMLJob</code>, as well as time-series forecasting, and non-tabular problem types such as image or text classification.</p>
+/// <p> <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version <code>CreateAutoMLJob</code>, as well as time-series forecasting, non-tabular problem types such as image or text classification, and text generation (LLMs fine-tuning).</p>
 /// <p>Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.</p>
 /// </note>
 /// <p>You can find the best-performing model after you run an AutoML job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a> (recommended) or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.</p>
@@ -77,12 +77,15 @@ impl CreateAutoMLJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_auto_ml_job::CreateAutoMlJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_auto_ml_job::CreateAutoMLJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_auto_ml_job::CreateAutoMLJob::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -91,20 +94,15 @@ impl CreateAutoMLJobFluentBuilder {
         crate::operation::create_auto_ml_job::CreateAutoMLJob::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::create_auto_ml_job::CreateAutoMlJobOutput,
-            crate::operation::create_auto_ml_job::CreateAutoMLJobError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_ml_job::CreateAutoMLJobError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::create_auto_ml_job::CreateAutoMlJobOutput,
+        crate::operation::create_auto_ml_job::CreateAutoMLJobError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

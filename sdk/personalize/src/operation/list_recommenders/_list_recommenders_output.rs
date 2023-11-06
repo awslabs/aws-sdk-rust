@@ -11,8 +11,10 @@ pub struct ListRecommendersOutput {
 }
 impl ListRecommendersOutput {
     /// <p>A list of the recommenders.</p>
-    pub fn recommenders(&self) -> ::std::option::Option<&[crate::types::RecommenderSummary]> {
-        self.recommenders.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommenders.is_none()`.
+    pub fn recommenders(&self) -> &[crate::types::RecommenderSummary] {
+        self.recommenders.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of recommenders (if they exist).</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

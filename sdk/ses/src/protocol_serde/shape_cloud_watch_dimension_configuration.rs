@@ -3,25 +3,26 @@
 pub fn ser_cloud_watch_dimension_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CloudWatchDimensionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DimensionName");
-    if let Some(var_2) = &input.dimension_name {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.dimension_name);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DimensionValueSource");
-    if let Some(var_4) = &input.dimension_value_source {
-        scope_3.string(var_4.as_str());
+    let mut scope_2 = writer.prefix("DimensionValueSource");
+    {
+        scope_2.string(input.dimension_value_source.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DefaultDimensionValue");
-    if let Some(var_6) = &input.default_dimension_value {
-        scope_5.string(var_6);
+    let mut scope_3 = writer.prefix("DefaultDimensionValue");
+    {
+        scope_3.string(&input.default_dimension_value);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_cloud_watch_dimension_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CloudWatchDimensionConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -30,7 +31,7 @@ pub fn de_cloud_watch_dimension_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DimensionName") /* DimensionName com.amazonaws.ses#CloudWatchDimensionConfiguration$DimensionName */ =>  {
-                let var_7 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -39,11 +40,11 @@ pub fn de_cloud_watch_dimension_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_dimension_name(var_7);
+                builder = builder.set_dimension_name(var_4);
             }
             ,
             s if s.matches("DimensionValueSource") /* DimensionValueSource com.amazonaws.ses#CloudWatchDimensionConfiguration$DimensionValueSource */ =>  {
-                let var_8 =
+                let var_5 =
                     Some(
                         Result::<crate::types::DimensionValueSource, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DimensionValueSource::from(
@@ -53,11 +54,11 @@ pub fn de_cloud_watch_dimension_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_dimension_value_source(var_8);
+                builder = builder.set_dimension_value_source(var_5);
             }
             ,
             s if s.matches("DefaultDimensionValue") /* DefaultDimensionValue com.amazonaws.ses#CloudWatchDimensionConfiguration$DefaultDimensionValue */ =>  {
-                let var_9 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -66,11 +67,13 @@ pub fn de_cloud_watch_dimension_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_default_dimension_value(var_9);
+                builder = builder.set_default_dimension_value(var_6);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::cloud_watch_dimension_configuration_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

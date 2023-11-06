@@ -22,8 +22,10 @@ impl AddProfileKeyInput {
         self.key_name.as_deref()
     }
     /// <p>A list of key values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct AddProfileKeyInputBuilder {
 }
 impl AddProfileKeyInputBuilder {
     /// <p>The unique identifier of a customer profile.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl AddProfileKeyInputBuilder {
         &self.profile_id
     }
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +100,7 @@ impl AddProfileKeyInputBuilder {
         &self.values
     }
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +117,7 @@ impl AddProfileKeyInputBuilder {
     /// Consumes the builder and constructs a [`AddProfileKeyInput`](crate::operation::add_profile_key::AddProfileKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_profile_key::AddProfileKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_profile_key::AddProfileKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_profile_key::AddProfileKeyInput {
             profile_id: self.profile_id,
             key_name: self.key_name,

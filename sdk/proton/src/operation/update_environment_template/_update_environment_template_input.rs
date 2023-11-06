@@ -50,6 +50,7 @@ pub struct UpdateEnvironmentTemplateInputBuilder {
 }
 impl UpdateEnvironmentTemplateInputBuilder {
     /// <p>The name of the environment template to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +97,7 @@ impl UpdateEnvironmentTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_template::UpdateEnvironmentTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_environment_template::UpdateEnvironmentTemplateInput {
             name: self.name,

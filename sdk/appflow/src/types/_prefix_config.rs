@@ -59,8 +59,10 @@ impl PrefixConfig {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn path_prefix_hierarchy(&self) -> ::std::option::Option<&[crate::types::PathPrefix]> {
-        self.path_prefix_hierarchy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.path_prefix_hierarchy.is_none()`.
+    pub fn path_prefix_hierarchy(&self) -> &[crate::types::PathPrefix] {
+        self.path_prefix_hierarchy.as_deref().unwrap_or_default()
     }
 }
 impl PrefixConfig {

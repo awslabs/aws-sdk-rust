@@ -11,8 +11,10 @@ pub struct ListPredictorBacktestExportJobsOutput {
 }
 impl ListPredictorBacktestExportJobsOutput {
     /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
-    pub fn predictor_backtest_export_jobs(&self) -> ::std::option::Option<&[crate::types::PredictorBacktestExportJobSummary]> {
-        self.predictor_backtest_export_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predictor_backtest_export_jobs.is_none()`.
+    pub fn predictor_backtest_export_jobs(&self) -> &[crate::types::PredictorBacktestExportJobSummary] {
+        self.predictor_backtest_export_jobs.as_deref().unwrap_or_default()
     }
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -35,6 +35,7 @@ pub struct GetPipelineInputBuilder {
 }
 impl GetPipelineInputBuilder {
     /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,7 +64,7 @@ impl GetPipelineInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetPipelineInput`](crate::operation::get_pipeline::GetPipelineInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_pipeline::GetPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_pipeline::GetPipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_pipeline::GetPipelineInput {
             name: self.name,
             version: self.version,

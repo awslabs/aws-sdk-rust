@@ -2,7 +2,7 @@
 pub fn ser_list_apps_lists_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_apps_lists::ListAppsListsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_lists {
         object.key("DefaultLists").boolean(*var_1);
     }

@@ -28,6 +28,7 @@ pub struct DeleteLoadBalancerInputBuilder {
 }
 impl DeleteLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,8 @@ impl DeleteLoadBalancerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLoadBalancerInput`](crate::operation::delete_load_balancer::DeleteLoadBalancerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_load_balancer::DeleteLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_load_balancer::DeleteLoadBalancerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_load_balancer::DeleteLoadBalancerInput {
             load_balancer_name: self.load_balancer_name,
         })

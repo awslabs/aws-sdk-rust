@@ -69,6 +69,7 @@ pub struct ModifyGlobalReplicationGroupInputBuilder {
 }
 impl ModifyGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
+    /// This field is required.
     pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         &self.global_replication_group_id
     }
     /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    /// This field is required.
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self
@@ -171,7 +173,7 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput {
             global_replication_group_id: self.global_replication_group_id,

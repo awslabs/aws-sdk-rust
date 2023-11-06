@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataProviderDescriptorDefinition {
     /// <p>The name or Amazon Resource Name (ARN) of the data provider.</p>
-    pub data_provider_identifier: ::std::option::Option<::std::string::String>,
+    pub data_provider_identifier: ::std::string::String,
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
@@ -13,8 +13,9 @@ pub struct DataProviderDescriptorDefinition {
 }
 impl DataProviderDescriptorDefinition {
     /// <p>The name or Amazon Resource Name (ARN) of the data provider.</p>
-    pub fn data_provider_identifier(&self) -> ::std::option::Option<&str> {
-        self.data_provider_identifier.as_deref()
+    pub fn data_provider_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.data_provider_identifier.deref()
     }
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
     pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct DataProviderDescriptorDefinitionBuilder {
 }
 impl DataProviderDescriptorDefinitionBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the data provider.</p>
+    /// This field is required.
     pub fn data_provider_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_provider_identifier = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl DataProviderDescriptorDefinitionBuilder {
         &self.secrets_manager_access_role_arn
     }
     /// Consumes the builder and constructs a [`DataProviderDescriptorDefinition`](crate::types::DataProviderDescriptorDefinition).
-    pub fn build(self) -> crate::types::DataProviderDescriptorDefinition {
-        crate::types::DataProviderDescriptorDefinition {
-            data_provider_identifier: self.data_provider_identifier,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_provider_identifier`](crate::types::builders::DataProviderDescriptorDefinitionBuilder::data_provider_identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataProviderDescriptorDefinition, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataProviderDescriptorDefinition {
+            data_provider_identifier: self.data_provider_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data_provider_identifier",
+                    "data_provider_identifier was not specified but it is required when building DataProviderDescriptorDefinition",
+                )
+            })?,
             secrets_manager_secret_id: self.secrets_manager_secret_id,
             secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
-        }
+        })
     }
 }

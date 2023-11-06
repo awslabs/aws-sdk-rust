@@ -2,7 +2,7 @@
 pub fn ser_create_recommendation_template_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_recommendation_template::CreateRecommendationTemplateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.assessment_arn {
         object.key("assessmentArn").string(var_1.as_str());
     }

@@ -3,20 +3,20 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNodeFromTemplateJob`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder::set_job_id): <p>The job's ID.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job's ID.</p><br>
     /// - On success, responds with [`DescribeNodeFromTemplateJobOutput`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::job_id): <p>The job's ID.</p>
-    ///   - [`status(Option<NodeFromTemplateJobStatus>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::status): <p>The job's status.</p>
-    ///   - [`status_message(Option<String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::status_message): <p>The job's status message.</p>
-    ///   - [`created_time(Option<DateTime>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::created_time): <p>When the job was created.</p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::last_updated_time): <p>When the job was updated.</p>
-    ///   - [`output_package_name(Option<String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::output_package_name): <p>The job's output package name.</p>
-    ///   - [`output_package_version(Option<String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::output_package_version): <p>The job's output package version.</p>
-    ///   - [`node_name(Option<String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::node_name): <p>The node's name.</p>
+    ///   - [`job_id(String)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::job_id): <p>The job's ID.</p>
+    ///   - [`status(NodeFromTemplateJobStatus)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::status): <p>The job's status.</p>
+    ///   - [`status_message(String)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::status_message): <p>The job's status message.</p>
+    ///   - [`created_time(DateTime)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::created_time): <p>When the job was created.</p>
+    ///   - [`last_updated_time(DateTime)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::last_updated_time): <p>When the job was updated.</p>
+    ///   - [`output_package_name(String)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::output_package_name): <p>The job's output package name.</p>
+    ///   - [`output_package_version(String)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::output_package_version): <p>The job's output package version.</p>
+    ///   - [`node_name(String)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::node_name): <p>The node's name.</p>
     ///   - [`node_description(Option<String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::node_description): <p>The node's description.</p>
-    ///   - [`template_type(Option<TemplateType>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::template_type): <p>The job's template type.</p>
-    ///   - [`template_parameters(Option<HashMap<String, String>>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::template_parameters): <p>The job's template parameters.</p>
-    ///   - [`job_tags(Option<Vec<JobResourceTags>>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::job_tags): <p>The job's tags.</p>
+    ///   - [`template_type(TemplateType)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::template_type): <p>The job's template type.</p>
+    ///   - [`template_parameters(HashMap::<String, String>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::template_parameters): <p>The job's template parameters.</p>
+    ///   - [`job_tags(Option<Vec::<JobResourceTags>>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::job_tags): <p>The job's tags.</p>
     /// - On failure, responds with [`SdkError<DescribeNodeFromTemplateJobError>`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError)
     pub fn describe_node_from_template_job(
         &self,

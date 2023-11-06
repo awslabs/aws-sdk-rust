@@ -20,8 +20,10 @@ pub struct DescribeVerifiedAccessEndpointsInput {
 }
 impl DescribeVerifiedAccessEndpointsInput {
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.verified_access_endpoint_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_endpoint_ids.is_none()`.
+    pub fn verified_access_endpoint_ids(&self) -> &[::std::string::String] {
+        self.verified_access_endpoint_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Verified Access instance.</p>
     pub fn verified_access_instance_id(&self) -> ::std::option::Option<&str> {
@@ -40,8 +42,10 @@ impl DescribeVerifiedAccessEndpointsInput {
         self.next_token.as_deref()
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -183,7 +187,7 @@ impl DescribeVerifiedAccessEndpointsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsInput {

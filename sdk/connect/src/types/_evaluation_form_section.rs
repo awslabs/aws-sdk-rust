@@ -5,32 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSection {
     /// <p>The title of the section.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
-    pub ref_id: ::std::option::Option<::std::string::String>,
+    pub ref_id: ::std::string::String,
     /// <p>The instructions of the section.</p>
     pub instructions: ::std::option::Option<::std::string::String>,
     /// <p>The items of the section.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
+    pub items: ::std::vec::Vec<crate::types::EvaluationFormItem>,
     /// <p>The scoring weight of the section.</p>
     pub weight: f64,
 }
 impl EvaluationFormSection {
     /// <p>The title of the section.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
-    pub fn ref_id(&self) -> ::std::option::Option<&str> {
-        self.ref_id.as_deref()
+    pub fn ref_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ref_id.deref()
     }
     /// <p>The instructions of the section.</p>
     pub fn instructions(&self) -> ::std::option::Option<&str> {
         self.instructions.as_deref()
     }
     /// <p>The items of the section.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::EvaluationFormItem]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::EvaluationFormItem] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>The scoring weight of the section.</p>
     pub fn weight(&self) -> f64 {
@@ -56,6 +59,7 @@ pub struct EvaluationFormSectionBuilder {
 }
 impl EvaluationFormSectionBuilder {
     /// <p>The title of the section.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl EvaluationFormSectionBuilder {
         &self.title
     }
     /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
+    /// This field is required.
     pub fn ref_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ref_id = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +137,32 @@ impl EvaluationFormSectionBuilder {
         &self.weight
     }
     /// Consumes the builder and constructs a [`EvaluationFormSection`](crate::types::EvaluationFormSection).
-    pub fn build(self) -> crate::types::EvaluationFormSection {
-        crate::types::EvaluationFormSection {
-            title: self.title,
-            ref_id: self.ref_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`title`](crate::types::builders::EvaluationFormSectionBuilder::title)
+    /// - [`ref_id`](crate::types::builders::EvaluationFormSectionBuilder::ref_id)
+    /// - [`items`](crate::types::builders::EvaluationFormSectionBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormSection, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationFormSection {
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building EvaluationFormSection",
+                )
+            })?,
+            ref_id: self.ref_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ref_id",
+                    "ref_id was not specified but it is required when building EvaluationFormSection",
+                )
+            })?,
             instructions: self.instructions,
-            items: self.items,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building EvaluationFormSection",
+                )
+            })?,
             weight: self.weight.unwrap_or_default(),
-        }
+        })
     }
 }

@@ -5,21 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemAlreadyExists {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    pub file_system_id: ::std::option::Option<::std::string::String>,
+    pub file_system_id: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl FileSystemAlreadyExists {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
-        self.file_system_id.as_deref()
+    pub fn file_system_id(&self) -> &str {
+        use std::ops::Deref;
+        self.file_system_id.deref()
     }
 }
 impl FileSystemAlreadyExists {
@@ -69,6 +71,7 @@ pub struct FileSystemAlreadyExistsBuilder {
 }
 impl FileSystemAlreadyExistsBuilder {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl FileSystemAlreadyExistsBuilder {
         &self.message
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +126,25 @@ impl FileSystemAlreadyExistsBuilder {
         self
     }
     /// Consumes the builder and constructs a [`FileSystemAlreadyExists`](crate::types::error::FileSystemAlreadyExists).
-    pub fn build(self) -> crate::types::error::FileSystemAlreadyExists {
-        crate::types::error::FileSystemAlreadyExists {
-            error_code: self.error_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::error::builders::FileSystemAlreadyExistsBuilder::error_code)
+    /// - [`file_system_id`](crate::types::error::builders::FileSystemAlreadyExistsBuilder::file_system_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::FileSystemAlreadyExists, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::FileSystemAlreadyExists {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building FileSystemAlreadyExists",
+                )
+            })?,
             message: self.message,
-            file_system_id: self.file_system_id,
+            file_system_id: self.file_system_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "file_system_id",
+                    "file_system_id was not specified but it is required when building FileSystemAlreadyExists",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

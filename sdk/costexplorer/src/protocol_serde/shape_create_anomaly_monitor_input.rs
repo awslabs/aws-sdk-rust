@@ -2,7 +2,7 @@
 pub fn ser_create_anomaly_monitor_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_anomaly_monitor::CreateAnomalyMonitorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.anomaly_monitor {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AnomalyMonitor").start_object();

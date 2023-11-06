@@ -41,6 +41,7 @@ pub struct ListTestGridSessionActionsInputBuilder {
 }
 impl ListTestGridSessionActionsInputBuilder {
     /// <p>The ARN of the session to retrieve.</p>
+    /// This field is required.
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListTestGridSessionActionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput {
             session_arn: self.session_arn,

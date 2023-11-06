@@ -27,6 +27,7 @@ pub struct StopDeliveryStreamEncryptionInputBuilder {
 }
 impl StopDeliveryStreamEncryptionInputBuilder {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl StopDeliveryStreamEncryptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput {
             delivery_stream_name: self.delivery_stream_name,

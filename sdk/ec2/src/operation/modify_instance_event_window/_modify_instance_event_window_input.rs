@@ -38,8 +38,10 @@ impl ModifyInstanceEventWindowInput {
         self.instance_event_window_id.as_deref()
     }
     /// <p>The time ranges of the event window.</p>
-    pub fn time_ranges(&self) -> ::std::option::Option<&[crate::types::InstanceEventWindowTimeRangeRequest]> {
-        self.time_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_ranges.is_none()`.
+    pub fn time_ranges(&self) -> &[crate::types::InstanceEventWindowTimeRangeRequest] {
+        self.time_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
@@ -103,6 +105,7 @@ impl ModifyInstanceEventWindowInputBuilder {
         &self.name
     }
     /// <p>The ID of the event window.</p>
+    /// This field is required.
     pub fn instance_event_window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_event_window_id = ::std::option::Option::Some(input.into());
         self
@@ -185,7 +188,7 @@ impl ModifyInstanceEventWindowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_event_window::ModifyInstanceEventWindowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_instance_event_window::ModifyInstanceEventWindowInput {
             dry_run: self.dry_run,

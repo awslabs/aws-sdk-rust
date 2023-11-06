@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserSettingsSummary {
     /// <p>The ARN of the user settings.</p>
-    pub user_settings_arn: ::std::option::Option<::std::string::String>,
+    pub user_settings_arn: ::std::string::String,
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub copy_allowed: ::std::option::Option<crate::types::EnabledType>,
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
@@ -25,8 +25,9 @@ pub struct UserSettingsSummary {
 }
 impl UserSettingsSummary {
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.user_settings_arn.as_deref()
+    pub fn user_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.user_settings_arn.deref()
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn copy_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
@@ -99,6 +100,7 @@ pub struct UserSettingsSummaryBuilder {
 }
 impl UserSettingsSummaryBuilder {
     /// <p>The ARN of the user settings.</p>
+    /// This field is required.
     pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -228,9 +230,16 @@ impl UserSettingsSummaryBuilder {
         &self.cookie_synchronization_configuration
     }
     /// Consumes the builder and constructs a [`UserSettingsSummary`](crate::types::UserSettingsSummary).
-    pub fn build(self) -> crate::types::UserSettingsSummary {
-        crate::types::UserSettingsSummary {
-            user_settings_arn: self.user_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_settings_arn`](crate::types::builders::UserSettingsSummaryBuilder::user_settings_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserSettingsSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserSettingsSummary {
+            user_settings_arn: self.user_settings_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_settings_arn",
+                    "user_settings_arn was not specified but it is required when building UserSettingsSummary",
+                )
+            })?,
             copy_allowed: self.copy_allowed,
             paste_allowed: self.paste_allowed,
             download_allowed: self.download_allowed,
@@ -239,7 +248,7 @@ impl UserSettingsSummaryBuilder {
             disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
             idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
             cookie_synchronization_configuration: self.cookie_synchronization_configuration,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for UserSettingsSummaryBuilder {

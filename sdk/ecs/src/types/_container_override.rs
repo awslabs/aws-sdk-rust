@@ -28,16 +28,22 @@ impl ContainerOverride {
         self.name.as_deref()
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn environment(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.environment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
+    pub fn environment(&self) -> &[crate::types::KeyValuePair] {
+        self.environment.as_deref().unwrap_or_default()
     }
     /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
-    pub fn environment_files(&self) -> ::std::option::Option<&[crate::types::EnvironmentFile]> {
-        self.environment_files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_files.is_none()`.
+    pub fn environment_files(&self) -> &[crate::types::EnvironmentFile] {
+        self.environment_files.as_deref().unwrap_or_default()
     }
     /// <p>The number of <code>cpu</code> units reserved for the container, instead of the default value from the task definition. You must also specify a container name.</p>
     pub fn cpu(&self) -> ::std::option::Option<i32> {
@@ -52,8 +58,10 @@ impl ContainerOverride {
         self.memory_reservation
     }
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-    pub fn resource_requirements(&self) -> ::std::option::Option<&[crate::types::ResourceRequirement]> {
-        self.resource_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
+    pub fn resource_requirements(&self) -> &[crate::types::ResourceRequirement] {
+        self.resource_requirements.as_deref().unwrap_or_default()
     }
 }
 impl ContainerOverride {

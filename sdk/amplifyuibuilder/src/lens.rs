@@ -72,69 +72,48 @@ pub(crate) fn reflens_list_themes_output_next_token(
 pub(crate) fn lens_export_components_output_entities(
     input: crate::operation::export_components::ExportComponentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Component>> {
-    let input = match input.entities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.entities;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_export_forms_output_entities(
     input: crate::operation::export_forms::ExportFormsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Form>> {
-    let input = match input.entities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.entities;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_export_themes_output_entities(
     input: crate::operation::export_themes::ExportThemesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Theme>> {
-    let input = match input.entities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.entities;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_codegen_jobs_output_entities(
     input: crate::operation::list_codegen_jobs::ListCodegenJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CodegenJobSummary>> {
-    let input = match input.entities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.entities;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_components_output_entities(
     input: crate::operation::list_components::ListComponentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
-    let input = match input.entities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.entities;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_forms_output_entities(
     input: crate::operation::list_forms::ListFormsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FormSummary>> {
-    let input = match input.entities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.entities;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_themes_output_entities(
     input: crate::operation::list_themes::ListThemesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>> {
-    let input = match input.entities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.entities;
     ::std::option::Option::Some(input)
 }

@@ -38,8 +38,8 @@ pub fn de_start_db_instance_automated_backups_replication_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DBInstanceNotFound" => crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::DbInstanceNotFoundFault({
@@ -54,8 +54,8 @@ pub fn de_start_db_instance_automated_backups_replication_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidDBInstanceState" => crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::InvalidDbInstanceStateFault({
@@ -70,8 +70,8 @@ pub fn de_start_db_instance_automated_backups_replication_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "KMSKeyNotAccessibleFault" => crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::KmsKeyNotAccessibleFault({
@@ -86,8 +86,8 @@ pub fn de_start_db_instance_automated_backups_replication_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "StorageTypeNotSupported" => crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::StorageTypeNotSupportedFault({
@@ -102,8 +102,8 @@ pub fn de_start_db_instance_automated_backups_replication_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::generic(generic)

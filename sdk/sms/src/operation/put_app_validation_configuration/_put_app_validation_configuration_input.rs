@@ -16,12 +16,16 @@ impl PutAppValidationConfigurationInput {
         self.app_id.as_deref()
     }
     /// <p>The configuration for application validation.</p>
-    pub fn app_validation_configurations(&self) -> ::std::option::Option<&[crate::types::AppValidationConfiguration]> {
-        self.app_validation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_validation_configurations.is_none()`.
+    pub fn app_validation_configurations(&self) -> &[crate::types::AppValidationConfiguration] {
+        self.app_validation_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for instance validation.</p>
-    pub fn server_group_validation_configurations(&self) -> ::std::option::Option<&[crate::types::ServerGroupValidationConfiguration]> {
-        self.server_group_validation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_group_validation_configurations.is_none()`.
+    pub fn server_group_validation_configurations(&self) -> &[crate::types::ServerGroupValidationConfiguration] {
+        self.server_group_validation_configurations.as_deref().unwrap_or_default()
     }
 }
 impl PutAppValidationConfigurationInput {
@@ -41,6 +45,7 @@ pub struct PutAppValidationConfigurationInputBuilder {
 }
 impl PutAppValidationConfigurationInputBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +112,7 @@ impl PutAppValidationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_app_validation_configuration::PutAppValidationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_app_validation_configuration::PutAppValidationConfigurationInput {
             app_id: self.app_id,

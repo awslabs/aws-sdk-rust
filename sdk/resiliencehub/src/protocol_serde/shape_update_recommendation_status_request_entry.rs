@@ -2,24 +2,24 @@
 pub fn ser_update_recommendation_status_request_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateRecommendationStatusRequestEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.entry_id {
-        object.key("entryId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("entryId").string(input.entry_id.as_str());
     }
-    if let Some(var_2) = &input.reference_id {
-        object.key("referenceId").string(var_2.as_str());
+    {
+        object.key("referenceId").string(input.reference_id.as_str());
     }
-    if let Some(var_3) = &input.item {
+    if let Some(var_1) = &input.item {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("item").start_object();
-        crate::protocol_serde::shape_update_recommendation_status_item::ser_update_recommendation_status_item(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("item").start_object();
+        crate::protocol_serde::shape_update_recommendation_status_item::ser_update_recommendation_status_item(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_5) = &input.excluded {
-        object.key("excluded").boolean(*var_5);
+    {
+        object.key("excluded").boolean(input.excluded);
     }
-    if let Some(var_6) = &input.exclude_reason {
-        object.key("excludeReason").string(var_6.as_str());
+    if let Some(var_3) = &input.exclude_reason {
+        object.key("excludeReason").string(var_3.as_str());
     }
     Ok(())
 }

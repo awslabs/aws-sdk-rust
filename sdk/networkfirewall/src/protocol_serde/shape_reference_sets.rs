@@ -2,7 +2,7 @@
 pub fn ser_reference_sets(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReferenceSets,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ip_set_references {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IPSetReferences").start_object();

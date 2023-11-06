@@ -42,6 +42,7 @@ pub struct UpdateElasticsearchDomainConfigOutputBuilder {
 }
 impl UpdateElasticsearchDomainConfigOutputBuilder {
     /// <p>The status of the updated Elasticsearch domain. </p>
+    /// This field is required.
     pub fn domain_config(mut self, input: crate::types::ElasticsearchDomainConfig) -> Self {
         self.domain_config = ::std::option::Option::Some(input);
         self

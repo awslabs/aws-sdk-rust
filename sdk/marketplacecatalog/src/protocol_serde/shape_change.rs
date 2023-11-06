@@ -2,36 +2,36 @@
 pub fn ser_change(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Change,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.change_type {
-        object.key("ChangeType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ChangeType").string(input.change_type.as_str());
     }
-    if let Some(var_2) = &input.entity {
+    if let Some(var_1) = &input.entity {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Entity").start_object();
-        crate::protocol_serde::shape_entity::ser_entity(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Entity").start_object();
+        crate::protocol_serde::shape_entity::ser_entity(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.entity_tags {
-        let mut array_5 = object.key("EntityTags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.entity_tags {
+        let mut array_4 = object.key("EntityTags").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.details {
-        object.key("Details").string(var_8.as_str());
+    if let Some(var_7) = &input.details {
+        object.key("Details").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.details_document {
-        object.key("DetailsDocument").document(var_9);
+    if let Some(var_8) = &input.details_document {
+        object.key("DetailsDocument").document(var_8);
     }
-    if let Some(var_10) = &input.change_name {
-        object.key("ChangeName").string(var_10.as_str());
+    if let Some(var_9) = &input.change_name {
+        object.key("ChangeName").string(var_9.as_str());
     }
     Ok(())
 }

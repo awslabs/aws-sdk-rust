@@ -2,7 +2,7 @@
 pub fn ser_spacing(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Spacing,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.top {
         object.key("Top").string(var_1.as_str());
     }

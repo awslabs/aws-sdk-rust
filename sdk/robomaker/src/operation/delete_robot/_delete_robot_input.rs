@@ -30,6 +30,7 @@ pub struct DeleteRobotInputBuilder {
 }
 impl DeleteRobotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    /// This field is required.
     pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.robot = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DeleteRobotInputBuilder {
         &self.robot
     }
     /// Consumes the builder and constructs a [`DeleteRobotInput`](crate::operation::delete_robot::DeleteRobotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_robot::DeleteRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_robot::DeleteRobotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_robot::DeleteRobotInput { robot: self.robot })
     }
 }

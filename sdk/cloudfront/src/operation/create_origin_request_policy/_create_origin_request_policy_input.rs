@@ -27,6 +27,7 @@ pub struct CreateOriginRequestPolicyInputBuilder {
 }
 impl CreateOriginRequestPolicyInputBuilder {
     /// <p>An origin request policy configuration.</p>
+    /// This field is required.
     pub fn origin_request_policy_config(mut self, input: crate::types::OriginRequestPolicyConfig) -> Self {
         self.origin_request_policy_config = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl CreateOriginRequestPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_origin_request_policy::CreateOriginRequestPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_origin_request_policy::CreateOriginRequestPolicyInput {
             origin_request_policy_config: self.origin_request_policy_config,

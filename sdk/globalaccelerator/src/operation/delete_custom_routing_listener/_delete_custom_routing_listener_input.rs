@@ -27,6 +27,7 @@ pub struct DeleteCustomRoutingListenerInputBuilder {
 }
 impl DeleteCustomRoutingListenerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteCustomRoutingListenerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput {
             listener_arn: self.listener_arn,

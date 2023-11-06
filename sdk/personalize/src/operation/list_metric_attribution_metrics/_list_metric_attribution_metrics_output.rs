@@ -11,8 +11,10 @@ pub struct ListMetricAttributionMetricsOutput {
 }
 impl ListMetricAttributionMetricsOutput {
     /// <p>The metrics for the specified metric attribution.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::MetricAttribute]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::MetricAttribute] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

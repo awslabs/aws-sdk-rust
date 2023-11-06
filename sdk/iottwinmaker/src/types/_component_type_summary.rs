@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentTypeSummary {
     /// <p>The ARN of the component type.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The ID of the component type.</p>
-    pub component_type_id: ::std::option::Option<::std::string::String>,
+    pub component_type_id: ::std::string::String,
     /// <p>The date and time when the component type was created.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the component type was last updated.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
     /// <p>The description of the component type.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the component type.</p>
@@ -21,20 +21,22 @@ pub struct ComponentTypeSummary {
 }
 impl ComponentTypeSummary {
     /// <p>The ARN of the component type.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
-        self.component_type_id.as_deref()
+    pub fn component_type_id(&self) -> &str {
+        use std::ops::Deref;
+        self.component_type_id.deref()
     }
     /// <p>The date and time when the component type was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
     /// <p>The date and time when the component type was last updated.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
     /// <p>The description of the component type.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -70,6 +72,7 @@ pub struct ComponentTypeSummaryBuilder {
 }
 impl ComponentTypeSummaryBuilder {
     /// <p>The ARN of the component type.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl ComponentTypeSummaryBuilder {
         &self.arn
     }
     /// <p>The ID of the component type.</p>
+    /// This field is required.
     pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl ComponentTypeSummaryBuilder {
         &self.component_type_id
     }
     /// <p>The date and time when the component type was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +117,7 @@ impl ComponentTypeSummaryBuilder {
         &self.creation_date_time
     }
     /// <p>The date and time when the component type was last updated.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -168,15 +174,40 @@ impl ComponentTypeSummaryBuilder {
         &self.component_type_name
     }
     /// Consumes the builder and constructs a [`ComponentTypeSummary`](crate::types::ComponentTypeSummary).
-    pub fn build(self) -> crate::types::ComponentTypeSummary {
-        crate::types::ComponentTypeSummary {
-            arn: self.arn,
-            component_type_id: self.component_type_id,
-            creation_date_time: self.creation_date_time,
-            update_date_time: self.update_date_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ComponentTypeSummaryBuilder::arn)
+    /// - [`component_type_id`](crate::types::builders::ComponentTypeSummaryBuilder::component_type_id)
+    /// - [`creation_date_time`](crate::types::builders::ComponentTypeSummaryBuilder::creation_date_time)
+    /// - [`update_date_time`](crate::types::builders::ComponentTypeSummaryBuilder::update_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentTypeSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComponentTypeSummary {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ComponentTypeSummary",
+                )
+            })?,
+            component_type_id: self.component_type_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "component_type_id",
+                    "component_type_id was not specified but it is required when building ComponentTypeSummary",
+                )
+            })?,
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building ComponentTypeSummary",
+                )
+            })?,
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building ComponentTypeSummary",
+                )
+            })?,
             description: self.description,
             status: self.status,
             component_type_name: self.component_type_name,
-        }
+        })
     }
 }

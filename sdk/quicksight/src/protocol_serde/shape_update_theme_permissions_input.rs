@@ -2,7 +2,7 @@
 pub fn ser_update_theme_permissions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_theme_permissions::UpdateThemePermissionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.grant_permissions {
         let mut array_2 = object.key("GrantPermissions").start_array();
         for item_3 in var_1 {

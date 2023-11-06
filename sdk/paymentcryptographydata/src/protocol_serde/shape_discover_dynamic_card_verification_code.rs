@@ -2,15 +2,17 @@
 pub fn ser_discover_dynamic_card_verification_code(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DiscoverDynamicCardVerificationCode,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.card_expiry_date {
-        object.key("CardExpiryDate").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("CardExpiryDate").string(input.card_expiry_date.as_str());
     }
-    if let Some(var_2) = &input.unpredictable_number {
-        object.key("UnpredictableNumber").string(var_2.as_str());
+    {
+        object.key("UnpredictableNumber").string(input.unpredictable_number.as_str());
     }
-    if let Some(var_3) = &input.application_transaction_counter {
-        object.key("ApplicationTransactionCounter").string(var_3.as_str());
+    {
+        object
+            .key("ApplicationTransactionCounter")
+            .string(input.application_transaction_counter.as_str());
     }
     Ok(())
 }

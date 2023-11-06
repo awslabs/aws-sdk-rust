@@ -2,12 +2,12 @@
 pub fn ser_chat_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChatMessage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.content_type {
-        object.key("ContentType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ContentType").string(input.content_type.as_str());
     }
-    if let Some(var_2) = &input.content {
-        object.key("Content").string(var_2.as_str());
+    {
+        object.key("Content").string(input.content.as_str());
     }
     Ok(())
 }

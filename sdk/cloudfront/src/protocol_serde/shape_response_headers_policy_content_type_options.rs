@@ -2,17 +2,18 @@
 pub fn ser_response_headers_policy_content_type_options(
     input: &crate::types::ResponseHeadersPolicyContentTypeOptions,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.r#override {
+    {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.r#override).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_content_type_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicyContentTypeOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -21,7 +22,7 @@ pub fn de_response_headers_policy_content_type_options(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Override") /* Override com.amazonaws.cloudfront#ResponseHeadersPolicyContentTypeOptions$Override */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -32,11 +33,13 @@ pub fn de_response_headers_policy_content_type_options(
                         ?
                     )
                 ;
-                builder = builder.set_override(var_2);
+                builder = builder.set_override(var_1);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::response_headers_policy_content_type_options_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

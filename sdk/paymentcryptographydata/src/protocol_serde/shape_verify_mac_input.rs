@@ -2,7 +2,7 @@
 pub fn ser_verify_mac_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::verify_mac::VerifyMacInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_identifier {
         object.key("KeyIdentifier").string(var_1.as_str());
     }

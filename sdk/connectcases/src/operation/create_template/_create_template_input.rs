@@ -34,8 +34,10 @@ impl CreateTemplateInput {
         self.layout_configuration.as_ref()
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn required_fields(&self) -> ::std::option::Option<&[crate::types::RequiredField]> {
-        self.required_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_fields.is_none()`.
+    pub fn required_fields(&self) -> &[crate::types::RequiredField] {
+        self.required_fields.as_deref().unwrap_or_default()
     }
     /// <p>The status of the template.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TemplateStatus> {
@@ -62,6 +64,7 @@ pub struct CreateTemplateInputBuilder {
 }
 impl CreateTemplateInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateTemplateInputBuilder {
         &self.domain_id
     }
     /// <p>A name for the template. It must be unique per domain.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -154,7 +158,7 @@ impl CreateTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateInput {
             domain_id: self.domain_id,
             name: self.name,

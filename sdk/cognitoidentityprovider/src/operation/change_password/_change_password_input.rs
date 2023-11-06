@@ -51,6 +51,7 @@ pub struct ChangePasswordInputBuilder {
 }
 impl ChangePasswordInputBuilder {
     /// <p>The old password.</p>
+    /// This field is required.
     pub fn previous_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_password = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl ChangePasswordInputBuilder {
         &self.previous_password
     }
     /// <p>The new password.</p>
+    /// This field is required.
     pub fn proposed_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposed_password = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +81,7 @@ impl ChangePasswordInputBuilder {
         &self.proposed_password
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +98,7 @@ impl ChangePasswordInputBuilder {
     /// Consumes the builder and constructs a [`ChangePasswordInput`](crate::operation::change_password::ChangePasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::change_password::ChangePasswordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::change_password::ChangePasswordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::change_password::ChangePasswordInput {
             previous_password: self.previous_password,
             proposed_password: self.proposed_password,

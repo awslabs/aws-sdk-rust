@@ -90,7 +90,7 @@ mod tests {
     use super::*;
     use crate::profile::profile_file::{ProfileFileKind, ProfileFiles};
     use crate::provider_config::ProviderConfig;
-    use crate::test_case::{no_traffic_connector, InstantSleep};
+    use crate::test_case::{no_traffic_client, InstantSleep};
     use aws_types::os_shim_internal::{Env, Fs};
 
     #[tokio::test]
@@ -105,7 +105,7 @@ mod tests {
                 &ProviderConfig::no_configuration()
                     .with_fs(fs)
                     .with_env(env)
-                    .with_http_connector(no_traffic_connector()),
+                    .with_http_client(no_traffic_client()),
             )
             .app_name()
             .await;
@@ -120,7 +120,7 @@ mod tests {
         let conf = crate::from_env()
             .sleep_impl(InstantSleep)
             .fs(fs)
-            .http_connector(no_traffic_connector())
+            .http_client(no_traffic_client())
             .profile_name("custom")
             .profile_files(
                 ProfileFiles::builder()
@@ -141,7 +141,7 @@ mod tests {
                 &ProviderConfig::empty()
                     .with_fs(fs)
                     .with_env(env)
-                    .with_http_connector(no_traffic_connector()),
+                    .with_http_client(no_traffic_client()),
             )
             .app_name()
             .await;
@@ -158,7 +158,7 @@ mod tests {
                 &ProviderConfig::empty()
                     .with_fs(fs)
                     .with_env(env)
-                    .with_http_connector(no_traffic_connector()),
+                    .with_http_client(no_traffic_client()),
             )
             .app_name()
             .await;

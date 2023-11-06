@@ -55,6 +55,7 @@ pub struct UpdateAlertInputBuilder {
 }
 impl UpdateAlertInputBuilder {
     /// <p>The ARN of the alert to update.</p>
+    /// This field is required.
     pub fn alert_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_arn = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +126,7 @@ impl UpdateAlertInputBuilder {
         &self.alert_filters
     }
     /// Consumes the builder and constructs a [`UpdateAlertInput`](crate::operation::update_alert::UpdateAlertInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_alert::UpdateAlertInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_alert::UpdateAlertInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_alert::UpdateAlertInput {
             alert_arn: self.alert_arn,
             alert_description: self.alert_description,

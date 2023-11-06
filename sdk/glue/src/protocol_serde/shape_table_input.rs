@@ -2,25 +2,25 @@
 pub fn ser_table_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.owner {
-        object.key("Owner").string(var_3.as_str());
+    if let Some(var_2) = &input.owner {
+        object.key("Owner").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.last_access_time {
+    if let Some(var_3) = &input.last_access_time {
         object
             .key("LastAccessTime")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.last_analyzed_time {
+    if let Some(var_4) = &input.last_analyzed_time {
         object
             .key("LastAnalyzedTime")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if input.retention != 0 {
         object.key("Retention").number(
@@ -28,48 +28,48 @@ pub fn ser_table_input(
             ::aws_smithy_types::Number::NegInt((input.retention).into()),
         );
     }
-    if let Some(var_6) = &input.storage_descriptor {
+    if let Some(var_5) = &input.storage_descriptor {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("StorageDescriptor").start_object();
-        crate::protocol_serde::shape_storage_descriptor::ser_storage_descriptor(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("StorageDescriptor").start_object();
+        crate::protocol_serde::shape_storage_descriptor::ser_storage_descriptor(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.partition_keys {
-        let mut array_9 = object.key("PartitionKeys").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.partition_keys {
+        let mut array_8 = object.key("PartitionKeys").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_column::ser_column(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_column::ser_column(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_12) = &input.view_original_text {
-        object.key("ViewOriginalText").string(var_12.as_str());
+    if let Some(var_11) = &input.view_original_text {
+        object.key("ViewOriginalText").string(var_11.as_str());
     }
-    if let Some(var_13) = &input.view_expanded_text {
-        object.key("ViewExpandedText").string(var_13.as_str());
+    if let Some(var_12) = &input.view_expanded_text {
+        object.key("ViewExpandedText").string(var_12.as_str());
     }
-    if let Some(var_14) = &input.table_type {
-        object.key("TableType").string(var_14.as_str());
+    if let Some(var_13) = &input.table_type {
+        object.key("TableType").string(var_13.as_str());
     }
-    if let Some(var_15) = &input.parameters {
+    if let Some(var_14) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("Parameters").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_15 = object.key("Parameters").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_16.finish();
+        object_15.finish();
     }
-    if let Some(var_19) = &input.target_table {
+    if let Some(var_18) = &input.target_table {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("TargetTable").start_object();
-        crate::protocol_serde::shape_table_identifier::ser_table_identifier(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_19 = object.key("TargetTable").start_object();
+        crate::protocol_serde::shape_table_identifier::ser_table_identifier(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

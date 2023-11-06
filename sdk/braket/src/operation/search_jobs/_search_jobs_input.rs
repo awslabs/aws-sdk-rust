@@ -20,8 +20,10 @@ impl SearchJobsInput {
         self.max_results
     }
     /// <p>The filter values to use when searching for a job.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SearchJobsFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SearchJobsFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl SearchJobsInput {
@@ -89,7 +91,7 @@ impl SearchJobsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchJobsInput`](crate::operation::search_jobs::SearchJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_jobs::SearchJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,

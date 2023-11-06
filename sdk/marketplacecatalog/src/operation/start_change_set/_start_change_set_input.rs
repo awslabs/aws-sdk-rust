@@ -20,8 +20,10 @@ impl StartChangeSetInput {
         self.catalog.as_deref()
     }
     /// <p>Array of <code>change</code> object.</p>
-    pub fn change_set(&self) -> ::std::option::Option<&[crate::types::Change]> {
-        self.change_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_set.is_none()`.
+    pub fn change_set(&self) -> &[crate::types::Change] {
+        self.change_set.as_deref().unwrap_or_default()
     }
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
     pub fn change_set_name(&self) -> ::std::option::Option<&str> {
@@ -32,8 +34,10 @@ impl StartChangeSetInput {
         self.client_request_token.as_deref()
     }
     /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
-    pub fn change_set_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.change_set_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_set_tags.is_none()`.
+    pub fn change_set_tags(&self) -> &[crate::types::Tag] {
+        self.change_set_tags.as_deref().unwrap_or_default()
     }
 }
 impl StartChangeSetInput {
@@ -55,6 +59,7 @@ pub struct StartChangeSetInputBuilder {
 }
 impl StartChangeSetInputBuilder {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +144,7 @@ impl StartChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`StartChangeSetInput`](crate::operation::start_change_set::StartChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_change_set::StartChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_change_set::StartChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_change_set::StartChangeSetInput {
             catalog: self.catalog,
             change_set: self.change_set,

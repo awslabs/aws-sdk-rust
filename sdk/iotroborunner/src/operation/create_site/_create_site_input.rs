@@ -62,6 +62,7 @@ impl CreateSiteInputBuilder {
         &self.client_token
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateSiteInputBuilder {
         &self.name
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
+    /// This field is required.
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
         self
@@ -104,7 +106,7 @@ impl CreateSiteInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateSiteInput`](crate::operation::create_site::CreateSiteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_site::CreateSiteInput {
             client_token: self.client_token,
             name: self.name,

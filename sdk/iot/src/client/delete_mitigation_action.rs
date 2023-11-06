@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMitigationAction`](crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`action_name(impl Into<String>)`](crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder::set_action_name): <p>The name of the mitigation action that you want to delete.</p>
+    ///   - [`action_name(impl Into<String>)`](crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder::set_action_name):<br>required: **true**<br><p>The name of the mitigation action that you want to delete.</p><br>
     /// - On success, responds with [`DeleteMitigationActionOutput`](crate::operation::delete_mitigation_action::DeleteMitigationActionOutput)
     /// - On failure, responds with [`SdkError<DeleteMitigationActionError>`](crate::operation::delete_mitigation_action::DeleteMitigationActionError)
     pub fn delete_mitigation_action(&self) -> crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder {

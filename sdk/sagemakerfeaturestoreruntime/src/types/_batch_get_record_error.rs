@@ -49,6 +49,7 @@ pub struct BatchGetRecordErrorBuilder {
 }
 impl BatchGetRecordErrorBuilder {
     /// <p>The name of the feature group that the record belongs to.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl BatchGetRecordErrorBuilder {
         &self.feature_group_name
     }
     /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.</p>
+    /// This field is required.
     pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl BatchGetRecordErrorBuilder {
         &self.record_identifier_value_as_string
     }
     /// <p>The error code of an error that has occurred when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl BatchGetRecordErrorBuilder {
         &self.error_code
     }
     /// <p>The error message of an error that has occurred when attempting to retrieve a record in the batch.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self

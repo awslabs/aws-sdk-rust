@@ -2,7 +2,7 @@
 pub fn ser_update_meeting_room_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateMeetingRoomConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.room_utilization_metrics_enabled {
         object.key("RoomUtilizationMetricsEnabled").boolean(*var_1);
     }

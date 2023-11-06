@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeForecast`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`forecast_arn(impl Into<String>)`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::set_forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    ///   - [`forecast_arn(impl Into<String>)`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::set_forecast_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the forecast.</p><br>
     /// - On success, responds with [`DescribeForecastOutput`](crate::operation::describe_forecast::DescribeForecastOutput) with field(s):
     ///   - [`forecast_arn(Option<String>)`](crate::operation::describe_forecast::DescribeForecastOutput::forecast_arn): <p>The forecast ARN as specified in the request.</p>
     ///   - [`forecast_name(Option<String>)`](crate::operation::describe_forecast::DescribeForecastOutput::forecast_name): <p>The name of the forecast.</p>
-    ///   - [`forecast_types(Option<Vec<String>>)`](crate::operation::describe_forecast::DescribeForecastOutput::forecast_types): <p>The quantiles at which probabilistic forecasts were generated.</p>
+    ///   - [`forecast_types(Option<Vec::<String>>)`](crate::operation::describe_forecast::DescribeForecastOutput::forecast_types): <p>The quantiles at which probabilistic forecasts were generated.</p>
     ///   - [`predictor_arn(Option<String>)`](crate::operation::describe_forecast::DescribeForecastOutput::predictor_arn): <p>The ARN of the predictor used to generate the forecast.</p>
     ///   - [`dataset_group_arn(Option<String>)`](crate::operation::describe_forecast::DescribeForecastOutput::dataset_group_arn): <p>The ARN of the dataset group that provided the data used to train the predictor.</p>
     ///   - [`estimated_time_remaining_in_minutes(Option<i64>)`](crate::operation::describe_forecast::DescribeForecastOutput::estimated_time_remaining_in_minutes): <p>The estimated time remaining in minutes for the forecast job to complete.</p>

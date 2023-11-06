@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFederationToken`](crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     /// - On success, responds with [`GetFederationTokenOutput`](crate::operation::get_federation_token::GetFederationTokenOutput) with field(s):
     ///   - [`credentials(Option<Credentials>)`](crate::operation::get_federation_token::GetFederationTokenOutput::credentials): <p>The credentials to use for federation.</p>
     ///   - [`sign_in_url(Option<String>)`](crate::operation::get_federation_token::GetFederationTokenOutput::sign_in_url): <p>The URL to sign into the user's instance. </p>

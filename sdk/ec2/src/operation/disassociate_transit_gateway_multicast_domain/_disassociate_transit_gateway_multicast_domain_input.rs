@@ -22,8 +22,10 @@ impl DisassociateTransitGatewayMulticastDomainInput {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The IDs of the subnets;</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -49,6 +51,7 @@ pub struct DisassociateTransitGatewayMulticastDomainInputBuilder {
 }
 impl DisassociateTransitGatewayMulticastDomainInputBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
+    /// This field is required.
     pub fn transit_gateway_multicast_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl DisassociateTransitGatewayMulticastDomainInputBuilder {
         &self.transit_gateway_multicast_domain_id
     }
     /// <p>The ID of the attachment.</p>
+    /// This field is required.
     pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +119,7 @@ impl DisassociateTransitGatewayMulticastDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput {

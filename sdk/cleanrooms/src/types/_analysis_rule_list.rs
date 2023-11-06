@@ -5,24 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRuleList {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
-    pub join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub join_columns: ::std::vec::Vec<::std::string::String>,
     /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
     pub allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
     /// <p>Columns that can be listed in the output.</p>
-    pub list_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub list_columns: ::std::vec::Vec<::std::string::String>,
 }
 impl AnalysisRuleList {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
-    pub fn join_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.join_columns.as_deref()
+    pub fn join_columns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.join_columns.deref()
     }
     /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    pub fn allowed_join_operators(&self) -> ::std::option::Option<&[crate::types::JoinOperator]> {
-        self.allowed_join_operators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_join_operators.is_none()`.
+    pub fn allowed_join_operators(&self) -> &[crate::types::JoinOperator] {
+        self.allowed_join_operators.as_deref().unwrap_or_default()
     }
     /// <p>Columns that can be listed in the output.</p>
-    pub fn list_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.list_columns.as_deref()
+    pub fn list_columns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.list_columns.deref()
     }
 }
 impl AnalysisRuleList {
@@ -102,11 +106,24 @@ impl AnalysisRuleListBuilder {
         &self.list_columns
     }
     /// Consumes the builder and constructs a [`AnalysisRuleList`](crate::types::AnalysisRuleList).
-    pub fn build(self) -> crate::types::AnalysisRuleList {
-        crate::types::AnalysisRuleList {
-            join_columns: self.join_columns,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`join_columns`](crate::types::builders::AnalysisRuleListBuilder::join_columns)
+    /// - [`list_columns`](crate::types::builders::AnalysisRuleListBuilder::list_columns)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleList, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalysisRuleList {
+            join_columns: self.join_columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "join_columns",
+                    "join_columns was not specified but it is required when building AnalysisRuleList",
+                )
+            })?,
             allowed_join_operators: self.allowed_join_operators,
-            list_columns: self.list_columns,
-        }
+            list_columns: self.list_columns.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "list_columns",
+                    "list_columns was not specified but it is required when building AnalysisRuleList",
+                )
+            })?,
+        })
     }
 }

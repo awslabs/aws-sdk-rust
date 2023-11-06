@@ -2,30 +2,30 @@
 pub fn ser_container_dataset_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContainerDatasetAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.image {
-        object.key("image").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("image").string(input.image.as_str());
     }
-    if let Some(var_2) = &input.execution_role_arn {
-        object.key("executionRoleArn").string(var_2.as_str());
+    {
+        object.key("executionRoleArn").string(input.execution_role_arn.as_str());
     }
-    if let Some(var_3) = &input.resource_configuration {
+    if let Some(var_1) = &input.resource_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("resourceConfiguration").start_object();
-        crate::protocol_serde::shape_resource_configuration::ser_resource_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("resourceConfiguration").start_object();
+        crate::protocol_serde::shape_resource_configuration::ser_resource_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_5) = &input.variables {
-        let mut array_6 = object.key("variables").start_array();
-        for item_7 in var_5 {
+    if let Some(var_3) = &input.variables {
+        let mut array_4 = object.key("variables").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_variable::ser_variable(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_variable::ser_variable(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -76,7 +76,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::container_dataset_action_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

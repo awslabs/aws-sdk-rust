@@ -18,8 +18,10 @@ impl SearchAnalysesInput {
         self.aws_account_id.as_deref()
     }
     /// <p>The structure for the search filters that you want to apply to your search. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::AnalysisSearchFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::AnalysisSearchFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct SearchAnalysesInputBuilder {
 }
 impl SearchAnalysesInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +115,7 @@ impl SearchAnalysesInputBuilder {
     /// Consumes the builder and constructs a [`SearchAnalysesInput`](crate::operation::search_analyses::SearchAnalysesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_analyses::SearchAnalysesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_analyses::SearchAnalysesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_analyses::SearchAnalysesInput {
             aws_account_id: self.aws_account_id,
             filters: self.filters,

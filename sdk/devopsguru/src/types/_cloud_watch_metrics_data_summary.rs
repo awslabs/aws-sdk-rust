@@ -11,8 +11,10 @@ pub struct CloudWatchMetricsDataSummary {
 }
 impl CloudWatchMetricsDataSummary {
     /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
-    pub fn timestamp_metric_value_pair_list(&self) -> ::std::option::Option<&[crate::types::TimestampMetricValuePair]> {
-        self.timestamp_metric_value_pair_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamp_metric_value_pair_list.is_none()`.
+    pub fn timestamp_metric_value_pair_list(&self) -> &[crate::types::TimestampMetricValuePair] {
+        self.timestamp_metric_value_pair_list.as_deref().unwrap_or_default()
     }
     /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
     pub fn status_code(&self) -> ::std::option::Option<&crate::types::CloudWatchMetricDataStatusCode> {

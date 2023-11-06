@@ -203,8 +203,10 @@ impl AwsRdsDbSnapshotDetails {
         self.iam_database_authentication_enabled
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbProcessorFeature]> {
-        self.processor_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processor_features.is_none()`.
+    pub fn processor_features(&self) -> &[crate::types::AwsRdsDbProcessorFeature] {
+        self.processor_features.as_deref().unwrap_or_default()
     }
     /// <p>The identifier for the source DB instance.</p>
     pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {

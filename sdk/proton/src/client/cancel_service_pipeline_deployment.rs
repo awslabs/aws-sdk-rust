@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelServicePipelineDeployment`](crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentFluentBuilder::set_service_name): <p>The name of the service with the service pipeline deployment to cancel.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentFluentBuilder::set_service_name):<br>required: **true**<br><p>The name of the service with the service pipeline deployment to cancel.</p><br>
     /// - On success, responds with [`CancelServicePipelineDeploymentOutput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput) with field(s):
     ///   - [`pipeline(Option<ServicePipeline>)`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput::pipeline): <p>The service pipeline detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CancelServicePipelineDeploymentError>`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError)

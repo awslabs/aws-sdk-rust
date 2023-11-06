@@ -34,6 +34,7 @@ pub struct StopIngestionInputBuilder {
 }
 impl StopIngestionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
+    /// This field is required.
     pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StopIngestionInputBuilder {
         &self.ingestion_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl StopIngestionInputBuilder {
     /// Consumes the builder and constructs a [`StopIngestionInput`](crate::operation::stop_ingestion::StopIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_ingestion::StopIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_ingestion::StopIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_ingestion::StopIngestionInput {
             ingestion_identifier: self.ingestion_identifier,
             app_bundle_identifier: self.app_bundle_identifier,

@@ -11,8 +11,10 @@ pub struct ListDeviceFleetsOutput {
 }
 impl ListDeviceFleetsOutput {
     /// <p>Summary of the device fleet.</p>
-    pub fn device_fleet_summaries(&self) -> ::std::option::Option<&[crate::types::DeviceFleetSummary]> {
-        self.device_fleet_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_fleet_summaries.is_none()`.
+    pub fn device_fleet_summaries(&self) -> &[crate::types::DeviceFleetSummary] {
+        self.device_fleet_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

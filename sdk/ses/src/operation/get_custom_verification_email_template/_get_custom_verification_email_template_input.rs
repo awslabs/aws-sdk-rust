@@ -28,6 +28,7 @@ pub struct GetCustomVerificationEmailTemplateInputBuilder {
 }
 impl GetCustomVerificationEmailTemplateInputBuilder {
     /// <p>The name of the custom verification email template to retrieve.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetCustomVerificationEmailTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput {

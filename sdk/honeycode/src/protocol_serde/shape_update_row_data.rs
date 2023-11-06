@@ -2,22 +2,22 @@
 pub fn ser_update_row_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateRowData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.row_id {
-        object.key("rowId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("rowId").string(input.row_id.as_str());
     }
-    if let Some(var_2) = &input.cells_to_update {
+    {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("cellsToUpdate").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_1 = object.key("cellsToUpdate").start_object();
+        for (key_2, value_3) in &input.cells_to_update {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_cell_input::ser_cell_input(&mut object_6, value_5)?;
-                object_6.finish();
+                let mut object_4 = object_1.key(key_2.as_str()).start_object();
+                crate::protocol_serde::shape_cell_input::ser_cell_input(&mut object_4, value_3)?;
+                object_4.finish();
             }
         }
-        object_3.finish();
+        object_1.finish();
     }
     Ok(())
 }

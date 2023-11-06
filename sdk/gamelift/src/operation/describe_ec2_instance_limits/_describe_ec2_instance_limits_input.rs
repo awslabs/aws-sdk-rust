@@ -66,7 +66,7 @@ impl DescribeEc2InstanceLimitsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput {
             ec2_instance_type: self.ec2_instance_type,

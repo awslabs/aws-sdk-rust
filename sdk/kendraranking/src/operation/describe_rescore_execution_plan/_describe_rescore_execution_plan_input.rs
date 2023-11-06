@@ -27,6 +27,7 @@ pub struct DescribeRescoreExecutionPlanInputBuilder {
 }
 impl DescribeRescoreExecutionPlanInputBuilder {
     /// <p>The identifier of the rescore execution plan that you want to get information on.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeRescoreExecutionPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanInput { id: self.id })
     }

@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JournalS3ExportDescription {
     /// <p>The name of the ledger.</p>
-    pub ledger_name: ::std::option::Option<::std::string::String>,
+    pub ledger_name: ::std::string::String,
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
-    pub export_id: ::std::option::Option<::std::string::String>,
+    pub export_id: ::std::string::String,
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub export_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub export_creation_time: ::aws_smithy_types::DateTime,
     /// <p>The current state of the journal export job.</p>
-    pub status: ::std::option::Option<crate::types::ExportStatus>,
+    pub status: crate::types::ExportStatus,
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
-    pub inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub inclusive_start_time: ::aws_smithy_types::DateTime,
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
-    pub exclusive_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub exclusive_end_time: ::aws_smithy_types::DateTime,
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
     pub s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
@@ -23,34 +23,36 @@ pub struct JournalS3ExportDescription {
     /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The output format of the exported journal data.</p>
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl JournalS3ExportDescription {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(&self) -> ::std::option::Option<&str> {
-        self.ledger_name.as_deref()
+    pub fn ledger_name(&self) -> &str {
+        use std::ops::Deref;
+        self.ledger_name.deref()
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
-    pub fn export_id(&self) -> ::std::option::Option<&str> {
-        self.export_id.as_deref()
+    pub fn export_id(&self) -> &str {
+        use std::ops::Deref;
+        self.export_id.deref()
     }
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn export_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.export_creation_time.as_ref()
+    pub fn export_creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.export_creation_time
     }
     /// <p>The current state of the journal export job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ExportStatus {
+        &self.status
     }
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn inclusive_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.inclusive_start_time.as_ref()
+    pub fn inclusive_start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.inclusive_start_time
     }
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn exclusive_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.exclusive_end_time.as_ref()
+    pub fn exclusive_end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.exclusive_end_time
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
     pub fn s3_export_configuration(&self) -> ::std::option::Option<&crate::types::S3ExportConfiguration> {
@@ -61,8 +63,9 @@ impl JournalS3ExportDescription {
     /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The output format of the exported journal data.</p>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
@@ -92,6 +95,7 @@ pub struct JournalS3ExportDescriptionBuilder {
 }
 impl JournalS3ExportDescriptionBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ledger_name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +110,7 @@ impl JournalS3ExportDescriptionBuilder {
         &self.ledger_name
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
+    /// This field is required.
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_id = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +125,7 @@ impl JournalS3ExportDescriptionBuilder {
         &self.export_id
     }
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// This field is required.
     pub fn export_creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.export_creation_time = ::std::option::Option::Some(input);
         self
@@ -134,6 +140,7 @@ impl JournalS3ExportDescriptionBuilder {
         &self.export_creation_time
     }
     /// <p>The current state of the journal export job.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ExportStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -148,6 +155,7 @@ impl JournalS3ExportDescriptionBuilder {
         &self.status
     }
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
+    /// This field is required.
     pub fn inclusive_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inclusive_start_time = ::std::option::Option::Some(input);
         self
@@ -162,6 +170,7 @@ impl JournalS3ExportDescriptionBuilder {
         &self.inclusive_start_time
     }
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
+    /// This field is required.
     pub fn exclusive_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.exclusive_end_time = ::std::option::Option::Some(input);
         self
@@ -176,6 +185,7 @@ impl JournalS3ExportDescriptionBuilder {
         &self.exclusive_end_time
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
+    /// This field is required.
     pub fn s3_export_configuration(mut self, input: crate::types::S3ExportConfiguration) -> Self {
         self.s3_export_configuration = ::std::option::Option::Some(input);
         self
@@ -194,6 +204,7 @@ impl JournalS3ExportDescriptionBuilder {
     /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -230,17 +241,60 @@ impl JournalS3ExportDescriptionBuilder {
         &self.output_format
     }
     /// Consumes the builder and constructs a [`JournalS3ExportDescription`](crate::types::JournalS3ExportDescription).
-    pub fn build(self) -> crate::types::JournalS3ExportDescription {
-        crate::types::JournalS3ExportDescription {
-            ledger_name: self.ledger_name,
-            export_id: self.export_id,
-            export_creation_time: self.export_creation_time,
-            status: self.status,
-            inclusive_start_time: self.inclusive_start_time,
-            exclusive_end_time: self.exclusive_end_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ledger_name`](crate::types::builders::JournalS3ExportDescriptionBuilder::ledger_name)
+    /// - [`export_id`](crate::types::builders::JournalS3ExportDescriptionBuilder::export_id)
+    /// - [`export_creation_time`](crate::types::builders::JournalS3ExportDescriptionBuilder::export_creation_time)
+    /// - [`status`](crate::types::builders::JournalS3ExportDescriptionBuilder::status)
+    /// - [`inclusive_start_time`](crate::types::builders::JournalS3ExportDescriptionBuilder::inclusive_start_time)
+    /// - [`exclusive_end_time`](crate::types::builders::JournalS3ExportDescriptionBuilder::exclusive_end_time)
+    /// - [`role_arn`](crate::types::builders::JournalS3ExportDescriptionBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::JournalS3ExportDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::JournalS3ExportDescription {
+            ledger_name: self.ledger_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ledger_name",
+                    "ledger_name was not specified but it is required when building JournalS3ExportDescription",
+                )
+            })?,
+            export_id: self.export_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "export_id",
+                    "export_id was not specified but it is required when building JournalS3ExportDescription",
+                )
+            })?,
+            export_creation_time: self.export_creation_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "export_creation_time",
+                    "export_creation_time was not specified but it is required when building JournalS3ExportDescription",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building JournalS3ExportDescription",
+                )
+            })?,
+            inclusive_start_time: self.inclusive_start_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "inclusive_start_time",
+                    "inclusive_start_time was not specified but it is required when building JournalS3ExportDescription",
+                )
+            })?,
+            exclusive_end_time: self.exclusive_end_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "exclusive_end_time",
+                    "exclusive_end_time was not specified but it is required when building JournalS3ExportDescription",
+                )
+            })?,
             s3_export_configuration: self.s3_export_configuration,
-            role_arn: self.role_arn,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building JournalS3ExportDescription",
+                )
+            })?,
             output_format: self.output_format,
-        }
+        })
     }
 }

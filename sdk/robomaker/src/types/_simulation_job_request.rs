@@ -85,18 +85,24 @@ impl SimulationJobRequest {
         self.use_default_applications
     }
     /// <p>The robot applications to use in the simulation job.</p>
-    pub fn robot_applications(&self) -> ::std::option::Option<&[crate::types::RobotApplicationConfig]> {
-        self.robot_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.robot_applications.is_none()`.
+    pub fn robot_applications(&self) -> &[crate::types::RobotApplicationConfig] {
+        self.robot_applications.as_deref().unwrap_or_default()
     }
     /// <p>The simulation applications to use in the simulation job.</p>
-    pub fn simulation_applications(&self) -> ::std::option::Option<&[crate::types::SimulationApplicationConfig]> {
-        self.simulation_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.simulation_applications.is_none()`.
+    pub fn simulation_applications(&self) -> &[crate::types::SimulationApplicationConfig] {
+        self.simulation_applications.as_deref().unwrap_or_default()
     }
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::DataSourceConfig]> {
-        self.data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
+    pub fn data_sources(&self) -> &[crate::types::DataSourceConfig] {
+        self.data_sources.as_deref().unwrap_or_default()
     }
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
@@ -165,6 +171,7 @@ impl SimulationJobRequestBuilder {
         &self.logging_config
     }
     /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
+    /// This field is required.
     pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
         self.max_job_duration_in_seconds = ::std::option::Option::Some(input);
         self

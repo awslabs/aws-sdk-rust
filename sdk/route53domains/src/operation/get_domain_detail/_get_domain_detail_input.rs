@@ -28,6 +28,7 @@ pub struct GetDomainDetailInputBuilder {
 }
 impl GetDomainDetailInputBuilder {
     /// <p>The name of the domain that you want to get detailed information about.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetDomainDetailInputBuilder {
     /// Consumes the builder and constructs a [`GetDomainDetailInput`](crate::operation::get_domain_detail::GetDomainDetailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_domain_detail::GetDomainDetailInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_domain_detail::GetDomainDetailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_domain_detail::GetDomainDetailInput {
             domain_name: self.domain_name,
         })

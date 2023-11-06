@@ -27,6 +27,7 @@ pub struct DescribeArtifactInputBuilder {
 }
 impl DescribeArtifactInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
+    /// This field is required.
     pub fn artifact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeArtifactInputBuilder {
     /// Consumes the builder and constructs a [`DescribeArtifactInput`](crate::operation::describe_artifact::DescribeArtifactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_artifact::DescribeArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_artifact::DescribeArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_artifact::DescribeArtifactInput {
             artifact_arn: self.artifact_arn,
         })

@@ -14,9 +14,9 @@ pub struct CanSignal {
     /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
     pub start_bit: i32,
     /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
-    pub offset: ::std::option::Option<f64>,
+    pub offset: f64,
     /// <p>A multiplier used to decode the CAN message.</p>
-    pub factor: ::std::option::Option<f64>,
+    pub factor: f64,
     /// <p>How many bytes of data are in the message.</p>
     pub length: i32,
     /// <p>The name of the signal.</p>
@@ -41,11 +41,11 @@ impl CanSignal {
         self.start_bit
     }
     /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
-    pub fn offset(&self) -> ::std::option::Option<f64> {
+    pub fn offset(&self) -> f64 {
         self.offset
     }
     /// <p>A multiplier used to decode the CAN message.</p>
-    pub fn factor(&self) -> ::std::option::Option<f64> {
+    pub fn factor(&self) -> f64 {
         self.factor
     }
     /// <p>How many bytes of data are in the message.</p>
@@ -79,6 +79,7 @@ pub struct CanSignalBuilder {
 }
 impl CanSignalBuilder {
     /// <p>The ID of the message.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: i32) -> Self {
         self.message_id = ::std::option::Option::Some(input);
         self
@@ -93,6 +94,7 @@ impl CanSignalBuilder {
         &self.message_id
     }
     /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
+    /// This field is required.
     pub fn is_big_endian(mut self, input: bool) -> Self {
         self.is_big_endian = ::std::option::Option::Some(input);
         self
@@ -107,6 +109,7 @@ impl CanSignalBuilder {
         &self.is_big_endian
     }
     /// <p>Whether the message data is specified as a signed value.</p>
+    /// This field is required.
     pub fn is_signed(mut self, input: bool) -> Self {
         self.is_signed = ::std::option::Option::Some(input);
         self
@@ -122,6 +125,7 @@ impl CanSignalBuilder {
     }
     /// <p>Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
     /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
+    /// This field is required.
     pub fn start_bit(mut self, input: i32) -> Self {
         self.start_bit = ::std::option::Option::Some(input);
         self
@@ -138,6 +142,7 @@ impl CanSignalBuilder {
         &self.start_bit
     }
     /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
+    /// This field is required.
     pub fn offset(mut self, input: f64) -> Self {
         self.offset = ::std::option::Option::Some(input);
         self
@@ -152,6 +157,7 @@ impl CanSignalBuilder {
         &self.offset
     }
     /// <p>A multiplier used to decode the CAN message.</p>
+    /// This field is required.
     pub fn factor(mut self, input: f64) -> Self {
         self.factor = ::std::option::Option::Some(input);
         self
@@ -166,6 +172,7 @@ impl CanSignalBuilder {
         &self.factor
     }
     /// <p>How many bytes of data are in the message.</p>
+    /// This field is required.
     pub fn length(mut self, input: i32) -> Self {
         self.length = ::std::option::Option::Some(input);
         self
@@ -194,16 +201,29 @@ impl CanSignalBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`CanSignal`](crate::types::CanSignal).
-    pub fn build(self) -> crate::types::CanSignal {
-        crate::types::CanSignal {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`offset`](crate::types::builders::CanSignalBuilder::offset)
+    /// - [`factor`](crate::types::builders::CanSignalBuilder::factor)
+    pub fn build(self) -> ::std::result::Result<crate::types::CanSignal, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CanSignal {
             message_id: self.message_id.unwrap_or_default(),
             is_big_endian: self.is_big_endian.unwrap_or_default(),
             is_signed: self.is_signed.unwrap_or_default(),
             start_bit: self.start_bit.unwrap_or_default(),
-            offset: self.offset,
-            factor: self.factor,
+            offset: self.offset.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "offset",
+                    "offset was not specified but it is required when building CanSignal",
+                )
+            })?,
+            factor: self.factor.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "factor",
+                    "factor was not specified but it is required when building CanSignal",
+                )
+            })?,
             length: self.length.unwrap_or_default(),
             name: self.name,
-        }
+        })
     }
 }

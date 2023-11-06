@@ -34,6 +34,7 @@ pub struct GetTransactionOutputBuilder {
 }
 impl GetTransactionOutputBuilder {
     /// <p>Contains the details of the transaction.</p>
+    /// This field is required.
     pub fn transaction(mut self, input: crate::types::Transaction) -> Self {
         self.transaction = ::std::option::Option::Some(input);
         self

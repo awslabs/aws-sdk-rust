@@ -20,8 +20,10 @@ impl CreateModelPackageGroupInput {
         self.model_package_group_description.as_deref()
     }
     /// <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateModelPackageGroupInput {
@@ -41,6 +43,7 @@ pub struct CreateModelPackageGroupInputBuilder {
 }
 impl CreateModelPackageGroupInputBuilder {
     /// <p>The name of the model group.</p>
+    /// This field is required.
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
@@ -93,7 +96,7 @@ impl CreateModelPackageGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_package_group::CreateModelPackageGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_model_package_group::CreateModelPackageGroupInput {
             model_package_group_name: self.model_package_group_name,

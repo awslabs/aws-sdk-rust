@@ -9,8 +9,10 @@ pub struct IndexingFilter {
 }
 impl IndexingFilter {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn named_shadow_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.named_shadow_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.named_shadow_names.is_none()`.
+    pub fn named_shadow_names(&self) -> &[::std::string::String] {
+        self.named_shadow_names.as_deref().unwrap_or_default()
     }
 }
 impl IndexingFilter {

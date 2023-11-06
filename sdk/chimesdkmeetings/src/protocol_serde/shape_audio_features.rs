@@ -2,7 +2,7 @@
 pub fn ser_audio_features(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AudioFeatures,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.echo_reduction {
         object.key("EchoReduction").string(var_1.as_str());
     }

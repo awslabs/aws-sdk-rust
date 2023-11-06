@@ -52,49 +52,34 @@ pub(crate) fn reflens_list_state_machines_output_next_token(
 pub(crate) fn lens_get_execution_history_output_events(
     input: crate::operation::get_execution_history::GetExecutionHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>> {
-    let input = match input.events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.events;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_activities_output_activities(
     input: crate::operation::list_activities::ListActivitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActivityListItem>> {
-    let input = match input.activities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.activities;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_executions_output_executions(
     input: crate::operation::list_executions::ListExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>> {
-    let input = match input.executions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.executions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_map_runs_output_map_runs(
     input: crate::operation::list_map_runs::ListMapRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MapRunListItem>> {
-    let input = match input.map_runs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.map_runs;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_state_machines_output_state_machines(
     input: crate::operation::list_state_machines::ListStateMachinesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>> {
-    let input = match input.state_machines {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.state_machines;
     ::std::option::Option::Some(input)
 }

@@ -15,8 +15,10 @@ impl RenditionConfiguration {
         self.rendition_selection.as_ref()
     }
     /// <p>Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.</p>
-    pub fn renditions(&self) -> ::std::option::Option<&[crate::types::RenditionConfigurationRendition]> {
-        self.renditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.renditions.is_none()`.
+    pub fn renditions(&self) -> &[crate::types::RenditionConfigurationRendition] {
+        self.renditions.as_deref().unwrap_or_default()
     }
 }
 impl RenditionConfiguration {

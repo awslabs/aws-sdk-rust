@@ -34,6 +34,7 @@ pub struct DescribeSubscribedWorkteamOutputBuilder {
 }
 impl DescribeSubscribedWorkteamOutputBuilder {
     /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
+    /// This field is required.
     pub fn subscribed_workteam(mut self, input: crate::types::SubscribedWorkteam) -> Self {
         self.subscribed_workteam = ::std::option::Option::Some(input);
         self

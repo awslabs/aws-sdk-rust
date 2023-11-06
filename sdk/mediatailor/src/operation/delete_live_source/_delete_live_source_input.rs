@@ -34,6 +34,7 @@ pub struct DeleteLiveSourceInputBuilder {
 }
 impl DeleteLiveSourceInputBuilder {
     /// <p>The name of the live source.</p>
+    /// This field is required.
     pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteLiveSourceInputBuilder {
         &self.live_source_name
     }
     /// <p>The name of the source location associated with this Live Source.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +66,7 @@ impl DeleteLiveSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLiveSourceInput`](crate::operation::delete_live_source::DeleteLiveSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_live_source::DeleteLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_live_source::DeleteLiveSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_live_source::DeleteLiveSourceInput {
             live_source_name: self.live_source_name,
             source_location_name: self.source_location_name,

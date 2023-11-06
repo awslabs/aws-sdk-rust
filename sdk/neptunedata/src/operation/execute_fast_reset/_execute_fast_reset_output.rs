@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteFastResetOutput {
     /// <p>The <code>status</code> is only returned for the <code>performDatabaseReset</code> action, and indicates whether or not the fast reset rquest is accepted.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>The <code>payload</code> is only returned by the <code>initiateDatabaseReset</code> action, and contains the unique token to use with the <code>performDatabaseReset</code> action to make the reset occur.</p>
     pub payload: ::std::option::Option<crate::types::FastResetToken>,
     _request_id: Option<String>,
 }
 impl ExecuteFastResetOutput {
     /// <p>The <code>status</code> is only returned for the <code>performDatabaseReset</code> action, and indicates whether or not the fast reset rquest is accepted.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>The <code>payload</code> is only returned by the <code>initiateDatabaseReset</code> action, and contains the unique token to use with the <code>performDatabaseReset</code> action to make the reset occur.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::FastResetToken> {
@@ -41,6 +42,7 @@ pub struct ExecuteFastResetOutputBuilder {
 }
 impl ExecuteFastResetOutputBuilder {
     /// <p>The <code>status</code> is only returned for the <code>performDatabaseReset</code> action, and indicates whether or not the fast reset rquest is accepted.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +80,20 @@ impl ExecuteFastResetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExecuteFastResetOutput`](crate::operation::execute_fast_reset::ExecuteFastResetOutput).
-    pub fn build(self) -> crate::operation::execute_fast_reset::ExecuteFastResetOutput {
-        crate::operation::execute_fast_reset::ExecuteFastResetOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::execute_fast_reset::builders::ExecuteFastResetOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::execute_fast_reset::ExecuteFastResetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::execute_fast_reset::ExecuteFastResetOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ExecuteFastResetOutput",
+                )
+            })?,
             payload: self.payload,
             _request_id: self._request_id,
-        }
+        })
     }
 }

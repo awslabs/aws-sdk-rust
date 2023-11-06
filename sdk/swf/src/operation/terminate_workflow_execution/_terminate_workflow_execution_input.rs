@@ -78,6 +78,7 @@ pub struct TerminateWorkflowExecutionInputBuilder {
 }
 impl TerminateWorkflowExecutionInputBuilder {
     /// <p>The domain of the workflow execution to terminate.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl TerminateWorkflowExecutionInputBuilder {
         &self.domain
     }
     /// <p>The workflowId of the workflow execution to terminate.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -190,7 +192,7 @@ impl TerminateWorkflowExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput {
             domain: self.domain,

@@ -2,15 +2,15 @@
 pub fn ser_can_interface(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CanInterface,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.protocol_name {
-        object.key("protocolName").string(var_2.as_str());
+    if let Some(var_1) = &input.protocol_name {
+        object.key("protocolName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.protocol_version {
-        object.key("protocolVersion").string(var_3.as_str());
+    if let Some(var_2) = &input.protocol_version {
+        object.key("protocolVersion").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::can_interface_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

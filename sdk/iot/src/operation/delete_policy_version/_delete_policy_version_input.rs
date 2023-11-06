@@ -35,6 +35,7 @@ pub struct DeletePolicyVersionInputBuilder {
 }
 impl DeletePolicyVersionInputBuilder {
     /// <p>The name of the policy.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeletePolicyVersionInputBuilder {
         &self.policy_name
     }
     /// <p>The policy version ID.</p>
+    /// This field is required.
     pub fn policy_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_version_id = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl DeletePolicyVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePolicyVersionInput`](crate::operation::delete_policy_version::DeletePolicyVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_policy_version::DeletePolicyVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_policy_version::DeletePolicyVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_policy_version::DeletePolicyVersionInput {
             policy_name: self.policy_name,

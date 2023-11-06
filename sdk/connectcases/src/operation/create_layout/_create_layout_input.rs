@@ -41,6 +41,7 @@ pub struct CreateLayoutInputBuilder {
 }
 impl CreateLayoutInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateLayoutInputBuilder {
         &self.domain_id
     }
     /// <p>The name of the layout. It must be unique for the Cases domain.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateLayoutInputBuilder {
         &self.name
     }
     /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::LayoutContent) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -83,7 +86,9 @@ impl CreateLayoutInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`CreateLayoutInput`](crate::operation::create_layout::CreateLayoutInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_layout::CreateLayoutInput {
             domain_id: self.domain_id,
             name: self.name,

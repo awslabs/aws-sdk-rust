@@ -2,7 +2,7 @@
 pub fn ser_qop_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QopConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rpc_protection {
         object.key("RpcProtection").string(var_1.as_str());
     }

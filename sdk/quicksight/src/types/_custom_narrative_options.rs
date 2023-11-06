@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomNarrativeOptions {
     /// <p>The string input of custom narrative.</p>
-    pub narrative: ::std::option::Option<::std::string::String>,
+    pub narrative: ::std::string::String,
 }
 impl CustomNarrativeOptions {
     /// <p>The string input of custom narrative.</p>
-    pub fn narrative(&self) -> ::std::option::Option<&str> {
-        self.narrative.as_deref()
+    pub fn narrative(&self) -> &str {
+        use std::ops::Deref;
+        self.narrative.deref()
     }
 }
 impl CustomNarrativeOptions {
@@ -28,6 +29,7 @@ pub struct CustomNarrativeOptionsBuilder {
 }
 impl CustomNarrativeOptionsBuilder {
     /// <p>The string input of custom narrative.</p>
+    /// This field is required.
     pub fn narrative(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.narrative = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl CustomNarrativeOptionsBuilder {
         &self.narrative
     }
     /// Consumes the builder and constructs a [`CustomNarrativeOptions`](crate::types::CustomNarrativeOptions).
-    pub fn build(self) -> crate::types::CustomNarrativeOptions {
-        crate::types::CustomNarrativeOptions { narrative: self.narrative }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`narrative`](crate::types::builders::CustomNarrativeOptionsBuilder::narrative)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomNarrativeOptions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomNarrativeOptions {
+            narrative: self.narrative.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "narrative",
+                    "narrative was not specified but it is required when building CustomNarrativeOptions",
+                )
+            })?,
+        })
     }
 }

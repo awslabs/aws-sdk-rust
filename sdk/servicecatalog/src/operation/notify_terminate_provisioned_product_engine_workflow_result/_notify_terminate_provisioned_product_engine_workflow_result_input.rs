@@ -55,6 +55,7 @@ pub struct NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
 }
 impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
     /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
+    /// This field is required.
     pub fn workflow_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_token = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
         &self.workflow_token
     }
     /// <p> The identifier of the record. </p>
+    /// This field is required.
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
         &self.record_id
     }
     /// <p> The status of the terminate engine execution. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::EngineWorkflowStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -111,6 +114,7 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
         &self.failure_reason
     }
     /// <p> The idempotency token that identifies the terminate engine execution. </p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +133,7 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultInput {

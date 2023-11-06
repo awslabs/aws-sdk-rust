@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCollaborationAnalysisTemplateError {
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>An error code for the error.</p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
     /// <p>A description of why the call failed.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl BatchGetCollaborationAnalysisTemplateError {
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>An error code for the error.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
     /// <p>A description of why the call failed.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl BatchGetCollaborationAnalysisTemplateError {
@@ -42,6 +45,7 @@ pub struct BatchGetCollaborationAnalysisTemplateErrorBuilder {
 }
 impl BatchGetCollaborationAnalysisTemplateErrorBuilder {
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl BatchGetCollaborationAnalysisTemplateErrorBuilder {
         &self.arn
     }
     /// <p>An error code for the error.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl BatchGetCollaborationAnalysisTemplateErrorBuilder {
         &self.code
     }
     /// <p>A description of why the call failed.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,32 @@ impl BatchGetCollaborationAnalysisTemplateErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`BatchGetCollaborationAnalysisTemplateError`](crate::types::BatchGetCollaborationAnalysisTemplateError).
-    pub fn build(self) -> crate::types::BatchGetCollaborationAnalysisTemplateError {
-        crate::types::BatchGetCollaborationAnalysisTemplateError {
-            arn: self.arn,
-            code: self.code,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::BatchGetCollaborationAnalysisTemplateErrorBuilder::arn)
+    /// - [`code`](crate::types::builders::BatchGetCollaborationAnalysisTemplateErrorBuilder::code)
+    /// - [`message`](crate::types::builders::BatchGetCollaborationAnalysisTemplateErrorBuilder::message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchGetCollaborationAnalysisTemplateError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetCollaborationAnalysisTemplateError {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building BatchGetCollaborationAnalysisTemplateError",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building BatchGetCollaborationAnalysisTemplateError",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building BatchGetCollaborationAnalysisTemplateError",
+                )
+            })?,
+        })
     }
 }

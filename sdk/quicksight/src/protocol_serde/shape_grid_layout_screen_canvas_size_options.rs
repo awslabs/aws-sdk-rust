@@ -2,12 +2,12 @@
 pub fn ser_grid_layout_screen_canvas_size_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GridLayoutScreenCanvasSizeOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resize_option {
-        object.key("ResizeOption").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("ResizeOption").string(input.resize_option.as_str());
     }
-    if let Some(var_2) = &input.optimized_view_port_width {
-        object.key("OptimizedViewPortWidth").string(var_2.as_str());
+    if let Some(var_1) = &input.optimized_view_port_width {
+        object.key("OptimizedViewPortWidth").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::grid_layout_screen_canvas_size_options_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

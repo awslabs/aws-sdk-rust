@@ -11,8 +11,10 @@ pub struct ListResourceInventoryOutput {
 }
 impl ListResourceInventoryOutput {
     /// <p>Information about the resources.</p>
-    pub fn resource_inventory_list(&self) -> ::std::option::Option<&[crate::types::ResourceInventory]> {
-        self.resource_inventory_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_inventory_list.is_none()`.
+    pub fn resource_inventory_list(&self) -> &[crate::types::ResourceInventory] {
+        self.resource_inventory_list.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

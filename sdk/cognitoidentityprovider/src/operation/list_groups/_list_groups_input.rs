@@ -41,6 +41,7 @@ pub struct ListGroupsInputBuilder {
 }
 impl ListGroupsInputBuilder {
     /// <p>The user pool ID for the user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListGroupsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListGroupsInput`](crate::operation::list_groups::ListGroupsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_groups::ListGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_groups::ListGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_groups::ListGroupsInput {
             user_pool_id: self.user_pool_id,
             limit: self.limit,

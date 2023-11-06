@@ -8,8 +8,10 @@ pub struct BatchGetEffectiveLifecyclePolicyInput {
 }
 impl BatchGetEffectiveLifecyclePolicyInput {
     /// <p>The unique identifiers of policy types and resource names.</p>
-    pub fn resource_identifiers(&self) -> ::std::option::Option<&[crate::types::LifecyclePolicyResourceIdentifier]> {
-        self.resource_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
+    pub fn resource_identifiers(&self) -> &[crate::types::LifecyclePolicyResourceIdentifier] {
+        self.resource_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetEffectiveLifecyclePolicyInput {
@@ -54,7 +56,7 @@ impl BatchGetEffectiveLifecyclePolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyInput {

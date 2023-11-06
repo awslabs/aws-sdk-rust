@@ -108,6 +108,7 @@ pub struct StartTaskContactInputBuilder {
 }
 impl StartTaskContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +177,7 @@ impl StartTaskContactInputBuilder {
         &self.attributes
     }
     /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -299,7 +301,7 @@ impl StartTaskContactInputBuilder {
     /// Consumes the builder and constructs a [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_task_contact::StartTaskContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_task_contact::StartTaskContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_task_contact::StartTaskContactInput {
             instance_id: self.instance_id,
             previous_contact_id: self.previous_contact_id,

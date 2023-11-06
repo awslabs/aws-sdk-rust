@@ -59,8 +59,10 @@ impl ReleasePhoneNumberOutput {
         self.message_type.as_ref()
     }
     /// <p>Specifies if the number could be used for text messages, voice, or both.</p>
-    pub fn number_capabilities(&self) -> ::std::option::Option<&[crate::types::NumberCapability]> {
-        self.number_capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.number_capabilities.is_none()`.
+    pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
+        self.number_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The type of number that was released.</p>
     pub fn number_type(&self) -> ::std::option::Option<&crate::types::NumberType> {

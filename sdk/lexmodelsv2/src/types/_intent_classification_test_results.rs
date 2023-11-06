@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentClassificationTestResults {
     /// <p>A list of the results for the intent classification test.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::IntentClassificationTestResultItem>>,
+    pub items: ::std::vec::Vec<crate::types::IntentClassificationTestResultItem>,
 }
 impl IntentClassificationTestResults {
     /// <p>A list of the results for the intent classification test.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::IntentClassificationTestResultItem]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::IntentClassificationTestResultItem] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl IntentClassificationTestResults {
@@ -48,7 +49,16 @@ impl IntentClassificationTestResultsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`IntentClassificationTestResults`](crate::types::IntentClassificationTestResults).
-    pub fn build(self) -> crate::types::IntentClassificationTestResults {
-        crate::types::IntentClassificationTestResults { items: self.items }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::types::builders::IntentClassificationTestResultsBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntentClassificationTestResults, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntentClassificationTestResults {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building IntentClassificationTestResults",
+                )
+            })?,
+        })
     }
 }

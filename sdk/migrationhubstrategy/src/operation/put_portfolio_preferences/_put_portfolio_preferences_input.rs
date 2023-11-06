@@ -108,7 +108,7 @@ impl PutPortfolioPreferencesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_portfolio_preferences::PutPortfolioPreferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_portfolio_preferences::PutPortfolioPreferencesInput {
             prioritize_business_goals: self.prioritize_business_goals,

@@ -21,8 +21,10 @@ impl CustomRoutingDestinationDescription {
         self.to_port
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::Protocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::Protocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
 }
 impl CustomRoutingDestinationDescription {

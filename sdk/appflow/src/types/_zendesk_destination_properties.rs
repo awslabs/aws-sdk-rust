@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZendeskDestinationProperties {
     /// <p>The object specified in the Zendesk flow destination.</p>
-    pub object: ::std::option::Option<::std::string::String>,
+    pub object: ::std::string::String,
     /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
     pub id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
@@ -15,12 +15,15 @@ pub struct ZendeskDestinationProperties {
 }
 impl ZendeskDestinationProperties {
     /// <p>The object specified in the Zendesk flow destination.</p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
-        self.object.as_deref()
+    pub fn object(&self) -> &str {
+        use std::ops::Deref;
+        self.object.deref()
     }
     /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
-    pub fn id_field_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.id_field_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id_field_names.is_none()`.
+    pub fn id_field_names(&self) -> &[::std::string::String] {
+        self.id_field_names.as_deref().unwrap_or_default()
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
@@ -49,6 +52,7 @@ pub struct ZendeskDestinationPropertiesBuilder {
 }
 impl ZendeskDestinationPropertiesBuilder {
     /// <p>The object specified in the Zendesk flow destination.</p>
+    /// This field is required.
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +115,19 @@ impl ZendeskDestinationPropertiesBuilder {
         &self.write_operation_type
     }
     /// Consumes the builder and constructs a [`ZendeskDestinationProperties`](crate::types::ZendeskDestinationProperties).
-    pub fn build(self) -> crate::types::ZendeskDestinationProperties {
-        crate::types::ZendeskDestinationProperties {
-            object: self.object,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object`](crate::types::builders::ZendeskDestinationPropertiesBuilder::object)
+    pub fn build(self) -> ::std::result::Result<crate::types::ZendeskDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ZendeskDestinationProperties {
+            object: self.object.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object",
+                    "object was not specified but it is required when building ZendeskDestinationProperties",
+                )
+            })?,
             id_field_names: self.id_field_names,
             error_handling_config: self.error_handling_config,
             write_operation_type: self.write_operation_type,
-        }
+        })
     }
 }

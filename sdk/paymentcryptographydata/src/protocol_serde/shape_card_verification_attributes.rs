@@ -2,7 +2,7 @@
 pub fn ser_card_verification_attributes(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CardVerificationAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::CardVerificationAttributes::AmexCardSecurityCodeVersion1(inner) => {
             #[allow(unused_mut)]
@@ -53,7 +53,7 @@ pub fn ser_card_verification_attributes(
             object_8.finish();
         }
         crate::types::CardVerificationAttributes::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CardVerificationAttributes",
             ))
         }

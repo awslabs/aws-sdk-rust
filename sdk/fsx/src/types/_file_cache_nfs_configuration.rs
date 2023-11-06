@@ -15,8 +15,10 @@ impl FileCacheNfsConfiguration {
         self.version.as_ref()
     }
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
-    pub fn dns_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
+    pub fn dns_ips(&self) -> &[::std::string::String] {
+        self.dns_ips.as_deref().unwrap_or_default()
     }
 }
 impl FileCacheNfsConfiguration {
@@ -35,6 +37,7 @@ pub struct FileCacheNfsConfigurationBuilder {
 }
 impl FileCacheNfsConfigurationBuilder {
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
+    /// This field is required.
     pub fn version(mut self, input: crate::types::NfsVersion) -> Self {
         self.version = ::std::option::Option::Some(input);
         self

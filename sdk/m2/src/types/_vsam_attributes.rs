@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VsamAttributes {
     /// <p>The record format of the data set.</p>
-    pub format: ::std::option::Option<::std::string::String>,
+    pub format: ::std::string::String,
     /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
     pub encoding: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether indexes for this dataset are stored as compressed values. If you have a large data set (typically &gt; 100 Mb), consider setting this flag to True.</p>
@@ -17,8 +17,9 @@ pub struct VsamAttributes {
 }
 impl VsamAttributes {
     /// <p>The record format of the data set.</p>
-    pub fn format(&self) -> ::std::option::Option<&str> {
-        self.format.as_deref()
+    pub fn format(&self) -> &str {
+        use std::ops::Deref;
+        self.format.deref()
     }
     /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
     pub fn encoding(&self) -> ::std::option::Option<&str> {
@@ -33,8 +34,10 @@ impl VsamAttributes {
         self.primary_key.as_ref()
     }
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
-    pub fn alternate_keys(&self) -> ::std::option::Option<&[crate::types::AlternateKey]> {
-        self.alternate_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternate_keys.is_none()`.
+    pub fn alternate_keys(&self) -> &[crate::types::AlternateKey] {
+        self.alternate_keys.as_deref().unwrap_or_default()
     }
 }
 impl VsamAttributes {
@@ -56,6 +59,7 @@ pub struct VsamAttributesBuilder {
 }
 impl VsamAttributesBuilder {
     /// <p>The record format of the data set.</p>
+    /// This field is required.
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +136,20 @@ impl VsamAttributesBuilder {
         &self.alternate_keys
     }
     /// Consumes the builder and constructs a [`VsamAttributes`](crate::types::VsamAttributes).
-    pub fn build(self) -> crate::types::VsamAttributes {
-        crate::types::VsamAttributes {
-            format: self.format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`format`](crate::types::builders::VsamAttributesBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::VsamAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VsamAttributes {
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building VsamAttributes",
+                )
+            })?,
             encoding: self.encoding,
             compressed: self.compressed.unwrap_or_default(),
             primary_key: self.primary_key,
             alternate_keys: self.alternate_keys,
-        }
+        })
     }
 }

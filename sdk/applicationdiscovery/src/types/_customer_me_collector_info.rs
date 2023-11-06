@@ -70,6 +70,7 @@ pub struct CustomerMeCollectorInfoBuilder {
 }
 impl CustomerMeCollectorInfoBuilder {
     /// <p> The number of active Migration Evaluator collectors. </p>
+    /// This field is required.
     pub fn active_me_collectors(mut self, input: i32) -> Self {
         self.active_me_collectors = ::std::option::Option::Some(input);
         self
@@ -84,6 +85,7 @@ impl CustomerMeCollectorInfoBuilder {
         &self.active_me_collectors
     }
     /// <p> The number of healthy Migration Evaluator collectors. </p>
+    /// This field is required.
     pub fn healthy_me_collectors(mut self, input: i32) -> Self {
         self.healthy_me_collectors = ::std::option::Option::Some(input);
         self
@@ -98,6 +100,7 @@ impl CustomerMeCollectorInfoBuilder {
         &self.healthy_me_collectors
     }
     /// <p> The number of deny-listed Migration Evaluator collectors. </p>
+    /// This field is required.
     pub fn deny_listed_me_collectors(mut self, input: i32) -> Self {
         self.deny_listed_me_collectors = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl CustomerMeCollectorInfoBuilder {
         &self.deny_listed_me_collectors
     }
     /// <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. </p>
+    /// This field is required.
     pub fn shutdown_me_collectors(mut self, input: i32) -> Self {
         self.shutdown_me_collectors = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl CustomerMeCollectorInfoBuilder {
         &self.shutdown_me_collectors
     }
     /// <p> The number of unhealthy Migration Evaluator collectors. </p>
+    /// This field is required.
     pub fn unhealthy_me_collectors(mut self, input: i32) -> Self {
         self.unhealthy_me_collectors = ::std::option::Option::Some(input);
         self
@@ -140,6 +145,7 @@ impl CustomerMeCollectorInfoBuilder {
         &self.unhealthy_me_collectors
     }
     /// <p> The total number of Migration Evaluator collectors. </p>
+    /// This field is required.
     pub fn total_me_collectors(mut self, input: i32) -> Self {
         self.total_me_collectors = ::std::option::Option::Some(input);
         self
@@ -154,6 +160,7 @@ impl CustomerMeCollectorInfoBuilder {
         &self.total_me_collectors
     }
     /// <p> The number of unknown Migration Evaluator collectors. </p>
+    /// This field is required.
     pub fn unknown_me_collectors(mut self, input: i32) -> Self {
         self.unknown_me_collectors = ::std::option::Option::Some(input);
         self

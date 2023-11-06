@@ -66,6 +66,7 @@ pub struct GetPlaceInputBuilder {
 }
 impl GetPlaceInputBuilder {
     /// <p>The name of the place index resource that you want to use for the search.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl GetPlaceInputBuilder {
         &self.index_name
     }
     /// <p>The identifier of the place to find.</p>
+    /// This field is required.
     pub fn place_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.place_id = ::std::option::Option::Some(input.into());
         self
@@ -134,7 +136,7 @@ impl GetPlaceInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetPlaceInput`](crate::operation::get_place::GetPlaceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_place::GetPlaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_place::GetPlaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_place::GetPlaceInput {
             index_name: self.index_name,
             place_id: self.place_id,

@@ -42,6 +42,7 @@ pub struct CreateResourceInputBuilder {
 }
 impl CreateResourceInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateResourceInputBuilder {
         &self.rest_api_id
     }
     /// <p>The parent resource's identifier.</p>
+    /// This field is required.
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl CreateResourceInputBuilder {
         &self.parent_id
     }
     /// <p>The last path segment for this resource.</p>
+    /// This field is required.
     pub fn path_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_part = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +89,7 @@ impl CreateResourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourceInput`](crate::operation::create_resource::CreateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resource::CreateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_resource::CreateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_resource::CreateResourceInput {
             rest_api_id: self.rest_api_id,
             parent_id: self.parent_id,

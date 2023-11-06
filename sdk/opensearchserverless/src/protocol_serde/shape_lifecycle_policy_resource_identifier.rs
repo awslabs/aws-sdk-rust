@@ -2,12 +2,12 @@
 pub fn ser_lifecycle_policy_resource_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LifecyclePolicyResourceIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.resource {
-        object.key("resource").string(var_2.as_str());
+    {
+        object.key("resource").string(input.resource.as_str());
     }
     Ok(())
 }

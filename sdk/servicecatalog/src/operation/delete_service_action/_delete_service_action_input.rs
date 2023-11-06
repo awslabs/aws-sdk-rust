@@ -42,6 +42,7 @@ pub struct DeleteServiceActionInputBuilder {
 }
 impl DeleteServiceActionInputBuilder {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -84,7 +85,7 @@ impl DeleteServiceActionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServiceActionInput`](crate::operation::delete_service_action::DeleteServiceActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_service_action::DeleteServiceActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_service_action::DeleteServiceActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_service_action::DeleteServiceActionInput {
             id: self.id,

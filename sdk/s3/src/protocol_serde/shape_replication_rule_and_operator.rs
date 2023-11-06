@@ -2,7 +2,7 @@
 pub fn ser_replication_rule_and_operator(
     input: &crate::types::ReplicationRuleAndOperator,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.prefix {
@@ -21,6 +21,7 @@ pub fn ser_replication_rule_and_operator(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_replication_rule_and_operator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReplicationRuleAndOperator, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -44,7 +45,7 @@ pub fn de_replication_rule_and_operator(
             s if s.matches("Tag") /* Tags com.amazonaws.s3#ReplicationRuleAndOperator$Tags */ =>  {
                 let var_5 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Tag>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec::<crate::types::Tag>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_6 = builder.tags.take().unwrap_or_default();
                             list_6.push(
                                 crate::protocol_serde::shape_tag::de_tag(&mut tag)

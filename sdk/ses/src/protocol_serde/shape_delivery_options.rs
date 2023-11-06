@@ -3,7 +3,7 @@
 pub fn ser_delivery_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::DeliveryOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TlsPolicy");
     if let Some(var_2) = &input.tls_policy {
@@ -12,6 +12,7 @@ pub fn ser_delivery_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_delivery_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DeliveryOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

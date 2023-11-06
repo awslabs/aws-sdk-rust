@@ -28,6 +28,7 @@ pub struct PropertyFilterBuilder {
 }
 impl PropertyFilterBuilder {
     /// <p>Represents a single property to match with when searching a raster data collection.</p>
+    /// This field is required.
     pub fn property(mut self, input: crate::types::Property) -> Self {
         self.property = ::std::option::Option::Some(input);
         self

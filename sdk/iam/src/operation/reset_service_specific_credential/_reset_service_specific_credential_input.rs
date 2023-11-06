@@ -56,6 +56,7 @@ impl ResetServiceSpecificCredentialInputBuilder {
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// This field is required.
     pub fn service_specific_credential_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_specific_credential_id = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +77,7 @@ impl ResetServiceSpecificCredentialInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput {
             user_name: self.user_name,

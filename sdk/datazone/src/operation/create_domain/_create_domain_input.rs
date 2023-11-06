@@ -69,6 +69,7 @@ pub struct CreateDomainInputBuilder {
 }
 impl CreateDomainInputBuilder {
     /// <p>The name of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl CreateDomainInputBuilder {
         &self.single_sign_on
     }
     /// <p>The domain execution role that is created when an Amazon DataZone domain is created. The domain execution role is created in the Amazon Web Services account that houses the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn domain_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_execution_role = ::std::option::Option::Some(input.into());
         self
@@ -173,7 +175,9 @@ impl CreateDomainInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput {
             name: self.name,
             description: self.description,

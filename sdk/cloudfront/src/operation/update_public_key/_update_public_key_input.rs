@@ -41,6 +41,7 @@ pub struct UpdatePublicKeyInputBuilder {
 }
 impl UpdatePublicKeyInputBuilder {
     /// <p>A public key configuration.</p>
+    /// This field is required.
     pub fn public_key_config(mut self, input: crate::types::PublicKeyConfig) -> Self {
         self.public_key_config = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdatePublicKeyInputBuilder {
         &self.public_key_config
     }
     /// <p>The identifier of the public key that you are updating.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +87,7 @@ impl UpdatePublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePublicKeyInput`](crate::operation::update_public_key::UpdatePublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_public_key::UpdatePublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_public_key::UpdatePublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_public_key::UpdatePublicKeyInput {
             public_key_config: self.public_key_config,
             id: self.id,

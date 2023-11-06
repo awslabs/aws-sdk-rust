@@ -2,7 +2,7 @@
 pub fn ser_get_relational_database_bundles_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.page_token {
         object.key("pageToken").string(var_1.as_str());
     }

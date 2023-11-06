@@ -37,8 +37,10 @@ impl ConfigurationProfileSummary {
         self.location_uri.as_deref()
     }
     /// <p>The types of validators in the configuration profile.</p>
-    pub fn validator_types(&self) -> ::std::option::Option<&[crate::types::ValidatorType]> {
-        self.validator_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validator_types.is_none()`.
+    pub fn validator_types(&self) -> &[crate::types::ValidatorType] {
+        self.validator_types.as_deref().unwrap_or_default()
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>

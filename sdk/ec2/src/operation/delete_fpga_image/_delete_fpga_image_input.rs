@@ -48,6 +48,7 @@ impl DeleteFpgaImageInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the AFI.</p>
+    /// This field is required.
     pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DeleteFpgaImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFpgaImageInput`](crate::operation::delete_fpga_image::DeleteFpgaImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_fpga_image::DeleteFpgaImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_fpga_image::DeleteFpgaImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fpga_image::DeleteFpgaImageInput {
             dry_run: self.dry_run,
             fpga_image_id: self.fpga_image_id,

@@ -28,6 +28,7 @@ pub struct GetConnectInstanceConfigInputBuilder {
 }
 impl GetConnectInstanceConfigInputBuilder {
     /// Amazon Connect Instance Id
+    /// This field is required.
     pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -46,7 +47,7 @@ impl GetConnectInstanceConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput {
             connect_instance_id: self.connect_instance_id,

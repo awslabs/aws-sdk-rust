@@ -35,6 +35,7 @@ pub struct DeleteDeploymentGroupInputBuilder {
 }
 impl DeleteDeploymentGroupInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteDeploymentGroupInputBuilder {
         &self.application_name
     }
     /// <p>The name of a deployment group for the specified application.</p>
+    /// This field is required.
     pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_group_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,7 @@ impl DeleteDeploymentGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeploymentGroupInput`](crate::operation::delete_deployment_group::DeleteDeploymentGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_deployment_group::DeleteDeploymentGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_deployment_group::DeleteDeploymentGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_deployment_group::DeleteDeploymentGroupInput {
             application_name: self.application_name,

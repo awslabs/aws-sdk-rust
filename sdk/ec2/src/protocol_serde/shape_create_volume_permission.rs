@@ -3,7 +3,7 @@
 pub fn ser_create_volume_permission(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CreateVolumePermission,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Group");
     if let Some(var_2) = &input.group {
@@ -17,6 +17,7 @@ pub fn ser_create_volume_permission(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_create_volume_permission(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CreateVolumePermission, ::aws_smithy_xml::decode::XmlDecodeError> {

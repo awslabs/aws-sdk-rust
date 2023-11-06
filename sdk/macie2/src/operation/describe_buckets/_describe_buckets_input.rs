@@ -119,7 +119,7 @@ impl DescribeBucketsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBucketsInput`](crate::operation::describe_buckets::DescribeBucketsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_buckets::DescribeBucketsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_buckets::DescribeBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_buckets::DescribeBucketsInput {
             criteria: self.criteria,
             max_results: self.max_results,

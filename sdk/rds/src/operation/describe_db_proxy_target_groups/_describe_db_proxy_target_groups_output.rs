@@ -11,8 +11,10 @@ pub struct DescribeDbProxyTargetGroupsOutput {
 }
 impl DescribeDbProxyTargetGroupsOutput {
     /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
-    pub fn target_groups(&self) -> ::std::option::Option<&[crate::types::DbProxyTargetGroup]> {
-        self.target_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_groups.is_none()`.
+    pub fn target_groups(&self) -> &[crate::types::DbProxyTargetGroup] {
+        self.target_groups.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

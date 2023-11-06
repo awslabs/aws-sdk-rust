@@ -34,6 +34,7 @@ pub struct DeleteFirewallPolicyOutputBuilder {
 }
 impl DeleteFirewallPolicyOutputBuilder {
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
+    /// This field is required.
     pub fn firewall_policy_response(mut self, input: crate::types::FirewallPolicyResponse) -> Self {
         self.firewall_policy_response = ::std::option::Option::Some(input);
         self

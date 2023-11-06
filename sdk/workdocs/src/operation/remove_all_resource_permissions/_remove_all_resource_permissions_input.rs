@@ -56,6 +56,7 @@ impl RemoveAllResourcePermissionsInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -74,7 +75,7 @@ impl RemoveAllResourcePermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsInput {
             authentication_token: self.authentication_token,

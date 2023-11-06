@@ -89,8 +89,10 @@ impl Backup {
         self.resource_arn.as_deref()
     }
     /// <p>The tags associated with a particular file system.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
     pub fn file_system(&self) -> ::std::option::Option<&crate::types::FileSystem> {
@@ -151,6 +153,7 @@ pub struct BackupBuilder {
 }
 impl BackupBuilder {
     /// <p>The ID of the backup.</p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +177,7 @@ impl BackupBuilder {
     /// <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li>
     /// <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn lifecycle(mut self, input: crate::types::BackupLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
         self
@@ -220,6 +224,7 @@ impl BackupBuilder {
         &self.failure_details
     }
     /// <p>The type of the file-system backup.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::BackupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -248,6 +253,7 @@ impl BackupBuilder {
         &self.progress_percent
     }
     /// <p>The time when a particular backup was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -310,6 +316,7 @@ impl BackupBuilder {
         &self.tags
     }
     /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
+    /// This field is required.
     pub fn file_system(mut self, input: crate::types::FileSystem) -> Self {
         self.file_system = ::std::option::Option::Some(input);
         self

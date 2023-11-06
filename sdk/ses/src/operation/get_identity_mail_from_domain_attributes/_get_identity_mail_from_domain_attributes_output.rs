@@ -5,16 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityMailFromDomainAttributesOutput {
     /// <p>A map of identities to custom MAIL FROM attributes.</p>
-    pub mail_from_domain_attributes:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>>,
+    pub mail_from_domain_attributes: ::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>,
     _request_id: Option<String>,
 }
 impl GetIdentityMailFromDomainAttributesOutput {
     /// <p>A map of identities to custom MAIL FROM attributes.</p>
-    pub fn mail_from_domain_attributes(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>> {
-        self.mail_from_domain_attributes.as_ref()
+    pub fn mail_from_domain_attributes(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes> {
+        &self.mail_from_domain_attributes
     }
 }
 impl ::aws_http::request_id::RequestId for GetIdentityMailFromDomainAttributesOutput {
@@ -77,10 +74,24 @@ impl GetIdentityMailFromDomainAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityMailFromDomainAttributesOutput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput).
-    pub fn build(self) -> crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput {
-        crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput {
-            mail_from_domain_attributes: self.mail_from_domain_attributes,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mail_from_domain_attributes`](crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesOutputBuilder::mail_from_domain_attributes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput {
+                mail_from_domain_attributes: self.mail_from_domain_attributes.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "mail_from_domain_attributes",
+                        "mail_from_domain_attributes was not specified but it is required when building GetIdentityMailFromDomainAttributesOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

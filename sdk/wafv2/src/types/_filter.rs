@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
-    pub behavior: ::std::option::Option<crate::types::FilterBehavior>,
+    pub behavior: crate::types::FilterBehavior,
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
-    pub requirement: ::std::option::Option<crate::types::FilterRequirement>,
+    pub requirement: crate::types::FilterRequirement,
     /// <p>Match conditions for the filter.</p>
-    pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
+    pub conditions: ::std::vec::Vec<crate::types::Condition>,
 }
 impl Filter {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
-    pub fn behavior(&self) -> ::std::option::Option<&crate::types::FilterBehavior> {
-        self.behavior.as_ref()
+    pub fn behavior(&self) -> &crate::types::FilterBehavior {
+        &self.behavior
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
-    pub fn requirement(&self) -> ::std::option::Option<&crate::types::FilterRequirement> {
-        self.requirement.as_ref()
+    pub fn requirement(&self) -> &crate::types::FilterRequirement {
+        &self.requirement
     }
     /// <p>Match conditions for the filter.</p>
-    pub fn conditions(&self) -> ::std::option::Option<&[crate::types::Condition]> {
-        self.conditions.as_deref()
+    pub fn conditions(&self) -> &[crate::types::Condition] {
+        use std::ops::Deref;
+        self.conditions.deref()
     }
 }
 impl Filter {
@@ -42,6 +43,7 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
+    /// This field is required.
     pub fn behavior(mut self, input: crate::types::FilterBehavior) -> Self {
         self.behavior = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl FilterBuilder {
         &self.behavior
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
+    /// This field is required.
     pub fn requirement(mut self, input: crate::types::FilterRequirement) -> Self {
         self.requirement = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl FilterBuilder {
         &self.conditions
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
-    pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter {
-            behavior: self.behavior,
-            requirement: self.requirement,
-            conditions: self.conditions,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`behavior`](crate::types::builders::FilterBuilder::behavior)
+    /// - [`requirement`](crate::types::builders::FilterBuilder::requirement)
+    /// - [`conditions`](crate::types::builders::FilterBuilder::conditions)
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Filter {
+            behavior: self.behavior.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "behavior",
+                    "behavior was not specified but it is required when building Filter",
+                )
+            })?,
+            requirement: self.requirement.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "requirement",
+                    "requirement was not specified but it is required when building Filter",
+                )
+            })?,
+            conditions: self.conditions.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "conditions",
+                    "conditions was not specified but it is required when building Filter",
+                )
+            })?,
+        })
     }
 }

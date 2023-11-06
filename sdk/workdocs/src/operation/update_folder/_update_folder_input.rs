@@ -80,6 +80,7 @@ impl UpdateFolderInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the folder.</p>
+    /// This field is required.
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
         self
@@ -136,7 +137,9 @@ impl UpdateFolderInputBuilder {
         &self.resource_state
     }
     /// Consumes the builder and constructs a [`UpdateFolderInput`](crate::operation::update_folder::UpdateFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_folder::UpdateFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_folder::UpdateFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_folder::UpdateFolderInput {
             authentication_token: self.authentication_token,
             folder_id: self.folder_id,

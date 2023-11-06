@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceNetworkVpcAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>>,
+    pub items: ::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListServiceNetworkVpcAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ServiceNetworkVpcAssociationSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::ServiceNetworkVpcAssociationSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,25 @@ impl ListServiceNetworkVpcAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceNetworkVpcAssociationsOutput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput).
-    pub fn build(self) -> crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput {
-        crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput {
-            items: self.items,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput {
+                items: self.items.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "items",
+                        "items was not specified but it is required when building ListServiceNetworkVpcAssociationsOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

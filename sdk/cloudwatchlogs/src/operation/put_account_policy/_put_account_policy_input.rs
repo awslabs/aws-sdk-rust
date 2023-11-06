@@ -68,6 +68,7 @@ pub struct PutAccountPolicyInputBuilder {
 }
 impl PutAccountPolicyInputBuilder {
     /// <p>A name for the policy. This must be unique within the account.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl PutAccountPolicyInputBuilder {
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is different than the operation's <code>policyName</code> parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +128,7 @@ impl PutAccountPolicyInputBuilder {
         &self.policy_document
     }
     /// <p>Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self
@@ -156,7 +159,7 @@ impl PutAccountPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutAccountPolicyInput`](crate::operation::put_account_policy::PutAccountPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_account_policy::PutAccountPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_account_policy::PutAccountPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_account_policy::PutAccountPolicyInput {
             policy_name: self.policy_name,
             policy_document: self.policy_document,

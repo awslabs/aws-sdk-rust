@@ -34,6 +34,7 @@ pub struct UpdateIndexTypeInputBuilder {
 }
 impl UpdateIndexTypeInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to update.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateIndexTypeInputBuilder {
         &self.arn
     }
     /// <p>The type of the index. To understand the difference between <code>LOCAL</code> and <code>AGGREGATOR</code>, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -64,7 +66,7 @@ impl UpdateIndexTypeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateIndexTypeInput`](crate::operation::update_index_type::UpdateIndexTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_index_type::UpdateIndexTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_index_type::UpdateIndexTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_index_type::UpdateIndexTypeInput {
             arn: self.arn,
             r#type: self.r#type,

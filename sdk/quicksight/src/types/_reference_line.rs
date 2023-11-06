@@ -83,6 +83,7 @@ impl ReferenceLineBuilder {
         &self.status
     }
     /// <p>The data configuration of the reference line.</p>
+    /// This field is required.
     pub fn data_configuration(mut self, input: crate::types::ReferenceLineDataConfiguration) -> Self {
         self.data_configuration = ::std::option::Option::Some(input);
         self

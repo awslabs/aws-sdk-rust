@@ -112,6 +112,7 @@ pub struct UpdateServicePipelineInputBuilder {
 }
 impl UpdateServicePipelineInputBuilder {
     /// <p>The name of the service to that the pipeline is associated with.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +127,7 @@ impl UpdateServicePipelineInputBuilder {
         &self.service_name
     }
     /// <p>The spec for the service pipeline to update.</p>
+    /// This field is required.
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
         self
@@ -163,6 +165,7 @@ impl UpdateServicePipelineInputBuilder {
     /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn deployment_type(mut self, input: crate::types::DeploymentUpdateType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
@@ -253,7 +256,7 @@ impl UpdateServicePipelineInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServicePipelineInput`](crate::operation::update_service_pipeline::UpdateServicePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_service_pipeline::UpdateServicePipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_service_pipeline::UpdateServicePipelineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_pipeline::UpdateServicePipelineInput {
             service_name: self.service_name,

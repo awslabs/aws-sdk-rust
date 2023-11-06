@@ -27,6 +27,7 @@ pub struct CreateCachePolicyInputBuilder {
 }
 impl CreateCachePolicyInputBuilder {
     /// <p>A cache policy configuration.</p>
+    /// This field is required.
     pub fn cache_policy_config(mut self, input: crate::types::CachePolicyConfig) -> Self {
         self.cache_policy_config = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,7 @@ impl CreateCachePolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateCachePolicyInput`](crate::operation::create_cache_policy::CreateCachePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cache_policy::CreateCachePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_cache_policy::CreateCachePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cache_policy::CreateCachePolicyInput {
             cache_policy_config: self.cache_policy_config,
         })

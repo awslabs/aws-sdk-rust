@@ -11,8 +11,10 @@ pub struct ListOrganizationAdminAccountsOutput {
 }
 impl ListOrganizationAdminAccountsOutput {
     /// <p>A list of accounts configured as GuardDuty delegated administrators.</p>
-    pub fn admin_accounts(&self) -> ::std::option::Option<&[crate::types::AdminAccount]> {
-        self.admin_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin_accounts.is_none()`.
+    pub fn admin_accounts(&self) -> &[crate::types::AdminAccount] {
+        self.admin_accounts.as_deref().unwrap_or_default()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

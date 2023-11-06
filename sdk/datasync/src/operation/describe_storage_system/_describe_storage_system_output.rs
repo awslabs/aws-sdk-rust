@@ -43,8 +43,10 @@ impl DescribeStorageSystemOutput {
         self.system_type.as_ref()
     }
     /// <p>The ARN of the DataSync agent that connects to and reads from your on-premises storage system.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>The name that you gave your on-premises storage system when adding it to DataSync Discovery.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {

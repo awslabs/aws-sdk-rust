@@ -88,8 +88,10 @@ impl ModifyClientVpnEndpointInput {
         self.dry_run
     }
     /// <p>The IDs of one or more security groups to apply to the target network.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
@@ -142,6 +144,7 @@ pub struct ModifyClientVpnEndpointInputBuilder {
 }
 impl ModifyClientVpnEndpointInputBuilder {
     /// <p>The ID of the Client VPN endpoint to modify.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -384,7 +387,7 @@ impl ModifyClientVpnEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput {
             client_vpn_endpoint_id: self.client_vpn_endpoint_id,

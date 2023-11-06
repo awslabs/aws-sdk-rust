@@ -63,6 +63,7 @@ pub struct PutMethodResponseInputBuilder {
 }
 impl PutMethodResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl PutMethodResponseInputBuilder {
         &self.rest_api_id
     }
     /// <p>The Resource identifier for the Method resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl PutMethodResponseInputBuilder {
         &self.resource_id
     }
     /// <p>The HTTP verb of the Method resource.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl PutMethodResponseInputBuilder {
         &self.http_method
     }
     /// <p>The method response's status code.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
         self
@@ -168,7 +172,7 @@ impl PutMethodResponseInputBuilder {
     /// Consumes the builder and constructs a [`PutMethodResponseInput`](crate::operation::put_method_response::PutMethodResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_method_response::PutMethodResponseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_method_response::PutMethodResponseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_method_response::PutMethodResponseInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

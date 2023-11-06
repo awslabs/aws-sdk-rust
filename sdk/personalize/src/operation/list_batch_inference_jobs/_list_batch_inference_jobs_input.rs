@@ -87,7 +87,7 @@ impl ListBatchInferenceJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsInput {
             solution_version_arn: self.solution_version_arn,

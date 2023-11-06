@@ -50,6 +50,7 @@ pub struct CreateTopicRuleInputBuilder {
 }
 impl CreateTopicRuleInputBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl CreateTopicRuleInputBuilder {
         &self.rule_name
     }
     /// <p>The rule payload.</p>
+    /// This field is required.
     pub fn topic_rule_payload(mut self, input: crate::types::TopicRulePayload) -> Self {
         self.topic_rule_payload = ::std::option::Option::Some(input);
         self
@@ -106,7 +108,7 @@ impl CreateTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateTopicRuleInput`](crate::operation::create_topic_rule::CreateTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_topic_rule::CreateTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_topic_rule::CreateTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_topic_rule::CreateTopicRuleInput {
             rule_name: self.rule_name,
             topic_rule_payload: self.topic_rule_payload,

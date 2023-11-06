@@ -2,17 +2,17 @@
 pub fn ser_app(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::App,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_name {
-        object.key("AppName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("AppName").string(input.app_name.as_str());
     }
-    if let Some(var_2) = &input.protocol {
-        object.key("Protocol").string(var_2.as_str());
+    {
+        object.key("Protocol").string(input.protocol.as_str());
     }
-    if let Some(var_3) = &input.port {
+    {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
     Ok(())
@@ -64,7 +64,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::app_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -14,8 +14,10 @@ impl PutPolicyInput {
         self.policy.as_ref()
     }
     /// <p>The tags to add to the Amazon Web Services resource.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl PutPolicyInput {
@@ -34,6 +36,7 @@ pub struct PutPolicyInputBuilder {
 }
 impl PutPolicyInputBuilder {
     /// <p>The details of the Firewall Manager policy to be created.</p>
+    /// This field is required.
     pub fn policy(mut self, input: crate::types::Policy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self
@@ -68,7 +71,7 @@ impl PutPolicyInputBuilder {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutPolicyInput`](crate::operation::put_policy::PutPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_policy::PutPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_policy::PutPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_policy::PutPolicyInput {
             policy: self.policy,
             tag_list: self.tag_list,

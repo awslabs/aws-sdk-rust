@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsDatabase {
     /// <p>The ID of an RDS DB instance.</p>
-    pub instance_identifier: ::std::option::Option<::std::string::String>,
+    pub instance_identifier: ::std::string::String,
     /// <p>The name of a database hosted on an RDS DB instance.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
 }
 impl RdsDatabase {
     /// <p>The ID of an RDS DB instance.</p>
-    pub fn instance_identifier(&self) -> ::std::option::Option<&str> {
-        self.instance_identifier.as_deref()
+    pub fn instance_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_identifier.deref()
     }
     /// <p>The name of a database hosted on an RDS DB instance.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
 }
 impl RdsDatabase {
@@ -35,6 +37,7 @@ pub struct RdsDatabaseBuilder {
 }
 impl RdsDatabaseBuilder {
     /// <p>The ID of an RDS DB instance.</p>
+    /// This field is required.
     pub fn instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl RdsDatabaseBuilder {
         &self.instance_identifier
     }
     /// <p>The name of a database hosted on an RDS DB instance.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl RdsDatabaseBuilder {
         &self.database_name
     }
     /// Consumes the builder and constructs a [`RdsDatabase`](crate::types::RdsDatabase).
-    pub fn build(self) -> crate::types::RdsDatabase {
-        crate::types::RdsDatabase {
-            instance_identifier: self.instance_identifier,
-            database_name: self.database_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_identifier`](crate::types::builders::RdsDatabaseBuilder::instance_identifier)
+    /// - [`database_name`](crate::types::builders::RdsDatabaseBuilder::database_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RdsDatabase, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RdsDatabase {
+            instance_identifier: self.instance_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "instance_identifier",
+                    "instance_identifier was not specified but it is required when building RdsDatabase",
+                )
+            })?,
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building RdsDatabase",
+                )
+            })?,
+        })
     }
 }

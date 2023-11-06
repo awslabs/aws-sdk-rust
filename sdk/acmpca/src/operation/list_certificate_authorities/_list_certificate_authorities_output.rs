@@ -11,8 +11,10 @@ pub struct ListCertificateAuthoritiesOutput {
 }
 impl ListCertificateAuthoritiesOutput {
     /// <p>Summary information about each certificate authority you have created.</p>
-    pub fn certificate_authorities(&self) -> ::std::option::Option<&[crate::types::CertificateAuthority]> {
-        self.certificate_authorities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_authorities.is_none()`.
+    pub fn certificate_authorities(&self) -> &[crate::types::CertificateAuthority] {
+        self.certificate_authorities.as_deref().unwrap_or_default()
     }
     /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

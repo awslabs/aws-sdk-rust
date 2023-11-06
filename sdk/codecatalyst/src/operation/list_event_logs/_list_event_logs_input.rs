@@ -62,6 +62,7 @@ pub struct ListEventLogsInputBuilder {
 }
 impl ListEventLogsInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ListEventLogsInputBuilder {
         &self.space_name
     }
     /// <p>The date and time when you want to start retrieving events, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl ListEventLogsInputBuilder {
         &self.start_time
     }
     /// <p>The time after which you do not want any events retrieved, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -148,7 +151,7 @@ impl ListEventLogsInputBuilder {
     /// Consumes the builder and constructs a [`ListEventLogsInput`](crate::operation::list_event_logs::ListEventLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_event_logs::ListEventLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_event_logs::ListEventLogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_event_logs::ListEventLogsInput {
             space_name: self.space_name,
             start_time: self.start_time,

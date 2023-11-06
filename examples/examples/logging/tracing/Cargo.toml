@@ -7,11 +7,11 @@ version = "0.1.0"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.56.1", path = "../../../../sdk/aws-config" }
-aws-sdk-dynamodb= { version = "0.34.0", path = "../../../../sdk/dynamodb" }
+aws-config= { version = "0.57.1", path = "../../../../sdk/aws-config" }
+aws-sdk-dynamodb= { version = "0.35.0", path = "../../../../sdk/dynamodb" }
 
 [dependencies.clap]
-version = "~4.2"
+version = "~4.4"
 features = ["derive"]
 
 [dependencies.tokio]

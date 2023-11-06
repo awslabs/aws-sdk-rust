@@ -34,6 +34,7 @@ pub struct RestoreCoreNetworkPolicyVersionInputBuilder {
 }
 impl RestoreCoreNetworkPolicyVersionInputBuilder {
     /// <p>The ID of a core network.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RestoreCoreNetworkPolicyVersionInputBuilder {
         &self.core_network_id
     }
     /// <p>The ID of the policy version to restore.</p>
+    /// This field is required.
     pub fn policy_version_id(mut self, input: i32) -> Self {
         self.policy_version_id = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl RestoreCoreNetworkPolicyVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionInput {

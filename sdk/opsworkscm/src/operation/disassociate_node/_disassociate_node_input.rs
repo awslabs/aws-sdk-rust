@@ -28,8 +28,10 @@ impl DisassociateNodeInput {
     /// <ul>
     /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
-    pub fn engine_attributes(&self) -> ::std::option::Option<&[crate::types::EngineAttribute]> {
-        self.engine_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
+    pub fn engine_attributes(&self) -> &[crate::types::EngineAttribute] {
+        self.engine_attributes.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateNodeInput {
@@ -49,6 +51,7 @@ pub struct DisassociateNodeInputBuilder {
 }
 impl DisassociateNodeInputBuilder {
     /// <p>The name of the server from which to disassociate the node. </p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl DisassociateNodeInputBuilder {
         &self.server_name
     }
     /// <p>The name of the client node. </p>
+    /// This field is required.
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +115,7 @@ impl DisassociateNodeInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateNodeInput`](crate::operation::disassociate_node::DisassociateNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_node::DisassociateNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_node::DisassociateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_node::DisassociateNodeInput {
             server_name: self.server_name,
             node_name: self.node_name,

@@ -2,53 +2,53 @@
 pub fn ser_evaluate_data_quality_multi_frame(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluateDataQualityMultiFrame,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.inputs {
-        let mut array_3 = object.key("Inputs").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Inputs").start_array();
+        for item_2 in &input.inputs {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.additional_data_sources {
+    if let Some(var_3) = &input.additional_data_sources {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("AdditionalDataSources").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_4 = object.key("AdditionalDataSources").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_6.finish();
+        object_4.finish();
     }
-    if let Some(var_9) = &input.ruleset {
-        object.key("Ruleset").string(var_9.as_str());
+    {
+        object.key("Ruleset").string(input.ruleset.as_str());
     }
-    if let Some(var_10) = &input.publishing_options {
+    if let Some(var_7) = &input.publishing_options {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("PublishingOptions").start_object();
-        crate::protocol_serde::shape_dq_results_publishing_options::ser_dq_results_publishing_options(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_8 = object.key("PublishingOptions").start_object();
+        crate::protocol_serde::shape_dq_results_publishing_options::ser_dq_results_publishing_options(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_12) = &input.additional_options {
+    if let Some(var_9) = &input.additional_options {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("AdditionalOptions").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_10 = object.key("AdditionalOptions").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_13.finish();
+        object_10.finish();
     }
-    if let Some(var_16) = &input.stop_job_on_failure_options {
+    if let Some(var_13) = &input.stop_job_on_failure_options {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("StopJobOnFailureOptions").start_object();
-        crate::protocol_serde::shape_dq_stop_job_on_failure_options::ser_dq_stop_job_on_failure_options(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_14 = object.key("StopJobOnFailureOptions").start_object();
+        crate::protocol_serde::shape_dq_stop_job_on_failure_options::ser_dq_stop_job_on_failure_options(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }
@@ -112,7 +112,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::evaluate_data_quality_multi_frame_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

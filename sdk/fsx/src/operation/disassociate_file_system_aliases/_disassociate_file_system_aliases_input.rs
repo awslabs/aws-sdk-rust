@@ -21,8 +21,10 @@ impl DisassociateFileSystemAliasesInput {
         self.file_system_id.as_deref()
     }
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[::std::string::String] {
+        self.aliases.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateFileSystemAliasesInput {
@@ -56,6 +58,7 @@ impl DisassociateFileSystemAliasesInputBuilder {
         &self.client_request_token
     }
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl DisassociateFileSystemAliasesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput {
             client_request_token: self.client_request_token,

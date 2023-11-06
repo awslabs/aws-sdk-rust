@@ -97,6 +97,7 @@ pub struct DescribeFlowDefinitionOutputBuilder {
 }
 impl DescribeFlowDefinitionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the flow defintion.</p>
+    /// This field is required.
     pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl DescribeFlowDefinitionOutputBuilder {
         &self.flow_definition_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    /// This field is required.
     pub fn flow_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +127,7 @@ impl DescribeFlowDefinitionOutputBuilder {
         &self.flow_definition_name
     }
     /// <p>The status of the flow definition. Valid values are listed below.</p>
+    /// This field is required.
     pub fn flow_definition_status(mut self, input: crate::types::FlowDefinitionStatus) -> Self {
         self.flow_definition_status = ::std::option::Option::Some(input);
         self
@@ -139,6 +142,7 @@ impl DescribeFlowDefinitionOutputBuilder {
         &self.flow_definition_status
     }
     /// <p>The timestamp when the flow definition was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -181,6 +185,7 @@ impl DescribeFlowDefinitionOutputBuilder {
         &self.human_loop_activation_config
     }
     /// <p>An object containing information about who works on the task, the workforce task price, and other task details.</p>
+    /// This field is required.
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
         self.human_loop_config = ::std::option::Option::Some(input);
         self
@@ -195,6 +200,7 @@ impl DescribeFlowDefinitionOutputBuilder {
         &self.human_loop_config
     }
     /// <p>An object containing information about the output file.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::FlowDefinitionOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -209,6 +215,7 @@ impl DescribeFlowDefinitionOutputBuilder {
         &self.output_config
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for the flow definition.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

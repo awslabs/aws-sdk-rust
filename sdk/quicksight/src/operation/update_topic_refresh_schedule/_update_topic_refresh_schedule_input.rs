@@ -48,6 +48,7 @@ pub struct UpdateTopicRefreshScheduleInputBuilder {
 }
 impl UpdateTopicRefreshScheduleInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateTopicRefreshScheduleInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateTopicRefreshScheduleInputBuilder {
         &self.topic_id
     }
     /// <p>The ID of the dataset.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl UpdateTopicRefreshScheduleInputBuilder {
         &self.dataset_id
     }
     /// <p>The definition of a refresh schedule.</p>
+    /// This field is required.
     pub fn refresh_schedule(mut self, input: crate::types::TopicRefreshSchedule) -> Self {
         self.refresh_schedule = ::std::option::Option::Some(input);
         self
@@ -108,7 +112,7 @@ impl UpdateTopicRefreshScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleInput {
             aws_account_id: self.aws_account_id,

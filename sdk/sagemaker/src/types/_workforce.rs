@@ -98,6 +98,7 @@ pub struct WorkforceBuilder {
 }
 impl WorkforceBuilder {
     /// <p>The name of the private workforce.</p>
+    /// This field is required.
     pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +113,7 @@ impl WorkforceBuilder {
         &self.workforce_name
     }
     /// <p>The Amazon Resource Name (ARN) of the private workforce.</p>
+    /// This field is required.
     pub fn workforce_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_arn = ::std::option::Option::Some(input.into());
         self

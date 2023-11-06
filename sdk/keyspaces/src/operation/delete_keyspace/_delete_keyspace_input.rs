@@ -27,6 +27,7 @@ pub struct DeleteKeyspaceInputBuilder {
 }
 impl DeleteKeyspaceInputBuilder {
     /// <p>The name of the keyspace to be deleted.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteKeyspaceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeyspaceInput`](crate::operation::delete_keyspace::DeleteKeyspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_keyspace::DeleteKeyspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_keyspace::DeleteKeyspaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_keyspace::DeleteKeyspaceInput {
             keyspace_name: self.keyspace_name,
         })

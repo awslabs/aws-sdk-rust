@@ -91,6 +91,7 @@ impl DescribeSpotFleetInstancesInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the Spot Fleet request.</p>
+    /// This field is required.
     pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +110,7 @@ impl DescribeSpotFleetInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesInput {
             dry_run: self.dry_run,

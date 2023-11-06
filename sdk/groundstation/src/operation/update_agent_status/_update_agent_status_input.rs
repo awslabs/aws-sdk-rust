@@ -26,8 +26,10 @@ impl UpdateAgentStatusInput {
         self.aggregate_status.as_ref()
     }
     /// <p>List of component statuses for agent.</p>
-    pub fn component_statuses(&self) -> ::std::option::Option<&[crate::types::ComponentStatusData]> {
-        self.component_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_statuses.is_none()`.
+    pub fn component_statuses(&self) -> &[crate::types::ComponentStatusData] {
+        self.component_statuses.as_deref().unwrap_or_default()
     }
 }
 impl UpdateAgentStatusInput {
@@ -48,6 +50,7 @@ pub struct UpdateAgentStatusInputBuilder {
 }
 impl UpdateAgentStatusInputBuilder {
     /// <p>UUID of agent to update.</p>
+    /// This field is required.
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl UpdateAgentStatusInputBuilder {
         &self.agent_id
     }
     /// <p>GUID of agent task.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl UpdateAgentStatusInputBuilder {
         &self.task_id
     }
     /// <p>Aggregate status for agent.</p>
+    /// This field is required.
     pub fn aggregate_status(mut self, input: crate::types::AggregateStatus) -> Self {
         self.aggregate_status = ::std::option::Option::Some(input);
         self
@@ -112,7 +117,7 @@ impl UpdateAgentStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_agent_status::UpdateAgentStatusInput {
             agent_id: self.agent_id,
             task_id: self.task_id,

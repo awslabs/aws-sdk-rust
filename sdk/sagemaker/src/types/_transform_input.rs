@@ -65,6 +65,7 @@ pub struct TransformInputBuilder {
 }
 impl TransformInputBuilder {
     /// <p>Describes the location of the channel data, which is, the S3 location of the input data that the model can consume.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::TransformDataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self

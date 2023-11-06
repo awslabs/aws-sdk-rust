@@ -2,7 +2,7 @@
 pub fn ser_lex_v2_bot(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LexV2Bot,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.alias_arn {
         object.key("AliasArn").string(var_1.as_str());
     }

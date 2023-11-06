@@ -27,6 +27,7 @@ pub struct DescribeRoleAliasInputBuilder {
 }
 impl DescribeRoleAliasInputBuilder {
     /// <p>The role alias to describe.</p>
+    /// This field is required.
     pub fn role_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_alias = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_role_alias::DescribeRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_role_alias::DescribeRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_role_alias::DescribeRoleAliasInput { role_alias: self.role_alias })
     }
 }

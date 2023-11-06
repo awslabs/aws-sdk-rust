@@ -27,6 +27,7 @@ pub struct CancelTaskInputBuilder {
 }
 impl CancelTaskInputBuilder {
     /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl CancelTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`CancelTaskInput`](crate::operation::cancel_task::CancelTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_task::CancelTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_task::CancelTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_task::CancelTaskInput { task_id: self.task_id })
     }
 }

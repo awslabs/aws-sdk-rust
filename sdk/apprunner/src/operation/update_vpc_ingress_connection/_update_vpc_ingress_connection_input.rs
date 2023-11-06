@@ -34,6 +34,7 @@ pub struct UpdateVpcIngressConnectionInputBuilder {
 }
 impl UpdateVpcIngressConnectionInputBuilder {
     /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
+    /// This field is required.
     pub fn vpc_ingress_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_ingress_connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateVpcIngressConnectionInputBuilder {
         &self.vpc_ingress_connection_arn
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
+    /// This field is required.
     pub fn ingress_vpc_configuration(mut self, input: crate::types::IngressVpcConfiguration) -> Self {
         self.ingress_vpc_configuration = ::std::option::Option::Some(input);
         self
@@ -66,7 +68,7 @@ impl UpdateVpcIngressConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionInput {
             vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,

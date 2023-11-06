@@ -42,6 +42,7 @@ pub struct DeleteArchiveRuleInputBuilder {
 }
 impl DeleteArchiveRuleInputBuilder {
     /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
+    /// This field is required.
     pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteArchiveRuleInputBuilder {
         &self.analyzer_name
     }
     /// <p>The name of the rule to delete.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +88,7 @@ impl DeleteArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteArchiveRuleInput`](crate::operation::delete_archive_rule::DeleteArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_archive_rule::DeleteArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_archive_rule::DeleteArchiveRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_archive_rule::DeleteArchiveRuleInput {
             analyzer_name: self.analyzer_name,
             rule_name: self.rule_name,

@@ -27,6 +27,7 @@ pub struct DeleteNamedQueryInputBuilder {
 }
 impl DeleteNamedQueryInputBuilder {
     /// <p>The unique ID of the query to delete.</p>
+    /// This field is required.
     pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.named_query_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNamedQueryInput`](crate::operation::delete_named_query::DeleteNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_named_query::DeleteNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_named_query::DeleteNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_named_query::DeleteNamedQueryInput {
             named_query_id: self.named_query_id,
         })

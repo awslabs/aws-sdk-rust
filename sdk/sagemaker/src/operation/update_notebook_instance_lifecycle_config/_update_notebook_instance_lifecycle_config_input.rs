@@ -16,12 +16,16 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
     /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn on_create(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
-        self.on_create.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_create.is_none()`.
+    pub fn on_create(&self) -> &[crate::types::NotebookInstanceLifecycleHook] {
+        self.on_create.as_deref().unwrap_or_default()
     }
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn on_start(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceLifecycleHook]> {
-        self.on_start.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_start.is_none()`.
+    pub fn on_start(&self) -> &[crate::types::NotebookInstanceLifecycleHook] {
+        self.on_start.as_deref().unwrap_or_default()
     }
 }
 impl UpdateNotebookInstanceLifecycleConfigInput {
@@ -41,6 +45,7 @@ pub struct UpdateNotebookInstanceLifecycleConfigInputBuilder {
 }
 impl UpdateNotebookInstanceLifecycleConfigInputBuilder {
     /// <p>The name of the lifecycle configuration.</p>
+    /// This field is required.
     pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
@@ -99,7 +104,7 @@ impl UpdateNotebookInstanceLifecycleConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigInput {

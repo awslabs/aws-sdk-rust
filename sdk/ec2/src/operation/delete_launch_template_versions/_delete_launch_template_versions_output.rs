@@ -13,16 +13,16 @@ pub struct DeleteLaunchTemplateVersionsOutput {
 }
 impl DeleteLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions that were successfully deleted.</p>
-    pub fn successfully_deleted_launch_template_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem]> {
-        self.successfully_deleted_launch_template_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successfully_deleted_launch_template_versions.is_none()`.
+    pub fn successfully_deleted_launch_template_versions(&self) -> &[crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem] {
+        self.successfully_deleted_launch_template_versions.as_deref().unwrap_or_default()
     }
     /// <p>Information about the launch template versions that could not be deleted.</p>
-    pub fn unsuccessfully_deleted_launch_template_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeleteLaunchTemplateVersionsResponseErrorItem]> {
-        self.unsuccessfully_deleted_launch_template_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessfully_deleted_launch_template_versions.is_none()`.
+    pub fn unsuccessfully_deleted_launch_template_versions(&self) -> &[crate::types::DeleteLaunchTemplateVersionsResponseErrorItem] {
+        self.unsuccessfully_deleted_launch_template_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteLaunchTemplateVersionsOutput {

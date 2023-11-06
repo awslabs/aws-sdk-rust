@@ -42,8 +42,10 @@ impl SearchTransitGatewayRoutesInput {
     /// <li> <p> <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
     /// <li> <p> <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of routes to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -72,6 +74,7 @@ pub struct SearchTransitGatewayRoutesInputBuilder {
 }
 impl SearchTransitGatewayRoutesInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -174,7 +177,7 @@ impl SearchTransitGatewayRoutesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput {
             transit_gateway_route_table_id: self.transit_gateway_route_table_id,

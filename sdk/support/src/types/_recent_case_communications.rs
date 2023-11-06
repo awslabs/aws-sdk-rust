@@ -11,8 +11,10 @@ pub struct RecentCaseCommunications {
 }
 impl RecentCaseCommunications {
     /// <p>The five most recent communications associated with the case.</p>
-    pub fn communications(&self) -> ::std::option::Option<&[crate::types::Communication]> {
-        self.communications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.communications.is_none()`.
+    pub fn communications(&self) -> &[crate::types::Communication] {
+        self.communications.as_deref().unwrap_or_default()
     }
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

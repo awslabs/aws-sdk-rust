@@ -2,21 +2,21 @@
 pub fn ser_health_check_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HealthCheckPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.timeout_millis {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
         object.key("timeoutMillis").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.timeout_millis).into()),
         );
     }
-    if let Some(var_2) = &input.interval_millis {
+    {
         object.key("intervalMillis").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.interval_millis).into()),
         );
     }
-    if let Some(var_3) = &input.protocol {
-        object.key("protocol").string(var_3.as_str());
+    {
+        object.key("protocol").string(input.protocol.as_str());
     }
     if input.port != 0 {
         object.key("port").number(
@@ -24,8 +24,8 @@ pub fn ser_health_check_policy(
             ::aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_4) = &input.path {
-        object.key("path").string(var_4.as_str());
+    if let Some(var_1) = &input.path {
+        object.key("path").string(var_1.as_str());
     }
     {
         object.key("healthyThreshold").number(
@@ -116,7 +116,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::health_check_policy_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

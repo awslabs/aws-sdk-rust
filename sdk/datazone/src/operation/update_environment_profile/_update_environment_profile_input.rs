@@ -36,8 +36,10 @@ impl UpdateEnvironmentProfileInput {
         self.description.as_deref()
     }
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
-    pub fn user_parameters(&self) -> ::std::option::Option<&[crate::types::EnvironmentParameter]> {
-        self.user_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::EnvironmentParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services account in which a specified environment profile is to be udpated.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
@@ -82,6 +84,7 @@ pub struct UpdateEnvironmentProfileInputBuilder {
 }
 impl UpdateEnvironmentProfileInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which an environment profile is to be updated.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl UpdateEnvironmentProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the environment profile that is to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -190,7 +194,7 @@ impl UpdateEnvironmentProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_profile::UpdateEnvironmentProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_environment_profile::UpdateEnvironmentProfileInput {
             domain_identifier: self.domain_identifier,

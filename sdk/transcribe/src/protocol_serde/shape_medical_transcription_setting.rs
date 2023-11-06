@@ -2,7 +2,7 @@
 pub fn ser_medical_transcription_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MedicalTranscriptionSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.show_speaker_labels {
         object.key("ShowSpeakerLabels").boolean(*var_1);
     }

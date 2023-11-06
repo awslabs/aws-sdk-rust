@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Treatment {
     /// <p>The name of this treatment.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the treatment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the feature name, and the value is the variation name.</p>
@@ -13,8 +13,9 @@ pub struct Treatment {
 }
 impl Treatment {
     /// <p>The name of this treatment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the treatment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct TreatmentBuilder {
 }
 impl TreatmentBuilder {
     /// <p>The name of this treatment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,11 +99,18 @@ impl TreatmentBuilder {
         &self.feature_variations
     }
     /// Consumes the builder and constructs a [`Treatment`](crate::types::Treatment).
-    pub fn build(self) -> crate::types::Treatment {
-        crate::types::Treatment {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TreatmentBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Treatment, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Treatment {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Treatment",
+                )
+            })?,
             description: self.description,
             feature_variations: self.feature_variations,
-        }
+        })
     }
 }

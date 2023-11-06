@@ -55,6 +55,7 @@ pub struct CreateAttributeGroupInputBuilder {
 }
 impl CreateAttributeGroupInputBuilder {
     /// <p>The name of the attribute group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateAttributeGroupInputBuilder {
         &self.description
     }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    /// This field is required.
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attributes = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +119,7 @@ impl CreateAttributeGroupInputBuilder {
         &self.tags
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +136,7 @@ impl CreateAttributeGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateAttributeGroupInput`](crate::operation::create_attribute_group::CreateAttributeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_attribute_group::CreateAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_attribute_group::CreateAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_attribute_group::CreateAttributeGroupInput {
             name: self.name,

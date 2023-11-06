@@ -6,7 +6,7 @@ pub struct GetMfaDeviceOutput {
     /// <p>The friendly name identifying the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-    pub serial_number: ::std::option::Option<::std::string::String>,
+    pub serial_number: ::std::string::String,
     /// <p>The date that a specified user's MFA device was first enabled.</p>
     pub enable_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The certifications of a specified user's MFA device. We currently provide FIPS-140-2, FIPS-140-3, and FIDO certification levels obtained from <a href="https://fidoalliance.org/metadata/"> FIDO Alliance Metadata Service (MDS)</a>.</p>
@@ -19,8 +19,9 @@ impl GetMfaDeviceOutput {
         self.user_name.as_deref()
     }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-    pub fn serial_number(&self) -> ::std::option::Option<&str> {
-        self.serial_number.as_deref()
+    pub fn serial_number(&self) -> &str {
+        use std::ops::Deref;
+        self.serial_number.deref()
     }
     /// <p>The date that a specified user's MFA device was first enabled.</p>
     pub fn enable_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -69,6 +70,7 @@ impl GetMfaDeviceOutputBuilder {
         &self.user_name
     }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
+    /// This field is required.
     pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
@@ -133,13 +135,22 @@ impl GetMfaDeviceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMfaDeviceOutput`](crate::operation::get_mfa_device::GetMfaDeviceOutput).
-    pub fn build(self) -> crate::operation::get_mfa_device::GetMfaDeviceOutput {
-        crate::operation::get_mfa_device::GetMfaDeviceOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`serial_number`](crate::operation::get_mfa_device::builders::GetMfaDeviceOutputBuilder::serial_number)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_mfa_device::GetMfaDeviceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_mfa_device::GetMfaDeviceOutput {
             user_name: self.user_name,
-            serial_number: self.serial_number,
+            serial_number: self.serial_number.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "serial_number",
+                    "serial_number was not specified but it is required when building GetMfaDeviceOutput",
+                )
+            })?,
             enable_date: self.enable_date,
             certifications: self.certifications,
             _request_id: self._request_id,
-        }
+        })
     }
 }

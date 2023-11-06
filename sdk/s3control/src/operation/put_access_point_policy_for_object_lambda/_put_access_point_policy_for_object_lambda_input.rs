@@ -41,6 +41,7 @@ pub struct PutAccessPointPolicyForObjectLambdaInputBuilder {
 }
 impl PutAccessPointPolicyForObjectLambdaInputBuilder {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
         &self.account_id
     }
     /// <p>The name of the Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
         &self.name
     }
     /// <p>Object Lambda Access Point resource policy document.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +90,7 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput {

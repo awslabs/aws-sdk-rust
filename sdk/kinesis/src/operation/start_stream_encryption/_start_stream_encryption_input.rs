@@ -76,6 +76,7 @@ impl StartStreamEncryptionInputBuilder {
         &self.stream_name
     }
     /// <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -97,6 +98,7 @@ impl StartStreamEncryptionInputBuilder {
     /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
     /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -141,7 +143,7 @@ impl StartStreamEncryptionInputBuilder {
     /// Consumes the builder and constructs a [`StartStreamEncryptionInput`](crate::operation::start_stream_encryption::StartStreamEncryptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_stream_encryption::StartStreamEncryptionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_stream_encryption::StartStreamEncryptionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_stream_encryption::StartStreamEncryptionInput {
             stream_name: self.stream_name,

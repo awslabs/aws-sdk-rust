@@ -8,8 +8,10 @@ pub struct BatchGetChannelInput {
 }
 impl BatchGetChannelInput {
     /// <p>Array of ARNs, one per channel.</p>
-    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
+    pub fn arns(&self) -> &[::std::string::String] {
+        self.arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetChannelInput {
@@ -49,7 +51,7 @@ impl BatchGetChannelInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetChannelInput`](crate::operation::batch_get_channel::BatchGetChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_channel::BatchGetChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_channel::BatchGetChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_channel::BatchGetChannelInput { arns: self.arns })
     }
 }

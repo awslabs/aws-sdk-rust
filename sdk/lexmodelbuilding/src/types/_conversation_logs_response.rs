@@ -11,8 +11,10 @@ pub struct ConversationLogsResponse {
 }
 impl ConversationLogsResponse {
     /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
-    pub fn log_settings(&self) -> ::std::option::Option<&[crate::types::LogSettingsResponse]> {
-        self.log_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_settings.is_none()`.
+    pub fn log_settings(&self) -> &[crate::types::LogSettingsResponse] {
+        self.log_settings.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {

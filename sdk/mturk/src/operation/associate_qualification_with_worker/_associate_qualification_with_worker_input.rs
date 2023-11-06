@@ -48,6 +48,7 @@ pub struct AssociateQualificationWithWorkerInputBuilder {
 }
 impl AssociateQualificationWithWorkerInputBuilder {
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
+    /// This field is required.
     pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateQualificationWithWorkerInputBuilder {
         &self.qualification_type_id
     }
     /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
+    /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +110,7 @@ impl AssociateQualificationWithWorkerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput {

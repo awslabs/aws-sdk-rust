@@ -44,8 +44,10 @@ impl InstanceRecommendationOption {
     /// <p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    pub fn projected_utilization_metrics(&self) -> ::std::option::Option<&[crate::types::UtilizationMetric]> {
-        self.projected_utilization_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projected_utilization_metrics.is_none()`.
+    pub fn projected_utilization_metrics(&self) -> &[crate::types::UtilizationMetric] {
+        self.projected_utilization_metrics.as_deref().unwrap_or_default()
     }
     /// <p>Describes the configuration differences between the current instance and the recommended instance type. You should consider the configuration differences before migrating your workloads from the current instance to the recommended instance type. The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type guide for Windows</a> provide general guidance for getting started with an instance migration.</p>
     /// <p>Platform differences include:</p>
@@ -57,8 +59,10 @@ impl InstanceRecommendationOption {
     /// <li> <p> <b> <code>VirtualizationType</code> </b> — The recommended instance type uses the hardware virtual machine (HVM) virtualization type and the current instance uses the paravirtual (PV) virtualization type. For more information about the differences between these virtualization types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html">Linux AMI virtualization types</a> in the <i>Amazon EC2 User Guide for Linux</i>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows AMI virtualization types</a> in the <i>Amazon EC2 User Guide for Windows</i>.</p> </li>
     /// <li> <p> <b> <code>Architecture</code> </b> — The CPU architecture between the recommended instance type and the current instance is different. For example, the recommended instance type might use an Arm CPU architecture and the current instance type might use a different one, such as x86. Before migrating, you should consider recompiling the software on your instance for the new architecture. Alternatively, you might switch to an Amazon Machine Image (AMI) that supports the new architecture. For more information about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p> </li>
     /// </ul>
-    pub fn platform_differences(&self) -> ::std::option::Option<&[crate::types::PlatformDifference]> {
-        self.platform_differences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_differences.is_none()`.
+    pub fn platform_differences(&self) -> &[crate::types::PlatformDifference] {
+        self.platform_differences.as_deref().unwrap_or_default()
     }
     /// <p>The performance risk of the instance recommendation option.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>

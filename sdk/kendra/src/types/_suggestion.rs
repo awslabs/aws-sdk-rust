@@ -23,8 +23,10 @@ impl Suggestion {
         self.value.as_ref()
     }
     /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
-    pub fn source_documents(&self) -> ::std::option::Option<&[crate::types::SourceDocument]> {
-        self.source_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_documents.is_none()`.
+    pub fn source_documents(&self) -> &[crate::types::SourceDocument] {
+        self.source_documents.as_deref().unwrap_or_default()
     }
 }
 impl Suggestion {

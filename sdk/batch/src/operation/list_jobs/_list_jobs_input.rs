@@ -101,8 +101,10 @@ impl ListJobsInput {
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// </dl>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::KeyValuesPair]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::KeyValuesPair] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListJobsInput {
@@ -314,7 +316,7 @@ impl ListJobsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsInput {
             job_queue: self.job_queue,
             array_job_id: self.array_job_id,

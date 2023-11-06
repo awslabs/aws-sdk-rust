@@ -41,6 +41,7 @@ pub struct GetTableMetadataInputBuilder {
 }
 impl GetTableMetadataInputBuilder {
     /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
+    /// This field is required.
     pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetTableMetadataInputBuilder {
         &self.catalog_name
     }
     /// <p>The name of the database that contains the table metadata to return.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetTableMetadataInputBuilder {
         &self.database_name
     }
     /// <p>The name of the table for which metadata is returned.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetTableMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetTableMetadataInput`](crate::operation::get_table_metadata::GetTableMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_table_metadata::GetTableMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_table_metadata::GetTableMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table_metadata::GetTableMetadataInput {
             catalog_name: self.catalog_name,
             database_name: self.database_name,

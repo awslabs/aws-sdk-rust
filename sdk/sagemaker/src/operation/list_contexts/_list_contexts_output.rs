@@ -11,8 +11,10 @@ pub struct ListContextsOutput {
 }
 impl ListContextsOutput {
     /// <p>A list of contexts and their properties.</p>
-    pub fn context_summaries(&self) -> ::std::option::Option<&[crate::types::ContextSummary]> {
-        self.context_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_summaries.is_none()`.
+    pub fn context_summaries(&self) -> &[crate::types::ContextSummary] {
+        self.context_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of contexts, if there are any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -2,7 +2,7 @@
 pub fn ser_batch_get_object_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchGetObjectAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.object_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ObjectReference").start_object();
@@ -15,14 +15,14 @@ pub fn ser_batch_get_object_attributes(
         crate::protocol_serde::shape_schema_facet::ser_schema_facet(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.attribute_names {
-        let mut array_6 = object.key("AttributeNames").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_5 = object.key("AttributeNames").start_array();
+        for item_6 in &input.attribute_names {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
     Ok(())
 }

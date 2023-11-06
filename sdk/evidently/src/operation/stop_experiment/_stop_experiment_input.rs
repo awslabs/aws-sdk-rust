@@ -48,6 +48,7 @@ pub struct StopExperimentInputBuilder {
 }
 impl StopExperimentInputBuilder {
     /// <p>The name or ARN of the project that contains the experiment to stop.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StopExperimentInputBuilder {
         &self.project
     }
     /// <p>The name of the experiment to stop.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +108,7 @@ impl StopExperimentInputBuilder {
     /// Consumes the builder and constructs a [`StopExperimentInput`](crate::operation::stop_experiment::StopExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_experiment::StopExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_experiment::StopExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_experiment::StopExperimentInput {
             project: self.project,
             experiment: self.experiment,

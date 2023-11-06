@@ -11,8 +11,10 @@ pub struct ListComputeOutput {
 }
 impl ListComputeOutput {
     /// <p>A list of compute resources in the specified fleet.</p>
-    pub fn compute_list(&self) -> ::std::option::Option<&[crate::types::Compute]> {
-        self.compute_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_list.is_none()`.
+    pub fn compute_list(&self) -> &[crate::types::Compute] {
+        self.compute_list.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

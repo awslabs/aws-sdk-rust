@@ -85,7 +85,7 @@ impl ListMetricSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListMetricSetsInput`](crate::operation::list_metric_sets::ListMetricSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_metric_sets::ListMetricSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_metric_sets::ListMetricSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_metric_sets::ListMetricSetsInput {
             anomaly_detector_arn: self.anomaly_detector_arn,
             max_results: self.max_results,

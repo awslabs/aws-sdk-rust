@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputationPreference {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
-    pub pricing_plan_arn: ::std::option::Option<::std::string::String>,
+    pub pricing_plan_arn: ::std::string::String,
 }
 impl ComputationPreference {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn pricing_plan_arn(&self) -> ::std::option::Option<&str> {
-        self.pricing_plan_arn.as_deref()
+    pub fn pricing_plan_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.pricing_plan_arn.deref()
     }
 }
 impl ComputationPreference {
@@ -28,6 +29,7 @@ pub struct ComputationPreferenceBuilder {
 }
 impl ComputationPreferenceBuilder {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
+    /// This field is required.
     pub fn pricing_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_plan_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl ComputationPreferenceBuilder {
         &self.pricing_plan_arn
     }
     /// Consumes the builder and constructs a [`ComputationPreference`](crate::types::ComputationPreference).
-    pub fn build(self) -> crate::types::ComputationPreference {
-        crate::types::ComputationPreference {
-            pricing_plan_arn: self.pricing_plan_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pricing_plan_arn`](crate::types::builders::ComputationPreferenceBuilder::pricing_plan_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComputationPreference, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComputationPreference {
+            pricing_plan_arn: self.pricing_plan_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pricing_plan_arn",
+                    "pricing_plan_arn was not specified but it is required when building ComputationPreference",
+                )
+            })?,
+        })
     }
 }

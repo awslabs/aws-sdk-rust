@@ -66,7 +66,7 @@ where
                             builder = builder.set_state_info(crate::protocol_serde::shape_state_info::de_state_info(tokens)?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "provisioned" => {
                             builder = builder.set_provisioned(crate::protocol_serde::shape_provisioned::de_provisioned(tokens)?);

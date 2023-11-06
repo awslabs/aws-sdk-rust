@@ -64,6 +64,7 @@ pub struct UpdateIdentitySourceInputBuilder {
 }
 impl UpdateIdentitySourceInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +79,7 @@ impl UpdateIdentitySourceInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the identity source that you want to update.</p>
+    /// This field is required.
     pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_source_id = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +97,7 @@ impl UpdateIdentitySourceInputBuilder {
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn update_configuration(mut self, input: crate::types::UpdateConfiguration) -> Self {
         self.update_configuration = ::std::option::Option::Some(input);
         self
@@ -131,7 +134,7 @@ impl UpdateIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateIdentitySourceInput`](crate::operation::update_identity_source::UpdateIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_identity_source::UpdateIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_identity_source::UpdateIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_identity_source::UpdateIdentitySourceInput {
             policy_store_id: self.policy_store_id,

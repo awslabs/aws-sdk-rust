@@ -25,12 +25,16 @@ impl Termination {
         self.default_phone_number.as_deref()
     }
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
-    pub fn calling_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.calling_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calling_regions.is_none()`.
+    pub fn calling_regions(&self) -> &[::std::string::String] {
+        self.calling_regions.as_deref().unwrap_or_default()
     }
     /// <p>The IP addresses allowed to make calls, in CIDR format.</p>
-    pub fn cidr_allowed_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidr_allowed_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_allowed_list.is_none()`.
+    pub fn cidr_allowed_list(&self) -> &[::std::string::String] {
+        self.cidr_allowed_list.as_deref().unwrap_or_default()
     }
     /// <p>When termination is disabled, outbound calls cannot be made.</p>
     pub fn disabled(&self) -> ::std::option::Option<bool> {

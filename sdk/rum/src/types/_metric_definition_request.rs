@@ -65,7 +65,7 @@ pub struct MetricDefinitionRequest {
     /// <li> <p> <code>HttpErrorCount</code> </p> </li>
     /// <li> <p> <code>SessionCount</code> </p> </li>
     /// </ul>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The field within the event object that the metric value is sourced from.</p>
     /// <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to count the number of events that the filter catches. </p>
     /// <p>If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will handle data extraction from the event.</p>
@@ -113,8 +113,9 @@ impl MetricDefinitionRequest {
     /// <li> <p> <code>HttpErrorCount</code> </p> </li>
     /// <li> <p> <code>SessionCount</code> </p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The field within the event object that the metric value is sourced from.</p>
     /// <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to count the number of events that the filter catches. </p>
@@ -191,6 +192,7 @@ impl MetricDefinitionRequestBuilder {
     /// <li> <p> <code>HttpErrorCount</code> </p> </li>
     /// <li> <p> <code>SessionCount</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -377,14 +379,21 @@ impl MetricDefinitionRequestBuilder {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`MetricDefinitionRequest`](crate::types::MetricDefinitionRequest).
-    pub fn build(self) -> crate::types::MetricDefinitionRequest {
-        crate::types::MetricDefinitionRequest {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::MetricDefinitionRequestBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricDefinitionRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MetricDefinitionRequest {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building MetricDefinitionRequest",
+                )
+            })?,
             value_key: self.value_key,
             unit_label: self.unit_label,
             dimension_keys: self.dimension_keys,
             event_pattern: self.event_pattern,
             namespace: self.namespace,
-        }
+        })
     }
 }

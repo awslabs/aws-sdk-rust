@@ -20,8 +20,10 @@ pub struct GetSessionOutput {
 impl GetSessionOutput {
     /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
     /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
-    pub fn recent_intent_summary_view(&self) -> ::std::option::Option<&[crate::types::IntentSummary]> {
-        self.recent_intent_summary_view.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recent_intent_summary_view.is_none()`.
+    pub fn recent_intent_summary_view(&self) -> &[crate::types::IntentSummary] {
+        self.recent_intent_summary_view.as_deref().unwrap_or_default()
     }
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
     pub fn session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -37,8 +39,10 @@ impl GetSessionOutput {
     }
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    pub fn active_contexts(&self) -> ::std::option::Option<&[crate::types::ActiveContext]> {
-        self.active_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
+    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
+        self.active_contexts.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for GetSessionOutput {

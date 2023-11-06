@@ -23,13 +23,17 @@ impl BatchGetImageInput {
         self.repository_name.as_deref()
     }
     /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn image_ids(&self) -> ::std::option::Option<&[crate::types::ImageIdentifier]> {
-        self.image_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
+    pub fn image_ids(&self) -> &[crate::types::ImageIdentifier] {
+        self.image_ids.as_deref().unwrap_or_default()
     }
     /// <p>The accepted media types for the request.</p>
     /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
-    pub fn accepted_media_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accepted_media_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accepted_media_types.is_none()`.
+    pub fn accepted_media_types(&self) -> &[::std::string::String] {
+        self.accepted_media_types.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetImageInput {
@@ -64,6 +68,7 @@ impl BatchGetImageInputBuilder {
         &self.registry_id
     }
     /// <p>The repository that contains the images to describe.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -123,7 +128,7 @@ impl BatchGetImageInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetImageInput`](crate::operation::batch_get_image::BatchGetImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_image::BatchGetImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_image::BatchGetImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_image::BatchGetImageInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

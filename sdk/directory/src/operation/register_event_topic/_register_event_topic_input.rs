@@ -35,6 +35,7 @@ pub struct RegisterEventTopicInputBuilder {
 }
 impl RegisterEventTopicInputBuilder {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RegisterEventTopicInputBuilder {
         &self.directory_id
     }
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
+    /// This field is required.
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
         self
@@ -65,7 +67,8 @@ impl RegisterEventTopicInputBuilder {
     /// Consumes the builder and constructs a [`RegisterEventTopicInput`](crate::operation::register_event_topic::RegisterEventTopicInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_event_topic::RegisterEventTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_event_topic::RegisterEventTopicInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::register_event_topic::RegisterEventTopicInput {
             directory_id: self.directory_id,
             topic_name: self.topic_name,

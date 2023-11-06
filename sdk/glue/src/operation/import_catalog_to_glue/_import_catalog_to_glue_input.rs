@@ -43,7 +43,7 @@ impl ImportCatalogToGlueInputBuilder {
     /// Consumes the builder and constructs a [`ImportCatalogToGlueInput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput { catalog_id: self.catalog_id })
     }

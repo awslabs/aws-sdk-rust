@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkspacesOutput {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
+    pub workspaces: ::std::vec::Vec<crate::types::WorkspaceSummary>,
     /// <p>The token to use when requesting the next set of workspaces.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorkspacesOutput {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub fn workspaces(&self) -> ::std::option::Option<&[crate::types::WorkspaceSummary]> {
-        self.workspaces.as_deref()
+    pub fn workspaces(&self) -> &[crate::types::WorkspaceSummary] {
+        use std::ops::Deref;
+        self.workspaces.deref()
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListWorkspacesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
-    pub fn build(self) -> crate::operation::list_workspaces::ListWorkspacesOutput {
-        crate::operation::list_workspaces::ListWorkspacesOutput {
-            workspaces: self.workspaces,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspaces`](crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder::workspaces)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_workspaces::ListWorkspacesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_workspaces::ListWorkspacesOutput {
+            workspaces: self.workspaces.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "workspaces",
+                    "workspaces was not specified but it is required when building ListWorkspacesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

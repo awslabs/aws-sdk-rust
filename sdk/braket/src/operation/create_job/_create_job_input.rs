@@ -38,8 +38,10 @@ impl CreateJobInput {
         self.algorithm_specification.as_ref()
     }
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&[crate::types::InputFileConfig]> {
-        self.input_data_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_data_config.is_none()`.
+    pub fn input_data_config(&self) -> &[crate::types::InputFileConfig] {
+        self.input_data_config.as_deref().unwrap_or_default()
     }
     /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::JobOutputDataConfig> {
@@ -104,6 +106,7 @@ pub struct CreateJobInputBuilder {
 }
 impl CreateJobInputBuilder {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl CreateJobInputBuilder {
         &self.client_token
     }
     /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
+    /// This field is required.
     pub fn algorithm_specification(mut self, input: crate::types::AlgorithmSpecification) -> Self {
         self.algorithm_specification = ::std::option::Option::Some(input);
         self
@@ -152,6 +156,7 @@ impl CreateJobInputBuilder {
         &self.input_data_config
     }
     /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::JobOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -180,6 +185,7 @@ impl CreateJobInputBuilder {
         &self.checkpoint_config
     }
     /// <p>The name of the Amazon Braket job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -194,6 +200,7 @@ impl CreateJobInputBuilder {
         &self.job_name
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -222,6 +229,7 @@ impl CreateJobInputBuilder {
         &self.stopping_condition
     }
     /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
+    /// This field is required.
     pub fn instance_config(mut self, input: crate::types::InstanceConfig) -> Self {
         self.instance_config = ::std::option::Option::Some(input);
         self
@@ -263,6 +271,7 @@ impl CreateJobInputBuilder {
         &self.hyper_parameters
     }
     /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
+    /// This field is required.
     pub fn device_config(mut self, input: crate::types::DeviceConfig) -> Self {
         self.device_config = ::std::option::Option::Some(input);
         self
@@ -297,7 +306,7 @@ impl CreateJobInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
             client_token: self.client_token,
             algorithm_specification: self.algorithm_specification,

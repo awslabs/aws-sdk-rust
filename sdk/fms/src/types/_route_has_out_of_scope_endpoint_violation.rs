@@ -43,8 +43,10 @@ impl RouteHasOutOfScopeEndpointViolation {
         self.route_table_id.as_deref()
     }
     /// <p>The list of routes that violate the route table.</p>
-    pub fn violating_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
-        self.violating_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violating_routes.is_none()`.
+    pub fn violating_routes(&self) -> &[crate::types::Route] {
+        self.violating_routes.as_deref().unwrap_or_default()
     }
     /// <p>The subnet's Availability Zone.</p>
     pub fn subnet_availability_zone(&self) -> ::std::option::Option<&str> {
@@ -63,8 +65,10 @@ impl RouteHasOutOfScopeEndpointViolation {
         self.firewall_subnet_id.as_deref()
     }
     /// <p>The list of firewall subnet routes.</p>
-    pub fn firewall_subnet_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
-        self.firewall_subnet_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_subnet_routes.is_none()`.
+    pub fn firewall_subnet_routes(&self) -> &[crate::types::Route] {
+        self.firewall_subnet_routes.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Internet Gateway.</p>
     pub fn internet_gateway_id(&self) -> ::std::option::Option<&str> {
@@ -75,8 +79,10 @@ impl RouteHasOutOfScopeEndpointViolation {
         self.current_internet_gateway_route_table.as_deref()
     }
     /// <p>The routes in the route table associated with the Internet Gateway.</p>
-    pub fn internet_gateway_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
-        self.internet_gateway_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.internet_gateway_routes.is_none()`.
+    pub fn internet_gateway_routes(&self) -> &[crate::types::Route] {
+        self.internet_gateway_routes.as_deref().unwrap_or_default()
     }
 }
 impl RouteHasOutOfScopeEndpointViolation {

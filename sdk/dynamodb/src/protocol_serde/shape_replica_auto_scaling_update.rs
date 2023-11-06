@@ -2,27 +2,27 @@
 pub fn ser_replica_auto_scaling_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReplicaAutoScalingUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.region_name {
-        object.key("RegionName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("RegionName").string(input.region_name.as_str());
     }
-    if let Some(var_2) = &input.replica_global_secondary_index_updates {
-        let mut array_3 = object.key("ReplicaGlobalSecondaryIndexUpdates").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.replica_global_secondary_index_updates {
+        let mut array_2 = object.key("ReplicaGlobalSecondaryIndexUpdates").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_replica_global_secondary_index_auto_scaling_update::ser_replica_global_secondary_index_auto_scaling_update(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_replica_global_secondary_index_auto_scaling_update::ser_replica_global_secondary_index_auto_scaling_update(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.replica_provisioned_read_capacity_auto_scaling_update {
+    if let Some(var_5) = &input.replica_provisioned_read_capacity_auto_scaling_update {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ReplicaProvisionedReadCapacityAutoScalingUpdate").start_object();
-        crate::protocol_serde::shape_auto_scaling_settings_update::ser_auto_scaling_settings_update(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("ReplicaProvisionedReadCapacityAutoScalingUpdate").start_object();
+        crate::protocol_serde::shape_auto_scaling_settings_update::ser_auto_scaling_settings_update(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

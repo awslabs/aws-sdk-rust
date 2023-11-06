@@ -41,6 +41,7 @@ pub struct UpdateConfiguredTableInputBuilder {
 }
 impl UpdateConfiguredTableInputBuilder {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
+    /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl UpdateConfiguredTableInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConfiguredTableInput`](crate::operation::update_configured_table::UpdateConfiguredTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_configured_table::UpdateConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_configured_table::UpdateConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_configured_table::UpdateConfiguredTableInput {
             configured_table_identifier: self.configured_table_identifier,

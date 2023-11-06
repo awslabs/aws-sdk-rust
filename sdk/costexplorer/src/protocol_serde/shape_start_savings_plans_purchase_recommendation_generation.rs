@@ -33,8 +33,8 @@ pub fn de_start_savings_plans_purchase_recommendation_generation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "GenerationExistsException" => crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::GenerationExistsException({
@@ -49,8 +49,8 @@ pub fn de_start_savings_plans_purchase_recommendation_generation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "LimitExceededException" => crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::LimitExceededException({
@@ -65,8 +65,8 @@ pub fn de_start_savings_plans_purchase_recommendation_generation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::ServiceQuotaExceededException({
@@ -81,8 +81,8 @@ pub fn de_start_savings_plans_purchase_recommendation_generation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::generic(generic)
@@ -109,8 +109,8 @@ pub fn de_start_savings_plans_purchase_recommendation_generation_http_response(
 
 pub fn ser_start_savings_plans_purchase_recommendation_generation_input(
     _input: &crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_start_savings_plans_purchase_recommendation_generation(value: &[u8], mut builder: crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder) -> Result<crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{

@@ -10,8 +10,10 @@ pub struct CancelReservedInstancesListingOutput {
 }
 impl CancelReservedInstancesListingOutput {
     /// <p>The Reserved Instance listing.</p>
-    pub fn reserved_instances_listings(&self) -> ::std::option::Option<&[crate::types::ReservedInstancesListing]> {
-        self.reserved_instances_listings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_listings.is_none()`.
+    pub fn reserved_instances_listings(&self) -> &[crate::types::ReservedInstancesListing] {
+        self.reserved_instances_listings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CancelReservedInstancesListingOutput {

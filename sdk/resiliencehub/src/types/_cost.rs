@@ -7,9 +7,9 @@ pub struct Cost {
     /// <p>The cost amount.</p>
     pub amount: f64,
     /// <p>The cost currency, for example <code>USD</code>.</p>
-    pub currency: ::std::option::Option<::std::string::String>,
+    pub currency: ::std::string::String,
     /// <p>The cost frequency.</p>
-    pub frequency: ::std::option::Option<crate::types::CostFrequency>,
+    pub frequency: crate::types::CostFrequency,
 }
 impl Cost {
     /// <p>The cost amount.</p>
@@ -17,12 +17,13 @@ impl Cost {
         self.amount
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
-    pub fn currency(&self) -> ::std::option::Option<&str> {
-        self.currency.as_deref()
+    pub fn currency(&self) -> &str {
+        use std::ops::Deref;
+        self.currency.deref()
     }
     /// <p>The cost frequency.</p>
-    pub fn frequency(&self) -> ::std::option::Option<&crate::types::CostFrequency> {
-        self.frequency.as_ref()
+    pub fn frequency(&self) -> &crate::types::CostFrequency {
+        &self.frequency
     }
 }
 impl Cost {
@@ -42,6 +43,7 @@ pub struct CostBuilder {
 }
 impl CostBuilder {
     /// <p>The cost amount.</p>
+    /// This field is required.
     pub fn amount(mut self, input: f64) -> Self {
         self.amount = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl CostBuilder {
         &self.amount
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
+    /// This field is required.
     pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl CostBuilder {
         &self.currency
     }
     /// <p>The cost frequency.</p>
+    /// This field is required.
     pub fn frequency(mut self, input: crate::types::CostFrequency) -> Self {
         self.frequency = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,24 @@ impl CostBuilder {
         &self.frequency
     }
     /// Consumes the builder and constructs a [`Cost`](crate::types::Cost).
-    pub fn build(self) -> crate::types::Cost {
-        crate::types::Cost {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`currency`](crate::types::builders::CostBuilder::currency)
+    /// - [`frequency`](crate::types::builders::CostBuilder::frequency)
+    pub fn build(self) -> ::std::result::Result<crate::types::Cost, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Cost {
             amount: self.amount.unwrap_or_default(),
-            currency: self.currency,
-            frequency: self.frequency,
-        }
+            currency: self.currency.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "currency",
+                    "currency was not specified but it is required when building Cost",
+                )
+            })?,
+            frequency: self.frequency.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "frequency",
+                    "frequency was not specified but it is required when building Cost",
+                )
+            })?,
+        })
     }
 }

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`InviteUsers`](crate::operation::invite_users::builders::InviteUsersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_email_list(impl Into<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::user_email_list) / [`set_user_email_list(Option<Vec<String>>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_user_email_list): <p>The user email addresses to which to send the email invitation.</p>
-    ///   - [`user_type(UserType)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::user_type) / [`set_user_type(Option<UserType>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_user_type): <p>The user type.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
+    ///   - [`user_email_list(impl Into<String>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::user_email_list) / [`set_user_email_list(Option<Vec::<String>>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_user_email_list):<br>required: **true**<br><p>The user email addresses to which to send the email invitation.</p><br>
+    ///   - [`user_type(UserType)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::user_type) / [`set_user_type(Option<UserType>)`](crate::operation::invite_users::builders::InviteUsersFluentBuilder::set_user_type):<br>required: **false**<br><p>The user type.</p><br>
     /// - On success, responds with [`InviteUsersOutput`](crate::operation::invite_users::InviteUsersOutput) with field(s):
-    ///   - [`invites(Option<Vec<Invite>>)`](crate::operation::invite_users::InviteUsersOutput::invites): <p>The email invitation details.</p>
+    ///   - [`invites(Option<Vec::<Invite>>)`](crate::operation::invite_users::InviteUsersOutput::invites): <p>The email invitation details.</p>
     /// - On failure, responds with [`SdkError<InviteUsersError>`](crate::operation::invite_users::InviteUsersError)
     pub fn invite_users(&self) -> crate::operation::invite_users::builders::InviteUsersFluentBuilder {
         crate::operation::invite_users::builders::InviteUsersFluentBuilder::new(self.handle.clone())

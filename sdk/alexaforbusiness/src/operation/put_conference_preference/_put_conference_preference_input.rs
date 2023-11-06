@@ -27,6 +27,7 @@ pub struct PutConferencePreferenceInputBuilder {
 }
 impl PutConferencePreferenceInputBuilder {
     /// <p>The conference preference of a specific conference provider.</p>
+    /// This field is required.
     pub fn conference_preference(mut self, input: crate::types::ConferencePreference) -> Self {
         self.conference_preference = ::std::option::Option::Some(input);
         self
@@ -45,7 +46,7 @@ impl PutConferencePreferenceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_conference_preference::PutConferencePreferenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_conference_preference::PutConferencePreferenceInput {
             conference_preference: self.conference_preference,

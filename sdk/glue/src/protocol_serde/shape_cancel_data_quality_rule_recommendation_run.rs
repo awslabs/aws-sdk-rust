@@ -125,7 +125,7 @@ pub fn de_cancel_data_quality_rule_recommendation_run_http_response(
 
 pub fn ser_cancel_data_quality_rule_recommendation_run_input(
     input: &crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_cancel_data_quality_rule_recommendation_run_input::ser_cancel_data_quality_rule_recommendation_run_input(
@@ -133,5 +133,5 @@ pub fn ser_cancel_data_quality_rule_recommendation_run_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

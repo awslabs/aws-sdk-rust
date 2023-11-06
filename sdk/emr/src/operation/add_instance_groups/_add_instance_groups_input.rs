@@ -11,8 +11,10 @@ pub struct AddInstanceGroupsInput {
 }
 impl AddInstanceGroupsInput {
     /// <p>Instance groups to add.</p>
-    pub fn instance_groups(&self) -> ::std::option::Option<&[crate::types::InstanceGroupConfig]> {
-        self.instance_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
+    pub fn instance_groups(&self) -> &[crate::types::InstanceGroupConfig] {
+        self.instance_groups.as_deref().unwrap_or_default()
     }
     /// <p>Job flow in which to add the instance groups.</p>
     pub fn job_flow_id(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ impl AddInstanceGroupsInputBuilder {
         &self.instance_groups
     }
     /// <p>Job flow in which to add the instance groups.</p>
+    /// This field is required.
     pub fn job_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_flow_id = ::std::option::Option::Some(input.into());
         self
@@ -71,7 +74,7 @@ impl AddInstanceGroupsInputBuilder {
     /// Consumes the builder and constructs a [`AddInstanceGroupsInput`](crate::operation::add_instance_groups::AddInstanceGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_instance_groups::AddInstanceGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_instance_groups::AddInstanceGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_instance_groups::AddInstanceGroupsInput {
             instance_groups: self.instance_groups,
             job_flow_id: self.job_flow_id,

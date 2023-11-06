@@ -27,6 +27,7 @@ pub struct DeleteEventSourceMappingInputBuilder {
 }
 impl DeleteEventSourceMappingInputBuilder {
     /// <p>The identifier of the event source mapping.</p>
+    /// This field is required.
     pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uuid = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteEventSourceMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput { uuid: self.uuid })
     }

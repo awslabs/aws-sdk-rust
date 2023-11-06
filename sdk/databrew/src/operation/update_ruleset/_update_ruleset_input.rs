@@ -20,8 +20,10 @@ impl UpdateRulesetInput {
         self.description.as_deref()
     }
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRulesetInput {
@@ -41,6 +43,7 @@ pub struct UpdateRulesetInputBuilder {
 }
 impl UpdateRulesetInputBuilder {
     /// <p>The name of the ruleset to be updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,7 +94,7 @@ impl UpdateRulesetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRulesetInput`](crate::operation::update_ruleset::UpdateRulesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ruleset::UpdateRulesetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_ruleset::UpdateRulesetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ruleset::UpdateRulesetInput {
             name: self.name,
             description: self.description,

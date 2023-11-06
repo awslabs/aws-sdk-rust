@@ -28,6 +28,7 @@ pub struct DescribeIdentityInputBuilder {
 }
 impl DescribeIdentityInputBuilder {
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    /// This field is required.
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl DescribeIdentityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIdentityInput`](crate::operation::describe_identity::DescribeIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_identity::DescribeIdentityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_identity::DescribeIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_identity::DescribeIdentityInput {
             identity_id: self.identity_id,
         })

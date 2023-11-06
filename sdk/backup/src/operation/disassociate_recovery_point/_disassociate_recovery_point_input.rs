@@ -34,6 +34,7 @@ pub struct DisassociateRecoveryPointInputBuilder {
 }
 impl DisassociateRecoveryPointInputBuilder {
     /// <p>The unique name of an Backup vault.</p>
+    /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateRecoveryPointInputBuilder {
         &self.backup_vault_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
+    /// This field is required.
     pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl DisassociateRecoveryPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_recovery_point::DisassociateRecoveryPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_recovery_point::DisassociateRecoveryPointInput {
             backup_vault_name: self.backup_vault_name,

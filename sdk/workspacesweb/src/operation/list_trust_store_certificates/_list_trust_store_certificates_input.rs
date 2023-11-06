@@ -41,6 +41,7 @@ pub struct ListTrustStoreCertificatesInputBuilder {
 }
 impl ListTrustStoreCertificatesInputBuilder {
     /// <p>The ARN of the trust store</p>
+    /// This field is required.
     pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
@@ -87,7 +88,7 @@ impl ListTrustStoreCertificatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesInput {
             trust_store_arn: self.trust_store_arn,

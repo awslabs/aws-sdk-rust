@@ -36,6 +36,7 @@ pub struct UpdateTaskExecutionInputBuilder {
 }
 impl UpdateTaskExecutionInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
+    /// This field is required.
     pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl UpdateTaskExecutionInputBuilder {
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::Options) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -69,7 +71,7 @@ impl UpdateTaskExecutionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTaskExecutionInput`](crate::operation::update_task_execution::UpdateTaskExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_task_execution::UpdateTaskExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_task_execution::UpdateTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_task_execution::UpdateTaskExecutionInput {
             task_execution_arn: self.task_execution_arn,

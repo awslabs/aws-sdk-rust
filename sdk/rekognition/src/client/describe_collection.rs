@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCollection`](crate::operation::describe_collection::builders::DescribeCollectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`collection_id(impl Into<String>)`](crate::operation::describe_collection::builders::DescribeCollectionFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::describe_collection::builders::DescribeCollectionFluentBuilder::set_collection_id): <p>The ID of the collection to describe.</p>
+    ///   - [`collection_id(impl Into<String>)`](crate::operation::describe_collection::builders::DescribeCollectionFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::describe_collection::builders::DescribeCollectionFluentBuilder::set_collection_id):<br>required: **true**<br><p>The ID of the collection to describe.</p><br>
     /// - On success, responds with [`DescribeCollectionOutput`](crate::operation::describe_collection::DescribeCollectionOutput) with field(s):
     ///   - [`face_count(Option<i64>)`](crate::operation::describe_collection::DescribeCollectionOutput::face_count): <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
     ///   - [`face_model_version(Option<String>)`](crate::operation::describe_collection::DescribeCollectionOutput::face_model_version): <p>The version of the face model that's used by the collection for face detection.</p>  <p>For more information, see Model versioning in the Amazon Rekognition Developer Guide.</p>

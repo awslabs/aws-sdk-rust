@@ -10,7 +10,7 @@ impl StartImportFileTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_import_file_task::StartImportFileTaskOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_import_file_task::StartImportFileTaskError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl StartImportFileTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_import_file_task::StartImportFileTaskOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_import_file_task::StartImportFileTaskError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::start_import_file_task::StartImportFileTask::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -86,20 +89,15 @@ impl StartImportFileTaskFluentBuilder {
         crate::operation::start_import_file_task::StartImportFileTask::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::start_import_file_task::StartImportFileTaskOutput,
-            crate::operation::start_import_file_task::StartImportFileTaskError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_import_file_task::StartImportFileTaskError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::start_import_file_task::StartImportFileTaskOutput,
+        crate::operation::start_import_file_task::StartImportFileTaskError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -139,18 +137,18 @@ impl StartImportFileTaskFluentBuilder {
         self.inner.get_s3_bucket()
     }
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub fn s3key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.s3key(input.into());
+    pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.s3_key(input.into());
         self
     }
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub fn set_s3key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_s3key(input);
+    pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_s3_key(input);
         self
     }
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub fn get_s3key(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_s3key()
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_key()
     }
     /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub fn data_source_type(mut self, input: crate::types::DataSourceType) -> Self {

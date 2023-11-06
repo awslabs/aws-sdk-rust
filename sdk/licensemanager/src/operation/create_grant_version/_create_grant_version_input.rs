@@ -34,8 +34,10 @@ impl CreateGrantVersionInput {
         self.grant_name.as_deref()
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn allowed_operations(&self) -> ::std::option::Option<&[crate::types::AllowedOperation]> {
-        self.allowed_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_operations.is_none()`.
+    pub fn allowed_operations(&self) -> &[crate::types::AllowedOperation] {
+        self.allowed_operations.as_deref().unwrap_or_default()
     }
     /// <p>Grant status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::GrantStatus> {
@@ -76,6 +78,7 @@ pub struct CreateGrantVersionInputBuilder {
 }
 impl CreateGrantVersionInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateGrantVersionInputBuilder {
         &self.client_token
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    /// This field is required.
     pub fn grant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_arn = ::std::option::Option::Some(input.into());
         self
@@ -196,7 +200,8 @@ impl CreateGrantVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateGrantVersionInput`](crate::operation::create_grant_version::CreateGrantVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_grant_version::CreateGrantVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_grant_version::CreateGrantVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_grant_version::CreateGrantVersionInput {
             client_token: self.client_token,
             grant_arn: self.grant_arn,

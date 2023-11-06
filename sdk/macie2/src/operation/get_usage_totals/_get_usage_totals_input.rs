@@ -43,7 +43,7 @@ impl GetUsageTotalsInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageTotalsInput`](crate::operation::get_usage_totals::GetUsageTotalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_usage_totals::GetUsageTotalsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_usage_totals::GetUsageTotalsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_totals::GetUsageTotalsInput { time_range: self.time_range })
     }
 }

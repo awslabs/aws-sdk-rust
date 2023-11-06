@@ -6,7 +6,7 @@ pub struct GetClipOutput {
     /// <p>The content type of the media in the requested clip.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
-    pub payload: ::aws_smithy_http::byte_stream::ByteStream,
+    pub payload: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
 impl GetClipOutput {
@@ -15,7 +15,7 @@ impl GetClipOutput {
         self.content_type.as_deref()
     }
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
-    pub fn payload(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.payload
     }
 }
@@ -36,7 +36,7 @@ impl GetClipOutput {
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClipOutputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
-    pub(crate) payload: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,
 }
 impl GetClipOutputBuilder {
@@ -55,17 +55,17 @@ impl GetClipOutputBuilder {
         &self.content_type
     }
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
-    pub fn payload(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn payload(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
-    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.payload = input;
         self
     }
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
-    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

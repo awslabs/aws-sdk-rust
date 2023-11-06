@@ -2,7 +2,7 @@
 pub fn ser_get_sink_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_sink::GetSinkInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identifier {
         object.key("Identifier").string(var_1.as_str());
     }

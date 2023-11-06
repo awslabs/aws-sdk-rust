@@ -41,6 +41,7 @@ pub struct GetModelVersionInputBuilder {
 }
 impl GetModelVersionInputBuilder {
     /// <p>The model ID.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetModelVersionInputBuilder {
         &self.model_id
     }
     /// <p>The model type.</p>
+    /// This field is required.
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl GetModelVersionInputBuilder {
         &self.model_type
     }
     /// <p>The model version number.</p>
+    /// This field is required.
     pub fn model_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version_number = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +88,7 @@ impl GetModelVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetModelVersionInput`](crate::operation::get_model_version::GetModelVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_model_version::GetModelVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_model_version::GetModelVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model_version::GetModelVersionInput {
             model_id: self.model_id,
             model_type: self.model_type,

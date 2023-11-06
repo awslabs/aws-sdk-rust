@@ -12,8 +12,10 @@ pub struct ListTopicsOutput {
 }
 impl ListTopicsOutput {
     /// <p>A list of topic ARNs.</p>
-    pub fn topics(&self) -> ::std::option::Option<&[crate::types::Topic]> {
-        self.topics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics.is_none()`.
+    pub fn topics(&self) -> &[crate::types::Topic] {
+        self.topics.as_deref().unwrap_or_default()
     }
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

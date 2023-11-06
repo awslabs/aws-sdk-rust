@@ -31,6 +31,7 @@ pub struct PurgeQueueInputBuilder {
 impl PurgeQueueInputBuilder {
     /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -47,7 +48,7 @@ impl PurgeQueueInputBuilder {
         &self.queue_url
     }
     /// Consumes the builder and constructs a [`PurgeQueueInput`](crate::operation::purge_queue::PurgeQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::purge_queue::PurgeQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::purge_queue::PurgeQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::purge_queue::PurgeQueueInput { queue_url: self.queue_url })
     }
 }

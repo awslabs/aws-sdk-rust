@@ -11,8 +11,10 @@ pub struct ListStorageSystemsOutput {
 }
 impl ListStorageSystemsOutput {
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
-    pub fn storage_systems(&self) -> ::std::option::Option<&[crate::types::StorageSystemListEntry]> {
-        self.storage_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_systems.is_none()`.
+    pub fn storage_systems(&self) -> &[crate::types::StorageSystemListEntry] {
+        self.storage_systems.as_deref().unwrap_or_default()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

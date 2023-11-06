@@ -2,18 +2,18 @@
 pub fn ser_model_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelVersion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.model_id {
-        object.key("modelId").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("modelId").string(input.model_id.as_str());
     }
-    if let Some(var_2) = &input.model_type {
-        object.key("modelType").string(var_2.as_str());
+    {
+        object.key("modelType").string(input.model_type.as_str());
     }
-    if let Some(var_3) = &input.model_version_number {
-        object.key("modelVersionNumber").string(var_3.as_str());
+    {
+        object.key("modelVersionNumber").string(input.model_version_number.as_str());
     }
-    if let Some(var_4) = &input.arn {
-        object.key("arn").string(var_4.as_str());
+    if let Some(var_1) = &input.arn {
+        object.key("arn").string(var_1.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::model_version_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

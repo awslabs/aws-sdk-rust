@@ -7,15 +7,15 @@ version = "0.1.0"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
-aws-sdk-rdsdata= { version = "0.34.0", path = "../../../sdk/rdsdata" }
+aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
+aws-sdk-rdsdata= { version = "0.35.0", path = "../../../sdk/rdsdata" }
 
 [dependencies.tokio]
 version = "1.20.1"
 features = ["full"]
 
 [dependencies.clap]
-version = "~4.2"
+version = "~4.4"
 features = ["derive"]
 
 [dependencies.tracing-subscriber]

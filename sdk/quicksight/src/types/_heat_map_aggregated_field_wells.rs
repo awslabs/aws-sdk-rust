@@ -13,16 +13,22 @@ pub struct HeatMapAggregatedFieldWells {
 }
 impl HeatMapAggregatedFieldWells {
     /// <p>The rows field well of a heat map.</p>
-    pub fn rows(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.rows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
+    pub fn rows(&self) -> &[crate::types::DimensionField] {
+        self.rows.as_deref().unwrap_or_default()
     }
     /// <p>The columns field well of a heat map.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
+    pub fn columns(&self) -> &[crate::types::DimensionField] {
+        self.columns.as_deref().unwrap_or_default()
     }
     /// <p>The values field well of a heat map.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::MeasureField] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl HeatMapAggregatedFieldWells {

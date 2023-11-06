@@ -2,12 +2,12 @@
 pub fn ser_ml_user_data_encryption(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MlUserDataEncryption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ml_user_data_encryption_mode {
-        object.key("MlUserDataEncryptionMode").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("MlUserDataEncryptionMode").string(input.ml_user_data_encryption_mode.as_str());
     }
-    if let Some(var_2) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_2.as_str());
+    if let Some(var_1) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ml_user_data_encryption_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -2,21 +2,21 @@
 pub fn ser_task_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaskConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.language_code {
-        object.key("LanguageCode").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("LanguageCode").string(input.language_code.as_str());
     }
-    if let Some(var_2) = &input.document_classification_config {
+    if let Some(var_1) = &input.document_classification_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DocumentClassificationConfig").start_object();
-        crate::protocol_serde::shape_document_classification_config::ser_document_classification_config(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("DocumentClassificationConfig").start_object();
+        crate::protocol_serde::shape_document_classification_config::ser_document_classification_config(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.entity_recognition_config {
+    if let Some(var_3) = &input.entity_recognition_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("EntityRecognitionConfig").start_object();
-        crate::protocol_serde::shape_entity_recognition_config::ser_entity_recognition_config(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("EntityRecognitionConfig").start_object();
+        crate::protocol_serde::shape_entity_recognition_config::ser_entity_recognition_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -63,7 +63,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::task_config_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

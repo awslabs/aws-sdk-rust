@@ -127,18 +127,20 @@ pub fn de_infer_rx_norm_http_response(
         output = crate::protocol_serde::shape_infer_rx_norm::de_infer_rx_norm(_response_body, output)
             .map_err(crate::operation::infer_rx_norm::InferRxNormError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::infer_rx_norm_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::infer_rx_norm::InferRxNormError::unhandled)?
     })
 }
 
 pub fn ser_infer_rx_norm_input(
     input: &crate::operation::infer_rx_norm::InferRxNormInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_infer_rx_norm_input::ser_infer_rx_norm_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_infer_rx_norm(

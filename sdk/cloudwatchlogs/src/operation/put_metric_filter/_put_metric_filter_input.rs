@@ -26,8 +26,10 @@ impl PutMetricFilterInput {
         self.filter_pattern.as_deref()
     }
     /// <p>A collection of information that defines how metric data gets emitted.</p>
-    pub fn metric_transformations(&self) -> ::std::option::Option<&[crate::types::MetricTransformation]> {
-        self.metric_transformations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_transformations.is_none()`.
+    pub fn metric_transformations(&self) -> &[crate::types::MetricTransformation] {
+        self.metric_transformations.as_deref().unwrap_or_default()
     }
 }
 impl PutMetricFilterInput {
@@ -48,6 +50,7 @@ pub struct PutMetricFilterInputBuilder {
 }
 impl PutMetricFilterInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl PutMetricFilterInputBuilder {
         &self.log_group_name
     }
     /// <p>A name for the metric filter.</p>
+    /// This field is required.
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl PutMetricFilterInputBuilder {
         &self.filter_name
     }
     /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
+    /// This field is required.
     pub fn filter_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_pattern = ::std::option::Option::Some(input.into());
         self
@@ -112,7 +117,7 @@ impl PutMetricFilterInputBuilder {
     /// Consumes the builder and constructs a [`PutMetricFilterInput`](crate::operation::put_metric_filter::PutMetricFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_metric_filter::PutMetricFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_metric_filter::PutMetricFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metric_filter::PutMetricFilterInput {
             log_group_name: self.log_group_name,
             filter_name: self.filter_name,

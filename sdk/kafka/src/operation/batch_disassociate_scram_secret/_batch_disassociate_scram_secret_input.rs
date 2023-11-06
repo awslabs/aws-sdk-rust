@@ -15,8 +15,10 @@ impl BatchDisassociateScramSecretInput {
         self.cluster_arn.as_deref()
     }
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
-    pub fn secret_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.secret_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secret_arn_list.is_none()`.
+    pub fn secret_arn_list(&self) -> &[::std::string::String] {
+        self.secret_arn_list.as_deref().unwrap_or_default()
     }
 }
 impl BatchDisassociateScramSecretInput {
@@ -35,6 +37,7 @@ pub struct BatchDisassociateScramSecretInputBuilder {
 }
 impl BatchDisassociateScramSecretInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl BatchDisassociateScramSecretInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretInput {
             cluster_arn: self.cluster_arn,

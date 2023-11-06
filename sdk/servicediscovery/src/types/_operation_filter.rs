@@ -12,7 +12,7 @@ pub struct OperationFilter {
     /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
-    pub name: ::std::option::Option<crate::types::OperationFilterName>,
+    pub name: crate::types::OperationFilterName,
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
     /// <li> <p> <b>NAMESPACE_ID</b>: Specify one namespace ID.</p> </li>
@@ -21,7 +21,7 @@ pub struct OperationFilter {
     /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
@@ -39,8 +39,8 @@ impl OperationFilter {
     /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::OperationFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::OperationFilterName {
+        &self.name
     }
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
@@ -50,8 +50,9 @@ impl OperationFilter {
     /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
@@ -87,6 +88,7 @@ impl OperationFilterBuilder {
     /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::OperationFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -185,11 +187,24 @@ impl OperationFilterBuilder {
         &self.condition
     }
     /// Consumes the builder and constructs a [`OperationFilter`](crate::types::OperationFilter).
-    pub fn build(self) -> crate::types::OperationFilter {
-        crate::types::OperationFilter {
-            name: self.name,
-            values: self.values,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::OperationFilterBuilder::name)
+    /// - [`values`](crate::types::builders::OperationFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::OperationFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::OperationFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building OperationFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building OperationFilter",
+                )
+            })?,
             condition: self.condition,
-        }
+        })
     }
 }

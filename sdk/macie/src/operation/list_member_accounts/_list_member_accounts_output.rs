@@ -11,8 +11,10 @@ pub struct ListMemberAccountsOutput {
 }
 impl ListMemberAccountsOutput {
     /// <p>(Discontinued) A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list.</p>
-    pub fn member_accounts(&self) -> ::std::option::Option<&[crate::types::MemberAccount]> {
-        self.member_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_accounts.is_none()`.
+    pub fn member_accounts(&self) -> &[crate::types::MemberAccount] {
+        self.member_accounts.as_deref().unwrap_or_default()
     }
     /// <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

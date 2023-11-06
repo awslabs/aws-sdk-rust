@@ -106,6 +106,7 @@ pub struct ImportVmImageInputBuilder {
 }
 impl ImportVmImageInputBuilder {
     /// <p>The name of the base image that is created by the import process.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +136,7 @@ impl ImportVmImageInputBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
+    /// This field is required.
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
@@ -193,6 +195,7 @@ impl ImportVmImageInputBuilder {
         &self.description
     }
     /// <p>The operating system platform for the imported VM.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -221,6 +224,7 @@ impl ImportVmImageInputBuilder {
         &self.os_version
     }
     /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+    /// This field is required.
     pub fn vm_import_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_import_task_id = ::std::option::Option::Some(input.into());
         self
@@ -255,6 +259,7 @@ impl ImportVmImageInputBuilder {
         &self.tags
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -271,7 +276,7 @@ impl ImportVmImageInputBuilder {
     /// Consumes the builder and constructs a [`ImportVmImageInput`](crate::operation::import_vm_image::ImportVmImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_vm_image::ImportVmImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_vm_image::ImportVmImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_vm_image::ImportVmImageInput {
             name: self.name,
             semantic_version: self.semantic_version,

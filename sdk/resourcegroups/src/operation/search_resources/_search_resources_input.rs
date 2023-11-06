@@ -41,6 +41,7 @@ pub struct SearchResourcesInputBuilder {
 }
 impl SearchResourcesInputBuilder {
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
+    /// This field is required.
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.resource_query = ::std::option::Option::Some(input);
         self
@@ -85,7 +86,7 @@ impl SearchResourcesInputBuilder {
     /// Consumes the builder and constructs a [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_resources::SearchResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_resources::SearchResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_resources::SearchResourcesInput {
             resource_query: self.resource_query,
             max_results: self.max_results,

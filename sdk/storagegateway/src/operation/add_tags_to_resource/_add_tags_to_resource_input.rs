@@ -19,8 +19,10 @@ impl AddTagsToResourceInput {
     /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl AddTagsToResourceInput {
@@ -39,6 +41,7 @@ pub struct AddTagsToResourceInputBuilder {
 }
 impl AddTagsToResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -81,7 +84,7 @@ impl AddTagsToResourceInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_tags_to_resource::AddTagsToResourceInput {
             resource_arn: self.resource_arn,
             tags: self.tags,

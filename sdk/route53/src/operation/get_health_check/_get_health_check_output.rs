@@ -35,6 +35,7 @@ pub struct GetHealthCheckOutputBuilder {
 }
 impl GetHealthCheckOutputBuilder {
     /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
+    /// This field is required.
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
         self.health_check = ::std::option::Option::Some(input);
         self

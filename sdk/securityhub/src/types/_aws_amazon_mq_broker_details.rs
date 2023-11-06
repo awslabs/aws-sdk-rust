@@ -99,20 +99,26 @@ impl AwsAmazonMqBrokerDetails {
         self.publicly_accessible
     }
     /// <p> The list of rules (one minimum, 125 maximum) that authorize connections to brokers. </p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p> The broker's storage type. </p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
     /// <p> The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. </p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p> The list of all broker usernames for the specified broker. Doesn't apply to RabbitMQ brokers. </p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::AwsAmazonMqBrokerUsersDetails]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::AwsAmazonMqBrokerUsersDetails] {
+        self.users.as_deref().unwrap_or_default()
     }
 }
 impl AwsAmazonMqBrokerDetails {

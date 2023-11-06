@@ -71,6 +71,7 @@ pub struct CreateNodeInputBuilder {
 }
 impl CreateNodeInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateNodeInputBuilder {
     /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
     /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +133,7 @@ impl CreateNodeInputBuilder {
         &self.member_id
     }
     /// <p>The properties of a node configuration.</p>
+    /// This field is required.
     pub fn node_configuration(mut self, input: crate::types::NodeConfiguration) -> Self {
         self.node_configuration = ::std::option::Option::Some(input);
         self
@@ -171,7 +174,7 @@ impl CreateNodeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNodeInput`](crate::operation::create_node::CreateNodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_node::CreateNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_node::CreateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_node::CreateNodeInput {
             client_request_token: self.client_request_token,
             network_id: self.network_id,

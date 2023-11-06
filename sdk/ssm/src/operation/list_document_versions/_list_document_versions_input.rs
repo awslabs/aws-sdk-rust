@@ -41,6 +41,7 @@ pub struct ListDocumentVersionsInputBuilder {
 }
 impl ListDocumentVersionsInputBuilder {
     /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,7 +86,7 @@ impl ListDocumentVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDocumentVersionsInput`](crate::operation::list_document_versions::ListDocumentVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_document_versions::ListDocumentVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_document_versions::ListDocumentVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_document_versions::ListDocumentVersionsInput {
             name: self.name,

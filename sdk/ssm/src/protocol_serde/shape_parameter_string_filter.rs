@@ -2,21 +2,21 @@
 pub fn ser_parameter_string_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParameterStringFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key {
-        object.key("Key").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Key").string(input.key.as_str());
     }
-    if let Some(var_2) = &input.option {
-        object.key("Option").string(var_2.as_str());
+    if let Some(var_1) = &input.option {
+        object.key("Option").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.values {
-        let mut array_4 = object.key("Values").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.values {
+        let mut array_3 = object.key("Values").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }

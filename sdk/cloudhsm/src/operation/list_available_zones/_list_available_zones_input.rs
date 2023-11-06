@@ -19,7 +19,8 @@ impl ListAvailableZonesInputBuilder {
     /// Consumes the builder and constructs a [`ListAvailableZonesInput`](crate::operation::list_available_zones::ListAvailableZonesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_available_zones::ListAvailableZonesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_available_zones::ListAvailableZonesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_available_zones::ListAvailableZonesInput {})
     }
 }

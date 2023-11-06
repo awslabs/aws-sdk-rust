@@ -89,9 +89,9 @@ pub(crate) fn de_get_connectivity_info(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ConnectivityInfo" => {
-                    builder = builder.set_connectivity_info(
-                        crate::protocol_serde::shape___list_of_connectivity_info::de___list_of_connectivity_info(tokens)?,
-                    );
+                    builder = builder.set_connectivity_info(crate::protocol_serde::shape_list_of_connectivity_info::de_list_of_connectivity_info(
+                        tokens,
+                    )?);
                 }
                 "message" => {
                     builder = builder.set_message(

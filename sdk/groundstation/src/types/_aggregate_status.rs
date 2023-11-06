@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateStatus {
     /// <p>Aggregate status.</p>
-    pub status: ::std::option::Option<crate::types::AgentStatus>,
+    pub status: crate::types::AgentStatus,
     /// <p>Sparse map of failure signatures.</p>
     pub signature_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
 }
 impl AggregateStatus {
     /// <p>Aggregate status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AgentStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::AgentStatus {
+        &self.status
     }
     /// <p>Sparse map of failure signatures.</p>
     pub fn signature_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
@@ -35,6 +35,7 @@ pub struct AggregateStatusBuilder {
 }
 impl AggregateStatusBuilder {
     /// <p>Aggregate status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -69,10 +70,17 @@ impl AggregateStatusBuilder {
         &self.signature_map
     }
     /// Consumes the builder and constructs a [`AggregateStatus`](crate::types::AggregateStatus).
-    pub fn build(self) -> crate::types::AggregateStatus {
-        crate::types::AggregateStatus {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::AggregateStatusBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregateStatus, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AggregateStatus {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building AggregateStatus",
+                )
+            })?,
             signature_map: self.signature_map,
-        }
+        })
     }
 }

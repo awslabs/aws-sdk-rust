@@ -55,6 +55,7 @@ pub struct CreateAssetInputBuilder {
 }
 impl CreateAssetInputBuilder {
     /// <p>A friendly name for the asset.</p>
+    /// This field is required.
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateAssetInputBuilder {
         &self.asset_name
     }
     /// <p>The ID of the asset model from which to create the asset.</p>
+    /// This field is required.
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +133,7 @@ impl CreateAssetInputBuilder {
         &self.asset_description
     }
     /// Consumes the builder and constructs a [`CreateAssetInput`](crate::operation::create_asset::CreateAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_asset::CreateAssetInput {
             asset_name: self.asset_name,
             asset_model_id: self.asset_model_id,

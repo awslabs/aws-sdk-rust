@@ -96,8 +96,10 @@ impl CreatePredictorInput {
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
-    pub fn forecast_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.forecast_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
+    pub fn forecast_types(&self) -> &[::std::string::String] {
+        self.forecast_types.as_deref().unwrap_or_default()
     }
     /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
     /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
@@ -160,8 +162,10 @@ impl CreatePredictorInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
     pub fn optimization_metric(&self) -> ::std::option::Option<&crate::types::OptimizationMetric> {
@@ -197,6 +201,7 @@ pub struct CreatePredictorInputBuilder {
 }
 impl CreatePredictorInputBuilder {
     /// <p>A name for the predictor.</p>
+    /// This field is required.
     pub fn predictor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_name = ::std::option::Option::Some(input.into());
         self
@@ -254,6 +259,7 @@ impl CreatePredictorInputBuilder {
     /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>
     /// <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>
     /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
+    /// This field is required.
     pub fn forecast_horizon(mut self, input: i32) -> Self {
         self.forecast_horizon = ::std::option::Option::Some(input);
         self
@@ -434,6 +440,7 @@ impl CreatePredictorInputBuilder {
         &self.hpo_config
     }
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -448,6 +455,7 @@ impl CreatePredictorInputBuilder {
         &self.input_data_config
     }
     /// <p>The featurization configuration.</p>
+    /// This field is required.
     pub fn featurization_config(mut self, input: crate::types::FeaturizationConfig) -> Self {
         self.featurization_config = ::std::option::Option::Some(input);
         self
@@ -542,7 +550,7 @@ impl CreatePredictorInputBuilder {
     /// Consumes the builder and constructs a [`CreatePredictorInput`](crate::operation::create_predictor::CreatePredictorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_predictor::CreatePredictorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_predictor::CreatePredictorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_predictor::CreatePredictorInput {
             predictor_name: self.predictor_name,
             algorithm_arn: self.algorithm_arn,

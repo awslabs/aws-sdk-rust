@@ -15,8 +15,10 @@ impl ListDeviceProfilesOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of device profiles.</p>
-    pub fn device_profile_list(&self) -> ::std::option::Option<&[crate::types::DeviceProfile]> {
-        self.device_profile_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_profile_list.is_none()`.
+    pub fn device_profile_list(&self) -> &[crate::types::DeviceProfile] {
+        self.device_profile_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDeviceProfilesOutput {

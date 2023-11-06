@@ -36,16 +36,20 @@ pub struct StorageDescriptor {
 }
 impl StorageDescriptor {
     /// <p>A list of the <code>Columns</code> in the table.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::Column]> {
-        self.columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
+    pub fn columns(&self) -> &[crate::types::Column] {
+        self.columns.as_deref().unwrap_or_default()
     }
     /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
-    pub fn additional_locations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_locations.is_none()`.
+    pub fn additional_locations(&self) -> &[::std::string::String] {
+        self.additional_locations.as_deref().unwrap_or_default()
     }
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
     pub fn input_format(&self) -> ::std::option::Option<&str> {
@@ -68,12 +72,16 @@ impl StorageDescriptor {
         self.serde_info.as_ref()
     }
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
-    pub fn bucket_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bucket_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bucket_columns.is_none()`.
+    pub fn bucket_columns(&self) -> &[::std::string::String] {
+        self.bucket_columns.as_deref().unwrap_or_default()
     }
     /// <p>A list specifying the sort order of each bucket in the table.</p>
-    pub fn sort_columns(&self) -> ::std::option::Option<&[crate::types::Order]> {
-        self.sort_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_columns.is_none()`.
+    pub fn sort_columns(&self) -> &[crate::types::Order] {
+        self.sort_columns.as_deref().unwrap_or_default()
     }
     /// <p>The user-supplied properties in key-value form.</p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

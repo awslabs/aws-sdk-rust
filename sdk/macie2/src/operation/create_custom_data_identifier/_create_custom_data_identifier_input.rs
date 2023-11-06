@@ -37,12 +37,16 @@ impl CreateCustomDataIdentifierInput {
         self.description.as_deref()
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn ignore_words(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ignore_words.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ignore_words.is_none()`.
+    pub fn ignore_words(&self) -> &[::std::string::String] {
+        self.ignore_words.as_deref().unwrap_or_default()
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    pub fn keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keywords.is_none()`.
+    pub fn keywords(&self) -> &[::std::string::String] {
+        self.keywords.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     pub fn maximum_match_distance(&self) -> ::std::option::Option<i32> {
@@ -59,8 +63,10 @@ impl CreateCustomDataIdentifierInput {
     }
     /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
     /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    pub fn severity_levels(&self) -> ::std::option::Option<&[crate::types::SeverityLevel]> {
-        self.severity_levels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severity_levels.is_none()`.
+    pub fn severity_levels(&self) -> &[crate::types::SeverityLevel] {
+        self.severity_levels.as_deref().unwrap_or_default()
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
     /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
@@ -177,6 +183,7 @@ impl CreateCustomDataIdentifierInputBuilder {
     }
     /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -193,6 +200,7 @@ impl CreateCustomDataIdentifierInputBuilder {
         &self.name
     }
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    /// This field is required.
     pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex = ::std::option::Option::Some(input.into());
         self
@@ -257,7 +265,7 @@ impl CreateCustomDataIdentifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierInput {
             client_token: self.client_token,

@@ -2,7 +2,7 @@
 pub fn ser_update_partner_account_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_partner_account::UpdatePartnerAccountInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sidewalk {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Sidewalk").start_object();

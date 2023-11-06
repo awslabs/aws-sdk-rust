@@ -35,6 +35,7 @@ pub struct PortRangeBuilder {
 }
 impl PortRangeBuilder {
     /// <p>The lower limit of the port range. This must be less than or equal to the <code>ToPort</code> specification. </p>
+    /// This field is required.
     pub fn from_port(mut self, input: i32) -> Self {
         self.from_port = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PortRangeBuilder {
         &self.from_port
     }
     /// <p>The upper limit of the port range. This must be greater than or equal to the <code>FromPort</code> specification. </p>
+    /// This field is required.
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
         self

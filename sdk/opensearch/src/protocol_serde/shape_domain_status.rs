@@ -48,6 +48,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EndpointV2" => {
+                            builder = builder.set_endpoint_v2(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Endpoints" => {
                             builder = builder.set_endpoints(crate::protocol_serde::shape_endpoints_map::de_endpoints_map(tokens)?);
                         }
@@ -74,6 +81,13 @@ where
                             builder = builder.set_access_policies(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "IPAddressType" => {
+                            builder = builder.set_ip_address_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }
@@ -148,7 +162,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::domain_status_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

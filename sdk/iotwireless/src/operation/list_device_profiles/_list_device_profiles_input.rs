@@ -85,7 +85,8 @@ impl ListDeviceProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceProfilesInput`](crate::operation::list_device_profiles::ListDeviceProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_device_profiles::ListDeviceProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_device_profiles::ListDeviceProfilesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_device_profiles::ListDeviceProfilesInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SenderIdFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub name: ::std::option::Option<crate::types::SenderIdFilterName>,
+    pub name: crate::types::SenderIdFilterName,
     /// <p>An array of values to filter for.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl SenderIdFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SenderIdFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::SenderIdFilterName {
+        &self.name
     }
     /// <p>An array of values to filter for.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl SenderIdFilter {
@@ -35,6 +36,7 @@ pub struct SenderIdFilterBuilder {
 }
 impl SenderIdFilterBuilder {
     /// <p>The name of the attribute to filter on.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::SenderIdFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl SenderIdFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`SenderIdFilter`](crate::types::SenderIdFilter).
-    pub fn build(self) -> crate::types::SenderIdFilter {
-        crate::types::SenderIdFilter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SenderIdFilterBuilder::name)
+    /// - [`values`](crate::types::builders::SenderIdFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::SenderIdFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::SenderIdFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SenderIdFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building SenderIdFilter",
+                )
+            })?,
+        })
     }
 }

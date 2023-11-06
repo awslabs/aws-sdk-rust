@@ -41,6 +41,7 @@ pub struct ListPromptsInputBuilder {
 }
 impl ListPromptsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl ListPromptsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPromptsInput`](crate::operation::list_prompts::ListPromptsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_prompts::ListPromptsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_prompts::ListPromptsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_prompts::ListPromptsInput {
             instance_id: self.instance_id,
             next_token: self.next_token,

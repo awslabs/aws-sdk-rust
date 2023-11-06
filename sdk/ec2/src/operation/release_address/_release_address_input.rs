@@ -111,7 +111,7 @@ impl ReleaseAddressInputBuilder {
     /// Consumes the builder and constructs a [`ReleaseAddressInput`](crate::operation::release_address::ReleaseAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::release_address::ReleaseAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::release_address::ReleaseAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::release_address::ReleaseAddressInput {
             allocation_id: self.allocation_id,
             public_ip: self.public_ip,

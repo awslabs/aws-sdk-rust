@@ -10,8 +10,10 @@ pub struct PutInstancePublicPortsInput {
 }
 impl PutInstancePublicPortsInput {
     /// <p>An array of objects to describe the ports to open for the specified instance.</p>
-    pub fn port_infos(&self) -> ::std::option::Option<&[crate::types::PortInfo]> {
-        self.port_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_infos.is_none()`.
+    pub fn port_infos(&self) -> &[crate::types::PortInfo] {
+        self.port_infos.as_deref().unwrap_or_default()
     }
     /// <p>The name of the instance for which to open ports.</p>
     pub fn instance_name(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl PutInstancePublicPortsInputBuilder {
         &self.port_infos
     }
     /// <p>The name of the instance for which to open ports.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
@@ -72,7 +75,7 @@ impl PutInstancePublicPortsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_instance_public_ports::PutInstancePublicPortsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_instance_public_ports::PutInstancePublicPortsInput {
             port_infos: self.port_infos,

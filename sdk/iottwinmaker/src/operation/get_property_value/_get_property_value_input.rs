@@ -37,8 +37,10 @@ impl GetPropertyValueInput {
         self.entity_id.as_deref()
     }
     /// <p>The properties whose values the operation returns.</p>
-    pub fn selected_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.selected_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_properties.is_none()`.
+    pub fn selected_properties(&self) -> &[::std::string::String] {
+        self.selected_properties.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the workspace whose values the operation returns.</p>
     pub fn workspace_id(&self) -> ::std::option::Option<&str> {
@@ -147,6 +149,7 @@ impl GetPropertyValueInputBuilder {
         &self.selected_properties
     }
     /// <p>The ID of the workspace whose values the operation returns.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -222,7 +225,7 @@ impl GetPropertyValueInputBuilder {
     /// Consumes the builder and constructs a [`GetPropertyValueInput`](crate::operation::get_property_value::GetPropertyValueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_property_value::GetPropertyValueInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_property_value::GetPropertyValueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_property_value::GetPropertyValueInput {
             component_name: self.component_name,
             component_type_id: self.component_type_id,

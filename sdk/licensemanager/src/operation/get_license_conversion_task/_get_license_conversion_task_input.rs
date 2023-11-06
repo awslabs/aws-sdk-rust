@@ -27,6 +27,7 @@ pub struct GetLicenseConversionTaskInputBuilder {
 }
 impl GetLicenseConversionTaskInputBuilder {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
+    /// This field is required.
     pub fn license_conversion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_conversion_task_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetLicenseConversionTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput {
             license_conversion_task_id: self.license_conversion_task_id,

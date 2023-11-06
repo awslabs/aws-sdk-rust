@@ -47,7 +47,7 @@ where
 pub fn ser_skewed_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SkewedInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.skewed_column_names {
         let mut array_2 = object.key("SkewedColumnNames").start_array();
         for item_3 in var_1 {

@@ -9,8 +9,10 @@ pub struct BatchGetApplicationsInput {
 }
 impl BatchGetApplicationsInput {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn application_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.application_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_names.is_none()`.
+    pub fn application_names(&self) -> &[::std::string::String] {
+        self.application_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetApplicationsInput {
@@ -50,7 +52,7 @@ impl BatchGetApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_applications::BatchGetApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_applications::BatchGetApplicationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_applications::BatchGetApplicationsInput {
             application_names: self.application_names,

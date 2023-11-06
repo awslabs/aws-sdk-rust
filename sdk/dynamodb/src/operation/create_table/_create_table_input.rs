@@ -92,8 +92,10 @@ pub struct CreateTableInput {
 }
 impl CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
-    pub fn attribute_definitions(&self) -> ::std::option::Option<&[crate::types::AttributeDefinition]> {
-        self.attribute_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_definitions.is_none()`.
+    pub fn attribute_definitions(&self) -> &[crate::types::AttributeDefinition] {
+        self.attribute_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The name of the table to create.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
@@ -115,8 +117,10 @@ impl CreateTableInput {
     /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
     /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
-        self.key_schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_schema.is_none()`.
+    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
+        self.key_schema.as_deref().unwrap_or_default()
     }
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
@@ -134,8 +138,10 @@ impl CreateTableInput {
     /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn local_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::LocalSecondaryIndex]> {
-        self.local_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_secondary_indexes.is_none()`.
+    pub fn local_secondary_indexes(&self) -> &[crate::types::LocalSecondaryIndex] {
+        self.local_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
@@ -153,8 +159,10 @@ impl CreateTableInput {
     /// </ul> </li>
     /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p> </li>
     /// </ul>
-    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndex]> {
-        self.global_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
+    pub fn global_secondary_indexes(&self) -> &[crate::types::GlobalSecondaryIndex] {
+        self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
@@ -189,8 +197,10 @@ impl CreateTableInput {
         self.sse_specification.as_ref()
     }
     /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub fn table_class(&self) -> ::std::option::Option<&crate::types::TableClass> {
@@ -247,6 +257,7 @@ impl CreateTableInputBuilder {
         &self.attribute_definitions
     }
     /// <p>The name of the table to create.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -608,7 +619,7 @@ impl CreateTableInputBuilder {
         &self.deletion_protection_enabled
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
             attribute_definitions: self.attribute_definitions,
             table_name: self.table_name,

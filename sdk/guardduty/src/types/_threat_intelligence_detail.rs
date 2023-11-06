@@ -15,8 +15,10 @@ impl ThreatIntelligenceDetail {
         self.threat_list_name.as_deref()
     }
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    pub fn threat_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.threat_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threat_names.is_none()`.
+    pub fn threat_names(&self) -> &[::std::string::String] {
+        self.threat_names.as_deref().unwrap_or_default()
     }
 }
 impl ThreatIntelligenceDetail {

@@ -9,11 +9,11 @@ pub struct TopicFilter {
     /// <p>The class of the filter. Valid values for this structure are <code>ENFORCED_VALUE_FILTER</code>, <code>CONDITIONAL_VALUE_FILTER</code>, and <code>NAMED_VALUE_FILTER</code>.</p>
     pub filter_class: ::std::option::Option<crate::types::FilterClass>,
     /// <p>The name of the filter.</p>
-    pub filter_name: ::std::option::Option<::std::string::String>,
+    pub filter_name: ::std::string::String,
     /// <p>The other names or aliases for the filter.</p>
     pub filter_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the field that the filter operates on.</p>
-    pub operand_field_name: ::std::option::Option<::std::string::String>,
+    pub operand_field_name: ::std::string::String,
     /// <p>The type of the filter. Valid values for this structure are <code>CATEGORY_FILTER</code>, <code>NUMERIC_EQUALITY_FILTER</code>, <code>NUMERIC_RANGE_FILTER</code>, <code>DATE_RANGE_FILTER</code>, and <code>RELATIVE_DATE_FILTER</code>.</p>
     pub filter_type: ::std::option::Option<crate::types::NamedFilterType>,
     /// <p>The category filter that is associated with this filter.</p>
@@ -37,16 +37,20 @@ impl TopicFilter {
         self.filter_class.as_ref()
     }
     /// <p>The name of the filter.</p>
-    pub fn filter_name(&self) -> ::std::option::Option<&str> {
-        self.filter_name.as_deref()
+    pub fn filter_name(&self) -> &str {
+        use std::ops::Deref;
+        self.filter_name.deref()
     }
     /// <p>The other names or aliases for the filter.</p>
-    pub fn filter_synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.filter_synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_synonyms.is_none()`.
+    pub fn filter_synonyms(&self) -> &[::std::string::String] {
+        self.filter_synonyms.as_deref().unwrap_or_default()
     }
     /// <p>The name of the field that the filter operates on.</p>
-    pub fn operand_field_name(&self) -> ::std::option::Option<&str> {
-        self.operand_field_name.as_deref()
+    pub fn operand_field_name(&self) -> &str {
+        use std::ops::Deref;
+        self.operand_field_name.deref()
     }
     /// <p>The type of the filter. Valid values for this structure are <code>CATEGORY_FILTER</code>, <code>NUMERIC_EQUALITY_FILTER</code>, <code>NUMERIC_RANGE_FILTER</code>, <code>DATE_RANGE_FILTER</code>, and <code>RELATIVE_DATE_FILTER</code>.</p>
     pub fn filter_type(&self) -> ::std::option::Option<&crate::types::NamedFilterType> {
@@ -126,6 +130,7 @@ impl TopicFilterBuilder {
         &self.filter_class
     }
     /// <p>The name of the filter.</p>
+    /// This field is required.
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +165,7 @@ impl TopicFilterBuilder {
         &self.filter_synonyms
     }
     /// <p>The name of the field that the filter operates on.</p>
+    /// This field is required.
     pub fn operand_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operand_field_name = ::std::option::Option::Some(input.into());
         self
@@ -258,19 +264,32 @@ impl TopicFilterBuilder {
         &self.relative_date_filter
     }
     /// Consumes the builder and constructs a [`TopicFilter`](crate::types::TopicFilter).
-    pub fn build(self) -> crate::types::TopicFilter {
-        crate::types::TopicFilter {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter_name`](crate::types::builders::TopicFilterBuilder::filter_name)
+    /// - [`operand_field_name`](crate::types::builders::TopicFilterBuilder::operand_field_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopicFilter {
             filter_description: self.filter_description,
             filter_class: self.filter_class,
-            filter_name: self.filter_name,
+            filter_name: self.filter_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "filter_name",
+                    "filter_name was not specified but it is required when building TopicFilter",
+                )
+            })?,
             filter_synonyms: self.filter_synonyms,
-            operand_field_name: self.operand_field_name,
+            operand_field_name: self.operand_field_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operand_field_name",
+                    "operand_field_name was not specified but it is required when building TopicFilter",
+                )
+            })?,
             filter_type: self.filter_type,
             category_filter: self.category_filter,
             numeric_equality_filter: self.numeric_equality_filter,
             numeric_range_filter: self.numeric_range_filter,
             date_range_filter: self.date_range_filter,
             relative_date_filter: self.relative_date_filter,
-        }
+        })
     }
 }

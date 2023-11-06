@@ -27,6 +27,7 @@ pub struct GetRecordingConfigurationInputBuilder {
 }
 impl GetRecordingConfigurationInputBuilder {
     /// <p>ARN of the recording configuration to be retrieved.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl GetRecordingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recording_configuration::GetRecordingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_recording_configuration::GetRecordingConfigurationInput { arn: self.arn })
     }

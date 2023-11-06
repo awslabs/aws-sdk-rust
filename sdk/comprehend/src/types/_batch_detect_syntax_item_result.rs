@@ -15,8 +15,10 @@ impl BatchDetectSyntaxItemResult {
         self.index
     }
     /// <p>The syntax tokens for the words in the document, one token for each word.</p>
-    pub fn syntax_tokens(&self) -> ::std::option::Option<&[crate::types::SyntaxToken]> {
-        self.syntax_tokens.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.syntax_tokens.is_none()`.
+    pub fn syntax_tokens(&self) -> &[crate::types::SyntaxToken] {
+        self.syntax_tokens.as_deref().unwrap_or_default()
     }
 }
 impl BatchDetectSyntaxItemResult {

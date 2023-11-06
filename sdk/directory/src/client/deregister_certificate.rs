@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterCertificate`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl Into<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::set_directory_id): <p>The identifier of the directory.</p>
-    ///   - [`certificate_id(impl Into<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::set_certificate_id): <p>The identifier of the certificate.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory.</p><br>
+    ///   - [`certificate_id(impl Into<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::set_certificate_id):<br>required: **true**<br><p>The identifier of the certificate.</p><br>
     /// - On success, responds with [`DeregisterCertificateOutput`](crate::operation::deregister_certificate::DeregisterCertificateOutput)
     /// - On failure, responds with [`SdkError<DeregisterCertificateError>`](crate::operation::deregister_certificate::DeregisterCertificateError)
     pub fn deregister_certificate(&self) -> crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder {

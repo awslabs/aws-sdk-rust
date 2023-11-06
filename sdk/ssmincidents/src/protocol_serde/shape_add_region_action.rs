@@ -2,12 +2,12 @@
 pub fn ser_add_region_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddRegionAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.region_name {
-        object.key("regionName").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("regionName").string(input.region_name.as_str());
     }
-    if let Some(var_2) = &input.sse_kms_key_id {
-        object.key("sseKmsKeyId").string(var_2.as_str());
+    if let Some(var_1) = &input.sse_kms_key_id {
+        object.key("sseKmsKeyId").string(var_1.as_str());
     }
     Ok(())
 }

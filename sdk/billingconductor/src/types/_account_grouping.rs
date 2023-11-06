@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountGrouping {
     /// <p>The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group.</p>
-    pub linked_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub linked_account_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub auto_associate: ::std::option::Option<bool>,
 }
 impl AccountGrouping {
     /// <p>The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group.</p>
-    pub fn linked_account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.linked_account_ids.as_deref()
+    pub fn linked_account_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.linked_account_ids.deref()
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn auto_associate(&self) -> ::std::option::Option<bool> {
@@ -69,10 +70,17 @@ impl AccountGroupingBuilder {
         &self.auto_associate
     }
     /// Consumes the builder and constructs a [`AccountGrouping`](crate::types::AccountGrouping).
-    pub fn build(self) -> crate::types::AccountGrouping {
-        crate::types::AccountGrouping {
-            linked_account_ids: self.linked_account_ids,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`linked_account_ids`](crate::types::builders::AccountGroupingBuilder::linked_account_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountGrouping, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccountGrouping {
+            linked_account_ids: self.linked_account_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "linked_account_ids",
+                    "linked_account_ids was not specified but it is required when building AccountGrouping",
+                )
+            })?,
             auto_associate: self.auto_associate,
-        }
+        })
     }
 }

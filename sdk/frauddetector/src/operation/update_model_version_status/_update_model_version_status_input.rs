@@ -48,6 +48,7 @@ pub struct UpdateModelVersionStatusInputBuilder {
 }
 impl UpdateModelVersionStatusInputBuilder {
     /// <p>The model ID of the model version to update.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateModelVersionStatusInputBuilder {
         &self.model_id
     }
     /// <p>The model type.</p>
+    /// This field is required.
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl UpdateModelVersionStatusInputBuilder {
         &self.model_type
     }
     /// <p>The model version number.</p>
+    /// This field is required.
     pub fn model_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version_number = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl UpdateModelVersionStatusInputBuilder {
         &self.model_version_number
     }
     /// <p>The model version status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ModelVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -108,7 +112,7 @@ impl UpdateModelVersionStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_model_version_status::UpdateModelVersionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_model_version_status::UpdateModelVersionStatusInput {
             model_id: self.model_id,

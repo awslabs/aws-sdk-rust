@@ -12,6 +12,8 @@ pub struct Resilience {
     pub hsr_operation_mode: ::std::option::Option<crate::types::OperationMode>,
     /// <p>The cluster status of the component.</p>
     pub cluster_status: ::std::option::Option<crate::types::ClusterStatus>,
+    /// <p>Indicates if or not enqueue replication is enabled for the ASCS component.</p>
+    pub enqueue_replication: ::std::option::Option<bool>,
 }
 impl Resilience {
     /// <p>The tier of the component.</p>
@@ -30,6 +32,10 @@ impl Resilience {
     pub fn cluster_status(&self) -> ::std::option::Option<&crate::types::ClusterStatus> {
         self.cluster_status.as_ref()
     }
+    /// <p>Indicates if or not enqueue replication is enabled for the ASCS component.</p>
+    pub fn enqueue_replication(&self) -> ::std::option::Option<bool> {
+        self.enqueue_replication
+    }
 }
 impl Resilience {
     /// Creates a new builder-style object to manufacture [`Resilience`](crate::types::Resilience).
@@ -46,6 +52,7 @@ pub struct ResilienceBuilder {
     pub(crate) hsr_replication_mode: ::std::option::Option<crate::types::ReplicationMode>,
     pub(crate) hsr_operation_mode: ::std::option::Option<crate::types::OperationMode>,
     pub(crate) cluster_status: ::std::option::Option<crate::types::ClusterStatus>,
+    pub(crate) enqueue_replication: ::std::option::Option<bool>,
 }
 impl ResilienceBuilder {
     /// <p>The tier of the component.</p>
@@ -104,6 +111,20 @@ impl ResilienceBuilder {
     pub fn get_cluster_status(&self) -> &::std::option::Option<crate::types::ClusterStatus> {
         &self.cluster_status
     }
+    /// <p>Indicates if or not enqueue replication is enabled for the ASCS component.</p>
+    pub fn enqueue_replication(mut self, input: bool) -> Self {
+        self.enqueue_replication = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if or not enqueue replication is enabled for the ASCS component.</p>
+    pub fn set_enqueue_replication(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enqueue_replication = input;
+        self
+    }
+    /// <p>Indicates if or not enqueue replication is enabled for the ASCS component.</p>
+    pub fn get_enqueue_replication(&self) -> &::std::option::Option<bool> {
+        &self.enqueue_replication
+    }
     /// Consumes the builder and constructs a [`Resilience`](crate::types::Resilience).
     pub fn build(self) -> crate::types::Resilience {
         crate::types::Resilience {
@@ -111,6 +132,7 @@ impl ResilienceBuilder {
             hsr_replication_mode: self.hsr_replication_mode,
             hsr_operation_mode: self.hsr_operation_mode,
             cluster_status: self.cluster_status,
+            enqueue_replication: self.enqueue_replication,
         }
     }
 }

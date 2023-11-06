@@ -106,7 +106,7 @@ impl ListWorkflowsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsInput {
             r#type: self.r#type,
             name: self.name,

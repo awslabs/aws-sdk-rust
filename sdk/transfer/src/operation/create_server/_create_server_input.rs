@@ -192,8 +192,10 @@ impl CreateServerInput {
     /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
     /// </ul>
     /// </note>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::Protocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::Protocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
@@ -210,8 +212,10 @@ impl CreateServerInput {
         self.security_policy_name.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for servers.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
@@ -224,8 +228,10 @@ impl CreateServerInput {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
-    pub fn structured_log_destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.structured_log_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.structured_log_destinations.is_none()`.
+    pub fn structured_log_destinations(&self) -> &[::std::string::String] {
+        self.structured_log_destinations.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateServerInput {
@@ -711,7 +717,9 @@ impl CreateServerInputBuilder {
         &self.structured_log_destinations
     }
     /// Consumes the builder and constructs a [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_server::CreateServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_server::CreateServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_server::CreateServerInput {
             certificate: self.certificate,
             domain: self.domain,

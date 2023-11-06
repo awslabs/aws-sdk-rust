@@ -49,6 +49,7 @@ pub struct DeploymentStageStatusSummaryBuilder {
 }
 impl DeploymentStageStatusSummaryBuilder {
     /// <p>The name of the stage.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DeploymentStageStatusSummaryBuilder {
         &self.stage_name
     }
     /// <p>Configuration of the devices in the stage.</p>
+    /// This field is required.
     pub fn device_selection_config(mut self, input: crate::types::DeviceSelectionConfig) -> Self {
         self.device_selection_config = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl DeploymentStageStatusSummaryBuilder {
         &self.device_selection_config
     }
     /// <p>Configuration of the deployment details.</p>
+    /// This field is required.
     pub fn deployment_config(mut self, input: crate::types::EdgeDeploymentConfig) -> Self {
         self.deployment_config = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl DeploymentStageStatusSummaryBuilder {
         &self.deployment_config
     }
     /// <p>General status of the current state.</p>
+    /// This field is required.
     pub fn deployment_status(mut self, input: crate::types::EdgeDeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
         self

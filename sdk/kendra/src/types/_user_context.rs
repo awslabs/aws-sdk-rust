@@ -30,12 +30,16 @@ impl UserContext {
         self.user_id.as_deref()
     }
     /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
-    pub fn data_source_groups(&self) -> ::std::option::Option<&[crate::types::DataSourceGroup]> {
-        self.data_source_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_source_groups.is_none()`.
+    pub fn data_source_groups(&self) -> &[crate::types::DataSourceGroup] {
+        self.data_source_groups.as_deref().unwrap_or_default()
     }
 }
 impl UserContext {

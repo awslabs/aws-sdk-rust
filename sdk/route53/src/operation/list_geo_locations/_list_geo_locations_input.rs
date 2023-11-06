@@ -117,7 +117,7 @@ impl ListGeoLocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListGeoLocationsInput`](crate::operation::list_geo_locations::ListGeoLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_geo_locations::ListGeoLocationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_geo_locations::ListGeoLocationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_geo_locations::ListGeoLocationsInput {
             start_continent_code: self.start_continent_code,
             start_country_code: self.start_country_code,

@@ -28,8 +28,10 @@ impl ListEntitiesInput {
         self.entity_type.as_deref()
     }
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    pub fn filter_list(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_list.is_none()`.
+    pub fn filter_list(&self) -> &[crate::types::Filter] {
+        self.filter_list.as_deref().unwrap_or_default()
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
@@ -69,6 +71,7 @@ pub struct ListEntitiesInputBuilder {
 }
 impl ListEntitiesInputBuilder {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl ListEntitiesInputBuilder {
         &self.catalog
     }
     /// <p>The type of entities to retrieve.</p>
+    /// This field is required.
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_type = ::std::option::Option::Some(input.into());
         self
@@ -173,7 +177,9 @@ impl ListEntitiesInputBuilder {
         &self.ownership_type
     }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_entities::ListEntitiesInput {
             catalog: self.catalog,
             entity_type: self.entity_type,

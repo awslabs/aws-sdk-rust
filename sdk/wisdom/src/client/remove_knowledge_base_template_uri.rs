@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveKnowledgeBaseTemplateUri`](crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
     /// - On success, responds with [`RemoveKnowledgeBaseTemplateUriOutput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput)
     /// - On failure, responds with [`SdkError<RemoveKnowledgeBaseTemplateUriError>`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError)
     pub fn remove_knowledge_base_template_uri(

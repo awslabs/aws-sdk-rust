@@ -59,6 +59,7 @@ pub struct ImportNotebookInputBuilder {
 }
 impl ImportNotebookInputBuilder {
     /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl ImportNotebookInputBuilder {
         &self.work_group
     }
     /// <p>The name of the notebook to import.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +89,7 @@ impl ImportNotebookInputBuilder {
         &self.name
     }
     /// <p>The notebook content to be imported.</p>
+    /// This field is required.
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +104,7 @@ impl ImportNotebookInputBuilder {
         &self.payload
     }
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -137,7 +141,7 @@ impl ImportNotebookInputBuilder {
     /// Consumes the builder and constructs a [`ImportNotebookInput`](crate::operation::import_notebook::ImportNotebookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_notebook::ImportNotebookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_notebook::ImportNotebookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_notebook::ImportNotebookInput {
             work_group: self.work_group,
             name: self.name,

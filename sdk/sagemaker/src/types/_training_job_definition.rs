@@ -46,8 +46,10 @@ impl TrainingJobDefinition {
         self.hyper_parameters.as_ref()
     }
     /// <p>An array of <code>Channel</code> objects, each of which specifies an input source.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.input_data_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_data_config.is_none()`.
+    pub fn input_data_config(&self) -> &[crate::types::Channel] {
+        self.input_data_config.as_deref().unwrap_or_default()
     }
     /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
@@ -92,6 +94,7 @@ impl TrainingJobDefinitionBuilder {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+    /// This field is required.
     pub fn training_input_mode(mut self, input: crate::types::TrainingInputMode) -> Self {
         self.training_input_mode = ::std::option::Option::Some(input);
         self
@@ -171,6 +174,7 @@ impl TrainingJobDefinitionBuilder {
         &self.input_data_config
     }
     /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -185,6 +189,7 @@ impl TrainingJobDefinitionBuilder {
         &self.output_data_config
     }
     /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training.</p>
+    /// This field is required.
     pub fn resource_config(mut self, input: crate::types::ResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
         self
@@ -200,6 +205,7 @@ impl TrainingJobDefinitionBuilder {
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
+    /// This field is required.
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
         self

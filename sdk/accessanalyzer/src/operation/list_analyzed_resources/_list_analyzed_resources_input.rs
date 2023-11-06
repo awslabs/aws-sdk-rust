@@ -49,6 +49,7 @@ pub struct ListAnalyzedResourcesInputBuilder {
 }
 impl ListAnalyzedResourcesInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -107,7 +108,7 @@ impl ListAnalyzedResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListAnalyzedResourcesInput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput {
             analyzer_arn: self.analyzer_arn,

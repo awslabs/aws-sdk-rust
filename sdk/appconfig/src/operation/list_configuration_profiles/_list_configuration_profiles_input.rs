@@ -48,6 +48,7 @@ pub struct ListConfigurationProfilesInputBuilder {
 }
 impl ListConfigurationProfilesInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -108,7 +109,7 @@ impl ListConfigurationProfilesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configuration_profiles::ListConfigurationProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_configuration_profiles::ListConfigurationProfilesInput {
             application_id: self.application_id,

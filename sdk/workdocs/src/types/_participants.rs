@@ -11,12 +11,16 @@ pub struct Participants {
 }
 impl Participants {
     /// <p>The list of users.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::UserMetadata]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::UserMetadata] {
+        self.users.as_deref().unwrap_or_default()
     }
     /// <p>The list of user groups.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupMetadata]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupMetadata] {
+        self.groups.as_deref().unwrap_or_default()
     }
 }
 impl Participants {

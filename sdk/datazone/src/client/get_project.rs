@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProject`](crate::operation::get_project::builders::GetProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which the project exists.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_identifier): <p>The ID of the project.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which the project exists.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_project::builders::GetProjectFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the project.</p><br>
     /// - On success, responds with [`GetProjectOutput`](crate::operation::get_project::GetProjectOutput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::operation::get_project::GetProjectOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the project exists.</p>
-    ///   - [`id(Option<String>)`](crate::operation::get_project::GetProjectOutput::id): <p>&gt;The ID of the project.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_project::GetProjectOutput::name): <p>The name of the project.</p>
+    ///   - [`domain_id(String)`](crate::operation::get_project::GetProjectOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the project exists.</p>
+    ///   - [`id(String)`](crate::operation::get_project::GetProjectOutput::id): <p>&gt;The ID of the project.</p>
+    ///   - [`name(String)`](crate::operation::get_project::GetProjectOutput::name): <p>The name of the project.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_project::GetProjectOutput::description): <p>The description of the project.</p>
-    ///   - [`created_by(Option<String>)`](crate::operation::get_project::GetProjectOutput::created_by): <p>The Amazon DataZone user who created the project.</p>
+    ///   - [`created_by(String)`](crate::operation::get_project::GetProjectOutput::created_by): <p>The Amazon DataZone user who created the project.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_project::GetProjectOutput::created_at): <p>The timestamp of when the project was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_project::GetProjectOutput::last_updated_at): <p>The timestamp of when the project was last updated.</p>
-    ///   - [`glossary_terms(Option<Vec<String>>)`](crate::operation::get_project::GetProjectOutput::glossary_terms): <p>The business glossary terms that can be used in the project.</p>
+    ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::get_project::GetProjectOutput::glossary_terms): <p>The business glossary terms that can be used in the project.</p>
     /// - On failure, responds with [`SdkError<GetProjectError>`](crate::operation::get_project::GetProjectError)
     pub fn get_project(&self) -> crate::operation::get_project::builders::GetProjectFluentBuilder {
         crate::operation::get_project::builders::GetProjectFluentBuilder::new(self.handle.clone())

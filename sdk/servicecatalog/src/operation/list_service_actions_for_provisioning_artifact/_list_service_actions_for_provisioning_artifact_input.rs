@@ -64,6 +64,7 @@ pub struct ListServiceActionsForProvisioningArtifactInputBuilder {
 }
 impl ListServiceActionsForProvisioningArtifactInputBuilder {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +79,7 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    /// This field is required.
     pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
@@ -150,7 +152,7 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput {

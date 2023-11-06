@@ -27,6 +27,7 @@ pub struct GetTriggerInputBuilder {
 }
 impl GetTriggerInputBuilder {
     /// <p>The name of the trigger to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl GetTriggerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetTriggerInput`](crate::operation::get_trigger::GetTriggerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_trigger::GetTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_trigger::GetTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trigger::GetTriggerInput { name: self.name })
     }
 }

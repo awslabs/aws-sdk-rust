@@ -15,8 +15,10 @@ impl GetInstanceMetricDataOutput {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> ::std::option::Option<&[crate::types::MetricDatapoint]> {
-        self.metric_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data.is_none()`.
+    pub fn metric_data(&self) -> &[crate::types::MetricDatapoint] {
+        self.metric_data.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetInstanceMetricDataOutput {

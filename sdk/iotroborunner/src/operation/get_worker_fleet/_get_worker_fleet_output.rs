@@ -4,45 +4,49 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkerFleetOutput {
     /// Filters access by the worker fleet's identifier
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// Full ARN of the worker fleet.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// Human friendly name of the resource.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// Site ARN.
-    pub site: ::std::option::Option<::std::string::String>,
+    pub site: ::std::string::String,
     /// Timestamp at which the resource was created.
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// Timestamp at which the resource was last updated.
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub additional_fixed_properties: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorkerFleetOutput {
     /// Filters access by the worker fleet's identifier
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// Full ARN of the worker fleet.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// Site ARN.
-    pub fn site(&self) -> ::std::option::Option<&str> {
-        self.site.as_deref()
+    pub fn site(&self) -> &str {
+        use std::ops::Deref;
+        self.site.deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub fn additional_fixed_properties(&self) -> ::std::option::Option<&str> {
@@ -76,6 +80,7 @@ pub struct GetWorkerFleetOutputBuilder {
 }
 impl GetWorkerFleetOutputBuilder {
     /// Filters access by the worker fleet's identifier
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl GetWorkerFleetOutputBuilder {
         &self.id
     }
     /// Full ARN of the worker fleet.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +110,7 @@ impl GetWorkerFleetOutputBuilder {
         &self.arn
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +125,7 @@ impl GetWorkerFleetOutputBuilder {
         &self.name
     }
     /// Site ARN.
+    /// This field is required.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +140,7 @@ impl GetWorkerFleetOutputBuilder {
         &self.site
     }
     /// Timestamp at which the resource was created.
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -146,6 +155,7 @@ impl GetWorkerFleetOutputBuilder {
         &self.created_at
     }
     /// Timestamp at which the resource was last updated.
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -183,16 +193,55 @@ impl GetWorkerFleetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetWorkerFleetOutput`](crate::operation::get_worker_fleet::GetWorkerFleetOutput).
-    pub fn build(self) -> crate::operation::get_worker_fleet::GetWorkerFleetOutput {
-        crate::operation::get_worker_fleet::GetWorkerFleetOutput {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            site: self.site,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_worker_fleet::builders::GetWorkerFleetOutputBuilder::id)
+    /// - [`arn`](crate::operation::get_worker_fleet::builders::GetWorkerFleetOutputBuilder::arn)
+    /// - [`name`](crate::operation::get_worker_fleet::builders::GetWorkerFleetOutputBuilder::name)
+    /// - [`site`](crate::operation::get_worker_fleet::builders::GetWorkerFleetOutputBuilder::site)
+    /// - [`created_at`](crate::operation::get_worker_fleet::builders::GetWorkerFleetOutputBuilder::created_at)
+    /// - [`updated_at`](crate::operation::get_worker_fleet::builders::GetWorkerFleetOutputBuilder::updated_at)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_worker_fleet::GetWorkerFleetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_worker_fleet::GetWorkerFleetOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetWorkerFleetOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetWorkerFleetOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetWorkerFleetOutput",
+                )
+            })?,
+            site: self.site.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "site",
+                    "site was not specified but it is required when building GetWorkerFleetOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetWorkerFleetOutput",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building GetWorkerFleetOutput",
+                )
+            })?,
             additional_fixed_properties: self.additional_fixed_properties,
             _request_id: self._request_id,
-        }
+        })
     }
 }

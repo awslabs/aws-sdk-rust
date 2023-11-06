@@ -51,8 +51,10 @@ impl SavingsPlanOfferingRate {
         self.operation.as_deref()
     }
     /// <p>The properties.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::SavingsPlanOfferingRateProperty]> {
-        self.properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties.is_none()`.
+    pub fn properties(&self) -> &[crate::types::SavingsPlanOfferingRateProperty] {
+        self.properties.as_deref().unwrap_or_default()
     }
 }
 impl SavingsPlanOfferingRate {

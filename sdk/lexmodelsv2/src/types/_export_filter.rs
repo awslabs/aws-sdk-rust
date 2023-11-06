@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub name: ::std::option::Option<crate::types::ExportFilterName>,
+    pub name: crate::types::ExportFilterName,
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
-    pub operator: ::std::option::Option<crate::types::ExportFilterOperator>,
+    pub operator: crate::types::ExportFilterOperator,
 }
 impl ExportFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ExportFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ExportFilterName {
+        &self.name
     }
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::ExportFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::ExportFilterOperator {
+        &self.operator
     }
 }
 impl ExportFilter {
@@ -42,6 +43,7 @@ pub struct ExportFilterBuilder {
 }
 impl ExportFilterBuilder {
     /// <p>The name of the field to use for filtering.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ExportFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl ExportFilterBuilder {
         &self.values
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::ExportFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl ExportFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`ExportFilter`](crate::types::ExportFilter).
-    pub fn build(self) -> crate::types::ExportFilter {
-        crate::types::ExportFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ExportFilterBuilder::name)
+    /// - [`values`](crate::types::builders::ExportFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::ExportFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportFilter, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExportFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ExportFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building ExportFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building ExportFilter",
+                )
+            })?,
+        })
     }
 }

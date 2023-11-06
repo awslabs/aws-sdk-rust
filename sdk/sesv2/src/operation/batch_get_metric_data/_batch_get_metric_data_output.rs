@@ -12,12 +12,16 @@ pub struct BatchGetMetricDataOutput {
 }
 impl BatchGetMetricDataOutput {
     /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::MetricDataResult]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[crate::types::MetricDataResult] {
+        self.results.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::MetricDataError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::MetricDataError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetMetricDataOutput {

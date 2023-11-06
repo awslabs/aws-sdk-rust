@@ -37,6 +37,7 @@ pub struct RegisterRobotInputBuilder {
 }
 impl RegisterRobotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// This field is required.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl RegisterRobotInputBuilder {
         &self.fleet
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    /// This field is required.
     pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.robot = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl RegisterRobotInputBuilder {
     /// Consumes the builder and constructs a [`RegisterRobotInput`](crate::operation::register_robot::RegisterRobotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_robot::RegisterRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_robot::RegisterRobotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_robot::RegisterRobotInput {
             fleet: self.fleet,
             robot: self.robot,

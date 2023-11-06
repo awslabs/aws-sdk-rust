@@ -14,8 +14,10 @@ pub struct DescribeMatchmakingConfigurationsInput {
 }
 impl DescribeMatchmakingConfigurationsInput {
     /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
     pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
@@ -114,7 +116,7 @@ impl DescribeMatchmakingConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsInput {

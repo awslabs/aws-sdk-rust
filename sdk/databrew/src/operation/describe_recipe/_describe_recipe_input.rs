@@ -34,6 +34,7 @@ pub struct DescribeRecipeInputBuilder {
 }
 impl DescribeRecipeInputBuilder {
     /// <p>The name of the recipe to be described.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -64,7 +65,7 @@ impl DescribeRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_recipe::DescribeRecipeInput {
             name: self.name,
             recipe_version: self.recipe_version,

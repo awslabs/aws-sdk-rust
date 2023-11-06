@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveContextTimeToLive {
     /// <p>The number of seconds that the context is active. You can specify between 5 and 86400 seconds (24 hours).</p>
-    pub time_to_live_in_seconds: ::std::option::Option<i32>,
+    pub time_to_live_in_seconds: i32,
     /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
-    pub turns_to_live: ::std::option::Option<i32>,
+    pub turns_to_live: i32,
 }
 impl ActiveContextTimeToLive {
     /// <p>The number of seconds that the context is active. You can specify between 5 and 86400 seconds (24 hours).</p>
-    pub fn time_to_live_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn time_to_live_in_seconds(&self) -> i32 {
         self.time_to_live_in_seconds
     }
     /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
-    pub fn turns_to_live(&self) -> ::std::option::Option<i32> {
+    pub fn turns_to_live(&self) -> i32 {
         self.turns_to_live
     }
 }
@@ -35,6 +35,7 @@ pub struct ActiveContextTimeToLiveBuilder {
 }
 impl ActiveContextTimeToLiveBuilder {
     /// <p>The number of seconds that the context is active. You can specify between 5 and 86400 seconds (24 hours).</p>
+    /// This field is required.
     pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
         self.time_to_live_in_seconds = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ActiveContextTimeToLiveBuilder {
         &self.time_to_live_in_seconds
     }
     /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
+    /// This field is required.
     pub fn turns_to_live(mut self, input: i32) -> Self {
         self.turns_to_live = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ActiveContextTimeToLiveBuilder {
         &self.turns_to_live
     }
     /// Consumes the builder and constructs a [`ActiveContextTimeToLive`](crate::types::ActiveContextTimeToLive).
-    pub fn build(self) -> crate::types::ActiveContextTimeToLive {
-        crate::types::ActiveContextTimeToLive {
-            time_to_live_in_seconds: self.time_to_live_in_seconds,
-            turns_to_live: self.turns_to_live,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`time_to_live_in_seconds`](crate::types::builders::ActiveContextTimeToLiveBuilder::time_to_live_in_seconds)
+    /// - [`turns_to_live`](crate::types::builders::ActiveContextTimeToLiveBuilder::turns_to_live)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActiveContextTimeToLive, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActiveContextTimeToLive {
+            time_to_live_in_seconds: self.time_to_live_in_seconds.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "time_to_live_in_seconds",
+                    "time_to_live_in_seconds was not specified but it is required when building ActiveContextTimeToLive",
+                )
+            })?,
+            turns_to_live: self.turns_to_live.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "turns_to_live",
+                    "turns_to_live was not specified but it is required when building ActiveContextTimeToLive",
+                )
+            })?,
+        })
     }
 }

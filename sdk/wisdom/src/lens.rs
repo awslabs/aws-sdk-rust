@@ -72,69 +72,48 @@ pub(crate) fn reflens_search_sessions_output_next_token(
 pub(crate) fn lens_list_assistant_associations_output_assistant_association_summaries(
     input: crate::operation::list_assistant_associations::ListAssistantAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>> {
-    let input = match input.assistant_association_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.assistant_association_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_assistants_output_assistant_summaries(
     input: crate::operation::list_assistants::ListAssistantsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssistantSummary>> {
-    let input = match input.assistant_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.assistant_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_contents_output_content_summaries(
     input: crate::operation::list_contents::ListContentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>> {
-    let input = match input.content_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.content_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_knowledge_bases_output_knowledge_base_summaries(
     input: crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
-    let input = match input.knowledge_base_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.knowledge_base_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_query_assistant_output_results(
     input: crate::operation::query_assistant::QueryAssistantOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResultData>> {
-    let input = match input.results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.results;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_content_output_content_summaries(
     input: crate::operation::search_content::SearchContentOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>> {
-    let input = match input.content_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.content_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_sessions_output_session_summaries(
     input: crate::operation::search_sessions::SearchSessionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>> {
-    let input = match input.session_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.session_summaries;
     ::std::option::Option::Some(input)
 }

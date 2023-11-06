@@ -11,8 +11,10 @@ pub struct DescribeVolumesOutput {
 }
 impl DescribeVolumesOutput {
     /// <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::Volume]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::Volume] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -22,12 +22,16 @@ impl CreateUserGroupInput {
         self.engine.as_deref()
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
+    pub fn user_ids(&self) -> &[::std::string::String] {
+        self.user_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateUserGroupInput {
@@ -48,6 +52,7 @@ pub struct CreateUserGroupInputBuilder {
 }
 impl CreateUserGroupInputBuilder {
     /// <p>The ID of the user group.</p>
+    /// This field is required.
     pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_group_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl CreateUserGroupInputBuilder {
         &self.user_group_id
     }
     /// <p>The current supported value is Redis. </p>
+    /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
@@ -118,7 +124,7 @@ impl CreateUserGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserGroupInput`](crate::operation::create_user_group::CreateUserGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_group::CreateUserGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_user_group::CreateUserGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user_group::CreateUserGroupInput {
             user_group_id: self.user_group_id,
             engine: self.engine,

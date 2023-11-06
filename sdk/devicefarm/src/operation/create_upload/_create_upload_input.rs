@@ -121,6 +121,7 @@ pub struct CreateUploadInputBuilder {
 }
 impl CreateUploadInputBuilder {
     /// <p>The ARN of the project for the upload.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +136,7 @@ impl CreateUploadInputBuilder {
         &self.project_arn
     }
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +187,7 @@ impl CreateUploadInputBuilder {
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::UploadType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -285,7 +288,9 @@ impl CreateUploadInputBuilder {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`CreateUploadInput`](crate::operation::create_upload::CreateUploadInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_upload::CreateUploadInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_upload::CreateUploadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_upload::CreateUploadInput {
             project_arn: self.project_arn,
             name: self.name,

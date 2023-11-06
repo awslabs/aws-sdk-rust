@@ -27,6 +27,7 @@ pub struct DeleteReplicationConfigurationTemplateInputBuilder {
 }
 impl DeleteReplicationConfigurationTemplateInputBuilder {
     /// <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
+    /// This field is required.
     pub fn replication_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DeleteReplicationConfigurationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput {

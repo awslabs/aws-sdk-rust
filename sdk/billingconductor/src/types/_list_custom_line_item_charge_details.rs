@@ -9,7 +9,7 @@ pub struct ListCustomLineItemChargeDetails {
     /// <p> A <code>ListCustomLineItemPercentageChargeDetails</code> that describes the charge details of a percentage custom line item. </p>
     pub percentage: ::std::option::Option<crate::types::ListCustomLineItemPercentageChargeDetails>,
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
-    pub r#type: ::std::option::Option<crate::types::CustomLineItemType>,
+    pub r#type: crate::types::CustomLineItemType,
     /// <p>A representation of the line item filter.</p>
     pub line_item_filters: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFilter>>,
 }
@@ -23,12 +23,14 @@ impl ListCustomLineItemChargeDetails {
         self.percentage.as_ref()
     }
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CustomLineItemType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::CustomLineItemType {
+        &self.r#type
     }
     /// <p>A representation of the line item filter.</p>
-    pub fn line_item_filters(&self) -> ::std::option::Option<&[crate::types::LineItemFilter]> {
-        self.line_item_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_item_filters.is_none()`.
+    pub fn line_item_filters(&self) -> &[crate::types::LineItemFilter] {
+        self.line_item_filters.as_deref().unwrap_or_default()
     }
 }
 impl ListCustomLineItemChargeDetails {
@@ -77,6 +79,7 @@ impl ListCustomLineItemChargeDetailsBuilder {
         &self.percentage
     }
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::CustomLineItemType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -111,12 +114,19 @@ impl ListCustomLineItemChargeDetailsBuilder {
         &self.line_item_filters
     }
     /// Consumes the builder and constructs a [`ListCustomLineItemChargeDetails`](crate::types::ListCustomLineItemChargeDetails).
-    pub fn build(self) -> crate::types::ListCustomLineItemChargeDetails {
-        crate::types::ListCustomLineItemChargeDetails {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ListCustomLineItemChargeDetailsBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListCustomLineItemChargeDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListCustomLineItemChargeDetails {
             flat: self.flat,
             percentage: self.percentage,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ListCustomLineItemChargeDetails",
+                )
+            })?,
             line_item_filters: self.line_item_filters,
-        }
+        })
     }
 }

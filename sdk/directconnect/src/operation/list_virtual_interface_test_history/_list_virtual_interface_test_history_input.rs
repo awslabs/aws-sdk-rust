@@ -27,8 +27,10 @@ impl ListVirtualInterfaceTestHistoryInput {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
-    pub fn bgp_peers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bgp_peers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bgp_peers.is_none()`.
+    pub fn bgp_peers(&self) -> &[::std::string::String] {
+        self.bgp_peers.as_deref().unwrap_or_default()
     }
     /// <p>The status of the virtual interface failover test.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
@@ -161,7 +163,7 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput {

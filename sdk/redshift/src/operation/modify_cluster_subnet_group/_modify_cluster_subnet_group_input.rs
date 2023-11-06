@@ -21,8 +21,10 @@ impl ModifyClusterSubnetGroupInput {
         self.description.as_deref()
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
 }
 impl ModifyClusterSubnetGroupInput {
@@ -42,6 +44,7 @@ pub struct ModifyClusterSubnetGroupInputBuilder {
 }
 impl ModifyClusterSubnetGroupInputBuilder {
     /// <p>The name of the subnet group to be modified.</p>
+    /// This field is required.
     pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -94,7 +97,7 @@ impl ModifyClusterSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput {
             cluster_subnet_group_name: self.cluster_subnet_group_name,

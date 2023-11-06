@@ -27,6 +27,7 @@ pub struct DescribePackagingConfigurationInputBuilder {
 }
 impl DescribePackagingConfigurationInputBuilder {
     /// The ID of a MediaPackage VOD PackagingConfiguration resource.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribePackagingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_packaging_configuration::DescribePackagingConfigurationInput { id: self.id })
     }

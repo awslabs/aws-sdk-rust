@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Backup {
     /// <p>The identifier (ID) of the backup.</p>
-    pub backup_id: ::std::option::Option<::std::string::String>,
+    pub backup_id: ::std::string::String,
     /// <p>The state of the backup.</p>
     pub backup_state: ::std::option::Option<crate::types::BackupState>,
     /// <p>The identifier (ID) of the cluster that was backed up.</p>
@@ -29,8 +29,9 @@ pub struct Backup {
 }
 impl Backup {
     /// <p>The identifier (ID) of the backup.</p>
-    pub fn backup_id(&self) -> ::std::option::Option<&str> {
-        self.backup_id.as_deref()
+    pub fn backup_id(&self) -> &str {
+        use std::ops::Deref;
+        self.backup_id.deref()
     }
     /// <p>The state of the backup.</p>
     pub fn backup_state(&self) -> ::std::option::Option<&crate::types::BackupState> {
@@ -69,8 +70,10 @@ impl Backup {
         self.delete_timestamp.as_ref()
     }
     /// <p>The list of tags for the backup.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl Backup {
@@ -98,6 +101,7 @@ pub struct BackupBuilder {
 }
 impl BackupBuilder {
     /// <p>The identifier (ID) of the backup.</p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
@@ -258,9 +262,16 @@ impl BackupBuilder {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`Backup`](crate::types::Backup).
-    pub fn build(self) -> crate::types::Backup {
-        crate::types::Backup {
-            backup_id: self.backup_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`backup_id`](crate::types::builders::BackupBuilder::backup_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Backup, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Backup {
+            backup_id: self.backup_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "backup_id",
+                    "backup_id was not specified but it is required when building Backup",
+                )
+            })?,
             backup_state: self.backup_state,
             cluster_id: self.cluster_id,
             create_timestamp: self.create_timestamp,
@@ -271,6 +282,6 @@ impl BackupBuilder {
             source_cluster: self.source_cluster,
             delete_timestamp: self.delete_timestamp,
             tag_list: self.tag_list,
-        }
+        })
     }
 }

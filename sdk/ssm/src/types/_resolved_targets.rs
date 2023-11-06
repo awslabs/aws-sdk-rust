@@ -11,8 +11,10 @@ pub struct ResolvedTargets {
 }
 impl ResolvedTargets {
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
-    pub fn parameter_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parameter_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_values.is_none()`.
+    pub fn parameter_values(&self) -> &[::std::string::String] {
+        self.parameter_values.as_deref().unwrap_or_default()
     }
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
     pub fn truncated(&self) -> bool {

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTemplateStep`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_id): <p>The ID of the step.</p>
-    ///   - [`template_id(impl Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_template_id): <p>The ID of the template.</p>
-    ///   - [`step_group_id(impl Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_step_group_id): <p>The ID of the step group.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the step.</p><br>
+    ///   - [`template_id(impl Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_template_id):<br>required: **true**<br><p>The ID of the template.</p><br>
+    ///   - [`step_group_id(impl Into<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::set_step_group_id):<br>required: **true**<br><p>The ID of the step group.</p><br>
     /// - On success, responds with [`GetTemplateStepOutput`](crate::operation::get_template_step::GetTemplateStepOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_template_step::GetTemplateStepOutput::id): <p>The ID of the step.</p>
     ///   - [`step_group_id(Option<String>)`](crate::operation::get_template_step::GetTemplateStepOutput::step_group_id): <p>The ID of the step group.</p>
@@ -14,9 +14,9 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_template_step::GetTemplateStepOutput::description): <p>The description of the step.</p>
     ///   - [`step_action_type(Option<StepActionType>)`](crate::operation::get_template_step::GetTemplateStepOutput::step_action_type): <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     ///   - [`creation_time(Option<String>)`](crate::operation::get_template_step::GetTemplateStepOutput::creation_time): <p>The time at which the step was created.</p>
-    ///   - [`previous(Option<Vec<String>>)`](crate::operation::get_template_step::GetTemplateStepOutput::previous): <p>The previous step.</p>
-    ///   - [`next(Option<Vec<String>>)`](crate::operation::get_template_step::GetTemplateStepOutput::next): <p>The next step.</p>
-    ///   - [`outputs(Option<Vec<StepOutput>>)`](crate::operation::get_template_step::GetTemplateStepOutput::outputs): <p>The outputs of the step.</p>
+    ///   - [`previous(Option<Vec::<String>>)`](crate::operation::get_template_step::GetTemplateStepOutput::previous): <p>The previous step.</p>
+    ///   - [`next(Option<Vec::<String>>)`](crate::operation::get_template_step::GetTemplateStepOutput::next): <p>The next step.</p>
+    ///   - [`outputs(Option<Vec::<StepOutput>>)`](crate::operation::get_template_step::GetTemplateStepOutput::outputs): <p>The outputs of the step.</p>
     ///   - [`step_automation_configuration(Option<StepAutomationConfiguration>)`](crate::operation::get_template_step::GetTemplateStepOutput::step_automation_configuration): <p>The custom script to run tests on source or target environments.</p>
     /// - On failure, responds with [`SdkError<GetTemplateStepError>`](crate::operation::get_template_step::GetTemplateStepError)
     pub fn get_template_step(&self) -> crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder {

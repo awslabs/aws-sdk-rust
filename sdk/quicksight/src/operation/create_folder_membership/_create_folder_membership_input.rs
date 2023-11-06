@@ -48,6 +48,7 @@ pub struct CreateFolderMembershipInputBuilder {
 }
 impl CreateFolderMembershipInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateFolderMembershipInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the folder.</p>
+    /// This field is required.
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateFolderMembershipInputBuilder {
         &self.folder_id
     }
     /// <p>The ID of the asset that you want to add to the folder.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateFolderMembershipInputBuilder {
         &self.member_id
     }
     /// <p>The member type of the asset that you want to add to a folder.</p>
+    /// This field is required.
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
         self.member_type = ::std::option::Option::Some(input);
         self
@@ -106,8 +110,10 @@ impl CreateFolderMembershipInputBuilder {
     /// Consumes the builder and constructs a [`CreateFolderMembershipInput`](crate::operation::create_folder_membership::CreateFolderMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_folder_membership::CreateFolderMembershipInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_folder_membership::CreateFolderMembershipInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_folder_membership::CreateFolderMembershipInput {
             aws_account_id: self.aws_account_id,
             folder_id: self.folder_id,

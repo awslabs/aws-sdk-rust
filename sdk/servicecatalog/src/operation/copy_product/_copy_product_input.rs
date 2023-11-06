@@ -45,14 +45,18 @@ impl CopyProductInput {
         self.target_product_name.as_deref()
     }
     /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_provisioning_artifact_identifiers.is_none()`.
     pub fn source_provisioning_artifact_identifiers(
         &self,
-    ) -> ::std::option::Option<&[::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>]> {
-        self.source_provisioning_artifact_identifiers.as_deref()
+    ) -> &[::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>] {
+        self.source_provisioning_artifact_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
-    pub fn copy_options(&self) -> ::std::option::Option<&[crate::types::CopyOption]> {
-        self.copy_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.copy_options.is_none()`.
+    pub fn copy_options(&self) -> &[crate::types::CopyOption] {
+        self.copy_options.as_deref().unwrap_or_default()
     }
     /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
@@ -107,6 +111,7 @@ impl CopyProductInputBuilder {
         &self.accept_language
     }
     /// <p>The Amazon Resource Name (ARN) of the source product.</p>
+    /// This field is required.
     pub fn source_product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_product_arn = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +205,7 @@ impl CopyProductInputBuilder {
         &self.copy_options
     }
     /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
@@ -214,7 +220,7 @@ impl CopyProductInputBuilder {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CopyProductInput`](crate::operation::copy_product::CopyProductInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::copy_product::CopyProductInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_product::CopyProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_product::CopyProductInput {
             accept_language: self.accept_language,
             source_product_arn: self.source_product_arn,

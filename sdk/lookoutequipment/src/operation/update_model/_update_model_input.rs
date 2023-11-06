@@ -41,6 +41,7 @@ pub struct UpdateModelInputBuilder {
 }
 impl UpdateModelInputBuilder {
     /// <p>The name of the model to update.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -83,7 +84,7 @@ impl UpdateModelInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_model::UpdateModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_model::UpdateModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_model::UpdateModelInput {
             model_name: self.model_name,
             labels_input_configuration: self.labels_input_configuration,

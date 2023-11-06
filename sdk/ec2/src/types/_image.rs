@@ -113,8 +113,10 @@ impl Image {
         self.usage_operation.as_deref()
     }
     /// <p>Any product codes associated with the AMI.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
     /// <p>The RAM disk associated with the image, if any. Only applicable for machine images.</p>
     pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
@@ -125,8 +127,10 @@ impl Image {
         self.state.as_ref()
     }
     /// <p>Any block device mapping entries.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The description of the AMI that was provided during image creation.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -165,8 +169,10 @@ impl Image {
         self.state_reason.as_ref()
     }
     /// <p>Any tags assigned to the image.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The type of virtualization of the AMI.</p>
     pub fn virtualization_type(&self) -> ::std::option::Option<&crate::types::VirtualizationType> {

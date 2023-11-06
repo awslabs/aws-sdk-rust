@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetError {
     /// <p>The identifier of the set of featured results that couldn't be removed from the index.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The error code for why the set of featured results couldn't be removed from the index.</p>
-    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub error_code: crate::types::ErrorCode,
     /// <p>An explanation for why the set of featured results couldn't be removed from the index.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl BatchDeleteFeaturedResultsSetError {
     /// <p>The identifier of the set of featured results that couldn't be removed from the index.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The error code for why the set of featured results couldn't be removed from the index.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
-        self.error_code.as_ref()
+    pub fn error_code(&self) -> &crate::types::ErrorCode {
+        &self.error_code
     }
     /// <p>An explanation for why the set of featured results couldn't be removed from the index.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl BatchDeleteFeaturedResultsSetError {
@@ -42,6 +44,7 @@ pub struct BatchDeleteFeaturedResultsSetErrorBuilder {
 }
 impl BatchDeleteFeaturedResultsSetErrorBuilder {
     /// <p>The identifier of the set of featured results that couldn't be removed from the index.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl BatchDeleteFeaturedResultsSetErrorBuilder {
         &self.id
     }
     /// <p>The error code for why the set of featured results couldn't be removed from the index.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl BatchDeleteFeaturedResultsSetErrorBuilder {
         &self.error_code
     }
     /// <p>An explanation for why the set of featured results couldn't be removed from the index.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl BatchDeleteFeaturedResultsSetErrorBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchDeleteFeaturedResultsSetError`](crate::types::BatchDeleteFeaturedResultsSetError).
-    pub fn build(self) -> crate::types::BatchDeleteFeaturedResultsSetError {
-        crate::types::BatchDeleteFeaturedResultsSetError {
-            id: self.id,
-            error_code: self.error_code,
-            error_message: self.error_message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::BatchDeleteFeaturedResultsSetErrorBuilder::id)
+    /// - [`error_code`](crate::types::builders::BatchDeleteFeaturedResultsSetErrorBuilder::error_code)
+    /// - [`error_message`](crate::types::builders::BatchDeleteFeaturedResultsSetErrorBuilder::error_message)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchDeleteFeaturedResultsSetError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchDeleteFeaturedResultsSetError {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building BatchDeleteFeaturedResultsSetError",
+                )
+            })?,
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building BatchDeleteFeaturedResultsSetError",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building BatchDeleteFeaturedResultsSetError",
+                )
+            })?,
+        })
     }
 }

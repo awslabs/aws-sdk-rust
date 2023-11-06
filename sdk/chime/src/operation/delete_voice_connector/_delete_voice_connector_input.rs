@@ -27,6 +27,7 @@ pub struct DeleteVoiceConnectorInputBuilder {
 }
 impl DeleteVoiceConnectorInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteVoiceConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorInput`](crate::operation::delete_voice_connector::DeleteVoiceConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_voice_connector::DeleteVoiceConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_voice_connector::DeleteVoiceConnectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_voice_connector::DeleteVoiceConnectorInput {
             voice_connector_id: self.voice_connector_id,

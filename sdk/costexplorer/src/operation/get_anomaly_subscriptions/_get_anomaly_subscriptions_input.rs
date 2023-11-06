@@ -14,8 +14,10 @@ pub struct GetAnomalySubscriptionsInput {
 }
 impl GetAnomalySubscriptionsInput {
     /// <p>A list of cost anomaly subscription ARNs. </p>
-    pub fn subscription_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subscription_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscription_arn_list.is_none()`.
+    pub fn subscription_arn_list(&self) -> &[::std::string::String] {
+        self.subscription_arn_list.as_deref().unwrap_or_default()
     }
     /// <p>Cost anomaly monitor ARNs. </p>
     pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
@@ -114,7 +116,7 @@ impl GetAnomalySubscriptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput {
             subscription_arn_list: self.subscription_arn_list,

@@ -2,7 +2,7 @@
 pub fn ser_describe_lineage_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_lineage_group::DescribeLineageGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lineage_group_name {
         object.key("LineageGroupName").string(var_1.as_str());
     }

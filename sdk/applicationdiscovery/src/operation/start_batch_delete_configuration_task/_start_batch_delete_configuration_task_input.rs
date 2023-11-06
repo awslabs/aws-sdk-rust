@@ -14,8 +14,10 @@ impl StartBatchDeleteConfigurationTaskInput {
         self.configuration_type.as_ref()
     }
     /// <p> The list of configuration IDs that will be deleted by the task. </p>
-    pub fn configuration_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
+    pub fn configuration_ids(&self) -> &[::std::string::String] {
+        self.configuration_ids.as_deref().unwrap_or_default()
     }
 }
 impl StartBatchDeleteConfigurationTaskInput {
@@ -34,6 +36,7 @@ pub struct StartBatchDeleteConfigurationTaskInputBuilder {
 }
 impl StartBatchDeleteConfigurationTaskInputBuilder {
     /// <p> The type of configuration item to delete. Supported types are: SERVER. </p>
+    /// This field is required.
     pub fn configuration_type(mut self, input: crate::types::DeletionConfigurationItemType) -> Self {
         self.configuration_type = ::std::option::Option::Some(input);
         self
@@ -72,7 +75,7 @@ impl StartBatchDeleteConfigurationTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskInput {

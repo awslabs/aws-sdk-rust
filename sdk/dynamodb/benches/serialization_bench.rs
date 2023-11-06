@@ -3,9 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_dynamodb::operation::put_item::PutItemInput;
+use aws_sdk_dynamodb::operation::put_item::{PutItem, PutItemInput};
 use aws_sdk_dynamodb::types::AttributeValue;
-use aws_sdk_dynamodb::Config;
+use aws_smithy_runtime_api::client::interceptors::context::Input;
+use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+use aws_smithy_runtime_api::client::ser_de::{RequestSerializer, SharedRequestSerializer};
+use aws_smithy_types::config_bag::ConfigBag;
 use criterion::{criterion_group, criterion_main, Criterion};
 
 macro_rules! attr_s {
@@ -33,25 +36,24 @@ macro_rules! attr_obj {
     };
 }
 
-fn do_bench(_config: &Config, _input: &PutItemInput) {
-    #[cfg(aws_sdk_middleware_mode)]
-    {
-        use futures_util::FutureExt;
+fn do_bench(input: &PutItemInput) {
+    let operation = PutItem::new();
+    let config = operation.config().expect("operation should have config");
+    let serializer = config
+        .load::<SharedRequestSerializer>()
+        .expect("operation should set a serializer");
+    let mut config_bag = ConfigBag::base();
+    let input = Input::erase(input.clone());
 
-        let operation = _input
-            .make_operation(&_config)
-            .now_or_never()
-            .unwrap()
-            .expect("operation failed to build");
-        let (http_request, _parts) = operation.into_request_response().0.into_parts();
-        let body = http_request.body().bytes().unwrap();
-        assert_eq!(body[0], b'{');
-    }
+    let request = serializer
+        .serialize_input(input, &mut config_bag)
+        .expect("success");
+    let body = request.body().bytes().unwrap();
+    assert_eq!(body[0], b'{');
 }
 
 fn bench_group(c: &mut Criterion) {
     c.bench_function("serialization_bench", |b| {
-        let config = Config::builder().build();
         let input = PutItemInput::builder()
             .table_name("Movies-5")
             .set_item(Some(
@@ -73,7 +75,7 @@ fn bench_group(c: &mut Criterion) {
             ))
             .build()
             .expect("valid input");
-        b.iter(|| do_bench(&config, &input))
+        b.iter(|| do_bench(&input))
     });
 }
 

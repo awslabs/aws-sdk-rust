@@ -48,6 +48,7 @@ pub struct StartHumanLoopInputBuilder {
 }
 impl StartHumanLoopInputBuilder {
     /// <p>The name of the human loop.</p>
+    /// This field is required.
     pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartHumanLoopInputBuilder {
         &self.human_loop_name
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
+    /// This field is required.
     pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartHumanLoopInputBuilder {
         &self.flow_definition_arn
     }
     /// <p>An object that contains information about the human loop.</p>
+    /// This field is required.
     pub fn human_loop_input(mut self, input: crate::types::HumanLoopInput) -> Self {
         self.human_loop_input = ::std::option::Option::Some(input);
         self
@@ -106,7 +109,7 @@ impl StartHumanLoopInputBuilder {
     /// Consumes the builder and constructs a [`StartHumanLoopInput`](crate::operation::start_human_loop::StartHumanLoopInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_human_loop::StartHumanLoopInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_human_loop::StartHumanLoopInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_human_loop::StartHumanLoopInput {
             human_loop_name: self.human_loop_name,
             flow_definition_arn: self.flow_definition_arn,

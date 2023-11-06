@@ -15,8 +15,10 @@ impl GetMetricStatisticsOutput {
         self.label.as_deref()
     }
     /// <p>The data points for the specified metric.</p>
-    pub fn datapoints(&self) -> ::std::option::Option<&[crate::types::Datapoint]> {
-        self.datapoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datapoints.is_none()`.
+    pub fn datapoints(&self) -> &[crate::types::Datapoint] {
+        self.datapoints.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMetricStatisticsOutput {

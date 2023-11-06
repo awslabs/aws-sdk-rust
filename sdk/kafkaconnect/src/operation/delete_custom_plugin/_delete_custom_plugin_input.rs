@@ -27,6 +27,7 @@ pub struct DeleteCustomPluginInputBuilder {
 }
 impl DeleteCustomPluginInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+    /// This field is required.
     pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,8 @@ impl DeleteCustomPluginInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomPluginInput`](crate::operation::delete_custom_plugin::DeleteCustomPluginInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_plugin::DeleteCustomPluginInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_custom_plugin::DeleteCustomPluginInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_custom_plugin::DeleteCustomPluginInput {
             custom_plugin_arn: self.custom_plugin_arn,
         })

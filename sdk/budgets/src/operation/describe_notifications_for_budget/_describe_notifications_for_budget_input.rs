@@ -49,6 +49,7 @@ pub struct DescribeNotificationsForBudgetInputBuilder {
 }
 impl DescribeNotificationsForBudgetInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DescribeNotificationsForBudgetInputBuilder {
         &self.account_id
     }
     /// <p>The name of the budget whose notifications you want descriptions of.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -109,7 +111,7 @@ impl DescribeNotificationsForBudgetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput {
             account_id: self.account_id,

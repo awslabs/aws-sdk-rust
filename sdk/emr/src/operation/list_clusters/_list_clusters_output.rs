@@ -12,8 +12,10 @@ pub struct ListClustersOutput {
 }
 impl ListClustersOutput {
     /// <p>The list of clusters for the account based on the given filters.</p>
-    pub fn clusters(&self) -> ::std::option::Option<&[crate::types::ClusterSummary]> {
-        self.clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
+    pub fn clusters(&self) -> &[crate::types::ClusterSummary] {
+        self.clusters.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

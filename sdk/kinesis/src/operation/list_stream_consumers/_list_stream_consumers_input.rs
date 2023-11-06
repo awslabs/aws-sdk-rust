@@ -58,6 +58,7 @@ pub struct ListStreamConsumersInputBuilder {
 }
 impl ListStreamConsumersInputBuilder {
     /// <p>The ARN of the Kinesis data stream for which you want to list the registered consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -131,7 +132,7 @@ impl ListStreamConsumersInputBuilder {
     /// Consumes the builder and constructs a [`ListStreamConsumersInput`](crate::operation::list_stream_consumers::ListStreamConsumersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stream_consumers::ListStreamConsumersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_stream_consumers::ListStreamConsumersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_stream_consumers::ListStreamConsumersInput {
             stream_arn: self.stream_arn,

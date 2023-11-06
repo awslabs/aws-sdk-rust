@@ -19,12 +19,16 @@ impl DescribeRecommendationExportJobsInput {
     /// <p>The identification numbers of the export jobs to return.</p>
     /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
-    pub fn job_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_ids.is_none()`.
+    pub fn job_ids(&self) -> &[::std::string::String] {
+        self.job_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::JobFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::JobFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of export jobs.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -135,7 +139,7 @@ impl DescribeRecommendationExportJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput {

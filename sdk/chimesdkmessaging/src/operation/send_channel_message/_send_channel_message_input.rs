@@ -80,8 +80,10 @@ impl SendChannelMessageInput {
         self.content_type.as_deref()
     }
     /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
-    pub fn target(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.target.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target.is_none()`.
+    pub fn target(&self) -> &[crate::types::Target] {
+        self.target.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for SendChannelMessageInput {
@@ -128,6 +130,7 @@ pub struct SendChannelMessageInputBuilder {
 }
 impl SendChannelMessageInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +145,7 @@ impl SendChannelMessageInputBuilder {
         &self.channel_arn
     }
     /// <p>The content of the channel message.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +162,7 @@ impl SendChannelMessageInputBuilder {
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
     /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -176,6 +181,7 @@ impl SendChannelMessageInputBuilder {
         &self.r#type
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    /// This field is required.
     pub fn persistence(mut self, input: crate::types::ChannelMessagePersistenceType) -> Self {
         self.persistence = ::std::option::Option::Some(input);
         self
@@ -204,6 +210,7 @@ impl SendChannelMessageInputBuilder {
         &self.metadata
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -218,6 +225,7 @@ impl SendChannelMessageInputBuilder {
         &self.client_request_token
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -321,7 +329,8 @@ impl SendChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_channel_message::SendChannelMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_channel_message::SendChannelMessageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::send_channel_message::SendChannelMessageInput {
             channel_arn: self.channel_arn,
             content: self.content,

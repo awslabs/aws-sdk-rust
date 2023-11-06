@@ -22,8 +22,10 @@ impl Listener {
         self.listener_arn.as_deref()
     }
     /// <p>The list of port ranges for the connections from clients to the accelerator.</p>
-    pub fn port_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.port_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
+    pub fn port_ranges(&self) -> &[crate::types::PortRange] {
+        self.port_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The protocol for the connections from clients to the accelerator.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {

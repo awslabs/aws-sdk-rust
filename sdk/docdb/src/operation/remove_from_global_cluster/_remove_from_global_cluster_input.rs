@@ -35,6 +35,7 @@ pub struct RemoveFromGlobalClusterInputBuilder {
 }
 impl RemoveFromGlobalClusterInputBuilder {
     /// <p>The cluster identifier to detach from the Amazon DocumentDB global cluster. </p>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RemoveFromGlobalClusterInputBuilder {
         &self.global_cluster_identifier
     }
     /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster. </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -67,7 +69,7 @@ impl RemoveFromGlobalClusterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,

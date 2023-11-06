@@ -41,6 +41,7 @@ pub struct ListSecurityConfigsInputBuilder {
 }
 impl ListSecurityConfigsInputBuilder {
     /// <p>The type of security configuration.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityConfigType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -85,7 +86,7 @@ impl ListSecurityConfigsInputBuilder {
     /// Consumes the builder and constructs a [`ListSecurityConfigsInput`](crate::operation::list_security_configs::ListSecurityConfigsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_security_configs::ListSecurityConfigsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_security_configs::ListSecurityConfigsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_security_configs::ListSecurityConfigsInput {
             r#type: self.r#type,

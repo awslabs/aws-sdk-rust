@@ -69,8 +69,10 @@ impl UpdateTableInput {
     /// <li> <p> <code>name</code> - The name of the column.</p> </li>
     /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
     /// </ul>
-    pub fn add_columns(&self) -> ::std::option::Option<&[crate::types::ColumnDefinition]> {
-        self.add_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_columns.is_none()`.
+    pub fn add_columns(&self) -> &[crate::types::ColumnDefinition] {
+        self.add_columns.as_deref().unwrap_or_default()
     }
     /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
@@ -149,6 +151,7 @@ pub struct UpdateTableInputBuilder {
 }
 impl UpdateTableInputBuilder {
     /// <p>The name of the keyspace the specified table is stored in.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -163,6 +166,7 @@ impl UpdateTableInputBuilder {
         &self.keyspace_name
     }
     /// <p>The name of the table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -380,7 +384,7 @@ impl UpdateTableInputBuilder {
         &self.client_side_timestamps
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
             keyspace_name: self.keyspace_name,
             table_name: self.table_name,

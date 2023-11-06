@@ -34,6 +34,7 @@ pub struct GetRevisionInputBuilder {
 }
 impl GetRevisionInputBuilder {
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetRevisionInputBuilder {
         &self.data_set_id
     }
     /// <p>The unique identifier for a revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetRevisionInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`GetRevisionInput`](crate::operation::get_revision::GetRevisionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_revision::GetRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_revision::GetRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_revision::GetRevisionInput {
             data_set_id: self.data_set_id,
             revision_id: self.revision_id,

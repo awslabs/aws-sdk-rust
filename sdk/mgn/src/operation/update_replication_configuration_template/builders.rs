@@ -10,7 +10,7 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplate::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),
@@ -90,20 +93,15 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
             .await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateOutput,
-            crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateOutput,
+        crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -172,21 +170,21 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     }
     /// Appends an item to `replicationServersSecurityGroupsIDs`.
     ///
-    /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
+    /// To override the contents of this collection use [`set_replication_servers_security_groups_ids`](Self::set_replication_servers_security_groups_ids).
     ///
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
-    pub fn replication_servers_security_groups_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.replication_servers_security_groups_i_ds(input.into());
+    pub fn replication_servers_security_groups_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.replication_servers_security_groups_ids(input.into());
         self
     }
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
-    pub fn set_replication_servers_security_groups_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_replication_servers_security_groups_i_ds(input);
+    pub fn set_replication_servers_security_groups_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_replication_servers_security_groups_ids(input);
         self
     }
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
-    pub fn get_replication_servers_security_groups_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_replication_servers_security_groups_i_ds()
+    pub fn get_replication_servers_security_groups_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_replication_servers_security_groups_ids()
     }
     /// <p>Update replication configuration template Replication Server instance type request.</p>
     pub fn replication_server_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

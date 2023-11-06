@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFeedback`](crate::operation::describe_feedback::builders::DescribeFeedbackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`insight_id(impl Into<String>)`](crate::operation::describe_feedback::builders::DescribeFeedbackFluentBuilder::insight_id) / [`set_insight_id(Option<String>)`](crate::operation::describe_feedback::builders::DescribeFeedbackFluentBuilder::set_insight_id): <p> The ID of the insight for which the feedback was provided. </p>
+    ///   - [`insight_id(impl Into<String>)`](crate::operation::describe_feedback::builders::DescribeFeedbackFluentBuilder::insight_id) / [`set_insight_id(Option<String>)`](crate::operation::describe_feedback::builders::DescribeFeedbackFluentBuilder::set_insight_id):<br>required: **false**<br><p> The ID of the insight for which the feedback was provided. </p><br>
     /// - On success, responds with [`DescribeFeedbackOutput`](crate::operation::describe_feedback::DescribeFeedbackOutput) with field(s):
     ///   - [`insight_feedback(Option<InsightFeedback>)`](crate::operation::describe_feedback::DescribeFeedbackOutput::insight_feedback): <p> Information about insight feedback received from a customer. </p>
     /// - On failure, responds with [`SdkError<DescribeFeedbackError>`](crate::operation::describe_feedback::DescribeFeedbackError)

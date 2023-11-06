@@ -131,6 +131,7 @@ impl PutBucketAclInputBuilder {
         &self.access_control_policy
     }
     /// <p>The bucket to which to apply the ACL.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -268,7 +269,7 @@ impl PutBucketAclInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketAclInput`](crate::operation::put_bucket_acl::PutBucketAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_acl::PutBucketAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_bucket_acl::PutBucketAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bucket_acl::PutBucketAclInput {
             acl: self.acl,
             access_control_policy: self.access_control_policy,

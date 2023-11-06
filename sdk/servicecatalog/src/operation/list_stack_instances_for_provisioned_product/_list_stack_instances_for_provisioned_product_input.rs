@@ -83,6 +83,7 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         &self.accept_language
     }
     /// <p>The identifier of the provisioned product.</p>
+    /// This field is required.
     pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
@@ -129,7 +130,7 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput {

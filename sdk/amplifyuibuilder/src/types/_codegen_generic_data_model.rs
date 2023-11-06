@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenGenericDataModel {
     /// <p>The fields in the generic data model.</p>
-    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>>,
+    pub fields: ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>,
     /// <p>Specifies whether the generic data model is a join table.</p>
     pub is_join_table: ::std::option::Option<bool>,
     /// <p>The primary keys of the generic data model.</p>
-    pub primary_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub primary_keys: ::std::vec::Vec<::std::string::String>,
 }
 impl CodegenGenericDataModel {
     /// <p>The fields in the generic data model.</p>
-    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>> {
-        self.fields.as_ref()
+    pub fn fields(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField> {
+        &self.fields
     }
     /// <p>Specifies whether the generic data model is a join table.</p>
     pub fn is_join_table(&self) -> ::std::option::Option<bool> {
         self.is_join_table
     }
     /// <p>The primary keys of the generic data model.</p>
-    pub fn primary_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.primary_keys.as_deref()
+    pub fn primary_keys(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.primary_keys.deref()
     }
 }
 impl CodegenGenericDataModel {
@@ -99,11 +100,24 @@ impl CodegenGenericDataModelBuilder {
         &self.primary_keys
     }
     /// Consumes the builder and constructs a [`CodegenGenericDataModel`](crate::types::CodegenGenericDataModel).
-    pub fn build(self) -> crate::types::CodegenGenericDataModel {
-        crate::types::CodegenGenericDataModel {
-            fields: self.fields,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`fields`](crate::types::builders::CodegenGenericDataModelBuilder::fields)
+    /// - [`primary_keys`](crate::types::builders::CodegenGenericDataModelBuilder::primary_keys)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataModel, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodegenGenericDataModel {
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building CodegenGenericDataModel",
+                )
+            })?,
             is_join_table: self.is_join_table,
-            primary_keys: self.primary_keys,
-        }
+            primary_keys: self.primary_keys.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "primary_keys",
+                    "primary_keys was not specified but it is required when building CodegenGenericDataModel",
+                )
+            })?,
+        })
     }
 }

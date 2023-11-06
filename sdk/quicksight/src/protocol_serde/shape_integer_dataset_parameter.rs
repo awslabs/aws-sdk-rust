@@ -2,21 +2,21 @@
 pub fn ser_integer_dataset_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntegerDatasetParameter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("Id").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.value_type {
-        object.key("ValueType").string(var_3.as_str());
+    {
+        object.key("ValueType").string(input.value_type.as_str());
     }
-    if let Some(var_4) = &input.default_values {
+    if let Some(var_1) = &input.default_values {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("DefaultValues").start_object();
-        crate::protocol_serde::shape_integer_dataset_parameter_default_values::ser_integer_dataset_parameter_default_values(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("DefaultValues").start_object();
+        crate::protocol_serde::shape_integer_dataset_parameter_default_values::ser_integer_dataset_parameter_default_values(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -74,7 +74,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::integer_dataset_parameter_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

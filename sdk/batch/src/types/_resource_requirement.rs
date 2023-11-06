@@ -506,6 +506,7 @@ impl ResourceRequirementBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -834,6 +835,7 @@ impl ResourceRequirementBuilder {
         &self.value
     }
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

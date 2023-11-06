@@ -41,6 +41,7 @@ pub struct DeleteCustomVocabularyInputBuilder {
 }
 impl DeleteCustomVocabularyInputBuilder {
     /// <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteCustomVocabularyInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot to remove the custom vocabulary from.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteCustomVocabularyInputBuilder {
         &self.bot_version
     }
     /// <p>The locale identifier for the locale that contains the custom vocabulary to remove.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -85,8 +88,10 @@ impl DeleteCustomVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomVocabularyInput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

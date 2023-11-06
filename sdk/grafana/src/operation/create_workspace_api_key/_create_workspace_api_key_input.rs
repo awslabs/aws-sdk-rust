@@ -50,6 +50,7 @@ pub struct CreateWorkspaceApiKeyInputBuilder {
 }
 impl CreateWorkspaceApiKeyInputBuilder {
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
     }
     /// <p>Specifies the permission level of the key.</p>
     /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+    /// This field is required.
     pub fn key_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_role = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +83,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
         &self.key_role
     }
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+    /// This field is required.
     pub fn seconds_to_live(mut self, input: i32) -> Self {
         self.seconds_to_live = ::std::option::Option::Some(input);
         self
@@ -95,6 +98,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
         &self.seconds_to_live
     }
     /// <p>The ID of the workspace to create an API key.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +115,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyInput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput {
             key_name: self.key_name,

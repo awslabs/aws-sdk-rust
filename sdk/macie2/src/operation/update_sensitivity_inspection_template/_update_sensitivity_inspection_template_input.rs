@@ -81,6 +81,7 @@ impl UpdateSensitivityInspectionTemplateInputBuilder {
         &self.excludes
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -113,7 +114,7 @@ impl UpdateSensitivityInspectionTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput {

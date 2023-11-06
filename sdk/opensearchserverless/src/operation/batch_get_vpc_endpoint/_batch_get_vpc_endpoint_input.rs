@@ -8,8 +8,10 @@ pub struct BatchGetVpcEndpointInput {
 }
 impl BatchGetVpcEndpointInput {
     /// <p>A list of VPC endpoint identifiers.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetVpcEndpointInput {
@@ -49,7 +51,7 @@ impl BatchGetVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput { ids: self.ids })
     }

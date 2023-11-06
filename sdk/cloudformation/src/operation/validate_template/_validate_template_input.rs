@@ -75,7 +75,7 @@ impl ValidateTemplateInputBuilder {
     /// Consumes the builder and constructs a [`ValidateTemplateInput`](crate::operation::validate_template::ValidateTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_template::ValidateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::validate_template::ValidateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::validate_template::ValidateTemplateInput {
             template_body: self.template_body,
             template_url: self.template_url,

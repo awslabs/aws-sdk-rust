@@ -28,6 +28,7 @@ pub struct GetClientCertificateInputBuilder {
 }
 impl GetClientCertificateInputBuilder {
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
+    /// This field is required.
     pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +45,7 @@ impl GetClientCertificateInputBuilder {
     /// Consumes the builder and constructs a [`GetClientCertificateInput`](crate::operation::get_client_certificate::GetClientCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_client_certificate::GetClientCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_client_certificate::GetClientCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_client_certificate::GetClientCertificateInput {
             client_certificate_id: self.client_certificate_id,

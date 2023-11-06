@@ -48,6 +48,7 @@ pub struct RegisterRdsDbInstanceInputBuilder {
 }
 impl RegisterRdsDbInstanceInputBuilder {
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl RegisterRdsDbInstanceInputBuilder {
         &self.stack_id
     }
     /// <p>The Amazon RDS instance's ARN.</p>
+    /// This field is required.
     pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_db_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl RegisterRdsDbInstanceInputBuilder {
         &self.rds_db_instance_arn
     }
     /// <p>The database's master user name.</p>
+    /// This field is required.
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_user = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl RegisterRdsDbInstanceInputBuilder {
         &self.db_user
     }
     /// <p>The database password.</p>
+    /// This field is required.
     pub fn db_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_password = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +110,7 @@ impl RegisterRdsDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterRdsDbInstanceInput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput {
             stack_id: self.stack_id,

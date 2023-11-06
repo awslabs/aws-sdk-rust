@@ -11,8 +11,10 @@ pub struct ListProductSubscriptionsOutput {
 }
 impl ListProductSubscriptionsOutput {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
-    pub fn product_user_summaries(&self) -> ::std::option::Option<&[crate::types::ProductUserSummary]> {
-        self.product_user_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_user_summaries.is_none()`.
+    pub fn product_user_summaries(&self) -> &[crate::types::ProductUserSummary] {
+        self.product_user_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

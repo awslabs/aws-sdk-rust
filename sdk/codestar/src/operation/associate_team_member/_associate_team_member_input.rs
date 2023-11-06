@@ -55,6 +55,7 @@ pub struct AssociateTeamMemberInputBuilder {
 }
 impl AssociateTeamMemberInputBuilder {
     /// <p>The ID of the project to which you will add the IAM user.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl AssociateTeamMemberInputBuilder {
         &self.client_request_token
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl AssociateTeamMemberInputBuilder {
         &self.user_arn
     }
     /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
+    /// This field is required.
     pub fn project_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_role = ::std::option::Option::Some(input.into());
         self
@@ -127,7 +130,7 @@ impl AssociateTeamMemberInputBuilder {
     /// Consumes the builder and constructs a [`AssociateTeamMemberInput`](crate::operation::associate_team_member::AssociateTeamMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_team_member::AssociateTeamMemberInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_team_member::AssociateTeamMemberInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_team_member::AssociateTeamMemberInput {
             project_id: self.project_id,

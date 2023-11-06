@@ -35,6 +35,7 @@ pub struct BatchAttachPolicyBuilder {
 }
 impl BatchAttachPolicyBuilder {
     /// <p>The reference that is associated with the policy object.</p>
+    /// This field is required.
     pub fn policy_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.policy_reference = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BatchAttachPolicyBuilder {
         &self.policy_reference
     }
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

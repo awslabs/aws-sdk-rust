@@ -50,6 +50,7 @@ pub struct ListChannelsAssociatedWithChannelFlowInputBuilder {
 }
 impl ListChannelsAssociatedWithChannelFlowInputBuilder {
     /// <p>The ARN of the channel flow.</p>
+    /// This field is required.
     pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,7 +97,7 @@ impl ListChannelsAssociatedWithChannelFlowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput {

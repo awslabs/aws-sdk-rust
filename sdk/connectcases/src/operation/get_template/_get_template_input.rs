@@ -34,6 +34,7 @@ pub struct GetTemplateInputBuilder {
 }
 impl GetTemplateInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetTemplateInputBuilder {
         &self.domain_id
     }
     /// <p>A unique identifier of a template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,7 @@ impl GetTemplateInputBuilder {
         &self.template_id
     }
     /// Consumes the builder and constructs a [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_template::GetTemplateInput {
             domain_id: self.domain_id,
             template_id: self.template_id,

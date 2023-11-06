@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
+    pub encryption_type: crate::types::EncryptionType,
     /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
@@ -13,8 +13,8 @@ pub struct DescribeDefaultEncryptionConfigurationOutput {
 }
 impl DescribeDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
-        self.encryption_type.as_ref()
+    pub fn encryption_type(&self) -> &crate::types::EncryptionType {
+        &self.encryption_type
     }
     /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -48,6 +48,7 @@ pub struct DescribeDefaultEncryptionConfigurationOutputBuilder {
 }
 impl DescribeDefaultEncryptionConfigurationOutputBuilder {
     /// <p>The type of encryption used for the encryption configuration.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl DescribeDefaultEncryptionConfigurationOutputBuilder {
         &self.kms_key_arn
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
+    /// This field is required.
     pub fn configuration_status(mut self, input: crate::types::ConfigurationStatus) -> Self {
         self.configuration_status = ::std::option::Option::Some(input);
         self
@@ -99,12 +101,26 @@ impl DescribeDefaultEncryptionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDefaultEncryptionConfigurationOutput`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput {
-        crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput {
-            encryption_type: self.encryption_type,
-            kms_key_arn: self.kms_key_arn,
-            configuration_status: self.configuration_status,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`encryption_type`](crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationOutputBuilder::encryption_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput {
+                encryption_type: self.encryption_type.ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "encryption_type",
+                        "encryption_type was not specified but it is required when building DescribeDefaultEncryptionConfigurationOutput",
+                    )
+                })?,
+                kms_key_arn: self.kms_key_arn,
+                configuration_status: self.configuration_status,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

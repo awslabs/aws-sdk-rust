@@ -42,8 +42,10 @@ impl CreatePortfolioInput {
         self.provider_name.as_deref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
@@ -96,6 +98,7 @@ impl CreatePortfolioInputBuilder {
         &self.accept_language
     }
     /// <p>The name to use for display purposes.</p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +127,7 @@ impl CreatePortfolioInputBuilder {
         &self.description
     }
     /// <p>The name of the portfolio provider.</p>
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +162,7 @@ impl CreatePortfolioInputBuilder {
         &self.tags
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
@@ -174,7 +179,7 @@ impl CreatePortfolioInputBuilder {
     /// Consumes the builder and constructs a [`CreatePortfolioInput`](crate::operation::create_portfolio::CreatePortfolioInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_portfolio::CreatePortfolioInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_portfolio::CreatePortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_portfolio::CreatePortfolioInput {
             accept_language: self.accept_language,
             display_name: self.display_name,

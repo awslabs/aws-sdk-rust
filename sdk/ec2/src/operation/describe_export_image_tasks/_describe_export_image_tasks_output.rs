@@ -11,8 +11,10 @@ pub struct DescribeExportImageTasksOutput {
 }
 impl DescribeExportImageTasksOutput {
     /// <p>Information about the export image tasks.</p>
-    pub fn export_image_tasks(&self) -> ::std::option::Option<&[crate::types::ExportImageTask]> {
-        self.export_image_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_image_tasks.is_none()`.
+    pub fn export_image_tasks(&self) -> &[crate::types::ExportImageTask] {
+        self.export_image_tasks.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

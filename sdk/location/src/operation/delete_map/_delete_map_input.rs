@@ -27,6 +27,7 @@ pub struct DeleteMapInputBuilder {
 }
 impl DeleteMapInputBuilder {
     /// <p>The name of the map resource to be deleted.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +42,7 @@ impl DeleteMapInputBuilder {
         &self.map_name
     }
     /// Consumes the builder and constructs a [`DeleteMapInput`](crate::operation::delete_map::DeleteMapInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_map::DeleteMapInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_map::DeleteMapInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_map::DeleteMapInput { map_name: self.map_name })
     }
 }

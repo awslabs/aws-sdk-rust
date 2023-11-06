@@ -35,6 +35,7 @@ pub struct S3ParametersBuilder {
 }
 impl S3ParametersBuilder {
     /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was uploaded into Amazon QuickSight.</p>
+    /// This field is required.
     pub fn manifest_file_location(mut self, input: crate::types::ManifestFileLocation) -> Self {
         self.manifest_file_location = ::std::option::Option::Some(input);
         self

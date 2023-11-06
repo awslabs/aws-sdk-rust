@@ -51,6 +51,7 @@ pub struct VerifyUserAttributeInputBuilder {
 }
 impl VerifyUserAttributeInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl VerifyUserAttributeInputBuilder {
         &self.access_token
     }
     /// <p>The attribute name in the request to verify user attributes.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +81,7 @@ impl VerifyUserAttributeInputBuilder {
         &self.attribute_name
     }
     /// <p>The verification code in the request to verify user attributes.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -95,7 +98,7 @@ impl VerifyUserAttributeInputBuilder {
     /// Consumes the builder and constructs a [`VerifyUserAttributeInput`](crate::operation::verify_user_attribute::VerifyUserAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_user_attribute::VerifyUserAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::verify_user_attribute::VerifyUserAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::verify_user_attribute::VerifyUserAttributeInput {
             access_token: self.access_token,

@@ -11,8 +11,10 @@ pub struct ListResourcesOutput {
 }
 impl ListResourcesOutput {
     /// <p>One page of the organization's resource representation.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::Resource] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -171,6 +171,7 @@ pub struct SelectObjectContentInputBuilder {
 }
 impl SelectObjectContentInputBuilder {
     /// <p>The S3 bucket.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +186,7 @@ impl SelectObjectContentInputBuilder {
         &self.bucket
     }
     /// <p>The object key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -241,6 +243,7 @@ impl SelectObjectContentInputBuilder {
         &self.sse_customer_key_md5
     }
     /// <p>The expression that is used to query the object.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -255,6 +258,7 @@ impl SelectObjectContentInputBuilder {
         &self.expression
     }
     /// <p>The type of the provided expression (for example, SQL).</p>
+    /// This field is required.
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
         self.expression_type = ::std::option::Option::Some(input);
         self
@@ -283,6 +287,7 @@ impl SelectObjectContentInputBuilder {
         &self.request_progress
     }
     /// <p>Describes the format of the data in the object that is being queried.</p>
+    /// This field is required.
     pub fn input_serialization(mut self, input: crate::types::InputSerialization) -> Self {
         self.input_serialization = ::std::option::Option::Some(input);
         self
@@ -297,6 +302,7 @@ impl SelectObjectContentInputBuilder {
         &self.input_serialization
     }
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
+    /// This field is required.
     pub fn output_serialization(mut self, input: crate::types::OutputSerialization) -> Self {
         self.output_serialization = ::std::option::Option::Some(input);
         self
@@ -413,7 +419,7 @@ impl SelectObjectContentInputBuilder {
     /// Consumes the builder and constructs a [`SelectObjectContentInput`](crate::operation::select_object_content::SelectObjectContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::select_object_content::SelectObjectContentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::select_object_content::SelectObjectContentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::select_object_content::SelectObjectContentInput {
             bucket: self.bucket,

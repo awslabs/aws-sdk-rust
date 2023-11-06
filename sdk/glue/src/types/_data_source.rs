@@ -28,6 +28,7 @@ pub struct DataSourceBuilder {
 }
 impl DataSourceBuilder {
     /// <p>An Glue table.</p>
+    /// This field is required.
     pub fn glue_table(mut self, input: crate::types::GlueTable) -> Self {
         self.glue_table = ::std::option::Option::Some(input);
         self

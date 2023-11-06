@@ -34,6 +34,7 @@ pub struct DeleteDomainInputBuilder {
 }
 impl DeleteDomainInputBuilder {
     /// <p>The domain ID.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +63,9 @@ impl DeleteDomainInputBuilder {
         &self.retention_policy
     }
     /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_domain::DeleteDomainInput {
             domain_id: self.domain_id,
             retention_policy: self.retention_policy,

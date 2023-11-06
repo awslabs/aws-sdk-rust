@@ -59,8 +59,10 @@ impl GetCapacityReservationUsageOutput {
         self.state.as_ref()
     }
     /// <p>Information about the Capacity Reservation usage.</p>
-    pub fn instance_usages(&self) -> ::std::option::Option<&[crate::types::InstanceUsage]> {
-        self.instance_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_usages.is_none()`.
+    pub fn instance_usages(&self) -> &[crate::types::InstanceUsage] {
+        self.instance_usages.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCapacityReservationUsageOutput {

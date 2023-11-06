@@ -41,6 +41,7 @@ pub struct CreateConfiguredTableAnalysisRuleInputBuilder {
 }
 impl CreateConfiguredTableAnalysisRuleInputBuilder {
     /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
+    /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateConfiguredTableAnalysisRuleInputBuilder {
         &self.configured_table_identifier
     }
     /// <p>The type of analysis rule.</p>
+    /// This field is required.
     pub fn analysis_rule_type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         self.analysis_rule_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl CreateConfiguredTableAnalysisRuleInputBuilder {
         &self.analysis_rule_type
     }
     /// <p>The entire created configured table analysis rule object.</p>
+    /// This field is required.
     pub fn analysis_rule_policy(mut self, input: crate::types::ConfiguredTableAnalysisRulePolicy) -> Self {
         self.analysis_rule_policy = ::std::option::Option::Some(input);
         self
@@ -87,7 +90,7 @@ impl CreateConfiguredTableAnalysisRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleInput {

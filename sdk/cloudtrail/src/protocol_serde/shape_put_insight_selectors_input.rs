@@ -2,7 +2,7 @@
 pub fn ser_put_insight_selectors_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_insight_selectors::PutInsightSelectorsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.trail_name {
         object.key("TrailName").string(var_1.as_str());
     }

@@ -4,31 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDirectoryOutput {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub directory_arn: ::std::option::Option<::std::string::String>,
+    pub directory_arn: ::std::string::String,
     /// <p>The name of the <code>Directory</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The root object node of the created directory.</p>
-    pub object_identifier: ::std::option::Option<::std::string::String>,
+    pub object_identifier: ::std::string::String,
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
-    pub applied_schema_arn: ::std::option::Option<::std::string::String>,
+    pub applied_schema_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateDirectoryOutput {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
-        self.directory_arn.as_deref()
+    pub fn directory_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.directory_arn.deref()
     }
     /// <p>The name of the <code>Directory</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The root object node of the created directory.</p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
-        self.object_identifier.as_deref()
+    pub fn object_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.object_identifier.deref()
     }
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
-    pub fn applied_schema_arn(&self) -> ::std::option::Option<&str> {
-        self.applied_schema_arn.as_deref()
+    pub fn applied_schema_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.applied_schema_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateDirectoryOutput {
@@ -55,6 +59,7 @@ pub struct CreateDirectoryOutputBuilder {
 }
 impl CreateDirectoryOutputBuilder {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl CreateDirectoryOutputBuilder {
         &self.directory_arn
     }
     /// <p>The name of the <code>Directory</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +89,7 @@ impl CreateDirectoryOutputBuilder {
         &self.name
     }
     /// <p>The root object node of the created directory.</p>
+    /// This field is required.
     pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +104,7 @@ impl CreateDirectoryOutputBuilder {
         &self.object_identifier
     }
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn applied_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.applied_schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -120,13 +128,40 @@ impl CreateDirectoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDirectoryOutput`](crate::operation::create_directory::CreateDirectoryOutput).
-    pub fn build(self) -> crate::operation::create_directory::CreateDirectoryOutput {
-        crate::operation::create_directory::CreateDirectoryOutput {
-            directory_arn: self.directory_arn,
-            name: self.name,
-            object_identifier: self.object_identifier,
-            applied_schema_arn: self.applied_schema_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`directory_arn`](crate::operation::create_directory::builders::CreateDirectoryOutputBuilder::directory_arn)
+    /// - [`name`](crate::operation::create_directory::builders::CreateDirectoryOutputBuilder::name)
+    /// - [`object_identifier`](crate::operation::create_directory::builders::CreateDirectoryOutputBuilder::object_identifier)
+    /// - [`applied_schema_arn`](crate::operation::create_directory::builders::CreateDirectoryOutputBuilder::applied_schema_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_directory::CreateDirectoryOutput {
+            directory_arn: self.directory_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "directory_arn",
+                    "directory_arn was not specified but it is required when building CreateDirectoryOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateDirectoryOutput",
+                )
+            })?,
+            object_identifier: self.object_identifier.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "object_identifier",
+                    "object_identifier was not specified but it is required when building CreateDirectoryOutput",
+                )
+            })?,
+            applied_schema_arn: self.applied_schema_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "applied_schema_arn",
+                    "applied_schema_arn was not specified but it is required when building CreateDirectoryOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

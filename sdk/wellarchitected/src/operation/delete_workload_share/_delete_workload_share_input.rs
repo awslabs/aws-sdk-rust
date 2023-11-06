@@ -48,6 +48,7 @@ pub struct DeleteWorkloadShareInputBuilder {
 }
 impl DeleteWorkloadShareInputBuilder {
     /// <p>The ID associated with the share.</p>
+    /// This field is required.
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DeleteWorkloadShareInputBuilder {
         &self.share_id
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +81,7 @@ impl DeleteWorkloadShareInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -101,7 +104,7 @@ impl DeleteWorkloadShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkloadShareInput`](crate::operation::delete_workload_share::DeleteWorkloadShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workload_share::DeleteWorkloadShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_workload_share::DeleteWorkloadShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_workload_share::DeleteWorkloadShareInput {
             share_id: self.share_id,

@@ -32,8 +32,10 @@ impl DeleteObjectsOnCancelInput {
         self.transaction_id.as_deref()
     }
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    pub fn objects(&self) -> ::std::option::Option<&[crate::types::VirtualObject]> {
-        self.objects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.objects.is_none()`.
+    pub fn objects(&self) -> &[crate::types::VirtualObject] {
+        self.objects.as_deref().unwrap_or_default()
     }
 }
 impl DeleteObjectsOnCancelInput {
@@ -69,6 +71,7 @@ impl DeleteObjectsOnCancelInputBuilder {
         &self.catalog_id
     }
     /// <p>The database that contains the governed table.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl DeleteObjectsOnCancelInputBuilder {
         &self.database_name
     }
     /// <p>The name of the governed table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl DeleteObjectsOnCancelInputBuilder {
         &self.table_name
     }
     /// <p>ID of the transaction that the writes occur in.</p>
+    /// This field is required.
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
@@ -133,7 +138,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteObjectsOnCancelInput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput {
             catalog_id: self.catalog_id,

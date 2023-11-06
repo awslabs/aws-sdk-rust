@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The timestamp of the event.</p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
     /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
-    pub r#type: ::std::option::Option<crate::types::EventType>,
+    pub r#type: crate::types::EventType,
     /// <p>The event data.</p>
-    pub data: ::std::option::Option<::std::string::String>,
+    pub data: ::std::string::String,
 }
 impl Event {
     /// <p>The timestamp of the event.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
     /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EventType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EventType {
+        &self.r#type
     }
     /// <p>The event data.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
-        self.data.as_deref()
+    pub fn data(&self) -> &str {
+        use std::ops::Deref;
+        self.data.deref()
     }
 }
 impl Event {
@@ -42,6 +43,7 @@ pub struct EventBuilder {
 }
 impl EventBuilder {
     /// <p>The timestamp of the event.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl EventBuilder {
         &self.timestamp
     }
     /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EventType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl EventBuilder {
         &self.r#type
     }
     /// <p>The event data.</p>
+    /// This field is required.
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,30 @@ impl EventBuilder {
         &self.data
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
-    pub fn build(self) -> crate::types::Event {
-        crate::types::Event {
-            timestamp: self.timestamp,
-            r#type: self.r#type,
-            data: self.data,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timestamp`](crate::types::builders::EventBuilder::timestamp)
+    /// - [`r#type`](crate::types::builders::EventBuilder::r#type)
+    /// - [`data`](crate::types::builders::EventBuilder::data)
+    pub fn build(self) -> ::std::result::Result<crate::types::Event, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::Event {
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building Event",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Event",
+                )
+            })?,
+            data: self.data.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "data",
+                    "data was not specified but it is required when building Event",
+                )
+            })?,
+        })
     }
 }

@@ -371,6 +371,7 @@ impl H265SettingsBuilder {
         &self.flicker_aq
     }
     /// Framerate denominator.
+    /// This field is required.
     pub fn framerate_denominator(mut self, input: i32) -> Self {
         self.framerate_denominator = ::std::option::Option::Some(input);
         self
@@ -385,6 +386,7 @@ impl H265SettingsBuilder {
         &self.framerate_denominator
     }
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+    /// This field is required.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
         self.framerate_numerator = ::std::option::Option::Some(input);
         self

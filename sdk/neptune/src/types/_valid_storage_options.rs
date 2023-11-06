@@ -20,16 +20,22 @@ impl ValidStorageOptions {
         self.storage_type.as_deref()
     }
     /// <p>The valid range of storage in gibibytes. For example, 100 to 16384.</p>
-    pub fn storage_size(&self) -> ::std::option::Option<&[crate::types::Range]> {
-        self.storage_size.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_size.is_none()`.
+    pub fn storage_size(&self) -> &[crate::types::Range] {
+        self.storage_size.as_deref().unwrap_or_default()
     }
     /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
-    pub fn provisioned_iops(&self) -> ::std::option::Option<&[crate::types::Range]> {
-        self.provisioned_iops.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_iops.is_none()`.
+    pub fn provisioned_iops(&self) -> &[crate::types::Range] {
+        self.provisioned_iops.as_deref().unwrap_or_default()
     }
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-    pub fn iops_to_storage_ratio(&self) -> ::std::option::Option<&[crate::types::DoubleRange]> {
-        self.iops_to_storage_ratio.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iops_to_storage_ratio.is_none()`.
+    pub fn iops_to_storage_ratio(&self) -> &[crate::types::DoubleRange] {
+        self.iops_to_storage_ratio.as_deref().unwrap_or_default()
     }
 }
 impl ValidStorageOptions {

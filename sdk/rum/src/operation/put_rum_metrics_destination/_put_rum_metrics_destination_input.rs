@@ -50,6 +50,7 @@ pub struct PutRumMetricsDestinationInputBuilder {
 }
 impl PutRumMetricsDestinationInputBuilder {
     /// <p>The name of the CloudWatch RUM app monitor that will send the metrics.</p>
+    /// This field is required.
     pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl PutRumMetricsDestinationInputBuilder {
         &self.app_monitor_name
     }
     /// <p>Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -113,7 +115,7 @@ impl PutRumMetricsDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationInput {
             app_monitor_name: self.app_monitor_name,

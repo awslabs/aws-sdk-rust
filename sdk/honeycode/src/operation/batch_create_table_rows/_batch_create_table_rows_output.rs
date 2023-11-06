@@ -6,7 +6,7 @@ pub struct BatchCreateTableRowsOutput {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
     pub workbook_cursor: i64,
     /// <p>The map of batch item id to the row id that was created for that item.</p>
-    pub created_rows: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub created_rows: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
@@ -17,12 +17,14 @@ impl BatchCreateTableRowsOutput {
         self.workbook_cursor
     }
     /// <p>The map of batch item id to the row id that was created for that item.</p>
-    pub fn created_rows(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.created_rows.as_ref()
+    pub fn created_rows(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.created_rows
     }
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
-    pub fn failed_batch_items(&self) -> ::std::option::Option<&[crate::types::FailedBatchItem]> {
-        self.failed_batch_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_batch_items.is_none()`.
+    pub fn failed_batch_items(&self) -> &[crate::types::FailedBatchItem] {
+        self.failed_batch_items.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchCreateTableRowsOutput {
@@ -48,6 +50,7 @@ pub struct BatchCreateTableRowsOutputBuilder {
 }
 impl BatchCreateTableRowsOutputBuilder {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
+    /// This field is required.
     pub fn workbook_cursor(mut self, input: i64) -> Self {
         self.workbook_cursor = ::std::option::Option::Some(input);
         self
@@ -114,12 +117,22 @@ impl BatchCreateTableRowsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchCreateTableRowsOutput`](crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput).
-    pub fn build(self) -> crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput {
-        crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`created_rows`](crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsOutputBuilder::created_rows)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput {
             workbook_cursor: self.workbook_cursor.unwrap_or_default(),
-            created_rows: self.created_rows,
+            created_rows: self.created_rows.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_rows",
+                    "created_rows was not specified but it is required when building BatchCreateTableRowsOutput",
+                )
+            })?,
             failed_batch_items: self.failed_batch_items,
             _request_id: self._request_id,
-        }
+        })
     }
 }

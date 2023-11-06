@@ -11,8 +11,10 @@ pub struct DescribeRegionsOutput {
 }
 impl DescribeRegionsOutput {
     /// <p>List of Region information related to the directory for each replicated Region.</p>
-    pub fn regions_description(&self) -> ::std::option::Option<&[crate::types::RegionDescription]> {
-        self.regions_description.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions_description.is_none()`.
+    pub fn regions_description(&self) -> &[crate::types::RegionDescription] {
+        self.regions_description.as_deref().unwrap_or_default()
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -17,8 +17,10 @@ impl ListMonitorEvaluationsOutput {
     }
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
-    pub fn predictor_monitor_evaluations(&self) -> ::std::option::Option<&[crate::types::PredictorMonitorEvaluation]> {
-        self.predictor_monitor_evaluations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predictor_monitor_evaluations.is_none()`.
+    pub fn predictor_monitor_evaluations(&self) -> &[crate::types::PredictorMonitorEvaluation] {
+        self.predictor_monitor_evaluations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListMonitorEvaluationsOutput {

@@ -27,6 +27,7 @@ pub struct DeleteVocabularyFilterInputBuilder {
 }
 impl DeleteVocabularyFilterInputBuilder {
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
+    /// This field is required.
     pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
@@ -43,8 +44,10 @@ impl DeleteVocabularyFilterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVocabularyFilterInput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput {
             vocabulary_filter_name: self.vocabulary_filter_name,
         })

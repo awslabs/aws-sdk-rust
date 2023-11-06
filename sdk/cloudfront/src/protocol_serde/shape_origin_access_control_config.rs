@@ -2,33 +2,34 @@
 pub fn ser_origin_access_control_config(
     input: &crate::types::OriginAccessControlConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.name {
+    {
         let mut inner_writer = scope.start_el("Name").finish();
+        inner_writer.data(input.name.as_str());
+    }
+    if let Some(var_1) = &input.description {
+        let mut inner_writer = scope.start_el("Description").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        let mut inner_writer = scope.start_el("Description").finish();
-        inner_writer.data(var_2.as_str());
-    }
-    if let Some(var_3) = &input.signing_protocol {
+    {
         let mut inner_writer = scope.start_el("SigningProtocol").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(input.signing_protocol.as_str());
     }
-    if let Some(var_4) = &input.signing_behavior {
+    {
         let mut inner_writer = scope.start_el("SigningBehavior").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(input.signing_behavior.as_str());
     }
-    if let Some(var_5) = &input.origin_access_control_origin_type {
+    {
         let mut inner_writer = scope.start_el("OriginAccessControlOriginType").finish();
-        inner_writer.data(var_5.as_str());
+        inner_writer.data(input.origin_access_control_origin_type.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_origin_access_control_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::OriginAccessControlConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -37,7 +38,7 @@ pub fn de_origin_access_control_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.cloudfront#OriginAccessControlConfig$Name */ =>  {
-                let var_6 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -46,11 +47,11 @@ pub fn de_origin_access_control_config(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_6);
+                builder = builder.set_name(var_2);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.cloudfront#OriginAccessControlConfig$Description */ =>  {
-                let var_7 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -59,11 +60,11 @@ pub fn de_origin_access_control_config(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_7);
+                builder = builder.set_description(var_3);
             }
             ,
             s if s.matches("SigningProtocol") /* SigningProtocol com.amazonaws.cloudfront#OriginAccessControlConfig$SigningProtocol */ =>  {
-                let var_8 =
+                let var_4 =
                     Some(
                         Result::<crate::types::OriginAccessControlSigningProtocols, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::OriginAccessControlSigningProtocols::from(
@@ -73,11 +74,11 @@ pub fn de_origin_access_control_config(
                         ?
                     )
                 ;
-                builder = builder.set_signing_protocol(var_8);
+                builder = builder.set_signing_protocol(var_4);
             }
             ,
             s if s.matches("SigningBehavior") /* SigningBehavior com.amazonaws.cloudfront#OriginAccessControlConfig$SigningBehavior */ =>  {
-                let var_9 =
+                let var_5 =
                     Some(
                         Result::<crate::types::OriginAccessControlSigningBehaviors, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::OriginAccessControlSigningBehaviors::from(
@@ -87,11 +88,11 @@ pub fn de_origin_access_control_config(
                         ?
                     )
                 ;
-                builder = builder.set_signing_behavior(var_9);
+                builder = builder.set_signing_behavior(var_5);
             }
             ,
             s if s.matches("OriginAccessControlOriginType") /* OriginAccessControlOriginType com.amazonaws.cloudfront#OriginAccessControlConfig$OriginAccessControlOriginType */ =>  {
-                let var_10 =
+                let var_6 =
                     Some(
                         Result::<crate::types::OriginAccessControlOriginTypes, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::OriginAccessControlOriginTypes::from(
@@ -101,11 +102,13 @@ pub fn de_origin_access_control_config(
                         ?
                     )
                 ;
-                builder = builder.set_origin_access_control_origin_type(var_10);
+                builder = builder.set_origin_access_control_origin_type(var_6);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::origin_access_control_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

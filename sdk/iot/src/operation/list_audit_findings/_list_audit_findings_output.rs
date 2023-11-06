@@ -11,8 +11,10 @@ pub struct ListAuditFindingsOutput {
 }
 impl ListAuditFindingsOutput {
     /// <p>The findings (results) of the audit.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::AuditFinding]> {
-        self.findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.findings.is_none()`.
+    pub fn findings(&self) -> &[crate::types::AuditFinding] {
+        self.findings.as_deref().unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

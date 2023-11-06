@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeLine {
     /// <p>The content of a line of code</p>
-    pub content: ::std::option::Option<::std::string::String>,
+    pub content: ::std::string::String,
     /// <p>The line number that a section of code is located at.</p>
-    pub line_number: ::std::option::Option<i32>,
+    pub line_number: i32,
 }
 impl CodeLine {
     /// <p>The content of a line of code</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
-        self.content.as_deref()
+    pub fn content(&self) -> &str {
+        use std::ops::Deref;
+        self.content.deref()
     }
     /// <p>The line number that a section of code is located at.</p>
-    pub fn line_number(&self) -> ::std::option::Option<i32> {
+    pub fn line_number(&self) -> i32 {
         self.line_number
     }
 }
@@ -35,6 +36,7 @@ pub struct CodeLineBuilder {
 }
 impl CodeLineBuilder {
     /// <p>The content of a line of code</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl CodeLineBuilder {
         &self.content
     }
     /// <p>The line number that a section of code is located at.</p>
+    /// This field is required.
     pub fn line_number(mut self, input: i32) -> Self {
         self.line_number = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl CodeLineBuilder {
         &self.line_number
     }
     /// Consumes the builder and constructs a [`CodeLine`](crate::types::CodeLine).
-    pub fn build(self) -> crate::types::CodeLine {
-        crate::types::CodeLine {
-            content: self.content,
-            line_number: self.line_number,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`content`](crate::types::builders::CodeLineBuilder::content)
+    /// - [`line_number`](crate::types::builders::CodeLineBuilder::line_number)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeLine, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodeLine {
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building CodeLine",
+                )
+            })?,
+            line_number: self.line_number.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "line_number",
+                    "line_number was not specified but it is required when building CodeLine",
+                )
+            })?,
+        })
     }
 }

@@ -132,12 +132,12 @@ pub fn de_update_application_http_response(
 
 pub fn ser_update_application_input(
     input: &crate::operation::update_application::UpdateApplicationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_application_input::ser_update_application_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_application(
@@ -190,7 +190,7 @@ pub(crate) fn de_update_application(
                     builder = builder.set_is_verified_author(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "labels" => {
-                    builder = builder.set_labels(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_labels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "licenseUrl" => {
                     builder = builder.set_license_url(

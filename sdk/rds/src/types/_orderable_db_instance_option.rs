@@ -104,8 +104,10 @@ impl OrderableDbInstanceOption {
         self.availability_zone_group.as_deref()
     }
     /// <p>A list of Availability Zones for a DB instance.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
     pub fn multi_az_capable(&self) -> ::std::option::Option<bool> {
@@ -168,12 +170,16 @@ impl OrderableDbInstanceOption {
         self.max_iops_per_gib
     }
     /// <p>A list of the available processor features for the DB instance class of a DB instance.</p>
-    pub fn available_processor_features(&self) -> ::std::option::Option<&[crate::types::AvailableProcessorFeature]> {
-        self.available_processor_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_processor_features.is_none()`.
+    pub fn available_processor_features(&self) -> &[crate::types::AvailableProcessorFeature] {
+        self.available_processor_features.as_deref().unwrap_or_default()
     }
     /// <p>A list of the supported DB engine modes.</p>
-    pub fn supported_engine_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_engine_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_engine_modes.is_none()`.
+    pub fn supported_engine_modes(&self) -> &[::std::string::String] {
+        self.supported_engine_modes.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
     pub fn supports_storage_autoscaling(&self) -> ::std::option::Option<bool> {
@@ -189,8 +195,10 @@ impl OrderableDbInstanceOption {
         self.outpost_capable
     }
     /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
-    pub fn supported_activity_stream_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_activity_stream_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_activity_stream_modes.is_none()`.
+    pub fn supported_activity_stream_modes(&self) -> &[::std::string::String] {
+        self.supported_activity_stream_modes.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
@@ -204,8 +212,10 @@ impl OrderableDbInstanceOption {
     /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
     /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn supported_network_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_network_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_network_types.is_none()`.
+    pub fn supported_network_types(&self) -> &[::std::string::String] {
+        self.supported_network_types.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether a DB instance supports storage throughput.</p>
     pub fn supports_storage_throughput(&self) -> ::std::option::Option<bool> {

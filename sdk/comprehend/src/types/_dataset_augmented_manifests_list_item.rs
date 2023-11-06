@@ -7,9 +7,9 @@ pub struct DatasetAugmentedManifestsListItem {
     /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
     /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attribute_names: ::std::vec::Vec<::std::string::String>,
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
     pub annotation_data_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
@@ -22,12 +22,14 @@ impl DatasetAugmentedManifestsListItem {
     /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
     /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attribute_names.as_deref()
+    pub fn attribute_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.attribute_names.deref()
     }
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
     pub fn annotation_data_s3_uri(&self) -> ::std::option::Option<&str> {
@@ -88,6 +90,7 @@ impl DatasetAugmentedManifestsListItemBuilder {
         &self.attribute_names
     }
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -147,13 +150,26 @@ impl DatasetAugmentedManifestsListItemBuilder {
         &self.document_type
     }
     /// Consumes the builder and constructs a [`DatasetAugmentedManifestsListItem`](crate::types::DatasetAugmentedManifestsListItem).
-    pub fn build(self) -> crate::types::DatasetAugmentedManifestsListItem {
-        crate::types::DatasetAugmentedManifestsListItem {
-            attribute_names: self.attribute_names,
-            s3_uri: self.s3_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_names`](crate::types::builders::DatasetAugmentedManifestsListItemBuilder::attribute_names)
+    /// - [`s3_uri`](crate::types::builders::DatasetAugmentedManifestsListItemBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatasetAugmentedManifestsListItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatasetAugmentedManifestsListItem {
+            attribute_names: self.attribute_names.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attribute_names",
+                    "attribute_names was not specified but it is required when building DatasetAugmentedManifestsListItem",
+                )
+            })?,
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building DatasetAugmentedManifestsListItem",
+                )
+            })?,
             annotation_data_s3_uri: self.annotation_data_s3_uri,
             source_documents_s3_uri: self.source_documents_s3_uri,
             document_type: self.document_type,
-        }
+        })
     }
 }

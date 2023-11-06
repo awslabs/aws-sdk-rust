@@ -34,6 +34,7 @@ pub struct GetCodeSigningConfigOutputBuilder {
 }
 impl GetCodeSigningConfigOutputBuilder {
     /// <p>The code signing configuration</p>
+    /// This field is required.
     pub fn code_signing_config(mut self, input: crate::types::CodeSigningConfig) -> Self {
         self.code_signing_config = ::std::option::Option::Some(input);
         self

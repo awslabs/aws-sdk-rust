@@ -14,8 +14,10 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
         self.account_id.as_deref()
     }
     /// <p>The sign-in delegate groups.</p>
-    pub fn signin_delegate_groups(&self) -> ::std::option::Option<&[crate::types::SigninDelegateGroup]> {
-        self.signin_delegate_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signin_delegate_groups.is_none()`.
+    pub fn signin_delegate_groups(&self) -> &[crate::types::SigninDelegateGroup] {
+        self.signin_delegate_groups.as_deref().unwrap_or_default()
     }
 }
 impl AssociateSigninDelegateGroupsWithAccountInput {
@@ -35,6 +37,7 @@ pub struct AssociateSigninDelegateGroupsWithAccountInputBuilder {
 }
 impl AssociateSigninDelegateGroupsWithAccountInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -73,7 +76,7 @@ impl AssociateSigninDelegateGroupsWithAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput {

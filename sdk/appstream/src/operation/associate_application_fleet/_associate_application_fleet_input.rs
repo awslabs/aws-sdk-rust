@@ -34,6 +34,7 @@ pub struct AssociateApplicationFleetInputBuilder {
 }
 impl AssociateApplicationFleetInputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateApplicationFleetInputBuilder {
         &self.fleet_name
     }
     /// <p>The ARN of the application.</p>
+    /// This field is required.
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,7 +68,7 @@ impl AssociateApplicationFleetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_application_fleet::AssociateApplicationFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_application_fleet::AssociateApplicationFleetInput {
             fleet_name: self.fleet_name,

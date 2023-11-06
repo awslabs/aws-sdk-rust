@@ -42,6 +42,7 @@ pub struct ListJobsByPipelineInputBuilder {
 }
 impl ListJobsByPipelineInputBuilder {
     /// <p>The ID of the pipeline for which you want to get job information.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +87,7 @@ impl ListJobsByPipelineInputBuilder {
     /// Consumes the builder and constructs a [`ListJobsByPipelineInput`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput {
             pipeline_id: self.pipeline_id,

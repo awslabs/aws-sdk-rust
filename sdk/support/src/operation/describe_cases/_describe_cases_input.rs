@@ -24,8 +24,10 @@ pub struct DescribeCasesInput {
 }
 impl DescribeCasesInput {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub fn case_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.case_id_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.case_id_list.is_none()`.
+    pub fn case_id_list(&self) -> &[::std::string::String] {
+        self.case_id_list.as_deref().unwrap_or_default()
     }
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
     pub fn display_id(&self) -> ::std::option::Option<&str> {
@@ -217,7 +219,7 @@ impl DescribeCasesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCasesInput`](crate::operation::describe_cases::DescribeCasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_cases::DescribeCasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_cases::DescribeCasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_cases::DescribeCasesInput {
             case_id_list: self.case_id_list,
             display_id: self.display_id,

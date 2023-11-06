@@ -2,54 +2,54 @@
 pub fn ser_dynamic_transform(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynamicTransform,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.transform_name {
-        object.key("TransformName").string(var_2.as_str());
+    {
+        object.key("TransformName").string(input.transform_name.as_str());
     }
-    if let Some(var_3) = &input.inputs {
-        let mut array_4 = object.key("Inputs").start_array();
+    {
+        let mut array_1 = object.key("Inputs").start_array();
+        for item_2 in &input.inputs {
+            {
+                array_1.value().string(item_2.as_str());
+            }
+        }
+        array_1.finish();
+    }
+    if let Some(var_3) = &input.parameters {
+        let mut array_4 = object.key("Parameters").start_array();
         for item_5 in var_3 {
             {
-                array_4.value().string(item_5.as_str());
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_transform_config_parameter::ser_transform_config_parameter(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.parameters {
-        let mut array_7 = object.key("Parameters").start_array();
-        for item_8 in var_6 {
+    {
+        object.key("FunctionName").string(input.function_name.as_str());
+    }
+    {
+        object.key("Path").string(input.path.as_str());
+    }
+    if let Some(var_7) = &input.version {
+        object.key("Version").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.output_schemas {
+        let mut array_9 = object.key("OutputSchemas").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_transform_config_parameter::ser_transform_config_parameter(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
-    }
-    if let Some(var_10) = &input.function_name {
-        object.key("FunctionName").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.path {
-        object.key("Path").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.version {
-        object.key("Version").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.output_schemas {
-        let mut array_14 = object.key("OutputSchemas").start_array();
-        for item_15 in var_13 {
-            {
-                #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_16, item_15)?;
-                object_16.finish();
-            }
-        }
-        array_14.finish();
+        array_9.finish();
     }
     Ok(())
 }
@@ -125,7 +125,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::dynamic_transform_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

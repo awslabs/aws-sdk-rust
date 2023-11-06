@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetOutput {
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>,
     _request_id: Option<String>,
 }
 impl BatchDeleteFeaturedResultsSetOutput {
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchDeleteFeaturedResultsSetError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchDeleteFeaturedResultsSetError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteFeaturedResultsSetOutput {
@@ -63,10 +64,22 @@ impl BatchDeleteFeaturedResultsSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteFeaturedResultsSetOutput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput).
-    pub fn build(self) -> crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput {
-        crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput {
-            errors: self.errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`errors`](crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput {
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building BatchDeleteFeaturedResultsSetOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

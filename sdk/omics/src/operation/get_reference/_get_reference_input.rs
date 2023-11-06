@@ -55,6 +55,7 @@ pub struct GetReferenceInputBuilder {
 }
 impl GetReferenceInputBuilder {
     /// <p>The reference's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetReferenceInputBuilder {
         &self.id
     }
     /// <p>The reference's store ID.</p>
+    /// This field is required.
     pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl GetReferenceInputBuilder {
         &self.range
     }
     /// <p>The part number to retrieve.</p>
+    /// This field is required.
     pub fn part_number(mut self, input: i32) -> Self {
         self.part_number = ::std::option::Option::Some(input);
         self
@@ -125,7 +128,9 @@ impl GetReferenceInputBuilder {
         &self.file
     }
     /// Consumes the builder and constructs a [`GetReferenceInput`](crate::operation::get_reference::GetReferenceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_reference::GetReferenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_reference::GetReferenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_reference::GetReferenceInput {
             id: self.id,
             reference_store_id: self.reference_store_id,

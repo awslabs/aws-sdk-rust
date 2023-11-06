@@ -193,7 +193,7 @@ impl SendCommandInputBuilder {
         &self.fetch_page
     }
     /// Consumes the builder and constructs a [`SendCommandInput`](crate::operation::send_command::SendCommandInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_command::SendCommandInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_command::SendCommandInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_command::SendCommandInput {
             session_token: self.session_token,
             start_session: self.start_session,

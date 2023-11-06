@@ -2,12 +2,12 @@
 pub fn ser_notification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Notification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.notification_type {
-        object.key("NotificationType").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("NotificationType").string(input.notification_type.as_str());
     }
-    if let Some(var_2) = &input.comparison_operator {
-        object.key("ComparisonOperator").string(var_2.as_str());
+    {
+        object.key("ComparisonOperator").string(input.comparison_operator.as_str());
     }
     {
         object.key("Threshold").number(
@@ -15,11 +15,11 @@ pub fn ser_notification(
             ::aws_smithy_types::Number::Float((input.threshold).into()),
         );
     }
-    if let Some(var_3) = &input.threshold_type {
-        object.key("ThresholdType").string(var_3.as_str());
+    if let Some(var_1) = &input.threshold_type {
+        object.key("ThresholdType").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.notification_state {
-        object.key("NotificationState").string(var_4.as_str());
+    if let Some(var_2) = &input.notification_state {
+        object.key("NotificationState").string(var_2.as_str());
     }
     Ok(())
 }
@@ -82,7 +82,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::notification_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

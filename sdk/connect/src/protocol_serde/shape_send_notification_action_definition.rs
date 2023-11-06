@@ -2,24 +2,24 @@
 pub fn ser_send_notification_action_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SendNotificationActionDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.delivery_method {
-        object.key("DeliveryMethod").string(var_1.as_str());
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("DeliveryMethod").string(input.delivery_method.as_str());
     }
-    if let Some(var_2) = &input.subject {
-        object.key("Subject").string(var_2.as_str());
+    if let Some(var_1) = &input.subject {
+        object.key("Subject").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.content {
-        object.key("Content").string(var_3.as_str());
+    {
+        object.key("Content").string(input.content.as_str());
     }
-    if let Some(var_4) = &input.content_type {
-        object.key("ContentType").string(var_4.as_str());
+    {
+        object.key("ContentType").string(input.content_type.as_str());
     }
-    if let Some(var_5) = &input.recipient {
+    if let Some(var_2) = &input.recipient {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Recipient").start_object();
-        crate::protocol_serde::shape_notification_recipient_type::ser_notification_recipient_type(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_3 = object.key("Recipient").start_object();
+        crate::protocol_serde::shape_notification_recipient_type::ser_notification_recipient_type(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -82,7 +82,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::send_notification_action_definition_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

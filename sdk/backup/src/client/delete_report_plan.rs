@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReportPlan`](crate::operation::delete_report_plan::builders::DeleteReportPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`report_plan_name(impl Into<String>)`](crate::operation::delete_report_plan::builders::DeleteReportPlanFluentBuilder::report_plan_name) / [`set_report_plan_name(Option<String>)`](crate::operation::delete_report_plan::builders::DeleteReportPlanFluentBuilder::set_report_plan_name): <p>The unique name of a report plan.</p>
+    ///   - [`report_plan_name(impl Into<String>)`](crate::operation::delete_report_plan::builders::DeleteReportPlanFluentBuilder::report_plan_name) / [`set_report_plan_name(Option<String>)`](crate::operation::delete_report_plan::builders::DeleteReportPlanFluentBuilder::set_report_plan_name):<br>required: **true**<br><p>The unique name of a report plan.</p><br>
     /// - On success, responds with [`DeleteReportPlanOutput`](crate::operation::delete_report_plan::DeleteReportPlanOutput)
     /// - On failure, responds with [`SdkError<DeleteReportPlanError>`](crate::operation::delete_report_plan::DeleteReportPlanError)
     pub fn delete_report_plan(&self) -> crate::operation::delete_report_plan::builders::DeleteReportPlanFluentBuilder {

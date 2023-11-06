@@ -48,6 +48,7 @@ pub struct GetFaceSearchInputBuilder {
 }
 impl GetFaceSearchInputBuilder {
     /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -106,7 +107,7 @@ impl GetFaceSearchInputBuilder {
     /// Consumes the builder and constructs a [`GetFaceSearchInput`](crate::operation::get_face_search::GetFaceSearchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_face_search::GetFaceSearchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_face_search::GetFaceSearchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_face_search::GetFaceSearchInput {
             job_id: self.job_id,
             max_results: self.max_results,

@@ -2,7 +2,7 @@
 pub fn ser_eks_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EksMetadata,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.labels {
         #[allow(unused_mut)]
         let mut object_2 = object.key("labels").start_object();

@@ -55,6 +55,7 @@ pub struct CreateFileCacheLustreConfigurationBuilder {
 }
 impl CreateFileCacheLustreConfigurationBuilder {
     /// <p>Provisions the amount of read and write throughput for each 1 tebibyte (TiB) of cache storage capacity, in MB/s/TiB. The only supported value is <code>1000</code>.</p>
+    /// This field is required.
     pub fn per_unit_storage_throughput(mut self, input: i32) -> Self {
         self.per_unit_storage_throughput = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl CreateFileCacheLustreConfigurationBuilder {
         &self.per_unit_storage_throughput
     }
     /// <p>Specifies the cache deployment type, which must be <code>CACHE_1</code>.</p>
+    /// This field is required.
     pub fn deployment_type(mut self, input: crate::types::FileCacheLustreDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
@@ -106,6 +108,7 @@ impl CreateFileCacheLustreConfigurationBuilder {
         &self.weekly_maintenance_start_time
     }
     /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
+    /// This field is required.
     pub fn metadata_configuration(mut self, input: crate::types::FileCacheLustreMetadataConfiguration) -> Self {
         self.metadata_configuration = ::std::option::Option::Some(input);
         self

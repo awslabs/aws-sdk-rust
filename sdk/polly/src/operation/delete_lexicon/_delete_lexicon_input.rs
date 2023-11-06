@@ -27,6 +27,7 @@ pub struct DeleteLexiconInputBuilder {
 }
 impl DeleteLexiconInputBuilder {
     /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DeleteLexiconInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLexiconInput`](crate::operation::delete_lexicon::DeleteLexiconInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_lexicon::DeleteLexiconInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_lexicon::DeleteLexiconInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_lexicon::DeleteLexiconInput { name: self.name })
     }
 }

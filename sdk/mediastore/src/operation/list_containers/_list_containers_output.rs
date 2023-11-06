@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContainersOutput {
     /// <p>The names of the containers.</p>
-    pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
+    pub containers: ::std::vec::Vec<crate::types::Container>,
     /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListContainersOutput {
     /// <p>The names of the containers.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::Container]> {
-        self.containers.as_deref()
+    pub fn containers(&self) -> &[crate::types::Container] {
+        use std::ops::Deref;
+        self.containers.deref()
     }
     /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListContainersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListContainersOutput`](crate::operation::list_containers::ListContainersOutput).
-    pub fn build(self) -> crate::operation::list_containers::ListContainersOutput {
-        crate::operation::list_containers::ListContainersOutput {
-            containers: self.containers,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`containers`](crate::operation::list_containers::builders::ListContainersOutputBuilder::containers)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_containers::ListContainersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_containers::ListContainersOutput {
+            containers: self.containers.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "containers",
+                    "containers was not specified but it is required when building ListContainersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

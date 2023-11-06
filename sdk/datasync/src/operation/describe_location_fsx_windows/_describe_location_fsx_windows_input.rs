@@ -27,6 +27,7 @@ pub struct DescribeLocationFsxWindowsInputBuilder {
 }
 impl DescribeLocationFsxWindowsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
@@ -45,7 +46,7 @@ impl DescribeLocationFsxWindowsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput {
             location_arn: self.location_arn,

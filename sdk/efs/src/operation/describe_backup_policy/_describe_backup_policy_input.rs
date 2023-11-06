@@ -27,6 +27,7 @@ pub struct DescribeBackupPolicyInputBuilder {
 }
 impl DescribeBackupPolicyInputBuilder {
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +44,7 @@ impl DescribeBackupPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBackupPolicyInput`](crate::operation::describe_backup_policy::DescribeBackupPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_backup_policy::DescribeBackupPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_backup_policy::DescribeBackupPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_backup_policy::DescribeBackupPolicyInput {
             file_system_id: self.file_system_id,

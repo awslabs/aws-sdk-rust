@@ -22,8 +22,10 @@ impl CreateTransitGatewayPeeringInput {
         self.transit_gateway_arn.as_deref()
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct CreateTransitGatewayPeeringInputBuilder {
 }
 impl CreateTransitGatewayPeeringInputBuilder {
     /// <p>The ID of a core network.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateTransitGatewayPeeringInputBuilder {
         &self.core_network_id
     }
     /// <p>The ARN of the transit gateway for the peering request.</p>
+    /// This field is required.
     pub fn transit_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +118,7 @@ impl CreateTransitGatewayPeeringInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringInput {
             core_network_id: self.core_network_id,
