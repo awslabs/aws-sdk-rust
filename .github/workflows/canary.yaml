@@ -75,11 +75,10 @@ jobs:
       - name: Compile the canary runner
         working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: cargo build
-      - uses: aws-actions/configure-aws-credentials@v1-node16
+      - uses: aws-actions/configure-aws-credentials@v4
         name: Acquire credentials for running the canary
         with:
           role-to-assume: ${{ secrets.CANARY_GITHUB_ACTIONS_ROLE_ARN }}
-          role-session-name: GitHubActions
           aws-region: us-west-2
       - name: Run the canary
         working-directory: smithy-rs/tools/ci-cdk/canary-runner
