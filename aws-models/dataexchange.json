@@ -4792,8 +4792,7 @@
                 "ProductId": {
                     "target": "com.amazonaws.dataexchange#__string",
                     "traits": {
-                        "smithy.api#documentation": "<p>The product ID of the origin of the data set.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The product ID of the origin of the data set.</p>"
                     }
                 }
             },
@@ -5718,7 +5717,7 @@
                     }
                 },
                 "Comment": {
-                    "target": "com.amazonaws.dataexchange#__stringMin0Max16384",
+                    "target": "com.amazonaws.dataexchange#__stringMin0Max4096",
                     "traits": {
                         "smithy.api#documentation": "<p>Free-form\n         text field for providers to add information about their notifications.</p>"
                     }
@@ -6631,6 +6630,15 @@
                 "smithy.api#length": {
                     "min": 0,
                     "max": 16384
+                }
+            }
+        },
+        "com.amazonaws.dataexchange#__stringMin0Max4096": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 4096
                 }
             }
         },
