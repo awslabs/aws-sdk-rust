@@ -58,8 +58,17 @@ pub fn ser_update_security_profile_input(
     if let Some(var_19) = &input.delete_behaviors {
         object.key("deleteBehaviors").boolean(*var_19);
     }
-    if let Some(var_20) = &input.security_profile_description {
-        object.key("securityProfileDescription").string(var_20.as_str());
+    if let Some(var_20) = &input.delete_metrics_export_config {
+        object.key("deleteMetricsExportConfig").boolean(*var_20);
+    }
+    if let Some(var_21) = &input.metrics_export_config {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("metricsExportConfig").start_object();
+        crate::protocol_serde::shape_metrics_export_config::ser_metrics_export_config(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.security_profile_description {
+        object.key("securityProfileDescription").string(var_23.as_str());
     }
     Ok(())
 }

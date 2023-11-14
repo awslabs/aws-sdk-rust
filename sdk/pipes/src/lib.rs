@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.57.1"
-//! aws-sdk-pipes = "0.13.0"
+//! aws-sdk-pipes = "0.13.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

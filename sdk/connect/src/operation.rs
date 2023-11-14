@@ -37,6 +37,12 @@ pub mod associate_security_key;
 /// Types for the `AssociateTrafficDistributionGroupUser` operation.
 pub mod associate_traffic_distribution_group_user;
 
+/// Types for the `BatchGetFlowAssociation` operation.
+pub mod batch_get_flow_association;
+
+/// Types for the `BatchPutContact` operation.
+pub mod batch_put_contact;
+
 /// Types for the `ClaimPhoneNumber` operation.
 pub mod claim_phone_number;
 
@@ -63,6 +69,9 @@ pub mod create_integration_association;
 
 /// Types for the `CreateParticipant` operation.
 pub mod create_participant;
+
+/// Types for the `CreatePersistentContactAssociation` operation.
+pub mod create_persistent_contact_association;
 
 /// Types for the `CreatePrompt` operation.
 pub mod create_prompt;

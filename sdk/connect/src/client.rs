@@ -156,6 +156,10 @@ mod associate_security_key;
 
 mod associate_traffic_distribution_group_user;
 
+mod batch_get_flow_association;
+
+mod batch_put_contact;
+
 mod claim_phone_number;
 
 mod create_agent_status;
@@ -173,6 +177,8 @@ mod create_instance;
 mod create_integration_association;
 
 mod create_participant;
+
+mod create_persistent_contact_association;
 
 mod create_prompt;
 

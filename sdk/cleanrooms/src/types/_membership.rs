@@ -22,14 +22,16 @@ pub struct Membership {
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the membership metadata was last updated.</p>
     pub update_time: ::aws_smithy_types::DateTime,
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     pub status: crate::types::MembershipStatus,
     /// <p>The abilities granted to the collaboration member.</p>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub query_log_status: crate::types::MembershipQueryLogStatus,
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    pub payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
 impl Membership {
     /// <p>The unique ID of the membership.</p>
@@ -75,7 +77,7 @@ impl Membership {
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     pub fn status(&self) -> &crate::types::MembershipStatus {
         &self.status
     }
@@ -84,13 +86,17 @@ impl Membership {
         use std::ops::Deref;
         self.member_abilities.deref()
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn query_log_status(&self) -> &crate::types::MembershipQueryLogStatus {
         &self.query_log_status
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn default_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedQueryResultConfiguration> {
         self.default_result_configuration.as_ref()
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::MembershipPaymentConfiguration> {
+        self.payment_configuration.as_ref()
     }
 }
 impl Membership {
@@ -117,6 +123,7 @@ pub struct MembershipBuilder {
     pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
     pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
 impl MembershipBuilder {
     /// <p>The unique ID of the membership.</p>
@@ -254,18 +261,18 @@ impl MembershipBuilder {
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::MembershipStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MembershipStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MembershipStatus> {
         &self.status
     }
@@ -289,18 +296,18 @@ impl MembershipBuilder {
     pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     /// This field is required.
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.query_log_status = input;
         self
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         &self.query_log_status
     }
@@ -320,6 +327,21 @@ impl MembershipBuilder {
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
         &self.default_result_configuration
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    /// This field is required.
+    pub fn payment_configuration(mut self, input: crate::types::MembershipPaymentConfiguration) -> Self {
+        self.payment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::MembershipPaymentConfiguration>) -> Self {
+        self.payment_configuration = input;
+        self
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::MembershipPaymentConfiguration> {
+        &self.payment_configuration
     }
     /// Consumes the builder and constructs a [`Membership`](crate::types::Membership).
     /// This method will fail if any of the following fields are not set:
@@ -410,6 +432,7 @@ impl MembershipBuilder {
                 )
             })?,
             default_result_configuration: self.default_result_configuration,
+            payment_configuration: self.payment_configuration,
         })
     }
 }

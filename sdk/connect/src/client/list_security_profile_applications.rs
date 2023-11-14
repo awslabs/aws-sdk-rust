@@ -11,6 +11,8 @@ impl super::Client {
     /// - On success, responds with [`ListSecurityProfileApplicationsOutput`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput) with field(s):
     ///   - [`applications(Option<Vec::<Application>>)`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput::applications): <p>This API is in preview release for Amazon Connect and is subject to change.</p>  <p>A list of the third-party application's metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput::last_modified_time): <p>The timestamp when this resource was last modified.</p>
+    ///   - [`last_modified_region(Option<String>)`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput::last_modified_region): <p>The Amazon Web Services Region where this resource was last modified.</p>
     /// - On failure, responds with [`SdkError<ListSecurityProfileApplicationsError>`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsError)
     pub fn list_security_profile_applications(
         &self,

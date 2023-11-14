@@ -170,6 +170,10 @@ pub(crate) fn de_update_security_profile(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "metricsExportConfig" => {
+                    builder =
+                        builder.set_metrics_export_config(crate::protocol_serde::shape_metrics_export_config::de_metrics_export_config(tokens)?);
+                }
                 "securityProfileArn" => {
                     builder = builder.set_security_profile_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

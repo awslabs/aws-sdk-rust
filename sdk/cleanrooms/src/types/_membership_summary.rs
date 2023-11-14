@@ -22,10 +22,12 @@ pub struct MembershipSummary {
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the membership metadata was last updated.</p>
     pub update_time: ::aws_smithy_types::DateTime,
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     pub status: crate::types::MembershipStatus,
     /// <p>The abilities granted to the collaboration member.</p>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    pub payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
 impl MembershipSummary {
     /// <p>The unique ID for the membership's collaboration.</p>
@@ -71,7 +73,7 @@ impl MembershipSummary {
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     pub fn status(&self) -> &crate::types::MembershipStatus {
         &self.status
     }
@@ -79,6 +81,10 @@ impl MembershipSummary {
     pub fn member_abilities(&self) -> &[crate::types::MemberAbility] {
         use std::ops::Deref;
         self.member_abilities.deref()
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::MembershipPaymentConfiguration> {
+        self.payment_configuration.as_ref()
     }
 }
 impl MembershipSummary {
@@ -103,6 +109,7 @@ pub struct MembershipSummaryBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::MembershipStatus>,
     pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
 impl MembershipSummaryBuilder {
     /// <p>The unique ID for the membership's collaboration.</p>
@@ -240,18 +247,18 @@ impl MembershipSummaryBuilder {
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::MembershipStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MembershipStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    /// <p>The status of the membership.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MembershipStatus> {
         &self.status
     }
@@ -274,6 +281,21 @@ impl MembershipSummaryBuilder {
     /// <p>The abilities granted to the collaboration member.</p>
     pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    /// This field is required.
+    pub fn payment_configuration(mut self, input: crate::types::MembershipPaymentConfiguration) -> Self {
+        self.payment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::MembershipPaymentConfiguration>) -> Self {
+        self.payment_configuration = input;
+        self
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::MembershipPaymentConfiguration> {
+        &self.payment_configuration
     }
     /// Consumes the builder and constructs a [`MembershipSummary`](crate::types::MembershipSummary).
     /// This method will fail if any of the following fields are not set:
@@ -356,6 +378,7 @@ impl MembershipSummaryBuilder {
                     "member_abilities was not specified but it is required when building MembershipSummary",
                 )
             })?,
+            payment_configuration: self.payment_configuration,
         })
     }
 }

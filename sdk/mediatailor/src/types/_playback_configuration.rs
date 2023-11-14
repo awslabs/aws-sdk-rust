@@ -29,7 +29,7 @@ pub struct PlaybackConfiguration {
     /// <p>The identifier for the playback configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
-    pub personalization_threshold_seconds: i32,
+    pub personalization_threshold_seconds: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
     pub playback_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.</p>
@@ -95,7 +95,7 @@ impl PlaybackConfiguration {
         self.name.as_deref()
     }
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
-    pub fn personalization_threshold_seconds(&self) -> i32 {
+    pub fn personalization_threshold_seconds(&self) -> ::std::option::Option<i32> {
         self.personalization_threshold_seconds
     }
     /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
@@ -466,7 +466,7 @@ impl PlaybackConfigurationBuilder {
             log_configuration: self.log_configuration,
             manifest_processing_rules: self.manifest_processing_rules,
             name: self.name,
-            personalization_threshold_seconds: self.personalization_threshold_seconds.unwrap_or_default(),
+            personalization_threshold_seconds: self.personalization_threshold_seconds,
             playback_configuration_arn: self.playback_configuration_arn,
             playback_endpoint_prefix: self.playback_endpoint_prefix,
             session_initialization_endpoint_prefix: self.session_initialization_endpoint_prefix,

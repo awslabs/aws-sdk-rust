@@ -12,6 +12,10 @@ pub struct AgentStatusSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the agent status.</p>
     pub r#type: ::std::option::Option<crate::types::AgentStatusType>,
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl AgentStatusSummary {
     /// <p>The identifier for an agent status.</p>
@@ -30,6 +34,14 @@ impl AgentStatusSummary {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AgentStatusType> {
         self.r#type.as_ref()
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
 }
 impl AgentStatusSummary {
     /// Creates a new builder-style object to manufacture [`AgentStatusSummary`](crate::types::AgentStatusSummary).
@@ -46,6 +58,8 @@ pub struct AgentStatusSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::AgentStatusType>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl AgentStatusSummaryBuilder {
     /// <p>The identifier for an agent status.</p>
@@ -104,6 +118,34 @@ impl AgentStatusSummaryBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AgentStatusType> {
         &self.r#type
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Consumes the builder and constructs a [`AgentStatusSummary`](crate::types::AgentStatusSummary).
     pub fn build(self) -> crate::types::AgentStatusSummary {
         crate::types::AgentStatusSummary {
@@ -111,6 +153,8 @@ impl AgentStatusSummaryBuilder {
             arn: self.arn,
             name: self.name,
             r#type: self.r#type,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
         }
     }
 }

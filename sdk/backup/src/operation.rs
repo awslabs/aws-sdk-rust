@@ -121,6 +121,9 @@ pub mod get_recovery_point_restore_metadata;
 /// Types for the `GetSupportedResourceTypes` operation.
 pub mod get_supported_resource_types;
 
+/// Types for the `ListBackupJobSummaries` operation.
+pub mod list_backup_job_summaries;
+
 /// Types for the `ListBackupJobs` operation.
 pub mod list_backup_jobs;
 
@@ -138,6 +141,9 @@ pub mod list_backup_selections;
 
 /// Types for the `ListBackupVaults` operation.
 pub mod list_backup_vaults;
+
+/// Types for the `ListCopyJobSummaries` operation.
+pub mod list_copy_job_summaries;
 
 /// Types for the `ListCopyJobs` operation.
 pub mod list_copy_jobs;
@@ -168,6 +174,9 @@ pub mod list_report_jobs;
 
 /// Types for the `ListReportPlans` operation.
 pub mod list_report_plans;
+
+/// Types for the `ListRestoreJobSummaries` operation.
+pub mod list_restore_job_summaries;
 
 /// Types for the `ListRestoreJobs` operation.
 pub mod list_restore_jobs;

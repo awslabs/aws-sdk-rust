@@ -122,17 +122,17 @@ impl UpdateMembershipFluentBuilder {
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_membership_identifier()
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.inner = self.inner.query_log_status(input);
         self
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.inner = self.inner.set_query_log_status(input);
         self
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         self.inner.get_query_log_status()
     }

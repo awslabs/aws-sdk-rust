@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
-aws-sdk-iot= { version = "0.35.0", path = "../../../sdk/iot" }
+aws-sdk-iot= { version = "0.35.1", path = "../../../sdk/iot" }
 aws-types= { version = "0.57.1", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]

@@ -22,7 +22,7 @@ impl UpdatePipeInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePipe`.
 ///
-/// <p>Update an existing pipe. When you call <code>UpdatePipe</code>, only the fields that are included in the request are changed, the rest are unchanged. The exception to this is if you modify any Amazon Web Services-service specific fields in the <code>SourceParameters</code>, <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. The fields in these objects are updated atomically as one and override existing values. This is by design and means that if you don't specify an optional field in one of these Parameters objects, that field will be set to its system-default value after the update.</p>
+/// <p>Update an existing pipe. When you call <code>UpdatePipe</code>, EventBridge only the updates fields you have specified in the request; the rest remain unchanged. The exception to this is if you modify any Amazon Web Services-service specific fields in the <code>SourceParameters</code>, <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. For example, <code>DynamoDBStreamParameters</code> or <code>EventBridgeEventBusParameters</code>. EventBridge updates the fields in these objects atomically as one and overrides existing values. This is by design, and means that if you don't specify an optional field in one of these <code>Parameters</code> objects, EventBridge sets that field to its system-default value during the update.</p>
 /// <p>For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html"> Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePipeFluentBuilder {
@@ -208,16 +208,19 @@ impl UpdatePipeFluentBuilder {
         self.inner.get_target()
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn target_parameters(mut self, input: crate::types::PipeTargetParameters) -> Self {
         self.inner = self.inner.target_parameters(input);
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_target_parameters(mut self, input: ::std::option::Option<crate::types::PipeTargetParameters>) -> Self {
         self.inner = self.inner.set_target_parameters(input);
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_target_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetParameters> {
         self.inner.get_target_parameters()
     }
@@ -234,5 +237,19 @@ impl UpdatePipeFluentBuilder {
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn log_configuration(mut self, input: crate::types::PipeLogConfigurationParameters) -> Self {
+        self.inner = self.inner.log_configuration(input);
+        self
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::PipeLogConfigurationParameters>) -> Self {
+        self.inner = self.inner.set_log_configuration(input);
+        self
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::PipeLogConfigurationParameters> {
+        self.inner.get_log_configuration()
     }
 }

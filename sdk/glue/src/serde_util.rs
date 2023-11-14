@@ -494,6 +494,36 @@ pub(crate) fn code_gen_node_arg_correct_errors(
     builder
 }
 
+pub(crate) fn connector_data_source_correct_errors(
+    mut builder: crate::types::builders::ConnectorDataSourceBuilder,
+) -> crate::types::builders::ConnectorDataSourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.connection_type.is_none() {
+        builder.connection_type = Some(Default::default())
+    }
+    if builder.data.is_none() {
+        builder.data = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn connector_data_target_correct_errors(
+    mut builder: crate::types::builders::ConnectorDataTargetBuilder,
+) -> crate::types::builders::ConnectorDataTargetBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.connection_type.is_none() {
+        builder.connection_type = Some(Default::default())
+    }
+    if builder.data.is_none() {
+        builder.data = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn custom_code_correct_errors(mut builder: crate::types::builders::CustomCodeBuilder) -> crate::types::builders::CustomCodeBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())

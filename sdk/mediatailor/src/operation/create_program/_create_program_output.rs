@@ -24,7 +24,7 @@ pub struct CreateProgramOutput {
     /// <p>The clip range configuration settings.</p>
     pub clip_range: ::std::option::Option<crate::types::ClipRange>,
     /// <p>The duration of the live program in milliseconds.</p>
-    pub duration_millis: i64,
+    pub duration_millis: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl CreateProgramOutput {
@@ -71,7 +71,7 @@ impl CreateProgramOutput {
         self.clip_range.as_ref()
     }
     /// <p>The duration of the live program in milliseconds.</p>
-    pub fn duration_millis(&self) -> i64 {
+    pub fn duration_millis(&self) -> ::std::option::Option<i64> {
         self.duration_millis
     }
 }
@@ -287,7 +287,7 @@ impl CreateProgramOutputBuilder {
             source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,
             clip_range: self.clip_range,
-            duration_millis: self.duration_millis.unwrap_or_default(),
+            duration_millis: self.duration_millis,
             _request_id: self._request_id,
         }
     }

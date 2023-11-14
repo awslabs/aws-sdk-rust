@@ -11,6 +11,8 @@ impl super::Client {
     /// - On success, responds with [`ListRoutingProfileQueuesOutput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`routing_profile_queue_config_summary_list(Option<Vec::<RoutingProfileQueueConfigSummary>>)`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput::routing_profile_queue_config_summary_list): <p>Information about the routing profiles.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput::last_modified_time): <p>The timestamp when this resource was last modified.</p>
+    ///   - [`last_modified_region(Option<String>)`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput::last_modified_region): <p>The Amazon Web Services Region where this resource was last modified.</p>
     /// - On failure, responds with [`SdkError<ListRoutingProfileQueuesError>`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesError)
     pub fn list_routing_profile_queues(&self) -> crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder {
         crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesFluentBuilder::new(self.handle.clone())

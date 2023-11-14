@@ -203,6 +203,8 @@ pub use crate::types::_evaluation_answer_data::EvaluationAnswerData;
 
 pub use crate::types::_agent_status_state::AgentStatusState;
 
+pub use crate::types::_disconnect_reason::DisconnectReason;
+
 pub use crate::types::_traffic_type::TrafficType;
 
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfig;
@@ -212,6 +214,8 @@ pub use crate::types::_chat_streaming_configuration::ChatStreamingConfiguration;
 pub use crate::types::_voice_recording_configuration::VoiceRecordingConfiguration;
 
 pub use crate::types::_voice_recording_track::VoiceRecordingTrack;
+
+pub use crate::types::_segment_attribute_value::SegmentAttributeValue;
 
 pub use crate::types::_persistent_chat::PersistentChat;
 
@@ -549,6 +553,24 @@ pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
 
 pub use crate::types::_participant_role::ParticipantRole;
 
+pub use crate::types::_failed_request::FailedRequest;
+
+pub use crate::types::_failure_reason_code::FailureReasonCode;
+
+pub use crate::types::_successful_request::SuccessfulRequest;
+
+pub use crate::types::_contact_data_request::ContactDataRequest;
+
+pub use crate::types::_campaign::Campaign;
+
+pub use crate::types::_endpoint::Endpoint;
+
+pub use crate::types::_endpoint_type::EndpointType;
+
+pub use crate::types::_flow_association_summary::FlowAssociationSummary;
+
+pub use crate::types::_list_flow_association_resource_type::ListFlowAssociationResourceType;
+
 mod _action_summary;
 
 mod _action_type;
@@ -585,6 +607,8 @@ mod _available_number_summary;
 
 mod _behavior_type;
 
+mod _campaign;
+
 mod _channel;
 
 mod _chat_message;
@@ -598,6 +622,8 @@ mod _claimed_phone_number_summary;
 mod _comparison;
 
 mod _contact;
+
+mod _contact_data_request;
 
 mod _contact_filter;
 
@@ -645,6 +671,8 @@ mod _dimensions;
 
 mod _directory_type;
 
+mod _disconnect_reason;
+
 mod _distribution;
 
 mod _email_reference;
@@ -652,6 +680,10 @@ mod _email_reference;
 mod _encryption_config;
 
 mod _encryption_type;
+
+mod _endpoint;
+
+mod _endpoint_type;
 
 mod _evaluation;
 
@@ -717,9 +749,15 @@ mod _event_bridge_action_definition;
 
 mod _event_source_name;
 
+mod _failed_request;
+
+mod _failure_reason_code;
+
 mod _filter_v2;
 
 mod _filters;
+
+mod _flow_association_summary;
 
 mod _grouping;
 
@@ -804,6 +842,8 @@ mod _lex_bot_config;
 mod _lex_v2_bot;
 
 mod _lex_version;
+
+mod _list_flow_association_resource_type;
 
 mod _list_phone_numbers_summary;
 
@@ -971,6 +1011,8 @@ mod _security_profile_summary;
 
 mod _security_profiles_search_filter;
 
+mod _segment_attribute_value;
+
 mod _send_notification_action_definition;
 
 mod _sign_in_config;
@@ -994,6 +1036,8 @@ mod _string_comparison_type;
 mod _string_condition;
 
 mod _string_reference;
+
+mod _successful_request;
 
 mod _tag_condition;
 

@@ -32,6 +32,15 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn org_configuration_correct_errors(
+    mut builder: crate::types::builders::OrgConfigurationBuilder,
+) -> crate::types::builders::OrgConfigurationBuilder {
+    if builder.aws_service_access_status.is_none() {
+        builder.aws_service_access_status = "no value was set".parse::<crate::types::AwsServiceAccessStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn batch_get_view_error_correct_errors(
     mut builder: crate::types::builders::BatchGetViewErrorBuilder,
 ) -> crate::types::builders::BatchGetViewErrorBuilder {

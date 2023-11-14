@@ -47,6 +47,8 @@ pub(crate) mod shape_batch_get_jobs;
 
 pub(crate) mod shape_batch_get_partition;
 
+pub(crate) mod shape_batch_get_table_optimizer;
+
 pub(crate) mod shape_batch_get_triggers;
 
 pub(crate) mod shape_batch_get_workflows;
@@ -101,6 +103,8 @@ pub(crate) mod shape_create_session;
 
 pub(crate) mod shape_create_table;
 
+pub(crate) mod shape_create_table_optimizer;
+
 pub(crate) mod shape_create_trigger;
 
 pub(crate) mod shape_create_user_defined_function;
@@ -148,6 +152,8 @@ pub(crate) mod shape_delete_security_configuration;
 pub(crate) mod shape_delete_session;
 
 pub(crate) mod shape_delete_table;
+
+pub(crate) mod shape_delete_table_optimizer;
 
 pub(crate) mod shape_delete_table_version;
 
@@ -257,6 +263,8 @@ pub(crate) mod shape_get_statement;
 
 pub(crate) mod shape_get_table;
 
+pub(crate) mod shape_get_table_optimizer;
+
 pub(crate) mod shape_get_table_version;
 
 pub(crate) mod shape_get_table_versions;
@@ -320,6 +328,8 @@ pub(crate) mod shape_list_schemas;
 pub(crate) mod shape_list_sessions;
 
 pub(crate) mod shape_list_statements;
+
+pub(crate) mod shape_list_table_optimizer_runs;
 
 pub(crate) mod shape_list_triggers;
 
@@ -421,6 +431,8 @@ pub(crate) mod shape_update_source_control_from_job;
 
 pub(crate) mod shape_update_table;
 
+pub(crate) mod shape_update_table_optimizer;
+
 pub(crate) mod shape_update_trigger;
 
 pub(crate) mod shape_update_user_defined_function;
@@ -462,6 +474,8 @@ pub(crate) mod shape_batch_get_dev_endpoints_input;
 pub(crate) mod shape_batch_get_jobs_input;
 
 pub(crate) mod shape_batch_get_partition_input;
+
+pub(crate) mod shape_batch_get_table_optimizer_input;
 
 pub(crate) mod shape_batch_get_triggers_input;
 
@@ -531,6 +545,8 @@ pub(crate) mod shape_create_session_input;
 
 pub(crate) mod shape_create_table_input;
 
+pub(crate) mod shape_create_table_optimizer_input;
+
 pub(crate) mod shape_create_trigger_input;
 
 pub(crate) mod shape_create_user_defined_function_input;
@@ -578,6 +594,8 @@ pub(crate) mod shape_delete_security_configuration_input;
 pub(crate) mod shape_delete_session_input;
 
 pub(crate) mod shape_delete_table_input;
+
+pub(crate) mod shape_delete_table_optimizer_input;
 
 pub(crate) mod shape_delete_table_version_input;
 
@@ -695,6 +713,8 @@ pub(crate) mod shape_get_statement_input;
 
 pub(crate) mod shape_get_table_input;
 
+pub(crate) mod shape_get_table_optimizer_input;
+
 pub(crate) mod shape_get_table_version_input;
 
 pub(crate) mod shape_get_table_versions_input;
@@ -774,6 +794,8 @@ pub(crate) mod shape_list_schemas_input;
 pub(crate) mod shape_list_sessions_input;
 
 pub(crate) mod shape_list_statements_input;
+
+pub(crate) mod shape_list_table_optimizer_runs_input;
 
 pub(crate) mod shape_list_triggers_input;
 
@@ -893,6 +915,8 @@ pub(crate) mod shape_update_source_control_from_job_input;
 
 pub(crate) mod shape_update_table_input;
 
+pub(crate) mod shape_update_table_optimizer_input;
+
 pub(crate) mod shape_update_trigger_input;
 
 pub(crate) mod shape_update_user_defined_function_input;
@@ -909,9 +933,15 @@ pub(crate) mod shape_audit_context;
 
 pub(crate) mod shape_batch_get_partition_value_list;
 
+pub(crate) mod shape_batch_get_table_optimizer_entry;
+
+pub(crate) mod shape_batch_get_table_optimizer_errors;
+
 pub(crate) mod shape_batch_stop_job_run_error_list;
 
 pub(crate) mod shape_batch_stop_job_run_successful_submission_list;
+
+pub(crate) mod shape_batch_table_optimizers;
 
 pub(crate) mod shape_batch_update_partition_failure_list;
 
@@ -1171,6 +1201,12 @@ pub(crate) mod shape_table_input;
 
 pub(crate) mod shape_table_list;
 
+pub(crate) mod shape_table_optimizer;
+
+pub(crate) mod shape_table_optimizer_configuration;
+
+pub(crate) mod shape_table_optimizer_runs;
+
 pub(crate) mod shape_table_version;
 
 pub(crate) mod shape_table_version_errors;
@@ -1249,9 +1285,13 @@ pub(crate) mod shape_athena_connector_source;
 
 pub(crate) mod shape_basic_catalog_target;
 
+pub(crate) mod shape_batch_get_table_optimizer_error;
+
 pub(crate) mod shape_batch_stop_job_run_error;
 
 pub(crate) mod shape_batch_stop_job_run_successful_submission;
+
+pub(crate) mod shape_batch_table_optimizer;
 
 pub(crate) mod shape_batch_update_partition_failure_entry;
 
@@ -1294,6 +1334,10 @@ pub(crate) mod shape_condition;
 pub(crate) mod shape_connection_password_encryption;
 
 pub(crate) mod shape_connection_properties;
+
+pub(crate) mod shape_connector_data_source;
+
+pub(crate) mod shape_connector_data_target;
 
 pub(crate) mod shape_crawler_history;
 
@@ -1535,6 +1579,8 @@ pub(crate) mod shape_table_error;
 
 pub(crate) mod shape_table_identifier;
 
+pub(crate) mod shape_table_optimizer_run;
+
 pub(crate) mod shape_table_version_error;
 
 pub(crate) mod shape_task_run;
@@ -1651,6 +1697,8 @@ pub(crate) mod shape_predecessor;
 
 pub(crate) mod shape_recipe_reference;
 
+pub(crate) mod shape_run_metrics;
+
 pub(crate) mod shape_s3_direct_source_additional_options;
 
 pub(crate) mod shape_s3_encryption_list;
@@ -1718,6 +1766,8 @@ pub(crate) mod shape_aggregate_operations;
 pub(crate) mod shape_backfill_errored_partitions_list;
 
 pub(crate) mod shape_catalog_tables_list;
+
+pub(crate) mod shape_connector_options;
 
 pub(crate) mod shape_crawler_node_details;
 

@@ -83,6 +83,10 @@ where
                                 crate::protocol_serde::shape_monitoring_execution_summary::de_monitoring_execution_summary(tokens)?,
                             );
                         }
+                        "BatchTransformInput" => {
+                            builder = builder
+                                .set_batch_transform_input(crate::protocol_serde::shape_batch_transform_input::de_batch_transform_input(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

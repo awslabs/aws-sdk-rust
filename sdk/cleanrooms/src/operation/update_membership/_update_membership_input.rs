@@ -5,7 +5,7 @@
 pub struct UpdateMembershipInput {
     /// <p>The unique identifier of the membership.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
@@ -15,7 +15,7 @@ impl UpdateMembershipInput {
     pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
         self.membership_identifier.as_deref()
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
     }
@@ -55,17 +55,17 @@ impl UpdateMembershipInputBuilder {
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_identifier
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.query_log_status = input;
         self
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         &self.query_log_status
     }

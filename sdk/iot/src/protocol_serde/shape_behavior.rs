@@ -24,6 +24,9 @@ pub fn ser_behavior(
     if let Some(var_6) = &input.suppress_alerts {
         object.key("suppressAlerts").boolean(*var_6);
     }
+    if let Some(var_7) = &input.export_metric {
+        object.key("exportMetric").boolean(*var_7);
+    }
     Ok(())
 }
 
@@ -64,6 +67,9 @@ where
                         }
                         "suppressAlerts" => {
                             builder = builder.set_suppress_alerts(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "exportMetric" => {
+                            builder = builder.set_export_metric(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -21,6 +21,8 @@ pub use crate::types::_stream_file::StreamFileBuilder;
 
 pub use crate::types::_s3_location::S3LocationBuilder;
 
+pub use crate::types::_metrics_export_config::MetricsExportConfigBuilder;
+
 pub use crate::types::_metric_to_retain::MetricToRetainBuilder;
 
 pub use crate::types::_alert_target::AlertTargetBuilder;

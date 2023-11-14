@@ -42,6 +42,9 @@ pub struct ListBackupJobsInput {
     pub by_complete_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     pub by_parent_job_id: ::std::option::Option<::std::string::String>,
+    /// <p>This returns a list of backup jobs for the specified message category.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    pub by_message_category: ::std::option::Option<::std::string::String>,
 }
 impl ListBackupJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -107,6 +110,11 @@ impl ListBackupJobsInput {
     pub fn by_parent_job_id(&self) -> ::std::option::Option<&str> {
         self.by_parent_job_id.as_deref()
     }
+    /// <p>This returns a list of backup jobs for the specified message category.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    pub fn by_message_category(&self) -> ::std::option::Option<&str> {
+        self.by_message_category.as_deref()
+    }
 }
 impl ListBackupJobsInput {
     /// Creates a new builder-style object to manufacture [`ListBackupJobsInput`](crate::operation::list_backup_jobs::ListBackupJobsInput).
@@ -131,6 +139,7 @@ pub struct ListBackupJobsInputBuilder {
     pub(crate) by_complete_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) by_complete_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) by_parent_job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) by_message_category: ::std::option::Option<::std::string::String>,
 }
 impl ListBackupJobsInputBuilder {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -346,6 +355,23 @@ impl ListBackupJobsInputBuilder {
     pub fn get_by_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_parent_job_id
     }
+    /// <p>This returns a list of backup jobs for the specified message category.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    pub fn by_message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.by_message_category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This returns a list of backup jobs for the specified message category.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    pub fn set_by_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.by_message_category = input;
+        self
+    }
+    /// <p>This returns a list of backup jobs for the specified message category.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    pub fn get_by_message_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.by_message_category
+    }
     /// Consumes the builder and constructs a [`ListBackupJobsInput`](crate::operation::list_backup_jobs::ListBackupJobsInput).
     pub fn build(
         self,
@@ -363,6 +389,7 @@ impl ListBackupJobsInputBuilder {
             by_complete_after: self.by_complete_after,
             by_complete_before: self.by_complete_before,
             by_parent_job_id: self.by_parent_job_id,
+            by_message_category: self.by_message_category,
         })
     }
 }

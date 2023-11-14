@@ -213,9 +213,13 @@ pub(crate) mod shape_member_summary_list;
 
 pub(crate) mod shape_membership;
 
+pub(crate) mod shape_membership_payment_configuration;
+
 pub(crate) mod shape_membership_protected_query_result_configuration;
 
 pub(crate) mod shape_membership_summary_list;
+
+pub(crate) mod shape_payment_configuration;
 
 pub(crate) mod shape_protected_query;
 
@@ -275,6 +279,8 @@ pub(crate) mod shape_member_summary;
 
 pub(crate) mod shape_membership_protected_query_output_configuration;
 
+pub(crate) mod shape_membership_query_compute_payment_config;
+
 pub(crate) mod shape_membership_summary;
 
 pub(crate) mod shape_protected_query_error;
@@ -286,6 +292,8 @@ pub(crate) mod shape_protected_query_result;
 pub(crate) mod shape_protected_query_statistics;
 
 pub(crate) mod shape_protected_query_summary;
+
+pub(crate) mod shape_query_compute_payment_config;
 
 pub(crate) mod shape_schema_summary;
 

@@ -16,6 +16,8 @@ pub struct Behavior {
     pub criteria: ::std::option::Option<crate::types::BehaviorCriteria>,
     /// <p> Suppresses alerts. </p>
     pub suppress_alerts: ::std::option::Option<bool>,
+    /// <p>Value indicates exporting metrics related to the behavior when it is true.</p>
+    pub export_metric: ::std::option::Option<bool>,
 }
 impl Behavior {
     /// <p>The name you've given to the behavior.</p>
@@ -41,6 +43,10 @@ impl Behavior {
     pub fn suppress_alerts(&self) -> ::std::option::Option<bool> {
         self.suppress_alerts
     }
+    /// <p>Value indicates exporting metrics related to the behavior when it is true.</p>
+    pub fn export_metric(&self) -> ::std::option::Option<bool> {
+        self.export_metric
+    }
 }
 impl Behavior {
     /// Creates a new builder-style object to manufacture [`Behavior`](crate::types::Behavior).
@@ -58,6 +64,7 @@ pub struct BehaviorBuilder {
     pub(crate) metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
     pub(crate) criteria: ::std::option::Option<crate::types::BehaviorCriteria>,
     pub(crate) suppress_alerts: ::std::option::Option<bool>,
+    pub(crate) export_metric: ::std::option::Option<bool>,
 }
 impl BehaviorBuilder {
     /// <p>The name you've given to the behavior.</p>
@@ -137,6 +144,20 @@ impl BehaviorBuilder {
     pub fn get_suppress_alerts(&self) -> &::std::option::Option<bool> {
         &self.suppress_alerts
     }
+    /// <p>Value indicates exporting metrics related to the behavior when it is true.</p>
+    pub fn export_metric(mut self, input: bool) -> Self {
+        self.export_metric = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Value indicates exporting metrics related to the behavior when it is true.</p>
+    pub fn set_export_metric(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.export_metric = input;
+        self
+    }
+    /// <p>Value indicates exporting metrics related to the behavior when it is true.</p>
+    pub fn get_export_metric(&self) -> &::std::option::Option<bool> {
+        &self.export_metric
+    }
     /// Consumes the builder and constructs a [`Behavior`](crate::types::Behavior).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::BehaviorBuilder::name)
@@ -152,6 +173,7 @@ impl BehaviorBuilder {
             metric_dimension: self.metric_dimension,
             criteria: self.criteria,
             suppress_alerts: self.suppress_alerts,
+            export_metric: self.export_metric,
         })
     }
 }

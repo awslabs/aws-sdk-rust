@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.57.1"
-//! aws-sdk-resourceexplorer2 = "0.13.0"
+//! aws-sdk-resourceexplorer2 = "0.13.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,13 +152,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListSupportedResourceTypes`](crate::operation::list_supported_resource_types) operation has
-/// a [`Client::list_supported_resource_types`], function which returns a builder for that operation.
+/// For example, the [`ListIndexesForMembers`](crate::operation::list_indexes_for_members) operation has
+/// a [`Client::list_indexes_for_members`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_supported_resource_types()
+/// let result = client.list_indexes_for_members()
 ///     .next_token("example")
 ///     .send()
 ///     .await;

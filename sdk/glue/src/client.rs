@@ -156,6 +156,8 @@ mod batch_get_jobs;
 
 mod batch_get_partition;
 
+mod batch_get_table_optimizer;
+
 mod batch_get_triggers;
 
 mod batch_get_workflows;
@@ -209,6 +211,8 @@ mod create_security_configuration;
 mod create_session;
 
 mod create_table;
+
+mod create_table_optimizer;
 
 mod create_trigger;
 
@@ -284,6 +288,8 @@ mod delete_security_configuration;
 mod delete_session;
 
 mod delete_table;
+
+mod delete_table_optimizer;
 
 mod delete_table_version;
 
@@ -393,6 +399,8 @@ mod get_statement;
 
 mod get_table;
 
+mod get_table_optimizer;
+
 mod get_table_version;
 
 mod get_table_versions;
@@ -456,6 +464,8 @@ mod list_schemas;
 mod list_sessions;
 
 mod list_statements;
+
+mod list_table_optimizer_runs;
 
 mod list_triggers;
 
@@ -556,6 +566,8 @@ mod update_schema;
 mod update_source_control_from_job;
 
 mod update_table;
+
+mod update_table_optimizer;
 
 mod update_trigger;
 

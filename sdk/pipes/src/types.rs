@@ -7,6 +7,20 @@ pub use crate::types::_requested_pipe_state::RequestedPipeState;
 
 pub use crate::types::_pipe::Pipe;
 
+pub use crate::types::_pipe_log_configuration_parameters::PipeLogConfigurationParameters;
+
+pub use crate::types::_include_execution_data_option::IncludeExecutionDataOption;
+
+pub use crate::types::_log_level::LogLevel;
+
+pub use crate::types::_cloudwatch_logs_log_destination_parameters::CloudwatchLogsLogDestinationParameters;
+
+pub use crate::types::_firehose_log_destination_parameters::FirehoseLogDestinationParameters;
+
+pub use crate::types::_s3_log_destination_parameters::S3LogDestinationParameters;
+
+pub use crate::types::_s3_output_format::S3OutputFormat;
+
 pub use crate::types::_pipe_target_parameters::PipeTargetParameters;
 
 pub use crate::types::_pipe_target_cloud_watch_logs_parameters::PipeTargetCloudWatchLogsParameters;
@@ -153,6 +167,14 @@ pub use crate::types::_update_pipe_source_dynamo_db_stream_parameters::UpdatePip
 
 pub use crate::types::_update_pipe_source_kinesis_stream_parameters::UpdatePipeSourceKinesisStreamParameters;
 
+pub use crate::types::_pipe_log_configuration::PipeLogConfiguration;
+
+pub use crate::types::_cloudwatch_logs_log_destination::CloudwatchLogsLogDestination;
+
+pub use crate::types::_firehose_log_destination::FirehoseLogDestination;
+
+pub use crate::types::_s3_log_destination::S3LogDestination;
+
 mod _assign_public_ip;
 
 mod _aws_vpc_configuration;
@@ -174,6 +196,10 @@ mod _batch_resource_requirement_type;
 mod _batch_retry_strategy;
 
 mod _capacity_provider_strategy_item;
+
+mod _cloudwatch_logs_log_destination;
+
+mod _cloudwatch_logs_log_destination_parameters;
 
 mod _dead_letter_config;
 
@@ -201,9 +227,17 @@ mod _filter;
 
 mod _filter_criteria;
 
+mod _firehose_log_destination;
+
+mod _firehose_log_destination_parameters;
+
+mod _include_execution_data_option;
+
 mod _kinesis_stream_start_position;
 
 mod _launch_type;
+
+mod _log_level;
 
 mod _mq_broker_access_credentials;
 
@@ -220,6 +254,10 @@ mod _pipe;
 mod _pipe_enrichment_http_parameters;
 
 mod _pipe_enrichment_parameters;
+
+mod _pipe_log_configuration;
+
+mod _pipe_log_configuration_parameters;
 
 mod _pipe_source_active_mq_broker_parameters;
 
@@ -278,6 +316,12 @@ mod _propagate_tags;
 mod _requested_pipe_state;
 
 mod _requested_pipe_state_describe_response;
+
+mod _s3_log_destination;
+
+mod _s3_log_destination_parameters;
+
+mod _s3_output_format;
 
 mod _sage_maker_pipeline_parameter;
 

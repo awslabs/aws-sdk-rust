@@ -2659,12 +2659,6 @@ pub(crate) fn inference_specification_correct_errors(
     if builder.containers.is_none() {
         builder.containers = Some(Default::default())
     }
-    if builder.supported_content_types.is_none() {
-        builder.supported_content_types = Some(Default::default())
-    }
-    if builder.supported_response_mime_types.is_none() {
-        builder.supported_response_mime_types = Some(Default::default())
-    }
     builder
 }
 

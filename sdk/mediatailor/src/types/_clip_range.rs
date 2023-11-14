@@ -43,9 +43,16 @@ impl ClipRangeBuilder {
         &self.end_offset_millis
     }
     /// Consumes the builder and constructs a [`ClipRange`](crate::types::ClipRange).
-    pub fn build(self) -> crate::types::ClipRange {
-        crate::types::ClipRange {
-            end_offset_millis: self.end_offset_millis.unwrap_or_default(),
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`end_offset_millis`](crate::types::builders::ClipRangeBuilder::end_offset_millis)
+    pub fn build(self) -> ::std::result::Result<crate::types::ClipRange, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ClipRange {
+            end_offset_millis: self.end_offset_millis.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "end_offset_millis",
+                    "end_offset_millis was not specified but it is required when building ClipRange",
+                )
+            })?,
+        })
     }
 }

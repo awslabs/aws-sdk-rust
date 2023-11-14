@@ -24,6 +24,18 @@ pub(crate) fn job_executions_retry_config_correct_errors(
     builder
 }
 
+pub(crate) fn metrics_export_config_correct_errors(
+    mut builder: crate::types::builders::MetricsExportConfigBuilder,
+) -> crate::types::builders::MetricsExportConfigBuilder {
+    if builder.mqtt_topic.is_none() {
+        builder.mqtt_topic = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn provisioning_hook_correct_errors(
     mut builder: crate::types::builders::ProvisioningHookBuilder,
 ) -> crate::types::builders::ProvisioningHookBuilder {

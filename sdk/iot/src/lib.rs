@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.57.1"
-//! aws-sdk-iot = "0.35.0"
+//! aws-sdk-iot = "0.35.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

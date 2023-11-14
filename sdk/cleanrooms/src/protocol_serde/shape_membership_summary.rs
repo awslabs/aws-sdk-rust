@@ -85,6 +85,11 @@ where
                         "memberAbilities" => {
                             builder = builder.set_member_abilities(crate::protocol_serde::shape_member_abilities::de_member_abilities(tokens)?);
                         }
+                        "paymentConfiguration" => {
+                            builder = builder.set_payment_configuration(
+                                crate::protocol_serde::shape_membership_payment_configuration::de_membership_payment_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

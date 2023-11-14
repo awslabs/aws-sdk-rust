@@ -5,29 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpliceInsertMessage {
     /// <p>This is written to <code>splice_insert.avail_num</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
-    pub avail_num: i32,
+    pub avail_num: ::std::option::Option<i32>,
     /// <p>This is written to <code>splice_insert.avails_expected</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
-    pub avails_expected: i32,
+    pub avails_expected: ::std::option::Option<i32>,
     /// <p>This is written to <code>splice_insert.splice_event_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>1</code>.</p>
-    pub splice_event_id: i32,
+    pub splice_event_id: ::std::option::Option<i32>,
     /// <p>This is written to <code>splice_insert.unique_program_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
-    pub unique_program_id: i32,
+    pub unique_program_id: ::std::option::Option<i32>,
 }
 impl SpliceInsertMessage {
     /// <p>This is written to <code>splice_insert.avail_num</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
-    pub fn avail_num(&self) -> i32 {
+    pub fn avail_num(&self) -> ::std::option::Option<i32> {
         self.avail_num
     }
     /// <p>This is written to <code>splice_insert.avails_expected</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
-    pub fn avails_expected(&self) -> i32 {
+    pub fn avails_expected(&self) -> ::std::option::Option<i32> {
         self.avails_expected
     }
     /// <p>This is written to <code>splice_insert.splice_event_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>1</code>.</p>
-    pub fn splice_event_id(&self) -> i32 {
+    pub fn splice_event_id(&self) -> ::std::option::Option<i32> {
         self.splice_event_id
     }
     /// <p>This is written to <code>splice_insert.unique_program_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
-    pub fn unique_program_id(&self) -> i32 {
+    pub fn unique_program_id(&self) -> ::std::option::Option<i32> {
         self.unique_program_id
     }
 }
@@ -107,10 +107,10 @@ impl SpliceInsertMessageBuilder {
     /// Consumes the builder and constructs a [`SpliceInsertMessage`](crate::types::SpliceInsertMessage).
     pub fn build(self) -> crate::types::SpliceInsertMessage {
         crate::types::SpliceInsertMessage {
-            avail_num: self.avail_num.unwrap_or_default(),
-            avails_expected: self.avails_expected.unwrap_or_default(),
-            splice_event_id: self.splice_event_id.unwrap_or_default(),
-            unique_program_id: self.unique_program_id.unwrap_or_default(),
+            avail_num: self.avail_num,
+            avails_expected: self.avails_expected,
+            splice_event_id: self.splice_event_id,
+            unique_program_id: self.unique_program_id,
         }
     }
 }

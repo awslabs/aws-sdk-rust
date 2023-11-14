@@ -6,8 +6,14 @@ pub fn ser_stop_contact_input(
     if let Some(var_1) = &input.contact_id {
         object.key("ContactId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.instance_id {
-        object.key("InstanceId").string(var_2.as_str());
+    if let Some(var_2) = &input.disconnect_reason {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("DisconnectReason").start_object();
+        crate::protocol_serde::shape_disconnect_reason::ser_disconnect_reason(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.instance_id {
+        object.key("InstanceId").string(var_4.as_str());
     }
     Ok(())
 }

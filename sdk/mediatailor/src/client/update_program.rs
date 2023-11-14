@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`vod_source_name(Option<String>)`](crate::operation::update_program::UpdateProgramOutput::vod_source_name): <p>The name that's used to refer to a VOD source.</p>
     ///   - [`live_source_name(Option<String>)`](crate::operation::update_program::UpdateProgramOutput::live_source_name): <p>The name of the LiveSource for this Program.</p>
     ///   - [`clip_range(Option<ClipRange>)`](crate::operation::update_program::UpdateProgramOutput::clip_range): <p>The clip range configuration settings.</p>
-    ///   - [`duration_millis(i64)`](crate::operation::update_program::UpdateProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
+    ///   - [`duration_millis(Option<i64>)`](crate::operation::update_program::UpdateProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
     ///   - [`scheduled_start_time(Option<DateTime>)`](crate::operation::update_program::UpdateProgramOutput::scheduled_start_time): <p>The scheduled start time for this Program.</p>
     /// - On failure, responds with [`SdkError<UpdateProgramError>`](crate::operation::update_program::UpdateProgramError)
     pub fn update_program(&self) -> crate::operation::update_program::builders::UpdateProgramFluentBuilder {

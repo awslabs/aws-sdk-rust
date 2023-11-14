@@ -141,6 +141,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Single Sign-On Admin | [aws-sdk-ssoadmin](https://crates.io/crates/aws-sdk-ssoadmin) ([docs](https://docs.rs/aws-sdk-ssoadmin)) |
 | AWS Snow Device Management | [aws-sdk-snowdevicemanagement](https://crates.io/crates/aws-sdk-snowdevicemanagement) ([docs](https://docs.rs/aws-sdk-snowdevicemanagement)) |
 | AWS Step Functions | [aws-sdk-sfn](https://crates.io/crates/aws-sdk-sfn) ([docs](https://docs.rs/aws-sdk-sfn)) |
+| AWS Step Functions | [aws-sdk-sfn](https://crates.io/crates/aws-sdk-sfn) ([docs](https://docs.rs/aws-sdk-sfn)) |
 | AWS Storage Gateway | [aws-sdk-storagegateway](https://crates.io/crates/aws-sdk-storagegateway) ([docs](https://docs.rs/aws-sdk-storagegateway)) |
 | AWS Support | [aws-sdk-support](https://crates.io/crates/aws-sdk-support) ([docs](https://docs.rs/aws-sdk-support)) |
 | AWS Support App | [aws-sdk-supportapp](https://crates.io/crates/aws-sdk-supportapp) ([docs](https://docs.rs/aws-sdk-supportapp)) |

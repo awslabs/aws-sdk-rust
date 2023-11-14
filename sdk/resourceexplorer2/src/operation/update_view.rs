@@ -247,7 +247,7 @@ pub enum UpdateViewError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request failed because it exceeds a service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas for Resource Explorer</a>.</p>
+    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas for Resource Explorer</a>.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The principal making the request isn't permitted to perform the operation.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),

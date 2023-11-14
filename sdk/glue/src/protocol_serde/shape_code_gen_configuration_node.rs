@@ -417,6 +417,18 @@ pub fn ser_code_gen_configuration_node(
         crate::protocol_serde::shape_snowflake_target::ser_snowflake_target(&mut object_138, var_137)?;
         object_138.finish();
     }
+    if let Some(var_139) = &input.connector_data_source {
+        #[allow(unused_mut)]
+        let mut object_140 = object.key("ConnectorDataSource").start_object();
+        crate::protocol_serde::shape_connector_data_source::ser_connector_data_source(&mut object_140, var_139)?;
+        object_140.finish();
+    }
+    if let Some(var_141) = &input.connector_data_target {
+        #[allow(unused_mut)]
+        let mut object_142 = object.key("ConnectorDataTarget").start_object();
+        crate::protocol_serde::shape_connector_data_target::ser_connector_data_target(&mut object_142, var_141)?;
+        object_142.finish();
+    }
     Ok(())
 }
 
@@ -691,6 +703,14 @@ where
                         }
                         "SnowflakeTarget" => {
                             builder = builder.set_snowflake_target(crate::protocol_serde::shape_snowflake_target::de_snowflake_target(tokens)?);
+                        }
+                        "ConnectorDataSource" => {
+                            builder = builder
+                                .set_connector_data_source(crate::protocol_serde::shape_connector_data_source::de_connector_data_source(tokens)?);
+                        }
+                        "ConnectorDataTarget" => {
+                            builder = builder
+                                .set_connector_data_target(crate::protocol_serde::shape_connector_data_target::de_connector_data_target(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

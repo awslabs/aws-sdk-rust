@@ -10,6 +10,9 @@ pub struct MemberSpecification {
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
     /// <p>The member's display name.</p>
     pub display_name: ::std::string::String,
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
+    pub payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
 }
 impl MemberSpecification {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
@@ -27,6 +30,11 @@ impl MemberSpecification {
         use std::ops::Deref;
         self.display_name.deref()
     }
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
+    pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::PaymentConfiguration> {
+        self.payment_configuration.as_ref()
+    }
 }
 impl MemberSpecification {
     /// Creates a new builder-style object to manufacture [`MemberSpecification`](crate::types::MemberSpecification).
@@ -42,6 +50,7 @@ pub struct MemberSpecificationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
 }
 impl MemberSpecificationBuilder {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
@@ -94,6 +103,23 @@ impl MemberSpecificationBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
+    pub fn payment_configuration(mut self, input: crate::types::PaymentConfiguration) -> Self {
+        self.payment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
+    pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::PaymentConfiguration>) -> Self {
+        self.payment_configuration = input;
+        self
+    }
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
+    pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::PaymentConfiguration> {
+        &self.payment_configuration
+    }
     /// Consumes the builder and constructs a [`MemberSpecification`](crate::types::MemberSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`account_id`](crate::types::builders::MemberSpecificationBuilder::account_id)
@@ -119,6 +145,7 @@ impl MemberSpecificationBuilder {
                     "display_name was not specified but it is required when building MemberSpecification",
                 )
             })?,
+            payment_configuration: self.payment_configuration,
         })
     }
 }

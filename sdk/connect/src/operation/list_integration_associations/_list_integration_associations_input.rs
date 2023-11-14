@@ -11,6 +11,8 @@ pub struct ListIntegrationAssociationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    pub integration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListIntegrationAssociationsInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -29,6 +31,10 @@ impl ListIntegrationAssociationsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    pub fn integration_arn(&self) -> ::std::option::Option<&str> {
+        self.integration_arn.as_deref()
+    }
 }
 impl ListIntegrationAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListIntegrationAssociationsInput`](crate::operation::list_integration_associations::ListIntegrationAssociationsInput).
@@ -45,6 +51,7 @@ pub struct ListIntegrationAssociationsInputBuilder {
     pub(crate) integration_type: ::std::option::Option<crate::types::IntegrationType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) integration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListIntegrationAssociationsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -104,6 +111,20 @@ impl ListIntegrationAssociationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    pub fn integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.integration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.integration_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_arn
+    }
     /// Consumes the builder and constructs a [`ListIntegrationAssociationsInput`](crate::operation::list_integration_associations::ListIntegrationAssociationsInput).
     pub fn build(
         self,
@@ -116,6 +137,7 @@ impl ListIntegrationAssociationsInputBuilder {
             integration_type: self.integration_type,
             next_token: self.next_token,
             max_results: self.max_results,
+            integration_arn: self.integration_arn,
         })
     }
 }

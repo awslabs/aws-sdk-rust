@@ -5,12 +5,24 @@
 pub struct GetPromptFileOutput {
     /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
     pub prompt_presigned_url: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPromptFileOutput {
     /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
     pub fn prompt_presigned_url(&self) -> ::std::option::Option<&str> {
         self.prompt_presigned_url.as_deref()
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetPromptFileOutput {
@@ -30,6 +42,8 @@ impl GetPromptFileOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPromptFileOutputBuilder {
     pub(crate) prompt_presigned_url: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPromptFileOutputBuilder {
@@ -47,6 +61,34 @@ impl GetPromptFileOutputBuilder {
     pub fn get_prompt_presigned_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.prompt_presigned_url
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +102,8 @@ impl GetPromptFileOutputBuilder {
     pub fn build(self) -> crate::operation::get_prompt_file::GetPromptFileOutput {
         crate::operation::get_prompt_file::GetPromptFileOutput {
             prompt_presigned_url: self.prompt_presigned_url,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
             _request_id: self._request_id,
         }
     }

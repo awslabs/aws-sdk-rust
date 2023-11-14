@@ -150,17 +150,17 @@ impl SignPayloadFluentBuilder {
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_payload()
     }
-    /// <p>Payload content type</p>
+    /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub fn payload_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payload_format(input.into());
         self
     }
-    /// <p>Payload content type</p>
+    /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub fn set_payload_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payload_format(input);
         self
     }
-    /// <p>Payload content type</p>
+    /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub fn get_payload_format(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payload_format()
     }

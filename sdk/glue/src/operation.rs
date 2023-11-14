@@ -37,6 +37,9 @@ pub mod batch_get_jobs;
 /// Types for the `BatchGetPartition` operation.
 pub mod batch_get_partition;
 
+/// Types for the `BatchGetTableOptimizer` operation.
+pub mod batch_get_table_optimizer;
+
 /// Types for the `BatchGetTriggers` operation.
 pub mod batch_get_triggers;
 
@@ -118,6 +121,9 @@ pub mod create_session;
 /// Types for the `CreateTable` operation.
 pub mod create_table;
 
+/// Types for the `CreateTableOptimizer` operation.
+pub mod create_table_optimizer;
+
 /// Types for the `CreateTrigger` operation.
 pub mod create_trigger;
 
@@ -189,6 +195,9 @@ pub mod delete_session;
 
 /// Types for the `DeleteTable` operation.
 pub mod delete_table;
+
+/// Types for the `DeleteTableOptimizer` operation.
+pub mod delete_table_optimizer;
 
 /// Types for the `DeleteTableVersion` operation.
 pub mod delete_table_version;
@@ -352,6 +361,9 @@ pub mod get_statement;
 /// Types for the `GetTable` operation.
 pub mod get_table;
 
+/// Types for the `GetTableOptimizer` operation.
+pub mod get_table_optimizer;
+
 /// Types for the `GetTableVersion` operation.
 pub mod get_table_version;
 
@@ -447,6 +459,9 @@ pub mod list_sessions;
 
 /// Types for the `ListStatements` operation.
 pub mod list_statements;
+
+/// Types for the `ListTableOptimizerRuns` operation.
+pub mod list_table_optimizer_runs;
 
 /// Types for the `ListTriggers` operation.
 pub mod list_triggers;
@@ -597,6 +612,9 @@ pub mod update_source_control_from_job;
 
 /// Types for the `UpdateTable` operation.
 pub mod update_table;
+
+/// Types for the `UpdateTableOptimizer` operation.
+pub mod update_table_optimizer;
 
 /// Types for the `UpdateTrigger` operation.
 pub mod update_trigger;

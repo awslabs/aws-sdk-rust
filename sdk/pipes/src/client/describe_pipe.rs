@@ -16,11 +16,12 @@ impl super::Client {
     ///   - [`enrichment(Option<String>)`](crate::operation::describe_pipe::DescribePipeOutput::enrichment): <p>The ARN of the enrichment resource.</p>
     ///   - [`enrichment_parameters(Option<PipeEnrichmentParameters>)`](crate::operation::describe_pipe::DescribePipeOutput::enrichment_parameters): <p>The parameters required to set up enrichment on your pipe.</p>
     ///   - [`target(Option<String>)`](crate::operation::describe_pipe::DescribePipeOutput::target): <p>The ARN of the target resource.</p>
-    ///   - [`target_parameters(Option<PipeTargetParameters>)`](crate::operation::describe_pipe::DescribePipeOutput::target_parameters): <p>The parameters required to set up a target for your pipe.</p>
+    ///   - [`target_parameters(Option<PipeTargetParameters>)`](crate::operation::describe_pipe::DescribePipeOutput::target_parameters): <p>The parameters required to set up a target for your pipe.</p>  <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_pipe::DescribePipeOutput::role_arn): <p>The ARN of the role that allows the pipe to send data to the target.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_pipe::DescribePipeOutput::tags): <p>The list of key-value pairs to associate with the pipe.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_pipe::DescribePipeOutput::creation_time): <p>The time the pipe was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_pipe::DescribePipeOutput::last_modified_time): <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`log_configuration(Option<PipeLogConfiguration>)`](crate::operation::describe_pipe::DescribePipeOutput::log_configuration): <p>The logging configuration settings for the pipe.</p>
     /// - On failure, responds with [`SdkError<DescribePipeError>`](crate::operation::describe_pipe::DescribePipeError)
     pub fn describe_pipe(&self) -> crate::operation::describe_pipe::builders::DescribePipeFluentBuilder {
         crate::operation::describe_pipe::builders::DescribePipeFluentBuilder::new(self.handle.clone())

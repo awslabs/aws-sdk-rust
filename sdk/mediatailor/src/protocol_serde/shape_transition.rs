@@ -3,22 +3,22 @@ pub fn ser_transition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Transition,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if input.duration_millis != 0 {
+    if let Some(var_1) = &input.duration_millis {
         object.key("DurationMillis").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.duration_millis).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     {
         object.key("RelativePosition").string(input.relative_position.as_str());
     }
-    if let Some(var_1) = &input.relative_program {
-        object.key("RelativeProgram").string(var_1.as_str());
+    if let Some(var_2) = &input.relative_program {
+        object.key("RelativeProgram").string(var_2.as_str());
     }
-    if input.scheduled_start_time_millis != 0 {
+    if let Some(var_3) = &input.scheduled_start_time_millis {
         object.key("ScheduledStartTimeMillis").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.scheduled_start_time_millis).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     {

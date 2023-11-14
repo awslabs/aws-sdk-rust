@@ -171,6 +171,9 @@ pub(crate) fn de_describe_pipe(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "LogConfiguration" => {
+                    builder = builder.set_log_configuration(crate::protocol_serde::shape_pipe_log_configuration::de_pipe_log_configuration(tokens)?);
+                }
                 "Name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -7,7 +7,7 @@ pub struct LivePreRollConfiguration {
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     pub ad_decision_server_url: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.</p>
-    pub max_duration_seconds: i32,
+    pub max_duration_seconds: ::std::option::Option<i32>,
 }
 impl LivePreRollConfiguration {
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -15,7 +15,7 @@ impl LivePreRollConfiguration {
         self.ad_decision_server_url.as_deref()
     }
     /// <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.</p>
-    pub fn max_duration_seconds(&self) -> i32 {
+    pub fn max_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.max_duration_seconds
     }
 }
@@ -66,7 +66,7 @@ impl LivePreRollConfigurationBuilder {
     pub fn build(self) -> crate::types::LivePreRollConfiguration {
         crate::types::LivePreRollConfiguration {
             ad_decision_server_url: self.ad_decision_server_url,
-            max_duration_seconds: self.max_duration_seconds.unwrap_or_default(),
+            max_duration_seconds: self.max_duration_seconds,
         }
     }
 }

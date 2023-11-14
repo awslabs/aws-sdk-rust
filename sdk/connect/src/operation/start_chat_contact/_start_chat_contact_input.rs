@@ -30,6 +30,12 @@ pub struct StartChatContactInput {
     /// <p>You cannot provide data for both RelatedContactId and PersistentChat. </p>
     /// </note>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
+    /// </note>
+    pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl StartChatContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -81,6 +87,16 @@ impl StartChatContactInput {
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
         self.related_contact_id.as_deref()
     }
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
+    /// </note>
+    pub fn segment_attributes(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        self.segment_attributes.as_ref()
+    }
 }
 impl StartChatContactInput {
     /// Creates a new builder-style object to manufacture [`StartChatContactInput`](crate::operation::start_chat_contact::StartChatContactInput).
@@ -103,6 +119,7 @@ pub struct StartChatContactInputBuilder {
     pub(crate) supported_messaging_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) persistent_chat: ::std::option::Option<crate::types::PersistentChat>,
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl StartChatContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -281,6 +298,43 @@ impl StartChatContactInputBuilder {
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_contact_id
     }
+    /// Adds a key-value pair to `segment_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
+    ///
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
+    /// </note>
+    pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
+        let mut hash_map = self.segment_attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.segment_attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
+    /// </note>
+    pub fn set_segment_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    ) -> Self {
+        self.segment_attributes = input;
+        self
+    }
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
+    /// </note>
+    pub fn get_segment_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        &self.segment_attributes
+    }
     /// Consumes the builder and constructs a [`StartChatContactInput`](crate::operation::start_chat_contact::StartChatContactInput).
     pub fn build(
         self,
@@ -296,6 +350,7 @@ impl StartChatContactInputBuilder {
             supported_messaging_content_types: self.supported_messaging_content_types,
             persistent_chat: self.persistent_chat,
             related_contact_id: self.related_contact_id,
+            segment_attributes: self.segment_attributes,
         })
     }
 }

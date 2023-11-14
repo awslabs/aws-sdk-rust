@@ -8,6 +8,8 @@ pub struct MetricToRetain {
     pub metric: ::std::string::String,
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
+    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    pub export_metric: ::std::option::Option<bool>,
 }
 impl MetricToRetain {
     /// <p>What is measured by the behavior.</p>
@@ -18,6 +20,10 @@ impl MetricToRetain {
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub fn metric_dimension(&self) -> ::std::option::Option<&crate::types::MetricDimension> {
         self.metric_dimension.as_ref()
+    }
+    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    pub fn export_metric(&self) -> ::std::option::Option<bool> {
+        self.export_metric
     }
 }
 impl MetricToRetain {
@@ -33,6 +39,7 @@ impl MetricToRetain {
 pub struct MetricToRetainBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
     pub(crate) metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
+    pub(crate) export_metric: ::std::option::Option<bool>,
 }
 impl MetricToRetainBuilder {
     /// <p>What is measured by the behavior.</p>
@@ -64,6 +71,20 @@ impl MetricToRetainBuilder {
     pub fn get_metric_dimension(&self) -> &::std::option::Option<crate::types::MetricDimension> {
         &self.metric_dimension
     }
+    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    pub fn export_metric(mut self, input: bool) -> Self {
+        self.export_metric = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    pub fn set_export_metric(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.export_metric = input;
+        self
+    }
+    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    pub fn get_export_metric(&self) -> &::std::option::Option<bool> {
+        &self.export_metric
+    }
     /// Consumes the builder and constructs a [`MetricToRetain`](crate::types::MetricToRetain).
     /// This method will fail if any of the following fields are not set:
     /// - [`metric`](crate::types::builders::MetricToRetainBuilder::metric)
@@ -76,6 +97,7 @@ impl MetricToRetainBuilder {
                 )
             })?,
             metric_dimension: self.metric_dimension,
+            export_metric: self.export_metric,
         })
     }
 }

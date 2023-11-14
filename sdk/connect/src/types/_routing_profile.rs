@@ -26,6 +26,12 @@ pub struct RoutingProfile {
     pub number_of_associated_users: ::std::option::Option<i64>,
     /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
     pub agent_availability_timer: ::std::option::Option<crate::types::AgentAvailabilityTimer>,
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
+    /// <p>Whether this a default routing profile.</p>
+    pub is_default: bool,
 }
 impl RoutingProfile {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -74,6 +80,18 @@ impl RoutingProfile {
     pub fn agent_availability_timer(&self) -> ::std::option::Option<&crate::types::AgentAvailabilityTimer> {
         self.agent_availability_timer.as_ref()
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
+    /// <p>Whether this a default routing profile.</p>
+    pub fn is_default(&self) -> bool {
+        self.is_default
+    }
 }
 impl RoutingProfile {
     /// Creates a new builder-style object to manufacture [`RoutingProfile`](crate::types::RoutingProfile).
@@ -97,6 +115,9 @@ pub struct RoutingProfileBuilder {
     pub(crate) number_of_associated_queues: ::std::option::Option<i64>,
     pub(crate) number_of_associated_users: ::std::option::Option<i64>,
     pub(crate) agent_availability_timer: ::std::option::Option<crate::types::AgentAvailabilityTimer>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
+    pub(crate) is_default: ::std::option::Option<bool>,
 }
 impl RoutingProfileBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -265,6 +286,48 @@ impl RoutingProfileBuilder {
     pub fn get_agent_availability_timer(&self) -> &::std::option::Option<crate::types::AgentAvailabilityTimer> {
         &self.agent_availability_timer
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
+    /// <p>Whether this a default routing profile.</p>
+    pub fn is_default(mut self, input: bool) -> Self {
+        self.is_default = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether this a default routing profile.</p>
+    pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_default = input;
+        self
+    }
+    /// <p>Whether this a default routing profile.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
+    }
     /// Consumes the builder and constructs a [`RoutingProfile`](crate::types::RoutingProfile).
     pub fn build(self) -> crate::types::RoutingProfile {
         crate::types::RoutingProfile {
@@ -279,6 +342,9 @@ impl RoutingProfileBuilder {
             number_of_associated_queues: self.number_of_associated_queues,
             number_of_associated_users: self.number_of_associated_users,
             agent_availability_timer: self.agent_availability_timer,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
+            is_default: self.is_default.unwrap_or_default(),
         }
     }
 }

@@ -3,28 +3,28 @@ pub fn ser_dash_playlist_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashPlaylistSettings,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if input.manifest_window_seconds != 0 {
+    if let Some(var_1) = &input.manifest_window_seconds {
         object.key("ManifestWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.manifest_window_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.min_buffer_time_seconds != 0 {
+    if let Some(var_2) = &input.min_buffer_time_seconds {
         object.key("MinBufferTimeSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.min_buffer_time_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.min_update_period_seconds != 0 {
+    if let Some(var_3) = &input.min_update_period_seconds {
         object.key("MinUpdatePeriodSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.min_update_period_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.suggested_presentation_delay_seconds != 0 {
+    if let Some(var_4) = &input.suggested_presentation_delay_seconds {
         object.key("SuggestedPresentationDelaySeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.suggested_presentation_delay_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

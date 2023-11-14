@@ -3,28 +3,28 @@ pub fn ser_splice_insert_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SpliceInsertMessage,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if input.avail_num != 0 {
+    if let Some(var_1) = &input.avail_num {
         object.key("AvailNum").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.avail_num).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.avails_expected != 0 {
+    if let Some(var_2) = &input.avails_expected {
         object.key("AvailsExpected").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.avails_expected).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.splice_event_id != 0 {
+    if let Some(var_3) = &input.splice_event_id {
         object.key("SpliceEventId").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.splice_event_id).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.unique_program_id != 0 {
+    if let Some(var_4) = &input.unique_program_id {
         object.key("UniqueProgramId").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.unique_program_id).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

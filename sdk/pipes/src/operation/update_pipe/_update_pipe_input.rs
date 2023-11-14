@@ -18,9 +18,12 @@ pub struct UpdatePipeInput {
     /// <p>The ARN of the target resource.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub target_parameters: ::std::option::Option<crate::types::PipeTargetParameters>,
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub log_configuration: ::std::option::Option<crate::types::PipeLogConfigurationParameters>,
 }
 impl UpdatePipeInput {
     /// <p>The name of the pipe.</p>
@@ -52,12 +55,17 @@ impl UpdatePipeInput {
         self.target.as_deref()
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn target_parameters(&self) -> ::std::option::Option<&crate::types::PipeTargetParameters> {
         self.target_parameters.as_ref()
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::PipeLogConfigurationParameters> {
+        self.log_configuration.as_ref()
     }
 }
 impl ::std::fmt::Debug for UpdatePipeInput {
@@ -72,6 +80,7 @@ impl ::std::fmt::Debug for UpdatePipeInput {
         formatter.field("target", &self.target);
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }
@@ -95,6 +104,7 @@ pub struct UpdatePipeInputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) target_parameters: ::std::option::Option<crate::types::PipeTargetParameters>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) log_configuration: ::std::option::Option<crate::types::PipeLogConfigurationParameters>,
 }
 impl UpdatePipeInputBuilder {
     /// <p>The name of the pipe.</p>
@@ -197,16 +207,19 @@ impl UpdatePipeInputBuilder {
         &self.target
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn target_parameters(mut self, input: crate::types::PipeTargetParameters) -> Self {
         self.target_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_target_parameters(mut self, input: ::std::option::Option<crate::types::PipeTargetParameters>) -> Self {
         self.target_parameters = input;
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_target_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetParameters> {
         &self.target_parameters
     }
@@ -225,6 +238,20 @@ impl UpdatePipeInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn log_configuration(mut self, input: crate::types::PipeLogConfigurationParameters) -> Self {
+        self.log_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::PipeLogConfigurationParameters>) -> Self {
+        self.log_configuration = input;
+        self
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::PipeLogConfigurationParameters> {
+        &self.log_configuration
+    }
     /// Consumes the builder and constructs a [`UpdatePipeInput`](crate::operation::update_pipe::UpdatePipeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_pipe::UpdatePipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pipe::UpdatePipeInput {
@@ -237,6 +264,7 @@ impl UpdatePipeInputBuilder {
             target: self.target,
             target_parameters: self.target_parameters,
             role_arn: self.role_arn,
+            log_configuration: self.log_configuration,
         })
     }
 }
@@ -252,6 +280,7 @@ impl ::std::fmt::Debug for UpdatePipeInputBuilder {
         formatter.field("target", &self.target);
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }

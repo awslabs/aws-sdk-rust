@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleAdBreak {
     /// <p>The approximate duration of the ad break, in seconds.</p>
-    pub approximate_duration_seconds: i64,
+    pub approximate_duration_seconds: ::std::option::Option<i64>,
     /// <p>The approximate time that the ad will start playing.</p>
     pub approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
@@ -15,7 +15,7 @@ pub struct ScheduleAdBreak {
 }
 impl ScheduleAdBreak {
     /// <p>The approximate duration of the ad break, in seconds.</p>
-    pub fn approximate_duration_seconds(&self) -> i64 {
+    pub fn approximate_duration_seconds(&self) -> ::std::option::Option<i64> {
         self.approximate_duration_seconds
     }
     /// <p>The approximate time that the ad will start playing.</p>
@@ -107,7 +107,7 @@ impl ScheduleAdBreakBuilder {
     /// Consumes the builder and constructs a [`ScheduleAdBreak`](crate::types::ScheduleAdBreak).
     pub fn build(self) -> crate::types::ScheduleAdBreak {
         crate::types::ScheduleAdBreak {
-            approximate_duration_seconds: self.approximate_duration_seconds.unwrap_or_default(),
+            approximate_duration_seconds: self.approximate_duration_seconds,
             approximate_start_time: self.approximate_start_time,
             source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,

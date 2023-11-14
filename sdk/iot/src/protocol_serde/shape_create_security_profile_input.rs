@@ -49,20 +49,26 @@ pub fn ser_create_security_profile_input(
         }
         array_14.finish();
     }
-    if let Some(var_17) = &input.security_profile_description {
-        object.key("securityProfileDescription").string(var_17.as_str());
+    if let Some(var_17) = &input.metrics_export_config {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("metricsExportConfig").start_object();
+        crate::protocol_serde::shape_metrics_export_config::ser_metrics_export_config(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_18) = &input.tags {
-        let mut array_19 = object.key("tags").start_array();
-        for item_20 in var_18 {
+    if let Some(var_19) = &input.security_profile_description {
+        object.key("securityProfileDescription").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.tags {
+        let mut array_21 = object.key("tags").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_23, item_22)?;
+                object_23.finish();
             }
         }
-        array_19.finish();
+        array_21.finish();
     }
     Ok(())
 }

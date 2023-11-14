@@ -13,7 +13,10 @@
 /// # let pipestate = unimplemented!();
 /// match pipestate {
 ///     PipeState::CreateFailed => { /* ... */ },
+///     PipeState::CreateRollbackFailed => { /* ... */ },
 ///     PipeState::Creating => { /* ... */ },
+///     PipeState::DeleteFailed => { /* ... */ },
+///     PipeState::DeleteRollbackFailed => { /* ... */ },
 ///     PipeState::Deleting => { /* ... */ },
 ///     PipeState::Running => { /* ... */ },
 ///     PipeState::Starting => { /* ... */ },
@@ -22,6 +25,7 @@
 ///     PipeState::Stopping => { /* ... */ },
 ///     PipeState::StopFailed => { /* ... */ },
 ///     PipeState::UpdateFailed => { /* ... */ },
+///     PipeState::UpdateRollbackFailed => { /* ... */ },
 ///     PipeState::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,7 +57,13 @@ pub enum PipeState {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
     #[allow(missing_docs)] // documentation missing in model
+    CreateRollbackFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteRollbackFailed,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
@@ -71,6 +81,8 @@ pub enum PipeState {
     #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
+    UpdateRollbackFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -79,7 +91,10 @@ impl ::std::convert::From<&str> for PipeState {
     fn from(s: &str) -> Self {
         match s {
             "CREATE_FAILED" => PipeState::CreateFailed,
+            "CREATE_ROLLBACK_FAILED" => PipeState::CreateRollbackFailed,
             "CREATING" => PipeState::Creating,
+            "DELETE_FAILED" => PipeState::DeleteFailed,
+            "DELETE_ROLLBACK_FAILED" => PipeState::DeleteRollbackFailed,
             "DELETING" => PipeState::Deleting,
             "RUNNING" => PipeState::Running,
             "STARTING" => PipeState::Starting,
@@ -88,6 +103,7 @@ impl ::std::convert::From<&str> for PipeState {
             "STOPPING" => PipeState::Stopping,
             "STOP_FAILED" => PipeState::StopFailed,
             "UPDATE_FAILED" => PipeState::UpdateFailed,
+            "UPDATE_ROLLBACK_FAILED" => PipeState::UpdateRollbackFailed,
             "UPDATING" => PipeState::Updating,
             other => PipeState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -105,7 +121,10 @@ impl PipeState {
     pub fn as_str(&self) -> &str {
         match self {
             PipeState::CreateFailed => "CREATE_FAILED",
+            PipeState::CreateRollbackFailed => "CREATE_ROLLBACK_FAILED",
             PipeState::Creating => "CREATING",
+            PipeState::DeleteFailed => "DELETE_FAILED",
+            PipeState::DeleteRollbackFailed => "DELETE_ROLLBACK_FAILED",
             PipeState::Deleting => "DELETING",
             PipeState::Running => "RUNNING",
             PipeState::Starting => "STARTING",
@@ -114,6 +133,7 @@ impl PipeState {
             PipeState::Stopping => "STOPPING",
             PipeState::StopFailed => "STOP_FAILED",
             PipeState::UpdateFailed => "UPDATE_FAILED",
+            PipeState::UpdateRollbackFailed => "UPDATE_ROLLBACK_FAILED",
             PipeState::Updating => "UPDATING",
             PipeState::Unknown(value) => value.as_str(),
         }
@@ -122,7 +142,10 @@ impl PipeState {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
+            "CREATE_ROLLBACK_FAILED",
             "CREATING",
+            "DELETE_FAILED",
+            "DELETE_ROLLBACK_FAILED",
             "DELETING",
             "RUNNING",
             "STARTING",
@@ -131,6 +154,7 @@ impl PipeState {
             "STOPPING",
             "STOP_FAILED",
             "UPDATE_FAILED",
+            "UPDATE_ROLLBACK_FAILED",
             "UPDATING",
         ]
     }

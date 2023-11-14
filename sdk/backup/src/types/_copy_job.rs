@@ -46,6 +46,11 @@ pub struct CopyJob {
     pub child_jobs_in_state: ::std::option::Option<::std::collections::HashMap<crate::types::CopyJobState, i64>>,
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    pub message_category: ::std::option::Option<::std::string::String>,
 }
 impl CopyJob {
     /// <p>The account ID that owns the copy job.</p>
@@ -132,6 +137,13 @@ impl CopyJob {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    pub fn message_category(&self) -> ::std::option::Option<&str> {
+        self.message_category.as_deref()
+    }
 }
 impl CopyJob {
     /// Creates a new builder-style object to manufacture [`CopyJob`](crate::types::CopyJob).
@@ -165,6 +177,7 @@ pub struct CopyJobBuilder {
     pub(crate) number_of_child_jobs: ::std::option::Option<i64>,
     pub(crate) child_jobs_in_state: ::std::option::Option<::std::collections::HashMap<crate::types::CopyJobState, i64>>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) message_category: ::std::option::Option<::std::string::String>,
 }
 impl CopyJobBuilder {
     /// <p>The account ID that owns the copy job.</p>
@@ -467,6 +480,29 @@ impl CopyJobBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    pub fn message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.message_category = input;
+        self
+    }
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    pub fn get_message_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_category
+    }
     /// Consumes the builder and constructs a [`CopyJob`](crate::types::CopyJob).
     pub fn build(self) -> crate::types::CopyJob {
         crate::types::CopyJob {
@@ -491,6 +527,7 @@ impl CopyJobBuilder {
             number_of_child_jobs: self.number_of_child_jobs,
             child_jobs_in_state: self.child_jobs_in_state,
             resource_name: self.resource_name,
+            message_category: self.message_category,
         }
     }
 }

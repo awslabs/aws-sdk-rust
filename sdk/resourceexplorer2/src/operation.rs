@@ -22,6 +22,9 @@ pub mod delete_view;
 /// Types for the `DisassociateDefaultView` operation.
 pub mod disassociate_default_view;
 
+/// Types for the `GetAccountLevelServiceConfiguration` operation.
+pub mod get_account_level_service_configuration;
+
 /// Types for the `GetDefaultView` operation.
 pub mod get_default_view;
 
@@ -33,6 +36,9 @@ pub mod get_view;
 
 /// Types for the `ListIndexes` operation.
 pub mod list_indexes;
+
+/// Types for the `ListIndexesForMembers` operation.
+pub mod list_indexes_for_members;
 
 /// Types for the `ListSupportedResourceTypes` operation.
 pub mod list_supported_resource_types;

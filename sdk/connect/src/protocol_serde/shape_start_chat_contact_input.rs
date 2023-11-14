@@ -49,14 +49,27 @@ pub fn ser_start_chat_contact_input(
     if let Some(var_15) = &input.related_contact_id {
         object.key("RelatedContactId").string(var_15.as_str());
     }
-    if let Some(var_16) = &input.supported_messaging_content_types {
-        let mut array_17 = object.key("SupportedMessagingContentTypes").start_array();
-        for item_18 in var_16 {
+    if let Some(var_16) = &input.segment_attributes {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("SegmentAttributes").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                array_17.value().string(item_18.as_str());
+                #[allow(unused_mut)]
+                let mut object_20 = object_17.key(key_18.as_str()).start_object();
+                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_20, value_19)?;
+                object_20.finish();
             }
         }
-        array_17.finish();
+        object_17.finish();
+    }
+    if let Some(var_21) = &input.supported_messaging_content_types {
+        let mut array_22 = object.key("SupportedMessagingContentTypes").start_array();
+        for item_23 in var_21 {
+            {
+                array_22.value().string(item_23.as_str());
+            }
+        }
+        array_22.finish();
     }
     Ok(())
 }

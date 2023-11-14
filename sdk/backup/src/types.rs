@@ -23,6 +23,12 @@ pub use crate::types::_copy_action::CopyAction;
 
 pub use crate::types::_backup_vault_event::BackupVaultEvent;
 
+pub use crate::types::_restore_job_summary::RestoreJobSummary;
+
+pub use crate::types::_restore_job_state::RestoreJobState;
+
+pub use crate::types::_aggregation_period::AggregationPeriod;
+
 pub use crate::types::_restore_jobs_list_member::RestoreJobsListMember;
 
 pub use crate::types::_restore_job_status::RestoreJobStatus;
@@ -51,6 +57,10 @@ pub use crate::types::_legal_hold_status::LegalHoldStatus;
 
 pub use crate::types::_framework::Framework;
 
+pub use crate::types::_copy_job_summary::CopyJobSummary;
+
+pub use crate::types::_copy_job_status::CopyJobStatus;
+
 pub use crate::types::_copy_job::CopyJob;
 
 pub use crate::types::_copy_job_state::CopyJobState;
@@ -64,6 +74,10 @@ pub use crate::types::_backup_selections_list_member::BackupSelectionsListMember
 pub use crate::types::_backup_plans_list_member::BackupPlansListMember;
 
 pub use crate::types::_backup_plan_templates_list_member::BackupPlanTemplatesListMember;
+
+pub use crate::types::_backup_job_summary::BackupJobSummary;
+
+pub use crate::types::_backup_job_status::BackupJobStatus;
 
 pub use crate::types::_backup_job::BackupJob;
 
@@ -93,9 +107,15 @@ pub use crate::types::_vault_state::VaultState;
 
 mod _advanced_backup_setting;
 
+mod _aggregation_period;
+
 mod _backup_job;
 
 mod _backup_job_state;
+
+mod _backup_job_status;
+
+mod _backup_job_summary;
 
 mod _backup_plan;
 
@@ -137,6 +157,10 @@ mod _copy_job;
 
 mod _copy_job_state;
 
+mod _copy_job_status;
+
+mod _copy_job_summary;
+
 mod _date_range;
 
 mod _framework;
@@ -173,7 +197,11 @@ mod _report_plan;
 
 mod _report_setting;
 
+mod _restore_job_state;
+
 mod _restore_job_status;
+
+mod _restore_job_summary;
 
 mod _restore_jobs_list_member;
 

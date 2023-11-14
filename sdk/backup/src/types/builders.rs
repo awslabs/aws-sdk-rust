@@ -21,6 +21,8 @@ pub use crate::types::_backup_rule_input::BackupRuleInputBuilder;
 
 pub use crate::types::_copy_action::CopyActionBuilder;
 
+pub use crate::types::_restore_job_summary::RestoreJobSummaryBuilder;
+
 pub use crate::types::_restore_jobs_list_member::RestoreJobsListMemberBuilder;
 
 pub use crate::types::_report_plan::ReportPlanBuilder;
@@ -43,6 +45,8 @@ pub use crate::types::_legal_hold::LegalHoldBuilder;
 
 pub use crate::types::_framework::FrameworkBuilder;
 
+pub use crate::types::_copy_job_summary::CopyJobSummaryBuilder;
+
 pub use crate::types::_copy_job::CopyJobBuilder;
 
 pub use crate::types::_backup_vault_list_member::BackupVaultListMemberBuilder;
@@ -52,6 +56,8 @@ pub use crate::types::_backup_selections_list_member::BackupSelectionsListMember
 pub use crate::types::_backup_plans_list_member::BackupPlansListMemberBuilder;
 
 pub use crate::types::_backup_plan_templates_list_member::BackupPlanTemplatesListMemberBuilder;
+
+pub use crate::types::_backup_job_summary::BackupJobSummaryBuilder;
 
 pub use crate::types::_backup_job::BackupJobBuilder;
 

@@ -21,7 +21,15 @@ pub use crate::types::_resource_property::ResourceProperty;
 
 pub use crate::types::_supported_resource_type::SupportedResourceType;
 
+pub use crate::types::_member_index::MemberIndex;
+
+pub use crate::types::_org_configuration::OrgConfiguration;
+
+pub use crate::types::_aws_service_access_status::AwsServiceAccessStatus;
+
 pub use crate::types::_batch_get_view_error::BatchGetViewError;
+
+mod _aws_service_access_status;
 
 mod _batch_get_view_error;
 
@@ -32,6 +40,10 @@ mod _index;
 mod _index_state;
 
 mod _index_type;
+
+mod _member_index;
+
+mod _org_configuration;
 
 mod _resource;
 

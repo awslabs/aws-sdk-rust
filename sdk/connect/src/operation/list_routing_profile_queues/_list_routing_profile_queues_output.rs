@@ -7,6 +7,10 @@ pub struct ListRoutingProfileQueuesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the routing profiles.</p>
     pub routing_profile_queue_config_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>,
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRoutingProfileQueuesOutput {
@@ -19,6 +23,14 @@ impl ListRoutingProfileQueuesOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_profile_queue_config_summary_list.is_none()`.
     pub fn routing_profile_queue_config_summary_list(&self) -> &[crate::types::RoutingProfileQueueConfigSummary] {
         self.routing_profile_queue_config_summary_list.as_deref().unwrap_or_default()
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRoutingProfileQueuesOutput {
@@ -39,6 +51,8 @@ impl ListRoutingProfileQueuesOutput {
 pub struct ListRoutingProfileQueuesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_queue_config_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRoutingProfileQueuesOutputBuilder {
@@ -81,6 +95,34 @@ impl ListRoutingProfileQueuesOutputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>> {
         &self.routing_profile_queue_config_summary_list
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -95,6 +137,8 @@ impl ListRoutingProfileQueuesOutputBuilder {
         crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput {
             next_token: self.next_token,
             routing_profile_queue_config_summary_list: self.routing_profile_queue_config_summary_list,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
             _request_id: self._request_id,
         }
     }

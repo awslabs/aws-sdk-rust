@@ -15,6 +15,7 @@
 ///     IntegrationType::Application => { /* ... */ },
 ///     IntegrationType::CasesDomain => { /* ... */ },
 ///     IntegrationType::Event => { /* ... */ },
+///     IntegrationType::FileScanner => { /* ... */ },
 ///     IntegrationType::PinpointApp => { /* ... */ },
 ///     IntegrationType::VoiceId => { /* ... */ },
 ///     IntegrationType::WisdomAssistant => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
     Event,
     #[allow(missing_docs)] // documentation missing in model
+    FileScanner,
+    #[allow(missing_docs)] // documentation missing in model
     PinpointApp,
     #[allow(missing_docs)] // documentation missing in model
     VoiceId,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for IntegrationType {
             "APPLICATION" => IntegrationType::Application,
             "CASES_DOMAIN" => IntegrationType::CasesDomain,
             "EVENT" => IntegrationType::Event,
+            "FILE_SCANNER" => IntegrationType::FileScanner,
             "PINPOINT_APP" => IntegrationType::PinpointApp,
             "VOICE_ID" => IntegrationType::VoiceId,
             "WISDOM_ASSISTANT" => IntegrationType::WisdomAssistant,
@@ -91,6 +95,7 @@ impl IntegrationType {
             IntegrationType::Application => "APPLICATION",
             IntegrationType::CasesDomain => "CASES_DOMAIN",
             IntegrationType::Event => "EVENT",
+            IntegrationType::FileScanner => "FILE_SCANNER",
             IntegrationType::PinpointApp => "PINPOINT_APP",
             IntegrationType::VoiceId => "VOICE_ID",
             IntegrationType::WisdomAssistant => "WISDOM_ASSISTANT",
@@ -104,6 +109,7 @@ impl IntegrationType {
             "APPLICATION",
             "CASES_DOMAIN",
             "EVENT",
+            "FILE_SCANNER",
             "PINPOINT_APP",
             "VOICE_ID",
             "WISDOM_ASSISTANT",

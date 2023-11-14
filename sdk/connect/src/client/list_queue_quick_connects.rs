@@ -11,6 +11,8 @@ impl super::Client {
     /// - On success, responds with [`ListQueueQuickConnectsOutput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`quick_connect_summary_list(Option<Vec::<QuickConnectSummary>>)`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput::quick_connect_summary_list): <p>Information about the quick connects.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput::last_modified_time): <p>The timestamp when this resource was last modified.</p>
+    ///   - [`last_modified_region(Option<String>)`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput::last_modified_region): <p>The Amazon Web Services Region where this resource was last modified.</p>
     /// - On failure, responds with [`SdkError<ListQueueQuickConnectsError>`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsError)
     pub fn list_queue_quick_connects(&self) -> crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsFluentBuilder {
         crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsFluentBuilder::new(self.handle.clone())

@@ -274,4 +274,32 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
         self.inner.get_expected_version()
     }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn metrics_export_config(mut self, input: crate::types::MetricsExportConfig) -> Self {
+        self.inner = self.inner.metrics_export_config(input);
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn set_metrics_export_config(mut self, input: ::std::option::Option<crate::types::MetricsExportConfig>) -> Self {
+        self.inner = self.inner.set_metrics_export_config(input);
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn get_metrics_export_config(&self) -> &::std::option::Option<crate::types::MetricsExportConfig> {
+        self.inner.get_metrics_export_config()
+    }
+    /// <p>Set the value as true to delete metrics export related configurations.</p>
+    pub fn delete_metrics_export_config(mut self, input: bool) -> Self {
+        self.inner = self.inner.delete_metrics_export_config(input);
+        self
+    }
+    /// <p>Set the value as true to delete metrics export related configurations.</p>
+    pub fn set_delete_metrics_export_config(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_delete_metrics_export_config(input);
+        self
+    }
+    /// <p>Set the value as true to delete metrics export related configurations.</p>
+    pub fn get_delete_metrics_export_config(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_metrics_export_config()
+    }
 }

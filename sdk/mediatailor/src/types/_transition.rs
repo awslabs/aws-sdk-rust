@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transition {
     /// <p>The duration of the live program in seconds.</p>
-    pub duration_millis: i64,
+    pub duration_millis: ::std::option::Option<i64>,
     /// <p>The position where this program will be inserted relative to the <code>RelativePosition</code>.</p>
     pub relative_position: crate::types::RelativePosition,
     /// <p>The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.</p>
     pub relative_program: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
-    pub scheduled_start_time_millis: i64,
+    pub scheduled_start_time_millis: ::std::option::Option<i64>,
     /// <p>Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or <code>RELATIVE</code>.</p>
     /// <p> <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting can only be used for channels using the <code>LINEAR</code> <code>PlaybackMode</code>.</p>
     /// <p>Note the following considerations when using <code>ABSOLUTE</code> transitions:</p>
@@ -22,7 +22,7 @@ pub struct Transition {
 }
 impl Transition {
     /// <p>The duration of the live program in seconds.</p>
-    pub fn duration_millis(&self) -> i64 {
+    pub fn duration_millis(&self) -> ::std::option::Option<i64> {
         self.duration_millis
     }
     /// <p>The position where this program will be inserted relative to the <code>RelativePosition</code>.</p>
@@ -34,7 +34,7 @@ impl Transition {
         self.relative_program.as_deref()
     }
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
-    pub fn scheduled_start_time_millis(&self) -> i64 {
+    pub fn scheduled_start_time_millis(&self) -> ::std::option::Option<i64> {
         self.scheduled_start_time_millis
     }
     /// <p>Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code> or <code>RELATIVE</code>.</p>
@@ -159,7 +159,7 @@ impl TransitionBuilder {
     /// - [`r#type`](crate::types::builders::TransitionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Transition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Transition {
-            duration_millis: self.duration_millis.unwrap_or_default(),
+            duration_millis: self.duration_millis,
             relative_position: self.relative_position.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "relative_position",
@@ -167,7 +167,7 @@ impl TransitionBuilder {
                 )
             })?,
             relative_program: self.relative_program,
-            scheduled_start_time_millis: self.scheduled_start_time_millis.unwrap_or_default(),
+            scheduled_start_time_millis: self.scheduled_start_time_millis,
             r#type: self.r#type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",

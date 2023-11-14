@@ -239,6 +239,8 @@ mod get_recovery_point_restore_metadata;
 
 mod get_supported_resource_types;
 
+mod list_backup_job_summaries;
+
 mod list_backup_jobs;
 
 mod list_backup_plan_templates;
@@ -250,6 +252,8 @@ mod list_backup_plans;
 mod list_backup_selections;
 
 mod list_backup_vaults;
+
+mod list_copy_job_summaries;
 
 mod list_copy_jobs;
 
@@ -270,6 +274,8 @@ mod list_recovery_points_by_resource;
 mod list_report_jobs;
 
 mod list_report_plans;
+
+mod list_restore_job_summaries;
 
 mod list_restore_jobs;
 

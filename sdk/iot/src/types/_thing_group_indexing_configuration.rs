@@ -6,7 +6,9 @@
 pub struct ThingGroupIndexingConfiguration {
     /// <p>Thing group indexing mode.</p>
     pub thing_group_indexing_mode: crate::types::ThingGroupIndexingMode,
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p> <note>
+    /// <p>You can't modify managed fields by updating fleet indexing configuration.</p>
+    /// </note>
     pub managed_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use the GetIndexingConfiguration API to get a list of managed fields.</p>
     /// <p>Contains custom field names and their data type.</p>
@@ -17,7 +19,9 @@ impl ThingGroupIndexingConfiguration {
     pub fn thing_group_indexing_mode(&self) -> &crate::types::ThingGroupIndexingMode {
         &self.thing_group_indexing_mode
     }
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p> <note>
+    /// <p>You can't modify managed fields by updating fleet indexing configuration.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_fields.is_none()`.
     pub fn managed_fields(&self) -> &[crate::types::Field] {
@@ -66,19 +70,25 @@ impl ThingGroupIndexingConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_fields`](Self::set_managed_fields).
     ///
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p> <note>
+    /// <p>You can't modify managed fields by updating fleet indexing configuration.</p>
+    /// </note>
     pub fn managed_fields(mut self, input: crate::types::Field) -> Self {
         let mut v = self.managed_fields.unwrap_or_default();
         v.push(input);
         self.managed_fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p> <note>
+    /// <p>You can't modify managed fields by updating fleet indexing configuration.</p>
+    /// </note>
     pub fn set_managed_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
         self.managed_fields = input;
         self
     }
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p> <note>
+    /// <p>You can't modify managed fields by updating fleet indexing configuration.</p>
+    /// </note>
     pub fn get_managed_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
         &self.managed_fields
     }

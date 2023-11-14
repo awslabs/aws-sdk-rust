@@ -221,6 +221,13 @@ pub(crate) fn de_describe_backup_job(
                 "IsParent" => {
                     builder = builder.set_is_parent(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "MessageCategory" => {
+                    builder = builder.set_message_category(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "NumberOfChildJobs" => {
                     builder = builder.set_number_of_child_jobs(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

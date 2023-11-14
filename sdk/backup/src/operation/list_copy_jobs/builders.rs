@@ -324,4 +324,27 @@ impl ListCopyJobsFluentBuilder {
     pub fn get_by_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_parent_job_id()
     }
+    /// <p>This parameter returns the job count for the specified message category.</p>
+    /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    pub fn by_message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.by_message_category(input.into());
+        self
+    }
+    /// <p>This parameter returns the job count for the specified message category.</p>
+    /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    pub fn set_by_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_by_message_category(input);
+        self
+    }
+    /// <p>This parameter returns the job count for the specified message category.</p>
+    /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    pub fn get_by_message_category(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_message_category()
+    }
 }

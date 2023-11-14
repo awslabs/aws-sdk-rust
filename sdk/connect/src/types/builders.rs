@@ -121,11 +121,15 @@ pub use crate::types::_evaluation_note::EvaluationNoteBuilder;
 
 pub use crate::types::_evaluation_answer_input::EvaluationAnswerInputBuilder;
 
+pub use crate::types::_disconnect_reason::DisconnectReasonBuilder;
+
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfigBuilder;
 
 pub use crate::types::_chat_streaming_configuration::ChatStreamingConfigurationBuilder;
 
 pub use crate::types::_voice_recording_configuration::VoiceRecordingConfigurationBuilder;
+
+pub use crate::types::_segment_attribute_value::SegmentAttributeValueBuilder;
 
 pub use crate::types::_persistent_chat::PersistentChatBuilder;
 
@@ -388,3 +392,15 @@ pub use crate::types::_agent_status::AgentStatusBuilder;
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentialsBuilder;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAddBuilder;
+
+pub use crate::types::_failed_request::FailedRequestBuilder;
+
+pub use crate::types::_successful_request::SuccessfulRequestBuilder;
+
+pub use crate::types::_contact_data_request::ContactDataRequestBuilder;
+
+pub use crate::types::_campaign::CampaignBuilder;
+
+pub use crate::types::_endpoint::EndpointBuilder;
+
+pub use crate::types::_flow_association_summary::FlowAssociationSummaryBuilder;

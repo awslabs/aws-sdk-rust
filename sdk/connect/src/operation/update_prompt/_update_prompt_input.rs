@@ -11,7 +11,7 @@ pub struct UpdatePromptInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the prompt.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The URI for the S3 bucket where the prompt is stored.</p>
+    /// <p>The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a> API instead of providing S3 URIs.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePromptInput {
@@ -31,7 +31,7 @@ impl UpdatePromptInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The URI for the S3 bucket where the prompt is stored.</p>
+    /// <p>The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a> API instead of providing S3 URIs.</p>
     pub fn s3_uri(&self) -> ::std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -112,17 +112,17 @@ impl UpdatePromptInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The URI for the S3 bucket where the prompt is stored.</p>
+    /// <p>The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a> API instead of providing S3 URIs.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI for the S3 bucket where the prompt is stored.</p>
+    /// <p>The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a> API instead of providing S3 URIs.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
     }
-    /// <p>The URI for the S3 bucket where the prompt is stored.</p>
+    /// <p>The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a> API instead of providing S3 URIs.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_uri
     }

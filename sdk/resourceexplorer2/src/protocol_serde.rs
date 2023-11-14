@@ -37,6 +37,8 @@ pub(crate) mod shape_delete_view;
 
 pub(crate) mod shape_disassociate_default_view;
 
+pub(crate) mod shape_get_account_level_service_configuration;
+
 pub(crate) mod shape_get_default_view;
 
 pub(crate) mod shape_get_index;
@@ -44,6 +46,8 @@ pub(crate) mod shape_get_index;
 pub(crate) mod shape_get_view;
 
 pub(crate) mod shape_list_indexes;
+
+pub(crate) mod shape_list_indexes_for_members;
 
 pub(crate) mod shape_list_supported_resource_types;
 
@@ -89,6 +93,8 @@ pub(crate) mod shape_get_view_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_indexes_for_members_input;
+
 pub(crate) mod shape_list_indexes_input;
 
 pub(crate) mod shape_list_supported_resource_types_input;
@@ -119,6 +125,10 @@ pub(crate) mod shape_included_property;
 
 pub(crate) mod shape_index_list;
 
+pub(crate) mod shape_member_index_list;
+
+pub(crate) mod shape_org_configuration;
+
 pub(crate) mod shape_region_list;
 
 pub(crate) mod shape_resource_count;
@@ -144,6 +154,8 @@ pub(crate) mod shape_batch_get_view_error;
 pub(crate) mod shape_included_property_list;
 
 pub(crate) mod shape_index;
+
+pub(crate) mod shape_member_index;
 
 pub(crate) mod shape_resource;
 

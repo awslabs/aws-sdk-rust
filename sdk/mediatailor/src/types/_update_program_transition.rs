@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProgramTransition {
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
-    pub scheduled_start_time_millis: i64,
+    pub scheduled_start_time_millis: ::std::option::Option<i64>,
     /// <p>The duration of the live program in seconds.</p>
-    pub duration_millis: i64,
+    pub duration_millis: ::std::option::Option<i64>,
 }
 impl UpdateProgramTransition {
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
-    pub fn scheduled_start_time_millis(&self) -> i64 {
+    pub fn scheduled_start_time_millis(&self) -> ::std::option::Option<i64> {
         self.scheduled_start_time_millis
     }
     /// <p>The duration of the live program in seconds.</p>
-    pub fn duration_millis(&self) -> i64 {
+    pub fn duration_millis(&self) -> ::std::option::Option<i64> {
         self.duration_millis
     }
 }
@@ -65,8 +65,8 @@ impl UpdateProgramTransitionBuilder {
     /// Consumes the builder and constructs a [`UpdateProgramTransition`](crate::types::UpdateProgramTransition).
     pub fn build(self) -> crate::types::UpdateProgramTransition {
         crate::types::UpdateProgramTransition {
-            scheduled_start_time_millis: self.scheduled_start_time_millis.unwrap_or_default(),
-            duration_millis: self.duration_millis.unwrap_or_default(),
+            scheduled_start_time_millis: self.scheduled_start_time_millis,
+            duration_millis: self.duration_millis,
         }
     }
 }

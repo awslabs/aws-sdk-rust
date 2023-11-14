@@ -347,6 +347,16 @@ pub(crate) fn reflens_list_sessions_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_table_optimizer_runs_output_next_token(
+    input: &crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_triggers_output_next_token(
     input: &crate::operation::list_triggers::ListTriggersOutput,
 ) -> ::std::option::Option<&::std::string::String> {

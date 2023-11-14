@@ -608,6 +608,79 @@ impl From<crate::operation::associate_traffic_distribution_group_user::Associate
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_flow_association::BatchGetFlowAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_flow_association::BatchGetFlowAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_flow_association::BatchGetFlowAssociationError> for Error {
+    fn from(err: crate::operation::batch_get_flow_association::BatchGetFlowAssociationError) -> Self {
+        match err {
+            crate::operation::batch_get_flow_association::BatchGetFlowAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_get_flow_association::BatchGetFlowAssociationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::batch_get_flow_association::BatchGetFlowAssociationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::batch_get_flow_association::BatchGetFlowAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::batch_get_flow_association::BatchGetFlowAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_get_flow_association::BatchGetFlowAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_get_flow_association::BatchGetFlowAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_put_contact::BatchPutContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_put_contact::BatchPutContactError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_put_contact::BatchPutContactError> for Error {
+    fn from(err: crate::operation::batch_put_contact::BatchPutContactError) -> Self {
+        match err {
+            crate::operation::batch_put_contact::BatchPutContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_put_contact::BatchPutContactError::IdempotencyException(inner) => Error::IdempotencyException(inner),
+            crate::operation::batch_put_contact::BatchPutContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::batch_put_contact::BatchPutContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::batch_put_contact::BatchPutContactError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::batch_put_contact::BatchPutContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_put_contact::BatchPutContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::claim_phone_number::ClaimPhoneNumberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -954,6 +1027,60 @@ impl From<crate::operation::create_participant::CreateParticipantError> for Erro
             }
             crate::operation::create_participant::CreateParticipantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_participant::CreateParticipantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError> for Error {
+    fn from(err: crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError) -> Self {
+        match err {
+            crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

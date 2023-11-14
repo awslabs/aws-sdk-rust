@@ -255,11 +255,13 @@ pub type TagResourceErrorKind = TagResourceError;
 pub enum TagResourceError {
     /// <p>The credentials that you used to call this operation don't have the minimum required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request failed because either you specified parameters that didn’t match the original request, or you attempted to create a view with a name that already exists in this Amazon Web Services Region.</p>
+    /// <p>If you attempted to create a view, then the request failed because either you specified parameters that didn’t match the original request, or you attempted to create a view with a name that already exists in this Amazon Web Services Region.</p>
+    /// <p>If you attempted to create an index, then the request failed because either you specified parameters that didn't match the original request, or an index already exists in the current Amazon Web Services Region.</p>
+    /// <p>If you attempted to update an index type to <code>AGGREGATOR</code>, then the request failed because you already have an <code>AGGREGATOR</code> index in a different Amazon Web Services Region.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request failed because of internal service error. Try your request again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas for Resource Explorer</a>.</p>
+    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas for Resource Explorer</a>.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The principal making the request isn't permitted to perform the operation.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),

@@ -17,6 +17,8 @@ pub use crate::types::_notification_property::NotificationPropertyBuilder;
 
 pub use crate::types::_trigger_update::TriggerUpdateBuilder;
 
+pub use crate::types::_table_optimizer_configuration::TableOptimizerConfigurationBuilder;
+
 pub use crate::types::_table_input::TableInputBuilder;
 
 pub use crate::types::_table_identifier::TableIdentifierBuilder;
@@ -51,6 +53,14 @@ pub use crate::types::_source_control_details::SourceControlDetailsBuilder;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNodeBuilder;
 
+pub use crate::types::_connector_data_target::ConnectorDataTargetBuilder;
+
+pub use crate::types::_connector_data_source::ConnectorDataSourceBuilder;
+
+pub use crate::types::_glue_schema::GlueSchemaBuilder;
+
+pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumnBuilder;
+
 pub use crate::types::_snowflake_target::SnowflakeTargetBuilder;
 
 pub use crate::types::_snowflake_node_data::SnowflakeNodeDataBuilder;
@@ -58,10 +68,6 @@ pub use crate::types::_snowflake_node_data::SnowflakeNodeDataBuilder;
 pub use crate::types::_option::OptionBuilder;
 
 pub use crate::types::_snowflake_source::SnowflakeSourceBuilder;
-
-pub use crate::types::_glue_schema::GlueSchemaBuilder;
-
-pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumnBuilder;
 
 pub use crate::types::_recipe::RecipeBuilder;
 
@@ -353,6 +359,10 @@ pub use crate::types::_connection_password_encryption::ConnectionPasswordEncrypt
 
 pub use crate::types::_encryption_at_rest::EncryptionAtRestBuilder;
 
+pub use crate::types::_table_optimizer_run::TableOptimizerRunBuilder;
+
+pub use crate::types::_run_metrics::RunMetricsBuilder;
+
 pub use crate::types::_statement::StatementBuilder;
 
 pub use crate::types::_statement_output::StatementOutputBuilder;
@@ -440,6 +450,8 @@ pub use crate::types::_partition::PartitionBuilder;
 pub use crate::types::_segment::SegmentBuilder;
 
 pub use crate::types::_table_version::TableVersionBuilder;
+
+pub use crate::types::_table_optimizer::TableOptimizerBuilder;
 
 pub use crate::types::_security_configuration::SecurityConfigurationBuilder;
 
@@ -568,6 +580,12 @@ pub use crate::types::_batch_update_partition_request_entry::BatchUpdatePartitio
 pub use crate::types::_batch_stop_job_run_error::BatchStopJobRunErrorBuilder;
 
 pub use crate::types::_batch_stop_job_run_successful_submission::BatchStopJobRunSuccessfulSubmissionBuilder;
+
+pub use crate::types::_batch_get_table_optimizer_error::BatchGetTableOptimizerErrorBuilder;
+
+pub use crate::types::_batch_table_optimizer::BatchTableOptimizerBuilder;
+
+pub use crate::types::_batch_get_table_optimizer_entry::BatchGetTableOptimizerEntryBuilder;
 
 pub use crate::types::_data_quality_result::DataQualityResultBuilder;
 

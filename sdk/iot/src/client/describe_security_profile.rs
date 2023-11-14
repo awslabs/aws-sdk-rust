@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`version(i64)`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput::version): <p>The version of the security profile. A new version is generated whenever the security profile is updated.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput::creation_date): <p>The time the security profile was created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput::last_modified_date): <p>The time the security profile was last modified.</p>
+    ///   - [`metrics_export_config(Option<MetricsExportConfig>)`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput::metrics_export_config): <p>Specifies the MQTT topic and role ARN required for metric export.</p>
     /// - On failure, responds with [`SdkError<DescribeSecurityProfileError>`](crate::operation::describe_security_profile::DescribeSecurityProfileError)
     pub fn describe_security_profile(&self) -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder {
         crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder::new(self.handle.clone())

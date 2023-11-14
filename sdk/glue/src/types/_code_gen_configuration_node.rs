@@ -142,6 +142,10 @@ pub struct CodeGenConfigurationNode {
     pub snowflake_source: ::std::option::Option<crate::types::SnowflakeSource>,
     /// <p>Specifies a target that writes to a Snowflake data source.</p>
     pub snowflake_target: ::std::option::Option<crate::types::SnowflakeTarget>,
+    /// <p>Specifies a source generated with standard connection options.</p>
+    pub connector_data_source: ::std::option::Option<crate::types::ConnectorDataSource>,
+    /// <p>Specifies a target generated with standard connection options.</p>
+    pub connector_data_target: ::std::option::Option<crate::types::ConnectorDataTarget>,
 }
 impl CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -420,6 +424,14 @@ impl CodeGenConfigurationNode {
     pub fn snowflake_target(&self) -> ::std::option::Option<&crate::types::SnowflakeTarget> {
         self.snowflake_target.as_ref()
     }
+    /// <p>Specifies a source generated with standard connection options.</p>
+    pub fn connector_data_source(&self) -> ::std::option::Option<&crate::types::ConnectorDataSource> {
+        self.connector_data_source.as_ref()
+    }
+    /// <p>Specifies a target generated with standard connection options.</p>
+    pub fn connector_data_target(&self) -> ::std::option::Option<&crate::types::ConnectorDataTarget> {
+        self.connector_data_target.as_ref()
+    }
 }
 impl CodeGenConfigurationNode {
     /// Creates a new builder-style object to manufacture [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
@@ -501,6 +513,8 @@ pub struct CodeGenConfigurationNodeBuilder {
     pub(crate) recipe: ::std::option::Option<crate::types::Recipe>,
     pub(crate) snowflake_source: ::std::option::Option<crate::types::SnowflakeSource>,
     pub(crate) snowflake_target: ::std::option::Option<crate::types::SnowflakeTarget>,
+    pub(crate) connector_data_source: ::std::option::Option<crate::types::ConnectorDataSource>,
+    pub(crate) connector_data_target: ::std::option::Option<crate::types::ConnectorDataTarget>,
 }
 impl CodeGenConfigurationNodeBuilder {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -1469,6 +1483,34 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn get_snowflake_target(&self) -> &::std::option::Option<crate::types::SnowflakeTarget> {
         &self.snowflake_target
     }
+    /// <p>Specifies a source generated with standard connection options.</p>
+    pub fn connector_data_source(mut self, input: crate::types::ConnectorDataSource) -> Self {
+        self.connector_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies a source generated with standard connection options.</p>
+    pub fn set_connector_data_source(mut self, input: ::std::option::Option<crate::types::ConnectorDataSource>) -> Self {
+        self.connector_data_source = input;
+        self
+    }
+    /// <p>Specifies a source generated with standard connection options.</p>
+    pub fn get_connector_data_source(&self) -> &::std::option::Option<crate::types::ConnectorDataSource> {
+        &self.connector_data_source
+    }
+    /// <p>Specifies a target generated with standard connection options.</p>
+    pub fn connector_data_target(mut self, input: crate::types::ConnectorDataTarget) -> Self {
+        self.connector_data_target = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies a target generated with standard connection options.</p>
+    pub fn set_connector_data_target(mut self, input: ::std::option::Option<crate::types::ConnectorDataTarget>) -> Self {
+        self.connector_data_target = input;
+        self
+    }
+    /// <p>Specifies a target generated with standard connection options.</p>
+    pub fn get_connector_data_target(&self) -> &::std::option::Option<crate::types::ConnectorDataTarget> {
+        &self.connector_data_target
+    }
     /// Consumes the builder and constructs a [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
     pub fn build(self) -> crate::types::CodeGenConfigurationNode {
         crate::types::CodeGenConfigurationNode {
@@ -1541,6 +1583,8 @@ impl CodeGenConfigurationNodeBuilder {
             recipe: self.recipe,
             snowflake_source: self.snowflake_source,
             snowflake_target: self.snowflake_target,
+            connector_data_source: self.connector_data_source,
+            connector_data_target: self.connector_data_target,
         }
     }
 }

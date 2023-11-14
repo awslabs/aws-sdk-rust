@@ -7,6 +7,8 @@ pub struct StopContactInput {
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.</p>
+    pub disconnect_reason: ::std::option::Option<crate::types::DisconnectReason>,
 }
 impl StopContactInput {
     /// <p>The ID of the contact.</p>
@@ -16,6 +18,10 @@ impl StopContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
+    }
+    /// <p>The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.</p>
+    pub fn disconnect_reason(&self) -> ::std::option::Option<&crate::types::DisconnectReason> {
+        self.disconnect_reason.as_ref()
     }
 }
 impl StopContactInput {
@@ -31,6 +37,7 @@ impl StopContactInput {
 pub struct StopContactInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) disconnect_reason: ::std::option::Option<crate::types::DisconnectReason>,
 }
 impl StopContactInputBuilder {
     /// <p>The ID of the contact.</p>
@@ -63,11 +70,26 @@ impl StopContactInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
+    /// <p>The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.</p>
+    pub fn disconnect_reason(mut self, input: crate::types::DisconnectReason) -> Self {
+        self.disconnect_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.</p>
+    pub fn set_disconnect_reason(mut self, input: ::std::option::Option<crate::types::DisconnectReason>) -> Self {
+        self.disconnect_reason = input;
+        self
+    }
+    /// <p>The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.</p>
+    pub fn get_disconnect_reason(&self) -> &::std::option::Option<crate::types::DisconnectReason> {
+        &self.disconnect_reason
+    }
     /// Consumes the builder and constructs a [`StopContactInput`](crate::operation::stop_contact::StopContactInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_contact::StopContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_contact::StopContactInput {
             contact_id: self.contact_id,
             instance_id: self.instance_id,
+            disconnect_reason: self.disconnect_reason,
         })
     }
 }

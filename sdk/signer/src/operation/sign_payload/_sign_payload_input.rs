@@ -9,7 +9,7 @@ pub struct SignPayloadInput {
     pub profile_owner: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the object digest (hash) to sign.</p>
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// <p>Payload content type</p>
+    /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub payload_format: ::std::option::Option<::std::string::String>,
 }
 impl SignPayloadInput {
@@ -25,7 +25,7 @@ impl SignPayloadInput {
     pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
-    /// <p>Payload content type</p>
+    /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub fn payload_format(&self) -> ::std::option::Option<&str> {
         self.payload_format.as_deref()
     }
@@ -91,18 +91,18 @@ impl SignPayloadInputBuilder {
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.payload
     }
-    /// <p>Payload content type</p>
+    /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     /// This field is required.
     pub fn payload_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_format = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Payload content type</p>
+    /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub fn set_payload_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload_format = input;
         self
     }
-    /// <p>Payload content type</p>
+    /// <p>Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
     pub fn get_payload_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.payload_format
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRevocationStatusOutput {
-    /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
+    /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
     pub revoked_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRevocationStatusOutput {
-    /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
+    /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoked_entities.is_none()`.
     pub fn revoked_entities(&self) -> &[::std::string::String] {
@@ -39,19 +39,19 @@ impl GetRevocationStatusOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_revoked_entities`](Self::set_revoked_entities).
     ///
-    /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
+    /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
     pub fn revoked_entities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.revoked_entities.unwrap_or_default();
         v.push(input.into());
         self.revoked_entities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
+    /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
     pub fn set_revoked_entities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.revoked_entities = input;
         self
     }
-    /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
+    /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
     pub fn get_revoked_entities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.revoked_entities
     }

@@ -236,4 +236,18 @@ impl CreateSecurityProfileFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn metrics_export_config(mut self, input: crate::types::MetricsExportConfig) -> Self {
+        self.inner = self.inner.metrics_export_config(input);
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn set_metrics_export_config(mut self, input: ::std::option::Option<crate::types::MetricsExportConfig>) -> Self {
+        self.inner = self.inner.set_metrics_export_config(input);
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn get_metrics_export_config(&self) -> &::std::option::Option<crate::types::MetricsExportConfig> {
+        self.inner.get_metrics_export_config()
+    }
 }

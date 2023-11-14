@@ -3,16 +3,16 @@ pub fn ser_update_program_transition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateProgramTransition,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if input.scheduled_start_time_millis != 0 {
+    if let Some(var_1) = &input.scheduled_start_time_millis {
         object.key("ScheduledStartTimeMillis").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.scheduled_start_time_millis).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.duration_millis != 0 {
+    if let Some(var_2) = &input.duration_millis {
         object.key("DurationMillis").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.duration_millis).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

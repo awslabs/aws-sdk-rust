@@ -12,6 +12,10 @@ pub struct QuickConnectSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub quick_connect_type: ::std::option::Option<crate::types::QuickConnectType>,
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl QuickConnectSummary {
     /// <p>The identifier for the quick connect.</p>
@@ -30,6 +34,14 @@ impl QuickConnectSummary {
     pub fn quick_connect_type(&self) -> ::std::option::Option<&crate::types::QuickConnectType> {
         self.quick_connect_type.as_ref()
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
 }
 impl QuickConnectSummary {
     /// Creates a new builder-style object to manufacture [`QuickConnectSummary`](crate::types::QuickConnectSummary).
@@ -46,6 +58,8 @@ pub struct QuickConnectSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_type: ::std::option::Option<crate::types::QuickConnectType>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl QuickConnectSummaryBuilder {
     /// <p>The identifier for the quick connect.</p>
@@ -104,6 +118,34 @@ impl QuickConnectSummaryBuilder {
     pub fn get_quick_connect_type(&self) -> &::std::option::Option<crate::types::QuickConnectType> {
         &self.quick_connect_type
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Consumes the builder and constructs a [`QuickConnectSummary`](crate::types::QuickConnectSummary).
     pub fn build(self) -> crate::types::QuickConnectSummary {
         crate::types::QuickConnectSummary {
@@ -111,6 +153,8 @@ impl QuickConnectSummaryBuilder {
             arn: self.arn,
             name: self.name,
             quick_connect_type: self.quick_connect_type,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
         }
     }
 }

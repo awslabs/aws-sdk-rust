@@ -22,7 +22,7 @@ pub struct UpdateProgramOutput {
     /// <p>The clip range configuration settings.</p>
     pub clip_range: ::std::option::Option<crate::types::ClipRange>,
     /// <p>The duration of the live program in milliseconds.</p>
-    pub duration_millis: i64,
+    pub duration_millis: ::std::option::Option<i64>,
     /// <p>The scheduled start time for this Program.</p>
     pub scheduled_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -67,7 +67,7 @@ impl UpdateProgramOutput {
         self.clip_range.as_ref()
     }
     /// <p>The duration of the live program in milliseconds.</p>
-    pub fn duration_millis(&self) -> i64 {
+    pub fn duration_millis(&self) -> ::std::option::Option<i64> {
         self.duration_millis
     }
     /// <p>The scheduled start time for this Program.</p>
@@ -286,7 +286,7 @@ impl UpdateProgramOutputBuilder {
             vod_source_name: self.vod_source_name,
             live_source_name: self.live_source_name,
             clip_range: self.clip_range,
-            duration_millis: self.duration_millis.unwrap_or_default(),
+            duration_millis: self.duration_millis,
             scheduled_start_time: self.scheduled_start_time,
             _request_id: self._request_id,
         }

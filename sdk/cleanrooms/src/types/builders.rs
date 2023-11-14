@@ -23,6 +23,10 @@ pub use crate::types::_protected_query_summary::ProtectedQuerySummaryBuilder;
 
 pub use crate::types::_membership_summary::MembershipSummaryBuilder;
 
+pub use crate::types::_membership_payment_configuration::MembershipPaymentConfigurationBuilder;
+
+pub use crate::types::_membership_query_compute_payment_config::MembershipQueryComputePaymentConfigBuilder;
+
 pub use crate::types::_membership::MembershipBuilder;
 
 pub use crate::types::_membership_protected_query_result_configuration::MembershipProtectedQueryResultConfigurationBuilder;
@@ -52,6 +56,10 @@ pub use crate::types::_configured_table_association::ConfiguredTableAssociationB
 pub use crate::types::_schema_summary::SchemaSummaryBuilder;
 
 pub use crate::types::_member_summary::MemberSummaryBuilder;
+
+pub use crate::types::_payment_configuration::PaymentConfigurationBuilder;
+
+pub use crate::types::_query_compute_payment_config::QueryComputePaymentConfigBuilder;
 
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummaryBuilder;
 

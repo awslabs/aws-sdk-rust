@@ -170,4 +170,18 @@ impl ListIntegrationAssociationsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    pub fn integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.integration_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_integration_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p>
+    pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_integration_arn()
+    }
 }

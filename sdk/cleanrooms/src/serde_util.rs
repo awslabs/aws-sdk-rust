@@ -639,6 +639,12 @@ pub(crate) fn membership_correct_errors(mut builder: crate::types::builders::Mem
     if builder.query_log_status.is_none() {
         builder.query_log_status = "no value was set".parse::<crate::types::MembershipQueryLogStatus>().ok()
     }
+    if builder.payment_configuration.is_none() {
+        builder.payment_configuration = {
+            let builder = crate::types::builders::MembershipPaymentConfigurationBuilder::default();
+            Some(crate::serde_util::membership_payment_configuration_correct_errors(builder).build())
+        }
+    }
     builder
 }
 
@@ -760,6 +766,20 @@ pub(crate) fn analysis_rule_correct_errors(mut builder: crate::types::builders::
     }
     if builder.policy.is_none() {
         builder.policy = Some(crate::types::AnalysisRulePolicy::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn membership_payment_configuration_correct_errors(
+    mut builder: crate::types::builders::MembershipPaymentConfigurationBuilder,
+) -> crate::types::builders::MembershipPaymentConfigurationBuilder {
+    if builder.query_compute.is_none() {
+        builder.query_compute = {
+            let builder = crate::types::builders::MembershipQueryComputePaymentConfigBuilder::default();
+            crate::serde_util::membership_query_compute_payment_config_correct_errors(builder)
+                .build()
+                .ok()
+        }
     }
     builder
 }
@@ -983,6 +1003,12 @@ pub(crate) fn member_summary_correct_errors(
     if builder.update_time.is_none() {
         builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
+    if builder.payment_configuration.is_none() {
+        builder.payment_configuration = {
+            let builder = crate::types::builders::PaymentConfigurationBuilder::default();
+            Some(crate::serde_util::payment_configuration_correct_errors(builder).build())
+        }
+    }
     builder
 }
 
@@ -1030,6 +1056,12 @@ pub(crate) fn membership_summary_correct_errors(
     }
     if builder.member_abilities.is_none() {
         builder.member_abilities = Some(Default::default())
+    }
+    if builder.payment_configuration.is_none() {
+        builder.payment_configuration = {
+            let builder = crate::types::builders::MembershipPaymentConfigurationBuilder::default();
+            Some(crate::serde_util::membership_payment_configuration_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -1127,6 +1159,15 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn membership_query_compute_payment_config_correct_errors(
+    mut builder: crate::types::builders::MembershipQueryComputePaymentConfigBuilder,
+) -> crate::types::builders::MembershipQueryComputePaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn analysis_parameter_correct_errors(
     mut builder: crate::types::builders::AnalysisParameterBuilder,
 ) -> crate::types::builders::AnalysisParameterBuilder {
@@ -1157,6 +1198,18 @@ pub(crate) fn glue_table_reference_correct_errors(
     }
     if builder.database_name.is_none() {
         builder.database_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn payment_configuration_correct_errors(
+    mut builder: crate::types::builders::PaymentConfigurationBuilder,
+) -> crate::types::builders::PaymentConfigurationBuilder {
+    if builder.query_compute.is_none() {
+        builder.query_compute = {
+            let builder = crate::types::builders::QueryComputePaymentConfigBuilder::default();
+            crate::serde_util::query_compute_payment_config_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -1220,6 +1273,15 @@ pub(crate) fn protected_query_s3_output_configuration_correct_errors(
     }
     if builder.bucket.is_none() {
         builder.bucket = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn query_compute_payment_config_correct_errors(
+    mut builder: crate::types::builders::QueryComputePaymentConfigBuilder,
+) -> crate::types::builders::QueryComputePaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
     }
     builder
 }

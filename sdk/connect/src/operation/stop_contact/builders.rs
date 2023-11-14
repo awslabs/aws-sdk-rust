@@ -142,4 +142,18 @@ impl StopContactFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
+    /// <p>The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.</p>
+    pub fn disconnect_reason(mut self, input: crate::types::DisconnectReason) -> Self {
+        self.inner = self.inner.disconnect_reason(input);
+        self
+    }
+    /// <p>The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.</p>
+    pub fn set_disconnect_reason(mut self, input: ::std::option::Option<crate::types::DisconnectReason>) -> Self {
+        self.inner = self.inner.set_disconnect_reason(input);
+        self
+    }
+    /// <p>The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can provide this field.</p>
+    pub fn get_disconnect_reason(&self) -> &::std::option::Option<crate::types::DisconnectReason> {
+        self.inner.get_disconnect_reason()
+    }
 }

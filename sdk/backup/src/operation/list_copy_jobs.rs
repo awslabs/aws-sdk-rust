@@ -249,6 +249,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCopyJobs
                         query.push_kv("parentJobId", &::aws_smithy_http::query::fmt_string(&inner_12));
                     }
                 }
+                if let ::std::option::Option::Some(inner_13) = &_input.by_message_category {
+                    {
+                        query.push_kv("messageCategory", &::aws_smithy_http::query::fmt_string(&inner_13));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

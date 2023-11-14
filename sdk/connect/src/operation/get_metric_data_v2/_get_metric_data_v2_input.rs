@@ -343,6 +343,38 @@ pub struct GetMetricDataV2Input {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
+    /// PERCENT_NON_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// SERVICE_LEVEL
     /// </dt>
     /// <dd>
@@ -743,6 +775,38 @@ impl GetMetricDataV2Input {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_NON_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
@@ -1311,6 +1375,38 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
+    /// PERCENT_NON_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// SERVICE_LEVEL
     /// </dt>
     /// <dd>
@@ -1656,6 +1752,38 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
+    /// PERCENT_NON_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// SERVICE_LEVEL
     /// </dt>
     /// <dd>
@@ -1996,6 +2124,38 @@ impl GetMetricDataV2InputBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_NON_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_TALK_TIME_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
+    /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>

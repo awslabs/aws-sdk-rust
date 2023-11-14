@@ -64,6 +64,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "paymentConfiguration" => {
+                            builder = builder
+                                .set_payment_configuration(crate::protocol_serde::shape_payment_configuration::de_payment_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

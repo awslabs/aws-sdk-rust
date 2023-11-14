@@ -18,23 +18,29 @@ pub fn ser_update_pipe_input(
         crate::protocol_serde::shape_pipe_enrichment_parameters::ser_pipe_enrichment_parameters(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.role_arn {
-        object.key("RoleArn").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.source_parameters {
+    if let Some(var_6) = &input.log_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("SourceParameters").start_object();
-        crate::protocol_serde::shape_update_pipe_source_parameters::ser_update_pipe_source_parameters(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("LogConfiguration").start_object();
+        crate::protocol_serde::shape_pipe_log_configuration_parameters::ser_pipe_log_configuration_parameters(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.target {
-        object.key("Target").string(var_9.as_str());
+    if let Some(var_8) = &input.role_arn {
+        object.key("RoleArn").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.target_parameters {
+    if let Some(var_9) = &input.source_parameters {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("TargetParameters").start_object();
-        crate::protocol_serde::shape_pipe_target_parameters::ser_pipe_target_parameters(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("SourceParameters").start_object();
+        crate::protocol_serde::shape_update_pipe_source_parameters::ser_update_pipe_source_parameters(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.target {
+        object.key("Target").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.target_parameters {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("TargetParameters").start_object();
+        crate::protocol_serde::shape_pipe_target_parameters::ser_pipe_target_parameters(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

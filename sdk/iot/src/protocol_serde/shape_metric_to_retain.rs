@@ -12,6 +12,9 @@ pub fn ser_metric_to_retain(
         crate::protocol_serde::shape_metric_dimension::ser_metric_dimension(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.export_metric {
+        object.key("exportMetric").boolean(*var_3);
+    }
     Ok(())
 }
 
@@ -39,6 +42,9 @@ where
                         }
                         "metricDimension" => {
                             builder = builder.set_metric_dimension(crate::protocol_serde::shape_metric_dimension::de_metric_dimension(tokens)?);
+                        }
+                        "exportMetric" => {
+                            builder = builder.set_export_metric(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

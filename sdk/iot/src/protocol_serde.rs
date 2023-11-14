@@ -947,6 +947,8 @@ pub(crate) mod shape_metric_names;
 
 pub(crate) mod shape_metric_to_retain;
 
+pub(crate) mod shape_metrics_export_config;
+
 pub(crate) mod shape_mitigation_action_identifier_list;
 
 pub(crate) mod shape_mitigation_action_list;

@@ -161,6 +161,20 @@ impl CreateViewFluentBuilder {
     pub fn get_included_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
         self.inner.get_included_properties()
     }
+    /// <p>The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.</p>
+    pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.scope(input.into());
+        self
+    }
+    /// <p>The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_scope(input);
+        self
+    }
+    /// <p>The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scope()
+    }
     /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>
     /// <p>For information about the supported syntax, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p> <important>
     /// <p>This query string in the context of this operation supports only <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter prefixes</a> with optional <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>. It doesn't support free-form text. For example, the string <code>region:us* service:ec2 -tag:stage=prod</code> includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters <code>us</code> and is <i>not</i> tagged with a key <code>Stage</code> that has the value <code>prod</code>.</p>

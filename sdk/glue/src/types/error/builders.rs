@@ -11,6 +11,8 @@ pub use crate::types::error::_concurrent_modification_exception::ConcurrentModif
 
 pub use crate::types::error::_glue_encryption_exception::GlueEncryptionExceptionBuilder;
 
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
 pub use crate::types::error::_resource_number_limit_exceeded_exception::ResourceNumberLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExceptionBuilder;
@@ -18,8 +20,6 @@ pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExce
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_already_exists_exception::AlreadyExistsExceptionBuilder;
-
-pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_idempotent_parameter_mismatch_exception::IdempotentParameterMismatchExceptionBuilder;
 

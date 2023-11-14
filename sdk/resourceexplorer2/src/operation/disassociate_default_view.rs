@@ -251,7 +251,9 @@ pub enum DisassociateDefaultViewError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request failed because of internal service error. Try your request again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas for Resource Explorer</a>.</p>
+    /// <p>You specified a resource that doesn't exist. Check the ID or ARN that you used to identity the resource, and try again.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas for Resource Explorer</a>.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>You provided an invalid value for one of the operation's parameters. Check the syntax for the operation, and try again.</p>
     ValidationException(crate::types::error::ValidationException),
@@ -275,6 +277,7 @@ impl ::std::fmt::Display for DisassociateDefaultViewError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -286,6 +289,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DisassociateD
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -326,6 +330,7 @@ impl DisassociateDefaultViewError {
         match self {
             Self::AccessDeniedException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
+            Self::ResourceNotFoundException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -338,6 +343,10 @@ impl DisassociateDefaultViewError {
     /// Returns `true` if the error kind is `DisassociateDefaultViewError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `DisassociateDefaultViewError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DisassociateDefaultViewError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -353,6 +362,7 @@ impl ::std::error::Error for DisassociateDefaultViewError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

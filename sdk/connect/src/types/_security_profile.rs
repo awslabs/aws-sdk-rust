@@ -20,6 +20,10 @@ pub struct SecurityProfile {
     pub allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
     pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl SecurityProfile {
     /// <p>The identifier for the security profile.</p>
@@ -56,6 +60,14 @@ impl SecurityProfile {
     pub fn tag_restricted_resources(&self) -> &[::std::string::String] {
         self.tag_restricted_resources.as_deref().unwrap_or_default()
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
 }
 impl SecurityProfile {
     /// Creates a new builder-style object to manufacture [`SecurityProfile`](crate::types::SecurityProfile).
@@ -76,6 +88,8 @@ pub struct SecurityProfileBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl SecurityProfileBuilder {
     /// <p>The identifier for the security profile.</p>
@@ -217,6 +231,34 @@ impl SecurityProfileBuilder {
     pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_restricted_resources
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Consumes the builder and constructs a [`SecurityProfile`](crate::types::SecurityProfile).
     pub fn build(self) -> crate::types::SecurityProfile {
         crate::types::SecurityProfile {
@@ -228,6 +270,8 @@ impl SecurityProfileBuilder {
             tags: self.tags,
             allowed_access_control_tags: self.allowed_access_control_tags,
             tag_restricted_resources: self.tag_restricted_resources,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
         }
     }
 }

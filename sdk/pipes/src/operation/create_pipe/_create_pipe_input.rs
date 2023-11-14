@@ -20,11 +20,14 @@ pub struct CreatePipeInput {
     /// <p>The ARN of the target resource.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub target_parameters: ::std::option::Option<crate::types::PipeTargetParameters>,
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value pairs to associate with the pipe.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub log_configuration: ::std::option::Option<crate::types::PipeLogConfigurationParameters>,
 }
 impl CreatePipeInput {
     /// <p>The name of the pipe.</p>
@@ -60,6 +63,7 @@ impl CreatePipeInput {
         self.target.as_deref()
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn target_parameters(&self) -> ::std::option::Option<&crate::types::PipeTargetParameters> {
         self.target_parameters.as_ref()
     }
@@ -70,6 +74,10 @@ impl CreatePipeInput {
     /// <p>The list of key-value pairs to associate with the pipe.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::PipeLogConfigurationParameters> {
+        self.log_configuration.as_ref()
     }
 }
 impl ::std::fmt::Debug for CreatePipeInput {
@@ -86,6 +94,7 @@ impl ::std::fmt::Debug for CreatePipeInput {
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("tags", &self.tags);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }
@@ -111,6 +120,7 @@ pub struct CreatePipeInputBuilder {
     pub(crate) target_parameters: ::std::option::Option<crate::types::PipeTargetParameters>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) log_configuration: ::std::option::Option<crate::types::PipeLogConfigurationParameters>,
 }
 impl CreatePipeInputBuilder {
     /// <p>The name of the pipe.</p>
@@ -229,16 +239,19 @@ impl CreatePipeInputBuilder {
         &self.target
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn target_parameters(mut self, input: crate::types::PipeTargetParameters) -> Self {
         self.target_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_target_parameters(mut self, input: ::std::option::Option<crate::types::PipeTargetParameters>) -> Self {
         self.target_parameters = input;
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_target_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetParameters> {
         &self.target_parameters
     }
@@ -277,6 +290,20 @@ impl CreatePipeInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn log_configuration(mut self, input: crate::types::PipeLogConfigurationParameters) -> Self {
+        self.log_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::PipeLogConfigurationParameters>) -> Self {
+        self.log_configuration = input;
+        self
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::PipeLogConfigurationParameters> {
+        &self.log_configuration
+    }
     /// Consumes the builder and constructs a [`CreatePipeInput`](crate::operation::create_pipe::CreatePipeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_pipe::CreatePipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pipe::CreatePipeInput {
@@ -291,6 +318,7 @@ impl CreatePipeInputBuilder {
             target_parameters: self.target_parameters,
             role_arn: self.role_arn,
             tags: self.tags,
+            log_configuration: self.log_configuration,
         })
     }
 }
@@ -308,6 +336,7 @@ impl ::std::fmt::Debug for CreatePipeInputBuilder {
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("tags", &self.tags);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }

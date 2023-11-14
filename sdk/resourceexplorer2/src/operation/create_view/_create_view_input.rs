@@ -11,6 +11,8 @@ pub struct CreateViewInput {
     /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
     /// <p>The default is an empty list, with no optional fields included in the results.</p>
     pub included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
+    /// <p>The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.</p>
+    pub scope: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>
     /// <p>For information about the supported syntax, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p> <important>
     /// <p>This query string in the context of this operation supports only <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter prefixes</a> with optional <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>. It doesn't support free-form text. For example, the string <code>region:us* service:ec2 -tag:stage=prod</code> includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters <code>us</code> and is <i>not</i> tagged with a key <code>Stage</code> that has the value <code>prod</code>.</p>
@@ -36,6 +38,10 @@ impl CreateViewInput {
     pub fn included_properties(&self) -> &[crate::types::IncludedProperty] {
         self.included_properties.as_deref().unwrap_or_default()
     }
+    /// <p>The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.</p>
+    pub fn scope(&self) -> ::std::option::Option<&str> {
+        self.scope.as_deref()
+    }
     /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>
     /// <p>For information about the supported syntax, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p> <important>
     /// <p>This query string in the context of this operation supports only <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter prefixes</a> with optional <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>. It doesn't support free-form text. For example, the string <code>region:us* service:ec2 -tag:stage=prod</code> includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters <code>us</code> and is <i>not</i> tagged with a key <code>Stage</code> that has the value <code>prod</code>.</p>
@@ -54,8 +60,9 @@ impl ::std::fmt::Debug for CreateViewInput {
         formatter.field("client_token", &self.client_token);
         formatter.field("view_name", &self.view_name);
         formatter.field("included_properties", &self.included_properties);
+        formatter.field("scope", &self.scope);
         formatter.field("filters", &"*** Sensitive Data Redacted ***");
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -73,6 +80,7 @@ pub struct CreateViewInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) view_name: ::std::option::Option<::std::string::String>,
     pub(crate) included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
+    pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::SearchFilter>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -132,6 +140,20 @@ impl CreateViewInputBuilder {
     pub fn get_included_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
         &self.included_properties
     }
+    /// <p>The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.</p>
+    pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scope = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope
+    }
     /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>
     /// <p>For information about the supported syntax, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query reference for Resource Explorer</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p> <important>
     /// <p>This query string in the context of this operation supports only <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter prefixes</a> with optional <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>. It doesn't support free-form text. For example, the string <code>region:us* service:ec2 -tag:stage=prod</code> includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters <code>us</code> and is <i>not</i> tagged with a key <code>Stage</code> that has the value <code>prod</code>.</p>
@@ -181,6 +203,7 @@ impl CreateViewInputBuilder {
             client_token: self.client_token,
             view_name: self.view_name,
             included_properties: self.included_properties,
+            scope: self.scope,
             filters: self.filters,
             tags: self.tags,
         })
@@ -192,8 +215,9 @@ impl ::std::fmt::Debug for CreateViewInputBuilder {
         formatter.field("client_token", &self.client_token);
         formatter.field("view_name", &self.view_name);
         formatter.field("included_properties", &self.included_properties);
+        formatter.field("scope", &self.scope);
         formatter.field("filters", &"*** Sensitive Data Redacted ***");
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

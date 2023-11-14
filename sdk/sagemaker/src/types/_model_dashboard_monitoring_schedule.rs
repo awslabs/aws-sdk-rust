@@ -26,6 +26,8 @@ pub struct ModelDashboardMonitoringSchedule {
     pub monitoring_alert_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
     /// <p>Summary of information about the last monitoring job to run.</p>
     pub last_monitoring_execution_summary: ::std::option::Option<crate::types::MonitoringExecutionSummary>,
+    /// <p>Input object for the batch transform job.</p>
+    pub batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
 }
 impl ModelDashboardMonitoringSchedule {
     /// <p>The Amazon Resource Name (ARN) of a monitoring schedule.</p>
@@ -74,6 +76,10 @@ impl ModelDashboardMonitoringSchedule {
     pub fn last_monitoring_execution_summary(&self) -> ::std::option::Option<&crate::types::MonitoringExecutionSummary> {
         self.last_monitoring_execution_summary.as_ref()
     }
+    /// <p>Input object for the batch transform job.</p>
+    pub fn batch_transform_input(&self) -> ::std::option::Option<&crate::types::BatchTransformInput> {
+        self.batch_transform_input.as_ref()
+    }
 }
 impl ModelDashboardMonitoringSchedule {
     /// Creates a new builder-style object to manufacture [`ModelDashboardMonitoringSchedule`](crate::types::ModelDashboardMonitoringSchedule).
@@ -97,6 +103,7 @@ pub struct ModelDashboardMonitoringScheduleBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_alert_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
     pub(crate) last_monitoring_execution_summary: ::std::option::Option<crate::types::MonitoringExecutionSummary>,
+    pub(crate) batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
 }
 impl ModelDashboardMonitoringScheduleBuilder {
     /// <p>The Amazon Resource Name (ARN) of a monitoring schedule.</p>
@@ -259,6 +266,20 @@ impl ModelDashboardMonitoringScheduleBuilder {
     pub fn get_last_monitoring_execution_summary(&self) -> &::std::option::Option<crate::types::MonitoringExecutionSummary> {
         &self.last_monitoring_execution_summary
     }
+    /// <p>Input object for the batch transform job.</p>
+    pub fn batch_transform_input(mut self, input: crate::types::BatchTransformInput) -> Self {
+        self.batch_transform_input = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Input object for the batch transform job.</p>
+    pub fn set_batch_transform_input(mut self, input: ::std::option::Option<crate::types::BatchTransformInput>) -> Self {
+        self.batch_transform_input = input;
+        self
+    }
+    /// <p>Input object for the batch transform job.</p>
+    pub fn get_batch_transform_input(&self) -> &::std::option::Option<crate::types::BatchTransformInput> {
+        &self.batch_transform_input
+    }
     /// Consumes the builder and constructs a [`ModelDashboardMonitoringSchedule`](crate::types::ModelDashboardMonitoringSchedule).
     pub fn build(self) -> crate::types::ModelDashboardMonitoringSchedule {
         crate::types::ModelDashboardMonitoringSchedule {
@@ -273,6 +294,7 @@ impl ModelDashboardMonitoringScheduleBuilder {
             endpoint_name: self.endpoint_name,
             monitoring_alert_summaries: self.monitoring_alert_summaries,
             last_monitoring_execution_summary: self.last_monitoring_execution_summary,
+            batch_transform_input: self.batch_transform_input,
         }
     }
 }

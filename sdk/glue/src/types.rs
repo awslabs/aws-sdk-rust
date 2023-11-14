@@ -33,6 +33,10 @@ pub use crate::types::_trigger_type::TriggerType;
 
 pub use crate::types::_trigger_update::TriggerUpdate;
 
+pub use crate::types::_table_optimizer_configuration::TableOptimizerConfiguration;
+
+pub use crate::types::_table_optimizer_type::TableOptimizerType;
+
 pub use crate::types::_table_input::TableInput;
 
 pub use crate::types::_table_identifier::TableIdentifier;
@@ -79,6 +83,14 @@ pub use crate::types::_execution_class::ExecutionClass;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNode;
 
+pub use crate::types::_connector_data_target::ConnectorDataTarget;
+
+pub use crate::types::_connector_data_source::ConnectorDataSource;
+
+pub use crate::types::_glue_schema::GlueSchema;
+
+pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumn;
+
 pub use crate::types::_snowflake_target::SnowflakeTarget;
 
 pub use crate::types::_snowflake_node_data::SnowflakeNodeData;
@@ -86,10 +98,6 @@ pub use crate::types::_snowflake_node_data::SnowflakeNodeData;
 pub use crate::types::_option::Option;
 
 pub use crate::types::_snowflake_source::SnowflakeSource;
-
-pub use crate::types::_glue_schema::GlueSchema;
-
-pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumn;
 
 pub use crate::types::_recipe::Recipe;
 
@@ -463,6 +471,12 @@ pub use crate::types::_encryption_at_rest::EncryptionAtRest;
 
 pub use crate::types::_catalog_encryption_mode::CatalogEncryptionMode;
 
+pub use crate::types::_table_optimizer_run::TableOptimizerRun;
+
+pub use crate::types::_run_metrics::RunMetrics;
+
+pub use crate::types::_table_optimizer_event_type::TableOptimizerEventType;
+
 pub use crate::types::_statement::Statement;
 
 pub use crate::types::_statement_output::StatementOutput;
@@ -580,6 +594,8 @@ pub use crate::types::_partition::Partition;
 pub use crate::types::_segment::Segment;
 
 pub use crate::types::_table_version::TableVersion;
+
+pub use crate::types::_table_optimizer::TableOptimizer;
 
 pub use crate::types::_security_configuration::SecurityConfiguration;
 
@@ -745,6 +761,12 @@ pub use crate::types::_batch_stop_job_run_error::BatchStopJobRunError;
 
 pub use crate::types::_batch_stop_job_run_successful_submission::BatchStopJobRunSuccessfulSubmission;
 
+pub use crate::types::_batch_get_table_optimizer_error::BatchGetTableOptimizerError;
+
+pub use crate::types::_batch_table_optimizer::BatchTableOptimizer;
+
+pub use crate::types::_batch_get_table_optimizer_entry::BatchGetTableOptimizerEntry;
+
 pub use crate::types::_data_quality_result::DataQualityResult;
 
 pub use crate::types::_table_version_error::TableVersionError;
@@ -783,9 +805,15 @@ mod _backfill_error_code;
 
 mod _basic_catalog_target;
 
+mod _batch_get_table_optimizer_entry;
+
+mod _batch_get_table_optimizer_error;
+
 mod _batch_stop_job_run_error;
 
 mod _batch_stop_job_run_successful_submission;
+
+mod _batch_table_optimizer;
 
 mod _batch_update_partition_failure_entry;
 
@@ -876,6 +904,10 @@ mod _connection_property_key;
 mod _connection_type;
 
 mod _connections_list;
+
+mod _connector_data_source;
+
+mod _connector_data_target;
 
 mod _crawl;
 
@@ -1281,6 +1313,8 @@ mod _resource_type;
 
 mod _resource_uri;
 
+mod _run_metrics;
+
 mod _s3_catalog_delta_source;
 
 mod _s3_catalog_hudi_source;
@@ -1422,6 +1456,16 @@ mod _table_error;
 mod _table_identifier;
 
 mod _table_input;
+
+mod _table_optimizer;
+
+mod _table_optimizer_configuration;
+
+mod _table_optimizer_event_type;
+
+mod _table_optimizer_run;
+
+mod _table_optimizer_type;
 
 mod _table_version;
 

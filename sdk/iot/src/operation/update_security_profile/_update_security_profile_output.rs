@@ -25,6 +25,8 @@ pub struct UpdateSecurityProfileOutput {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the security profile was last modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub metrics_export_config: ::std::option::Option<crate::types::MetricsExportConfig>,
     _request_id: Option<String>,
 }
 impl UpdateSecurityProfileOutput {
@@ -76,6 +78,10 @@ impl UpdateSecurityProfileOutput {
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn metrics_export_config(&self) -> ::std::option::Option<&crate::types::MetricsExportConfig> {
+        self.metrics_export_config.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for UpdateSecurityProfileOutput {
     fn request_id(&self) -> Option<&str> {
@@ -103,6 +109,7 @@ pub struct UpdateSecurityProfileOutputBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) metrics_export_config: ::std::option::Option<crate::types::MetricsExportConfig>,
     _request_id: Option<String>,
 }
 impl UpdateSecurityProfileOutputBuilder {
@@ -279,6 +286,20 @@ impl UpdateSecurityProfileOutputBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn metrics_export_config(mut self, input: crate::types::MetricsExportConfig) -> Self {
+        self.metrics_export_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn set_metrics_export_config(mut self, input: ::std::option::Option<crate::types::MetricsExportConfig>) -> Self {
+        self.metrics_export_config = input;
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn get_metrics_export_config(&self) -> &::std::option::Option<crate::types::MetricsExportConfig> {
+        &self.metrics_export_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -301,6 +322,7 @@ impl UpdateSecurityProfileOutputBuilder {
             version: self.version.unwrap_or_default(),
             creation_date: self.creation_date,
             last_modified_date: self.last_modified_date,
+            metrics_export_config: self.metrics_export_config,
             _request_id: self._request_id,
         }
     }

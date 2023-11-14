@@ -122,17 +122,17 @@ impl CreateMembershipFluentBuilder {
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_collaboration_identifier()
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.inner = self.inner.query_log_status(input);
         self
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.inner = self.inner.set_query_log_status(input);
         self
     }
-    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         self.inner.get_query_log_status()
     }
@@ -170,5 +170,25 @@ impl CreateMembershipFluentBuilder {
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
         self.inner.get_default_result_configuration()
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    /// <p>Not required if the collaboration member has the member ability to run queries. </p>
+    /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator. </p>
+    pub fn payment_configuration(mut self, input: crate::types::MembershipPaymentConfiguration) -> Self {
+        self.inner = self.inner.payment_configuration(input);
+        self
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    /// <p>Not required if the collaboration member has the member ability to run queries. </p>
+    /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator. </p>
+    pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::MembershipPaymentConfiguration>) -> Self {
+        self.inner = self.inner.set_payment_configuration(input);
+        self
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member.</p>
+    /// <p>Not required if the collaboration member has the member ability to run queries. </p>
+    /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator. </p>
+    pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::MembershipPaymentConfiguration> {
+        self.inner.get_payment_configuration()
     }
 }

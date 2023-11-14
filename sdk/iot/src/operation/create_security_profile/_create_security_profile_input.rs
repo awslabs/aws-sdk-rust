@@ -19,6 +19,8 @@ pub struct CreateSecurityProfileInput {
     pub additional_metrics_to_retain_v2: ::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>>,
     /// <p>Metadata that can be used to manage the security profile.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub metrics_export_config: ::std::option::Option<crate::types::MetricsExportConfig>,
 }
 impl CreateSecurityProfileInput {
     /// <p>The name you are giving to the security profile.</p>
@@ -59,6 +61,10 @@ impl CreateSecurityProfileInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn metrics_export_config(&self) -> ::std::option::Option<&crate::types::MetricsExportConfig> {
+        self.metrics_export_config.as_ref()
+    }
 }
 impl CreateSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityProfileInput`](crate::operation::create_security_profile::CreateSecurityProfileInput).
@@ -78,6 +84,7 @@ pub struct CreateSecurityProfileInputBuilder {
     pub(crate) additional_metrics_to_retain: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) additional_metrics_to_retain_v2: ::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) metrics_export_config: ::std::option::Option<crate::types::MetricsExportConfig>,
 }
 impl CreateSecurityProfileInputBuilder {
     /// <p>The name you are giving to the security profile.</p>
@@ -218,6 +225,20 @@ impl CreateSecurityProfileInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn metrics_export_config(mut self, input: crate::types::MetricsExportConfig) -> Self {
+        self.metrics_export_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn set_metrics_export_config(mut self, input: ::std::option::Option<crate::types::MetricsExportConfig>) -> Self {
+        self.metrics_export_config = input;
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn get_metrics_export_config(&self) -> &::std::option::Option<crate::types::MetricsExportConfig> {
+        &self.metrics_export_config
+    }
     /// Consumes the builder and constructs a [`CreateSecurityProfileInput`](crate::operation::create_security_profile::CreateSecurityProfileInput).
     pub fn build(
         self,
@@ -231,6 +252,7 @@ impl CreateSecurityProfileInputBuilder {
             additional_metrics_to_retain: self.additional_metrics_to_retain,
             additional_metrics_to_retain_v2: self.additional_metrics_to_retain_v2,
             tags: self.tags,
+            metrics_export_config: self.metrics_export_config,
         })
     }
 }

@@ -51,6 +51,11 @@ pub struct BackupJob {
     pub is_parent: bool,
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    pub message_category: ::std::option::Option<::std::string::String>,
 }
 impl BackupJob {
     /// <p>The account ID that owns the backup job.</p>
@@ -146,6 +151,13 @@ impl BackupJob {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    pub fn message_category(&self) -> ::std::option::Option<&str> {
+        self.message_category.as_deref()
+    }
 }
 impl BackupJob {
     /// Creates a new builder-style object to manufacture [`BackupJob`](crate::types::BackupJob).
@@ -181,6 +193,7 @@ pub struct BackupJobBuilder {
     pub(crate) parent_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_parent: ::std::option::Option<bool>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) message_category: ::std::option::Option<::std::string::String>,
 }
 impl BackupJobBuilder {
     /// <p>The account ID that owns the backup job.</p>
@@ -521,6 +534,29 @@ impl BackupJobBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    pub fn message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.message_category = input;
+        self
+    }
+    /// <p>This parameter is the job count for the specified message category.</p>
+    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>The the value ANY returns count of all message categories.</p>
+    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
+    pub fn get_message_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_category
+    }
     /// Consumes the builder and constructs a [`BackupJob`](crate::types::BackupJob).
     pub fn build(self) -> crate::types::BackupJob {
         crate::types::BackupJob {
@@ -547,6 +583,7 @@ impl BackupJobBuilder {
             parent_job_id: self.parent_job_id,
             is_parent: self.is_parent.unwrap_or_default(),
             resource_name: self.resource_name,
+            message_category: self.message_category,
         }
     }
 }

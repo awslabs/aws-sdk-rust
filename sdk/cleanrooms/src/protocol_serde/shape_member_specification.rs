@@ -18,5 +18,11 @@ pub fn ser_member_specification(
     {
         object.key("displayName").string(input.display_name.as_str());
     }
+    if let Some(var_3) = &input.payment_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("paymentConfiguration").start_object();
+        crate::protocol_serde::shape_payment_configuration::ser_payment_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

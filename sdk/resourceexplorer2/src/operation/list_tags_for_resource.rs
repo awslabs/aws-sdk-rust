@@ -98,6 +98,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTag
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("ListTagsForResource", "resourceexplorer2"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
@@ -261,7 +262,7 @@ pub enum ListTagsForResourceError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>You specified a resource that doesn't exist. Check the ID or ARN that you used to identity the resource, and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas for Resource Explorer</a>.</p>
+    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas for Resource Explorer</a>.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The principal making the request isn't permitted to perform the operation.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),

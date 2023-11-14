@@ -5,6 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeEnrichmentParameters {
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
+    /// <p>To remove an input template, specify an empty string.</p>
     pub input_template: ::std::option::Option<::std::string::String>,
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
@@ -12,6 +13,7 @@ pub struct PipeEnrichmentParameters {
 }
 impl PipeEnrichmentParameters {
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
+    /// <p>To remove an input template, specify an empty string.</p>
     pub fn input_template(&self) -> ::std::option::Option<&str> {
         self.input_template.as_deref()
     }
@@ -45,16 +47,19 @@ pub struct PipeEnrichmentParametersBuilder {
 }
 impl PipeEnrichmentParametersBuilder {
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
+    /// <p>To remove an input template, specify an empty string.</p>
     pub fn input_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
+    /// <p>To remove an input template, specify an empty string.</p>
     pub fn set_input_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_template = input;
         self
     }
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
+    /// <p>To remove an input template, specify an empty string.</p>
     pub fn get_input_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_template
     }

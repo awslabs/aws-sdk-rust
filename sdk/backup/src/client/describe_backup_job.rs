@@ -30,6 +30,7 @@ impl super::Client {
     ///   - [`number_of_child_jobs(Option<i64>)`](crate::operation::describe_backup_job::DescribeBackupJobOutput::number_of_child_jobs): <p>This returns the number of child (nested) backup jobs.</p>
     ///   - [`child_jobs_in_state(Option<HashMap::<BackupJobState, i64>>)`](crate::operation::describe_backup_job::DescribeBackupJobOutput::child_jobs_in_state): <p>This returns the statistics of the included child (nested) backup jobs.</p>
     ///   - [`resource_name(Option<String>)`](crate::operation::describe_backup_job::DescribeBackupJobOutput::resource_name): <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    ///   - [`message_category(Option<String>)`](crate::operation::describe_backup_job::DescribeBackupJobOutput::message_category): <p>This is the job count for the specified message category.</p>  <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// - On failure, responds with [`SdkError<DescribeBackupJobError>`](crate::operation::describe_backup_job::DescribeBackupJobError)
     pub fn describe_backup_job(&self) -> crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder {
         crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder::new(self.handle.clone())

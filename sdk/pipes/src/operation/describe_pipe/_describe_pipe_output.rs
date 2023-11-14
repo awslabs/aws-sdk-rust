@@ -26,6 +26,7 @@ pub struct DescribePipeOutput {
     /// <p>The ARN of the target resource.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub target_parameters: ::std::option::Option<crate::types::PipeTargetParameters>,
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -35,6 +36,8 @@ pub struct DescribePipeOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub log_configuration: ::std::option::Option<crate::types::PipeLogConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribePipeOutput {
@@ -83,6 +86,7 @@ impl DescribePipeOutput {
         self.target.as_deref()
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn target_parameters(&self) -> ::std::option::Option<&crate::types::PipeTargetParameters> {
         self.target_parameters.as_ref()
     }
@@ -101,6 +105,10 @@ impl DescribePipeOutput {
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::PipeLogConfiguration> {
+        self.log_configuration.as_ref()
     }
 }
 impl ::std::fmt::Debug for DescribePipeOutput {
@@ -122,6 +130,7 @@ impl ::std::fmt::Debug for DescribePipeOutput {
         formatter.field("tags", &self.tags);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -158,6 +167,7 @@ pub struct DescribePipeOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) log_configuration: ::std::option::Option<crate::types::PipeLogConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribePipeOutputBuilder {
@@ -316,16 +326,19 @@ impl DescribePipeOutputBuilder {
         &self.target
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn target_parameters(mut self, input: crate::types::PipeTargetParameters) -> Self {
         self.target_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_target_parameters(mut self, input: ::std::option::Option<crate::types::PipeTargetParameters>) -> Self {
         self.target_parameters = input;
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
+    /// <p>For more information about pipe target parameters, including how to use dynamic path parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target parameters</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_target_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetParameters> {
         &self.target_parameters
     }
@@ -391,6 +404,20 @@ impl DescribePipeOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn log_configuration(mut self, input: crate::types::PipeLogConfiguration) -> Self {
+        self.log_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::PipeLogConfiguration>) -> Self {
+        self.log_configuration = input;
+        self
+    }
+    /// <p>The logging configuration settings for the pipe.</p>
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::PipeLogConfiguration> {
+        &self.log_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -419,6 +446,7 @@ impl DescribePipeOutputBuilder {
             tags: self.tags,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
+            log_configuration: self.log_configuration,
             _request_id: self._request_id,
         }
     }
@@ -442,6 +470,7 @@ impl ::std::fmt::Debug for DescribePipeOutputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

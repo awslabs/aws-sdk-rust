@@ -503,6 +503,35 @@ impl From<crate::operation::batch_get_partition::BatchGetPartitionError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError> for Error {
+    fn from(err: crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError) -> Self {
+        match err {
+            crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_triggers::BatchGetTriggersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1432,6 +1461,40 @@ impl From<crate::operation::create_table::CreateTableError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_table_optimizer::CreateTableOptimizerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_table_optimizer::CreateTableOptimizerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_table_optimizer::CreateTableOptimizerError> for Error {
+    fn from(err: crate::operation::create_table_optimizer::CreateTableOptimizerError) -> Self {
+        match err {
+            crate::operation::create_table_optimizer::CreateTableOptimizerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_table_optimizer::CreateTableOptimizerError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_table_optimizer::CreateTableOptimizerError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::create_table_optimizer::CreateTableOptimizerError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_table_optimizer::CreateTableOptimizerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_table_optimizer::CreateTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trigger::CreateTriggerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2231,6 +2294,37 @@ impl From<crate::operation::delete_table::DeleteTableError> for Error {
             crate::operation::delete_table::DeleteTableError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::delete_table::DeleteTableError::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
             crate::operation::delete_table::DeleteTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_table_optimizer::DeleteTableOptimizerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_table_optimizer::DeleteTableOptimizerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_table_optimizer::DeleteTableOptimizerError> for Error {
+    fn from(err: crate::operation::delete_table_optimizer::DeleteTableOptimizerError) -> Self {
+        match err {
+            crate::operation::delete_table_optimizer::DeleteTableOptimizerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_table_optimizer::DeleteTableOptimizerError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::delete_table_optimizer::DeleteTableOptimizerError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_table_optimizer::DeleteTableOptimizerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_table_optimizer::DeleteTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3906,6 +4000,33 @@ impl From<crate::operation::get_table::GetTableError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_optimizer::GetTableOptimizerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_optimizer::GetTableOptimizerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_table_optimizer::GetTableOptimizerError> for Error {
+    fn from(err: crate::operation::get_table_optimizer::GetTableOptimizerError) -> Self {
+        match err {
+            crate::operation::get_table_optimizer::GetTableOptimizerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_table_optimizer::GetTableOptimizerError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_table_optimizer::GetTableOptimizerError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_table_optimizer::GetTableOptimizerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_table_optimizer::GetTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tables::GetTablesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4960,6 +5081,44 @@ impl From<crate::operation::list_statements::ListStatementsError> for Error {
             crate::operation::list_statements::ListStatementsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::list_statements::ListStatementsError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::list_statements::ListStatementsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError> for Error {
+    fn from(err: crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError) -> Self {
+        match err {
+            crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6712,6 +6871,37 @@ impl From<crate::operation::update_table::UpdateTableError> for Error {
                 Error::ResourceNumberLimitExceededException(inner)
             }
             crate::operation::update_table::UpdateTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_table_optimizer::UpdateTableOptimizerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_table_optimizer::UpdateTableOptimizerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_table_optimizer::UpdateTableOptimizerError> for Error {
+    fn from(err: crate::operation::update_table_optimizer::UpdateTableOptimizerError) -> Self {
+        match err {
+            crate::operation::update_table_optimizer::UpdateTableOptimizerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_table_optimizer::UpdateTableOptimizerError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::update_table_optimizer::UpdateTableOptimizerError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_table_optimizer::UpdateTableOptimizerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_table_optimizer::UpdateTableOptimizerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

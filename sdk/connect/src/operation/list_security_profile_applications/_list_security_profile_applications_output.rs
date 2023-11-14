@@ -8,6 +8,10 @@ pub struct ListSecurityProfileApplicationsOutput {
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSecurityProfileApplicationsOutput {
@@ -21,6 +25,14 @@ impl ListSecurityProfileApplicationsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSecurityProfileApplicationsOutput {
@@ -41,6 +53,8 @@ impl ListSecurityProfileApplicationsOutput {
 pub struct ListSecurityProfileApplicationsOutputBuilder {
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSecurityProfileApplicationsOutputBuilder {
@@ -81,6 +95,34 @@ impl ListSecurityProfileApplicationsOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -95,6 +137,8 @@ impl ListSecurityProfileApplicationsOutputBuilder {
         crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput {
             applications: self.applications,
             next_token: self.next_token,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
             _request_id: self._request_id,
         }
     }

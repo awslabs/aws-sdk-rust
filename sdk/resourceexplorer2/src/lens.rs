@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_indexes_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_indexes_for_members_output_next_token(
+    input: &crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_supported_resource_types_output_next_token(
     input: &crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -40,6 +50,16 @@ pub(crate) fn reflens_search_output_next_token(input: &crate::operation::search:
 pub(crate) fn lens_list_indexes_output_indexes(
     input: crate::operation::list_indexes::ListIndexesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Index>> {
+    let input = match input.indexes {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_indexes_for_members_output_indexes(
+    input: crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MemberIndex>> {
     let input = match input.indexes {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

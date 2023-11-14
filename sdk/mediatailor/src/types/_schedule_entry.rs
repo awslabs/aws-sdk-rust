@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
-    pub approximate_duration_seconds: i64,
+    pub approximate_duration_seconds: ::std::option::Option<i64>,
     /// <p>The approximate time that the program will start playing.</p>
     pub approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the program.</p>
@@ -27,7 +27,7 @@ pub struct ScheduleEntry {
 }
 impl ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
-    pub fn approximate_duration_seconds(&self) -> i64 {
+    pub fn approximate_duration_seconds(&self) -> ::std::option::Option<i64> {
         self.approximate_duration_seconds
     }
     /// <p>The approximate time that the program will start playing.</p>
@@ -254,7 +254,7 @@ impl ScheduleEntryBuilder {
     /// - [`source_location_name`](crate::types::builders::ScheduleEntryBuilder::source_location_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduleEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduleEntry {
-            approximate_duration_seconds: self.approximate_duration_seconds.unwrap_or_default(),
+            approximate_duration_seconds: self.approximate_duration_seconds,
             approximate_start_time: self.approximate_start_time,
             arn: self.arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

@@ -15,18 +15,24 @@ pub fn ser_create_membership_input(
         )?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_4) = &input.payment_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_5 = object.key("paymentConfiguration").start_object();
+        crate::protocol_serde::shape_membership_payment_configuration::ser_membership_payment_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_6.finish();
+        object_8.finish();
     }
     Ok(())
 }

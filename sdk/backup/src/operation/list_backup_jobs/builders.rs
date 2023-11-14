@@ -327,4 +327,21 @@ impl ListBackupJobsFluentBuilder {
     pub fn get_by_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_parent_job_id()
     }
+    /// <p>This returns a list of backup jobs for the specified message category.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    pub fn by_message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.by_message_category(input.into());
+        self
+    }
+    /// <p>This returns a list of backup jobs for the specified message category.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    pub fn set_by_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_by_message_category(input);
+        self
+    }
+    /// <p>This returns a list of backup jobs for the specified message category.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    pub fn get_by_message_category(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_message_category()
+    }
 }

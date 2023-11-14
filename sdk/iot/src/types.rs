@@ -29,6 +29,8 @@ pub use crate::types::_stream_file::StreamFile;
 
 pub use crate::types::_s3_location::S3Location;
 
+pub use crate::types::_metrics_export_config::MetricsExportConfig;
+
 pub use crate::types::_metric_to_retain::MetricToRetain;
 
 pub use crate::types::_alert_target::AlertTarget;
@@ -882,6 +884,8 @@ mod _metric_dimension;
 mod _metric_to_retain;
 
 mod _metric_value;
+
+mod _metrics_export_config;
 
 mod _mitigation_action;
 

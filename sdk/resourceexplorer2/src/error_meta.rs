@@ -5,7 +5,9 @@
 pub enum Error {
     /// <p>The credentials that you used to call this operation don't have the minimum required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request failed because either you specified parameters that didn’t match the original request, or you attempted to create a view with a name that already exists in this Amazon Web Services Region.</p>
+    /// <p>If you attempted to create a view, then the request failed because either you specified parameters that didn’t match the original request, or you attempted to create a view with a name that already exists in this Amazon Web Services Region.</p>
+    /// <p>If you attempted to create an index, then the request failed because either you specified parameters that didn't match the original request, or an index already exists in the current Amazon Web Services Region.</p>
+    /// <p>If you attempted to update an index type to <code>AGGREGATOR</code>, then the request failed because you already have an <code>AGGREGATOR</code> index in a different Amazon Web Services Region.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request failed because of internal service error. Try your request again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -13,7 +15,7 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request failed because it exceeds a service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas for Resource Explorer</a>.</p>
+    /// <p>The request failed because you exceeded a rate limit for this operation. For more information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas for Resource Explorer</a>.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The principal making the request isn't permitted to perform the operation.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
@@ -240,6 +242,9 @@ impl From<crate::operation::disassociate_default_view::DisassociateDefaultViewEr
             crate::operation::disassociate_default_view::DisassociateDefaultViewError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::disassociate_default_view::DisassociateDefaultViewError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::disassociate_default_view::DisassociateDefaultViewError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -247,6 +252,54 @@ impl From<crate::operation::disassociate_default_view::DisassociateDefaultViewEr
                 Error::ValidationException(inner)
             }
             crate::operation::disassociate_default_view::DisassociateDefaultViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationError> for Error {
+    fn from(err: crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationError) -> Self {
+        match err {
+            crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -359,6 +412,39 @@ impl From<crate::operation::list_indexes::ListIndexesError> for Error {
             crate::operation::list_indexes::ListIndexesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_indexes::ListIndexesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_indexes::ListIndexesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_indexes_for_members::ListIndexesForMembersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_indexes_for_members::ListIndexesForMembersError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_indexes_for_members::ListIndexesForMembersError> for Error {
+    fn from(err: crate::operation::list_indexes_for_members::ListIndexesForMembersError) -> Self {
+        match err {
+            crate::operation::list_indexes_for_members::ListIndexesForMembersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_indexes_for_members::ListIndexesForMembersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_indexes_for_members::ListIndexesForMembersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_indexes_for_members::ListIndexesForMembersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_indexes_for_members::ListIndexesForMembersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

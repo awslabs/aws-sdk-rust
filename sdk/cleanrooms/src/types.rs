@@ -43,6 +43,10 @@ pub use crate::types::_protected_query_summary::ProtectedQuerySummary;
 
 pub use crate::types::_membership_summary::MembershipSummary;
 
+pub use crate::types::_membership_payment_configuration::MembershipPaymentConfiguration;
+
+pub use crate::types::_membership_query_compute_payment_config::MembershipQueryComputePaymentConfig;
+
 pub use crate::types::_member_ability::MemberAbility;
 
 pub use crate::types::_membership_status::MembershipStatus;
@@ -104,6 +108,10 @@ pub use crate::types::_analysis_rule_type::AnalysisRuleType;
 pub use crate::types::_schema_type::SchemaType;
 
 pub use crate::types::_member_summary::MemberSummary;
+
+pub use crate::types::_payment_configuration::PaymentConfiguration;
+
+pub use crate::types::_query_compute_payment_config::QueryComputePaymentConfig;
 
 pub use crate::types::_member_status::MemberStatus;
 
@@ -243,9 +251,13 @@ mod _member_summary;
 
 mod _membership;
 
+mod _membership_payment_configuration;
+
 mod _membership_protected_query_output_configuration;
 
 mod _membership_protected_query_result_configuration;
+
+mod _membership_query_compute_payment_config;
 
 mod _membership_query_log_status;
 
@@ -254,6 +266,8 @@ mod _membership_status;
 mod _membership_summary;
 
 mod _parameter_type;
+
+mod _payment_configuration;
 
 mod _protected_query;
 
@@ -282,6 +296,8 @@ mod _protected_query_status;
 mod _protected_query_summary;
 
 mod _protected_query_type;
+
+mod _query_compute_payment_config;
 
 mod _resource_type;
 

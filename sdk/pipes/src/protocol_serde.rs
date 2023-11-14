@@ -73,6 +73,10 @@ pub(crate) mod shape_pipe_enrichment_parameters;
 
 pub(crate) mod shape_pipe_list;
 
+pub(crate) mod shape_pipe_log_configuration;
+
+pub(crate) mod shape_pipe_log_configuration_parameters;
+
 pub(crate) mod shape_pipe_source_parameters;
 
 pub(crate) mod shape_pipe_target_parameters;
@@ -83,7 +87,17 @@ pub(crate) mod shape_update_pipe_source_parameters;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_cloudwatch_logs_log_destination;
+
+pub(crate) mod shape_cloudwatch_logs_log_destination_parameters;
+
 pub(crate) mod shape_filter_criteria;
+
+pub(crate) mod shape_firehose_log_destination;
+
+pub(crate) mod shape_firehose_log_destination_parameters;
+
+pub(crate) mod shape_include_execution_data;
 
 pub(crate) mod shape_pipe;
 
@@ -124,6 +138,10 @@ pub(crate) mod shape_pipe_target_sage_maker_pipeline_parameters;
 pub(crate) mod shape_pipe_target_sqs_queue_parameters;
 
 pub(crate) mod shape_pipe_target_state_machine_parameters;
+
+pub(crate) mod shape_s3_log_destination;
+
+pub(crate) mod shape_s3_log_destination_parameters;
 
 pub(crate) mod shape_update_pipe_source_active_mq_broker_parameters;
 

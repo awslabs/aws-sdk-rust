@@ -103,6 +103,8 @@ pub(crate) mod shape_get_recovery_point_restore_metadata;
 
 pub(crate) mod shape_get_supported_resource_types;
 
+pub(crate) mod shape_list_backup_job_summaries;
+
 pub(crate) mod shape_list_backup_jobs;
 
 pub(crate) mod shape_list_backup_plan_templates;
@@ -114,6 +116,8 @@ pub(crate) mod shape_list_backup_plans;
 pub(crate) mod shape_list_backup_selections;
 
 pub(crate) mod shape_list_backup_vaults;
+
+pub(crate) mod shape_list_copy_job_summaries;
 
 pub(crate) mod shape_list_copy_jobs;
 
@@ -134,6 +138,8 @@ pub(crate) mod shape_list_recovery_points_by_resource;
 pub(crate) mod shape_list_report_jobs;
 
 pub(crate) mod shape_list_report_plans;
+
+pub(crate) mod shape_list_restore_job_summaries;
 
 pub(crate) mod shape_list_restore_jobs;
 
@@ -249,6 +255,8 @@ pub(crate) mod shape_advanced_backup_settings;
 
 pub(crate) mod shape_backup_job_child_jobs_in_state;
 
+pub(crate) mod shape_backup_job_summary_list;
+
 pub(crate) mod shape_backup_jobs_list;
 
 pub(crate) mod shape_backup_options;
@@ -274,6 +282,8 @@ pub(crate) mod shape_backup_vault_list;
 pub(crate) mod shape_calculated_lifecycle;
 
 pub(crate) mod shape_copy_job;
+
+pub(crate) mod shape_copy_job_summary_list;
 
 pub(crate) mod shape_copy_jobs_list;
 
@@ -321,6 +331,8 @@ pub(crate) mod shape_resource_type_opt_in_preference;
 
 pub(crate) mod shape_resource_types;
 
+pub(crate) mod shape_restore_job_summary_list;
+
 pub(crate) mod shape_restore_jobs_list;
 
 pub(crate) mod shape_tags;
@@ -328,6 +340,8 @@ pub(crate) mod shape_tags;
 pub(crate) mod shape_advanced_backup_setting;
 
 pub(crate) mod shape_backup_job;
+
+pub(crate) mod shape_backup_job_summary;
 
 pub(crate) mod shape_backup_plan_templates_list_member;
 
@@ -351,6 +365,8 @@ pub(crate) mod shape_control_scope;
 
 pub(crate) mod shape_copy_job_child_jobs_in_state;
 
+pub(crate) mod shape_copy_job_summary;
+
 pub(crate) mod shape_date_range;
 
 pub(crate) mod shape_framework;
@@ -372,6 +388,8 @@ pub(crate) mod shape_report_destination;
 pub(crate) mod shape_resource_arns;
 
 pub(crate) mod shape_resource_identifiers;
+
+pub(crate) mod shape_restore_job_summary;
 
 pub(crate) mod shape_restore_jobs_list_member;
 

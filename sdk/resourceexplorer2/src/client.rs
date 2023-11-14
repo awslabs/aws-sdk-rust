@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListSupportedResourceTypes`](crate::operation::list_supported_resource_types) operation has
-/// a [`Client::list_supported_resource_types`], function which returns a builder for that operation.
+/// For example, the [`ListIndexesForMembers`](crate::operation::list_indexes_for_members) operation has
+/// a [`Client::list_indexes_for_members`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_supported_resource_types()
+/// let result = client.list_indexes_for_members()
 ///     .next_token("example")
 ///     .send()
 ///     .await;
@@ -173,6 +173,8 @@ mod delete_view;
 
 mod disassociate_default_view;
 
+mod get_account_level_service_configuration;
+
 mod get_default_view;
 
 mod get_index;
@@ -180,6 +182,8 @@ mod get_index;
 mod get_view;
 
 mod list_indexes;
+
+mod list_indexes_for_members;
 
 mod list_supported_resource_types;
 

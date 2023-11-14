@@ -25,6 +25,10 @@ pub struct UpdateSecurityProfileInput {
     pub delete_additional_metrics_to_retain: ::std::option::Option<bool>,
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub expected_version: ::std::option::Option<i64>,
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub metrics_export_config: ::std::option::Option<crate::types::MetricsExportConfig>,
+    /// <p>Set the value as true to delete metrics export related configurations.</p>
+    pub delete_metrics_export_config: ::std::option::Option<bool>,
 }
 impl UpdateSecurityProfileInput {
     /// <p>The name of the security profile you want to update.</p>
@@ -75,6 +79,14 @@ impl UpdateSecurityProfileInput {
     pub fn expected_version(&self) -> ::std::option::Option<i64> {
         self.expected_version
     }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn metrics_export_config(&self) -> ::std::option::Option<&crate::types::MetricsExportConfig> {
+        self.metrics_export_config.as_ref()
+    }
+    /// <p>Set the value as true to delete metrics export related configurations.</p>
+    pub fn delete_metrics_export_config(&self) -> ::std::option::Option<bool> {
+        self.delete_metrics_export_config
+    }
 }
 impl UpdateSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
@@ -97,6 +109,8 @@ pub struct UpdateSecurityProfileInputBuilder {
     pub(crate) delete_alert_targets: ::std::option::Option<bool>,
     pub(crate) delete_additional_metrics_to_retain: ::std::option::Option<bool>,
     pub(crate) expected_version: ::std::option::Option<i64>,
+    pub(crate) metrics_export_config: ::std::option::Option<crate::types::MetricsExportConfig>,
+    pub(crate) delete_metrics_export_config: ::std::option::Option<bool>,
 }
 impl UpdateSecurityProfileInputBuilder {
     /// <p>The name of the security profile you want to update.</p>
@@ -273,6 +287,34 @@ impl UpdateSecurityProfileInputBuilder {
     pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
         &self.expected_version
     }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn metrics_export_config(mut self, input: crate::types::MetricsExportConfig) -> Self {
+        self.metrics_export_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn set_metrics_export_config(mut self, input: ::std::option::Option<crate::types::MetricsExportConfig>) -> Self {
+        self.metrics_export_config = input;
+        self
+    }
+    /// <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+    pub fn get_metrics_export_config(&self) -> &::std::option::Option<crate::types::MetricsExportConfig> {
+        &self.metrics_export_config
+    }
+    /// <p>Set the value as true to delete metrics export related configurations.</p>
+    pub fn delete_metrics_export_config(mut self, input: bool) -> Self {
+        self.delete_metrics_export_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set the value as true to delete metrics export related configurations.</p>
+    pub fn set_delete_metrics_export_config(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_metrics_export_config = input;
+        self
+    }
+    /// <p>Set the value as true to delete metrics export related configurations.</p>
+    pub fn get_delete_metrics_export_config(&self) -> &::std::option::Option<bool> {
+        &self.delete_metrics_export_config
+    }
     /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
     pub fn build(
         self,
@@ -289,6 +331,8 @@ impl UpdateSecurityProfileInputBuilder {
             delete_alert_targets: self.delete_alert_targets,
             delete_additional_metrics_to_retain: self.delete_additional_metrics_to_retain,
             expected_version: self.expected_version,
+            metrics_export_config: self.metrics_export_config,
+            delete_metrics_export_config: self.delete_metrics_export_config,
         })
     }
 }

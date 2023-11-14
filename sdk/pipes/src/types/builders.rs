@@ -3,6 +3,14 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_pipe::PipeBuilder;
 
+pub use crate::types::_pipe_log_configuration_parameters::PipeLogConfigurationParametersBuilder;
+
+pub use crate::types::_cloudwatch_logs_log_destination_parameters::CloudwatchLogsLogDestinationParametersBuilder;
+
+pub use crate::types::_firehose_log_destination_parameters::FirehoseLogDestinationParametersBuilder;
+
+pub use crate::types::_s3_log_destination_parameters::S3LogDestinationParametersBuilder;
+
 pub use crate::types::_pipe_target_parameters::PipeTargetParametersBuilder;
 
 pub use crate::types::_pipe_target_cloud_watch_logs_parameters::PipeTargetCloudWatchLogsParametersBuilder;
@@ -110,3 +118,11 @@ pub use crate::types::_update_pipe_source_sqs_queue_parameters::UpdatePipeSource
 pub use crate::types::_update_pipe_source_dynamo_db_stream_parameters::UpdatePipeSourceDynamoDbStreamParametersBuilder;
 
 pub use crate::types::_update_pipe_source_kinesis_stream_parameters::UpdatePipeSourceKinesisStreamParametersBuilder;
+
+pub use crate::types::_pipe_log_configuration::PipeLogConfigurationBuilder;
+
+pub use crate::types::_cloudwatch_logs_log_destination::CloudwatchLogsLogDestinationBuilder;
+
+pub use crate::types::_firehose_log_destination::FirehoseLogDestinationBuilder;
+
+pub use crate::types::_s3_log_destination::S3LogDestinationBuilder;

@@ -26,9 +26,9 @@ impl StartSigningJobInputBuilder {
 /// <ul>
 /// <li> <p> You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li>
 /// <li> <p>Your S3 source bucket must be version enabled.</p> </li>
-/// <li> <p>You must create an S3 destination bucket. Code signing uses your S3 destination bucket to write your signed code.</p> </li>
+/// <li> <p>You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket to write your signed code.</p> </li>
 /// <li> <p>You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code> operation.</p> </li>
-/// <li> <p>You must also specify a request token that identifies your request to code signing.</p> </li>
+/// <li> <p>You must also specify a request token that identifies your request to Signer.</p> </li>
 /// </ul>
 /// <p>You can call the <code>DescribeSigningJob</code> and the <code>ListSigningJobs</code> actions after you call <code>StartSigningJob</code>.</p>
 /// <p>For a Java example that shows how to use this action, see <a href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.</p>

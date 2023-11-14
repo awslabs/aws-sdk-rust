@@ -11,6 +11,8 @@ impl super::Client {
     /// - On success, responds with [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput) with field(s):
     ///   - [`permissions(Option<Vec::<String>>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::permissions): <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::last_modified_time): <p>The timestamp when this resource was last modified.</p>
+    ///   - [`last_modified_region(Option<String>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::last_modified_region): <p>The Amazon Web Services Region where this resource was last modified.</p>
     /// - On failure, responds with [`SdkError<ListSecurityProfilePermissionsError>`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsError)
     pub fn list_security_profile_permissions(
         &self,

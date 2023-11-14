@@ -12,6 +12,10 @@ pub struct QueueSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of queue.</p>
     pub queue_type: ::std::option::Option<crate::types::QueueType>,
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl QueueSummary {
     /// <p>The identifier of the queue.</p>
@@ -30,6 +34,14 @@ impl QueueSummary {
     pub fn queue_type(&self) -> ::std::option::Option<&crate::types::QueueType> {
         self.queue_type.as_ref()
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
 }
 impl QueueSummary {
     /// Creates a new builder-style object to manufacture [`QueueSummary`](crate::types::QueueSummary).
@@ -46,6 +58,8 @@ pub struct QueueSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) queue_type: ::std::option::Option<crate::types::QueueType>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl QueueSummaryBuilder {
     /// <p>The identifier of the queue.</p>
@@ -104,6 +118,34 @@ impl QueueSummaryBuilder {
     pub fn get_queue_type(&self) -> &::std::option::Option<crate::types::QueueType> {
         &self.queue_type
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Consumes the builder and constructs a [`QueueSummary`](crate::types::QueueSummary).
     pub fn build(self) -> crate::types::QueueSummary {
         crate::types::QueueSummary {
@@ -111,6 +153,8 @@ impl QueueSummaryBuilder {
             arn: self.arn,
             name: self.name,
             queue_type: self.queue_type,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
         }
     }
 }

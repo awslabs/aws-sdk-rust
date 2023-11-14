@@ -1565,6 +1565,38 @@ impl From<crate::operation::list_backup_jobs::ListBackupJobsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_backup_job_summaries::ListBackupJobSummariesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_backup_job_summaries::ListBackupJobSummariesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_backup_job_summaries::ListBackupJobSummariesError> for Error {
+    fn from(err: crate::operation::list_backup_job_summaries::ListBackupJobSummariesError) -> Self {
+        match err {
+            crate::operation::list_backup_job_summaries::ListBackupJobSummariesError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_backup_job_summaries::ListBackupJobSummariesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_backup_job_summaries::ListBackupJobSummariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_backup_plans::ListBackupPlansError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1766,6 +1798,37 @@ impl From<crate::operation::list_copy_jobs::ListCopyJobsError> for Error {
             }
             crate::operation::list_copy_jobs::ListCopyJobsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_copy_jobs::ListCopyJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_copy_job_summaries::ListCopyJobSummariesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_copy_job_summaries::ListCopyJobSummariesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_copy_job_summaries::ListCopyJobSummariesError> for Error {
+    fn from(err: crate::operation::list_copy_job_summaries::ListCopyJobSummariesError) -> Self {
+        match err {
+            crate::operation::list_copy_job_summaries::ListCopyJobSummariesError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_copy_job_summaries::ListCopyJobSummariesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_copy_job_summaries::ListCopyJobSummariesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2117,6 +2180,38 @@ impl From<crate::operation::list_restore_jobs::ListRestoreJobsError> for Error {
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::list_restore_jobs::ListRestoreJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError> for Error {
+    fn from(err: crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError) -> Self {
+        match err {
+            crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
