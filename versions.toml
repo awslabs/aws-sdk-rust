@@ -2288,6 +2288,10 @@ source_hash = 'e1e915e6749cf39a78ea310f21007d5d0d01c64262d440bb07b4356d30ea11da'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'eefcdfb0d93bd9c212ec9cf938bc097d2b174a7c35fb6881b65ed1dfa91535c4'
+
+[release]
+tag = 'release-2023-11-14'
+
 [release.crates]
 aws-sdk-backup = '0.35.1'
 aws-sdk-cleanrooms = '0.12.1'
