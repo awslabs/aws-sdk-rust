@@ -1620,8 +1620,7 @@
                 "referenceArn": {
                     "target": "com.amazonaws.omics#ReferenceArn",
                     "traits": {
-                        "smithy.api#documentation": "<p>\n      The ARN of the reference.\n    </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>\n      The ARN of the reference.\n    </p>"
                     }
                 },
                 "name": {
@@ -3565,6 +3564,10 @@
                     {
                         "value": "CRAM",
                         "name": "CRAM"
+                    },
+                    {
+                        "value": "UBAM",
+                        "name": "UBAM"
                     }
                 ]
             }
@@ -6339,6 +6342,18 @@
                     "target": "com.amazonaws.omics#RunLogLocation",
                     "traits": {
                         "smithy.api#documentation": "<p>\n      The location of the run log. \n    </p>"
+                    }
+                },
+                "uuid": {
+                    "target": "com.amazonaws.omics#RunUuid",
+                    "traits": {
+                        "smithy.api#documentation": "<p>\n      The universally unique identifier for a run. \n    </p>"
+                    }
+                },
+                "runOutputUri": {
+                    "target": "com.amazonaws.omics#RunOutputUri",
+                    "traits": {
+                        "smithy.api#documentation": "<p>\n      The destination for workflow outputs.\n    </p>"
                     }
                 }
             },
@@ -11442,7 +11457,7 @@
                     }
                 },
                 "referenceArn": {
-                    "target": "com.amazonaws.omics#ReferenceArn",
+                    "target": "com.amazonaws.omics#ReferenceArnFilter",
                     "traits": {
                         "smithy.api#documentation": "<p>A genome reference ARN to filter on.</p>"
                     }
@@ -11898,6 +11913,16 @@
                     "max": 127
                 },
                 "smithy.api#pattern": "^arn:.+$"
+            }
+        },
+        "com.amazonaws.omics#ReferenceArnFilter": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 127
+                },
+                "smithy.api#pattern": "^$|^arn:.+$"
             }
         },
         "com.amazonaws.omics#ReferenceDescription": {
@@ -13038,6 +13063,16 @@
                 "smithy.api#timestampFormat": "date-time"
             }
         },
+        "com.amazonaws.omics#RunUuid": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 128
+                },
+                "smithy.api#pattern": "^[\\p{L}||\\p{M}||\\p{Z}||\\p{S}||\\p{N}||\\p{P}]+$"
+            }
+        },
         "com.amazonaws.omics#S3Destination": {
             "type": "string",
             "traits": {
@@ -14123,8 +14158,7 @@
                 "referenceArn": {
                     "target": "com.amazonaws.omics#ReferenceArn",
                     "traits": {
-                        "smithy.api#documentation": "<p>The source's reference ARN.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The source's reference ARN.</p>"
                     }
                 },
                 "name": {
@@ -14497,6 +14531,18 @@
                     "target": "com.amazonaws.omics#TagMap",
                     "traits": {
                         "smithy.api#documentation": "<p>The run's tags.</p>"
+                    }
+                },
+                "uuid": {
+                    "target": "com.amazonaws.omics#RunUuid",
+                    "traits": {
+                        "smithy.api#documentation": "<p>\n      The universally unique identifier for a run. \n    </p>"
+                    }
+                },
+                "runOutputUri": {
+                    "target": "com.amazonaws.omics#RunOutputUri",
+                    "traits": {
+                        "smithy.api#documentation": "<p>\n      The destination for workflow outputs.\n    </p>"
                     }
                 }
             },

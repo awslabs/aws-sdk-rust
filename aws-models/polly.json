@@ -3480,6 +3480,18 @@
                     "traits": {
                         "smithy.api#enumValue": "Zayd"
                     }
+                },
+                "Danielle": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Danielle"
+                    }
+                },
+                "Gregory": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Gregory"
+                    }
                 }
             }
         },
