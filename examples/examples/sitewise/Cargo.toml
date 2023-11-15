@@ -8,9 +8,9 @@ publish = false
 
 [dependencies]
 thiserror = "1.0"
-aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
+aws-config= { version = "0.57.2", path = "../../../sdk/aws-config" }
 aws-sdk-iotsitewise= { version = "0.36.0", path = "../../../sdk/iotsitewise" }
-aws-smithy-types-convert= { version = "0.57.1", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
+aws-smithy-types-convert= { version = "0.57.2", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.clap]
 version = "~4.4"

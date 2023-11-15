@@ -28,7 +28,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
+//! aws-config = "0.57.2"
 //! aws-sdk-datazone = "0.4.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

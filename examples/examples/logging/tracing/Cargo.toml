@@ -7,7 +7,7 @@ version = "0.1.0"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.57.1", path = "../../../../sdk/aws-config" }
+aws-config= { version = "0.57.2", path = "../../../../sdk/aws-config" }
 aws-sdk-dynamodb= { version = "0.36.0", path = "../../../../sdk/dynamodb" }
 
 [dependencies.clap]

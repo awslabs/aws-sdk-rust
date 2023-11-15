@@ -34,7 +34,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
+//! aws-config = "0.57.2"
 //! aws-sdk-internetmonitor = "0.12.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

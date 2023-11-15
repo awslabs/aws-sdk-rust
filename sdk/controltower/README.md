@@ -50,7 +50,7 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.1"
+aws-config = "0.57.2"
 aws-sdk-controltower = "0.17.0"
 tokio = { version = "1", features = ["full"] }
 ```
