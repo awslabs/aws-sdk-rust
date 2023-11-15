@@ -8,8 +8,8 @@ publish = false
 
 [dependencies]
 aws-sdk-autoscalingplans= { version = "0.36.0", path = "../../../sdk/autoscalingplans" }
-aws-config= { version = "0.57.0", path = "../../../sdk/aws-config" }
-aws-types= { version = "0.57.0", path = "../../../sdk/aws-types" }
+aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
+aws-types= { version = "0.57.1", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]
 version = "1.20.1"

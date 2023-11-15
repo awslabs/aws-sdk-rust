@@ -21,8 +21,8 @@ http = "0.2.8"
 futures = "0.3.28"
 async_once = "0.2.6"
 lazy_static = "1.4.0"
-aws-config= { version = "0.57.0", path = "../../../sdk/aws-config" }
-aws-credential-types= { version = "0.57.0", path = "../../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
+aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
+aws-credential-types= { version = "0.57.1", path = "../../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
 aws-sdk-iam= { version = "0.36.0", path = "../../../sdk/iam" }
 aws-sdk-s3= { version = "0.36.0", path = "../../../sdk/s3" }
 aws-sdk-sts= { version = "0.36.0", path = "../../../sdk/sts" }

@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 tokio-stream = "0.1.8"
-aws-config= { version = "0.57.0", path = "../../../sdk/aws-config" }
+aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
 aws-sdk-globalaccelerator= { version = "0.36.0", path = "../../../sdk/globalaccelerator" }
 
 [dependencies.tokio]
