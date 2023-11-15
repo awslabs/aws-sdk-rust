@@ -116,6 +116,6 @@ pub fn de_create_in_app_template_http_response(
             crate::protocol_serde::shape_create_in_app_template_output::de_template_create_message_body_payload(_response_body)?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_in_app_template_output_correct_errors(output).build()
+        crate::serde_util::create_in_app_template_output_output_correct_errors(output).build()
     })
 }

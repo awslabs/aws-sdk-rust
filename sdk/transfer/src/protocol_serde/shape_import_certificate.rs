@@ -93,7 +93,7 @@ pub fn de_import_certificate_http_response(
         output = crate::protocol_serde::shape_import_certificate::de_import_certificate(_response_body, output)
             .map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::import_certificate_output_correct_errors(output)
+        crate::serde_util::import_certificate_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?
     })
@@ -104,7 +104,7 @@ pub fn ser_import_certificate_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_import_certificate_input::ser_import_certificate_input(&mut object, input)?;
+    crate::protocol_serde::shape_import_certificate_input::ser_import_certificate_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

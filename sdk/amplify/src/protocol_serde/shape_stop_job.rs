@@ -108,7 +108,7 @@ pub fn de_stop_job_http_response(
         output = crate::protocol_serde::shape_stop_job::de_stop_job(_response_body, output)
             .map_err(crate::operation::stop_job::StopJobError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::stop_job_output_correct_errors(output).build()
+        crate::serde_util::stop_job_output_output_correct_errors(output).build()
     })
 }
 

@@ -41,7 +41,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_application_instance_output_correct_errors(
+pub(crate) fn create_application_instance_output_output_correct_errors(
     mut builder: crate::operation::create_application_instance::builders::CreateApplicationInstanceOutputBuilder,
 ) -> crate::operation::create_application_instance::builders::CreateApplicationInstanceOutputBuilder {
     if builder.application_instance_id.is_none() {
@@ -80,7 +80,7 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_job_for_devices_output_correct_errors(
+pub(crate) fn create_job_for_devices_output_output_correct_errors(
     mut builder: crate::operation::create_job_for_devices::builders::CreateJobForDevicesOutputBuilder,
 ) -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesOutputBuilder {
     if builder.jobs.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn create_job_for_devices_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_node_from_template_job_output_correct_errors(
+pub(crate) fn create_node_from_template_job_output_output_correct_errors(
     mut builder: crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobOutputBuilder,
 ) -> crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobOutputBuilder {
     if builder.job_id.is_none() {
@@ -98,7 +98,7 @@ pub(crate) fn create_node_from_template_job_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_package_output_correct_errors(
+pub(crate) fn create_package_output_output_correct_errors(
     mut builder: crate::operation::create_package::builders::CreatePackageOutputBuilder,
 ) -> crate::operation::create_package::builders::CreatePackageOutputBuilder {
     if builder.storage_location.is_none() {
@@ -110,7 +110,7 @@ pub(crate) fn create_package_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_package_import_job_output_correct_errors(
+pub(crate) fn create_package_import_job_output_output_correct_errors(
     mut builder: crate::operation::create_package_import_job::builders::CreatePackageImportJobOutputBuilder,
 ) -> crate::operation::create_package_import_job::builders::CreatePackageImportJobOutputBuilder {
     if builder.job_id.is_none() {
@@ -119,7 +119,7 @@ pub(crate) fn create_package_import_job_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_node_output_correct_errors(
+pub(crate) fn describe_node_output_output_correct_errors(
     mut builder: crate::operation::describe_node::builders::DescribeNodeOutputBuilder,
 ) -> crate::operation::describe_node::builders::DescribeNodeOutputBuilder {
     if builder.node_id.is_none() {
@@ -164,7 +164,7 @@ pub(crate) fn describe_node_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_node_from_template_job_output_correct_errors(
+pub(crate) fn describe_node_from_template_job_output_output_correct_errors(
     mut builder: crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder,
 ) -> crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder {
     if builder.job_id.is_none() {
@@ -200,7 +200,7 @@ pub(crate) fn describe_node_from_template_job_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_package_output_correct_errors(
+pub(crate) fn describe_package_output_output_correct_errors(
     mut builder: crate::operation::describe_package::builders::DescribePackageOutputBuilder,
 ) -> crate::operation::describe_package::builders::DescribePackageOutputBuilder {
     if builder.package_id.is_none() {
@@ -227,7 +227,7 @@ pub(crate) fn describe_package_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_package_import_job_output_correct_errors(
+pub(crate) fn describe_package_import_job_output_output_correct_errors(
     mut builder: crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder,
 ) -> crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder {
     if builder.job_id.is_none() {
@@ -269,7 +269,7 @@ pub(crate) fn describe_package_import_job_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_package_version_output_correct_errors(
+pub(crate) fn describe_package_version_output_output_correct_errors(
     mut builder: crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder,
 ) -> crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder {
     if builder.package_id.is_none() {
@@ -293,7 +293,7 @@ pub(crate) fn describe_package_version_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_devices_output_correct_errors(
+pub(crate) fn list_devices_output_output_correct_errors(
     mut builder: crate::operation::list_devices::builders::ListDevicesOutputBuilder,
 ) -> crate::operation::list_devices::builders::ListDevicesOutputBuilder {
     if builder.devices.is_none() {
@@ -302,7 +302,7 @@ pub(crate) fn list_devices_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_node_from_template_jobs_output_correct_errors(
+pub(crate) fn list_node_from_template_jobs_output_output_correct_errors(
     mut builder: crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsOutputBuilder,
 ) -> crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsOutputBuilder {
     if builder.node_from_template_jobs.is_none() {
@@ -311,7 +311,7 @@ pub(crate) fn list_node_from_template_jobs_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_package_import_jobs_output_correct_errors(
+pub(crate) fn list_package_import_jobs_output_output_correct_errors(
     mut builder: crate::operation::list_package_import_jobs::builders::ListPackageImportJobsOutputBuilder,
 ) -> crate::operation::list_package_import_jobs::builders::ListPackageImportJobsOutputBuilder {
     if builder.package_import_jobs.is_none() {
@@ -320,7 +320,7 @@ pub(crate) fn list_package_import_jobs_output_correct_errors(
     builder
 }
 
-pub(crate) fn provision_device_output_correct_errors(
+pub(crate) fn provision_device_output_output_correct_errors(
     mut builder: crate::operation::provision_device::builders::ProvisionDeviceOutputBuilder,
 ) -> crate::operation::provision_device::builders::ProvisionDeviceOutputBuilder {
     if builder.arn.is_none() {
@@ -332,7 +332,7 @@ pub(crate) fn provision_device_output_correct_errors(
     builder
 }
 
-pub(crate) fn signal_application_instance_node_instances_output_correct_errors(
+pub(crate) fn signal_application_instance_node_instances_output_output_correct_errors(
     mut builder: crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesOutputBuilder,
 ) -> crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesOutputBuilder {
     if builder.application_instance_id.is_none() {

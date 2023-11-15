@@ -116,7 +116,7 @@ pub fn de_get_control_operation_http_response(
         output = crate::protocol_serde::shape_get_control_operation::de_get_control_operation(_response_body, output)
             .map_err(crate::operation::get_control_operation::GetControlOperationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_control_operation_output_correct_errors(output).build()
+        crate::serde_util::get_control_operation_output_output_correct_errors(output).build()
     })
 }
 
@@ -125,7 +125,7 @@ pub fn ser_get_control_operation_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_control_operation_input::ser_get_control_operation_input(&mut object, input)?;
+    crate::protocol_serde::shape_get_control_operation_input::ser_get_control_operation_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -74,7 +74,7 @@ pub fn ser_list_distributions_by_realtime_log_config_op_input(
         let mut root = writer
             .start_el("ListDistributionsByRealtimeLogConfigRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::protocol_serde::shape_list_distributions_by_realtime_log_config_input::ser_list_distributions_by_realtime_log_config_input_input(
+        crate::protocol_serde::shape_list_distributions_by_realtime_log_config_input::ser_list_distributions_by_realtime_log_config_input_input_input(
             input, root,
         )?
     }

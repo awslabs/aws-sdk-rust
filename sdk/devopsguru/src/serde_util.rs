@@ -65,7 +65,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn add_notification_channel_output_correct_errors(
+pub(crate) fn add_notification_channel_output_output_correct_errors(
     mut builder: crate::operation::add_notification_channel::builders::AddNotificationChannelOutputBuilder,
 ) -> crate::operation::add_notification_channel::builders::AddNotificationChannelOutputBuilder {
     if builder.id.is_none() {
@@ -74,7 +74,7 @@ pub(crate) fn add_notification_channel_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_account_health_output_correct_errors(
+pub(crate) fn describe_account_health_output_output_correct_errors(
     mut builder: crate::operation::describe_account_health::builders::DescribeAccountHealthOutputBuilder,
 ) -> crate::operation::describe_account_health::builders::DescribeAccountHealthOutputBuilder {
     if builder.open_reactive_insights.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn describe_account_health_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_account_overview_output_correct_errors(
+pub(crate) fn describe_account_overview_output_output_correct_errors(
     mut builder: crate::operation::describe_account_overview::builders::DescribeAccountOverviewOutputBuilder,
 ) -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewOutputBuilder {
     if builder.reactive_insights.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn describe_account_overview_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_organization_health_output_correct_errors(
+pub(crate) fn describe_organization_health_output_output_correct_errors(
     mut builder: crate::operation::describe_organization_health::builders::DescribeOrganizationHealthOutputBuilder,
 ) -> crate::operation::describe_organization_health::builders::DescribeOrganizationHealthOutputBuilder {
     if builder.open_reactive_insights.is_none() {
@@ -125,7 +125,7 @@ pub(crate) fn describe_organization_health_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_organization_overview_output_correct_errors(
+pub(crate) fn describe_organization_overview_output_output_correct_errors(
     mut builder: crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewOutputBuilder,
 ) -> crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewOutputBuilder {
     if builder.reactive_insights.is_none() {
@@ -137,7 +137,7 @@ pub(crate) fn describe_organization_overview_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_anomalous_log_groups_output_correct_errors(
+pub(crate) fn list_anomalous_log_groups_output_output_correct_errors(
     mut builder: crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder,
 ) -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder {
     if builder.insight_id.is_none() {
@@ -149,7 +149,7 @@ pub(crate) fn list_anomalous_log_groups_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_events_output_correct_errors(
+pub(crate) fn list_events_output_output_correct_errors(
     mut builder: crate::operation::list_events::builders::ListEventsOutputBuilder,
 ) -> crate::operation::list_events::builders::ListEventsOutputBuilder {
     if builder.events.is_none() {
@@ -158,7 +158,7 @@ pub(crate) fn list_events_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_monitored_resources_output_correct_errors(
+pub(crate) fn list_monitored_resources_output_output_correct_errors(
     mut builder: crate::operation::list_monitored_resources::builders::ListMonitoredResourcesOutputBuilder,
 ) -> crate::operation::list_monitored_resources::builders::ListMonitoredResourcesOutputBuilder {
     if builder.monitored_resource_identifiers.is_none() {

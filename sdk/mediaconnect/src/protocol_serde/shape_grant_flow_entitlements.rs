@@ -139,7 +139,7 @@ pub fn ser_grant_flow_entitlements_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_grant_flow_entitlements_input::ser_grant_flow_entitlements_input(&mut object, input)?;
+    crate::protocol_serde::shape_grant_flow_entitlements_input::ser_grant_flow_entitlements_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

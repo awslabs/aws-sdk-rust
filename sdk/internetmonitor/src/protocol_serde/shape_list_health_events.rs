@@ -93,7 +93,7 @@ pub fn de_list_health_events_http_response(
         output = crate::protocol_serde::shape_list_health_events::de_list_health_events(_response_body, output)
             .map_err(crate::operation::list_health_events::ListHealthEventsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_health_events_output_correct_errors(output)
+        crate::serde_util::list_health_events_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_health_events::ListHealthEventsError::unhandled)?
     })

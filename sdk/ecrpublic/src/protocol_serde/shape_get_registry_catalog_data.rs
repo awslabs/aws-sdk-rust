@@ -74,7 +74,7 @@ pub fn de_get_registry_catalog_data_http_response(
         output = crate::protocol_serde::shape_get_registry_catalog_data::de_get_registry_catalog_data(_response_body, output)
             .map_err(crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_registry_catalog_data_output_correct_errors(output).build()
+        crate::serde_util::get_registry_catalog_data_output_output_correct_errors(output).build()
     })
 }
 

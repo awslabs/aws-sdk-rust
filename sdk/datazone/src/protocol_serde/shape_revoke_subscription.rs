@@ -137,7 +137,7 @@ pub fn de_revoke_subscription_http_response(
         output = crate::protocol_serde::shape_revoke_subscription::de_revoke_subscription(_response_body, output)
             .map_err(crate::operation::revoke_subscription::RevokeSubscriptionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::revoke_subscription_output_correct_errors(output)
+        crate::serde_util::revoke_subscription_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::revoke_subscription::RevokeSubscriptionError::unhandled)?
     })
@@ -148,7 +148,7 @@ pub fn ser_revoke_subscription_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_revoke_subscription_input::ser_revoke_subscription_input(&mut object, input)?;
+    crate::protocol_serde::shape_revoke_subscription_input::ser_revoke_subscription_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

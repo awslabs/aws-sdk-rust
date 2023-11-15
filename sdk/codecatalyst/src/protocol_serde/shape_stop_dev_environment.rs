@@ -126,7 +126,7 @@ pub fn de_stop_dev_environment_http_response(
         output = crate::protocol_serde::shape_stop_dev_environment::de_stop_dev_environment(_response_body, output)
             .map_err(crate::operation::stop_dev_environment::StopDevEnvironmentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::stop_dev_environment_output_correct_errors(output)
+        crate::serde_util::stop_dev_environment_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::stop_dev_environment::StopDevEnvironmentError::unhandled)?
     })

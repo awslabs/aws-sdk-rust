@@ -113,7 +113,7 @@ pub fn de_get_sol_network_operation_http_response(
         output = crate::protocol_serde::shape_get_sol_network_operation::de_get_sol_network_operation(_response_body, output)
             .map_err(crate::operation::get_sol_network_operation::GetSolNetworkOperationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_sol_network_operation_output_correct_errors(output)
+        crate::serde_util::get_sol_network_operation_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_sol_network_operation::GetSolNetworkOperationError::unhandled)?
     })

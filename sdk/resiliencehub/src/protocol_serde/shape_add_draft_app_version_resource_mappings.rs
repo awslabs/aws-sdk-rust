@@ -144,7 +144,7 @@ pub fn de_add_draft_app_version_resource_mappings_http_response(
             crate::protocol_serde::shape_add_draft_app_version_resource_mappings::de_add_draft_app_version_resource_mappings(_response_body, output)
                 .map_err(crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::add_draft_app_version_resource_mappings_output_correct_errors(output)
+        crate::serde_util::add_draft_app_version_resource_mappings_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError::unhandled)?
     })
@@ -155,7 +155,7 @@ pub fn ser_add_draft_app_version_resource_mappings_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_add_draft_app_version_resource_mappings_input::ser_add_draft_app_version_resource_mappings_input(
+    crate::protocol_serde::shape_add_draft_app_version_resource_mappings_input::ser_add_draft_app_version_resource_mappings_input_input(
         &mut object,
         input,
     )?;

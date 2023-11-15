@@ -53,7 +53,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_access_token_output_correct_errors(
+pub(crate) fn create_access_token_output_output_correct_errors(
     mut builder: crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder,
 ) -> crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder {
     if builder.secret.is_none() {
@@ -71,7 +71,7 @@ pub(crate) fn create_access_token_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_dev_environment_output_correct_errors(
+pub(crate) fn create_dev_environment_output_output_correct_errors(
     mut builder: crate::operation::create_dev_environment::builders::CreateDevEnvironmentOutputBuilder,
 ) -> crate::operation::create_dev_environment::builders::CreateDevEnvironmentOutputBuilder {
     if builder.space_name.is_none() {
@@ -86,7 +86,7 @@ pub(crate) fn create_dev_environment_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_project_output_correct_errors(
+pub(crate) fn create_project_output_output_correct_errors(
     mut builder: crate::operation::create_project::builders::CreateProjectOutputBuilder,
 ) -> crate::operation::create_project::builders::CreateProjectOutputBuilder {
     if builder.name.is_none() {
@@ -95,7 +95,7 @@ pub(crate) fn create_project_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_source_repository_output_correct_errors(
+pub(crate) fn create_source_repository_output_output_correct_errors(
     mut builder: crate::operation::create_source_repository::builders::CreateSourceRepositoryOutputBuilder,
 ) -> crate::operation::create_source_repository::builders::CreateSourceRepositoryOutputBuilder {
     if builder.space_name.is_none() {
@@ -110,7 +110,7 @@ pub(crate) fn create_source_repository_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_dev_environment_output_correct_errors(
+pub(crate) fn delete_dev_environment_output_output_correct_errors(
     mut builder: crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentOutputBuilder,
 ) -> crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentOutputBuilder {
     if builder.space_name.is_none() {
@@ -125,7 +125,7 @@ pub(crate) fn delete_dev_environment_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_project_output_correct_errors(
+pub(crate) fn delete_project_output_output_correct_errors(
     mut builder: crate::operation::delete_project::builders::DeleteProjectOutputBuilder,
 ) -> crate::operation::delete_project::builders::DeleteProjectOutputBuilder {
     if builder.space_name.is_none() {
@@ -137,7 +137,7 @@ pub(crate) fn delete_project_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_source_repository_output_correct_errors(
+pub(crate) fn delete_source_repository_output_output_correct_errors(
     mut builder: crate::operation::delete_source_repository::builders::DeleteSourceRepositoryOutputBuilder,
 ) -> crate::operation::delete_source_repository::builders::DeleteSourceRepositoryOutputBuilder {
     if builder.space_name.is_none() {
@@ -152,7 +152,7 @@ pub(crate) fn delete_source_repository_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_space_output_correct_errors(
+pub(crate) fn delete_space_output_output_correct_errors(
     mut builder: crate::operation::delete_space::builders::DeleteSpaceOutputBuilder,
 ) -> crate::operation::delete_space::builders::DeleteSpaceOutputBuilder {
     if builder.name.is_none() {
@@ -161,7 +161,7 @@ pub(crate) fn delete_space_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_dev_environment_output_correct_errors(
+pub(crate) fn get_dev_environment_output_output_correct_errors(
     mut builder: crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder,
 ) -> crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder {
     if builder.space_name.is_none() {
@@ -200,7 +200,7 @@ pub(crate) fn get_dev_environment_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_project_output_correct_errors(
+pub(crate) fn get_project_output_output_correct_errors(
     mut builder: crate::operation::get_project::builders::GetProjectOutputBuilder,
 ) -> crate::operation::get_project::builders::GetProjectOutputBuilder {
     if builder.name.is_none() {
@@ -209,7 +209,7 @@ pub(crate) fn get_project_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_source_repository_output_correct_errors(
+pub(crate) fn get_source_repository_output_output_correct_errors(
     mut builder: crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder,
 ) -> crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder {
     if builder.space_name.is_none() {
@@ -230,7 +230,7 @@ pub(crate) fn get_source_repository_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_source_repository_clone_urls_output_correct_errors(
+pub(crate) fn get_source_repository_clone_urls_output_output_correct_errors(
     mut builder: crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder,
 ) -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder {
     if builder.https.is_none() {
@@ -239,7 +239,7 @@ pub(crate) fn get_source_repository_clone_urls_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_space_output_correct_errors(
+pub(crate) fn get_space_output_output_correct_errors(
     mut builder: crate::operation::get_space::builders::GetSpaceOutputBuilder,
 ) -> crate::operation::get_space::builders::GetSpaceOutputBuilder {
     if builder.name.is_none() {
@@ -251,7 +251,7 @@ pub(crate) fn get_space_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_access_tokens_output_correct_errors(
+pub(crate) fn list_access_tokens_output_output_correct_errors(
     mut builder: crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder,
 ) -> crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder {
     if builder.items.is_none() {
@@ -260,7 +260,7 @@ pub(crate) fn list_access_tokens_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_dev_environment_sessions_output_correct_errors(
+pub(crate) fn list_dev_environment_sessions_output_output_correct_errors(
     mut builder: crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsOutputBuilder,
 ) -> crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsOutputBuilder {
     if builder.items.is_none() {
@@ -269,7 +269,7 @@ pub(crate) fn list_dev_environment_sessions_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_dev_environments_output_correct_errors(
+pub(crate) fn list_dev_environments_output_output_correct_errors(
     mut builder: crate::operation::list_dev_environments::builders::ListDevEnvironmentsOutputBuilder,
 ) -> crate::operation::list_dev_environments::builders::ListDevEnvironmentsOutputBuilder {
     if builder.items.is_none() {
@@ -278,7 +278,7 @@ pub(crate) fn list_dev_environments_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_event_logs_output_correct_errors(
+pub(crate) fn list_event_logs_output_output_correct_errors(
     mut builder: crate::operation::list_event_logs::builders::ListEventLogsOutputBuilder,
 ) -> crate::operation::list_event_logs::builders::ListEventLogsOutputBuilder {
     if builder.items.is_none() {
@@ -287,7 +287,7 @@ pub(crate) fn list_event_logs_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_source_repository_branches_output_correct_errors(
+pub(crate) fn list_source_repository_branches_output_output_correct_errors(
     mut builder: crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesOutputBuilder,
 ) -> crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesOutputBuilder {
     if builder.items.is_none() {
@@ -296,7 +296,7 @@ pub(crate) fn list_source_repository_branches_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_dev_environment_output_correct_errors(
+pub(crate) fn start_dev_environment_output_output_correct_errors(
     mut builder: crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder,
 ) -> crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder {
     if builder.space_name.is_none() {
@@ -314,7 +314,7 @@ pub(crate) fn start_dev_environment_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_dev_environment_session_output_correct_errors(
+pub(crate) fn start_dev_environment_session_output_output_correct_errors(
     mut builder: crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder,
 ) -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder {
     if builder.access_details.is_none() {
@@ -335,7 +335,7 @@ pub(crate) fn start_dev_environment_session_output_correct_errors(
     builder
 }
 
-pub(crate) fn stop_dev_environment_output_correct_errors(
+pub(crate) fn stop_dev_environment_output_output_correct_errors(
     mut builder: crate::operation::stop_dev_environment::builders::StopDevEnvironmentOutputBuilder,
 ) -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentOutputBuilder {
     if builder.space_name.is_none() {
@@ -353,7 +353,7 @@ pub(crate) fn stop_dev_environment_output_correct_errors(
     builder
 }
 
-pub(crate) fn stop_dev_environment_session_output_correct_errors(
+pub(crate) fn stop_dev_environment_session_output_output_correct_errors(
     mut builder: crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder,
 ) -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder {
     if builder.space_name.is_none() {
@@ -371,7 +371,7 @@ pub(crate) fn stop_dev_environment_session_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_dev_environment_output_correct_errors(
+pub(crate) fn update_dev_environment_output_output_correct_errors(
     mut builder: crate::operation::update_dev_environment::builders::UpdateDevEnvironmentOutputBuilder,
 ) -> crate::operation::update_dev_environment::builders::UpdateDevEnvironmentOutputBuilder {
     if builder.id.is_none() {

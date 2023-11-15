@@ -117,7 +117,7 @@ pub fn de_associate_license_http_response(
         output = crate::protocol_serde::shape_associate_license::de_associate_license(_response_body, output)
             .map_err(crate::operation::associate_license::AssociateLicenseError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::associate_license_output_correct_errors(output).build()
+        crate::serde_util::associate_license_output_output_correct_errors(output).build()
     })
 }
 

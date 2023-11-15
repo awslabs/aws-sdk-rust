@@ -120,7 +120,7 @@ pub fn de_validate_sol_function_package_content_http_response(
         output = crate::protocol_serde::shape_validate_sol_function_package_content::de_validate_sol_function_package_content(_response_body, output)
             .map_err(crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::validate_sol_function_package_content_output_correct_errors(output)
+        crate::serde_util::validate_sol_function_package_content_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::unhandled)?
     })

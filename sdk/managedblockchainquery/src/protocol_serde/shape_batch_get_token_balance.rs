@@ -140,7 +140,7 @@ pub fn de_batch_get_token_balance_http_response(
         output = crate::protocol_serde::shape_batch_get_token_balance::de_batch_get_token_balance(_response_body, output)
             .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::batch_get_token_balance_output_correct_errors(output)
+        crate::serde_util::batch_get_token_balance_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::unhandled)?
     })
@@ -151,7 +151,7 @@ pub fn ser_batch_get_token_balance_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_batch_get_token_balance_input::ser_batch_get_token_balance_input(&mut object, input)?;
+    crate::protocol_serde::shape_batch_get_token_balance_input::ser_batch_get_token_balance_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

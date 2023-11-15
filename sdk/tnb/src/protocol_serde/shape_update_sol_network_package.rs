@@ -113,7 +113,7 @@ pub fn de_update_sol_network_package_http_response(
         output = crate::protocol_serde::shape_update_sol_network_package::de_update_sol_network_package(_response_body, output)
             .map_err(crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_sol_network_package_output_correct_errors(output)
+        crate::serde_util::update_sol_network_package_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::unhandled)?
     })
@@ -124,7 +124,7 @@ pub fn ser_update_sol_network_package_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_update_sol_network_package_input::ser_update_sol_network_package_input(&mut object, input)?;
+    crate::protocol_serde::shape_update_sol_network_package_input::ser_update_sol_network_package_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

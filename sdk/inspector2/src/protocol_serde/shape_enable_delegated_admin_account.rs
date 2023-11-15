@@ -140,7 +140,7 @@ pub fn de_enable_delegated_admin_account_http_response(
         output = crate::protocol_serde::shape_enable_delegated_admin_account::de_enable_delegated_admin_account(_response_body, output)
             .map_err(crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::enable_delegated_admin_account_output_correct_errors(output)
+        crate::serde_util::enable_delegated_admin_account_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountError::unhandled)?
     })
@@ -151,7 +151,7 @@ pub fn ser_enable_delegated_admin_account_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_enable_delegated_admin_account_input::ser_enable_delegated_admin_account_input(&mut object, input)?;
+    crate::protocol_serde::shape_enable_delegated_admin_account_input::ser_enable_delegated_admin_account_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

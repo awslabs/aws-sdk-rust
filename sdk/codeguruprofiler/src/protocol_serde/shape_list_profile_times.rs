@@ -89,7 +89,7 @@ pub fn de_list_profile_times_http_response(
         output = crate::protocol_serde::shape_list_profile_times::de_list_profile_times(_response_body, output)
             .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_profile_times_output_correct_errors(output)
+        crate::serde_util::list_profile_times_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?
     })

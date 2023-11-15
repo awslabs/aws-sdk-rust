@@ -126,7 +126,7 @@ pub fn de_get_source_repository_http_response(
         output = crate::protocol_serde::shape_get_source_repository::de_get_source_repository(_response_body, output)
             .map_err(crate::operation::get_source_repository::GetSourceRepositoryError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_source_repository_output_correct_errors(output)
+        crate::serde_util::get_source_repository_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_source_repository::GetSourceRepositoryError::unhandled)?
     })

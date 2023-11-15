@@ -159,7 +159,7 @@ pub fn de_associate_vpc_with_hosted_zone_http_response(
         output = crate::protocol_serde::shape_associate_vpc_with_hosted_zone::de_associate_vpc_with_hosted_zone(_response_body, output)
             .map_err(crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::associate_vpc_with_hosted_zone_output_correct_errors(output).build()
+        crate::serde_util::associate_vpc_with_hosted_zone_output_output_correct_errors(output).build()
     })
 }
 
@@ -173,7 +173,7 @@ pub fn ser_associate_vpc_with_hosted_zone_op_input(
         let mut root = writer
             .start_el("AssociateVPCWithHostedZoneRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_associate_vpc_with_hosted_zone_input::ser_associate_vpc_with_hosted_zone_input_input(input, root)?
+        crate::protocol_serde::shape_associate_vpc_with_hosted_zone_input::ser_associate_vpc_with_hosted_zone_input_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

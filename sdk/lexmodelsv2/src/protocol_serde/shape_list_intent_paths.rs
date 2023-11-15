@@ -128,7 +128,7 @@ pub fn ser_list_intent_paths_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_intent_paths_input::ser_list_intent_paths_input(&mut object, input)?;
+    crate::protocol_serde::shape_list_intent_paths_input::ser_list_intent_paths_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

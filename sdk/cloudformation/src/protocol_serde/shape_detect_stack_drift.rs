@@ -25,7 +25,7 @@ pub fn de_detect_stack_drift_http_response(
         output = crate::protocol_serde::shape_detect_stack_drift::de_detect_stack_drift(_response_body, output)
             .map_err(crate::operation::detect_stack_drift::DetectStackDriftError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::detect_stack_drift_output_correct_errors(output).build()
+        crate::serde_util::detect_stack_drift_output_output_correct_errors(output).build()
     })
 }
 

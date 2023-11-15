@@ -151,7 +151,7 @@ pub fn de_create_query_logging_config_http_response(
             })?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_query_logging_config_output_correct_errors(output)
+        crate::serde_util::create_query_logging_config_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::create_query_logging_config::CreateQueryLoggingConfigError::unhandled)?
     })
@@ -167,7 +167,7 @@ pub fn ser_create_query_logging_config_op_input(
         let mut root = writer
             .start_el("CreateQueryLoggingConfigRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_create_query_logging_config_input::ser_create_query_logging_config_input_input(input, root)?
+        crate::protocol_serde::shape_create_query_logging_config_input::ser_create_query_logging_config_input_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

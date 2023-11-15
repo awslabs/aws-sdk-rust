@@ -97,7 +97,7 @@ pub fn ser_validate_security_profile_behaviors_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_validate_security_profile_behaviors_input::ser_validate_security_profile_behaviors_input(&mut object, input)?;
+    crate::protocol_serde::shape_validate_security_profile_behaviors_input::ser_validate_security_profile_behaviors_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

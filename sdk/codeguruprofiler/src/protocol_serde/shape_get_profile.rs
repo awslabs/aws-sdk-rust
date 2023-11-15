@@ -97,7 +97,7 @@ pub fn de_get_profile_http_response(
         );
         output = output.set_profile(crate::protocol_serde::shape_get_profile_output::de_profile_payload(_response_body)?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_profile_output_correct_errors(output)
+        crate::serde_util::get_profile_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_profile::GetProfileError::unhandled)?
     })

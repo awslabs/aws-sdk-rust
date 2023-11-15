@@ -154,6 +154,6 @@ pub fn de_get_campaign_date_range_kpi_http_response(
             crate::protocol_serde::shape_get_campaign_date_range_kpi_output::de_campaign_date_range_kpi_response_payload(_response_body)?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_campaign_date_range_kpi_output_correct_errors(output).build()
+        crate::serde_util::get_campaign_date_range_kpi_output_output_correct_errors(output).build()
     })
 }

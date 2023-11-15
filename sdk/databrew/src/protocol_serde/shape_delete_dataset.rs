@@ -78,7 +78,7 @@ pub fn de_delete_dataset_http_response(
         output = crate::protocol_serde::shape_delete_dataset::de_delete_dataset(_response_body, output)
             .map_err(crate::operation::delete_dataset::DeleteDatasetError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_dataset_output_correct_errors(output)
+        crate::serde_util::delete_dataset_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_dataset::DeleteDatasetError::unhandled)?
     })

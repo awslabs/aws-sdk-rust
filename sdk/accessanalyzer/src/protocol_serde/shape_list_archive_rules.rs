@@ -103,7 +103,7 @@ pub fn de_list_archive_rules_http_response(
         output = crate::protocol_serde::shape_list_archive_rules::de_list_archive_rules(_response_body, output)
             .map_err(crate::operation::list_archive_rules::ListArchiveRulesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_archive_rules_output_correct_errors(output)
+        crate::serde_util::list_archive_rules_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_archive_rules::ListArchiveRulesError::unhandled)?
     })

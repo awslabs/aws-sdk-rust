@@ -197,7 +197,7 @@ pub fn de_batch_disassociate_approval_rule_template_from_repositories_http_respo
         let mut output = crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder::default();
         output = crate::protocol_serde::shape_batch_disassociate_approval_rule_template_from_repositories::de_batch_disassociate_approval_rule_template_from_repositories(_response_body, output).map_err(crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::batch_disassociate_approval_rule_template_from_repositories_output_correct_errors(output).build().map_err(crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?
+        crate::serde_util::batch_disassociate_approval_rule_template_from_repositories_output_output_correct_errors(output).build().map_err(crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?
     })
 }
 
@@ -206,7 +206,7 @@ pub fn ser_batch_disassociate_approval_rule_template_from_repositories_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_batch_disassociate_approval_rule_template_from_repositories_input::ser_batch_disassociate_approval_rule_template_from_repositories_input(&mut object, input)?;
+    crate::protocol_serde::shape_batch_disassociate_approval_rule_template_from_repositories_input::ser_batch_disassociate_approval_rule_template_from_repositories_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

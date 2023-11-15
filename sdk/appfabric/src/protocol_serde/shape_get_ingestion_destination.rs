@@ -127,7 +127,7 @@ pub fn de_get_ingestion_destination_http_response(
         output = crate::protocol_serde::shape_get_ingestion_destination::de_get_ingestion_destination(_response_body, output)
             .map_err(crate::operation::get_ingestion_destination::GetIngestionDestinationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_ingestion_destination_output_correct_errors(output).build()
+        crate::serde_util::get_ingestion_destination_output_output_correct_errors(output).build()
     })
 }
 

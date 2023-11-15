@@ -123,7 +123,7 @@ pub fn de_define_expression_http_response(
         output = crate::protocol_serde::shape_define_expression::de_define_expression(_response_body, output)
             .map_err(crate::operation::define_expression::DefineExpressionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::define_expression_output_correct_errors(output).build()
+        crate::serde_util::define_expression_output_output_correct_errors(output).build()
     })
 }
 

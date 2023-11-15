@@ -134,7 +134,7 @@ pub fn de_copy_image_set_http_response(
         output = crate::protocol_serde::shape_copy_image_set::de_copy_image_set(_response_body, output)
             .map_err(crate::operation::copy_image_set::CopyImageSetError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::copy_image_set_output_correct_errors(output)
+        crate::serde_util::copy_image_set_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::copy_image_set::CopyImageSetError::unhandled)?
     })

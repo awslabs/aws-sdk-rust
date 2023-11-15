@@ -123,7 +123,7 @@ pub fn de_cancel_job_http_response(
         output = crate::protocol_serde::shape_cancel_job::de_cancel_job(_response_body, output)
             .map_err(crate::operation::cancel_job::CancelJobError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::cancel_job_output_correct_errors(output)
+        crate::serde_util::cancel_job_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::cancel_job::CancelJobError::unhandled)?
     })

@@ -140,7 +140,7 @@ pub fn de_start_policy_generation_http_response(
         output = crate::protocol_serde::shape_start_policy_generation::de_start_policy_generation(_response_body, output)
             .map_err(crate::operation::start_policy_generation::StartPolicyGenerationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::start_policy_generation_output_correct_errors(output)
+        crate::serde_util::start_policy_generation_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::start_policy_generation::StartPolicyGenerationError::unhandled)?
     })
@@ -151,7 +151,7 @@ pub fn ser_start_policy_generation_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_start_policy_generation_input::ser_start_policy_generation_input(&mut object, input)?;
+    crate::protocol_serde::shape_start_policy_generation_input::ser_start_policy_generation_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

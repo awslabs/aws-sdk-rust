@@ -114,7 +114,7 @@ pub fn de_evaluate_expression_http_response(
         output = crate::protocol_serde::shape_evaluate_expression::de_evaluate_expression(_response_body, output)
             .map_err(crate::operation::evaluate_expression::EvaluateExpressionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::evaluate_expression_output_correct_errors(output)
+        crate::serde_util::evaluate_expression_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::evaluate_expression::EvaluateExpressionError::unhandled)?
     })
@@ -125,7 +125,7 @@ pub fn ser_evaluate_expression_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_evaluate_expression_input::ser_evaluate_expression_input(&mut object, input)?;
+    crate::protocol_serde::shape_evaluate_expression_input::ser_evaluate_expression_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

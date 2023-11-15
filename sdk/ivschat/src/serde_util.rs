@@ -95,7 +95,7 @@ pub(crate) fn throttling_exception_correct_errors(
     builder
 }
 
-pub(crate) fn list_logging_configurations_output_correct_errors(
+pub(crate) fn list_logging_configurations_output_output_correct_errors(
     mut builder: crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsOutputBuilder,
 ) -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsOutputBuilder {
     if builder.logging_configurations.is_none() {
@@ -104,7 +104,7 @@ pub(crate) fn list_logging_configurations_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_rooms_output_correct_errors(
+pub(crate) fn list_rooms_output_output_correct_errors(
     mut builder: crate::operation::list_rooms::builders::ListRoomsOutputBuilder,
 ) -> crate::operation::list_rooms::builders::ListRoomsOutputBuilder {
     if builder.rooms.is_none() {
@@ -122,7 +122,7 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {

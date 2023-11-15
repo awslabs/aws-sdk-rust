@@ -113,7 +113,7 @@ pub fn de_generate_card_validation_data_http_response(
         output = crate::protocol_serde::shape_generate_card_validation_data::de_generate_card_validation_data(_response_body, output)
             .map_err(crate::operation::generate_card_validation_data::GenerateCardValidationDataError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::generate_card_validation_data_output_correct_errors(output)
+        crate::serde_util::generate_card_validation_data_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::generate_card_validation_data::GenerateCardValidationDataError::unhandled)?
     })
@@ -124,7 +124,7 @@ pub fn ser_generate_card_validation_data_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_generate_card_validation_data_input::ser_generate_card_validation_data_input(&mut object, input)?;
+    crate::protocol_serde::shape_generate_card_validation_data_input::ser_generate_card_validation_data_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

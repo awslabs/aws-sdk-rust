@@ -35,7 +35,7 @@ pub fn de_get_identity_mail_from_domain_attributes_http_response(
         )
         .map_err(crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_identity_mail_from_domain_attributes_output_correct_errors(output)
+        crate::serde_util::get_identity_mail_from_domain_attributes_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesError::unhandled)?
     })

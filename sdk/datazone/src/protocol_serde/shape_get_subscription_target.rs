@@ -123,7 +123,7 @@ pub fn de_get_subscription_target_http_response(
         output = crate::protocol_serde::shape_get_subscription_target::de_get_subscription_target(_response_body, output)
             .map_err(crate::operation::get_subscription_target::GetSubscriptionTargetError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_subscription_target_output_correct_errors(output)
+        crate::serde_util::get_subscription_target_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_subscription_target::GetSubscriptionTargetError::unhandled)?
     })

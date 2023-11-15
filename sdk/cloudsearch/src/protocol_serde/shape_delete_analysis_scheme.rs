@@ -114,7 +114,7 @@ pub fn de_delete_analysis_scheme_http_response(
         output = crate::protocol_serde::shape_delete_analysis_scheme::de_delete_analysis_scheme(_response_body, output)
             .map_err(crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_analysis_scheme_output_correct_errors(output).build()
+        crate::serde_util::delete_analysis_scheme_output_output_correct_errors(output).build()
     })
 }
 

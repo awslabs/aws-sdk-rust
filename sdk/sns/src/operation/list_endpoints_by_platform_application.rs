@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEndpoint
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_list_endpoints_by_platform_application_input::ser_list_endpoints_by_platform_application_input_input(
+            crate::protocol_serde::shape_list_endpoints_by_platform_application_input::ser_list_endpoints_by_platform_application_input_input_input(
                 &input,
             )?,
         );

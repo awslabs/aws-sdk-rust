@@ -116,7 +116,7 @@ pub fn de_search_related_items_http_response(
         output = crate::protocol_serde::shape_search_related_items::de_search_related_items(_response_body, output)
             .map_err(crate::operation::search_related_items::SearchRelatedItemsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::search_related_items_output_correct_errors(output)
+        crate::serde_util::search_related_items_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::search_related_items::SearchRelatedItemsError::unhandled)?
     })
@@ -127,7 +127,7 @@ pub fn ser_search_related_items_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_search_related_items_input::ser_search_related_items_input(&mut object, input)?;
+    crate::protocol_serde::shape_search_related_items_input::ser_search_related_items_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

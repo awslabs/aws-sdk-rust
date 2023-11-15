@@ -104,7 +104,7 @@ pub fn de_delete_asset_model_http_response(
         output = crate::protocol_serde::shape_delete_asset_model::de_delete_asset_model(_response_body, output)
             .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_asset_model_output_correct_errors(output).build()
+        crate::serde_util::delete_asset_model_output_output_correct_errors(output).build()
     })
 }
 

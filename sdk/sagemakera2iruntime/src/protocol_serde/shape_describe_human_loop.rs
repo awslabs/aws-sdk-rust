@@ -95,7 +95,7 @@ pub fn de_describe_human_loop_http_response(
         output = crate::protocol_serde::shape_describe_human_loop::de_describe_human_loop(_response_body, output)
             .map_err(crate::operation::describe_human_loop::DescribeHumanLoopError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_human_loop_output_correct_errors(output).build()
+        crate::serde_util::describe_human_loop_output_output_correct_errors(output).build()
     })
 }
 

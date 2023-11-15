@@ -38,7 +38,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_findings_output_correct_errors(
+pub(crate) fn batch_get_findings_output_output_correct_errors(
     mut builder: crate::operation::batch_get_findings::builders::BatchGetFindingsOutputBuilder,
 ) -> crate::operation::batch_get_findings::builders::BatchGetFindingsOutputBuilder {
     if builder.findings.is_none() {
@@ -86,7 +86,7 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_scan_output_correct_errors(
+pub(crate) fn create_scan_output_output_correct_errors(
     mut builder: crate::operation::create_scan::builders::CreateScanOutputBuilder,
 ) -> crate::operation::create_scan::builders::CreateScanOutputBuilder {
     if builder.scan_name.is_none() {
@@ -104,7 +104,7 @@ pub(crate) fn create_scan_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_upload_url_output_correct_errors(
+pub(crate) fn create_upload_url_output_output_correct_errors(
     mut builder: crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder,
 ) -> crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder {
     if builder.s3_url.is_none() {
@@ -119,7 +119,7 @@ pub(crate) fn create_upload_url_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_account_configuration_output_correct_errors(
+pub(crate) fn get_account_configuration_output_output_correct_errors(
     mut builder: crate::operation::get_account_configuration::builders::GetAccountConfigurationOutputBuilder,
 ) -> crate::operation::get_account_configuration::builders::GetAccountConfigurationOutputBuilder {
     if builder.encryption_config.is_none() {
@@ -131,7 +131,7 @@ pub(crate) fn get_account_configuration_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_scan_output_correct_errors(
+pub(crate) fn get_scan_output_output_correct_errors(
     mut builder: crate::operation::get_scan::builders::GetScanOutputBuilder,
 ) -> crate::operation::get_scan::builders::GetScanOutputBuilder {
     if builder.scan_name.is_none() {
@@ -152,7 +152,7 @@ pub(crate) fn get_scan_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_account_configuration_output_correct_errors(
+pub(crate) fn update_account_configuration_output_output_correct_errors(
     mut builder: crate::operation::update_account_configuration::builders::UpdateAccountConfigurationOutputBuilder,
 ) -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationOutputBuilder {
     if builder.encryption_config.is_none() {

@@ -157,7 +157,7 @@ pub fn de_upload_read_set_part_http_response(
         output = crate::protocol_serde::shape_upload_read_set_part::de_upload_read_set_part(_response_body, output)
             .map_err(crate::operation::upload_read_set_part::UploadReadSetPartError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::upload_read_set_part_output_correct_errors(output)
+        crate::serde_util::upload_read_set_part_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::upload_read_set_part::UploadReadSetPartError::unhandled)?
     })

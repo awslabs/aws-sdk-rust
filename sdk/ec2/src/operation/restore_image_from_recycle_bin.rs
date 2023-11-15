@@ -187,7 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RestoreImage
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_restore_image_from_recycle_bin_input::ser_restore_image_from_recycle_bin_input_input(&input)?,
+            crate::protocol_serde::shape_restore_image_from_recycle_bin_input::ser_restore_image_from_recycle_bin_input_input_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();

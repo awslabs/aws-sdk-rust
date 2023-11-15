@@ -113,7 +113,7 @@ pub fn de_get_annotation_store_version_http_response(
         output = crate::protocol_serde::shape_get_annotation_store_version::de_get_annotation_store_version(_response_body, output)
             .map_err(crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_annotation_store_version_output_correct_errors(output)
+        crate::serde_util::get_annotation_store_version_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError::unhandled)?
     })

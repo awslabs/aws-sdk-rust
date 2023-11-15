@@ -63,7 +63,7 @@ pub fn de_describe_job_http_response(
         output = crate::protocol_serde::shape_describe_job::de_describe_job(_response_body, output)
             .map_err(crate::operation::describe_job::DescribeJobError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_job_output_correct_errors(output)
+        crate::serde_util::describe_job_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_job::DescribeJobError::unhandled)?
     })

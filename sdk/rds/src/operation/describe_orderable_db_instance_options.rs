@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeOrde
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_describe_orderable_db_instance_options_input::ser_describe_orderable_db_instance_options_input_input(
+            crate::protocol_serde::shape_describe_orderable_db_instance_options_input::ser_describe_orderable_db_instance_options_input_input_input(
                 &input,
             )?,
         );

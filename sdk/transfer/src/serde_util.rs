@@ -47,7 +47,7 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_access_output_correct_errors(
+pub(crate) fn create_access_output_output_correct_errors(
     mut builder: crate::operation::create_access::builders::CreateAccessOutputBuilder,
 ) -> crate::operation::create_access::builders::CreateAccessOutputBuilder {
     if builder.server_id.is_none() {
@@ -59,7 +59,7 @@ pub(crate) fn create_access_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_agreement_output_correct_errors(
+pub(crate) fn create_agreement_output_output_correct_errors(
     mut builder: crate::operation::create_agreement::builders::CreateAgreementOutputBuilder,
 ) -> crate::operation::create_agreement::builders::CreateAgreementOutputBuilder {
     if builder.agreement_id.is_none() {
@@ -68,7 +68,7 @@ pub(crate) fn create_agreement_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_connector_output_correct_errors(
+pub(crate) fn create_connector_output_output_correct_errors(
     mut builder: crate::operation::create_connector::builders::CreateConnectorOutputBuilder,
 ) -> crate::operation::create_connector::builders::CreateConnectorOutputBuilder {
     if builder.connector_id.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn create_connector_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_profile_output_correct_errors(
+pub(crate) fn create_profile_output_output_correct_errors(
     mut builder: crate::operation::create_profile::builders::CreateProfileOutputBuilder,
 ) -> crate::operation::create_profile::builders::CreateProfileOutputBuilder {
     if builder.profile_id.is_none() {
@@ -86,7 +86,7 @@ pub(crate) fn create_profile_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_server_output_correct_errors(
+pub(crate) fn create_server_output_output_correct_errors(
     mut builder: crate::operation::create_server::builders::CreateServerOutputBuilder,
 ) -> crate::operation::create_server::builders::CreateServerOutputBuilder {
     if builder.server_id.is_none() {
@@ -95,7 +95,7 @@ pub(crate) fn create_server_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_user_output_correct_errors(
+pub(crate) fn create_user_output_output_correct_errors(
     mut builder: crate::operation::create_user::builders::CreateUserOutputBuilder,
 ) -> crate::operation::create_user::builders::CreateUserOutputBuilder {
     if builder.server_id.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn create_user_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_workflow_output_correct_errors(
+pub(crate) fn create_workflow_output_output_correct_errors(
     mut builder: crate::operation::create_workflow::builders::CreateWorkflowOutputBuilder,
 ) -> crate::operation::create_workflow::builders::CreateWorkflowOutputBuilder {
     if builder.workflow_id.is_none() {
@@ -116,7 +116,7 @@ pub(crate) fn create_workflow_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_access_output_correct_errors(
+pub(crate) fn describe_access_output_output_correct_errors(
     mut builder: crate::operation::describe_access::builders::DescribeAccessOutputBuilder,
 ) -> crate::operation::describe_access::builders::DescribeAccessOutputBuilder {
     if builder.server_id.is_none() {
@@ -131,7 +131,7 @@ pub(crate) fn describe_access_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_agreement_output_correct_errors(
+pub(crate) fn describe_agreement_output_output_correct_errors(
     mut builder: crate::operation::describe_agreement::builders::DescribeAgreementOutputBuilder,
 ) -> crate::operation::describe_agreement::builders::DescribeAgreementOutputBuilder {
     if builder.agreement.is_none() {
@@ -143,7 +143,7 @@ pub(crate) fn describe_agreement_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_certificate_output_correct_errors(
+pub(crate) fn describe_certificate_output_output_correct_errors(
     mut builder: crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder,
 ) -> crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder {
     if builder.certificate.is_none() {
@@ -155,7 +155,7 @@ pub(crate) fn describe_certificate_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_connector_output_correct_errors(
+pub(crate) fn describe_connector_output_output_correct_errors(
     mut builder: crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder,
 ) -> crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder {
     if builder.connector.is_none() {
@@ -167,7 +167,7 @@ pub(crate) fn describe_connector_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_execution_output_correct_errors(
+pub(crate) fn describe_execution_output_output_correct_errors(
     mut builder: crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder,
 ) -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
     if builder.workflow_id.is_none() {
@@ -182,7 +182,7 @@ pub(crate) fn describe_execution_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_host_key_output_correct_errors(
+pub(crate) fn describe_host_key_output_output_correct_errors(
     mut builder: crate::operation::describe_host_key::builders::DescribeHostKeyOutputBuilder,
 ) -> crate::operation::describe_host_key::builders::DescribeHostKeyOutputBuilder {
     if builder.host_key.is_none() {
@@ -194,7 +194,7 @@ pub(crate) fn describe_host_key_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_profile_output_correct_errors(
+pub(crate) fn describe_profile_output_output_correct_errors(
     mut builder: crate::operation::describe_profile::builders::DescribeProfileOutputBuilder,
 ) -> crate::operation::describe_profile::builders::DescribeProfileOutputBuilder {
     if builder.profile.is_none() {
@@ -206,7 +206,7 @@ pub(crate) fn describe_profile_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_security_policy_output_correct_errors(
+pub(crate) fn describe_security_policy_output_output_correct_errors(
     mut builder: crate::operation::describe_security_policy::builders::DescribeSecurityPolicyOutputBuilder,
 ) -> crate::operation::describe_security_policy::builders::DescribeSecurityPolicyOutputBuilder {
     if builder.security_policy.is_none() {
@@ -218,7 +218,7 @@ pub(crate) fn describe_security_policy_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_server_output_correct_errors(
+pub(crate) fn describe_server_output_output_correct_errors(
     mut builder: crate::operation::describe_server::builders::DescribeServerOutputBuilder,
 ) -> crate::operation::describe_server::builders::DescribeServerOutputBuilder {
     if builder.server.is_none() {
@@ -230,7 +230,7 @@ pub(crate) fn describe_server_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_user_output_correct_errors(
+pub(crate) fn describe_user_output_output_correct_errors(
     mut builder: crate::operation::describe_user::builders::DescribeUserOutputBuilder,
 ) -> crate::operation::describe_user::builders::DescribeUserOutputBuilder {
     if builder.server_id.is_none() {
@@ -245,7 +245,7 @@ pub(crate) fn describe_user_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_workflow_output_correct_errors(
+pub(crate) fn describe_workflow_output_output_correct_errors(
     mut builder: crate::operation::describe_workflow::builders::DescribeWorkflowOutputBuilder,
 ) -> crate::operation::describe_workflow::builders::DescribeWorkflowOutputBuilder {
     if builder.workflow.is_none() {
@@ -257,7 +257,7 @@ pub(crate) fn describe_workflow_output_correct_errors(
     builder
 }
 
-pub(crate) fn import_certificate_output_correct_errors(
+pub(crate) fn import_certificate_output_output_correct_errors(
     mut builder: crate::operation::import_certificate::builders::ImportCertificateOutputBuilder,
 ) -> crate::operation::import_certificate::builders::ImportCertificateOutputBuilder {
     if builder.certificate_id.is_none() {
@@ -266,7 +266,7 @@ pub(crate) fn import_certificate_output_correct_errors(
     builder
 }
 
-pub(crate) fn import_host_key_output_correct_errors(
+pub(crate) fn import_host_key_output_output_correct_errors(
     mut builder: crate::operation::import_host_key::builders::ImportHostKeyOutputBuilder,
 ) -> crate::operation::import_host_key::builders::ImportHostKeyOutputBuilder {
     if builder.server_id.is_none() {
@@ -278,7 +278,7 @@ pub(crate) fn import_host_key_output_correct_errors(
     builder
 }
 
-pub(crate) fn import_ssh_public_key_output_correct_errors(
+pub(crate) fn import_ssh_public_key_output_output_correct_errors(
     mut builder: crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder,
 ) -> crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder {
     if builder.server_id.is_none() {
@@ -302,7 +302,7 @@ pub(crate) fn invalid_next_token_exception_correct_errors(
     builder
 }
 
-pub(crate) fn list_accesses_output_correct_errors(
+pub(crate) fn list_accesses_output_output_correct_errors(
     mut builder: crate::operation::list_accesses::builders::ListAccessesOutputBuilder,
 ) -> crate::operation::list_accesses::builders::ListAccessesOutputBuilder {
     if builder.server_id.is_none() {
@@ -314,7 +314,7 @@ pub(crate) fn list_accesses_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_agreements_output_correct_errors(
+pub(crate) fn list_agreements_output_output_correct_errors(
     mut builder: crate::operation::list_agreements::builders::ListAgreementsOutputBuilder,
 ) -> crate::operation::list_agreements::builders::ListAgreementsOutputBuilder {
     if builder.agreements.is_none() {
@@ -323,7 +323,7 @@ pub(crate) fn list_agreements_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_certificates_output_correct_errors(
+pub(crate) fn list_certificates_output_output_correct_errors(
     mut builder: crate::operation::list_certificates::builders::ListCertificatesOutputBuilder,
 ) -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder {
     if builder.certificates.is_none() {
@@ -332,7 +332,7 @@ pub(crate) fn list_certificates_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_connectors_output_correct_errors(
+pub(crate) fn list_connectors_output_output_correct_errors(
     mut builder: crate::operation::list_connectors::builders::ListConnectorsOutputBuilder,
 ) -> crate::operation::list_connectors::builders::ListConnectorsOutputBuilder {
     if builder.connectors.is_none() {
@@ -341,7 +341,7 @@ pub(crate) fn list_connectors_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_executions_output_correct_errors(
+pub(crate) fn list_executions_output_output_correct_errors(
     mut builder: crate::operation::list_executions::builders::ListExecutionsOutputBuilder,
 ) -> crate::operation::list_executions::builders::ListExecutionsOutputBuilder {
     if builder.workflow_id.is_none() {
@@ -353,7 +353,7 @@ pub(crate) fn list_executions_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_host_keys_output_correct_errors(
+pub(crate) fn list_host_keys_output_output_correct_errors(
     mut builder: crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder,
 ) -> crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder {
     if builder.server_id.is_none() {
@@ -365,7 +365,7 @@ pub(crate) fn list_host_keys_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_profiles_output_correct_errors(
+pub(crate) fn list_profiles_output_output_correct_errors(
     mut builder: crate::operation::list_profiles::builders::ListProfilesOutputBuilder,
 ) -> crate::operation::list_profiles::builders::ListProfilesOutputBuilder {
     if builder.profiles.is_none() {
@@ -374,7 +374,7 @@ pub(crate) fn list_profiles_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_security_policies_output_correct_errors(
+pub(crate) fn list_security_policies_output_output_correct_errors(
     mut builder: crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder,
 ) -> crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder {
     if builder.security_policy_names.is_none() {
@@ -383,7 +383,7 @@ pub(crate) fn list_security_policies_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_servers_output_correct_errors(
+pub(crate) fn list_servers_output_output_correct_errors(
     mut builder: crate::operation::list_servers::builders::ListServersOutputBuilder,
 ) -> crate::operation::list_servers::builders::ListServersOutputBuilder {
     if builder.servers.is_none() {
@@ -392,7 +392,7 @@ pub(crate) fn list_servers_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_users_output_correct_errors(
+pub(crate) fn list_users_output_output_correct_errors(
     mut builder: crate::operation::list_users::builders::ListUsersOutputBuilder,
 ) -> crate::operation::list_users::builders::ListUsersOutputBuilder {
     if builder.server_id.is_none() {
@@ -404,7 +404,7 @@ pub(crate) fn list_users_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_workflows_output_correct_errors(
+pub(crate) fn list_workflows_output_output_correct_errors(
     mut builder: crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder,
 ) -> crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder {
     if builder.workflows.is_none() {
@@ -413,7 +413,7 @@ pub(crate) fn list_workflows_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_file_transfer_output_correct_errors(
+pub(crate) fn start_file_transfer_output_output_correct_errors(
     mut builder: crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder,
 ) -> crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder {
     if builder.transfer_id.is_none() {
@@ -422,7 +422,7 @@ pub(crate) fn start_file_transfer_output_correct_errors(
     builder
 }
 
-pub(crate) fn test_identity_provider_output_correct_errors(
+pub(crate) fn test_identity_provider_output_output_correct_errors(
     mut builder: crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder,
 ) -> crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder {
     if builder.status_code.is_none() {
@@ -434,7 +434,7 @@ pub(crate) fn test_identity_provider_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_access_output_correct_errors(
+pub(crate) fn update_access_output_output_correct_errors(
     mut builder: crate::operation::update_access::builders::UpdateAccessOutputBuilder,
 ) -> crate::operation::update_access::builders::UpdateAccessOutputBuilder {
     if builder.server_id.is_none() {
@@ -446,7 +446,7 @@ pub(crate) fn update_access_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_agreement_output_correct_errors(
+pub(crate) fn update_agreement_output_output_correct_errors(
     mut builder: crate::operation::update_agreement::builders::UpdateAgreementOutputBuilder,
 ) -> crate::operation::update_agreement::builders::UpdateAgreementOutputBuilder {
     if builder.agreement_id.is_none() {
@@ -455,7 +455,7 @@ pub(crate) fn update_agreement_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_certificate_output_correct_errors(
+pub(crate) fn update_certificate_output_output_correct_errors(
     mut builder: crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder,
 ) -> crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder {
     if builder.certificate_id.is_none() {
@@ -464,7 +464,7 @@ pub(crate) fn update_certificate_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_connector_output_correct_errors(
+pub(crate) fn update_connector_output_output_correct_errors(
     mut builder: crate::operation::update_connector::builders::UpdateConnectorOutputBuilder,
 ) -> crate::operation::update_connector::builders::UpdateConnectorOutputBuilder {
     if builder.connector_id.is_none() {
@@ -473,7 +473,7 @@ pub(crate) fn update_connector_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_host_key_output_correct_errors(
+pub(crate) fn update_host_key_output_output_correct_errors(
     mut builder: crate::operation::update_host_key::builders::UpdateHostKeyOutputBuilder,
 ) -> crate::operation::update_host_key::builders::UpdateHostKeyOutputBuilder {
     if builder.server_id.is_none() {
@@ -485,7 +485,7 @@ pub(crate) fn update_host_key_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_profile_output_correct_errors(
+pub(crate) fn update_profile_output_output_correct_errors(
     mut builder: crate::operation::update_profile::builders::UpdateProfileOutputBuilder,
 ) -> crate::operation::update_profile::builders::UpdateProfileOutputBuilder {
     if builder.profile_id.is_none() {
@@ -503,7 +503,7 @@ pub(crate) fn conflict_exception_correct_errors(
     builder
 }
 
-pub(crate) fn update_server_output_correct_errors(
+pub(crate) fn update_server_output_output_correct_errors(
     mut builder: crate::operation::update_server::builders::UpdateServerOutputBuilder,
 ) -> crate::operation::update_server::builders::UpdateServerOutputBuilder {
     if builder.server_id.is_none() {
@@ -512,7 +512,7 @@ pub(crate) fn update_server_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_user_output_correct_errors(
+pub(crate) fn update_user_output_output_correct_errors(
     mut builder: crate::operation::update_user::builders::UpdateUserOutputBuilder,
 ) -> crate::operation::update_user::builders::UpdateUserOutputBuilder {
     if builder.server_id.is_none() {

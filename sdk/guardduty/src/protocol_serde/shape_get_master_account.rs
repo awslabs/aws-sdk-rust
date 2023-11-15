@@ -64,7 +64,7 @@ pub fn de_get_master_account_http_response(
         output = crate::protocol_serde::shape_get_master_account::de_get_master_account(_response_body, output)
             .map_err(crate::operation::get_master_account::GetMasterAccountError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_master_account_output_correct_errors(output).build()
+        crate::serde_util::get_master_account_output_output_correct_errors(output).build()
     })
 }
 

@@ -167,7 +167,7 @@ pub fn ser_start_organization_service_access_update_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_start_organization_service_access_update_input::ser_start_organization_service_access_update_input(
+    crate::protocol_serde::shape_start_organization_service_access_update_input::ser_start_organization_service_access_update_input_input(
         &mut object,
         input,
     )?;

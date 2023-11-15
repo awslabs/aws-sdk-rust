@@ -146,6 +146,6 @@ pub fn de_update_apns_voip_channel_http_response(
             crate::protocol_serde::shape_update_apns_voip_channel_output::de_apns_voip_channel_response_payload(_response_body)?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_apns_voip_channel_output_correct_errors(output).build()
+        crate::serde_util::update_apns_voip_channel_output_output_correct_errors(output).build()
     })
 }

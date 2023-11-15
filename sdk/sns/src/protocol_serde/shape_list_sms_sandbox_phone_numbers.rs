@@ -114,7 +114,7 @@ pub fn de_list_sms_sandbox_phone_numbers_http_response(
         output = crate::protocol_serde::shape_list_sms_sandbox_phone_numbers::de_list_sms_sandbox_phone_numbers(_response_body, output)
             .map_err(crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_sms_sandbox_phone_numbers_output_correct_errors(output)
+        crate::serde_util::list_sms_sandbox_phone_numbers_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError::unhandled)?
     })

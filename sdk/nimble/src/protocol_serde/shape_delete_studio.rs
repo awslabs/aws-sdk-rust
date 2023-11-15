@@ -142,7 +142,7 @@ pub fn de_delete_studio_http_response(
         output = crate::protocol_serde::shape_delete_studio::de_delete_studio(_response_body, output)
             .map_err(crate::operation::delete_studio::DeleteStudioError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_studio_output_correct_errors(output).build()
+        crate::serde_util::delete_studio_output_output_correct_errors(output).build()
     })
 }
 

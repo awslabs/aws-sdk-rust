@@ -87,7 +87,7 @@ impl DescribeApplicableIndividualAssessmentsPaginator {
                         // If the input member is None or it was an error
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
-                                let new_token = crate::lens::reflens_describe_applicable_individual_assessments_output_marker(resp);
+                                let new_token = crate::lens::reflens_describe_applicable_individual_assessments_output_output_marker(resp);
                                 let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                 if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                     true

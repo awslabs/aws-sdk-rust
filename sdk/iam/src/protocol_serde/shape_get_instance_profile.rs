@@ -69,7 +69,7 @@ pub fn de_get_instance_profile_http_response(
         output = crate::protocol_serde::shape_get_instance_profile::de_get_instance_profile(_response_body, output)
             .map_err(crate::operation::get_instance_profile::GetInstanceProfileError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_instance_profile_output_correct_errors(output).build()
+        crate::serde_util::get_instance_profile_output_output_correct_errors(output).build()
     })
 }
 

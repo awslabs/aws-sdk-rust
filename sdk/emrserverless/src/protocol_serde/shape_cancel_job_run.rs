@@ -75,7 +75,7 @@ pub fn de_cancel_job_run_http_response(
         output = crate::protocol_serde::shape_cancel_job_run::de_cancel_job_run(_response_body, output)
             .map_err(crate::operation::cancel_job_run::CancelJobRunError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::cancel_job_run_output_correct_errors(output)
+        crate::serde_util::cancel_job_run_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::cancel_job_run::CancelJobRunError::unhandled)?
     })

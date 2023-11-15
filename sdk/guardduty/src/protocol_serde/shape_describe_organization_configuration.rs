@@ -76,7 +76,7 @@ pub fn de_describe_organization_configuration_http_response(
         output = crate::protocol_serde::shape_describe_organization_configuration::de_describe_organization_configuration(_response_body, output)
             .map_err(crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_organization_configuration_output_correct_errors(output).build()
+        crate::serde_util::describe_organization_configuration_output_output_correct_errors(output).build()
     })
 }
 

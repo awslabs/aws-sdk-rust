@@ -128,7 +128,7 @@ pub fn de_associate_trust_store_http_response(
         output = crate::protocol_serde::shape_associate_trust_store::de_associate_trust_store(_response_body, output)
             .map_err(crate::operation::associate_trust_store::AssociateTrustStoreError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::associate_trust_store_output_correct_errors(output)
+        crate::serde_util::associate_trust_store_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::associate_trust_store::AssociateTrustStoreError::unhandled)?
     })

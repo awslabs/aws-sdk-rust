@@ -90,7 +90,7 @@ impl ListVersionsByFunctionPaginator {
                         // If the input member is None or it was an error
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
-                                let new_token = crate::lens::reflens_list_versions_by_function_output_next_marker(resp);
+                                let new_token = crate::lens::reflens_list_versions_by_function_output_output_next_marker(resp);
                                 let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                 if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                     true
@@ -139,7 +139,7 @@ impl ListVersionsByFunctionPaginatorItems {
         >,
     > {
         ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_list_versions_by_function_output_versions(page)
+            crate::lens::lens_list_versions_by_function_output_output_versions(page)
                 .unwrap_or_default()
                 .into_iter()
         })

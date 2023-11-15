@@ -69,7 +69,7 @@ pub fn de_create_hyper_parameter_tuning_job_http_response(
         output = crate::protocol_serde::shape_create_hyper_parameter_tuning_job::de_create_hyper_parameter_tuning_job(_response_body, output)
             .map_err(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_hyper_parameter_tuning_job_output_correct_errors(output).build()
+        crate::serde_util::create_hyper_parameter_tuning_job_output_output_correct_errors(output).build()
     })
 }
 
@@ -78,7 +78,7 @@ pub fn ser_create_hyper_parameter_tuning_job_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_hyper_parameter_tuning_job_input::ser_create_hyper_parameter_tuning_job_input(&mut object, input)?;
+    crate::protocol_serde::shape_create_hyper_parameter_tuning_job_input::ser_create_hyper_parameter_tuning_job_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

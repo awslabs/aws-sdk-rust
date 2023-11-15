@@ -103,7 +103,7 @@ pub fn de_list_applications_http_response(
         output = crate::protocol_serde::shape_list_applications::de_list_applications(_response_body, output)
             .map_err(crate::operation::list_applications::ListApplicationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_applications_output_correct_errors(output)
+        crate::serde_util::list_applications_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_applications::ListApplicationsError::unhandled)?
     })

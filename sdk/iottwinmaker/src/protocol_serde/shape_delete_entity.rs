@@ -111,7 +111,7 @@ pub fn de_delete_entity_http_response(
         output = crate::protocol_serde::shape_delete_entity::de_delete_entity(_response_body, output)
             .map_err(crate::operation::delete_entity::DeleteEntityError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_entity_output_correct_errors(output)
+        crate::serde_util::delete_entity_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_entity::DeleteEntityError::unhandled)?
     })

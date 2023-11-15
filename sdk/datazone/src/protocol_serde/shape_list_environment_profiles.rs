@@ -113,7 +113,7 @@ pub fn de_list_environment_profiles_http_response(
         output = crate::protocol_serde::shape_list_environment_profiles::de_list_environment_profiles(_response_body, output)
             .map_err(crate::operation::list_environment_profiles::ListEnvironmentProfilesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_environment_profiles_output_correct_errors(output)
+        crate::serde_util::list_environment_profiles_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_environment_profiles::ListEnvironmentProfilesError::unhandled)?
     })

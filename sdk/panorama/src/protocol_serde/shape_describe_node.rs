@@ -108,7 +108,7 @@ pub fn de_describe_node_http_response(
         output = crate::protocol_serde::shape_describe_node::de_describe_node(_response_body, output)
             .map_err(crate::operation::describe_node::DescribeNodeError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_node_output_correct_errors(output)
+        crate::serde_util::describe_node_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_node::DescribeNodeError::unhandled)?
     })

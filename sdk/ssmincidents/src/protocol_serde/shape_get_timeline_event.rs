@@ -103,7 +103,7 @@ pub fn de_get_timeline_event_http_response(
         output = crate::protocol_serde::shape_get_timeline_event::de_get_timeline_event(_response_body, output)
             .map_err(crate::operation::get_timeline_event::GetTimelineEventError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_timeline_event_output_correct_errors(output).build()
+        crate::serde_util::get_timeline_event_output_output_correct_errors(output).build()
     })
 }
 

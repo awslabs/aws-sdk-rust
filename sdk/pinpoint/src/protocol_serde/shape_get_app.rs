@@ -140,6 +140,6 @@ pub fn de_get_app_http_response(
             _response_body,
         )?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_app_output_correct_errors(output).build()
+        crate::serde_util::get_app_output_output_correct_errors(output).build()
     })
 }

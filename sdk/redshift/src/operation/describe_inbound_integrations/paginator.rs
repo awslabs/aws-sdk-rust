@@ -93,7 +93,7 @@ impl DescribeInboundIntegrationsPaginator {
                         // If the input member is None or it was an error
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
-                                let new_token = crate::lens::reflens_describe_inbound_integrations_output_marker(resp);
+                                let new_token = crate::lens::reflens_describe_inbound_integrations_output_output_marker(resp);
                                 let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                 if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                     true
@@ -142,7 +142,7 @@ impl DescribeInboundIntegrationsPaginatorItems {
         >,
     > {
         ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_describe_inbound_integrations_output_inbound_integrations(page)
+            crate::lens::lens_describe_inbound_integrations_output_output_inbound_integrations(page)
                 .unwrap_or_default()
                 .into_iter()
         })

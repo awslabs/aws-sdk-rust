@@ -123,7 +123,7 @@ pub fn de_list_app_authorizations_http_response(
         output = crate::protocol_serde::shape_list_app_authorizations::de_list_app_authorizations(_response_body, output)
             .map_err(crate::operation::list_app_authorizations::ListAppAuthorizationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_app_authorizations_output_correct_errors(output)
+        crate::serde_util::list_app_authorizations_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_app_authorizations::ListAppAuthorizationsError::unhandled)?
     })

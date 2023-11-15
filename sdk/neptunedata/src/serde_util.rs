@@ -359,7 +359,7 @@ pub(crate) fn server_shutdown_exception_correct_errors(
     builder
 }
 
-pub(crate) fn execute_fast_reset_output_correct_errors(
+pub(crate) fn execute_fast_reset_output_output_correct_errors(
     mut builder: crate::operation::execute_fast_reset::builders::ExecuteFastResetOutputBuilder,
 ) -> crate::operation::execute_fast_reset::builders::ExecuteFastResetOutputBuilder {
     if builder.status.is_none() {
@@ -458,7 +458,7 @@ pub(crate) fn query_too_large_exception_correct_errors(
     builder
 }
 
-pub(crate) fn execute_open_cypher_explain_query_output_correct_errors(
+pub(crate) fn execute_open_cypher_explain_query_output_output_correct_errors(
     mut builder: crate::operation::execute_open_cypher_explain_query::builders::ExecuteOpenCypherExplainQueryOutputBuilder,
 ) -> crate::operation::execute_open_cypher_explain_query::builders::ExecuteOpenCypherExplainQueryOutputBuilder {
     if builder.results.is_none() {
@@ -467,7 +467,7 @@ pub(crate) fn execute_open_cypher_explain_query_output_correct_errors(
     builder
 }
 
-pub(crate) fn execute_open_cypher_query_output_correct_errors(
+pub(crate) fn execute_open_cypher_query_output_output_correct_errors(
     mut builder: crate::operation::execute_open_cypher_query::builders::ExecuteOpenCypherQueryOutputBuilder,
 ) -> crate::operation::execute_open_cypher_query::builders::ExecuteOpenCypherQueryOutputBuilder {
     if builder.results.is_none() {
@@ -476,7 +476,7 @@ pub(crate) fn execute_open_cypher_query_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_loader_job_status_output_correct_errors(
+pub(crate) fn get_loader_job_status_output_output_correct_errors(
     mut builder: crate::operation::get_loader_job_status::builders::GetLoaderJobStatusOutputBuilder,
 ) -> crate::operation::get_loader_job_status::builders::GetLoaderJobStatusOutputBuilder {
     if builder.status.is_none() {
@@ -488,7 +488,7 @@ pub(crate) fn get_loader_job_status_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_propertygraph_statistics_output_correct_errors(
+pub(crate) fn get_propertygraph_statistics_output_output_correct_errors(
     mut builder: crate::operation::get_propertygraph_statistics::builders::GetPropertygraphStatisticsOutputBuilder,
 ) -> crate::operation::get_propertygraph_statistics::builders::GetPropertygraphStatisticsOutputBuilder {
     if builder.status.is_none() {
@@ -548,7 +548,7 @@ pub(crate) fn throttling_exception_correct_errors(
     builder
 }
 
-pub(crate) fn get_propertygraph_stream_output_correct_errors(
+pub(crate) fn get_propertygraph_stream_output_output_correct_errors(
     mut builder: crate::operation::get_propertygraph_stream::builders::GetPropertygraphStreamOutputBuilder,
 ) -> crate::operation::get_propertygraph_stream::builders::GetPropertygraphStreamOutputBuilder {
     if builder.last_event_id.is_none() {
@@ -569,7 +569,7 @@ pub(crate) fn get_propertygraph_stream_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_sparql_statistics_output_correct_errors(
+pub(crate) fn get_sparql_statistics_output_output_correct_errors(
     mut builder: crate::operation::get_sparql_statistics::builders::GetSparqlStatisticsOutputBuilder,
 ) -> crate::operation::get_sparql_statistics::builders::GetSparqlStatisticsOutputBuilder {
     if builder.status.is_none() {
@@ -584,7 +584,7 @@ pub(crate) fn get_sparql_statistics_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_sparql_stream_output_correct_errors(
+pub(crate) fn get_sparql_stream_output_output_correct_errors(
     mut builder: crate::operation::get_sparql_stream::builders::GetSparqlStreamOutputBuilder,
 ) -> crate::operation::get_sparql_stream::builders::GetSparqlStreamOutputBuilder {
     if builder.last_event_id.is_none() {
@@ -605,7 +605,7 @@ pub(crate) fn get_sparql_stream_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_loader_jobs_output_correct_errors(
+pub(crate) fn list_loader_jobs_output_output_correct_errors(
     mut builder: crate::operation::list_loader_jobs::builders::ListLoaderJobsOutputBuilder,
 ) -> crate::operation::list_loader_jobs::builders::ListLoaderJobsOutputBuilder {
     if builder.status.is_none() {
@@ -620,7 +620,7 @@ pub(crate) fn list_loader_jobs_output_correct_errors(
     builder
 }
 
-pub(crate) fn manage_propertygraph_statistics_output_correct_errors(
+pub(crate) fn manage_propertygraph_statistics_output_output_correct_errors(
     mut builder: crate::operation::manage_propertygraph_statistics::builders::ManagePropertygraphStatisticsOutputBuilder,
 ) -> crate::operation::manage_propertygraph_statistics::builders::ManagePropertygraphStatisticsOutputBuilder {
     if builder.status.is_none() {
@@ -629,7 +629,7 @@ pub(crate) fn manage_propertygraph_statistics_output_correct_errors(
     builder
 }
 
-pub(crate) fn manage_sparql_statistics_output_correct_errors(
+pub(crate) fn manage_sparql_statistics_output_output_correct_errors(
     mut builder: crate::operation::manage_sparql_statistics::builders::ManageSparqlStatisticsOutputBuilder,
 ) -> crate::operation::manage_sparql_statistics::builders::ManageSparqlStatisticsOutputBuilder {
     if builder.status.is_none() {
@@ -653,7 +653,7 @@ pub(crate) fn s3_exception_correct_errors(
     builder
 }
 
-pub(crate) fn start_loader_job_output_correct_errors(
+pub(crate) fn start_loader_job_output_output_correct_errors(
     mut builder: crate::operation::start_loader_job::builders::StartLoaderJobOutputBuilder,
 ) -> crate::operation::start_loader_job::builders::StartLoaderJobOutputBuilder {
     if builder.status.is_none() {

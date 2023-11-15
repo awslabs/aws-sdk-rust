@@ -74,7 +74,7 @@ pub fn de_get_administrator_account_http_response(
         output = crate::protocol_serde::shape_get_administrator_account::de_get_administrator_account(_response_body, output)
             .map_err(crate::operation::get_administrator_account::GetAdministratorAccountError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_administrator_account_output_correct_errors(output).build()
+        crate::serde_util::get_administrator_account_output_output_correct_errors(output).build()
     })
 }
 

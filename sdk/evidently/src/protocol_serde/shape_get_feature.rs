@@ -93,7 +93,7 @@ pub fn de_get_feature_http_response(
         output = crate::protocol_serde::shape_get_feature::de_get_feature(_response_body, output)
             .map_err(crate::operation::get_feature::GetFeatureError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_feature_output_correct_errors(output).build()
+        crate::serde_util::get_feature_output_output_correct_errors(output).build()
     })
 }
 

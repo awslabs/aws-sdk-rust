@@ -193,7 +193,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateStorag
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_create_storage_location_input::ser_create_storage_location_input_input(&input)?,
+            crate::protocol_serde::shape_create_storage_location_input::ser_create_storage_location_input_input_input(&input)?,
         );
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())

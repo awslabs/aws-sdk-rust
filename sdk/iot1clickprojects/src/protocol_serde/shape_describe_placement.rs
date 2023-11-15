@@ -77,7 +77,7 @@ pub fn de_describe_placement_http_response(
         output = crate::protocol_serde::shape_describe_placement::de_describe_placement(_response_body, output)
             .map_err(crate::operation::describe_placement::DescribePlacementError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_placement_output_correct_errors(output).build()
+        crate::serde_util::describe_placement_output_output_correct_errors(output).build()
     })
 }
 

@@ -114,7 +114,7 @@ pub fn de_get_matching_workflow_http_response(
         output = crate::protocol_serde::shape_get_matching_workflow::de_get_matching_workflow(_response_body, output)
             .map_err(crate::operation::get_matching_workflow::GetMatchingWorkflowError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_matching_workflow_output_correct_errors(output)
+        crate::serde_util::get_matching_workflow_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_matching_workflow::GetMatchingWorkflowError::unhandled)?
     })

@@ -129,7 +129,7 @@ pub fn de_update_service_access_policies_http_response(
         output = crate::protocol_serde::shape_update_service_access_policies::de_update_service_access_policies(_response_body, output)
             .map_err(crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_service_access_policies_output_correct_errors(output).build()
+        crate::serde_util::update_service_access_policies_output_output_correct_errors(output).build()
     })
 }
 
