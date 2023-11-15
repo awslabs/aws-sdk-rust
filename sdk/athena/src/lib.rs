@@ -12,8 +12,8 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
-//! feedback purposes only. Do not use this SDK for production workloads.**
+//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+//! on production workloads. Any use in production is at your own risk.**
 //!
 //! Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see [What is Amazon Athena](http://docs.aws.amazon.com/athena/latest/ug/what-is.html) in the _Amazon Athena User Guide_.
 //!

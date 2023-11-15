@@ -1,7 +1,7 @@
 # aws-sdk-mediastoredata
 
-**Please Note: The SDK is currently in Developer Preview and is intended strictly for
-feedback purposes only. Do not use this SDK for production workloads.**
+**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+on production workloads. Any use in production is at your own risk.**
 
 An AWS Elemental MediaStore asset is an object, similar to an object in the Amazon S3 service. Objects are the fundamental entities that are stored in AWS Elemental MediaStore.
 

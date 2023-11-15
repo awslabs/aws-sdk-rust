@@ -12,8 +12,8 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
-//! feedback purposes only. Do not use this SDK for production workloads.**
+//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+//! on production workloads. Any use in production is at your own risk.**
 //!
 //! Contains all data plane API operations and data types for Amazon SageMaker Metrics. Use these APIs to put and retrieve (get) features related to your training run.
 //!   - [BatchPutMetrics](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_metrics_BatchPutMetrics.html)

@@ -1,7 +1,7 @@
 # aws-sdk-inspector2
 
-**Please Note: The SDK is currently in Developer Preview and is intended strictly for
-feedback purposes only. Do not use this SDK for production workloads.**
+**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+on production workloads. Any use in production is at your own risk.**
 
 Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2, Amazon ECR, and Amazon Web Services Lambda environments.
 

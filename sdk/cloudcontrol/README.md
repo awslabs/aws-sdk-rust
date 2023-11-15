@@ -1,7 +1,7 @@
 # aws-sdk-cloudcontrol
 
-**Please Note: The SDK is currently in Developer Preview and is intended strictly for
-feedback purposes only. Do not use this SDK for production workloads.**
+**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+on production workloads. Any use in production is at your own risk.**
 
 For more information about Amazon Web Services Cloud Control API, see the [Amazon Web Services Cloud Control API User Guide](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html).
 

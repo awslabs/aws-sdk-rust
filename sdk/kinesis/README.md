@@ -1,7 +1,7 @@
 # aws-sdk-kinesis
 
-**Please Note: The SDK is currently in Developer Preview and is intended strictly for
-feedback purposes only. Do not use this SDK for production workloads.**
+**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+on production workloads. Any use in production is at your own risk.**
 
 Amazon Kinesis Data Streams is a managed service that scales elastically for real-time processing of streaming big data.
 

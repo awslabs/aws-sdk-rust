@@ -1,7 +1,7 @@
 # aws-sdk-oam
 
-**Please Note: The SDK is currently in Developer Preview and is intended strictly for
-feedback purposes only. Do not use this SDK for production workloads.**
+**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+on production workloads. Any use in production is at your own risk.**
 
 Use Amazon CloudWatch Observability Access Manager to create and manage links between source accounts and monitoring accounts by using _CloudWatch cross-account observability_. With CloudWatch cross-account observability, you can monitor and troubleshoot applications that span multiple accounts within a Region. Seamlessly search, visualize, and analyze your metrics, logs, traces, and Application Insights applications in any of the linked accounts without account boundaries.
 

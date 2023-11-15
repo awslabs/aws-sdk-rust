@@ -12,8 +12,8 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
-//! feedback purposes only. Do not use this SDK for production workloads.**
+//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+//! on production workloads. Any use in production is at your own risk.**
 //!
 //! The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a _task_ represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.
 //!

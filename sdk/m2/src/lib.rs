@@ -12,8 +12,8 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
-//! feedback purposes only. Do not use this SDK for production workloads.**
+//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+//! on production workloads. Any use in production is at your own risk.**
 //!
 //! Amazon Web Services Mainframe Modernization provides tools and resources to help you plan and implement migration and modernization from mainframes to Amazon Web Services managed runtime environments. It provides tools for analyzing existing mainframe applications, developing or updating mainframe applications using COBOL or PL/I, and implementing an automated pipeline for continuous integration and continuous delivery (CI/CD) of the applications.
 //!

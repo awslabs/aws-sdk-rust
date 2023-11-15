@@ -12,8 +12,8 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
-//! feedback purposes only. Do not use this SDK for production workloads.**
+//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+//! on production workloads. Any use in production is at your own risk.**
 //!
 //! Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is called a human review workflow. To create and start a human review workflow, you need three resources: a _worker task template_, a _flow definition_, and a _human loop_.
 //!
