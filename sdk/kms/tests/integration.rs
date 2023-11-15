@@ -52,7 +52,7 @@ async fn generate_random() {
             .header("content-type", "application/x-amz-json-1.1")
             .header("x-amz-target", "TrentService.GenerateRandom")
             .header("content-length", "20")
-            .header("authorization", "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-east-1/kms/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date;x-amz-target;x-amz-user-agent, Signature=53dcf70f6f852cb576185dcabef5aaa3d068704cf1b7ea7dc644efeaa46674d7")
+            .header("authorization", "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-east-1/kms/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date;x-amz-security-token;x-amz-target;x-amz-user-agent, Signature=703f72fe50c310e3ee1a7a106df947b980cb91bc8bad7a4a603b057096603aed")
             .header("x-amz-date", "20090213T233130Z")
             .header("user-agent", "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0")
             .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
