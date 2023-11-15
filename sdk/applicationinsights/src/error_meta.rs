@@ -882,6 +882,9 @@ impl From<crate::operation::update_component_configuration::UpdateComponentConfi
             crate::operation::update_component_configuration::UpdateComponentConfigurationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::update_component_configuration::UpdateComponentConfigurationError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
             crate::operation::update_component_configuration::UpdateComponentConfigurationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }

@@ -12,6 +12,8 @@ pub struct JobSettings {
     pub esam: ::std::option::Option<crate::types::EsamSettings>,
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub extended_data_services: ::std::option::Option<crate::types::ExtendedDataServices>,
+    /// Specify the input that MediaConvert references for your default output settings. MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify different output settings for. Enabling this setting will disable "Follow source" for all other inputs. If MediaConvert cannot follow your source, for example if you specify an audio-only input, MediaConvert uses the first followable input instead. In your JSON job specification, enter an integer from 1 to 150 corresponding to the order of your inputs.
+    pub follow_source: ::std::option::Option<i32>,
     /// Use Inputs to define source file used in the transcode job. There can be multiple inputs add in a job. These inputs will be concantenated together to create the output.
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
@@ -45,6 +47,10 @@ impl JobSettings {
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub fn extended_data_services(&self) -> ::std::option::Option<&crate::types::ExtendedDataServices> {
         self.extended_data_services.as_ref()
+    }
+    /// Specify the input that MediaConvert references for your default output settings. MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify different output settings for. Enabling this setting will disable "Follow source" for all other inputs. If MediaConvert cannot follow your source, for example if you specify an audio-only input, MediaConvert uses the first followable input instead. In your JSON job specification, enter an integer from 1 to 150 corresponding to the order of your inputs.
+    pub fn follow_source(&self) -> ::std::option::Option<i32> {
+        self.follow_source
     }
     /// Use Inputs to define source file used in the transcode job. There can be multiple inputs add in a job. These inputs will be concantenated together to create the output.
     ///
@@ -98,6 +104,7 @@ pub struct JobSettingsBuilder {
     pub(crate) avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,
     pub(crate) esam: ::std::option::Option<crate::types::EsamSettings>,
     pub(crate) extended_data_services: ::std::option::Option<crate::types::ExtendedDataServices>,
+    pub(crate) follow_source: ::std::option::Option<i32>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
     pub(crate) kantar_watermark: ::std::option::Option<crate::types::KantarWatermarkSettings>,
     pub(crate) motion_image_inserter: ::std::option::Option<crate::types::MotionImageInserter>,
@@ -163,6 +170,20 @@ impl JobSettingsBuilder {
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub fn get_extended_data_services(&self) -> &::std::option::Option<crate::types::ExtendedDataServices> {
         &self.extended_data_services
+    }
+    /// Specify the input that MediaConvert references for your default output settings. MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify different output settings for. Enabling this setting will disable "Follow source" for all other inputs. If MediaConvert cannot follow your source, for example if you specify an audio-only input, MediaConvert uses the first followable input instead. In your JSON job specification, enter an integer from 1 to 150 corresponding to the order of your inputs.
+    pub fn follow_source(mut self, input: i32) -> Self {
+        self.follow_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the input that MediaConvert references for your default output settings. MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify different output settings for. Enabling this setting will disable "Follow source" for all other inputs. If MediaConvert cannot follow your source, for example if you specify an audio-only input, MediaConvert uses the first followable input instead. In your JSON job specification, enter an integer from 1 to 150 corresponding to the order of your inputs.
+    pub fn set_follow_source(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.follow_source = input;
+        self
+    }
+    /// Specify the input that MediaConvert references for your default output settings. MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify different output settings for. Enabling this setting will disable "Follow source" for all other inputs. If MediaConvert cannot follow your source, for example if you specify an audio-only input, MediaConvert uses the first followable input instead. In your JSON job specification, enter an integer from 1 to 150 corresponding to the order of your inputs.
+    pub fn get_follow_source(&self) -> &::std::option::Option<i32> {
+        &self.follow_source
     }
     /// Appends an item to `inputs`.
     ///
@@ -295,6 +316,7 @@ impl JobSettingsBuilder {
             avail_blanking: self.avail_blanking,
             esam: self.esam,
             extended_data_services: self.extended_data_services,
+            follow_source: self.follow_source,
             inputs: self.inputs,
             kantar_watermark: self.kantar_watermark,
             motion_image_inserter: self.motion_image_inserter,

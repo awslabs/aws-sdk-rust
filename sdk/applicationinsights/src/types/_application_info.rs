@@ -26,6 +26,8 @@ pub struct ApplicationInfo {
     pub auto_config_enabled: ::std::option::Option<bool>,
     /// <p> The method used by Application Insights to onboard your resources. </p>
     pub discovery_type: ::std::option::Option<crate::types::DiscoveryType>,
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub attach_missing_permission: ::std::option::Option<bool>,
 }
 impl ApplicationInfo {
     /// <p>The AWS account ID for the owner of the application.</p>
@@ -68,6 +70,10 @@ impl ApplicationInfo {
     pub fn discovery_type(&self) -> ::std::option::Option<&crate::types::DiscoveryType> {
         self.discovery_type.as_ref()
     }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn attach_missing_permission(&self) -> ::std::option::Option<bool> {
+        self.attach_missing_permission
+    }
 }
 impl ApplicationInfo {
     /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::types::ApplicationInfo).
@@ -89,6 +95,7 @@ pub struct ApplicationInfoBuilder {
     pub(crate) remarks: ::std::option::Option<::std::string::String>,
     pub(crate) auto_config_enabled: ::std::option::Option<bool>,
     pub(crate) discovery_type: ::std::option::Option<crate::types::DiscoveryType>,
+    pub(crate) attach_missing_permission: ::std::option::Option<bool>,
 }
 impl ApplicationInfoBuilder {
     /// <p>The AWS account ID for the owner of the application.</p>
@@ -229,6 +236,20 @@ impl ApplicationInfoBuilder {
     pub fn get_discovery_type(&self) -> &::std::option::Option<crate::types::DiscoveryType> {
         &self.discovery_type
     }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn attach_missing_permission(mut self, input: bool) -> Self {
+        self.attach_missing_permission = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn set_attach_missing_permission(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.attach_missing_permission = input;
+        self
+    }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn get_attach_missing_permission(&self) -> &::std::option::Option<bool> {
+        &self.attach_missing_permission
+    }
     /// Consumes the builder and constructs a [`ApplicationInfo`](crate::types::ApplicationInfo).
     pub fn build(self) -> crate::types::ApplicationInfo {
         crate::types::ApplicationInfo {
@@ -241,6 +262,7 @@ impl ApplicationInfoBuilder {
             remarks: self.remarks,
             auto_config_enabled: self.auto_config_enabled,
             discovery_type: self.discovery_type,
+            attach_missing_permission: self.attach_missing_permission,
         }
     }
 }

@@ -675,4 +675,18 @@ impl ModifyClusterFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ip_address_type()
     }
+    /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+    pub fn multi_az(mut self, input: bool) -> Self {
+        self.inner = self.inner.multi_az(input);
+        self
+    }
+    /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+    pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_multi_az(input);
+        self
+    }
+    /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        self.inner.get_multi_az()
+    }
 }

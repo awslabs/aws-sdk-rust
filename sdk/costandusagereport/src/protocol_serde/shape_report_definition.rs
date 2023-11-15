@@ -51,6 +51,12 @@ pub fn ser_report_definition(
     if let Some(var_8) = &input.billing_view_arn {
         object.key("BillingViewArn").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.report_status {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("ReportStatus").start_object();
+        crate::protocol_serde::shape_report_status::ser_report_status(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -143,6 +149,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "ReportStatus" => {
+                            builder = builder.set_report_status(crate::protocol_serde::shape_report_status::de_report_status(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

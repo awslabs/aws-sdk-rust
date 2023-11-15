@@ -108,18 +108,6 @@ pub(crate) fn output_data_config_correct_errors(
     builder
 }
 
-pub(crate) fn parallel_data_config_correct_errors(
-    mut builder: crate::types::builders::ParallelDataConfigBuilder,
-) -> crate::types::builders::ParallelDataConfigBuilder {
-    if builder.s3_uri.is_none() {
-        builder.s3_uri = Some(Default::default())
-    }
-    if builder.format.is_none() {
-        builder.format = "no value was set".parse::<crate::types::ParallelDataFormat>().ok()
-    }
-    builder
-}
-
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())

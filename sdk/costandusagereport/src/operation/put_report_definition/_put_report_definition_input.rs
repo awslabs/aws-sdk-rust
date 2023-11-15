@@ -6,11 +6,19 @@
 pub struct PutReportDefinitionInput {
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub report_definition: ::std::option::Option<crate::types::ReportDefinition>,
+    /// <p>The tags to be assigned to the report definition resource.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutReportDefinitionInput {
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub fn report_definition(&self) -> ::std::option::Option<&crate::types::ReportDefinition> {
         self.report_definition.as_ref()
+    }
+    /// <p>The tags to be assigned to the report definition resource.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutReportDefinitionInput {
@@ -25,6 +33,7 @@ impl PutReportDefinitionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutReportDefinitionInputBuilder {
     pub(crate) report_definition: ::std::option::Option<crate::types::ReportDefinition>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutReportDefinitionInputBuilder {
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
@@ -42,6 +51,26 @@ impl PutReportDefinitionInputBuilder {
     pub fn get_report_definition(&self) -> &::std::option::Option<crate::types::ReportDefinition> {
         &self.report_definition
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags to be assigned to the report definition resource.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags to be assigned to the report definition resource.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags to be assigned to the report definition resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`PutReportDefinitionInput`](crate::operation::put_report_definition::PutReportDefinitionInput).
     pub fn build(
         self,
@@ -49,6 +78,7 @@ impl PutReportDefinitionInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::put_report_definition::PutReportDefinitionInput {
             report_definition: self.report_definition,
+            tags: self.tags,
         })
     }
 }

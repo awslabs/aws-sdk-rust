@@ -15,6 +15,8 @@ pub struct UpdateApplicationInput {
     pub remove_sns_topic: ::std::option::Option<bool>,
     /// <p> Turns auto-configuration on or off. </p>
     pub auto_config_enabled: ::std::option::Option<bool>,
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub attach_missing_permission: ::std::option::Option<bool>,
 }
 impl UpdateApplicationInput {
     /// <p>The name of the resource group.</p>
@@ -41,6 +43,10 @@ impl UpdateApplicationInput {
     pub fn auto_config_enabled(&self) -> ::std::option::Option<bool> {
         self.auto_config_enabled
     }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn attach_missing_permission(&self) -> ::std::option::Option<bool> {
+        self.attach_missing_permission
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -59,6 +65,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) remove_sns_topic: ::std::option::Option<bool>,
     pub(crate) auto_config_enabled: ::std::option::Option<bool>,
+    pub(crate) attach_missing_permission: ::std::option::Option<bool>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the resource group.</p>
@@ -146,6 +153,20 @@ impl UpdateApplicationInputBuilder {
     pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
         &self.auto_config_enabled
     }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn attach_missing_permission(mut self, input: bool) -> Self {
+        self.attach_missing_permission = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn set_attach_missing_permission(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.attach_missing_permission = input;
+        self
+    }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn get_attach_missing_permission(&self) -> &::std::option::Option<bool> {
+        &self.attach_missing_permission
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -157,6 +178,7 @@ impl UpdateApplicationInputBuilder {
             ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
             remove_sns_topic: self.remove_sns_topic,
             auto_config_enabled: self.auto_config_enabled,
+            attach_missing_permission: self.attach_missing_permission,
         })
     }
 }

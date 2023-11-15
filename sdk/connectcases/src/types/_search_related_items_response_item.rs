@@ -14,6 +14,8 @@ pub struct SearchRelatedItemsResponseItem {
     pub content: ::std::option::Option<crate::types::RelatedItemContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    /// <p>Represents the creator of the related item.</p>
+    pub performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl SearchRelatedItemsResponseItem {
     /// <p>Unique identifier of a related item.</p>
@@ -37,6 +39,10 @@ impl SearchRelatedItemsResponseItem {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn performed_by(&self) -> ::std::option::Option<&crate::types::UserUnion> {
+        self.performed_by.as_ref()
+    }
 }
 impl SearchRelatedItemsResponseItem {
     /// Creates a new builder-style object to manufacture [`SearchRelatedItemsResponseItem`](crate::types::SearchRelatedItemsResponseItem).
@@ -54,6 +60,7 @@ pub struct SearchRelatedItemsResponseItemBuilder {
     pub(crate) association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) content: ::std::option::Option<crate::types::RelatedItemContent>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl SearchRelatedItemsResponseItemBuilder {
     /// <p>Unique identifier of a related item.</p>
@@ -141,6 +148,20 @@ impl SearchRelatedItemsResponseItemBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
+        self.performed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
+        self.performed_by = input;
+        self
+    }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
+        &self.performed_by
+    }
     /// Consumes the builder and constructs a [`SearchRelatedItemsResponseItem`](crate::types::SearchRelatedItemsResponseItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`related_item_id`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::related_item_id)
@@ -168,6 +189,7 @@ impl SearchRelatedItemsResponseItemBuilder {
             })?,
             content: self.content,
             tags: self.tags,
+            performed_by: self.performed_by,
         })
     }
 }

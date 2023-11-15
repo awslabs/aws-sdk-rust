@@ -8,9 +8,9 @@ publish = false
 
 [dependencies]
 thiserror = "1.0"
-aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
-aws-sdk-cognitoidentityprovider= { version = "0.35.0", path = "../../../sdk/cognitoidentityprovider" }
-aws-smithy-types-convert= { version = "0.57.1", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
+aws-config= { version = "0.57.0", path = "../../../sdk/aws-config" }
+aws-sdk-cognitoidentityprovider= { version = "0.36.0", path = "../../../sdk/cognitoidentityprovider" }
+aws-smithy-types-convert= { version = "0.57.0", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.clap]
 version = "~4.4"

@@ -57,6 +57,10 @@ pub use crate::types::_disruption_compliance::DisruptionCompliance;
 
 pub use crate::types::_resiliency_score::ResiliencyScore;
 
+pub use crate::types::_scoring_component_resiliency_score::ScoringComponentResiliencyScore;
+
+pub use crate::types::_resiliency_score_type::ResiliencyScoreType;
+
 pub use crate::types::_cost::Cost;
 
 pub use crate::types::_cost_frequency::CostFrequency;
@@ -68,6 +72,8 @@ pub use crate::types::_resource_resolution_status_type::ResourceResolutionStatus
 pub use crate::types::_unsupported_resource::UnsupportedResource;
 
 pub use crate::types::_test_recommendation::TestRecommendation;
+
+pub use crate::types::_recommendation_status::RecommendationStatus;
 
 pub use crate::types::_recommendation_item::RecommendationItem;
 
@@ -241,6 +247,8 @@ mod _recommendation_disruption_compliance;
 
 mod _recommendation_item;
 
+mod _recommendation_status;
+
 mod _recommendation_template;
 
 mod _recommendation_template_status;
@@ -252,6 +260,8 @@ mod _resiliency_policy;
 mod _resiliency_policy_tier;
 
 mod _resiliency_score;
+
+mod _resiliency_score_type;
 
 mod _resource_error;
 
@@ -270,6 +280,8 @@ mod _resource_resolution_status_type;
 mod _resource_source_type;
 
 mod _s3_location;
+
+mod _scoring_component_resiliency_score;
 
 mod _sop_recommendation;
 

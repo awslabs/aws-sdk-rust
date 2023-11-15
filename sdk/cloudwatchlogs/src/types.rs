@@ -19,6 +19,18 @@ pub use crate::types::_input_log_event::InputLogEvent;
 
 pub use crate::types::_destination::Destination;
 
+pub use crate::types::_delivery_source::DeliverySource;
+
+pub use crate::types::_policy::Policy;
+
+pub use crate::types::_delivery_destination::DeliveryDestination;
+
+pub use crate::types::_delivery_destination_configuration::DeliveryDestinationConfiguration;
+
+pub use crate::types::_output_format::OutputFormat;
+
+pub use crate::types::_delivery_destination_type::DeliveryDestinationType;
+
 pub use crate::types::_account_policy::AccountPolicy;
 
 pub use crate::types::_scope::Scope;
@@ -34,6 +46,8 @@ pub use crate::types::_result_field::ResultField;
 pub use crate::types::_log_group_field::LogGroupField;
 
 pub use crate::types::_output_log_event::OutputLogEvent;
+
+pub use crate::types::_delivery::Delivery;
 
 pub use crate::types::_searched_log_stream::SearchedLogStream;
 
@@ -69,6 +83,16 @@ mod _account_policy;
 
 mod _data_protection_status;
 
+mod _delivery;
+
+mod _delivery_destination;
+
+mod _delivery_destination_configuration;
+
+mod _delivery_destination_type;
+
+mod _delivery_source;
+
 mod _destination;
 
 mod _distribution;
@@ -101,7 +125,11 @@ mod _metric_transformation;
 
 mod _order_by;
 
+mod _output_format;
+
 mod _output_log_event;
+
+mod _policy;
 
 mod _policy_type;
 

@@ -19,6 +19,26 @@ pub(crate) fn reflens_list_byoip_cidrs_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_cross_account_attachments_output_next_token(
+    input: &crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_cross_account_resources_output_next_token(
+    input: &crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_custom_routing_accelerators_output_next_token(
     input: &crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -103,6 +123,26 @@ pub(crate) fn lens_list_byoip_cidrs_output_byoip_cidrs(
     input: crate::operation::list_byoip_cidrs::ListByoipCidrsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>> {
     let input = match input.byoip_cidrs {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_cross_account_attachments_output_cross_account_attachments(
+    input: crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+    let input = match input.cross_account_attachments {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_cross_account_resources_output_cross_account_resources(
+    input: crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountResource>> {
+    let input = match input.cross_account_resources {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -245,6 +245,8 @@ pub type ModifyScheduledActionErrorKind = ModifyScheduledActionError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyScheduledActionError {
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The scheduled action is not valid. </p>
     InvalidScheduledActionFault(crate::types::error::InvalidScheduledActionFault),
     /// <p>The schedule you submitted isn't valid.</p>
@@ -255,6 +257,8 @@ pub enum ModifyScheduledActionError {
     ScheduledActionTypeUnsupportedFault(crate::types::error::ScheduledActionTypeUnsupportedFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::types::error::UnauthorizedOperation),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -273,11 +277,13 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for ModifySc
 impl ::std::fmt::Display for ModifyScheduledActionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidScheduledActionFault(_inner) => _inner.fmt(f),
             Self::InvalidScheduleFault(_inner) => _inner.fmt(f),
             Self::ScheduledActionNotFoundFault(_inner) => _inner.fmt(f),
             Self::ScheduledActionTypeUnsupportedFault(_inner) => _inner.fmt(f),
             Self::UnauthorizedOperation(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -285,11 +291,13 @@ impl ::std::fmt::Display for ModifyScheduledActionError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyScheduledActionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidScheduledActionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidScheduleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ScheduledActionNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ScheduledActionTypeUnsupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -326,13 +334,19 @@ impl ModifyScheduledActionError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ClusterNotFoundFault(e) => e.meta(),
             Self::InvalidScheduledActionFault(e) => e.meta(),
             Self::InvalidScheduleFault(e) => e.meta(),
             Self::ScheduledActionNotFoundFault(e) => e.meta(),
             Self::ScheduledActionTypeUnsupportedFault(e) => e.meta(),
             Self::UnauthorizedOperation(e) => e.meta(),
+            Self::UnsupportedOperationFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `ModifyScheduledActionError::ClusterNotFoundFault`.
+    pub fn is_cluster_not_found_fault(&self) -> bool {
+        matches!(self, Self::ClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyScheduledActionError::InvalidScheduledActionFault`.
     pub fn is_invalid_scheduled_action_fault(&self) -> bool {
@@ -354,15 +368,21 @@ impl ModifyScheduledActionError {
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(self, Self::UnauthorizedOperation(_))
     }
+    /// Returns `true` if the error kind is `ModifyScheduledActionError::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationFault(_))
+    }
 }
 impl ::std::error::Error for ModifyScheduledActionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidScheduledActionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidScheduleFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ScheduledActionNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ScheduledActionTypeUnsupportedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedOperation(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

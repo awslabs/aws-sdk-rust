@@ -12,6 +12,9 @@ pub fn ser_text_log_setting(
         crate::protocol_serde::shape_text_log_destination::ser_text_log_destination(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.selective_logging_enabled {
+        object.key("selectiveLoggingEnabled").boolean(*var_3);
+    }
     Ok(())
 }
 
@@ -35,6 +38,10 @@ where
                         }
                         "destination" => {
                             builder = builder.set_destination(crate::protocol_serde::shape_text_log_destination::de_text_log_destination(tokens)?);
+                        }
+                        "selectiveLoggingEnabled" => {
+                            builder =
+                                builder.set_selective_logging_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

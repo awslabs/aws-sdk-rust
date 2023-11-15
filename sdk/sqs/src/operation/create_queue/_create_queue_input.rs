@@ -12,19 +12,6 @@ pub struct CreateQueueInput {
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_name: ::std::option::Option<::std::string::String>,
-    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <p>When you use queue tags, keep the following guidelines in mind:</p>
-    /// <ul>
-    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
-    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
-    /// <li> <p>Tags are case-sensitive.</p> </li>
-    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
-    /// </ul>
-    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
-    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
-    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </note>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateQueue</code> action uses:</p>
     /// <ul>
@@ -90,18 +77,6 @@ pub struct CreateQueueInput {
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,
-}
-impl CreateQueueInput {
-    /// <p>The name of the new queue. The following limits apply to this name:</p>
-    /// <ul>
-    /// <li> <p>A queue name can have up to 80 characters.</p> </li>
-    /// <li> <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p> </li>
-    /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
-    /// </ul>
-    /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_name(&self) -> ::std::option::Option<&str> {
-        self.queue_name.as_deref()
-    }
     /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>When you use queue tags, keep the following guidelines in mind:</p>
     /// <ul>
@@ -114,8 +89,18 @@ impl CreateQueueInput {
     /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
     /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.tags.as_ref()
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+}
+impl CreateQueueInput {
+    /// <p>The name of the new queue. The following limits apply to this name:</p>
+    /// <ul>
+    /// <li> <p>A queue name can have up to 80 characters.</p> </li>
+    /// <li> <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p> </li>
+    /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
+    /// </ul>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn queue_name(&self) -> ::std::option::Option<&str> {
+        self.queue_name.as_deref()
     }
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateQueue</code> action uses:</p>
@@ -184,6 +169,21 @@ impl CreateQueueInput {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>> {
         self.attributes.as_ref()
     }
+    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>When you use queue tags, keep the following guidelines in mind:</p>
+    /// <ul>
+    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
+    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
+    /// <li> <p>Tags are case-sensitive.</p> </li>
+    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
+    /// </ul>
+    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
+    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// </note>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl CreateQueueInput {
     /// Creates a new builder-style object to manufacture [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
@@ -197,8 +197,8 @@ impl CreateQueueInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQueueInputBuilder {
     pub(crate) queue_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInputBuilder {
     /// <p>The name of the new queue. The following limits apply to this name:</p>
@@ -233,59 +233,6 @@ impl CreateQueueInputBuilder {
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn get_queue_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_name
-    }
-    /// Adds a key-value pair to `tags`.
-    ///
-    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-    ///
-    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <p>When you use queue tags, keep the following guidelines in mind:</p>
-    /// <ul>
-    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
-    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
-    /// <li> <p>Tags are case-sensitive.</p> </li>
-    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
-    /// </ul>
-    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
-    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
-    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </note>
-    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
-    }
-    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <p>When you use queue tags, keep the following guidelines in mind:</p>
-    /// <ul>
-    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
-    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
-    /// <li> <p>Tags are case-sensitive.</p> </li>
-    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
-    /// </ul>
-    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
-    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
-    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
-    }
-    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <p>When you use queue tags, keep the following guidelines in mind:</p>
-    /// <ul>
-    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
-    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
-    /// <li> <p>Tags are case-sensitive.</p> </li>
-    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
-    /// </ul>
-    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
-    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
-    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        &self.tags
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -499,12 +446,65 @@ impl CreateQueueInputBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>> {
         &self.attributes
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>When you use queue tags, keep the following guidelines in mind:</p>
+    /// <ul>
+    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
+    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
+    /// <li> <p>Tags are case-sensitive.</p> </li>
+    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
+    /// </ul>
+    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
+    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// </note>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>When you use queue tags, keep the following guidelines in mind:</p>
+    /// <ul>
+    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
+    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
+    /// <li> <p>Tags are case-sensitive.</p> </li>
+    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
+    /// </ul>
+    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
+    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// </note>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>When you use queue tags, keep the following guidelines in mind:</p>
+    /// <ul>
+    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
+    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
+    /// <li> <p>Tags are case-sensitive.</p> </li>
+    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
+    /// </ul>
+    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
+    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_queue::CreateQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_queue::CreateQueueInput {
             queue_name: self.queue_name,
-            tags: self.tags,
             attributes: self.attributes,
+            tags: self.tags,
         })
     }
 }

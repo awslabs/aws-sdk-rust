@@ -15,6 +15,9 @@ pub fn ser_network_configuration(
         crate::protocol_serde::shape_ingress_configuration::ser_ingress_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -40,6 +43,13 @@ where
                         "IngressConfiguration" => {
                             builder = builder
                                 .set_ingress_configuration(crate::protocol_serde::shape_ingress_configuration::de_ingress_configuration(tokens)?);
+                        }
+                        "IpAddressType" => {
+                            builder = builder.set_ip_address_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

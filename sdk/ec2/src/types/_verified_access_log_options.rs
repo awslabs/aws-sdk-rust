@@ -10,10 +10,10 @@ pub struct VerifiedAccessLogOptions {
     pub cloud_watch_logs: ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>,
     /// <p>Sends Verified Access logs to Kinesis.</p>
     pub kinesis_data_firehose: ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>,
-    /// <p> The logging version to use. </p>
+    /// <p>The logging version.</p>
     /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
     pub log_version: ::std::option::Option<::std::string::String>,
-    /// <p> Include trust data sent by trust providers into the logs. </p>
+    /// <p>Indicates whether to include trust data sent by trust providers in the logs.</p>
     pub include_trust_context: ::std::option::Option<bool>,
 }
 impl VerifiedAccessLogOptions {
@@ -29,12 +29,12 @@ impl VerifiedAccessLogOptions {
     pub fn kinesis_data_firehose(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions> {
         self.kinesis_data_firehose.as_ref()
     }
-    /// <p> The logging version to use. </p>
+    /// <p>The logging version.</p>
     /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
     pub fn log_version(&self) -> ::std::option::Option<&str> {
         self.log_version.as_deref()
     }
-    /// <p> Include trust data sent by trust providers into the logs. </p>
+    /// <p>Indicates whether to include trust data sent by trust providers in the logs.</p>
     pub fn include_trust_context(&self) -> ::std::option::Option<bool> {
         self.include_trust_context
     }
@@ -102,34 +102,34 @@ impl VerifiedAccessLogOptionsBuilder {
     pub fn get_kinesis_data_firehose(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions> {
         &self.kinesis_data_firehose
     }
-    /// <p> The logging version to use. </p>
+    /// <p>The logging version.</p>
     /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
     pub fn log_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The logging version to use. </p>
+    /// <p>The logging version.</p>
     /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
     pub fn set_log_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_version = input;
         self
     }
-    /// <p> The logging version to use. </p>
+    /// <p>The logging version.</p>
     /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
     pub fn get_log_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_version
     }
-    /// <p> Include trust data sent by trust providers into the logs. </p>
+    /// <p>Indicates whether to include trust data sent by trust providers in the logs.</p>
     pub fn include_trust_context(mut self, input: bool) -> Self {
         self.include_trust_context = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Include trust data sent by trust providers into the logs. </p>
+    /// <p>Indicates whether to include trust data sent by trust providers in the logs.</p>
     pub fn set_include_trust_context(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_trust_context = input;
         self
     }
-    /// <p> Include trust data sent by trust providers into the logs. </p>
+    /// <p>Indicates whether to include trust data sent by trust providers in the logs.</p>
     pub fn get_include_trust_context(&self) -> &::std::option::Option<bool> {
         &self.include_trust_context
     }

@@ -36,6 +36,10 @@ pub struct ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub redrive_count: ::std::option::Option<i32>,
+    /// <p>The date the execution was last redriven.</p>
+    pub redrive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -93,6 +97,14 @@ impl ExecutionListItem {
     pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
         self.state_machine_alias_arn.as_deref()
     }
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn redrive_count(&self) -> ::std::option::Option<i32> {
+        self.redrive_count
+    }
+    /// <p>The date the execution was last redriven.</p>
+    pub fn redrive_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.redrive_date.as_ref()
+    }
 }
 impl ExecutionListItem {
     /// Creates a new builder-style object to manufacture [`ExecutionListItem`](crate::types::ExecutionListItem).
@@ -115,6 +127,8 @@ pub struct ExecutionListItemBuilder {
     pub(crate) item_count: ::std::option::Option<i32>,
     pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) redrive_count: ::std::option::Option<i32>,
+    pub(crate) redrive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExecutionListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -298,6 +312,34 @@ impl ExecutionListItemBuilder {
     pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_machine_alias_arn
     }
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn redrive_count(mut self, input: i32) -> Self {
+        self.redrive_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn set_redrive_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.redrive_count = input;
+        self
+    }
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn get_redrive_count(&self) -> &::std::option::Option<i32> {
+        &self.redrive_count
+    }
+    /// <p>The date the execution was last redriven.</p>
+    pub fn redrive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.redrive_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date the execution was last redriven.</p>
+    pub fn set_redrive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.redrive_date = input;
+        self
+    }
+    /// <p>The date the execution was last redriven.</p>
+    pub fn get_redrive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.redrive_date
+    }
     /// Consumes the builder and constructs a [`ExecutionListItem`](crate::types::ExecutionListItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`execution_arn`](crate::types::builders::ExecutionListItemBuilder::execution_arn)
@@ -342,6 +384,8 @@ impl ExecutionListItemBuilder {
             item_count: self.item_count,
             state_machine_version_arn: self.state_machine_version_arn,
             state_machine_alias_arn: self.state_machine_alias_arn,
+            redrive_count: self.redrive_count,
+            redrive_date: self.redrive_date,
         })
     }
 }

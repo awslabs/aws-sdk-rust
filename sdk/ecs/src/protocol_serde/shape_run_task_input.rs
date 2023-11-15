@@ -99,5 +99,8 @@ pub fn ser_run_task_input(
     if let Some(var_31) = &input.task_definition {
         object.key("taskDefinition").string(var_31.as_str());
     }
+    if let Some(var_32) = &input.client_token {
+        object.key("clientToken").string(var_32.as_str());
+    }
     Ok(())
 }

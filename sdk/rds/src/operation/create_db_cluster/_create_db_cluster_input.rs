@@ -196,6 +196,8 @@ pub struct CreateDbClusterInput {
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     pub scaling_configuration: ::std::option::Option<crate::types::ScalingConfiguration>,
+    /// <p>Reserved for future use.</p>
+    pub rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub deletion_protection: ::std::option::Option<bool>,
@@ -590,6 +592,10 @@ impl CreateDbClusterInput {
     pub fn scaling_configuration(&self) -> ::std::option::Option<&crate::types::ScalingConfiguration> {
         self.scaling_configuration.as_ref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<&crate::types::RdsCustomClusterConfiguration> {
+        self.rds_custom_cluster_configuration.as_ref()
+    }
     /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
@@ -816,6 +822,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_configuration: ::std::option::Option<crate::types::ScalingConfiguration>,
+    pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) enable_http_endpoint: ::std::option::Option<bool>,
@@ -1652,6 +1659,20 @@ impl CreateDbClusterInputBuilder {
     pub fn get_scaling_configuration(&self) -> &::std::option::Option<crate::types::ScalingConfiguration> {
         &self.scaling_configuration
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(mut self, input: crate::types::RdsCustomClusterConfiguration) -> Self {
+        self.rds_custom_cluster_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_rds_custom_cluster_configuration(mut self, input: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>) -> Self {
+        self.rds_custom_cluster_configuration = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
+        &self.rds_custom_cluster_configuration
+    }
     /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -2295,6 +2316,7 @@ impl CreateDbClusterInputBuilder {
             enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
             engine_mode: self.engine_mode,
             scaling_configuration: self.scaling_configuration,
+            rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
             deletion_protection: self.deletion_protection,
             global_cluster_identifier: self.global_cluster_identifier,
             enable_http_endpoint: self.enable_http_endpoint,

@@ -6,6 +6,15 @@ pub fn ser_audio_channel_tagging_settings(
     if let Some(var_1) = &input.channel_tag {
         object.key("channelTag").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.channel_tags {
+        let mut array_3 = object.key("channelTags").start_array();
+        for item_4 in var_2 {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +39,11 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AudioChannelTag::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "channelTags" => {
+                            builder = builder.set_channel_tags(crate::protocol_serde::shape_list_of_audio_channel_tag::de_list_of_audio_channel_tag(
+                                tokens,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -69,6 +69,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_publish_state_machine_version;
 
+pub(crate) mod shape_redrive_execution;
+
 pub(crate) mod shape_send_task_failure;
 
 pub(crate) mod shape_send_task_heartbeat;
@@ -139,6 +141,8 @@ pub(crate) mod shape_execution_does_not_exist;
 
 pub(crate) mod shape_execution_limit_exceeded;
 
+pub(crate) mod shape_execution_not_redrivable;
+
 pub(crate) mod shape_get_activity_task_input;
 
 pub(crate) mod shape_get_execution_history_input;
@@ -176,6 +180,8 @@ pub(crate) mod shape_list_tags_for_resource_input;
 pub(crate) mod shape_missing_required_parameter;
 
 pub(crate) mod shape_publish_state_machine_version_input;
+
+pub(crate) mod shape_redrive_execution_input;
 
 pub(crate) mod shape_resource_not_found;
 
@@ -291,6 +297,8 @@ pub(crate) mod shape_execution_aborted_event_details;
 
 pub(crate) mod shape_execution_failed_event_details;
 
+pub(crate) mod shape_execution_redriven_event_details;
+
 pub(crate) mod shape_execution_started_event_details;
 
 pub(crate) mod shape_execution_succeeded_event_details;
@@ -312,6 +320,8 @@ pub(crate) mod shape_lambda_function_timed_out_event_details;
 pub(crate) mod shape_map_iteration_event_details;
 
 pub(crate) mod shape_map_run_failed_event_details;
+
+pub(crate) mod shape_map_run_redriven_event_details;
 
 pub(crate) mod shape_map_run_started_event_details;
 

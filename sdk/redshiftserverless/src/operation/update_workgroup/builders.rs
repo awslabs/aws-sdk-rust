@@ -232,4 +232,18 @@ impl UpdateWorkgroupFluentBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
     }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn max_capacity(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_capacity(input);
+        self
+    }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_capacity(input);
+        self
+    }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_capacity()
+    }
 }

@@ -20,6 +20,21 @@ pub fn de_modify_scheduled_action_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ClusterNotFound" => crate::operation::modify_scheduled_action::ModifyScheduledActionError::ClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidScheduledAction" => crate::operation::modify_scheduled_action::ModifyScheduledActionError::InvalidScheduledActionFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -96,6 +111,21 @@ pub fn de_modify_scheduled_action_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
                 output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::modify_scheduled_action::ModifyScheduledActionError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output)
                     .map_err(crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

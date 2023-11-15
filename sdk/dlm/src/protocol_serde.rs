@@ -123,6 +123,8 @@ pub(crate) mod shape_encryption_configuration;
 
 pub(crate) mod shape_exclude_data_volume_tag_list;
 
+pub(crate) mod shape_script;
+
 pub(crate) mod shape_cross_region_copy_action_list;
 
 pub(crate) mod shape_cross_region_copy_rules;
@@ -139,6 +141,10 @@ pub(crate) mod shape_variable_tags_list;
 
 pub(crate) mod shape_availability_zone_list;
 
+pub(crate) mod shape_scripts_list;
+
 pub(crate) mod shape_times_list;
 
 pub(crate) mod shape_share_target_account_list;
+
+pub(crate) mod shape_stages_list;

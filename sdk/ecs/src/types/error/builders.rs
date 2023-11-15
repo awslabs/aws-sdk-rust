@@ -31,6 +31,8 @@ pub use crate::types::error::_no_update_available_exception::NoUpdateAvailableEx
 
 pub use crate::types::error::_missing_version_exception::MissingVersionExceptionBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_blocked_exception::BlockedExceptionBuilder;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;

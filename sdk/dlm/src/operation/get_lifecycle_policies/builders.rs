@@ -23,7 +23,7 @@ impl GetLifecyclePoliciesInputBuilder {
 /// Fluent builder constructing a request to `GetLifecyclePolicies`.
 ///
 /// <p>Gets summary information about all or the specified data lifecycle policies.</p>
-/// <p>To get complete information about a policy, use <code>GetLifecyclePolicy</code>.</p>
+/// <p>To get complete information about a policy, use <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLifecyclePoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

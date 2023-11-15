@@ -23,6 +23,8 @@ pub use crate::types::_server_certificate::ServerCertificateBuilder;
 
 pub use crate::types::_rule_group_response::RuleGroupResponseBuilder;
 
+pub use crate::types::_analysis_result::AnalysisResultBuilder;
+
 pub use crate::types::_source_metadata::SourceMetadataBuilder;
 
 pub use crate::types::_rule_group::RuleGroupBuilder;

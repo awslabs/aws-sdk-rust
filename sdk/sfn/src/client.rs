@@ -205,6 +205,8 @@ mod list_tags_for_resource;
 
 mod publish_state_machine_version;
 
+mod redrive_execution;
+
 mod send_task_failure;
 
 mod send_task_heartbeat;

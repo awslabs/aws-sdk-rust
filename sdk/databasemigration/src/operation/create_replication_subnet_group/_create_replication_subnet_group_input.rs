@@ -10,7 +10,7 @@ pub struct CreateReplicationSubnetGroupInput {
     pub replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description for the subnet group.</p>
     pub replication_subnet_group_description: ::std::option::Option<::std::string::String>,
-    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    /// <p>Two or more subnet IDs to be assigned to the subnet group.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more tags to be assigned to the subnet group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -26,7 +26,7 @@ impl CreateReplicationSubnetGroupInput {
     pub fn replication_subnet_group_description(&self) -> ::std::option::Option<&str> {
         self.replication_subnet_group_description.as_deref()
     }
-    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    /// <p>Two or more subnet IDs to be assigned to the subnet group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
@@ -96,19 +96,19 @@ impl CreateReplicationSubnetGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    /// <p>Two or more subnet IDs to be assigned to the subnet group.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    /// <p>Two or more subnet IDs to be assigned to the subnet group.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
-    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    /// <p>Two or more subnet IDs to be assigned to the subnet group.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }

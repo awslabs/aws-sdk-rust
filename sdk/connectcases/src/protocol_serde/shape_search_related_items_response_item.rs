@@ -40,6 +40,9 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                         }
+                        "performedBy" => {
+                            builder = builder.set_performed_by(crate::protocol_serde::shape_user_union::de_user_union(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

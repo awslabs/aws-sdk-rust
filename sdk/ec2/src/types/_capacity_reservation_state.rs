@@ -16,7 +16,10 @@
 ///     CapacityReservationState::Cancelled => { /* ... */ },
 ///     CapacityReservationState::Expired => { /* ... */ },
 ///     CapacityReservationState::Failed => { /* ... */ },
+///     CapacityReservationState::PaymentFailed => { /* ... */ },
+///     CapacityReservationState::PaymentPending => { /* ... */ },
 ///     CapacityReservationState::Pending => { /* ... */ },
+///     CapacityReservationState::Scheduled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -53,7 +56,13 @@ pub enum CapacityReservationState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    PaymentFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    PaymentPending,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Scheduled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -64,7 +73,10 @@ impl ::std::convert::From<&str> for CapacityReservationState {
             "cancelled" => CapacityReservationState::Cancelled,
             "expired" => CapacityReservationState::Expired,
             "failed" => CapacityReservationState::Failed,
+            "payment-failed" => CapacityReservationState::PaymentFailed,
+            "payment-pending" => CapacityReservationState::PaymentPending,
             "pending" => CapacityReservationState::Pending,
+            "scheduled" => CapacityReservationState::Scheduled,
             other => CapacityReservationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -84,13 +96,25 @@ impl CapacityReservationState {
             CapacityReservationState::Cancelled => "cancelled",
             CapacityReservationState::Expired => "expired",
             CapacityReservationState::Failed => "failed",
+            CapacityReservationState::PaymentFailed => "payment-failed",
+            CapacityReservationState::PaymentPending => "payment-pending",
             CapacityReservationState::Pending => "pending",
+            CapacityReservationState::Scheduled => "scheduled",
             CapacityReservationState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["active", "cancelled", "expired", "failed", "pending"]
+        &[
+            "active",
+            "cancelled",
+            "expired",
+            "failed",
+            "payment-failed",
+            "payment-pending",
+            "pending",
+            "scheduled",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CapacityReservationState {

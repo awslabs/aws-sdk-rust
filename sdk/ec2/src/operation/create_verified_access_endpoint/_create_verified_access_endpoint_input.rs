@@ -15,7 +15,7 @@ pub struct CreateVerifiedAccessEndpointInput {
     pub application_domain: ::std::option::Option<::std::string::String>,
     /// <p>A custom identifier that is prepended to the DNS name that is generated for the endpoint.</p>
     pub endpoint_domain_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The IDs of the security groups to associate with the Verified Access endpoint.</p>
+    /// <p>The IDs of the security groups to associate with the Verified Access endpoint. Required if <code>AttachmentType</code> is set to <code>vpc</code>.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.</p>
     pub load_balancer_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions>,
@@ -31,7 +31,7 @@ pub struct CreateVerifiedAccessEndpointInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
 }
 impl CreateVerifiedAccessEndpointInput {
@@ -59,7 +59,7 @@ impl CreateVerifiedAccessEndpointInput {
     pub fn endpoint_domain_prefix(&self) -> ::std::option::Option<&str> {
         self.endpoint_domain_prefix.as_deref()
     }
-    /// <p>The IDs of the security groups to associate with the Verified Access endpoint.</p>
+    /// <p>The IDs of the security groups to associate with the Verified Access endpoint. Required if <code>AttachmentType</code> is set to <code>vpc</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
@@ -95,7 +95,7 @@ impl CreateVerifiedAccessEndpointInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationRequest> {
         self.sse_specification.as_ref()
     }
@@ -222,19 +222,19 @@ impl CreateVerifiedAccessEndpointInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>The IDs of the security groups to associate with the Verified Access endpoint.</p>
+    /// <p>The IDs of the security groups to associate with the Verified Access endpoint. Required if <code>AttachmentType</code> is set to <code>vpc</code>.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the security groups to associate with the Verified Access endpoint.</p>
+    /// <p>The IDs of the security groups to associate with the Verified Access endpoint. Required if <code>AttachmentType</code> is set to <code>vpc</code>.</p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
-    /// <p>The IDs of the security groups to associate with the Verified Access endpoint.</p>
+    /// <p>The IDs of the security groups to associate with the Verified Access endpoint. Required if <code>AttachmentType</code> is set to <code>vpc</code>.</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
@@ -342,17 +342,17 @@ impl CreateVerifiedAccessEndpointInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn sse_specification(mut self, input: crate::types::VerifiedAccessSseSpecificationRequest) -> Self {
         self.sse_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>) -> Self {
         self.sse_specification = input;
         self
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
         &self.sse_specification
     }

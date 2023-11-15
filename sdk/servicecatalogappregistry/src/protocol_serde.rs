@@ -79,6 +79,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_associate_resource_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_application_input;
@@ -111,6 +113,10 @@ pub(crate) mod shape_application_summaries;
 
 pub(crate) mod shape_application_summary;
 
+pub(crate) mod shape_application_tag_definition;
+
+pub(crate) mod shape_application_tag_result;
+
 pub(crate) mod shape_attribute_group;
 
 pub(crate) mod shape_attribute_group_details_list;
@@ -122,6 +128,8 @@ pub(crate) mod shape_attribute_group_summaries;
 pub(crate) mod shape_attribute_group_summary;
 
 pub(crate) mod shape_integrations;
+
+pub(crate) mod shape_options;
 
 pub(crate) mod shape_resource;
 
@@ -137,6 +145,10 @@ pub(crate) mod shape_resource_info;
 
 pub(crate) mod shape_resource_integrations;
 
+pub(crate) mod shape_resources_list;
+
 pub(crate) mod shape_tag_query_configuration;
 
 pub(crate) mod shape_resource_details;
+
+pub(crate) mod shape_resources_list_item;

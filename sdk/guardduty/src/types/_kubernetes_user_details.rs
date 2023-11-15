@@ -12,6 +12,8 @@ pub struct KubernetesUserDetails {
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
     pub session_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Information about the impersonated user.</p>
+    pub impersonated_user: ::std::option::Option<crate::types::ImpersonatedUser>,
 }
 impl KubernetesUserDetails {
     /// <p>The username of the user who called the Kubernetes API.</p>
@@ -34,6 +36,10 @@ impl KubernetesUserDetails {
     pub fn session_name(&self) -> &[::std::string::String] {
         self.session_name.as_deref().unwrap_or_default()
     }
+    /// <p>Information about the impersonated user.</p>
+    pub fn impersonated_user(&self) -> ::std::option::Option<&crate::types::ImpersonatedUser> {
+        self.impersonated_user.as_ref()
+    }
 }
 impl KubernetesUserDetails {
     /// Creates a new builder-style object to manufacture [`KubernetesUserDetails`](crate::types::KubernetesUserDetails).
@@ -50,6 +56,7 @@ pub struct KubernetesUserDetailsBuilder {
     pub(crate) uid: ::std::option::Option<::std::string::String>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) session_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) impersonated_user: ::std::option::Option<crate::types::ImpersonatedUser>,
 }
 impl KubernetesUserDetailsBuilder {
     /// <p>The username of the user who called the Kubernetes API.</p>
@@ -120,6 +127,20 @@ impl KubernetesUserDetailsBuilder {
     pub fn get_session_name(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.session_name
     }
+    /// <p>Information about the impersonated user.</p>
+    pub fn impersonated_user(mut self, input: crate::types::ImpersonatedUser) -> Self {
+        self.impersonated_user = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the impersonated user.</p>
+    pub fn set_impersonated_user(mut self, input: ::std::option::Option<crate::types::ImpersonatedUser>) -> Self {
+        self.impersonated_user = input;
+        self
+    }
+    /// <p>Information about the impersonated user.</p>
+    pub fn get_impersonated_user(&self) -> &::std::option::Option<crate::types::ImpersonatedUser> {
+        &self.impersonated_user
+    }
     /// Consumes the builder and constructs a [`KubernetesUserDetails`](crate::types::KubernetesUserDetails).
     pub fn build(self) -> crate::types::KubernetesUserDetails {
         crate::types::KubernetesUserDetails {
@@ -127,6 +148,7 @@ impl KubernetesUserDetailsBuilder {
             uid: self.uid,
             groups: self.groups,
             session_name: self.session_name,
+            impersonated_user: self.impersonated_user,
         }
     }
 }

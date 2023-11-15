@@ -27,6 +27,14 @@ pub use crate::types::_taint_effect::TaintEffect;
 
 pub use crate::types::_update_labels_payload::UpdateLabelsPayload;
 
+pub use crate::types::_eks_anywhere_subscription::EksAnywhereSubscription;
+
+pub use crate::types::_eks_anywhere_subscription_term::EksAnywhereSubscriptionTerm;
+
+pub use crate::types::_eks_anywhere_subscription_term_unit::EksAnywhereSubscriptionTermUnit;
+
+pub use crate::types::_eks_anywhere_subscription_license_type::EksAnywhereSubscriptionLicenseType;
+
 pub use crate::types::_logging::Logging;
 
 pub use crate::types::_log_setup::LogSetup;
@@ -74,6 +82,8 @@ pub use crate::types::_connector_config_request::ConnectorConfigRequest;
 pub use crate::types::_connector_config_provider::ConnectorConfigProvider;
 
 pub use crate::types::_identity_provider_config::IdentityProviderConfig;
+
+pub use crate::types::_eks_anywhere_subscription_status::EksAnywhereSubscriptionStatus;
 
 pub use crate::types::_nodegroup::Nodegroup;
 
@@ -178,6 +188,16 @@ mod _connector_config_response;
 mod _control_plane_placement_request;
 
 mod _control_plane_placement_response;
+
+mod _eks_anywhere_subscription;
+
+mod _eks_anywhere_subscription_license_type;
+
+mod _eks_anywhere_subscription_status;
+
+mod _eks_anywhere_subscription_term;
+
+mod _eks_anywhere_subscription_term_unit;
 
 mod _encryption_config;
 

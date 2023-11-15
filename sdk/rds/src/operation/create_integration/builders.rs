@@ -22,7 +22,7 @@ impl CreateIntegrationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateIntegration`.
 ///
-/// <p>Creates a zero-ETL integration with Amazon Redshift. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora User Guide</i>.</p>
+/// <p>Creates a zero-ETL integration with Amazon Redshift.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateIntegrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.</p>
+    /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.</p>
+    /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.</p>
+    /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_arn()
     }
@@ -150,17 +150,17 @@ impl CreateIntegrationFluentBuilder {
     pub fn get_integration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_integration_name()
     }
-    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned key. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned key. </p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned key. </p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }

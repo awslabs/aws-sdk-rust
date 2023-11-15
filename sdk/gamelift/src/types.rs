@@ -179,6 +179,8 @@ pub use crate::types::_event_code::EventCode;
 
 pub use crate::types::_fleet_attributes::FleetAttributes;
 
+pub use crate::types::_instance_role_credentials_provider::InstanceRoleCredentialsProvider;
+
 pub use crate::types::_compute_type::ComputeType;
 
 pub use crate::types::_certificate_configuration::CertificateConfiguration;
@@ -320,6 +322,8 @@ mod _instance_access;
 mod _instance_credentials;
 
 mod _instance_definition;
+
+mod _instance_role_credentials_provider;
 
 mod _instance_status;
 

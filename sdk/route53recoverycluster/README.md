@@ -28,8 +28,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.1"
-aws-sdk-route53recoverycluster = "0.35.0"
+aws-config = "0.57.0"
+aws-sdk-route53recoverycluster = "0.36.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

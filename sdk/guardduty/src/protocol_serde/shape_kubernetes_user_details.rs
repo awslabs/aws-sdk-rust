@@ -34,6 +34,9 @@ where
                         "sessionName" => {
                             builder = builder.set_session_name(crate::protocol_serde::shape_session_name_list::de_session_name_list(tokens)?);
                         }
+                        "impersonatedUser" => {
+                            builder = builder.set_impersonated_user(crate::protocol_serde::shape_impersonated_user::de_impersonated_user(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

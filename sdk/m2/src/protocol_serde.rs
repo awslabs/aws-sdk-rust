@@ -109,11 +109,15 @@ pub(crate) mod shape_create_deployment_input;
 
 pub(crate) mod shape_create_environment_input;
 
+pub(crate) mod shape_execution_timeout_exception;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_start_batch_job_input;
 
@@ -215,6 +219,8 @@ pub(crate) mod shape_po_detail_attributes;
 
 pub(crate) mod shape_ps_detail_attributes;
 
+pub(crate) mod shape_s3_batch_job_identifier;
+
 pub(crate) mod shape_script_batch_job_identifier;
 
 pub(crate) mod shape_validation_exception_field;
@@ -228,6 +234,8 @@ pub(crate) mod shape_data_set;
 pub(crate) mod shape_external_location;
 
 pub(crate) mod shape_file_batch_job_definition;
+
+pub(crate) mod shape_job_identifier;
 
 pub(crate) mod shape_primary_key;
 

@@ -9,6 +9,8 @@ pub use crate::types::_sub_domain_setting::SubDomainSettingBuilder;
 
 pub use crate::types::_branch::BranchBuilder;
 
+pub use crate::types::_backend::BackendBuilder;
+
 pub use crate::types::_app::AppBuilder;
 
 pub use crate::types::_auto_branch_creation_config::AutoBranchCreationConfigBuilder;

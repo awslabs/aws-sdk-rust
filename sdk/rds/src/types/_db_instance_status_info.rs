@@ -6,7 +6,7 @@
 pub struct DbInstanceStatusInfo {
     /// <p>This value is currently "read replication."</p>
     pub status_type: ::std::option::Option<::std::string::String>,
-    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>Indicates whether the instance is operating normally (TRUE) or is in an error state (FALSE).</p>
     pub normal: ::std::option::Option<bool>,
     /// <p>The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
     pub status: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl DbInstanceStatusInfo {
     pub fn status_type(&self) -> ::std::option::Option<&str> {
         self.status_type.as_deref()
     }
-    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>Indicates whether the instance is operating normally (TRUE) or is in an error state (FALSE).</p>
     pub fn normal(&self) -> ::std::option::Option<bool> {
         self.normal
     }
@@ -62,17 +62,17 @@ impl DbInstanceStatusInfoBuilder {
     pub fn get_status_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_type
     }
-    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>Indicates whether the instance is operating normally (TRUE) or is in an error state (FALSE).</p>
     pub fn normal(mut self, input: bool) -> Self {
         self.normal = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>Indicates whether the instance is operating normally (TRUE) or is in an error state (FALSE).</p>
     pub fn set_normal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.normal = input;
         self
     }
-    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>Indicates whether the instance is operating normally (TRUE) or is in an error state (FALSE).</p>
     pub fn get_normal(&self) -> &::std::option::Option<bool> {
         &self.normal
     }

@@ -22,7 +22,7 @@ impl ModifyReportDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyReportDefinition`.
 ///
-/// <p>Allows you to programatically update your report preferences.</p>
+/// <p>Allows you to programmatically update your report preferences.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyReportDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl ModifyReportDefinitionFluentBuilder {
     pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_report_name()
     }
-    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+    /// <p>The definition of Amazon Web Services Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
     pub fn report_definition(mut self, input: crate::types::ReportDefinition) -> Self {
         self.inner = self.inner.report_definition(input);
         self
     }
-    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+    /// <p>The definition of Amazon Web Services Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
     pub fn set_report_definition(mut self, input: ::std::option::Option<crate::types::ReportDefinition>) -> Self {
         self.inner = self.inner.set_report_definition(input);
         self
     }
-    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+    /// <p>The definition of Amazon Web Services Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
     pub fn get_report_definition(&self) -> &::std::option::Option<crate::types::ReportDefinition> {
         self.inner.get_report_definition()
     }

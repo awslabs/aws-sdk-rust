@@ -151,7 +151,7 @@ impl DescribeInstancesFluentBuilder {
     /// <li> <p> <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.</p> </li>
     /// <li> <p> <code>image-id</code> - The ID of the image used to launch the instance.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
-    /// <li> <p> <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+    /// <li> <p> <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).</p> </li>
     /// <li> <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is used for internal purposes and should be ignored. The low byte is set based on the state represented. The valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
     /// <li> <p> <code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p> </li>
     /// <li> <p> <code>instance-type</code> - The type of instance (for example, <code>t2.micro</code>).</p> </li>
@@ -290,7 +290,7 @@ impl DescribeInstancesFluentBuilder {
     /// <li> <p> <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.</p> </li>
     /// <li> <p> <code>image-id</code> - The ID of the image used to launch the instance.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
-    /// <li> <p> <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+    /// <li> <p> <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).</p> </li>
     /// <li> <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is used for internal purposes and should be ignored. The low byte is set based on the state represented. The valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
     /// <li> <p> <code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p> </li>
     /// <li> <p> <code>instance-type</code> - The type of instance (for example, <code>t2.micro</code>).</p> </li>
@@ -429,7 +429,7 @@ impl DescribeInstancesFluentBuilder {
     /// <li> <p> <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.</p> </li>
     /// <li> <p> <code>image-id</code> - The ID of the image used to launch the instance.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
-    /// <li> <p> <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+    /// <li> <p> <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).</p> </li>
     /// <li> <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is used for internal purposes and should be ignored. The low byte is set based on the state represented. The valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
     /// <li> <p> <code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p> </li>
     /// <li> <p> <code>instance-type</code> - The type of instance (for example, <code>t2.micro</code>).</p> </li>

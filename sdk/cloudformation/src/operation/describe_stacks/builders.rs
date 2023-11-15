@@ -23,7 +23,7 @@ impl DescribeStacksInputBuilder {
 /// Fluent builder constructing a request to `DescribeStacks`.
 ///
 /// <p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p> <note>
-/// <p>If the stack doesn't exist, an <code>ValidationError</code> is returned.</p>
+/// <p>If the stack doesn't exist, a <code>ValidationError</code> is returned.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStacksFluentBuilder {

@@ -46,6 +46,21 @@ where
                                 crate::protocol_serde::shape_rds_login_attempt_action::de_rds_login_attempt_action(tokens)?,
                             );
                         }
+                        "kubernetesPermissionCheckedDetails" => {
+                            builder = builder.set_kubernetes_permission_checked_details(
+                                crate::protocol_serde::shape_kubernetes_permission_checked_details::de_kubernetes_permission_checked_details(tokens)?,
+                            );
+                        }
+                        "kubernetesRoleBindingDetails" => {
+                            builder = builder.set_kubernetes_role_binding_details(
+                                crate::protocol_serde::shape_kubernetes_role_binding_details::de_kubernetes_role_binding_details(tokens)?,
+                            );
+                        }
+                        "kubernetesRoleDetails" => {
+                            builder = builder.set_kubernetes_role_details(
+                                crate::protocol_serde::shape_kubernetes_role_details::de_kubernetes_role_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

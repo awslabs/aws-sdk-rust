@@ -194,6 +194,8 @@ mod create_integration;
 
 mod create_option_group;
 
+mod create_tenant_database;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -259,6 +261,8 @@ mod delete_integration;
 
 mod delete_option_group;
 
+mod delete_tenant_database;
+
 mod deregister_db_proxy_targets;
 
 mod describe_account_attributes;
@@ -307,6 +311,8 @@ mod describe_db_security_groups;
 
 mod describe_db_snapshot_attributes;
 
+mod describe_db_snapshot_tenant_databases;
+
 mod describe_db_snapshots;
 
 mod describe_db_subnet_groups;
@@ -340,6 +346,8 @@ mod describe_reserved_db_instances;
 mod describe_reserved_db_instances_offerings;
 
 mod describe_source_regions;
+
+mod describe_tenant_databases;
 
 mod describe_valid_db_instance_modifications;
 
@@ -388,6 +396,8 @@ mod modify_event_subscription;
 mod modify_global_cluster;
 
 mod modify_option_group;
+
+mod modify_tenant_database;
 
 mod promote_read_replica;
 

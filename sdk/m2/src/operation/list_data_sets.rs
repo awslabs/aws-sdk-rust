@@ -203,6 +203,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDataSets
                         query.push_kv("prefix", &::aws_smithy_http::query::fmt_string(&inner_4));
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.name_filter {
+                    {
+                        query.push_kv("nameFilter", &::aws_smithy_http::query::fmt_string(&inner_5));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -274,10 +279,16 @@ pub type ListDataSetsErrorKind = ListDataSetsError;
 pub enum ListDataSetsError {
     /// <p>The account or role doesn't have the right permissions to make the request.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The parameters provided in the request conflict with existing resources.</p>
+    ConflictException(crate::types::error::ConflictException),
+    /// <p> Failed to connect to server, or didn’t receive response within expected time period.</p>
+    ExecutionTimeoutException(crate::types::error::ExecutionTimeoutException),
     /// <p>An unexpected error occurred during the processing of the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>Server cannot process the request at the moment.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The number of requests made exceeds the limit.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>One or more parameters provided in the request is not valid.</p>
@@ -301,8 +312,11 @@ impl ::std::fmt::Display for ListDataSetsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::ExecutionTimeoutException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -313,8 +327,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListDataSetsE
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ExecutionTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -332,7 +349,9 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListDataSetsError {
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
         match self {
+            Self::ExecutionTimeoutException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::InternalServerException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::ServiceUnavailableException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::ThrottlingException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             _ => ::std::option::Option::None,
         }
@@ -358,8 +377,11 @@ impl ListDataSetsError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::AccessDeniedException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
+            Self::ExecutionTimeoutException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
+            Self::ServiceUnavailableException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -369,6 +391,14 @@ impl ListDataSetsError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `ListDataSetsError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `ListDataSetsError::ExecutionTimeoutException`.
+    pub fn is_execution_timeout_exception(&self) -> bool {
+        matches!(self, Self::ExecutionTimeoutException(_))
+    }
     /// Returns `true` if the error kind is `ListDataSetsError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
@@ -376,6 +406,10 @@ impl ListDataSetsError {
     /// Returns `true` if the error kind is `ListDataSetsError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `ListDataSetsError::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(self, Self::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListDataSetsError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -390,8 +424,11 @@ impl ::std::error::Error for ListDataSetsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ExecutionTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

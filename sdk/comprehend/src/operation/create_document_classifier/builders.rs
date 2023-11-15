@@ -182,17 +182,17 @@ impl CreateDocumentClassifierFluentBuilder {
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierInputDataConfig> {
         self.inner.get_input_data_config()
     }
-    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
+    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub fn output_data_config(mut self, input: crate::types::DocumentClassifierOutputDataConfig) -> Self {
         self.inner = self.inner.output_data_config(input);
         self
     }
-    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
+    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
-    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
+    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierOutputDataConfig> {
         self.inner.get_output_data_config()
     }

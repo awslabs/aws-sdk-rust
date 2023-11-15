@@ -59,6 +59,8 @@ pub use crate::types::error::_invalid_db_security_group_state_fault::InvalidDbSe
 
 pub use crate::types::error::_db_security_group_not_found_fault::DbSecurityGroupNotFoundFaultBuilder;
 
+pub use crate::types::error::_tenant_database_quota_exceeded_fault::TenantDatabaseQuotaExceededFaultBuilder;
+
 pub use crate::types::error::_storage_quota_exceeded_fault::StorageQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_provisioned_iops_not_available_in_az_fault::ProvisionedIopsNotAvailableInAzFaultBuilder;
@@ -103,7 +105,11 @@ pub use crate::types::error::_invalid_db_subnet_group_state_fault::InvalidDbSubn
 
 pub use crate::types::error::_invalid_db_parameter_group_state_fault::InvalidDbParameterGroupStateFaultBuilder;
 
+pub use crate::types::error::_tenant_database_not_found_fault::TenantDatabaseNotFoundFaultBuilder;
+
 pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFaultBuilder;
+
+pub use crate::types::error::_db_snapshot_tenant_database_not_found_fault::DbSnapshotTenantDatabaseNotFoundFaultBuilder;
 
 pub use crate::types::error::_db_proxy_target_group_not_found_fault::DbProxyTargetGroupNotFoundFaultBuilder;
 
@@ -128,6 +134,8 @@ pub use crate::types::error::_reserved_db_instances_offering_not_found_fault::Re
 pub use crate::types::error::_reserved_db_instance_quota_exceeded_fault::ReservedDbInstanceQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_reserved_db_instance_already_exists_fault::ReservedDbInstanceAlreadyExistsFaultBuilder;
+
+pub use crate::types::error::_tenant_database_already_exists_fault::TenantDatabaseAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_invalid_option_group_state_fault::InvalidOptionGroupStateFaultBuilder;
 

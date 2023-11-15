@@ -65,6 +65,8 @@ pub use crate::types::error::_cloud_trail_arn_invalid_exception::CloudTrailArnIn
 
 pub use crate::types::error::_cloud_trail_access_not_enabled_exception::CloudTrailAccessNotEnabledExceptionBuilder;
 
+pub use crate::types::error::_invalid_insight_selectors_exception::InvalidInsightSelectorsExceptionBuilder;
+
 pub use crate::types::error::_inactive_event_data_store_exception::InactiveEventDataStoreExceptionBuilder;
 
 pub use crate::types::error::_event_data_store_not_found_exception::EventDataStoreNotFoundExceptionBuilder;
@@ -116,8 +118,6 @@ pub use crate::types::error::_account_not_found_exception::AccountNotFoundExcept
 pub use crate::types::error::_resource_policy_not_valid_exception::ResourcePolicyNotValidExceptionBuilder;
 
 pub use crate::types::error::_resource_arn_not_valid_exception::ResourceArnNotValidExceptionBuilder;
-
-pub use crate::types::error::_invalid_insight_selectors_exception::InvalidInsightSelectorsExceptionBuilder;
 
 pub use crate::types::error::_invalid_time_range_exception::InvalidTimeRangeExceptionBuilder;
 

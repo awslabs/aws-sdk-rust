@@ -38,6 +38,9 @@ where
                         "resourceDetails" => {
                             builder = builder.set_resource_details(crate::protocol_serde::shape_resource_details::de_resource_details(tokens)?);
                         }
+                        "options" => {
+                            builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

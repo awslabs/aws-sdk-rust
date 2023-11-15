@@ -24,6 +24,8 @@ pub struct Analysis {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
+    /// <p>An array of analysis level configurations.</p>
+    pub options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl Analysis {
     /// <p>The ID of the analysis.</p>
@@ -72,6 +74,10 @@ impl Analysis {
     pub fn sheets(&self) -> &[crate::types::Sheet] {
         self.sheets.as_deref().unwrap_or_default()
     }
+    /// <p>An array of analysis level configurations.</p>
+    pub fn options(&self) -> ::std::option::Option<&crate::types::AssetOptions> {
+        self.options.as_ref()
+    }
 }
 impl Analysis {
     /// Creates a new builder-style object to manufacture [`Analysis`](crate::types::Analysis).
@@ -94,6 +100,7 @@ pub struct AnalysisBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
+    pub(crate) options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl AnalysisBuilder {
     /// <p>The ID of the analysis.</p>
@@ -254,6 +261,20 @@ impl AnalysisBuilder {
     pub fn get_sheets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sheet>> {
         &self.sheets
     }
+    /// <p>An array of analysis level configurations.</p>
+    pub fn options(mut self, input: crate::types::AssetOptions) -> Self {
+        self.options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An array of analysis level configurations.</p>
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AssetOptions>) -> Self {
+        self.options = input;
+        self
+    }
+    /// <p>An array of analysis level configurations.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::AssetOptions> {
+        &self.options
+    }
     /// Consumes the builder and constructs a [`Analysis`](crate::types::Analysis).
     pub fn build(self) -> crate::types::Analysis {
         crate::types::Analysis {
@@ -267,6 +288,7 @@ impl AnalysisBuilder {
             created_time: self.created_time,
             last_updated_time: self.last_updated_time,
             sheets: self.sheets,
+            options: self.options,
         }
     }
 }

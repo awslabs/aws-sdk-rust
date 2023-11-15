@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAddonsOutput {
-    /// <p>A list of available add-ons.</p>
+    /// <p>A list of installed add-ons.</p>
     pub addons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -12,7 +12,7 @@ pub struct ListAddonsOutput {
     _request_id: Option<String>,
 }
 impl ListAddonsOutput {
-    /// <p>A list of available add-ons.</p>
+    /// <p>A list of installed add-ons.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addons.is_none()`.
     pub fn addons(&self) -> &[::std::string::String] {
@@ -50,19 +50,19 @@ impl ListAddonsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_addons`](Self::set_addons).
     ///
-    /// <p>A list of available add-ons.</p>
+    /// <p>A list of installed add-ons.</p>
     pub fn addons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.addons.unwrap_or_default();
         v.push(input.into());
         self.addons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of available add-ons.</p>
+    /// <p>A list of installed add-ons.</p>
     pub fn set_addons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.addons = input;
         self
     }
-    /// <p>A list of available add-ons.</p>
+    /// <p>A list of installed add-ons.</p>
     pub fn get_addons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.addons
     }

@@ -18,6 +18,14 @@ pub struct KubernetesApiCallAction {
     pub status_code: ::std::option::Option<i32>,
     /// <p>Parameters related to the Kubernetes API call action.</p>
     pub parameters: ::std::option::Option<::std::string::String>,
+    /// <p>The resource component in the Kubernetes API call action.</p>
+    pub resource: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the sub-resource in the Kubernetes API call action.</p>
+    pub subresource: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the namespace where the Kubernetes API call action takes place.</p>
+    pub namespace: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the resource in the Kubernetes API call action.</p>
+    pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl KubernetesApiCallAction {
     /// <p>The Kubernetes API request URI.</p>
@@ -50,6 +58,22 @@ impl KubernetesApiCallAction {
     pub fn parameters(&self) -> ::std::option::Option<&str> {
         self.parameters.as_deref()
     }
+    /// <p>The resource component in the Kubernetes API call action.</p>
+    pub fn resource(&self) -> ::std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The name of the sub-resource in the Kubernetes API call action.</p>
+    pub fn subresource(&self) -> ::std::option::Option<&str> {
+        self.subresource.as_deref()
+    }
+    /// <p>The name of the namespace where the Kubernetes API call action takes place.</p>
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The name of the resource in the Kubernetes API call action.</p>
+    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl KubernetesApiCallAction {
     /// Creates a new builder-style object to manufacture [`KubernetesApiCallAction`](crate::types::KubernetesApiCallAction).
@@ -69,6 +93,10 @@ pub struct KubernetesApiCallActionBuilder {
     pub(crate) remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) parameters: ::std::option::Option<::std::string::String>,
+    pub(crate) resource: ::std::option::Option<::std::string::String>,
+    pub(crate) subresource: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_name: ::std::option::Option<::std::string::String>,
 }
 impl KubernetesApiCallActionBuilder {
     /// <p>The Kubernetes API request URI.</p>
@@ -175,6 +203,62 @@ impl KubernetesApiCallActionBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameters
     }
+    /// <p>The resource component in the Kubernetes API call action.</p>
+    pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The resource component in the Kubernetes API call action.</p>
+    pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource = input;
+        self
+    }
+    /// <p>The resource component in the Kubernetes API call action.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
+    /// <p>The name of the sub-resource in the Kubernetes API call action.</p>
+    pub fn subresource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subresource = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the sub-resource in the Kubernetes API call action.</p>
+    pub fn set_subresource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subresource = input;
+        self
+    }
+    /// <p>The name of the sub-resource in the Kubernetes API call action.</p>
+    pub fn get_subresource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subresource
+    }
+    /// <p>The name of the namespace where the Kubernetes API call action takes place.</p>
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the namespace where the Kubernetes API call action takes place.</p>
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace = input;
+        self
+    }
+    /// <p>The name of the namespace where the Kubernetes API call action takes place.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
+    /// <p>The name of the resource in the Kubernetes API call action.</p>
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the resource in the Kubernetes API call action.</p>
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_name = input;
+        self
+    }
+    /// <p>The name of the resource in the Kubernetes API call action.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// Consumes the builder and constructs a [`KubernetesApiCallAction`](crate::types::KubernetesApiCallAction).
     pub fn build(self) -> crate::types::KubernetesApiCallAction {
         crate::types::KubernetesApiCallAction {
@@ -185,6 +269,10 @@ impl KubernetesApiCallActionBuilder {
             remote_ip_details: self.remote_ip_details,
             status_code: self.status_code,
             parameters: self.parameters,
+            resource: self.resource,
+            subresource: self.subresource,
+            namespace: self.namespace,
+            resource_name: self.resource_name,
         }
     }
 }

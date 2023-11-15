@@ -22,7 +22,7 @@ impl DescribeReportDefinitionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeReportDefinitions`.
 ///
-/// <p>Lists the AWS Cost and Usage reports available to this account.</p>
+/// <p>Lists the Amazon Web Services Cost and Usage Report available to this account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReportDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl DescribeReportDefinitionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_report_definitions::paginator::DescribeReportDefinitionsPaginator {
         crate::operation::describe_report_definitions::paginator::DescribeReportDefinitionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The maximum number of results that AWS returns for the operation.</p>
+    /// <p>The maximum number of results that Amazon Web Services returns for the operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results that AWS returns for the operation.</p>
+    /// <p>The maximum number of results that Amazon Web Services returns for the operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results that AWS returns for the operation.</p>
+    /// <p>The maximum number of results that Amazon Web Services returns for the operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

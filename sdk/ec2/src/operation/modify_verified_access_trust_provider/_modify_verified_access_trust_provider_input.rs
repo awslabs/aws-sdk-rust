@@ -13,7 +13,7 @@ pub struct ModifyVerifiedAccessTrustProviderInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
 }
 impl ModifyVerifiedAccessTrustProviderInput {
@@ -37,7 +37,7 @@ impl ModifyVerifiedAccessTrustProviderInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationRequest> {
         self.sse_specification.as_ref()
     }
@@ -132,17 +132,17 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn sse_specification(mut self, input: crate::types::VerifiedAccessSseSpecificationRequest) -> Self {
         self.sse_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>) -> Self {
         self.sse_specification = input;
         self
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
         &self.sse_specification
     }

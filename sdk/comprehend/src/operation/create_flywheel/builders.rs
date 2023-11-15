@@ -126,17 +126,17 @@ impl CreateFlywheelFluentBuilder {
     pub fn get_flywheel_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flywheel_name()
     }
-    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version. Do not set <code>TaskConfig</code> or <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
     pub fn active_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.active_model_arn(input.into());
         self
     }
-    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version. Do not set <code>TaskConfig</code> or <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
     pub fn set_active_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_active_model_arn(input);
         self
     }
-    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version. Do not set <code>TaskConfig</code> or <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
     pub fn get_active_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_active_model_arn()
     }
@@ -154,31 +154,31 @@ impl CreateFlywheelFluentBuilder {
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_access_role_arn()
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with the flywheel. You need to set <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
     pub fn task_config(mut self, input: crate::types::TaskConfig) -> Self {
         self.inner = self.inner.task_config(input);
         self
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with the flywheel. You need to set <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
     pub fn set_task_config(mut self, input: ::std::option::Option<crate::types::TaskConfig>) -> Self {
         self.inner = self.inner.set_task_config(input);
         self
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with the flywheel. You need to set <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
     pub fn get_task_config(&self) -> &::std::option::Option<crate::types::TaskConfig> {
         self.inner.get_task_config()
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. You need to set <code>ModelType</code> if you are creating a flywheel for a new model.</p>
     pub fn model_type(mut self, input: crate::types::ModelType) -> Self {
         self.inner = self.inner.model_type(input);
         self
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. You need to set <code>ModelType</code> if you are creating a flywheel for a new model.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelType>) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. You need to set <code>ModelType</code> if you are creating a flywheel for a new model.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelType> {
         self.inner.get_model_type()
     }

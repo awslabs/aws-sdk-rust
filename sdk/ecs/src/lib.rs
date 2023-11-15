@@ -32,8 +32,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
-//! aws-sdk-ecs = "0.35.0"
+//! aws-config = "0.57.0"
+//! aws-sdk-ecs = "0.36.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -188,6 +188,10 @@ pub mod primitives;
 pub mod types;
 
 mod auth_plugin;
+
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
 
 pub(crate) mod protocol_serde;
 

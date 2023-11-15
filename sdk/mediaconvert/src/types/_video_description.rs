@@ -24,7 +24,7 @@ pub struct VideoDescription {
     pub position: ::std::option::Option<crate::types::Rectangle>,
     /// Use Respond to AFD to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to NONE. A preferred implementation of this workflow is to set RespondToAfd to and set AfdSignaling to AUTO. * Choose None to remove all input AFD values from this output.
     pub respond_to_afd: ::std::option::Option<crate::types::RespondToAfd>,
-    /// Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement in this output.
+    /// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
     pub scaling_behavior: ::std::option::Option<crate::types::ScalingBehavior>,
     /// Use Sharpness setting to specify the strength of anti-aliasing. This setting changes the width of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
     pub sharpness: ::std::option::Option<i32>,
@@ -76,7 +76,7 @@ impl VideoDescription {
     pub fn respond_to_afd(&self) -> ::std::option::Option<&crate::types::RespondToAfd> {
         self.respond_to_afd.as_ref()
     }
-    /// Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement in this output.
+    /// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
     pub fn scaling_behavior(&self) -> ::std::option::Option<&crate::types::ScalingBehavior> {
         self.scaling_behavior.as_ref()
     }
@@ -265,17 +265,17 @@ impl VideoDescriptionBuilder {
     pub fn get_respond_to_afd(&self) -> &::std::option::Option<crate::types::RespondToAfd> {
         &self.respond_to_afd
     }
-    /// Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement in this output.
+    /// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
     pub fn scaling_behavior(mut self, input: crate::types::ScalingBehavior) -> Self {
         self.scaling_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement in this output.
+    /// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
     pub fn set_scaling_behavior(mut self, input: ::std::option::Option<crate::types::ScalingBehavior>) -> Self {
         self.scaling_behavior = input;
         self
     }
-    /// Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement in this output.
+    /// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
     pub fn get_scaling_behavior(&self) -> &::std::option::Option<crate::types::ScalingBehavior> {
         &self.scaling_behavior
     }

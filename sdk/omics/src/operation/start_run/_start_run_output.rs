@@ -11,6 +11,10 @@ pub struct StartRunOutput {
     pub status: ::std::option::Option<crate::types::RunStatus>,
     /// <p>The run's tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p> The universally unique identifier for a run. </p>
+    pub uuid: ::std::option::Option<::std::string::String>,
+    /// <p> The destination for workflow outputs. </p>
+    pub run_output_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartRunOutput {
@@ -29,6 +33,14 @@ impl StartRunOutput {
     /// <p>The run's tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p> The universally unique identifier for a run. </p>
+    pub fn uuid(&self) -> ::std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+    /// <p> The destination for workflow outputs. </p>
+    pub fn run_output_uri(&self) -> ::std::option::Option<&str> {
+        self.run_output_uri.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartRunOutput {
@@ -51,6 +63,8 @@ pub struct StartRunOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RunStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) uuid: ::std::option::Option<::std::string::String>,
+    pub(crate) run_output_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartRunOutputBuilder {
@@ -116,6 +130,34 @@ impl StartRunOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p> The universally unique identifier for a run. </p>
+    pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uuid = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The universally unique identifier for a run. </p>
+    pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.uuid = input;
+        self
+    }
+    /// <p> The universally unique identifier for a run. </p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uuid
+    }
+    /// <p> The destination for workflow outputs. </p>
+    pub fn run_output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.run_output_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The destination for workflow outputs. </p>
+    pub fn set_run_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.run_output_uri = input;
+        self
+    }
+    /// <p> The destination for workflow outputs. </p>
+    pub fn get_run_output_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_output_uri
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -132,6 +174,8 @@ impl StartRunOutputBuilder {
             id: self.id,
             status: self.status,
             tags: self.tags,
+            uuid: self.uuid,
+            run_output_uri: self.run_output_uri,
             _request_id: self._request_id,
         }
     }

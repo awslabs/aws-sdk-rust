@@ -35,9 +35,13 @@ pub use crate::types::_execution_list_item::ExecutionListItem;
 
 pub use crate::types::_execution_status::ExecutionStatus;
 
+pub use crate::types::_execution_redrive_filter::ExecutionRedriveFilter;
+
 pub use crate::types::_activity_list_item::ActivityListItem;
 
 pub use crate::types::_history_event::HistoryEvent;
+
+pub use crate::types::_map_run_redriven_event_details::MapRunRedrivenEventDetails;
 
 pub use crate::types::_map_run_failed_event_details::MapRunFailedEventDetails;
 
@@ -66,6 +70,8 @@ pub use crate::types::_lambda_function_failed_event_details::LambdaFunctionFaile
 pub use crate::types::_map_iteration_event_details::MapIterationEventDetails;
 
 pub use crate::types::_map_state_started_event_details::MapStateStartedEventDetails;
+
+pub use crate::types::_execution_redriven_event_details::ExecutionRedrivenEventDetails;
 
 pub use crate::types::_execution_timed_out_event_details::ExecutionTimedOutEventDetails;
 
@@ -115,6 +121,8 @@ pub use crate::types::_map_run_item_counts::MapRunItemCounts;
 
 pub use crate::types::_map_run_status::MapRunStatus;
 
+pub use crate::types::_execution_redrive_status::ExecutionRedriveStatus;
+
 mod _activity_failed_event_details;
 
 mod _activity_list_item;
@@ -140,6 +148,12 @@ mod _execution_aborted_event_details;
 mod _execution_failed_event_details;
 
 mod _execution_list_item;
+
+mod _execution_redrive_filter;
+
+mod _execution_redrive_status;
+
+mod _execution_redriven_event_details;
 
 mod _execution_started_event_details;
 
@@ -182,6 +196,8 @@ mod _map_run_failed_event_details;
 mod _map_run_item_counts;
 
 mod _map_run_list_item;
+
+mod _map_run_redriven_event_details;
 
 mod _map_run_started_event_details;
 

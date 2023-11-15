@@ -66,6 +66,9 @@ where
                         "Sheets" => {
                             builder = builder.set_sheets(crate::protocol_serde::shape_sheet_list::de_sheet_list(tokens)?);
                         }
+                        "Options" => {
+                            builder = builder.set_options(crate::protocol_serde::shape_asset_options::de_asset_options(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

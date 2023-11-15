@@ -56,9 +56,18 @@ impl RunTask {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
-            ::aws_runtime::auth::sigv4::SCHEME_ID,
-        ]));
+        runtime_plugins = runtime_plugins
+            .with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
+                |token_provider, input| {
+                    let input: &mut crate::operation::run_task::RunTaskInput = input.downcast_mut().expect("correct type");
+                    if input.client_token.is_none() {
+                        input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                    }
+                },
+            ))
+            .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
+                ::aws_runtime::auth::sigv4::SCHEME_ID,
+            ]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -245,10 +254,17 @@ pub enum RunTaskError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/"> Amazon Web Services Support</a>.</p>
     BlockedException(crate::types::error::BlockedException),
-    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The specified cluster wasn't found. You can view your available clusters with <code>ListClusters</code>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::types::error::ClusterNotFoundException),
+    /// <p>The <code>RunTask</code> request could not be processed due to conflicts. The provided <code>clientToken</code> is already in use with a different <code>RunTask</code> request. The <code>resourceIds</code> are the existing task ARNs which are already associated with the <code>clientToken</code>. </p>
+    /// <p>To fix this issue:</p>
+    /// <ul>
+    /// <li> <p>Run <code>RunTask</code> with a unique <code>clientToken</code>.</p> </li>
+    /// <li> <p>Run <code>RunTask</code> with the <code>clientToken</code> and the original set of parameters</p> </li>
+    /// </ul>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
@@ -281,6 +297,7 @@ impl ::std::fmt::Display for RunTaskError {
             Self::BlockedException(_inner) => _inner.fmt(f),
             Self::ClientException(_inner) => _inner.fmt(f),
             Self::ClusterNotFoundException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::PlatformTaskDefinitionIncompatibilityException(_inner) => _inner.fmt(f),
             Self::PlatformUnknownException(_inner) => _inner.fmt(f),
@@ -297,6 +314,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RunTaskError 
             Self::BlockedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PlatformTaskDefinitionIncompatibilityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PlatformUnknownException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -342,6 +360,7 @@ impl RunTaskError {
             Self::BlockedException(e) => e.meta(),
             Self::ClientException(e) => e.meta(),
             Self::ClusterNotFoundException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::InvalidParameterException(e) => e.meta(),
             Self::PlatformTaskDefinitionIncompatibilityException(e) => e.meta(),
             Self::PlatformUnknownException(e) => e.meta(),
@@ -365,6 +384,10 @@ impl RunTaskError {
     /// Returns `true` if the error kind is `RunTaskError::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
         matches!(self, Self::ClusterNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `RunTaskError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `RunTaskError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
@@ -394,6 +417,7 @@ impl ::std::error::Error for RunTaskError {
             Self::BlockedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::PlatformTaskDefinitionIncompatibilityException(_inner) => ::std::option::Option::Some(_inner),
             Self::PlatformUnknownException(_inner) => ::std::option::Option::Some(_inner),

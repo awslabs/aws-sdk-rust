@@ -23,7 +23,10 @@ impl CreateRelatedItemInputBuilder {
 /// Fluent builder constructing a request to `CreateRelatedItem`.
 ///
 /// <p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p> <note>
-/// <p>A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and <code>contacts</code>.</p>
+/// <ul>
+/// <li> <p>A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and <code>contacts</code>.</p> </li>
+/// <li> <p>If you provide a value for <code>performedBy.userArn</code> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a> permission on the ARN of the user that you provide.</p> </li>
+/// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRelatedItemFluentBuilder {
@@ -165,5 +168,19 @@ impl CreateRelatedItemFluentBuilder {
     /// <p>The content of a related item to be created.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::RelatedItemInputContent> {
         self.inner.get_content()
+    }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
+        self.inner = self.inner.performed_by(input);
+        self
+    }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
+        self.inner = self.inner.set_performed_by(input);
+        self
+    }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
+        self.inner.get_performed_by()
     }
 }

@@ -46,6 +46,8 @@ pub struct StartStreamTranscriptionOutput {
     pub language_options: ::std::option::Option<::std::string::String>,
     /// <p>Provides the preferred language that you specified in your request.</p>
     pub preferred_language: ::std::option::Option<crate::types::LanguageCode>,
+    /// <p>Shows whether automatic multi-language identification was enabled for your transcription.</p>
+    pub identify_multiple_languages: bool,
     /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
     pub vocabulary_names: ::std::option::Option<::std::string::String>,
     /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
@@ -139,6 +141,10 @@ impl StartStreamTranscriptionOutput {
     pub fn preferred_language(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.preferred_language.as_ref()
     }
+    /// <p>Shows whether automatic multi-language identification was enabled for your transcription.</p>
+    pub fn identify_multiple_languages(&self) -> bool {
+        self.identify_multiple_languages
+    }
     /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
     pub fn vocabulary_names(&self) -> ::std::option::Option<&str> {
         self.vocabulary_names.as_deref()
@@ -187,6 +193,7 @@ pub struct StartStreamTranscriptionOutputBuilder {
     pub(crate) identify_language: ::std::option::Option<bool>,
     pub(crate) language_options: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_language: ::std::option::Option<crate::types::LanguageCode>,
+    pub(crate) identify_multiple_languages: ::std::option::Option<bool>,
     pub(crate) vocabulary_names: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_names: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -498,6 +505,20 @@ impl StartStreamTranscriptionOutputBuilder {
     pub fn get_preferred_language(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.preferred_language
     }
+    /// <p>Shows whether automatic multi-language identification was enabled for your transcription.</p>
+    pub fn identify_multiple_languages(mut self, input: bool) -> Self {
+        self.identify_multiple_languages = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Shows whether automatic multi-language identification was enabled for your transcription.</p>
+    pub fn set_identify_multiple_languages(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.identify_multiple_languages = input;
+        self
+    }
+    /// <p>Shows whether automatic multi-language identification was enabled for your transcription.</p>
+    pub fn get_identify_multiple_languages(&self) -> &::std::option::Option<bool> {
+        &self.identify_multiple_languages
+    }
     /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
     pub fn vocabulary_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_names = ::std::option::Option::Some(input.into());
@@ -571,6 +592,7 @@ impl StartStreamTranscriptionOutputBuilder {
             identify_language: self.identify_language.unwrap_or_default(),
             language_options: self.language_options,
             preferred_language: self.preferred_language,
+            identify_multiple_languages: self.identify_multiple_languages.unwrap_or_default(),
             vocabulary_names: self.vocabulary_names,
             vocabulary_filter_names: self.vocabulary_filter_names,
             _request_id: self._request_id,

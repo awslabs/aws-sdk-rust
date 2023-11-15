@@ -226,6 +226,11 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_86) = &input.ip_address_type {
         scope_85.string(var_86);
     }
+    #[allow(unused_mut)]
+    let mut scope_87 = writer.prefix("MultiAZ");
+    if let Some(var_88) = &input.multi_az {
+        scope_87.boolean(*var_88);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

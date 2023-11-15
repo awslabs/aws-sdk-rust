@@ -7,6 +7,9 @@ pub mod associate_kms_key;
 /// Types for the `CancelExportTask` operation.
 pub mod cancel_export_task;
 
+/// Types for the `CreateDelivery` operation.
+pub mod create_delivery;
+
 /// Types for the `CreateExportTask` operation.
 pub mod create_export_task;
 
@@ -21,6 +24,18 @@ pub mod delete_account_policy;
 
 /// Types for the `DeleteDataProtectionPolicy` operation.
 pub mod delete_data_protection_policy;
+
+/// Types for the `DeleteDelivery` operation.
+pub mod delete_delivery;
+
+/// Types for the `DeleteDeliveryDestination` operation.
+pub mod delete_delivery_destination;
+
+/// Types for the `DeleteDeliveryDestinationPolicy` operation.
+pub mod delete_delivery_destination_policy;
+
+/// Types for the `DeleteDeliverySource` operation.
+pub mod delete_delivery_source;
 
 /// Types for the `DeleteDestination` operation.
 pub mod delete_destination;
@@ -48,6 +63,15 @@ pub mod delete_subscription_filter;
 
 /// Types for the `DescribeAccountPolicies` operation.
 pub mod describe_account_policies;
+
+/// Types for the `DescribeDeliveries` operation.
+pub mod describe_deliveries;
+
+/// Types for the `DescribeDeliveryDestinations` operation.
+pub mod describe_delivery_destinations;
+
+/// Types for the `DescribeDeliverySources` operation.
+pub mod describe_delivery_sources;
 
 /// Types for the `DescribeDestinations` operation.
 pub mod describe_destinations;
@@ -85,6 +109,18 @@ pub mod filter_log_events;
 /// Types for the `GetDataProtectionPolicy` operation.
 pub mod get_data_protection_policy;
 
+/// Types for the `GetDelivery` operation.
+pub mod get_delivery;
+
+/// Types for the `GetDeliveryDestination` operation.
+pub mod get_delivery_destination;
+
+/// Types for the `GetDeliveryDestinationPolicy` operation.
+pub mod get_delivery_destination_policy;
+
+/// Types for the `GetDeliverySource` operation.
+pub mod get_delivery_source;
+
 /// Types for the `GetLogEvents` operation.
 pub mod get_log_events;
 
@@ -108,6 +144,15 @@ pub mod put_account_policy;
 
 /// Types for the `PutDataProtectionPolicy` operation.
 pub mod put_data_protection_policy;
+
+/// Types for the `PutDeliveryDestination` operation.
+pub mod put_delivery_destination;
+
+/// Types for the `PutDeliveryDestinationPolicy` operation.
+pub mod put_delivery_destination_policy;
+
+/// Types for the `PutDeliverySource` operation.
+pub mod put_delivery_source;
 
 /// Types for the `PutDestination` operation.
 pub mod put_destination;

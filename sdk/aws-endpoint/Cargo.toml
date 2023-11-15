@@ -1,6 +1,6 @@
 [package]
 name = "aws-endpoint"
-version = "0.57.1"
+version = "0.57.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "This crate is no longer used by the AWS SDK and is deprecated."
 edition = "2021"

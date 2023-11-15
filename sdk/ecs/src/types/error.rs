@@ -31,6 +31,8 @@ pub use crate::types::error::_no_update_available_exception::NoUpdateAvailableEx
 
 pub use crate::types::error::_missing_version_exception::MissingVersionException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_blocked_exception::BlockedException;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
@@ -64,6 +66,8 @@ mod _cluster_contains_services_exception;
 mod _cluster_contains_tasks_exception;
 
 mod _cluster_not_found_exception;
+
+mod _conflict_exception;
 
 mod _invalid_parameter_exception;
 

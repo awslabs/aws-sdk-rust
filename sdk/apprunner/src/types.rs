@@ -11,6 +11,8 @@ pub use crate::types::_service_observability_configuration::ServiceObservability
 
 pub use crate::types::_network_configuration::NetworkConfiguration;
 
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_ingress_configuration::IngressConfiguration;
 
 pub use crate::types::_egress_configuration::EgressConfiguration;
@@ -154,6 +156,8 @@ mod _ingress_configuration;
 mod _ingress_vpc_configuration;
 
 mod _instance_configuration;
+
+mod _ip_address_type;
 
 mod _list_vpc_ingress_connections_filter;
 

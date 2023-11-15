@@ -19,6 +19,8 @@ pub struct GetDataSetDetailsOutput {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the data set was referenced.</p>
     pub last_referenced_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>File size of the dataset.</p>
+    pub file_size: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetDataSetDetailsOutput {
@@ -55,6 +57,10 @@ impl GetDataSetDetailsOutput {
     pub fn last_referenced_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_referenced_time.as_ref()
     }
+    /// <p>File size of the dataset.</p>
+    pub fn file_size(&self) -> ::std::option::Option<i64> {
+        self.file_size
+    }
 }
 impl ::aws_http::request_id::RequestId for GetDataSetDetailsOutput {
     fn request_id(&self) -> Option<&str> {
@@ -80,6 +86,7 @@ pub struct GetDataSetDetailsOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_referenced_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) file_size: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetDataSetDetailsOutputBuilder {
@@ -196,6 +203,20 @@ impl GetDataSetDetailsOutputBuilder {
     pub fn get_last_referenced_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_referenced_time
     }
+    /// <p>File size of the dataset.</p>
+    pub fn file_size(mut self, input: i64) -> Self {
+        self.file_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>File size of the dataset.</p>
+    pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.file_size = input;
+        self
+    }
+    /// <p>File size of the dataset.</p>
+    pub fn get_file_size(&self) -> &::std::option::Option<i64> {
+        &self.file_size
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -226,6 +247,7 @@ impl GetDataSetDetailsOutputBuilder {
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,
             last_referenced_time: self.last_referenced_time,
+            file_size: self.file_size,
             _request_id: self._request_id,
         })
     }

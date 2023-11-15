@@ -227,6 +227,7 @@ impl CreateFilterFluentBuilder {
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
     /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
     /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
@@ -239,7 +240,10 @@ impl CreateFilterFluentBuilder {
     /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
     /// <li> <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p> </li>
     /// <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li>
+    /// <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p> </li>
     /// <li> <p>service.action.kubernetesApiCallAction.requestUri</p> </li>
+    /// <li> <p>service.action.kubernetesApiCallAction.statusCode</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
     /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
@@ -327,6 +331,7 @@ impl CreateFilterFluentBuilder {
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
     /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
     /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
@@ -339,7 +344,10 @@ impl CreateFilterFluentBuilder {
     /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
     /// <li> <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p> </li>
     /// <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li>
+    /// <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p> </li>
     /// <li> <p>service.action.kubernetesApiCallAction.requestUri</p> </li>
+    /// <li> <p>service.action.kubernetesApiCallAction.statusCode</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
     /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
@@ -427,6 +435,7 @@ impl CreateFilterFluentBuilder {
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
     /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
     /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
@@ -439,7 +448,10 @@ impl CreateFilterFluentBuilder {
     /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
     /// <li> <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p> </li>
     /// <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li>
+    /// <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p> </li>
     /// <li> <p>service.action.kubernetesApiCallAction.requestUri</p> </li>
+    /// <li> <p>service.action.kubernetesApiCallAction.statusCode</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
     /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>

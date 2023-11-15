@@ -172,6 +172,11 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input(
     if let Some(var_65) = &input.source_db_cluster_resource_id {
         scope_64.string(var_65);
     }
+    #[allow(unused_mut)]
+    let mut scope_66 = writer.prefix("RdsCustomClusterConfiguration");
+    if let Some(var_67) = &input.rds_custom_cluster_configuration {
+        crate::protocol_serde::shape_rds_custom_cluster_configuration::ser_rds_custom_cluster_configuration(scope_66, var_67)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

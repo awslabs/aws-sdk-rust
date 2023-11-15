@@ -29,6 +29,8 @@ pub use crate::types::_activity_list_item::ActivityListItemBuilder;
 
 pub use crate::types::_history_event::HistoryEventBuilder;
 
+pub use crate::types::_map_run_redriven_event_details::MapRunRedrivenEventDetailsBuilder;
+
 pub use crate::types::_map_run_failed_event_details::MapRunFailedEventDetailsBuilder;
 
 pub use crate::types::_map_run_started_event_details::MapRunStartedEventDetailsBuilder;
@@ -56,6 +58,8 @@ pub use crate::types::_lambda_function_failed_event_details::LambdaFunctionFaile
 pub use crate::types::_map_iteration_event_details::MapIterationEventDetailsBuilder;
 
 pub use crate::types::_map_state_started_event_details::MapStateStartedEventDetailsBuilder;
+
+pub use crate::types::_execution_redriven_event_details::ExecutionRedrivenEventDetailsBuilder;
 
 pub use crate::types::_execution_timed_out_event_details::ExecutionTimedOutEventDetailsBuilder;
 

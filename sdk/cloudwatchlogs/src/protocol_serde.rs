@@ -27,6 +27,8 @@ pub(crate) mod shape_associate_kms_key;
 
 pub(crate) mod shape_cancel_export_task;
 
+pub(crate) mod shape_create_delivery;
+
 pub(crate) mod shape_create_export_task;
 
 pub(crate) mod shape_create_log_group;
@@ -36,6 +38,14 @@ pub(crate) mod shape_create_log_stream;
 pub(crate) mod shape_delete_account_policy;
 
 pub(crate) mod shape_delete_data_protection_policy;
+
+pub(crate) mod shape_delete_delivery;
+
+pub(crate) mod shape_delete_delivery_destination;
+
+pub(crate) mod shape_delete_delivery_destination_policy;
+
+pub(crate) mod shape_delete_delivery_source;
 
 pub(crate) mod shape_delete_destination;
 
@@ -54,6 +64,12 @@ pub(crate) mod shape_delete_retention_policy;
 pub(crate) mod shape_delete_subscription_filter;
 
 pub(crate) mod shape_describe_account_policies;
+
+pub(crate) mod shape_describe_deliveries;
+
+pub(crate) mod shape_describe_delivery_destinations;
+
+pub(crate) mod shape_describe_delivery_sources;
 
 pub(crate) mod shape_describe_destinations;
 
@@ -79,6 +95,14 @@ pub(crate) mod shape_filter_log_events;
 
 pub(crate) mod shape_get_data_protection_policy;
 
+pub(crate) mod shape_get_delivery;
+
+pub(crate) mod shape_get_delivery_destination;
+
+pub(crate) mod shape_get_delivery_destination_policy;
+
+pub(crate) mod shape_get_delivery_source;
+
 pub(crate) mod shape_get_log_events;
 
 pub(crate) mod shape_get_log_group_fields;
@@ -94,6 +118,12 @@ pub(crate) mod shape_list_tags_log_group;
 pub(crate) mod shape_put_account_policy;
 
 pub(crate) mod shape_put_data_protection_policy;
+
+pub(crate) mod shape_put_delivery_destination;
+
+pub(crate) mod shape_put_delivery_destination_policy;
+
+pub(crate) mod shape_put_delivery_source;
 
 pub(crate) mod shape_put_destination;
 
@@ -125,10 +155,6 @@ pub(crate) mod shape_untag_log_group;
 
 pub(crate) mod shape_untag_resource;
 
-pub(crate) mod shape_associate_kms_key_input;
-
-pub(crate) mod shape_cancel_export_task_input;
-
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -136,6 +162,16 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_associate_kms_key_input;
+
+pub(crate) mod shape_cancel_export_task_input;
+
+pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_delivery_input;
 
 pub(crate) mod shape_create_export_task_input;
 
@@ -148,6 +184,14 @@ pub(crate) mod shape_data_already_accepted_exception;
 pub(crate) mod shape_delete_account_policy_input;
 
 pub(crate) mod shape_delete_data_protection_policy_input;
+
+pub(crate) mod shape_delete_delivery_destination_input;
+
+pub(crate) mod shape_delete_delivery_destination_policy_input;
+
+pub(crate) mod shape_delete_delivery_input;
+
+pub(crate) mod shape_delete_delivery_source_input;
 
 pub(crate) mod shape_delete_destination_input;
 
@@ -166,6 +210,12 @@ pub(crate) mod shape_delete_retention_policy_input;
 pub(crate) mod shape_delete_subscription_filter_input;
 
 pub(crate) mod shape_describe_account_policies_input;
+
+pub(crate) mod shape_describe_deliveries_input;
+
+pub(crate) mod shape_describe_delivery_destinations_input;
+
+pub(crate) mod shape_describe_delivery_sources_input;
 
 pub(crate) mod shape_describe_destinations_input;
 
@@ -190,6 +240,14 @@ pub(crate) mod shape_disassociate_kms_key_input;
 pub(crate) mod shape_filter_log_events_input;
 
 pub(crate) mod shape_get_data_protection_policy_input;
+
+pub(crate) mod shape_get_delivery_destination_input;
+
+pub(crate) mod shape_get_delivery_destination_policy_input;
+
+pub(crate) mod shape_get_delivery_input;
+
+pub(crate) mod shape_get_delivery_source_input;
 
 pub(crate) mod shape_get_log_events_input;
 
@@ -219,6 +277,12 @@ pub(crate) mod shape_put_account_policy_input;
 
 pub(crate) mod shape_put_data_protection_policy_input;
 
+pub(crate) mod shape_put_delivery_destination_input;
+
+pub(crate) mod shape_put_delivery_destination_policy_input;
+
+pub(crate) mod shape_put_delivery_source_input;
+
 pub(crate) mod shape_put_destination_input;
 
 pub(crate) mod shape_put_destination_policy_input;
@@ -239,6 +303,8 @@ pub(crate) mod shape_resource_already_exists_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_start_query_input;
@@ -251,6 +317,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_test_metric_filter_input;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_too_many_tags_exception;
 
 pub(crate) mod shape_unrecognized_client_exception;
@@ -259,9 +327,25 @@ pub(crate) mod shape_untag_log_group_input;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_validation_exception;
+
 pub(crate) mod shape_account_policies;
 
 pub(crate) mod shape_account_policy;
+
+pub(crate) mod shape_deliveries;
+
+pub(crate) mod shape_delivery;
+
+pub(crate) mod shape_delivery_destination;
+
+pub(crate) mod shape_delivery_destination_configuration;
+
+pub(crate) mod shape_delivery_destinations;
+
+pub(crate) mod shape_delivery_source;
+
+pub(crate) mod shape_delivery_sources;
 
 pub(crate) mod shape_destination;
 
@@ -288,6 +372,8 @@ pub(crate) mod shape_metric_filters;
 pub(crate) mod shape_metric_transformation;
 
 pub(crate) mod shape_output_log_events;
+
+pub(crate) mod shape_policy;
 
 pub(crate) mod shape_query_compile_error;
 
@@ -332,6 +418,8 @@ pub(crate) mod shape_query_compile_error_location;
 pub(crate) mod shape_query_definition;
 
 pub(crate) mod shape_query_info;
+
+pub(crate) mod shape_resource_arns;
 
 pub(crate) mod shape_result_rows;
 

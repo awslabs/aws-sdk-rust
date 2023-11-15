@@ -147,6 +147,10 @@ pub(crate) mod shape_create_option_group;
 
 pub(crate) mod shape_create_option_group_input;
 
+pub(crate) mod shape_create_tenant_database;
+
+pub(crate) mod shape_create_tenant_database_input;
+
 pub(crate) mod shape_delete_blue_green_deployment;
 
 pub(crate) mod shape_delete_blue_green_deployment_input;
@@ -222,6 +226,10 @@ pub(crate) mod shape_delete_integration_input;
 pub(crate) mod shape_delete_option_group;
 
 pub(crate) mod shape_delete_option_group_input;
+
+pub(crate) mod shape_delete_tenant_database;
+
+pub(crate) mod shape_delete_tenant_database_input;
 
 pub(crate) mod shape_deregister_db_proxy_targets;
 
@@ -319,6 +327,10 @@ pub(crate) mod shape_describe_db_snapshot_attributes;
 
 pub(crate) mod shape_describe_db_snapshot_attributes_input;
 
+pub(crate) mod shape_describe_db_snapshot_tenant_databases;
+
+pub(crate) mod shape_describe_db_snapshot_tenant_databases_input;
+
 pub(crate) mod shape_describe_db_snapshots;
 
 pub(crate) mod shape_describe_db_snapshots_input;
@@ -386,6 +398,10 @@ pub(crate) mod shape_describe_reserved_db_instances_offerings_input;
 pub(crate) mod shape_describe_source_regions;
 
 pub(crate) mod shape_describe_source_regions_input;
+
+pub(crate) mod shape_describe_tenant_databases;
+
+pub(crate) mod shape_describe_tenant_databases_input;
 
 pub(crate) mod shape_describe_valid_db_instance_modifications;
 
@@ -482,6 +498,10 @@ pub(crate) mod shape_modify_global_cluster_input;
 pub(crate) mod shape_modify_option_group;
 
 pub(crate) mod shape_modify_option_group_input;
+
+pub(crate) mod shape_modify_tenant_database;
+
+pub(crate) mod shape_modify_tenant_database_input;
 
 pub(crate) mod shape_promote_read_replica;
 
@@ -721,6 +741,8 @@ pub(crate) mod shape_db_snapshot_already_exists_fault;
 
 pub(crate) mod shape_db_snapshot_not_found_fault;
 
+pub(crate) mod shape_db_snapshot_tenant_database_not_found_fault;
+
 pub(crate) mod shape_db_subnet_group_already_exists_fault;
 
 pub(crate) mod shape_db_subnet_group_does_not_cover_enough_azs;
@@ -851,6 +873,8 @@ pub(crate) mod shape_processor_feature;
 
 pub(crate) mod shape_provisioned_iops_not_available_in_az_fault;
 
+pub(crate) mod shape_rds_custom_cluster_configuration;
+
 pub(crate) mod shape_reserved_db_instance_already_exists_fault;
 
 pub(crate) mod shape_reserved_db_instance_not_found_fault;
@@ -896,6 +920,12 @@ pub(crate) mod shape_subscription_category_not_found_fault;
 pub(crate) mod shape_subscription_not_found_fault;
 
 pub(crate) mod shape_tag;
+
+pub(crate) mod shape_tenant_database_already_exists_fault;
+
+pub(crate) mod shape_tenant_database_not_found_fault;
+
+pub(crate) mod shape_tenant_database_quota_exceeded_fault;
 
 pub(crate) mod shape_user_auth_config;
 
@@ -971,6 +1001,8 @@ pub(crate) mod shape_db_snapshot_attributes_result;
 
 pub(crate) mod shape_db_snapshot_list;
 
+pub(crate) mod shape_db_snapshot_tenant_databases_list;
+
 pub(crate) mod shape_db_subnet_group;
 
 pub(crate) mod shape_db_subnet_groups;
@@ -1041,6 +1073,10 @@ pub(crate) mod shape_target_group_list;
 
 pub(crate) mod shape_target_list;
 
+pub(crate) mod shape_tenant_database;
+
+pub(crate) mod shape_tenant_databases_list;
+
 pub(crate) mod shape_valid_db_instance_modifications_message;
 
 pub(crate) mod shape_valid_upgrade_target_list;
@@ -1086,6 +1122,8 @@ pub(crate) mod shape_db_proxy_target;
 pub(crate) mod shape_db_security_group_membership_list;
 
 pub(crate) mod shape_db_snapshot_attribute_list;
+
+pub(crate) mod shape_db_snapshot_tenant_database;
 
 pub(crate) mod shape_describe_db_log_files_details;
 
@@ -1152,6 +1190,8 @@ pub(crate) mod shape_source_region;
 pub(crate) mod shape_subnet_list;
 
 pub(crate) mod shape_switchover_detail_list;
+
+pub(crate) mod shape_tenant_database_pending_modified_values;
 
 pub(crate) mod shape_timezone;
 

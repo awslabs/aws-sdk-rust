@@ -239,6 +239,8 @@ pub(crate) mod shape_tls_inspection_configuration_response;
 
 pub(crate) mod shape_tls_inspection_configurations;
 
+pub(crate) mod shape_analysis_result_list;
+
 pub(crate) mod shape_capacity_usage_summary;
 
 pub(crate) mod shape_certificates;
@@ -291,6 +293,8 @@ pub(crate) mod shape_tls_inspection_configuration_metadata;
 
 pub(crate) mod shape_action_definition;
 
+pub(crate) mod shape_analysis_result;
+
 pub(crate) mod shape_check_certificate_revocation_status_actions;
 
 pub(crate) mod shape_cidr_summary;
@@ -336,6 +340,8 @@ pub(crate) mod shape_log_destination_map;
 pub(crate) mod shape_port_range;
 
 pub(crate) mod shape_publish_metric_action;
+
+pub(crate) mod shape_rule_id_list;
 
 pub(crate) mod shape_rule_option;
 

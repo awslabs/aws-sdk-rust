@@ -17,12 +17,42 @@ pub fn de_purge_queue_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidAddress" => crate::operation::purge_queue::PurgeQueueError::InvalidAddress({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidAddressBuilder::default();
+                output = crate::protocol_serde::shape_invalid_address::de_invalid_address_json_err(_response_body, output)
+                    .map_err(crate::operation::purge_queue::PurgeQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidSecurity" => crate::operation::purge_queue::PurgeQueueError::InvalidSecurity({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSecurityBuilder::default();
+                output = crate::protocol_serde::shape_invalid_security::de_invalid_security_json_err(_response_body, output)
+                    .map_err(crate::operation::purge_queue::PurgeQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "AWS.SimpleQueueService.PurgeQueueInProgress" => crate::operation::purge_queue::PurgeQueueError::PurgeQueueInProgress({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::PurgeQueueInProgressBuilder::default();
-                output = crate::protocol_serde::shape_purge_queue_in_progress::de_purge_queue_in_progress_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_purge_queue_in_progress::de_purge_queue_in_progress_json_err(_response_body, output)
                     .map_err(crate::operation::purge_queue::PurgeQueueError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -37,7 +67,37 @@ pub fn de_purge_queue_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::QueueDoesNotExistBuilder::default();
-                output = crate::protocol_serde::shape_queue_does_not_exist::de_queue_does_not_exist_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_queue_does_not_exist::de_queue_does_not_exist_json_err(_response_body, output)
+                    .map_err(crate::operation::purge_queue::PurgeQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestThrottled" => crate::operation::purge_queue::PurgeQueueError::RequestThrottled({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RequestThrottledBuilder::default();
+                output = crate::protocol_serde::shape_request_throttled::de_request_throttled_json_err(_response_body, output)
+                    .map_err(crate::operation::purge_queue::PurgeQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "AWS.SimpleQueueService.UnsupportedOperation" => crate::operation::purge_queue::PurgeQueueError::UnsupportedOperation({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_json_err(_response_body, output)
                     .map_err(crate::operation::purge_queue::PurgeQueueError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -63,4 +123,14 @@ pub fn de_purge_queue_http_response(
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+pub fn ser_purge_queue_input(
+    input: &crate::operation::purge_queue::PurgeQueueInput,
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_purge_queue_input::ser_purge_queue_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

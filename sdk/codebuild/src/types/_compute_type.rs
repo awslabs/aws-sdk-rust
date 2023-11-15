@@ -16,6 +16,11 @@
 ///     ComputeType::BuildGeneral1Large => { /* ... */ },
 ///     ComputeType::BuildGeneral1Medium => { /* ... */ },
 ///     ComputeType::BuildGeneral1Small => { /* ... */ },
+///     ComputeType::BuildLambda10Gb => { /* ... */ },
+///     ComputeType::BuildLambda1Gb => { /* ... */ },
+///     ComputeType::BuildLambda2Gb => { /* ... */ },
+///     ComputeType::BuildLambda4Gb => { /* ... */ },
+///     ComputeType::BuildLambda8Gb => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +56,16 @@ pub enum ComputeType {
     BuildGeneral1Medium,
     #[allow(missing_docs)] // documentation missing in model
     BuildGeneral1Small,
+    #[allow(missing_docs)] // documentation missing in model
+    BuildLambda10Gb,
+    #[allow(missing_docs)] // documentation missing in model
+    BuildLambda1Gb,
+    #[allow(missing_docs)] // documentation missing in model
+    BuildLambda2Gb,
+    #[allow(missing_docs)] // documentation missing in model
+    BuildLambda4Gb,
+    #[allow(missing_docs)] // documentation missing in model
+    BuildLambda8Gb,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -61,6 +76,11 @@ impl ::std::convert::From<&str> for ComputeType {
             "BUILD_GENERAL1_LARGE" => ComputeType::BuildGeneral1Large,
             "BUILD_GENERAL1_MEDIUM" => ComputeType::BuildGeneral1Medium,
             "BUILD_GENERAL1_SMALL" => ComputeType::BuildGeneral1Small,
+            "BUILD_LAMBDA_10GB" => ComputeType::BuildLambda10Gb,
+            "BUILD_LAMBDA_1GB" => ComputeType::BuildLambda1Gb,
+            "BUILD_LAMBDA_2GB" => ComputeType::BuildLambda2Gb,
+            "BUILD_LAMBDA_4GB" => ComputeType::BuildLambda4Gb,
+            "BUILD_LAMBDA_8GB" => ComputeType::BuildLambda8Gb,
             other => ComputeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -80,6 +100,11 @@ impl ComputeType {
             ComputeType::BuildGeneral1Large => "BUILD_GENERAL1_LARGE",
             ComputeType::BuildGeneral1Medium => "BUILD_GENERAL1_MEDIUM",
             ComputeType::BuildGeneral1Small => "BUILD_GENERAL1_SMALL",
+            ComputeType::BuildLambda10Gb => "BUILD_LAMBDA_10GB",
+            ComputeType::BuildLambda1Gb => "BUILD_LAMBDA_1GB",
+            ComputeType::BuildLambda2Gb => "BUILD_LAMBDA_2GB",
+            ComputeType::BuildLambda4Gb => "BUILD_LAMBDA_4GB",
+            ComputeType::BuildLambda8Gb => "BUILD_LAMBDA_8GB",
             ComputeType::Unknown(value) => value.as_str(),
         }
     }
@@ -90,6 +115,11 @@ impl ComputeType {
             "BUILD_GENERAL1_LARGE",
             "BUILD_GENERAL1_MEDIUM",
             "BUILD_GENERAL1_SMALL",
+            "BUILD_LAMBDA_10GB",
+            "BUILD_LAMBDA_1GB",
+            "BUILD_LAMBDA_2GB",
+            "BUILD_LAMBDA_4GB",
+            "BUILD_LAMBDA_8GB",
         ]
     }
 }

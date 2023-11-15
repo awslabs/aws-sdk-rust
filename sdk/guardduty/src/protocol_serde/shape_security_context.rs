@@ -17,6 +17,10 @@ where
                         "privileged" => {
                             builder = builder.set_privileged(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "allowPrivilegeEscalation" => {
+                            builder =
+                                builder.set_allow_privilege_escalation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

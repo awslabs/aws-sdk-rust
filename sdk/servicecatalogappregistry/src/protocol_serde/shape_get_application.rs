@@ -108,6 +108,11 @@ pub(crate) fn de_get_application(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "applicationTag" => {
+                    builder = builder.set_application_tag(crate::protocol_serde::shape_application_tag_definition::de_application_tag_definition(
+                        tokens,
+                    )?);
+                }
                 "arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

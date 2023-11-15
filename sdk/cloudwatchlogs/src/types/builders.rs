@@ -15,6 +15,14 @@ pub use crate::types::_input_log_event::InputLogEventBuilder;
 
 pub use crate::types::_destination::DestinationBuilder;
 
+pub use crate::types::_delivery_source::DeliverySourceBuilder;
+
+pub use crate::types::_policy::PolicyBuilder;
+
+pub use crate::types::_delivery_destination::DeliveryDestinationBuilder;
+
+pub use crate::types::_delivery_destination_configuration::DeliveryDestinationConfigurationBuilder;
+
 pub use crate::types::_account_policy::AccountPolicyBuilder;
 
 pub use crate::types::_query_statistics::QueryStatisticsBuilder;
@@ -24,6 +32,8 @@ pub use crate::types::_result_field::ResultFieldBuilder;
 pub use crate::types::_log_group_field::LogGroupFieldBuilder;
 
 pub use crate::types::_output_log_event::OutputLogEventBuilder;
+
+pub use crate::types::_delivery::DeliveryBuilder;
 
 pub use crate::types::_searched_log_stream::SearchedLogStreamBuilder;
 

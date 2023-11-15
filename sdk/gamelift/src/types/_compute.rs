@@ -2,7 +2,7 @@
 
 /// <p>An Amazon GameLift compute resource for hosting your game servers. A compute can be an EC2instance in a managed EC2 fleet or a registered compute in an Anywhere fleet. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Compute {
     /// <p>A unique identifier for the fleet that the compute belongs to.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
@@ -79,6 +79,24 @@ impl Compute {
         self.game_lift_service_sdk_endpoint.as_deref()
     }
 }
+impl ::std::fmt::Debug for Compute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Compute");
+        formatter.field("fleet_id", &self.fleet_id);
+        formatter.field("fleet_arn", &self.fleet_arn);
+        formatter.field("compute_name", &self.compute_name);
+        formatter.field("compute_arn", &self.compute_arn);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("compute_status", &self.compute_status);
+        formatter.field("location", &self.location);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("operating_system", &self.operating_system);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("game_lift_service_sdk_endpoint", &self.game_lift_service_sdk_endpoint);
+        formatter.finish()
+    }
+}
 impl Compute {
     /// Creates a new builder-style object to manufacture [`Compute`](crate::types::Compute).
     pub fn builder() -> crate::types::builders::ComputeBuilder {
@@ -88,7 +106,7 @@ impl Compute {
 
 /// A builder for [`Compute`](crate::types::Compute).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ComputeBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
@@ -288,5 +306,23 @@ impl ComputeBuilder {
             r#type: self.r#type,
             game_lift_service_sdk_endpoint: self.game_lift_service_sdk_endpoint,
         }
+    }
+}
+impl ::std::fmt::Debug for ComputeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ComputeBuilder");
+        formatter.field("fleet_id", &self.fleet_id);
+        formatter.field("fleet_arn", &self.fleet_arn);
+        formatter.field("compute_name", &self.compute_name);
+        formatter.field("compute_arn", &self.compute_arn);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("compute_status", &self.compute_status);
+        formatter.field("location", &self.location);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("operating_system", &self.operating_system);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("game_lift_service_sdk_endpoint", &self.game_lift_service_sdk_endpoint);
+        formatter.finish()
     }
 }

@@ -13,6 +13,8 @@ pub struct DescribeRuleGroupInput {
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub r#type: ::std::option::Option<crate::types::RuleGroupType>,
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
+    pub analyze_rule_group: ::std::option::Option<bool>,
 }
 impl DescribeRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -31,6 +33,10 @@ impl DescribeRuleGroupInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleGroupType> {
         self.r#type.as_ref()
     }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
+    pub fn analyze_rule_group(&self) -> ::std::option::Option<bool> {
+        self.analyze_rule_group
+    }
 }
 impl DescribeRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleGroupInput`](crate::operation::describe_rule_group::DescribeRuleGroupInput).
@@ -46,6 +52,7 @@ pub struct DescribeRuleGroupInputBuilder {
     pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RuleGroupType>,
+    pub(crate) analyze_rule_group: ::std::option::Option<bool>,
 }
 impl DescribeRuleGroupInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -102,6 +109,20 @@ impl DescribeRuleGroupInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
         &self.r#type
     }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
+    pub fn analyze_rule_group(mut self, input: bool) -> Self {
+        self.analyze_rule_group = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
+    pub fn set_analyze_rule_group(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.analyze_rule_group = input;
+        self
+    }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
+    pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
+        &self.analyze_rule_group
+    }
     /// Consumes the builder and constructs a [`DescribeRuleGroupInput`](crate::operation::describe_rule_group::DescribeRuleGroupInput).
     pub fn build(
         self,
@@ -110,6 +131,7 @@ impl DescribeRuleGroupInputBuilder {
             rule_group_name: self.rule_group_name,
             rule_group_arn: self.rule_group_arn,
             r#type: self.r#type,
+            analyze_rule_group: self.analyze_rule_group,
         })
     }
 }

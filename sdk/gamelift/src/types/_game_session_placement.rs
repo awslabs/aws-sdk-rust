@@ -4,7 +4,7 @@
 /// <p>If the game session placement status is <code>PENDING</code>, the properties for game session ID/ARN, region, IP address/DNS, and port aren't final. A game session is not active and ready to accept players until placement status reaches <code>FULFILLED</code>. When the placement is in <code>PENDING</code> status, Amazon GameLift may attempt to place a game session multiple times before succeeding. With each attempt it creates a <code>GameSession</code> object and updates this placement object with the new game session properties..</p>
 /// </note>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GameSessionPlacement {
     /// <p>A unique identifier for a game session placement.</p>
     pub placement_id: ::std::option::Option<::std::string::String>,
@@ -165,6 +165,30 @@ impl GameSessionPlacement {
         self.matchmaker_data.as_deref()
     }
 }
+impl ::std::fmt::Debug for GameSessionPlacement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameSessionPlacement");
+        formatter.field("placement_id", &self.placement_id);
+        formatter.field("game_session_queue_name", &self.game_session_queue_name);
+        formatter.field("status", &self.status);
+        formatter.field("game_properties", &self.game_properties);
+        formatter.field("maximum_player_session_count", &self.maximum_player_session_count);
+        formatter.field("game_session_name", &self.game_session_name);
+        formatter.field("game_session_id", &self.game_session_id);
+        formatter.field("game_session_arn", &self.game_session_arn);
+        formatter.field("game_session_region", &self.game_session_region);
+        formatter.field("player_latencies", &self.player_latencies);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("port", &"*** Sensitive Data Redacted ***");
+        formatter.field("placed_player_sessions", &self.placed_player_sessions);
+        formatter.field("game_session_data", &self.game_session_data);
+        formatter.field("matchmaker_data", &self.matchmaker_data);
+        formatter.finish()
+    }
+}
 impl GameSessionPlacement {
     /// Creates a new builder-style object to manufacture [`GameSessionPlacement`](crate::types::GameSessionPlacement).
     pub fn builder() -> crate::types::builders::GameSessionPlacementBuilder {
@@ -174,7 +198,7 @@ impl GameSessionPlacement {
 
 /// A builder for [`GameSessionPlacement`](crate::types::GameSessionPlacement).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GameSessionPlacementBuilder {
     pub(crate) placement_id: ::std::option::Option<::std::string::String>,
     pub(crate) game_session_queue_name: ::std::option::Option<::std::string::String>,
@@ -551,5 +575,29 @@ impl GameSessionPlacementBuilder {
             game_session_data: self.game_session_data,
             matchmaker_data: self.matchmaker_data,
         }
+    }
+}
+impl ::std::fmt::Debug for GameSessionPlacementBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameSessionPlacementBuilder");
+        formatter.field("placement_id", &self.placement_id);
+        formatter.field("game_session_queue_name", &self.game_session_queue_name);
+        formatter.field("status", &self.status);
+        formatter.field("game_properties", &self.game_properties);
+        formatter.field("maximum_player_session_count", &self.maximum_player_session_count);
+        formatter.field("game_session_name", &self.game_session_name);
+        formatter.field("game_session_id", &self.game_session_id);
+        formatter.field("game_session_arn", &self.game_session_arn);
+        formatter.field("game_session_region", &self.game_session_region);
+        formatter.field("player_latencies", &self.player_latencies);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("port", &"*** Sensitive Data Redacted ***");
+        formatter.field("placed_player_sessions", &self.placed_player_sessions);
+        formatter.field("game_session_data", &self.game_session_data);
+        formatter.field("matchmaker_data", &self.matchmaker_data);
+        formatter.finish()
     }
 }

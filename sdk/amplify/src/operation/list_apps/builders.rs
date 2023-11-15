@@ -22,7 +22,7 @@ impl ListAppsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListApps`.
 ///
-/// <p> Returns a list of the existing Amplify apps. </p>
+/// <p>Returns a list of the existing Amplify apps. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAppsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,31 +99,37 @@ impl ListAppsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_apps::paginator::ListAppsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_apps::paginator::ListAppsPaginator {
+        crate::operation::list_apps::paginator::ListAppsPaginator::new(self.handle, self.inner)
+    }
+    /// <p>A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    /// <p>A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    /// <p>A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The maximum number of records to list in a single response. </p>
+    /// <p>The maximum number of records to list in a single response. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of records to list in a single response. </p>
+    /// <p>The maximum number of records to list in a single response. </p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of records to list in a single response. </p>
+    /// <p>The maximum number of records to list in a single response. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

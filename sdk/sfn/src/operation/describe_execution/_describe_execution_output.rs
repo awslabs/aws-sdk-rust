@@ -48,6 +48,33 @@ pub struct DescribeExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
     /// <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub redrive_count: ::std::option::Option<i32>,
+    /// <p>The date the execution was last redriven. If you have not yet redriven an execution, the <code>redriveDate</code> is null.</p>
+    /// <p>The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child workflow executions of type <code>EXPRESS</code>.</p>
+    pub redrive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Indicates whether or not an execution can be redriven at a given point in time.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code> if calling the <code>RedriveExecution</code> API action would return the <code>ExecutionNotRedrivable</code> error.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> <p>You can redrive failed or timed out <code>EXPRESS</code> workflows <i>only if</i> they're a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a> the Map Run, these workflows are restarted using the <code>StartExecution</code> API action.</p> </li>
+    /// </ul>
+    pub redrive_status: ::std::option::Option<crate::types::ExecutionRedriveStatus>,
+    /// <p>When <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>, <code>redriveStatusReason</code> specifies the reason why an execution cannot be redriven.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, or for a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatusReason</code> can include one of the following reasons:</p>
+    /// <ul>
+    /// <li> <p> <code>State machine is in DELETING status</code>.</p> </li>
+    /// <li> <p> <code>Execution is RUNNING and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution is SUCCEEDED and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution was started before the launch of RedriveExecution</code>.</p> </li>
+    /// <li> <p> <code>Execution history event limit exceeded</code>.</p> </li>
+    /// <li> <p> <code>Execution has exceeded the max execution time</code>.</p> </li>
+    /// <li> <p> <code>Execution redrivable period exceeded</code>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatusReason</code> is only returned if the child workflows are not redrivable. This happens when the child workflow executions have completed successfully.</p> </li>
+    /// </ul>
+    pub redrive_status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeExecutionOutput {
@@ -130,6 +157,41 @@ impl DescribeExecutionOutput {
     pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
         self.state_machine_alias_arn.as_deref()
     }
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn redrive_count(&self) -> ::std::option::Option<i32> {
+        self.redrive_count
+    }
+    /// <p>The date the execution was last redriven. If you have not yet redriven an execution, the <code>redriveDate</code> is null.</p>
+    /// <p>The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child workflow executions of type <code>EXPRESS</code>.</p>
+    pub fn redrive_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.redrive_date.as_ref()
+    }
+    /// <p>Indicates whether or not an execution can be redriven at a given point in time.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code> if calling the <code>RedriveExecution</code> API action would return the <code>ExecutionNotRedrivable</code> error.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> <p>You can redrive failed or timed out <code>EXPRESS</code> workflows <i>only if</i> they're a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a> the Map Run, these workflows are restarted using the <code>StartExecution</code> API action.</p> </li>
+    /// </ul>
+    pub fn redrive_status(&self) -> ::std::option::Option<&crate::types::ExecutionRedriveStatus> {
+        self.redrive_status.as_ref()
+    }
+    /// <p>When <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>, <code>redriveStatusReason</code> specifies the reason why an execution cannot be redriven.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, or for a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatusReason</code> can include one of the following reasons:</p>
+    /// <ul>
+    /// <li> <p> <code>State machine is in DELETING status</code>.</p> </li>
+    /// <li> <p> <code>Execution is RUNNING and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution is SUCCEEDED and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution was started before the launch of RedriveExecution</code>.</p> </li>
+    /// <li> <p> <code>Execution history event limit exceeded</code>.</p> </li>
+    /// <li> <p> <code>Execution has exceeded the max execution time</code>.</p> </li>
+    /// <li> <p> <code>Execution redrivable period exceeded</code>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatusReason</code> is only returned if the child workflows are not redrivable. This happens when the child workflow executions have completed successfully.</p> </li>
+    /// </ul>
+    pub fn redrive_status_reason(&self) -> ::std::option::Option<&str> {
+        self.redrive_status_reason.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DescribeExecutionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -150,6 +212,10 @@ impl ::std::fmt::Debug for DescribeExecutionOutput {
         formatter.field("cause", &"*** Sensitive Data Redacted ***");
         formatter.field("state_machine_version_arn", &self.state_machine_version_arn);
         formatter.field("state_machine_alias_arn", &self.state_machine_alias_arn);
+        formatter.field("redrive_count", &self.redrive_count);
+        formatter.field("redrive_date", &self.redrive_date);
+        formatter.field("redrive_status", &self.redrive_status);
+        formatter.field("redrive_status_reason", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -186,6 +252,10 @@ pub struct DescribeExecutionOutputBuilder {
     pub(crate) cause: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) redrive_count: ::std::option::Option<i32>,
+    pub(crate) redrive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) redrive_status: ::std::option::Option<crate::types::ExecutionRedriveStatus>,
+    pub(crate) redrive_status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeExecutionOutputBuilder {
@@ -456,6 +526,119 @@ impl DescribeExecutionOutputBuilder {
     pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_machine_alias_arn
     }
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn redrive_count(mut self, input: i32) -> Self {
+        self.redrive_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn set_redrive_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.redrive_count = input;
+        self
+    }
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn get_redrive_count(&self) -> &::std::option::Option<i32> {
+        &self.redrive_count
+    }
+    /// <p>The date the execution was last redriven. If you have not yet redriven an execution, the <code>redriveDate</code> is null.</p>
+    /// <p>The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child workflow executions of type <code>EXPRESS</code>.</p>
+    pub fn redrive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.redrive_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date the execution was last redriven. If you have not yet redriven an execution, the <code>redriveDate</code> is null.</p>
+    /// <p>The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child workflow executions of type <code>EXPRESS</code>.</p>
+    pub fn set_redrive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.redrive_date = input;
+        self
+    }
+    /// <p>The date the execution was last redriven. If you have not yet redriven an execution, the <code>redriveDate</code> is null.</p>
+    /// <p>The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child workflow executions of type <code>EXPRESS</code>.</p>
+    pub fn get_redrive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.redrive_date
+    }
+    /// <p>Indicates whether or not an execution can be redriven at a given point in time.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code> if calling the <code>RedriveExecution</code> API action would return the <code>ExecutionNotRedrivable</code> error.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> <p>You can redrive failed or timed out <code>EXPRESS</code> workflows <i>only if</i> they're a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a> the Map Run, these workflows are restarted using the <code>StartExecution</code> API action.</p> </li>
+    /// </ul>
+    pub fn redrive_status(mut self, input: crate::types::ExecutionRedriveStatus) -> Self {
+        self.redrive_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether or not an execution can be redriven at a given point in time.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code> if calling the <code>RedriveExecution</code> API action would return the <code>ExecutionNotRedrivable</code> error.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> <p>You can redrive failed or timed out <code>EXPRESS</code> workflows <i>only if</i> they're a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a> the Map Run, these workflows are restarted using the <code>StartExecution</code> API action.</p> </li>
+    /// </ul>
+    pub fn set_redrive_status(mut self, input: ::std::option::Option<crate::types::ExecutionRedriveStatus>) -> Self {
+        self.redrive_status = input;
+        self
+    }
+    /// <p>Indicates whether or not an execution can be redriven at a given point in time.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code> if calling the <code>RedriveExecution</code> API action would return the <code>ExecutionNotRedrivable</code> error.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatus</code> indicates whether or not the Map Run can redrive child workflow executions.</p> <p>You can redrive failed or timed out <code>EXPRESS</code> workflows <i>only if</i> they're a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a> the Map Run, these workflows are restarted using the <code>StartExecution</code> API action.</p> </li>
+    /// </ul>
+    pub fn get_redrive_status(&self) -> &::std::option::Option<crate::types::ExecutionRedriveStatus> {
+        &self.redrive_status
+    }
+    /// <p>When <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>, <code>redriveStatusReason</code> specifies the reason why an execution cannot be redriven.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, or for a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatusReason</code> can include one of the following reasons:</p>
+    /// <ul>
+    /// <li> <p> <code>State machine is in DELETING status</code>.</p> </li>
+    /// <li> <p> <code>Execution is RUNNING and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution is SUCCEEDED and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution was started before the launch of RedriveExecution</code>.</p> </li>
+    /// <li> <p> <code>Execution history event limit exceeded</code>.</p> </li>
+    /// <li> <p> <code>Execution has exceeded the max execution time</code>.</p> </li>
+    /// <li> <p> <code>Execution redrivable period exceeded</code>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatusReason</code> is only returned if the child workflows are not redrivable. This happens when the child workflow executions have completed successfully.</p> </li>
+    /// </ul>
+    pub fn redrive_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.redrive_status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>When <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>, <code>redriveStatusReason</code> specifies the reason why an execution cannot be redriven.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, or for a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatusReason</code> can include one of the following reasons:</p>
+    /// <ul>
+    /// <li> <p> <code>State machine is in DELETING status</code>.</p> </li>
+    /// <li> <p> <code>Execution is RUNNING and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution is SUCCEEDED and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution was started before the launch of RedriveExecution</code>.</p> </li>
+    /// <li> <p> <code>Execution history event limit exceeded</code>.</p> </li>
+    /// <li> <p> <code>Execution has exceeded the max execution time</code>.</p> </li>
+    /// <li> <p> <code>Execution redrivable period exceeded</code>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatusReason</code> is only returned if the child workflows are not redrivable. This happens when the child workflow executions have completed successfully.</p> </li>
+    /// </ul>
+    pub fn set_redrive_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.redrive_status_reason = input;
+        self
+    }
+    /// <p>When <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>, <code>redriveStatusReason</code> specifies the reason why an execution cannot be redriven.</p>
+    /// <ul>
+    /// <li> <p>For executions of type <code>STANDARD</code>, or for a Distributed Map that includes child workflows of type <code>STANDARD</code>, <code>redriveStatusReason</code> can include one of the following reasons:</p>
+    /// <ul>
+    /// <li> <p> <code>State machine is in DELETING status</code>.</p> </li>
+    /// <li> <p> <code>Execution is RUNNING and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution is SUCCEEDED and cannot be redriven</code>.</p> </li>
+    /// <li> <p> <code>Execution was started before the launch of RedriveExecution</code>.</p> </li>
+    /// <li> <p> <code>Execution history event limit exceeded</code>.</p> </li>
+    /// <li> <p> <code>Execution has exceeded the max execution time</code>.</p> </li>
+    /// <li> <p> <code>Execution redrivable period exceeded</code>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For a Distributed Map that includes child workflows of type <code>EXPRESS</code>, <code>redriveStatusReason</code> is only returned if the child workflows are not redrivable. This happens when the child workflow executions have completed successfully.</p> </li>
+    /// </ul>
+    pub fn get_redrive_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redrive_status_reason
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -511,6 +694,10 @@ impl DescribeExecutionOutputBuilder {
             cause: self.cause,
             state_machine_version_arn: self.state_machine_version_arn,
             state_machine_alias_arn: self.state_machine_alias_arn,
+            redrive_count: self.redrive_count,
+            redrive_date: self.redrive_date,
+            redrive_status: self.redrive_status,
+            redrive_status_reason: self.redrive_status_reason,
             _request_id: self._request_id,
         })
     }
@@ -534,6 +721,10 @@ impl ::std::fmt::Debug for DescribeExecutionOutputBuilder {
         formatter.field("cause", &"*** Sensitive Data Redacted ***");
         formatter.field("state_machine_version_arn", &self.state_machine_version_arn);
         formatter.field("state_machine_alias_arn", &self.state_machine_alias_arn);
+        formatter.field("redrive_count", &self.redrive_count);
+        formatter.field("redrive_date", &self.redrive_date);
+        formatter.field("redrive_status", &self.redrive_status);
+        formatter.field("redrive_status_reason", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -62,7 +62,7 @@ pub struct BuildBatch {
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
     /// <li> <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p> </li>
-    /// <li> <p>If an IAM user started the build, the user's name.</p> </li>
+    /// <li> <p>If a user started the build, the user's name.</p> </li>
     /// <li> <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li>
     /// </ul>
     pub initiator: ::std::option::Option<::std::string::String>,
@@ -196,7 +196,7 @@ impl BuildBatch {
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
     /// <li> <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p> </li>
-    /// <li> <p>If an IAM user started the build, the user's name.</p> </li>
+    /// <li> <p>If a user started the build, the user's name.</p> </li>
     /// <li> <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li>
     /// </ul>
     pub fn initiator(&self) -> ::std::option::Option<&str> {
@@ -650,7 +650,7 @@ impl BuildBatchBuilder {
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
     /// <li> <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p> </li>
-    /// <li> <p>If an IAM user started the build, the user's name.</p> </li>
+    /// <li> <p>If a user started the build, the user's name.</p> </li>
     /// <li> <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li>
     /// </ul>
     pub fn initiator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -660,7 +660,7 @@ impl BuildBatchBuilder {
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
     /// <li> <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p> </li>
-    /// <li> <p>If an IAM user started the build, the user's name.</p> </li>
+    /// <li> <p>If a user started the build, the user's name.</p> </li>
     /// <li> <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li>
     /// </ul>
     pub fn set_initiator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -670,7 +670,7 @@ impl BuildBatchBuilder {
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
     /// <li> <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p> </li>
-    /// <li> <p>If an IAM user started the build, the user's name.</p> </li>
+    /// <li> <p>If a user started the build, the user's name.</p> </li>
     /// <li> <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li>
     /// </ul>
     pub fn get_initiator(&self) -> &::std::option::Option<::std::string::String> {

@@ -184,6 +184,26 @@ pub fn de_update_event_data_store_http_error(
             }
             tmp
         }),
+        "InvalidInsightSelectorsException" => {
+            crate::operation::update_event_data_store::UpdateEventDataStoreError::InvalidInsightSelectorsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInsightSelectorsExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_insight_selectors_exception::de_invalid_insight_selectors_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::update_event_data_store::UpdateEventDataStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidKmsKeyIdException" => crate::operation::update_event_data_store::UpdateEventDataStoreError::InvalidKmsKeyIdException({
             #[allow(unused_mut)]
             let mut tmp = {

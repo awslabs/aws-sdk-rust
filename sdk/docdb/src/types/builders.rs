@@ -19,6 +19,8 @@ pub use crate::types::_global_cluster_member::GlobalClusterMemberBuilder;
 
 pub use crate::types::_db_instance::DbInstanceBuilder;
 
+pub use crate::types::_certificate_details::CertificateDetailsBuilder;
+
 pub use crate::types::_db_instance_status_info::DbInstanceStatusInfoBuilder;
 
 pub use crate::types::_pending_modified_values::PendingModifiedValuesBuilder;

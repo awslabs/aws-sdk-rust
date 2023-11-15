@@ -13,6 +13,9 @@
 /// # let scalingbehavior = unimplemented!();
 /// match scalingbehavior {
 ///     ScalingBehavior::Default => { /* ... */ },
+///     ScalingBehavior::Fill => { /* ... */ },
+///     ScalingBehavior::Fit => { /* ... */ },
+///     ScalingBehavior::FitNoUpscale => { /* ... */ },
 ///     ScalingBehavior::StretchToOutput => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -35,7 +38,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement in this output.
+/// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -43,6 +46,12 @@
 pub enum ScalingBehavior {
     #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
+    Fill,
+    #[allow(missing_docs)] // documentation missing in model
+    Fit,
+    #[allow(missing_docs)] // documentation missing in model
+    FitNoUpscale,
     #[allow(missing_docs)] // documentation missing in model
     StretchToOutput,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -52,6 +61,9 @@ impl ::std::convert::From<&str> for ScalingBehavior {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => ScalingBehavior::Default,
+            "FILL" => ScalingBehavior::Fill,
+            "FIT" => ScalingBehavior::Fit,
+            "FIT_NO_UPSCALE" => ScalingBehavior::FitNoUpscale,
             "STRETCH_TO_OUTPUT" => ScalingBehavior::StretchToOutput,
             other => ScalingBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +81,16 @@ impl ScalingBehavior {
     pub fn as_str(&self) -> &str {
         match self {
             ScalingBehavior::Default => "DEFAULT",
+            ScalingBehavior::Fill => "FILL",
+            ScalingBehavior::Fit => "FIT",
+            ScalingBehavior::FitNoUpscale => "FIT_NO_UPSCALE",
             ScalingBehavior::StretchToOutput => "STRETCH_TO_OUTPUT",
             ScalingBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEFAULT", "STRETCH_TO_OUTPUT"]
+        &["DEFAULT", "FILL", "FIT", "FIT_NO_UPSCALE", "STRETCH_TO_OUTPUT"]
     }
 }
 impl ::std::convert::AsRef<str> for ScalingBehavior {

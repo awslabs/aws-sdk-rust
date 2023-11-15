@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReportDefinitionsOutput {
-    /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
+    /// <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
     pub report_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
     /// <p>A generic string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeReportDefinitionsOutput {
-    /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
+    /// <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_definitions.is_none()`.
     pub fn report_definitions(&self) -> &[crate::types::ReportDefinition] {
@@ -47,19 +47,19 @@ impl DescribeReportDefinitionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_report_definitions`](Self::set_report_definitions).
     ///
-    /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
+    /// <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
     pub fn report_definitions(mut self, input: crate::types::ReportDefinition) -> Self {
         let mut v = self.report_definitions.unwrap_or_default();
         v.push(input);
         self.report_definitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
+    /// <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
     pub fn set_report_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>) -> Self {
         self.report_definitions = input;
         self
     }
-    /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
+    /// <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
     pub fn get_report_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>> {
         &self.report_definitions
     }

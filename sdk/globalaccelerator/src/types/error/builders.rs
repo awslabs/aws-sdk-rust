@@ -21,6 +21,8 @@ pub use crate::types::error::_accelerator_not_found_exception::AcceleratorNotFou
 
 pub use crate::types::error::_transaction_in_progress_exception::TransactionInProgressExceptionBuilder;
 
+pub use crate::types::error::_attachment_not_found_exception::AttachmentNotFoundExceptionBuilder;
+
 pub use crate::types::error::_endpoint_not_found_exception::EndpointNotFoundExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

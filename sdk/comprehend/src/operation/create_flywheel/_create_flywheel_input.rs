@@ -5,13 +5,13 @@
 pub struct CreateFlywheelInput {
     /// <p>Name for the flywheel.</p>
     pub flywheel_name: ::std::option::Option<::std::string::String>,
-    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version. Do not set <code>TaskConfig</code> or <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
     pub active_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with the flywheel. You need to set <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
     pub task_config: ::std::option::Option<crate::types::TaskConfig>,
-    /// <p>The model type.</p>
+    /// <p>The model type. You need to set <code>ModelType</code> if you are creating a flywheel for a new model.</p>
     pub model_type: ::std::option::Option<crate::types::ModelType>,
     /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
     pub data_lake_s3_uri: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl CreateFlywheelInput {
     pub fn flywheel_name(&self) -> ::std::option::Option<&str> {
         self.flywheel_name.as_deref()
     }
-    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version. Do not set <code>TaskConfig</code> or <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
     pub fn active_model_arn(&self) -> ::std::option::Option<&str> {
         self.active_model_arn.as_deref()
     }
@@ -35,11 +35,11 @@ impl CreateFlywheelInput {
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with the flywheel. You need to set <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
     pub fn task_config(&self) -> ::std::option::Option<&crate::types::TaskConfig> {
         self.task_config.as_ref()
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. You need to set <code>ModelType</code> if you are creating a flywheel for a new model.</p>
     pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelType> {
         self.model_type.as_ref()
     }
@@ -99,17 +99,17 @@ impl CreateFlywheelInputBuilder {
     pub fn get_flywheel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.flywheel_name
     }
-    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version. Do not set <code>TaskConfig</code> or <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
     pub fn active_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version. Do not set <code>TaskConfig</code> or <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
     pub fn set_active_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_model_arn = input;
         self
     }
-    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
+    /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version. Do not set <code>TaskConfig</code> or <code>ModelType</code> if you specify an <code>ActiveModelArn</code>.</p>
     pub fn get_active_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.active_model_arn
     }
@@ -128,31 +128,31 @@ impl CreateFlywheelInputBuilder {
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role_arn
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with the flywheel. You need to set <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
     pub fn task_config(mut self, input: crate::types::TaskConfig) -> Self {
         self.task_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with the flywheel. You need to set <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
     pub fn set_task_config(mut self, input: ::std::option::Option<crate::types::TaskConfig>) -> Self {
         self.task_config = input;
         self
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with the flywheel. You need to set <code>TaskConfig</code> if you are creating a flywheel for a new model.</p>
     pub fn get_task_config(&self) -> &::std::option::Option<crate::types::TaskConfig> {
         &self.task_config
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. You need to set <code>ModelType</code> if you are creating a flywheel for a new model.</p>
     pub fn model_type(mut self, input: crate::types::ModelType) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. You need to set <code>ModelType</code> if you are creating a flywheel for a new model.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelType>) -> Self {
         self.model_type = input;
         self
     }
-    /// <p>The model type.</p>
+    /// <p>The model type. You need to set <code>ModelType</code> if you are creating a flywheel for a new model.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelType> {
         &self.model_type
     }

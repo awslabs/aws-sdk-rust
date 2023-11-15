@@ -339,6 +339,8 @@ mod enable_logging;
 
 mod enable_snapshot_copy;
 
+mod failover_primary_compute;
+
 mod get_cluster_credentials;
 
 mod get_cluster_credentials_with_iam;

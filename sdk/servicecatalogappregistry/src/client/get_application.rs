@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`associated_resource_count(i32)`](crate::operation::get_application::GetApplicationOutput::associated_resource_count): <p>The number of top-level resources that were registered as part of this application.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>Key-value pairs associated with the application.</p>
     ///   - [`integrations(Option<Integrations>)`](crate::operation::get_application::GetApplicationOutput::integrations): <p> The information about the integration of the application with other services, such as Resource Groups. </p>
+    ///   - [`application_tag(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::application_tag): <p> A key-value pair that identifies an associated resource. </p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

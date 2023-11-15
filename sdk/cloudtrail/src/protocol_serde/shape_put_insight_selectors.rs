@@ -114,6 +114,42 @@ pub fn de_put_insight_selectors_http_error(
             }
             tmp
         }),
+        "InvalidParameterCombinationException" => {
+            crate::operation::put_insight_selectors::PutInsightSelectorsError::InvalidParameterCombinationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::put_insight_selectors::PutInsightSelectorsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterException" => crate::operation::put_insight_selectors::PutInsightSelectorsError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_insight_selectors::PutInsightSelectorsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidTrailNameException" => crate::operation::put_insight_selectors::PutInsightSelectorsError::InvalidTrailNameException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -314,6 +350,20 @@ pub(crate) fn de_put_insight_selectors(
                 }
                 "InsightSelectors" => {
                     builder = builder.set_insight_selectors(crate::protocol_serde::shape_insight_selectors::de_insight_selectors(tokens)?);
+                }
+                "EventDataStoreArn" => {
+                    builder = builder.set_event_data_store_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "InsightsDestination" => {
+                    builder = builder.set_insights_destination(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

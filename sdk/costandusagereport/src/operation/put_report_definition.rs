@@ -265,7 +265,9 @@ pub enum PutReportDefinitionError {
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>This account already has five reports defined. To define a new report, you must delete an existing report.</p>
     ReportLimitReachedException(crate::types::error::ReportLimitReachedException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The specified report (<code>ReportName</code>) in the request doesn't exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
@@ -288,6 +290,7 @@ impl ::std::fmt::Display for PutReportDefinitionError {
             Self::DuplicateReportNameException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::ReportLimitReachedException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -299,6 +302,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutReportDefi
             Self::DuplicateReportNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReportLimitReachedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
@@ -339,6 +343,7 @@ impl PutReportDefinitionError {
             Self::DuplicateReportNameException(e) => e.meta(),
             Self::InternalErrorException(e) => e.meta(),
             Self::ReportLimitReachedException(e) => e.meta(),
+            Self::ResourceNotFoundException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -355,6 +360,10 @@ impl PutReportDefinitionError {
     pub fn is_report_limit_reached_exception(&self) -> bool {
         matches!(self, Self::ReportLimitReachedException(_))
     }
+    /// Returns `true` if the error kind is `PutReportDefinitionError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `PutReportDefinitionError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -366,6 +375,7 @@ impl ::std::error::Error for PutReportDefinitionError {
             Self::DuplicateReportNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::ReportLimitReachedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

@@ -168,3 +168,9 @@ mod get_control_operation;
 mod get_enabled_control;
 
 mod list_enabled_controls;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;

@@ -26,6 +26,8 @@ pub struct TestRecommendation {
     pub prerequisite: ::std::option::Option<::std::string::String>,
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
     pub depends_on_alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Status of the recommended test.</p>
+    pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
 impl TestRecommendation {
     /// <p>Identifier for the test recommendation.</p>
@@ -77,6 +79,10 @@ impl TestRecommendation {
     pub fn depends_on_alarms(&self) -> &[::std::string::String] {
         self.depends_on_alarms.as_deref().unwrap_or_default()
     }
+    /// <p>Status of the recommended test.</p>
+    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+        self.recommendation_status.as_ref()
+    }
 }
 impl TestRecommendation {
     /// Creates a new builder-style object to manufacture [`TestRecommendation`](crate::types::TestRecommendation).
@@ -100,6 +106,7 @@ pub struct TestRecommendationBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     pub(crate) prerequisite: ::std::option::Option<::std::string::String>,
     pub(crate) depends_on_alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
 impl TestRecommendationBuilder {
     /// <p>Identifier for the test recommendation.</p>
@@ -269,6 +276,20 @@ impl TestRecommendationBuilder {
     pub fn get_depends_on_alarms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.depends_on_alarms
     }
+    /// <p>Status of the recommended test.</p>
+    pub fn recommendation_status(mut self, input: crate::types::RecommendationStatus) -> Self {
+        self.recommendation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Status of the recommended test.</p>
+    pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
+        self.recommendation_status = input;
+        self
+    }
+    /// <p>Status of the recommended test.</p>
+    pub fn get_recommendation_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
+        &self.recommendation_status
+    }
     /// Consumes the builder and constructs a [`TestRecommendation`](crate::types::TestRecommendation).
     /// This method will fail if any of the following fields are not set:
     /// - [`reference_id`](crate::types::builders::TestRecommendationBuilder::reference_id)
@@ -290,6 +311,7 @@ impl TestRecommendationBuilder {
             items: self.items,
             prerequisite: self.prerequisite,
             depends_on_alarms: self.depends_on_alarms,
+            recommendation_status: self.recommendation_status,
         })
     }
 }

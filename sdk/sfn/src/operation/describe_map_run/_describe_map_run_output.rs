@@ -23,6 +23,10 @@ pub struct DescribeMapRunOutput {
     pub item_counts: ::std::option::Option<crate::types::MapRunItemCounts>,
     /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
     pub execution_counts: ::std::option::Option<crate::types::MapRunExecutionCounts>,
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub redrive_count: ::std::option::Option<i32>,
+    /// <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run, the <code>redriveDate</code> is null.</p>
+    pub redrive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeMapRunOutput {
@@ -68,6 +72,14 @@ impl DescribeMapRunOutput {
     pub fn execution_counts(&self) -> ::std::option::Option<&crate::types::MapRunExecutionCounts> {
         self.execution_counts.as_ref()
     }
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn redrive_count(&self) -> ::std::option::Option<i32> {
+        self.redrive_count
+    }
+    /// <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run, the <code>redriveDate</code> is null.</p>
+    pub fn redrive_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.redrive_date.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeMapRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -95,6 +107,8 @@ pub struct DescribeMapRunOutputBuilder {
     pub(crate) tolerated_failure_count: ::std::option::Option<i64>,
     pub(crate) item_counts: ::std::option::Option<crate::types::MapRunItemCounts>,
     pub(crate) execution_counts: ::std::option::Option<crate::types::MapRunExecutionCounts>,
+    pub(crate) redrive_count: ::std::option::Option<i32>,
+    pub(crate) redrive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeMapRunOutputBuilder {
@@ -247,6 +261,34 @@ impl DescribeMapRunOutputBuilder {
     pub fn get_execution_counts(&self) -> &::std::option::Option<crate::types::MapRunExecutionCounts> {
         &self.execution_counts
     }
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn redrive_count(mut self, input: i32) -> Self {
+        self.redrive_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn set_redrive_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.redrive_count = input;
+        self
+    }
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    pub fn get_redrive_count(&self) -> &::std::option::Option<i32> {
+        &self.redrive_count
+    }
+    /// <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run, the <code>redriveDate</code> is null.</p>
+    pub fn redrive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.redrive_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run, the <code>redriveDate</code> is null.</p>
+    pub fn set_redrive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.redrive_date = input;
+        self
+    }
+    /// <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run, the <code>redriveDate</code> is null.</p>
+    pub fn get_redrive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.redrive_date
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -296,6 +338,8 @@ impl DescribeMapRunOutputBuilder {
             tolerated_failure_count: self.tolerated_failure_count.unwrap_or_default(),
             item_counts: self.item_counts,
             execution_counts: self.execution_counts,
+            redrive_count: self.redrive_count,
+            redrive_date: self.redrive_date,
             _request_id: self._request_id,
         })
     }

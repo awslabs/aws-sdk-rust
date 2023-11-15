@@ -31,6 +31,7 @@
 ///     VoiceId::Conchita => { /* ... */ },
 ///     VoiceId::Cristiano => { /* ... */ },
 ///     VoiceId::Daniel => { /* ... */ },
+///     VoiceId::Danielle => { /* ... */ },
 ///     VoiceId::Dora => { /* ... */ },
 ///     VoiceId::Elin => { /* ... */ },
 ///     VoiceId::Emma => { /* ... */ },
@@ -40,6 +41,7 @@
 ///     VoiceId::Gabrielle => { /* ... */ },
 ///     VoiceId::Geraint => { /* ... */ },
 ///     VoiceId::Giorgio => { /* ... */ },
+///     VoiceId::Gregory => { /* ... */ },
 ///     VoiceId::Gwyneth => { /* ... */ },
 ///     VoiceId::Hala => { /* ... */ },
 ///     VoiceId::Hannah => { /* ... */ },
@@ -171,6 +173,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Daniel,
     #[allow(missing_docs)] // documentation missing in model
+    Danielle,
+    #[allow(missing_docs)] // documentation missing in model
     Dora,
     #[allow(missing_docs)] // documentation missing in model
     Elin,
@@ -188,6 +192,8 @@ pub enum VoiceId {
     Geraint,
     #[allow(missing_docs)] // documentation missing in model
     Giorgio,
+    #[allow(missing_docs)] // documentation missing in model
+    Gregory,
     #[allow(missing_docs)] // documentation missing in model
     Gwyneth,
     #[allow(missing_docs)] // documentation missing in model
@@ -343,6 +349,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Conchita" => VoiceId::Conchita,
             "Cristiano" => VoiceId::Cristiano,
             "Daniel" => VoiceId::Daniel,
+            "Danielle" => VoiceId::Danielle,
             "Dora" => VoiceId::Dora,
             "Elin" => VoiceId::Elin,
             "Emma" => VoiceId::Emma,
@@ -352,6 +359,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Gabrielle" => VoiceId::Gabrielle,
             "Geraint" => VoiceId::Geraint,
             "Giorgio" => VoiceId::Giorgio,
+            "Gregory" => VoiceId::Gregory,
             "Gwyneth" => VoiceId::Gwyneth,
             "Hala" => VoiceId::Hala,
             "Hannah" => VoiceId::Hannah,
@@ -451,6 +459,7 @@ impl VoiceId {
             VoiceId::Conchita => "Conchita",
             VoiceId::Cristiano => "Cristiano",
             VoiceId::Daniel => "Daniel",
+            VoiceId::Danielle => "Danielle",
             VoiceId::Dora => "Dora",
             VoiceId::Elin => "Elin",
             VoiceId::Emma => "Emma",
@@ -460,6 +469,7 @@ impl VoiceId {
             VoiceId::Gabrielle => "Gabrielle",
             VoiceId::Geraint => "Geraint",
             VoiceId::Giorgio => "Giorgio",
+            VoiceId::Gregory => "Gregory",
             VoiceId::Gwyneth => "Gwyneth",
             VoiceId::Hala => "Hala",
             VoiceId::Hannah => "Hannah",
@@ -550,6 +560,7 @@ impl VoiceId {
             "Conchita",
             "Cristiano",
             "Daniel",
+            "Danielle",
             "Dora",
             "Elin",
             "Emma",
@@ -559,6 +570,7 @@ impl VoiceId {
             "Gabrielle",
             "Geraint",
             "Giorgio",
+            "Gregory",
             "Gwyneth",
             "Hala",
             "Hannah",

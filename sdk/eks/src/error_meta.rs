@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This exception is thrown if the request contains a semantic error. The precise meaning will depend on the API, and will be documented in the error message.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
@@ -207,6 +207,52 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError> for Error {
+    fn from(err: crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError) -> Self {
+        match err {
+            crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_fargate_profile::CreateFargateProfileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -329,6 +375,49 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
             crate::operation::delete_cluster::DeleteClusterError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_cluster::DeleteClusterError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_cluster::DeleteClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionError> for Error {
+    fn from(err: crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionError) -> Self {
+        match err {
+            crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -540,6 +629,52 @@ impl From<crate::operation::describe_cluster::DescribeClusterError> for Error {
             crate::operation::describe_cluster::DescribeClusterError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::describe_cluster::DescribeClusterError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::describe_cluster::DescribeClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionError> for Error {
+    fn from(err: crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionError) -> Self {
+        match err {
+            crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -788,6 +923,48 @@ impl From<crate::operation::list_clusters::ListClustersError> for Error {
             crate::operation::list_clusters::ListClustersError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::list_clusters::ListClustersError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_clusters::ListClustersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError> for Error {
+    fn from(err: crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError) -> Self {
+        match err {
+            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1130,6 +1307,52 @@ impl From<crate::operation::update_cluster_version::UpdateClusterVersionError> f
             }
             crate::operation::update_cluster_version::UpdateClusterVersionError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::update_cluster_version::UpdateClusterVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError> for Error {
+    fn from(err: crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError) -> Self {
+        match err {
+            crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`app_id(impl Into<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::set_app_id):<br>required: **true**<br><p> The unique ID for an Amplify app. </p><br>
-    ///   - [`branch_name(impl Into<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::set_branch_name):<br>required: **true**<br><p> The name for the branch, for the job. </p><br>
+    ///   - [`branch_name(impl Into<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::set_branch_name):<br>required: **true**<br><p>The name of the branch to use for the stop job request. </p><br>
     ///   - [`job_id(impl Into<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::set_job_id):<br>required: **true**<br><p> The unique id for the job. </p><br>
     /// - On success, responds with [`StopJobOutput`](crate::operation::stop_job::StopJobOutput) with field(s):
     ///   - [`job_summary(Option<JobSummary>)`](crate::operation::stop_job::StopJobOutput::job_summary): <p> The summary for the job. </p>

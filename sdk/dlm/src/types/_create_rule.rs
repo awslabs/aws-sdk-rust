@@ -3,7 +3,7 @@
 /// <p> <b>[Snapshot and AMI policies only]</b> Specifies when the policy should create snapshots or AMIs.</p> <note>
 /// <ul>
 /// <li> <p>You must specify either <b>CronExpression</b>, or <b>Interval</b>, <b>IntervalUnit</b>, and <b>Times</b>.</p> </li>
-/// <li> <p>If you need to specify an <code>ArchiveRule</code> for the schedule, then you must specify a creation frequency of at least 28 days.</p> </li>
+/// <li> <p>If you need to specify an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a> for the schedule, then you must specify a creation frequency of at least 28 days.</p> </li>
 /// </ul>
 /// </note>
 #[non_exhaustive]
@@ -21,6 +21,9 @@ pub struct CreateRule {
     pub times: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
+    /// <p> <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
+    pub scripts: ::std::option::Option<::std::vec::Vec<crate::types::Script>>,
 }
 impl CreateRule {
     /// <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
@@ -47,6 +50,13 @@ impl CreateRule {
     pub fn cron_expression(&self) -> ::std::option::Option<&str> {
         self.cron_expression.as_deref()
     }
+    /// <p> <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scripts.is_none()`.
+    pub fn scripts(&self) -> &[crate::types::Script] {
+        self.scripts.as_deref().unwrap_or_default()
+    }
 }
 impl CreateRule {
     /// Creates a new builder-style object to manufacture [`CreateRule`](crate::types::CreateRule).
@@ -64,6 +74,7 @@ pub struct CreateRuleBuilder {
     pub(crate) interval_unit: ::std::option::Option<crate::types::IntervalUnitValues>,
     pub(crate) times: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
+    pub(crate) scripts: ::std::option::Option<::std::vec::Vec<crate::types::Script>>,
 }
 impl CreateRuleBuilder {
     /// <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
@@ -148,6 +159,29 @@ impl CreateRuleBuilder {
     pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.cron_expression
     }
+    /// Appends an item to `scripts`.
+    ///
+    /// To override the contents of this collection use [`set_scripts`](Self::set_scripts).
+    ///
+    /// <p> <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
+    pub fn scripts(mut self, input: crate::types::Script) -> Self {
+        let mut v = self.scripts.unwrap_or_default();
+        v.push(input);
+        self.scripts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
+    pub fn set_scripts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Script>>) -> Self {
+        self.scripts = input;
+        self
+    }
+    /// <p> <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
+    pub fn get_scripts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Script>> {
+        &self.scripts
+    }
     /// Consumes the builder and constructs a [`CreateRule`](crate::types::CreateRule).
     pub fn build(self) -> crate::types::CreateRule {
         crate::types::CreateRule {
@@ -156,6 +190,7 @@ impl CreateRuleBuilder {
             interval_unit: self.interval_unit,
             times: self.times,
             cron_expression: self.cron_expression,
+            scripts: self.scripts,
         }
     }
 }

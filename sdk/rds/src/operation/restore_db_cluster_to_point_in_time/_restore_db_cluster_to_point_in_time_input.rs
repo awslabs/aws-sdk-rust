@@ -174,6 +174,8 @@ pub struct RestoreDbClusterToPointInTimeInput {
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the source DB cluster from which to restore.</p>
     pub source_db_cluster_resource_id: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for future use.</p>
+    pub rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -408,6 +410,10 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn source_db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
         self.source_db_cluster_resource_id.as_deref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<&crate::types::RdsCustomClusterConfiguration> {
+        self.rds_custom_cluster_configuration.as_ref()
+    }
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
@@ -448,6 +454,7 @@ pub struct RestoreDbClusterToPointInTimeInputBuilder {
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) source_db_cluster_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
 }
 impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -1203,6 +1210,20 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_source_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_resource_id
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(mut self, input: crate::types::RdsCustomClusterConfiguration) -> Self {
+        self.rds_custom_cluster_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_rds_custom_cluster_configuration(mut self, input: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>) -> Self {
+        self.rds_custom_cluster_configuration = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
+        &self.rds_custom_cluster_configuration
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
     pub fn build(
         self,
@@ -1240,6 +1261,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
                 network_type: self.network_type,
                 source_db_cluster_resource_id: self.source_db_cluster_resource_id,
+                rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
             },
         )
     }

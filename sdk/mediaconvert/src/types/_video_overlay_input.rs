@@ -8,7 +8,7 @@ pub struct VideoOverlayInput {
     pub file_input: ::std::option::Option<::std::string::String>,
     /// Specify one or more clips to use from your video overlay. When you include an input clip, you must also specify its start timecode, end timecode, or both start and end timecode.
     pub input_clippings: ::std::option::Option<::std::vec::Vec<crate::types::VideoOverlayInputClipping>>,
-    /// Specify the starting timecode for your video overlay. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
+    /// Specify the timecode source for your video overlay input clips. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
     pub timecode_source: ::std::option::Option<crate::types::InputTimecodeSource>,
     /// Specify the starting timecode for this video overlay. To use this setting, you must set Timecode source to Specified start.
     pub timecode_start: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl VideoOverlayInput {
     pub fn input_clippings(&self) -> &[crate::types::VideoOverlayInputClipping] {
         self.input_clippings.as_deref().unwrap_or_default()
     }
-    /// Specify the starting timecode for your video overlay. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
+    /// Specify the timecode source for your video overlay input clips. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
     pub fn timecode_source(&self) -> ::std::option::Option<&crate::types::InputTimecodeSource> {
         self.timecode_source.as_ref()
     }
@@ -84,17 +84,17 @@ impl VideoOverlayInputBuilder {
     pub fn get_input_clippings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VideoOverlayInputClipping>> {
         &self.input_clippings
     }
-    /// Specify the starting timecode for your video overlay. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
+    /// Specify the timecode source for your video overlay input clips. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
     pub fn timecode_source(mut self, input: crate::types::InputTimecodeSource) -> Self {
         self.timecode_source = ::std::option::Option::Some(input);
         self
     }
-    /// Specify the starting timecode for your video overlay. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
+    /// Specify the timecode source for your video overlay input clips. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
     pub fn set_timecode_source(mut self, input: ::std::option::Option<crate::types::InputTimecodeSource>) -> Self {
         self.timecode_source = input;
         self
     }
-    /// Specify the starting timecode for your video overlay. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
+    /// Specify the timecode source for your video overlay input clips. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
     pub fn get_timecode_source(&self) -> &::std::option::Option<crate::types::InputTimecodeSource> {
         &self.timecode_source
     }

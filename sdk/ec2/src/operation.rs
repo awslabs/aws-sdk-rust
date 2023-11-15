@@ -679,6 +679,9 @@ pub mod describe_bundle_tasks;
 /// Types for the `DescribeByoipCidrs` operation.
 pub mod describe_byoip_cidrs;
 
+/// Types for the `DescribeCapacityBlockOfferings` operation.
+pub mod describe_capacity_block_offerings;
+
 /// Types for the `DescribeCapacityReservationFleets` operation.
 pub mod describe_capacity_reservation_fleets;
 
@@ -801,6 +804,9 @@ pub mod describe_instance_event_windows;
 
 /// Types for the `DescribeInstanceStatus` operation.
 pub mod describe_instance_status;
+
+/// Types for the `DescribeInstanceTopology` operation.
+pub mod describe_instance_topology;
 
 /// Types for the `DescribeInstanceTypeOfferings` operation.
 pub mod describe_instance_type_offerings;
@@ -1135,6 +1141,9 @@ pub mod disable_ipam_organization_admin_account;
 /// Types for the `DisableSerialConsoleAccess` operation.
 pub mod disable_serial_console_access;
 
+/// Types for the `DisableSnapshotBlockPublicAccess` operation.
+pub mod disable_snapshot_block_public_access;
+
 /// Types for the `DisableTransitGatewayRouteTablePropagation` operation.
 pub mod disable_transit_gateway_route_table_propagation;
 
@@ -1221,6 +1230,9 @@ pub mod enable_reachability_analyzer_organization_sharing;
 
 /// Types for the `EnableSerialConsoleAccess` operation.
 pub mod enable_serial_console_access;
+
+/// Types for the `EnableSnapshotBlockPublicAccess` operation.
+pub mod enable_snapshot_block_public_access;
 
 /// Types for the `EnableTransitGatewayRouteTablePropagation` operation.
 pub mod enable_transit_gateway_route_table_propagation;
@@ -1341,6 +1353,9 @@ pub mod get_security_groups_for_vpc;
 
 /// Types for the `GetSerialConsoleAccessStatus` operation.
 pub mod get_serial_console_access_status;
+
+/// Types for the `GetSnapshotBlockPublicAccessState` operation.
+pub mod get_snapshot_block_public_access_state;
 
 /// Types for the `GetSpotPlacementScores` operation.
 pub mod get_spot_placement_scores;
@@ -1617,6 +1632,9 @@ pub mod provision_ipam_pool_cidr;
 
 /// Types for the `ProvisionPublicIpv4PoolCidr` operation.
 pub mod provision_public_ipv4_pool_cidr;
+
+/// Types for the `PurchaseCapacityBlock` operation.
+pub mod purchase_capacity_block;
 
 /// Types for the `PurchaseHostReservation` operation.
 pub mod purchase_host_reservation;

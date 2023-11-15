@@ -11,6 +11,8 @@ pub struct CreateRelatedItemInput {
     pub r#type: ::std::option::Option<crate::types::RelatedItemType>,
     /// <p>The content of a related item to be created.</p>
     pub content: ::std::option::Option<crate::types::RelatedItemInputContent>,
+    /// <p>Represents the creator of the related item.</p>
+    pub performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl CreateRelatedItemInput {
     /// <p>The unique identifier of the Cases domain. </p>
@@ -29,6 +31,10 @@ impl CreateRelatedItemInput {
     pub fn content(&self) -> ::std::option::Option<&crate::types::RelatedItemInputContent> {
         self.content.as_ref()
     }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn performed_by(&self) -> ::std::option::Option<&crate::types::UserUnion> {
+        self.performed_by.as_ref()
+    }
 }
 impl CreateRelatedItemInput {
     /// Creates a new builder-style object to manufacture [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
@@ -45,6 +51,7 @@ pub struct CreateRelatedItemInputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RelatedItemType>,
     pub(crate) content: ::std::option::Option<crate::types::RelatedItemInputContent>,
+    pub(crate) performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl CreateRelatedItemInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
@@ -107,6 +114,20 @@ impl CreateRelatedItemInputBuilder {
     pub fn get_content(&self) -> &::std::option::Option<crate::types::RelatedItemInputContent> {
         &self.content
     }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
+        self.performed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
+        self.performed_by = input;
+        self
+    }
+    /// <p>Represents the creator of the related item.</p>
+    pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
+        &self.performed_by
+    }
     /// Consumes the builder and constructs a [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
     pub fn build(
         self,
@@ -116,6 +137,7 @@ impl CreateRelatedItemInputBuilder {
             case_id: self.case_id,
             r#type: self.r#type,
             content: self.content,
+            performed_by: self.performed_by,
         })
     }
 }

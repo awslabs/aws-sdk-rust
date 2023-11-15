@@ -47,6 +47,9 @@ pub struct CreateDbInstanceInput {
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceInput {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
@@ -118,6 +121,11 @@ impl CreateDbInstanceInput {
     pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
+    }
 }
 impl CreateDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
@@ -142,6 +150,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) promotion_tier: ::std::option::Option<i32>,
     pub(crate) enable_performance_insights: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceInputBuilder {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
@@ -379,6 +388,23 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.performance_insights_kms_key_id
     }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = input;
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
+    }
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn build(
         self,
@@ -396,6 +422,7 @@ impl CreateDbInstanceInputBuilder {
             promotion_tier: self.promotion_tier,
             enable_performance_insights: self.enable_performance_insights,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
+            ca_certificate_identifier: self.ca_certificate_identifier,
         })
     }
 }

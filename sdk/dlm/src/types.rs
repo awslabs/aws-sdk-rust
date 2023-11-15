@@ -45,6 +45,12 @@ pub use crate::types::_retain_rule::RetainRule;
 
 pub use crate::types::_create_rule::CreateRule;
 
+pub use crate::types::_script::Script;
+
+pub use crate::types::_execution_handler_service_values::ExecutionHandlerServiceValues;
+
+pub use crate::types::_stage_values::StageValues;
+
 pub use crate::types::_interval_unit_values::IntervalUnitValues;
 
 pub use crate::types::_location_values::LocationValues;
@@ -91,6 +97,8 @@ mod _event_source_values;
 
 mod _event_type_values;
 
+mod _execution_handler_service_values;
+
 mod _fast_restore_rule;
 
 mod _gettable_policy_state_values;
@@ -121,9 +129,13 @@ mod _retention_interval_unit_values;
 
 mod _schedule;
 
+mod _script;
+
 mod _settable_policy_state_values;
 
 mod _share_rule;
+
+mod _stage_values;
 
 mod _tag;
 

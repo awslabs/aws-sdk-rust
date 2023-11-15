@@ -32,6 +32,8 @@ pub struct Service {
     pub ebs_volume_scan_details: ::std::option::Option<crate::types::EbsVolumeScanDetails>,
     /// <p>Information about the process and any required context values for a specific finding</p>
     pub runtime_details: ::std::option::Option<crate::types::RuntimeDetails>,
+    /// <p>Contains information about the detected unusual behavior.</p>
+    pub detection: ::std::option::Option<crate::types::Detection>,
 }
 impl Service {
     /// <p>Information about the activity that is described in a finding.</p>
@@ -90,6 +92,10 @@ impl Service {
     pub fn runtime_details(&self) -> ::std::option::Option<&crate::types::RuntimeDetails> {
         self.runtime_details.as_ref()
     }
+    /// <p>Contains information about the detected unusual behavior.</p>
+    pub fn detection(&self) -> ::std::option::Option<&crate::types::Detection> {
+        self.detection.as_ref()
+    }
 }
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::types::Service).
@@ -116,6 +122,7 @@ pub struct ServiceBuilder {
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,
     pub(crate) ebs_volume_scan_details: ::std::option::Option<crate::types::EbsVolumeScanDetails>,
     pub(crate) runtime_details: ::std::option::Option<crate::types::RuntimeDetails>,
+    pub(crate) detection: ::std::option::Option<crate::types::Detection>,
 }
 impl ServiceBuilder {
     /// <p>Information about the activity that is described in a finding.</p>
@@ -314,6 +321,20 @@ impl ServiceBuilder {
     pub fn get_runtime_details(&self) -> &::std::option::Option<crate::types::RuntimeDetails> {
         &self.runtime_details
     }
+    /// <p>Contains information about the detected unusual behavior.</p>
+    pub fn detection(mut self, input: crate::types::Detection) -> Self {
+        self.detection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the detected unusual behavior.</p>
+    pub fn set_detection(mut self, input: ::std::option::Option<crate::types::Detection>) -> Self {
+        self.detection = input;
+        self
+    }
+    /// <p>Contains information about the detected unusual behavior.</p>
+    pub fn get_detection(&self) -> &::std::option::Option<crate::types::Detection> {
+        &self.detection
+    }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {
         crate::types::Service {
@@ -331,6 +352,7 @@ impl ServiceBuilder {
             feature_name: self.feature_name,
             ebs_volume_scan_details: self.ebs_volume_scan_details,
             runtime_details: self.runtime_details,
+            detection: self.detection,
         }
     }
 }

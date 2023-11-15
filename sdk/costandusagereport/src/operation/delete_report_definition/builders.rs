@@ -22,7 +22,7 @@ impl DeleteReportDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteReportDefinition`.
 ///
-/// <p>Deletes the specified report.</p>
+/// <p>Deletes the specified report. Any tags associated with the report are also deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReportDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

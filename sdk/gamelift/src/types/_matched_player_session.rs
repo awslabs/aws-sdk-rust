@@ -3,7 +3,7 @@
 /// <p>Represents a new player session that is created as a result of a successful FlexMatch match. A successful match automatically creates new player sessions for every player ID in the original matchmaking request. </p>
 /// <p>When players connect to the match's game session, they must include both player ID and player session ID in order to claim their assigned player slot.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MatchedPlayerSession {
     /// <p>A unique identifier for a player </p>
     pub player_id: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,14 @@ impl MatchedPlayerSession {
         self.player_session_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for MatchedPlayerSession {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MatchedPlayerSession");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_session_id", &self.player_session_id);
+        formatter.finish()
+    }
+}
 impl MatchedPlayerSession {
     /// Creates a new builder-style object to manufacture [`MatchedPlayerSession`](crate::types::MatchedPlayerSession).
     pub fn builder() -> crate::types::builders::MatchedPlayerSessionBuilder {
@@ -29,7 +37,7 @@ impl MatchedPlayerSession {
 
 /// A builder for [`MatchedPlayerSession`](crate::types::MatchedPlayerSession).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MatchedPlayerSessionBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_session_id: ::std::option::Option<::std::string::String>,
@@ -69,5 +77,13 @@ impl MatchedPlayerSessionBuilder {
             player_id: self.player_id,
             player_session_id: self.player_session_id,
         }
+    }
+}
+impl ::std::fmt::Debug for MatchedPlayerSessionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MatchedPlayerSessionBuilder");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_session_id", &self.player_session_id);
+        formatter.finish()
     }
 }

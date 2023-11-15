@@ -275,6 +275,9 @@ pub enum UpdateEventDataStoreError {
     /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
     /// </ul>
     InvalidEventSelectorsException(crate::types::error::InvalidEventSelectorsException),
+    /// <p>For <code>PutInsightSelectors</code>, this exception is thrown when the formatting or syntax of the <code>InsightSelectors</code> JSON statement is not valid, or the specified <code>InsightType</code> in the <code>InsightSelectors</code> statement is not valid. Valid values for <code>InsightType</code> are <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code>. To enable Insights on an event data store, the destination event data store specified by the <code>InsightsDestination</code> parameter must log Insights events and the source event data store specified by the <code>EventDataStore</code> parameter must log management events.</p>
+    /// <p>For <code>UpdateEventDataStore</code>, this exception is thrown if Insights are enabled on the event data store and the updated advanced event selectors are not compatible with the configured <code>InsightSelectors</code>. If the <code>InsightSelectors</code> includes an <code>InsightType</code> of <code>ApiCallRateInsight</code>, the source event data store must log <code>write</code> management events. If the <code>InsightSelectors</code> includes an <code>InsightType</code> of <code>ApiErrorRateInsight</code>, the source event data store must log management events.</p>
+    InvalidInsightSelectorsException(crate::types::error::InvalidInsightSelectorsException),
     /// <p>This exception is thrown when the KMS key ARN is not valid.</p>
     InvalidKmsKeyIdException(crate::types::error::InvalidKmsKeyIdException),
     /// <p>The request includes a parameter that is not valid.</p>
@@ -322,6 +325,7 @@ impl ::std::fmt::Display for UpdateEventDataStoreError {
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => _inner.fmt(f),
             Self::InsufficientEncryptionPolicyException(_inner) => _inner.fmt(f),
             Self::InvalidEventSelectorsException(_inner) => _inner.fmt(f),
+            Self::InvalidInsightSelectorsException(_inner) => _inner.fmt(f),
             Self::InvalidKmsKeyIdException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::KmsException(_inner) => _inner.fmt(f),
@@ -350,6 +354,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateEventDa
             }
             Self::InsufficientEncryptionPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidEventSelectorsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidInsightSelectorsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidKmsKeyIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -405,6 +410,7 @@ impl UpdateEventDataStoreError {
             Self::InsufficientDependencyServiceAccessPermissionException(e) => e.meta(),
             Self::InsufficientEncryptionPolicyException(e) => e.meta(),
             Self::InvalidEventSelectorsException(e) => e.meta(),
+            Self::InvalidInsightSelectorsException(e) => e.meta(),
             Self::InvalidKmsKeyIdException(e) => e.meta(),
             Self::InvalidParameterException(e) => e.meta(),
             Self::KmsException(e) => e.meta(),
@@ -453,6 +459,10 @@ impl UpdateEventDataStoreError {
     /// Returns `true` if the error kind is `UpdateEventDataStoreError::InvalidEventSelectorsException`.
     pub fn is_invalid_event_selectors_exception(&self) -> bool {
         matches!(self, Self::InvalidEventSelectorsException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreError::InvalidInsightSelectorsException`.
+    pub fn is_invalid_insight_selectors_exception(&self) -> bool {
+        matches!(self, Self::InvalidInsightSelectorsException(_))
     }
     /// Returns `true` if the error kind is `UpdateEventDataStoreError::InvalidKmsKeyIdException`.
     pub fn is_invalid_kms_key_id_exception(&self) -> bool {
@@ -507,6 +517,7 @@ impl ::std::error::Error for UpdateEventDataStoreError {
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientEncryptionPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEventSelectorsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidInsightSelectorsException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidKmsKeyIdException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsException(_inner) => ::std::option::Option::Some(_inner),

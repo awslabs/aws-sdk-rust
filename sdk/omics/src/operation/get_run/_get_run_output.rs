@@ -57,6 +57,10 @@ pub struct GetRunOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p> The location of the run log. </p>
     pub log_location: ::std::option::Option<crate::types::RunLogLocation>,
+    /// <p> The universally unique identifier for a run. </p>
+    pub uuid: ::std::option::Option<::std::string::String>,
+    /// <p> The destination for workflow outputs. </p>
+    pub run_output_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -168,6 +172,14 @@ impl GetRunOutput {
     pub fn log_location(&self) -> ::std::option::Option<&crate::types::RunLogLocation> {
         self.log_location.as_ref()
     }
+    /// <p> The universally unique identifier for a run. </p>
+    pub fn uuid(&self) -> ::std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+    /// <p> The destination for workflow outputs. </p>
+    pub fn run_output_uri(&self) -> ::std::option::Option<&str> {
+        self.run_output_uri.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -212,6 +224,8 @@ pub struct GetRunOutputBuilder {
     pub(crate) retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) log_location: ::std::option::Option<crate::types::RunLogLocation>,
+    pub(crate) uuid: ::std::option::Option<::std::string::String>,
+    pub(crate) run_output_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -612,6 +626,34 @@ impl GetRunOutputBuilder {
     pub fn get_log_location(&self) -> &::std::option::Option<crate::types::RunLogLocation> {
         &self.log_location
     }
+    /// <p> The universally unique identifier for a run. </p>
+    pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uuid = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The universally unique identifier for a run. </p>
+    pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.uuid = input;
+        self
+    }
+    /// <p> The universally unique identifier for a run. </p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uuid
+    }
+    /// <p> The destination for workflow outputs. </p>
+    pub fn run_output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.run_output_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The destination for workflow outputs. </p>
+    pub fn set_run_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.run_output_uri = input;
+        self
+    }
+    /// <p> The destination for workflow outputs. </p>
+    pub fn get_run_output_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_output_uri
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -651,6 +693,8 @@ impl GetRunOutputBuilder {
             retention_mode: self.retention_mode,
             failure_reason: self.failure_reason,
             log_location: self.log_location,
+            uuid: self.uuid,
+            run_output_uri: self.run_output_uri,
             _request_id: self._request_id,
         }
     }

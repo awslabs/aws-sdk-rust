@@ -86,6 +86,19 @@ pub fn de_get_coip_pool_usage(
                 builder = builder.set_local_gateway_route_table_id(var_3);
             }
             ,
+            s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#GetCoipPoolUsageOutput$NextToken */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_next_token(var_4);
+            }
+            ,
             _ => {}
         }
     }

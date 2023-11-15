@@ -138,6 +138,11 @@ where
                                 crate::protocol_serde::shape_execution_timed_out_event_details::de_execution_timed_out_event_details(tokens)?,
                             );
                         }
+                        "executionRedrivenEventDetails" => {
+                            builder = builder.set_execution_redriven_event_details(
+                                crate::protocol_serde::shape_execution_redriven_event_details::de_execution_redriven_event_details(tokens)?,
+                            );
+                        }
                         "mapStateStartedEventDetails" => {
                             builder = builder.set_map_state_started_event_details(
                                 crate::protocol_serde::shape_map_state_started_event_details::de_map_state_started_event_details(tokens)?,
@@ -217,6 +222,11 @@ where
                         "mapRunFailedEventDetails" => {
                             builder = builder.set_map_run_failed_event_details(
                                 crate::protocol_serde::shape_map_run_failed_event_details::de_map_run_failed_event_details(tokens)?,
+                            );
+                        }
+                        "mapRunRedrivenEventDetails" => {
+                            builder = builder.set_map_run_redriven_event_details(
+                                crate::protocol_serde::shape_map_run_redriven_event_details::de_map_run_redriven_event_details(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

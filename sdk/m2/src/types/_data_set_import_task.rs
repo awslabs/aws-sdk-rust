@@ -10,6 +10,8 @@ pub struct DataSetImportTask {
     pub status: crate::types::DataSetTaskLifecycle,
     /// <p>A summary of the data set import task.</p>
     pub summary: ::std::option::Option<crate::types::DataSetImportSummary>,
+    /// <p>If dataset import failed, the failure reason will show here.</p>
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl DataSetImportTask {
     /// <p>The identifier of the data set import task.</p>
@@ -24,6 +26,10 @@ impl DataSetImportTask {
     /// <p>A summary of the data set import task.</p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::DataSetImportSummary> {
         self.summary.as_ref()
+    }
+    /// <p>If dataset import failed, the failure reason will show here.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+        self.status_reason.as_deref()
     }
 }
 impl DataSetImportTask {
@@ -40,6 +46,7 @@ pub struct DataSetImportTaskBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataSetTaskLifecycle>,
     pub(crate) summary: ::std::option::Option<crate::types::DataSetImportSummary>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl DataSetImportTaskBuilder {
     /// <p>The identifier of the data set import task.</p>
@@ -87,6 +94,20 @@ impl DataSetImportTaskBuilder {
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::DataSetImportSummary> {
         &self.summary
     }
+    /// <p>If dataset import failed, the failure reason will show here.</p>
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If dataset import failed, the failure reason will show here.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>If dataset import failed, the failure reason will show here.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// Consumes the builder and constructs a [`DataSetImportTask`](crate::types::DataSetImportTask).
     /// This method will fail if any of the following fields are not set:
     /// - [`task_id`](crate::types::builders::DataSetImportTaskBuilder::task_id)
@@ -106,6 +127,7 @@ impl DataSetImportTaskBuilder {
                 )
             })?,
             summary: self.summary,
+            status_reason: self.status_reason,
         })
     }
 }

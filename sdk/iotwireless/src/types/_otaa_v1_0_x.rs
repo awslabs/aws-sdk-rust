@@ -8,6 +8,8 @@ pub struct OtaaV10X {
     pub app_key: ::std::option::Option<::std::string::String>,
     /// <p>The AppEUI value.</p>
     pub app_eui: ::std::option::Option<::std::string::String>,
+    /// <p>The JoinEUI value.</p>
+    pub join_eui: ::std::option::Option<::std::string::String>,
     /// <p>The GenAppKey value.</p>
     pub gen_app_key: ::std::option::Option<::std::string::String>,
 }
@@ -19,6 +21,10 @@ impl OtaaV10X {
     /// <p>The AppEUI value.</p>
     pub fn app_eui(&self) -> ::std::option::Option<&str> {
         self.app_eui.as_deref()
+    }
+    /// <p>The JoinEUI value.</p>
+    pub fn join_eui(&self) -> ::std::option::Option<&str> {
+        self.join_eui.as_deref()
     }
     /// <p>The GenAppKey value.</p>
     pub fn gen_app_key(&self) -> ::std::option::Option<&str> {
@@ -38,6 +44,7 @@ impl OtaaV10X {
 pub struct OtaaV10XBuilder {
     pub(crate) app_key: ::std::option::Option<::std::string::String>,
     pub(crate) app_eui: ::std::option::Option<::std::string::String>,
+    pub(crate) join_eui: ::std::option::Option<::std::string::String>,
     pub(crate) gen_app_key: ::std::option::Option<::std::string::String>,
 }
 impl OtaaV10XBuilder {
@@ -69,6 +76,20 @@ impl OtaaV10XBuilder {
     pub fn get_app_eui(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_eui
     }
+    /// <p>The JoinEUI value.</p>
+    pub fn join_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.join_eui = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The JoinEUI value.</p>
+    pub fn set_join_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.join_eui = input;
+        self
+    }
+    /// <p>The JoinEUI value.</p>
+    pub fn get_join_eui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.join_eui
+    }
     /// <p>The GenAppKey value.</p>
     pub fn gen_app_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gen_app_key = ::std::option::Option::Some(input.into());
@@ -88,6 +109,7 @@ impl OtaaV10XBuilder {
         crate::types::OtaaV10X {
             app_key: self.app_key,
             app_eui: self.app_eui,
+            join_eui: self.join_eui,
             gen_app_key: self.gen_app_key,
         }
     }

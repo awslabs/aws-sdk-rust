@@ -142,6 +142,8 @@ mod allow_custom_routing_traffic;
 
 mod create_accelerator;
 
+mod create_cross_account_attachment;
+
 mod create_custom_routing_accelerator;
 
 mod create_custom_routing_endpoint_group;
@@ -181,6 +183,8 @@ pub mod customize;
 
 mod delete_accelerator;
 
+mod delete_cross_account_attachment;
+
 mod delete_custom_routing_accelerator;
 
 mod delete_custom_routing_endpoint_group;
@@ -199,6 +203,8 @@ mod describe_accelerator;
 
 mod describe_accelerator_attributes;
 
+mod describe_cross_account_attachment;
+
 mod describe_custom_routing_accelerator;
 
 mod describe_custom_routing_accelerator_attributes;
@@ -214,6 +220,12 @@ mod describe_listener;
 mod list_accelerators;
 
 mod list_byoip_cidrs;
+
+mod list_cross_account_attachments;
+
+mod list_cross_account_resource_accounts;
+
+mod list_cross_account_resources;
 
 mod list_custom_routing_accelerators;
 
@@ -244,6 +256,8 @@ mod untag_resource;
 mod update_accelerator;
 
 mod update_accelerator_attributes;
+
+mod update_cross_account_attachment;
 
 mod update_custom_routing_accelerator;
 

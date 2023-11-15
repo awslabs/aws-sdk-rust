@@ -373,6 +373,11 @@ pub fn ser_create_db_instance_input_input(
     if let Some(var_140) = &input.dedicated_log_volume {
         scope_139.boolean(*var_140);
     }
+    #[allow(unused_mut)]
+    let mut scope_141 = writer.prefix("MultiTenant");
+    if let Some(var_142) = &input.multi_tenant {
+        scope_141.boolean(*var_142);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

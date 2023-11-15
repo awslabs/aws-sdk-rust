@@ -23,7 +23,7 @@ impl UpdateEventDataStoreInputBuilder {
 /// Fluent builder constructing a request to `UpdateEventDataStore`.
 ///
 /// <p>Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2557. By default, <code>TerminationProtection</code> is enabled.</p>
-/// <p>For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes management and data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.</p>
+/// <p>For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes management, data, or Insights events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.</p>
 /// <p> For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, <code>AdvancedEventSelectors</code> includes events of that type in your event data store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventDataStoreFluentBuilder {
@@ -170,17 +170,23 @@ impl UpdateEventDataStoreFluentBuilder {
     pub fn get_multi_region_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_region_enabled()
     }
-    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
+    /// </note>
     pub fn organization_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.organization_enabled(input);
         self
     }
-    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
+    /// </note>
     pub fn set_organization_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_organization_enabled(input);
         self
     }
-    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
+    /// </note>
     pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_organization_enabled()
     }

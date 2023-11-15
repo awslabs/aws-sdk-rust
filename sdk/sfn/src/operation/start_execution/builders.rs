@@ -273,6 +273,7 @@ impl StartExecutionFluentBuilder {
         self.inner.get_state_machine_arn()
     }
     /// <p>Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>If you don't provide a name for the execution, Step Functions automatically generates a universally unique identifier (UUID) as the execution name.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li> <p>white space</p> </li>
@@ -287,6 +288,7 @@ impl StartExecutionFluentBuilder {
         self
     }
     /// <p>Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>If you don't provide a name for the execution, Step Functions automatically generates a universally unique identifier (UUID) as the execution name.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li> <p>white space</p> </li>
@@ -301,6 +303,7 @@ impl StartExecutionFluentBuilder {
         self
     }
     /// <p>Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>If you don't provide a name for the execution, Step Functions automatically generates a universally unique identifier (UUID) as the execution name.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li> <p>white space</p> </li>

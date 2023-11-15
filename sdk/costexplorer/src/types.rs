@@ -175,6 +175,8 @@ pub use crate::types::_reservation_purchase_recommendation_detail::ReservationPu
 
 pub use crate::types::_instance_details::InstanceDetails;
 
+pub use crate::types::_memory_db_instance_details::MemoryDbInstanceDetails;
+
 pub use crate::types::_es_instance_details::EsInstanceDetails;
 
 pub use crate::types::_elasti_cache_instance_details::ElastiCacheInstanceDetails;
@@ -354,6 +356,8 @@ mod _instance_details;
 mod _lookback_period_in_days;
 
 mod _match_option;
+
+mod _memory_db_instance_details;
 
 mod _metric;
 

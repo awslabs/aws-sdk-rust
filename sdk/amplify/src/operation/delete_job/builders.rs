@@ -116,17 +116,17 @@ impl DeleteJobFluentBuilder {
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }
-    /// <p> The name for the branch, for the job. </p>
+    /// <p>The name of the branch to use for the job. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
         self
     }
-    /// <p> The name for the branch, for the job. </p>
+    /// <p>The name of the branch to use for the job. </p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
     }
-    /// <p> The name for the branch, for the job. </p>
+    /// <p>The name of the branch to use for the job. </p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_branch_name()
     }

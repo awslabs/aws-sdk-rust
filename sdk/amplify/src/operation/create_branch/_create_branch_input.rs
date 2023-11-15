@@ -6,11 +6,11 @@
 pub struct CreateBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: ::std::option::Option<::std::string::String>,
-    /// <p> The name for the branch. </p>
+    /// <p>The name for the branch. </p>
     pub branch_name: ::std::option::Option<::std::string::String>,
-    /// <p> The description for the branch. </p>
+    /// <p>The description for the branch. </p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p> Describes the current stage for the branch. </p>
+    /// <p>Describes the current stage for the branch. </p>
     pub stage: ::std::option::Option<crate::types::Stage>,
     /// <p> The framework for the branch. </p>
     pub framework: ::std::option::Option<::std::string::String>,
@@ -39,23 +39,25 @@ pub struct CreateBranchInput {
     pub enable_pull_request_preview: ::std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
     pub pull_request_environment_name: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub backend_environment_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    pub backend: ::std::option::Option<crate::types::Backend>,
 }
 impl CreateBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name for the branch. </p>
     pub fn branch_name(&self) -> ::std::option::Option<&str> {
         self.branch_name.as_deref()
     }
-    /// <p> The description for the branch. </p>
+    /// <p>The description for the branch. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> Describes the current stage for the branch. </p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn stage(&self) -> ::std::option::Option<&crate::types::Stage> {
         self.stage.as_ref()
     }
@@ -112,9 +114,13 @@ impl CreateBranchInput {
     pub fn pull_request_environment_name(&self) -> ::std::option::Option<&str> {
         self.pull_request_environment_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(&self) -> ::std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
+    }
+    /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    pub fn backend(&self) -> ::std::option::Option<&crate::types::Backend> {
+        self.backend.as_ref()
     }
 }
 impl ::std::fmt::Debug for CreateBranchInput {
@@ -138,6 +144,7 @@ impl ::std::fmt::Debug for CreateBranchInput {
         formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
         formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
+        formatter.field("backend", &self.backend);
         formatter.finish()
     }
 }
@@ -170,6 +177,7 @@ pub struct CreateBranchInputBuilder {
     pub(crate) enable_pull_request_preview: ::std::option::Option<bool>,
     pub(crate) pull_request_environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) backend: ::std::option::Option<crate::types::Backend>,
 }
 impl CreateBranchInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
@@ -187,46 +195,46 @@ impl CreateBranchInputBuilder {
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_id
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name for the branch. </p>
     /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name for the branch. </p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name for the branch. </p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.branch_name
     }
-    /// <p> The description for the branch. </p>
+    /// <p>The description for the branch. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The description for the branch. </p>
+    /// <p>The description for the branch. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p> The description for the branch. </p>
+    /// <p>The description for the branch. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p> Describes the current stage for the branch. </p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn stage(mut self, input: crate::types::Stage) -> Self {
         self.stage = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes the current stage for the branch. </p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::Stage>) -> Self {
         self.stage = input;
         self
     }
-    /// <p> Describes the current stage for the branch. </p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn get_stage(&self) -> &::std::option::Option<crate::types::Stage> {
         &self.stage
     }
@@ -434,19 +442,33 @@ impl CreateBranchInputBuilder {
     pub fn get_pull_request_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pull_request_environment_name
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn set_backend_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn get_backend_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.backend_environment_arn
+    }
+    /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    pub fn backend(mut self, input: crate::types::Backend) -> Self {
+        self.backend = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    pub fn set_backend(mut self, input: ::std::option::Option<crate::types::Backend>) -> Self {
+        self.backend = input;
+        self
+    }
+    /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    pub fn get_backend(&self) -> &::std::option::Option<crate::types::Backend> {
+        &self.backend
     }
     /// Consumes the builder and constructs a [`CreateBranchInput`](crate::operation::create_branch::CreateBranchInput).
     pub fn build(
@@ -471,6 +493,7 @@ impl CreateBranchInputBuilder {
             enable_pull_request_preview: self.enable_pull_request_preview,
             pull_request_environment_name: self.pull_request_environment_name,
             backend_environment_arn: self.backend_environment_arn,
+            backend: self.backend,
         })
     }
 }
@@ -495,6 +518,7 @@ impl ::std::fmt::Debug for CreateBranchInputBuilder {
         formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
         formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
+        formatter.field("backend", &self.backend);
         formatter.finish()
     }
 }

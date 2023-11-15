@@ -6,7 +6,7 @@
 pub struct CreateDeploymentInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: ::std::option::Option<::std::string::String>,
-    /// <p> The name for the branch, for the job. </p>
+    /// <p> The name of the branch to use for the job. </p>
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     pub file_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -16,7 +16,7 @@ impl CreateDeploymentInput {
     pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p> The name for the branch, for the job. </p>
+    /// <p> The name of the branch to use for the job. </p>
     pub fn branch_name(&self) -> ::std::option::Option<&str> {
         self.branch_name.as_deref()
     }
@@ -56,18 +56,18 @@ impl CreateDeploymentInputBuilder {
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_id
     }
-    /// <p> The name for the branch, for the job. </p>
+    /// <p> The name of the branch to use for the job. </p>
     /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name for the branch, for the job. </p>
+    /// <p> The name of the branch to use for the job. </p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
     }
-    /// <p> The name for the branch, for the job. </p>
+    /// <p> The name of the branch to use for the job. </p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.branch_name
     }

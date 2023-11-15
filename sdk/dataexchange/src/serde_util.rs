@@ -62,15 +62,6 @@ pub(crate) fn service_limit_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn origin_details_correct_errors(
-    mut builder: crate::types::builders::OriginDetailsBuilder,
-) -> crate::types::builders::OriginDetailsBuilder {
-    if builder.product_id.is_none() {
-        builder.product_id = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn asset_entry_correct_errors(mut builder: crate::types::builders::AssetEntryBuilder) -> crate::types::builders::AssetEntryBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())

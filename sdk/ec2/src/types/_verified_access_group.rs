@@ -22,7 +22,7 @@ pub struct VerifiedAccessGroup {
     pub deletion_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p> Describes the options in use for server side encryption. </p>
+    /// <p>The options in use for server side encryption.</p>
     pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>,
 }
 impl VerifiedAccessGroup {
@@ -64,7 +64,7 @@ impl VerifiedAccessGroup {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p> Describes the options in use for server side encryption. </p>
+    /// <p>The options in use for server side encryption.</p>
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationResponse> {
         self.sse_specification.as_ref()
     }
@@ -224,17 +224,17 @@ impl VerifiedAccessGroupBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p> Describes the options in use for server side encryption. </p>
+    /// <p>The options in use for server side encryption.</p>
     pub fn sse_specification(mut self, input: crate::types::VerifiedAccessSseSpecificationResponse) -> Self {
         self.sse_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes the options in use for server side encryption. </p>
+    /// <p>The options in use for server side encryption.</p>
     pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>) -> Self {
         self.sse_specification = input;
         self
     }
-    /// <p> Describes the options in use for server side encryption. </p>
+    /// <p>The options in use for server side encryption.</p>
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse> {
         &self.sse_specification
     }

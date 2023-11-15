@@ -43,6 +43,8 @@ pub use crate::types::error::_invalid_token::InvalidTokenBuilder;
 
 pub use crate::types::error::_invalid_output::InvalidOutputBuilder;
 
+pub use crate::types::error::_execution_not_redrivable::ExecutionNotRedrivableBuilder;
+
 pub use crate::types::error::_activity_worker_limit_exceeded::ActivityWorkerLimitExceededBuilder;
 
 pub use crate::types::error::_activity_does_not_exist::ActivityDoesNotExistBuilder;

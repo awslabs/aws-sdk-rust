@@ -13,6 +13,9 @@ pub mod create_addon;
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
+/// Types for the `CreateEksAnywhereSubscription` operation.
+pub mod create_eks_anywhere_subscription;
+
 /// Types for the `CreateFargateProfile` operation.
 pub mod create_fargate_profile;
 
@@ -24,6 +27,9 @@ pub mod delete_addon;
 
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
+
+/// Types for the `DeleteEksAnywhereSubscription` operation.
+pub mod delete_eks_anywhere_subscription;
 
 /// Types for the `DeleteFargateProfile` operation.
 pub mod delete_fargate_profile;
@@ -46,6 +52,9 @@ pub mod describe_addon_versions;
 /// Types for the `DescribeCluster` operation.
 pub mod describe_cluster;
 
+/// Types for the `DescribeEksAnywhereSubscription` operation.
+pub mod describe_eks_anywhere_subscription;
+
 /// Types for the `DescribeFargateProfile` operation.
 pub mod describe_fargate_profile;
 
@@ -66,6 +75,9 @@ pub mod list_addons;
 
 /// Types for the `ListClusters` operation.
 pub mod list_clusters;
+
+/// Types for the `ListEksAnywhereSubscriptions` operation.
+pub mod list_eks_anywhere_subscriptions;
 
 /// Types for the `ListFargateProfiles` operation.
 pub mod list_fargate_profiles;
@@ -99,6 +111,9 @@ pub mod update_cluster_config;
 
 /// Types for the `UpdateClusterVersion` operation.
 pub mod update_cluster_version;
+
+/// Types for the `UpdateEksAnywhereSubscription` operation.
+pub mod update_eks_anywhere_subscription;
 
 /// Types for the `UpdateNodegroupConfig` operation.
 pub mod update_nodegroup_config;

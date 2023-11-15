@@ -105,6 +105,8 @@ pub(crate) mod shape_detect_syntax;
 
 pub(crate) mod shape_detect_targeted_sentiment;
 
+pub(crate) mod shape_detect_toxic_content;
+
 pub(crate) mod shape_import_model;
 
 pub(crate) mod shape_list_datasets;
@@ -284,6 +286,8 @@ pub(crate) mod shape_detect_sentiment_input;
 pub(crate) mod shape_detect_syntax_input;
 
 pub(crate) mod shape_detect_targeted_sentiment_input;
+
+pub(crate) mod shape_detect_toxic_content_input;
 
 pub(crate) mod shape_import_model_input;
 
@@ -525,6 +529,8 @@ pub(crate) mod shape_list_of_syntax_tokens;
 
 pub(crate) mod shape_list_of_targeted_sentiment_entities;
 
+pub(crate) mod shape_list_of_toxic_labels;
+
 pub(crate) mod shape_list_of_warnings;
 
 pub(crate) mod shape_output_data_config;
@@ -556,6 +562,8 @@ pub(crate) mod shape_targeted_sentiment_detection_job_properties;
 pub(crate) mod shape_targeted_sentiment_detection_job_properties_list;
 
 pub(crate) mod shape_task_config;
+
+pub(crate) mod shape_text_segment;
 
 pub(crate) mod shape_topics_detection_job_filter;
 
@@ -647,6 +655,8 @@ pub(crate) mod shape_target_event_types;
 
 pub(crate) mod shape_targeted_sentiment_entity;
 
+pub(crate) mod shape_toxic_labels;
+
 pub(crate) mod shape_warnings_list_item;
 
 pub(crate) mod shape_classifier_evaluation_metrics;
@@ -681,6 +691,8 @@ pub(crate) mod shape_list_of_pii_entity_types;
 
 pub(crate) mod shape_list_of_relationships;
 
+pub(crate) mod shape_list_of_toxic_content;
+
 pub(crate) mod shape_part_of_speech_tag;
 
 pub(crate) mod shape_security_group_ids;
@@ -702,6 +714,8 @@ pub(crate) mod shape_polygon;
 pub(crate) mod shape_relationships_list_item;
 
 pub(crate) mod shape_targeted_sentiment_mention;
+
+pub(crate) mod shape_toxic_content;
 
 pub(crate) mod shape_attribute_names_list;
 

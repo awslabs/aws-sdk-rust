@@ -69,6 +69,8 @@ pub struct CapacityReservation {
     pub placement_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about instance capacity usage.</p>
     pub capacity_allocations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
+    /// <p>The type of Capacity Reservation.</p>
+    pub reservation_type: ::std::option::Option<crate::types::CapacityReservationType>,
 }
 impl CapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -186,6 +188,10 @@ impl CapacityReservation {
     pub fn capacity_allocations(&self) -> &[crate::types::CapacityAllocation] {
         self.capacity_allocations.as_deref().unwrap_or_default()
     }
+    /// <p>The type of Capacity Reservation.</p>
+    pub fn reservation_type(&self) -> ::std::option::Option<&crate::types::CapacityReservationType> {
+        self.reservation_type.as_ref()
+    }
 }
 impl CapacityReservation {
     /// Creates a new builder-style object to manufacture [`CapacityReservation`](crate::types::CapacityReservation).
@@ -221,6 +227,7 @@ pub struct CapacityReservationBuilder {
     pub(crate) capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) placement_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_allocations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
+    pub(crate) reservation_type: ::std::option::Option<crate::types::CapacityReservationType>,
 }
 impl CapacityReservationBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -614,6 +621,20 @@ impl CapacityReservationBuilder {
     pub fn get_capacity_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>> {
         &self.capacity_allocations
     }
+    /// <p>The type of Capacity Reservation.</p>
+    pub fn reservation_type(mut self, input: crate::types::CapacityReservationType) -> Self {
+        self.reservation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of Capacity Reservation.</p>
+    pub fn set_reservation_type(mut self, input: ::std::option::Option<crate::types::CapacityReservationType>) -> Self {
+        self.reservation_type = input;
+        self
+    }
+    /// <p>The type of Capacity Reservation.</p>
+    pub fn get_reservation_type(&self) -> &::std::option::Option<crate::types::CapacityReservationType> {
+        &self.reservation_type
+    }
     /// Consumes the builder and constructs a [`CapacityReservation`](crate::types::CapacityReservation).
     pub fn build(self) -> crate::types::CapacityReservation {
         crate::types::CapacityReservation {
@@ -640,6 +661,7 @@ impl CapacityReservationBuilder {
             capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
             placement_group_arn: self.placement_group_arn,
             capacity_allocations: self.capacity_allocations,
+            reservation_type: self.reservation_type,
         }
     }
 }

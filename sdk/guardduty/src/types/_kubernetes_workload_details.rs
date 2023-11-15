@@ -18,6 +18,12 @@ pub struct KubernetesWorkloadDetails {
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     /// <p>Volumes used by the Kubernetes workload.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub service_account_name: ::std::option::Option<::std::string::String>,
+    /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
+    pub host_ipc: ::std::option::Option<bool>,
+    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    pub host_pid: ::std::option::Option<bool>,
 }
 impl KubernetesWorkloadDetails {
     /// <p>Kubernetes workload name.</p>
@@ -52,6 +58,18 @@ impl KubernetesWorkloadDetails {
     pub fn volumes(&self) -> &[crate::types::Volume] {
         self.volumes.as_deref().unwrap_or_default()
     }
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub fn service_account_name(&self) -> ::std::option::Option<&str> {
+        self.service_account_name.as_deref()
+    }
+    /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
+    pub fn host_ipc(&self) -> ::std::option::Option<bool> {
+        self.host_ipc
+    }
+    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    pub fn host_pid(&self) -> ::std::option::Option<bool> {
+        self.host_pid
+    }
 }
 impl KubernetesWorkloadDetails {
     /// Creates a new builder-style object to manufacture [`KubernetesWorkloadDetails`](crate::types::KubernetesWorkloadDetails).
@@ -71,6 +89,9 @@ pub struct KubernetesWorkloadDetailsBuilder {
     pub(crate) host_network: ::std::option::Option<bool>,
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub(crate) service_account_name: ::std::option::Option<::std::string::String>,
+    pub(crate) host_ipc: ::std::option::Option<bool>,
+    pub(crate) host_pid: ::std::option::Option<bool>,
 }
 impl KubernetesWorkloadDetailsBuilder {
     /// <p>Kubernetes workload name.</p>
@@ -183,6 +204,48 @@ impl KubernetesWorkloadDetailsBuilder {
     pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
         &self.volumes
     }
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub fn service_account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_account_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub fn set_service_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_account_name = input;
+        self
+    }
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub fn get_service_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_account_name
+    }
+    /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
+    pub fn host_ipc(mut self, input: bool) -> Self {
+        self.host_ipc = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
+    pub fn set_host_ipc(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.host_ipc = input;
+        self
+    }
+    /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
+    pub fn get_host_ipc(&self) -> &::std::option::Option<bool> {
+        &self.host_ipc
+    }
+    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    pub fn host_pid(mut self, input: bool) -> Self {
+        self.host_pid = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    pub fn set_host_pid(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.host_pid = input;
+        self
+    }
+    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    pub fn get_host_pid(&self) -> &::std::option::Option<bool> {
+        &self.host_pid
+    }
     /// Consumes the builder and constructs a [`KubernetesWorkloadDetails`](crate::types::KubernetesWorkloadDetails).
     pub fn build(self) -> crate::types::KubernetesWorkloadDetails {
         crate::types::KubernetesWorkloadDetails {
@@ -193,6 +256,9 @@ impl KubernetesWorkloadDetailsBuilder {
             host_network: self.host_network,
             containers: self.containers,
             volumes: self.volumes,
+            service_account_name: self.service_account_name,
+            host_ipc: self.host_ipc,
+            host_pid: self.host_pid,
         }
     }
 }

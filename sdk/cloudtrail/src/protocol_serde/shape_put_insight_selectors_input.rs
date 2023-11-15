@@ -18,5 +18,11 @@ pub fn ser_put_insight_selectors_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.event_data_store {
+        object.key("EventDataStore").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.insights_destination {
+        object.key("InsightsDestination").string(var_7.as_str());
+    }
     Ok(())
 }

@@ -199,6 +199,20 @@ pub use crate::types::_finding::Finding;
 
 pub use crate::types::_service::Service;
 
+pub use crate::types::_detection::Detection;
+
+pub use crate::types::_anomaly::Anomaly;
+
+pub use crate::types::_anomaly_unusual::AnomalyUnusual;
+
+pub use crate::types::_anomaly_object::AnomalyObject;
+
+pub use crate::types::_observations::Observations;
+
+pub use crate::types::_profile_subtype::ProfileSubtype;
+
+pub use crate::types::_profile_type::ProfileType;
+
 pub use crate::types::_runtime_details::RuntimeDetails;
 
 pub use crate::types::_runtime_context::RuntimeContext;
@@ -232,6 +246,12 @@ pub use crate::types::_evidence::Evidence;
 pub use crate::types::_threat_intelligence_detail::ThreatIntelligenceDetail;
 
 pub use crate::types::_action::Action;
+
+pub use crate::types::_kubernetes_role_details::KubernetesRoleDetails;
+
+pub use crate::types::_kubernetes_role_binding_details::KubernetesRoleBindingDetails;
+
+pub use crate::types::_kubernetes_permission_checked_details::KubernetesPermissionCheckedDetails;
 
 pub use crate::types::_rds_login_attempt_action::RdsLoginAttemptAction;
 
@@ -306,6 +326,8 @@ pub use crate::types::_kubernetes_details::KubernetesDetails;
 pub use crate::types::_kubernetes_workload_details::KubernetesWorkloadDetails;
 
 pub use crate::types::_kubernetes_user_details::KubernetesUserDetails;
+
+pub use crate::types::_impersonated_user::ImpersonatedUser;
 
 pub use crate::types::_eks_cluster_details::EksClusterDetails;
 
@@ -417,6 +439,12 @@ mod _admin_status;
 
 mod _administrator;
 
+mod _anomaly;
+
+mod _anomaly_object;
+
+mod _anomaly_unusual;
+
 mod _auto_enable_members;
 
 mod _aws_api_call_action;
@@ -482,6 +510,8 @@ mod _destination;
 mod _destination_properties;
 
 mod _destination_type;
+
+mod _detection;
 
 mod _detector_additional_configuration;
 
@@ -557,6 +587,8 @@ mod _host_path;
 
 mod _iam_instance_profile;
 
+mod _impersonated_user;
+
 mod _instance_details;
 
 mod _invitation;
@@ -578,6 +610,12 @@ mod _kubernetes_configuration_result;
 mod _kubernetes_data_source_free_trial;
 
 mod _kubernetes_details;
+
+mod _kubernetes_permission_checked_details;
+
+mod _kubernetes_role_binding_details;
+
+mod _kubernetes_role_details;
 
 mod _kubernetes_user_details;
 
@@ -618,6 +656,8 @@ mod _member_features_configuration_result;
 mod _network_connection_action;
 
 mod _network_interface;
+
+mod _observations;
 
 mod _order_by;
 
@@ -678,6 +718,10 @@ mod _private_ip_address_details;
 mod _process_details;
 
 mod _product_code;
+
+mod _profile_subtype;
+
+mod _profile_type;
 
 mod _public_access;
 

@@ -12,7 +12,7 @@ pub struct RuleGroup {
     pub reference_sets: ::std::option::Option<crate::types::ReferenceSets>,
     /// <p>The stateful rules or stateless rules for the rule group. </p>
     pub rules_source: ::std::option::Option<crate::types::RulesSource>,
-    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings. Some limitations apply; for more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub stateful_rule_options: ::std::option::Option<crate::types::StatefulRuleOptions>,
 }
 impl RuleGroup {
@@ -28,7 +28,7 @@ impl RuleGroup {
     pub fn rules_source(&self) -> ::std::option::Option<&crate::types::RulesSource> {
         self.rules_source.as_ref()
     }
-    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings. Some limitations apply; for more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn stateful_rule_options(&self) -> ::std::option::Option<&crate::types::StatefulRuleOptions> {
         self.stateful_rule_options.as_ref()
     }
@@ -93,17 +93,17 @@ impl RuleGroupBuilder {
     pub fn get_rules_source(&self) -> &::std::option::Option<crate::types::RulesSource> {
         &self.rules_source
     }
-    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings. Some limitations apply; for more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn stateful_rule_options(mut self, input: crate::types::StatefulRuleOptions) -> Self {
         self.stateful_rule_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings. Some limitations apply; for more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn set_stateful_rule_options(mut self, input: ::std::option::Option<crate::types::StatefulRuleOptions>) -> Self {
         self.stateful_rule_options = input;
         self
     }
-    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings. Some limitations apply; for more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn get_stateful_rule_options(&self) -> &::std::option::Option<crate::types::StatefulRuleOptions> {
         &self.stateful_rule_options
     }

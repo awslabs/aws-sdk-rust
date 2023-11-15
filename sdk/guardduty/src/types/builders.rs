@@ -137,6 +137,16 @@ pub use crate::types::_finding::FindingBuilder;
 
 pub use crate::types::_service::ServiceBuilder;
 
+pub use crate::types::_detection::DetectionBuilder;
+
+pub use crate::types::_anomaly::AnomalyBuilder;
+
+pub use crate::types::_anomaly_unusual::AnomalyUnusualBuilder;
+
+pub use crate::types::_anomaly_object::AnomalyObjectBuilder;
+
+pub use crate::types::_observations::ObservationsBuilder;
+
 pub use crate::types::_runtime_details::RuntimeDetailsBuilder;
 
 pub use crate::types::_runtime_context::RuntimeContextBuilder;
@@ -168,6 +178,12 @@ pub use crate::types::_evidence::EvidenceBuilder;
 pub use crate::types::_threat_intelligence_detail::ThreatIntelligenceDetailBuilder;
 
 pub use crate::types::_action::ActionBuilder;
+
+pub use crate::types::_kubernetes_role_details::KubernetesRoleDetailsBuilder;
+
+pub use crate::types::_kubernetes_role_binding_details::KubernetesRoleBindingDetailsBuilder;
+
+pub use crate::types::_kubernetes_permission_checked_details::KubernetesPermissionCheckedDetailsBuilder;
 
 pub use crate::types::_rds_login_attempt_action::RdsLoginAttemptActionBuilder;
 
@@ -242,6 +258,8 @@ pub use crate::types::_kubernetes_details::KubernetesDetailsBuilder;
 pub use crate::types::_kubernetes_workload_details::KubernetesWorkloadDetailsBuilder;
 
 pub use crate::types::_kubernetes_user_details::KubernetesUserDetailsBuilder;
+
+pub use crate::types::_impersonated_user::ImpersonatedUserBuilder;
 
 pub use crate::types::_eks_cluster_details::EksClusterDetailsBuilder;
 

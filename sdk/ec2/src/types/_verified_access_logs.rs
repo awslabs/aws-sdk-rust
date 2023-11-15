@@ -10,9 +10,9 @@ pub struct VerifiedAccessLogs {
     pub cloud_watch_logs: ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>,
     /// <p>Kinesis logging destination.</p>
     pub kinesis_data_firehose: ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination>,
-    /// <p> Describes current setting for the logging version. </p>
+    /// <p>The log version.</p>
     pub log_version: ::std::option::Option<::std::string::String>,
-    /// <p> Describes current setting for including trust data into the logs. </p>
+    /// <p>Indicates whether trust data is included in the logs.</p>
     pub include_trust_context: ::std::option::Option<bool>,
 }
 impl VerifiedAccessLogs {
@@ -28,11 +28,11 @@ impl VerifiedAccessLogs {
     pub fn kinesis_data_firehose(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogKinesisDataFirehoseDestination> {
         self.kinesis_data_firehose.as_ref()
     }
-    /// <p> Describes current setting for the logging version. </p>
+    /// <p>The log version.</p>
     pub fn log_version(&self) -> ::std::option::Option<&str> {
         self.log_version.as_deref()
     }
-    /// <p> Describes current setting for including trust data into the logs. </p>
+    /// <p>Indicates whether trust data is included in the logs.</p>
     pub fn include_trust_context(&self) -> ::std::option::Option<bool> {
         self.include_trust_context
     }
@@ -97,31 +97,31 @@ impl VerifiedAccessLogsBuilder {
     pub fn get_kinesis_data_firehose(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination> {
         &self.kinesis_data_firehose
     }
-    /// <p> Describes current setting for the logging version. </p>
+    /// <p>The log version.</p>
     pub fn log_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Describes current setting for the logging version. </p>
+    /// <p>The log version.</p>
     pub fn set_log_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_version = input;
         self
     }
-    /// <p> Describes current setting for the logging version. </p>
+    /// <p>The log version.</p>
     pub fn get_log_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_version
     }
-    /// <p> Describes current setting for including trust data into the logs. </p>
+    /// <p>Indicates whether trust data is included in the logs.</p>
     pub fn include_trust_context(mut self, input: bool) -> Self {
         self.include_trust_context = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes current setting for including trust data into the logs. </p>
+    /// <p>Indicates whether trust data is included in the logs.</p>
     pub fn set_include_trust_context(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_trust_context = input;
         self
     }
-    /// <p> Describes current setting for including trust data into the logs. </p>
+    /// <p>Indicates whether trust data is included in the logs.</p>
     pub fn get_include_trust_context(&self) -> &::std::option::Option<bool> {
         &self.include_trust_context
     }

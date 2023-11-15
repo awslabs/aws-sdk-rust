@@ -10,7 +10,7 @@ pub struct FlywheelProperties {
     pub active_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with a flywheel.</p>
     pub task_config: ::std::option::Option<crate::types::TaskConfig>,
     /// <p>Amazon S3 URI of the data lake location. </p>
     pub data_lake_s3_uri: ::std::option::Option<::std::string::String>,
@@ -42,7 +42,7 @@ impl FlywheelProperties {
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with a flywheel.</p>
     pub fn task_config(&self) -> ::std::option::Option<&crate::types::TaskConfig> {
         self.task_config.as_ref()
     }
@@ -146,17 +146,17 @@ impl FlywheelPropertiesBuilder {
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role_arn
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with a flywheel.</p>
     pub fn task_config(mut self, input: crate::types::TaskConfig) -> Self {
         self.task_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with a flywheel.</p>
     pub fn set_task_config(mut self, input: ::std::option::Option<crate::types::TaskConfig>) -> Self {
         self.task_config = input;
         self
     }
-    /// <p>Configuration about the custom classifier associated with the flywheel.</p>
+    /// <p>Configuration about the model associated with a flywheel.</p>
     pub fn get_task_config(&self) -> &::std::option::Option<crate::types::TaskConfig> {
         &self.task_config
     }

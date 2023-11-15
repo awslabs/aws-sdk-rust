@@ -111,3 +111,10 @@ pub(crate) fn encryption_configuration_correct_errors(
     }
     builder
 }
+
+pub(crate) fn script_correct_errors(mut builder: crate::types::builders::ScriptBuilder) -> crate::types::builders::ScriptBuilder {
+    if builder.execution_handler.is_none() {
+        builder.execution_handler = Some(Default::default())
+    }
+    builder
+}

@@ -39,6 +39,10 @@ pub use crate::types::_ip_address_family::IpAddressFamily;
 
 pub use crate::types::_ip_address_type::IpAddressType;
 
+pub use crate::types::_attachment::Attachment;
+
+pub use crate::types::_resource::Resource;
+
 pub use crate::types::_accelerator_attributes::AcceleratorAttributes;
 
 pub use crate::types::_accelerator::Accelerator;
@@ -69,6 +73,8 @@ pub use crate::types::_custom_routing_endpoint_description::CustomRoutingEndpoin
 
 pub use crate::types::_custom_routing_destination_description::CustomRoutingDestinationDescription;
 
+pub use crate::types::_cross_account_resource::CrossAccountResource;
+
 pub use crate::types::_custom_routing_destination_configuration::CustomRoutingDestinationConfiguration;
 
 pub use crate::types::_custom_routing_endpoint_configuration::CustomRoutingEndpointConfiguration;
@@ -81,6 +87,8 @@ mod _accelerator_event;
 
 mod _accelerator_status;
 
+mod _attachment;
+
 mod _byoip_cidr;
 
 mod _byoip_cidr_event;
@@ -90,6 +98,8 @@ mod _byoip_cidr_state;
 mod _cidr_authorization_context;
 
 mod _client_affinity;
+
+mod _cross_account_resource;
 
 mod _custom_routing_accelerator;
 
@@ -142,6 +152,8 @@ mod _port_override;
 mod _port_range;
 
 mod _protocol;
+
+mod _resource;
 
 mod _socket_address;
 

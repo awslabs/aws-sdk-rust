@@ -77,6 +77,8 @@ pub struct DbSnapshot {
     pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
+    /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub multi_tenant: ::std::option::Option<bool>,
 }
 impl DbSnapshot {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -225,6 +227,10 @@ impl DbSnapshot {
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
     }
+    /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
+        self.multi_tenant
+    }
 }
 impl DbSnapshot {
     /// Creates a new builder-style object to manufacture [`DbSnapshot`](crate::types::DbSnapshot).
@@ -272,6 +278,7 @@ pub struct DbSnapshotBuilder {
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
+    pub(crate) multi_tenant: ::std::option::Option<bool>,
 }
 impl DbSnapshotBuilder {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -782,6 +789,20 @@ impl DbSnapshotBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
+    /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(mut self, input: bool) -> Self {
+        self.multi_tenant = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.multi_tenant = input;
+        self
+    }
+    /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
+        &self.multi_tenant
+    }
     /// Consumes the builder and constructs a [`DbSnapshot`](crate::types::DbSnapshot).
     pub fn build(self) -> crate::types::DbSnapshot {
         crate::types::DbSnapshot {
@@ -820,6 +841,7 @@ impl DbSnapshotBuilder {
             storage_throughput: self.storage_throughput,
             db_system_id: self.db_system_id,
             dedicated_log_volume: self.dedicated_log_volume,
+            multi_tenant: self.multi_tenant,
         }
     }
 }

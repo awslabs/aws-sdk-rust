@@ -61,6 +61,8 @@ pub use crate::types::_serverless_v2_scaling_configuration_info::ServerlessV2Sca
 
 pub use crate::types::_cluster_pending_modified_values::ClusterPendingModifiedValuesBuilder;
 
+pub use crate::types::_rds_custom_cluster_configuration::RdsCustomClusterConfigurationBuilder;
+
 pub use crate::types::_scaling_configuration_info::ScalingConfigurationInfoBuilder;
 
 pub use crate::types::_db_cluster_role::DbClusterRoleBuilder;
@@ -90,6 +92,10 @@ pub use crate::types::_target_health::TargetHealthBuilder;
 pub use crate::types::_reserved_db_instance::ReservedDbInstanceBuilder;
 
 pub use crate::types::_recurring_charge::RecurringChargeBuilder;
+
+pub use crate::types::_tenant_database::TenantDatabaseBuilder;
+
+pub use crate::types::_tenant_database_pending_modified_values::TenantDatabasePendingModifiedValuesBuilder;
 
 pub use crate::types::_option_group::OptionGroupBuilder;
 
@@ -176,6 +182,8 @@ pub use crate::types::_event::EventBuilder;
 pub use crate::types::_event_categories_map::EventCategoriesMapBuilder;
 
 pub use crate::types::_engine_defaults::EngineDefaultsBuilder;
+
+pub use crate::types::_db_snapshot_tenant_database::DbSnapshotTenantDatabaseBuilder;
 
 pub use crate::types::_db_parameter_group::DbParameterGroupBuilder;
 

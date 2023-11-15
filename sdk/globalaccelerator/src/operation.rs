@@ -16,6 +16,9 @@ pub mod allow_custom_routing_traffic;
 /// Types for the `CreateAccelerator` operation.
 pub mod create_accelerator;
 
+/// Types for the `CreateCrossAccountAttachment` operation.
+pub mod create_cross_account_attachment;
+
 /// Types for the `CreateCustomRoutingAccelerator` operation.
 pub mod create_custom_routing_accelerator;
 
@@ -33,6 +36,9 @@ pub mod create_listener;
 
 /// Types for the `DeleteAccelerator` operation.
 pub mod delete_accelerator;
+
+/// Types for the `DeleteCrossAccountAttachment` operation.
+pub mod delete_cross_account_attachment;
 
 /// Types for the `DeleteCustomRoutingAccelerator` operation.
 pub mod delete_custom_routing_accelerator;
@@ -61,6 +67,9 @@ pub mod describe_accelerator;
 /// Types for the `DescribeAcceleratorAttributes` operation.
 pub mod describe_accelerator_attributes;
 
+/// Types for the `DescribeCrossAccountAttachment` operation.
+pub mod describe_cross_account_attachment;
+
 /// Types for the `DescribeCustomRoutingAccelerator` operation.
 pub mod describe_custom_routing_accelerator;
 
@@ -84,6 +93,15 @@ pub mod list_accelerators;
 
 /// Types for the `ListByoipCidrs` operation.
 pub mod list_byoip_cidrs;
+
+/// Types for the `ListCrossAccountAttachments` operation.
+pub mod list_cross_account_attachments;
+
+/// Types for the `ListCrossAccountResourceAccounts` operation.
+pub mod list_cross_account_resource_accounts;
+
+/// Types for the `ListCrossAccountResources` operation.
+pub mod list_cross_account_resources;
 
 /// Types for the `ListCustomRoutingAccelerators` operation.
 pub mod list_custom_routing_accelerators;
@@ -129,6 +147,9 @@ pub mod update_accelerator;
 
 /// Types for the `UpdateAcceleratorAttributes` operation.
 pub mod update_accelerator_attributes;
+
+/// Types for the `UpdateCrossAccountAttachment` operation.
+pub mod update_cross_account_attachment;
 
 /// Types for the `UpdateCustomRoutingAccelerator` operation.
 pub mod update_custom_routing_accelerator;

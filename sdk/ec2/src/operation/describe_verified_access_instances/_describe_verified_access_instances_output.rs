@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessInstancesOutput {
-    /// <p>The IDs of the Verified Access instances.</p>
+    /// <p>Details about the Verified Access instances.</p>
     pub verified_access_instances: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVerifiedAccessInstancesOutput {
-    /// <p>The IDs of the Verified Access instances.</p>
+    /// <p>Details about the Verified Access instances.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_instances.is_none()`.
     pub fn verified_access_instances(&self) -> &[crate::types::VerifiedAccessInstance] {
@@ -46,19 +46,19 @@ impl DescribeVerifiedAccessInstancesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_verified_access_instances`](Self::set_verified_access_instances).
     ///
-    /// <p>The IDs of the Verified Access instances.</p>
+    /// <p>Details about the Verified Access instances.</p>
     pub fn verified_access_instances(mut self, input: crate::types::VerifiedAccessInstance) -> Self {
         let mut v = self.verified_access_instances.unwrap_or_default();
         v.push(input);
         self.verified_access_instances = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the Verified Access instances.</p>
+    /// <p>Details about the Verified Access instances.</p>
     pub fn set_verified_access_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>>) -> Self {
         self.verified_access_instances = input;
         self
     }
-    /// <p>The IDs of the Verified Access instances.</p>
+    /// <p>Details about the Verified Access instances.</p>
     pub fn get_verified_access_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>> {
         &self.verified_access_instances
     }

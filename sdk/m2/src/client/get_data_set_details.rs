@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::creation_time): <p>The timestamp when the data set was created.</p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::last_updated_time): <p>The last time the data set was updated.</p>
     ///   - [`last_referenced_time(Option<DateTime>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::last_referenced_time): <p>The last time the data set was referenced.</p>
+    ///   - [`file_size(Option<i64>)`](crate::operation::get_data_set_details::GetDataSetDetailsOutput::file_size): <p>File size of the dataset.</p>
     /// - On failure, responds with [`SdkError<GetDataSetDetailsError>`](crate::operation::get_data_set_details::GetDataSetDetailsError)
     pub fn get_data_set_details(&self) -> crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder {
         crate::operation::get_data_set_details::builders::GetDataSetDetailsFluentBuilder::new(self.handle.clone())

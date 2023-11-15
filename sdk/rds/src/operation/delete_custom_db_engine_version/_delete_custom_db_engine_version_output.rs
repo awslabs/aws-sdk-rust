@@ -80,7 +80,7 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub supports_local_write_forwarding: ::std::option::Option<bool>,
-    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    /// <p>Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.</p>
     pub supports_integrations: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -243,7 +243,7 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn supports_local_write_forwarding(&self) -> ::std::option::Option<bool> {
         self.supports_local_write_forwarding
     }
-    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    /// <p>Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.</p>
     pub fn supports_integrations(&self) -> ::std::option::Option<bool> {
         self.supports_integrations
     }
@@ -838,17 +838,17 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn get_supports_local_write_forwarding(&self) -> &::std::option::Option<bool> {
         &self.supports_local_write_forwarding
     }
-    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    /// <p>Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.</p>
     pub fn supports_integrations(mut self, input: bool) -> Self {
         self.supports_integrations = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    /// <p>Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.</p>
     pub fn set_supports_integrations(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_integrations = input;
         self
     }
-    /// <p>Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.</p>
+    /// <p>Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.</p>
     pub fn get_supports_integrations(&self) -> &::std::option::Option<bool> {
         &self.supports_integrations
     }

@@ -17,12 +17,192 @@ pub fn de_receive_message_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidAddress" => crate::operation::receive_message::ReceiveMessageError::InvalidAddress({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidAddressBuilder::default();
+                output = crate::protocol_serde::shape_invalid_address::de_invalid_address_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidSecurity" => crate::operation::receive_message::ReceiveMessageError::InvalidSecurity({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSecurityBuilder::default();
+                output = crate::protocol_serde::shape_invalid_security::de_invalid_security_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMS.AccessDeniedException" => crate::operation::receive_message::ReceiveMessageError::KmsAccessDenied({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsAccessDeniedBuilder::default();
+                output = crate::protocol_serde::shape_kms_access_denied::de_kms_access_denied_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMS.DisabledException" => crate::operation::receive_message::ReceiveMessageError::KmsDisabled({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsDisabledBuilder::default();
+                output = crate::protocol_serde::shape_kms_disabled::de_kms_disabled_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMS.InvalidKeyUsageException" => crate::operation::receive_message::ReceiveMessageError::KmsInvalidKeyUsage({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsInvalidKeyUsageBuilder::default();
+                output = crate::protocol_serde::shape_kms_invalid_key_usage::de_kms_invalid_key_usage_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMS.InvalidStateException" => crate::operation::receive_message::ReceiveMessageError::KmsInvalidState({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsInvalidStateBuilder::default();
+                output = crate::protocol_serde::shape_kms_invalid_state::de_kms_invalid_state_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMS.NotFoundException" => crate::operation::receive_message::ReceiveMessageError::KmsNotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsNotFoundBuilder::default();
+                output = crate::protocol_serde::shape_kms_not_found::de_kms_not_found_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMS.OptInRequired" => crate::operation::receive_message::ReceiveMessageError::KmsOptInRequired({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsOptInRequiredBuilder::default();
+                output = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMS.ThrottlingException" => crate::operation::receive_message::ReceiveMessageError::KmsThrottled({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsThrottledBuilder::default();
+                output = crate::protocol_serde::shape_kms_throttled::de_kms_throttled_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "OverLimit" => crate::operation::receive_message::ReceiveMessageError::OverLimit({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::OverLimitBuilder::default();
-                output = crate::protocol_serde::shape_over_limit::de_over_limit_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_over_limit::de_over_limit_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "AWS.SimpleQueueService.NonExistentQueue" => crate::operation::receive_message::ReceiveMessageError::QueueDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::QueueDoesNotExistBuilder::default();
+                output = crate::protocol_serde::shape_queue_does_not_exist::de_queue_does_not_exist_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestThrottled" => crate::operation::receive_message::ReceiveMessageError::RequestThrottled({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RequestThrottledBuilder::default();
+                output = crate::protocol_serde::shape_request_throttled::de_request_throttled_json_err(_response_body, output)
+                    .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "AWS.SimpleQueueService.UnsupportedOperation" => crate::operation::receive_message::ReceiveMessageError::UnsupportedOperation({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_json_err(_response_body, output)
                     .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -52,55 +232,44 @@ pub fn de_receive_message_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_receive_message(
-    inp: &[u8],
-    mut builder: crate::operation::receive_message::builders::ReceiveMessageOutputBuilder,
-) -> Result<crate::operation::receive_message::builders::ReceiveMessageOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn ser_receive_message_input(
+    input: &crate::operation::receive_message::ReceiveMessageInput,
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_receive_message_input::ser_receive_message_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
+}
 
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("ReceiveMessageResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ReceiveMessageResponse got {:?}",
-            start_el
-        )));
-    }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("ReceiveMessageResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ReceiveMessageResult got {:?}",
-                start_el
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("Message") /* Messages com.amazonaws.sqs.synthetic#ReceiveMessageOutput$Messages */ =>  {
-                let var_1 =
-                    Some(
-                        Result::<::std::vec::Vec::<crate::types::Message>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_2 = builder.messages.take().unwrap_or_default();
-                            list_2.push(
-                                crate::protocol_serde::shape_message::de_message(&mut tag)
-                                ?
-                            );
-                            list_2
-                        })
-                        ?
-                    )
-                ;
-                builder = builder.set_messages(var_1);
+pub(crate) fn de_receive_message(
+    value: &[u8],
+    mut builder: crate::operation::receive_message::builders::ReceiveMessageOutputBuilder,
+) -> Result<crate::operation::receive_message::builders::ReceiveMessageOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let tokens = &mut tokens_owned;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "Messages" => {
+                    builder = builder.set_messages(crate::protocol_serde::shape_message_list::de_message_list(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
+            other => {
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
-            ,
-            _ => {}
         }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected ReceiveMessageResult tag"));
-    };
+    }
+    if tokens.next().is_some() {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
     Ok(builder)
 }

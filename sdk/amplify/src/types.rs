@@ -11,6 +11,8 @@ pub use crate::types::_domain_status::DomainStatus;
 
 pub use crate::types::_branch::Branch;
 
+pub use crate::types::_backend::Backend;
+
 pub use crate::types::_stage::Stage;
 
 pub use crate::types::_app::App;
@@ -44,6 +46,8 @@ mod _app;
 mod _artifact;
 
 mod _auto_branch_creation_config;
+
+mod _backend;
 
 mod _backend_environment;
 

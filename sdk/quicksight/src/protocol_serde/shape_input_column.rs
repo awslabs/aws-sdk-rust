@@ -9,6 +9,9 @@ pub fn ser_input_column(
     {
         object.key("Type").string(input.r#type.as_str());
     }
+    if let Some(var_1) = &input.sub_type {
+        object.key("SubType").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -38,6 +41,13 @@ where
                             builder = builder.set_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::InputColumnDataType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SubType" => {
+                            builder = builder.set_sub_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ColumnDataSubType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

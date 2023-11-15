@@ -33,6 +33,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'scriptBatchJobIdentifier' cannot be null")
                             })?,
                         )),
+                        "s3BatchJobIdentifier" => Some(crate::types::BatchJobIdentifier::S3BatchJobIdentifier(
+                            crate::protocol_serde::shape_s3_batch_job_identifier::de_s3_batch_job_identifier(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3BatchJobIdentifier' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::BatchJobIdentifier::Unknown)
@@ -72,6 +77,12 @@ pub fn ser_batch_job_identifier(
             let mut object_2 = object_2.key("scriptBatchJobIdentifier").start_object();
             crate::protocol_serde::shape_script_batch_job_identifier::ser_script_batch_job_identifier(&mut object_2, inner)?;
             object_2.finish();
+        }
+        crate::types::BatchJobIdentifier::S3BatchJobIdentifier(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("s3BatchJobIdentifier").start_object();
+            crate::protocol_serde::shape_s3_batch_job_identifier::ser_s3_batch_job_identifier(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::BatchJobIdentifier::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

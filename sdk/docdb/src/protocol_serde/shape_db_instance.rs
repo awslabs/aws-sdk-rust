@@ -354,6 +354,16 @@ pub fn de_db_instance(
                 builder = builder.set_enabled_cloudwatch_logs_exports(var_27);
             }
             ,
+            s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.docdb#DBInstance$CertificateDetails */ =>  {
+                let var_28 =
+                    Some(
+                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_certificate_details(var_28);
+            }
+            ,
             _ => {}
         }
     }

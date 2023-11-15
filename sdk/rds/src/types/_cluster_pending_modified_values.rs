@@ -18,6 +18,8 @@ pub struct ClusterPendingModifiedValues {
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub allocated_storage: ::std::option::Option<i32>,
+    /// <p>Reserved for future use.</p>
+    pub rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub iops: ::std::option::Option<i32>,
     /// <p>The storage type for the DB cluster.</p>
@@ -52,6 +54,10 @@ impl ClusterPendingModifiedValues {
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<&crate::types::RdsCustomClusterConfiguration> {
+        self.rds_custom_cluster_configuration.as_ref()
+    }
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
@@ -79,6 +85,7 @@ pub struct ClusterPendingModifiedValuesBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
+    pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
@@ -181,6 +188,20 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(mut self, input: crate::types::RdsCustomClusterConfiguration) -> Self {
+        self.rds_custom_cluster_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_rds_custom_cluster_configuration(mut self, input: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>) -> Self {
+        self.rds_custom_cluster_configuration = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
+        &self.rds_custom_cluster_configuration
+    }
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -219,6 +240,7 @@ impl ClusterPendingModifiedValuesBuilder {
             engine_version: self.engine_version,
             backup_retention_period: self.backup_retention_period,
             allocated_storage: self.allocated_storage,
+            rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
             iops: self.iops,
             storage_type: self.storage_type,
         }

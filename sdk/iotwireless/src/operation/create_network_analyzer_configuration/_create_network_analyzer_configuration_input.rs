@@ -5,7 +5,7 @@
 pub struct CreateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub trace_content: ::std::option::Option<crate::types::TraceContent>,
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
     pub wireless_devices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -25,7 +25,7 @@ impl CreateNetworkAnalyzerConfigurationInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn trace_content(&self) -> ::std::option::Option<&crate::types::TraceContent> {
         self.trace_content.as_ref()
     }
@@ -98,17 +98,17 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn trace_content(mut self, input: crate::types::TraceContent) -> Self {
         self.trace_content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn set_trace_content(mut self, input: ::std::option::Option<crate::types::TraceContent>) -> Self {
         self.trace_content = input;
         self
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
         &self.trace_content
     }

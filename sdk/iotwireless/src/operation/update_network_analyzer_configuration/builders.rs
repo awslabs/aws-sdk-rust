@@ -122,17 +122,17 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_name()
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn trace_content(mut self, input: crate::types::TraceContent) -> Self {
         self.inner = self.inner.trace_content(input);
         self
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn set_trace_content(mut self, input: ::std::option::Option<crate::types::TraceContent>) -> Self {
         self.inner = self.inner.set_trace_content(input);
         self
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
         self.inner.get_trace_content()
     }
@@ -244,17 +244,17 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_multicast_groups_to_remove`](Self::set_multicast_groups_to_remove).
     ///
-    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resources to remove in the input array.</p>
     pub fn multicast_groups_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multicast_groups_to_remove(input.into());
         self
     }
-    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resources to remove in the input array.</p>
     pub fn set_multicast_groups_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_multicast_groups_to_remove(input);
         self
     }
-    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resources to remove in the input array.</p>
     pub fn get_multicast_groups_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_multicast_groups_to_remove()
     }

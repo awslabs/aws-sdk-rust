@@ -3,12 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFastLaunchImagesInput {
-    /// <p>Details for one or more Windows AMI image IDs.</p>
+    /// <p>Specify one or more Windows AMI image IDs for the request.</p>
     pub image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
     /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li>
     /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
     /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>
@@ -21,7 +20,7 @@ pub struct DescribeFastLaunchImagesInput {
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeFastLaunchImagesInput {
-    /// <p>Details for one or more Windows AMI image IDs.</p>
+    /// <p>Specify one or more Windows AMI image IDs for the request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
     pub fn image_ids(&self) -> &[::std::string::String] {
@@ -30,7 +29,6 @@ impl DescribeFastLaunchImagesInput {
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
     /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li>
     /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
     /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>
@@ -74,19 +72,19 @@ impl DescribeFastLaunchImagesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
     ///
-    /// <p>Details for one or more Windows AMI image IDs.</p>
+    /// <p>Specify one or more Windows AMI image IDs for the request.</p>
     pub fn image_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_ids.unwrap_or_default();
         v.push(input.into());
         self.image_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Details for one or more Windows AMI image IDs.</p>
+    /// <p>Specify one or more Windows AMI image IDs for the request.</p>
     pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_ids = input;
         self
     }
-    /// <p>Details for one or more Windows AMI image IDs.</p>
+    /// <p>Specify one or more Windows AMI image IDs for the request.</p>
     pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.image_ids
     }
@@ -97,7 +95,6 @@ impl DescribeFastLaunchImagesInputBuilder {
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
     /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li>
     /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
     /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>
@@ -110,7 +107,6 @@ impl DescribeFastLaunchImagesInputBuilder {
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
     /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li>
     /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
     /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>
@@ -121,7 +117,6 @@ impl DescribeFastLaunchImagesInputBuilder {
     /// <p>Use the following filters to streamline results.</p>
     /// <ul>
     /// <li> <p> <code>resource-type</code> - The resource type for pre-provisioning.</p> </li>
-    /// <li> <p> <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.</p> </li>
     /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
     /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>

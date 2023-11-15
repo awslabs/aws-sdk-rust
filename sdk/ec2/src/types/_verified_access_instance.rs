@@ -16,7 +16,7 @@ pub struct VerifiedAccessInstance {
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    /// <p>Indicates whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
     pub fips_enabled: ::std::option::Option<bool>,
 }
 impl VerifiedAccessInstance {
@@ -48,7 +48,7 @@ impl VerifiedAccessInstance {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    /// <p>Indicates whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
     pub fn fips_enabled(&self) -> ::std::option::Option<bool> {
         self.fips_enabled
     }
@@ -172,17 +172,17 @@ impl VerifiedAccessInstanceBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    /// <p>Indicates whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
     pub fn fips_enabled(mut self, input: bool) -> Self {
         self.fips_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    /// <p>Indicates whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
     pub fn set_fips_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.fips_enabled = input;
         self
     }
-    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    /// <p>Indicates whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
     pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
         &self.fips_enabled
     }

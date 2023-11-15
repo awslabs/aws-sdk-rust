@@ -5,8 +5,12 @@
 pub struct PutInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
     pub trail_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+    /// <p>A JSON string that contains the Insights event types that you want to log on a trail or event data store. The valid Insights types are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
     pub insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
+    /// <p>The Amazon Resource Name (ARN) of the source event data store for which you want to change or add Insights selectors.</p>
+    pub event_data_store_arn: ::std::option::Option<::std::string::String>,
+    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    pub insights_destination: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutInsightSelectorsOutput {
@@ -14,11 +18,19 @@ impl PutInsightSelectorsOutput {
     pub fn trail_arn(&self) -> ::std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
-    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+    /// <p>A JSON string that contains the Insights event types that you want to log on a trail or event data store. The valid Insights types are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_selectors.is_none()`.
     pub fn insight_selectors(&self) -> &[crate::types::InsightSelector] {
         self.insight_selectors.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source event data store for which you want to change or add Insights selectors.</p>
+    pub fn event_data_store_arn(&self) -> ::std::option::Option<&str> {
+        self.event_data_store_arn.as_deref()
+    }
+    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    pub fn insights_destination(&self) -> ::std::option::Option<&str> {
+        self.insights_destination.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for PutInsightSelectorsOutput {
@@ -39,6 +51,8 @@ impl PutInsightSelectorsOutput {
 pub struct PutInsightSelectorsOutputBuilder {
     pub(crate) trail_arn: ::std::option::Option<::std::string::String>,
     pub(crate) insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
+    pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) insights_destination: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutInsightSelectorsOutputBuilder {
@@ -60,21 +74,49 @@ impl PutInsightSelectorsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
     ///
-    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+    /// <p>A JSON string that contains the Insights event types that you want to log on a trail or event data store. The valid Insights types are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
     pub fn insight_selectors(mut self, input: crate::types::InsightSelector) -> Self {
         let mut v = self.insight_selectors.unwrap_or_default();
         v.push(input);
         self.insight_selectors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+    /// <p>A JSON string that contains the Insights event types that you want to log on a trail or event data store. The valid Insights types are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
     pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>) -> Self {
         self.insight_selectors = input;
         self
     }
-    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+    /// <p>A JSON string that contains the Insights event types that you want to log on a trail or event data store. The valid Insights types are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
     pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
         &self.insight_selectors
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source event data store for which you want to change or add Insights selectors.</p>
+    pub fn event_data_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_data_store_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source event data store for which you want to change or add Insights selectors.</p>
+    pub fn set_event_data_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source event data store for which you want to change or add Insights selectors.</p>
+    pub fn get_event_data_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_arn
+    }
+    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    pub fn insights_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.insights_destination = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    pub fn set_insights_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.insights_destination = input;
+        self
+    }
+    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    pub fn get_insights_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insights_destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -90,6 +132,8 @@ impl PutInsightSelectorsOutputBuilder {
         crate::operation::put_insight_selectors::PutInsightSelectorsOutput {
             trail_arn: self.trail_arn,
             insight_selectors: self.insight_selectors,
+            event_data_store_arn: self.event_data_store_arn,
+            insights_destination: self.insights_destination,
             _request_id: self._request_id,
         }
     }

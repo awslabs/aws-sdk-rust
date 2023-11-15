@@ -20,6 +20,21 @@ pub fn de_copy_cluster_snapshot_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ClusterNotFound" => crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ClusterSnapshotAlreadyExists" => crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ClusterSnapshotAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp = {

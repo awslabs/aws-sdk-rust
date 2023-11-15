@@ -13,6 +13,8 @@ pub use crate::types::_pending_maintenance::PendingMaintenanceBuilder;
 
 pub use crate::types::_maintenance_schedule::MaintenanceScheduleBuilder;
 
+pub use crate::types::_s3_batch_job_identifier::S3BatchJobIdentifierBuilder;
+
 pub use crate::types::_script_batch_job_identifier::ScriptBatchJobIdentifierBuilder;
 
 pub use crate::types::_file_batch_job_identifier::FileBatchJobIdentifierBuilder;

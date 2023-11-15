@@ -9,6 +9,8 @@ You can use Step Functions to build applications from individual components, eac
 
 Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale. You can run tasks on Amazon Web Services, your own servers, or any system that has access to Amazon Web Services. You can access and use Step Functions using the console, the Amazon Web Services SDKs, or an HTTP API. For more information about Step Functions, see the _ [Step Functions Developer Guide](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html) _.
 
+If you use the Step Functions API actions using Amazon Web Services SDK integrations, make sure the API actions are in camel case and parameter names are in Pascal case. For example, you could use Step Functions API action startSyncExecution and specify its parameter as StateMachineArn.
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -20,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.1"
-aws-sdk-sfn = "0.35.1"
+aws-config = "0.57.0"
+aws-sdk-sfn = "0.36.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

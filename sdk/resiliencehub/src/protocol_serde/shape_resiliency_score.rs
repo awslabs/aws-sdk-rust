@@ -23,6 +23,11 @@ where
                                 crate::protocol_serde::shape_disruption_resiliency_score::de_disruption_resiliency_score(tokens)?,
                             );
                         }
+                        "componentScore" => {
+                            builder = builder.set_component_score(
+                                crate::protocol_serde::shape_scoring_component_resiliency_scores::de_scoring_component_resiliency_scores(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

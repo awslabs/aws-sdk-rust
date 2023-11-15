@@ -23,7 +23,7 @@ impl DeleteLocationInputBuilder {
 /// Fluent builder constructing a request to `DeleteLocation`.
 ///
 /// <p>Deletes a custom location.</p>
-/// <p>Before deleting a custom location, review any fleets currently using the custom location and deregister the location if it is in use. For more information see, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterCompute.html">DeregisterCompute</a>.</p>
+/// <p>Before deleting a custom location, review any fleets currently using the custom location and deregister the location if it is in use. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterCompute.html">DeregisterCompute</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

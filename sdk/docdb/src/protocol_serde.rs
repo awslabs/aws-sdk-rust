@@ -411,6 +411,8 @@ pub(crate) mod shape_availability_zones;
 
 pub(crate) mod shape_certificate;
 
+pub(crate) mod shape_certificate_details;
+
 pub(crate) mod shape_db_cluster_member_list;
 
 pub(crate) mod shape_db_cluster_roles;
@@ -448,6 +450,8 @@ pub(crate) mod shape_subnet_list;
 pub(crate) mod shape_vpc_security_group_membership_list;
 
 pub(crate) mod shape_availability_zone_list;
+
+pub(crate) mod shape_ca_certificate_identifiers_list;
 
 pub(crate) mod shape_db_cluster_member;
 

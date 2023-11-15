@@ -6251,6 +6251,40 @@ impl From<crate::operation::describe_byoip_cidrs::DescribeByoipCidrsError> for E
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsError> for Error {
+    fn from(err: crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsError) -> Self {
+        match err {
+            crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsError,
             R,
         >,
@@ -7406,6 +7440,32 @@ impl From<crate::operation::describe_instance_status::DescribeInstanceStatusErro
     fn from(err: crate::operation::describe_instance_status::DescribeInstanceStatusError) -> Self {
         match err {
             crate::operation::describe_instance_status::DescribeInstanceStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_topology::DescribeInstanceTopologyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_topology::DescribeInstanceTopologyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_instance_topology::DescribeInstanceTopologyError> for Error {
+    fn from(err: crate::operation::describe_instance_topology::DescribeInstanceTopologyError) -> Self {
+        match err {
+            crate::operation::describe_instance_topology::DescribeInstanceTopologyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -10654,6 +10714,42 @@ impl From<crate::operation::disable_serial_console_access::DisableSerialConsoleA
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessError> for Error {
+    fn from(err: crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessError) -> Self {
+        match err {
+            crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationError,
             R,
         >,
@@ -11530,6 +11626,40 @@ impl From<crate::operation::enable_serial_console_access::EnableSerialConsoleAcc
     fn from(err: crate::operation::enable_serial_console_access::EnableSerialConsoleAccessError) -> Self {
         match err {
             crate::operation::enable_serial_console_access::EnableSerialConsoleAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessError> for Error {
+    fn from(err: crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessError) -> Self {
+        match err {
+            crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -12703,6 +12833,42 @@ impl From<crate::operation::get_serial_console_access_status::GetSerialConsoleAc
     fn from(err: crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError) -> Self {
         match err {
             crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_snapshot_block_public_access_state::GetSnapshotBlockPublicAccessStateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_snapshot_block_public_access_state::GetSnapshotBlockPublicAccessStateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_snapshot_block_public_access_state::GetSnapshotBlockPublicAccessStateError> for Error {
+    fn from(err: crate::operation::get_snapshot_block_public_access_state::GetSnapshotBlockPublicAccessStateError) -> Self {
+        match err {
+            crate::operation::get_snapshot_block_public_access_state::GetSnapshotBlockPublicAccessStateError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -15344,6 +15510,31 @@ impl From<crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4
     fn from(err: crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError) -> Self {
         match err {
             crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::purchase_capacity_block::PurchaseCapacityBlockError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::purchase_capacity_block::PurchaseCapacityBlockError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::purchase_capacity_block::PurchaseCapacityBlockError> for Error {
+    fn from(err: crate::operation::purchase_capacity_block::PurchaseCapacityBlockError) -> Self {
+        match err {
+            crate::operation::purchase_capacity_block::PurchaseCapacityBlockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

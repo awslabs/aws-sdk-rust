@@ -192,4 +192,18 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_config_enabled()
     }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn attach_missing_permission(mut self, input: bool) -> Self {
+        self.inner = self.inner.attach_missing_permission(input);
+        self
+    }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn set_attach_missing_permission(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_attach_missing_permission(input);
+        self
+    }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn get_attach_missing_permission(&self) -> &::std::option::Option<bool> {
+        self.inner.get_attach_missing_permission()
+    }
 }

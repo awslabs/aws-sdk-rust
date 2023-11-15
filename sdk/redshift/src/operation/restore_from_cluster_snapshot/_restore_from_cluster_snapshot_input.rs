@@ -114,6 +114,8 @@ pub struct RestoreFromClusterSnapshotInput {
     pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub ip_address_type: ::std::option::Option<::std::string::String>,
+    /// <p>If true, the snapshot will be restored to a cluster deployed in two Availability Zones.</p>
+    pub multi_az: ::std::option::Option<bool>,
 }
 impl RestoreFromClusterSnapshotInput {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -304,6 +306,10 @@ impl RestoreFromClusterSnapshotInput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
         self.ip_address_type.as_deref()
     }
+    /// <p>If true, the snapshot will be restored to a cluster deployed in two Availability Zones.</p>
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
+        self.multi_az
+    }
 }
 impl RestoreFromClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
@@ -352,6 +358,7 @@ pub struct RestoreFromClusterSnapshotInputBuilder {
     pub(crate) manage_master_password: ::std::option::Option<bool>,
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_az: ::std::option::Option<bool>,
 }
 impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -991,6 +998,20 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address_type
     }
+    /// <p>If true, the snapshot will be restored to a cluster deployed in two Availability Zones.</p>
+    pub fn multi_az(mut self, input: bool) -> Self {
+        self.multi_az = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If true, the snapshot will be restored to a cluster deployed in two Availability Zones.</p>
+    pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.multi_az = input;
+        self
+    }
+    /// <p>If true, the snapshot will be restored to a cluster deployed in two Availability Zones.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
+    }
     /// Consumes the builder and constructs a [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
     pub fn build(
         self,
@@ -1035,6 +1056,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
             manage_master_password: self.manage_master_password,
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
             ip_address_type: self.ip_address_type,
+            multi_az: self.multi_az,
         })
     }
 }

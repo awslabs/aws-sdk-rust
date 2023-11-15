@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessGroupOutput {
-    /// <p>Details of Verified Access group.</p>
+    /// <p>Details about the Verified Access group.</p>
     pub verified_access_group: ::std::option::Option<crate::types::VerifiedAccessGroup>,
     _request_id: Option<String>,
 }
 impl ModifyVerifiedAccessGroupOutput {
-    /// <p>Details of Verified Access group.</p>
+    /// <p>Details about the Verified Access group.</p>
     pub fn verified_access_group(&self) -> ::std::option::Option<&crate::types::VerifiedAccessGroup> {
         self.verified_access_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct ModifyVerifiedAccessGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl ModifyVerifiedAccessGroupOutputBuilder {
-    /// <p>Details of Verified Access group.</p>
+    /// <p>Details about the Verified Access group.</p>
     pub fn verified_access_group(mut self, input: crate::types::VerifiedAccessGroup) -> Self {
         self.verified_access_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details of Verified Access group.</p>
+    /// <p>Details about the Verified Access group.</p>
     pub fn set_verified_access_group(mut self, input: ::std::option::Option<crate::types::VerifiedAccessGroup>) -> Self {
         self.verified_access_group = input;
         self
     }
-    /// <p>Details of Verified Access group.</p>
+    /// <p>Details about the Verified Access group.</p>
     pub fn get_verified_access_group(&self) -> &::std::option::Option<crate::types::VerifiedAccessGroup> {
         &self.verified_access_group
     }

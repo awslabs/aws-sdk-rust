@@ -61,6 +61,22 @@ pub(crate) fn de_identify_language_header(
     }
 }
 
+pub(crate) fn de_identify_multiple_languages_header(
+    header_map: &::http::HeaderMap,
+) -> std::result::Result<::std::option::Option<bool>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-identify-multiple-languages").iter();
+    let var_4 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_4.len() > 1 {
+        Err(::aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_4.len()
+        )))
+    } else {
+        let mut var_4 = var_4;
+        Ok(var_4.pop())
+    }
+}
+
 pub(crate) fn de_language_code_header(
     header_map: &::http::HeaderMap,
 ) -> std::result::Result<::std::option::Option<crate::types::LanguageCode>, ::aws_smithy_http::header::ParseError> {
@@ -93,22 +109,6 @@ pub(crate) fn de_media_sample_rate_hertz_header(
     header_map: &::http::HeaderMap,
 ) -> std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-transcribe-sample-rate").iter();
-    let var_4 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
-    if var_4.len() > 1 {
-        Err(::aws_smithy_http::header::ParseError::new(format!(
-            "expected one item but found {}",
-            var_4.len()
-        )))
-    } else {
-        let mut var_4 = var_4;
-        Ok(var_4.pop())
-    }
-}
-
-pub(crate) fn de_number_of_channels_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amzn-transcribe-number-of-channels").iter();
     let var_5 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_5.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
@@ -118,6 +118,22 @@ pub(crate) fn de_number_of_channels_header(
     } else {
         let mut var_5 = var_5;
         Ok(var_5.pop())
+    }
+}
+
+pub(crate) fn de_number_of_channels_header(
+    header_map: &::http::HeaderMap,
+) -> std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-number-of-channels").iter();
+    let var_6 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_6.len() > 1 {
+        Err(::aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_6.len()
+        )))
+    } else {
+        let mut var_6 = var_6;
+        Ok(var_6.pop())
     }
 }
 
@@ -160,15 +176,15 @@ pub(crate) fn de_show_speaker_label_header(
     header_map: &::http::HeaderMap,
 ) -> std::result::Result<::std::option::Option<bool>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-transcribe-show-speaker-label").iter();
-    let var_6 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
-    if var_6.len() > 1 {
+    let var_7 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_7.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
-            var_6.len()
+            var_7.len()
         )))
     } else {
-        let mut var_6 = var_6;
-        Ok(var_6.pop())
+        let mut var_7 = var_7;
+        Ok(var_7.pop())
     }
 }
 

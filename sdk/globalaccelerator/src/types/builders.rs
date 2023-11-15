@@ -23,6 +23,10 @@ pub use crate::types::_custom_routing_accelerator::CustomRoutingAcceleratorBuild
 
 pub use crate::types::_ip_set::IpSetBuilder;
 
+pub use crate::types::_attachment::AttachmentBuilder;
+
+pub use crate::types::_resource::ResourceBuilder;
+
 pub use crate::types::_accelerator_attributes::AcceleratorAttributesBuilder;
 
 pub use crate::types::_accelerator::AcceleratorBuilder;
@@ -46,6 +50,8 @@ pub use crate::types::_custom_routing_endpoint_group::CustomRoutingEndpointGroup
 pub use crate::types::_custom_routing_endpoint_description::CustomRoutingEndpointDescriptionBuilder;
 
 pub use crate::types::_custom_routing_destination_description::CustomRoutingDestinationDescriptionBuilder;
+
+pub use crate::types::_cross_account_resource::CrossAccountResourceBuilder;
 
 pub use crate::types::_custom_routing_destination_configuration::CustomRoutingDestinationConfigurationBuilder;
 

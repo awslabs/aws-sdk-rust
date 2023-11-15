@@ -291,6 +291,8 @@ pub enum CreateClusterError {
     TagLimitExceededFault(crate::types::error::TagLimitExceededFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::types::error::UnauthorizedOperation),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -332,6 +334,7 @@ impl ::std::fmt::Display for CreateClusterError {
             Self::SnapshotScheduleNotFoundFault(_inner) => _inner.fmt(f),
             Self::TagLimitExceededFault(_inner) => _inner.fmt(f),
             Self::UnauthorizedOperation(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -362,6 +365,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateCluster
             Self::SnapshotScheduleNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TagLimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -421,6 +425,7 @@ impl CreateClusterError {
             Self::SnapshotScheduleNotFoundFault(e) => e.meta(),
             Self::TagLimitExceededFault(e) => e.meta(),
             Self::UnauthorizedOperation(e) => e.meta(),
+            Self::UnsupportedOperationFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -516,6 +521,10 @@ impl CreateClusterError {
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(self, Self::UnauthorizedOperation(_))
     }
+    /// Returns `true` if the error kind is `CreateClusterError::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationFault(_))
+    }
 }
 impl ::std::error::Error for CreateClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -543,6 +552,7 @@ impl ::std::error::Error for CreateClusterError {
             Self::SnapshotScheduleNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TagLimitExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedOperation(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

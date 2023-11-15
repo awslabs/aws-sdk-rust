@@ -150,6 +150,19 @@ pub(crate) fn de_describe_map_run(
                         tokens,
                     )?);
                 }
+                "redriveCount" => {
+                    builder = builder.set_redrive_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "redriveDate" => {
+                    builder = builder.set_redrive_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

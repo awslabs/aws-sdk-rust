@@ -23,6 +23,8 @@ pub struct CreateWorkgroupInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     pub port: ::std::option::Option<i32>,
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub max_capacity: ::std::option::Option<i32>,
 }
 impl CreateWorkgroupInput {
     /// <p>The name of the created workgroup.</p>
@@ -73,6 +75,10 @@ impl CreateWorkgroupInput {
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn max_capacity(&self) -> ::std::option::Option<i32> {
+        self.max_capacity
+    }
 }
 impl CreateWorkgroupInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkgroupInput`](crate::operation::create_workgroup::CreateWorkgroupInput).
@@ -95,6 +101,7 @@ pub struct CreateWorkgroupInputBuilder {
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) max_capacity: ::std::option::Option<i32>,
 }
 impl CreateWorkgroupInputBuilder {
     /// <p>The name of the created workgroup.</p>
@@ -263,6 +270,20 @@ impl CreateWorkgroupInputBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn max_capacity(mut self, input: i32) -> Self {
+        self.max_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_capacity = input;
+        self
+    }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity
+    }
     /// Consumes the builder and constructs a [`CreateWorkgroupInput`](crate::operation::create_workgroup::CreateWorkgroupInput).
     pub fn build(
         self,
@@ -278,6 +299,7 @@ impl CreateWorkgroupInputBuilder {
             publicly_accessible: self.publicly_accessible,
             tags: self.tags,
             port: self.port,
+            max_capacity: self.max_capacity,
         })
     }
 }

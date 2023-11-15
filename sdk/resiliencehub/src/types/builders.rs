@@ -27,6 +27,8 @@ pub use crate::types::_disruption_compliance::DisruptionComplianceBuilder;
 
 pub use crate::types::_resiliency_score::ResiliencyScoreBuilder;
 
+pub use crate::types::_scoring_component_resiliency_score::ScoringComponentResiliencyScoreBuilder;
+
 pub use crate::types::_cost::CostBuilder;
 
 pub use crate::types::_unsupported_resource::UnsupportedResourceBuilder;

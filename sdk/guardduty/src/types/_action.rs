@@ -18,6 +18,12 @@ pub struct Action {
     pub kubernetes_api_call_action: ::std::option::Option<crate::types::KubernetesApiCallAction>,
     /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
     pub rds_login_attempt_action: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
+    /// <p>Information whether the user has the permission to use a specific Kubernetes API.</p>
+    pub kubernetes_permission_checked_details: ::std::option::Option<crate::types::KubernetesPermissionCheckedDetails>,
+    /// <p>Information about the role binding that grants the permission defined in a Kubernetes role.</p>
+    pub kubernetes_role_binding_details: ::std::option::Option<crate::types::KubernetesRoleBindingDetails>,
+    /// <p>Information about the Kubernetes role name and role type.</p>
+    pub kubernetes_role_details: ::std::option::Option<crate::types::KubernetesRoleDetails>,
 }
 impl Action {
     /// <p>The GuardDuty finding activity type.</p>
@@ -48,6 +54,18 @@ impl Action {
     pub fn rds_login_attempt_action(&self) -> ::std::option::Option<&crate::types::RdsLoginAttemptAction> {
         self.rds_login_attempt_action.as_ref()
     }
+    /// <p>Information whether the user has the permission to use a specific Kubernetes API.</p>
+    pub fn kubernetes_permission_checked_details(&self) -> ::std::option::Option<&crate::types::KubernetesPermissionCheckedDetails> {
+        self.kubernetes_permission_checked_details.as_ref()
+    }
+    /// <p>Information about the role binding that grants the permission defined in a Kubernetes role.</p>
+    pub fn kubernetes_role_binding_details(&self) -> ::std::option::Option<&crate::types::KubernetesRoleBindingDetails> {
+        self.kubernetes_role_binding_details.as_ref()
+    }
+    /// <p>Information about the Kubernetes role name and role type.</p>
+    pub fn kubernetes_role_details(&self) -> ::std::option::Option<&crate::types::KubernetesRoleDetails> {
+        self.kubernetes_role_details.as_ref()
+    }
 }
 impl Action {
     /// Creates a new builder-style object to manufacture [`Action`](crate::types::Action).
@@ -67,6 +85,9 @@ pub struct ActionBuilder {
     pub(crate) port_probe_action: ::std::option::Option<crate::types::PortProbeAction>,
     pub(crate) kubernetes_api_call_action: ::std::option::Option<crate::types::KubernetesApiCallAction>,
     pub(crate) rds_login_attempt_action: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
+    pub(crate) kubernetes_permission_checked_details: ::std::option::Option<crate::types::KubernetesPermissionCheckedDetails>,
+    pub(crate) kubernetes_role_binding_details: ::std::option::Option<crate::types::KubernetesRoleBindingDetails>,
+    pub(crate) kubernetes_role_details: ::std::option::Option<crate::types::KubernetesRoleDetails>,
 }
 impl ActionBuilder {
     /// <p>The GuardDuty finding activity type.</p>
@@ -167,6 +188,51 @@ impl ActionBuilder {
     pub fn get_rds_login_attempt_action(&self) -> &::std::option::Option<crate::types::RdsLoginAttemptAction> {
         &self.rds_login_attempt_action
     }
+    /// <p>Information whether the user has the permission to use a specific Kubernetes API.</p>
+    pub fn kubernetes_permission_checked_details(mut self, input: crate::types::KubernetesPermissionCheckedDetails) -> Self {
+        self.kubernetes_permission_checked_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information whether the user has the permission to use a specific Kubernetes API.</p>
+    pub fn set_kubernetes_permission_checked_details(
+        mut self,
+        input: ::std::option::Option<crate::types::KubernetesPermissionCheckedDetails>,
+    ) -> Self {
+        self.kubernetes_permission_checked_details = input;
+        self
+    }
+    /// <p>Information whether the user has the permission to use a specific Kubernetes API.</p>
+    pub fn get_kubernetes_permission_checked_details(&self) -> &::std::option::Option<crate::types::KubernetesPermissionCheckedDetails> {
+        &self.kubernetes_permission_checked_details
+    }
+    /// <p>Information about the role binding that grants the permission defined in a Kubernetes role.</p>
+    pub fn kubernetes_role_binding_details(mut self, input: crate::types::KubernetesRoleBindingDetails) -> Self {
+        self.kubernetes_role_binding_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the role binding that grants the permission defined in a Kubernetes role.</p>
+    pub fn set_kubernetes_role_binding_details(mut self, input: ::std::option::Option<crate::types::KubernetesRoleBindingDetails>) -> Self {
+        self.kubernetes_role_binding_details = input;
+        self
+    }
+    /// <p>Information about the role binding that grants the permission defined in a Kubernetes role.</p>
+    pub fn get_kubernetes_role_binding_details(&self) -> &::std::option::Option<crate::types::KubernetesRoleBindingDetails> {
+        &self.kubernetes_role_binding_details
+    }
+    /// <p>Information about the Kubernetes role name and role type.</p>
+    pub fn kubernetes_role_details(mut self, input: crate::types::KubernetesRoleDetails) -> Self {
+        self.kubernetes_role_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the Kubernetes role name and role type.</p>
+    pub fn set_kubernetes_role_details(mut self, input: ::std::option::Option<crate::types::KubernetesRoleDetails>) -> Self {
+        self.kubernetes_role_details = input;
+        self
+    }
+    /// <p>Information about the Kubernetes role name and role type.</p>
+    pub fn get_kubernetes_role_details(&self) -> &::std::option::Option<crate::types::KubernetesRoleDetails> {
+        &self.kubernetes_role_details
+    }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
@@ -177,6 +243,9 @@ impl ActionBuilder {
             port_probe_action: self.port_probe_action,
             kubernetes_api_call_action: self.kubernetes_api_call_action,
             rds_login_attempt_action: self.rds_login_attempt_action,
+            kubernetes_permission_checked_details: self.kubernetes_permission_checked_details,
+            kubernetes_role_binding_details: self.kubernetes_role_binding_details,
+            kubernetes_role_details: self.kubernetes_role_details,
         }
     }
 }

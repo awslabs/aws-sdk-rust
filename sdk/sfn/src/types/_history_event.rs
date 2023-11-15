@@ -50,6 +50,8 @@ pub struct HistoryEvent {
     pub execution_aborted_event_details: ::std::option::Option<crate::types::ExecutionAbortedEventDetails>,
     /// <p>Contains details about the execution timeout that occurred during the execution.</p>
     pub execution_timed_out_event_details: ::std::option::Option<crate::types::ExecutionTimedOutEventDetails>,
+    /// <p>Contains details about the redrive attempt of an execution.</p>
+    pub execution_redriven_event_details: ::std::option::Option<crate::types::ExecutionRedrivenEventDetails>,
     /// <p>Contains details about Map state that was started.</p>
     pub map_state_started_event_details: ::std::option::Option<crate::types::MapStateStartedEventDetails>,
     /// <p>Contains details about an iteration of a Map state that was started.</p>
@@ -80,6 +82,8 @@ pub struct HistoryEvent {
     pub map_run_started_event_details: ::std::option::Option<crate::types::MapRunStartedEventDetails>,
     /// <p>Contains error and cause details about a Map Run that failed.</p>
     pub map_run_failed_event_details: ::std::option::Option<crate::types::MapRunFailedEventDetails>,
+    /// <p>Contains details about the redrive attempt of a Map Run.</p>
+    pub map_run_redriven_event_details: ::std::option::Option<crate::types::MapRunRedrivenEventDetails>,
 }
 impl HistoryEvent {
     /// <p>The date and time the event occurred.</p>
@@ -174,6 +178,10 @@ impl HistoryEvent {
     pub fn execution_timed_out_event_details(&self) -> ::std::option::Option<&crate::types::ExecutionTimedOutEventDetails> {
         self.execution_timed_out_event_details.as_ref()
     }
+    /// <p>Contains details about the redrive attempt of an execution.</p>
+    pub fn execution_redriven_event_details(&self) -> ::std::option::Option<&crate::types::ExecutionRedrivenEventDetails> {
+        self.execution_redriven_event_details.as_ref()
+    }
     /// <p>Contains details about Map state that was started.</p>
     pub fn map_state_started_event_details(&self) -> ::std::option::Option<&crate::types::MapStateStartedEventDetails> {
         self.map_state_started_event_details.as_ref()
@@ -234,6 +242,10 @@ impl HistoryEvent {
     pub fn map_run_failed_event_details(&self) -> ::std::option::Option<&crate::types::MapRunFailedEventDetails> {
         self.map_run_failed_event_details.as_ref()
     }
+    /// <p>Contains details about the redrive attempt of a Map Run.</p>
+    pub fn map_run_redriven_event_details(&self) -> ::std::option::Option<&crate::types::MapRunRedrivenEventDetails> {
+        self.map_run_redriven_event_details.as_ref()
+    }
 }
 impl HistoryEvent {
     /// Creates a new builder-style object to manufacture [`HistoryEvent`](crate::types::HistoryEvent).
@@ -269,6 +281,7 @@ pub struct HistoryEventBuilder {
     pub(crate) execution_succeeded_event_details: ::std::option::Option<crate::types::ExecutionSucceededEventDetails>,
     pub(crate) execution_aborted_event_details: ::std::option::Option<crate::types::ExecutionAbortedEventDetails>,
     pub(crate) execution_timed_out_event_details: ::std::option::Option<crate::types::ExecutionTimedOutEventDetails>,
+    pub(crate) execution_redriven_event_details: ::std::option::Option<crate::types::ExecutionRedrivenEventDetails>,
     pub(crate) map_state_started_event_details: ::std::option::Option<crate::types::MapStateStartedEventDetails>,
     pub(crate) map_iteration_started_event_details: ::std::option::Option<crate::types::MapIterationEventDetails>,
     pub(crate) map_iteration_succeeded_event_details: ::std::option::Option<crate::types::MapIterationEventDetails>,
@@ -284,6 +297,7 @@ pub struct HistoryEventBuilder {
     pub(crate) state_exited_event_details: ::std::option::Option<crate::types::StateExitedEventDetails>,
     pub(crate) map_run_started_event_details: ::std::option::Option<crate::types::MapRunStartedEventDetails>,
     pub(crate) map_run_failed_event_details: ::std::option::Option<crate::types::MapRunFailedEventDetails>,
+    pub(crate) map_run_redriven_event_details: ::std::option::Option<crate::types::MapRunRedrivenEventDetails>,
 }
 impl HistoryEventBuilder {
     /// <p>The date and time the event occurred.</p>
@@ -614,6 +628,20 @@ impl HistoryEventBuilder {
     pub fn get_execution_timed_out_event_details(&self) -> &::std::option::Option<crate::types::ExecutionTimedOutEventDetails> {
         &self.execution_timed_out_event_details
     }
+    /// <p>Contains details about the redrive attempt of an execution.</p>
+    pub fn execution_redriven_event_details(mut self, input: crate::types::ExecutionRedrivenEventDetails) -> Self {
+        self.execution_redriven_event_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the redrive attempt of an execution.</p>
+    pub fn set_execution_redriven_event_details(mut self, input: ::std::option::Option<crate::types::ExecutionRedrivenEventDetails>) -> Self {
+        self.execution_redriven_event_details = input;
+        self
+    }
+    /// <p>Contains details about the redrive attempt of an execution.</p>
+    pub fn get_execution_redriven_event_details(&self) -> &::std::option::Option<crate::types::ExecutionRedrivenEventDetails> {
+        &self.execution_redriven_event_details
+    }
     /// <p>Contains details about Map state that was started.</p>
     pub fn map_state_started_event_details(mut self, input: crate::types::MapStateStartedEventDetails) -> Self {
         self.map_state_started_event_details = ::std::option::Option::Some(input);
@@ -841,6 +869,20 @@ impl HistoryEventBuilder {
     pub fn get_map_run_failed_event_details(&self) -> &::std::option::Option<crate::types::MapRunFailedEventDetails> {
         &self.map_run_failed_event_details
     }
+    /// <p>Contains details about the redrive attempt of a Map Run.</p>
+    pub fn map_run_redriven_event_details(mut self, input: crate::types::MapRunRedrivenEventDetails) -> Self {
+        self.map_run_redriven_event_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the redrive attempt of a Map Run.</p>
+    pub fn set_map_run_redriven_event_details(mut self, input: ::std::option::Option<crate::types::MapRunRedrivenEventDetails>) -> Self {
+        self.map_run_redriven_event_details = input;
+        self
+    }
+    /// <p>Contains details about the redrive attempt of a Map Run.</p>
+    pub fn get_map_run_redriven_event_details(&self) -> &::std::option::Option<crate::types::MapRunRedrivenEventDetails> {
+        &self.map_run_redriven_event_details
+    }
     /// Consumes the builder and constructs a [`HistoryEvent`](crate::types::HistoryEvent).
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::HistoryEventBuilder::timestamp)
@@ -880,6 +922,7 @@ impl HistoryEventBuilder {
             execution_succeeded_event_details: self.execution_succeeded_event_details,
             execution_aborted_event_details: self.execution_aborted_event_details,
             execution_timed_out_event_details: self.execution_timed_out_event_details,
+            execution_redriven_event_details: self.execution_redriven_event_details,
             map_state_started_event_details: self.map_state_started_event_details,
             map_iteration_started_event_details: self.map_iteration_started_event_details,
             map_iteration_succeeded_event_details: self.map_iteration_succeeded_event_details,
@@ -895,6 +938,7 @@ impl HistoryEventBuilder {
             state_exited_event_details: self.state_exited_event_details,
             map_run_started_event_details: self.map_run_started_event_details,
             map_run_failed_event_details: self.map_run_failed_event_details,
+            map_run_redriven_event_details: self.map_run_redriven_event_details,
         })
     }
 }

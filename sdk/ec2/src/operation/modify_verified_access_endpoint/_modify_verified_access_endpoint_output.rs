@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessEndpointOutput {
-    /// <p>The Verified Access endpoint details.</p>
+    /// <p>Details about the Verified Access endpoint.</p>
     pub verified_access_endpoint: ::std::option::Option<crate::types::VerifiedAccessEndpoint>,
     _request_id: Option<String>,
 }
 impl ModifyVerifiedAccessEndpointOutput {
-    /// <p>The Verified Access endpoint details.</p>
+    /// <p>Details about the Verified Access endpoint.</p>
     pub fn verified_access_endpoint(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpoint> {
         self.verified_access_endpoint.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct ModifyVerifiedAccessEndpointOutputBuilder {
     _request_id: Option<String>,
 }
 impl ModifyVerifiedAccessEndpointOutputBuilder {
-    /// <p>The Verified Access endpoint details.</p>
+    /// <p>Details about the Verified Access endpoint.</p>
     pub fn verified_access_endpoint(mut self, input: crate::types::VerifiedAccessEndpoint) -> Self {
         self.verified_access_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Verified Access endpoint details.</p>
+    /// <p>Details about the Verified Access endpoint.</p>
     pub fn set_verified_access_endpoint(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpoint>) -> Self {
         self.verified_access_endpoint = input;
         self
     }
-    /// <p>The Verified Access endpoint details.</p>
+    /// <p>Details about the Verified Access endpoint.</p>
     pub fn get_verified_access_endpoint(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpoint> {
         &self.verified_access_endpoint
     }

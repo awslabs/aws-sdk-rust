@@ -13,6 +13,8 @@ pub enum Error {
     AssociatedEndpointGroupFoundException(crate::types::error::AssociatedEndpointGroupFoundException),
     /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
     AssociatedListenerFoundException(crate::types::error::AssociatedListenerFoundException),
+    /// <p>No cross-account attachment was found.</p>
+    AttachmentNotFoundException(crate::types::error::AttachmentNotFoundException),
     /// <p>The CIDR that you specified was not found or is incorrect.</p>
     ByoipCidrNotFoundException(crate::types::error::ByoipCidrNotFoundException),
     /// <p>You can't use both of those options.</p>
@@ -52,6 +54,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::AssociatedEndpointGroupFoundException(inner) => inner.fmt(f),
             Error::AssociatedListenerFoundException(inner) => inner.fmt(f),
+            Error::AttachmentNotFoundException(inner) => inner.fmt(f),
             Error::ByoipCidrNotFoundException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::EndpointAlreadyExistsException(inner) => inner.fmt(f),
@@ -242,6 +245,51 @@ impl From<crate::operation::create_accelerator::CreateAcceleratorError> for Erro
             crate::operation::create_accelerator::CreateAcceleratorError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::create_accelerator::CreateAcceleratorError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_accelerator::CreateAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError> for Error {
+    fn from(err: crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError) -> Self {
+        match err {
+            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
+            }
+            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -499,6 +547,51 @@ impl From<crate::operation::delete_accelerator::DeleteAcceleratorError> for Erro
             }
             crate::operation::delete_accelerator::DeleteAcceleratorError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::delete_accelerator::DeleteAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError> for Error {
+    fn from(err: crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError) -> Self {
+        match err {
+            crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError::AttachmentNotFoundException(inner) => {
+                Error::AttachmentNotFoundException(inner)
+            }
+            crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
+            }
+            crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -846,6 +939,52 @@ impl From<crate::operation::describe_accelerator_attributes::DescribeAccelerator
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentError> for Error {
+    fn from(err: crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentError) -> Self {
+        match err {
+            crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentError::AttachmentNotFoundException(inner) => {
+                Error::AttachmentNotFoundException(inner)
+            }
+            crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::describe_cross_account_attachment::DescribeCrossAccountAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorError,
             R,
         >,
@@ -1124,6 +1263,131 @@ impl From<crate::operation::list_byoip_cidrs::ListByoipCidrsError> for Error {
             crate::operation::list_byoip_cidrs::ListByoipCidrsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::list_byoip_cidrs::ListByoipCidrsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::list_byoip_cidrs::ListByoipCidrsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError> for Error {
+    fn from(err: crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError) -> Self {
+        match err {
+            crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsError> for Error {
+    fn from(err: crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsError) -> Self {
+        match err {
+            crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cross_account_resources::ListCrossAccountResourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cross_account_resources::ListCrossAccountResourcesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_cross_account_resources::ListCrossAccountResourcesError> for Error {
+    fn from(err: crate::operation::list_cross_account_resources::ListCrossAccountResourcesError) -> Self {
+        match err {
+            crate::operation::list_cross_account_resources::ListCrossAccountResourcesError::AcceleratorNotFoundException(inner) => {
+                Error::AcceleratorNotFoundException(inner)
+            }
+            crate::operation::list_cross_account_resources::ListCrossAccountResourcesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_cross_account_resources::ListCrossAccountResourcesError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::list_cross_account_resources::ListCrossAccountResourcesError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::list_cross_account_resources::ListCrossAccountResourcesError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_cross_account_resources::ListCrossAccountResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1670,6 +1934,54 @@ impl From<crate::operation::update_accelerator_attributes::UpdateAcceleratorAttr
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError> for Error {
+    fn from(err: crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError) -> Self {
+        match err {
+            crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError::AttachmentNotFoundException(inner) => {
+                Error::AttachmentNotFoundException(inner)
+            }
+            crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
+            }
+            crate::operation::update_cross_account_attachment::UpdateCrossAccountAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorError,
@@ -1901,6 +2213,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::AssociatedEndpointGroupFoundException(inner) => inner.source(),
             Error::AssociatedListenerFoundException(inner) => inner.source(),
+            Error::AttachmentNotFoundException(inner) => inner.source(),
             Error::ByoipCidrNotFoundException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::EndpointAlreadyExistsException(inner) => inner.source(),
@@ -1927,6 +2240,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::AssociatedEndpointGroupFoundException(e) => e.request_id(),
             Self::AssociatedListenerFoundException(e) => e.request_id(),
+            Self::AttachmentNotFoundException(e) => e.request_id(),
             Self::ByoipCidrNotFoundException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::EndpointAlreadyExistsException(e) => e.request_id(),

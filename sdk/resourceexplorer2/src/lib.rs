@@ -34,8 +34,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
-//! aws-sdk-resourceexplorer2 = "0.13.1"
+//! aws-config = "0.57.0"
+//! aws-sdk-resourceexplorer2 = "0.14.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

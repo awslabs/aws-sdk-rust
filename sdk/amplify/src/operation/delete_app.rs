@@ -248,15 +248,15 @@ pub type DeleteAppErrorKind = DeleteAppError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteAppError {
-    /// <p> A request contains unexpected data. </p>
+    /// <p>A request contains unexpected data. </p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p> An operation failed because a dependent service threw an exception. </p>
+    /// <p>An operation failed because a dependent service threw an exception. </p>
     DependentServiceFailureException(crate::types::error::DependentServiceFailureException),
-    /// <p> The service failed to perform an operation due to an internal issue. </p>
+    /// <p>The service failed to perform an operation due to an internal issue. </p>
     InternalFailureException(crate::types::error::InternalFailureException),
-    /// <p> An entity was not found during an operation. </p>
+    /// <p>An entity was not found during an operation. </p>
     NotFoundException(crate::types::error::NotFoundException),
-    /// <p> An operation failed due to a lack of access. </p>
+    /// <p>An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

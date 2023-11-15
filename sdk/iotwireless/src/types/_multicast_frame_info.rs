@@ -37,7 +37,7 @@
 /// - It might inadvertently shadow other intended match arms.
 /// <p>
 /// <code>FrameInfo</code> of your multicast group resources for the trace content. Use
-/// FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server.</p>
+/// FrameInfo to debug the multicast communication between your multicast groups and the network server.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

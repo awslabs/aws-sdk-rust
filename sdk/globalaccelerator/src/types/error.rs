@@ -21,6 +21,8 @@ pub use crate::types::error::_accelerator_not_found_exception::AcceleratorNotFou
 
 pub use crate::types::error::_transaction_in_progress_exception::TransactionInProgressException;
 
+pub use crate::types::error::_attachment_not_found_exception::AttachmentNotFoundException;
+
 pub use crate::types::error::_endpoint_not_found_exception::EndpointNotFoundException;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
@@ -46,6 +48,8 @@ mod _access_denied_exception;
 mod _associated_endpoint_group_found_exception;
 
 mod _associated_listener_found_exception;
+
+mod _attachment_not_found_exception;
 
 mod _byoip_cidr_not_found_exception;
 

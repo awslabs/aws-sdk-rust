@@ -56,6 +56,8 @@ pub struct Replication {
     pub replication_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when replication was last stopped.</p>
     pub replication_last_stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when DMS will deprovision the replication.</p>
+    pub replication_deprovision_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Replication {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
@@ -148,6 +150,10 @@ impl Replication {
     pub fn replication_last_stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_last_stop_time.as_ref()
     }
+    /// <p>The timestamp when DMS will deprovision the replication.</p>
+    pub fn replication_deprovision_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.replication_deprovision_time.as_ref()
+    }
 }
 impl Replication {
     /// Creates a new builder-style object to manufacture [`Replication`](crate::types::Replication).
@@ -178,6 +184,7 @@ pub struct ReplicationBuilder {
     pub(crate) replication_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) replication_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) replication_last_stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) replication_deprovision_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationBuilder {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
@@ -486,6 +493,20 @@ impl ReplicationBuilder {
     pub fn get_replication_last_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_last_stop_time
     }
+    /// <p>The timestamp when DMS will deprovision the replication.</p>
+    pub fn replication_deprovision_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.replication_deprovision_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when DMS will deprovision the replication.</p>
+    pub fn set_replication_deprovision_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.replication_deprovision_time = input;
+        self
+    }
+    /// <p>The timestamp when DMS will deprovision the replication.</p>
+    pub fn get_replication_deprovision_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.replication_deprovision_time
+    }
     /// Consumes the builder and constructs a [`Replication`](crate::types::Replication).
     pub fn build(self) -> crate::types::Replication {
         crate::types::Replication {
@@ -507,6 +528,7 @@ impl ReplicationBuilder {
             replication_create_time: self.replication_create_time,
             replication_update_time: self.replication_update_time,
             replication_last_stop_time: self.replication_last_stop_time,
+            replication_deprovision_time: self.replication_deprovision_time,
         }
     }
 }

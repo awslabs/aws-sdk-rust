@@ -27,6 +27,18 @@ pub fn ser_create_rule(
     if let Some(var_7) = &input.cron_expression {
         object.key("CronExpression").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.scripts {
+        let mut array_9 = object.key("Scripts").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_script::ser_script(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }
 
@@ -75,6 +87,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "Scripts" => {
+                            builder = builder.set_scripts(crate::protocol_serde::shape_scripts_list::de_scripts_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

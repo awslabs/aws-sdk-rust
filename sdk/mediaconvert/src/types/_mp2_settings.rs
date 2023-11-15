@@ -8,7 +8,7 @@ pub struct Mp2Settings {
     pub bitrate: ::std::option::Option<i32>,
     /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
     pub channels: ::std::option::Option<i32>,
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub sample_rate: ::std::option::Option<i32>,
 }
 impl Mp2Settings {
@@ -20,7 +20,7 @@ impl Mp2Settings {
     pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
     }
@@ -69,17 +69,17 @@ impl Mp2SettingsBuilder {
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
         &self.channels
     }
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
         self
     }
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
     }
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
         &self.sample_rate
     }

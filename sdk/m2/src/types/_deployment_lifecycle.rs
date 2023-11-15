@@ -15,6 +15,7 @@
 ///     DeploymentLifecycle::Deploying => { /* ... */ },
 ///     DeploymentLifecycle::Failed => { /* ... */ },
 ///     DeploymentLifecycle::Succeeded => { /* ... */ },
+///     DeploymentLifecycle::DeployUpdate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum DeploymentLifecycle {
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
+    DeployUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for DeploymentLifecycle {
             "Deploying" => DeploymentLifecycle::Deploying,
             "Failed" => DeploymentLifecycle::Failed,
             "Succeeded" => DeploymentLifecycle::Succeeded,
+            "Updating Deployment" => DeploymentLifecycle::DeployUpdate,
             other => DeploymentLifecycle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -75,12 +79,13 @@ impl DeploymentLifecycle {
             DeploymentLifecycle::Deploying => "Deploying",
             DeploymentLifecycle::Failed => "Failed",
             DeploymentLifecycle::Succeeded => "Succeeded",
+            DeploymentLifecycle::DeployUpdate => "Updating Deployment",
             DeploymentLifecycle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Deploying", "Failed", "Succeeded"]
+        &["Deploying", "Failed", "Succeeded", "Updating Deployment"]
     }
 }
 impl ::std::convert::AsRef<str> for DeploymentLifecycle {

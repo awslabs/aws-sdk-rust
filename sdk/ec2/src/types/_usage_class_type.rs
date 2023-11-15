@@ -12,6 +12,7 @@
 /// ```text
 /// # let usageclasstype = unimplemented!();
 /// match usageclasstype {
+///     UsageClassType::CapacityBlock => { /* ... */ },
 ///     UsageClassType::OnDemand => { /* ... */ },
 ///     UsageClassType::Spot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum UsageClassType {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityBlock,
+    #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     #[allow(missing_docs)] // documentation missing in model
     Spot,
@@ -51,6 +54,7 @@ pub enum UsageClassType {
 impl ::std::convert::From<&str> for UsageClassType {
     fn from(s: &str) -> Self {
         match s {
+            "capacity-block" => UsageClassType::CapacityBlock,
             "on-demand" => UsageClassType::OnDemand,
             "spot" => UsageClassType::Spot,
             other => UsageClassType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -68,6 +72,7 @@ impl UsageClassType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UsageClassType::CapacityBlock => "capacity-block",
             UsageClassType::OnDemand => "on-demand",
             UsageClassType::Spot => "spot",
             UsageClassType::Unknown(value) => value.as_str(),
@@ -75,7 +80,7 @@ impl UsageClassType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["on-demand", "spot"]
+        &["capacity-block", "on-demand", "spot"]
     }
 }
 impl ::std::convert::AsRef<str> for UsageClassType {

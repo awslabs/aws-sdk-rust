@@ -21,5 +21,8 @@ pub fn ser_update_application_input(
     if let Some(var_6) = &input.auto_config_enabled {
         object.key("AutoConfigEnabled").boolean(*var_6);
     }
+    if let Some(var_7) = &input.attach_missing_permission {
+        object.key("AttachMissingPermission").boolean(*var_7);
+    }
     Ok(())
 }

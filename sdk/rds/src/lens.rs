@@ -199,6 +199,16 @@ pub(crate) fn reflens_describe_db_security_groups_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_db_snapshot_tenant_databases_output_marker(
+    input: &crate::operation::describe_db_snapshot_tenant_databases::DescribeDbSnapshotTenantDatabasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_db_snapshots_output_marker(
     input: &crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -345,6 +355,16 @@ pub(crate) fn reflens_describe_reserved_db_instances_offerings_output_marker(
 
 pub(crate) fn reflens_describe_source_regions_output_marker(
     input: &crate::operation::describe_source_regions::DescribeSourceRegionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_tenant_databases_output_marker(
+    input: &crate::operation::describe_tenant_databases::DescribeTenantDatabasesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.marker {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -563,6 +583,16 @@ pub(crate) fn lens_describe_db_security_groups_output_db_security_groups(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_db_snapshot_tenant_databases_output_db_snapshot_tenant_databases(
+    input: crate::operation::describe_db_snapshot_tenant_databases::DescribeDbSnapshotTenantDatabasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshotTenantDatabase>> {
+    let input = match input.db_snapshot_tenant_databases {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_db_snapshots_output_db_snapshots(
     input: crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>> {
@@ -711,6 +741,16 @@ pub(crate) fn lens_describe_source_regions_output_source_regions(
     input: crate::operation::describe_source_regions::DescribeSourceRegionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SourceRegion>> {
     let input = match input.source_regions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_tenant_databases_output_tenant_databases(
+    input: crate::operation::describe_tenant_databases::DescribeTenantDatabasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TenantDatabase>> {
+    let input = match input.tenant_databases {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

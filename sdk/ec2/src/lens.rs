@@ -39,6 +39,16 @@ pub(crate) fn reflens_describe_byoip_cidrs_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_capacity_block_offerings_output_next_token(
+    input: &crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_capacity_reservation_fleets_output_next_token(
     input: &crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -321,6 +331,16 @@ pub(crate) fn reflens_describe_instance_event_windows_output_next_token(
 
 pub(crate) fn reflens_describe_instance_status_output_next_token(
     input: &crate::operation::describe_instance_status::DescribeInstanceStatusOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_instance_topology_output_next_token(
+    input: &crate::operation::describe_instance_topology::DescribeInstanceTopologyOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -1409,6 +1429,16 @@ pub(crate) fn lens_describe_byoip_cidrs_output_byoip_cidrs(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_capacity_block_offerings_output_capacity_block_offerings(
+    input: crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockOffering>> {
+    let input = match input.capacity_block_offerings {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_capacity_reservation_fleets_output_capacity_reservation_fleets(
     input: crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationFleet>> {
@@ -1693,6 +1723,16 @@ pub(crate) fn lens_describe_instance_status_output_instance_statuses(
     input: crate::operation::describe_instance_status::DescribeInstanceStatusOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>> {
     let input = match input.instance_statuses {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_instance_topology_output_instances(
+    input: crate::operation::describe_instance_topology::DescribeInstanceTopologyOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceTopology>> {
+    let input = match input.instances {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

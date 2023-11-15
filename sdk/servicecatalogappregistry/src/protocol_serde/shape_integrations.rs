@@ -17,6 +17,10 @@ where
                         "resourceGroup" => {
                             builder = builder.set_resource_group(crate::protocol_serde::shape_resource_group::de_resource_group(tokens)?);
                         }
+                        "applicationTagResourceGroup" => {
+                            builder =
+                                builder.set_application_tag_resource_group(crate::protocol_serde::shape_resource_group::de_resource_group(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

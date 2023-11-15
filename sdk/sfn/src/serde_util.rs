@@ -227,6 +227,15 @@ pub(crate) fn publish_state_machine_version_output_correct_errors(
     builder
 }
 
+pub(crate) fn redrive_execution_output_correct_errors(
+    mut builder: crate::operation::redrive_execution::builders::RedriveExecutionOutputBuilder,
+) -> crate::operation::redrive_execution::builders::RedriveExecutionOutputBuilder {
+    if builder.redrive_date.is_none() {
+        builder.redrive_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn start_execution_output_correct_errors(
     mut builder: crate::operation::start_execution::builders::StartExecutionOutputBuilder,
 ) -> crate::operation::start_execution::builders::StartExecutionOutputBuilder {

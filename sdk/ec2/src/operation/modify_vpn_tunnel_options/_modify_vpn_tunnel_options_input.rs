@@ -11,7 +11,7 @@ pub struct ModifyVpnTunnelOptionsInput {
     pub tunnel_options: ::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Choose whether or not to trigger immediate tunnel replacement. This is only applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub skip_tunnel_replacement: ::std::option::Option<bool>,
 }
@@ -32,7 +32,7 @@ impl ModifyVpnTunnelOptionsInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Choose whether or not to trigger immediate tunnel replacement. This is only applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub fn skip_tunnel_replacement(&self) -> ::std::option::Option<bool> {
         self.skip_tunnel_replacement
@@ -126,19 +126,19 @@ impl ModifyVpnTunnelOptionsInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Choose whether or not to trigger immediate tunnel replacement. This is only applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub fn skip_tunnel_replacement(mut self, input: bool) -> Self {
         self.skip_tunnel_replacement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Choose whether or not to trigger immediate tunnel replacement. This is only applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub fn set_skip_tunnel_replacement(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_tunnel_replacement = input;
         self
     }
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Choose whether or not to trigger immediate tunnel replacement. This is only applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub fn get_skip_tunnel_replacement(&self) -> &::std::option::Option<bool> {
         &self.skip_tunnel_replacement

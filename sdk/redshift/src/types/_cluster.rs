@@ -162,6 +162,10 @@ pub struct Cluster {
     pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub ip_address_type: ::std::option::Option<::std::string::String>,
+    /// <p>A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.</p>
+    pub multi_az: ::std::option::Option<::std::string::String>,
+    /// <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.</p>
+    pub multi_az_secondary: ::std::option::Option<crate::types::SecondaryClusterInfo>,
 }
 impl Cluster {
     /// <p>The unique identifier of the cluster.</p>
@@ -454,6 +458,14 @@ impl Cluster {
     pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
         self.ip_address_type.as_deref()
     }
+    /// <p>A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.</p>
+    pub fn multi_az(&self) -> ::std::option::Option<&str> {
+        self.multi_az.as_deref()
+    }
+    /// <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.</p>
+    pub fn multi_az_secondary(&self) -> ::std::option::Option<&crate::types::SecondaryClusterInfo> {
+        self.multi_az_secondary.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -524,6 +536,8 @@ pub struct ClusterBuilder {
     pub(crate) master_password_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_az: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_az_secondary: ::std::option::Option<crate::types::SecondaryClusterInfo>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier of the cluster.</p>
@@ -1518,6 +1532,34 @@ impl ClusterBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address_type
     }
+    /// <p>A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.</p>
+    pub fn multi_az(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multi_az = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.</p>
+    pub fn set_multi_az(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.multi_az = input;
+        self
+    }
+    /// <p>A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multi_az
+    }
+    /// <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.</p>
+    pub fn multi_az_secondary(mut self, input: crate::types::SecondaryClusterInfo) -> Self {
+        self.multi_az_secondary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.</p>
+    pub fn set_multi_az_secondary(mut self, input: ::std::option::Option<crate::types::SecondaryClusterInfo>) -> Self {
+        self.multi_az_secondary = input;
+        self
+    }
+    /// <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.</p>
+    pub fn get_multi_az_secondary(&self) -> &::std::option::Option<crate::types::SecondaryClusterInfo> {
+        &self.multi_az_secondary
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -1579,6 +1621,8 @@ impl ClusterBuilder {
             master_password_secret_arn: self.master_password_secret_arn,
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
             ip_address_type: self.ip_address_type,
+            multi_az: self.multi_az,
+            multi_az_secondary: self.multi_az_secondary,
         }
     }
 }

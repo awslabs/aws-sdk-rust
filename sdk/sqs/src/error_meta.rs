@@ -9,14 +9,39 @@ pub enum Error {
     BatchRequestTooLong(crate::types::error::BatchRequestTooLong),
     /// <p>The batch request doesn't contain any entries.</p>
     EmptyBatchRequest(crate::types::error::EmptyBatchRequest),
+    /// <p>The <code>accountId</code> is invalid.</p>
+    InvalidAddress(crate::types::error::InvalidAddress),
     /// <p>The specified attribute doesn't exist.</p>
     InvalidAttributeName(crate::types::error::InvalidAttributeName),
+    /// <p>A queue attribute value is invalid.</p>
+    InvalidAttributeValue(crate::types::error::InvalidAttributeValue),
     /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.</p>
     InvalidBatchEntryId(crate::types::error::InvalidBatchEntryId),
     /// <p>The specified receipt handle isn't valid for the current version.</p>
+    #[deprecated(note = "exception has been included in ReceiptHandleIsInvalid")]
     InvalidIdFormat(crate::types::error::InvalidIdFormat),
     /// <p>The message contains characters outside the allowed set.</p>
     InvalidMessageContents(crate::types::error::InvalidMessageContents),
+    /// <p>When the request to a queue is not HTTPS and SigV4.</p>
+    InvalidSecurity(crate::types::error::InvalidSecurity),
+    /// <p>The caller doesn't have the required KMS access.</p>
+    KmsAccessDenied(crate::types::error::KmsAccessDenied),
+    /// <p>The request was denied due to request throttling.</p>
+    KmsDisabled(crate::types::error::KmsDisabled),
+    /// <p>The request was rejected for one of the following reasons:</p>
+    /// <ul>
+    /// <li> <p>The KeyUsage value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key (KeySpec).</p> </li>
+    /// </ul>
+    KmsInvalidKeyUsage(crate::types::error::KmsInvalidKeyUsage),
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    KmsInvalidState(crate::types::error::KmsInvalidState),
+    /// <p>The request was rejected because the specified entity or resource could not be found. </p>
+    KmsNotFound(crate::types::error::KmsNotFound),
+    /// <p>The request was rejected because the specified key policy isn't syntactically or semantically correct.</p>
+    KmsOptInRequired(crate::types::error::KmsOptInRequired),
+    /// <p>Amazon Web Services KMS throttles requests for the following conditions.</p>
+    KmsThrottled(crate::types::error::KmsThrottled),
     /// <p>The specified message isn't in flight.</p>
     MessageNotInflight(crate::types::error::MessageNotInflight),
     /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of in flight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
@@ -31,6 +56,13 @@ pub enum Error {
     QueueNameExists(crate::types::error::QueueNameExists),
     /// <p>The specified receipt handle isn't valid.</p>
     ReceiptHandleIsInvalid(crate::types::error::ReceiptHandleIsInvalid),
+    /// <p>The request was denied due to request throttling.</p>
+    /// <ul>
+    /// <li> <p>The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and Region. </p> </li>
+    /// <li> <p>A burst or sustained high rate of requests to change the state of the same KMS key. This condition is often known as a "hot key."</p> </li>
+    /// <li> <p>Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web Services CloudHSM key store.</p> </li>
+    /// </ul>
+    RequestThrottled(crate::types::error::RequestThrottled),
     /// <p>One or more specified resources don't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The batch request contains more entries than permissible.</p>
@@ -46,10 +78,20 @@ impl ::std::fmt::Display for Error {
             Error::BatchEntryIdsNotDistinct(inner) => inner.fmt(f),
             Error::BatchRequestTooLong(inner) => inner.fmt(f),
             Error::EmptyBatchRequest(inner) => inner.fmt(f),
+            Error::InvalidAddress(inner) => inner.fmt(f),
             Error::InvalidAttributeName(inner) => inner.fmt(f),
+            Error::InvalidAttributeValue(inner) => inner.fmt(f),
             Error::InvalidBatchEntryId(inner) => inner.fmt(f),
             Error::InvalidIdFormat(inner) => inner.fmt(f),
             Error::InvalidMessageContents(inner) => inner.fmt(f),
+            Error::InvalidSecurity(inner) => inner.fmt(f),
+            Error::KmsAccessDenied(inner) => inner.fmt(f),
+            Error::KmsDisabled(inner) => inner.fmt(f),
+            Error::KmsInvalidKeyUsage(inner) => inner.fmt(f),
+            Error::KmsInvalidState(inner) => inner.fmt(f),
+            Error::KmsNotFound(inner) => inner.fmt(f),
+            Error::KmsOptInRequired(inner) => inner.fmt(f),
+            Error::KmsThrottled(inner) => inner.fmt(f),
             Error::MessageNotInflight(inner) => inner.fmt(f),
             Error::OverLimit(inner) => inner.fmt(f),
             Error::PurgeQueueInProgress(inner) => inner.fmt(f),
@@ -57,6 +99,7 @@ impl ::std::fmt::Display for Error {
             Error::QueueDoesNotExist(inner) => inner.fmt(f),
             Error::QueueNameExists(inner) => inner.fmt(f),
             Error::ReceiptHandleIsInvalid(inner) => inner.fmt(f),
+            Error::RequestThrottled(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::TooManyEntriesInBatchRequest(inner) => inner.fmt(f),
             Error::UnsupportedOperation(inner) => inner.fmt(f),
@@ -83,7 +126,12 @@ where
 impl From<crate::operation::add_permission::AddPermissionError> for Error {
     fn from(err: crate::operation::add_permission::AddPermissionError) -> Self {
         match err {
+            crate::operation::add_permission::AddPermissionError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::add_permission::AddPermissionError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
             crate::operation::add_permission::AddPermissionError::OverLimit(inner) => Error::OverLimit(inner),
+            crate::operation::add_permission::AddPermissionError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::add_permission::AddPermissionError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::add_permission::AddPermissionError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::add_permission::AddPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -109,6 +157,9 @@ where
 impl From<crate::operation::cancel_message_move_task::CancelMessageMoveTaskError> for Error {
     fn from(err: crate::operation::cancel_message_move_task::CancelMessageMoveTaskError) -> Self {
         match err {
+            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError::RequestThrottled(inner) => Error::RequestThrottled(inner),
             crate::operation::cancel_message_move_task::CancelMessageMoveTaskError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -139,9 +190,16 @@ where
 impl From<crate::operation::change_message_visibility::ChangeMessageVisibilityError> for Error {
     fn from(err: crate::operation::change_message_visibility::ChangeMessageVisibilityError) -> Self {
         match err {
+            crate::operation::change_message_visibility::ChangeMessageVisibilityError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::change_message_visibility::ChangeMessageVisibilityError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
             crate::operation::change_message_visibility::ChangeMessageVisibilityError::MessageNotInflight(inner) => Error::MessageNotInflight(inner),
+            crate::operation::change_message_visibility::ChangeMessageVisibilityError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
             crate::operation::change_message_visibility::ChangeMessageVisibilityError::ReceiptHandleIsInvalid(inner) => {
                 Error::ReceiptHandleIsInvalid(inner)
+            }
+            crate::operation::change_message_visibility::ChangeMessageVisibilityError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::change_message_visibility::ChangeMessageVisibilityError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
             }
             crate::operation::change_message_visibility::ChangeMessageVisibilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -179,11 +237,26 @@ impl From<crate::operation::change_message_visibility_batch::ChangeMessageVisibi
             crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::EmptyBatchRequest(inner) => {
                 Error::EmptyBatchRequest(inner)
             }
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::InvalidAddress(inner) => {
+                Error::InvalidAddress(inner)
+            }
             crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::InvalidBatchEntryId(inner) => {
                 Error::InvalidBatchEntryId(inner)
             }
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::InvalidSecurity(inner) => {
+                Error::InvalidSecurity(inner)
+            }
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::QueueDoesNotExist(inner) => {
+                Error::QueueDoesNotExist(inner)
+            }
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::RequestThrottled(inner) => {
+                Error::RequestThrottled(inner)
+            }
             crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::TooManyEntriesInBatchRequest(inner) => {
                 Error::TooManyEntriesInBatchRequest(inner)
+            }
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
             }
             crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -208,8 +281,14 @@ where
 impl From<crate::operation::create_queue::CreateQueueError> for Error {
     fn from(err: crate::operation::create_queue::CreateQueueError) -> Self {
         match err {
+            crate::operation::create_queue::CreateQueueError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::create_queue::CreateQueueError::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
+            crate::operation::create_queue::CreateQueueError::InvalidAttributeValue(inner) => Error::InvalidAttributeValue(inner),
+            crate::operation::create_queue::CreateQueueError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
             crate::operation::create_queue::CreateQueueError::QueueDeletedRecently(inner) => Error::QueueDeletedRecently(inner),
             crate::operation::create_queue::CreateQueueError::QueueNameExists(inner) => Error::QueueNameExists(inner),
+            crate::operation::create_queue::CreateQueueError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::create_queue::CreateQueueError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::create_queue::CreateQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -233,8 +312,13 @@ where
 impl From<crate::operation::delete_message::DeleteMessageError> for Error {
     fn from(err: crate::operation::delete_message::DeleteMessageError) -> Self {
         match err {
+            crate::operation::delete_message::DeleteMessageError::InvalidAddress(inner) => Error::InvalidAddress(inner),
             crate::operation::delete_message::DeleteMessageError::InvalidIdFormat(inner) => Error::InvalidIdFormat(inner),
+            crate::operation::delete_message::DeleteMessageError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::delete_message::DeleteMessageError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
             crate::operation::delete_message::DeleteMessageError::ReceiptHandleIsInvalid(inner) => Error::ReceiptHandleIsInvalid(inner),
+            crate::operation::delete_message::DeleteMessageError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::delete_message::DeleteMessageError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::delete_message::DeleteMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -262,10 +346,15 @@ impl From<crate::operation::delete_message_batch::DeleteMessageBatchError> for E
                 Error::BatchEntryIdsNotDistinct(inner)
             }
             crate::operation::delete_message_batch::DeleteMessageBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
+            crate::operation::delete_message_batch::DeleteMessageBatchError::InvalidAddress(inner) => Error::InvalidAddress(inner),
             crate::operation::delete_message_batch::DeleteMessageBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
+            crate::operation::delete_message_batch::DeleteMessageBatchError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::delete_message_batch::DeleteMessageBatchError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::delete_message_batch::DeleteMessageBatchError::RequestThrottled(inner) => Error::RequestThrottled(inner),
             crate::operation::delete_message_batch::DeleteMessageBatchError::TooManyEntriesInBatchRequest(inner) => {
                 Error::TooManyEntriesInBatchRequest(inner)
             }
+            crate::operation::delete_message_batch::DeleteMessageBatchError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::delete_message_batch::DeleteMessageBatchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -289,6 +378,11 @@ where
 impl From<crate::operation::delete_queue::DeleteQueueError> for Error {
     fn from(err: crate::operation::delete_queue::DeleteQueueError) -> Self {
         match err {
+            crate::operation::delete_queue::DeleteQueueError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::delete_queue::DeleteQueueError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::delete_queue::DeleteQueueError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::delete_queue::DeleteQueueError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::delete_queue::DeleteQueueError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::delete_queue::DeleteQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -312,7 +406,12 @@ where
 impl From<crate::operation::get_queue_attributes::GetQueueAttributesError> for Error {
     fn from(err: crate::operation::get_queue_attributes::GetQueueAttributesError) -> Self {
         match err {
+            crate::operation::get_queue_attributes::GetQueueAttributesError::InvalidAddress(inner) => Error::InvalidAddress(inner),
             crate::operation::get_queue_attributes::GetQueueAttributesError::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
+            crate::operation::get_queue_attributes::GetQueueAttributesError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::get_queue_attributes::GetQueueAttributesError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::get_queue_attributes::GetQueueAttributesError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::get_queue_attributes::GetQueueAttributesError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::get_queue_attributes::GetQueueAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -336,7 +435,11 @@ where
 impl From<crate::operation::get_queue_url::GetQueueUrlError> for Error {
     fn from(err: crate::operation::get_queue_url::GetQueueUrlError) -> Self {
         match err {
+            crate::operation::get_queue_url::GetQueueUrlError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::get_queue_url::GetQueueUrlError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
             crate::operation::get_queue_url::GetQueueUrlError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::get_queue_url::GetQueueUrlError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::get_queue_url::GetQueueUrlError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::get_queue_url::GetQueueUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -363,8 +466,18 @@ where
 impl From<crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError> for Error {
     fn from(err: crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError) -> Self {
         match err {
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::InvalidSecurity(inner) => {
+                Error::InvalidSecurity(inner)
+            }
             crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::QueueDoesNotExist(inner) => {
                 Error::QueueDoesNotExist(inner)
+            }
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::RequestThrottled(inner) => {
+                Error::RequestThrottled(inner)
+            }
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
             }
             crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -391,6 +504,9 @@ where
 impl From<crate::operation::list_message_move_tasks::ListMessageMoveTasksError> for Error {
     fn from(err: crate::operation::list_message_move_tasks::ListMessageMoveTasksError) -> Self {
         match err {
+            crate::operation::list_message_move_tasks::ListMessageMoveTasksError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::list_message_move_tasks::ListMessageMoveTasksError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::list_message_move_tasks::ListMessageMoveTasksError::RequestThrottled(inner) => Error::RequestThrottled(inner),
             crate::operation::list_message_move_tasks::ListMessageMoveTasksError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -418,6 +534,10 @@ where
 impl From<crate::operation::list_queues::ListQueuesError> for Error {
     fn from(err: crate::operation::list_queues::ListQueuesError) -> Self {
         match err {
+            crate::operation::list_queues::ListQueuesError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::list_queues::ListQueuesError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::list_queues::ListQueuesError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::list_queues::ListQueuesError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::list_queues::ListQueuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -441,6 +561,11 @@ where
 impl From<crate::operation::list_queue_tags::ListQueueTagsError> for Error {
     fn from(err: crate::operation::list_queue_tags::ListQueueTagsError) -> Self {
         match err {
+            crate::operation::list_queue_tags::ListQueueTagsError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::list_queue_tags::ListQueueTagsError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::list_queue_tags::ListQueueTagsError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::list_queue_tags::ListQueueTagsError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::list_queue_tags::ListQueueTagsError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::list_queue_tags::ListQueueTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -464,8 +589,12 @@ where
 impl From<crate::operation::purge_queue::PurgeQueueError> for Error {
     fn from(err: crate::operation::purge_queue::PurgeQueueError) -> Self {
         match err {
+            crate::operation::purge_queue::PurgeQueueError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::purge_queue::PurgeQueueError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
             crate::operation::purge_queue::PurgeQueueError::PurgeQueueInProgress(inner) => Error::PurgeQueueInProgress(inner),
             crate::operation::purge_queue::PurgeQueueError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::purge_queue::PurgeQueueError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::purge_queue::PurgeQueueError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::purge_queue::PurgeQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -489,7 +618,19 @@ where
 impl From<crate::operation::receive_message::ReceiveMessageError> for Error {
     fn from(err: crate::operation::receive_message::ReceiveMessageError) -> Self {
         match err {
+            crate::operation::receive_message::ReceiveMessageError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::receive_message::ReceiveMessageError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::receive_message::ReceiveMessageError::KmsAccessDenied(inner) => Error::KmsAccessDenied(inner),
+            crate::operation::receive_message::ReceiveMessageError::KmsDisabled(inner) => Error::KmsDisabled(inner),
+            crate::operation::receive_message::ReceiveMessageError::KmsInvalidKeyUsage(inner) => Error::KmsInvalidKeyUsage(inner),
+            crate::operation::receive_message::ReceiveMessageError::KmsInvalidState(inner) => Error::KmsInvalidState(inner),
+            crate::operation::receive_message::ReceiveMessageError::KmsNotFound(inner) => Error::KmsNotFound(inner),
+            crate::operation::receive_message::ReceiveMessageError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
+            crate::operation::receive_message::ReceiveMessageError::KmsThrottled(inner) => Error::KmsThrottled(inner),
             crate::operation::receive_message::ReceiveMessageError::OverLimit(inner) => Error::OverLimit(inner),
+            crate::operation::receive_message::ReceiveMessageError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::receive_message::ReceiveMessageError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::receive_message::ReceiveMessageError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::receive_message::ReceiveMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -513,6 +654,11 @@ where
 impl From<crate::operation::remove_permission::RemovePermissionError> for Error {
     fn from(err: crate::operation::remove_permission::RemovePermissionError) -> Self {
         match err {
+            crate::operation::remove_permission::RemovePermissionError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::remove_permission::RemovePermissionError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::remove_permission::RemovePermissionError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::remove_permission::RemovePermissionError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::remove_permission::RemovePermissionError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::remove_permission::RemovePermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -536,7 +682,18 @@ where
 impl From<crate::operation::send_message::SendMessageError> for Error {
     fn from(err: crate::operation::send_message::SendMessageError) -> Self {
         match err {
+            crate::operation::send_message::SendMessageError::InvalidAddress(inner) => Error::InvalidAddress(inner),
             crate::operation::send_message::SendMessageError::InvalidMessageContents(inner) => Error::InvalidMessageContents(inner),
+            crate::operation::send_message::SendMessageError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::send_message::SendMessageError::KmsAccessDenied(inner) => Error::KmsAccessDenied(inner),
+            crate::operation::send_message::SendMessageError::KmsDisabled(inner) => Error::KmsDisabled(inner),
+            crate::operation::send_message::SendMessageError::KmsInvalidKeyUsage(inner) => Error::KmsInvalidKeyUsage(inner),
+            crate::operation::send_message::SendMessageError::KmsInvalidState(inner) => Error::KmsInvalidState(inner),
+            crate::operation::send_message::SendMessageError::KmsNotFound(inner) => Error::KmsNotFound(inner),
+            crate::operation::send_message::SendMessageError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
+            crate::operation::send_message::SendMessageError::KmsThrottled(inner) => Error::KmsThrottled(inner),
+            crate::operation::send_message::SendMessageError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::send_message::SendMessageError::RequestThrottled(inner) => Error::RequestThrottled(inner),
             crate::operation::send_message::SendMessageError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::send_message::SendMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -564,7 +721,18 @@ impl From<crate::operation::send_message_batch::SendMessageBatchError> for Error
             crate::operation::send_message_batch::SendMessageBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
             crate::operation::send_message_batch::SendMessageBatchError::BatchRequestTooLong(inner) => Error::BatchRequestTooLong(inner),
             crate::operation::send_message_batch::SendMessageBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::InvalidAddress(inner) => Error::InvalidAddress(inner),
             crate::operation::send_message_batch::SendMessageBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::KmsAccessDenied(inner) => Error::KmsAccessDenied(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::KmsDisabled(inner) => Error::KmsDisabled(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::KmsInvalidKeyUsage(inner) => Error::KmsInvalidKeyUsage(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::KmsInvalidState(inner) => Error::KmsInvalidState(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::KmsNotFound(inner) => Error::KmsNotFound(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::KmsThrottled(inner) => Error::KmsThrottled(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::RequestThrottled(inner) => Error::RequestThrottled(inner),
             crate::operation::send_message_batch::SendMessageBatchError::TooManyEntriesInBatchRequest(inner) => {
                 Error::TooManyEntriesInBatchRequest(inner)
             }
@@ -592,7 +760,14 @@ where
 impl From<crate::operation::set_queue_attributes::SetQueueAttributesError> for Error {
     fn from(err: crate::operation::set_queue_attributes::SetQueueAttributesError) -> Self {
         match err {
+            crate::operation::set_queue_attributes::SetQueueAttributesError::InvalidAddress(inner) => Error::InvalidAddress(inner),
             crate::operation::set_queue_attributes::SetQueueAttributesError::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
+            crate::operation::set_queue_attributes::SetQueueAttributesError::InvalidAttributeValue(inner) => Error::InvalidAttributeValue(inner),
+            crate::operation::set_queue_attributes::SetQueueAttributesError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::set_queue_attributes::SetQueueAttributesError::OverLimit(inner) => Error::OverLimit(inner),
+            crate::operation::set_queue_attributes::SetQueueAttributesError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::set_queue_attributes::SetQueueAttributesError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::set_queue_attributes::SetQueueAttributesError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::set_queue_attributes::SetQueueAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -618,6 +793,9 @@ where
 impl From<crate::operation::start_message_move_task::StartMessageMoveTaskError> for Error {
     fn from(err: crate::operation::start_message_move_task::StartMessageMoveTaskError) -> Self {
         match err {
+            crate::operation::start_message_move_task::StartMessageMoveTaskError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::start_message_move_task::StartMessageMoveTaskError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::start_message_move_task::StartMessageMoveTaskError::RequestThrottled(inner) => Error::RequestThrottled(inner),
             crate::operation::start_message_move_task::StartMessageMoveTaskError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -645,6 +823,11 @@ where
 impl From<crate::operation::tag_queue::TagQueueError> for Error {
     fn from(err: crate::operation::tag_queue::TagQueueError) -> Self {
         match err {
+            crate::operation::tag_queue::TagQueueError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::tag_queue::TagQueueError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::tag_queue::TagQueueError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::tag_queue::TagQueueError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::tag_queue::TagQueueError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::tag_queue::TagQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -668,6 +851,11 @@ where
 impl From<crate::operation::untag_queue::UntagQueueError> for Error {
     fn from(err: crate::operation::untag_queue::UntagQueueError) -> Self {
         match err {
+            crate::operation::untag_queue::UntagQueueError::InvalidAddress(inner) => Error::InvalidAddress(inner),
+            crate::operation::untag_queue::UntagQueueError::InvalidSecurity(inner) => Error::InvalidSecurity(inner),
+            crate::operation::untag_queue::UntagQueueError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::untag_queue::UntagQueueError::RequestThrottled(inner) => Error::RequestThrottled(inner),
+            crate::operation::untag_queue::UntagQueueError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::untag_queue::UntagQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -678,10 +866,20 @@ impl ::std::error::Error for Error {
             Error::BatchEntryIdsNotDistinct(inner) => inner.source(),
             Error::BatchRequestTooLong(inner) => inner.source(),
             Error::EmptyBatchRequest(inner) => inner.source(),
+            Error::InvalidAddress(inner) => inner.source(),
             Error::InvalidAttributeName(inner) => inner.source(),
+            Error::InvalidAttributeValue(inner) => inner.source(),
             Error::InvalidBatchEntryId(inner) => inner.source(),
             Error::InvalidIdFormat(inner) => inner.source(),
             Error::InvalidMessageContents(inner) => inner.source(),
+            Error::InvalidSecurity(inner) => inner.source(),
+            Error::KmsAccessDenied(inner) => inner.source(),
+            Error::KmsDisabled(inner) => inner.source(),
+            Error::KmsInvalidKeyUsage(inner) => inner.source(),
+            Error::KmsInvalidState(inner) => inner.source(),
+            Error::KmsNotFound(inner) => inner.source(),
+            Error::KmsOptInRequired(inner) => inner.source(),
+            Error::KmsThrottled(inner) => inner.source(),
             Error::MessageNotInflight(inner) => inner.source(),
             Error::OverLimit(inner) => inner.source(),
             Error::PurgeQueueInProgress(inner) => inner.source(),
@@ -689,6 +887,7 @@ impl ::std::error::Error for Error {
             Error::QueueDoesNotExist(inner) => inner.source(),
             Error::QueueNameExists(inner) => inner.source(),
             Error::ReceiptHandleIsInvalid(inner) => inner.source(),
+            Error::RequestThrottled(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::TooManyEntriesInBatchRequest(inner) => inner.source(),
             Error::UnsupportedOperation(inner) => inner.source(),
@@ -702,10 +901,20 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::BatchEntryIdsNotDistinct(e) => e.request_id(),
             Self::BatchRequestTooLong(e) => e.request_id(),
             Self::EmptyBatchRequest(e) => e.request_id(),
+            Self::InvalidAddress(e) => e.request_id(),
             Self::InvalidAttributeName(e) => e.request_id(),
+            Self::InvalidAttributeValue(e) => e.request_id(),
             Self::InvalidBatchEntryId(e) => e.request_id(),
             Self::InvalidIdFormat(e) => e.request_id(),
             Self::InvalidMessageContents(e) => e.request_id(),
+            Self::InvalidSecurity(e) => e.request_id(),
+            Self::KmsAccessDenied(e) => e.request_id(),
+            Self::KmsDisabled(e) => e.request_id(),
+            Self::KmsInvalidKeyUsage(e) => e.request_id(),
+            Self::KmsInvalidState(e) => e.request_id(),
+            Self::KmsNotFound(e) => e.request_id(),
+            Self::KmsOptInRequired(e) => e.request_id(),
+            Self::KmsThrottled(e) => e.request_id(),
             Self::MessageNotInflight(e) => e.request_id(),
             Self::OverLimit(e) => e.request_id(),
             Self::PurgeQueueInProgress(e) => e.request_id(),
@@ -713,6 +922,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::QueueDoesNotExist(e) => e.request_id(),
             Self::QueueNameExists(e) => e.request_id(),
             Self::ReceiptHandleIsInvalid(e) => e.request_id(),
+            Self::RequestThrottled(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::TooManyEntriesInBatchRequest(e) => e.request_id(),
             Self::UnsupportedOperation(e) => e.request_id(),

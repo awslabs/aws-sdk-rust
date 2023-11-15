@@ -12,6 +12,7 @@
 /// ```text
 /// # let defaulttargetcapacitytype = unimplemented!();
 /// match defaulttargetcapacitytype {
+///     DefaultTargetCapacityType::CapacityBlock => { /* ... */ },
 ///     DefaultTargetCapacityType::OnDemand => { /* ... */ },
 ///     DefaultTargetCapacityType::Spot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum DefaultTargetCapacityType {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityBlock,
+    #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     #[allow(missing_docs)] // documentation missing in model
     Spot,
@@ -51,6 +54,7 @@ pub enum DefaultTargetCapacityType {
 impl ::std::convert::From<&str> for DefaultTargetCapacityType {
     fn from(s: &str) -> Self {
         match s {
+            "capacity-block" => DefaultTargetCapacityType::CapacityBlock,
             "on-demand" => DefaultTargetCapacityType::OnDemand,
             "spot" => DefaultTargetCapacityType::Spot,
             other => DefaultTargetCapacityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -68,6 +72,7 @@ impl DefaultTargetCapacityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DefaultTargetCapacityType::CapacityBlock => "capacity-block",
             DefaultTargetCapacityType::OnDemand => "on-demand",
             DefaultTargetCapacityType::Spot => "spot",
             DefaultTargetCapacityType::Unknown(value) => value.as_str(),
@@ -75,7 +80,7 @@ impl DefaultTargetCapacityType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["on-demand", "spot"]
+        &["capacity-block", "on-demand", "spot"]
     }
 }
 impl ::std::convert::AsRef<str> for DefaultTargetCapacityType {

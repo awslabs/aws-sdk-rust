@@ -16,7 +16,12 @@ pub struct TranslateTextInput {
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language code requested for the language of the target text. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     pub target_language_code: ::std::option::Option<::std::string::String>,
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: reduces the length of the translated output for most translations.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub settings: ::std::option::Option<crate::types::TranslationSettings>,
 }
 impl TranslateTextInput {
@@ -43,7 +48,12 @@ impl TranslateTextInput {
     pub fn target_language_code(&self) -> ::std::option::Option<&str> {
         self.target_language_code.as_deref()
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: reduces the length of the translated output for most translations.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::TranslationSettings> {
         self.settings.as_ref()
     }
@@ -146,17 +156,32 @@ impl TranslateTextInputBuilder {
     pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_language_code
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: reduces the length of the translated output for most translations.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: reduces the length of the translated output for most translations.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
         self.settings = input;
         self
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: reduces the length of the translated output for most translations.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
         &self.settings
     }

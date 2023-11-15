@@ -5,12 +5,26 @@
 pub struct GetAssociatedResourceOutput {
     /// <p>The resource associated with the application.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
+    /// <p> The result of the application that's tag applied to a resource. </p>
+    pub application_tag_result: ::std::option::Option<crate::types::ApplicationTagResult>,
     _request_id: Option<String>,
 }
 impl GetAssociatedResourceOutput {
     /// <p>The resource associated with the application.</p>
     pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
         self.resource.as_ref()
+    }
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::AssociationOption] {
+        self.options.as_deref().unwrap_or_default()
+    }
+    /// <p> The result of the application that's tag applied to a resource. </p>
+    pub fn application_tag_result(&self) -> ::std::option::Option<&crate::types::ApplicationTagResult> {
+        self.application_tag_result.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAssociatedResourceOutput {
@@ -30,6 +44,8 @@ impl GetAssociatedResourceOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssociatedResourceOutputBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
+    pub(crate) application_tag_result: ::std::option::Option<crate::types::ApplicationTagResult>,
     _request_id: Option<String>,
 }
 impl GetAssociatedResourceOutputBuilder {
@@ -47,6 +63,40 @@ impl GetAssociatedResourceOutputBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
         &self.resource
     }
+    /// Appends an item to `options`.
+    ///
+    /// To override the contents of this collection use [`set_options`](Self::set_options).
+    ///
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub fn options(mut self, input: crate::types::AssociationOption) -> Self {
+        let mut v = self.options.unwrap_or_default();
+        v.push(input);
+        self.options = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>) -> Self {
+        self.options = input;
+        self
+    }
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>> {
+        &self.options
+    }
+    /// <p> The result of the application that's tag applied to a resource. </p>
+    pub fn application_tag_result(mut self, input: crate::types::ApplicationTagResult) -> Self {
+        self.application_tag_result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The result of the application that's tag applied to a resource. </p>
+    pub fn set_application_tag_result(mut self, input: ::std::option::Option<crate::types::ApplicationTagResult>) -> Self {
+        self.application_tag_result = input;
+        self
+    }
+    /// <p> The result of the application that's tag applied to a resource. </p>
+    pub fn get_application_tag_result(&self) -> &::std::option::Option<crate::types::ApplicationTagResult> {
+        &self.application_tag_result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +110,8 @@ impl GetAssociatedResourceOutputBuilder {
     pub fn build(self) -> crate::operation::get_associated_resource::GetAssociatedResourceOutput {
         crate::operation::get_associated_resource::GetAssociatedResourceOutput {
             resource: self.resource,
+            options: self.options,
+            application_tag_result: self.application_tag_result,
             _request_id: self._request_id,
         }
     }

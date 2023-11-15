@@ -17,6 +17,10 @@ pub use crate::types::_resource_details::ResourceDetailsBuilder;
 
 pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
+pub use crate::types::_application_tag_result::ApplicationTagResultBuilder;
+
+pub use crate::types::_resources_list_item::ResourcesListItemBuilder;
+
 pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_resource_integrations::ResourceIntegrationsBuilder;

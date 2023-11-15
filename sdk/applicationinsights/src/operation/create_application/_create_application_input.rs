@@ -19,6 +19,8 @@ pub struct CreateApplicationInput {
     pub auto_create: ::std::option::Option<bool>,
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
     pub grouping_type: ::std::option::Option<crate::types::GroupingType>,
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub attach_missing_permission: ::std::option::Option<bool>,
 }
 impl CreateApplicationInput {
     /// <p>The name of the resource group.</p>
@@ -55,6 +57,10 @@ impl CreateApplicationInput {
     pub fn grouping_type(&self) -> ::std::option::Option<&crate::types::GroupingType> {
         self.grouping_type.as_ref()
     }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn attach_missing_permission(&self) -> ::std::option::Option<bool> {
+        self.attach_missing_permission
+    }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
@@ -75,6 +81,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) auto_config_enabled: ::std::option::Option<bool>,
     pub(crate) auto_create: ::std::option::Option<bool>,
     pub(crate) grouping_type: ::std::option::Option<crate::types::GroupingType>,
+    pub(crate) attach_missing_permission: ::std::option::Option<bool>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the resource group.</p>
@@ -195,6 +202,20 @@ impl CreateApplicationInputBuilder {
     pub fn get_grouping_type(&self) -> &::std::option::Option<crate::types::GroupingType> {
         &self.grouping_type
     }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn attach_missing_permission(mut self, input: bool) -> Self {
+        self.attach_missing_permission = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn set_attach_missing_permission(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.attach_missing_permission = input;
+        self
+    }
+    /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
+    pub fn get_attach_missing_permission(&self) -> &::std::option::Option<bool> {
+        &self.attach_missing_permission
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -208,6 +229,7 @@ impl CreateApplicationInputBuilder {
             auto_config_enabled: self.auto_config_enabled,
             auto_create: self.auto_create,
             grouping_type: self.grouping_type,
+            attach_missing_permission: self.attach_missing_permission,
         })
     }
 }

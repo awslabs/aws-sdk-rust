@@ -4,7 +4,7 @@
 /// <p> <b>Related actions</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PlayerSession {
     /// <p>A unique identifier for a player session.</p>
     pub player_session_id: ::std::option::Option<::std::string::String>,
@@ -123,6 +123,24 @@ impl PlayerSession {
         self.player_data.as_deref()
     }
 }
+impl ::std::fmt::Debug for PlayerSession {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PlayerSession");
+        formatter.field("player_session_id", &self.player_session_id);
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("game_session_id", &self.game_session_id);
+        formatter.field("fleet_id", &self.fleet_id);
+        formatter.field("fleet_arn", &self.fleet_arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("termination_time", &self.termination_time);
+        formatter.field("status", &self.status);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("port", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_data", &self.player_data);
+        formatter.finish()
+    }
+}
 impl PlayerSession {
     /// Creates a new builder-style object to manufacture [`PlayerSession`](crate::types::PlayerSession).
     pub fn builder() -> crate::types::builders::PlayerSessionBuilder {
@@ -132,7 +150,7 @@ impl PlayerSession {
 
 /// A builder for [`PlayerSession`](crate::types::PlayerSession).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PlayerSessionBuilder {
     pub(crate) player_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
@@ -395,5 +413,23 @@ impl PlayerSessionBuilder {
             port: self.port,
             player_data: self.player_data,
         }
+    }
+}
+impl ::std::fmt::Debug for PlayerSessionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PlayerSessionBuilder");
+        formatter.field("player_session_id", &self.player_session_id);
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("game_session_id", &self.game_session_id);
+        formatter.field("fleet_id", &self.fleet_id);
+        formatter.field("fleet_arn", &self.fleet_arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("termination_time", &self.termination_time);
+        formatter.field("status", &self.status);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("port", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_data", &self.player_data);
+        formatter.finish()
     }
 }

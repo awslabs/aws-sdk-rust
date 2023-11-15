@@ -276,6 +276,13 @@ pub(crate) fn de_get_run(
                             .transpose()?,
                     );
                 }
+                "runOutputUri" => {
+                    builder = builder.set_run_output_uri(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "startTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -318,6 +325,13 @@ pub(crate) fn de_get_run(
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                }
+                "uuid" => {
+                    builder = builder.set_uuid(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 "workflowId" => {
                     builder = builder.set_workflow_id(

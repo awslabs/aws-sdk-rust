@@ -193,6 +193,10 @@ pub use crate::types::_instance_ipv6_address::InstanceIpv6Address;
 
 pub use crate::types::_instance_network_interface_attachment::InstanceNetworkInterfaceAttachment;
 
+pub use crate::types::_instance_attachment_ena_srd_specification::InstanceAttachmentEnaSrdSpecification;
+
+pub use crate::types::_instance_attachment_ena_srd_udp_specification::InstanceAttachmentEnaSrdUdpSpecification;
+
 pub use crate::types::_attachment_status::AttachmentStatus;
 
 pub use crate::types::_elastic_inference_accelerator_association::ElasticInferenceAcceleratorAssociation;
@@ -260,6 +264,10 @@ pub use crate::types::_elastic_inference_accelerator::ElasticInferenceAccelerato
 pub use crate::types::_elastic_gpu_specification::ElasticGpuSpecification;
 
 pub use crate::types::_instance_network_interface_specification::InstanceNetworkInterfaceSpecification;
+
+pub use crate::types::_ena_srd_specification_request::EnaSrdSpecificationRequest;
+
+pub use crate::types::_ena_srd_udp_specification_request::EnaSrdUdpSpecificationRequest;
 
 pub use crate::types::_ipv6_prefix_specification_request::Ipv6PrefixSpecificationRequest;
 
@@ -474,6 +482,24 @@ pub use crate::types::_currency_code_values::CurrencyCodeValues;
 pub use crate::types::_purchase::Purchase;
 
 pub use crate::types::_payment_option::PaymentOption;
+
+pub use crate::types::_capacity_reservation::CapacityReservation;
+
+pub use crate::types::_capacity_reservation_type::CapacityReservationType;
+
+pub use crate::types::_capacity_allocation::CapacityAllocation;
+
+pub use crate::types::_allocation_type::AllocationType;
+
+pub use crate::types::_instance_match_criteria::InstanceMatchCriteria;
+
+pub use crate::types::_end_date_type::EndDateType;
+
+pub use crate::types::_capacity_reservation_state::CapacityReservationState;
+
+pub use crate::types::_capacity_reservation_tenancy::CapacityReservationTenancy;
+
+pub use crate::types::_capacity_reservation_instance_platform::CapacityReservationInstancePlatform;
 
 pub use crate::types::_public_ipv4_pool_range::PublicIpv4PoolRange;
 
@@ -865,8 +891,6 @@ pub use crate::types::_dns_servers_options_modify_structure::DnsServersOptionsMo
 
 pub use crate::types::_connection_log_options::ConnectionLogOptions;
 
-pub use crate::types::_end_date_type::EndDateType;
-
 pub use crate::types::_modify_availability_zone_opt_in_status::ModifyAvailabilityZoneOptInStatus;
 
 pub use crate::types::_snapshot_recycle_bin_info::SnapshotRecycleBinInfo;
@@ -951,6 +975,8 @@ pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequ
 
 pub use crate::types::_architecture_type::ArchitectureType;
 
+pub use crate::types::_snapshot_block_public_access_state::SnapshotBlockPublicAccessState;
+
 pub use crate::types::_security_group_for_vpc::SecurityGroupForVpc;
 
 pub use crate::types::_target_reservation_value::TargetReservationValue;
@@ -1031,6 +1057,10 @@ pub use crate::types::_launch_templates_monitoring::LaunchTemplatesMonitoring;
 
 pub use crate::types::_launch_template_instance_network_interface_specification::LaunchTemplateInstanceNetworkInterfaceSpecification;
 
+pub use crate::types::_launch_template_ena_srd_specification::LaunchTemplateEnaSrdSpecification;
+
+pub use crate::types::_launch_template_ena_srd_udp_specification::LaunchTemplateEnaSrdUdpSpecification;
+
 pub use crate::types::_ipv6_prefix_specification_response::Ipv6PrefixSpecificationResponse;
 
 pub use crate::types::_ipv4_prefix_specification_response::Ipv4PrefixSpecificationResponse;
@@ -1070,8 +1100,6 @@ pub use crate::types::_partition_load_frequency::PartitionLoadFrequency;
 pub use crate::types::_coip_address_usage::CoipAddressUsage;
 
 pub use crate::types::_instance_usage::InstanceUsage;
-
-pub use crate::types::_capacity_reservation_state::CapacityReservationState;
 
 pub use crate::types::_data_response::DataResponse;
 
@@ -1603,6 +1631,8 @@ pub use crate::types::_instance_type_offering::InstanceTypeOffering;
 
 pub use crate::types::_location_type::LocationType;
 
+pub use crate::types::_instance_topology::InstanceTopology;
+
 pub use crate::types::_instance_status::InstanceStatus;
 
 pub use crate::types::_instance_status_summary::InstanceStatusSummary;
@@ -1807,18 +1837,6 @@ pub use crate::types::_carrier_gateway::CarrierGateway;
 
 pub use crate::types::_carrier_gateway_state::CarrierGatewayState;
 
-pub use crate::types::_capacity_reservation::CapacityReservation;
-
-pub use crate::types::_capacity_allocation::CapacityAllocation;
-
-pub use crate::types::_allocation_type::AllocationType;
-
-pub use crate::types::_instance_match_criteria::InstanceMatchCriteria;
-
-pub use crate::types::_capacity_reservation_tenancy::CapacityReservationTenancy;
-
-pub use crate::types::_capacity_reservation_instance_platform::CapacityReservationInstancePlatform;
-
 pub use crate::types::_capacity_reservation_fleet::CapacityReservationFleet;
 
 pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservation;
@@ -1828,6 +1846,8 @@ pub use crate::types::_fleet_instance_match_criteria::FleetInstanceMatchCriteria
 pub use crate::types::_fleet_capacity_reservation_tenancy::FleetCapacityReservationTenancy;
 
 pub use crate::types::_capacity_reservation_fleet_state::CapacityReservationFleetState;
+
+pub use crate::types::_capacity_block_offering::CapacityBlockOffering;
 
 pub use crate::types::_bundle_task::BundleTask;
 
@@ -2221,6 +2241,8 @@ mod _cancelled_spot_instance_request;
 
 mod _capacity_allocation;
 
+mod _capacity_block_offering;
+
 mod _capacity_reservation;
 
 mod _capacity_reservation_fleet;
@@ -2250,6 +2272,8 @@ mod _capacity_reservation_target;
 mod _capacity_reservation_target_response;
 
 mod _capacity_reservation_tenancy;
+
+mod _capacity_reservation_type;
 
 mod _carrier_gateway;
 
@@ -2527,7 +2551,11 @@ mod _elastic_inference_accelerator_association;
 
 mod _ena_srd_specification;
 
+mod _ena_srd_specification_request;
+
 mod _ena_srd_udp_specification;
+
+mod _ena_srd_udp_specification_request;
 
 mod _ena_support;
 
@@ -2771,6 +2799,10 @@ mod _inference_device_memory_info;
 
 mod _instance;
 
+mod _instance_attachment_ena_srd_specification;
+
+mod _instance_attachment_ena_srd_udp_specification;
+
 mod _instance_attribute_name;
 
 mod _instance_auto_recovery_state;
@@ -2886,6 +2918,8 @@ mod _instance_storage_encryption_support;
 mod _instance_storage_info;
 
 mod _instance_tag_notification_attribute;
+
+mod _instance_topology;
 
 mod _instance_type;
 
@@ -3046,6 +3080,10 @@ mod _launch_template_ebs_block_device_request;
 mod _launch_template_elastic_inference_accelerator;
 
 mod _launch_template_elastic_inference_accelerator_response;
+
+mod _launch_template_ena_srd_specification;
+
+mod _launch_template_ena_srd_udp_specification;
 
 mod _launch_template_enclave_options;
 
@@ -3598,6 +3636,8 @@ mod _slot_start_time_range_request;
 mod _snapshot;
 
 mod _snapshot_attribute_name;
+
+mod _snapshot_block_public_access_state;
 
 mod _snapshot_detail;
 

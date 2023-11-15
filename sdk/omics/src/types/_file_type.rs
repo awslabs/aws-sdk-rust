@@ -15,6 +15,7 @@
 ///     FileType::Bam => { /* ... */ },
 ///     FileType::Cram => { /* ... */ },
 ///     FileType::Fastq => { /* ... */ },
+///     FileType::Ubam => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum FileType {
     Cram,
     #[allow(missing_docs)] // documentation missing in model
     Fastq,
+    #[allow(missing_docs)] // documentation missing in model
+    Ubam,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for FileType {
             "BAM" => FileType::Bam,
             "CRAM" => FileType::Cram,
             "FASTQ" => FileType::Fastq,
+            "UBAM" => FileType::Ubam,
             other => FileType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -75,12 +79,13 @@ impl FileType {
             FileType::Bam => "BAM",
             FileType::Cram => "CRAM",
             FileType::Fastq => "FASTQ",
+            FileType::Ubam => "UBAM",
             FileType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BAM", "CRAM", "FASTQ"]
+        &["BAM", "CRAM", "FASTQ", "UBAM"]
     }
 }
 impl ::std::convert::AsRef<str> for FileType {

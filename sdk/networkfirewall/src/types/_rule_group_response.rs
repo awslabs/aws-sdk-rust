@@ -35,6 +35,8 @@ pub struct RuleGroupResponse {
     pub sns_topic: ::std::option::Option<::std::string::String>,
     /// <p>The last time that the rule group was changed.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
+    pub analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
 }
 impl RuleGroupResponse {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
@@ -101,6 +103,12 @@ impl RuleGroupResponse {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_results.is_none()`.
+    pub fn analysis_results(&self) -> &[crate::types::AnalysisResult] {
+        self.analysis_results.as_deref().unwrap_or_default()
+    }
 }
 impl RuleGroupResponse {
     /// Creates a new builder-style object to manufacture [`RuleGroupResponse`](crate::types::RuleGroupResponse).
@@ -127,6 +135,7 @@ pub struct RuleGroupResponseBuilder {
     pub(crate) source_metadata: ::std::option::Option<crate::types::SourceMetadata>,
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
 }
 impl RuleGroupResponseBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
@@ -343,6 +352,26 @@ impl RuleGroupResponseBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// Appends an item to `analysis_results`.
+    ///
+    /// To override the contents of this collection use [`set_analysis_results`](Self::set_analysis_results).
+    ///
+    /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
+    pub fn analysis_results(mut self, input: crate::types::AnalysisResult) -> Self {
+        let mut v = self.analysis_results.unwrap_or_default();
+        v.push(input);
+        self.analysis_results = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
+    pub fn set_analysis_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>) -> Self {
+        self.analysis_results = input;
+        self
+    }
+    /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
+    pub fn get_analysis_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>> {
+        &self.analysis_results
+    }
     /// Consumes the builder and constructs a [`RuleGroupResponse`](crate::types::RuleGroupResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_group_arn`](crate::types::builders::RuleGroupResponseBuilder::rule_group_arn)
@@ -379,6 +408,7 @@ impl RuleGroupResponseBuilder {
             source_metadata: self.source_metadata,
             sns_topic: self.sns_topic,
             last_modified_time: self.last_modified_time,
+            analysis_results: self.analysis_results,
         })
     }
 }

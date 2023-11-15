@@ -9,7 +9,7 @@ pub enum Error {
     AttributeLimitExceededException(crate::types::error::AttributeLimitExceededException),
     /// <p>Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/"> Amazon Web Services Support</a>.</p>
     BlockedException(crate::types::error::BlockedException),
-    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>You can't delete a cluster that has registered container instances. First, deregister the container instances before you can delete the cluster. For more information, see <code>DeregisterContainerInstance</code>.</p>
     ClusterContainsContainerInstancesException(crate::types::error::ClusterContainsContainerInstancesException),
@@ -19,6 +19,13 @@ pub enum Error {
     ClusterContainsTasksException(crate::types::error::ClusterContainsTasksException),
     /// <p>The specified cluster wasn't found. You can view your available clusters with <code>ListClusters</code>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::types::error::ClusterNotFoundException),
+    /// <p>The <code>RunTask</code> request could not be processed due to conflicts. The provided <code>clientToken</code> is already in use with a different <code>RunTask</code> request. The <code>resourceIds</code> are the existing task ARNs which are already associated with the <code>clientToken</code>. </p>
+    /// <p>To fix this issue:</p>
+    /// <ul>
+    /// <li> <p>Run <code>RunTask</code> with a unique <code>clientToken</code>.</p> </li>
+    /// <li> <p>Run <code>RunTask</code> with the <code>clientToken</code> and the original set of parameters</p> </li>
+    /// </ul>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The limit for the resource was exceeded.</p>
@@ -73,6 +80,7 @@ impl ::std::fmt::Display for Error {
             Error::ClusterContainsServicesException(inner) => inner.fmt(f),
             Error::ClusterContainsTasksException(inner) => inner.fmt(f),
             Error::ClusterNotFoundException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MissingVersionException(inner) => inner.fmt(f),
@@ -1317,6 +1325,7 @@ impl From<crate::operation::run_task::RunTaskError> for Error {
             crate::operation::run_task::RunTaskError::BlockedException(inner) => Error::BlockedException(inner),
             crate::operation::run_task::RunTaskError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::run_task::RunTaskError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
+            crate::operation::run_task::RunTaskError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::run_task::RunTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::run_task::RunTaskError::PlatformTaskDefinitionIncompatibilityException(inner) => {
                 Error::PlatformTaskDefinitionIncompatibilityException(inner)
@@ -1891,6 +1900,7 @@ impl ::std::error::Error for Error {
             Error::ClusterContainsServicesException(inner) => inner.source(),
             Error::ClusterContainsTasksException(inner) => inner.source(),
             Error::ClusterNotFoundException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::MissingVersionException(inner) => inner.source(),
@@ -1923,6 +1933,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ClusterContainsServicesException(e) => e.request_id(),
             Self::ClusterContainsTasksException(e) => e.request_id(),
             Self::ClusterNotFoundException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::MissingVersionException(e) => e.request_id(),

@@ -152,5 +152,10 @@ pub fn ser_launch_template_instance_network_interface_specification_request(
     if let Some(var_55) = &input.primary_ipv6 {
         scope_54.boolean(*var_55);
     }
+    #[allow(unused_mut)]
+    let mut scope_56 = writer.prefix("EnaSrdSpecification");
+    if let Some(var_57) = &input.ena_srd_specification {
+        crate::protocol_serde::shape_ena_srd_specification_request::ser_ena_srd_specification_request(scope_56, var_57)?;
+    }
     Ok(())
 }

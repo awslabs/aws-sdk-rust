@@ -383,6 +383,10 @@ pub(crate) mod shape_enable_snapshot_copy;
 
 pub(crate) mod shape_enable_snapshot_copy_input;
 
+pub(crate) mod shape_failover_primary_compute;
+
+pub(crate) mod shape_failover_primary_compute_input;
+
 pub(crate) mod shape_get_cluster_credentials;
 
 pub(crate) mod shape_get_cluster_credentials_input;
@@ -1026,6 +1030,8 @@ pub(crate) mod shape_restorable_node_type_list;
 pub(crate) mod shape_restore_status;
 
 pub(crate) mod shape_scheduled_action;
+
+pub(crate) mod shape_secondary_cluster_info;
 
 pub(crate) mod shape_snapshot_error_message;
 

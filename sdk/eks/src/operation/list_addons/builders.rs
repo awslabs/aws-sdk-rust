@@ -22,7 +22,7 @@ impl ListAddonsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAddons`.
 ///
-/// <p>Lists the available add-ons.</p>
+/// <p>Lists the installed add-ons.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAddonsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

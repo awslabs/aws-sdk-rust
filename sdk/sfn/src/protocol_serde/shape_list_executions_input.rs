@@ -21,5 +21,8 @@ pub fn ser_list_executions_input(
     if let Some(var_5) = &input.map_run_arn {
         object.key("mapRunArn").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.redrive_filter {
+        object.key("redriveFilter").string(var_6.as_str());
+    }
     Ok(())
 }

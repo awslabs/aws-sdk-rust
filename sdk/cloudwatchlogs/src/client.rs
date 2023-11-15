@@ -136,6 +136,8 @@ mod associate_kms_key;
 
 mod cancel_export_task;
 
+mod create_delivery;
+
 mod create_export_task;
 
 mod create_log_group;
@@ -173,6 +175,14 @@ mod delete_account_policy;
 
 mod delete_data_protection_policy;
 
+mod delete_delivery;
+
+mod delete_delivery_destination;
+
+mod delete_delivery_destination_policy;
+
+mod delete_delivery_source;
+
 mod delete_destination;
 
 mod delete_log_group;
@@ -190,6 +200,12 @@ mod delete_retention_policy;
 mod delete_subscription_filter;
 
 mod describe_account_policies;
+
+mod describe_deliveries;
+
+mod describe_delivery_destinations;
+
+mod describe_delivery_sources;
 
 mod describe_destinations;
 
@@ -215,6 +231,14 @@ mod filter_log_events;
 
 mod get_data_protection_policy;
 
+mod get_delivery;
+
+mod get_delivery_destination;
+
+mod get_delivery_destination_policy;
+
+mod get_delivery_source;
+
 mod get_log_events;
 
 mod get_log_group_fields;
@@ -230,6 +254,12 @@ mod list_tags_log_group;
 mod put_account_policy;
 
 mod put_data_protection_policy;
+
+mod put_delivery_destination;
+
+mod put_delivery_destination_policy;
+
+mod put_delivery_source;
 
 mod put_destination;
 

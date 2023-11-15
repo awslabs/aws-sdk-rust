@@ -15,7 +15,7 @@ pub struct CreateVerifiedAccessGroupInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
 }
 impl CreateVerifiedAccessGroupInput {
@@ -45,7 +45,7 @@ impl CreateVerifiedAccessGroupInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationRequest> {
         self.sse_specification.as_ref()
     }
@@ -161,17 +161,17 @@ impl CreateVerifiedAccessGroupInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn sse_specification(mut self, input: crate::types::VerifiedAccessSseSpecificationRequest) -> Self {
         self.sse_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>) -> Self {
         self.sse_specification = input;
         self
     }
-    /// <p> Options for server side encryption. </p>
+    /// <p>The options for server side encryption.</p>
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
         &self.sse_specification
     }

@@ -23,7 +23,7 @@ pub struct EventSubscription {
     pub source_ids_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of event categories for the RDS event notification subscription.</p>
     pub event_categories_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
+    /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
     pub event_subscription_arn: ::std::option::Option<::std::string::String>,
@@ -68,7 +68,7 @@ impl EventSubscription {
     pub fn event_categories_list(&self) -> &[::std::string::String] {
         self.event_categories_list.as_deref().unwrap_or_default()
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
+    /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -233,17 +233,17 @@ impl EventSubscriptionBuilder {
     pub fn get_event_categories_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_categories_list
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
+    /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
+    /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
+    /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

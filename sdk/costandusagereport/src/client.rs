@@ -163,6 +163,12 @@ mod delete_report_definition;
 
 mod describe_report_definitions;
 
+mod list_tags_for_resource;
+
 mod modify_report_definition;
 
 mod put_report_definition;
+
+mod tag_resource;
+
+mod untag_resource;

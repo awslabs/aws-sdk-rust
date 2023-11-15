@@ -4,8 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RulesSource {
-    /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
-    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
+    /// <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat detection framework that includes a standard rule-based language for network traffic inspection.</p>
+    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p> <note>
+    /// <p>You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in <code>StatefulRuleOptions</code> is set to <code>STRICT_ORDER</code>.</p>
+    /// </note>
     pub rules_string: ::std::option::Option<::std::string::String>,
     /// <p>Stateful inspection criteria for a domain list rule group. </p>
     pub rules_source_list: ::std::option::Option<crate::types::RulesSourceList>,
@@ -15,8 +17,10 @@ pub struct RulesSource {
     pub stateless_rules_and_custom_actions: ::std::option::Option<crate::types::StatelessRulesAndCustomActions>,
 }
 impl RulesSource {
-    /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
-    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
+    /// <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat detection framework that includes a standard rule-based language for network traffic inspection.</p>
+    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p> <note>
+    /// <p>You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in <code>StatefulRuleOptions</code> is set to <code>STRICT_ORDER</code>.</p>
+    /// </note>
     pub fn rules_string(&self) -> ::std::option::Option<&str> {
         self.rules_string.as_deref()
     }
@@ -52,20 +56,26 @@ pub struct RulesSourceBuilder {
     pub(crate) stateless_rules_and_custom_actions: ::std::option::Option<crate::types::StatelessRulesAndCustomActions>,
 }
 impl RulesSourceBuilder {
-    /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
-    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
+    /// <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat detection framework that includes a standard rule-based language for network traffic inspection.</p>
+    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p> <note>
+    /// <p>You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in <code>StatefulRuleOptions</code> is set to <code>STRICT_ORDER</code>.</p>
+    /// </note>
     pub fn rules_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rules_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
-    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
+    /// <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat detection framework that includes a standard rule-based language for network traffic inspection.</p>
+    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p> <note>
+    /// <p>You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in <code>StatefulRuleOptions</code> is set to <code>STRICT_ORDER</code>.</p>
+    /// </note>
     pub fn set_rules_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rules_string = input;
         self
     }
-    /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
-    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
+    /// <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat detection framework that includes a standard rule-based language for network traffic inspection.</p>
+    /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p> <note>
+    /// <p>You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in <code>StatefulRuleOptions</code> is set to <code>STRICT_ORDER</code>.</p>
+    /// </note>
     pub fn get_rules_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.rules_string
     }

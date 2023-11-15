@@ -58,6 +58,8 @@ pub struct DbInstance {
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that this instance is configured to export to CloudWatch Logs.</p>
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
 }
 impl DbInstance {
     /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
@@ -174,6 +176,10 @@ impl DbInstance {
     pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
         self.enabled_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub fn certificate_details(&self) -> ::std::option::Option<&crate::types::CertificateDetails> {
+        self.certificate_details.as_ref()
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -213,6 +219,7 @@ pub struct DbInstanceBuilder {
     pub(crate) promotion_tier: ::std::option::Option<i32>,
     pub(crate) db_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
 }
 impl DbInstanceBuilder {
     /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
@@ -611,6 +618,20 @@ impl DbInstanceBuilder {
     pub fn get_enabled_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enabled_cloudwatch_logs_exports
     }
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub fn certificate_details(mut self, input: crate::types::CertificateDetails) -> Self {
+        self.certificate_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub fn set_certificate_details(mut self, input: ::std::option::Option<crate::types::CertificateDetails>) -> Self {
+        self.certificate_details = input;
+        self
+    }
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub fn get_certificate_details(&self) -> &::std::option::Option<crate::types::CertificateDetails> {
+        &self.certificate_details
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -641,6 +662,7 @@ impl DbInstanceBuilder {
             promotion_tier: self.promotion_tier,
             db_instance_arn: self.db_instance_arn,
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
+            certificate_details: self.certificate_details,
         }
     }
 }

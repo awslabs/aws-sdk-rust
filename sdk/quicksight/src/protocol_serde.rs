@@ -819,6 +819,8 @@ pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_parameters;
 
 pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_parameters_list;
 
+pub(crate) mod shape_asset_options;
+
 pub(crate) mod shape_athena_parameters;
 
 pub(crate) mod shape_aurora_parameters;

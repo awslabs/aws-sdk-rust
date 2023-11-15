@@ -9,6 +9,8 @@ pub struct AssociateResourceInput {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The name or ID of the resource of which the application will be associated.</p>
     pub resource: ::std::option::Option<::std::string::String>,
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
 }
 impl AssociateResourceInput {
     /// <p> The name, ID, or ARN of the application. </p>
@@ -22,6 +24,12 @@ impl AssociateResourceInput {
     /// <p>The name or ID of the resource of which the application will be associated.</p>
     pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
+    }
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::AssociationOption] {
+        self.options.as_deref().unwrap_or_default()
     }
 }
 impl AssociateResourceInput {
@@ -38,6 +46,7 @@ pub struct AssociateResourceInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
 }
 impl AssociateResourceInputBuilder {
     /// <p> The name, ID, or ARN of the application. </p>
@@ -85,6 +94,26 @@ impl AssociateResourceInputBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource
     }
+    /// Appends an item to `options`.
+    ///
+    /// To override the contents of this collection use [`set_options`](Self::set_options).
+    ///
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub fn options(mut self, input: crate::types::AssociationOption) -> Self {
+        let mut v = self.options.unwrap_or_default();
+        v.push(input);
+        self.options = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>) -> Self {
+        self.options = input;
+        self
+    }
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>> {
+        &self.options
+    }
     /// Consumes the builder and constructs a [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
     pub fn build(
         self,
@@ -93,6 +122,7 @@ impl AssociateResourceInputBuilder {
             application: self.application,
             resource_type: self.resource_type,
             resource: self.resource,
+            options: self.options,
         })
     }
 }

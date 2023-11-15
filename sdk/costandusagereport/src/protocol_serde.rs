@@ -27,9 +27,15 @@ pub(crate) mod shape_delete_report_definition;
 
 pub(crate) mod shape_describe_report_definitions;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_modify_report_definition;
 
 pub(crate) mod shape_put_report_definition;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -47,17 +53,31 @@ pub(crate) mod shape_duplicate_report_name_exception;
 
 pub(crate) mod shape_internal_error_exception;
 
+pub(crate) mod shape_list_tags_for_resource_input;
+
 pub(crate) mod shape_modify_report_definition_input;
 
 pub(crate) mod shape_put_report_definition_input;
 
 pub(crate) mod shape_report_limit_reached_exception;
 
+pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_untag_resource_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_report_definition;
 
 pub(crate) mod shape_report_definition_list;
+
+pub(crate) mod shape_tag;
+
+pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_report_status;
 
 pub(crate) mod shape_additional_artifact_list;
 

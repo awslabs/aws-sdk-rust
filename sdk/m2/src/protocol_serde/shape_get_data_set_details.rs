@@ -34,6 +34,34 @@ pub fn de_get_data_set_details_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::get_data_set_details::GetDataSetDetailsError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_data_set_details::GetDataSetDetailsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_data_set_details::GetDataSetDetailsError::unhandled)?
+            };
+            tmp
+        }),
+        "ExecutionTimeoutException" => crate::operation::get_data_set_details::GetDataSetDetailsError::ExecutionTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ExecutionTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_execution_timeout_exception::de_execution_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_data_set_details::GetDataSetDetailsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::execution_timeout_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_data_set_details::GetDataSetDetailsError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::get_data_set_details::GetDataSetDetailsError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -64,6 +92,21 @@ pub fn de_get_data_set_details_http_error(
                     .map_err(crate::operation::get_data_set_details::GetDataSetDetailsError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_data_set_details::GetDataSetDetailsError::unhandled)?
+            };
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_data_set_details::GetDataSetDetailsError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_data_set_details::GetDataSetDetailsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::get_data_set_details::GetDataSetDetailsError::unhandled)?
             };
@@ -164,6 +207,13 @@ pub(crate) fn de_get_data_set_details(
                 "dataSetOrg" => {
                     builder = builder
                         .set_data_set_org(crate::protocol_serde::shape_dataset_detail_org_attributes::de_dataset_detail_org_attributes(tokens)?);
+                }
+                "fileSize" => {
+                    builder = builder.set_file_size(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
                 }
                 "lastReferencedTime" => {
                     builder = builder.set_last_referenced_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

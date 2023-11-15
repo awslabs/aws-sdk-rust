@@ -86,6 +86,13 @@ where
                             builder = builder
                                 .set_depends_on_alarms(crate::protocol_serde::shape_alarm_reference_id_list::de_alarm_reference_id_list(tokens)?);
                         }
+                        "recommendationStatus" => {
+                            builder = builder.set_recommendation_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RecommendationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

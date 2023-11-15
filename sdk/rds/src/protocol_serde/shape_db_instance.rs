@@ -1093,6 +1093,21 @@ pub fn de_db_instance(
                 builder = builder.set_is_storage_config_upgrade_available(var_84);
             }
             ,
+            s if s.matches("MultiTenant") /* MultiTenant com.amazonaws.rds#DBInstance$MultiTenant */ =>  {
+                let var_85 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_multi_tenant(var_85);
+            }
+            ,
             _ => {}
         }
     }

@@ -911,6 +911,20 @@ impl CreateDBClusterFluentBuilder {
     pub fn get_scaling_configuration(&self) -> &::std::option::Option<crate::types::ScalingConfiguration> {
         self.inner.get_scaling_configuration()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(mut self, input: crate::types::RdsCustomClusterConfiguration) -> Self {
+        self.inner = self.inner.rds_custom_cluster_configuration(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_rds_custom_cluster_configuration(mut self, input: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>) -> Self {
+        self.inner = self.inner.set_rds_custom_cluster_configuration(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
+        self.inner.get_rds_custom_cluster_configuration()
+    }
     /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {

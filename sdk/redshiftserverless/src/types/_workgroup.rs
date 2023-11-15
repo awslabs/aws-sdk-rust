@@ -42,6 +42,8 @@ pub struct Workgroup {
     pub workgroup_version: ::std::option::Option<::std::string::String>,
     /// <p>The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
     pub patch_version: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub max_capacity: ::std::option::Option<i32>,
 }
 impl Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
@@ -126,6 +128,10 @@ impl Workgroup {
     pub fn patch_version(&self) -> ::std::option::Option<&str> {
         self.patch_version.as_deref()
     }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn max_capacity(&self) -> ::std::option::Option<i32> {
+        self.max_capacity
+    }
 }
 impl Workgroup {
     /// Creates a new builder-style object to manufacture [`Workgroup`](crate::types::Workgroup).
@@ -157,6 +163,7 @@ pub struct WorkgroupBuilder {
     pub(crate) custom_domain_certificate_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) workgroup_version: ::std::option::Option<::std::string::String>,
     pub(crate) patch_version: ::std::option::Option<::std::string::String>,
+    pub(crate) max_capacity: ::std::option::Option<i32>,
 }
 impl WorkgroupBuilder {
     /// <p>The unique identifier of the workgroup.</p>
@@ -443,6 +450,20 @@ impl WorkgroupBuilder {
     pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.patch_version
     }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn max_capacity(mut self, input: i32) -> Self {
+        self.max_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_capacity = input;
+        self
+    }
+    /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity
+    }
     /// Consumes the builder and constructs a [`Workgroup`](crate::types::Workgroup).
     pub fn build(self) -> crate::types::Workgroup {
         crate::types::Workgroup {
@@ -465,6 +486,7 @@ impl WorkgroupBuilder {
             custom_domain_certificate_expiry_time: self.custom_domain_certificate_expiry_time,
             workgroup_version: self.workgroup_version,
             patch_version: self.patch_version,
+            max_capacity: self.max_capacity,
         }
     }
 }

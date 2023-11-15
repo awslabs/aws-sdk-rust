@@ -15,11 +15,12 @@
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! These interfaces allow you to apply the AWS library of pre-defined _controls_ to your organizational units, programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms. .
+//! These interfaces allow you to apply the AWS library of pre-defined _controls_ to your organizational units, programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms.
 //!
 //! To call these APIs, you'll need to know:
 //!   - the controlIdentifier for the control--or guardrail--you are targeting.
 //!   - the ARN associated with the target organizational unit (OU), which we call the targetIdentifier.
+//!   - the ARN associated with a resource that you wish to tag or untag.
 //!
 //! __To get the controlIdentifier for your AWS Control Tower control:__
 //!
@@ -27,7 +28,7 @@
 //!
 //! The controlIdentifier is unique in each AWS Region for each control. You can find the controlIdentifier for each Region and control in the [Tables of control metadata](https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html) in the _AWS Control Tower User Guide._
 //!
-//! A quick-reference list of control identifers for the AWS Control Tower legacy _Strongly recommended_ and _Elective_ controls is given in [Resource identifiers for APIs and guardrails](https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html) in the [Controls reference guide section](https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html) of the _AWS Control Tower User Guide_. Remember that _Mandatory_ controls cannot be added or removed.
+//! A quick-reference list of control identifers for the AWS Control Tower legacy _Strongly recommended_ and _Elective_ controls is given in [Resource identifiers for APIs and controls](https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html) in the [Controls reference guide section](https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html) of the _AWS Control Tower User Guide_. Remember that _Mandatory_ controls cannot be added or removed.
 //!
 //! __To get the targetIdentifier:__
 //!
@@ -61,8 +62,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
-//! aws-sdk-controltower = "0.16.0"
+//! aws-config = "0.57.0"
+//! aws-sdk-controltower = "0.17.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

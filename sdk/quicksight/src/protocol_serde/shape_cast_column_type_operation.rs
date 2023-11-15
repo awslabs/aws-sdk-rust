@@ -9,8 +9,11 @@ pub fn ser_cast_column_type_operation(
     {
         object.key("NewColumnType").string(input.new_column_type.as_str());
     }
-    if let Some(var_1) = &input.format {
-        object.key("Format").string(var_1.as_str());
+    if let Some(var_1) = &input.sub_type {
+        object.key("SubType").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.format {
+        object.key("Format").string(var_2.as_str());
     }
     Ok(())
 }
@@ -41,6 +44,13 @@ where
                             builder = builder.set_new_column_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ColumnDataType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SubType" => {
+                            builder = builder.set_sub_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ColumnDataSubType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

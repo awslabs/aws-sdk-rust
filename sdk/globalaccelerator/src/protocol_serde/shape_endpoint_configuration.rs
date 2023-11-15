@@ -15,5 +15,8 @@ pub fn ser_endpoint_configuration(
     if let Some(var_3) = &input.client_ip_preservation_enabled {
         object.key("ClientIPPreservationEnabled").boolean(*var_3);
     }
+    if let Some(var_4) = &input.attachment_arn {
+        object.key("AttachmentArn").string(var_4.as_str());
+    }
     Ok(())
 }

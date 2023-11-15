@@ -57,6 +57,12 @@ pub fn ser_my_sql_settings(
     if let Some(var_14) = &input.secrets_manager_secret_id {
         object.key("SecretsManagerSecretId").string(var_14.as_str());
     }
+    if let Some(var_15) = &input.execute_timeout {
+        object.key("ExecuteTimeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
+    }
     Ok(())
 }
 
@@ -167,6 +173,13 @@ where
                             builder = builder.set_secrets_manager_secret_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExecuteTimeout" => {
+                            builder = builder.set_execute_timeout(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

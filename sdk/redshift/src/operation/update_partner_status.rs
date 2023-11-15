@@ -251,6 +251,8 @@ pub enum UpdatePartnerStatusError {
     PartnerNotFoundFault(crate::types::error::PartnerNotFoundFault),
     /// <p>The partner integration is not authorized.</p>
     UnauthorizedPartnerIntegrationFault(crate::types::error::UnauthorizedPartnerIntegrationFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -272,6 +274,7 @@ impl ::std::fmt::Display for UpdatePartnerStatusError {
             Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::PartnerNotFoundFault(_inner) => _inner.fmt(f),
             Self::UnauthorizedPartnerIntegrationFault(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -282,6 +285,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdatePartner
             Self::ClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PartnerNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedPartnerIntegrationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -321,6 +325,7 @@ impl UpdatePartnerStatusError {
             Self::ClusterNotFoundFault(e) => e.meta(),
             Self::PartnerNotFoundFault(e) => e.meta(),
             Self::UnauthorizedPartnerIntegrationFault(e) => e.meta(),
+            Self::UnsupportedOperationFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -336,6 +341,10 @@ impl UpdatePartnerStatusError {
     pub fn is_unauthorized_partner_integration_fault(&self) -> bool {
         matches!(self, Self::UnauthorizedPartnerIntegrationFault(_))
     }
+    /// Returns `true` if the error kind is `UpdatePartnerStatusError::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationFault(_))
+    }
 }
 impl ::std::error::Error for UpdatePartnerStatusError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -343,6 +352,7 @@ impl ::std::error::Error for UpdatePartnerStatusError {
             Self::ClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::PartnerNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedPartnerIntegrationFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

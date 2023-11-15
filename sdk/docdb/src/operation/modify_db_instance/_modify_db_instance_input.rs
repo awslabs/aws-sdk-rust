@@ -49,6 +49,12 @@ pub struct ModifyDbInstanceInput {
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
+    /// </important>
+    /// <p>If you are using SSL/TLS to connect to the DB instance, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub certificate_rotation_restart: ::std::option::Option<bool>,
 }
 impl ModifyDbInstanceInput {
     /// <p>The instance identifier. This value is stored as a lowercase string.</p>
@@ -118,6 +124,14 @@ impl ModifyDbInstanceInput {
     pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
+    /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
+    /// </important>
+    /// <p>If you are using SSL/TLS to connect to the DB instance, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn certificate_rotation_restart(&self) -> ::std::option::Option<bool> {
+        self.certificate_rotation_restart
+    }
 }
 impl ModifyDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
@@ -141,6 +155,7 @@ pub struct ModifyDbInstanceInputBuilder {
     pub(crate) promotion_tier: ::std::option::Option<i32>,
     pub(crate) enable_performance_insights: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_rotation_restart: ::std::option::Option<bool>,
 }
 impl ModifyDbInstanceInputBuilder {
     /// <p>The instance identifier. This value is stored as a lowercase string.</p>
@@ -367,6 +382,32 @@ impl ModifyDbInstanceInputBuilder {
     pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.performance_insights_kms_key_id
     }
+    /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
+    /// </important>
+    /// <p>If you are using SSL/TLS to connect to the DB instance, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn certificate_rotation_restart(mut self, input: bool) -> Self {
+        self.certificate_rotation_restart = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
+    /// </important>
+    /// <p>If you are using SSL/TLS to connect to the DB instance, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn set_certificate_rotation_restart(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.certificate_rotation_restart = input;
+        self
+    }
+    /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
+    /// </important>
+    /// <p>If you are using SSL/TLS to connect to the DB instance, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn get_certificate_rotation_restart(&self) -> &::std::option::Option<bool> {
+        &self.certificate_rotation_restart
+    }
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
     pub fn build(
         self,
@@ -383,6 +424,7 @@ impl ModifyDbInstanceInputBuilder {
             promotion_tier: self.promotion_tier,
             enable_performance_insights: self.enable_performance_insights,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
+            certificate_rotation_restart: self.certificate_rotation_restart,
         })
     }
 }

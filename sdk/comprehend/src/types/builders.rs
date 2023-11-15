@@ -125,6 +125,12 @@ pub use crate::types::_dataset_properties::DatasetPropertiesBuilder;
 
 pub use crate::types::_dataset_filter::DatasetFilterBuilder;
 
+pub use crate::types::_toxic_labels::ToxicLabelsBuilder;
+
+pub use crate::types::_toxic_content::ToxicContentBuilder;
+
+pub use crate::types::_text_segment::TextSegmentBuilder;
+
 pub use crate::types::_targeted_sentiment_entity::TargetedSentimentEntityBuilder;
 
 pub use crate::types::_targeted_sentiment_mention::TargetedSentimentMentionBuilder;

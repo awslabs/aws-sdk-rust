@@ -20,6 +20,11 @@ pub struct DbEngineVersion {
     pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
 }
 impl DbEngineVersion {
     /// <p>The name of the database engine.</p>
@@ -58,6 +63,17 @@ impl DbEngineVersion {
     pub fn supports_log_exports_to_cloudwatch_logs(&self) -> ::std::option::Option<bool> {
         self.supports_log_exports_to_cloudwatch_logs
     }
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_ca_certificate_identifiers.is_none()`.
+    pub fn supported_ca_certificate_identifiers(&self) -> &[::std::string::String] {
+        self.supported_ca_certificate_identifiers.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub fn supports_certificate_rotation_without_restart(&self) -> ::std::option::Option<bool> {
+        self.supports_certificate_rotation_without_restart
+    }
 }
 impl DbEngineVersion {
     /// Creates a new builder-style object to manufacture [`DbEngineVersion`](crate::types::DbEngineVersion).
@@ -78,6 +94,8 @@ pub struct DbEngineVersionBuilder {
     pub(crate) valid_upgrade_target: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>,
     pub(crate) exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
+    pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
 }
 impl DbEngineVersionBuilder {
     /// <p>The name of the database engine.</p>
@@ -204,6 +222,43 @@ impl DbEngineVersionBuilder {
     pub fn get_supports_log_exports_to_cloudwatch_logs(&self) -> &::std::option::Option<bool> {
         &self.supports_log_exports_to_cloudwatch_logs
     }
+    /// Appends an item to `supported_ca_certificate_identifiers`.
+    ///
+    /// To override the contents of this collection use [`set_supported_ca_certificate_identifiers`](Self::set_supported_ca_certificate_identifiers).
+    ///
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn supported_ca_certificate_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_ca_certificate_identifiers.unwrap_or_default();
+        v.push(input.into());
+        self.supported_ca_certificate_identifiers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn set_supported_ca_certificate_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_ca_certificate_identifiers = input;
+        self
+    }
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    pub fn get_supported_ca_certificate_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_ca_certificate_identifiers
+    }
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
+        self.supports_certificate_rotation_without_restart = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub fn set_supports_certificate_rotation_without_restart(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_certificate_rotation_without_restart = input;
+        self
+    }
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub fn get_supports_certificate_rotation_without_restart(&self) -> &::std::option::Option<bool> {
+        &self.supports_certificate_rotation_without_restart
+    }
     /// Consumes the builder and constructs a [`DbEngineVersion`](crate::types::DbEngineVersion).
     pub fn build(self) -> crate::types::DbEngineVersion {
         crate::types::DbEngineVersion {
@@ -215,6 +270,8 @@ impl DbEngineVersionBuilder {
             valid_upgrade_target: self.valid_upgrade_target,
             exportable_log_types: self.exportable_log_types,
             supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs,
+            supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
+            supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart,
         }
     }
 }

@@ -91,6 +91,9 @@ where
                         "runtimeDetails" => {
                             builder = builder.set_runtime_details(crate::protocol_serde::shape_runtime_details::de_runtime_details(tokens)?);
                         }
+                        "detection" => {
+                            builder = builder.set_detection(crate::protocol_serde::shape_detection::de_detection(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

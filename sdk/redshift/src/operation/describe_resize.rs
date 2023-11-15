@@ -248,6 +248,8 @@ pub enum DescribeResizeError {
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>A resize operation for the specified cluster is not found.</p>
     ResizeNotFoundFault(crate::types::error::ResizeNotFoundFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -268,6 +270,7 @@ impl ::std::fmt::Display for DescribeResizeError {
         match self {
             Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::ResizeNotFoundFault(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -277,6 +280,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeResiz
         match self {
             Self::ClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResizeNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -315,6 +319,7 @@ impl DescribeResizeError {
         match self {
             Self::ClusterNotFoundFault(e) => e.meta(),
             Self::ResizeNotFoundFault(e) => e.meta(),
+            Self::UnsupportedOperationFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -326,12 +331,17 @@ impl DescribeResizeError {
     pub fn is_resize_not_found_fault(&self) -> bool {
         matches!(self, Self::ResizeNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `DescribeResizeError::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationFault(_))
+    }
 }
 impl ::std::error::Error for DescribeResizeError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResizeNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

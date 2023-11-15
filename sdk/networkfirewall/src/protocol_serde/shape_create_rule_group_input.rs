@@ -54,5 +54,8 @@ pub fn ser_create_rule_group_input(
         crate::protocol_serde::shape_source_metadata::ser_source_metadata(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.analyze_rule_group {
+        object.key("AnalyzeRuleGroup").boolean(*var_17);
+    }
     Ok(())
 }

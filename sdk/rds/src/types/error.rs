@@ -59,6 +59,8 @@ pub use crate::types::error::_invalid_db_security_group_state_fault::InvalidDbSe
 
 pub use crate::types::error::_db_security_group_not_found_fault::DbSecurityGroupNotFoundFault;
 
+pub use crate::types::error::_tenant_database_quota_exceeded_fault::TenantDatabaseQuotaExceededFault;
+
 pub use crate::types::error::_storage_quota_exceeded_fault::StorageQuotaExceededFault;
 
 pub use crate::types::error::_provisioned_iops_not_available_in_az_fault::ProvisionedIopsNotAvailableInAzFault;
@@ -103,7 +105,11 @@ pub use crate::types::error::_invalid_db_subnet_group_state_fault::InvalidDbSubn
 
 pub use crate::types::error::_invalid_db_parameter_group_state_fault::InvalidDbParameterGroupStateFault;
 
+pub use crate::types::error::_tenant_database_not_found_fault::TenantDatabaseNotFoundFault;
+
 pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFault;
+
+pub use crate::types::error::_db_snapshot_tenant_database_not_found_fault::DbSnapshotTenantDatabaseNotFoundFault;
 
 pub use crate::types::error::_db_proxy_target_group_not_found_fault::DbProxyTargetGroupNotFoundFault;
 
@@ -128,6 +134,8 @@ pub use crate::types::error::_reserved_db_instances_offering_not_found_fault::Re
 pub use crate::types::error::_reserved_db_instance_quota_exceeded_fault::ReservedDbInstanceQuotaExceededFault;
 
 pub use crate::types::error::_reserved_db_instance_already_exists_fault::ReservedDbInstanceAlreadyExistsFault;
+
+pub use crate::types::error::_tenant_database_already_exists_fault::TenantDatabaseAlreadyExistsFault;
 
 pub use crate::types::error::_invalid_option_group_state_fault::InvalidOptionGroupStateFault;
 
@@ -373,6 +381,8 @@ mod _db_snapshot_already_exists_fault;
 
 mod _db_snapshot_not_found_fault;
 
+mod _db_snapshot_tenant_database_not_found_fault;
+
 mod _db_subnet_group_already_exists_fault;
 
 mod _db_subnet_group_does_not_cover_enough_azs;
@@ -534,6 +544,12 @@ mod _subscription_already_exist_fault;
 mod _subscription_category_not_found_fault;
 
 mod _subscription_not_found_fault;
+
+mod _tenant_database_already_exists_fault;
+
+mod _tenant_database_not_found_fault;
+
+mod _tenant_database_quota_exceeded_fault;
 
 /// Builders
 pub mod builders;

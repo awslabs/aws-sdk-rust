@@ -10,6 +10,8 @@ pub struct ServerException {
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub addon_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon EKS subscription ID with the exception.</p>
+    pub subscription_id: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
@@ -26,6 +28,10 @@ impl ServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn addon_name(&self) -> ::std::option::Option<&str> {
         self.addon_name.as_deref()
+    }
+    /// <p>The Amazon EKS subscription ID with the exception.</p>
+    pub fn subscription_id(&self) -> ::std::option::Option<&str> {
+        self.subscription_id.as_deref()
     }
 }
 impl ServerException {
@@ -71,6 +77,7 @@ pub struct ServerExceptionBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) nodegroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
@@ -117,6 +124,20 @@ impl ServerExceptionBuilder {
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_name
     }
+    /// <p>The Amazon EKS subscription ID with the exception.</p>
+    pub fn subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subscription_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon EKS subscription ID with the exception.</p>
+    pub fn set_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subscription_id = input;
+        self
+    }
+    /// <p>The Amazon EKS subscription ID with the exception.</p>
+    pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_id
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -148,6 +169,7 @@ impl ServerExceptionBuilder {
             cluster_name: self.cluster_name,
             nodegroup_name: self.nodegroup_name,
             addon_name: self.addon_name,
+            subscription_id: self.subscription_id,
             message: self.message,
             meta: self.meta.unwrap_or_default(),
         }

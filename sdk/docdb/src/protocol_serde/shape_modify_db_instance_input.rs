@@ -63,6 +63,11 @@ pub fn ser_modify_db_instance_input_input(
     if let Some(var_22) = &input.performance_insights_kms_key_id {
         scope_21.string(var_22);
     }
+    #[allow(unused_mut)]
+    let mut scope_23 = writer.prefix("CertificateRotationRestart");
+    if let Some(var_24) = &input.certificate_rotation_restart {
+        scope_23.boolean(*var_24);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

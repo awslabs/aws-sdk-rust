@@ -9,8 +9,11 @@ pub fn ser_otaa_v1_0_x(
     if let Some(var_2) = &input.app_eui {
         object.key("AppEui").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.gen_app_key {
-        object.key("GenAppKey").string(var_3.as_str());
+    if let Some(var_3) = &input.join_eui {
+        object.key("JoinEui").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.gen_app_key {
+        object.key("GenAppKey").string(var_4.as_str());
     }
     Ok(())
 }
@@ -39,6 +42,13 @@ where
                         }
                         "AppEui" => {
                             builder = builder.set_app_eui(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "JoinEui" => {
+                            builder = builder.set_join_eui(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

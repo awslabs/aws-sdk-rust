@@ -18,7 +18,7 @@ pub struct StackSetOperationPreferences {
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>, but not both.</p>
     /// <p>By default, <code>0</code> is specified.</p>
     pub failure_tolerance_percentage: ::std::option::Option<i32>,
-    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This can depend on the value of <code>FailureToleranceCount</code> depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code> if you're using <code>STRICT_FAILURE_TOLERANCE</code>.</p>
     /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
@@ -29,6 +29,12 @@ pub struct StackSetOperationPreferences {
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
     pub max_concurrent_percentage: ::std::option::Option<i32>,
+    /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
+    /// <ul>
+    /// <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual concurrency of your deployment as the minimum value between the <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1. This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p> </li>
+    /// <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by the user in the <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p> </li>
+    /// </ul>
+    pub concurrency_mode: ::std::option::Option<crate::types::ConcurrencyMode>,
 }
 impl StackSetOperationPreferences {
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
@@ -54,7 +60,7 @@ impl StackSetOperationPreferences {
     pub fn failure_tolerance_percentage(&self) -> ::std::option::Option<i32> {
         self.failure_tolerance_percentage
     }
-    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This can depend on the value of <code>FailureToleranceCount</code> depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code> if you're using <code>STRICT_FAILURE_TOLERANCE</code>.</p>
     /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
@@ -68,6 +74,14 @@ impl StackSetOperationPreferences {
     /// <p>By default, <code>1</code> is specified.</p>
     pub fn max_concurrent_percentage(&self) -> ::std::option::Option<i32> {
         self.max_concurrent_percentage
+    }
+    /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
+    /// <ul>
+    /// <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual concurrency of your deployment as the minimum value between the <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1. This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p> </li>
+    /// <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by the user in the <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p> </li>
+    /// </ul>
+    pub fn concurrency_mode(&self) -> ::std::option::Option<&crate::types::ConcurrencyMode> {
+        self.concurrency_mode.as_ref()
     }
 }
 impl StackSetOperationPreferences {
@@ -87,6 +101,7 @@ pub struct StackSetOperationPreferencesBuilder {
     pub(crate) failure_tolerance_percentage: ::std::option::Option<i32>,
     pub(crate) max_concurrent_count: ::std::option::Option<i32>,
     pub(crate) max_concurrent_percentage: ::std::option::Option<i32>,
+    pub(crate) concurrency_mode: ::std::option::Option<crate::types::ConcurrencyMode>,
 }
 impl StackSetOperationPreferencesBuilder {
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
@@ -166,7 +181,7 @@ impl StackSetOperationPreferencesBuilder {
     pub fn get_failure_tolerance_percentage(&self) -> &::std::option::Option<i32> {
         &self.failure_tolerance_percentage
     }
-    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This can depend on the value of <code>FailureToleranceCount</code> depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code> if you're using <code>STRICT_FAILURE_TOLERANCE</code>.</p>
     /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
@@ -174,7 +189,7 @@ impl StackSetOperationPreferencesBuilder {
         self.max_concurrent_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This can depend on the value of <code>FailureToleranceCount</code> depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code> if you're using <code>STRICT_FAILURE_TOLERANCE</code>.</p>
     /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
@@ -182,7 +197,7 @@ impl StackSetOperationPreferencesBuilder {
         self.max_concurrent_count = input;
         self
     }
-    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This can depend on the value of <code>FailureToleranceCount</code> depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code> if you're using <code>STRICT_FAILURE_TOLERANCE</code>.</p>
     /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
@@ -215,6 +230,32 @@ impl StackSetOperationPreferencesBuilder {
     pub fn get_max_concurrent_percentage(&self) -> &::std::option::Option<i32> {
         &self.max_concurrent_percentage
     }
+    /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
+    /// <ul>
+    /// <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual concurrency of your deployment as the minimum value between the <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1. This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p> </li>
+    /// <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by the user in the <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p> </li>
+    /// </ul>
+    pub fn concurrency_mode(mut self, input: crate::types::ConcurrencyMode) -> Self {
+        self.concurrency_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
+    /// <ul>
+    /// <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual concurrency of your deployment as the minimum value between the <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1. This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p> </li>
+    /// <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by the user in the <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p> </li>
+    /// </ul>
+    pub fn set_concurrency_mode(mut self, input: ::std::option::Option<crate::types::ConcurrencyMode>) -> Self {
+        self.concurrency_mode = input;
+        self
+    }
+    /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
+    /// <ul>
+    /// <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the <code>FailureToleranceCount</code> +1. StackSets will set the actual concurrency of your deployment as the minimum value between the <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code> +1. This is the default behavior.</p> <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p> </li>
+    /// <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by the user in the <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p> </li>
+    /// </ul>
+    pub fn get_concurrency_mode(&self) -> &::std::option::Option<crate::types::ConcurrencyMode> {
+        &self.concurrency_mode
+    }
     /// Consumes the builder and constructs a [`StackSetOperationPreferences`](crate::types::StackSetOperationPreferences).
     pub fn build(self) -> crate::types::StackSetOperationPreferences {
         crate::types::StackSetOperationPreferences {
@@ -224,6 +265,7 @@ impl StackSetOperationPreferencesBuilder {
             failure_tolerance_percentage: self.failure_tolerance_percentage,
             max_concurrent_count: self.max_concurrent_count,
             max_concurrent_percentage: self.max_concurrent_percentage,
+            concurrency_mode: self.concurrency_mode,
         }
     }
 }

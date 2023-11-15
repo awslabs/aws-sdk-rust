@@ -48,6 +48,8 @@ pub struct PendingModifiedValues {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub multi_tenant: ::std::option::Option<bool>,
 }
 impl PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -138,6 +140,10 @@ impl PendingModifiedValues {
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
     }
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
+        self.multi_tenant
+    }
 }
 impl PendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::types::PendingModifiedValues).
@@ -171,6 +177,7 @@ pub struct PendingModifiedValuesBuilder {
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
+    pub(crate) multi_tenant: ::std::option::Option<bool>,
 }
 impl PendingModifiedValuesBuilder {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -479,6 +486,20 @@ impl PendingModifiedValuesBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub fn multi_tenant(mut self, input: bool) -> Self {
+        self.multi_tenant = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.multi_tenant = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
+        &self.multi_tenant
+    }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {
         crate::types::PendingModifiedValues {
@@ -503,6 +524,7 @@ impl PendingModifiedValuesBuilder {
             storage_throughput: self.storage_throughput,
             engine: self.engine,
             dedicated_log_volume: self.dedicated_log_volume,
+            multi_tenant: self.multi_tenant,
         }
     }
 }

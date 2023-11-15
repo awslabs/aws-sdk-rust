@@ -23,9 +23,8 @@ pub enum Error {
     ChannelMaxLimitExceededException(crate::types::error::ChannelMaxLimitExceededException),
     /// <p>This exception is thrown when CloudTrail cannot find the specified channel.</p>
     ChannelNotFoundException(crate::types::error::ChannelNotFoundException),
-    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    /// <p>This exception is also thrown when you call <code>AddTags</code> or <code>RemoveTags</code> on a trail, event data store, or channel with a resource ARN that is not valid.</p>
+    /// <p>This exception is thrown when an operation is called with an ARN that is not valid.</p>
+    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
@@ -57,7 +56,7 @@ pub enum Error {
     InactiveEventDataStoreException(crate::types::error::InactiveEventDataStoreException),
     /// <p>The specified query cannot be canceled because it is in the <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> state.</p>
     InactiveQueryException(crate::types::error::InactiveQueryException),
-    /// <p>If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
+    /// <p>If you run <code>GetInsightSelectors</code> on a trail or event data store that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
     InsightNotEnabledException(crate::types::error::InsightNotEnabledException),
     /// <p>This exception is thrown when the IAM identity that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(crate::types::error::InsufficientDependencyServiceAccessPermissionException),
@@ -92,7 +91,8 @@ pub enum Error {
     InvalidHomeRegionException(crate::types::error::InvalidHomeRegionException),
     /// <p> This exception is thrown when the provided source S3 bucket is not valid for import. </p>
     InvalidImportSourceException(crate::types::error::InvalidImportSourceException),
-    /// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
+    /// <p>For <code>PutInsightSelectors</code>, this exception is thrown when the formatting or syntax of the <code>InsightSelectors</code> JSON statement is not valid, or the specified <code>InsightType</code> in the <code>InsightSelectors</code> statement is not valid. Valid values for <code>InsightType</code> are <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code>. To enable Insights on an event data store, the destination event data store specified by the <code>InsightsDestination</code> parameter must log Insights events and the source event data store specified by the <code>EventDataStore</code> parameter must log management events.</p>
+    /// <p>For <code>UpdateEventDataStore</code>, this exception is thrown if Insights are enabled on the event data store and the updated advanced event selectors are not compatible with the configured <code>InsightSelectors</code>. If the <code>InsightSelectors</code> includes an <code>InsightType</code> of <code>ApiCallRateInsight</code>, the source event data store must log <code>write</code> management events. If the <code>InsightSelectors</code> includes an <code>InsightType</code> of <code>ApiErrorRateInsight</code>, the source event data store must log management events.</p>
     InvalidInsightSelectorsException(crate::types::error::InvalidInsightSelectorsException),
     /// <p>This exception is thrown when the KMS key ARN is not valid.</p>
     InvalidKmsKeyIdException(crate::types::error::InvalidKmsKeyIdException),
@@ -1012,6 +1012,12 @@ impl From<crate::operation::get_insight_selectors::GetInsightSelectorsError> for
             crate::operation::get_insight_selectors::GetInsightSelectorsError::InsightNotEnabledException(inner) => {
                 Error::InsightNotEnabledException(inner)
             }
+            crate::operation::get_insight_selectors::GetInsightSelectorsError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::get_insight_selectors::GetInsightSelectorsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::get_insight_selectors::GetInsightSelectorsError::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
             }
@@ -1556,6 +1562,12 @@ impl From<crate::operation::put_insight_selectors::PutInsightSelectorsError> for
             }
             crate::operation::put_insight_selectors::PutInsightSelectorsError::InvalidInsightSelectorsException(inner) => {
                 Error::InvalidInsightSelectorsException(inner)
+            }
+            crate::operation::put_insight_selectors::PutInsightSelectorsError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::put_insight_selectors::PutInsightSelectorsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
             }
             crate::operation::put_insight_selectors::PutInsightSelectorsError::InvalidTrailNameException(inner) => {
                 Error::InvalidTrailNameException(inner)
@@ -2146,6 +2158,9 @@ impl From<crate::operation::update_event_data_store::UpdateEventDataStoreError> 
             }
             crate::operation::update_event_data_store::UpdateEventDataStoreError::InvalidEventSelectorsException(inner) => {
                 Error::InvalidEventSelectorsException(inner)
+            }
+            crate::operation::update_event_data_store::UpdateEventDataStoreError::InvalidInsightSelectorsException(inner) => {
+                Error::InvalidInsightSelectorsException(inner)
             }
             crate::operation::update_event_data_store::UpdateEventDataStoreError::InvalidKmsKeyIdException(inner) => {
                 Error::InvalidKmsKeyIdException(inner)

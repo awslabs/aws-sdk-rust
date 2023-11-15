@@ -22,7 +22,7 @@ impl DeleteWebhookInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWebhook`.
 ///
-/// <p> Deletes a webhook. </p>
+/// <p>Deletes a webhook. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWebhookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteWebhookFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique ID for a webhook. </p>
+    /// <p>The unique ID for a webhook. </p>
     pub fn webhook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.webhook_id(input.into());
         self
     }
-    /// <p> The unique ID for a webhook. </p>
+    /// <p>The unique ID for a webhook. </p>
     pub fn set_webhook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_webhook_id(input);
         self
     }
-    /// <p> The unique ID for a webhook. </p>
+    /// <p>The unique ID for a webhook. </p>
     pub fn get_webhook_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_webhook_id()
     }

@@ -9,8 +9,14 @@ pub fn ser_create_related_item_input(
         crate::protocol_serde::shape_related_item_input_content::ser_related_item_input_content(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("type").string(var_3.as_str());
+    if let Some(var_3) = &input.performed_by {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("performedBy").start_object();
+        crate::protocol_serde::shape_user_union::ser_user_union(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.r#type {
+        object.key("type").string(var_5.as_str());
     }
     Ok(())
 }

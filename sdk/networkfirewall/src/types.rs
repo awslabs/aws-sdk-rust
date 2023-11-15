@@ -29,6 +29,10 @@ pub use crate::types::_server_certificate::ServerCertificate;
 
 pub use crate::types::_rule_group_response::RuleGroupResponse;
 
+pub use crate::types::_analysis_result::AnalysisResult;
+
+pub use crate::types::_identified_type::IdentifiedType;
+
 pub use crate::types::_source_metadata::SourceMetadata;
 
 pub use crate::types::_rule_group_type::RuleGroupType;
@@ -159,6 +163,8 @@ mod _action_definition;
 
 mod _address;
 
+mod _analysis_result;
+
 mod _attachment;
 
 mod _attachment_status;
@@ -196,6 +202,8 @@ mod _firewall_status_value;
 mod _generated_rules_type;
 
 mod _header;
+
+mod _identified_type;
 
 mod _ip_address_type;
 

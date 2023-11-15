@@ -3,14 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMembersOutput {
-    /// <p>A list of members.</p>
+    /// <p>A list of members.</p> <note>
+    /// <p>The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added by invitation.</p>
+    /// </note>
     pub members: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMembersOutput {
-    /// <p>A list of members.</p>
+    /// <p>A list of members.</p> <note>
+    /// <p>The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added by invitation.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
     pub fn members(&self) -> &[crate::types::Member] {
@@ -46,19 +50,25 @@ impl ListMembersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_members`](Self::set_members).
     ///
-    /// <p>A list of members.</p>
+    /// <p>A list of members.</p> <note>
+    /// <p>The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added by invitation.</p>
+    /// </note>
     pub fn members(mut self, input: crate::types::Member) -> Self {
         let mut v = self.members.unwrap_or_default();
         v.push(input);
         self.members = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of members.</p>
+    /// <p>A list of members.</p> <note>
+    /// <p>The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added by invitation.</p>
+    /// </note>
     pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Member>>) -> Self {
         self.members = input;
         self
     }
-    /// <p>A list of members.</p>
+    /// <p>A list of members.</p> <note>
+    /// <p>The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added by invitation.</p>
+    /// </note>
     pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Member>> {
         &self.members
     }

@@ -268,11 +268,11 @@ pub type ListBranchesErrorKind = ListBranchesError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListBranchesError {
-    /// <p> A request contains unexpected data. </p>
+    /// <p>A request contains unexpected data. </p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p> The service failed to perform an operation due to an internal issue. </p>
+    /// <p>The service failed to perform an operation due to an internal issue. </p>
     InternalFailureException(crate::types::error::InternalFailureException),
-    /// <p> An operation failed due to a lack of access. </p>
+    /// <p>An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
@@ -381,3 +381,6 @@ mod _list_branches_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

@@ -5,13 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginDetails {
     /// <p>The product ID of the origin of the data set.</p>
-    pub product_id: ::std::string::String,
+    pub product_id: ::std::option::Option<::std::string::String>,
 }
 impl OriginDetails {
     /// <p>The product ID of the origin of the data set.</p>
-    pub fn product_id(&self) -> &str {
-        use std::ops::Deref;
-        self.product_id.deref()
+    pub fn product_id(&self) -> ::std::option::Option<&str> {
+        self.product_id.as_deref()
     }
 }
 impl OriginDetails {
@@ -29,7 +28,6 @@ pub struct OriginDetailsBuilder {
 }
 impl OriginDetailsBuilder {
     /// <p>The product ID of the origin of the data set.</p>
-    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -44,16 +42,7 @@ impl OriginDetailsBuilder {
         &self.product_id
     }
     /// Consumes the builder and constructs a [`OriginDetails`](crate::types::OriginDetails).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`product_id`](crate::types::builders::OriginDetailsBuilder::product_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::OriginDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginDetails {
-            product_id: self.product_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "product_id",
-                    "product_id was not specified but it is required when building OriginDetails",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::OriginDetails {
+        crate::types::OriginDetails { product_id: self.product_id }
     }
 }

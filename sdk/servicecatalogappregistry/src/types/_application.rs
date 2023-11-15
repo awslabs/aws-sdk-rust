@@ -18,6 +18,8 @@ pub struct Application {
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Key-value pairs you can use to associate with the application.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p> A key-value pair that identifies an associated resource. </p>
+    pub application_tag: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Application {
     /// <p>The identifier of the application.</p>
@@ -48,6 +50,10 @@ impl Application {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p> A key-value pair that identifies an associated resource. </p>
+    pub fn application_tag(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.application_tag.as_ref()
+    }
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::types::Application).
@@ -67,6 +73,7 @@ pub struct ApplicationBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) application_tag: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ApplicationBuilder {
     /// <p>The identifier of the application.</p>
@@ -173,6 +180,33 @@ impl ApplicationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Adds a key-value pair to `application_tag`.
+    ///
+    /// To override the contents of this collection use [`set_application_tag`](Self::set_application_tag).
+    ///
+    /// <p> A key-value pair that identifies an associated resource. </p>
+    pub fn application_tag(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.application_tag.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.application_tag = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p> A key-value pair that identifies an associated resource. </p>
+    pub fn set_application_tag(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.application_tag = input;
+        self
+    }
+    /// <p> A key-value pair that identifies an associated resource. </p>
+    pub fn get_application_tag(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.application_tag
+    }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {
         crate::types::Application {
@@ -183,6 +217,7 @@ impl ApplicationBuilder {
             creation_time: self.creation_time,
             last_update_time: self.last_update_time,
             tags: self.tags,
+            application_tag: self.application_tag,
         }
     }
 }

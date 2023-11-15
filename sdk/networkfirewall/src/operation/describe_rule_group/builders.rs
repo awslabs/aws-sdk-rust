@@ -162,4 +162,18 @@ impl DescribeRuleGroupFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
         self.inner.get_type()
     }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
+    pub fn analyze_rule_group(mut self, input: bool) -> Self {
+        self.inner = self.inner.analyze_rule_group(input);
+        self
+    }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
+    pub fn set_analyze_rule_group(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_analyze_rule_group(input);
+        self
+    }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
+    pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
+        self.inner.get_analyze_rule_group()
+    }
 }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessEndpointsOutput {
-    /// <p>The ID of the Verified Access endpoint.</p>
+    /// <p>Details about the Verified Access endpoints.</p>
     pub verified_access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVerifiedAccessEndpointsOutput {
-    /// <p>The ID of the Verified Access endpoint.</p>
+    /// <p>Details about the Verified Access endpoints.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_endpoints.is_none()`.
     pub fn verified_access_endpoints(&self) -> &[crate::types::VerifiedAccessEndpoint] {
@@ -46,19 +46,19 @@ impl DescribeVerifiedAccessEndpointsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_verified_access_endpoints`](Self::set_verified_access_endpoints).
     ///
-    /// <p>The ID of the Verified Access endpoint.</p>
+    /// <p>Details about the Verified Access endpoints.</p>
     pub fn verified_access_endpoints(mut self, input: crate::types::VerifiedAccessEndpoint) -> Self {
         let mut v = self.verified_access_endpoints.unwrap_or_default();
         v.push(input);
         self.verified_access_endpoints = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ID of the Verified Access endpoint.</p>
+    /// <p>Details about the Verified Access endpoints.</p>
     pub fn set_verified_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>>) -> Self {
         self.verified_access_endpoints = input;
         self
     }
-    /// <p>The ID of the Verified Access endpoint.</p>
+    /// <p>Details about the Verified Access endpoints.</p>
     pub fn get_verified_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpoint>> {
         &self.verified_access_endpoints
     }

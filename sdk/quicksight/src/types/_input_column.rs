@@ -8,6 +8,8 @@ pub struct InputColumn {
     pub name: ::std::string::String,
     /// <p>The data type of the column.</p>
     pub r#type: crate::types::InputColumnDataType,
+    /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
+    pub sub_type: ::std::option::Option<crate::types::ColumnDataSubType>,
 }
 impl InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
@@ -18,6 +20,10 @@ impl InputColumn {
     /// <p>The data type of the column.</p>
     pub fn r#type(&self) -> &crate::types::InputColumnDataType {
         &self.r#type
+    }
+    /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
+    pub fn sub_type(&self) -> ::std::option::Option<&crate::types::ColumnDataSubType> {
+        self.sub_type.as_ref()
     }
 }
 impl InputColumn {
@@ -33,6 +39,7 @@ impl InputColumn {
 pub struct InputColumnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::InputColumnDataType>,
+    pub(crate) sub_type: ::std::option::Option<crate::types::ColumnDataSubType>,
 }
 impl InputColumnBuilder {
     /// <p>The name of this column in the underlying data source.</p>
@@ -65,6 +72,20 @@ impl InputColumnBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InputColumnDataType> {
         &self.r#type
     }
+    /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
+    pub fn sub_type(mut self, input: crate::types::ColumnDataSubType) -> Self {
+        self.sub_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
+    pub fn set_sub_type(mut self, input: ::std::option::Option<crate::types::ColumnDataSubType>) -> Self {
+        self.sub_type = input;
+        self
+    }
+    /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
+    pub fn get_sub_type(&self) -> &::std::option::Option<crate::types::ColumnDataSubType> {
+        &self.sub_type
+    }
     /// Consumes the builder and constructs a [`InputColumn`](crate::types::InputColumn).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::InputColumnBuilder::name)
@@ -83,6 +104,7 @@ impl InputColumnBuilder {
                     "r#type was not specified but it is required when building InputColumn",
                 )
             })?,
+            sub_type: self.sub_type,
         })
     }
 }

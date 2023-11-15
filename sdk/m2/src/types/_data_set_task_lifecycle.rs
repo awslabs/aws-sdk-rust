@@ -14,6 +14,7 @@
 /// match datasettasklifecycle {
 ///     DataSetTaskLifecycle::Completed => { /* ... */ },
 ///     DataSetTaskLifecycle::Creating => { /* ... */ },
+///     DataSetTaskLifecycle::Failed => { /* ... */ },
 ///     DataSetTaskLifecycle::Running => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum DataSetTaskLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for DataSetTaskLifecycle {
         match s {
             "Completed" => DataSetTaskLifecycle::Completed,
             "Creating" => DataSetTaskLifecycle::Creating,
+            "Failed" => DataSetTaskLifecycle::Failed,
             "Running" => DataSetTaskLifecycle::Running,
             other => DataSetTaskLifecycle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -74,13 +78,14 @@ impl DataSetTaskLifecycle {
         match self {
             DataSetTaskLifecycle::Completed => "Completed",
             DataSetTaskLifecycle::Creating => "Creating",
+            DataSetTaskLifecycle::Failed => "Failed",
             DataSetTaskLifecycle::Running => "Running",
             DataSetTaskLifecycle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Creating", "Running"]
+        &["Completed", "Creating", "Failed", "Running"]
     }
 }
 impl ::std::convert::AsRef<str> for DataSetTaskLifecycle {

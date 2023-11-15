@@ -17,9 +17,17 @@ pub use crate::types::_attribute_group_summary::AttributeGroupSummary;
 
 pub use crate::types::_resource_info::ResourceInfo;
 
+pub use crate::types::_association_option::AssociationOption;
+
 pub use crate::types::_resource_details::ResourceDetails;
 
 pub use crate::types::_application_summary::ApplicationSummary;
+
+pub use crate::types::_application_tag_result::ApplicationTagResult;
+
+pub use crate::types::_resources_list_item::ResourcesListItem;
+
+pub use crate::types::_application_tag_status::ApplicationTagStatus;
 
 pub use crate::types::_resource::Resource;
 
@@ -29,6 +37,8 @@ pub use crate::types::_resource_group::ResourceGroup;
 
 pub use crate::types::_resource_group_state::ResourceGroupState;
 
+pub use crate::types::_resource_item_status::ResourceItemStatus;
+
 pub use crate::types::_integrations::Integrations;
 
 mod _app_registry_configuration;
@@ -36,6 +46,12 @@ mod _app_registry_configuration;
 mod _application;
 
 mod _application_summary;
+
+mod _application_tag_result;
+
+mod _application_tag_status;
+
+mod _association_option;
 
 mod _attribute_group;
 
@@ -57,7 +73,11 @@ mod _resource_info;
 
 mod _resource_integrations;
 
+mod _resource_item_status;
+
 mod _resource_type;
+
+mod _resources_list_item;
 
 mod _sync_action;
 

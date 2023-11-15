@@ -55,6 +55,15 @@ pub fn de_start_stream_transcription_http_response(
                 )
             })?,
         );
+        output = output.set_identify_multiple_languages(
+            crate::protocol_serde::shape_start_stream_transcription_output::de_identify_multiple_languages_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled(
+                        "Failed to parse IdentifyMultipleLanguages from header `x-amzn-transcribe-identify-multiple-languages",
+                    )
+                },
+            )?,
+        );
         output = output.set_language_code(
             crate::protocol_serde::shape_start_stream_transcription_output::de_language_code_header(_response_headers).map_err(|_| {
                 crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled(
@@ -546,10 +555,24 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-preferred-language", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_39) = &input.vocabulary_names {
-        let formatted_40 = inner_39.as_str();
+    if let ::std::option::Option::Some(inner_39) = &input.identify_multiple_languages {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_39);
+        let formatted_40 = encoder.encode();
         if !formatted_40.is_empty() {
             let header_value = formatted_40;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "identify_multiple_languages",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("x-amzn-transcribe-identify-multiple-languages", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_41) = &input.vocabulary_names {
+        let formatted_42 = inner_41.as_str();
+        if !formatted_42.is_empty() {
+            let header_value = formatted_42;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "vocabulary_names",
@@ -559,10 +582,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-vocabulary-names", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_41) = &input.vocabulary_filter_names {
-        let formatted_42 = inner_41.as_str();
-        if !formatted_42.is_empty() {
-            let header_value = formatted_42;
+    if let ::std::option::Option::Some(inner_43) = &input.vocabulary_filter_names {
+        let formatted_44 = inner_43.as_str();
+        if !formatted_44.is_empty() {
+            let header_value = formatted_44;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "vocabulary_filter_names",

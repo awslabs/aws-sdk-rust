@@ -7,7 +7,7 @@ pub struct RoutingConfigurationListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies one or two state machine versions defined in the routing configuration.</p>
     /// <p>If you specify the ARN of a second version, it must belong to the same state machine as the first version.</p>
     pub state_machine_version_arn: ::std::string::String,
-    /// <p>The percentage of traffic you want to route to the second state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
+    /// <p>The percentage of traffic you want to route to a state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     pub weight: i32,
 }
 impl RoutingConfigurationListItem {
@@ -17,7 +17,7 @@ impl RoutingConfigurationListItem {
         use std::ops::Deref;
         self.state_machine_version_arn.deref()
     }
-    /// <p>The percentage of traffic you want to route to the second state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
+    /// <p>The percentage of traffic you want to route to a state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     pub fn weight(&self) -> i32 {
         self.weight
     }
@@ -55,18 +55,18 @@ impl RoutingConfigurationListItemBuilder {
     pub fn get_state_machine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_machine_version_arn
     }
-    /// <p>The percentage of traffic you want to route to the second state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
+    /// <p>The percentage of traffic you want to route to a state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     /// This field is required.
     pub fn weight(mut self, input: i32) -> Self {
         self.weight = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage of traffic you want to route to the second state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
+    /// <p>The percentage of traffic you want to route to a state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
         self.weight = input;
         self
     }
-    /// <p>The percentage of traffic you want to route to the second state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
+    /// <p>The percentage of traffic you want to route to a state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
         &self.weight
     }

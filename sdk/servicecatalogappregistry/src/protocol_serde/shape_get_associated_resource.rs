@@ -102,6 +102,13 @@ pub(crate) fn de_get_associated_resource(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "applicationTagResult" => {
+                    builder =
+                        builder.set_application_tag_result(crate::protocol_serde::shape_application_tag_result::de_application_tag_result(tokens)?);
+                }
+                "options" => {
+                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens)?);
+                }
                 "resource" => {
                     builder = builder.set_resource(crate::protocol_serde::shape_resource::de_resource(tokens)?);
                 }

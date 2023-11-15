@@ -8,7 +8,7 @@ pub struct ThrottlingException {
     pub message: ::std::string::String,
     /// <p>The identifier of the service that the throttled request was made to.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the throttled reuqest.</p>
+    /// <p>The identifier of the throttled request.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds to wait before retrying the request.</p>
     pub retry_after_seconds: i32,
@@ -19,7 +19,7 @@ impl ThrottlingException {
     pub fn service_code(&self) -> ::std::option::Option<&str> {
         self.service_code.as_deref()
     }
-    /// <p>The identifier of the throttled reuqest.</p>
+    /// <p>The identifier of the throttled request.</p>
     pub fn quota_code(&self) -> ::std::option::Option<&str> {
         self.quota_code.as_deref()
     }
@@ -106,17 +106,17 @@ impl ThrottlingExceptionBuilder {
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }
-    /// <p>The identifier of the throttled reuqest.</p>
+    /// <p>The identifier of the throttled request.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the throttled reuqest.</p>
+    /// <p>The identifier of the throttled request.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_code = input;
         self
     }
-    /// <p>The identifier of the throttled reuqest.</p>
+    /// <p>The identifier of the throttled request.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.quota_code
     }

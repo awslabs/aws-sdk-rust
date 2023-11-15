@@ -15,7 +15,7 @@ pub struct StartReadSetImportJobSourceItem {
     /// <p>Where the source originated.</p>
     pub generated_from: ::std::option::Option<::std::string::String>,
     /// <p>The source's reference ARN.</p>
-    pub reference_arn: ::std::string::String,
+    pub reference_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The source's description.</p>
@@ -47,9 +47,8 @@ impl StartReadSetImportJobSourceItem {
         self.generated_from.as_deref()
     }
     /// <p>The source's reference ARN.</p>
-    pub fn reference_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.reference_arn.deref()
+    pub fn reference_arn(&self) -> ::std::option::Option<&str> {
+        self.reference_arn.as_deref()
     }
     /// <p>The source's name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -161,7 +160,6 @@ impl StartReadSetImportJobSourceItemBuilder {
         &self.generated_from
     }
     /// <p>The source's reference ARN.</p>
-    /// This field is required.
     pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_arn = ::std::option::Option::Some(input.into());
         self
@@ -228,7 +226,6 @@ impl StartReadSetImportJobSourceItemBuilder {
     /// - [`source_file_type`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::source_file_type)
     /// - [`subject_id`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::subject_id)
     /// - [`sample_id`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::sample_id)
-    /// - [`reference_arn`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::reference_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::StartReadSetImportJobSourceItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartReadSetImportJobSourceItem {
             source_files: self.source_files,
@@ -251,12 +248,7 @@ impl StartReadSetImportJobSourceItemBuilder {
                 )
             })?,
             generated_from: self.generated_from,
-            reference_arn: self.reference_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reference_arn",
-                    "reference_arn was not specified but it is required when building StartReadSetImportJobSourceItem",
-                )
-            })?,
+            reference_arn: self.reference_arn,
             name: self.name,
             description: self.description,
             tags: self.tags,

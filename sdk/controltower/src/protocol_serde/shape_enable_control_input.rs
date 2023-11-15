@@ -6,8 +6,18 @@ pub fn ser_enable_control_input(
     if let Some(var_1) = &input.control_identifier {
         object.key("controlIdentifier").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.target_identifier {
-        object.key("targetIdentifier").string(var_2.as_str());
+    if let Some(var_2) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("tags").start_object();
+        for (key_4, value_5) in var_2 {
+            {
+                object_3.key(key_4.as_str()).string(value_5.as_str());
+            }
+        }
+        object_3.finish();
+    }
+    if let Some(var_6) = &input.target_identifier {
+        object.key("targetIdentifier").string(var_6.as_str());
     }
     Ok(())
 }

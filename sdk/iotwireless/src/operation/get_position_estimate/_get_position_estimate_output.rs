@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPositionEstimateOutput {
-    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device location (console)</a>.</p>
     pub geo_json_payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl GetPositionEstimateOutput {
-    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device location (console)</a>.</p>
     pub fn geo_json_payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.geo_json_payload.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetPositionEstimateOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetPositionEstimateOutputBuilder {
-    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device location (console)</a>.</p>
     pub fn geo_json_payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.geo_json_payload = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device location (console)</a>.</p>
     pub fn set_geo_json_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.geo_json_payload = input;
         self
     }
-    /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
+    /// <p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device location (console)</a>.</p>
     pub fn get_geo_json_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.geo_json_payload
     }

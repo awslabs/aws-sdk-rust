@@ -74,6 +74,11 @@ pub fn ser_create_db_instance_input_input(
     if let Some(var_27) = &input.performance_insights_kms_key_id {
         scope_26.string(var_27);
     }
+    #[allow(unused_mut)]
+    let mut scope_28 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_29) = &input.ca_certificate_identifier {
+        scope_28.string(var_29);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

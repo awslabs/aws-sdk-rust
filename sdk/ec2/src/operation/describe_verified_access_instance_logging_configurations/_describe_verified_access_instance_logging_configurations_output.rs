@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
-    /// <p>The current logging configuration for the Verified Access instances.</p>
+    /// <p>The logging configuration for the Verified Access instances.</p>
     pub logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
-    /// <p>The current logging configuration for the Verified Access instances.</p>
+    /// <p>The logging configuration for the Verified Access instances.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logging_configurations.is_none()`.
     pub fn logging_configurations(&self) -> &[crate::types::VerifiedAccessInstanceLoggingConfiguration] {
@@ -46,14 +46,14 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_logging_configurations`](Self::set_logging_configurations).
     ///
-    /// <p>The current logging configuration for the Verified Access instances.</p>
+    /// <p>The logging configuration for the Verified Access instances.</p>
     pub fn logging_configurations(mut self, input: crate::types::VerifiedAccessInstanceLoggingConfiguration) -> Self {
         let mut v = self.logging_configurations.unwrap_or_default();
         v.push(input);
         self.logging_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The current logging configuration for the Verified Access instances.</p>
+    /// <p>The logging configuration for the Verified Access instances.</p>
     pub fn set_logging_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>>,
@@ -61,7 +61,7 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutputBuilder {
         self.logging_configurations = input;
         self
     }
-    /// <p>The current logging configuration for the Verified Access instances.</p>
+    /// <p>The logging configuration for the Verified Access instances.</p>
     pub fn get_logging_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>> {
         &self.logging_configurations
     }

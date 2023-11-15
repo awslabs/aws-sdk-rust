@@ -164,19 +164,19 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Choose whether or not to trigger immediate tunnel replacement. This is only applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub fn skip_tunnel_replacement(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_tunnel_replacement(input);
         self
     }
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Choose whether or not to trigger immediate tunnel replacement. This is only applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub fn set_skip_tunnel_replacement(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_tunnel_replacement(input);
         self
     }
-    /// <p>Choose whether or not to trigger immediate tunnel replacement.</p>
+    /// <p>Choose whether or not to trigger immediate tunnel replacement. This is only applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
     pub fn get_skip_tunnel_replacement(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_tunnel_replacement()

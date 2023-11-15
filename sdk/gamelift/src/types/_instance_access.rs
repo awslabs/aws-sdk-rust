@@ -42,7 +42,7 @@ impl ::std::fmt::Debug for InstanceAccess {
         let mut formatter = f.debug_struct("InstanceAccess");
         formatter.field("fleet_id", &self.fleet_id);
         formatter.field("instance_id", &self.instance_id);
-        formatter.field("ip_address", &self.ip_address);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("operating_system", &self.operating_system);
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -152,7 +152,7 @@ impl ::std::fmt::Debug for InstanceAccessBuilder {
         let mut formatter = f.debug_struct("InstanceAccessBuilder");
         formatter.field("fleet_id", &self.fleet_id);
         formatter.field("instance_id", &self.instance_id);
-        formatter.field("ip_address", &self.ip_address);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("operating_system", &self.operating_system);
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.finish()

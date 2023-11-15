@@ -124,6 +124,9 @@ pub mod detect_syntax;
 /// Types for the `DetectTargetedSentiment` operation.
 pub mod detect_targeted_sentiment;
 
+/// Types for the `DetectToxicContent` operation.
+pub mod detect_toxic_content;
+
 /// Types for the `ImportModel` operation.
 pub mod import_model;
 

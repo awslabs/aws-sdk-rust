@@ -487,6 +487,8 @@ pub(crate) mod shape_coverage_eks_cluster_details;
 
 pub(crate) mod shape_data_source_free_trial;
 
+pub(crate) mod shape_detection;
+
 pub(crate) mod shape_detector_additional_configuration_result;
 
 pub(crate) mod shape_ebs_volume_details;
@@ -547,6 +549,8 @@ pub(crate) mod shape_volume_detail;
 
 pub(crate) mod shape_addon_details;
 
+pub(crate) mod shape_anomaly;
+
 pub(crate) mod shape_aws_api_call_action;
 
 pub(crate) mod shape_dns_request_action;
@@ -556,6 +560,12 @@ pub(crate) mod shape_ecs_task_details;
 pub(crate) mod shape_iam_instance_profile;
 
 pub(crate) mod shape_kubernetes_api_call_action;
+
+pub(crate) mod shape_kubernetes_permission_checked_details;
+
+pub(crate) mod shape_kubernetes_role_binding_details;
+
+pub(crate) mod shape_kubernetes_role_details;
 
 pub(crate) mod shape_kubernetes_user_details;
 
@@ -595,6 +605,10 @@ pub(crate) mod shape_vpc_config;
 
 pub(crate) mod shape_affected_resources;
 
+pub(crate) mod shape_anomaly_profiles;
+
+pub(crate) mod shape_anomaly_unusual;
+
 pub(crate) mod shape_containers;
 
 pub(crate) mod shape_default_server_side_encryption;
@@ -606,6 +620,8 @@ pub(crate) mod shape_flags_list;
 pub(crate) mod shape_groups;
 
 pub(crate) mod shape_highest_severity_threat_details;
+
+pub(crate) mod shape_impersonated_user;
 
 pub(crate) mod shape_lineage;
 
@@ -657,6 +673,10 @@ pub(crate) mod shape_volume_mount;
 
 pub(crate) mod shape_volumes;
 
+pub(crate) mod shape_anomaly_profile_features;
+
+pub(crate) mod shape_behavior;
+
 pub(crate) mod shape_city;
 
 pub(crate) mod shape_country;
@@ -687,6 +707,10 @@ pub(crate) mod shape_volume;
 
 pub(crate) mod shape_account_level_permissions;
 
+pub(crate) mod shape_anomaly_profile_feature_objects;
+
+pub(crate) mod shape_anomaly_unusual_behavior_feature;
+
 pub(crate) mod shape_bucket_level_permissions;
 
 pub(crate) mod shape_host_path;
@@ -697,10 +721,16 @@ pub(crate) mod shape_scan_threat_name;
 
 pub(crate) mod shape_access_control_list;
 
+pub(crate) mod shape_anomaly_object;
+
 pub(crate) mod shape_block_public_access;
 
 pub(crate) mod shape_bucket_policy;
 
 pub(crate) mod shape_file_paths;
 
+pub(crate) mod shape_observations;
+
 pub(crate) mod shape_scan_file_path;
+
+pub(crate) mod shape_observation_texts;

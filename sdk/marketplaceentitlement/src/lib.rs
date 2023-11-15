@@ -33,8 +33,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
-//! aws-sdk-marketplaceentitlement = "0.35.0"
+//! aws-config = "0.57.0"
+//! aws-sdk-marketplaceentitlement = "0.36.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -193,6 +193,8 @@ mod auth_plugin;
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
+
+mod lens;
 
 mod endpoint_lib;
 

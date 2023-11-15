@@ -70,6 +70,9 @@ pub mod list_tags_for_resource;
 /// Types for the `PublishStateMachineVersion` operation.
 pub mod publish_state_machine_version;
 
+/// Types for the `RedriveExecution` operation.
+pub mod redrive_execution;
+
 /// Types for the `SendTaskFailure` operation.
 pub mod send_task_failure;
 

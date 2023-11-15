@@ -24,6 +24,13 @@ pub(crate) fn de_resource_limit_exceeded_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "subscriptionId" => {
+                    builder = builder.set_subscription_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "message" => {
                     builder = builder.set_message(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

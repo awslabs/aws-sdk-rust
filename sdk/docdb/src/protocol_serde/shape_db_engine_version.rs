@@ -107,6 +107,31 @@ pub fn de_db_engine_version(
                 builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_8);
             }
             ,
+            s if s.matches("SupportedCACertificateIdentifiers") /* SupportedCACertificateIdentifiers com.amazonaws.docdb#DBEngineVersion$SupportedCACertificateIdentifiers */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_ca_certificate_identifiers_list::de_ca_certificate_identifiers_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_ca_certificate_identifiers(var_9);
+            }
+            ,
+            s if s.matches("SupportsCertificateRotationWithoutRestart") /* SupportsCertificateRotationWithoutRestart com.amazonaws.docdb#DBEngineVersion$SupportsCertificateRotationWithoutRestart */ =>  {
+                let var_10 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.docdb#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_certificate_rotation_without_restart(var_10);
+            }
+            ,
             _ => {}
         }
     }

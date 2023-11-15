@@ -122,17 +122,17 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn trace_content(mut self, input: crate::types::TraceContent) -> Self {
         self.inner = self.inner.trace_content(input);
         self
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn set_trace_content(mut self, input: ::std::option::Option<crate::types::TraceContent>) -> Self {
         self.inner = self.inner.set_trace_content(input);
         self
     }
-    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
         self.inner.get_trace_content()
     }

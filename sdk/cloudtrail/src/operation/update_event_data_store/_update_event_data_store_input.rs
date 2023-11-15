@@ -11,7 +11,9 @@ pub struct UpdateEventDataStoreInput {
     pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub multi_region_enabled: ::std::option::Option<bool>,
-    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
+    /// </note>
     pub organization_enabled: ::std::option::Option<bool>,
     /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p> <note>
     /// <p>If you decrease the retention period of an event data store, CloudTrail will remove any events with an <code>eventTime</code> older than the new retention period. For example, if the previous retention period was 365 days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code> older than 100 days.</p>
@@ -51,7 +53,9 @@ impl UpdateEventDataStoreInput {
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_region_enabled
     }
-    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
+    /// </note>
     pub fn organization_enabled(&self) -> ::std::option::Option<bool> {
         self.organization_enabled
     }
@@ -164,17 +168,23 @@ impl UpdateEventDataStoreInputBuilder {
     pub fn get_multi_region_enabled(&self) -> &::std::option::Option<bool> {
         &self.multi_region_enabled
     }
-    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
+    /// </note>
     pub fn organization_enabled(mut self, input: bool) -> Self {
         self.organization_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
+    /// </note>
     pub fn set_organization_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.organization_enabled = input;
         self
     }
-    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
+    /// </note>
     pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
         &self.organization_enabled
     }

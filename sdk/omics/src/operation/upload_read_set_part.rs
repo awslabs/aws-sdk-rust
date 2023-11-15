@@ -94,7 +94,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UploadR
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("UploadReadSetPart", "omics"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
-        signing_options.content_sha256_header = false;
+        signing_options.content_sha256_header = true;
         signing_options.normalize_uri_path = true;
         signing_options.payload_override = Some(::aws_sigv4::http_request::SignableBody::UnsignedPayload);
 

@@ -91,6 +91,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Registe
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("RegisterCompute", "gamelift"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
@@ -254,6 +255,8 @@ pub enum RegisterComputeError {
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -277,6 +280,7 @@ impl ::std::fmt::Display for RegisterComputeError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::UnauthorizedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -288,6 +292,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RegisterCompu
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
@@ -328,6 +333,7 @@ impl RegisterComputeError {
             Self::ConflictException(e) => e.meta(),
             Self::InternalServiceException(e) => e.meta(),
             Self::InvalidRequestException(e) => e.meta(),
+            Self::LimitExceededException(e) => e.meta(),
             Self::UnauthorizedException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -344,6 +350,10 @@ impl RegisterComputeError {
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(self, Self::InvalidRequestException(_))
     }
+    /// Returns `true` if the error kind is `RegisterComputeError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `RegisterComputeError::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(self, Self::UnauthorizedException(_))
@@ -355,6 +365,7 @@ impl ::std::error::Error for RegisterComputeError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

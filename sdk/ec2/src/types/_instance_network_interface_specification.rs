@@ -49,6 +49,8 @@ pub struct InstanceNetworkInterfaceSpecification {
     pub ipv6_prefix_count: ::std::option::Option<i32>,
     /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub primary_ipv6: ::std::option::Option<bool>,
+    /// <p>Specifies the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>,
 }
 impl InstanceNetworkInterfaceSpecification {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
@@ -146,6 +148,10 @@ impl InstanceNetworkInterfaceSpecification {
     pub fn primary_ipv6(&self) -> ::std::option::Option<bool> {
         self.primary_ipv6
     }
+    /// <p>Specifies the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdSpecificationRequest> {
+        self.ena_srd_specification.as_ref()
+    }
 }
 impl InstanceNetworkInterfaceSpecification {
     /// Creates a new builder-style object to manufacture [`InstanceNetworkInterfaceSpecification`](crate::types::InstanceNetworkInterfaceSpecification).
@@ -178,6 +184,7 @@ pub struct InstanceNetworkInterfaceSpecificationBuilder {
     pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
     pub(crate) primary_ipv6: ::std::option::Option<bool>,
+    pub(crate) ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>,
 }
 impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
@@ -505,6 +512,20 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     pub fn get_primary_ipv6(&self) -> &::std::option::Option<bool> {
         &self.primary_ipv6
     }
+    /// <p>Specifies the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub fn ena_srd_specification(mut self, input: crate::types::EnaSrdSpecificationRequest) -> Self {
+        self.ena_srd_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>) -> Self {
+        self.ena_srd_specification = input;
+        self
+    }
+    /// <p>Specifies the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecificationRequest> {
+        &self.ena_srd_specification
+    }
     /// Consumes the builder and constructs a [`InstanceNetworkInterfaceSpecification`](crate::types::InstanceNetworkInterfaceSpecification).
     pub fn build(self) -> crate::types::InstanceNetworkInterfaceSpecification {
         crate::types::InstanceNetworkInterfaceSpecification {
@@ -528,6 +549,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
             ipv6_prefixes: self.ipv6_prefixes,
             ipv6_prefix_count: self.ipv6_prefix_count,
             primary_ipv6: self.primary_ipv6,
+            ena_srd_specification: self.ena_srd_specification,
         }
     }
 }

@@ -31,7 +31,7 @@ impl GetPropertygraphStreamInputBuilder {
 /// <p>Note that you can restrict property-graph queries using the following IAM context keys:</p>
 /// <ul>
 /// <li> <p> <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Opencypher</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:OpenCypher</a> </p> </li>
 /// </ul>
 /// <p>See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition keys available in Neptune IAM data-access policy statements</a>).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

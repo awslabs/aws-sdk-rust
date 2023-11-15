@@ -249,9 +249,9 @@ pub type SendTaskHeartbeatErrorKind = SendTaskHeartbeatError;
 pub enum SendTaskHeartbeatError {
     /// <p>The provided token is not valid.</p>
     InvalidToken(crate::types::error::InvalidToken),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The activity does not exist.</p>
     TaskDoesNotExist(crate::types::error::TaskDoesNotExist),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The task token has either expired or the task associated with the token has already been closed.</p>
     TaskTimedOut(crate::types::error::TaskTimedOut),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

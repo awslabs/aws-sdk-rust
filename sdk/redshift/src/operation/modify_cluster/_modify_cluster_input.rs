@@ -115,6 +115,8 @@ pub struct ModifyClusterInput {
     pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub ip_address_type: ::std::option::Option<::std::string::String>,
+    /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+    pub multi_az: ::std::option::Option<bool>,
 }
 impl ModifyClusterInput {
     /// <p>The unique identifier of the cluster to be modified.</p>
@@ -288,6 +290,10 @@ impl ModifyClusterInput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
         self.ip_address_type.as_deref()
     }
+    /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
+        self.multi_az
+    }
 }
 impl ::std::fmt::Debug for ModifyClusterInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -320,6 +326,7 @@ impl ::std::fmt::Debug for ModifyClusterInput {
         formatter.field("manage_master_password", &self.manage_master_password);
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
         formatter.field("ip_address_type", &self.ip_address_type);
+        formatter.field("multi_az", &self.multi_az);
         formatter.finish()
     }
 }
@@ -362,6 +369,7 @@ pub struct ModifyClusterInputBuilder {
     pub(crate) manage_master_password: ::std::option::Option<bool>,
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_az: ::std::option::Option<bool>,
 }
 impl ModifyClusterInputBuilder {
     /// <p>The unique identifier of the cluster to be modified.</p>
@@ -934,6 +942,20 @@ impl ModifyClusterInputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address_type
     }
+    /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+    pub fn multi_az(mut self, input: bool) -> Self {
+        self.multi_az = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+    pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.multi_az = input;
+        self
+    }
+    /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
+    }
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(
         self,
@@ -967,6 +989,7 @@ impl ModifyClusterInputBuilder {
             manage_master_password: self.manage_master_password,
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
             ip_address_type: self.ip_address_type,
+            multi_az: self.multi_az,
         })
     }
 }
@@ -1001,6 +1024,7 @@ impl ::std::fmt::Debug for ModifyClusterInputBuilder {
         formatter.field("manage_master_password", &self.manage_master_password);
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
         formatter.field("ip_address_type", &self.ip_address_type);
+        formatter.field("multi_az", &self.multi_az);
         formatter.finish()
     }
 }

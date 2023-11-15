@@ -26,6 +26,15 @@ pub struct IbmDb2Settings {
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Db2 LUW endpoint connection details.</p>
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
+    /// <p>The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>
+    pub load_timeout: ::std::option::Option<i32>,
+    /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS replication instance. The default value is 1024 (1 MB).</p>
+    pub write_buffer_size: ::std::option::Option<i32>,
+    /// <p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.</p>
+    pub max_file_size: ::std::option::Option<i32>,
+    /// <p>If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files for analysis and troubleshooting.</p>
+    /// <p>The default value is false. </p>
+    pub keep_csv_files: ::std::option::Option<bool>,
 }
 impl IbmDb2Settings {
     /// <p>Database name for the endpoint.</p>
@@ -70,6 +79,23 @@ impl IbmDb2Settings {
     pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
+    /// <p>The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>
+    pub fn load_timeout(&self) -> ::std::option::Option<i32> {
+        self.load_timeout
+    }
+    /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS replication instance. The default value is 1024 (1 MB).</p>
+    pub fn write_buffer_size(&self) -> ::std::option::Option<i32> {
+        self.write_buffer_size
+    }
+    /// <p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.</p>
+    pub fn max_file_size(&self) -> ::std::option::Option<i32> {
+        self.max_file_size
+    }
+    /// <p>If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files for analysis and troubleshooting.</p>
+    /// <p>The default value is false. </p>
+    pub fn keep_csv_files(&self) -> ::std::option::Option<bool> {
+        self.keep_csv_files
+    }
 }
 impl ::std::fmt::Debug for IbmDb2Settings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -84,6 +110,10 @@ impl ::std::fmt::Debug for IbmDb2Settings {
         formatter.field("username", &self.username);
         formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("load_timeout", &self.load_timeout);
+        formatter.field("write_buffer_size", &self.write_buffer_size);
+        formatter.field("max_file_size", &self.max_file_size);
+        formatter.field("keep_csv_files", &self.keep_csv_files);
         formatter.finish()
     }
 }
@@ -108,6 +138,10 @@ pub struct IbmDb2SettingsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
+    pub(crate) load_timeout: ::std::option::Option<i32>,
+    pub(crate) write_buffer_size: ::std::option::Option<i32>,
+    pub(crate) max_file_size: ::std::option::Option<i32>,
+    pub(crate) keep_csv_files: ::std::option::Option<bool>,
 }
 impl IbmDb2SettingsBuilder {
     /// <p>Database name for the endpoint.</p>
@@ -256,6 +290,65 @@ impl IbmDb2SettingsBuilder {
     pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_secret_id
     }
+    /// <p>The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>
+    pub fn load_timeout(mut self, input: i32) -> Self {
+        self.load_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>
+    pub fn set_load_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.load_timeout = input;
+        self
+    }
+    /// <p>The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>
+    pub fn get_load_timeout(&self) -> &::std::option::Option<i32> {
+        &self.load_timeout
+    }
+    /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS replication instance. The default value is 1024 (1 MB).</p>
+    pub fn write_buffer_size(mut self, input: i32) -> Self {
+        self.write_buffer_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS replication instance. The default value is 1024 (1 MB).</p>
+    pub fn set_write_buffer_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.write_buffer_size = input;
+        self
+    }
+    /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS replication instance. The default value is 1024 (1 MB).</p>
+    pub fn get_write_buffer_size(&self) -> &::std::option::Option<i32> {
+        &self.write_buffer_size
+    }
+    /// <p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.</p>
+    pub fn max_file_size(mut self, input: i32) -> Self {
+        self.max_file_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.</p>
+    pub fn set_max_file_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_file_size = input;
+        self
+    }
+    /// <p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.</p>
+    pub fn get_max_file_size(&self) -> &::std::option::Option<i32> {
+        &self.max_file_size
+    }
+    /// <p>If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files for analysis and troubleshooting.</p>
+    /// <p>The default value is false. </p>
+    pub fn keep_csv_files(mut self, input: bool) -> Self {
+        self.keep_csv_files = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files for analysis and troubleshooting.</p>
+    /// <p>The default value is false. </p>
+    pub fn set_keep_csv_files(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.keep_csv_files = input;
+        self
+    }
+    /// <p>If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files for analysis and troubleshooting.</p>
+    /// <p>The default value is false. </p>
+    pub fn get_keep_csv_files(&self) -> &::std::option::Option<bool> {
+        &self.keep_csv_files
+    }
     /// Consumes the builder and constructs a [`IbmDb2Settings`](crate::types::IbmDb2Settings).
     pub fn build(self) -> crate::types::IbmDb2Settings {
         crate::types::IbmDb2Settings {
@@ -269,6 +362,10 @@ impl IbmDb2SettingsBuilder {
             username: self.username,
             secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
             secrets_manager_secret_id: self.secrets_manager_secret_id,
+            load_timeout: self.load_timeout,
+            write_buffer_size: self.write_buffer_size,
+            max_file_size: self.max_file_size,
+            keep_csv_files: self.keep_csv_files,
         }
     }
 }
@@ -285,6 +382,10 @@ impl ::std::fmt::Debug for IbmDb2SettingsBuilder {
         formatter.field("username", &self.username);
         formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("load_timeout", &self.load_timeout);
+        formatter.field("write_buffer_size", &self.write_buffer_size);
+        formatter.field("max_file_size", &self.max_file_size);
+        formatter.field("keep_csv_files", &self.keep_csv_files);
         formatter.finish()
     }
 }

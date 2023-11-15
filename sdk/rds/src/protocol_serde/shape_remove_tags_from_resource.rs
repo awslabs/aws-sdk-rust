@@ -124,6 +124,22 @@ pub fn de_remove_tags_from_resource_http_error(
             }
             tmp
         }),
+        "DBSnapshotTenantDatabaseNotFoundFault" => {
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbSnapshotTenantDatabaseNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbSnapshotTenantDatabaseNotFoundFaultBuilder::default();
+                    output = crate::protocol_serde::shape_db_snapshot_tenant_database_not_found_fault::de_db_snapshot_tenant_database_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "IntegrationNotFoundFault" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::IntegrationNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -131,6 +147,22 @@ pub fn de_remove_tags_from_resource_http_error(
                 let mut output = crate::types::error::builders::IntegrationNotFoundFaultBuilder::default();
                 output = crate::protocol_serde::shape_integration_not_found_fault::de_integration_not_found_fault_xml_err(_response_body, output)
                     .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TenantDatabaseNotFound" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::TenantDatabaseNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TenantDatabaseNotFoundFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_tenant_database_not_found_fault::de_tenant_database_not_found_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

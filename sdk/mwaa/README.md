@@ -20,12 +20,9 @@ __Endpoints__
     - [CreateCliToken](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html )
     - [CreateWebLoginToken](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html)
 
-  - ops.airflow.{region}.amazonaws.com - This endpoint is used to push environment metrics that track environment health.
-    - [PublishMetrics](https://docs.aws.amazon.com/mwaa/latest/API/API_PublishMetrics.html )
-
 __Regions__
 
-For a list of regions that Amazon MWAA supports, see [Region availability](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html#regions-mwaa) in the _Amazon MWAA User Guide_.
+For a list of supported regions, see [Amazon MWAA endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/mwaa.html) in the _Amazon Web Services General Reference_.
 
 ## Getting Started
 
@@ -38,8 +35,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.1"
-aws-sdk-mwaa = "0.35.0"
+aws-config = "0.57.0"
+aws-sdk-mwaa = "0.36.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

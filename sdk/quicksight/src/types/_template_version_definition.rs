@@ -21,6 +21,8 @@ pub struct TemplateVersionDefinition {
     pub column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
     /// <p>The configuration for default analysis settings.</p>
     pub analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
+    /// <p>An array of option definitions for a template.</p>
+    pub options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl TemplateVersionDefinition {
     /// <p>An array of dataset configurations. These configurations define the required columns for each dataset used within a template.</p>
@@ -65,6 +67,10 @@ impl TemplateVersionDefinition {
     pub fn analysis_defaults(&self) -> ::std::option::Option<&crate::types::AnalysisDefaults> {
         self.analysis_defaults.as_ref()
     }
+    /// <p>An array of option definitions for a template.</p>
+    pub fn options(&self) -> ::std::option::Option<&crate::types::AssetOptions> {
+        self.options.as_ref()
+    }
 }
 impl TemplateVersionDefinition {
     /// Creates a new builder-style object to manufacture [`TemplateVersionDefinition`](crate::types::TemplateVersionDefinition).
@@ -84,6 +90,7 @@ pub struct TemplateVersionDefinitionBuilder {
     pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>>,
     pub(crate) column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
     pub(crate) analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
+    pub(crate) options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl TemplateVersionDefinitionBuilder {
     /// Appends an item to `data_set_configurations`.
@@ -229,6 +236,20 @@ impl TemplateVersionDefinitionBuilder {
     pub fn get_analysis_defaults(&self) -> &::std::option::Option<crate::types::AnalysisDefaults> {
         &self.analysis_defaults
     }
+    /// <p>An array of option definitions for a template.</p>
+    pub fn options(mut self, input: crate::types::AssetOptions) -> Self {
+        self.options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An array of option definitions for a template.</p>
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AssetOptions>) -> Self {
+        self.options = input;
+        self
+    }
+    /// <p>An array of option definitions for a template.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::AssetOptions> {
+        &self.options
+    }
     /// Consumes the builder and constructs a [`TemplateVersionDefinition`](crate::types::TemplateVersionDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_configurations`](crate::types::builders::TemplateVersionDefinitionBuilder::data_set_configurations)
@@ -246,6 +267,7 @@ impl TemplateVersionDefinitionBuilder {
             filter_groups: self.filter_groups,
             column_configurations: self.column_configurations,
             analysis_defaults: self.analysis_defaults,
+            options: self.options,
         })
     }
 }

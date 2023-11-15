@@ -12,8 +12,11 @@ pub fn ser_describe_component_configuration_recommendation_input(
     if let Some(var_3) = &input.tier {
         object.key("Tier").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.recommendation_type {
-        object.key("RecommendationType").string(var_4.as_str());
+    if let Some(var_4) = &input.workload_name {
+        object.key("WorkloadName").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.recommendation_type {
+        object.key("RecommendationType").string(var_5.as_str());
     }
     Ok(())
 }

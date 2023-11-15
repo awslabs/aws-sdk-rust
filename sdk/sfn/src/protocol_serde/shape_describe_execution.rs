@@ -198,6 +198,33 @@ pub(crate) fn de_describe_execution(
                             .transpose()?,
                     );
                 }
+                "redriveCount" => {
+                    builder = builder.set_redrive_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "redriveDate" => {
+                    builder = builder.set_redrive_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "redriveStatus" => {
+                    builder = builder.set_redrive_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ExecutionRedriveStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "redriveStatusReason" => {
+                    builder = builder.set_redrive_status_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

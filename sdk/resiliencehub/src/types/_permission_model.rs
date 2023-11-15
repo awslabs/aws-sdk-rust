@@ -7,7 +7,10 @@ pub struct PermissionModel {
     /// <p>Defines how Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your Amazon Web Services account, or by using the credentials of the current IAM user.</p>
     pub r#type: crate::types::PermissionModelType,
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p> <note>
-    /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p>
+    /// <ul>
+    /// <li> <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p> </li>
+    /// <li> <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p> </li>
+    /// </ul>
     /// </note>
     pub invoker_role_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines a list of role Amazon Resource Names (ARNs) to be used in other accounts. These ARNs are used for querying purposes while importing resources and assessing your application.</p> <note>
@@ -24,7 +27,10 @@ impl PermissionModel {
         &self.r#type
     }
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p> <note>
-    /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p>
+    /// <ul>
+    /// <li> <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p> </li>
+    /// <li> <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p> </li>
+    /// </ul>
     /// </note>
     pub fn invoker_role_name(&self) -> ::std::option::Option<&str> {
         self.invoker_role_name.as_deref()
@@ -73,21 +79,30 @@ impl PermissionModelBuilder {
         &self.r#type
     }
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p> <note>
-    /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p>
+    /// <ul>
+    /// <li> <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p> </li>
+    /// <li> <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p> </li>
+    /// </ul>
     /// </note>
     pub fn invoker_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invoker_role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p> <note>
-    /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p>
+    /// <ul>
+    /// <li> <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p> </li>
+    /// <li> <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p> </li>
+    /// </ul>
     /// </note>
     pub fn set_invoker_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invoker_role_name = input;
         self
     }
     /// <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services account that will be assumed by Resilience Hub Service Principle to obtain a read-only access to your application resources while running an assessment.</p> <note>
-    /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p>
+    /// <ul>
+    /// <li> <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p> </li>
+    /// <li> <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p> </li>
+    /// </ul>
     /// </note>
     pub fn get_invoker_role_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.invoker_role_name

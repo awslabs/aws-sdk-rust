@@ -122,45 +122,45 @@ impl CreateBranchFluentBuilder {
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name for the branch. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
         self
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name for the branch. </p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name for the branch. </p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_branch_name()
     }
-    /// <p> The description for the branch. </p>
+    /// <p>The description for the branch. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> The description for the branch. </p>
+    /// <p>The description for the branch. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> The description for the branch. </p>
+    /// <p>The description for the branch. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p> Describes the current stage for the branch. </p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn stage(mut self, input: crate::types::Stage) -> Self {
         self.inner = self.inner.stage(input);
         self
     }
-    /// <p> Describes the current stage for the branch. </p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::Stage>) -> Self {
         self.inner = self.inner.set_stage(input);
         self
     }
-    /// <p> Describes the current stage for the branch. </p>
+    /// <p>Describes the current stage for the branch. </p>
     pub fn get_stage(&self) -> &::std::option::Option<crate::types::Stage> {
         self.inner.get_stage()
     }
@@ -364,18 +364,32 @@ impl CreateBranchFluentBuilder {
     pub fn get_pull_request_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pull_request_environment_name()
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backend_environment_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn set_backend_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backend_environment_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn get_backend_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backend_environment_arn()
+    }
+    /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    pub fn backend(mut self, input: crate::types::Backend) -> Self {
+        self.inner = self.inner.backend(input);
+        self
+    }
+    /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    pub fn set_backend(mut self, input: ::std::option::Option<crate::types::Backend>) -> Self {
+        self.inner = self.inner.set_backend(input);
+        self
+    }
+    /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    pub fn get_backend(&self) -> &::std::option::Option<crate::types::Backend> {
+        self.inner.get_backend()
     }
 }

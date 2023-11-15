@@ -166,6 +166,13 @@ pub(crate) fn de_enable_control(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "arn" => {
+                    builder = builder.set_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "operationIdentifier" => {
                     builder = builder.set_operation_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

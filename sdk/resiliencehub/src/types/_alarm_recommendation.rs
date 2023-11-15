@@ -25,6 +25,8 @@ pub struct AlarmRecommendation {
     pub prerequisite: ::std::option::Option<::std::string::String>,
     /// <p>List of Application Component names for the CloudWatch alarm recommendation.</p>
     pub app_component_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Status of the recommended Amazon CloudWatch alarm.</p>
+    pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
 impl AlarmRecommendation {
     /// <p>Identifier of the alarm recommendation.</p>
@@ -73,6 +75,10 @@ impl AlarmRecommendation {
     pub fn app_component_names(&self) -> &[::std::string::String] {
         self.app_component_names.as_deref().unwrap_or_default()
     }
+    /// <p>Status of the recommended Amazon CloudWatch alarm.</p>
+    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+        self.recommendation_status.as_ref()
+    }
 }
 impl AlarmRecommendation {
     /// Creates a new builder-style object to manufacture [`AlarmRecommendation`](crate::types::AlarmRecommendation).
@@ -94,6 +100,7 @@ pub struct AlarmRecommendationBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     pub(crate) prerequisite: ::std::option::Option<::std::string::String>,
     pub(crate) app_component_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
 impl AlarmRecommendationBuilder {
     /// <p>Identifier of the alarm recommendation.</p>
@@ -247,6 +254,20 @@ impl AlarmRecommendationBuilder {
     pub fn get_app_component_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.app_component_names
     }
+    /// <p>Status of the recommended Amazon CloudWatch alarm.</p>
+    pub fn recommendation_status(mut self, input: crate::types::RecommendationStatus) -> Self {
+        self.recommendation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Status of the recommended Amazon CloudWatch alarm.</p>
+    pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
+        self.recommendation_status = input;
+        self
+    }
+    /// <p>Status of the recommended Amazon CloudWatch alarm.</p>
+    pub fn get_recommendation_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
+        &self.recommendation_status
+    }
     /// Consumes the builder and constructs a [`AlarmRecommendation`](crate::types::AlarmRecommendation).
     /// This method will fail if any of the following fields are not set:
     /// - [`recommendation_id`](crate::types::builders::AlarmRecommendationBuilder::recommendation_id)
@@ -284,6 +305,7 @@ impl AlarmRecommendationBuilder {
             items: self.items,
             prerequisite: self.prerequisite,
             app_component_names: self.app_component_names,
+            recommendation_status: self.recommendation_status,
         })
     }
 }

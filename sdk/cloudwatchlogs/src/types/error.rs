@@ -19,9 +19,23 @@ pub use crate::types::error::_invalid_sequence_token_exception::InvalidSequenceT
 
 pub use crate::types::error::_data_already_accepted_exception::DataAlreadyAcceptedException;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
 
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
 pub use crate::types::error::_invalid_operation_exception::InvalidOperationException;
+
+mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _data_already_accepted_exception;
 
@@ -41,11 +55,17 @@ mod _resource_already_exists_exception;
 
 mod _resource_not_found_exception;
 
+mod _service_quota_exceeded_exception;
+
 mod _service_unavailable_exception;
+
+mod _throttling_exception;
 
 mod _too_many_tags_exception;
 
 mod _unrecognized_client_exception;
+
+mod _validation_exception;
 
 /// Builders
 pub mod builders;

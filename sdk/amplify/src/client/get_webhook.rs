@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWebhook`](crate::operation::get_webhook::builders::GetWebhookFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`webhook_id(impl Into<String>)`](crate::operation::get_webhook::builders::GetWebhookFluentBuilder::webhook_id) / [`set_webhook_id(Option<String>)`](crate::operation::get_webhook::builders::GetWebhookFluentBuilder::set_webhook_id):<br>required: **true**<br><p> The unique ID for a webhook. </p><br>
+    ///   - [`webhook_id(impl Into<String>)`](crate::operation::get_webhook::builders::GetWebhookFluentBuilder::webhook_id) / [`set_webhook_id(Option<String>)`](crate::operation::get_webhook::builders::GetWebhookFluentBuilder::set_webhook_id):<br>required: **true**<br><p>The unique ID for a webhook. </p><br>
     /// - On success, responds with [`GetWebhookOutput`](crate::operation::get_webhook::GetWebhookOutput) with field(s):
-    ///   - [`webhook(Option<Webhook>)`](crate::operation::get_webhook::GetWebhookOutput::webhook): <p> Describes the structure of a webhook. </p>
+    ///   - [`webhook(Option<Webhook>)`](crate::operation::get_webhook::GetWebhookOutput::webhook): <p>Describes the structure of a webhook. </p>
     /// - On failure, responds with [`SdkError<GetWebhookError>`](crate::operation::get_webhook::GetWebhookError)
     pub fn get_webhook(&self) -> crate::operation::get_webhook::builders::GetWebhookFluentBuilder {
         crate::operation::get_webhook::builders::GetWebhookFluentBuilder::new(self.handle.clone())

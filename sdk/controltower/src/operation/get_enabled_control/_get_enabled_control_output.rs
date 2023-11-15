@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnabledControlOutput {
-    /// <p> Information about the enabled control. </p>
+    /// <p>Information about the enabled control.</p>
     pub enabled_control_details: ::std::option::Option<crate::types::EnabledControlDetails>,
     _request_id: Option<String>,
 }
 impl GetEnabledControlOutput {
-    /// <p> Information about the enabled control. </p>
+    /// <p>Information about the enabled control.</p>
     pub fn enabled_control_details(&self) -> ::std::option::Option<&crate::types::EnabledControlDetails> {
         self.enabled_control_details.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetEnabledControlOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetEnabledControlOutputBuilder {
-    /// <p> Information about the enabled control. </p>
+    /// <p>Information about the enabled control.</p>
     /// This field is required.
     pub fn enabled_control_details(mut self, input: crate::types::EnabledControlDetails) -> Self {
         self.enabled_control_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Information about the enabled control. </p>
+    /// <p>Information about the enabled control.</p>
     pub fn set_enabled_control_details(mut self, input: ::std::option::Option<crate::types::EnabledControlDetails>) -> Self {
         self.enabled_control_details = input;
         self
     }
-    /// <p> Information about the enabled control. </p>
+    /// <p>Information about the enabled control.</p>
     pub fn get_enabled_control_details(&self) -> &::std::option::Option<crate::types::EnabledControlDetails> {
         &self.enabled_control_details
     }

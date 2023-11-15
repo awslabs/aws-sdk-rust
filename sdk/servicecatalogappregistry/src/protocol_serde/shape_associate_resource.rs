@@ -131,6 +131,16 @@ pub fn de_associate_resource_http_response(
     })
 }
 
+pub fn ser_associate_resource_input(
+    input: &crate::operation::associate_resource::AssociateResourceInput,
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_associate_resource_input::ser_associate_resource_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
+}
+
 pub(crate) fn de_associate_resource(
     value: &[u8],
     mut builder: crate::operation::associate_resource::builders::AssociateResourceOutputBuilder,
@@ -148,6 +158,9 @@ pub(crate) fn de_associate_resource(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "options" => {
+                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens)?);
                 }
                 "resourceArn" => {
                     builder = builder.set_resource_arn(

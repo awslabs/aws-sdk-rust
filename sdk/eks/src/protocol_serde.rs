@@ -31,6 +31,8 @@ pub(crate) mod shape_create_addon;
 
 pub(crate) mod shape_create_cluster;
 
+pub(crate) mod shape_create_eks_anywhere_subscription;
+
 pub(crate) mod shape_create_fargate_profile;
 
 pub(crate) mod shape_create_nodegroup;
@@ -38,6 +40,8 @@ pub(crate) mod shape_create_nodegroup;
 pub(crate) mod shape_delete_addon;
 
 pub(crate) mod shape_delete_cluster;
+
+pub(crate) mod shape_delete_eks_anywhere_subscription;
 
 pub(crate) mod shape_delete_fargate_profile;
 
@@ -53,6 +57,8 @@ pub(crate) mod shape_describe_addon_versions;
 
 pub(crate) mod shape_describe_cluster;
 
+pub(crate) mod shape_describe_eks_anywhere_subscription;
+
 pub(crate) mod shape_describe_fargate_profile;
 
 pub(crate) mod shape_describe_identity_provider_config;
@@ -66,6 +72,8 @@ pub(crate) mod shape_disassociate_identity_provider_config;
 pub(crate) mod shape_list_addons;
 
 pub(crate) mod shape_list_clusters;
+
+pub(crate) mod shape_list_eks_anywhere_subscriptions;
 
 pub(crate) mod shape_list_fargate_profiles;
 
@@ -88,6 +96,8 @@ pub(crate) mod shape_update_addon;
 pub(crate) mod shape_update_cluster_config;
 
 pub(crate) mod shape_update_cluster_version;
+
+pub(crate) mod shape_update_eks_anywhere_subscription;
 
 pub(crate) mod shape_update_nodegroup_config;
 
@@ -114,6 +124,8 @@ pub(crate) mod shape_client_exception;
 pub(crate) mod shape_create_addon_input;
 
 pub(crate) mod shape_create_cluster_input;
+
+pub(crate) mod shape_create_eks_anywhere_subscription_input;
 
 pub(crate) mod shape_create_fargate_profile_input;
 
@@ -153,6 +165,8 @@ pub(crate) mod shape_update_cluster_config_input;
 
 pub(crate) mod shape_update_cluster_version_input;
 
+pub(crate) mod shape_update_eks_anywhere_subscription_input;
+
 pub(crate) mod shape_update_nodegroup_config_input;
 
 pub(crate) mod shape_update_nodegroup_version_input;
@@ -164,6 +178,12 @@ pub(crate) mod shape_addons;
 pub(crate) mod shape_cluster;
 
 pub(crate) mod shape_connector_config_request;
+
+pub(crate) mod shape_eks_anywhere_subscription;
+
+pub(crate) mod shape_eks_anywhere_subscription_list;
+
+pub(crate) mod shape_eks_anywhere_subscription_term;
 
 pub(crate) mod shape_encryption_config;
 

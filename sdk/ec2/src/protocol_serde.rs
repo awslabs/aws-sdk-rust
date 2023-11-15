@@ -927,6 +927,10 @@ pub(crate) mod shape_describe_byoip_cidrs;
 
 pub(crate) mod shape_describe_byoip_cidrs_input;
 
+pub(crate) mod shape_describe_capacity_block_offerings;
+
+pub(crate) mod shape_describe_capacity_block_offerings_input;
+
 pub(crate) mod shape_describe_capacity_reservation_fleets;
 
 pub(crate) mod shape_describe_capacity_reservation_fleets_input;
@@ -1090,6 +1094,10 @@ pub(crate) mod shape_describe_instance_event_windows_input;
 pub(crate) mod shape_describe_instance_status;
 
 pub(crate) mod shape_describe_instance_status_input;
+
+pub(crate) mod shape_describe_instance_topology;
+
+pub(crate) mod shape_describe_instance_topology_input;
 
 pub(crate) mod shape_describe_instance_type_offerings;
 
@@ -1535,6 +1543,10 @@ pub(crate) mod shape_disable_serial_console_access;
 
 pub(crate) mod shape_disable_serial_console_access_input;
 
+pub(crate) mod shape_disable_snapshot_block_public_access;
+
+pub(crate) mod shape_disable_snapshot_block_public_access_input;
+
 pub(crate) mod shape_disable_transit_gateway_route_table_propagation;
 
 pub(crate) mod shape_disable_transit_gateway_route_table_propagation_input;
@@ -1650,6 +1662,10 @@ pub(crate) mod shape_enable_reachability_analyzer_organization_sharing_input;
 pub(crate) mod shape_enable_serial_console_access;
 
 pub(crate) mod shape_enable_serial_console_access_input;
+
+pub(crate) mod shape_enable_snapshot_block_public_access;
+
+pub(crate) mod shape_enable_snapshot_block_public_access_input;
 
 pub(crate) mod shape_enable_transit_gateway_route_table_propagation;
 
@@ -1810,6 +1826,10 @@ pub(crate) mod shape_get_security_groups_for_vpc_input;
 pub(crate) mod shape_get_serial_console_access_status;
 
 pub(crate) mod shape_get_serial_console_access_status_input;
+
+pub(crate) mod shape_get_snapshot_block_public_access_state;
+
+pub(crate) mod shape_get_snapshot_block_public_access_state_input;
 
 pub(crate) mod shape_get_spot_placement_scores;
 
@@ -2178,6 +2198,10 @@ pub(crate) mod shape_provision_ipam_pool_cidr_input;
 pub(crate) mod shape_provision_public_ipv4_pool_cidr;
 
 pub(crate) mod shape_provision_public_ipv4_pool_cidr_input;
+
+pub(crate) mod shape_purchase_capacity_block;
+
+pub(crate) mod shape_purchase_capacity_block_input;
 
 pub(crate) mod shape_purchase_host_reservation;
 
@@ -2721,6 +2745,8 @@ pub(crate) mod shape_cancel_spot_fleet_requests_success_set;
 
 pub(crate) mod shape_cancelled_spot_instance_request_list;
 
+pub(crate) mod shape_capacity_block_offering_set;
+
 pub(crate) mod shape_capacity_reservation;
 
 pub(crate) mod shape_capacity_reservation_fleet_cancellation_state_set;
@@ -2825,6 +2851,8 @@ pub(crate) mod shape_egress_only_internet_gateway_list;
 
 pub(crate) mod shape_elastic_gpu_set;
 
+pub(crate) mod shape_ena_srd_specification_request;
+
 pub(crate) mod shape_ena_srd_udp_specification;
 
 pub(crate) mod shape_enable_fast_snapshot_restore_error_set;
@@ -2922,6 +2950,8 @@ pub(crate) mod shape_instance_list;
 pub(crate) mod shape_instance_metadata_options_response;
 
 pub(crate) mod shape_instance_monitoring_list;
+
+pub(crate) mod shape_instance_set;
 
 pub(crate) mod shape_instance_state_change_list;
 
@@ -3517,6 +3547,8 @@ pub(crate) mod shape_cancelled_spot_instance_request;
 
 pub(crate) mod shape_capacity_allocations;
 
+pub(crate) mod shape_capacity_block_offering;
+
 pub(crate) mod shape_capacity_reservation_fleet;
 
 pub(crate) mod shape_capacity_reservation_fleet_cancellation_state;
@@ -3574,6 +3606,8 @@ pub(crate) mod shape_dns_options;
 pub(crate) mod shape_elastic_gpu_specification_response_list;
 
 pub(crate) mod shape_elastic_gpus;
+
+pub(crate) mod shape_ena_srd_udp_specification_request;
 
 pub(crate) mod shape_enable_fast_snapshot_restore_error_item;
 
@@ -3656,6 +3690,8 @@ pub(crate) mod shape_instance_state_change;
 pub(crate) mod shape_instance_status;
 
 pub(crate) mod shape_instance_tag_key_set;
+
+pub(crate) mod shape_instance_topology;
 
 pub(crate) mod shape_instance_type_info;
 
@@ -4183,6 +4219,8 @@ pub(crate) mod shape_network_interface_ipv6_address;
 
 pub(crate) mod shape_network_interface_private_ip_address;
 
+pub(crate) mod shape_network_nodes_list;
+
 pub(crate) mod shape_nitro_tpm_info;
 
 pub(crate) mod shape_on_demand_options;
@@ -4405,6 +4443,8 @@ pub(crate) mod shape_launch_template_config_list;
 
 pub(crate) mod shape_launch_template_ebs_block_device;
 
+pub(crate) mod shape_launch_template_ena_srd_specification;
+
 pub(crate) mod shape_license_configuration;
 
 pub(crate) mod shape_metric_point;
@@ -4513,6 +4553,8 @@ pub(crate) mod shape_ipv4_prefix_specification_response;
 
 pub(crate) mod shape_ipv6_prefix_specification_response;
 
+pub(crate) mod shape_launch_template_ena_srd_udp_specification;
+
 pub(crate) mod shape_network_card_info;
 
 pub(crate) mod shape_packet_header_statement;
@@ -4557,6 +4599,8 @@ pub(crate) mod shape_ike_versions_list_value;
 
 pub(crate) mod shape_inference_device_memory_info;
 
+pub(crate) mod shape_instance_attachment_ena_srd_specification;
+
 pub(crate) mod shape_instance_ipv4_prefix;
 
 pub(crate) mod shape_instance_ipv6_prefix;
@@ -4594,6 +4638,8 @@ pub(crate) mod shape_security_group_id_string_list;
 pub(crate) mod shape_spot_fleet_tag_specification_list;
 
 pub(crate) mod shape_target_groups;
+
+pub(crate) mod shape_instance_attachment_ena_srd_udp_specification;
 
 pub(crate) mod shape_rule_group_rule_options_pair;
 

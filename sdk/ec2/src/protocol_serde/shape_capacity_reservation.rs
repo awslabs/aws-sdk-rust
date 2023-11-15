@@ -316,6 +316,20 @@ pub fn de_capacity_reservation(
                 builder = builder.set_capacity_allocations(var_23);
             }
             ,
+            s if s.matches("reservationType") /* ReservationType com.amazonaws.ec2#CapacityReservation$ReservationType */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<crate::types::CapacityReservationType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::CapacityReservationType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_reservation_type(var_24);
+            }
+            ,
             _ => {}
         }
     }

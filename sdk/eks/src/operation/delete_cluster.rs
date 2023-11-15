@@ -249,7 +249,7 @@ pub type DeleteClusterErrorKind = DeleteClusterError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteClusterError {
-    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),

@@ -57,9 +57,9 @@ pub struct CreateCustomDbEngineVersionInput {
     pub manifest: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Reserved for future use.</p>
+    /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
     pub source_custom_db_engine_version_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Reserved for future use.</p>
+    /// <p>Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.</p>
     pub use_aws_provided_latest_image: ::std::option::Option<bool>,
 }
 impl CreateCustomDbEngineVersionInput {
@@ -137,11 +137,11 @@ impl CreateCustomDbEngineVersionInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
     pub fn source_custom_db_engine_version_identifier(&self) -> ::std::option::Option<&str> {
         self.source_custom_db_engine_version_identifier.as_deref()
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.</p>
     pub fn use_aws_provided_latest_image(&self) -> ::std::option::Option<bool> {
         self.use_aws_provided_latest_image
     }
@@ -412,31 +412,31 @@ impl CreateCustomDbEngineVersionInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
     pub fn source_custom_db_engine_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_custom_db_engine_version_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
     pub fn set_source_custom_db_engine_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_custom_db_engine_version_identifier = input;
         self
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
     pub fn get_source_custom_db_engine_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_custom_db_engine_version_identifier
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.</p>
     pub fn use_aws_provided_latest_image(mut self, input: bool) -> Self {
         self.use_aws_provided_latest_image = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.</p>
     pub fn set_use_aws_provided_latest_image(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_aws_provided_latest_image = input;
         self
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.</p>
     pub fn get_use_aws_provided_latest_image(&self) -> &::std::option::Option<bool> {
         &self.use_aws_provided_latest_image
     }

@@ -2,7 +2,7 @@
 
 /// <p>Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PlayerLatency {
     /// <p>A unique identifier for a player associated with the latency data.</p>
     pub player_id: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl PlayerLatency {
         self.latency_in_milliseconds
     }
 }
+impl ::std::fmt::Debug for PlayerLatency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PlayerLatency");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("region_identifier", &self.region_identifier);
+        formatter.field("latency_in_milliseconds", &self.latency_in_milliseconds);
+        formatter.finish()
+    }
+}
 impl PlayerLatency {
     /// Creates a new builder-style object to manufacture [`PlayerLatency`](crate::types::PlayerLatency).
     pub fn builder() -> crate::types::builders::PlayerLatencyBuilder {
@@ -34,7 +43,7 @@ impl PlayerLatency {
 
 /// A builder for [`PlayerLatency`](crate::types::PlayerLatency).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PlayerLatencyBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_identifier: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl PlayerLatencyBuilder {
             region_identifier: self.region_identifier,
             latency_in_milliseconds: self.latency_in_milliseconds,
         }
+    }
+}
+impl ::std::fmt::Debug for PlayerLatencyBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PlayerLatencyBuilder");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("region_identifier", &self.region_identifier);
+        formatter.field("latency_in_milliseconds", &self.latency_in_milliseconds);
+        formatter.finish()
     }
 }

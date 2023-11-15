@@ -2,7 +2,7 @@
 
 /// <p>Connection information for a new game session that is created in response to a start matchmaking request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the matchmaking ticket.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GameSessionConnectionInfo {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
     pub game_session_arn: ::std::option::Option<::std::string::String>,
@@ -67,6 +67,17 @@ impl GameSessionConnectionInfo {
         self.matched_player_sessions.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for GameSessionConnectionInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameSessionConnectionInfo");
+        formatter.field("game_session_arn", &self.game_session_arn);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("port", &self.port);
+        formatter.field("matched_player_sessions", &self.matched_player_sessions);
+        formatter.finish()
+    }
+}
 impl GameSessionConnectionInfo {
     /// Creates a new builder-style object to manufacture [`GameSessionConnectionInfo`](crate::types::GameSessionConnectionInfo).
     pub fn builder() -> crate::types::builders::GameSessionConnectionInfoBuilder {
@@ -76,7 +87,7 @@ impl GameSessionConnectionInfo {
 
 /// A builder for [`GameSessionConnectionInfo`](crate::types::GameSessionConnectionInfo).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GameSessionConnectionInfoBuilder {
     pub(crate) game_session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
@@ -212,5 +223,16 @@ impl GameSessionConnectionInfoBuilder {
             port: self.port,
             matched_player_sessions: self.matched_player_sessions,
         }
+    }
+}
+impl ::std::fmt::Debug for GameSessionConnectionInfoBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameSessionConnectionInfoBuilder");
+        formatter.field("game_session_arn", &self.game_session_arn);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("port", &self.port);
+        formatter.field("matched_player_sessions", &self.matched_player_sessions);
+        formatter.finish()
     }
 }

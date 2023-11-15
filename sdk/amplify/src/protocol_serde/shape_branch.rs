@@ -168,6 +168,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "backend" => {
+                            builder = builder.set_backend(crate::protocol_serde::shape_backend::de_backend(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

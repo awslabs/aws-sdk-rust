@@ -22,7 +22,7 @@ impl RegisterOrganizationDelegatedAdminInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterOrganizationDelegatedAdmin`.
 ///
-/// <p>Registers an organization’s member account as the CloudTrail delegated administrator.</p>
+/// <p>Registers an organization’s member account as the CloudTrail <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-delegated-administrator.html">delegated administrator</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterOrganizationDelegatedAdminFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

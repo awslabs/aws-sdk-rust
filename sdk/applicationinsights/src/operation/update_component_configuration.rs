@@ -261,6 +261,8 @@ pub type UpdateComponentConfigurationErrorKind = UpdateComponentConfigurationErr
 pub enum UpdateComponentConfigurationError {
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The resource is already created or in use.</p>
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The resource does not exist in the customer account.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
@@ -284,6 +286,7 @@ impl ::std::fmt::Display for UpdateComponentConfigurationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceInUseException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -294,6 +297,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateCompone
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -333,6 +337,7 @@ impl UpdateComponentConfigurationError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::InternalServerException(e) => e.meta(),
+            Self::ResourceInUseException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -341,6 +346,10 @@ impl UpdateComponentConfigurationError {
     /// Returns `true` if the error kind is `UpdateComponentConfigurationError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateComponentConfigurationError::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(self, Self::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `UpdateComponentConfigurationError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -355,6 +364,7 @@ impl ::std::error::Error for UpdateComponentConfigurationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceInUseException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

@@ -8,6 +8,8 @@ pub struct TextLogSetting {
     pub enabled: bool,
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
     pub destination: ::std::option::Option<crate::types::TextLogDestination>,
+    /// <p>The option to enable selective conversation log capture for text.</p>
+    pub selective_logging_enabled: ::std::option::Option<bool>,
 }
 impl TextLogSetting {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
@@ -17,6 +19,10 @@ impl TextLogSetting {
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
     pub fn destination(&self) -> ::std::option::Option<&crate::types::TextLogDestination> {
         self.destination.as_ref()
+    }
+    /// <p>The option to enable selective conversation log capture for text.</p>
+    pub fn selective_logging_enabled(&self) -> ::std::option::Option<bool> {
+        self.selective_logging_enabled
     }
 }
 impl TextLogSetting {
@@ -32,6 +38,7 @@ impl TextLogSetting {
 pub struct TextLogSettingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) destination: ::std::option::Option<crate::types::TextLogDestination>,
+    pub(crate) selective_logging_enabled: ::std::option::Option<bool>,
 }
 impl TextLogSettingBuilder {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
@@ -64,11 +71,26 @@ impl TextLogSettingBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::TextLogDestination> {
         &self.destination
     }
+    /// <p>The option to enable selective conversation log capture for text.</p>
+    pub fn selective_logging_enabled(mut self, input: bool) -> Self {
+        self.selective_logging_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The option to enable selective conversation log capture for text.</p>
+    pub fn set_selective_logging_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.selective_logging_enabled = input;
+        self
+    }
+    /// <p>The option to enable selective conversation log capture for text.</p>
+    pub fn get_selective_logging_enabled(&self) -> &::std::option::Option<bool> {
+        &self.selective_logging_enabled
+    }
     /// Consumes the builder and constructs a [`TextLogSetting`](crate::types::TextLogSetting).
     pub fn build(self) -> crate::types::TextLogSetting {
         crate::types::TextLogSetting {
             enabled: self.enabled.unwrap_or_default(),
             destination: self.destination,
+            selective_logging_enabled: self.selective_logging_enabled,
         }
     }
 }

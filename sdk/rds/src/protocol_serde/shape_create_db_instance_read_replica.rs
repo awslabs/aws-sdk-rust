@@ -417,6 +417,26 @@ pub fn de_create_db_instance_read_replica_http_error(
                 tmp
             })
         }
+        "TenantDatabaseQuotaExceeded" => {
+            crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::TenantDatabaseQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TenantDatabaseQuotaExceededFaultBuilder::default();
+                    output = crate::protocol_serde::shape_tenant_database_quota_exceeded_fault::de_tenant_database_quota_exceeded_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::generic(generic),
     })
 }

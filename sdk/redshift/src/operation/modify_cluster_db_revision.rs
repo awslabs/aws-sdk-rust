@@ -252,6 +252,8 @@ pub enum ModifyClusterDbRevisionError {
     ClusterOnLatestRevisionFault(crate::types::error::ClusterOnLatestRevisionFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -273,6 +275,7 @@ impl ::std::fmt::Display for ModifyClusterDbRevisionError {
             Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::ClusterOnLatestRevisionFault(_inner) => _inner.fmt(f),
             Self::InvalidClusterStateFault(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -283,6 +286,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyCluster
             Self::ClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterOnLatestRevisionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -322,6 +326,7 @@ impl ModifyClusterDbRevisionError {
             Self::ClusterNotFoundFault(e) => e.meta(),
             Self::ClusterOnLatestRevisionFault(e) => e.meta(),
             Self::InvalidClusterStateFault(e) => e.meta(),
+            Self::UnsupportedOperationFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -337,6 +342,10 @@ impl ModifyClusterDbRevisionError {
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(self, Self::InvalidClusterStateFault(_))
     }
+    /// Returns `true` if the error kind is `ModifyClusterDbRevisionError::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationFault(_))
+    }
 }
 impl ::std::error::Error for ModifyClusterDbRevisionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -344,6 +353,7 @@ impl ::std::error::Error for ModifyClusterDbRevisionError {
             Self::ClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterOnLatestRevisionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

@@ -9,5 +9,17 @@ pub fn ser_put_report_definition_input(
         crate::protocol_serde::shape_report_definition::ser_report_definition(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.tags {
+        let mut array_4 = object.key("Tags").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }

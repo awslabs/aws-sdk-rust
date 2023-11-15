@@ -22,8 +22,8 @@ impl DisableFastLaunchInputBuilder {
 }
 /// Fluent builder constructing a request to `DisableFastLaunch`.
 ///
-/// <p>Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned snapshots. When you disable faster launching, the AMI uses the standard launch process for each instance. All pre-provisioned snapshots must be removed before you can enable faster launching again.</p> <note>
-/// <p>To change these settings, you must own the AMI.</p>
+/// <p>Discontinue Windows fast launch for a Windows AMI, and clean up existing pre-provisioned snapshots. After you disable Windows fast launch, the AMI uses the standard launch process for each new instance. Amazon EC2 must remove all pre-provisioned snapshots before you can enable Windows fast launch again.</p> <note>
+/// <p>You can only change these settings for Windows AMIs that you own or that have been shared with you.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableFastLaunchFluentBuilder {
@@ -110,31 +110,31 @@ impl DisableFastLaunchFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
+    /// <p>Specify the ID of the image for which to disable Windows fast launch.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_id(input.into());
         self
     }
-    /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
+    /// <p>Specify the ID of the image for which to disable Windows fast launch.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_id(input);
         self
     }
-    /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
+    /// <p>Specify the ID of the image for which to disable Windows fast launch.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_id()
     }
-    /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
+    /// <p>Forces the image settings to turn off Windows fast launch for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
         self
     }
-    /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
+    /// <p>Forces the image settings to turn off Windows fast launch for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
     }
-    /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
+    /// <p>Forces the image settings to turn off Windows fast launch for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         self.inner.get_force()
     }

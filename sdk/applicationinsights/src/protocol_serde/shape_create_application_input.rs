@@ -36,5 +36,8 @@ pub fn ser_create_application_input(
     if let Some(var_11) = &input.grouping_type {
         object.key("GroupingType").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.attach_missing_permission {
+        object.key("AttachMissingPermission").boolean(*var_12);
+    }
     Ok(())
 }

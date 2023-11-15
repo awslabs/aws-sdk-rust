@@ -7,8 +7,17 @@ pub mod delete_report_definition;
 /// Types for the `DescribeReportDefinitions` operation.
 pub mod describe_report_definitions;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `ModifyReportDefinition` operation.
 pub mod modify_report_definition;
 
 /// Types for the `PutReportDefinition` operation.
 pub mod put_report_definition;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;

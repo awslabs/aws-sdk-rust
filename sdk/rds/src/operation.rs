@@ -94,6 +94,9 @@ pub mod create_integration;
 /// Types for the `CreateOptionGroup` operation.
 pub mod create_option_group;
 
+/// Types for the `CreateTenantDatabase` operation.
+pub mod create_tenant_database;
+
 /// Types for the `DeleteBlueGreenDeployment` operation.
 pub mod delete_blue_green_deployment;
 
@@ -150,6 +153,9 @@ pub mod delete_integration;
 
 /// Types for the `DeleteOptionGroup` operation.
 pub mod delete_option_group;
+
+/// Types for the `DeleteTenantDatabase` operation.
+pub mod delete_tenant_database;
 
 /// Types for the `DeregisterDBProxyTargets` operation.
 pub mod deregister_db_proxy_targets;
@@ -223,6 +229,9 @@ pub mod describe_db_security_groups;
 /// Types for the `DescribeDBSnapshotAttributes` operation.
 pub mod describe_db_snapshot_attributes;
 
+/// Types for the `DescribeDBSnapshotTenantDatabases` operation.
+pub mod describe_db_snapshot_tenant_databases;
+
 /// Types for the `DescribeDBSnapshots` operation.
 pub mod describe_db_snapshots;
 
@@ -273,6 +282,9 @@ pub mod describe_reserved_db_instances_offerings;
 
 /// Types for the `DescribeSourceRegions` operation.
 pub mod describe_source_regions;
+
+/// Types for the `DescribeTenantDatabases` operation.
+pub mod describe_tenant_databases;
 
 /// Types for the `DescribeValidDBInstanceModifications` operation.
 pub mod describe_valid_db_instance_modifications;
@@ -345,6 +357,9 @@ pub mod modify_global_cluster;
 
 /// Types for the `ModifyOptionGroup` operation.
 pub mod modify_option_group;
+
+/// Types for the `ModifyTenantDatabase` operation.
+pub mod modify_tenant_database;
 
 /// Types for the `PromoteReadReplica` operation.
 pub mod promote_read_replica;

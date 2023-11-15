@@ -101,6 +101,10 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "AnalysisResults" => {
+                            builder =
+                                builder.set_analysis_results(crate::protocol_serde::shape_analysis_result_list::de_analysis_result_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

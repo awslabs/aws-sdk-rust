@@ -23,6 +23,7 @@ impl PublishMetricsInputBuilder {
 /// Fluent builder constructing a request to `PublishMetrics`.
 ///
 /// <p> <b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.</p>
+#[deprecated(note = "This API is for internal use and not meant for public use, and is no longer available.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PublishMetricsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

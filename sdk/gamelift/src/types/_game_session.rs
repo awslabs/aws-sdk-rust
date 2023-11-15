@@ -5,7 +5,7 @@
 /// <p>Amazon GameLift retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GameSession {
     /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
     /// <region>
@@ -168,6 +168,31 @@ impl GameSession {
         self.location.as_deref()
     }
 }
+impl ::std::fmt::Debug for GameSession {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameSession");
+        formatter.field("game_session_id", &self.game_session_id);
+        formatter.field("name", &self.name);
+        formatter.field("fleet_id", &self.fleet_id);
+        formatter.field("fleet_arn", &self.fleet_arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("termination_time", &self.termination_time);
+        formatter.field("current_player_session_count", &self.current_player_session_count);
+        formatter.field("maximum_player_session_count", &self.maximum_player_session_count);
+        formatter.field("status", &self.status);
+        formatter.field("status_reason", &self.status_reason);
+        formatter.field("game_properties", &self.game_properties);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("port", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_session_creation_policy", &self.player_session_creation_policy);
+        formatter.field("creator_id", &self.creator_id);
+        formatter.field("game_session_data", &self.game_session_data);
+        formatter.field("matchmaker_data", &self.matchmaker_data);
+        formatter.field("location", &self.location);
+        formatter.finish()
+    }
+}
 impl GameSession {
     /// Creates a new builder-style object to manufacture [`GameSession`](crate::types::GameSession).
     pub fn builder() -> crate::types::builders::GameSessionBuilder {
@@ -177,7 +202,7 @@ impl GameSession {
 
 /// A builder for [`GameSession`](crate::types::GameSession).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GameSessionBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -558,5 +583,30 @@ impl GameSessionBuilder {
             matchmaker_data: self.matchmaker_data,
             location: self.location,
         }
+    }
+}
+impl ::std::fmt::Debug for GameSessionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameSessionBuilder");
+        formatter.field("game_session_id", &self.game_session_id);
+        formatter.field("name", &self.name);
+        formatter.field("fleet_id", &self.fleet_id);
+        formatter.field("fleet_arn", &self.fleet_arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("termination_time", &self.termination_time);
+        formatter.field("current_player_session_count", &self.current_player_session_count);
+        formatter.field("maximum_player_session_count", &self.maximum_player_session_count);
+        formatter.field("status", &self.status);
+        formatter.field("status_reason", &self.status_reason);
+        formatter.field("game_properties", &self.game_properties);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("dns_name", &self.dns_name);
+        formatter.field("port", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_session_creation_policy", &self.player_session_creation_policy);
+        formatter.field("creator_id", &self.creator_id);
+        formatter.field("game_session_data", &self.game_session_data);
+        formatter.field("matchmaker_data", &self.matchmaker_data);
+        formatter.field("location", &self.location);
+        formatter.finish()
     }
 }

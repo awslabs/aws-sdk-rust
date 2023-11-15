@@ -20,6 +20,8 @@ pub enum Error {
     ExecutionDoesNotExist(crate::types::error::ExecutionDoesNotExist),
     /// <p>The maximum number of running executions has been reached. Running executions must end or be stopped before a new execution can be started.</p>
     ExecutionLimitExceeded(crate::types::error::ExecutionLimitExceeded),
+    /// <p>The execution Amazon Resource Name (ARN) that you specified for <code>executionArn</code> cannot be redriven.</p>
+    ExecutionNotRedrivable(crate::types::error::ExecutionNotRedrivable),
     /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::types::error::InvalidArn),
     /// <p>The provided Amazon States Language definition is not valid.</p>
@@ -53,9 +55,9 @@ pub enum Error {
     StateMachineLimitExceeded(crate::types::error::StateMachineLimitExceeded),
     /// <p></p>
     StateMachineTypeNotSupported(crate::types::error::StateMachineTypeNotSupported),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The activity does not exist.</p>
     TaskDoesNotExist(crate::types::error::TaskDoesNotExist),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The task token has either expired or the task associated with the token has already been closed.</p>
     TaskTimedOut(crate::types::error::TaskTimedOut),
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the Step Functions Developer Guide.</p>
     TooManyTags(crate::types::error::TooManyTags),
@@ -74,6 +76,7 @@ impl ::std::fmt::Display for Error {
             Error::ExecutionAlreadyExists(inner) => inner.fmt(f),
             Error::ExecutionDoesNotExist(inner) => inner.fmt(f),
             Error::ExecutionLimitExceeded(inner) => inner.fmt(f),
+            Error::ExecutionNotRedrivable(inner) => inner.fmt(f),
             Error::InvalidArn(inner) => inner.fmt(f),
             Error::InvalidDefinition(inner) => inner.fmt(f),
             Error::InvalidExecutionInput(inner) => inner.fmt(f),
@@ -787,6 +790,33 @@ impl From<crate::operation::publish_state_machine_version::PublishStateMachineVe
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::redrive_execution::RedriveExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::redrive_execution::RedriveExecutionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::redrive_execution::RedriveExecutionError> for Error {
+    fn from(err: crate::operation::redrive_execution::RedriveExecutionError) -> Self {
+        match err {
+            crate::operation::redrive_execution::RedriveExecutionError::ExecutionDoesNotExist(inner) => Error::ExecutionDoesNotExist(inner),
+            crate::operation::redrive_execution::RedriveExecutionError::ExecutionLimitExceeded(inner) => Error::ExecutionLimitExceeded(inner),
+            crate::operation::redrive_execution::RedriveExecutionError::ExecutionNotRedrivable(inner) => Error::ExecutionNotRedrivable(inner),
+            crate::operation::redrive_execution::RedriveExecutionError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::redrive_execution::RedriveExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_task_failure::SendTaskFailureError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1118,6 +1148,7 @@ impl ::std::error::Error for Error {
             Error::ExecutionAlreadyExists(inner) => inner.source(),
             Error::ExecutionDoesNotExist(inner) => inner.source(),
             Error::ExecutionLimitExceeded(inner) => inner.source(),
+            Error::ExecutionNotRedrivable(inner) => inner.source(),
             Error::InvalidArn(inner) => inner.source(),
             Error::InvalidDefinition(inner) => inner.source(),
             Error::InvalidExecutionInput(inner) => inner.source(),
@@ -1152,6 +1183,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ExecutionAlreadyExists(e) => e.request_id(),
             Self::ExecutionDoesNotExist(e) => e.request_id(),
             Self::ExecutionLimitExceeded(e) => e.request_id(),
+            Self::ExecutionNotRedrivable(e) => e.request_id(),
             Self::InvalidArn(e) => e.request_id(),
             Self::InvalidDefinition(e) => e.request_id(),
             Self::InvalidExecutionInput(e) => e.request_id(),

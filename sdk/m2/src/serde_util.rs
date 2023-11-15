@@ -173,6 +173,24 @@ pub(crate) fn get_batch_job_execution_output_correct_errors(
     builder
 }
 
+pub(crate) fn execution_timeout_exception_correct_errors(
+    mut builder: crate::types::error::builders::ExecutionTimeoutExceptionBuilder,
+) -> crate::types::error::builders::ExecutionTimeoutExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_unavailable_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceUnavailableExceptionBuilder,
+) -> crate::types::error::builders::ServiceUnavailableExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_data_set_details_output_correct_errors(
     mut builder: crate::operation::get_data_set_details::builders::GetDataSetDetailsOutputBuilder,
 ) -> crate::operation::get_data_set_details::builders::GetDataSetDetailsOutputBuilder {
@@ -619,6 +637,18 @@ pub(crate) fn ps_detail_attributes_correct_errors(
     }
     if builder.encoding.is_none() {
         builder.encoding = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_batch_job_identifier_correct_errors(
+    mut builder: crate::types::builders::S3BatchJobIdentifierBuilder,
+) -> crate::types::builders::S3BatchJobIdentifierBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.identifier.is_none() {
+        builder.identifier = Some(crate::types::JobIdentifier::Unknown)
     }
     builder
 }

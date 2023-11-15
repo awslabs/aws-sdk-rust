@@ -7,12 +7,16 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The parameters provided in the request conflict with existing resources.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p> Failed to connect to server, or didn’t receive response within expected time period.</p>
+    ExecutionTimeoutException(crate::types::error::ExecutionTimeoutException),
     /// <p>An unexpected error occurred during the processing of the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>Server cannot process the request at the moment.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The number of requests made exceeds the limit.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>One or more parameters provided in the request is not valid.</p>
@@ -25,9 +29,11 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::ExecutionTimeoutException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -441,9 +447,16 @@ impl From<crate::operation::get_data_set_details::GetDataSetDetailsError> for Er
     fn from(err: crate::operation::get_data_set_details::GetDataSetDetailsError) -> Self {
         match err {
             crate::operation::get_data_set_details::GetDataSetDetailsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_data_set_details::GetDataSetDetailsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_data_set_details::GetDataSetDetailsError::ExecutionTimeoutException(inner) => {
+                Error::ExecutionTimeoutException(inner)
+            }
             crate::operation::get_data_set_details::GetDataSetDetailsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_data_set_details::GetDataSetDetailsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_data_set_details::GetDataSetDetailsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
             }
             crate::operation::get_data_set_details::GetDataSetDetailsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_data_set_details::GetDataSetDetailsError::ValidationException(inner) => Error::ValidationException(inner),
@@ -785,8 +798,11 @@ impl From<crate::operation::list_data_sets::ListDataSetsError> for Error {
     fn from(err: crate::operation::list_data_sets::ListDataSetsError) -> Self {
         match err {
             crate::operation::list_data_sets::ListDataSetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_data_sets::ListDataSetsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_data_sets::ListDataSetsError::ExecutionTimeoutException(inner) => Error::ExecutionTimeoutException(inner),
             crate::operation::list_data_sets::ListDataSetsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_data_sets::ListDataSetsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_data_sets::ListDataSetsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_data_sets::ListDataSetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_data_sets::ListDataSetsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_data_sets::ListDataSetsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1117,9 +1133,11 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::ExecutionTimeoutException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
@@ -1131,9 +1149,11 @@ impl ::aws_http::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::ExecutionTimeoutException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),

@@ -5,11 +5,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Region {
-    /// <p> The AWS Region name. </p>
+    /// <p>The AWS Region name.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl Region {
-    /// <p> The AWS Region name. </p>
+    /// <p>The AWS Region name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -28,17 +28,17 @@ pub struct RegionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl RegionBuilder {
-    /// <p> The AWS Region name. </p>
+    /// <p>The AWS Region name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The AWS Region name. </p>
+    /// <p>The AWS Region name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The AWS Region name. </p>
+    /// <p>The AWS Region name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

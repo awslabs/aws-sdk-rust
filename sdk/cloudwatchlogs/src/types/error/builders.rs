@@ -19,6 +19,16 @@ pub use crate::types::error::_invalid_sequence_token_exception::InvalidSequenceT
 
 pub use crate::types::error::_data_already_accepted_exception::DataAlreadyAcceptedExceptionBuilder;
 
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsExceptionBuilder;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_invalid_operation_exception::InvalidOperationExceptionBuilder;

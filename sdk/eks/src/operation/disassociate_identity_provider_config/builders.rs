@@ -22,7 +22,7 @@ impl DisassociateIdentityProviderConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateIdentityProviderConfig`.
 ///
-/// <p>Disassociates an identity provider configuration from a cluster. If you disassociate an identity provider from your cluster, users included in the provider can no longer access the cluster. However, you can still access the cluster with Amazon Web Services IAM users.</p>
+/// <p>Disassociates an identity provider configuration from a cluster. If you disassociate an identity provider from your cluster, users included in the provider can no longer access the cluster. However, you can still access the cluster with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principals</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateIdentityProviderConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

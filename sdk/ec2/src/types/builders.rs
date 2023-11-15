@@ -137,6 +137,10 @@ pub use crate::types::_instance_ipv6_address::InstanceIpv6AddressBuilder;
 
 pub use crate::types::_instance_network_interface_attachment::InstanceNetworkInterfaceAttachmentBuilder;
 
+pub use crate::types::_instance_attachment_ena_srd_specification::InstanceAttachmentEnaSrdSpecificationBuilder;
+
+pub use crate::types::_instance_attachment_ena_srd_udp_specification::InstanceAttachmentEnaSrdUdpSpecificationBuilder;
+
 pub use crate::types::_elastic_inference_accelerator_association::ElasticInferenceAcceleratorAssociationBuilder;
 
 pub use crate::types::_elastic_gpu_association::ElasticGpuAssociationBuilder;
@@ -182,6 +186,10 @@ pub use crate::types::_elastic_inference_accelerator::ElasticInferenceAccelerato
 pub use crate::types::_elastic_gpu_specification::ElasticGpuSpecificationBuilder;
 
 pub use crate::types::_instance_network_interface_specification::InstanceNetworkInterfaceSpecificationBuilder;
+
+pub use crate::types::_ena_srd_specification_request::EnaSrdSpecificationRequestBuilder;
+
+pub use crate::types::_ena_srd_udp_specification_request::EnaSrdUdpSpecificationRequestBuilder;
 
 pub use crate::types::_ipv6_prefix_specification_request::Ipv6PrefixSpecificationRequestBuilder;
 
@@ -308,6 +316,10 @@ pub use crate::types::_purchase_request::PurchaseRequestBuilder;
 pub use crate::types::_reserved_instance_limit_price::ReservedInstanceLimitPriceBuilder;
 
 pub use crate::types::_purchase::PurchaseBuilder;
+
+pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
+
+pub use crate::types::_capacity_allocation::CapacityAllocationBuilder;
 
 pub use crate::types::_public_ipv4_pool_range::PublicIpv4PoolRangeBuilder;
 
@@ -707,6 +719,10 @@ pub use crate::types::_launch_templates_monitoring::LaunchTemplatesMonitoringBui
 
 pub use crate::types::_launch_template_instance_network_interface_specification::LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder;
 
+pub use crate::types::_launch_template_ena_srd_specification::LaunchTemplateEnaSrdSpecificationBuilder;
+
+pub use crate::types::_launch_template_ena_srd_udp_specification::LaunchTemplateEnaSrdUdpSpecificationBuilder;
+
 pub use crate::types::_ipv6_prefix_specification_response::Ipv6PrefixSpecificationResponseBuilder;
 
 pub use crate::types::_ipv4_prefix_specification_response::Ipv4PrefixSpecificationResponseBuilder;
@@ -1091,6 +1107,8 @@ pub use crate::types::_processor_info::ProcessorInfoBuilder;
 
 pub use crate::types::_instance_type_offering::InstanceTypeOfferingBuilder;
 
+pub use crate::types::_instance_topology::InstanceTopologyBuilder;
+
 pub use crate::types::_instance_status::InstanceStatusBuilder;
 
 pub use crate::types::_instance_status_summary::InstanceStatusSummaryBuilder;
@@ -1223,13 +1241,11 @@ pub use crate::types::_classic_link_instance::ClassicLinkInstanceBuilder;
 
 pub use crate::types::_carrier_gateway::CarrierGatewayBuilder;
 
-pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
-
-pub use crate::types::_capacity_allocation::CapacityAllocationBuilder;
-
 pub use crate::types::_capacity_reservation_fleet::CapacityReservationFleetBuilder;
 
 pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservationBuilder;
+
+pub use crate::types::_capacity_block_offering::CapacityBlockOfferingBuilder;
 
 pub use crate::types::_bundle_task::BundleTaskBuilder;
 

@@ -70,6 +70,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "failuresNotRedrivable" => {
+                            builder = builder.set_failures_not_redrivable(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "pendingRedrive" => {
+                            builder = builder.set_pending_redrive(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

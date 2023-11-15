@@ -170,4 +170,18 @@ impl ListDataSetsFluentBuilder {
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prefix()
     }
+    /// <p>Filter dataset name matching the specified pattern. Can use * and % as wild cards.</p>
+    pub fn name_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.name_filter(input.into());
+        self
+    }
+    /// <p>Filter dataset name matching the specified pattern. Can use * and % as wild cards.</p>
+    pub fn set_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_name_filter(input);
+        self
+    }
+    /// <p>Filter dataset name matching the specified pattern. Can use * and % as wild cards.</p>
+    pub fn get_name_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_filter()
+    }
 }

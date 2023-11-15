@@ -6,7 +6,7 @@
 pub struct VgwTelemetry {
     /// <p>The number of accepted routes.</p>
     pub accepted_route_count: ::std::option::Option<i32>,
-    /// <p>The date and time of the last change in status.</p>
+    /// <p>The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
     pub last_status_change: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
     pub outside_ip_address: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl VgwTelemetry {
     pub fn accepted_route_count(&self) -> ::std::option::Option<i32> {
         self.accepted_route_count
     }
-    /// <p>The date and time of the last change in status.</p>
+    /// <p>The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
     pub fn last_status_change(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_status_change.as_ref()
     }
@@ -76,17 +76,17 @@ impl VgwTelemetryBuilder {
     pub fn get_accepted_route_count(&self) -> &::std::option::Option<i32> {
         &self.accepted_route_count
     }
-    /// <p>The date and time of the last change in status.</p>
+    /// <p>The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
     pub fn last_status_change(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_status_change = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time of the last change in status.</p>
+    /// <p>The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
     pub fn set_last_status_change(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_status_change = input;
         self
     }
-    /// <p>The date and time of the last change in status.</p>
+    /// <p>The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
     pub fn get_last_status_change(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_status_change
     }

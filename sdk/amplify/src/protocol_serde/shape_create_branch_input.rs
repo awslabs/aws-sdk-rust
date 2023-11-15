@@ -3,70 +3,76 @@ pub fn ser_create_branch_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_branch::CreateBranchInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.backend_environment_arn {
-        object.key("backendEnvironmentArn").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.basic_auth_credentials {
-        object.key("basicAuthCredentials").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.branch_name {
-        object.key("branchName").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.build_spec {
-        object.key("buildSpec").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.description {
-        object.key("description").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.display_name {
-        object.key("displayName").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.enable_auto_build {
-        object.key("enableAutoBuild").boolean(*var_7);
-    }
-    if let Some(var_8) = &input.enable_basic_auth {
-        object.key("enableBasicAuth").boolean(*var_8);
-    }
-    if let Some(var_9) = &input.enable_notification {
-        object.key("enableNotification").boolean(*var_9);
-    }
-    if let Some(var_10) = &input.enable_performance_mode {
-        object.key("enablePerformanceMode").boolean(*var_10);
-    }
-    if let Some(var_11) = &input.enable_pull_request_preview {
-        object.key("enablePullRequestPreview").boolean(*var_11);
-    }
-    if let Some(var_12) = &input.environment_variables {
+    if let Some(var_1) = &input.backend {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("environmentVariables").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_2 = object.key("backend").start_object();
+        crate::protocol_serde::shape_backend::ser_backend(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.backend_environment_arn {
+        object.key("backendEnvironmentArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.basic_auth_credentials {
+        object.key("basicAuthCredentials").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.branch_name {
+        object.key("branchName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.build_spec {
+        object.key("buildSpec").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.description {
+        object.key("description").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.display_name {
+        object.key("displayName").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.enable_auto_build {
+        object.key("enableAutoBuild").boolean(*var_9);
+    }
+    if let Some(var_10) = &input.enable_basic_auth {
+        object.key("enableBasicAuth").boolean(*var_10);
+    }
+    if let Some(var_11) = &input.enable_notification {
+        object.key("enableNotification").boolean(*var_11);
+    }
+    if let Some(var_12) = &input.enable_performance_mode {
+        object.key("enablePerformanceMode").boolean(*var_12);
+    }
+    if let Some(var_13) = &input.enable_pull_request_preview {
+        object.key("enablePullRequestPreview").boolean(*var_13);
+    }
+    if let Some(var_14) = &input.environment_variables {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("environmentVariables").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_13.finish();
+        object_15.finish();
     }
-    if let Some(var_16) = &input.framework {
-        object.key("framework").string(var_16.as_str());
+    if let Some(var_18) = &input.framework {
+        object.key("framework").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.pull_request_environment_name {
-        object.key("pullRequestEnvironmentName").string(var_17.as_str());
+    if let Some(var_19) = &input.pull_request_environment_name {
+        object.key("pullRequestEnvironmentName").string(var_19.as_str());
     }
-    if let Some(var_18) = &input.stage {
-        object.key("stage").string(var_18.as_str());
+    if let Some(var_20) = &input.stage {
+        object.key("stage").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_21) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_22 = object.key("tags").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_20.finish();
+        object_22.finish();
     }
-    if let Some(var_23) = &input.ttl {
-        object.key("ttl").string(var_23.as_str());
+    if let Some(var_25) = &input.ttl {
+        object.key("ttl").string(var_25.as_str());
     }
     Ok(())
 }

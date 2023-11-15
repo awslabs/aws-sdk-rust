@@ -22,7 +22,7 @@ impl UpdateWebhookInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateWebhook`.
 ///
-/// <p> Updates a webhook. </p>
+/// <p>Updates a webhook. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWebhookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateWebhookFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique ID for a webhook. </p>
+    /// <p>The unique ID for a webhook. </p>
     pub fn webhook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.webhook_id(input.into());
         self
     }
-    /// <p> The unique ID for a webhook. </p>
+    /// <p>The unique ID for a webhook. </p>
     pub fn set_webhook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_webhook_id(input);
         self
     }
-    /// <p> The unique ID for a webhook. </p>
+    /// <p>The unique ID for a webhook. </p>
     pub fn get_webhook_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_webhook_id()
     }
-    /// <p> The name for a branch that is part of an Amplify app. </p>
+    /// <p>The name for a branch that is part of an Amplify app. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
         self
     }
-    /// <p> The name for a branch that is part of an Amplify app. </p>
+    /// <p>The name for a branch that is part of an Amplify app. </p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
     }
-    /// <p> The name for a branch that is part of an Amplify app. </p>
+    /// <p>The name for a branch that is part of an Amplify app. </p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_branch_name()
     }
-    /// <p> The description for a webhook. </p>
+    /// <p>The description for a webhook. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> The description for a webhook. </p>
+    /// <p>The description for a webhook. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> The description for a webhook. </p>
+    /// <p>The description for a webhook. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

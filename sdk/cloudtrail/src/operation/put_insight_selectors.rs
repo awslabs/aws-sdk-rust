@@ -250,9 +250,8 @@ pub type PutInsightSelectorsErrorKind = PutInsightSelectorsError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutInsightSelectorsError {
-    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    /// <p>This exception is also thrown when you call <code>AddTags</code> or <code>RemoveTags</code> on a trail, event data store, or channel with a resource ARN that is not valid.</p>
+    /// <p>This exception is thrown when an operation is called with an ARN that is not valid.</p>
+    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
@@ -262,8 +261,13 @@ pub enum PutInsightSelectorsError {
     InsufficientS3BucketPolicyException(crate::types::error::InsufficientS3BucketPolicyException),
     /// <p>This exception is thrown when an operation is called on a trail from a Region other than the Region in which the trail was created.</p>
     InvalidHomeRegionException(crate::types::error::InvalidHomeRegionException),
-    /// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
+    /// <p>For <code>PutInsightSelectors</code>, this exception is thrown when the formatting or syntax of the <code>InsightSelectors</code> JSON statement is not valid, or the specified <code>InsightType</code> in the <code>InsightSelectors</code> statement is not valid. Valid values for <code>InsightType</code> are <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code>. To enable Insights on an event data store, the destination event data store specified by the <code>InsightsDestination</code> parameter must log Insights events and the source event data store specified by the <code>EventDataStore</code> parameter must log management events.</p>
+    /// <p>For <code>UpdateEventDataStore</code>, this exception is thrown if Insights are enabled on the event data store and the updated advanced event selectors are not compatible with the configured <code>InsightSelectors</code>. If the <code>InsightSelectors</code> includes an <code>InsightType</code> of <code>ApiCallRateInsight</code>, the source event data store must log <code>write</code> management events. If the <code>InsightSelectors</code> includes an <code>InsightType</code> of <code>ApiErrorRateInsight</code>, the source event data store must log management events.</p>
     InvalidInsightSelectorsException(crate::types::error::InvalidInsightSelectorsException),
+    /// <p>This exception is thrown when the combination of parameters provided is not valid.</p>
+    InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
@@ -312,6 +316,8 @@ impl ::std::fmt::Display for PutInsightSelectorsError {
             Self::InsufficientS3BucketPolicyException(_inner) => _inner.fmt(f),
             Self::InvalidHomeRegionException(_inner) => _inner.fmt(f),
             Self::InvalidInsightSelectorsException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidTrailNameException(_inner) => _inner.fmt(f),
             Self::KmsException(_inner) => _inner.fmt(f),
             Self::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
@@ -333,6 +339,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutInsightSel
             Self::InsufficientS3BucketPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidHomeRegionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInsightSelectorsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTrailNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -383,6 +391,8 @@ impl PutInsightSelectorsError {
             Self::InsufficientS3BucketPolicyException(e) => e.meta(),
             Self::InvalidHomeRegionException(e) => e.meta(),
             Self::InvalidInsightSelectorsException(e) => e.meta(),
+            Self::InvalidParameterCombinationException(e) => e.meta(),
+            Self::InvalidParameterException(e) => e.meta(),
             Self::InvalidTrailNameException(e) => e.meta(),
             Self::KmsException(e) => e.meta(),
             Self::NoManagementAccountSlrExistsException(e) => e.meta(),
@@ -414,6 +424,14 @@ impl PutInsightSelectorsError {
     /// Returns `true` if the error kind is `PutInsightSelectorsError::InvalidInsightSelectorsException`.
     pub fn is_invalid_insight_selectors_exception(&self) -> bool {
         matches!(self, Self::InvalidInsightSelectorsException(_))
+    }
+    /// Returns `true` if the error kind is `PutInsightSelectorsError::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterCombinationException(_))
+    }
+    /// Returns `true` if the error kind is `PutInsightSelectorsError::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `PutInsightSelectorsError::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
@@ -460,6 +478,8 @@ impl ::std::error::Error for PutInsightSelectorsError {
             Self::InsufficientS3BucketPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidHomeRegionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInsightSelectorsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTrailNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::std::option::Option::Some(_inner),

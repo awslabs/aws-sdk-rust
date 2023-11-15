@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`integration_identifier(impl Into<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::integration_identifier) / [`set_integration_identifier(Option<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::set_integration_identifier):<br>required: **true**<br><p>The unique identifier of the integration.</p><br>
     /// - On success, responds with [`DeleteIntegrationOutput`](crate::operation::delete_integration::DeleteIntegrationOutput) with field(s):
-    ///   - [`source_arn(Option<String>)`](crate::operation::delete_integration::DeleteIntegrationOutput::source_arn): <p>The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source for replication.</p>
+    ///   - [`source_arn(Option<String>)`](crate::operation::delete_integration::DeleteIntegrationOutput::source_arn): <p>The Amazon Resource Name (ARN) of the database used as the source for replication.</p>
     ///   - [`target_arn(Option<String>)`](crate::operation::delete_integration::DeleteIntegrationOutput::target_arn): <p>The ARN of the Redshift data warehouse used as the target for replication.</p>
     ///   - [`integration_name(Option<String>)`](crate::operation::delete_integration::DeleteIntegrationOutput::integration_name): <p>The name of the integration.</p>
     ///   - [`integration_arn(Option<String>)`](crate::operation::delete_integration::DeleteIntegrationOutput::integration_arn): <p>The ARN of the integration.</p>

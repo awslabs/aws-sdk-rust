@@ -16,6 +16,8 @@ pub struct InstanceNetworkInterfaceAttachment {
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>The index of the network card.</p>
     pub network_card_index: ::std::option::Option<i32>,
+    /// <p>Contains the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub ena_srd_specification: ::std::option::Option<crate::types::InstanceAttachmentEnaSrdSpecification>,
 }
 impl InstanceNetworkInterfaceAttachment {
     /// <p>The time stamp when the attachment initiated.</p>
@@ -42,6 +44,10 @@ impl InstanceNetworkInterfaceAttachment {
     pub fn network_card_index(&self) -> ::std::option::Option<i32> {
         self.network_card_index
     }
+    /// <p>Contains the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::InstanceAttachmentEnaSrdSpecification> {
+        self.ena_srd_specification.as_ref()
+    }
 }
 impl InstanceNetworkInterfaceAttachment {
     /// Creates a new builder-style object to manufacture [`InstanceNetworkInterfaceAttachment`](crate::types::InstanceNetworkInterfaceAttachment).
@@ -60,6 +66,7 @@ pub struct InstanceNetworkInterfaceAttachmentBuilder {
     pub(crate) device_index: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::AttachmentStatus>,
     pub(crate) network_card_index: ::std::option::Option<i32>,
+    pub(crate) ena_srd_specification: ::std::option::Option<crate::types::InstanceAttachmentEnaSrdSpecification>,
 }
 impl InstanceNetworkInterfaceAttachmentBuilder {
     /// <p>The time stamp when the attachment initiated.</p>
@@ -146,6 +153,20 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     pub fn get_network_card_index(&self) -> &::std::option::Option<i32> {
         &self.network_card_index
     }
+    /// <p>Contains the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub fn ena_srd_specification(mut self, input: crate::types::InstanceAttachmentEnaSrdSpecification) -> Self {
+        self.ena_srd_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::InstanceAttachmentEnaSrdSpecification>) -> Self {
+        self.ena_srd_specification = input;
+        self
+    }
+    /// <p>Contains the ENA Express settings for the network interface that's attached to the instance.</p>
+    pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::InstanceAttachmentEnaSrdSpecification> {
+        &self.ena_srd_specification
+    }
     /// Consumes the builder and constructs a [`InstanceNetworkInterfaceAttachment`](crate::types::InstanceNetworkInterfaceAttachment).
     pub fn build(self) -> crate::types::InstanceNetworkInterfaceAttachment {
         crate::types::InstanceNetworkInterfaceAttachment {
@@ -155,6 +176,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
             device_index: self.device_index,
             status: self.status,
             network_card_index: self.network_card_index,
+            ena_srd_specification: self.ena_srd_specification,
         }
     }
 }

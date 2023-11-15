@@ -30,7 +30,9 @@ pub struct UpdateTrailInput {
     /// </note>
     pub enable_log_file_validation: ::std::option::Option<bool>,
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
@@ -44,7 +46,9 @@ pub struct UpdateTrailInput {
     /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization trail to a non-organization trail, or convert a non-organization trail to an organization trail.</p>
+    /// </note>
     pub is_organization_trail: ::std::option::Option<bool>,
 }
 impl UpdateTrailInput {
@@ -88,7 +92,9 @@ impl UpdateTrailInput {
         self.enable_log_file_validation
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
@@ -108,7 +114,9 @@ impl UpdateTrailInput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization trail to a non-organization trail, or convert a non-organization trail to an organization trail.</p>
+    /// </note>
     pub fn is_organization_trail(&self) -> ::std::option::Option<bool> {
         self.is_organization_trail
     }
@@ -270,19 +278,25 @@ impl UpdateTrailInputBuilder {
         &self.enable_log_file_validation
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub fn cloud_watch_logs_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logs_log_group_arn
     }
@@ -338,17 +352,23 @@ impl UpdateTrailInputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization trail to a non-organization trail, or convert a non-organization trail to an organization trail.</p>
+    /// </note>
     pub fn is_organization_trail(mut self, input: bool) -> Self {
         self.is_organization_trail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization trail to a non-organization trail, or convert a non-organization trail to an organization trail.</p>
+    /// </note>
     pub fn set_is_organization_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_organization_trail = input;
         self
     }
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p> <note>
+    /// <p>Only the management account for the organization can convert an organization trail to a non-organization trail, or convert a non-organization trail to an organization trail.</p>
+    /// </note>
     pub fn get_is_organization_trail(&self) -> &::std::option::Option<bool> {
         &self.is_organization_trail
     }

@@ -34,8 +34,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
-//! aws-sdk-entityresolution = "0.7.0"
+//! aws-config = "0.57.0"
+//! aws-sdk-entityresolution = "0.8.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

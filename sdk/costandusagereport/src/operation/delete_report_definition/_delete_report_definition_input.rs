@@ -28,6 +28,7 @@ pub struct DeleteReportDefinitionInputBuilder {
 }
 impl DeleteReportDefinitionInputBuilder {
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
+    /// This field is required.
     pub fn report_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_name = ::std::option::Option::Some(input.into());
         self

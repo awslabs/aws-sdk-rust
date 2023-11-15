@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`report_definition(ReportDefinition)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::report_definition) / [`set_report_definition(Option<ReportDefinition>)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::set_report_definition):<br>required: **true**<br><p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p><br>
+    ///   - [`tags(Tag)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::set_tags):<br>required: **false**<br><p>The tags to be assigned to the report definition resource.</p><br>
     /// - On success, responds with [`PutReportDefinitionOutput`](crate::operation::put_report_definition::PutReportDefinitionOutput)
     /// - On failure, responds with [`SdkError<PutReportDefinitionError>`](crate::operation::put_report_definition::PutReportDefinitionError)
     pub fn put_report_definition(&self) -> crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder {

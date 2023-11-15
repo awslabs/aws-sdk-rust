@@ -15,11 +15,14 @@ pub fn ser_update_environment_input(
     if let Some(var_3) = &input.engine_version {
         object.key("engineVersion").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.instance_type {
-        object.key("instanceType").string(var_4.as_str());
+    if let Some(var_4) = &input.force_update {
+        object.key("forceUpdate").boolean(*var_4);
     }
-    if let Some(var_5) = &input.preferred_maintenance_window {
-        object.key("preferredMaintenanceWindow").string(var_5.as_str());
+    if let Some(var_5) = &input.instance_type {
+        object.key("instanceType").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.preferred_maintenance_window {
+        object.key("preferredMaintenanceWindow").string(var_6.as_str());
     }
     Ok(())
 }

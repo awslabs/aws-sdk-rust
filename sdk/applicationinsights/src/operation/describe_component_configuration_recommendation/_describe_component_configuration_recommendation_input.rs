@@ -9,6 +9,8 @@ pub struct DescribeComponentConfigurationRecommendationInput {
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The tier of the application component.</p>
     pub tier: ::std::option::Option<crate::types::Tier>,
+    /// <p>The name of the workload.</p>
+    pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The recommended configuration type.</p>
     pub recommendation_type: ::std::option::Option<crate::types::RecommendationType>,
 }
@@ -24,6 +26,10 @@ impl DescribeComponentConfigurationRecommendationInput {
     /// <p>The tier of the application component.</p>
     pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
         self.tier.as_ref()
+    }
+    /// <p>The name of the workload.</p>
+    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+        self.workload_name.as_deref()
     }
     /// <p>The recommended configuration type.</p>
     pub fn recommendation_type(&self) -> ::std::option::Option<&crate::types::RecommendationType> {
@@ -46,6 +52,7 @@ pub struct DescribeComponentConfigurationRecommendationInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<crate::types::Tier>,
+    pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_type: ::std::option::Option<crate::types::RecommendationType>,
 }
 impl DescribeComponentConfigurationRecommendationInputBuilder {
@@ -94,6 +101,20 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
         &self.tier
     }
+    /// <p>The name of the workload.</p>
+    pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workload.</p>
+    pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workload_name = input;
+        self
+    }
+    /// <p>The name of the workload.</p>
+    pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_name
+    }
     /// <p>The recommended configuration type.</p>
     pub fn recommendation_type(mut self, input: crate::types::RecommendationType) -> Self {
         self.recommendation_type = ::std::option::Option::Some(input);
@@ -120,6 +141,7 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
                 resource_group_name: self.resource_group_name,
                 component_name: self.component_name,
                 tier: self.tier,
+                workload_name: self.workload_name,
                 recommendation_type: self.recommendation_type,
             },
         )

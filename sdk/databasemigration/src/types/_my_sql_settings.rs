@@ -44,6 +44,8 @@ pub struct MySqlSettings {
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
+    pub execute_timeout: ::std::option::Option<i32>,
 }
 impl MySqlSettings {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
@@ -114,6 +116,10 @@ impl MySqlSettings {
     pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
+    /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
+    pub fn execute_timeout(&self) -> ::std::option::Option<i32> {
+        self.execute_timeout
+    }
 }
 impl ::std::fmt::Debug for MySqlSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -132,6 +138,7 @@ impl ::std::fmt::Debug for MySqlSettings {
         formatter.field("username", &self.username);
         formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("execute_timeout", &self.execute_timeout);
         formatter.finish()
     }
 }
@@ -160,6 +167,7 @@ pub struct MySqlSettingsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
+    pub(crate) execute_timeout: ::std::option::Option<i32>,
 }
 impl MySqlSettingsBuilder {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
@@ -394,6 +402,20 @@ impl MySqlSettingsBuilder {
     pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_secret_id
     }
+    /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
+    pub fn execute_timeout(mut self, input: i32) -> Self {
+        self.execute_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
+    pub fn set_execute_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.execute_timeout = input;
+        self
+    }
+    /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
+    pub fn get_execute_timeout(&self) -> &::std::option::Option<i32> {
+        &self.execute_timeout
+    }
     /// Consumes the builder and constructs a [`MySqlSettings`](crate::types::MySqlSettings).
     pub fn build(self) -> crate::types::MySqlSettings {
         crate::types::MySqlSettings {
@@ -411,6 +433,7 @@ impl MySqlSettingsBuilder {
             username: self.username,
             secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
             secrets_manager_secret_id: self.secrets_manager_secret_id,
+            execute_timeout: self.execute_timeout,
         }
     }
 }
@@ -431,6 +454,7 @@ impl ::std::fmt::Debug for MySqlSettingsBuilder {
         formatter.field("username", &self.username);
         formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("execute_timeout", &self.execute_timeout);
         formatter.finish()
     }
 }

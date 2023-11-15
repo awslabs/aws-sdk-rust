@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnabledControl`](crate::operation::get_enabled_control::builders::GetEnabledControlFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`enabled_control_identifier(impl Into<String>)`](crate::operation::get_enabled_control::builders::GetEnabledControlFluentBuilder::enabled_control_identifier) / [`set_enabled_control_identifier(Option<String>)`](crate::operation::get_enabled_control::builders::GetEnabledControlFluentBuilder::set_enabled_control_identifier):<br>required: **true**<br><p> The ARN of the enabled control. </p><br>
+    ///   - [`enabled_control_identifier(impl Into<String>)`](crate::operation::get_enabled_control::builders::GetEnabledControlFluentBuilder::enabled_control_identifier) / [`set_enabled_control_identifier(Option<String>)`](crate::operation::get_enabled_control::builders::GetEnabledControlFluentBuilder::set_enabled_control_identifier):<br>required: **true**<br><p>The <code>controlIdentifier</code> of the enabled control.</p><br>
     /// - On success, responds with [`GetEnabledControlOutput`](crate::operation::get_enabled_control::GetEnabledControlOutput) with field(s):
-    ///   - [`enabled_control_details(Option<EnabledControlDetails>)`](crate::operation::get_enabled_control::GetEnabledControlOutput::enabled_control_details): <p> Information about the enabled control. </p>
+    ///   - [`enabled_control_details(Option<EnabledControlDetails>)`](crate::operation::get_enabled_control::GetEnabledControlOutput::enabled_control_details): <p>Information about the enabled control.</p>
     /// - On failure, responds with [`SdkError<GetEnabledControlError>`](crate::operation::get_enabled_control::GetEnabledControlError)
     pub fn get_enabled_control(&self) -> crate::operation::get_enabled_control::builders::GetEnabledControlFluentBuilder {
         crate::operation::get_enabled_control::builders::GetEnabledControlFluentBuilder::new(self.handle.clone())

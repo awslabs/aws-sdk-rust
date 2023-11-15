@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnabledControlInput {
-    /// <p> The ARN of the enabled control. </p>
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub enabled_control_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetEnabledControlInput {
-    /// <p> The ARN of the enabled control. </p>
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn enabled_control_identifier(&self) -> ::std::option::Option<&str> {
         self.enabled_control_identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetEnabledControlInputBuilder {
     pub(crate) enabled_control_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetEnabledControlInputBuilder {
-    /// <p> The ARN of the enabled control. </p>
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     /// This field is required.
     pub fn enabled_control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enabled_control_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the enabled control. </p>
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn set_enabled_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.enabled_control_identifier = input;
         self
     }
-    /// <p> The ARN of the enabled control. </p>
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn get_enabled_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.enabled_control_identifier
     }

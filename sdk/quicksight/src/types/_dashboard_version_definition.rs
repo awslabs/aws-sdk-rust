@@ -20,6 +20,8 @@ pub struct DashboardVersionDefinition {
     pub column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
     /// <p>The configuration for default analysis settings.</p>
     pub analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
+    /// <p>An array of option definitions for a dashboard.</p>
+    pub options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl DashboardVersionDefinition {
     /// <p>An array of dataset identifier declarations. With this mapping,you can use dataset identifiers instead of dataset Amazon Resource Names (ARNs) throughout the dashboard's sub-structures.</p>
@@ -63,6 +65,10 @@ impl DashboardVersionDefinition {
     pub fn analysis_defaults(&self) -> ::std::option::Option<&crate::types::AnalysisDefaults> {
         self.analysis_defaults.as_ref()
     }
+    /// <p>An array of option definitions for a dashboard.</p>
+    pub fn options(&self) -> ::std::option::Option<&crate::types::AssetOptions> {
+        self.options.as_ref()
+    }
 }
 impl DashboardVersionDefinition {
     /// Creates a new builder-style object to manufacture [`DashboardVersionDefinition`](crate::types::DashboardVersionDefinition).
@@ -82,6 +88,7 @@ pub struct DashboardVersionDefinitionBuilder {
     pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>>,
     pub(crate) column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
     pub(crate) analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
+    pub(crate) options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl DashboardVersionDefinitionBuilder {
     /// Appends an item to `data_set_identifier_declarations`.
@@ -227,6 +234,20 @@ impl DashboardVersionDefinitionBuilder {
     pub fn get_analysis_defaults(&self) -> &::std::option::Option<crate::types::AnalysisDefaults> {
         &self.analysis_defaults
     }
+    /// <p>An array of option definitions for a dashboard.</p>
+    pub fn options(mut self, input: crate::types::AssetOptions) -> Self {
+        self.options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An array of option definitions for a dashboard.</p>
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AssetOptions>) -> Self {
+        self.options = input;
+        self
+    }
+    /// <p>An array of option definitions for a dashboard.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::AssetOptions> {
+        &self.options
+    }
     /// Consumes the builder and constructs a [`DashboardVersionDefinition`](crate::types::DashboardVersionDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_identifier_declarations`](crate::types::builders::DashboardVersionDefinitionBuilder::data_set_identifier_declarations)
@@ -244,6 +265,7 @@ impl DashboardVersionDefinitionBuilder {
             filter_groups: self.filter_groups,
             column_configurations: self.column_configurations,
             analysis_defaults: self.analysis_defaults,
+            options: self.options,
         })
     }
 }

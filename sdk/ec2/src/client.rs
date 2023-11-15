@@ -611,6 +611,8 @@ mod describe_bundle_tasks;
 
 mod describe_byoip_cidrs;
 
+mod describe_capacity_block_offerings;
+
 mod describe_capacity_reservation_fleets;
 
 mod describe_capacity_reservations;
@@ -692,6 +694,8 @@ mod describe_instance_event_notification_attributes;
 mod describe_instance_event_windows;
 
 mod describe_instance_status;
+
+mod describe_instance_topology;
 
 mod describe_instance_type_offerings;
 
@@ -915,6 +919,8 @@ mod disable_ipam_organization_admin_account;
 
 mod disable_serial_console_access;
 
+mod disable_snapshot_block_public_access;
+
 mod disable_transit_gateway_route_table_propagation;
 
 mod disable_vgw_route_propagation;
@@ -972,6 +978,8 @@ mod enable_ipam_organization_admin_account;
 mod enable_reachability_analyzer_organization_sharing;
 
 mod enable_serial_console_access;
+
+mod enable_snapshot_block_public_access;
 
 mod enable_transit_gateway_route_table_propagation;
 
@@ -1052,6 +1060,8 @@ mod get_reserved_instances_exchange_quote;
 mod get_security_groups_for_vpc;
 
 mod get_serial_console_access_status;
+
+mod get_snapshot_block_public_access_state;
 
 mod get_spot_placement_scores;
 
@@ -1236,6 +1246,8 @@ mod provision_byoip_cidr;
 mod provision_ipam_pool_cidr;
 
 mod provision_public_ipv4_pool_cidr;
+
+mod purchase_capacity_block;
 
 mod purchase_host_reservation;
 

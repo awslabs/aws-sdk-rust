@@ -5,19 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParallelDataConfig {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
-    pub s3_uri: ::std::string::String,
+    pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The format of the parallel data input file.</p>
-    pub format: crate::types::ParallelDataFormat,
+    pub format: ::std::option::Option<crate::types::ParallelDataFormat>,
 }
 impl ParallelDataConfig {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+        self.s3_uri.as_deref()
     }
     /// <p>The format of the parallel data input file.</p>
-    pub fn format(&self) -> &crate::types::ParallelDataFormat {
-        &self.format
+    pub fn format(&self) -> ::std::option::Option<&crate::types::ParallelDataFormat> {
+        self.format.as_ref()
     }
 }
 impl ParallelDataConfig {
@@ -36,7 +35,6 @@ pub struct ParallelDataConfigBuilder {
 }
 impl ParallelDataConfigBuilder {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
-    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -51,7 +49,6 @@ impl ParallelDataConfigBuilder {
         &self.s3_uri
     }
     /// <p>The format of the parallel data input file.</p>
-    /// This field is required.
     pub fn format(mut self, input: crate::types::ParallelDataFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -66,23 +63,10 @@ impl ParallelDataConfigBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`ParallelDataConfig`](crate::types::ParallelDataConfig).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`s3_uri`](crate::types::builders::ParallelDataConfigBuilder::s3_uri)
-    /// - [`format`](crate::types::builders::ParallelDataConfigBuilder::format)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParallelDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParallelDataConfig {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building ParallelDataConfig",
-                )
-            })?,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building ParallelDataConfig",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::ParallelDataConfig {
+        crate::types::ParallelDataConfig {
+            s3_uri: self.s3_uri,
+            format: self.format,
+        }
     }
 }

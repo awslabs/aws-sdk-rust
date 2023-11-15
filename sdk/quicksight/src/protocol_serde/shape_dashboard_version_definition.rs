@@ -81,6 +81,12 @@ pub fn ser_dashboard_version_definition(
         crate::protocol_serde::shape_analysis_defaults::ser_analysis_defaults(&mut object_25, var_24)?;
         object_25.finish();
     }
+    if let Some(var_26) = &input.options {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("Options").start_object();
+        crate::protocol_serde::shape_asset_options::ser_asset_options(&mut object_27, var_26)?;
+        object_27.finish();
+    }
     Ok(())
 }
 
@@ -125,6 +131,9 @@ where
                         }
                         "AnalysisDefaults" => {
                             builder = builder.set_analysis_defaults(crate::protocol_serde::shape_analysis_defaults::de_analysis_defaults(tokens)?);
+                        }
+                        "Options" => {
+                            builder = builder.set_options(crate::protocol_serde::shape_asset_options::de_asset_options(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

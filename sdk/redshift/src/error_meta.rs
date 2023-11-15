@@ -481,6 +481,7 @@ impl From<crate::operation::add_partner::AddPartnerError> for Error {
             crate::operation::add_partner::AddPartnerError::UnauthorizedPartnerIntegrationFault(inner) => {
                 Error::UnauthorizedPartnerIntegrationFault(inner)
             }
+            crate::operation::add_partner::AddPartnerError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::add_partner::AddPartnerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -783,6 +784,7 @@ where
 impl From<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError> for Error {
     fn from(err: crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError) -> Self {
         match err {
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ClusterSnapshotAlreadyExistsFault(inner) => {
                 Error::ClusterSnapshotAlreadyExistsFault(inner)
             }
@@ -897,6 +899,7 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
             crate::operation::create_cluster::CreateClusterError::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
             crate::operation::create_cluster::CreateClusterError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
             crate::operation::create_cluster::CreateClusterError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::create_cluster::CreateClusterError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::create_cluster::CreateClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1305,6 +1308,7 @@ where
 impl From<crate::operation::create_scheduled_action::CreateScheduledActionError> for Error {
     fn from(err: crate::operation::create_scheduled_action::CreateScheduledActionError) -> Self {
         match err {
+            crate::operation::create_scheduled_action::CreateScheduledActionError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::create_scheduled_action::CreateScheduledActionError::InvalidScheduledActionFault(inner) => {
                 Error::InvalidScheduledActionFault(inner)
             }
@@ -1320,6 +1324,9 @@ impl From<crate::operation::create_scheduled_action::CreateScheduledActionError>
             }
             crate::operation::create_scheduled_action::CreateScheduledActionError::UnauthorizedOperation(inner) => {
                 Error::UnauthorizedOperation(inner)
+            }
+            crate::operation::create_scheduled_action::CreateScheduledActionError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
             }
             crate::operation::create_scheduled_action::CreateScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1880,6 +1887,7 @@ impl From<crate::operation::delete_partner::DeletePartnerError> for Error {
             crate::operation::delete_partner::DeletePartnerError::UnauthorizedPartnerIntegrationFault(inner) => {
                 Error::UnauthorizedPartnerIntegrationFault(inner)
             }
+            crate::operation::delete_partner::DeletePartnerError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::delete_partner::DeletePartnerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2858,6 +2866,9 @@ impl From<crate::operation::describe_logging_status::DescribeLoggingStatusError>
     fn from(err: crate::operation::describe_logging_status::DescribeLoggingStatusError) -> Self {
         match err {
             crate::operation::describe_logging_status::DescribeLoggingStatusError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::describe_logging_status::DescribeLoggingStatusError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
             crate::operation::describe_logging_status::DescribeLoggingStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2968,6 +2979,7 @@ impl From<crate::operation::describe_partners::DescribePartnersError> for Error 
             crate::operation::describe_partners::DescribePartnersError::UnauthorizedPartnerIntegrationFault(inner) => {
                 Error::UnauthorizedPartnerIntegrationFault(inner)
             }
+            crate::operation::describe_partners::DescribePartnersError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::describe_partners::DescribePartnersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3109,6 +3121,7 @@ impl From<crate::operation::describe_resize::DescribeResizeError> for Error {
         match err {
             crate::operation::describe_resize::DescribeResizeError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::describe_resize::DescribeResizeError::ResizeNotFoundFault(inner) => Error::ResizeNotFoundFault(inner),
+            crate::operation::describe_resize::DescribeResizeError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::describe_resize::DescribeResizeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3329,6 +3342,7 @@ impl From<crate::operation::disable_logging::DisableLoggingError> for Error {
         match err {
             crate::operation::disable_logging::DisableLoggingError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::disable_logging::DisableLoggingError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::disable_logging::DisableLoggingError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::disable_logging::DisableLoggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3360,6 +3374,9 @@ impl From<crate::operation::disable_snapshot_copy::DisableSnapshotCopyError> for
                 Error::SnapshotCopyAlreadyDisabledFault(inner)
             }
             crate::operation::disable_snapshot_copy::DisableSnapshotCopyError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
             crate::operation::disable_snapshot_copy::DisableSnapshotCopyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3428,6 +3445,7 @@ impl From<crate::operation::enable_logging::EnableLoggingError> for Error {
             crate::operation::enable_logging::EnableLoggingError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
             crate::operation::enable_logging::EnableLoggingError::InvalidS3BucketNameFault(inner) => Error::InvalidS3BucketNameFault(inner),
             crate::operation::enable_logging::EnableLoggingError::InvalidS3KeyPrefixFault(inner) => Error::InvalidS3KeyPrefixFault(inner),
+            crate::operation::enable_logging::EnableLoggingError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::enable_logging::EnableLoggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3479,6 +3497,43 @@ impl From<crate::operation::enable_snapshot_copy::EnableSnapshotCopyError> for E
                 Error::UnknownSnapshotCopyRegionFault(inner)
             }
             crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::failover_primary_compute::FailoverPrimaryComputeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::failover_primary_compute::FailoverPrimaryComputeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::failover_primary_compute::FailoverPrimaryComputeError> for Error {
+    fn from(err: crate::operation::failover_primary_compute::FailoverPrimaryComputeError) -> Self {
+        match err {
+            crate::operation::failover_primary_compute::FailoverPrimaryComputeError::ClusterNotFoundFault(inner) => {
+                Error::ClusterNotFoundFault(inner)
+            }
+            crate::operation::failover_primary_compute::FailoverPrimaryComputeError::InvalidClusterStateFault(inner) => {
+                Error::InvalidClusterStateFault(inner)
+            }
+            crate::operation::failover_primary_compute::FailoverPrimaryComputeError::UnauthorizedOperation(inner) => {
+                Error::UnauthorizedOperation(inner)
+            }
+            crate::operation::failover_primary_compute::FailoverPrimaryComputeError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::failover_primary_compute::FailoverPrimaryComputeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3832,6 +3887,9 @@ impl From<crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionE
             }
             crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError::InvalidClusterStateFault(inner) => {
                 Error::InvalidClusterStateFault(inner)
+            }
+            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
             }
             crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4199,6 +4257,7 @@ where
 impl From<crate::operation::modify_scheduled_action::ModifyScheduledActionError> for Error {
     fn from(err: crate::operation::modify_scheduled_action::ModifyScheduledActionError) -> Self {
         match err {
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::modify_scheduled_action::ModifyScheduledActionError::InvalidScheduledActionFault(inner) => {
                 Error::InvalidScheduledActionFault(inner)
             }
@@ -4211,6 +4270,9 @@ impl From<crate::operation::modify_scheduled_action::ModifyScheduledActionError>
             }
             crate::operation::modify_scheduled_action::ModifyScheduledActionError::UnauthorizedOperation(inner) => {
                 Error::UnauthorizedOperation(inner)
+            }
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
             }
             crate::operation::modify_scheduled_action::ModifyScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4348,6 +4410,7 @@ impl From<crate::operation::pause_cluster::PauseClusterError> for Error {
         match err {
             crate::operation::pause_cluster::PauseClusterError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::pause_cluster::PauseClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::pause_cluster::PauseClusterError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::pause_cluster::PauseClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4758,6 +4821,7 @@ impl From<crate::operation::resume_cluster::ResumeClusterError> for Error {
                 Error::InsufficientClusterCapacityFault(inner)
             }
             crate::operation::resume_cluster::ResumeClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::resume_cluster::ResumeClusterError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::resume_cluster::ResumeClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4900,6 +4964,9 @@ impl From<crate::operation::rotate_encryption_key::RotateEncryptionKeyError> for
             crate::operation::rotate_encryption_key::RotateEncryptionKeyError::InvalidClusterStateFault(inner) => {
                 Error::InvalidClusterStateFault(inner)
             }
+            crate::operation::rotate_encryption_key::RotateEncryptionKeyError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
             crate::operation::rotate_encryption_key::RotateEncryptionKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4927,6 +4994,9 @@ impl From<crate::operation::update_partner_status::UpdatePartnerStatusError> for
             crate::operation::update_partner_status::UpdatePartnerStatusError::PartnerNotFoundFault(inner) => Error::PartnerNotFoundFault(inner),
             crate::operation::update_partner_status::UpdatePartnerStatusError::UnauthorizedPartnerIntegrationFault(inner) => {
                 Error::UnauthorizedPartnerIntegrationFault(inner)
+            }
+            crate::operation::update_partner_status::UpdatePartnerStatusError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
             }
             crate::operation::update_partner_status::UpdatePartnerStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }

@@ -43,6 +43,8 @@ pub use crate::types::error::_invalid_token::InvalidToken;
 
 pub use crate::types::error::_invalid_output::InvalidOutput;
 
+pub use crate::types::error::_execution_not_redrivable::ExecutionNotRedrivable;
+
 pub use crate::types::error::_activity_worker_limit_exceeded::ActivityWorkerLimitExceeded;
 
 pub use crate::types::error::_activity_does_not_exist::ActivityDoesNotExist;
@@ -66,6 +68,8 @@ mod _execution_already_exists;
 mod _execution_does_not_exist;
 
 mod _execution_limit_exceeded;
+
+mod _execution_not_redrivable;
 
 mod _invalid_arn;
 

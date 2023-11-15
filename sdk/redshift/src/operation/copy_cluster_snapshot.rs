@@ -245,6 +245,8 @@ pub type CopyClusterSnapshotErrorKind = CopyClusterSnapshotError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CopyClusterSnapshotError {
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
     ClusterSnapshotAlreadyExistsFault(crate::types::error::ClusterSnapshotAlreadyExistsFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
@@ -274,6 +276,7 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CopyClus
 impl ::std::fmt::Display for CopyClusterSnapshotError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::ClusterSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::ClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::ClusterSnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
@@ -286,6 +289,7 @@ impl ::std::fmt::Display for CopyClusterSnapshotError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CopyClusterSnapshotError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterSnapshotAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterSnapshotQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -327,6 +331,7 @@ impl CopyClusterSnapshotError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ClusterNotFoundFault(e) => e.meta(),
             Self::ClusterSnapshotAlreadyExistsFault(e) => e.meta(),
             Self::ClusterSnapshotNotFoundFault(e) => e.meta(),
             Self::ClusterSnapshotQuotaExceededFault(e) => e.meta(),
@@ -334,6 +339,10 @@ impl CopyClusterSnapshotError {
             Self::InvalidRetentionPeriodFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `CopyClusterSnapshotError::ClusterNotFoundFault`.
+    pub fn is_cluster_not_found_fault(&self) -> bool {
+        matches!(self, Self::ClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CopyClusterSnapshotError::ClusterSnapshotAlreadyExistsFault`.
     pub fn is_cluster_snapshot_already_exists_fault(&self) -> bool {
@@ -359,6 +368,7 @@ impl CopyClusterSnapshotError {
 impl ::std::error::Error for CopyClusterSnapshotError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterSnapshotAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterSnapshotQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),

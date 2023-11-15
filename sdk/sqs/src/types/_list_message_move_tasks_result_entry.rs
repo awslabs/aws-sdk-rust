@@ -13,11 +13,11 @@ pub struct ListMessageMoveTasksResultEntry {
     /// <p>The ARN of the destination queue if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>DestinationArn</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of messages to be moved per second (the message movement rate), if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>MaxNumberOfMessagesPerSecond</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
-    pub max_number_of_messages_per_second: i32,
+    pub max_number_of_messages_per_second: ::std::option::Option<i32>,
     /// <p>The approximate number of messages already moved to the destination queue.</p>
     pub approximate_number_of_messages_moved: i64,
     /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
-    pub approximate_number_of_messages_to_move: i64,
+    pub approximate_number_of_messages_to_move: ::std::option::Option<i64>,
     /// <p>The task failure reason (only included if the task status is FAILED).</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of starting the message movement task.</p>
@@ -41,7 +41,7 @@ impl ListMessageMoveTasksResultEntry {
         self.destination_arn.as_deref()
     }
     /// <p>The number of messages to be moved per second (the message movement rate), if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>MaxNumberOfMessagesPerSecond</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
-    pub fn max_number_of_messages_per_second(&self) -> i32 {
+    pub fn max_number_of_messages_per_second(&self) -> ::std::option::Option<i32> {
         self.max_number_of_messages_per_second
     }
     /// <p>The approximate number of messages already moved to the destination queue.</p>
@@ -49,7 +49,7 @@ impl ListMessageMoveTasksResultEntry {
         self.approximate_number_of_messages_moved
     }
     /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
-    pub fn approximate_number_of_messages_to_move(&self) -> i64 {
+    pub fn approximate_number_of_messages_to_move(&self) -> ::std::option::Option<i64> {
         self.approximate_number_of_messages_to_move
     }
     /// <p>The task failure reason (only included if the task status is FAILED).</p>
@@ -216,9 +216,9 @@ impl ListMessageMoveTasksResultEntryBuilder {
             status: self.status,
             source_arn: self.source_arn,
             destination_arn: self.destination_arn,
-            max_number_of_messages_per_second: self.max_number_of_messages_per_second.unwrap_or_default(),
+            max_number_of_messages_per_second: self.max_number_of_messages_per_second,
             approximate_number_of_messages_moved: self.approximate_number_of_messages_moved.unwrap_or_default(),
-            approximate_number_of_messages_to_move: self.approximate_number_of_messages_to_move.unwrap_or_default(),
+            approximate_number_of_messages_to_move: self.approximate_number_of_messages_to_move,
             failure_reason: self.failure_reason,
             started_timestamp: self.started_timestamp.unwrap_or_default(),
         }

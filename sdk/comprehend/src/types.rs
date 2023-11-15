@@ -173,6 +173,14 @@ pub use crate::types::_dataset_type::DatasetType;
 
 pub use crate::types::_dataset_filter::DatasetFilter;
 
+pub use crate::types::_toxic_labels::ToxicLabels;
+
+pub use crate::types::_toxic_content::ToxicContent;
+
+pub use crate::types::_toxic_content_type::ToxicContentType;
+
+pub use crate::types::_text_segment::TextSegment;
+
 pub use crate::types::_targeted_sentiment_entity::TargetedSentimentEntity;
 
 pub use crate::types::_targeted_sentiment_mention::TargetedSentimentMention;
@@ -537,9 +545,17 @@ mod _targeted_sentiment_mention;
 
 mod _task_config;
 
+mod _text_segment;
+
 mod _topics_detection_job_filter;
 
 mod _topics_detection_job_properties;
+
+mod _toxic_content;
+
+mod _toxic_content_type;
+
+mod _toxic_labels;
 
 mod _update_data_security_config;
 

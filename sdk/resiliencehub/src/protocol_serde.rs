@@ -391,11 +391,15 @@ pub(crate) mod shape_recommendation_item_list;
 
 pub(crate) mod shape_resource_error_list;
 
+pub(crate) mod shape_scoring_component_resiliency_scores;
+
 pub(crate) mod shape_config_recommendation;
 
 pub(crate) mod shape_recommendation_item;
 
 pub(crate) mod shape_resource_error;
+
+pub(crate) mod shape_scoring_component_resiliency_score;
 
 pub(crate) mod shape_recommendation_compliance;
 

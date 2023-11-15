@@ -14,6 +14,7 @@
 /// match resourcetype {
 ///     ResourceType::Certificate => { /* ... */ },
 ///     ResourceType::AcmpcaCertificateAuthority => { /* ... */ },
+///     ResourceType::AcmpcaCertificateAuthorityActivation => { /* ... */ },
 ///     ResourceType::ApsRuleGroupsNamespace => { /* ... */ },
 ///     ResourceType::AccessAnalyzerAnalyzer => { /* ... */ },
 ///     ResourceType::AmazonMqBroker => { /* ... */ },
@@ -30,6 +31,8 @@
 ///     ResourceType::AppConfigHostedConfigurationVersion => { /* ... */ },
 ///     ResourceType::AppFlowFlow => { /* ... */ },
 ///     ResourceType::AppIntegrationsEventIntegration => { /* ... */ },
+///     ResourceType::AppMeshGatewayRoute => { /* ... */ },
+///     ResourceType::AppMeshMesh => { /* ... */ },
 ///     ResourceType::AppMeshRoute => { /* ... */ },
 ///     ResourceType::AppMeshVirtualGateway => { /* ... */ },
 ///     ResourceType::AppMeshVirtualNode => { /* ... */ },
@@ -78,7 +81,9 @@
 ///     ResourceType::Pipeline => { /* ... */ },
 ///     ResourceType::ConformancePackCompliance => { /* ... */ },
 ///     ResourceType::ResourceCompliance => { /* ... */ },
+///     ResourceType::ConnectInstance => { /* ... */ },
 ///     ResourceType::ConnectPhoneNumber => { /* ... */ },
+///     ResourceType::ConnectQuickConnect => { /* ... */ },
 ///     ResourceType::CustomerProfilesDomain => { /* ... */ },
 ///     ResourceType::CustomerProfilesObjectType => { /* ... */ },
 ///     ResourceType::DmsCertificate => { /* ... */ },
@@ -100,6 +105,7 @@
 ///     ResourceType::DeviceFarmTestGridProject => { /* ... */ },
 ///     ResourceType::Table => { /* ... */ },
 ///     ResourceType::Ec2CapacityReservation => { /* ... */ },
+///     ResourceType::Ec2CarrierGateway => { /* ... */ },
 ///     ResourceType::Ec2ClientVpnEndpoint => { /* ... */ },
 ///     ResourceType::CustomerGateway => { /* ... */ },
 ///     ResourceType::Ec2DhcpOptions => { /* ... */ },
@@ -109,6 +115,7 @@
 ///     ResourceType::FlowLog => { /* ... */ },
 ///     ResourceType::Host => { /* ... */ },
 ///     ResourceType::Ec2Ipam => { /* ... */ },
+///     ResourceType::Ec2IpamPool => { /* ... */ },
 ///     ResourceType::Ec2IpamScope => { /* ... */ },
 ///     ResourceType::Instance => { /* ... */ },
 ///     ResourceType::InternetGateway => { /* ... */ },
@@ -130,6 +137,8 @@
 ///     ResourceType::Ec2TrafficMirrorTarget => { /* ... */ },
 ///     ResourceType::TransitGateway => { /* ... */ },
 ///     ResourceType::TransitGatewayAttachment => { /* ... */ },
+///     ResourceType::Ec2TransitGatewayConnect => { /* ... */ },
+///     ResourceType::Ec2TransitGatewayMulticastDomain => { /* ... */ },
 ///     ResourceType::TransitGatewayRouteTable => { /* ... */ },
 ///     ResourceType::Vpc => { /* ... */ },
 ///     ResourceType::VpcEndpoint => { /* ... */ },
@@ -142,6 +151,7 @@
 ///     ResourceType::EcrPullThroughCacheRule => { /* ... */ },
 ///     ResourceType::EcrRegistryPolicy => { /* ... */ },
 ///     ResourceType::EcrRepository => { /* ... */ },
+///     ResourceType::EcsCapacityProvider => { /* ... */ },
 ///     ResourceType::EcsCluster => { /* ... */ },
 ///     ResourceType::EcsService => { /* ... */ },
 ///     ResourceType::EcsTaskDefinition => { /* ... */ },
@@ -194,6 +204,7 @@
 ///     ResourceType::GuardDutyThreatIntelSet => { /* ... */ },
 ///     ResourceType::HealthLakeFhirDatastore => { /* ... */ },
 ///     ResourceType::Group => { /* ... */ },
+///     ResourceType::IamInstanceProfile => { /* ... */ },
 ///     ResourceType::Policy => { /* ... */ },
 ///     ResourceType::Role => { /* ... */ },
 ///     ResourceType::IamsamlProvider => { /* ... */ },
@@ -209,6 +220,7 @@
 ///     ResourceType::InspectorV2Filter => { /* ... */ },
 ///     ResourceType::IoTAccountAuditConfiguration => { /* ... */ },
 ///     ResourceType::IoTAuthorizer => { /* ... */ },
+///     ResourceType::IoTcaCertificate => { /* ... */ },
 ///     ResourceType::IoTCustomMetric => { /* ... */ },
 ///     ResourceType::IoTDimension => { /* ... */ },
 ///     ResourceType::IoTFleetMetric => { /* ... */ },
@@ -234,11 +246,13 @@
 ///     ResourceType::IoTTwinMakerComponentType => { /* ... */ },
 ///     ResourceType::IoTTwinMakerEntity => { /* ... */ },
 ///     ResourceType::IoTTwinMakerScene => { /* ... */ },
+///     ResourceType::IoTTwinMakerSyncJob => { /* ... */ },
 ///     ResourceType::IoTTwinMakerWorkspace => { /* ... */ },
 ///     ResourceType::IoTWirelessFuotaTask => { /* ... */ },
 ///     ResourceType::IoTWirelessMulticastGroup => { /* ... */ },
 ///     ResourceType::IoTWirelessServiceProfile => { /* ... */ },
 ///     ResourceType::Key => { /* ... */ },
+///     ResourceType::KafkaConnectConnector => { /* ... */ },
 ///     ResourceType::KendraIndex => { /* ... */ },
 ///     ResourceType::KinesisStream => { /* ... */ },
 ///     ResourceType::KinesisStreamConsumer => { /* ... */ },
@@ -246,6 +260,7 @@
 ///     ResourceType::KinesisFirehoseDeliveryStream => { /* ... */ },
 ///     ResourceType::KinesisVideoSignalingChannel => { /* ... */ },
 ///     ResourceType::KinesisVideoStream => { /* ... */ },
+///     ResourceType::LambdaCodeSigningConfig => { /* ... */ },
 ///     ResourceType::Function => { /* ... */ },
 ///     ResourceType::LexBot => { /* ... */ },
 ///     ResourceType::LexBotAlias => { /* ... */ },
@@ -268,6 +283,7 @@
 ///     ResourceType::NetworkFirewallFirewall => { /* ... */ },
 ///     ResourceType::NetworkFirewallFirewallPolicy => { /* ... */ },
 ///     ResourceType::NetworkFirewallRuleGroup => { /* ... */ },
+///     ResourceType::NetworkManagerConnectPeer => { /* ... */ },
 ///     ResourceType::NetworkManagerCustomerGatewayAssociation => { /* ... */ },
 ///     ResourceType::NetworkManagerDevice => { /* ... */ },
 ///     ResourceType::NetworkManagerGlobalNetwork => { /* ... */ },
@@ -308,6 +324,7 @@
 ///     ResourceType::RedshiftScheduledAction => { /* ... */ },
 ///     ResourceType::ResilienceHubApp => { /* ... */ },
 ///     ResourceType::ResilienceHubResiliencyPolicy => { /* ... */ },
+///     ResourceType::ResourceExplorer2Index => { /* ... */ },
 ///     ResourceType::RoboMakerRobotApplication => { /* ... */ },
 ///     ResourceType::RoboMakerRobotApplicationVersion => { /* ... */ },
 ///     ResourceType::RoboMakerSimulationApplication => { /* ... */ },
@@ -416,6 +433,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AcmpcaCertificateAuthority,
     #[allow(missing_docs)] // documentation missing in model
+    AcmpcaCertificateAuthorityActivation,
+    #[allow(missing_docs)] // documentation missing in model
     ApsRuleGroupsNamespace,
     #[allow(missing_docs)] // documentation missing in model
     AccessAnalyzerAnalyzer,
@@ -447,6 +466,10 @@ pub enum ResourceType {
     AppFlowFlow,
     #[allow(missing_docs)] // documentation missing in model
     AppIntegrationsEventIntegration,
+    #[allow(missing_docs)] // documentation missing in model
+    AppMeshGatewayRoute,
+    #[allow(missing_docs)] // documentation missing in model
+    AppMeshMesh,
     #[allow(missing_docs)] // documentation missing in model
     AppMeshRoute,
     #[allow(missing_docs)] // documentation missing in model
@@ -544,7 +567,11 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ResourceCompliance,
     #[allow(missing_docs)] // documentation missing in model
+    ConnectInstance,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectPhoneNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    ConnectQuickConnect,
     #[allow(missing_docs)] // documentation missing in model
     CustomerProfilesDomain,
     #[allow(missing_docs)] // documentation missing in model
@@ -588,6 +615,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2CapacityReservation,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2CarrierGateway,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2ClientVpnEndpoint,
     #[allow(missing_docs)] // documentation missing in model
     CustomerGateway,
@@ -605,6 +634,8 @@ pub enum ResourceType {
     Host,
     #[allow(missing_docs)] // documentation missing in model
     Ec2Ipam,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2IpamPool,
     #[allow(missing_docs)] // documentation missing in model
     Ec2IpamScope,
     #[allow(missing_docs)] // documentation missing in model
@@ -648,6 +679,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     TransitGatewayAttachment,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2TransitGatewayConnect,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2TransitGatewayMulticastDomain,
+    #[allow(missing_docs)] // documentation missing in model
     TransitGatewayRouteTable,
     #[allow(missing_docs)] // documentation missing in model
     Vpc,
@@ -671,6 +706,8 @@ pub enum ResourceType {
     EcrRegistryPolicy,
     #[allow(missing_docs)] // documentation missing in model
     EcrRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    EcsCapacityProvider,
     #[allow(missing_docs)] // documentation missing in model
     EcsCluster,
     #[allow(missing_docs)] // documentation missing in model
@@ -776,6 +813,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Group,
     #[allow(missing_docs)] // documentation missing in model
+    IamInstanceProfile,
+    #[allow(missing_docs)] // documentation missing in model
     Policy,
     #[allow(missing_docs)] // documentation missing in model
     Role,
@@ -805,6 +844,8 @@ pub enum ResourceType {
     IoTAccountAuditConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     IoTAuthorizer,
+    #[allow(missing_docs)] // documentation missing in model
+    IoTcaCertificate,
     #[allow(missing_docs)] // documentation missing in model
     IoTCustomMetric,
     #[allow(missing_docs)] // documentation missing in model
@@ -856,6 +897,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     IoTTwinMakerScene,
     #[allow(missing_docs)] // documentation missing in model
+    IoTTwinMakerSyncJob,
+    #[allow(missing_docs)] // documentation missing in model
     IoTTwinMakerWorkspace,
     #[allow(missing_docs)] // documentation missing in model
     IoTWirelessFuotaTask,
@@ -865,6 +908,8 @@ pub enum ResourceType {
     IoTWirelessServiceProfile,
     #[allow(missing_docs)] // documentation missing in model
     Key,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaConnectConnector,
     #[allow(missing_docs)] // documentation missing in model
     KendraIndex,
     #[allow(missing_docs)] // documentation missing in model
@@ -879,6 +924,8 @@ pub enum ResourceType {
     KinesisVideoSignalingChannel,
     #[allow(missing_docs)] // documentation missing in model
     KinesisVideoStream,
+    #[allow(missing_docs)] // documentation missing in model
+    LambdaCodeSigningConfig,
     #[allow(missing_docs)] // documentation missing in model
     Function,
     #[allow(missing_docs)] // documentation missing in model
@@ -923,6 +970,8 @@ pub enum ResourceType {
     NetworkFirewallFirewallPolicy,
     #[allow(missing_docs)] // documentation missing in model
     NetworkFirewallRuleGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    NetworkManagerConnectPeer,
     #[allow(missing_docs)] // documentation missing in model
     NetworkManagerCustomerGatewayAssociation,
     #[allow(missing_docs)] // documentation missing in model
@@ -1003,6 +1052,8 @@ pub enum ResourceType {
     ResilienceHubApp,
     #[allow(missing_docs)] // documentation missing in model
     ResilienceHubResiliencyPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceExplorer2Index,
     #[allow(missing_docs)] // documentation missing in model
     RoboMakerRobotApplication,
     #[allow(missing_docs)] // documentation missing in model
@@ -1163,6 +1214,7 @@ impl ::std::convert::From<&str> for ResourceType {
         match s {
             "AWS::ACM::Certificate" => ResourceType::Certificate,
             "AWS::ACMPCA::CertificateAuthority" => ResourceType::AcmpcaCertificateAuthority,
+            "AWS::ACMPCA::CertificateAuthorityActivation" => ResourceType::AcmpcaCertificateAuthorityActivation,
             "AWS::APS::RuleGroupsNamespace" => ResourceType::ApsRuleGroupsNamespace,
             "AWS::AccessAnalyzer::Analyzer" => ResourceType::AccessAnalyzerAnalyzer,
             "AWS::AmazonMQ::Broker" => ResourceType::AmazonMqBroker,
@@ -1179,6 +1231,8 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::AppConfig::HostedConfigurationVersion" => ResourceType::AppConfigHostedConfigurationVersion,
             "AWS::AppFlow::Flow" => ResourceType::AppFlowFlow,
             "AWS::AppIntegrations::EventIntegration" => ResourceType::AppIntegrationsEventIntegration,
+            "AWS::AppMesh::GatewayRoute" => ResourceType::AppMeshGatewayRoute,
+            "AWS::AppMesh::Mesh" => ResourceType::AppMeshMesh,
             "AWS::AppMesh::Route" => ResourceType::AppMeshRoute,
             "AWS::AppMesh::VirtualGateway" => ResourceType::AppMeshVirtualGateway,
             "AWS::AppMesh::VirtualNode" => ResourceType::AppMeshVirtualNode,
@@ -1227,7 +1281,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
             "AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
             "AWS::Config::ResourceCompliance" => ResourceType::ResourceCompliance,
+            "AWS::Connect::Instance" => ResourceType::ConnectInstance,
             "AWS::Connect::PhoneNumber" => ResourceType::ConnectPhoneNumber,
+            "AWS::Connect::QuickConnect" => ResourceType::ConnectQuickConnect,
             "AWS::CustomerProfiles::Domain" => ResourceType::CustomerProfilesDomain,
             "AWS::CustomerProfiles::ObjectType" => ResourceType::CustomerProfilesObjectType,
             "AWS::DMS::Certificate" => ResourceType::DmsCertificate,
@@ -1249,6 +1305,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::DeviceFarm::TestGridProject" => ResourceType::DeviceFarmTestGridProject,
             "AWS::DynamoDB::Table" => ResourceType::Table,
             "AWS::EC2::CapacityReservation" => ResourceType::Ec2CapacityReservation,
+            "AWS::EC2::CarrierGateway" => ResourceType::Ec2CarrierGateway,
             "AWS::EC2::ClientVpnEndpoint" => ResourceType::Ec2ClientVpnEndpoint,
             "AWS::EC2::CustomerGateway" => ResourceType::CustomerGateway,
             "AWS::EC2::DHCPOptions" => ResourceType::Ec2DhcpOptions,
@@ -1258,6 +1315,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::EC2::FlowLog" => ResourceType::FlowLog,
             "AWS::EC2::Host" => ResourceType::Host,
             "AWS::EC2::IPAM" => ResourceType::Ec2Ipam,
+            "AWS::EC2::IPAMPool" => ResourceType::Ec2IpamPool,
             "AWS::EC2::IPAMScope" => ResourceType::Ec2IpamScope,
             "AWS::EC2::Instance" => ResourceType::Instance,
             "AWS::EC2::InternetGateway" => ResourceType::InternetGateway,
@@ -1279,6 +1337,8 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::EC2::TrafficMirrorTarget" => ResourceType::Ec2TrafficMirrorTarget,
             "AWS::EC2::TransitGateway" => ResourceType::TransitGateway,
             "AWS::EC2::TransitGatewayAttachment" => ResourceType::TransitGatewayAttachment,
+            "AWS::EC2::TransitGatewayConnect" => ResourceType::Ec2TransitGatewayConnect,
+            "AWS::EC2::TransitGatewayMulticastDomain" => ResourceType::Ec2TransitGatewayMulticastDomain,
             "AWS::EC2::TransitGatewayRouteTable" => ResourceType::TransitGatewayRouteTable,
             "AWS::EC2::VPC" => ResourceType::Vpc,
             "AWS::EC2::VPCEndpoint" => ResourceType::VpcEndpoint,
@@ -1291,6 +1351,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ECR::PullThroughCacheRule" => ResourceType::EcrPullThroughCacheRule,
             "AWS::ECR::RegistryPolicy" => ResourceType::EcrRegistryPolicy,
             "AWS::ECR::Repository" => ResourceType::EcrRepository,
+            "AWS::ECS::CapacityProvider" => ResourceType::EcsCapacityProvider,
             "AWS::ECS::Cluster" => ResourceType::EcsCluster,
             "AWS::ECS::Service" => ResourceType::EcsService,
             "AWS::ECS::TaskDefinition" => ResourceType::EcsTaskDefinition,
@@ -1343,6 +1404,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::GuardDuty::ThreatIntelSet" => ResourceType::GuardDutyThreatIntelSet,
             "AWS::HealthLake::FHIRDatastore" => ResourceType::HealthLakeFhirDatastore,
             "AWS::IAM::Group" => ResourceType::Group,
+            "AWS::IAM::InstanceProfile" => ResourceType::IamInstanceProfile,
             "AWS::IAM::Policy" => ResourceType::Policy,
             "AWS::IAM::Role" => ResourceType::Role,
             "AWS::IAM::SAMLProvider" => ResourceType::IamsamlProvider,
@@ -1358,6 +1420,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::InspectorV2::Filter" => ResourceType::InspectorV2Filter,
             "AWS::IoT::AccountAuditConfiguration" => ResourceType::IoTAccountAuditConfiguration,
             "AWS::IoT::Authorizer" => ResourceType::IoTAuthorizer,
+            "AWS::IoT::CACertificate" => ResourceType::IoTcaCertificate,
             "AWS::IoT::CustomMetric" => ResourceType::IoTCustomMetric,
             "AWS::IoT::Dimension" => ResourceType::IoTDimension,
             "AWS::IoT::FleetMetric" => ResourceType::IoTFleetMetric,
@@ -1383,11 +1446,13 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::IoTTwinMaker::ComponentType" => ResourceType::IoTTwinMakerComponentType,
             "AWS::IoTTwinMaker::Entity" => ResourceType::IoTTwinMakerEntity,
             "AWS::IoTTwinMaker::Scene" => ResourceType::IoTTwinMakerScene,
+            "AWS::IoTTwinMaker::SyncJob" => ResourceType::IoTTwinMakerSyncJob,
             "AWS::IoTTwinMaker::Workspace" => ResourceType::IoTTwinMakerWorkspace,
             "AWS::IoTWireless::FuotaTask" => ResourceType::IoTWirelessFuotaTask,
             "AWS::IoTWireless::MulticastGroup" => ResourceType::IoTWirelessMulticastGroup,
             "AWS::IoTWireless::ServiceProfile" => ResourceType::IoTWirelessServiceProfile,
             "AWS::KMS::Key" => ResourceType::Key,
+            "AWS::KafkaConnect::Connector" => ResourceType::KafkaConnectConnector,
             "AWS::Kendra::Index" => ResourceType::KendraIndex,
             "AWS::Kinesis::Stream" => ResourceType::KinesisStream,
             "AWS::Kinesis::StreamConsumer" => ResourceType::KinesisStreamConsumer,
@@ -1395,6 +1460,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::KinesisFirehose::DeliveryStream" => ResourceType::KinesisFirehoseDeliveryStream,
             "AWS::KinesisVideo::SignalingChannel" => ResourceType::KinesisVideoSignalingChannel,
             "AWS::KinesisVideo::Stream" => ResourceType::KinesisVideoStream,
+            "AWS::Lambda::CodeSigningConfig" => ResourceType::LambdaCodeSigningConfig,
             "AWS::Lambda::Function" => ResourceType::Function,
             "AWS::Lex::Bot" => ResourceType::LexBot,
             "AWS::Lex::BotAlias" => ResourceType::LexBotAlias,
@@ -1417,6 +1483,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::NetworkFirewall::Firewall" => ResourceType::NetworkFirewallFirewall,
             "AWS::NetworkFirewall::FirewallPolicy" => ResourceType::NetworkFirewallFirewallPolicy,
             "AWS::NetworkFirewall::RuleGroup" => ResourceType::NetworkFirewallRuleGroup,
+            "AWS::NetworkManager::ConnectPeer" => ResourceType::NetworkManagerConnectPeer,
             "AWS::NetworkManager::CustomerGatewayAssociation" => ResourceType::NetworkManagerCustomerGatewayAssociation,
             "AWS::NetworkManager::Device" => ResourceType::NetworkManagerDevice,
             "AWS::NetworkManager::GlobalNetwork" => ResourceType::NetworkManagerGlobalNetwork,
@@ -1457,6 +1524,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Redshift::ScheduledAction" => ResourceType::RedshiftScheduledAction,
             "AWS::ResilienceHub::App" => ResourceType::ResilienceHubApp,
             "AWS::ResilienceHub::ResiliencyPolicy" => ResourceType::ResilienceHubResiliencyPolicy,
+            "AWS::ResourceExplorer2::Index" => ResourceType::ResourceExplorer2Index,
             "AWS::RoboMaker::RobotApplication" => ResourceType::RoboMakerRobotApplication,
             "AWS::RoboMaker::RobotApplicationVersion" => ResourceType::RoboMakerRobotApplicationVersion,
             "AWS::RoboMaker::SimulationApplication" => ResourceType::RoboMakerSimulationApplication,
@@ -1550,6 +1618,7 @@ impl ResourceType {
         match self {
             ResourceType::Certificate => "AWS::ACM::Certificate",
             ResourceType::AcmpcaCertificateAuthority => "AWS::ACMPCA::CertificateAuthority",
+            ResourceType::AcmpcaCertificateAuthorityActivation => "AWS::ACMPCA::CertificateAuthorityActivation",
             ResourceType::ApsRuleGroupsNamespace => "AWS::APS::RuleGroupsNamespace",
             ResourceType::AccessAnalyzerAnalyzer => "AWS::AccessAnalyzer::Analyzer",
             ResourceType::AmazonMqBroker => "AWS::AmazonMQ::Broker",
@@ -1566,6 +1635,8 @@ impl ResourceType {
             ResourceType::AppConfigHostedConfigurationVersion => "AWS::AppConfig::HostedConfigurationVersion",
             ResourceType::AppFlowFlow => "AWS::AppFlow::Flow",
             ResourceType::AppIntegrationsEventIntegration => "AWS::AppIntegrations::EventIntegration",
+            ResourceType::AppMeshGatewayRoute => "AWS::AppMesh::GatewayRoute",
+            ResourceType::AppMeshMesh => "AWS::AppMesh::Mesh",
             ResourceType::AppMeshRoute => "AWS::AppMesh::Route",
             ResourceType::AppMeshVirtualGateway => "AWS::AppMesh::VirtualGateway",
             ResourceType::AppMeshVirtualNode => "AWS::AppMesh::VirtualNode",
@@ -1614,7 +1685,9 @@ impl ResourceType {
             ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
             ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
             ResourceType::ResourceCompliance => "AWS::Config::ResourceCompliance",
+            ResourceType::ConnectInstance => "AWS::Connect::Instance",
             ResourceType::ConnectPhoneNumber => "AWS::Connect::PhoneNumber",
+            ResourceType::ConnectQuickConnect => "AWS::Connect::QuickConnect",
             ResourceType::CustomerProfilesDomain => "AWS::CustomerProfiles::Domain",
             ResourceType::CustomerProfilesObjectType => "AWS::CustomerProfiles::ObjectType",
             ResourceType::DmsCertificate => "AWS::DMS::Certificate",
@@ -1636,6 +1709,7 @@ impl ResourceType {
             ResourceType::DeviceFarmTestGridProject => "AWS::DeviceFarm::TestGridProject",
             ResourceType::Table => "AWS::DynamoDB::Table",
             ResourceType::Ec2CapacityReservation => "AWS::EC2::CapacityReservation",
+            ResourceType::Ec2CarrierGateway => "AWS::EC2::CarrierGateway",
             ResourceType::Ec2ClientVpnEndpoint => "AWS::EC2::ClientVpnEndpoint",
             ResourceType::CustomerGateway => "AWS::EC2::CustomerGateway",
             ResourceType::Ec2DhcpOptions => "AWS::EC2::DHCPOptions",
@@ -1645,6 +1719,7 @@ impl ResourceType {
             ResourceType::FlowLog => "AWS::EC2::FlowLog",
             ResourceType::Host => "AWS::EC2::Host",
             ResourceType::Ec2Ipam => "AWS::EC2::IPAM",
+            ResourceType::Ec2IpamPool => "AWS::EC2::IPAMPool",
             ResourceType::Ec2IpamScope => "AWS::EC2::IPAMScope",
             ResourceType::Instance => "AWS::EC2::Instance",
             ResourceType::InternetGateway => "AWS::EC2::InternetGateway",
@@ -1666,6 +1741,8 @@ impl ResourceType {
             ResourceType::Ec2TrafficMirrorTarget => "AWS::EC2::TrafficMirrorTarget",
             ResourceType::TransitGateway => "AWS::EC2::TransitGateway",
             ResourceType::TransitGatewayAttachment => "AWS::EC2::TransitGatewayAttachment",
+            ResourceType::Ec2TransitGatewayConnect => "AWS::EC2::TransitGatewayConnect",
+            ResourceType::Ec2TransitGatewayMulticastDomain => "AWS::EC2::TransitGatewayMulticastDomain",
             ResourceType::TransitGatewayRouteTable => "AWS::EC2::TransitGatewayRouteTable",
             ResourceType::Vpc => "AWS::EC2::VPC",
             ResourceType::VpcEndpoint => "AWS::EC2::VPCEndpoint",
@@ -1678,6 +1755,7 @@ impl ResourceType {
             ResourceType::EcrPullThroughCacheRule => "AWS::ECR::PullThroughCacheRule",
             ResourceType::EcrRegistryPolicy => "AWS::ECR::RegistryPolicy",
             ResourceType::EcrRepository => "AWS::ECR::Repository",
+            ResourceType::EcsCapacityProvider => "AWS::ECS::CapacityProvider",
             ResourceType::EcsCluster => "AWS::ECS::Cluster",
             ResourceType::EcsService => "AWS::ECS::Service",
             ResourceType::EcsTaskDefinition => "AWS::ECS::TaskDefinition",
@@ -1730,6 +1808,7 @@ impl ResourceType {
             ResourceType::GuardDutyThreatIntelSet => "AWS::GuardDuty::ThreatIntelSet",
             ResourceType::HealthLakeFhirDatastore => "AWS::HealthLake::FHIRDatastore",
             ResourceType::Group => "AWS::IAM::Group",
+            ResourceType::IamInstanceProfile => "AWS::IAM::InstanceProfile",
             ResourceType::Policy => "AWS::IAM::Policy",
             ResourceType::Role => "AWS::IAM::Role",
             ResourceType::IamsamlProvider => "AWS::IAM::SAMLProvider",
@@ -1745,6 +1824,7 @@ impl ResourceType {
             ResourceType::InspectorV2Filter => "AWS::InspectorV2::Filter",
             ResourceType::IoTAccountAuditConfiguration => "AWS::IoT::AccountAuditConfiguration",
             ResourceType::IoTAuthorizer => "AWS::IoT::Authorizer",
+            ResourceType::IoTcaCertificate => "AWS::IoT::CACertificate",
             ResourceType::IoTCustomMetric => "AWS::IoT::CustomMetric",
             ResourceType::IoTDimension => "AWS::IoT::Dimension",
             ResourceType::IoTFleetMetric => "AWS::IoT::FleetMetric",
@@ -1770,11 +1850,13 @@ impl ResourceType {
             ResourceType::IoTTwinMakerComponentType => "AWS::IoTTwinMaker::ComponentType",
             ResourceType::IoTTwinMakerEntity => "AWS::IoTTwinMaker::Entity",
             ResourceType::IoTTwinMakerScene => "AWS::IoTTwinMaker::Scene",
+            ResourceType::IoTTwinMakerSyncJob => "AWS::IoTTwinMaker::SyncJob",
             ResourceType::IoTTwinMakerWorkspace => "AWS::IoTTwinMaker::Workspace",
             ResourceType::IoTWirelessFuotaTask => "AWS::IoTWireless::FuotaTask",
             ResourceType::IoTWirelessMulticastGroup => "AWS::IoTWireless::MulticastGroup",
             ResourceType::IoTWirelessServiceProfile => "AWS::IoTWireless::ServiceProfile",
             ResourceType::Key => "AWS::KMS::Key",
+            ResourceType::KafkaConnectConnector => "AWS::KafkaConnect::Connector",
             ResourceType::KendraIndex => "AWS::Kendra::Index",
             ResourceType::KinesisStream => "AWS::Kinesis::Stream",
             ResourceType::KinesisStreamConsumer => "AWS::Kinesis::StreamConsumer",
@@ -1782,6 +1864,7 @@ impl ResourceType {
             ResourceType::KinesisFirehoseDeliveryStream => "AWS::KinesisFirehose::DeliveryStream",
             ResourceType::KinesisVideoSignalingChannel => "AWS::KinesisVideo::SignalingChannel",
             ResourceType::KinesisVideoStream => "AWS::KinesisVideo::Stream",
+            ResourceType::LambdaCodeSigningConfig => "AWS::Lambda::CodeSigningConfig",
             ResourceType::Function => "AWS::Lambda::Function",
             ResourceType::LexBot => "AWS::Lex::Bot",
             ResourceType::LexBotAlias => "AWS::Lex::BotAlias",
@@ -1804,6 +1887,7 @@ impl ResourceType {
             ResourceType::NetworkFirewallFirewall => "AWS::NetworkFirewall::Firewall",
             ResourceType::NetworkFirewallFirewallPolicy => "AWS::NetworkFirewall::FirewallPolicy",
             ResourceType::NetworkFirewallRuleGroup => "AWS::NetworkFirewall::RuleGroup",
+            ResourceType::NetworkManagerConnectPeer => "AWS::NetworkManager::ConnectPeer",
             ResourceType::NetworkManagerCustomerGatewayAssociation => "AWS::NetworkManager::CustomerGatewayAssociation",
             ResourceType::NetworkManagerDevice => "AWS::NetworkManager::Device",
             ResourceType::NetworkManagerGlobalNetwork => "AWS::NetworkManager::GlobalNetwork",
@@ -1844,6 +1928,7 @@ impl ResourceType {
             ResourceType::RedshiftScheduledAction => "AWS::Redshift::ScheduledAction",
             ResourceType::ResilienceHubApp => "AWS::ResilienceHub::App",
             ResourceType::ResilienceHubResiliencyPolicy => "AWS::ResilienceHub::ResiliencyPolicy",
+            ResourceType::ResourceExplorer2Index => "AWS::ResourceExplorer2::Index",
             ResourceType::RoboMakerRobotApplication => "AWS::RoboMaker::RobotApplication",
             ResourceType::RoboMakerRobotApplicationVersion => "AWS::RoboMaker::RobotApplicationVersion",
             ResourceType::RoboMakerSimulationApplication => "AWS::RoboMaker::SimulationApplication",
@@ -1928,6 +2013,7 @@ impl ResourceType {
         &[
             "AWS::ACM::Certificate",
             "AWS::ACMPCA::CertificateAuthority",
+            "AWS::ACMPCA::CertificateAuthorityActivation",
             "AWS::APS::RuleGroupsNamespace",
             "AWS::AccessAnalyzer::Analyzer",
             "AWS::AmazonMQ::Broker",
@@ -1944,6 +2030,8 @@ impl ResourceType {
             "AWS::AppConfig::HostedConfigurationVersion",
             "AWS::AppFlow::Flow",
             "AWS::AppIntegrations::EventIntegration",
+            "AWS::AppMesh::GatewayRoute",
+            "AWS::AppMesh::Mesh",
             "AWS::AppMesh::Route",
             "AWS::AppMesh::VirtualGateway",
             "AWS::AppMesh::VirtualNode",
@@ -1992,7 +2080,9 @@ impl ResourceType {
             "AWS::CodePipeline::Pipeline",
             "AWS::Config::ConformancePackCompliance",
             "AWS::Config::ResourceCompliance",
+            "AWS::Connect::Instance",
             "AWS::Connect::PhoneNumber",
+            "AWS::Connect::QuickConnect",
             "AWS::CustomerProfiles::Domain",
             "AWS::CustomerProfiles::ObjectType",
             "AWS::DMS::Certificate",
@@ -2014,6 +2104,7 @@ impl ResourceType {
             "AWS::DeviceFarm::TestGridProject",
             "AWS::DynamoDB::Table",
             "AWS::EC2::CapacityReservation",
+            "AWS::EC2::CarrierGateway",
             "AWS::EC2::ClientVpnEndpoint",
             "AWS::EC2::CustomerGateway",
             "AWS::EC2::DHCPOptions",
@@ -2023,6 +2114,7 @@ impl ResourceType {
             "AWS::EC2::FlowLog",
             "AWS::EC2::Host",
             "AWS::EC2::IPAM",
+            "AWS::EC2::IPAMPool",
             "AWS::EC2::IPAMScope",
             "AWS::EC2::Instance",
             "AWS::EC2::InternetGateway",
@@ -2044,6 +2136,8 @@ impl ResourceType {
             "AWS::EC2::TrafficMirrorTarget",
             "AWS::EC2::TransitGateway",
             "AWS::EC2::TransitGatewayAttachment",
+            "AWS::EC2::TransitGatewayConnect",
+            "AWS::EC2::TransitGatewayMulticastDomain",
             "AWS::EC2::TransitGatewayRouteTable",
             "AWS::EC2::VPC",
             "AWS::EC2::VPCEndpoint",
@@ -2056,6 +2150,7 @@ impl ResourceType {
             "AWS::ECR::PullThroughCacheRule",
             "AWS::ECR::RegistryPolicy",
             "AWS::ECR::Repository",
+            "AWS::ECS::CapacityProvider",
             "AWS::ECS::Cluster",
             "AWS::ECS::Service",
             "AWS::ECS::TaskDefinition",
@@ -2108,6 +2203,7 @@ impl ResourceType {
             "AWS::GuardDuty::ThreatIntelSet",
             "AWS::HealthLake::FHIRDatastore",
             "AWS::IAM::Group",
+            "AWS::IAM::InstanceProfile",
             "AWS::IAM::Policy",
             "AWS::IAM::Role",
             "AWS::IAM::SAMLProvider",
@@ -2123,6 +2219,7 @@ impl ResourceType {
             "AWS::InspectorV2::Filter",
             "AWS::IoT::AccountAuditConfiguration",
             "AWS::IoT::Authorizer",
+            "AWS::IoT::CACertificate",
             "AWS::IoT::CustomMetric",
             "AWS::IoT::Dimension",
             "AWS::IoT::FleetMetric",
@@ -2148,11 +2245,13 @@ impl ResourceType {
             "AWS::IoTTwinMaker::ComponentType",
             "AWS::IoTTwinMaker::Entity",
             "AWS::IoTTwinMaker::Scene",
+            "AWS::IoTTwinMaker::SyncJob",
             "AWS::IoTTwinMaker::Workspace",
             "AWS::IoTWireless::FuotaTask",
             "AWS::IoTWireless::MulticastGroup",
             "AWS::IoTWireless::ServiceProfile",
             "AWS::KMS::Key",
+            "AWS::KafkaConnect::Connector",
             "AWS::Kendra::Index",
             "AWS::Kinesis::Stream",
             "AWS::Kinesis::StreamConsumer",
@@ -2160,6 +2259,7 @@ impl ResourceType {
             "AWS::KinesisFirehose::DeliveryStream",
             "AWS::KinesisVideo::SignalingChannel",
             "AWS::KinesisVideo::Stream",
+            "AWS::Lambda::CodeSigningConfig",
             "AWS::Lambda::Function",
             "AWS::Lex::Bot",
             "AWS::Lex::BotAlias",
@@ -2182,6 +2282,7 @@ impl ResourceType {
             "AWS::NetworkFirewall::Firewall",
             "AWS::NetworkFirewall::FirewallPolicy",
             "AWS::NetworkFirewall::RuleGroup",
+            "AWS::NetworkManager::ConnectPeer",
             "AWS::NetworkManager::CustomerGatewayAssociation",
             "AWS::NetworkManager::Device",
             "AWS::NetworkManager::GlobalNetwork",
@@ -2222,6 +2323,7 @@ impl ResourceType {
             "AWS::Redshift::ScheduledAction",
             "AWS::ResilienceHub::App",
             "AWS::ResilienceHub::ResiliencyPolicy",
+            "AWS::ResourceExplorer2::Index",
             "AWS::RoboMaker::RobotApplication",
             "AWS::RoboMaker::RobotApplicationVersion",
             "AWS::RoboMaker::SimulationApplication",

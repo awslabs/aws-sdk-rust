@@ -28,8 +28,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
-//! aws-sdk-connectcases = "0.16.0"
+//! aws-config = "0.57.0"
+//! aws-sdk-connectcases = "0.17.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

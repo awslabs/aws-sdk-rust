@@ -47,6 +47,8 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub ipv6_prefix_count: ::std::option::Option<i32>,
     /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub primary_ipv6: ::std::option::Option<bool>,
+    /// <p>Configure ENA Express settings for your launch template.</p>
+    pub ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>,
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     /// <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
@@ -142,6 +144,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub fn primary_ipv6(&self) -> ::std::option::Option<bool> {
         self.primary_ipv6
     }
+    /// <p>Configure ENA Express settings for your launch template.</p>
+    pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdSpecificationRequest> {
+        self.ena_srd_specification.as_ref()
+    }
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateInstanceNetworkInterfaceSpecificationRequest`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest).
@@ -174,6 +180,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
     pub(crate) primary_ipv6: ::std::option::Option<bool>,
+    pub(crate) ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>,
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     /// <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
@@ -495,6 +502,20 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     pub fn get_primary_ipv6(&self) -> &::std::option::Option<bool> {
         &self.primary_ipv6
     }
+    /// <p>Configure ENA Express settings for your launch template.</p>
+    pub fn ena_srd_specification(mut self, input: crate::types::EnaSrdSpecificationRequest) -> Self {
+        self.ena_srd_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configure ENA Express settings for your launch template.</p>
+    pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>) -> Self {
+        self.ena_srd_specification = input;
+        self
+    }
+    /// <p>Configure ENA Express settings for your launch template.</p>
+    pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecificationRequest> {
+        &self.ena_srd_specification
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceNetworkInterfaceSpecificationRequest`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest).
     pub fn build(self) -> crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
         crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
@@ -518,6 +539,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
             ipv6_prefixes: self.ipv6_prefixes,
             ipv6_prefix_count: self.ipv6_prefix_count,
             primary_ipv6: self.primary_ipv6,
+            ena_srd_specification: self.ena_srd_specification,
         }
     }
 }

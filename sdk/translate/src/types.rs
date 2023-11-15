@@ -7,6 +7,8 @@ pub use crate::types::_parallel_data_format::ParallelDataFormat;
 
 pub use crate::types::_translation_settings::TranslationSettings;
 
+pub use crate::types::_brevity::Brevity;
+
 pub use crate::types::_profanity::Profanity;
 
 pub use crate::types::_formality::Formality;
@@ -58,6 +60,8 @@ pub use crate::types::_merge_strategy::MergeStrategy;
 pub use crate::types::_parallel_data_data_location::ParallelDataDataLocation;
 
 mod _applied_terminology;
+
+mod _brevity;
 
 mod _directionality;
 

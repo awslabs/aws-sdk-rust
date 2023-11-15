@@ -3,6 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>You don't have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The event was already logged.</p> <important>
     /// <p> <code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of log events has already been accepted. </p>
     /// </important>
@@ -26,18 +30,26 @@ pub enum Error {
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>This request exceeds a service quota.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>The request was throttled because of quota limits.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>A resource can have no more than 50 tags.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>The most likely cause is an Amazon Web Services access key ID or secret key that's not valid.</p>
     UnrecognizedClientException(crate::types::error::UnrecognizedClientException),
+    /// <p>One of the parameters for the request is not valid.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::DataAlreadyAcceptedException(inner) => inner.fmt(f),
             Error::InvalidOperationException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
@@ -47,9 +59,12 @@ impl ::std::fmt::Display for Error {
             Error::OperationAbortedException(inner) => inner.fmt(f),
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnrecognizedClientException(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -109,6 +124,38 @@ impl From<crate::operation::cancel_export_task::CancelExportTaskError> for Error
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::cancel_export_task::CancelExportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_delivery::CreateDeliveryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_delivery::CreateDeliveryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_delivery::CreateDeliveryError> for Error {
+    fn from(err: crate::operation::create_delivery::CreateDeliveryError) -> Self {
+        match err {
+            crate::operation::create_delivery::CreateDeliveryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_delivery::CreateDeliveryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -276,6 +323,162 @@ impl From<crate::operation::delete_data_protection_policy::DeleteDataProtectionP
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_delivery::DeleteDeliveryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_delivery::DeleteDeliveryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_delivery::DeleteDeliveryError> for Error {
+    fn from(err: crate::operation::delete_delivery::DeleteDeliveryError) -> Self {
+        match err {
+            crate::operation::delete_delivery::DeleteDeliveryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_delivery::DeleteDeliveryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_delivery::DeleteDeliveryError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_delivery::DeleteDeliveryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_delivery::DeleteDeliveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_delivery::DeleteDeliveryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_delivery::DeleteDeliveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError> for Error {
+    fn from(err: crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError) -> Self {
+        match err {
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError> for Error {
+    fn from(err: crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError) -> Self {
+        match err {
+            crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_delivery_source::DeleteDeliverySourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_delivery_source::DeleteDeliverySourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_delivery_source::DeleteDeliverySourceError> for Error {
+    fn from(err: crate::operation::delete_delivery_source::DeleteDeliverySourceError) -> Self {
+        match err {
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -575,6 +778,117 @@ impl From<crate::operation::describe_account_policies::DescribeAccountPoliciesEr
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::describe_account_policies::DescribeAccountPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_deliveries::DescribeDeliveriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_deliveries::DescribeDeliveriesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_deliveries::DescribeDeliveriesError> for Error {
+    fn from(err: crate::operation::describe_deliveries::DescribeDeliveriesError) -> Self {
+        match err {
+            crate::operation::describe_deliveries::DescribeDeliveriesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::describe_deliveries::DescribeDeliveriesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_deliveries::DescribeDeliveriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_deliveries::DescribeDeliveriesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_deliveries::DescribeDeliveriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError> for Error {
+    fn from(err: crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError) -> Self {
+        match err {
+            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_delivery_sources::DescribeDeliverySourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_delivery_sources::DescribeDeliverySourcesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_delivery_sources::DescribeDeliverySourcesError> for Error {
+    fn from(err: crate::operation::describe_delivery_sources::DescribeDeliverySourcesError) -> Self {
+        match err {
+            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -957,6 +1271,143 @@ impl From<crate::operation::get_data_protection_policy::GetDataProtectionPolicyE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delivery::GetDeliveryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delivery::GetDeliveryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_delivery::GetDeliveryError> for Error {
+    fn from(err: crate::operation::get_delivery::GetDeliveryError) -> Self {
+        match err {
+            crate::operation::get_delivery::GetDeliveryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_delivery::GetDeliveryError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_delivery::GetDeliveryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_delivery::GetDeliveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_delivery::GetDeliveryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_delivery::GetDeliveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delivery_destination::GetDeliveryDestinationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delivery_destination::GetDeliveryDestinationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_delivery_destination::GetDeliveryDestinationError> for Error {
+    fn from(err: crate::operation::get_delivery_destination::GetDeliveryDestinationError) -> Self {
+        match err {
+            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_delivery_destination::GetDeliveryDestinationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError> for Error {
+    fn from(err: crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError) -> Self {
+        match err {
+            crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delivery_source::GetDeliverySourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delivery_source::GetDeliverySourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_delivery_source::GetDeliverySourceError> for Error {
+    fn from(err: crate::operation::get_delivery_source::GetDeliverySourceError) -> Self {
+        match err {
+            crate::operation::get_delivery_source::GetDeliverySourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_delivery_source::GetDeliverySourceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_delivery_source::GetDeliverySourceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_delivery_source::GetDeliverySourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_delivery_source::GetDeliverySourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_delivery_source::GetDeliverySourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_events::GetLogEventsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1197,6 +1648,120 @@ impl From<crate::operation::put_data_protection_policy::PutDataProtectionPolicyE
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::put_data_protection_policy::PutDataProtectionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_delivery_destination::PutDeliveryDestinationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_delivery_destination::PutDeliveryDestinationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_delivery_destination::PutDeliveryDestinationError> for Error {
+    fn from(err: crate::operation::put_delivery_destination::PutDeliveryDestinationError) -> Self {
+        match err {
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError> for Error {
+    fn from(err: crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError) -> Self {
+        match err {
+            crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_delivery_source::PutDeliverySourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_delivery_source::PutDeliverySourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_delivery_source::PutDeliverySourceError> for Error {
+    fn from(err: crate::operation::put_delivery_source::PutDeliverySourceError) -> Self {
+        match err {
+            crate::operation::put_delivery_source::PutDeliverySourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_delivery_source::PutDeliverySourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_delivery_source::PutDeliverySourceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::put_delivery_source::PutDeliverySourceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::put_delivery_source::PutDeliverySourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_delivery_source::PutDeliverySourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_delivery_source::PutDeliverySourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1641,6 +2206,8 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::DataAlreadyAcceptedException(inner) => inner.source(),
             Error::InvalidOperationException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
@@ -1650,9 +2217,12 @@ impl ::std::error::Error for Error {
             Error::OperationAbortedException(inner) => inner.source(),
             Error::ResourceAlreadyExistsException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::UnrecognizedClientException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
         }
     }
@@ -1660,6 +2230,8 @@ impl ::std::error::Error for Error {
 impl ::aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::DataAlreadyAcceptedException(e) => e.request_id(),
             Self::InvalidOperationException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
@@ -1669,9 +2241,12 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::OperationAbortedException(e) => e.request_id(),
             Self::ResourceAlreadyExistsException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
             Self::UnrecognizedClientException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }
     }

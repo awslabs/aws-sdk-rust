@@ -10,7 +10,7 @@ pub struct Mp3Settings {
     pub channels: ::std::option::Option<i32>,
     /// Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
     pub rate_control_mode: ::std::option::Option<crate::types::Mp3RateControlMode>,
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub sample_rate: ::std::option::Option<i32>,
     /// Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
     pub vbr_quality: ::std::option::Option<i32>,
@@ -28,7 +28,7 @@ impl Mp3Settings {
     pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::Mp3RateControlMode> {
         self.rate_control_mode.as_ref()
     }
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
     }
@@ -97,17 +97,17 @@ impl Mp3SettingsBuilder {
     pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::Mp3RateControlMode> {
         &self.rate_control_mode
     }
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
         self
     }
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
     }
-    /// Sample rate in hz.
+    /// Sample rate in Hz.
     pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
         &self.sample_rate
     }

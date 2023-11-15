@@ -14,6 +14,7 @@
 /// match executionstatus {
 ///     ExecutionStatus::Aborted => { /* ... */ },
 ///     ExecutionStatus::Failed => { /* ... */ },
+///     ExecutionStatus::PendingRedrive => { /* ... */ },
 ///     ExecutionStatus::Running => { /* ... */ },
 ///     ExecutionStatus::Succeeded => { /* ... */ },
 ///     ExecutionStatus::TimedOut => { /* ... */ },
@@ -49,6 +50,8 @@ pub enum ExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    PendingRedrive,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for ExecutionStatus {
         match s {
             "ABORTED" => ExecutionStatus::Aborted,
             "FAILED" => ExecutionStatus::Failed,
+            "PENDING_REDRIVE" => ExecutionStatus::PendingRedrive,
             "RUNNING" => ExecutionStatus::Running,
             "SUCCEEDED" => ExecutionStatus::Succeeded,
             "TIMED_OUT" => ExecutionStatus::TimedOut,
@@ -82,6 +86,7 @@ impl ExecutionStatus {
         match self {
             ExecutionStatus::Aborted => "ABORTED",
             ExecutionStatus::Failed => "FAILED",
+            ExecutionStatus::PendingRedrive => "PENDING_REDRIVE",
             ExecutionStatus::Running => "RUNNING",
             ExecutionStatus::Succeeded => "SUCCEEDED",
             ExecutionStatus::TimedOut => "TIMED_OUT",
@@ -90,7 +95,7 @@ impl ExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED", "TIMED_OUT"]
+        &["ABORTED", "FAILED", "PENDING_REDRIVE", "RUNNING", "SUCCEEDED", "TIMED_OUT"]
     }
 }
 impl ::std::convert::AsRef<str> for ExecutionStatus {

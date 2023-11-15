@@ -182,11 +182,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AddPermissio
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder
         };
-        let body =
-            ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_add_permission_input::ser_add_permission_input_input(&input)?);
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_add_permission::ser_add_permission_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
@@ -243,8 +242,23 @@ pub type AddPermissionErrorKind = AddPermissionError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AddPermissionError {
+    /// <p>The <code>accountId</code> is invalid.</p>
+    InvalidAddress(crate::types::error::InvalidAddress),
+    /// <p>When the request to a queue is not HTTPS and SigV4.</p>
+    InvalidSecurity(crate::types::error::InvalidSecurity),
     /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of in flight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
     OverLimit(crate::types::error::OverLimit),
+    /// <p>The specified queue doesn't exist.</p>
+    QueueDoesNotExist(crate::types::error::QueueDoesNotExist),
+    /// <p>The request was denied due to request throttling.</p>
+    /// <ul>
+    /// <li> <p>The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and Region. </p> </li>
+    /// <li> <p>A burst or sustained high rate of requests to change the state of the same KMS key. This condition is often known as a "hot key."</p> </li>
+    /// <li> <p>Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web Services CloudHSM key store.</p> </li>
+    /// </ul>
+    RequestThrottled(crate::types::error::RequestThrottled),
+    /// <p>Error code 400. Unsupported operation.</p>
+    UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -263,7 +277,12 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for AddPermi
 impl ::std::fmt::Display for AddPermissionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidAddress(_inner) => _inner.fmt(f),
+            Self::InvalidSecurity(_inner) => _inner.fmt(f),
             Self::OverLimit(_inner) => _inner.fmt(f),
+            Self::QueueDoesNotExist(_inner) => _inner.fmt(f),
+            Self::RequestThrottled(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperation(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -271,7 +290,12 @@ impl ::std::fmt::Display for AddPermissionError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AddPermissionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidAddress(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSecurity(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OverLimit(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::QueueDoesNotExist(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RequestThrottled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -308,19 +332,49 @@ impl AddPermissionError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::InvalidAddress(e) => e.meta(),
+            Self::InvalidSecurity(e) => e.meta(),
             Self::OverLimit(e) => e.meta(),
+            Self::QueueDoesNotExist(e) => e.meta(),
+            Self::RequestThrottled(e) => e.meta(),
+            Self::UnsupportedOperation(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `AddPermissionError::InvalidAddress`.
+    pub fn is_invalid_address(&self) -> bool {
+        matches!(self, Self::InvalidAddress(_))
+    }
+    /// Returns `true` if the error kind is `AddPermissionError::InvalidSecurity`.
+    pub fn is_invalid_security(&self) -> bool {
+        matches!(self, Self::InvalidSecurity(_))
     }
     /// Returns `true` if the error kind is `AddPermissionError::OverLimit`.
     pub fn is_over_limit(&self) -> bool {
         matches!(self, Self::OverLimit(_))
     }
+    /// Returns `true` if the error kind is `AddPermissionError::QueueDoesNotExist`.
+    pub fn is_queue_does_not_exist(&self) -> bool {
+        matches!(self, Self::QueueDoesNotExist(_))
+    }
+    /// Returns `true` if the error kind is `AddPermissionError::RequestThrottled`.
+    pub fn is_request_throttled(&self) -> bool {
+        matches!(self, Self::RequestThrottled(_))
+    }
+    /// Returns `true` if the error kind is `AddPermissionError::UnsupportedOperation`.
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(self, Self::UnsupportedOperation(_))
+    }
 }
 impl ::std::error::Error for AddPermissionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidAddress(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidSecurity(_inner) => ::std::option::Option::Some(_inner),
             Self::OverLimit(_inner) => ::std::option::Option::Some(_inner),
+            Self::QueueDoesNotExist(_inner) => ::std::option::Option::Some(_inner),
+            Self::RequestThrottled(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperation(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

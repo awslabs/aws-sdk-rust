@@ -12,7 +12,7 @@ pub struct ChangeMessageVisibilityBatchRequestEntry {
     /// <p>A receipt handle.</p>
     pub receipt_handle: ::std::string::String,
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
-    pub visibility_timeout: i32,
+    pub visibility_timeout: ::std::option::Option<i32>,
 }
 impl ChangeMessageVisibilityBatchRequestEntry {
     /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
@@ -29,7 +29,7 @@ impl ChangeMessageVisibilityBatchRequestEntry {
         self.receipt_handle.deref()
     }
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
-    pub fn visibility_timeout(&self) -> i32 {
+    pub fn visibility_timeout(&self) -> ::std::option::Option<i32> {
         self.visibility_timeout
     }
 }
@@ -122,7 +122,7 @@ impl ChangeMessageVisibilityBatchRequestEntryBuilder {
                     "receipt_handle was not specified but it is required when building ChangeMessageVisibilityBatchRequestEntry",
                 )
             })?,
-            visibility_timeout: self.visibility_timeout.unwrap_or_default(),
+            visibility_timeout: self.visibility_timeout,
         })
     }
 }

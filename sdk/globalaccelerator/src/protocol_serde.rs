@@ -33,6 +33,8 @@ pub(crate) mod shape_allow_custom_routing_traffic;
 
 pub(crate) mod shape_create_accelerator;
 
+pub(crate) mod shape_create_cross_account_attachment;
+
 pub(crate) mod shape_create_custom_routing_accelerator;
 
 pub(crate) mod shape_create_custom_routing_endpoint_group;
@@ -44,6 +46,8 @@ pub(crate) mod shape_create_endpoint_group;
 pub(crate) mod shape_create_listener;
 
 pub(crate) mod shape_delete_accelerator;
+
+pub(crate) mod shape_delete_cross_account_attachment;
 
 pub(crate) mod shape_delete_custom_routing_accelerator;
 
@@ -63,6 +67,8 @@ pub(crate) mod shape_describe_accelerator;
 
 pub(crate) mod shape_describe_accelerator_attributes;
 
+pub(crate) mod shape_describe_cross_account_attachment;
+
 pub(crate) mod shape_describe_custom_routing_accelerator;
 
 pub(crate) mod shape_describe_custom_routing_accelerator_attributes;
@@ -78,6 +84,12 @@ pub(crate) mod shape_describe_listener;
 pub(crate) mod shape_list_accelerators;
 
 pub(crate) mod shape_list_byoip_cidrs;
+
+pub(crate) mod shape_list_cross_account_attachments;
+
+pub(crate) mod shape_list_cross_account_resource_accounts;
+
+pub(crate) mod shape_list_cross_account_resources;
 
 pub(crate) mod shape_list_custom_routing_accelerators;
 
@@ -108,6 +120,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_accelerator;
 
 pub(crate) mod shape_update_accelerator_attributes;
+
+pub(crate) mod shape_update_cross_account_attachment;
 
 pub(crate) mod shape_update_custom_routing_accelerator;
 
@@ -147,11 +161,15 @@ pub(crate) mod shape_associated_endpoint_group_found_exception;
 
 pub(crate) mod shape_associated_listener_found_exception;
 
+pub(crate) mod shape_attachment_not_found_exception;
+
 pub(crate) mod shape_byoip_cidr_not_found_exception;
 
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_accelerator_input;
+
+pub(crate) mod shape_create_cross_account_attachment_input;
 
 pub(crate) mod shape_create_custom_routing_accelerator_input;
 
@@ -164,6 +182,8 @@ pub(crate) mod shape_create_endpoint_group_input;
 pub(crate) mod shape_create_listener_input;
 
 pub(crate) mod shape_delete_accelerator_input;
+
+pub(crate) mod shape_delete_cross_account_attachment_input;
 
 pub(crate) mod shape_delete_custom_routing_accelerator_input;
 
@@ -182,6 +202,8 @@ pub(crate) mod shape_deprovision_byoip_cidr_input;
 pub(crate) mod shape_describe_accelerator_attributes_input;
 
 pub(crate) mod shape_describe_accelerator_input;
+
+pub(crate) mod shape_describe_cross_account_attachment_input;
 
 pub(crate) mod shape_describe_custom_routing_accelerator_attributes_input;
 
@@ -219,6 +241,10 @@ pub(crate) mod shape_list_accelerators_input;
 
 pub(crate) mod shape_list_byoip_cidrs_input;
 
+pub(crate) mod shape_list_cross_account_attachments_input;
+
+pub(crate) mod shape_list_cross_account_resources_input;
+
 pub(crate) mod shape_list_custom_routing_accelerators_input;
 
 pub(crate) mod shape_list_custom_routing_endpoint_groups_input;
@@ -253,6 +279,8 @@ pub(crate) mod shape_update_accelerator_attributes_input;
 
 pub(crate) mod shape_update_accelerator_input;
 
+pub(crate) mod shape_update_cross_account_attachment_input;
+
 pub(crate) mod shape_update_custom_routing_accelerator_attributes_input;
 
 pub(crate) mod shape_update_custom_routing_accelerator_input;
@@ -271,11 +299,19 @@ pub(crate) mod shape_accelerator_attributes;
 
 pub(crate) mod shape_accelerators;
 
+pub(crate) mod shape_attachment;
+
+pub(crate) mod shape_attachments;
+
+pub(crate) mod shape_aws_account_ids;
+
 pub(crate) mod shape_byoip_cidr;
 
 pub(crate) mod shape_byoip_cidrs;
 
 pub(crate) mod shape_cidr_authorization_context;
+
+pub(crate) mod shape_cross_account_resources;
 
 pub(crate) mod shape_custom_routing_accelerator;
 
@@ -319,6 +355,8 @@ pub(crate) mod shape_port_override;
 
 pub(crate) mod shape_port_range;
 
+pub(crate) mod shape_resource;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;
@@ -326,6 +364,8 @@ pub(crate) mod shape_tags;
 pub(crate) mod shape_accelerator_events;
 
 pub(crate) mod shape_byoip_cidr_events;
+
+pub(crate) mod shape_cross_account_resource;
 
 pub(crate) mod shape_custom_routing_destination_descriptions;
 
@@ -342,6 +382,10 @@ pub(crate) mod shape_port_mapping;
 pub(crate) mod shape_port_overrides;
 
 pub(crate) mod shape_port_ranges;
+
+pub(crate) mod shape_principals;
+
+pub(crate) mod shape_resources;
 
 pub(crate) mod shape_accelerator_event;
 

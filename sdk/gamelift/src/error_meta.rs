@@ -2686,6 +2686,7 @@ impl From<crate::operation::register_compute::RegisterComputeError> for Error {
             crate::operation::register_compute::RegisterComputeError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::register_compute::RegisterComputeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::register_compute::RegisterComputeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::register_compute::RegisterComputeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::register_compute::RegisterComputeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::register_compute::RegisterComputeError::Unhandled(inner) => Error::Unhandled(inner),
         }

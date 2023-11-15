@@ -249,7 +249,7 @@ pub type DiscoverPollEndpointErrorKind = DiscoverPollEndpointError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DiscoverPollEndpointError {
-    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::types::error::ServerException),

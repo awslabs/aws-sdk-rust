@@ -2,7 +2,7 @@
 
 /// <p>Player information for use when creating player sessions using a game session placement request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DesiredPlayerSession {
     /// <p>A unique identifier for a player to associate with the player session.</p>
     pub player_id: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl DesiredPlayerSession {
         self.player_data.as_deref()
     }
 }
+impl ::std::fmt::Debug for DesiredPlayerSession {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DesiredPlayerSession");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_data", &self.player_data);
+        formatter.finish()
+    }
+}
 impl DesiredPlayerSession {
     /// Creates a new builder-style object to manufacture [`DesiredPlayerSession`](crate::types::DesiredPlayerSession).
     pub fn builder() -> crate::types::builders::DesiredPlayerSessionBuilder {
@@ -28,7 +36,7 @@ impl DesiredPlayerSession {
 
 /// A builder for [`DesiredPlayerSession`](crate::types::DesiredPlayerSession).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DesiredPlayerSessionBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_data: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl DesiredPlayerSessionBuilder {
             player_id: self.player_id,
             player_data: self.player_data,
         }
+    }
+}
+impl ::std::fmt::Debug for DesiredPlayerSessionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DesiredPlayerSessionBuilder");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_data", &self.player_data);
+        formatter.finish()
     }
 }

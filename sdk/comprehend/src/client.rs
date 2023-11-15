@@ -241,6 +241,8 @@ mod detect_syntax;
 
 mod detect_targeted_sentiment;
 
+mod detect_toxic_content;
+
 mod import_model;
 
 mod list_datasets;

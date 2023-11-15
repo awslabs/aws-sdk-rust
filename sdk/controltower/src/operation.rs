@@ -15,3 +15,12 @@ pub mod get_enabled_control;
 
 /// Types for the `ListEnabledControls` operation.
 pub mod list_enabled_controls;
+
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;

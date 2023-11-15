@@ -35,13 +35,13 @@ pub struct GetEnvironmentOutput {
     pub high_availability_config: ::std::option::Option<crate::types::HighAvailabilityConfig>,
     /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
     pub publicly_accessible: bool,
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
     pub actual_capacity: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the reported status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the service assigns a random value.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the pending maintenance scheduled on this environment.</p>
     pub pending_maintenance: ::std::option::Option<crate::types::PendingMaintenance>,
@@ -124,7 +124,7 @@ impl GetEnvironmentOutput {
     pub fn publicly_accessible(&self) -> bool {
         self.publicly_accessible
     }
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
     pub fn actual_capacity(&self) -> ::std::option::Option<i32> {
         self.actual_capacity
     }
@@ -136,7 +136,7 @@ impl GetEnvironmentOutput {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the service assigns a random value.</p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
@@ -447,17 +447,17 @@ impl GetEnvironmentOutputBuilder {
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
     pub fn actual_capacity(mut self, input: i32) -> Self {
         self.actual_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
     pub fn set_actual_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.actual_capacity = input;
         self
     }
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
     pub fn get_actual_capacity(&self) -> &::std::option::Option<i32> {
         &self.actual_capacity
     }
@@ -489,17 +489,17 @@ impl GetEnvironmentOutputBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the service assigns a random value.</p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the service assigns a random value.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the service assigns a random value.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }

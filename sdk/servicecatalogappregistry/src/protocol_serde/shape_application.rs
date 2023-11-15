@@ -57,6 +57,11 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                         }
+                        "applicationTag" => {
+                            builder = builder.set_application_tag(
+                                crate::protocol_serde::shape_application_tag_definition::de_application_tag_definition(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

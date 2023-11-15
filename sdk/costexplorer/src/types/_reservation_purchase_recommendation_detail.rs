@@ -6,7 +6,7 @@
 pub struct ReservationPurchaseRecommendationDetail {
     /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
+    /// <p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>
     pub instance_details: ::std::option::Option<crate::types::InstanceDetails>,
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
     pub recommended_number_of_instances_to_purchase: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl ReservationPurchaseRecommendationDetail {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
+    /// <p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn instance_details(&self) -> ::std::option::Option<&crate::types::InstanceDetails> {
         self.instance_details.as_ref()
     }
@@ -167,17 +167,17 @@ impl ReservationPurchaseRecommendationDetailBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
+    /// <p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn instance_details(mut self, input: crate::types::InstanceDetails) -> Self {
         self.instance_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
+    /// <p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn set_instance_details(mut self, input: ::std::option::Option<crate::types::InstanceDetails>) -> Self {
         self.instance_details = input;
         self
     }
-    /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
+    /// <p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn get_instance_details(&self) -> &::std::option::Option<crate::types::InstanceDetails> {
         &self.instance_details
     }

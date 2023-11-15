@@ -17,12 +17,87 @@ pub fn de_add_permission_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidAddress" => crate::operation::add_permission::AddPermissionError::InvalidAddress({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidAddressBuilder::default();
+                output = crate::protocol_serde::shape_invalid_address::de_invalid_address_json_err(_response_body, output)
+                    .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidSecurity" => crate::operation::add_permission::AddPermissionError::InvalidSecurity({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSecurityBuilder::default();
+                output = crate::protocol_serde::shape_invalid_security::de_invalid_security_json_err(_response_body, output)
+                    .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "OverLimit" => crate::operation::add_permission::AddPermissionError::OverLimit({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::OverLimitBuilder::default();
-                output = crate::protocol_serde::shape_over_limit::de_over_limit_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_over_limit::de_over_limit_json_err(_response_body, output)
+                    .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "AWS.SimpleQueueService.NonExistentQueue" => crate::operation::add_permission::AddPermissionError::QueueDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::QueueDoesNotExistBuilder::default();
+                output = crate::protocol_serde::shape_queue_does_not_exist::de_queue_does_not_exist_json_err(_response_body, output)
+                    .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestThrottled" => crate::operation::add_permission::AddPermissionError::RequestThrottled({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RequestThrottledBuilder::default();
+                output = crate::protocol_serde::shape_request_throttled::de_request_throttled_json_err(_response_body, output)
+                    .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "AWS.SimpleQueueService.UnsupportedOperation" => crate::operation::add_permission::AddPermissionError::UnsupportedOperation({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_json_err(_response_body, output)
                     .map_err(crate::operation::add_permission::AddPermissionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -48,4 +123,14 @@ pub fn de_add_permission_http_response(
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+pub fn ser_add_permission_input(
+    input: &crate::operation::add_permission::AddPermissionInput,
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_add_permission_input::ser_add_permission_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

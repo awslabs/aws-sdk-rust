@@ -39,6 +39,27 @@ pub fn ser_ibm_db2_settings(
     if let Some(var_10) = &input.secrets_manager_secret_id {
         object.key("SecretsManagerSecretId").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.load_timeout {
+        object.key("LoadTimeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+        );
+    }
+    if let Some(var_12) = &input.write_buffer_size {
+        object.key("WriteBufferSize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
+    }
+    if let Some(var_13) = &input.max_file_size {
+        object.key("MaxFileSize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+        );
+    }
+    if let Some(var_14) = &input.keep_csv_files {
+        object.key("KeepCsvFiles").boolean(*var_14);
+    }
     Ok(())
 }
 
@@ -123,6 +144,30 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "LoadTimeout" => {
+                            builder = builder.set_load_timeout(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "WriteBufferSize" => {
+                            builder = builder.set_write_buffer_size(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "MaxFileSize" => {
+                            builder = builder.set_max_file_size(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "KeepCsvFiles" => {
+                            builder = builder.set_keep_csv_files(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

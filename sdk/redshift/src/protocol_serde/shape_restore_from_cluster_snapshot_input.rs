@@ -215,6 +215,11 @@ pub fn ser_restore_from_cluster_snapshot_input_input(
     if let Some(var_81) = &input.ip_address_type {
         scope_80.string(var_81);
     }
+    #[allow(unused_mut)]
+    let mut scope_82 = writer.prefix("MultiAZ");
+    if let Some(var_83) = &input.multi_az {
+        scope_82.boolean(*var_83);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

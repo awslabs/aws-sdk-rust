@@ -42,9 +42,9 @@ pub struct ModifyVpnTunnelOptionsSpecification {
     /// <p>Constraints: A value between 64 and 2048.</p>
     /// <p>Default: <code>1024</code> </p>
     pub replay_window_size: ::std::option::Option<i32>,
-    /// <p>The number of seconds after which a DPD timeout occurs.</p>
+    /// <p>The number of seconds after which a DPD timeout occurs. A DPD timeout of 40 seconds means that the VPN endpoint will consider the peer dead 30 seconds after the first failed keep-alive.</p>
     /// <p>Constraints: A value greater than or equal to 30.</p>
-    /// <p>Default: <code>30</code> </p>
+    /// <p>Default: <code>40</code> </p>
     pub dpd_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
     /// <p>Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code> </p>
@@ -135,9 +135,9 @@ impl ModifyVpnTunnelOptionsSpecification {
     pub fn replay_window_size(&self) -> ::std::option::Option<i32> {
         self.replay_window_size
     }
-    /// <p>The number of seconds after which a DPD timeout occurs.</p>
+    /// <p>The number of seconds after which a DPD timeout occurs. A DPD timeout of 40 seconds means that the VPN endpoint will consider the peer dead 30 seconds after the first failed keep-alive.</p>
     /// <p>Constraints: A value greater than or equal to 30.</p>
-    /// <p>Default: <code>30</code> </p>
+    /// <p>Default: <code>40</code> </p>
     pub fn dpd_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.dpd_timeout_seconds
     }
@@ -448,23 +448,23 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     pub fn get_replay_window_size(&self) -> &::std::option::Option<i32> {
         &self.replay_window_size
     }
-    /// <p>The number of seconds after which a DPD timeout occurs.</p>
+    /// <p>The number of seconds after which a DPD timeout occurs. A DPD timeout of 40 seconds means that the VPN endpoint will consider the peer dead 30 seconds after the first failed keep-alive.</p>
     /// <p>Constraints: A value greater than or equal to 30.</p>
-    /// <p>Default: <code>30</code> </p>
+    /// <p>Default: <code>40</code> </p>
     pub fn dpd_timeout_seconds(mut self, input: i32) -> Self {
         self.dpd_timeout_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds after which a DPD timeout occurs.</p>
+    /// <p>The number of seconds after which a DPD timeout occurs. A DPD timeout of 40 seconds means that the VPN endpoint will consider the peer dead 30 seconds after the first failed keep-alive.</p>
     /// <p>Constraints: A value greater than or equal to 30.</p>
-    /// <p>Default: <code>30</code> </p>
+    /// <p>Default: <code>40</code> </p>
     pub fn set_dpd_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dpd_timeout_seconds = input;
         self
     }
-    /// <p>The number of seconds after which a DPD timeout occurs.</p>
+    /// <p>The number of seconds after which a DPD timeout occurs. A DPD timeout of 40 seconds means that the VPN endpoint will consider the peer dead 30 seconds after the first failed keep-alive.</p>
     /// <p>Constraints: A value greater than or equal to 30.</p>
-    /// <p>Default: <code>30</code> </p>
+    /// <p>Default: <code>40</code> </p>
     pub fn get_dpd_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.dpd_timeout_seconds
     }

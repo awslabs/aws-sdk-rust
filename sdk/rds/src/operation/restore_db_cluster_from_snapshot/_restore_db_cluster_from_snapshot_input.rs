@@ -181,6 +181,8 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for future use.</p>
+    pub rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
@@ -424,6 +426,10 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<&crate::types::RdsCustomClusterConfiguration> {
+        self.rds_custom_cluster_configuration.as_ref()
+    }
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
@@ -464,6 +470,7 @@ pub struct RestoreDbClusterFromSnapshotInputBuilder {
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
 }
 impl RestoreDbClusterFromSnapshotInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -1248,6 +1255,20 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(mut self, input: crate::types::RdsCustomClusterConfiguration) -> Self {
+        self.rds_custom_cluster_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_rds_custom_cluster_configuration(mut self, input: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>) -> Self {
+        self.rds_custom_cluster_configuration = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
+        &self.rds_custom_cluster_configuration
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
     pub fn build(
         self,
@@ -1284,6 +1305,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
             publicly_accessible: self.publicly_accessible,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             network_type: self.network_type,
+            rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
         })
     }
 }

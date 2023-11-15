@@ -12,6 +12,8 @@ pub struct ResourceInfo {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p> The details related to the resource. </p>
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
 }
 impl ResourceInfo {
     /// <p>The name of the resource.</p>
@@ -30,6 +32,12 @@ impl ResourceInfo {
     pub fn resource_details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::AssociationOption] {
+        self.options.as_deref().unwrap_or_default()
+    }
 }
 impl ResourceInfo {
     /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::types::ResourceInfo).
@@ -46,6 +54,7 @@ pub struct ResourceInfoBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_details: ::std::option::Option<crate::types::ResourceDetails>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,
 }
 impl ResourceInfoBuilder {
     /// <p>The name of the resource.</p>
@@ -104,6 +113,26 @@ impl ResourceInfoBuilder {
     pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
         &self.resource_details
     }
+    /// Appends an item to `options`.
+    ///
+    /// To override the contents of this collection use [`set_options`](Self::set_options).
+    ///
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub fn options(mut self, input: crate::types::AssociationOption) -> Self {
+        let mut v = self.options.unwrap_or_default();
+        v.push(input);
+        self.options = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>) -> Self {
+        self.options = input;
+        self
+    }
+    /// <p> Determines whether an application tag is applied or skipped. </p>
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>> {
+        &self.options
+    }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {
         crate::types::ResourceInfo {
@@ -111,6 +140,7 @@ impl ResourceInfoBuilder {
             arn: self.arn,
             resource_type: self.resource_type,
             resource_details: self.resource_details,
+            options: self.options,
         }
     }
 }

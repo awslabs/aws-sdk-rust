@@ -79,6 +79,8 @@ pub use crate::types::_serverless_v2_scaling_configuration_info::ServerlessV2Sca
 
 pub use crate::types::_cluster_pending_modified_values::ClusterPendingModifiedValues;
 
+pub use crate::types::_rds_custom_cluster_configuration::RdsCustomClusterConfiguration;
+
 pub use crate::types::_scaling_configuration_info::ScalingConfigurationInfo;
 
 pub use crate::types::_db_cluster_role::DbClusterRole;
@@ -120,6 +122,10 @@ pub use crate::types::_target_type::TargetType;
 pub use crate::types::_reserved_db_instance::ReservedDbInstance;
 
 pub use crate::types::_recurring_charge::RecurringCharge;
+
+pub use crate::types::_tenant_database::TenantDatabase;
+
+pub use crate::types::_tenant_database_pending_modified_values::TenantDatabasePendingModifiedValues;
 
 pub use crate::types::_option_group::OptionGroup;
 
@@ -226,6 +232,8 @@ pub use crate::types::_source_type::SourceType;
 pub use crate::types::_event_categories_map::EventCategoriesMap;
 
 pub use crate::types::_engine_defaults::EngineDefaults;
+
+pub use crate::types::_db_snapshot_tenant_database::DbSnapshotTenantDatabase;
 
 pub use crate::types::_db_parameter_group::DbParameterGroup;
 
@@ -353,6 +361,8 @@ mod _db_snapshot_attribute;
 
 mod _db_snapshot_attributes_result;
 
+mod _db_snapshot_tenant_database;
+
 mod _db_subnet_group;
 
 mod _describe_db_log_files_details;
@@ -439,6 +449,8 @@ mod _processor_feature;
 
 mod _range;
 
+mod _rds_custom_cluster_configuration;
+
 mod _recurring_charge;
 
 mod _replica_mode;
@@ -478,6 +490,10 @@ mod _target_role;
 mod _target_state;
 
 mod _target_type;
+
+mod _tenant_database;
+
+mod _tenant_database_pending_modified_values;
 
 mod _timezone;
 

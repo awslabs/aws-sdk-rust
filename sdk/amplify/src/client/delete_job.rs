@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`app_id(impl Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_app_id):<br>required: **true**<br><p> The unique ID for an Amplify app. </p><br>
-    ///   - [`branch_name(impl Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_branch_name):<br>required: **true**<br><p> The name for the branch, for the job. </p><br>
+    ///   - [`branch_name(impl Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_branch_name):<br>required: **true**<br><p>The name of the branch to use for the job. </p><br>
     ///   - [`job_id(impl Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_job_id):<br>required: **true**<br><p> The unique ID for the job. </p><br>
     /// - On success, responds with [`DeleteJobOutput`](crate::operation::delete_job::DeleteJobOutput) with field(s):
     ///   - [`job_summary(Option<JobSummary>)`](crate::operation::delete_job::DeleteJobOutput::job_summary): <p> Describes the summary for an execution job for an Amplify app. </p>

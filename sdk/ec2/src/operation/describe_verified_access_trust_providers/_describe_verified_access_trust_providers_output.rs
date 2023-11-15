@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessTrustProvidersOutput {
-    /// <p>The IDs of the Verified Access trust providers.</p>
+    /// <p>Details about the Verified Access trust providers.</p>
     pub verified_access_trust_providers: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProvider>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVerifiedAccessTrustProvidersOutput {
-    /// <p>The IDs of the Verified Access trust providers.</p>
+    /// <p>Details about the Verified Access trust providers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_trust_providers.is_none()`.
     pub fn verified_access_trust_providers(&self) -> &[crate::types::VerifiedAccessTrustProvider] {
@@ -46,14 +46,14 @@ impl DescribeVerifiedAccessTrustProvidersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_verified_access_trust_providers`](Self::set_verified_access_trust_providers).
     ///
-    /// <p>The IDs of the Verified Access trust providers.</p>
+    /// <p>Details about the Verified Access trust providers.</p>
     pub fn verified_access_trust_providers(mut self, input: crate::types::VerifiedAccessTrustProvider) -> Self {
         let mut v = self.verified_access_trust_providers.unwrap_or_default();
         v.push(input);
         self.verified_access_trust_providers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the Verified Access trust providers.</p>
+    /// <p>Details about the Verified Access trust providers.</p>
     pub fn set_verified_access_trust_providers(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProvider>>,
@@ -61,7 +61,7 @@ impl DescribeVerifiedAccessTrustProvidersOutputBuilder {
         self.verified_access_trust_providers = input;
         self
     }
-    /// <p>The IDs of the Verified Access trust providers.</p>
+    /// <p>Details about the Verified Access trust providers.</p>
     pub fn get_verified_access_trust_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProvider>> {
         &self.verified_access_trust_providers
     }

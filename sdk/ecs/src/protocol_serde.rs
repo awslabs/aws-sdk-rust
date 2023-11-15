@@ -159,6 +159,8 @@ pub(crate) mod shape_cluster_contains_tasks_exception;
 
 pub(crate) mod shape_cluster_not_found_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_capacity_provider_input;
 
 pub(crate) mod shape_create_cluster_input;
@@ -368,6 +370,8 @@ pub(crate) mod shape_protected_tasks;
 pub(crate) mod shape_proxy_configuration;
 
 pub(crate) mod shape_resource;
+
+pub(crate) mod shape_resource_ids;
 
 pub(crate) mod shape_runtime_platform;
 

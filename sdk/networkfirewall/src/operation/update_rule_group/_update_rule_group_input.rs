@@ -35,6 +35,8 @@ pub struct UpdateRuleGroupInput {
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
     pub source_metadata: ::std::option::Option<crate::types::SourceMetadata>,
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    pub analyze_rule_group: ::std::option::Option<bool>,
 }
 impl UpdateRuleGroupInput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
@@ -89,6 +91,10 @@ impl UpdateRuleGroupInput {
     pub fn source_metadata(&self) -> ::std::option::Option<&crate::types::SourceMetadata> {
         self.source_metadata.as_ref()
     }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    pub fn analyze_rule_group(&self) -> ::std::option::Option<bool> {
+        self.analyze_rule_group
+    }
 }
 impl UpdateRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
@@ -111,6 +117,7 @@ pub struct UpdateRuleGroupInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) source_metadata: ::std::option::Option<crate::types::SourceMetadata>,
+    pub(crate) analyze_rule_group: ::std::option::Option<bool>,
 }
 impl UpdateRuleGroupInputBuilder {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
@@ -290,6 +297,20 @@ impl UpdateRuleGroupInputBuilder {
     pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::SourceMetadata> {
         &self.source_metadata
     }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    pub fn analyze_rule_group(mut self, input: bool) -> Self {
+        self.analyze_rule_group = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    pub fn set_analyze_rule_group(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.analyze_rule_group = input;
+        self
+    }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
+        &self.analyze_rule_group
+    }
     /// Consumes the builder and constructs a [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
     pub fn build(
         self,
@@ -305,6 +326,7 @@ impl UpdateRuleGroupInputBuilder {
             dry_run: self.dry_run,
             encryption_configuration: self.encryption_configuration,
             source_metadata: self.source_metadata,
+            analyze_rule_group: self.analyze_rule_group,
         })
     }
 }

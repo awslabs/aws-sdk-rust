@@ -102,6 +102,8 @@ pub struct DbCluster {
     /// <p>The scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub scaling_configuration_info: ::std::option::Option<crate::types::ScalingConfigurationInfo>,
+    /// <p>Reserved for future use.</p>
+    pub rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     /// <p>Indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is enabled.</p>
@@ -392,6 +394,10 @@ impl DbCluster {
     pub fn scaling_configuration_info(&self) -> ::std::option::Option<&crate::types::ScalingConfigurationInfo> {
         self.scaling_configuration_info.as_ref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<&crate::types::RdsCustomClusterConfiguration> {
+        self.rds_custom_cluster_configuration.as_ref()
+    }
     /// <p>Indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
@@ -602,6 +608,7 @@ pub struct DbClusterBuilder {
     pub(crate) capacity: ::std::option::Option<i32>,
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_configuration_info: ::std::option::Option<crate::types::ScalingConfigurationInfo>,
+    pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) http_endpoint_enabled: ::std::option::Option<bool>,
     pub(crate) activity_stream_mode: ::std::option::Option<crate::types::ActivityStreamMode>,
@@ -1319,6 +1326,20 @@ impl DbClusterBuilder {
     pub fn get_scaling_configuration_info(&self) -> &::std::option::Option<crate::types::ScalingConfigurationInfo> {
         &self.scaling_configuration_info
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(mut self, input: crate::types::RdsCustomClusterConfiguration) -> Self {
+        self.rds_custom_cluster_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_rds_custom_cluster_configuration(mut self, input: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>) -> Self {
+        self.rds_custom_cluster_configuration = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
+        &self.rds_custom_cluster_configuration
+    }
     /// <p>Indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -1891,6 +1912,7 @@ impl DbClusterBuilder {
             capacity: self.capacity,
             engine_mode: self.engine_mode,
             scaling_configuration_info: self.scaling_configuration_info,
+            rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
             deletion_protection: self.deletion_protection,
             http_endpoint_enabled: self.http_endpoint_enabled,
             activity_stream_mode: self.activity_stream_mode,

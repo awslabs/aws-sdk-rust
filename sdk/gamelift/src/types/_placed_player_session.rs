@@ -2,7 +2,7 @@
 
 /// <p>Information about a player session. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html">DescribePlayerSessions</a> with the player session ID.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PlacedPlayerSession {
     /// <p>A unique identifier for a player that is associated with this player session.</p>
     pub player_id: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl PlacedPlayerSession {
         self.player_session_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for PlacedPlayerSession {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PlacedPlayerSession");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_session_id", &self.player_session_id);
+        formatter.finish()
+    }
+}
 impl PlacedPlayerSession {
     /// Creates a new builder-style object to manufacture [`PlacedPlayerSession`](crate::types::PlacedPlayerSession).
     pub fn builder() -> crate::types::builders::PlacedPlayerSessionBuilder {
@@ -28,7 +36,7 @@ impl PlacedPlayerSession {
 
 /// A builder for [`PlacedPlayerSession`](crate::types::PlacedPlayerSession).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PlacedPlayerSessionBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_session_id: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl PlacedPlayerSessionBuilder {
             player_id: self.player_id,
             player_session_id: self.player_session_id,
         }
+    }
+}
+impl ::std::fmt::Debug for PlacedPlayerSessionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PlacedPlayerSessionBuilder");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_session_id", &self.player_session_id);
+        formatter.finish()
     }
 }

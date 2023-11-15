@@ -34,7 +34,7 @@ pub struct LoRaWanDeviceProfile {
     pub factory_preset_freqs_list: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The MaxEIRP value.</p>
     pub max_eirp: ::std::option::Option<i32>,
-    /// <p>The MaxDutyCycle value.</p>
+    /// <p>The MaxDutyCycle value. It ranges from 0 to 15.</p>
     pub max_duty_cycle: ::std::option::Option<i32>,
     /// <p>The frequency band (RFRegion) value.</p>
     pub rf_region: ::std::option::Option<::std::string::String>,
@@ -106,7 +106,7 @@ impl LoRaWanDeviceProfile {
     pub fn max_eirp(&self) -> ::std::option::Option<i32> {
         self.max_eirp
     }
-    /// <p>The MaxDutyCycle value.</p>
+    /// <p>The MaxDutyCycle value. It ranges from 0 to 15.</p>
     pub fn max_duty_cycle(&self) -> ::std::option::Option<i32> {
         self.max_duty_cycle
     }
@@ -371,17 +371,17 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn get_max_eirp(&self) -> &::std::option::Option<i32> {
         &self.max_eirp
     }
-    /// <p>The MaxDutyCycle value.</p>
+    /// <p>The MaxDutyCycle value. It ranges from 0 to 15.</p>
     pub fn max_duty_cycle(mut self, input: i32) -> Self {
         self.max_duty_cycle = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The MaxDutyCycle value.</p>
+    /// <p>The MaxDutyCycle value. It ranges from 0 to 15.</p>
     pub fn set_max_duty_cycle(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_duty_cycle = input;
         self
     }
-    /// <p>The MaxDutyCycle value.</p>
+    /// <p>The MaxDutyCycle value. It ranges from 0 to 15.</p>
     pub fn get_max_duty_cycle(&self) -> &::std::option::Option<i32> {
         &self.max_duty_cycle
     }

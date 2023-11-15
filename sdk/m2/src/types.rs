@@ -23,6 +23,10 @@ pub use crate::types::_maintenance_schedule::MaintenanceSchedule;
 
 pub use crate::types::_batch_job_identifier::BatchJobIdentifier;
 
+pub use crate::types::_s3_batch_job_identifier::S3BatchJobIdentifier;
+
+pub use crate::types::_job_identifier::JobIdentifier;
+
 pub use crate::types::_script_batch_job_identifier::ScriptBatchJobIdentifier;
 
 pub use crate::types::_file_batch_job_identifier::FileBatchJobIdentifier;
@@ -175,6 +179,8 @@ mod _gdg_detail_attributes;
 
 mod _high_availability_config;
 
+mod _job_identifier;
+
 mod _log_group_summary;
 
 mod _maintenance_schedule;
@@ -192,6 +198,8 @@ mod _ps_attributes;
 mod _ps_detail_attributes;
 
 mod _record_length;
+
+mod _s3_batch_job_identifier;
 
 mod _script_batch_job_definition;
 

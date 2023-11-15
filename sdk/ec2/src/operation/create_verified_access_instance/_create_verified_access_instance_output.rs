@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessInstanceOutput {
-    /// <p>The ID of the Verified Access instance.</p>
+    /// <p>Details about the Verified Access instance.</p>
     pub verified_access_instance: ::std::option::Option<crate::types::VerifiedAccessInstance>,
     _request_id: Option<String>,
 }
 impl CreateVerifiedAccessInstanceOutput {
-    /// <p>The ID of the Verified Access instance.</p>
+    /// <p>Details about the Verified Access instance.</p>
     pub fn verified_access_instance(&self) -> ::std::option::Option<&crate::types::VerifiedAccessInstance> {
         self.verified_access_instance.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateVerifiedAccessInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateVerifiedAccessInstanceOutputBuilder {
-    /// <p>The ID of the Verified Access instance.</p>
+    /// <p>Details about the Verified Access instance.</p>
     pub fn verified_access_instance(mut self, input: crate::types::VerifiedAccessInstance) -> Self {
         self.verified_access_instance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ID of the Verified Access instance.</p>
+    /// <p>Details about the Verified Access instance.</p>
     pub fn set_verified_access_instance(mut self, input: ::std::option::Option<crate::types::VerifiedAccessInstance>) -> Self {
         self.verified_access_instance = input;
         self
     }
-    /// <p>The ID of the Verified Access instance.</p>
+    /// <p>Details about the Verified Access instance.</p>
     pub fn get_verified_access_instance(&self) -> &::std::option::Option<crate::types::VerifiedAccessInstance> {
         &self.verified_access_instance
     }

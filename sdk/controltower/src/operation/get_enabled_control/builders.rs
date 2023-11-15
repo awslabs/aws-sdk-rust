@@ -22,13 +22,7 @@ impl GetEnabledControlInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEnabledControl`.
 ///
-/// <p> Provides details about the enabled control. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS Control Tower User Guide</i> </a>.</p>
-/// <p class="title"> <b>Returned values</b> </p>
-/// <ul>
-/// <li> <p>TargetRegions: Shows target AWS Regions where the enabled control is available to be deployed.</p> </li>
-/// <li> <p>StatusSummary: Provides a detailed summary of the deployment status.</p> </li>
-/// <li> <p>DriftSummary: Provides a detailed summary of the drifted status.</p> </li>
-/// </ul>
+/// <p>Retrieves details about an enabled control. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS Control Tower User Guide</i> </a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEnabledControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +108,17 @@ impl GetEnabledControlFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ARN of the enabled control. </p>
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn enabled_control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.enabled_control_identifier(input.into());
         self
     }
-    /// <p> The ARN of the enabled control. </p>
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn set_enabled_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_enabled_control_identifier(input);
         self
     }
-    /// <p> The ARN of the enabled control. </p>
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn get_enabled_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_enabled_control_identifier()
     }

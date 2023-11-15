@@ -47,6 +47,21 @@ pub fn de_pause_cluster_http_error(
             }
             tmp
         }),
+        "UnsupportedOperation" => crate::operation::pause_cluster::PauseClusterError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::pause_cluster::PauseClusterError::generic(generic),
     })
 }

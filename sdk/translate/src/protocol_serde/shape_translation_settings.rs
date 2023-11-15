@@ -9,6 +9,9 @@ pub fn ser_translation_settings(
     if let Some(var_2) = &input.profanity {
         object.key("Profanity").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.brevity {
+        object.key("Brevity").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -38,6 +41,13 @@ where
                             builder = builder.set_profanity(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Profanity::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Brevity" => {
+                            builder = builder.set_brevity(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Brevity::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

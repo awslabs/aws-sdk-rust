@@ -28,7 +28,9 @@ pub struct CreateTrailInput {
     /// </note>
     pub enable_log_file_validation: ::std::option::Option<bool>,
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
@@ -86,7 +88,9 @@ impl CreateTrailInput {
         self.enable_log_file_validation
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
@@ -270,19 +274,25 @@ impl CreateTrailInputBuilder {
         &self.enable_log_file_validation
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub fn cloud_watch_logs_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// </note>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logs_log_group_arn
     }

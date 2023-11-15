@@ -2,7 +2,7 @@
 
 /// <p>Represents a player in matchmaking. When starting a matchmaking request, a player has a player ID, attributes, and may have latency data. Team information is added after a match has been successfully completed.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Player {
     /// <p>A unique identifier for a player</p>
     pub player_id: ::std::option::Option<::std::string::String>,
@@ -35,6 +35,16 @@ impl Player {
         self.latency_in_ms.as_ref()
     }
 }
+impl ::std::fmt::Debug for Player {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Player");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_attributes", &self.player_attributes);
+        formatter.field("team", &self.team);
+        formatter.field("latency_in_ms", &self.latency_in_ms);
+        formatter.finish()
+    }
+}
 impl Player {
     /// Creates a new builder-style object to manufacture [`Player`](crate::types::Player).
     pub fn builder() -> crate::types::builders::PlayerBuilder {
@@ -44,7 +54,7 @@ impl Player {
 
 /// A builder for [`Player`](crate::types::Player).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PlayerBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
@@ -137,5 +147,15 @@ impl PlayerBuilder {
             team: self.team,
             latency_in_ms: self.latency_in_ms,
         }
+    }
+}
+impl ::std::fmt::Debug for PlayerBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PlayerBuilder");
+        formatter.field("player_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("player_attributes", &self.player_attributes);
+        formatter.field("team", &self.team);
+        formatter.field("latency_in_ms", &self.latency_in_ms);
+        formatter.finish()
     }
 }

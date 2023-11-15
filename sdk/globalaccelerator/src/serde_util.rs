@@ -8,3 +8,10 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     builder
 }
+
+pub(crate) fn resource_correct_errors(mut builder: crate::types::builders::ResourceBuilder) -> crate::types::builders::ResourceBuilder {
+    if builder.endpoint_id.is_none() {
+        builder.endpoint_id = Some(Default::default())
+    }
+    builder
+}

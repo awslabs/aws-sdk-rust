@@ -156,6 +156,20 @@ impl DescribeComponentConfigurationRecommendationFluentBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
         self.inner.get_tier()
     }
+    /// <p>The name of the workload.</p>
+    pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workload_name(input.into());
+        self
+    }
+    /// <p>The name of the workload.</p>
+    pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workload_name(input);
+        self
+    }
+    /// <p>The name of the workload.</p>
+    pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_name()
+    }
     /// <p>The recommended configuration type.</p>
     pub fn recommendation_type(mut self, input: crate::types::RecommendationType) -> Self {
         self.inner = self.inner.recommendation_type(input);

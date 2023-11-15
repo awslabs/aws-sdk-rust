@@ -378,7 +378,6 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ExecuteOpenCypherExplainQue
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
         match self {
-            Self::CancelledByUserException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::ClientTimeoutException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::ConcurrentModificationException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::ConstraintViolationException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),

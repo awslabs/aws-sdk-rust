@@ -52,6 +52,11 @@ pub fn ser_stack_set_operation_preferences(
             ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("ConcurrencyMode");
+    if let Some(var_17) = &input.concurrency_mode {
+        scope_16.string(var_17.as_str());
+    }
     Ok(())
 }
 
@@ -64,7 +69,7 @@ pub fn de_stack_set_operation_preferences(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RegionConcurrencyType") /* RegionConcurrencyType com.amazonaws.cloudformation#StackSetOperationPreferences$RegionConcurrencyType */ =>  {
-                let var_16 =
+                let var_18 =
                     Some(
                         Result::<crate::types::RegionConcurrencyType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::RegionConcurrencyType::from(
@@ -74,21 +79,21 @@ pub fn de_stack_set_operation_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_region_concurrency_type(var_16);
+                builder = builder.set_region_concurrency_type(var_18);
             }
             ,
             s if s.matches("RegionOrder") /* RegionOrder com.amazonaws.cloudformation#StackSetOperationPreferences$RegionOrder */ =>  {
-                let var_17 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_region_list::de_region_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_region_order(var_17);
+                builder = builder.set_region_order(var_19);
             }
             ,
             s if s.matches("FailureToleranceCount") /* FailureToleranceCount com.amazonaws.cloudformation#StackSetOperationPreferences$FailureToleranceCount */ =>  {
-                let var_18 =
+                let var_20 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -99,11 +104,11 @@ pub fn de_stack_set_operation_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_failure_tolerance_count(var_18);
+                builder = builder.set_failure_tolerance_count(var_20);
             }
             ,
             s if s.matches("FailureTolerancePercentage") /* FailureTolerancePercentage com.amazonaws.cloudformation#StackSetOperationPreferences$FailureTolerancePercentage */ =>  {
-                let var_19 =
+                let var_21 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -114,11 +119,11 @@ pub fn de_stack_set_operation_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_failure_tolerance_percentage(var_19);
+                builder = builder.set_failure_tolerance_percentage(var_21);
             }
             ,
             s if s.matches("MaxConcurrentCount") /* MaxConcurrentCount com.amazonaws.cloudformation#StackSetOperationPreferences$MaxConcurrentCount */ =>  {
-                let var_20 =
+                let var_22 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -129,11 +134,11 @@ pub fn de_stack_set_operation_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_max_concurrent_count(var_20);
+                builder = builder.set_max_concurrent_count(var_22);
             }
             ,
             s if s.matches("MaxConcurrentPercentage") /* MaxConcurrentPercentage com.amazonaws.cloudformation#StackSetOperationPreferences$MaxConcurrentPercentage */ =>  {
-                let var_21 =
+                let var_23 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -144,7 +149,21 @@ pub fn de_stack_set_operation_preferences(
                         ?
                     )
                 ;
-                builder = builder.set_max_concurrent_percentage(var_21);
+                builder = builder.set_max_concurrent_percentage(var_23);
+            }
+            ,
+            s if s.matches("ConcurrencyMode") /* ConcurrencyMode com.amazonaws.cloudformation#StackSetOperationPreferences$ConcurrencyMode */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<crate::types::ConcurrencyMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ConcurrencyMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_concurrency_mode(var_24);
             }
             ,
             _ => {}

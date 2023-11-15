@@ -22,8 +22,11 @@ impl PutInsightSelectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutInsightSelectors`.
 ///
-/// <p>Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
-/// <p>To log CloudTrail Insights events on API call volume, the trail must log <code>write</code> management events. To log CloudTrail Insights events on API error rate, the trail must log <code>read</code> or <code>write</code> management events. You can call <code>GetEventSelectors</code> on a trail to check whether the trail logs management events.</p>
+/// <p>Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an existing trail or event data store. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of Insights types. The valid Insights event types are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+/// <p>To enable Insights on an event data store, you must specify the ARNs (or ID suffix of the ARNs) for the source event data store (<code>EventDataStore</code>) and the destination event data store (<code>InsightsDestination</code>). The source event data store logs management events and enables Insights. The destination event data store logs Insights events based upon the management event activity of the source event data store. The source and destination event data stores must belong to the same Amazon Web Services account.</p>
+/// <p>To log Insights events for a trail, you must specify the name (<code>TrailName</code>) of the CloudTrail trail for which you want to change or add Insights selectors.</p>
+/// <p>To log CloudTrail Insights events on API call volume, the trail or event data store must log <code>write</code> management events. To log CloudTrail Insights events on API error rate, the trail or event data store must log <code>read</code> or <code>write</code> management events. You can call <code>GetEventSelectors</code> on a trail to check whether the trail logs management events. You can call <code>GetEventDataStore</code> on an event data store to check whether the event data store logs management events.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutInsightSelectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,16 +113,19 @@ impl PutInsightSelectorsFluentBuilder {
         self
     }
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
+    /// <p>You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trail_name(input.into());
         self
     }
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
+    /// <p>You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trail_name(input);
         self
     }
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
+    /// <p>You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trail_name()
     }
@@ -127,24 +133,58 @@ impl PutInsightSelectorsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
     ///
-    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>A JSON string that contains the Insights types you want to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn insight_selectors(mut self, input: crate::types::InsightSelector) -> Self {
         self.inner = self.inner.insight_selectors(input);
         self
     }
-    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>A JSON string that contains the Insights types you want to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>) -> Self {
         self.inner = self.inner.set_insight_selectors(input);
         self
     }
-    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>A JSON string that contains the Insights types you want to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
         self.inner.get_insight_selectors()
+    }
+    /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
+    /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.event_data_store(input.into());
+        self
+    }
+    /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
+    /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_event_data_store(input);
+        self
+    }
+    /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
+    /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data_store()
+    }
+    /// <p> The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters. </p>
+    /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
+    pub fn insights_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.insights_destination(input.into());
+        self
+    }
+    /// <p> The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters. </p>
+    /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
+    pub fn set_insights_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_insights_destination(input);
+        self
+    }
+    /// <p> The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters. </p>
+    /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
+    pub fn get_insights_destination(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_insights_destination()
     }
 }

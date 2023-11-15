@@ -140,6 +140,8 @@ mod create_addon;
 
 mod create_cluster;
 
+mod create_eks_anywhere_subscription;
+
 mod create_fargate_profile;
 
 mod create_nodegroup;
@@ -175,6 +177,8 @@ mod delete_addon;
 
 mod delete_cluster;
 
+mod delete_eks_anywhere_subscription;
+
 mod delete_fargate_profile;
 
 mod delete_nodegroup;
@@ -189,6 +193,8 @@ mod describe_addon_versions;
 
 mod describe_cluster;
 
+mod describe_eks_anywhere_subscription;
+
 mod describe_fargate_profile;
 
 mod describe_identity_provider_config;
@@ -202,6 +208,8 @@ mod disassociate_identity_provider_config;
 mod list_addons;
 
 mod list_clusters;
+
+mod list_eks_anywhere_subscriptions;
 
 mod list_fargate_profiles;
 
@@ -224,6 +232,8 @@ mod update_addon;
 mod update_cluster_config;
 
 mod update_cluster_version;
+
+mod update_eks_anywhere_subscription;
 
 mod update_nodegroup_config;
 

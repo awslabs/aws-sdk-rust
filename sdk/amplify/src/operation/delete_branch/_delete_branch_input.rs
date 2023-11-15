@@ -6,7 +6,7 @@
 pub struct DeleteBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: ::std::option::Option<::std::string::String>,
-    /// <p> The name for the branch. </p>
+    /// <p>The name of the branch. </p>
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBranchInput {
@@ -14,7 +14,7 @@ impl DeleteBranchInput {
     pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name of the branch. </p>
     pub fn branch_name(&self) -> ::std::option::Option<&str> {
         self.branch_name.as_deref()
     }
@@ -49,18 +49,18 @@ impl DeleteBranchInputBuilder {
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_id
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name of the branch. </p>
     /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name of the branch. </p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
     }
-    /// <p> The name for the branch. </p>
+    /// <p>The name of the branch. </p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.branch_name
     }

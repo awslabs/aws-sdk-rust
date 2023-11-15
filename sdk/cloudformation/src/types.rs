@@ -17,6 +17,8 @@ pub use crate::types::_account_filter_type::AccountFilterType;
 
 pub use crate::types::_stack_set_operation_preferences::StackSetOperationPreferences;
 
+pub use crate::types::_concurrency_mode::ConcurrencyMode;
+
 pub use crate::types::_region_concurrency_type::RegionConcurrencyType;
 
 pub use crate::types::_tag::Tag;
@@ -272,6 +274,8 @@ mod _change_set_type;
 mod _change_source;
 
 mod _change_type;
+
+mod _concurrency_mode;
 
 mod _deployment_targets;
 

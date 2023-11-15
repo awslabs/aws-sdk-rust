@@ -22,8 +22,7 @@ impl TranslateDocumentInputBuilder {
 }
 /// Fluent builder constructing a request to `TranslateDocument`.
 ///
-/// <p>Translates the input document from the source language to the target language. This synchronous operation supports plain text or HTML for the input document. <code>TranslateDocument</code> supports translations from English to any supported language, and from any supported language to English. Therefore, specify either the source language code or the target language code as “en” (English). </p>
-/// <p> <code>TranslateDocument</code> does not support language auto-detection. </p>
+/// <p>Translates the input document from the source language to the target language. This synchronous operation supports text, HTML, or Word documents as the input document. <code>TranslateDocument</code> supports translations from English to any supported language, and from any supported language to English. Therefore, specify either the source language code or the target language code as “en” (English). </p>
 /// <p> If you set the <code>Formality</code> parameter, the request will fail if the target language does not support formality. For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting formality</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TranslateDocumentFluentBuilder {
@@ -148,17 +147,26 @@ impl TranslateDocumentFluentBuilder {
     pub fn get_terminology_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_terminology_names()
     }
-    /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>The language code for the language of the source text. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateDocument</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+    /// </note>
     pub fn source_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_language_code(input.into());
         self
     }
-    /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>The language code for the language of the source text. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateDocument</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+    /// </note>
     pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_language_code(input);
         self
     }
-    /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>The language code for the language of the source text. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateDocument</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+    /// </note>
     pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_language_code()
     }
@@ -176,17 +184,32 @@ impl TranslateDocumentFluentBuilder {
     pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_language_code()
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: not supported.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.inner = self.inner.settings(input);
         self
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: not supported.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: not supported.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
         self.inner.get_settings()
     }

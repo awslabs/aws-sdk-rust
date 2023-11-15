@@ -12,5 +12,8 @@ pub fn ser_describe_rule_group_input(
     if let Some(var_3) = &input.r#type {
         object.key("Type").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.analyze_rule_group {
+        object.key("AnalyzeRuleGroup").boolean(*var_4);
+    }
     Ok(())
 }

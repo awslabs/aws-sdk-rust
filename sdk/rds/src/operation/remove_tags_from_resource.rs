@@ -256,8 +256,12 @@ pub enum RemoveTagsFromResourceError {
     DbProxyTargetGroupNotFoundFault(crate::types::error::DbProxyTargetGroupNotFoundFault),
     /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
+    /// <p>The specified snapshot tenant database wasn't found.</p>
+    DbSnapshotTenantDatabaseNotFoundFault(crate::types::error::DbSnapshotTenantDatabaseNotFoundFault),
     /// <p>The specified integration could not be found.</p>
     IntegrationNotFoundFault(crate::types::error::IntegrationNotFoundFault),
+    /// <p>The specified tenant database wasn't found in the DB instance.</p>
+    TenantDatabaseNotFoundFault(crate::types::error::TenantDatabaseNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -282,7 +286,9 @@ impl ::std::fmt::Display for RemoveTagsFromResourceError {
             Self::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbProxyTargetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbSnapshotTenantDatabaseNotFoundFault(_inner) => _inner.fmt(f),
             Self::IntegrationNotFoundFault(_inner) => _inner.fmt(f),
+            Self::TenantDatabaseNotFoundFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -296,7 +302,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RemoveTagsFro
             Self::DbProxyNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbProxyTargetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbSnapshotTenantDatabaseNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IntegrationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TenantDatabaseNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -339,7 +347,9 @@ impl RemoveTagsFromResourceError {
             Self::DbProxyNotFoundFault(e) => e.meta(),
             Self::DbProxyTargetGroupNotFoundFault(e) => e.meta(),
             Self::DbSnapshotNotFoundFault(e) => e.meta(),
+            Self::DbSnapshotTenantDatabaseNotFoundFault(e) => e.meta(),
             Self::IntegrationNotFoundFault(e) => e.meta(),
+            Self::TenantDatabaseNotFoundFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -367,9 +377,17 @@ impl RemoveTagsFromResourceError {
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(self, Self::DbSnapshotNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceError::DbSnapshotTenantDatabaseNotFoundFault`.
+    pub fn is_db_snapshot_tenant_database_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbSnapshotTenantDatabaseNotFoundFault(_))
+    }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceError::IntegrationNotFoundFault`.
     pub fn is_integration_not_found_fault(&self) -> bool {
         matches!(self, Self::IntegrationNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceError::TenantDatabaseNotFoundFault`.
+    pub fn is_tenant_database_not_found_fault(&self) -> bool {
+        matches!(self, Self::TenantDatabaseNotFoundFault(_))
     }
 }
 impl ::std::error::Error for RemoveTagsFromResourceError {
@@ -381,7 +399,9 @@ impl ::std::error::Error for RemoveTagsFromResourceError {
             Self::DbProxyNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbProxyTargetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbSnapshotTenantDatabaseNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::IntegrationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::TenantDatabaseNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

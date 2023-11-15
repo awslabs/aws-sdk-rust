@@ -155,6 +155,8 @@ pub(crate) mod shape_artifacts;
 
 pub(crate) mod shape_auto_branch_creation_config;
 
+pub(crate) mod shape_backend;
+
 pub(crate) mod shape_backend_environment;
 
 pub(crate) mod shape_backend_environments;

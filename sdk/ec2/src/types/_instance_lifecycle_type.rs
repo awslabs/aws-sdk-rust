@@ -12,6 +12,7 @@
 /// ```text
 /// # let instancelifecycletype = unimplemented!();
 /// match instancelifecycletype {
+///     InstanceLifecycleType::CapacityBlock => { /* ... */ },
 ///     InstanceLifecycleType::Scheduled => { /* ... */ },
 ///     InstanceLifecycleType::Spot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum InstanceLifecycleType {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityBlock,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
     #[allow(missing_docs)] // documentation missing in model
     Spot,
@@ -51,6 +54,7 @@ pub enum InstanceLifecycleType {
 impl ::std::convert::From<&str> for InstanceLifecycleType {
     fn from(s: &str) -> Self {
         match s {
+            "capacity-block" => InstanceLifecycleType::CapacityBlock,
             "scheduled" => InstanceLifecycleType::Scheduled,
             "spot" => InstanceLifecycleType::Spot,
             other => InstanceLifecycleType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -68,6 +72,7 @@ impl InstanceLifecycleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InstanceLifecycleType::CapacityBlock => "capacity-block",
             InstanceLifecycleType::Scheduled => "scheduled",
             InstanceLifecycleType::Spot => "spot",
             InstanceLifecycleType::Unknown(value) => value.as_str(),
@@ -75,7 +80,7 @@ impl InstanceLifecycleType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["scheduled", "spot"]
+        &["capacity-block", "scheduled", "spot"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceLifecycleType {

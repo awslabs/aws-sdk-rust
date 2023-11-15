@@ -93,6 +93,16 @@ pub fn de_instance_network_interface_attachment(
                 builder = builder.set_network_card_index(var_6);
             }
             ,
+            s if s.matches("enaSrdSpecification") /* EnaSrdSpecification com.amazonaws.ec2#InstanceNetworkInterfaceAttachment$EnaSrdSpecification */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_instance_attachment_ena_srd_specification::de_instance_attachment_ena_srd_specification(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ena_srd_specification(var_7);
+            }
+            ,
             _ => {}
         }
     }

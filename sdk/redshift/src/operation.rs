@@ -271,6 +271,9 @@ pub mod enable_logging;
 /// Types for the `EnableSnapshotCopy` operation.
 pub mod enable_snapshot_copy;
 
+/// Types for the `FailoverPrimaryCompute` operation.
+pub mod failover_primary_compute;
+
 /// Types for the `GetClusterCredentials` operation.
 pub mod get_cluster_credentials;
 

@@ -178,6 +178,11 @@ pub fn ser_restore_db_cluster_from_snapshot_input_input(
     if let Some(var_68) = &input.network_type {
         scope_67.string(var_68);
     }
+    #[allow(unused_mut)]
+    let mut scope_69 = writer.prefix("RdsCustomClusterConfiguration");
+    if let Some(var_70) = &input.rds_custom_cluster_configuration {
+        crate::protocol_serde::shape_rds_custom_cluster_configuration::ser_rds_custom_cluster_configuration(scope_69, var_70)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

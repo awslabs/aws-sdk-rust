@@ -36,6 +36,11 @@ where
                             builder =
                                 builder.set_es_instance_details(crate::protocol_serde::shape_es_instance_details::de_es_instance_details(tokens)?);
                         }
+                        "MemoryDBInstanceDetails" => {
+                            builder = builder.set_memory_db_instance_details(
+                                crate::protocol_serde::shape_memory_db_instance_details::de_memory_db_instance_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

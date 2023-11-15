@@ -2390,4 +2390,33 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         self.inner.get_dedicated_log_volume()
     }
+    /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
+    /// <p>Note the following restrictions: </p>
+    /// <ul>
+    /// <li> <p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p> </li>
+    /// <li> <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p> </li>
+    /// </ul>
+    pub fn multi_tenant(mut self, input: bool) -> Self {
+        self.inner = self.inner.multi_tenant(input);
+        self
+    }
+    /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
+    /// <p>Note the following restrictions: </p>
+    /// <ul>
+    /// <li> <p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p> </li>
+    /// <li> <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p> </li>
+    /// </ul>
+    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_multi_tenant(input);
+        self
+    }
+    /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
+    /// <p>Note the following restrictions: </p>
+    /// <ul>
+    /// <li> <p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p> </li>
+    /// <li> <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p> </li>
+    /// </ul>
+    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
+        self.inner.get_multi_tenant()
+    }
 }

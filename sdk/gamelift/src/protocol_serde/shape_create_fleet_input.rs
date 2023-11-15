@@ -120,5 +120,8 @@ pub fn ser_create_fleet_input(
         crate::protocol_serde::shape_anywhere_configuration::ser_anywhere_configuration(&mut object_39, var_38)?;
         object_39.finish();
     }
+    if let Some(var_40) = &input.instance_role_credentials_provider {
+        object.key("InstanceRoleCredentialsProvider").string(var_40.as_str());
+    }
     Ok(())
 }

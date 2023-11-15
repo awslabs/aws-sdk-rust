@@ -111,6 +111,8 @@ pub enum Error {
     DbSnapshotAlreadyExistsFault(crate::types::error::DbSnapshotAlreadyExistsFault),
     /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
+    /// <p>The specified snapshot tenant database wasn't found.</p>
+    DbSnapshotTenantDatabaseNotFoundFault(crate::types::error::DbSnapshotTenantDatabaseNotFoundFault),
     /// <p> <code>DBSubnetGroupName</code> is already used by an existing DB subnet group.</p>
     DbSubnetGroupAlreadyExistsFault(crate::types::error::DbSubnetGroupAlreadyExistsFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
@@ -273,6 +275,12 @@ pub enum Error {
     SubscriptionCategoryNotFoundFault(crate::types::error::SubscriptionCategoryNotFoundFault),
     /// <p>The subscription name does not exist.</p>
     SubscriptionNotFoundFault(crate::types::error::SubscriptionNotFoundFault),
+    /// <p>You attempted to either create a tenant database that already exists or modify a tenant database to use the name of an existing tenant database.</p>
+    TenantDatabaseAlreadyExistsFault(crate::types::error::TenantDatabaseAlreadyExistsFault),
+    /// <p>The specified tenant database wasn't found in the DB instance.</p>
+    TenantDatabaseNotFoundFault(crate::types::error::TenantDatabaseNotFoundFault),
+    /// <p>You attempted to create more tenant databases than are permitted in your Amazon Web Services account.</p>
+    TenantDatabaseQuotaExceededFault(crate::types::error::TenantDatabaseQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -332,6 +340,7 @@ impl ::std::fmt::Display for Error {
             Error::DbSecurityGroupQuotaExceededFault(inner) => inner.fmt(f),
             Error::DbSnapshotAlreadyExistsFault(inner) => inner.fmt(f),
             Error::DbSnapshotNotFoundFault(inner) => inner.fmt(f),
+            Error::DbSnapshotTenantDatabaseNotFoundFault(inner) => inner.fmt(f),
             Error::DbSubnetGroupAlreadyExistsFault(inner) => inner.fmt(f),
             Error::DbSubnetGroupDoesNotCoverEnoughAZs(inner) => inner.fmt(f),
             Error::DbSubnetGroupNotAllowedFault(inner) => inner.fmt(f),
@@ -413,6 +422,9 @@ impl ::std::fmt::Display for Error {
             Error::SubscriptionAlreadyExistFault(inner) => inner.fmt(f),
             Error::SubscriptionCategoryNotFoundFault(inner) => inner.fmt(f),
             Error::SubscriptionNotFoundFault(inner) => inner.fmt(f),
+            Error::TenantDatabaseAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::TenantDatabaseNotFoundFault(inner) => inner.fmt(f),
+            Error::TenantDatabaseQuotaExceededFault(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -556,7 +568,13 @@ impl From<crate::operation::add_tags_to_resource::AddTagsToResourceError> for Er
                 Error::DbProxyTargetGroupNotFoundFault(inner)
             }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbSnapshotNotFoundFault(inner) => Error::DbSnapshotNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::DbSnapshotTenantDatabaseNotFoundFault(inner) => {
+                Error::DbSnapshotTenantDatabaseNotFoundFault(inner)
+            }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::IntegrationNotFoundFault(inner) => Error::IntegrationNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::TenantDatabaseNotFoundFault(inner) => {
+                Error::TenantDatabaseNotFoundFault(inner)
+            }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1232,6 +1250,9 @@ impl From<crate::operation::create_db_instance::CreateDBInstanceError> for Error
             crate::operation::create_db_instance::CreateDBInstanceError::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
             }
+            crate::operation::create_db_instance::CreateDBInstanceError::TenantDatabaseQuotaExceededFault(inner) => {
+                Error::TenantDatabaseQuotaExceededFault(inner)
+            }
             crate::operation::create_db_instance::CreateDBInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1325,6 +1346,9 @@ impl From<crate::operation::create_db_instance_read_replica::CreateDBInstanceRea
             }
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
+            }
+            crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::TenantDatabaseQuotaExceededFault(inner) => {
+                Error::TenantDatabaseQuotaExceededFault(inner)
             }
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1668,6 +1692,41 @@ impl From<crate::operation::create_option_group::CreateOptionGroupError> for Err
                 Error::OptionGroupQuotaExceededFault(inner)
             }
             crate::operation::create_option_group::CreateOptionGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_tenant_database::CreateTenantDatabaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_tenant_database::CreateTenantDatabaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_tenant_database::CreateTenantDatabaseError> for Error {
+    fn from(err: crate::operation::create_tenant_database::CreateTenantDatabaseError) -> Self {
+        match err {
+            crate::operation::create_tenant_database::CreateTenantDatabaseError::DbInstanceNotFoundFault(inner) => {
+                Error::DbInstanceNotFoundFault(inner)
+            }
+            crate::operation::create_tenant_database::CreateTenantDatabaseError::InvalidDbInstanceStateFault(inner) => {
+                Error::InvalidDbInstanceStateFault(inner)
+            }
+            crate::operation::create_tenant_database::CreateTenantDatabaseError::TenantDatabaseAlreadyExistsFault(inner) => {
+                Error::TenantDatabaseAlreadyExistsFault(inner)
+            }
+            crate::operation::create_tenant_database::CreateTenantDatabaseError::TenantDatabaseQuotaExceededFault(inner) => {
+                Error::TenantDatabaseQuotaExceededFault(inner)
+            }
+            crate::operation::create_tenant_database::CreateTenantDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2289,6 +2348,38 @@ impl From<crate::operation::delete_option_group::DeleteOptionGroupError> for Err
             }
             crate::operation::delete_option_group::DeleteOptionGroupError::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
             crate::operation::delete_option_group::DeleteOptionGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_tenant_database::DeleteTenantDatabaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_tenant_database::DeleteTenantDatabaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_tenant_database::DeleteTenantDatabaseError> for Error {
+    fn from(err: crate::operation::delete_tenant_database::DeleteTenantDatabaseError) -> Self {
+        match err {
+            crate::operation::delete_tenant_database::DeleteTenantDatabaseError::DbInstanceNotFoundFault(inner) => {
+                Error::DbInstanceNotFoundFault(inner)
+            }
+            crate::operation::delete_tenant_database::DeleteTenantDatabaseError::InvalidDbInstanceStateFault(inner) => {
+                Error::InvalidDbInstanceStateFault(inner)
+            }
+            crate::operation::delete_tenant_database::DeleteTenantDatabaseError::TenantDatabaseNotFoundFault(inner) => {
+                Error::TenantDatabaseNotFoundFault(inner)
+            }
+            crate::operation::delete_tenant_database::DeleteTenantDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3066,6 +3157,45 @@ impl From<crate::operation::describe_db_snapshots::DescribeDBSnapshotsError> for
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_db_snapshot_tenant_databases::DescribeDBSnapshotTenantDatabasesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_db_snapshot_tenant_databases::DescribeDBSnapshotTenantDatabasesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_db_snapshot_tenant_databases::DescribeDBSnapshotTenantDatabasesError> for Error {
+    fn from(err: crate::operation::describe_db_snapshot_tenant_databases::DescribeDBSnapshotTenantDatabasesError) -> Self {
+        match err {
+            crate::operation::describe_db_snapshot_tenant_databases::DescribeDBSnapshotTenantDatabasesError::DbSnapshotNotFoundFault(inner) => {
+                Error::DbSnapshotNotFoundFault(inner)
+            }
+            crate::operation::describe_db_snapshot_tenant_databases::DescribeDBSnapshotTenantDatabasesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_db_subnet_groups::DescribeDBSubnetGroupsError, R>>
     for Error
 where
@@ -3543,6 +3673,35 @@ impl From<crate::operation::describe_source_regions::DescribeSourceRegionsError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_tenant_databases::DescribeTenantDatabasesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_tenant_databases::DescribeTenantDatabasesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_tenant_databases::DescribeTenantDatabasesError> for Error {
+    fn from(err: crate::operation::describe_tenant_databases::DescribeTenantDatabasesError) -> Self {
+        match err {
+            crate::operation::describe_tenant_databases::DescribeTenantDatabasesError::DbInstanceNotFoundFault(inner) => {
+                Error::DbInstanceNotFoundFault(inner)
+            }
+            crate::operation::describe_tenant_databases::DescribeTenantDatabasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -3717,8 +3876,14 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::DbSnapshotNotFoundFault(inner) => {
                 Error::DbSnapshotNotFoundFault(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::DbSnapshotTenantDatabaseNotFoundFault(inner) => {
+                Error::DbSnapshotTenantDatabaseNotFoundFault(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::IntegrationNotFoundFault(inner) => {
                 Error::IntegrationNotFoundFault(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::TenantDatabaseNotFoundFault(inner) => {
+                Error::TenantDatabaseNotFoundFault(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4099,6 +4264,9 @@ impl From<crate::operation::modify_db_instance::ModifyDBInstanceError> for Error
             crate::operation::modify_db_instance::ModifyDBInstanceError::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
             }
+            crate::operation::modify_db_instance::ModifyDBInstanceError::TenantDatabaseQuotaExceededFault(inner) => {
+                Error::TenantDatabaseQuotaExceededFault(inner)
+            }
             crate::operation::modify_db_instance::ModifyDBInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4429,6 +4597,41 @@ impl From<crate::operation::modify_option_group::ModifyOptionGroupError> for Err
             }
             crate::operation::modify_option_group::ModifyOptionGroupError::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
             crate::operation::modify_option_group::ModifyOptionGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_tenant_database::ModifyTenantDatabaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_tenant_database::ModifyTenantDatabaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_tenant_database::ModifyTenantDatabaseError> for Error {
+    fn from(err: crate::operation::modify_tenant_database::ModifyTenantDatabaseError) -> Self {
+        match err {
+            crate::operation::modify_tenant_database::ModifyTenantDatabaseError::DbInstanceNotFoundFault(inner) => {
+                Error::DbInstanceNotFoundFault(inner)
+            }
+            crate::operation::modify_tenant_database::ModifyTenantDatabaseError::InvalidDbInstanceStateFault(inner) => {
+                Error::InvalidDbInstanceStateFault(inner)
+            }
+            crate::operation::modify_tenant_database::ModifyTenantDatabaseError::TenantDatabaseAlreadyExistsFault(inner) => {
+                Error::TenantDatabaseAlreadyExistsFault(inner)
+            }
+            crate::operation::modify_tenant_database::ModifyTenantDatabaseError::TenantDatabaseNotFoundFault(inner) => {
+                Error::TenantDatabaseNotFoundFault(inner)
+            }
+            crate::operation::modify_tenant_database::ModifyTenantDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4827,8 +5030,14 @@ impl From<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceErr
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbSnapshotNotFoundFault(inner) => {
                 Error::DbSnapshotNotFoundFault(inner)
             }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbSnapshotTenantDatabaseNotFoundFault(inner) => {
+                Error::DbSnapshotTenantDatabaseNotFoundFault(inner)
+            }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::IntegrationNotFoundFault(inner) => {
                 Error::IntegrationNotFoundFault(inner)
+            }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::TenantDatabaseNotFoundFault(inner) => {
+                Error::TenantDatabaseNotFoundFault(inner)
             }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -5244,6 +5453,9 @@ impl From<crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInsta
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
             }
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::TenantDatabaseQuotaExceededFault(inner) => {
+                Error::TenantDatabaseQuotaExceededFault(inner)
+            }
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -5424,6 +5636,9 @@ impl From<crate::operation::restore_db_instance_to_point_in_time::RestoreDBInsta
             }
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
+            }
+            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::TenantDatabaseQuotaExceededFault(inner) => {
+                Error::TenantDatabaseQuotaExceededFault(inner)
             }
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -5939,6 +6154,7 @@ impl ::std::error::Error for Error {
             Error::DbSecurityGroupQuotaExceededFault(inner) => inner.source(),
             Error::DbSnapshotAlreadyExistsFault(inner) => inner.source(),
             Error::DbSnapshotNotFoundFault(inner) => inner.source(),
+            Error::DbSnapshotTenantDatabaseNotFoundFault(inner) => inner.source(),
             Error::DbSubnetGroupAlreadyExistsFault(inner) => inner.source(),
             Error::DbSubnetGroupDoesNotCoverEnoughAZs(inner) => inner.source(),
             Error::DbSubnetGroupNotAllowedFault(inner) => inner.source(),
@@ -6020,6 +6236,9 @@ impl ::std::error::Error for Error {
             Error::SubscriptionAlreadyExistFault(inner) => inner.source(),
             Error::SubscriptionCategoryNotFoundFault(inner) => inner.source(),
             Error::SubscriptionNotFoundFault(inner) => inner.source(),
+            Error::TenantDatabaseAlreadyExistsFault(inner) => inner.source(),
+            Error::TenantDatabaseNotFoundFault(inner) => inner.source(),
+            Error::TenantDatabaseQuotaExceededFault(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
         }
     }
@@ -6080,6 +6299,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::DbSecurityGroupQuotaExceededFault(e) => e.request_id(),
             Self::DbSnapshotAlreadyExistsFault(e) => e.request_id(),
             Self::DbSnapshotNotFoundFault(e) => e.request_id(),
+            Self::DbSnapshotTenantDatabaseNotFoundFault(e) => e.request_id(),
             Self::DbSubnetGroupAlreadyExistsFault(e) => e.request_id(),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(e) => e.request_id(),
             Self::DbSubnetGroupNotAllowedFault(e) => e.request_id(),
@@ -6161,6 +6381,9 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::SubscriptionAlreadyExistFault(e) => e.request_id(),
             Self::SubscriptionCategoryNotFoundFault(e) => e.request_id(),
             Self::SubscriptionNotFoundFault(e) => e.request_id(),
+            Self::TenantDatabaseAlreadyExistsFault(e) => e.request_id(),
+            Self::TenantDatabaseNotFoundFault(e) => e.request_id(),
+            Self::TenantDatabaseQuotaExceededFault(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }
     }

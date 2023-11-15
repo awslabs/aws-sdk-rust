@@ -87,6 +87,8 @@ pub use crate::types::_validation_strategy::ValidationStrategyBuilder;
 
 pub use crate::types::_template_version_definition::TemplateVersionDefinitionBuilder;
 
+pub use crate::types::_asset_options::AssetOptionsBuilder;
+
 pub use crate::types::_analysis_defaults::AnalysisDefaultsBuilder;
 
 pub use crate::types::_default_new_sheet_configuration::DefaultNewSheetConfigurationBuilder;

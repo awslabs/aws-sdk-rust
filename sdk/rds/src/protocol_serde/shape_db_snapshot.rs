@@ -476,6 +476,21 @@ pub fn de_db_snapshot(
                 builder = builder.set_dedicated_log_volume(var_35);
             }
             ,
+            s if s.matches("MultiTenant") /* MultiTenant com.amazonaws.rds#DBSnapshot$MultiTenant */ =>  {
+                let var_36 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_multi_tenant(var_36);
+            }
+            ,
             _ => {}
         }
     }

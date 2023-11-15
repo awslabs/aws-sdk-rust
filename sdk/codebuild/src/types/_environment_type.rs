@@ -13,8 +13,10 @@
 /// # let environmenttype = unimplemented!();
 /// match environmenttype {
 ///     EnvironmentType::ArmContainer => { /* ... */ },
+///     EnvironmentType::ArmLambdaContainer => { /* ... */ },
 ///     EnvironmentType::LinuxContainer => { /* ... */ },
 ///     EnvironmentType::LinuxGpuContainer => { /* ... */ },
+///     EnvironmentType::LinuxLambdaContainer => { /* ... */ },
 ///     EnvironmentType::WindowsContainer => { /* ... */ },
 ///     EnvironmentType::WindowsServer2019Container => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -47,9 +49,13 @@ pub enum EnvironmentType {
     #[allow(missing_docs)] // documentation missing in model
     ArmContainer,
     #[allow(missing_docs)] // documentation missing in model
+    ArmLambdaContainer,
+    #[allow(missing_docs)] // documentation missing in model
     LinuxContainer,
     #[allow(missing_docs)] // documentation missing in model
     LinuxGpuContainer,
+    #[allow(missing_docs)] // documentation missing in model
+    LinuxLambdaContainer,
     #[allow(missing_docs)] // documentation missing in model
     WindowsContainer,
     #[allow(missing_docs)] // documentation missing in model
@@ -61,8 +67,10 @@ impl ::std::convert::From<&str> for EnvironmentType {
     fn from(s: &str) -> Self {
         match s {
             "ARM_CONTAINER" => EnvironmentType::ArmContainer,
+            "ARM_LAMBDA_CONTAINER" => EnvironmentType::ArmLambdaContainer,
             "LINUX_CONTAINER" => EnvironmentType::LinuxContainer,
             "LINUX_GPU_CONTAINER" => EnvironmentType::LinuxGpuContainer,
+            "LINUX_LAMBDA_CONTAINER" => EnvironmentType::LinuxLambdaContainer,
             "WINDOWS_CONTAINER" => EnvironmentType::WindowsContainer,
             "WINDOWS_SERVER_2019_CONTAINER" => EnvironmentType::WindowsServer2019Container,
             other => EnvironmentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -81,8 +89,10 @@ impl EnvironmentType {
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentType::ArmContainer => "ARM_CONTAINER",
+            EnvironmentType::ArmLambdaContainer => "ARM_LAMBDA_CONTAINER",
             EnvironmentType::LinuxContainer => "LINUX_CONTAINER",
             EnvironmentType::LinuxGpuContainer => "LINUX_GPU_CONTAINER",
+            EnvironmentType::LinuxLambdaContainer => "LINUX_LAMBDA_CONTAINER",
             EnvironmentType::WindowsContainer => "WINDOWS_CONTAINER",
             EnvironmentType::WindowsServer2019Container => "WINDOWS_SERVER_2019_CONTAINER",
             EnvironmentType::Unknown(value) => value.as_str(),
@@ -92,8 +102,10 @@ impl EnvironmentType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ARM_CONTAINER",
+            "ARM_LAMBDA_CONTAINER",
             "LINUX_CONTAINER",
             "LINUX_GPU_CONTAINER",
+            "LINUX_LAMBDA_CONTAINER",
             "WINDOWS_CONTAINER",
             "WINDOWS_SERVER_2019_CONTAINER",
         ]

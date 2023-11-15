@@ -191,6 +191,8 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_template_summary_list;
 
+pub(crate) mod shape_user_union;
+
 pub(crate) mod shape_basic_layout;
 
 pub(crate) mod shape_case_summary;

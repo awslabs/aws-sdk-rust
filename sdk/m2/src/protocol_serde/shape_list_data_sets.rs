@@ -31,6 +31,34 @@ pub fn de_list_data_sets_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::list_data_sets::ListDataSetsError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?
+            };
+            tmp
+        }),
+        "ExecutionTimeoutException" => crate::operation::list_data_sets::ListDataSetsError::ExecutionTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ExecutionTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_execution_timeout_exception::de_execution_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::execution_timeout_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::list_data_sets::ListDataSetsError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -59,6 +87,21 @@ pub fn de_list_data_sets_http_error(
                     .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?
+            };
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::list_data_sets::ListDataSetsError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?
             };

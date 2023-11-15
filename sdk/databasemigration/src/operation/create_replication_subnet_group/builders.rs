@@ -148,17 +148,17 @@ impl CreateReplicationSubnetGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    /// <p>Two or more subnet IDs to be assigned to the subnet group.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
-    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    /// <p>Two or more subnet IDs to be assigned to the subnet group.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
-    /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
+    /// <p>Two or more subnet IDs to be assigned to the subnet group.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }

@@ -51,6 +51,19 @@ where
                         "volumes" => {
                             builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens)?);
                         }
+                        "serviceAccountName" => {
+                            builder = builder.set_service_account_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "hostIPC" => {
+                            builder = builder.set_host_ipc(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "hostPID" => {
+                            builder = builder.set_host_pid(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

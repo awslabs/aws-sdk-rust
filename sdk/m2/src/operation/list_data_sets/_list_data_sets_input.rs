@@ -11,6 +11,8 @@ pub struct ListDataSetsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The prefix of the data set name, which you can use to filter the list of data sets.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
+    /// <p>Filter dataset name matching the specified pattern. Can use * and % as wild cards.</p>
+    pub name_filter: ::std::option::Option<::std::string::String>,
 }
 impl ListDataSetsInput {
     /// <p>The unique identifier of the application for which you want to list the associated data sets.</p>
@@ -29,6 +31,10 @@ impl ListDataSetsInput {
     pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
+    /// <p>Filter dataset name matching the specified pattern. Can use * and % as wild cards.</p>
+    pub fn name_filter(&self) -> ::std::option::Option<&str> {
+        self.name_filter.as_deref()
+    }
 }
 impl ListDataSetsInput {
     /// Creates a new builder-style object to manufacture [`ListDataSetsInput`](crate::operation::list_data_sets::ListDataSetsInput).
@@ -45,6 +51,7 @@ pub struct ListDataSetsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) name_filter: ::std::option::Option<::std::string::String>,
 }
 impl ListDataSetsInputBuilder {
     /// <p>The unique identifier of the application for which you want to list the associated data sets.</p>
@@ -104,6 +111,20 @@ impl ListDataSetsInputBuilder {
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix
     }
+    /// <p>Filter dataset name matching the specified pattern. Can use * and % as wild cards.</p>
+    pub fn name_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name_filter = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filter dataset name matching the specified pattern. Can use * and % as wild cards.</p>
+    pub fn set_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name_filter = input;
+        self
+    }
+    /// <p>Filter dataset name matching the specified pattern. Can use * and % as wild cards.</p>
+    pub fn get_name_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_filter
+    }
     /// Consumes the builder and constructs a [`ListDataSetsInput`](crate::operation::list_data_sets::ListDataSetsInput).
     pub fn build(
         self,
@@ -113,6 +134,7 @@ impl ListDataSetsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             prefix: self.prefix,
+            name_filter: self.name_filter,
         })
     }
 }

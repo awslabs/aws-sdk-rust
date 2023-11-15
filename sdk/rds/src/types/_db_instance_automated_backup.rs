@@ -72,6 +72,8 @@ pub struct DbInstanceAutomatedBackup {
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub multi_tenant: ::std::option::Option<bool>,
 }
 impl DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -204,6 +206,10 @@ impl DbInstanceAutomatedBackup {
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
     }
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
+        self.multi_tenant
+    }
 }
 impl DbInstanceAutomatedBackup {
     /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
@@ -247,6 +253,7 @@ pub struct DbInstanceAutomatedBackupBuilder {
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
+    pub(crate) multi_tenant: ::std::option::Option<bool>,
 }
 impl DbInstanceAutomatedBackupBuilder {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -704,6 +711,20 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub fn multi_tenant(mut self, input: bool) -> Self {
+        self.multi_tenant = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.multi_tenant = input;
+        self
+    }
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
+        &self.multi_tenant
+    }
     /// Consumes the builder and constructs a [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
     pub fn build(self) -> crate::types::DbInstanceAutomatedBackup {
         crate::types::DbInstanceAutomatedBackup {
@@ -737,6 +758,7 @@ impl DbInstanceAutomatedBackupBuilder {
             storage_throughput: self.storage_throughput,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             dedicated_log_volume: self.dedicated_log_volume,
+            multi_tenant: self.multi_tenant,
         }
     }
 }

@@ -141,6 +141,10 @@ pub use crate::types::_validation_strategy_mode::ValidationStrategyMode;
 
 pub use crate::types::_template_version_definition::TemplateVersionDefinition;
 
+pub use crate::types::_asset_options::AssetOptions;
+
+pub use crate::types::_day_of_the_week::DayOfTheWeek;
+
 pub use crate::types::_analysis_defaults::AnalysisDefaults;
 
 pub use crate::types::_default_new_sheet_configuration::DefaultNewSheetConfiguration;
@@ -1451,6 +1455,8 @@ pub use crate::types::_geo_spatial_data_role::GeoSpatialDataRole;
 
 pub use crate::types::_cast_column_type_operation::CastColumnTypeOperation;
 
+pub use crate::types::_column_data_sub_type::ColumnDataSubType;
+
 pub use crate::types::_column_data_type::ColumnDataType;
 
 pub use crate::types::_rename_column_operation::RenameColumnOperation;
@@ -2005,6 +2011,8 @@ mod _asset_bundle_import_source;
 
 mod _asset_bundle_import_source_description;
 
+mod _asset_options;
+
 mod _assignment_status;
 
 mod _athena_parameters;
@@ -2140,6 +2148,8 @@ mod _colors_configuration;
 mod _column_configuration;
 
 mod _column_data_role;
+
+mod _column_data_sub_type;
 
 mod _column_data_type;
 
@@ -2394,6 +2404,8 @@ mod _date_time_parameter_declaration;
 mod _date_time_picker_control_display_options;
 
 mod _date_time_value_when_unset_configuration;
+
+mod _day_of_the_week;
 
 mod _day_of_week;
 

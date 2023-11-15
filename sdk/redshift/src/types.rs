@@ -3,6 +3,10 @@ pub use crate::types::_partner_integration_status::PartnerIntegrationStatus;
 
 pub use crate::types::_cluster::Cluster;
 
+pub use crate::types::_secondary_cluster_info::SecondaryClusterInfo;
+
+pub use crate::types::_cluster_node::ClusterNode;
+
 pub use crate::types::_reserved_node_exchange_status::ReservedNodeExchangeStatus;
 
 pub use crate::types::_reserved_node_exchange_status_type::ReservedNodeExchangeStatusType;
@@ -24,8 +28,6 @@ pub use crate::types::_cluster_iam_role::ClusterIamRole;
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_elastic_ip_status::ElasticIpStatus;
-
-pub use crate::types::_cluster_node::ClusterNode;
 
 pub use crate::types::_cluster_snapshot_copy_status::ClusterSnapshotCopyStatus;
 
@@ -386,6 +388,8 @@ mod _scheduled_action_state;
 mod _scheduled_action_type;
 
 mod _scheduled_action_type_values;
+
+mod _secondary_cluster_info;
 
 mod _snapshot;
 

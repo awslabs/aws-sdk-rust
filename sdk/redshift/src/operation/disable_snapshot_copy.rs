@@ -254,6 +254,8 @@ pub enum DisableSnapshotCopyError {
     SnapshotCopyAlreadyDisabledFault(crate::types::error::SnapshotCopyAlreadyDisabledFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::types::error::UnauthorizedOperation),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -276,6 +278,7 @@ impl ::std::fmt::Display for DisableSnapshotCopyError {
             Self::InvalidClusterStateFault(_inner) => _inner.fmt(f),
             Self::SnapshotCopyAlreadyDisabledFault(_inner) => _inner.fmt(f),
             Self::UnauthorizedOperation(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -287,6 +290,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DisableSnapsh
             Self::InvalidClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapshotCopyAlreadyDisabledFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -327,6 +331,7 @@ impl DisableSnapshotCopyError {
             Self::InvalidClusterStateFault(e) => e.meta(),
             Self::SnapshotCopyAlreadyDisabledFault(e) => e.meta(),
             Self::UnauthorizedOperation(e) => e.meta(),
+            Self::UnsupportedOperationFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -346,6 +351,10 @@ impl DisableSnapshotCopyError {
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(self, Self::UnauthorizedOperation(_))
     }
+    /// Returns `true` if the error kind is `DisableSnapshotCopyError::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationFault(_))
+    }
 }
 impl ::std::error::Error for DisableSnapshotCopyError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -354,6 +363,7 @@ impl ::std::error::Error for DisableSnapshotCopyError {
             Self::InvalidClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapshotCopyAlreadyDisabledFault(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedOperation(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

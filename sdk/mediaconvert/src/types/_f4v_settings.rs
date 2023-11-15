@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct F4vSettings {
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub moov_placement: ::std::option::Option<crate::types::F4vMoovPlacement>,
 }
 impl F4vSettings {
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn moov_placement(&self) -> ::std::option::Option<&crate::types::F4vMoovPlacement> {
         self.moov_placement.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct F4vSettingsBuilder {
     pub(crate) moov_placement: ::std::option::Option<crate::types::F4vMoovPlacement>,
 }
 impl F4vSettingsBuilder {
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn moov_placement(mut self, input: crate::types::F4vMoovPlacement) -> Self {
         self.moov_placement = ::std::option::Option::Some(input);
         self
     }
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn set_moov_placement(mut self, input: ::std::option::Option<crate::types::F4vMoovPlacement>) -> Self {
         self.moov_placement = input;
         self
     }
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn get_moov_placement(&self) -> &::std::option::Option<crate::types::F4vMoovPlacement> {
         &self.moov_placement
     }

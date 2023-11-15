@@ -21,6 +21,8 @@ pub struct AnalysisDefinition {
     pub column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
     /// <p>The configuration for default analysis settings.</p>
     pub analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
+    /// <p>An array of option definitions for an analysis.</p>
+    pub options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl AnalysisDefinition {
     /// <p>An array of dataset identifier declarations. This mapping allows the usage of dataset identifiers instead of dataset ARNs throughout analysis sub-structures.</p>
@@ -65,6 +67,10 @@ impl AnalysisDefinition {
     pub fn analysis_defaults(&self) -> ::std::option::Option<&crate::types::AnalysisDefaults> {
         self.analysis_defaults.as_ref()
     }
+    /// <p>An array of option definitions for an analysis.</p>
+    pub fn options(&self) -> ::std::option::Option<&crate::types::AssetOptions> {
+        self.options.as_ref()
+    }
 }
 impl AnalysisDefinition {
     /// Creates a new builder-style object to manufacture [`AnalysisDefinition`](crate::types::AnalysisDefinition).
@@ -84,6 +90,7 @@ pub struct AnalysisDefinitionBuilder {
     pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>>,
     pub(crate) column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
     pub(crate) analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
+    pub(crate) options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl AnalysisDefinitionBuilder {
     /// Appends an item to `data_set_identifier_declarations`.
@@ -232,6 +239,20 @@ impl AnalysisDefinitionBuilder {
     pub fn get_analysis_defaults(&self) -> &::std::option::Option<crate::types::AnalysisDefaults> {
         &self.analysis_defaults
     }
+    /// <p>An array of option definitions for an analysis.</p>
+    pub fn options(mut self, input: crate::types::AssetOptions) -> Self {
+        self.options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An array of option definitions for an analysis.</p>
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AssetOptions>) -> Self {
+        self.options = input;
+        self
+    }
+    /// <p>An array of option definitions for an analysis.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::AssetOptions> {
+        &self.options
+    }
     /// Consumes the builder and constructs a [`AnalysisDefinition`](crate::types::AnalysisDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_identifier_declarations`](crate::types::builders::AnalysisDefinitionBuilder::data_set_identifier_declarations)
@@ -249,6 +270,7 @@ impl AnalysisDefinitionBuilder {
             filter_groups: self.filter_groups,
             column_configurations: self.column_configurations,
             analysis_defaults: self.analysis_defaults,
+            options: self.options,
         })
     }
 }

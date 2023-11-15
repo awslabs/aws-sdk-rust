@@ -858,4 +858,18 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     pub fn get_source_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_cluster_resource_id()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rds_custom_cluster_configuration(mut self, input: crate::types::RdsCustomClusterConfiguration) -> Self {
+        self.inner = self.inner.rds_custom_cluster_configuration(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_rds_custom_cluster_configuration(mut self, input: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>) -> Self {
+        self.inner = self.inner.set_rds_custom_cluster_configuration(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
+        self.inner.get_rds_custom_cluster_configuration()
+    }
 }

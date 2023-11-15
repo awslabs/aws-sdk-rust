@@ -1587,6 +1587,37 @@ impl From<crate::operation::detect_targeted_sentiment::DetectTargetedSentimentEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_toxic_content::DetectToxicContentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_toxic_content::DetectToxicContentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::detect_toxic_content::DetectToxicContentError> for Error {
+    fn from(err: crate::operation::detect_toxic_content::DetectToxicContentError) -> Self {
+        match err {
+            crate::operation::detect_toxic_content::DetectToxicContentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::detect_toxic_content::DetectToxicContentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::detect_toxic_content::DetectToxicContentError::TextSizeLimitExceededException(inner) => {
+                Error::TextSizeLimitExceededException(inner)
+            }
+            crate::operation::detect_toxic_content::DetectToxicContentError::UnsupportedLanguageException(inner) => {
+                Error::UnsupportedLanguageException(inner)
+            }
+            crate::operation::detect_toxic_content::DetectToxicContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_model::ImportModelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

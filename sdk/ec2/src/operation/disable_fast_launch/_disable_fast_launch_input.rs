@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableFastLaunchInput {
-    /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
+    /// <p>Specify the ID of the image for which to disable Windows fast launch.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
-    /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
+    /// <p>Forces the image settings to turn off Windows fast launch for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub force: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DisableFastLaunchInput {
-    /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
+    /// <p>Specify the ID of the image for which to disable Windows fast launch.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
+    /// <p>Forces the image settings to turn off Windows fast launch for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
@@ -40,32 +40,32 @@ pub struct DisableFastLaunchInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DisableFastLaunchInputBuilder {
-    /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
+    /// <p>Specify the ID of the image for which to disable Windows fast launch.</p>
     /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
+    /// <p>Specify the ID of the image for which to disable Windows fast launch.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
     }
-    /// <p>The ID of the image for which you’re turning off faster launching, and removing pre-provisioned snapshots.</p>
+    /// <p>Specify the ID of the image for which to disable Windows fast launch.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }
-    /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
+    /// <p>Forces the image settings to turn off Windows fast launch for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
+    /// <p>Forces the image settings to turn off Windows fast launch for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
-    /// <p>Forces the image settings to turn off faster launching for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
+    /// <p>Forces the image settings to turn off Windows fast launch for your Windows AMI. This parameter overrides any errors that are encountered while cleaning up resources in your account.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }

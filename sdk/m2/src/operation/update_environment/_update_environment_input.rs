@@ -11,10 +11,15 @@ pub struct UpdateEnvironmentInput {
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The version of the runtime engine for the runtime environment.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>. </p>
+    /// <p>If you do not provide a value, a random system-generated value will be assigned.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
     pub apply_during_maintenance_window: ::std::option::Option<bool>,
+    /// <p>Forces the updates on the environment. This option is needed if the applications in the environment are not stopped or if there are ongoing application-related activities in the environment.</p>
+    /// <p>If you use this option, be aware that it could lead to data corruption in the applications, and that you might need to perform repair and recovery procedures for the applications.</p>
+    /// <p>This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.</p>
+    pub force_update: ::std::option::Option<bool>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
@@ -33,13 +38,20 @@ impl UpdateEnvironmentInput {
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>. </p>
+    /// <p>If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
     pub fn apply_during_maintenance_window(&self) -> ::std::option::Option<bool> {
         self.apply_during_maintenance_window
+    }
+    /// <p>Forces the updates on the environment. This option is needed if the applications in the environment are not stopped or if there are ongoing application-related activities in the environment.</p>
+    /// <p>If you use this option, be aware that it could lead to data corruption in the applications, and that you might need to perform repair and recovery procedures for the applications.</p>
+    /// <p>This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.</p>
+    pub fn force_update(&self) -> ::std::option::Option<bool> {
+        self.force_update
     }
 }
 impl UpdateEnvironmentInput {
@@ -59,6 +71,7 @@ pub struct UpdateEnvironmentInputBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) apply_during_maintenance_window: ::std::option::Option<bool>,
+    pub(crate) force_update: ::std::option::Option<bool>,
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
@@ -118,17 +131,20 @@ impl UpdateEnvironmentInputBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>. </p>
+    /// <p>If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>. </p>
+    /// <p>If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
-    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    /// <p>Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>. </p>
+    /// <p>If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
@@ -146,6 +162,26 @@ impl UpdateEnvironmentInputBuilder {
     pub fn get_apply_during_maintenance_window(&self) -> &::std::option::Option<bool> {
         &self.apply_during_maintenance_window
     }
+    /// <p>Forces the updates on the environment. This option is needed if the applications in the environment are not stopped or if there are ongoing application-related activities in the environment.</p>
+    /// <p>If you use this option, be aware that it could lead to data corruption in the applications, and that you might need to perform repair and recovery procedures for the applications.</p>
+    /// <p>This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.</p>
+    pub fn force_update(mut self, input: bool) -> Self {
+        self.force_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Forces the updates on the environment. This option is needed if the applications in the environment are not stopped or if there are ongoing application-related activities in the environment.</p>
+    /// <p>If you use this option, be aware that it could lead to data corruption in the applications, and that you might need to perform repair and recovery procedures for the applications.</p>
+    /// <p>This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.</p>
+    pub fn set_force_update(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force_update = input;
+        self
+    }
+    /// <p>Forces the updates on the environment. This option is needed if the applications in the environment are not stopped or if there are ongoing application-related activities in the environment.</p>
+    /// <p>If you use this option, be aware that it could lead to data corruption in the applications, and that you might need to perform repair and recovery procedures for the applications.</p>
+    /// <p>This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.</p>
+    pub fn get_force_update(&self) -> &::std::option::Option<bool> {
+        &self.force_update
+    }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
@@ -157,6 +193,7 @@ impl UpdateEnvironmentInputBuilder {
             engine_version: self.engine_version,
             preferred_maintenance_window: self.preferred_maintenance_window,
             apply_during_maintenance_window: self.apply_during_maintenance_window,
+            force_update: self.force_update,
         })
     }
 }

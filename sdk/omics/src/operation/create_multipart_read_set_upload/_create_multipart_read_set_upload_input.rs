@@ -178,7 +178,6 @@ impl CreateMultipartReadSetUploadInputBuilder {
         &self.generated_from
     }
     /// <p> The ARN of the reference. </p>
-    /// This field is required.
     pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_arn = ::std::option::Option::Some(input.into());
         self

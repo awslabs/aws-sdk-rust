@@ -726,6 +726,29 @@ pub fn de_cluster(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                 builder = builder.set_ip_address_type(var_58);
             }
             ,
+            s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.redshift#Cluster$MultiAZ */ =>  {
+                let var_59 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_multi_az(var_59);
+            }
+            ,
+            s if s.matches("MultiAZSecondary") /* MultiAZSecondary com.amazonaws.redshift#Cluster$MultiAZSecondary */ =>  {
+                let var_60 =
+                    Some(
+                        crate::protocol_serde::shape_secondary_cluster_info::de_secondary_cluster_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_multi_az_secondary(var_60);
+            }
+            ,
             _ => {}
         }
     }

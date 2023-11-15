@@ -182,10 +182,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SendMessageR
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder
         };
-        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_send_message_input::ser_send_message_input_input(&input)?);
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_send_message::ser_send_message_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
@@ -242,8 +242,39 @@ pub type SendMessageErrorKind = SendMessageError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum SendMessageError {
+    /// <p>The <code>accountId</code> is invalid.</p>
+    InvalidAddress(crate::types::error::InvalidAddress),
     /// <p>The message contains characters outside the allowed set.</p>
     InvalidMessageContents(crate::types::error::InvalidMessageContents),
+    /// <p>When the request to a queue is not HTTPS and SigV4.</p>
+    InvalidSecurity(crate::types::error::InvalidSecurity),
+    /// <p>The caller doesn't have the required KMS access.</p>
+    KmsAccessDenied(crate::types::error::KmsAccessDenied),
+    /// <p>The request was denied due to request throttling.</p>
+    KmsDisabled(crate::types::error::KmsDisabled),
+    /// <p>The request was rejected for one of the following reasons:</p>
+    /// <ul>
+    /// <li> <p>The KeyUsage value of the KMS key is incompatible with the API operation.</p> </li>
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key (KeySpec).</p> </li>
+    /// </ul>
+    KmsInvalidKeyUsage(crate::types::error::KmsInvalidKeyUsage),
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
+    KmsInvalidState(crate::types::error::KmsInvalidState),
+    /// <p>The request was rejected because the specified entity or resource could not be found. </p>
+    KmsNotFound(crate::types::error::KmsNotFound),
+    /// <p>The request was rejected because the specified key policy isn't syntactically or semantically correct.</p>
+    KmsOptInRequired(crate::types::error::KmsOptInRequired),
+    /// <p>Amazon Web Services KMS throttles requests for the following conditions.</p>
+    KmsThrottled(crate::types::error::KmsThrottled),
+    /// <p>The specified queue doesn't exist.</p>
+    QueueDoesNotExist(crate::types::error::QueueDoesNotExist),
+    /// <p>The request was denied due to request throttling.</p>
+    /// <ul>
+    /// <li> <p>The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and Region. </p> </li>
+    /// <li> <p>A burst or sustained high rate of requests to change the state of the same KMS key. This condition is often known as a "hot key."</p> </li>
+    /// <li> <p>Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web Services CloudHSM key store.</p> </li>
+    /// </ul>
+    RequestThrottled(crate::types::error::RequestThrottled),
     /// <p>Error code 400. Unsupported operation.</p>
     UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -264,7 +295,18 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for SendMess
 impl ::std::fmt::Display for SendMessageError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidAddress(_inner) => _inner.fmt(f),
             Self::InvalidMessageContents(_inner) => _inner.fmt(f),
+            Self::InvalidSecurity(_inner) => _inner.fmt(f),
+            Self::KmsAccessDenied(_inner) => _inner.fmt(f),
+            Self::KmsDisabled(_inner) => _inner.fmt(f),
+            Self::KmsInvalidKeyUsage(_inner) => _inner.fmt(f),
+            Self::KmsInvalidState(_inner) => _inner.fmt(f),
+            Self::KmsNotFound(_inner) => _inner.fmt(f),
+            Self::KmsOptInRequired(_inner) => _inner.fmt(f),
+            Self::KmsThrottled(_inner) => _inner.fmt(f),
+            Self::QueueDoesNotExist(_inner) => _inner.fmt(f),
+            Self::RequestThrottled(_inner) => _inner.fmt(f),
             Self::UnsupportedOperation(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -273,7 +315,18 @@ impl ::std::fmt::Display for SendMessageError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SendMessageError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidAddress(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidMessageContents(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSecurity(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsAccessDenied(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsDisabled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsInvalidKeyUsage(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsInvalidState(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsOptInRequired(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsThrottled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::QueueDoesNotExist(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RequestThrottled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
@@ -311,14 +364,69 @@ impl SendMessageError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::InvalidAddress(e) => e.meta(),
             Self::InvalidMessageContents(e) => e.meta(),
+            Self::InvalidSecurity(e) => e.meta(),
+            Self::KmsAccessDenied(e) => e.meta(),
+            Self::KmsDisabled(e) => e.meta(),
+            Self::KmsInvalidKeyUsage(e) => e.meta(),
+            Self::KmsInvalidState(e) => e.meta(),
+            Self::KmsNotFound(e) => e.meta(),
+            Self::KmsOptInRequired(e) => e.meta(),
+            Self::KmsThrottled(e) => e.meta(),
+            Self::QueueDoesNotExist(e) => e.meta(),
+            Self::RequestThrottled(e) => e.meta(),
             Self::UnsupportedOperation(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
+    /// Returns `true` if the error kind is `SendMessageError::InvalidAddress`.
+    pub fn is_invalid_address(&self) -> bool {
+        matches!(self, Self::InvalidAddress(_))
+    }
     /// Returns `true` if the error kind is `SendMessageError::InvalidMessageContents`.
     pub fn is_invalid_message_contents(&self) -> bool {
         matches!(self, Self::InvalidMessageContents(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::InvalidSecurity`.
+    pub fn is_invalid_security(&self) -> bool {
+        matches!(self, Self::InvalidSecurity(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::KmsAccessDenied`.
+    pub fn is_kms_access_denied(&self) -> bool {
+        matches!(self, Self::KmsAccessDenied(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::KmsDisabled`.
+    pub fn is_kms_disabled(&self) -> bool {
+        matches!(self, Self::KmsDisabled(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::KmsInvalidKeyUsage`.
+    pub fn is_kms_invalid_key_usage(&self) -> bool {
+        matches!(self, Self::KmsInvalidKeyUsage(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::KmsInvalidState`.
+    pub fn is_kms_invalid_state(&self) -> bool {
+        matches!(self, Self::KmsInvalidState(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::KmsNotFound`.
+    pub fn is_kms_not_found(&self) -> bool {
+        matches!(self, Self::KmsNotFound(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::KmsOptInRequired`.
+    pub fn is_kms_opt_in_required(&self) -> bool {
+        matches!(self, Self::KmsOptInRequired(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::KmsThrottled`.
+    pub fn is_kms_throttled(&self) -> bool {
+        matches!(self, Self::KmsThrottled(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::QueueDoesNotExist`.
+    pub fn is_queue_does_not_exist(&self) -> bool {
+        matches!(self, Self::QueueDoesNotExist(_))
+    }
+    /// Returns `true` if the error kind is `SendMessageError::RequestThrottled`.
+    pub fn is_request_throttled(&self) -> bool {
+        matches!(self, Self::RequestThrottled(_))
     }
     /// Returns `true` if the error kind is `SendMessageError::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
@@ -328,7 +436,18 @@ impl SendMessageError {
 impl ::std::error::Error for SendMessageError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidAddress(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidMessageContents(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidSecurity(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsAccessDenied(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsDisabled(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsInvalidKeyUsage(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsInvalidState(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsNotFound(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsOptInRequired(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsThrottled(_inner) => ::std::option::Option::Some(_inner),
+            Self::QueueDoesNotExist(_inner) => ::std::option::Option::Some(_inner),
+            Self::RequestThrottled(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperation(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

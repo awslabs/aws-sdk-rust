@@ -4,22 +4,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueuesOutput {
-    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the request.</p>
     pub queue_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListQueuesOutput {
-    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_urls.is_none()`.
     pub fn queue_urls(&self) -> &[::std::string::String] {
         self.queue_urls.as_deref().unwrap_or_default()
+    }
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListQueuesOutput {
@@ -38,25 +38,11 @@ impl ListQueuesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueuesOutputBuilder {
-    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) queue_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListQueuesOutputBuilder {
-    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
     /// Appends an item to `queue_urls`.
     ///
     /// To override the contents of this collection use [`set_queue_urls`](Self::set_queue_urls).
@@ -77,6 +63,20 @@ impl ListQueuesOutputBuilder {
     pub fn get_queue_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.queue_urls
     }
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -89,8 +89,8 @@ impl ListQueuesOutputBuilder {
     /// Consumes the builder and constructs a [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput).
     pub fn build(self) -> crate::operation::list_queues::ListQueuesOutput {
         crate::operation::list_queues::ListQueuesOutput {
-            next_token: self.next_token,
             queue_urls: self.queue_urls,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

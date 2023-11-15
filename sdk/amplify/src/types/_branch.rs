@@ -59,6 +59,8 @@ pub struct Branch {
     pub source_branch: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub backend_environment_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    pub backend: ::std::option::Option<crate::types::Backend>,
 }
 impl Branch {
     /// <p> The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. </p>
@@ -181,6 +183,10 @@ impl Branch {
     pub fn backend_environment_arn(&self) -> ::std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
+    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    pub fn backend(&self) -> ::std::option::Option<&crate::types::Backend> {
+        self.backend.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Branch {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -212,6 +218,7 @@ impl ::std::fmt::Debug for Branch {
         formatter.field("destination_branch", &self.destination_branch);
         formatter.field("source_branch", &self.source_branch);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
+        formatter.field("backend", &self.backend);
         formatter.finish()
     }
 }
@@ -253,6 +260,7 @@ pub struct BranchBuilder {
     pub(crate) destination_branch: ::std::option::Option<::std::string::String>,
     pub(crate) source_branch: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) backend: ::std::option::Option<crate::types::Backend>,
 }
 impl BranchBuilder {
     /// <p> The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. </p>
@@ -682,6 +690,20 @@ impl BranchBuilder {
     pub fn get_backend_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.backend_environment_arn
     }
+    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    pub fn backend(mut self, input: crate::types::Backend) -> Self {
+        self.backend = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    pub fn set_backend(mut self, input: ::std::option::Option<crate::types::Backend>) -> Self {
+        self.backend = input;
+        self
+    }
+    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    pub fn get_backend(&self) -> &::std::option::Option<crate::types::Backend> {
+        &self.backend
+    }
     /// Consumes the builder and constructs a [`Branch`](crate::types::Branch).
     /// This method will fail if any of the following fields are not set:
     /// - [`branch_arn`](crate::types::builders::BranchBuilder::branch_arn)
@@ -815,6 +837,7 @@ impl BranchBuilder {
             destination_branch: self.destination_branch,
             source_branch: self.source_branch,
             backend_environment_arn: self.backend_environment_arn,
+            backend: self.backend,
         })
     }
 }
@@ -848,6 +871,7 @@ impl ::std::fmt::Debug for BranchBuilder {
         formatter.field("destination_branch", &self.destination_branch);
         formatter.field("source_branch", &self.source_branch);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
+        formatter.field("backend", &self.backend);
         formatter.finish()
     }
 }

@@ -289,6 +289,8 @@ pub enum CreateDBInstanceReadReplicaError {
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
     /// <p>The specified <code>StorageType</code> can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
+    /// <p>You attempted to create more tenant databases than are permitted in your Amazon Web Services account.</p>
+    TenantDatabaseQuotaExceededFault(crate::types::error::TenantDatabaseQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -329,6 +331,7 @@ impl ::std::fmt::Display for CreateDBInstanceReadReplicaError {
             Self::ProvisionedIopsNotAvailableInAzFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::StorageTypeNotSupportedFault(_inner) => _inner.fmt(f),
+            Self::TenantDatabaseQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -358,6 +361,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBInsta
             Self::ProvisionedIopsNotAvailableInAzFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TenantDatabaseQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -416,6 +420,7 @@ impl CreateDBInstanceReadReplicaError {
             Self::ProvisionedIopsNotAvailableInAzFault(e) => e.meta(),
             Self::StorageQuotaExceededFault(e) => e.meta(),
             Self::StorageTypeNotSupportedFault(e) => e.meta(),
+            Self::TenantDatabaseQuotaExceededFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -507,6 +512,10 @@ impl CreateDBInstanceReadReplicaError {
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
         matches!(self, Self::StorageTypeNotSupportedFault(_))
     }
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaError::TenantDatabaseQuotaExceededFault`.
+    pub fn is_tenant_database_quota_exceeded_fault(&self) -> bool {
+        matches!(self, Self::TenantDatabaseQuotaExceededFault(_))
+    }
 }
 impl ::std::error::Error for CreateDBInstanceReadReplicaError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -533,6 +542,7 @@ impl ::std::error::Error for CreateDBInstanceReadReplicaError {
             Self::ProvisionedIopsNotAvailableInAzFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::TenantDatabaseQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

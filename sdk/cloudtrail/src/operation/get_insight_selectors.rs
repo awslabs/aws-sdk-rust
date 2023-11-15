@@ -250,14 +250,17 @@ pub type GetInsightSelectorsErrorKind = GetInsightSelectorsError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetInsightSelectorsError {
-    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    /// <p>This exception is also thrown when you call <code>AddTags</code> or <code>RemoveTags</code> on a trail, event data store, or channel with a resource ARN that is not valid.</p>
+    /// <p>This exception is thrown when an operation is called with an ARN that is not valid.</p>
+    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
-    /// <p>If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
+    /// <p>If you run <code>GetInsightSelectors</code> on a trail or event data store that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
     InsightNotEnabledException(crate::types::error::InsightNotEnabledException),
+    /// <p>This exception is thrown when the combination of parameters provided is not valid.</p>
+    InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
@@ -297,6 +300,8 @@ impl ::std::fmt::Display for GetInsightSelectorsError {
         match self {
             Self::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             Self::InsightNotEnabledException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidTrailNameException(_inner) => _inner.fmt(f),
             Self::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
@@ -312,6 +317,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetInsightSel
         match self {
             Self::CloudTrailArnInvalidException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsightNotEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTrailNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -356,6 +363,8 @@ impl GetInsightSelectorsError {
         match self {
             Self::CloudTrailArnInvalidException(e) => e.meta(),
             Self::InsightNotEnabledException(e) => e.meta(),
+            Self::InvalidParameterCombinationException(e) => e.meta(),
+            Self::InvalidParameterException(e) => e.meta(),
             Self::InvalidTrailNameException(e) => e.meta(),
             Self::NoManagementAccountSlrExistsException(e) => e.meta(),
             Self::OperationNotPermittedException(e) => e.meta(),
@@ -372,6 +381,14 @@ impl GetInsightSelectorsError {
     /// Returns `true` if the error kind is `GetInsightSelectorsError::InsightNotEnabledException`.
     pub fn is_insight_not_enabled_exception(&self) -> bool {
         matches!(self, Self::InsightNotEnabledException(_))
+    }
+    /// Returns `true` if the error kind is `GetInsightSelectorsError::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterCombinationException(_))
+    }
+    /// Returns `true` if the error kind is `GetInsightSelectorsError::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetInsightSelectorsError::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
@@ -403,6 +420,8 @@ impl ::std::error::Error for GetInsightSelectorsError {
         match self {
             Self::CloudTrailArnInvalidException(_inner) => ::std::option::Option::Some(_inner),
             Self::InsightNotEnabledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTrailNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),

@@ -9,11 +9,12 @@ pub struct AdvancedFieldSelector {
     /// <p> For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>. </p>
     /// <ul>
     /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
-    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set to <code>NotEquals</code> <code>kms.amazonaws.com</code> or <code>NotEquals</code> <code>rdsdata.amazonaws.com</code>.</p> </li>
     /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
     /// <li> <p> <b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>. </p>
     /// <ul>
     /// <li> <p> For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>. </p> </li>
+    /// <li> <p> For CloudTrail Insights event records, the value must be <code>Insight</code>. </p> </li>
     /// <li> <p> For Config configuration items, the value must be <code>ConfigurationItem</code>. </p> </li>
     /// <li> <p> For Audit Manager evidence, the value must be <code>Evidence</code>. </p> </li>
     /// <li> <p> For non-Amazon Web Services events, the value must be <code>ActivityAuditLog</code>. </p> </li>
@@ -24,6 +25,7 @@ pub struct AdvancedFieldSelector {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Customization</code> </p> </li>
     /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
@@ -33,15 +35,22 @@ pub struct AdvancedFieldSelector {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::KinesisVideo::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
+    /// <li> <p> <code>AWS::PCAConnectorAD::Connector</code> </p> </li>
+    /// <li> <p> <code>AWS::SageMaker::Endpoint</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::PlatformEndpoint</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Database</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Table</code> </p> </li>
     /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
@@ -99,6 +108,19 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :channel/
     /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Customization</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :customization/
+    /// <customization_id></customization_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -219,6 +241,21 @@ pub struct AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KinesisVideo::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kinesisvideo:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :stream/
+    /// <stream_name>
+    /// <creation_time></creation_time>
+    /// </stream_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -252,6 +289,32 @@ pub struct AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :pca-connector-ad:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :connector/
+    /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_name></endpoint_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -275,6 +338,38 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :feature-group/
     /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_type>
+    /// /
+    /// <endpoint_name>
+    /// /
+    /// <endpoint_id></endpoint_id>
+    /// </endpoint_name>
+    /// </endpoint_type>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::Topic</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <topic_name></topic_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -341,6 +436,35 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Database</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name></database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </database_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -379,11 +503,12 @@ impl AdvancedFieldSelector {
     /// <p> For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>. </p>
     /// <ul>
     /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
-    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set to <code>NotEquals</code> <code>kms.amazonaws.com</code> or <code>NotEquals</code> <code>rdsdata.amazonaws.com</code>.</p> </li>
     /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
     /// <li> <p> <b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>. </p>
     /// <ul>
     /// <li> <p> For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>. </p> </li>
+    /// <li> <p> For CloudTrail Insights event records, the value must be <code>Insight</code>. </p> </li>
     /// <li> <p> For Config configuration items, the value must be <code>ConfigurationItem</code>. </p> </li>
     /// <li> <p> For Audit Manager evidence, the value must be <code>Evidence</code>. </p> </li>
     /// <li> <p> For non-Amazon Web Services events, the value must be <code>ActivityAuditLog</code>. </p> </li>
@@ -394,6 +519,7 @@ impl AdvancedFieldSelector {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Customization</code> </p> </li>
     /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
@@ -403,15 +529,22 @@ impl AdvancedFieldSelector {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::KinesisVideo::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
+    /// <li> <p> <code>AWS::PCAConnectorAD::Connector</code> </p> </li>
+    /// <li> <p> <code>AWS::SageMaker::Endpoint</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::PlatformEndpoint</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Database</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Table</code> </p> </li>
     /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
@@ -469,6 +602,19 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :channel/
     /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Customization</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :customization/
+    /// <customization_id></customization_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -589,6 +735,21 @@ impl AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KinesisVideo::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kinesisvideo:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :stream/
+    /// <stream_name>
+    /// <creation_time></creation_time>
+    /// </stream_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -622,6 +783,32 @@ impl AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :pca-connector-ad:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :connector/
+    /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_name></endpoint_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -645,6 +832,38 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :feature-group/
     /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_type>
+    /// /
+    /// <endpoint_name>
+    /// /
+    /// <endpoint_id></endpoint_id>
+    /// </endpoint_name>
+    /// </endpoint_type>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::Topic</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <topic_name></topic_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -711,6 +930,35 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Database</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name></database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </database_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -795,11 +1043,12 @@ impl AdvancedFieldSelectorBuilder {
     /// <p> For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>. </p>
     /// <ul>
     /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
-    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set to <code>NotEquals</code> <code>kms.amazonaws.com</code> or <code>NotEquals</code> <code>rdsdata.amazonaws.com</code>.</p> </li>
     /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
     /// <li> <p> <b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>. </p>
     /// <ul>
     /// <li> <p> For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>. </p> </li>
+    /// <li> <p> For CloudTrail Insights event records, the value must be <code>Insight</code>. </p> </li>
     /// <li> <p> For Config configuration items, the value must be <code>ConfigurationItem</code>. </p> </li>
     /// <li> <p> For Audit Manager evidence, the value must be <code>Evidence</code>. </p> </li>
     /// <li> <p> For non-Amazon Web Services events, the value must be <code>ActivityAuditLog</code>. </p> </li>
@@ -810,6 +1059,7 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Customization</code> </p> </li>
     /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
@@ -819,15 +1069,22 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::KinesisVideo::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
+    /// <li> <p> <code>AWS::PCAConnectorAD::Connector</code> </p> </li>
+    /// <li> <p> <code>AWS::SageMaker::Endpoint</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::PlatformEndpoint</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Database</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Table</code> </p> </li>
     /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
@@ -885,6 +1142,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :channel/
     /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Customization</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :customization/
+    /// <customization_id></customization_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1005,6 +1275,21 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KinesisVideo::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kinesisvideo:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :stream/
+    /// <stream_name>
+    /// <creation_time></creation_time>
+    /// </stream_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -1038,6 +1323,32 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :pca-connector-ad:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :connector/
+    /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_name></endpoint_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -1061,6 +1372,38 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :feature-group/
     /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_type>
+    /// /
+    /// <endpoint_name>
+    /// /
+    /// <endpoint_id></endpoint_id>
+    /// </endpoint_name>
+    /// </endpoint_type>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::Topic</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <topic_name></topic_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1127,6 +1470,35 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Database</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name></database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </database_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1155,11 +1527,12 @@ impl AdvancedFieldSelectorBuilder {
     /// <p> For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>. </p>
     /// <ul>
     /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
-    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set to <code>NotEquals</code> <code>kms.amazonaws.com</code> or <code>NotEquals</code> <code>rdsdata.amazonaws.com</code>.</p> </li>
     /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
     /// <li> <p> <b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>. </p>
     /// <ul>
     /// <li> <p> For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>. </p> </li>
+    /// <li> <p> For CloudTrail Insights event records, the value must be <code>Insight</code>. </p> </li>
     /// <li> <p> For Config configuration items, the value must be <code>ConfigurationItem</code>. </p> </li>
     /// <li> <p> For Audit Manager evidence, the value must be <code>Evidence</code>. </p> </li>
     /// <li> <p> For non-Amazon Web Services events, the value must be <code>ActivityAuditLog</code>. </p> </li>
@@ -1170,6 +1543,7 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Customization</code> </p> </li>
     /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
@@ -1179,15 +1553,22 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::KinesisVideo::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
+    /// <li> <p> <code>AWS::PCAConnectorAD::Connector</code> </p> </li>
+    /// <li> <p> <code>AWS::SageMaker::Endpoint</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::PlatformEndpoint</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Database</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Table</code> </p> </li>
     /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
@@ -1245,6 +1626,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :channel/
     /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Customization</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :customization/
+    /// <customization_id></customization_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1365,6 +1759,21 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KinesisVideo::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kinesisvideo:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :stream/
+    /// <stream_name>
+    /// <creation_time></creation_time>
+    /// </stream_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -1398,6 +1807,32 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :pca-connector-ad:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :connector/
+    /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_name></endpoint_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -1421,6 +1856,38 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :feature-group/
     /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_type>
+    /// /
+    /// <endpoint_name>
+    /// /
+    /// <endpoint_id></endpoint_id>
+    /// </endpoint_name>
+    /// </endpoint_type>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::Topic</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <topic_name></topic_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1487,6 +1954,35 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Database</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name></database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </database_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1514,11 +2010,12 @@ impl AdvancedFieldSelectorBuilder {
     /// <p> For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>. </p>
     /// <ul>
     /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
-    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set to <code>NotEquals</code> <code>kms.amazonaws.com</code> or <code>NotEquals</code> <code>rdsdata.amazonaws.com</code>.</p> </li>
     /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
     /// <li> <p> <b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>. </p>
     /// <ul>
     /// <li> <p> For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>. </p> </li>
+    /// <li> <p> For CloudTrail Insights event records, the value must be <code>Insight</code>. </p> </li>
     /// <li> <p> For Config configuration items, the value must be <code>ConfigurationItem</code>. </p> </li>
     /// <li> <p> For Audit Manager evidence, the value must be <code>Evidence</code>. </p> </li>
     /// <li> <p> For non-Amazon Web Services events, the value must be <code>ActivityAuditLog</code>. </p> </li>
@@ -1529,6 +2026,7 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Customization</code> </p> </li>
     /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
@@ -1538,15 +2036,22 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::KinesisVideo::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
+    /// <li> <p> <code>AWS::PCAConnectorAD::Connector</code> </p> </li>
+    /// <li> <p> <code>AWS::SageMaker::Endpoint</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::PlatformEndpoint</code> </p> </li>
+    /// <li> <p> <code>AWS::SNS::Topic</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Database</code> </p> </li>
+    /// <li> <p> <code>AWS::Timestream::Table</code> </p> </li>
     /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
@@ -1604,6 +2109,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :channel/
     /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Customization</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :customization/
+    /// <customization_id></customization_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1724,6 +2242,21 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KinesisVideo::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kinesisvideo:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :stream/
+    /// <stream_name>
+    /// <creation_time></creation_time>
+    /// </stream_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -1757,6 +2290,32 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :pca-connector-ad:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :connector/
+    /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_name></endpoint_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -1780,6 +2339,38 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :feature-group/
     /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :endpoint/
+    /// <endpoint_type>
+    /// /
+    /// <endpoint_name>
+    /// /
+    /// <endpoint_id></endpoint_id>
+    /// </endpoint_name>
+    /// </endpoint_type>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SNS::Topic</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sns:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <topic_name></topic_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1846,6 +2437,35 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Database</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name></database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Timestream::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :timestream:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :database/
+    /// <database_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </database_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>

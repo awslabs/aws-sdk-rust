@@ -20,6 +20,8 @@ pub struct SopRecommendation {
     pub reference_id: ::std::string::String,
     /// <p>Prerequisite for the SOP recommendation.</p>
     pub prerequisite: ::std::option::Option<::std::string::String>,
+    /// <p>Status of the recommended standard operating procedure.</p>
+    pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
 impl SopRecommendation {
     /// <p>The service type.</p>
@@ -58,6 +60,10 @@ impl SopRecommendation {
     pub fn prerequisite(&self) -> ::std::option::Option<&str> {
         self.prerequisite.as_deref()
     }
+    /// <p>Status of the recommended standard operating procedure.</p>
+    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+        self.recommendation_status.as_ref()
+    }
 }
 impl SopRecommendation {
     /// Creates a new builder-style object to manufacture [`SopRecommendation`](crate::types::SopRecommendation).
@@ -78,6 +84,7 @@ pub struct SopRecommendationBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,
     pub(crate) prerequisite: ::std::option::Option<::std::string::String>,
+    pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
 impl SopRecommendationBuilder {
     /// <p>The service type.</p>
@@ -201,6 +208,20 @@ impl SopRecommendationBuilder {
     pub fn get_prerequisite(&self) -> &::std::option::Option<::std::string::String> {
         &self.prerequisite
     }
+    /// <p>Status of the recommended standard operating procedure.</p>
+    pub fn recommendation_status(mut self, input: crate::types::RecommendationStatus) -> Self {
+        self.recommendation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Status of the recommended standard operating procedure.</p>
+    pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
+        self.recommendation_status = input;
+        self
+    }
+    /// <p>Status of the recommended standard operating procedure.</p>
+    pub fn get_recommendation_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
+        &self.recommendation_status
+    }
     /// Consumes the builder and constructs a [`SopRecommendation`](crate::types::SopRecommendation).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_type`](crate::types::builders::SopRecommendationBuilder::service_type)
@@ -231,6 +252,7 @@ impl SopRecommendationBuilder {
                 )
             })?,
             prerequisite: self.prerequisite,
+            recommendation_status: self.recommendation_status,
         })
     }
 }

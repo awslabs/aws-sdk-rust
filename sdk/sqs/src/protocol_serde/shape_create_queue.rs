@@ -17,12 +17,72 @@ pub fn de_create_queue_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidAddress" => crate::operation::create_queue::CreateQueueError::InvalidAddress({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidAddressBuilder::default();
+                output = crate::protocol_serde::shape_invalid_address::de_invalid_address_json_err(_response_body, output)
+                    .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidAttributeName" => crate::operation::create_queue::CreateQueueError::InvalidAttributeName({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidAttributeNameBuilder::default();
+                output = crate::protocol_serde::shape_invalid_attribute_name::de_invalid_attribute_name_json_err(_response_body, output)
+                    .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidAttributeValue" => crate::operation::create_queue::CreateQueueError::InvalidAttributeValue({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidAttributeValueBuilder::default();
+                output = crate::protocol_serde::shape_invalid_attribute_value::de_invalid_attribute_value_json_err(_response_body, output)
+                    .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidSecurity" => crate::operation::create_queue::CreateQueueError::InvalidSecurity({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSecurityBuilder::default();
+                output = crate::protocol_serde::shape_invalid_security::de_invalid_security_json_err(_response_body, output)
+                    .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "AWS.SimpleQueueService.QueueDeletedRecently" => crate::operation::create_queue::CreateQueueError::QueueDeletedRecently({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::QueueDeletedRecentlyBuilder::default();
-                output = crate::protocol_serde::shape_queue_deleted_recently::de_queue_deleted_recently_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_queue_deleted_recently::de_queue_deleted_recently_json_err(_response_body, output)
                     .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -37,7 +97,37 @@ pub fn de_create_queue_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::QueueNameExistsBuilder::default();
-                output = crate::protocol_serde::shape_queue_name_exists::de_queue_name_exists_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_queue_name_exists::de_queue_name_exists_json_err(_response_body, output)
+                    .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestThrottled" => crate::operation::create_queue::CreateQueueError::RequestThrottled({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RequestThrottledBuilder::default();
+                output = crate::protocol_serde::shape_request_throttled::de_request_throttled_json_err(_response_body, output)
+                    .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "AWS.SimpleQueueService.UnsupportedOperation" => crate::operation::create_queue::CreateQueueError::UnsupportedOperation({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_json_err(_response_body, output)
                     .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -67,51 +157,48 @@ pub fn de_create_queue_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_create_queue(
-    inp: &[u8],
-    mut builder: crate::operation::create_queue::builders::CreateQueueOutputBuilder,
-) -> Result<crate::operation::create_queue::builders::CreateQueueOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn ser_create_queue_input(
+    input: &crate::operation::create_queue::CreateQueueInput,
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_create_queue_input::ser_create_queue_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
+}
 
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("CreateQueueResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateQueueResponse got {:?}",
-            start_el
-        )));
-    }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("CreateQueueResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateQueueResult got {:?}",
-                start_el
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("QueueUrl") /* QueueUrl com.amazonaws.sqs.synthetic#CreateQueueOutput$QueueUrl */ =>  {
-                let var_1 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_queue_url(var_1);
+pub(crate) fn de_create_queue(
+    value: &[u8],
+    mut builder: crate::operation::create_queue::builders::CreateQueueOutputBuilder,
+) -> Result<crate::operation::create_queue::builders::CreateQueueOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let tokens = &mut tokens_owned;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "QueueUrl" => {
+                    builder = builder.set_queue_url(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
+            other => {
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
-            ,
-            _ => {}
         }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected CreateQueueResult tag"));
-    };
+    }
+    if tokens.next().is_some() {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
     Ok(builder)
 }

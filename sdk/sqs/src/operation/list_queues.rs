@@ -180,10 +180,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListQueuesRe
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder
         };
-        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_list_queues_input::ser_list_queues_input_input(&input)?);
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_list_queues::ser_list_queues_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
@@ -240,6 +240,19 @@ pub type ListQueuesErrorKind = ListQueuesError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListQueuesError {
+    /// <p>The <code>accountId</code> is invalid.</p>
+    InvalidAddress(crate::types::error::InvalidAddress),
+    /// <p>When the request to a queue is not HTTPS and SigV4.</p>
+    InvalidSecurity(crate::types::error::InvalidSecurity),
+    /// <p>The request was denied due to request throttling.</p>
+    /// <ul>
+    /// <li> <p>The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and Region. </p> </li>
+    /// <li> <p>A burst or sustained high rate of requests to change the state of the same KMS key. This condition is often known as a "hot key."</p> </li>
+    /// <li> <p>Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web Services CloudHSM key store.</p> </li>
+    /// </ul>
+    RequestThrottled(crate::types::error::RequestThrottled),
+    /// <p>Error code 400. Unsupported operation.</p>
+    UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -258,6 +271,10 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for ListQueu
 impl ::std::fmt::Display for ListQueuesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidAddress(_inner) => _inner.fmt(f),
+            Self::InvalidSecurity(_inner) => _inner.fmt(f),
+            Self::RequestThrottled(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperation(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -265,6 +282,10 @@ impl ::std::fmt::Display for ListQueuesError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListQueuesError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidAddress(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSecurity(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RequestThrottled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -301,13 +322,37 @@ impl ListQueuesError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::InvalidAddress(e) => e.meta(),
+            Self::InvalidSecurity(e) => e.meta(),
+            Self::RequestThrottled(e) => e.meta(),
+            Self::UnsupportedOperation(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `ListQueuesError::InvalidAddress`.
+    pub fn is_invalid_address(&self) -> bool {
+        matches!(self, Self::InvalidAddress(_))
+    }
+    /// Returns `true` if the error kind is `ListQueuesError::InvalidSecurity`.
+    pub fn is_invalid_security(&self) -> bool {
+        matches!(self, Self::InvalidSecurity(_))
+    }
+    /// Returns `true` if the error kind is `ListQueuesError::RequestThrottled`.
+    pub fn is_request_throttled(&self) -> bool {
+        matches!(self, Self::RequestThrottled(_))
+    }
+    /// Returns `true` if the error kind is `ListQueuesError::UnsupportedOperation`.
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(self, Self::UnsupportedOperation(_))
     }
 }
 impl ::std::error::Error for ListQueuesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidAddress(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidSecurity(_inner) => ::std::option::Option::Some(_inner),
+            Self::RequestThrottled(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperation(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

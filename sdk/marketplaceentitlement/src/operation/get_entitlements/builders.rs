@@ -108,6 +108,12 @@ impl GetEntitlementsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_entitlements::paginator::GetEntitlementsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::get_entitlements::paginator::GetEntitlementsPaginator {
+        crate::operation::get_entitlements::paginator::GetEntitlementsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_code(input.into());

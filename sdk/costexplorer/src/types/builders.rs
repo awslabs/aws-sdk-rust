@@ -115,6 +115,8 @@ pub use crate::types::_reservation_purchase_recommendation_detail::ReservationPu
 
 pub use crate::types::_instance_details::InstanceDetailsBuilder;
 
+pub use crate::types::_memory_db_instance_details::MemoryDbInstanceDetailsBuilder;
+
 pub use crate::types::_es_instance_details::EsInstanceDetailsBuilder;
 
 pub use crate::types::_elasti_cache_instance_details::ElastiCacheInstanceDetailsBuilder;

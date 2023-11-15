@@ -8,7 +8,7 @@ pub struct OpusSettings {
     pub bitrate: ::std::option::Option<i32>,
     /// Specify the number of channels in this output audio track. Choosing Mono on gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
     pub channels: ::std::option::Option<i32>,
-    /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+    /// Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     pub sample_rate: ::std::option::Option<i32>,
 }
 impl OpusSettings {
@@ -20,7 +20,7 @@ impl OpusSettings {
     pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
-    /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+    /// Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
     }
@@ -69,17 +69,17 @@ impl OpusSettingsBuilder {
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
         &self.channels
     }
-    /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+    /// Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
         self
     }
-    /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+    /// Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
     }
-    /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+    /// Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
         &self.sample_rate
     }

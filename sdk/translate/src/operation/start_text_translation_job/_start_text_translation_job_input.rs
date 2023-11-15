@@ -32,7 +32,12 @@ pub struct StartTextTranslationJobInput {
     pub parallel_data_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: not supported.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub settings: ::std::option::Option<crate::types::TranslationSettings>,
 }
 impl StartTextTranslationJobInput {
@@ -89,7 +94,12 @@ impl StartTextTranslationJobInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: not supported.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::TranslationSettings> {
         self.settings.as_ref()
     }
@@ -299,17 +309,32 @@ impl StartTextTranslationJobInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: not supported.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: not supported.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
         self.settings = input;
         self
     }
-    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output. You can configure the following options:</p>
+    /// <ul>
+    /// <li> <p>Brevity: not supported.</p> </li>
+    /// <li> <p>Formality: sets the formality level of the output text.</p> </li>
+    /// <li> <p>Profanity: masks profane words and phrases in your translation output.</p> </li>
+    /// </ul>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
         &self.settings
     }

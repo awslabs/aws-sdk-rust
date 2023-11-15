@@ -21,6 +21,8 @@ pub use crate::types::_global_cluster_member::GlobalClusterMember;
 
 pub use crate::types::_db_instance::DbInstance;
 
+pub use crate::types::_certificate_details::CertificateDetails;
+
 pub use crate::types::_db_instance_status_info::DbInstanceStatusInfo;
 
 pub use crate::types::_pending_modified_values::PendingModifiedValues;
@@ -72,6 +74,8 @@ mod _apply_method;
 mod _availability_zone;
 
 mod _certificate;
+
+mod _certificate_details;
 
 mod _cloudwatch_logs_export_configuration;
 

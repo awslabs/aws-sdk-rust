@@ -6,11 +6,17 @@
 pub struct SecurityContext {
     /// <p>Whether the container is privileged.</p>
     pub privileged: ::std::option::Option<bool>,
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.</p>
+    pub allow_privilege_escalation: ::std::option::Option<bool>,
 }
 impl SecurityContext {
     /// <p>Whether the container is privileged.</p>
     pub fn privileged(&self) -> ::std::option::Option<bool> {
         self.privileged
+    }
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.</p>
+    pub fn allow_privilege_escalation(&self) -> ::std::option::Option<bool> {
+        self.allow_privilege_escalation
     }
 }
 impl SecurityContext {
@@ -25,6 +31,7 @@ impl SecurityContext {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityContextBuilder {
     pub(crate) privileged: ::std::option::Option<bool>,
+    pub(crate) allow_privilege_escalation: ::std::option::Option<bool>,
 }
 impl SecurityContextBuilder {
     /// <p>Whether the container is privileged.</p>
@@ -41,8 +48,25 @@ impl SecurityContextBuilder {
     pub fn get_privileged(&self) -> &::std::option::Option<bool> {
         &self.privileged
     }
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.</p>
+    pub fn allow_privilege_escalation(mut self, input: bool) -> Self {
+        self.allow_privilege_escalation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.</p>
+    pub fn set_allow_privilege_escalation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_privilege_escalation = input;
+        self
+    }
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.</p>
+    pub fn get_allow_privilege_escalation(&self) -> &::std::option::Option<bool> {
+        &self.allow_privilege_escalation
+    }
     /// Consumes the builder and constructs a [`SecurityContext`](crate::types::SecurityContext).
     pub fn build(self) -> crate::types::SecurityContext {
-        crate::types::SecurityContext { privileged: self.privileged }
+        crate::types::SecurityContext {
+            privileged: self.privileged,
+            allow_privilege_escalation: self.allow_privilege_escalation,
+        }
     }
 }

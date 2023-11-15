@@ -22,8 +22,9 @@ impl GetInsightSelectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetInsightSelectors`.
 ///
-/// <p>Describes the settings for the Insights event selectors that you configured for your trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail, and if it is, which insight types are enabled. If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code> </p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User Guide</i>.</p>
+/// <p>Describes the settings for the Insights event selectors that you configured for your trail or event data store. <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail or event data store, and if it is, which Insights types are enabled. If you run <code>GetInsightSelectors</code> on a trail or event data store that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code> </p>
+/// <p>Specify either the <code>EventDataStore</code> parameter to get Insights event selectors for an event data store, or the <code>TrailName</code> parameter to the get Insights event selectors for a trail. You cannot specify these parameters together.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInsightSelectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -119,6 +120,7 @@ impl GetInsightSelectorsFluentBuilder {
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>You cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
     pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trail_name(input.into());
         self
@@ -133,6 +135,7 @@ impl GetInsightSelectorsFluentBuilder {
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>You cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
     pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trail_name(input);
         self
@@ -147,7 +150,25 @@ impl GetInsightSelectorsFluentBuilder {
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>You cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
     pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trail_name()
+    }
+    /// <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors. </p>
+    /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.event_data_store(input.into());
+        self
+    }
+    /// <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors. </p>
+    /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_event_data_store(input);
+        self
+    }
+    /// <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors. </p>
+    /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data_store()
     }
 }

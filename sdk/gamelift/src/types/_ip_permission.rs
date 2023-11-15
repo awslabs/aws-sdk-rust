@@ -2,7 +2,7 @@
 
 /// <p>A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IpPermission {
     /// <p>A starting value for a range of allowed port numbers.</p>
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
@@ -39,6 +39,16 @@ impl IpPermission {
         self.protocol.as_ref()
     }
 }
+impl ::std::fmt::Debug for IpPermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IpPermission");
+        formatter.field("from_port", &"*** Sensitive Data Redacted ***");
+        formatter.field("to_port", &"*** Sensitive Data Redacted ***");
+        formatter.field("ip_range", &"*** Sensitive Data Redacted ***");
+        formatter.field("protocol", &self.protocol);
+        formatter.finish()
+    }
+}
 impl IpPermission {
     /// Creates a new builder-style object to manufacture [`IpPermission`](crate::types::IpPermission).
     pub fn builder() -> crate::types::builders::IpPermissionBuilder {
@@ -48,7 +58,7 @@ impl IpPermission {
 
 /// A builder for [`IpPermission`](crate::types::IpPermission).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct IpPermissionBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,
@@ -136,5 +146,15 @@ impl IpPermissionBuilder {
             ip_range: self.ip_range,
             protocol: self.protocol,
         }
+    }
+}
+impl ::std::fmt::Debug for IpPermissionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IpPermissionBuilder");
+        formatter.field("from_port", &"*** Sensitive Data Redacted ***");
+        formatter.field("to_port", &"*** Sensitive Data Redacted ***");
+        formatter.field("ip_range", &"*** Sensitive Data Redacted ***");
+        formatter.field("protocol", &self.protocol);
+        formatter.finish()
     }
 }

@@ -22,6 +22,7 @@
 ///     HistoryEventType::ChoiceStateExited => { /* ... */ },
 ///     HistoryEventType::ExecutionAborted => { /* ... */ },
 ///     HistoryEventType::ExecutionFailed => { /* ... */ },
+///     HistoryEventType::ExecutionRedriven => { /* ... */ },
 ///     HistoryEventType::ExecutionStarted => { /* ... */ },
 ///     HistoryEventType::ExecutionSucceeded => { /* ... */ },
 ///     HistoryEventType::ExecutionTimedOut => { /* ... */ },
@@ -39,6 +40,7 @@
 ///     HistoryEventType::MapIterationSucceeded => { /* ... */ },
 ///     HistoryEventType::MapRunAborted => { /* ... */ },
 ///     HistoryEventType::MapRunFailed => { /* ... */ },
+///     HistoryEventType::MapRunRedriven => { /* ... */ },
 ///     HistoryEventType::MapRunStarted => { /* ... */ },
 ///     HistoryEventType::MapRunSucceeded => { /* ... */ },
 ///     HistoryEventType::MapStateAborted => { /* ... */ },
@@ -119,6 +121,8 @@ pub enum HistoryEventType {
     #[allow(missing_docs)] // documentation missing in model
     ExecutionFailed,
     #[allow(missing_docs)] // documentation missing in model
+    ExecutionRedriven,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionStarted,
     #[allow(missing_docs)] // documentation missing in model
     ExecutionSucceeded,
@@ -152,6 +156,8 @@ pub enum HistoryEventType {
     MapRunAborted,
     #[allow(missing_docs)] // documentation missing in model
     MapRunFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    MapRunRedriven,
     #[allow(missing_docs)] // documentation missing in model
     MapRunStarted,
     #[allow(missing_docs)] // documentation missing in model
@@ -232,6 +238,7 @@ impl ::std::convert::From<&str> for HistoryEventType {
             "ChoiceStateExited" => HistoryEventType::ChoiceStateExited,
             "ExecutionAborted" => HistoryEventType::ExecutionAborted,
             "ExecutionFailed" => HistoryEventType::ExecutionFailed,
+            "ExecutionRedriven" => HistoryEventType::ExecutionRedriven,
             "ExecutionStarted" => HistoryEventType::ExecutionStarted,
             "ExecutionSucceeded" => HistoryEventType::ExecutionSucceeded,
             "ExecutionTimedOut" => HistoryEventType::ExecutionTimedOut,
@@ -249,6 +256,7 @@ impl ::std::convert::From<&str> for HistoryEventType {
             "MapIterationSucceeded" => HistoryEventType::MapIterationSucceeded,
             "MapRunAborted" => HistoryEventType::MapRunAborted,
             "MapRunFailed" => HistoryEventType::MapRunFailed,
+            "MapRunRedriven" => HistoryEventType::MapRunRedriven,
             "MapRunStarted" => HistoryEventType::MapRunStarted,
             "MapRunSucceeded" => HistoryEventType::MapRunSucceeded,
             "MapStateAborted" => HistoryEventType::MapStateAborted,
@@ -306,6 +314,7 @@ impl HistoryEventType {
             HistoryEventType::ChoiceStateExited => "ChoiceStateExited",
             HistoryEventType::ExecutionAborted => "ExecutionAborted",
             HistoryEventType::ExecutionFailed => "ExecutionFailed",
+            HistoryEventType::ExecutionRedriven => "ExecutionRedriven",
             HistoryEventType::ExecutionStarted => "ExecutionStarted",
             HistoryEventType::ExecutionSucceeded => "ExecutionSucceeded",
             HistoryEventType::ExecutionTimedOut => "ExecutionTimedOut",
@@ -323,6 +332,7 @@ impl HistoryEventType {
             HistoryEventType::MapIterationSucceeded => "MapIterationSucceeded",
             HistoryEventType::MapRunAborted => "MapRunAborted",
             HistoryEventType::MapRunFailed => "MapRunFailed",
+            HistoryEventType::MapRunRedriven => "MapRunRedriven",
             HistoryEventType::MapRunStarted => "MapRunStarted",
             HistoryEventType::MapRunSucceeded => "MapRunSucceeded",
             HistoryEventType::MapStateAborted => "MapStateAborted",
@@ -371,6 +381,7 @@ impl HistoryEventType {
             "ChoiceStateExited",
             "ExecutionAborted",
             "ExecutionFailed",
+            "ExecutionRedriven",
             "ExecutionStarted",
             "ExecutionSucceeded",
             "ExecutionTimedOut",
@@ -388,6 +399,7 @@ impl HistoryEventType {
             "MapIterationSucceeded",
             "MapRunAborted",
             "MapRunFailed",
+            "MapRunRedriven",
             "MapRunStarted",
             "MapRunSucceeded",
             "MapStateAborted",

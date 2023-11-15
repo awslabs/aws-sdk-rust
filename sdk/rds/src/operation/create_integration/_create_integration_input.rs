@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntegrationInput {
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.</p>
+    /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Redshift data warehouse to use as the target for replication.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the integration.</p>
     pub integration_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned key. </p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional set of non-secret key–value pairs that contains additional contextual information about the data. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// <p>You can only include this parameter if you specify the <code>KMSKeyId</code> parameter.</p>
@@ -18,7 +18,7 @@ pub struct CreateIntegrationInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateIntegrationInput {
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.</p>
+    /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
     pub fn source_arn(&self) -> ::std::option::Option<&str> {
         self.source_arn.as_deref()
     }
@@ -30,7 +30,7 @@ impl CreateIntegrationInput {
     pub fn integration_name(&self) -> ::std::option::Option<&str> {
         self.integration_name.as_deref()
     }
-    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned key. </p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -65,18 +65,18 @@ pub struct CreateIntegrationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateIntegrationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.</p>
+    /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
     /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.</p>
+    /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.</p>
+    /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_arn
     }
@@ -110,17 +110,17 @@ impl CreateIntegrationInputBuilder {
     pub fn get_integration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_name
     }
-    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned key. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned key. </p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned key. </p>
+    /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned key. </p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

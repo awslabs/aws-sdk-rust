@@ -12,6 +12,7 @@
 /// ```text
 /// # let markettype = unimplemented!();
 /// match markettype {
+///     MarketType::CapacityBlock => { /* ... */ },
 ///     MarketType::Spot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum MarketType {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityBlock,
+    #[allow(missing_docs)] // documentation missing in model
     Spot,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -48,6 +51,7 @@ pub enum MarketType {
 impl ::std::convert::From<&str> for MarketType {
     fn from(s: &str) -> Self {
         match s {
+            "capacity-block" => MarketType::CapacityBlock,
             "spot" => MarketType::Spot,
             other => MarketType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -64,13 +68,14 @@ impl MarketType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MarketType::CapacityBlock => "capacity-block",
             MarketType::Spot => "spot",
             MarketType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["spot"]
+        &["capacity-block", "spot"]
     }
 }
 impl ::std::convert::AsRef<str> for MarketType {

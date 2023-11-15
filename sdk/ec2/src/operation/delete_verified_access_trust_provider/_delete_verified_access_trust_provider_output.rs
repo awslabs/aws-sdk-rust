@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVerifiedAccessTrustProviderOutput {
-    /// <p>The ID of the Verified Access trust provider.</p>
+    /// <p>Details about the Verified Access trust provider.</p>
     pub verified_access_trust_provider: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     _request_id: Option<String>,
 }
 impl DeleteVerifiedAccessTrustProviderOutput {
-    /// <p>The ID of the Verified Access trust provider.</p>
+    /// <p>Details about the Verified Access trust provider.</p>
     pub fn verified_access_trust_provider(&self) -> ::std::option::Option<&crate::types::VerifiedAccessTrustProvider> {
         self.verified_access_trust_provider.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteVerifiedAccessTrustProviderOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteVerifiedAccessTrustProviderOutputBuilder {
-    /// <p>The ID of the Verified Access trust provider.</p>
+    /// <p>Details about the Verified Access trust provider.</p>
     pub fn verified_access_trust_provider(mut self, input: crate::types::VerifiedAccessTrustProvider) -> Self {
         self.verified_access_trust_provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ID of the Verified Access trust provider.</p>
+    /// <p>Details about the Verified Access trust provider.</p>
     pub fn set_verified_access_trust_provider(mut self, input: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>) -> Self {
         self.verified_access_trust_provider = input;
         self
     }
-    /// <p>The ID of the Verified Access trust provider.</p>
+    /// <p>Details about the Verified Access trust provider.</p>
     pub fn get_verified_access_trust_provider(&self) -> &::std::option::Option<crate::types::VerifiedAccessTrustProvider> {
         &self.verified_access_trust_provider
     }

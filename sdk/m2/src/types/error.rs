@@ -13,15 +13,23 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
+
+pub use crate::types::error::_execution_timeout_exception::ExecutionTimeoutException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
+
+mod _execution_timeout_exception;
 
 mod _internal_server_exception;
 
 mod _resource_not_found_exception;
 
 mod _service_quota_exceeded_exception;
+
+mod _service_unavailable_exception;
 
 mod _throttling_exception;
 

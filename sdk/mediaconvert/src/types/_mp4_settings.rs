@@ -12,7 +12,7 @@ pub struct Mp4Settings {
     pub ctts_version: ::std::option::Option<i32>,
     /// Inserts a free-space box immediately after the moov box.
     pub free_space_box: ::std::option::Option<crate::types::Mp4FreeSpaceBox>,
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub moov_placement: ::std::option::Option<crate::types::Mp4MoovPlacement>,
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
     pub mp4_major_brand: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl Mp4Settings {
     pub fn free_space_box(&self) -> ::std::option::Option<&crate::types::Mp4FreeSpaceBox> {
         self.free_space_box.as_ref()
     }
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn moov_placement(&self) -> ::std::option::Option<&crate::types::Mp4MoovPlacement> {
         self.moov_placement.as_ref()
     }
@@ -118,17 +118,17 @@ impl Mp4SettingsBuilder {
     pub fn get_free_space_box(&self) -> &::std::option::Option<crate::types::Mp4FreeSpaceBox> {
         &self.free_space_box
     }
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn moov_placement(mut self, input: crate::types::Mp4MoovPlacement) -> Self {
         self.moov_placement = ::std::option::Option::Some(input);
         self
     }
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn set_moov_placement(mut self, input: ::std::option::Option<crate::types::Mp4MoovPlacement>) -> Self {
         self.moov_placement = input;
         self
     }
-    /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
+    /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn get_moov_placement(&self) -> &::std::option::Option<crate::types::Mp4MoovPlacement> {
         &self.moov_placement
     }

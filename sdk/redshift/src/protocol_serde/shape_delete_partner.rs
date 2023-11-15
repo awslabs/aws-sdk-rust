@@ -65,6 +65,21 @@ pub fn de_delete_partner_http_error(
             }
             tmp
         }),
+        "UnsupportedOperation" => crate::operation::delete_partner::DeletePartnerError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_partner::DeletePartnerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_partner::DeletePartnerError::generic(generic),
     })
 }

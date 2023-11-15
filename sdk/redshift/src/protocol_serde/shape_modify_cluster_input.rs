@@ -169,6 +169,11 @@ pub fn ser_modify_cluster_input_input(
     if let Some(var_62) = &input.ip_address_type {
         scope_61.string(var_62);
     }
+    #[allow(unused_mut)]
+    let mut scope_63 = writer.prefix("MultiAZ");
+    if let Some(var_64) = &input.multi_az {
+        scope_63.boolean(*var_64);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

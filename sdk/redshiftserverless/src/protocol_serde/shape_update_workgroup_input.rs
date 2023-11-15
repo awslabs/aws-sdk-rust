@@ -54,5 +54,11 @@ pub fn ser_update_workgroup_input(
             ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
+    if let Some(var_16) = &input.max_capacity {
+        object.key("maxCapacity").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+        );
+    }
     Ok(())
 }

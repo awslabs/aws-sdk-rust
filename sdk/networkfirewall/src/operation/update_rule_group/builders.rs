@@ -285,4 +285,18 @@ impl UpdateRuleGroupFluentBuilder {
     pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::SourceMetadata> {
         self.inner.get_source_metadata()
     }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    pub fn analyze_rule_group(mut self, input: bool) -> Self {
+        self.inner = self.inner.analyze_rule_group(input);
+        self
+    }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    pub fn set_analyze_rule_group(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_analyze_rule_group(input);
+        self
+    }
+    /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the rule group for you. To run the stateless rule group analyzer without updating the rule group, set <code>DryRun</code> to <code>TRUE</code>. </p>
+    pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
+        self.inner.get_analyze_rule_group()
+    }
 }

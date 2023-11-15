@@ -248,6 +248,8 @@ pub enum DisableLoggingError {
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -268,6 +270,7 @@ impl ::std::fmt::Display for DisableLoggingError {
         match self {
             Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidClusterStateFault(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -277,6 +280,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DisableLoggin
         match self {
             Self::ClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -315,6 +319,7 @@ impl DisableLoggingError {
         match self {
             Self::ClusterNotFoundFault(e) => e.meta(),
             Self::InvalidClusterStateFault(e) => e.meta(),
+            Self::UnsupportedOperationFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -326,12 +331,17 @@ impl DisableLoggingError {
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(self, Self::InvalidClusterStateFault(_))
     }
+    /// Returns `true` if the error kind is `DisableLoggingError::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationFault(_))
+    }
 }
 impl ::std::error::Error for DisableLoggingError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

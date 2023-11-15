@@ -69,6 +69,8 @@ pub use crate::types::_case_summary::CaseSummary;
 
 pub use crate::types::_search_related_items_response_item::SearchRelatedItemsResponseItem;
 
+pub use crate::types::_user_union::UserUnion;
+
 pub use crate::types::_related_item_content::RelatedItemContent;
 
 pub use crate::types::_comment_content::CommentContent;
@@ -178,6 +180,8 @@ mod _sort;
 mod _template_status;
 
 mod _template_summary;
+
+mod _user_union;
 
 /// Builders
 pub mod builders;

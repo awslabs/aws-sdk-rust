@@ -20,6 +20,10 @@ pub struct MapRunExecutionCounts {
     pub total: i64,
     /// <p>Returns the count of child workflow executions whose results were written by <code>ResultWriter</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a> in the <i>Step Functions Developer Guide</i>.</p>
     pub results_written: i64,
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> child workflow executions that cannot be redriven because their execution status is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    pub failures_not_redrivable: ::std::option::Option<i64>,
+    /// <p>The number of unsuccessful child workflow executions currently waiting to be redriven. The status of these child workflow executions could be <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> in the original execution attempt or a previous redrive attempt.</p>
+    pub pending_redrive: ::std::option::Option<i64>,
 }
 impl MapRunExecutionCounts {
     /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet. </p>
@@ -54,6 +58,14 @@ impl MapRunExecutionCounts {
     pub fn results_written(&self) -> i64 {
         self.results_written
     }
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> child workflow executions that cannot be redriven because their execution status is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    pub fn failures_not_redrivable(&self) -> ::std::option::Option<i64> {
+        self.failures_not_redrivable
+    }
+    /// <p>The number of unsuccessful child workflow executions currently waiting to be redriven. The status of these child workflow executions could be <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> in the original execution attempt or a previous redrive attempt.</p>
+    pub fn pending_redrive(&self) -> ::std::option::Option<i64> {
+        self.pending_redrive
+    }
 }
 impl MapRunExecutionCounts {
     /// Creates a new builder-style object to manufacture [`MapRunExecutionCounts`](crate::types::MapRunExecutionCounts).
@@ -74,6 +86,8 @@ pub struct MapRunExecutionCountsBuilder {
     pub(crate) aborted: ::std::option::Option<i64>,
     pub(crate) total: ::std::option::Option<i64>,
     pub(crate) results_written: ::std::option::Option<i64>,
+    pub(crate) failures_not_redrivable: ::std::option::Option<i64>,
+    pub(crate) pending_redrive: ::std::option::Option<i64>,
 }
 impl MapRunExecutionCountsBuilder {
     /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet. </p>
@@ -196,6 +210,34 @@ impl MapRunExecutionCountsBuilder {
     pub fn get_results_written(&self) -> &::std::option::Option<i64> {
         &self.results_written
     }
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> child workflow executions that cannot be redriven because their execution status is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    pub fn failures_not_redrivable(mut self, input: i64) -> Self {
+        self.failures_not_redrivable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> child workflow executions that cannot be redriven because their execution status is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    pub fn set_failures_not_redrivable(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.failures_not_redrivable = input;
+        self
+    }
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> child workflow executions that cannot be redriven because their execution status is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    pub fn get_failures_not_redrivable(&self) -> &::std::option::Option<i64> {
+        &self.failures_not_redrivable
+    }
+    /// <p>The number of unsuccessful child workflow executions currently waiting to be redriven. The status of these child workflow executions could be <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> in the original execution attempt or a previous redrive attempt.</p>
+    pub fn pending_redrive(mut self, input: i64) -> Self {
+        self.pending_redrive = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of unsuccessful child workflow executions currently waiting to be redriven. The status of these child workflow executions could be <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> in the original execution attempt or a previous redrive attempt.</p>
+    pub fn set_pending_redrive(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.pending_redrive = input;
+        self
+    }
+    /// <p>The number of unsuccessful child workflow executions currently waiting to be redriven. The status of these child workflow executions could be <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> in the original execution attempt or a previous redrive attempt.</p>
+    pub fn get_pending_redrive(&self) -> &::std::option::Option<i64> {
+        &self.pending_redrive
+    }
     /// Consumes the builder and constructs a [`MapRunExecutionCounts`](crate::types::MapRunExecutionCounts).
     pub fn build(self) -> crate::types::MapRunExecutionCounts {
         crate::types::MapRunExecutionCounts {
@@ -207,6 +249,8 @@ impl MapRunExecutionCountsBuilder {
             aborted: self.aborted.unwrap_or_default(),
             total: self.total.unwrap_or_default(),
             results_written: self.results_written.unwrap_or_default(),
+            failures_not_redrivable: self.failures_not_redrivable,
+            pending_redrive: self.pending_redrive,
         }
     }
 }

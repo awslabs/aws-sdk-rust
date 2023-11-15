@@ -16,16 +16,16 @@ pub struct DocumentClassifierInputDataConfig {
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
-    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
+    /// <p>This specifies the Amazon S3 location that contains the test annotations for the document classifier. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
     pub test_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
     pub label_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.</p>
     pub augmented_manifests: ::std::option::Option<::std::vec::Vec<crate::types::AugmentedManifestsListItem>>,
-    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native model.</p>
+    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native document model.</p>
     pub document_type: ::std::option::Option<crate::types::DocumentClassifierDocumentTypeFormat>,
-    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native classifier model.</p>
+    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native document model.</p>
     pub documents: ::std::option::Option<crate::types::DocumentClassifierDocuments>,
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files. </p>
     /// <p> By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type: </p>
@@ -54,7 +54,7 @@ impl DocumentClassifierInputDataConfig {
     pub fn s3_uri(&self) -> ::std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
-    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
+    /// <p>This specifies the Amazon S3 location that contains the test annotations for the document classifier. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
     pub fn test_s3_uri(&self) -> ::std::option::Option<&str> {
         self.test_s3_uri.as_deref()
     }
@@ -69,11 +69,11 @@ impl DocumentClassifierInputDataConfig {
     pub fn augmented_manifests(&self) -> &[crate::types::AugmentedManifestsListItem] {
         self.augmented_manifests.as_deref().unwrap_or_default()
     }
-    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native model.</p>
+    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native document model.</p>
     pub fn document_type(&self) -> ::std::option::Option<&crate::types::DocumentClassifierDocumentTypeFormat> {
         self.document_type.as_ref()
     }
-    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native classifier model.</p>
+    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native document model.</p>
     pub fn documents(&self) -> ::std::option::Option<&crate::types::DocumentClassifierDocuments> {
         self.documents.as_ref()
     }
@@ -160,17 +160,17 @@ impl DocumentClassifierInputDataConfigBuilder {
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_uri
     }
-    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
+    /// <p>This specifies the Amazon S3 location that contains the test annotations for the document classifier. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
     pub fn test_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
+    /// <p>This specifies the Amazon S3 location that contains the test annotations for the document classifier. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
     pub fn set_test_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_s3_uri = input;
         self
     }
-    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
+    /// <p>This specifies the Amazon S3 location that contains the test annotations for the document classifier. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
     pub fn get_test_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_s3_uri
     }
@@ -211,31 +211,31 @@ impl DocumentClassifierInputDataConfigBuilder {
     pub fn get_augmented_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AugmentedManifestsListItem>> {
         &self.augmented_manifests
     }
-    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native model.</p>
+    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native document model.</p>
     pub fn document_type(mut self, input: crate::types::DocumentClassifierDocumentTypeFormat) -> Self {
         self.document_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native model.</p>
+    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native document model.</p>
     pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::DocumentClassifierDocumentTypeFormat>) -> Self {
         self.document_type = input;
         self
     }
-    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native model.</p>
+    /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native document model.</p>
     pub fn get_document_type(&self) -> &::std::option::Option<crate::types::DocumentClassifierDocumentTypeFormat> {
         &self.document_type
     }
-    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native classifier model.</p>
+    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native document model.</p>
     pub fn documents(mut self, input: crate::types::DocumentClassifierDocuments) -> Self {
         self.documents = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native classifier model.</p>
+    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native document model.</p>
     pub fn set_documents(mut self, input: ::std::option::Option<crate::types::DocumentClassifierDocuments>) -> Self {
         self.documents = input;
         self
     }
-    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native classifier model.</p>
+    /// <p>The S3 location of the training documents. This parameter is required in a request to create a native document model.</p>
     pub fn get_documents(&self) -> &::std::option::Option<crate::types::DocumentClassifierDocuments> {
         &self.documents
     }

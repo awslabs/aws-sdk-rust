@@ -13,7 +13,7 @@ pub struct CreateDocumentClassifierInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub input_data_config: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
-    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
+    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub output_data_config: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -65,7 +65,7 @@ impl CreateDocumentClassifierInput {
     pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::DocumentClassifierInputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
+    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::DocumentClassifierOutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -215,17 +215,17 @@ impl CreateDocumentClassifierInputBuilder {
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierInputDataConfig> {
         &self.input_data_config
     }
-    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
+    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub fn output_data_config(mut self, input: crate::types::DocumentClassifierOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
+    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
-    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
+    /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierOutputDataConfig> {
         &self.output_data_config
     }

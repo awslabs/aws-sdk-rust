@@ -3,7 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetViolationDetailsInput {
-    /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
+    /// <ul>
+    /// <li> <p>DNS Firewall</p> </li>
+    /// <li> <p>Imported Network Firewall</p> </li>
+    /// <li> <p>Network Firewall</p> </li>
+    /// <li> <p>Security group content audit</p> </li>
+    /// <li> <p>Third-party firewall</p> </li>
+    /// </ul>
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
     pub member_account: ::std::option::Option<::std::string::String>,
@@ -13,7 +20,14 @@ pub struct GetViolationDetailsInput {
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl GetViolationDetailsInput {
-    /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
+    /// <ul>
+    /// <li> <p>DNS Firewall</p> </li>
+    /// <li> <p>Imported Network Firewall</p> </li>
+    /// <li> <p>Network Firewall</p> </li>
+    /// <li> <p>Security group content audit</p> </li>
+    /// <li> <p>Third-party firewall</p> </li>
+    /// </ul>
     pub fn policy_id(&self) -> ::std::option::Option<&str> {
         self.policy_id.as_deref()
     }
@@ -47,18 +61,39 @@ pub struct GetViolationDetailsInputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }
 impl GetViolationDetailsInputBuilder {
-    /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
+    /// <ul>
+    /// <li> <p>DNS Firewall</p> </li>
+    /// <li> <p>Imported Network Firewall</p> </li>
+    /// <li> <p>Network Firewall</p> </li>
+    /// <li> <p>Security group content audit</p> </li>
+    /// <li> <p>Third-party firewall</p> </li>
+    /// </ul>
     /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
+    /// <ul>
+    /// <li> <p>DNS Firewall</p> </li>
+    /// <li> <p>Imported Network Firewall</p> </li>
+    /// <li> <p>Network Firewall</p> </li>
+    /// <li> <p>Security group content audit</p> </li>
+    /// <li> <p>Third-party firewall</p> </li>
+    /// </ul>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
     }
-    /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
+    /// <ul>
+    /// <li> <p>DNS Firewall</p> </li>
+    /// <li> <p>Imported Network Firewall</p> </li>
+    /// <li> <p>Network Firewall</p> </li>
+    /// <li> <p>Security group content audit</p> </li>
+    /// <li> <p>Third-party firewall</p> </li>
+    /// </ul>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_id
     }

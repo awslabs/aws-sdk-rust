@@ -251,7 +251,7 @@ pub type DeleteTaskDefinitionsErrorKind = DeleteTaskDefinitionsError;
 pub enum DeleteTaskDefinitionsError {
     /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
+    /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),

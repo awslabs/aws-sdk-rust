@@ -18,7 +18,7 @@ pub struct DbInstance {
     pub automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The master username for the DB instance.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
-    /// <p>Contains the initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
+    /// <p>The initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The connection endpoint for the DB instance.</p> <note>
     /// <p>The endpoint might not be shown for instances with the status of <code>creating</code>.</p>
@@ -210,6 +210,8 @@ pub struct DbInstance {
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica from the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
     pub is_storage_config_upgrade_available: ::std::option::Option<bool>,
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub multi_tenant: ::std::option::Option<bool>,
 }
 impl DbInstance {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -237,7 +239,7 @@ impl DbInstance {
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
     }
-    /// <p>Contains the initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
+    /// <p>The initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
     pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
@@ -611,6 +613,10 @@ impl DbInstance {
     pub fn is_storage_config_upgrade_available(&self) -> ::std::option::Option<bool> {
         self.is_storage_config_upgrade_available
     }
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
+        self.multi_tenant
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -708,6 +714,7 @@ pub struct DbInstanceBuilder {
     pub(crate) percent_progress: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) is_storage_config_upgrade_available: ::std::option::Option<bool>,
+    pub(crate) multi_tenant: ::std::option::Option<bool>,
 }
 impl DbInstanceBuilder {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -797,17 +804,17 @@ impl DbInstanceBuilder {
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_username
     }
-    /// <p>Contains the initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
+    /// <p>The initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Contains the initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
+    /// <p>The initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
     }
-    /// <p>Contains the initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
+    /// <p>The initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_name
     }
@@ -2080,6 +2087,20 @@ impl DbInstanceBuilder {
     pub fn get_is_storage_config_upgrade_available(&self) -> &::std::option::Option<bool> {
         &self.is_storage_config_upgrade_available
     }
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(mut self, input: bool) -> Self {
+        self.multi_tenant = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.multi_tenant = input;
+        self
+    }
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
+        &self.multi_tenant
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -2167,6 +2188,7 @@ impl DbInstanceBuilder {
             percent_progress: self.percent_progress,
             dedicated_log_volume: self.dedicated_log_volume,
             is_storage_config_upgrade_available: self.is_storage_config_upgrade_available,
+            multi_tenant: self.multi_tenant,
         }
     }
 }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let schemaelement = unimplemented!();
 /// match schemaelement {
+///     SchemaElement::ManualDiscountCompatibility => { /* ... */ },
 ///     SchemaElement::Resources => { /* ... */ },
 ///     SchemaElement::SplitCostAllocationData => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -35,12 +36,14 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>Whether or not AWS includes resource IDs in the report. </p>
+/// <p>Whether or not Amazon Web Services includes resource IDs in the report. </p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SchemaElement {
+    #[allow(missing_docs)] // documentation missing in model
+    ManualDiscountCompatibility,
     #[allow(missing_docs)] // documentation missing in model
     Resources,
     #[allow(missing_docs)] // documentation missing in model
@@ -51,6 +54,7 @@ pub enum SchemaElement {
 impl ::std::convert::From<&str> for SchemaElement {
     fn from(s: &str) -> Self {
         match s {
+            "MANUAL_DISCOUNT_COMPATIBILITY" => SchemaElement::ManualDiscountCompatibility,
             "RESOURCES" => SchemaElement::Resources,
             "SPLIT_COST_ALLOCATION_DATA" => SchemaElement::SplitCostAllocationData,
             other => SchemaElement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -68,6 +72,7 @@ impl SchemaElement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SchemaElement::ManualDiscountCompatibility => "MANUAL_DISCOUNT_COMPATIBILITY",
             SchemaElement::Resources => "RESOURCES",
             SchemaElement::SplitCostAllocationData => "SPLIT_COST_ALLOCATION_DATA",
             SchemaElement::Unknown(value) => value.as_str(),
@@ -75,7 +80,7 @@ impl SchemaElement {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RESOURCES", "SPLIT_COST_ALLOCATION_DATA"]
+        &["MANUAL_DISCOUNT_COMPATIBILITY", "RESOURCES", "SPLIT_COST_ALLOCATION_DATA"]
     }
 }
 impl ::std::convert::AsRef<str> for SchemaElement {

@@ -272,6 +272,16 @@ pub fn de_launch_template_instance_network_interface_specification(
                 builder = builder.set_primary_ipv6(var_20);
             }
             ,
+            s if s.matches("enaSrdSpecification") /* EnaSrdSpecification com.amazonaws.ec2#LaunchTemplateInstanceNetworkInterfaceSpecification$EnaSrdSpecification */ =>  {
+                let var_21 =
+                    Some(
+                        crate::protocol_serde::shape_launch_template_ena_srd_specification::de_launch_template_ena_srd_specification(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ena_srd_specification(var_21);
+            }
+            ,
             _ => {}
         }
     }

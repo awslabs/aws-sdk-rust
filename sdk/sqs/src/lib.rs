@@ -48,8 +48,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
-//! aws-sdk-sqs = "0.35.0"
+//! aws-config = "0.57.0"
+//! aws-sdk-sqs = "0.36.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -213,9 +213,11 @@ mod lens;
 
 mod serde_util;
 
+mod aws_query_compatible_errors;
+
 mod endpoint_lib;
 
-mod rest_xml_wrapped_errors;
+mod json_errors;
 
 #[doc(inline)]
 pub use client::Client;

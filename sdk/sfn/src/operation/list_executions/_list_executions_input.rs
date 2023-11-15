@@ -17,6 +17,11 @@ pub struct ListExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
     pub map_run_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Sets a filter to list executions based on whether or not they have been redriven.</p>
+    /// <p>For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on whether or not they have been redriven.</p>
+    /// <p>If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and non-redriven executions.</p>
+    /// <p>If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.</p>
+    pub redrive_filter: ::std::option::Option<crate::types::ExecutionRedriveFilter>,
 }
 impl ListExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
@@ -43,6 +48,13 @@ impl ListExecutionsInput {
     pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
         self.map_run_arn.as_deref()
     }
+    /// <p>Sets a filter to list executions based on whether or not they have been redriven.</p>
+    /// <p>For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on whether or not they have been redriven.</p>
+    /// <p>If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and non-redriven executions.</p>
+    /// <p>If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.</p>
+    pub fn redrive_filter(&self) -> ::std::option::Option<&crate::types::ExecutionRedriveFilter> {
+        self.redrive_filter.as_ref()
+    }
 }
 impl ListExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListExecutionsInput`](crate::operation::list_executions::ListExecutionsInput).
@@ -60,6 +72,7 @@ pub struct ListExecutionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) redrive_filter: ::std::option::Option<crate::types::ExecutionRedriveFilter>,
 }
 impl ListExecutionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
@@ -144,6 +157,29 @@ impl ListExecutionsInputBuilder {
     pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.map_run_arn
     }
+    /// <p>Sets a filter to list executions based on whether or not they have been redriven.</p>
+    /// <p>For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on whether or not they have been redriven.</p>
+    /// <p>If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and non-redriven executions.</p>
+    /// <p>If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.</p>
+    pub fn redrive_filter(mut self, input: crate::types::ExecutionRedriveFilter) -> Self {
+        self.redrive_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets a filter to list executions based on whether or not they have been redriven.</p>
+    /// <p>For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on whether or not they have been redriven.</p>
+    /// <p>If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and non-redriven executions.</p>
+    /// <p>If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.</p>
+    pub fn set_redrive_filter(mut self, input: ::std::option::Option<crate::types::ExecutionRedriveFilter>) -> Self {
+        self.redrive_filter = input;
+        self
+    }
+    /// <p>Sets a filter to list executions based on whether or not they have been redriven.</p>
+    /// <p>For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on whether or not they have been redriven.</p>
+    /// <p>If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and non-redriven executions.</p>
+    /// <p>If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.</p>
+    pub fn get_redrive_filter(&self) -> &::std::option::Option<crate::types::ExecutionRedriveFilter> {
+        &self.redrive_filter
+    }
     /// Consumes the builder and constructs a [`ListExecutionsInput`](crate::operation::list_executions::ListExecutionsInput).
     pub fn build(
         self,
@@ -154,6 +190,7 @@ impl ListExecutionsInputBuilder {
             max_results: self.max_results,
             next_token: self.next_token,
             map_run_arn: self.map_run_arn,
+            redrive_filter: self.redrive_filter,
         })
     }
 }

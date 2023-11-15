@@ -459,6 +459,8 @@ pub(crate) mod shape_elasti_cache_instance_details;
 
 pub(crate) mod shape_es_instance_details;
 
+pub(crate) mod shape_memory_db_instance_details;
+
 pub(crate) mod shape_network_resource_utilization;
 
 pub(crate) mod shape_platform_differences;
