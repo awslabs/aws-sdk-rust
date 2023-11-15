@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`alias(Option<String>)`](crate::operation::get_dataset::GetDatasetOutput::alias): <p>The unique resource identifier for a Dataset.</p>
     ///   - [`status(Option<DatasetStatus>)`](crate::operation::get_dataset::GetDatasetOutput::status): <p>Status of the Dataset creation.</p>  <ul>   <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>   <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>   <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>   <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetDatasetError>`](crate::operation::get_dataset::GetDatasetError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn get_dataset(&self) -> crate::operation::get_dataset::builders::GetDatasetFluentBuilder {
         crate::operation::get_dataset::builders::GetDatasetFluentBuilder::new(self.handle.clone())
     }

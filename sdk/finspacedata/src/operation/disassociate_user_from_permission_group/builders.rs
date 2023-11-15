@@ -23,6 +23,7 @@ impl DisassociateUserFromPermissionGroupInputBuilder {
 /// Fluent builder constructing a request to `DisassociateUserFromPermissionGroup`.
 ///
 /// <p>Removes a user from a permission group.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateUserFromPermissionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

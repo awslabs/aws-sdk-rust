@@ -139,6 +139,8 @@ pub use crate::types::error::_sns_invalid_topic_fault::SnsInvalidTopicFault;
 
 pub use crate::types::error::_invalid_subscription_state_fault::InvalidSubscriptionStateFault;
 
+pub use crate::types::error::_custom_domain_association_not_found_fault::CustomDomainAssociationNotFoundFault;
+
 pub use crate::types::error::_custom_cname_association_fault::CustomCnameAssociationFault;
 
 pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUse;
@@ -186,8 +188,6 @@ pub use crate::types::error::_resize_not_found_fault::ResizeNotFoundFault;
 pub use crate::types::error::_reserved_node_exchange_not_found_fault::ReservedNodeExchangeNotFoundFault;
 
 pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFault;
-
-pub use crate::types::error::_custom_domain_association_not_found_fault::CustomDomainAssociationNotFoundFault;
 
 pub use crate::types::error::_invalid_snapshot_copy_grant_state_fault::InvalidSnapshotCopyGrantStateFault;
 

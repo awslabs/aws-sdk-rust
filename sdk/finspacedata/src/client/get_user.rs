@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`last_modified_time(i64)`](crate::operation::get_user::GetUserOutput::last_modified_time): <p>Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.</p>
     ///   - [`last_login_time(i64)`](crate::operation::get_user::GetUserOutput::last_login_time): <p>Describes the last time that the user logged into their account. The value is determined as epoch time in milliseconds.</p>
     /// - On failure, responds with [`SdkError<GetUserError>`](crate::operation::get_user::GetUserError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn get_user(&self) -> crate::operation::get_user::builders::GetUserFluentBuilder {
         crate::operation::get_user::builders::GetUserFluentBuilder::new(self.handle.clone())
     }

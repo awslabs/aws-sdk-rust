@@ -19,6 +19,8 @@ pub use crate::types::_dimension::Dimension;
 
 pub use crate::types::_environment::Environment;
 
+pub use crate::types::_endpoint_management::EndpointManagement;
+
 pub use crate::types::_last_update::LastUpdate;
 
 pub use crate::types::_update_error::UpdateError;
@@ -34,6 +36,8 @@ pub use crate::types::_network_configuration::NetworkConfiguration;
 pub use crate::types::_environment_status::EnvironmentStatus;
 
 mod _dimension;
+
+mod _endpoint_management;
 
 mod _environment;
 

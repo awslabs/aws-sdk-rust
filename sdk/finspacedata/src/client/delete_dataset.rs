@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::operation::delete_dataset::DeleteDatasetOutput::dataset_id): <p>The unique identifier for the deleted Dataset.</p>
     /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::operation::delete_dataset::DeleteDatasetError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn delete_dataset(&self) -> crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder {
         crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::new(self.handle.clone())
     }

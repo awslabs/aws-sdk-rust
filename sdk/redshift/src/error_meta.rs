@@ -1732,6 +1732,9 @@ impl From<crate::operation::delete_custom_domain_association::DeleteCustomDomain
             crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::CustomCnameAssociationFault(inner) => {
                 Error::CustomCnameAssociationFault(inner)
             }
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::CustomDomainAssociationNotFoundFault(inner) => {
+                Error::CustomDomainAssociationNotFoundFault(inner)
+            }
             crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::UnsupportedOperationFault(inner) => {
                 Error::UnsupportedOperationFault(inner)
             }
@@ -4145,6 +4148,9 @@ impl From<crate::operation::modify_custom_domain_association::ModifyCustomDomain
             }
             crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError::CustomCnameAssociationFault(inner) => {
                 Error::CustomCnameAssociationFault(inner)
+            }
+            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError::CustomDomainAssociationNotFoundFault(inner) => {
+                Error::CustomDomainAssociationNotFoundFault(inner)
             }
             crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError::UnsupportedOperationFault(inner) => {
                 Error::UnsupportedOperationFault(inner)

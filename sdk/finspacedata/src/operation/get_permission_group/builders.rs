@@ -23,6 +23,7 @@ impl GetPermissionGroupInputBuilder {
 /// Fluent builder constructing a request to `GetPermissionGroup`.
 ///
 /// <p>Retrieves the details of a specific permission group.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPermissionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

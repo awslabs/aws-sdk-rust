@@ -41,6 +41,7 @@ pub struct ModifyCustomDomainAssociationInputBuilder {
 }
 impl ModifyCustomDomainAssociationInputBuilder {
     /// <p>The custom domain name for a changed custom domain association.</p>
+    /// This field is required.
     pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ModifyCustomDomainAssociationInputBuilder {
         &self.custom_domain_name
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the changed custom domain association.</p>
+    /// This field is required.
     pub fn custom_domain_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_certificate_arn = ::std::option::Option::Some(input.into());
         self

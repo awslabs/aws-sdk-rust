@@ -57,6 +57,10 @@ pub(crate) mod shape_get_subscription;
 
 pub(crate) mod shape_get_user_details;
 
+pub(crate) mod shape_get_workflow;
+
+pub(crate) mod shape_get_workflow_run;
+
 pub(crate) mod shape_list_access_tokens;
 
 pub(crate) mod shape_list_dev_environment_sessions;
@@ -73,9 +77,15 @@ pub(crate) mod shape_list_source_repository_branches;
 
 pub(crate) mod shape_list_spaces;
 
+pub(crate) mod shape_list_workflow_runs;
+
+pub(crate) mod shape_list_workflows;
+
 pub(crate) mod shape_start_dev_environment;
 
 pub(crate) mod shape_start_dev_environment_session;
+
+pub(crate) mod shape_start_workflow_run;
 
 pub(crate) mod shape_stop_dev_environment;
 
@@ -127,6 +137,10 @@ pub(crate) mod shape_list_source_repository_branches_input;
 
 pub(crate) mod shape_list_spaces_input;
 
+pub(crate) mod shape_list_workflow_runs_input;
+
+pub(crate) mod shape_list_workflows_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -134,6 +148,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_start_dev_environment_input;
 
 pub(crate) mod shape_start_dev_environment_session_input;
+
+pub(crate) mod shape_start_workflow_run_input;
 
 pub(crate) mod shape_throttling_exception;
 
@@ -185,6 +201,18 @@ pub(crate) mod shape_repository_input;
 
 pub(crate) mod shape_space_summaries;
 
+pub(crate) mod shape_workflow_definition;
+
+pub(crate) mod shape_workflow_run_sort_criteria;
+
+pub(crate) mod shape_workflow_run_status_reasons;
+
+pub(crate) mod shape_workflow_run_summaries;
+
+pub(crate) mod shape_workflow_sort_criteria;
+
+pub(crate) mod shape_workflow_summaries;
+
 pub(crate) mod shape_access_token_summary;
 
 pub(crate) mod shape_dev_environment_repository_summary;
@@ -207,8 +235,16 @@ pub(crate) mod shape_project_summary;
 
 pub(crate) mod shape_space_summary;
 
+pub(crate) mod shape_workflow_run_status_reason;
+
+pub(crate) mod shape_workflow_run_summary;
+
+pub(crate) mod shape_workflow_summary;
+
 pub(crate) mod shape_event_payload;
 
 pub(crate) mod shape_project_information;
 
 pub(crate) mod shape_user_identity;
+
+pub(crate) mod shape_workflow_definition_summary;

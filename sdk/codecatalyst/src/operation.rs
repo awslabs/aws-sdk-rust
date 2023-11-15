@@ -52,6 +52,12 @@ pub mod get_subscription;
 /// Types for the `GetUserDetails` operation.
 pub mod get_user_details;
 
+/// Types for the `GetWorkflow` operation.
+pub mod get_workflow;
+
+/// Types for the `GetWorkflowRun` operation.
+pub mod get_workflow_run;
+
 /// Types for the `ListAccessTokens` operation.
 pub mod list_access_tokens;
 
@@ -76,11 +82,20 @@ pub mod list_source_repository_branches;
 /// Types for the `ListSpaces` operation.
 pub mod list_spaces;
 
+/// Types for the `ListWorkflowRuns` operation.
+pub mod list_workflow_runs;
+
+/// Types for the `ListWorkflows` operation.
+pub mod list_workflows;
+
 /// Types for the `StartDevEnvironment` operation.
 pub mod start_dev_environment;
 
 /// Types for the `StartDevEnvironmentSession` operation.
 pub mod start_dev_environment_session;
+
+/// Types for the `StartWorkflowRun` operation.
+pub mod start_workflow_run;
 
 /// Types for the `StopDevEnvironment` operation.
 pub mod stop_dev_environment;

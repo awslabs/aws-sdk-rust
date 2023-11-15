@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::created_timestamp): <p>The timestamp of the event data store's creation.</p>
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::updated_timestamp): <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    ///   - [`billing_mode(Option<BillingMode>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::billing_mode): <p>The billing mode for the event data store.</p>
     /// - On failure, responds with [`SdkError<GetEventDataStoreError>`](crate::operation::get_event_data_store::GetEventDataStoreError)
     pub fn get_event_data_store(&self) -> crate::operation::get_event_data_store::builders::GetEventDataStoreFluentBuilder {
         crate::operation::get_event_data_store::builders::GetEventDataStoreFluentBuilder::new(self.handle.clone())

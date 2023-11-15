@@ -20,6 +20,7 @@
 ///     Runtime::Go1x => { /* ... */ },
 ///     Runtime::Java11 => { /* ... */ },
 ///     Runtime::Java17 => { /* ... */ },
+///     Runtime::Java21 => { /* ... */ },
 ///     Runtime::Java8 => { /* ... */ },
 ///     Runtime::Java8al2 => { /* ... */ },
 ///     Runtime::Nodejs => { /* ... */ },
@@ -91,6 +92,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Java17,
     #[allow(missing_docs)] // documentation missing in model
+    Java21,
+    #[allow(missing_docs)] // documentation missing in model
     Java8,
     #[allow(missing_docs)] // documentation missing in model
     Java8al2,
@@ -158,6 +161,7 @@ impl ::std::convert::From<&str> for Runtime {
             "go1.x" => Runtime::Go1x,
             "java11" => Runtime::Java11,
             "java17" => Runtime::Java17,
+            "java21" => Runtime::Java21,
             "java8" => Runtime::Java8,
             "java8.al2" => Runtime::Java8al2,
             "nodejs" => Runtime::Nodejs,
@@ -208,6 +212,7 @@ impl Runtime {
             Runtime::Go1x => "go1.x",
             Runtime::Java11 => "java11",
             Runtime::Java17 => "java17",
+            Runtime::Java21 => "java21",
             Runtime::Java8 => "java8",
             Runtime::Java8al2 => "java8.al2",
             Runtime::Nodejs => "nodejs",
@@ -249,6 +254,7 @@ impl Runtime {
             "go1.x",
             "java11",
             "java17",
+            "java21",
             "java8",
             "java8.al2",
             "nodejs",

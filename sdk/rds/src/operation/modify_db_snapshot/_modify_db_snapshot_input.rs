@@ -8,9 +8,7 @@ pub struct ModifyDbSnapshotInput {
     /// <p>The engine version to upgrade the DB snapshot to.</p>
     /// <p>The following are the database engines and engine versions that are available when you upgrade a DB snapshot.</p>
     /// <p> <b>MySQL</b> </p>
-    /// <ul>
-    /// <li> <p> <code>5.5.46</code> (supported for 5.1 DB snapshots)</p> </li>
-    /// </ul>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html"> Upgrading a MySQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p> <b>Oracle</b> </p>
     /// <ul>
     /// <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)</p> </li>
@@ -20,7 +18,7 @@ pub struct ModifyDbSnapshotInput {
     /// <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p> </li>
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
-    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html"> Upgrading a PostgreSQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The option group to identify with the upgraded DB snapshot.</p>
     /// <p>You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -34,9 +32,7 @@ impl ModifyDbSnapshotInput {
     /// <p>The engine version to upgrade the DB snapshot to.</p>
     /// <p>The following are the database engines and engine versions that are available when you upgrade a DB snapshot.</p>
     /// <p> <b>MySQL</b> </p>
-    /// <ul>
-    /// <li> <p> <code>5.5.46</code> (supported for 5.1 DB snapshots)</p> </li>
-    /// </ul>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html"> Upgrading a MySQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p> <b>Oracle</b> </p>
     /// <ul>
     /// <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)</p> </li>
@@ -46,7 +42,7 @@ impl ModifyDbSnapshotInput {
     /// <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p> </li>
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
-    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html"> Upgrading a PostgreSQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -90,9 +86,7 @@ impl ModifyDbSnapshotInputBuilder {
     /// <p>The engine version to upgrade the DB snapshot to.</p>
     /// <p>The following are the database engines and engine versions that are available when you upgrade a DB snapshot.</p>
     /// <p> <b>MySQL</b> </p>
-    /// <ul>
-    /// <li> <p> <code>5.5.46</code> (supported for 5.1 DB snapshots)</p> </li>
-    /// </ul>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html"> Upgrading a MySQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p> <b>Oracle</b> </p>
     /// <ul>
     /// <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)</p> </li>
@@ -102,7 +96,7 @@ impl ModifyDbSnapshotInputBuilder {
     /// <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p> </li>
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
-    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html"> Upgrading a PostgreSQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
@@ -110,9 +104,7 @@ impl ModifyDbSnapshotInputBuilder {
     /// <p>The engine version to upgrade the DB snapshot to.</p>
     /// <p>The following are the database engines and engine versions that are available when you upgrade a DB snapshot.</p>
     /// <p> <b>MySQL</b> </p>
-    /// <ul>
-    /// <li> <p> <code>5.5.46</code> (supported for 5.1 DB snapshots)</p> </li>
-    /// </ul>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html"> Upgrading a MySQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p> <b>Oracle</b> </p>
     /// <ul>
     /// <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)</p> </li>
@@ -122,7 +114,7 @@ impl ModifyDbSnapshotInputBuilder {
     /// <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p> </li>
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
-    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html"> Upgrading a PostgreSQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
@@ -130,9 +122,7 @@ impl ModifyDbSnapshotInputBuilder {
     /// <p>The engine version to upgrade the DB snapshot to.</p>
     /// <p>The following are the database engines and engine versions that are available when you upgrade a DB snapshot.</p>
     /// <p> <b>MySQL</b> </p>
-    /// <ul>
-    /// <li> <p> <code>5.5.46</code> (supported for 5.1 DB snapshots)</p> </li>
-    /// </ul>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html"> Upgrading a MySQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p> <b>Oracle</b> </p>
     /// <ul>
     /// <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)</p> </li>
@@ -142,7 +132,7 @@ impl ModifyDbSnapshotInputBuilder {
     /// <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p> </li>
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
-    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html"> Upgrading a PostgreSQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }

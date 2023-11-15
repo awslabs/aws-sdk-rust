@@ -13,6 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateUserOutput`](crate::operation::create_user::CreateUserOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::operation::create_user::CreateUserOutput::user_id): <p>The unique identifier for the user.</p>
     /// - On failure, responds with [`SdkError<CreateUserError>`](crate::operation::create_user::CreateUserError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn create_user(&self) -> crate::operation::create_user::builders::CreateUserFluentBuilder {
         crate::operation::create_user::builders::CreateUserFluentBuilder::new(self.handle.clone())
     }

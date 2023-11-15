@@ -23,6 +23,7 @@ impl CreateDatasetInputBuilder {
 /// Fluent builder constructing a request to `CreateDataset`.
 ///
 /// <p>Creates a new FinSpace Dataset.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

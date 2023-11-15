@@ -13,6 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::operation::update_user::UpdateUserOutput::user_id): <p>The unique identifier of the updated user.</p>
     /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::operation::update_user::UpdateUserError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn update_user(&self) -> crate::operation::update_user::builders::UpdateUserFluentBuilder {
         crate::operation::update_user::builders::UpdateUserFluentBuilder::new(self.handle.clone())
     }

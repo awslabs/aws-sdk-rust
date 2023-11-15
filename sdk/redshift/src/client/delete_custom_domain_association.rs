@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::set_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster to delete a custom domain association for.</p><br>
+    ///   - [`custom_domain_name(impl Into<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::custom_domain_name) / [`set_custom_domain_name(Option<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::set_custom_domain_name):<br>required: **true**<br><p>The custom domain name for the custom domain association.</p><br>
     /// - On success, responds with [`DeleteCustomDomainAssociationOutput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomDomainAssociationError>`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError)
     pub fn delete_custom_domain_association(

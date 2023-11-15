@@ -26,6 +26,8 @@ pub struct UpdateEventDataStoreOutput {
     /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The billing mode for the event data store.</p>
+    pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
     _request_id: Option<String>,
 }
 impl UpdateEventDataStoreOutput {
@@ -76,6 +78,10 @@ impl UpdateEventDataStoreOutput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p>The billing mode for the event data store.</p>
+    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
+        self.billing_mode.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for UpdateEventDataStoreOutput {
     fn request_id(&self) -> Option<&str> {
@@ -104,6 +110,7 @@ pub struct UpdateEventDataStoreOutputBuilder {
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
     _request_id: Option<String>,
 }
 impl UpdateEventDataStoreOutputBuilder {
@@ -270,6 +277,20 @@ impl UpdateEventDataStoreOutputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
+    /// <p>The billing mode for the event data store.</p>
+    pub fn billing_mode(mut self, input: crate::types::BillingMode) -> Self {
+        self.billing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The billing mode for the event data store.</p>
+    pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
+        self.billing_mode = input;
+        self
+    }
+    /// <p>The billing mode for the event data store.</p>
+    pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
+        &self.billing_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -293,6 +314,7 @@ impl UpdateEventDataStoreOutputBuilder {
             created_timestamp: self.created_timestamp,
             updated_timestamp: self.updated_timestamp,
             kms_key_id: self.kms_key_id,
+            billing_mode: self.billing_mode,
             _request_id: self._request_id,
         }
     }

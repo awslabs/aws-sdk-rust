@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`permission_groups(Option<Vec::<PermissionGroup>>)`](crate::operation::list_permission_groups::ListPermissionGroupsOutput::permission_groups): <p>A list of all the permission groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permission_groups::ListPermissionGroupsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListPermissionGroupsError>`](crate::operation::list_permission_groups::ListPermissionGroupsError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn list_permission_groups(&self) -> crate::operation::list_permission_groups::builders::ListPermissionGroupsFluentBuilder {
         crate::operation::list_permission_groups::builders::ListPermissionGroupsFluentBuilder::new(self.handle.clone())
     }

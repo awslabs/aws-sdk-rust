@@ -23,6 +23,7 @@ impl ListDatasetsInputBuilder {
 /// Fluent builder constructing a request to `ListDatasets`.
 ///
 /// <p>Lists all of the active Datasets that a user has access to.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDatasetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

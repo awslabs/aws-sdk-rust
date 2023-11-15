@@ -79,6 +79,26 @@ pub(crate) fn reflens_list_spaces_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_workflow_runs_output_output_next_token(
+    input: &crate::operation::list_workflow_runs::ListWorkflowRunsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_workflows_output_output_next_token(
+    input: &crate::operation::list_workflows::ListWorkflowsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_access_tokens_output_output_items(
     input: crate::operation::list_access_tokens::ListAccessTokensOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessTokenSummary>> {
@@ -137,6 +157,26 @@ pub(crate) fn lens_list_source_repository_branches_output_output_items(
 pub(crate) fn lens_list_spaces_output_output_items(
     input: crate::operation::list_spaces::ListSpacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SpaceSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_workflow_runs_output_output_items(
+    input: crate::operation::list_workflow_runs::ListWorkflowRunsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRunSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_workflows_output_output_items(
+    input: crate::operation::list_workflows::ListWorkflowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>> {
     let input = match input.items {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

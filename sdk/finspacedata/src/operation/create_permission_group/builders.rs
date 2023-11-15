@@ -23,6 +23,7 @@ impl CreatePermissionGroupInputBuilder {
 /// Fluent builder constructing a request to `CreatePermissionGroup`.
 ///
 /// <p>Creates a group of permissions for various actions that a user can perform in FinSpace.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePermissionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -24,5 +24,8 @@ pub fn ser_list_dev_environments_input_input(
     if let Some(var_6) = &input.next_token {
         object.key("nextToken").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.project_name {
+        object.key("projectName").string(var_7.as_str());
+    }
     Ok(())
 }

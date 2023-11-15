@@ -23,6 +23,7 @@ impl GetChangesetInputBuilder {
 /// Fluent builder constructing a request to `GetChangeset`.
 ///
 /// <p>Get information about a Changeset.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetChangesetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

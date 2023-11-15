@@ -203,6 +203,7 @@
 ///     InstanceType::D3en8xlarge => { /* ... */ },
 ///     InstanceType::D3enXlarge => { /* ... */ },
 ///     InstanceType::Dl124xlarge => { /* ... */ },
+///     InstanceType::Dl2q24xlarge => { /* ... */ },
 ///     InstanceType::F116xlarge => { /* ... */ },
 ///     InstanceType::F12xlarge => { /* ... */ },
 ///     InstanceType::F14xlarge => { /* ... */ },
@@ -1192,6 +1193,8 @@ pub enum InstanceType {
     D3enXlarge,
     #[allow(missing_docs)] // documentation missing in model
     Dl124xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    Dl2q24xlarge,
     #[allow(missing_docs)] // documentation missing in model
     F116xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -2549,6 +2552,7 @@ impl ::std::convert::From<&str> for InstanceType {
             "d3en.8xlarge" => InstanceType::D3en8xlarge,
             "d3en.xlarge" => InstanceType::D3enXlarge,
             "dl1.24xlarge" => InstanceType::Dl124xlarge,
+            "dl2q.24xlarge" => InstanceType::Dl2q24xlarge,
             "f1.16xlarge" => InstanceType::F116xlarge,
             "f1.2xlarge" => InstanceType::F12xlarge,
             "f1.4xlarge" => InstanceType::F14xlarge,
@@ -3335,6 +3339,7 @@ impl InstanceType {
             InstanceType::D3en8xlarge => "d3en.8xlarge",
             InstanceType::D3enXlarge => "d3en.xlarge",
             InstanceType::Dl124xlarge => "dl1.24xlarge",
+            InstanceType::Dl2q24xlarge => "dl2q.24xlarge",
             InstanceType::F116xlarge => "f1.16xlarge",
             InstanceType::F12xlarge => "f1.2xlarge",
             InstanceType::F14xlarge => "f1.4xlarge",
@@ -4112,6 +4117,7 @@ impl InstanceType {
             "d3en.8xlarge",
             "d3en.xlarge",
             "dl1.24xlarge",
+            "dl2q.24xlarge",
             "f1.16xlarge",
             "f1.2xlarge",
             "f1.4xlarge",

@@ -6,12 +6,14 @@
 pub struct Environment {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the Amazon MWAA environment. Valid values:</p>
+    /// <p>The status of the Amazon MWAA environment.</p>
+    /// <p>Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
     /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
     /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
     /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
@@ -78,24 +80,34 @@ pub struct Environment {
     pub weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
     /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub webserver_access_mode: ::std::option::Option<crate::types::WebserverAccessMode>,
     /// <p>The minimum number of workers that run in your environment. For example, <code>2</code>.</p>
     pub min_workers: ::std::option::Option<i32>,
     /// <p>The number of Apache Airflow schedulers that run in your Amazon MWAA environment.</p>
     pub schedulers: ::std::option::Option<i32>,
+    /// <p>The VPC endpoint for the environment's web server.</p>
+    pub webserver_vpc_endpoint_service: ::std::option::Option<::std::string::String>,
+    /// <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+    pub database_vpc_endpoint_service: ::std::option::Option<::std::string::String>,
+    /// <p>The queue ARN for the environment's <a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across multiple workers. When you create an environment in a shared VPC, you must provide access to the Celery Executor queue from your VPC.</p>
+    pub celery_executor_queue: ::std::option::Option<::std::string::String>,
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in your VPC.</p>
+    pub endpoint_management: ::std::option::Option<crate::types::EndpointManagement>,
 }
 impl Environment {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The status of the Amazon MWAA environment. Valid values:</p>
+    /// <p>The status of the Amazon MWAA environment.</p>
+    /// <p>Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
     /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
     /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
     /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
@@ -210,7 +222,7 @@ impl Environment {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn webserver_access_mode(&self) -> ::std::option::Option<&crate::types::WebserverAccessMode> {
         self.webserver_access_mode.as_ref()
     }
@@ -221,6 +233,22 @@ impl Environment {
     /// <p>The number of Apache Airflow schedulers that run in your Amazon MWAA environment.</p>
     pub fn schedulers(&self) -> ::std::option::Option<i32> {
         self.schedulers
+    }
+    /// <p>The VPC endpoint for the environment's web server.</p>
+    pub fn webserver_vpc_endpoint_service(&self) -> ::std::option::Option<&str> {
+        self.webserver_vpc_endpoint_service.as_deref()
+    }
+    /// <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+    pub fn database_vpc_endpoint_service(&self) -> ::std::option::Option<&str> {
+        self.database_vpc_endpoint_service.as_deref()
+    }
+    /// <p>The queue ARN for the environment's <a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across multiple workers. When you create an environment in a shared VPC, you must provide access to the Celery Executor queue from your VPC.</p>
+    pub fn celery_executor_queue(&self) -> ::std::option::Option<&str> {
+        self.celery_executor_queue.as_deref()
+    }
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in your VPC.</p>
+    pub fn endpoint_management(&self) -> ::std::option::Option<&crate::types::EndpointManagement> {
+        self.endpoint_management.as_ref()
     }
 }
 impl ::std::fmt::Debug for Environment {
@@ -254,6 +282,10 @@ impl ::std::fmt::Debug for Environment {
         formatter.field("webserver_access_mode", &self.webserver_access_mode);
         formatter.field("min_workers", &self.min_workers);
         formatter.field("schedulers", &self.schedulers);
+        formatter.field("webserver_vpc_endpoint_service", &self.webserver_vpc_endpoint_service);
+        formatter.field("database_vpc_endpoint_service", &self.database_vpc_endpoint_service);
+        formatter.field("celery_executor_queue", &self.celery_executor_queue);
+        formatter.field("endpoint_management", &self.endpoint_management);
         formatter.finish()
     }
 }
@@ -296,6 +328,10 @@ pub struct EnvironmentBuilder {
     pub(crate) webserver_access_mode: ::std::option::Option<crate::types::WebserverAccessMode>,
     pub(crate) min_workers: ::std::option::Option<i32>,
     pub(crate) schedulers: ::std::option::Option<i32>,
+    pub(crate) webserver_vpc_endpoint_service: ::std::option::Option<::std::string::String>,
+    pub(crate) database_vpc_endpoint_service: ::std::option::Option<::std::string::String>,
+    pub(crate) celery_executor_queue: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_management: ::std::option::Option<crate::types::EndpointManagement>,
 }
 impl EnvironmentBuilder {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -312,12 +348,14 @@ impl EnvironmentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The status of the Amazon MWAA environment. Valid values:</p>
+    /// <p>The status of the Amazon MWAA environment.</p>
+    /// <p>Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
     /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
     /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
     /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
@@ -330,12 +368,14 @@ impl EnvironmentBuilder {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the Amazon MWAA environment. Valid values:</p>
+    /// <p>The status of the Amazon MWAA environment.</p>
+    /// <p>Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
     /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
     /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
     /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
@@ -348,12 +388,14 @@ impl EnvironmentBuilder {
         self.status = input;
         self
     }
-    /// <p>The status of the Amazon MWAA environment. Valid values:</p>
+    /// <p>The status of the Amazon MWAA environment.</p>
+    /// <p>Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
     /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
     /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
     /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
@@ -741,17 +783,17 @@ impl EnvironmentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn webserver_access_mode(mut self, input: crate::types::WebserverAccessMode) -> Self {
         self.webserver_access_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn set_webserver_access_mode(mut self, input: ::std::option::Option<crate::types::WebserverAccessMode>) -> Self {
         self.webserver_access_mode = input;
         self
     }
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn get_webserver_access_mode(&self) -> &::std::option::Option<crate::types::WebserverAccessMode> {
         &self.webserver_access_mode
     }
@@ -782,6 +824,62 @@ impl EnvironmentBuilder {
     /// <p>The number of Apache Airflow schedulers that run in your Amazon MWAA environment.</p>
     pub fn get_schedulers(&self) -> &::std::option::Option<i32> {
         &self.schedulers
+    }
+    /// <p>The VPC endpoint for the environment's web server.</p>
+    pub fn webserver_vpc_endpoint_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.webserver_vpc_endpoint_service = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The VPC endpoint for the environment's web server.</p>
+    pub fn set_webserver_vpc_endpoint_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.webserver_vpc_endpoint_service = input;
+        self
+    }
+    /// <p>The VPC endpoint for the environment's web server.</p>
+    pub fn get_webserver_vpc_endpoint_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.webserver_vpc_endpoint_service
+    }
+    /// <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+    pub fn database_vpc_endpoint_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_vpc_endpoint_service = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+    pub fn set_database_vpc_endpoint_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_vpc_endpoint_service = input;
+        self
+    }
+    /// <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+    pub fn get_database_vpc_endpoint_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_vpc_endpoint_service
+    }
+    /// <p>The queue ARN for the environment's <a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across multiple workers. When you create an environment in a shared VPC, you must provide access to the Celery Executor queue from your VPC.</p>
+    pub fn celery_executor_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.celery_executor_queue = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The queue ARN for the environment's <a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across multiple workers. When you create an environment in a shared VPC, you must provide access to the Celery Executor queue from your VPC.</p>
+    pub fn set_celery_executor_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.celery_executor_queue = input;
+        self
+    }
+    /// <p>The queue ARN for the environment's <a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across multiple workers. When you create an environment in a shared VPC, you must provide access to the Celery Executor queue from your VPC.</p>
+    pub fn get_celery_executor_queue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.celery_executor_queue
+    }
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in your VPC.</p>
+    pub fn endpoint_management(mut self, input: crate::types::EndpointManagement) -> Self {
+        self.endpoint_management = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in your VPC.</p>
+    pub fn set_endpoint_management(mut self, input: ::std::option::Option<crate::types::EndpointManagement>) -> Self {
+        self.endpoint_management = input;
+        self
+    }
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in your VPC.</p>
+    pub fn get_endpoint_management(&self) -> &::std::option::Option<crate::types::EndpointManagement> {
+        &self.endpoint_management
     }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {
@@ -814,6 +912,10 @@ impl EnvironmentBuilder {
             webserver_access_mode: self.webserver_access_mode,
             min_workers: self.min_workers,
             schedulers: self.schedulers,
+            webserver_vpc_endpoint_service: self.webserver_vpc_endpoint_service,
+            database_vpc_endpoint_service: self.database_vpc_endpoint_service,
+            celery_executor_queue: self.celery_executor_queue,
+            endpoint_management: self.endpoint_management,
         }
     }
 }
@@ -848,6 +950,10 @@ impl ::std::fmt::Debug for EnvironmentBuilder {
         formatter.field("webserver_access_mode", &self.webserver_access_mode);
         formatter.field("min_workers", &self.min_workers);
         formatter.field("schedulers", &self.schedulers);
+        formatter.field("webserver_vpc_endpoint_service", &self.webserver_vpc_endpoint_service);
+        formatter.field("database_vpc_endpoint_service", &self.database_vpc_endpoint_service);
+        formatter.field("celery_executor_queue", &self.celery_executor_queue);
+        formatter.field("endpoint_management", &self.endpoint_management);
         formatter.finish()
     }
 }

@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`users(Option<Vec::<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>A list of all the users.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users::ListUsersOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListUsersError>`](crate::operation::list_users::ListUsersError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn list_users(&self) -> crate::operation::list_users::builders::ListUsersFluentBuilder {
         crate::operation::list_users::builders::ListUsersFluentBuilder::new(self.handle.clone())
     }

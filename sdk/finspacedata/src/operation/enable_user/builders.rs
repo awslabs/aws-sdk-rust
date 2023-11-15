@@ -23,6 +23,7 @@ impl EnableUserInputBuilder {
 /// Fluent builder constructing a request to `EnableUser`.
 ///
 /// <p> Allows the specified user to access the FinSpace web application and API.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

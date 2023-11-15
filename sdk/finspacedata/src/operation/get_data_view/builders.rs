@@ -23,6 +23,7 @@ impl GetDataViewInputBuilder {
 /// Fluent builder constructing a request to `GetDataView`.
 ///
 /// <p>Gets information about a Dataview.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataViewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

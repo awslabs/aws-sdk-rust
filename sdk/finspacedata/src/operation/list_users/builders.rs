@@ -23,6 +23,7 @@ impl ListUsersInputBuilder {
 /// Fluent builder constructing a request to `ListUsers`.
 ///
 /// <p>Lists all available users in FinSpace.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

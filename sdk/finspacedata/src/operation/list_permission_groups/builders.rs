@@ -23,6 +23,7 @@ impl ListPermissionGroupsInputBuilder {
 /// Fluent builder constructing a request to `ListPermissionGroups`.
 ///
 /// <p>Lists all available permission groups in FinSpace.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPermissionGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -39,7 +39,7 @@ pub struct CreateEnvironmentInput {
     /// <p>The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA environment</a>.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.</p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub airflow_version: ::std::option::Option<::std::string::String>,
     /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs.</p>
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfigurationInput>,
@@ -47,7 +47,7 @@ pub struct CreateEnvironmentInput {
     pub weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
     /// <p>The key-value tag pairs you want to associate to your environment. For example, <code>"Environment": "Staging"</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>Defines the access mode for the Apache Airflow <i>web server</i>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub webserver_access_mode: ::std::option::Option<crate::types::WebserverAccessMode>,
     /// <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
     pub min_workers: ::std::option::Option<i32>,
@@ -57,6 +57,8 @@ pub struct CreateEnvironmentInput {
     /// <li> <p>v1 - Accepts 1.</p> </li>
     /// </ul>
     pub schedulers: ::std::option::Option<i32>,
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints for your VPC. If you choose to create an environment in a shared VPC, you must set this value to <code>CUSTOMER</code>. In a shared VPC deployment, the environment will remain in <code>PENDING</code> status until you create the VPC endpoints. If you do not take action to create the endpoints within 72 hours, the status will change to <code>CREATE_FAILED</code>. You can delete the failed environment and create a new one.</p>
+    pub endpoint_management: ::std::option::Option<crate::types::EndpointManagement>,
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -124,7 +126,7 @@ impl CreateEnvironmentInput {
         self.kms_key.as_deref()
     }
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.</p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub fn airflow_version(&self) -> ::std::option::Option<&str> {
         self.airflow_version.as_deref()
     }
@@ -140,7 +142,7 @@ impl CreateEnvironmentInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>Defines the access mode for the Apache Airflow <i>web server</i>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn webserver_access_mode(&self) -> ::std::option::Option<&crate::types::WebserverAccessMode> {
         self.webserver_access_mode.as_ref()
     }
@@ -155,6 +157,10 @@ impl CreateEnvironmentInput {
     /// </ul>
     pub fn schedulers(&self) -> ::std::option::Option<i32> {
         self.schedulers
+    }
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints for your VPC. If you choose to create an environment in a shared VPC, you must set this value to <code>CUSTOMER</code>. In a shared VPC deployment, the environment will remain in <code>PENDING</code> status until you create the VPC endpoints. If you do not take action to create the endpoints within 72 hours, the status will change to <code>CREATE_FAILED</code>. You can delete the failed environment and create a new one.</p>
+    pub fn endpoint_management(&self) -> ::std::option::Option<&crate::types::EndpointManagement> {
+        self.endpoint_management.as_ref()
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentInput {
@@ -182,6 +188,7 @@ impl ::std::fmt::Debug for CreateEnvironmentInput {
         formatter.field("webserver_access_mode", &self.webserver_access_mode);
         formatter.field("min_workers", &self.min_workers);
         formatter.field("schedulers", &self.schedulers);
+        formatter.field("endpoint_management", &self.endpoint_management);
         formatter.finish()
     }
 }
@@ -218,6 +225,7 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) webserver_access_mode: ::std::option::Option<crate::types::WebserverAccessMode>,
     pub(crate) min_workers: ::std::option::Option<i32>,
     pub(crate) schedulers: ::std::option::Option<i32>,
+    pub(crate) endpoint_management: ::std::option::Option<crate::types::EndpointManagement>,
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -463,19 +471,19 @@ impl CreateEnvironmentInputBuilder {
         &self.kms_key
     }
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.</p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub fn airflow_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.airflow_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.</p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub fn set_airflow_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.airflow_version = input;
         self
     }
     /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.</p>
+    /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> </p>
     pub fn get_airflow_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.airflow_version
     }
@@ -527,17 +535,17 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>Defines the access mode for the Apache Airflow <i>web server</i>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn webserver_access_mode(mut self, input: crate::types::WebserverAccessMode) -> Self {
         self.webserver_access_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>Defines the access mode for the Apache Airflow <i>web server</i>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn set_webserver_access_mode(mut self, input: ::std::option::Option<crate::types::WebserverAccessMode>) -> Self {
         self.webserver_access_mode = input;
         self
     }
-    /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    /// <p>Defines the access mode for the Apache Airflow <i>web server</i>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     pub fn get_webserver_access_mode(&self) -> &::std::option::Option<crate::types::WebserverAccessMode> {
         &self.webserver_access_mode
     }
@@ -581,6 +589,20 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_schedulers(&self) -> &::std::option::Option<i32> {
         &self.schedulers
     }
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints for your VPC. If you choose to create an environment in a shared VPC, you must set this value to <code>CUSTOMER</code>. In a shared VPC deployment, the environment will remain in <code>PENDING</code> status until you create the VPC endpoints. If you do not take action to create the endpoints within 72 hours, the status will change to <code>CREATE_FAILED</code>. You can delete the failed environment and create a new one.</p>
+    pub fn endpoint_management(mut self, input: crate::types::EndpointManagement) -> Self {
+        self.endpoint_management = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints for your VPC. If you choose to create an environment in a shared VPC, you must set this value to <code>CUSTOMER</code>. In a shared VPC deployment, the environment will remain in <code>PENDING</code> status until you create the VPC endpoints. If you do not take action to create the endpoints within 72 hours, the status will change to <code>CREATE_FAILED</code>. You can delete the failed environment and create a new one.</p>
+    pub fn set_endpoint_management(mut self, input: ::std::option::Option<crate::types::EndpointManagement>) -> Self {
+        self.endpoint_management = input;
+        self
+    }
+    /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints for your VPC. If you choose to create an environment in a shared VPC, you must set this value to <code>CUSTOMER</code>. In a shared VPC deployment, the environment will remain in <code>PENDING</code> status until you create the VPC endpoints. If you do not take action to create the endpoints within 72 hours, the status will change to <code>CREATE_FAILED</code>. You can delete the failed environment and create a new one.</p>
+    pub fn get_endpoint_management(&self) -> &::std::option::Option<crate::types::EndpointManagement> {
+        &self.endpoint_management
+    }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
@@ -608,6 +630,7 @@ impl CreateEnvironmentInputBuilder {
             webserver_access_mode: self.webserver_access_mode,
             min_workers: self.min_workers,
             schedulers: self.schedulers,
+            endpoint_management: self.endpoint_management,
         })
     }
 }
@@ -636,6 +659,7 @@ impl ::std::fmt::Debug for CreateEnvironmentInputBuilder {
         formatter.field("webserver_access_mode", &self.webserver_access_mode);
         formatter.field("min_workers", &self.min_workers);
         formatter.field("schedulers", &self.schedulers);
+        formatter.field("endpoint_management", &self.endpoint_management);
         formatter.finish()
     }
 }

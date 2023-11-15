@@ -23,6 +23,7 @@ impl ResetUserPasswordInputBuilder {
 /// Fluent builder constructing a request to `ResetUserPassword`.
 ///
 /// <p>Resets the password for a specified user ID and generates a temporary one. Only a superuser can reset password for other users. Resetting the password immediately invalidates the previous password associated with the user.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetUserPasswordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

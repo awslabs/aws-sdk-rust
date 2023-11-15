@@ -23,6 +23,7 @@ impl UpdatePermissionGroupInputBuilder {
 /// Fluent builder constructing a request to `UpdatePermissionGroup`.
 ///
 /// <p>Modifies the details of a permission group. You cannot modify a <code>permissionGroupID</code>.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePermissionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

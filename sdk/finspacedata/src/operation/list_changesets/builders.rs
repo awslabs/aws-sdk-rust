@@ -23,6 +23,7 @@ impl ListChangesetsInputBuilder {
 /// Fluent builder constructing a request to `ListChangesets`.
 ///
 /// <p>Lists the FinSpace Changesets for a Dataset.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListChangesetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

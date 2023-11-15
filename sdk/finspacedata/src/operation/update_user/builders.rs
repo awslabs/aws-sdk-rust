@@ -23,6 +23,7 @@ impl UpdateUserInputBuilder {
 /// Fluent builder constructing a request to `UpdateUser`.
 ///
 /// <p>Modifies the details of the specified user. You cannot update the <code>userId</code> for a user.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

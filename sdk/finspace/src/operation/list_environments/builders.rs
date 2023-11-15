@@ -23,6 +23,7 @@ impl ListEnvironmentsInputBuilder {
 /// Fluent builder constructing a request to `ListEnvironments`.
 ///
 /// <p>A list of all of your FinSpace environments.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

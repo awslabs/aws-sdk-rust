@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`credentials(Option<Credentials>)`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput::credentials): <p>Returns the programmatic credentials.</p>
     ///   - [`duration_in_minutes(Option<i64>)`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput::duration_in_minutes): <p>Returns the duration in which the credentials will remain valid.</p>
     /// - On failure, responds with [`SdkError<GetProgrammaticAccessCredentialsError>`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn get_programmatic_access_credentials(
         &self,
     ) -> crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsFluentBuilder {

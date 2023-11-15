@@ -735,6 +735,8 @@ mod describe_local_gateway_virtual_interfaces;
 
 mod describe_local_gateways;
 
+mod describe_locked_snapshots;
+
 mod describe_managed_prefix_lists;
 
 mod describe_moving_addresses;
@@ -1107,6 +1109,8 @@ mod list_images_in_recycle_bin;
 
 mod list_snapshots_in_recycle_bin;
 
+mod lock_snapshot;
+
 mod modify_address_attribute;
 
 mod modify_availability_zone_group;
@@ -1362,6 +1366,8 @@ mod unassign_ipv6_addresses;
 mod unassign_private_ip_addresses;
 
 mod unassign_private_nat_gateway_address;
+
+mod unlock_snapshot;
 
 mod unmonitor_instances;
 

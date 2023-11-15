@@ -23,6 +23,7 @@ impl DeletePermissionGroupInputBuilder {
 /// Fluent builder constructing a request to `DeletePermissionGroup`.
 ///
 /// <p>Deletes a permission group. This action is irreversible.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePermissionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

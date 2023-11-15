@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_views::ListDataViewsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     ///   - [`data_views(Option<Vec::<DataViewSummary>>)`](crate::operation::list_data_views::ListDataViewsOutput::data_views): <p>A list of Dataviews.</p>
     /// - On failure, responds with [`SdkError<ListDataViewsError>`](crate::operation::list_data_views::ListDataViewsError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn list_data_views(&self) -> crate::operation::list_data_views::builders::ListDataViewsFluentBuilder {
         crate::operation::list_data_views::builders::ListDataViewsFluentBuilder::new(self.handle.clone())
     }

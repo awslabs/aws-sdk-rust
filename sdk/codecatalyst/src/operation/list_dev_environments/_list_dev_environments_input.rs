@@ -72,7 +72,6 @@ impl ListDevEnvironmentsInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
-    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self

@@ -23,6 +23,7 @@ impl AssociateUserToPermissionGroupInputBuilder {
 /// Fluent builder constructing a request to `AssociateUserToPermissionGroup`.
 ///
 /// <p>Adds a user to a permission group to grant permissions for actions a user can perform in FinSpace.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateUserToPermissionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

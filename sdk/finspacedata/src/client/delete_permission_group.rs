@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePermissionGroupOutput`](crate::operation::delete_permission_group::DeletePermissionGroupOutput) with field(s):
     ///   - [`permission_group_id(Option<String>)`](crate::operation::delete_permission_group::DeletePermissionGroupOutput::permission_group_id): <p>The unique identifier for the deleted permission group.</p>
     /// - On failure, responds with [`SdkError<DeletePermissionGroupError>`](crate::operation::delete_permission_group::DeletePermissionGroupError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn delete_permission_group(&self) -> crate::operation::delete_permission_group::builders::DeletePermissionGroupFluentBuilder {
         crate::operation::delete_permission_group::builders::DeletePermissionGroupFluentBuilder::new(self.handle.clone())
     }

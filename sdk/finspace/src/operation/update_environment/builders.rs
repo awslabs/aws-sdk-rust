@@ -23,6 +23,7 @@ impl UpdateEnvironmentInputBuilder {
 /// Fluent builder constructing a request to `UpdateEnvironment`.
 ///
 /// <p>Update your FinSpace environment.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

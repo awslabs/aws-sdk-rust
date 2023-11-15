@@ -51,5 +51,8 @@ pub fn ser_create_event_data_store_input_input(
     if let Some(var_15) = &input.start_ingestion {
         object.key("StartIngestion").boolean(*var_15);
     }
+    if let Some(var_16) = &input.billing_mode {
+        object.key("BillingMode").string(var_16.as_str());
+    }
     Ok(())
 }

@@ -27,6 +27,7 @@ impl GetExternalDataViewAccessDetailsInputBuilder {
 /// <li> <p>You must retrieve the programmatic credentials.</p> </li>
 /// <li> <p>You must be a member of a FinSpace user group, where the dataset that you want to access has <code>Read Dataset Data</code> permissions.</p> </li>
 /// </ul>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExternalDataViewAccessDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

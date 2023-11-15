@@ -13,6 +13,7 @@
 /// # let filterkey = unimplemented!();
 /// match filterkey {
 ///     FilterKey::HasAccessTo => { /* ... */ },
+///     FilterKey::Name => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum FilterKey {
     #[allow(missing_docs)] // documentation missing in model
     HasAccessTo,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -49,6 +52,7 @@ impl ::std::convert::From<&str> for FilterKey {
     fn from(s: &str) -> Self {
         match s {
             "hasAccessTo" => FilterKey::HasAccessTo,
+            "name" => FilterKey::Name,
             other => FilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,12 +69,13 @@ impl FilterKey {
     pub fn as_str(&self) -> &str {
         match self {
             FilterKey::HasAccessTo => "hasAccessTo",
+            FilterKey::Name => "name",
             FilterKey::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["hasAccessTo"]
+        &["hasAccessTo", "name"]
     }
 }
 impl ::std::convert::AsRef<str> for FilterKey {

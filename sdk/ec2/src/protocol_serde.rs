@@ -1175,6 +1175,10 @@ pub(crate) mod shape_describe_local_gateways;
 
 pub(crate) mod shape_describe_local_gateways_input;
 
+pub(crate) mod shape_describe_locked_snapshots;
+
+pub(crate) mod shape_describe_locked_snapshots_input;
+
 pub(crate) mod shape_describe_managed_prefix_lists;
 
 pub(crate) mod shape_describe_managed_prefix_lists_input;
@@ -1919,6 +1923,10 @@ pub(crate) mod shape_list_snapshots_in_recycle_bin;
 
 pub(crate) mod shape_list_snapshots_in_recycle_bin_input;
 
+pub(crate) mod shape_lock_snapshot;
+
+pub(crate) mod shape_lock_snapshot_input;
+
 pub(crate) mod shape_modify_address_attribute;
 
 pub(crate) mod shape_modify_address_attribute_input;
@@ -2430,6 +2438,10 @@ pub(crate) mod shape_unassign_private_ip_addresses_input;
 pub(crate) mod shape_unassign_private_nat_gateway_address;
 
 pub(crate) mod shape_unassign_private_nat_gateway_address_input;
+
+pub(crate) mod shape_unlock_snapshot;
+
+pub(crate) mod shape_unlock_snapshot_input;
 
 pub(crate) mod shape_unmonitor_instances;
 
@@ -3101,6 +3113,8 @@ pub(crate) mod shape_local_gateway_virtual_interface_group_set;
 
 pub(crate) mod shape_local_gateway_virtual_interface_set;
 
+pub(crate) mod shape_locked_snapshots_info_list;
+
 pub(crate) mod shape_maintenance_details;
 
 pub(crate) mod shape_managed_prefix_list;
@@ -3770,6 +3784,8 @@ pub(crate) mod shape_local_gateway;
 pub(crate) mod shape_local_gateway_virtual_interface;
 
 pub(crate) mod shape_local_gateway_virtual_interface_group;
+
+pub(crate) mod shape_locked_snapshots_info;
 
 pub(crate) mod shape_moving_address_status;
 

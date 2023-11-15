@@ -23,6 +23,7 @@ impl CreateUserInputBuilder {
 /// Fluent builder constructing a request to `CreateUser`.
 ///
 /// <p>Creates a new user in FinSpace.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

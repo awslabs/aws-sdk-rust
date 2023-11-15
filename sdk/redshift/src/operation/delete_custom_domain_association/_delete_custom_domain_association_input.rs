@@ -5,11 +5,17 @@
 pub struct DeleteCustomDomainAssociationInput {
     /// <p>The identifier of the cluster to delete a custom domain association for.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The custom domain name for the custom domain association.</p>
+    pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomDomainAssociationInput {
     /// <p>The identifier of the cluster to delete a custom domain association for.</p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
+    }
+    /// <p>The custom domain name for the custom domain association.</p>
+    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_name.as_deref()
     }
 }
 impl DeleteCustomDomainAssociationInput {
@@ -24,6 +30,7 @@ impl DeleteCustomDomainAssociationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomDomainAssociationInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomDomainAssociationInputBuilder {
     /// <p>The identifier of the cluster to delete a custom domain association for.</p>
@@ -41,6 +48,21 @@ impl DeleteCustomDomainAssociationInputBuilder {
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
+    /// <p>The custom domain name for the custom domain association.</p>
+    /// This field is required.
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_domain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain name for the custom domain association.</p>
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_domain_name = input;
+        self
+    }
+    /// <p>The custom domain name for the custom domain association.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
     /// Consumes the builder and constructs a [`DeleteCustomDomainAssociationInput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationInput).
     pub fn build(
         self,
@@ -50,6 +72,7 @@ impl DeleteCustomDomainAssociationInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationInput {
             cluster_identifier: self.cluster_identifier,
+            custom_domain_name: self.custom_domain_name,
         })
     }
 }

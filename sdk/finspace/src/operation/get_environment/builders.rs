@@ -23,6 +23,7 @@ impl GetEnvironmentInputBuilder {
 /// Fluent builder constructing a request to `GetEnvironment`.
 ///
 /// <p>Returns the FinSpace environment object.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

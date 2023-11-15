@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`changesets(Option<Vec::<ChangesetSummary>>)`](crate::operation::list_changesets::ListChangesetsOutput::changesets): <p>List of Changesets found.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_changesets::ListChangesetsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListChangesetsError>`](crate::operation::list_changesets::ListChangesetsError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn list_changesets(&self) -> crate::operation::list_changesets::builders::ListChangesetsFluentBuilder {
         crate::operation::list_changesets::builders::ListChangesetsFluentBuilder::new(self.handle.clone())
     }

@@ -10,6 +10,11 @@ pub fn ser_delete_custom_domain_association_input_input_input(
     if let Some(var_2) = &input.cluster_identifier {
         scope_1.string(var_2);
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("CustomDomainName");
+    if let Some(var_4) = &input.custom_domain_name {
+        scope_3.string(var_4);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

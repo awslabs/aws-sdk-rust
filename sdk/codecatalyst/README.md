@@ -10,7 +10,7 @@ Spaces, by calling the following:
   - GetSpace, which returns information about a space.
   - GetSubscription, which returns information about the Amazon Web Services account used for billing purposes and the billing plan for the space.
   - ListSpaces, which retrieves a list of spaces.
-  - UpdateSpace, which hanges one or more values for a space.
+  - UpdateSpace, which changes one or more values for a space.
 
 Projects, by calling the following:
   - CreateProject which creates a project in a specified space.
@@ -41,6 +41,13 @@ Dev Environments and the Amazon Web Services Toolkits, by calling the following:
   - StopDevEnvironmentSession, which stops a session for a specified Dev Environment.
   - UpdateDevEnvironment, which changes one or more values for a Dev Environment.
 
+Workflows, by calling the following:
+  - GetWorkflow, which returns information about a workflow.
+  - GetWorkflowRun, which returns information about a specified run of a workflow.
+  - ListWorkflowRuns, which retrieves a list of runs of a specified workflow.
+  - ListWorkflows, which retrieves a list of workflows in a specified project.
+  - StartWorkflowRun, which starts a run of a specified workflow.
+
 Security, activity, and resource management in Amazon CodeCatalyst, by calling the following:
   - CreateAccessToken, which creates a personal access token (PAT) for the current user.
   - DeleteAccessToken, which deletes a specified personal access token (PAT).
@@ -60,7 +67,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.57.2"
-aws-sdk-codecatalyst = "0.14.0"
+aws-sdk-codecatalyst = "0.14.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

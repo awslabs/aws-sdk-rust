@@ -193,6 +193,10 @@ mod get_subscription;
 
 mod get_user_details;
 
+mod get_workflow;
+
+mod get_workflow_run;
+
 mod list_access_tokens;
 
 mod list_dev_environment_sessions;
@@ -209,9 +213,15 @@ mod list_source_repository_branches;
 
 mod list_spaces;
 
+mod list_workflow_runs;
+
+mod list_workflows;
+
 mod start_dev_environment;
 
 mod start_dev_environment_session;
+
+mod start_workflow_run;
 
 mod stop_dev_environment;
 

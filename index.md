@@ -126,6 +126,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Route53 Recovery Control Config | [aws-sdk-route53recoverycontrolconfig](https://crates.io/crates/aws-sdk-route53recoverycontrolconfig) ([docs](https://docs.rs/aws-sdk-route53recoverycontrolconfig)) |
 | AWS Route53 Recovery Readiness | [aws-sdk-route53recoveryreadiness](https://crates.io/crates/aws-sdk-route53recoveryreadiness) ([docs](https://docs.rs/aws-sdk-route53recoveryreadiness)) |
 | AWS S3 Control | [aws-sdk-s3control](https://crates.io/crates/aws-sdk-s3control) ([docs](https://docs.rs/aws-sdk-s3control)) |
+| AWS S3 Control | [aws-sdk-s3control](https://crates.io/crates/aws-sdk-s3control) ([docs](https://docs.rs/aws-sdk-s3control)) |
 | AWS SSO Identity Store | [aws-sdk-identitystore](https://crates.io/crates/aws-sdk-identitystore) ([docs](https://docs.rs/aws-sdk-identitystore)) |
 | AWS SSO OIDC | [aws-sdk-ssooidc](https://crates.io/crates/aws-sdk-ssooidc) ([docs](https://docs.rs/aws-sdk-ssooidc)) |
 | AWS Savings Plans | [aws-sdk-savingsplans](https://crates.io/crates/aws-sdk-savingsplans) ([docs](https://docs.rs/aws-sdk-savingsplans)) |
@@ -334,6 +335,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AppFabric | [aws-sdk-appfabric](https://crates.io/crates/aws-sdk-appfabric) ([docs](https://docs.rs/aws-sdk-appfabric)) |
 | Application Auto Scaling | [aws-sdk-applicationautoscaling](https://crates.io/crates/aws-sdk-applicationautoscaling) ([docs](https://docs.rs/aws-sdk-applicationautoscaling)) |
 | Application Migration Service | [aws-sdk-mgn](https://crates.io/crates/aws-sdk-mgn) ([docs](https://docs.rs/aws-sdk-mgn)) |
+| Auto Scaling | [aws-sdk-autoscaling](https://crates.io/crates/aws-sdk-autoscaling) ([docs](https://docs.rs/aws-sdk-autoscaling)) |
 | Auto Scaling | [aws-sdk-autoscaling](https://crates.io/crates/aws-sdk-autoscaling) ([docs](https://docs.rs/aws-sdk-autoscaling)) |
 | Braket | [aws-sdk-braket](https://crates.io/crates/aws-sdk-braket) ([docs](https://docs.rs/aws-sdk-braket)) |
 | CloudWatch Observability Access Manager | [aws-sdk-oam](https://crates.io/crates/aws-sdk-oam) ([docs](https://docs.rs/aws-sdk-oam)) |

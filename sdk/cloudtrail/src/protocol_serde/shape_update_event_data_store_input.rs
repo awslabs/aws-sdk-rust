@@ -39,5 +39,8 @@ pub fn ser_update_event_data_store_input_input(
     if let Some(var_11) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.billing_mode {
+        object.key("BillingMode").string(var_12.as_str());
+    }
     Ok(())
 }

@@ -23,6 +23,7 @@ impl DeleteEnvironmentInputBuilder {
 /// Fluent builder constructing a request to `DeleteEnvironment`.
 ///
 /// <p>Delete an FinSpace environment.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

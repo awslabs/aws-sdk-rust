@@ -12,6 +12,7 @@
 /// ```text
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
+///     ComparisonOperator::BeginsWith => { /* ... */ },
 ///     ComparisonOperator::Equals => { /* ... */ },
 ///     ComparisonOperator::GreaterThanOrEquals => { /* ... */ },
 ///     ComparisonOperator::GreaterThan => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
+    BeginsWith,
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
     #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEquals,
@@ -60,6 +63,7 @@ pub enum ComparisonOperator {
 impl ::std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
         match s {
+            "BEGINS_WITH" => ComparisonOperator::BeginsWith,
             "EQ" => ComparisonOperator::Equals,
             "GE" => ComparisonOperator::GreaterThanOrEquals,
             "GT" => ComparisonOperator::GreaterThan,
@@ -80,6 +84,7 @@ impl ComparisonOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ComparisonOperator::BeginsWith => "BEGINS_WITH",
             ComparisonOperator::Equals => "EQ",
             ComparisonOperator::GreaterThanOrEquals => "GE",
             ComparisonOperator::GreaterThan => "GT",
@@ -90,7 +95,7 @@ impl ComparisonOperator {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EQ", "GE", "GT", "LE", "LT"]
+        &["BEGINS_WITH", "EQ", "GE", "GT", "LE", "LT"]
     }
 }
 impl ::std::convert::AsRef<str> for ComparisonOperator {

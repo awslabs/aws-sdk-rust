@@ -7988,6 +7988,32 @@ impl From<crate::operation::describe_local_gateway_virtual_interfaces::DescribeL
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_locked_snapshots::DescribeLockedSnapshotsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_locked_snapshots::DescribeLockedSnapshotsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_locked_snapshots::DescribeLockedSnapshotsError> for Error {
+    fn from(err: crate::operation::describe_locked_snapshots::DescribeLockedSnapshotsError) -> Self {
+        match err {
+            crate::operation::describe_locked_snapshots::DescribeLockedSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError, R>>
     for Error
 where
@@ -13548,6 +13574,29 @@ impl From<crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycl
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::lock_snapshot::LockSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::lock_snapshot::LockSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::lock_snapshot::LockSnapshotError> for Error {
+    fn from(err: crate::operation::lock_snapshot::LockSnapshotError) -> Self {
+        match err {
+            crate::operation::lock_snapshot::LockSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_address_attribute::ModifyAddressAttributeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -17137,6 +17186,29 @@ impl From<crate::operation::unassign_private_nat_gateway_address::UnassignPrivat
             crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::unlock_snapshot::UnlockSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::unlock_snapshot::UnlockSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::unlock_snapshot::UnlockSnapshotError> for Error {
+    fn from(err: crate::operation::unlock_snapshot::UnlockSnapshotError) -> Self {
+        match err {
+            crate::operation::unlock_snapshot::UnlockSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

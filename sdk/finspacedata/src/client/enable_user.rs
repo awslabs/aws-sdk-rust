@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`EnableUserOutput`](crate::operation::enable_user::EnableUserOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::operation::enable_user::EnableUserOutput::user_id): <p>The unique identifier for the active user.</p>
     /// - On failure, responds with [`SdkError<EnableUserError>`](crate::operation::enable_user::EnableUserError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn enable_user(&self) -> crate::operation::enable_user::builders::EnableUserFluentBuilder {
         crate::operation::enable_user::builders::EnableUserFluentBuilder::new(self.handle.clone())
     }

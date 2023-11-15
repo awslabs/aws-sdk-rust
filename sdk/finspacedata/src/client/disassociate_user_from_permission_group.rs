@@ -9,6 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateUserFromPermissionGroupOutput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput) with field(s):
     ///   - [`status_code(i32)`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput::status_code): <p>The returned status code of the response.</p>
     /// - On failure, responds with [`SdkError<DisassociateUserFromPermissionGroupError>`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn disassociate_user_from_permission_group(
         &self,
     ) -> crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupFluentBuilder {

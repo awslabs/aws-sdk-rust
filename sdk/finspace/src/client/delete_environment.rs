@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`environment_id(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_environment_id):<br>required: **true**<br><p>The identifier for the FinSpace environment.</p><br>
     /// - On success, responds with [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput)
     /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::operation::delete_environment::DeleteEnvironmentError)
+    #[deprecated(note = "This method will be discontinued.")]
     pub fn delete_environment(&self) -> crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::new(self.handle.clone())
     }

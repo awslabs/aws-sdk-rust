@@ -893,6 +893,10 @@ pub use crate::types::_connection_log_options::ConnectionLogOptions;
 
 pub use crate::types::_modify_availability_zone_opt_in_status::ModifyAvailabilityZoneOptInStatus;
 
+pub use crate::types::_lock_state::LockState;
+
+pub use crate::types::_lock_mode::LockMode;
+
 pub use crate::types::_snapshot_recycle_bin_info::SnapshotRecycleBinInfo;
 
 pub use crate::types::_image_recycle_bin_info::ImageRecycleBinInfo;
@@ -1524,6 +1528,8 @@ pub use crate::types::_provisioned_bandwidth::ProvisionedBandwidth;
 pub use crate::types::_moving_address_status::MovingAddressStatus;
 
 pub use crate::types::_move_status::MoveStatus;
+
+pub use crate::types::_locked_snapshots_info::LockedSnapshotsInfo;
 
 pub use crate::types::_local_gateway_virtual_interface::LocalGatewayVirtualInterface;
 
@@ -3196,6 +3202,12 @@ mod _local_storage;
 mod _local_storage_type;
 
 mod _location_type;
+
+mod _lock_mode;
+
+mod _lock_state;
+
+mod _locked_snapshots_info;
 
 mod _log_destination_type;
 

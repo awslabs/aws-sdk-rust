@@ -251,6 +251,69 @@ pub(crate) fn get_space_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_workflow_output_output_correct_errors(
+    mut builder: crate::operation::get_workflow::builders::GetWorkflowOutputBuilder,
+) -> crate::operation::get_workflow::builders::GetWorkflowOutputBuilder {
+    if builder.space_name.is_none() {
+        builder.space_name = Some(Default::default())
+    }
+    if builder.project_name.is_none() {
+        builder.project_name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.definition.is_none() {
+        builder.definition = {
+            let builder = crate::types::builders::WorkflowDefinitionBuilder::default();
+            crate::serde_util::workflow_definition_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.run_mode.is_none() {
+        builder.run_mode = "no value was set".parse::<crate::types::WorkflowRunMode>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::WorkflowStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_workflow_run_output_output_correct_errors(
+    mut builder: crate::operation::get_workflow_run::builders::GetWorkflowRunOutputBuilder,
+) -> crate::operation::get_workflow_run::builders::GetWorkflowRunOutputBuilder {
+    if builder.space_name.is_none() {
+        builder.space_name = Some(Default::default())
+    }
+    if builder.project_name.is_none() {
+        builder.project_name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.workflow_id.is_none() {
+        builder.workflow_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::WorkflowRunStatus>().ok()
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn list_access_tokens_output_output_correct_errors(
     mut builder: crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder,
 ) -> crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder {
@@ -335,6 +398,24 @@ pub(crate) fn start_dev_environment_session_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_workflow_run_output_output_correct_errors(
+    mut builder: crate::operation::start_workflow_run::builders::StartWorkflowRunOutputBuilder,
+) -> crate::operation::start_workflow_run::builders::StartWorkflowRunOutputBuilder {
+    if builder.space_name.is_none() {
+        builder.space_name = Some(Default::default())
+    }
+    if builder.project_name.is_none() {
+        builder.project_name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.workflow_id.is_none() {
+        builder.workflow_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn stop_dev_environment_output_output_correct_errors(
     mut builder: crate::operation::stop_dev_environment::builders::StopDevEnvironmentOutputBuilder,
 ) -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentOutputBuilder {
@@ -391,6 +472,15 @@ pub(crate) fn persistent_storage_correct_errors(
 ) -> crate::types::builders::PersistentStorageBuilder {
     if builder.size_in_gib.is_none() {
         builder.size_in_gib = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn workflow_definition_correct_errors(
+    mut builder: crate::types::builders::WorkflowDefinitionBuilder,
+) -> crate::types::builders::WorkflowDefinitionBuilder {
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
     }
     builder
 }
@@ -552,12 +642,81 @@ pub(crate) fn space_summary_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn workflow_run_summary_correct_errors(
+    mut builder: crate::types::builders::WorkflowRunSummaryBuilder,
+) -> crate::types::builders::WorkflowRunSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.workflow_id.is_none() {
+        builder.workflow_id = Some(Default::default())
+    }
+    if builder.workflow_name.is_none() {
+        builder.workflow_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::WorkflowRunStatus>().ok()
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn workflow_summary_correct_errors(
+    mut builder: crate::types::builders::WorkflowSummaryBuilder,
+) -> crate::types::builders::WorkflowSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.source_repository_name.is_none() {
+        builder.source_repository_name = Some(Default::default())
+    }
+    if builder.source_branch_name.is_none() {
+        builder.source_branch_name = Some(Default::default())
+    }
+    if builder.definition.is_none() {
+        builder.definition = {
+            let builder = crate::types::builders::WorkflowDefinitionSummaryBuilder::default();
+            crate::serde_util::workflow_definition_summary_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.run_mode.is_none() {
+        builder.run_mode = "no value was set".parse::<crate::types::WorkflowRunMode>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::WorkflowStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn user_identity_correct_errors(mut builder: crate::types::builders::UserIdentityBuilder) -> crate::types::builders::UserIdentityBuilder {
     if builder.user_type.is_none() {
         builder.user_type = "no value was set".parse::<crate::types::UserType>().ok()
     }
     if builder.principal_id.is_none() {
         builder.principal_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn workflow_definition_summary_correct_errors(
+    mut builder: crate::types::builders::WorkflowDefinitionSummaryBuilder,
+) -> crate::types::builders::WorkflowDefinitionSummaryBuilder {
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
     }
     builder
 }

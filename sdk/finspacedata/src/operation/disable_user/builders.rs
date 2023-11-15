@@ -23,6 +23,7 @@ impl DisableUserInputBuilder {
 /// Fluent builder constructing a request to `DisableUser`.
 ///
 /// <p>Denies access to the FinSpace web application and API for the specified user.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

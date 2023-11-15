@@ -865,6 +865,9 @@ pub mod describe_local_gateway_virtual_interfaces;
 /// Types for the `DescribeLocalGateways` operation.
 pub mod describe_local_gateways;
 
+/// Types for the `DescribeLockedSnapshots` operation.
+pub mod describe_locked_snapshots;
+
 /// Types for the `DescribeManagedPrefixLists` operation.
 pub mod describe_managed_prefix_lists;
 
@@ -1423,6 +1426,9 @@ pub mod list_images_in_recycle_bin;
 /// Types for the `ListSnapshotsInRecycleBin` operation.
 pub mod list_snapshots_in_recycle_bin;
 
+/// Types for the `LockSnapshot` operation.
+pub mod lock_snapshot;
+
 /// Types for the `ModifyAddressAttribute` operation.
 pub mod modify_address_attribute;
 
@@ -1806,6 +1812,9 @@ pub mod unassign_private_ip_addresses;
 
 /// Types for the `UnassignPrivateNatGatewayAddress` operation.
 pub mod unassign_private_nat_gateway_address;
+
+/// Types for the `UnlockSnapshot` operation.
+pub mod unlock_snapshot;
 
 /// Types for the `UnmonitorInstances` operation.
 pub mod unmonitor_instances;

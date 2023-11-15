@@ -23,6 +23,7 @@ impl GetWorkingLocationInputBuilder {
 /// Fluent builder constructing a request to `GetWorkingLocation`.
 ///
 /// <p>A temporary Amazon S3 location, where you can copy your files from a source location to stage or use as a scratch space in FinSpace notebook.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkingLocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

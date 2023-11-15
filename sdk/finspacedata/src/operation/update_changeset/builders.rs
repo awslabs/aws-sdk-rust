@@ -23,6 +23,7 @@ impl UpdateChangesetInputBuilder {
 /// Fluent builder constructing a request to `UpdateChangeset`.
 ///
 /// <p>Updates a FinSpace Changeset.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateChangesetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

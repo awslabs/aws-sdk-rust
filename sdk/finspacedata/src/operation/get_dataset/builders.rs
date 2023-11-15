@@ -23,6 +23,7 @@ impl GetDatasetInputBuilder {
 /// Fluent builder constructing a request to `GetDataset`.
 ///
 /// <p>Returns information about a Dataset.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -23,6 +23,7 @@ impl ListUsersByPermissionGroupInputBuilder {
 /// Fluent builder constructing a request to `ListUsersByPermissionGroup`.
 ///
 /// <p>Lists details of all the users in a specific permission group.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUsersByPermissionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

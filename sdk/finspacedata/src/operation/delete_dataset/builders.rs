@@ -23,6 +23,7 @@ impl DeleteDatasetInputBuilder {
 /// Fluent builder constructing a request to `DeleteDataset`.
 ///
 /// <p>Deletes a FinSpace Dataset.</p>
+#[deprecated(note = "This method will be discontinued.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
