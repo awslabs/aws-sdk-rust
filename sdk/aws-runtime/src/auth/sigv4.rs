@@ -223,8 +223,9 @@ mod event_stream {
     use aws_sigv4::event_stream::{sign_empty_message, sign_message};
     use aws_sigv4::sign::v4;
     use aws_smithy_async::time::SharedTimeSource;
-    use aws_smithy_eventstream::frame::{Message, SignMessage, SignMessageError};
+    use aws_smithy_eventstream::frame::{SignMessage, SignMessageError};
     use aws_smithy_runtime_api::client::identity::Identity;
+    use aws_smithy_types::event_stream::Message;
     use aws_types::region::SigningRegion;
     use aws_types::SigningName;
 
@@ -293,7 +294,8 @@ mod event_stream {
         use crate::auth::sigv4::event_stream::SigV4MessageSigner;
         use aws_credential_types::Credentials;
         use aws_smithy_async::time::SharedTimeSource;
-        use aws_smithy_eventstream::frame::{HeaderValue, Message, SignMessage};
+        use aws_smithy_eventstream::frame::SignMessage;
+        use aws_smithy_types::event_stream::{HeaderValue, Message};
 
         use aws_types::region::Region;
         use aws_types::region::SigningRegion;

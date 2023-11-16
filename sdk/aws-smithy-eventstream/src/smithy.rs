@@ -4,8 +4,8 @@
  */
 
 use crate::error::{Error, ErrorKind};
-use crate::frame::{Header, HeaderValue, Message};
-use crate::str_bytes::StrBytes;
+use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
+use aws_smithy_types::str_bytes::StrBytes;
 use aws_smithy_types::{Blob, DateTime};
 
 macro_rules! expect_shape_fn {
@@ -125,7 +125,7 @@ pub fn parse_response_headers(message: &Message) -> Result<ResponseHeaders<'_>, 
 #[cfg(test)]
 mod tests {
     use super::parse_response_headers;
-    use crate::frame::{Header, HeaderValue, Message};
+    use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
 
     #[test]
     fn normal_message() {

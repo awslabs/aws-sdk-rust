@@ -5,6 +5,9 @@ pub use ::aws_smithy_types::byte_stream::AggregatedBytes;
 pub use ::aws_smithy_types::byte_stream::ByteStream;
 pub use ::aws_smithy_types::Blob;
 
+/// Event stream related primitives such as `Message` or `Header`.
+pub mod event_stream;
+
 /// Opaque struct used as inner data for the `Unknown` variant defined in enums in
 /// the crate
 ///

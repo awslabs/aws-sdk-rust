@@ -2,3 +2,6 @@
 pub use ::aws_smithy_types::date_time::Format as DateTimeFormat;
 pub use ::aws_smithy_types::Blob;
 pub use ::aws_smithy_types::DateTime;
+
+/// Event stream related primitives such as `Message` or `Header`.
+pub mod event_stream;

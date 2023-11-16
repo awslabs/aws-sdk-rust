@@ -5,10 +5,10 @@
 
 #![no_main]
 
-use aws_smithy_eventstream::frame::Message;
+use aws_smithy_eventstream::frame::read_message_from;
 use libfuzzer_sys::fuzz_target;
 
 fuzz_target!(|data: &[u8]| {
     let mut message = data;
-    let _ = Message::read_from(&mut message);
+    let _ = read_message_from(&mut message);
 });

@@ -5,7 +5,8 @@
 
 #![no_main]
 
-use aws_smithy_eventstream::frame::{Header, HeaderValue, Message};
+use aws_smithy_eventstream::frame::{read_message_from, write_message_to};
+use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
 use aws_smithy_types::DateTime;
 use bytes::{Buf, BufMut};
 use crc32fast::Hasher as Crc;
@@ -18,7 +19,7 @@ use libfuzzer_sys::{fuzz_mutator, fuzz_target};
 // so that the fuzzer can actually explore the header parsing logic.
 fn mutate(data: &mut [u8], size: usize, max_size: usize) -> usize {
     let input = &mut &data[..size];
-    let message = if let Ok(message) = Message::read_from(input) {
+    let message = if let Ok(message) = read_message_from(input) {
         message
     } else {
         Message::new(&b"some payload"[..])
@@ -44,7 +45,7 @@ fn mutate(data: &mut [u8], size: usize, max_size: usize) -> usize {
     };
 
     let mut bytes = Vec::new();
-    message.write_to(&mut bytes).unwrap();
+    write_message_to(&message, &mut bytes).unwrap();
 
     let headers_len = (&bytes[4..8]).get_u32();
     let non_header_len = bytes.len() - headers_len as usize;
@@ -72,7 +73,7 @@ fuzz_mutator!(
 
 fuzz_target!(|data: &[u8]| {
     let mut message = data;
-    let _ = Message::read_from(&mut message);
+    let _ = read_message_from(&mut message);
 });
 
 fn crc(input: &[u8]) -> u32 {

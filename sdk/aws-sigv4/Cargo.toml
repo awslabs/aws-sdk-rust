@@ -57,6 +57,10 @@ path = "../aws-smithy-runtime-api"
 features = ["client"]
 version = "0.57.1"
 
+[dependencies.aws-smithy-types]
+path = "../aws-smithy-types"
+version = "0.57.1"
+
 [dependencies.form_urlencoded]
 version = "1.0"
 optional = true

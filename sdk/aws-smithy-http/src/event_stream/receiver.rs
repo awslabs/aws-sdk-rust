@@ -4,10 +4,11 @@
  */
 
 use aws_smithy_eventstream::frame::{
-    DecodedFrame, Message, MessageFrameDecoder, UnmarshallMessage, UnmarshalledMessage,
+    DecodedFrame, MessageFrameDecoder, UnmarshallMessage, UnmarshalledMessage,
 };
 use aws_smithy_runtime_api::client::result::{ConnectorError, SdkError};
 use aws_smithy_types::body::SdkBody;
+use aws_smithy_types::event_stream::Message;
 use bytes::Buf;
 use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
@@ -277,9 +278,10 @@ impl<T, E> Receiver<T, E> {
 mod tests {
     use super::{Receiver, UnmarshallMessage};
     use aws_smithy_eventstream::error::Error as EventStreamError;
-    use aws_smithy_eventstream::frame::{Header, HeaderValue, Message, UnmarshalledMessage};
+    use aws_smithy_eventstream::frame::{write_message_to, UnmarshalledMessage};
     use aws_smithy_runtime_api::client::result::SdkError;
     use aws_smithy_types::body::SdkBody;
+    use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
     use bytes::Bytes;
     use hyper::body::Body;
     use std::error::Error as StdError;
@@ -287,7 +289,7 @@ mod tests {
 
     fn encode_initial_response() -> Bytes {
         let mut buffer = Vec::new();
-        Message::new(Bytes::new())
+        let message = Message::new(Bytes::new())
             .add_header(Header::new(
                 ":message-type",
                 HeaderValue::String("event".into()),
@@ -295,17 +297,15 @@ mod tests {
             .add_header(Header::new(
                 ":event-type",
                 HeaderValue::String("initial-response".into()),
-            ))
-            .write_to(&mut buffer)
-            .unwrap();
+            ));
+        write_message_to(&message, &mut buffer).unwrap();
         buffer.into()
     }
 
     fn encode_message(message: &str) -> Bytes {
         let mut buffer = Vec::new();
-        Message::new(Bytes::copy_from_slice(message.as_bytes()))
-            .write_to(&mut buffer)
-            .unwrap();
+        let message = Message::new(Bytes::copy_from_slice(message.as_bytes()));
+        write_message_to(&message, &mut buffer).unwrap();
         buffer.into()
     }
 

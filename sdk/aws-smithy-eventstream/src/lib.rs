@@ -13,8 +13,9 @@
 
 //! AWS Event Stream frame serialization/deserialization implementation.
 
+#[cfg(feature = "derive-arbitrary")]
+pub mod arbitrary;
 mod buf;
 pub mod error;
 pub mod frame;
 pub mod smithy;
-pub mod str_bytes;

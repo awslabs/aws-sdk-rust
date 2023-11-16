@@ -9,7 +9,7 @@
 //!
 //! ```rust
 //! use aws_sigv4::event_stream::sign_message;
-//! use aws_smithy_eventstream::frame::{Header, HeaderValue, Message};
+//! use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
 //! use std::time::SystemTime;
 //! use aws_credential_types::Credentials;
 //! use aws_smithy_runtime_api::client::identity::Identity;
@@ -51,7 +51,8 @@ use crate::http_request::SigningError;
 use crate::sign::v4::{calculate_signature, generate_signing_key, sha256_hex_string};
 use crate::SigningOutput;
 use aws_credential_types::Credentials;
-use aws_smithy_eventstream::frame::{write_headers_to, Header, HeaderValue, Message};
+use aws_smithy_eventstream::frame::{write_headers_to, write_message_to};
+use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
 use bytes::Bytes;
 use std::io::Write;
 use std::time::SystemTime;
@@ -102,7 +103,7 @@ pub fn sign_message<'a>(
 ) -> Result<SigningOutput<Message>, SigningError> {
     let message_payload = {
         let mut payload = Vec::new();
-        message.write_to(&mut payload).unwrap();
+        write_message_to(message, &mut payload).unwrap();
         payload
     };
     sign_payload(Some(message_payload), last_signature, params)
@@ -161,7 +162,8 @@ mod tests {
     use crate::event_stream::{calculate_string_to_sign, sign_message, SigningParams};
     use crate::sign::v4::sha256_hex_string;
     use aws_credential_types::Credentials;
-    use aws_smithy_eventstream::frame::{Header, HeaderValue, Message};
+    use aws_smithy_eventstream::frame::write_message_to;
+    use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
     use std::time::{Duration, UNIX_EPOCH};
 
     #[test]
@@ -171,7 +173,7 @@ mod tests {
             HeaderValue::String("value".into()),
         ));
         let mut message_payload = Vec::new();
-        message_to_sign.write_to(&mut message_payload).unwrap();
+        write_message_to(&message_to_sign, &mut message_payload).unwrap();
 
         let params = SigningParams {
             identity: &Credentials::for_tests().into(),

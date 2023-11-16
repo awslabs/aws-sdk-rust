@@ -5,7 +5,7 @@
 
 #![no_main]
 
-use aws_smithy_eventstream::frame::Message;
+use aws_smithy_eventstream::frame::read_message_from;
 use bytes::BufMut;
 use crc32fast::Hasher as Crc;
 use libfuzzer_sys::fuzz_target;
@@ -30,7 +30,7 @@ fuzz_target!(|input: Input| {
     message.put_u32(crc(&message));
 
     let mut data = &mut &message[..];
-    let _ = Message::read_from(&mut data);
+    let _ = read_message_from(&mut data);
 });
 
 fn crc(input: &[u8]) -> u32 {

@@ -7,13 +7,14 @@ use async_stream::stream;
 use aws_sdk_transcribestreaming::config::{Credentials, Region};
 use aws_sdk_transcribestreaming::error::SdkError;
 use aws_sdk_transcribestreaming::operation::start_stream_transcription::StartStreamTranscriptionOutput;
+use aws_sdk_transcribestreaming::primitives::event_stream::{HeaderValue, Message};
 use aws_sdk_transcribestreaming::primitives::Blob;
 use aws_sdk_transcribestreaming::types::error::{AudioStreamError, TranscriptResultStreamError};
 use aws_sdk_transcribestreaming::types::{
     AudioEvent, AudioStream, LanguageCode, MediaEncoding, TranscriptResultStream,
 };
 use aws_sdk_transcribestreaming::{Client, Config};
-use aws_smithy_eventstream::frame::{DecodedFrame, HeaderValue, Message, MessageFrameDecoder};
+use aws_smithy_eventstream::frame::{read_message_from, DecodedFrame, MessageFrameDecoder};
 use aws_smithy_runtime::client::http::test_util::dvr::{Event, ReplayingClient};
 use bytes::BufMut;
 use futures_core::Stream;
@@ -132,7 +133,7 @@ fn decode_frames(mut body: &[u8]) -> Vec<(Message, Option<Message>)> {
         let inner_msg = if msg.payload().is_empty() {
             None
         } else {
-            Some(Message::read_from(msg.payload().as_ref()).unwrap())
+            Some(read_message_from(msg.payload().as_ref()).unwrap())
         };
         result.push((msg, inner_msg));
     }

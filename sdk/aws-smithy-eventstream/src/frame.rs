@@ -8,8 +8,11 @@
 use crate::buf::count::CountBuf;
 use crate::buf::crc::{CrcBuf, CrcBufMut};
 use crate::error::{Error, ErrorKind};
-use crate::str_bytes::StrBytes;
-use bytes::{Buf, BufMut, Bytes};
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
+use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
+use aws_smithy_types::str_bytes::StrBytes;
+use aws_smithy_types::DateTime;
+use bytes::{Buf, BufMut};
 use std::convert::{TryFrom, TryInto};
 use std::error::Error as StdError;
 use std::fmt;
@@ -21,6 +24,17 @@ const PRELUDE_LENGTH_BYTES_USIZE: usize = PRELUDE_LENGTH_BYTES as usize;
 const MESSAGE_CRC_LENGTH_BYTES: u32 = size_of::<u32>() as u32;
 const MAX_HEADER_NAME_LEN: usize = 255;
 const MIN_HEADER_LEN: usize = 2;
+
+pub(crate) const TYPE_TRUE: u8 = 0;
+pub(crate) const TYPE_FALSE: u8 = 1;
+pub(crate) const TYPE_BYTE: u8 = 2;
+pub(crate) const TYPE_INT16: u8 = 3;
+pub(crate) const TYPE_INT32: u8 = 4;
+pub(crate) const TYPE_INT64: u8 = 5;
+pub(crate) const TYPE_BYTE_ARRAY: u8 = 6;
+pub(crate) const TYPE_STRING: u8 = 7;
+pub(crate) const TYPE_TIMESTAMP: u8 = 8;
+pub(crate) const TYPE_UUID: u8 = 9;
 
 pub type SignMessageError = Box<dyn StdError + Send + Sync + 'static>;
 
@@ -168,451 +182,242 @@ pub trait UnmarshallMessage: fmt::Debug {
     ) -> Result<UnmarshalledMessage<Self::Output, Self::Error>, Error>;
 }
 
-mod value {
-    use crate::error::{Error, ErrorKind};
-    use crate::frame::checked;
-    use crate::str_bytes::StrBytes;
-    use aws_smithy_types::DateTime;
-    use bytes::{Buf, BufMut, Bytes};
-    use std::convert::TryInto;
-    use std::mem::size_of;
-
-    const TYPE_TRUE: u8 = 0;
-    const TYPE_FALSE: u8 = 1;
-    const TYPE_BYTE: u8 = 2;
-    const TYPE_INT16: u8 = 3;
-    const TYPE_INT32: u8 = 4;
-    const TYPE_INT64: u8 = 5;
-    const TYPE_BYTE_ARRAY: u8 = 6;
-    const TYPE_STRING: u8 = 7;
-    const TYPE_TIMESTAMP: u8 = 8;
-    const TYPE_UUID: u8 = 9;
-
-    /// Event Stream frame header value.
-    #[non_exhaustive]
-    #[derive(Clone, Debug, PartialEq)]
-    pub enum HeaderValue {
-        Bool(bool),
-        Byte(i8),
-        Int16(i16),
-        Int32(i32),
-        Int64(i64),
-        ByteArray(Bytes),
-        String(StrBytes),
-        Timestamp(DateTime),
-        Uuid(u128),
-    }
-
-    impl HeaderValue {
-        pub fn as_bool(&self) -> Result<bool, &Self> {
-            match self {
-                HeaderValue::Bool(value) => Ok(*value),
-                _ => Err(self),
-            }
+macro_rules! read_value {
+    ($buf:ident, $typ:ident, $size_typ:ident, $read_fn:ident) => {
+        if $buf.remaining() >= size_of::<$size_typ>() {
+            Ok(HeaderValue::$typ($buf.$read_fn()))
+        } else {
+            Err(ErrorKind::InvalidHeaderValue.into())
         }
+    };
+}
 
-        pub fn as_byte(&self) -> Result<i8, &Self> {
-            match self {
-                HeaderValue::Byte(value) => Ok(*value),
-                _ => Err(self),
-            }
-        }
-
-        pub fn as_int16(&self) -> Result<i16, &Self> {
-            match self {
-                HeaderValue::Int16(value) => Ok(*value),
-                _ => Err(self),
-            }
-        }
-
-        pub fn as_int32(&self) -> Result<i32, &Self> {
-            match self {
-                HeaderValue::Int32(value) => Ok(*value),
-                _ => Err(self),
-            }
-        }
-
-        pub fn as_int64(&self) -> Result<i64, &Self> {
-            match self {
-                HeaderValue::Int64(value) => Ok(*value),
-                _ => Err(self),
-            }
-        }
-
-        pub fn as_byte_array(&self) -> Result<&Bytes, &Self> {
-            match self {
-                HeaderValue::ByteArray(value) => Ok(value),
-                _ => Err(self),
-            }
-        }
-
-        pub fn as_string(&self) -> Result<&StrBytes, &Self> {
-            match self {
-                HeaderValue::String(value) => Ok(value),
-                _ => Err(self),
-            }
-        }
-
-        pub fn as_timestamp(&self) -> Result<DateTime, &Self> {
-            match self {
-                HeaderValue::Timestamp(value) => Ok(*value),
-                _ => Err(self),
-            }
-        }
-
-        pub fn as_uuid(&self) -> Result<u128, &Self> {
-            match self {
-                HeaderValue::Uuid(value) => Ok(*value),
-                _ => Err(self),
-            }
-        }
-    }
-
-    macro_rules! read_value {
-        ($buf:ident, $typ:ident, $size_typ:ident, $read_fn:ident) => {
-            if $buf.remaining() >= size_of::<$size_typ>() {
-                Ok(HeaderValue::$typ($buf.$read_fn()))
+fn read_header_value_from<B: Buf>(mut buffer: B) -> Result<HeaderValue, Error> {
+    let value_type = buffer.get_u8();
+    match value_type {
+        TYPE_TRUE => Ok(HeaderValue::Bool(true)),
+        TYPE_FALSE => Ok(HeaderValue::Bool(false)),
+        TYPE_BYTE => read_value!(buffer, Byte, i8, get_i8),
+        TYPE_INT16 => read_value!(buffer, Int16, i16, get_i16),
+        TYPE_INT32 => read_value!(buffer, Int32, i32, get_i32),
+        TYPE_INT64 => read_value!(buffer, Int64, i64, get_i64),
+        TYPE_BYTE_ARRAY | TYPE_STRING => {
+            if buffer.remaining() > size_of::<u16>() {
+                let len = buffer.get_u16() as usize;
+                if buffer.remaining() < len {
+                    return Err(ErrorKind::InvalidHeaderValue.into());
+                }
+                let bytes = buffer.copy_to_bytes(len);
+                if value_type == TYPE_STRING {
+                    Ok(HeaderValue::String(
+                        bytes.try_into().map_err(|_| ErrorKind::InvalidUtf8String)?,
+                    ))
+                } else {
+                    Ok(HeaderValue::ByteArray(bytes))
+                }
             } else {
                 Err(ErrorKind::InvalidHeaderValue.into())
             }
-        };
-    }
-
-    impl HeaderValue {
-        pub(super) fn read_from<B: Buf>(mut buffer: B) -> Result<HeaderValue, Error> {
-            let value_type = buffer.get_u8();
-            match value_type {
-                TYPE_TRUE => Ok(HeaderValue::Bool(true)),
-                TYPE_FALSE => Ok(HeaderValue::Bool(false)),
-                TYPE_BYTE => read_value!(buffer, Byte, i8, get_i8),
-                TYPE_INT16 => read_value!(buffer, Int16, i16, get_i16),
-                TYPE_INT32 => read_value!(buffer, Int32, i32, get_i32),
-                TYPE_INT64 => read_value!(buffer, Int64, i64, get_i64),
-                TYPE_BYTE_ARRAY | TYPE_STRING => {
-                    if buffer.remaining() > size_of::<u16>() {
-                        let len = buffer.get_u16() as usize;
-                        if buffer.remaining() < len {
-                            return Err(ErrorKind::InvalidHeaderValue.into());
-                        }
-                        let bytes = buffer.copy_to_bytes(len);
-                        if value_type == TYPE_STRING {
-                            Ok(HeaderValue::String(
-                                bytes.try_into().map_err(|_| ErrorKind::InvalidUtf8String)?,
-                            ))
-                        } else {
-                            Ok(HeaderValue::ByteArray(bytes))
-                        }
-                    } else {
-                        Err(ErrorKind::InvalidHeaderValue.into())
-                    }
-                }
-                TYPE_TIMESTAMP => {
-                    if buffer.remaining() >= size_of::<i64>() {
-                        let epoch_millis = buffer.get_i64();
-                        Ok(HeaderValue::Timestamp(DateTime::from_millis(epoch_millis)))
-                    } else {
-                        Err(ErrorKind::InvalidHeaderValue.into())
-                    }
-                }
-                TYPE_UUID => read_value!(buffer, Uuid, u128, get_u128),
-                _ => Err(ErrorKind::InvalidHeaderValueType(value_type).into()),
+        }
+        TYPE_TIMESTAMP => {
+            if buffer.remaining() >= size_of::<i64>() {
+                let epoch_millis = buffer.get_i64();
+                Ok(HeaderValue::Timestamp(DateTime::from_millis(epoch_millis)))
+            } else {
+                Err(ErrorKind::InvalidHeaderValue.into())
             }
         }
-
-        pub(super) fn write_to<B: BufMut>(&self, mut buffer: B) -> Result<(), Error> {
-            use HeaderValue::*;
-            match self {
-                Bool(val) => buffer.put_u8(if *val { TYPE_TRUE } else { TYPE_FALSE }),
-                Byte(val) => {
-                    buffer.put_u8(TYPE_BYTE);
-                    buffer.put_i8(*val);
-                }
-                Int16(val) => {
-                    buffer.put_u8(TYPE_INT16);
-                    buffer.put_i16(*val);
-                }
-                Int32(val) => {
-                    buffer.put_u8(TYPE_INT32);
-                    buffer.put_i32(*val);
-                }
-                Int64(val) => {
-                    buffer.put_u8(TYPE_INT64);
-                    buffer.put_i64(*val);
-                }
-                ByteArray(val) => {
-                    buffer.put_u8(TYPE_BYTE_ARRAY);
-                    buffer.put_u16(checked(val.len(), ErrorKind::HeaderValueTooLong.into())?);
-                    buffer.put_slice(&val[..]);
-                }
-                String(val) => {
-                    buffer.put_u8(TYPE_STRING);
-                    buffer.put_u16(checked(
-                        val.as_bytes().len(),
-                        ErrorKind::HeaderValueTooLong.into(),
-                    )?);
-                    buffer.put_slice(&val.as_bytes()[..]);
-                }
-                Timestamp(time) => {
-                    buffer.put_u8(TYPE_TIMESTAMP);
-                    buffer.put_i64(
-                        time.to_millis()
-                            .map_err(|_| ErrorKind::TimestampValueTooLarge(*time))?,
-                    );
-                }
-                Uuid(val) => {
-                    buffer.put_u8(TYPE_UUID);
-                    buffer.put_u128(*val);
-                }
-            }
-            Ok(())
-        }
-    }
-
-    #[cfg(feature = "derive-arbitrary")]
-    impl<'a> arbitrary::Arbitrary<'a> for HeaderValue {
-        fn arbitrary(unstruct: &mut arbitrary::Unstructured<'a>) -> arbitrary::Result<Self> {
-            let value_type: u8 = unstruct.int_in_range(0..=9)?;
-            Ok(match value_type {
-                TYPE_TRUE => HeaderValue::Bool(true),
-                TYPE_FALSE => HeaderValue::Bool(false),
-                TYPE_BYTE => HeaderValue::Byte(i8::arbitrary(unstruct)?),
-                TYPE_INT16 => HeaderValue::Int16(i16::arbitrary(unstruct)?),
-                TYPE_INT32 => HeaderValue::Int32(i32::arbitrary(unstruct)?),
-                TYPE_INT64 => HeaderValue::Int64(i64::arbitrary(unstruct)?),
-                TYPE_BYTE_ARRAY => {
-                    HeaderValue::ByteArray(Bytes::from(Vec::<u8>::arbitrary(unstruct)?))
-                }
-                TYPE_STRING => HeaderValue::String(StrBytes::from(String::arbitrary(unstruct)?)),
-                TYPE_TIMESTAMP => {
-                    HeaderValue::Timestamp(DateTime::from_secs(i64::arbitrary(unstruct)?))
-                }
-                TYPE_UUID => HeaderValue::Uuid(u128::arbitrary(unstruct)?),
-                _ => unreachable!(),
-            })
-        }
+        TYPE_UUID => read_value!(buffer, Uuid, u128, get_u128),
+        _ => Err(ErrorKind::InvalidHeaderValueType(value_type).into()),
     }
 }
 
-use aws_smithy_types::config_bag::{Storable, StoreReplace};
-pub use value::HeaderValue;
-
-/// Event Stream header.
-#[non_exhaustive]
-#[derive(Clone, Debug, PartialEq)]
-#[cfg_attr(feature = "derive-arbitrary", derive(derive_arbitrary::Arbitrary))]
-pub struct Header {
-    name: StrBytes,
-    value: HeaderValue,
+fn write_header_value_to<B: BufMut>(value: &HeaderValue, mut buffer: B) -> Result<(), Error> {
+    use HeaderValue::*;
+    match value {
+        Bool(val) => buffer.put_u8(if *val { TYPE_TRUE } else { TYPE_FALSE }),
+        Byte(val) => {
+            buffer.put_u8(TYPE_BYTE);
+            buffer.put_i8(*val);
+        }
+        Int16(val) => {
+            buffer.put_u8(TYPE_INT16);
+            buffer.put_i16(*val);
+        }
+        Int32(val) => {
+            buffer.put_u8(TYPE_INT32);
+            buffer.put_i32(*val);
+        }
+        Int64(val) => {
+            buffer.put_u8(TYPE_INT64);
+            buffer.put_i64(*val);
+        }
+        ByteArray(val) => {
+            buffer.put_u8(TYPE_BYTE_ARRAY);
+            buffer.put_u16(checked(val.len(), ErrorKind::HeaderValueTooLong.into())?);
+            buffer.put_slice(&val[..]);
+        }
+        String(val) => {
+            buffer.put_u8(TYPE_STRING);
+            buffer.put_u16(checked(
+                val.as_bytes().len(),
+                ErrorKind::HeaderValueTooLong.into(),
+            )?);
+            buffer.put_slice(&val.as_bytes()[..]);
+        }
+        Timestamp(time) => {
+            buffer.put_u8(TYPE_TIMESTAMP);
+            buffer.put_i64(
+                time.to_millis()
+                    .map_err(|_| ErrorKind::TimestampValueTooLarge(*time))?,
+            );
+        }
+        Uuid(val) => {
+            buffer.put_u8(TYPE_UUID);
+            buffer.put_u128(*val);
+        }
+        _ => {
+            panic!("matched on unexpected variant in `aws_smithy_types::event_stream::HeaderValue`")
+        }
+    }
+    Ok(())
 }
 
-impl Header {
-    /// Creates a new header with the given `name` and `value`.
-    pub fn new(name: impl Into<StrBytes>, value: HeaderValue) -> Header {
-        Header {
-            name: name.into(),
-            value,
-        }
+/// Reads a header from the given `buffer`.
+fn read_header_from<B: Buf>(mut buffer: B) -> Result<(Header, usize), Error> {
+    if buffer.remaining() < MIN_HEADER_LEN {
+        return Err(ErrorKind::InvalidHeadersLength.into());
     }
 
-    /// Returns the header name.
-    pub fn name(&self) -> &StrBytes {
-        &self.name
+    let mut counting_buf = CountBuf::new(&mut buffer);
+    let name_len = counting_buf.get_u8();
+    if name_len as usize >= counting_buf.remaining() {
+        return Err(ErrorKind::InvalidHeaderNameLength.into());
     }
 
-    /// Returns the header value.
-    pub fn value(&self) -> &HeaderValue {
-        &self.value
+    let name: StrBytes = counting_buf
+        .copy_to_bytes(name_len as usize)
+        .try_into()
+        .map_err(|_| ErrorKind::InvalidUtf8String)?;
+    let value = read_header_value_from(&mut counting_buf)?;
+    Ok((Header::new(name, value), counting_buf.into_count()))
+}
+
+/// Writes the header to the given `buffer`.
+fn write_header_to<B: BufMut>(header: &Header, mut buffer: B) -> Result<(), Error> {
+    if header.name().as_bytes().len() > MAX_HEADER_NAME_LEN {
+        return Err(ErrorKind::InvalidHeaderNameLength.into());
     }
 
-    /// Reads a header from the given `buffer`.
-    fn read_from<B: Buf>(mut buffer: B) -> Result<(Header, usize), Error> {
-        if buffer.remaining() < MIN_HEADER_LEN {
-            return Err(ErrorKind::InvalidHeadersLength.into());
-        }
-
-        let mut counting_buf = CountBuf::new(&mut buffer);
-        let name_len = counting_buf.get_u8();
-        if name_len as usize >= counting_buf.remaining() {
-            return Err(ErrorKind::InvalidHeaderNameLength.into());
-        }
-
-        let name: StrBytes = counting_buf
-            .copy_to_bytes(name_len as usize)
-            .try_into()
-            .map_err(|_| ErrorKind::InvalidUtf8String)?;
-        let value = HeaderValue::read_from(&mut counting_buf)?;
-        Ok((Header::new(name, value), counting_buf.into_count()))
-    }
-
-    /// Writes the header to the given `buffer`.
-    fn write_to<B: BufMut>(&self, mut buffer: B) -> Result<(), Error> {
-        if self.name.as_bytes().len() > MAX_HEADER_NAME_LEN {
-            return Err(ErrorKind::InvalidHeaderNameLength.into());
-        }
-
-        buffer.put_u8(u8::try_from(self.name.as_bytes().len()).expect("bounds check above"));
-        buffer.put_slice(&self.name.as_bytes()[..]);
-        self.value.write_to(buffer)
-    }
+    buffer.put_u8(u8::try_from(header.name().as_bytes().len()).expect("bounds check above"));
+    buffer.put_slice(&header.name().as_bytes()[..]);
+    write_header_value_to(header.value(), buffer)
 }
 
 /// Writes the given `headers` to a `buffer`.
 pub fn write_headers_to<B: BufMut>(headers: &[Header], mut buffer: B) -> Result<(), Error> {
     for header in headers {
-        header.write_to(&mut buffer)?;
+        write_header_to(header, &mut buffer)?;
     }
     Ok(())
 }
 
-/// Event Stream message.
-#[non_exhaustive]
-#[derive(Clone, Debug, PartialEq)]
-pub struct Message {
-    headers: Vec<Header>,
-    payload: Bytes,
+// Returns (total_len, header_len)
+fn read_prelude_from<B: Buf>(mut buffer: B) -> Result<(u32, u32), Error> {
+    let mut crc_buffer = CrcBuf::new(&mut buffer);
+
+    // If the buffer doesn't have the entire, then error
+    let total_len = crc_buffer.get_u32();
+    if crc_buffer.remaining() + size_of::<u32>() < total_len as usize {
+        return Err(ErrorKind::InvalidMessageLength.into());
+    }
+
+    // Validate the prelude
+    let header_len = crc_buffer.get_u32();
+    let (expected_crc, prelude_crc) = (crc_buffer.into_crc(), buffer.get_u32());
+    if expected_crc != prelude_crc {
+        return Err(ErrorKind::PreludeChecksumMismatch(expected_crc, prelude_crc).into());
+    }
+    // The header length can be 0 or >= 2, but must fit within the frame size
+    if header_len == 1 || header_len > max_header_len(total_len)? {
+        return Err(ErrorKind::InvalidHeadersLength.into());
+    }
+    Ok((total_len, header_len))
 }
 
-impl Message {
-    /// Creates a new message with the given `payload`. Headers can be added later.
-    pub fn new(payload: impl Into<Bytes>) -> Message {
-        Message {
-            headers: Vec::new(),
-            payload: payload.into(),
-        }
+/// Reads a message from the given `buffer`. For streaming use cases, use
+/// the [`MessageFrameDecoder`] instead of this.
+pub fn read_message_from<B: Buf>(mut buffer: B) -> Result<Message, Error> {
+    if buffer.remaining() < PRELUDE_LENGTH_BYTES_USIZE {
+        return Err(ErrorKind::InvalidMessageLength.into());
     }
 
-    /// Creates a message with the given `headers` and `payload`.
-    pub fn new_from_parts(headers: Vec<Header>, payload: impl Into<Bytes>) -> Self {
-        Self {
-            headers,
-            payload: payload.into(),
-        }
+    // Calculate a CRC as we go and read the prelude
+    let mut crc_buffer = CrcBuf::new(&mut buffer);
+    let (total_len, header_len) = read_prelude_from(&mut crc_buffer)?;
+
+    // Verify we have the full frame before continuing
+    let remaining_len = total_len
+        .checked_sub(PRELUDE_LENGTH_BYTES)
+        .ok_or_else(|| Error::from(ErrorKind::InvalidMessageLength))?;
+    if crc_buffer.remaining() < remaining_len as usize {
+        return Err(ErrorKind::InvalidMessageLength.into());
     }
 
-    /// Adds a header to the message.
-    pub fn add_header(mut self, header: Header) -> Self {
-        self.headers.push(header);
-        self
+    // Read headers
+    let mut header_bytes_read = 0;
+    let mut headers = Vec::new();
+    while header_bytes_read < header_len as usize {
+        let (header, bytes_read) = read_header_from(&mut crc_buffer)?;
+        header_bytes_read += bytes_read;
+        if header_bytes_read > header_len as usize {
+            return Err(ErrorKind::InvalidHeaderValue.into());
+        }
+        headers.push(header);
     }
 
-    /// Returns all headers.
-    pub fn headers(&self) -> &[Header] {
-        &self.headers
+    // Read payload
+    let payload_len = payload_len(total_len, header_len)?;
+    let payload = crc_buffer.copy_to_bytes(payload_len as usize);
+
+    let expected_crc = crc_buffer.into_crc();
+    let message_crc = buffer.get_u32();
+    if expected_crc != message_crc {
+        return Err(ErrorKind::MessageChecksumMismatch(expected_crc, message_crc).into());
     }
 
-    /// Returns the payload bytes.
-    pub fn payload(&self) -> &Bytes {
-        &self.payload
-    }
-
-    // Returns (total_len, header_len)
-    fn read_prelude_from<B: Buf>(mut buffer: B) -> Result<(u32, u32), Error> {
-        let mut crc_buffer = CrcBuf::new(&mut buffer);
-
-        // If the buffer doesn't have the entire, then error
-        let total_len = crc_buffer.get_u32();
-        if crc_buffer.remaining() + size_of::<u32>() < total_len as usize {
-            return Err(ErrorKind::InvalidMessageLength.into());
-        }
-
-        // Validate the prelude
-        let header_len = crc_buffer.get_u32();
-        let (expected_crc, prelude_crc) = (crc_buffer.into_crc(), buffer.get_u32());
-        if expected_crc != prelude_crc {
-            return Err(ErrorKind::PreludeChecksumMismatch(expected_crc, prelude_crc).into());
-        }
-        // The header length can be 0 or >= 2, but must fit within the frame size
-        if header_len == 1 || header_len > max_header_len(total_len)? {
-            return Err(ErrorKind::InvalidHeadersLength.into());
-        }
-        Ok((total_len, header_len))
-    }
-
-    /// Reads a message from the given `buffer`. For streaming use cases, use
-    /// the [`MessageFrameDecoder`] instead of this.
-    pub fn read_from<B: Buf>(mut buffer: B) -> Result<Message, Error> {
-        if buffer.remaining() < PRELUDE_LENGTH_BYTES_USIZE {
-            return Err(ErrorKind::InvalidMessageLength.into());
-        }
-
-        // Calculate a CRC as we go and read the prelude
-        let mut crc_buffer = CrcBuf::new(&mut buffer);
-        let (total_len, header_len) = Self::read_prelude_from(&mut crc_buffer)?;
-
-        // Verify we have the full frame before continuing
-        let remaining_len = total_len
-            .checked_sub(PRELUDE_LENGTH_BYTES)
-            .ok_or_else(|| Error::from(ErrorKind::InvalidMessageLength))?;
-        if crc_buffer.remaining() < remaining_len as usize {
-            return Err(ErrorKind::InvalidMessageLength.into());
-        }
-
-        // Read headers
-        let mut header_bytes_read = 0;
-        let mut headers = Vec::new();
-        while header_bytes_read < header_len as usize {
-            let (header, bytes_read) = Header::read_from(&mut crc_buffer)?;
-            header_bytes_read += bytes_read;
-            if header_bytes_read > header_len as usize {
-                return Err(ErrorKind::InvalidHeaderValue.into());
-            }
-            headers.push(header);
-        }
-
-        // Read payload
-        let payload_len = payload_len(total_len, header_len)?;
-        let payload = crc_buffer.copy_to_bytes(payload_len as usize);
-
-        let expected_crc = crc_buffer.into_crc();
-        let message_crc = buffer.get_u32();
-        if expected_crc != message_crc {
-            return Err(ErrorKind::MessageChecksumMismatch(expected_crc, message_crc).into());
-        }
-
-        Ok(Message { headers, payload })
-    }
-
-    /// Writes the message to the given `buffer`.
-    pub fn write_to(&self, buffer: &mut dyn BufMut) -> Result<(), Error> {
-        let mut headers = Vec::new();
-        for header in &self.headers {
-            header.write_to(&mut headers)?;
-        }
-
-        let headers_len = checked(headers.len(), ErrorKind::HeadersTooLong.into())?;
-        let payload_len = checked(self.payload.len(), ErrorKind::PayloadTooLong.into())?;
-        let message_len = [
-            PRELUDE_LENGTH_BYTES,
-            headers_len,
-            payload_len,
-            MESSAGE_CRC_LENGTH_BYTES,
-        ]
-        .iter()
-        .try_fold(0u32, |acc, v| {
-            acc.checked_add(*v)
-                .ok_or_else(|| Error::from(ErrorKind::MessageTooLong))
-        })?;
-
-        let mut crc_buffer = CrcBufMut::new(buffer);
-        crc_buffer.put_u32(message_len);
-        crc_buffer.put_u32(headers_len);
-        crc_buffer.put_crc();
-        crc_buffer.put(&headers[..]);
-        crc_buffer.put(&self.payload[..]);
-        crc_buffer.put_crc();
-        Ok(())
-    }
+    Ok(Message::new_from_parts(headers, payload))
 }
 
-#[cfg(feature = "derive-arbitrary")]
-impl<'a> arbitrary::Arbitrary<'a> for Message {
-    fn arbitrary(unstruct: &mut arbitrary::Unstructured<'a>) -> arbitrary::Result<Self> {
-        let headers: arbitrary::Result<Vec<Header>> = unstruct.arbitrary_iter()?.collect();
-        Ok(Message {
-            headers: headers?,
-            payload: Bytes::from(Vec::<u8>::arbitrary(unstruct)?),
-        })
+/// Writes the `message` to the given `buffer`.
+pub fn write_message_to(message: &Message, buffer: &mut dyn BufMut) -> Result<(), Error> {
+    let mut headers = Vec::new();
+    for header in message.headers() {
+        write_header_to(header, &mut headers)?;
     }
+
+    let headers_len = checked(headers.len(), ErrorKind::HeadersTooLong.into())?;
+    let payload_len = checked(message.payload().len(), ErrorKind::PayloadTooLong.into())?;
+    let message_len = [
+        PRELUDE_LENGTH_BYTES,
+        headers_len,
+        payload_len,
+        MESSAGE_CRC_LENGTH_BYTES,
+    ]
+    .iter()
+    .try_fold(0u32, |acc, v| {
+        acc.checked_add(*v)
+            .ok_or_else(|| Error::from(ErrorKind::MessageTooLong))
+    })?;
+
+    let mut crc_buffer = CrcBufMut::new(buffer);
+    crc_buffer.put_u32(message_len);
+    crc_buffer.put_u32(headers_len);
+    crc_buffer.put_crc();
+    crc_buffer.put(&headers[..]);
+    crc_buffer.put(&message.payload()[..]);
+    crc_buffer.put_crc();
+    Ok(())
 }
 
 fn checked<T: TryFrom<U>, U>(from: U, err: Error) -> Result<T, Error> {
@@ -637,14 +442,15 @@ fn payload_len(total_len: u32, header_len: u32) -> Result<u32, Error> {
 
 #[cfg(test)]
 mod message_tests {
+    use super::read_message_from;
     use crate::error::ErrorKind;
-    use crate::frame::{Header, HeaderValue, Message};
+    use crate::frame::{write_message_to, Header, HeaderValue, Message};
     use aws_smithy_types::DateTime;
     use bytes::Bytes;
 
     macro_rules! read_message_expect_err {
         ($bytes:expr, $err:pat) => {
-            let result = Message::read_from(&mut Bytes::from_static($bytes));
+            let result = read_message_from(&mut Bytes::from_static($bytes));
             let result = result.as_ref();
             assert!(result.is_err(), "Expected error, got {:?}", result);
             assert!(
@@ -702,11 +508,11 @@ mod message_tests {
             0x36,
         ];
 
-        let result = Message::read_from(&mut Bytes::from_static(data)).unwrap();
+        let result = read_message_from(&mut Bytes::from_static(data)).unwrap();
         assert_eq!(result.headers(), Vec::new());
 
         let expected_payload = b"{'foo':'bar'}";
-        assert_eq!(expected_payload, result.payload.as_ref());
+        assert_eq!(expected_payload, result.payload().as_ref());
     }
 
     #[test]
@@ -721,7 +527,7 @@ mod message_tests {
             0x7d, 0x8D, 0x9C, 0x08, 0xB1,
         ];
 
-        let result = Message::read_from(&mut Bytes::from_static(data)).unwrap();
+        let result = read_message_from(&mut Bytes::from_static(data)).unwrap();
         assert_eq!(
             result.headers(),
             vec![Header::new(
@@ -731,13 +537,13 @@ mod message_tests {
         );
 
         let expected_payload = b"{'foo':'bar'}";
-        assert_eq!(expected_payload, result.payload.as_ref());
+        assert_eq!(expected_payload, result.payload().as_ref());
     }
 
     #[test]
     fn read_all_headers_and_payload() {
         let message = include_bytes!("../test_data/valid_with_all_headers_and_payload");
-        let result = Message::read_from(&mut Bytes::from_static(message)).unwrap();
+        let result = read_message_from(&mut Bytes::from_static(message)).unwrap();
         assert_eq!(
             result.headers(),
             vec![
@@ -763,7 +569,7 @@ mod message_tests {
             ]
         );
 
-        assert_eq!(b"some payload", result.payload.as_ref());
+        assert_eq!(b"some payload", result.payload().as_ref());
     }
 
     #[test]
@@ -790,14 +596,14 @@ mod message_tests {
             ));
 
         let mut actual = Vec::new();
-        message.write_to(&mut actual).unwrap();
+        write_message_to(&message, &mut actual).unwrap();
 
         let expected = include_bytes!("../test_data/valid_with_all_headers_and_payload").to_vec();
         assert_eq!(expected, actual);
 
-        let result = Message::read_from(&mut Bytes::from(actual)).unwrap();
+        let result = read_message_from(&mut Bytes::from(actual)).unwrap();
         assert_eq!(message.headers(), result.headers());
-        assert_eq!(message.payload().as_ref(), result.payload.as_ref());
+        assert_eq!(message.payload().as_ref(), result.payload().as_ref());
     }
 }
 
@@ -866,7 +672,7 @@ impl MessageFrameDecoder {
 
         if let Some(remaining_len) = self.remaining_bytes_if_frame_available(&buffer)? {
             let mut message_buf = (&self.prelude[..]).chain(buffer.take(remaining_len));
-            let result = Message::read_from(&mut message_buf).map(DecodedFrame::Complete);
+            let result = read_message_from(&mut message_buf).map(DecodedFrame::Complete);
             self.reset();
             return result;
         }
@@ -878,7 +684,7 @@ impl MessageFrameDecoder {
 #[cfg(test)]
 mod message_frame_decoder_tests {
     use super::{DecodedFrame, MessageFrameDecoder};
-    use crate::frame::Message;
+    use crate::frame::read_message_from;
     use bytes::Bytes;
     use bytes_utils::SegmentedBuf;
 
@@ -899,7 +705,7 @@ mod message_frame_decoder_tests {
         match decoder.decode_frame(&mut segmented).unwrap() {
             DecodedFrame::Incomplete => panic!("frame should be complete now"),
             DecodedFrame::Complete(actual) => {
-                let expected = Message::read_from(&mut Bytes::from_static(message)).unwrap();
+                let expected = read_message_from(&mut Bytes::from_static(message)).unwrap();
                 assert_eq!(expected, actual);
             }
         }
@@ -926,9 +732,9 @@ mod message_frame_decoder_tests {
             }
         }
 
-        let expected1 = Message::read_from(&mut Bytes::from_static(message1)).unwrap();
-        let expected2 = Message::read_from(&mut Bytes::from_static(message2)).unwrap();
-        let expected3 = Message::read_from(&mut Bytes::from_static(message3)).unwrap();
+        let expected1 = read_message_from(&mut Bytes::from_static(message1)).unwrap();
+        let expected2 = read_message_from(&mut Bytes::from_static(message2)).unwrap();
+        let expected3 = read_message_from(&mut Bytes::from_static(message3)).unwrap();
         assert_eq!(3, decoded.len());
         assert_eq!(expected1, decoded[0]);
         assert_eq!(expected2, decoded[1]);

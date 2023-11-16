@@ -10,14 +10,17 @@ impl AudioStreamErrorMarshaller {
 }
 impl ::aws_smithy_eventstream::frame::MarshallMessage for AudioStreamErrorMarshaller {
     type Input = crate::types::error::AudioStreamError;
-    fn marshall(&self, _input: Self::Input) -> std::result::Result<::aws_smithy_eventstream::frame::Message, ::aws_smithy_eventstream::error::Error> {
+    fn marshall(
+        &self,
+        _input: Self::Input,
+    ) -> std::result::Result<::aws_smithy_types::event_stream::Message, ::aws_smithy_eventstream::error::Error> {
         let mut headers = Vec::new();
-        headers.push(::aws_smithy_eventstream::frame::Header::new(
+        headers.push(::aws_smithy_types::event_stream::Header::new(
             ":message-type",
-            ::aws_smithy_eventstream::frame::HeaderValue::String("exception".into()),
+            ::aws_smithy_types::event_stream::HeaderValue::String("exception".into()),
         ));
         let payload = Vec::new();
-        Ok(::aws_smithy_eventstream::frame::Message::new_from_parts(headers, payload))
+        Ok(::aws_smithy_types::event_stream::Message::new_from_parts(headers, payload))
     }
 }
 
@@ -32,16 +35,16 @@ impl AudioStreamMarshaller {
 }
 impl ::aws_smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller {
     type Input = crate::types::AudioStream;
-    fn marshall(&self, input: Self::Input) -> std::result::Result<::aws_smithy_eventstream::frame::Message, ::aws_smithy_eventstream::error::Error> {
+    fn marshall(&self, input: Self::Input) -> std::result::Result<::aws_smithy_types::event_stream::Message, ::aws_smithy_eventstream::error::Error> {
         let mut headers = Vec::new();
-        headers.push(::aws_smithy_eventstream::frame::Header::new(
+        headers.push(::aws_smithy_types::event_stream::Header::new(
             ":message-type",
-            ::aws_smithy_eventstream::frame::HeaderValue::String("event".into()),
+            ::aws_smithy_types::event_stream::HeaderValue::String("event".into()),
         ));
         let payload = match input {
             Self::Input::AudioEvent(inner) =>  {
-                headers.push(::aws_smithy_eventstream::frame::Header::new(":event-type", ::aws_smithy_eventstream::frame::HeaderValue::String("AudioEvent".into())));
-                headers.push(::aws_smithy_eventstream::frame::Header::new(":content-type", ::aws_smithy_eventstream::frame::HeaderValue::String("application/octet-stream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("AudioEvent".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/octet-stream".into())));
                 if let Some(inner_payload) = inner.audio_chunk {
                     inner_payload.into_inner()
                 }
@@ -50,8 +53,8 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller 
                 }
             }
             Self::Input::ConfigurationEvent(inner) =>  {
-                headers.push(::aws_smithy_eventstream::frame::Header::new(":event-type", ::aws_smithy_eventstream::frame::HeaderValue::String("ConfigurationEvent".into())));
-                headers.push(::aws_smithy_eventstream::frame::Header::new(":content-type", ::aws_smithy_eventstream::frame::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("ConfigurationEvent".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
                 crate::protocol_serde::shape_audio_stream::ser_configuration_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
@@ -60,7 +63,7 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller 
                                         )
         }
         ;
-        Ok(::aws_smithy_eventstream::frame::Message::new_from_parts(headers, payload))
+        Ok(::aws_smithy_types::event_stream::Message::new_from_parts(headers, payload))
     }
 }
 
@@ -78,7 +81,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CallAnalyticsTranscr
     type Error = crate::types::error::CallAnalyticsTranscriptResultStreamError;
     fn unmarshall(
         &self,
-        message: &::aws_smithy_eventstream::frame::Message,
+        message: &::aws_smithy_types::event_stream::Message,
     ) -> std::result::Result<::aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>, ::aws_smithy_eventstream::error::Error>
     {
         let response_headers = ::aws_smithy_eventstream::smithy::parse_response_headers(message)?;
@@ -215,7 +218,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for MedicalTranscriptRes
     type Error = crate::types::error::MedicalTranscriptResultStreamError;
     fn unmarshall(
         &self,
-        message: &::aws_smithy_eventstream::frame::Message,
+        message: &::aws_smithy_types::event_stream::Message,
     ) -> std::result::Result<::aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>, ::aws_smithy_eventstream::error::Error>
     {
         let response_headers = ::aws_smithy_eventstream::smithy::parse_response_headers(message)?;
@@ -345,7 +348,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStre
     type Error = crate::types::error::TranscriptResultStreamError;
     fn unmarshall(
         &self,
-        message: &::aws_smithy_eventstream::frame::Message,
+        message: &::aws_smithy_types::event_stream::Message,
     ) -> std::result::Result<::aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>, ::aws_smithy_eventstream::error::Error>
     {
         let response_headers = ::aws_smithy_eventstream::smithy::parse_response_headers(message)?;

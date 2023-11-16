@@ -5,7 +5,8 @@
 
 #![no_main]
 
-use aws_smithy_eventstream::frame::{Header, HeaderValue, Message};
+use aws_smithy_eventstream::frame::{read_message_from, write_message_to};
+use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
 use bytes::{Buf, BufMut};
 use crc32fast::Hasher as Crc;
 use libfuzzer_sys::fuzz_target;
@@ -22,7 +23,7 @@ fuzz_target!(|input: Input| {
         .add_header(Header::new("str", HeaderValue::String("some str".into())));
 
     let mut bytes = Vec::new();
-    message.write_to(&mut bytes).unwrap();
+    write_message_to(&message, &mut bytes).unwrap();
 
     let headers_len = (&bytes[4..8]).get_u32();
     let headers = &bytes[12..(12 + headers_len as usize)];
@@ -35,7 +36,7 @@ fuzz_target!(|input: Input| {
     mutated.put_slice(message.payload());
     mutated.put_u32(crc(&mutated));
 
-    let _ = Message::read_from(&mut &mutated[..]);
+    let _ = read_message_from(&mut &mutated[..]);
 });
 
 fn crc(input: &[u8]) -> u32 {

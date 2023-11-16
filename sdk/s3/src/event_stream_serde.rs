@@ -13,7 +13,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentE
     type Error = crate::types::error::SelectObjectContentEventStreamError;
     fn unmarshall(
         &self,
-        message: &::aws_smithy_eventstream::frame::Message,
+        message: &::aws_smithy_types::event_stream::Message,
     ) -> std::result::Result<::aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>, ::aws_smithy_eventstream::error::Error>
     {
         let response_headers = ::aws_smithy_eventstream::smithy::parse_response_headers(message)?;
