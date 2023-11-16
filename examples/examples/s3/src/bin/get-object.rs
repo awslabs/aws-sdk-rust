@@ -3,7 +3,7 @@ use std::{fs::File, io::Write, path::PathBuf, process::exit};
 
 use aws_sdk_s3::Client;
 use clap::Parser;
-use tracing::log::trace;
+use tracing::trace;
 
 #[derive(Debug, Parser)]
 struct Opt {
@@ -32,9 +32,10 @@ async fn get_object(client: Client, opt: Opt) -> Result<usize, anyhow::Error> {
 
     let mut byte_count = 0_usize;
     while let Some(bytes) = object.body.try_next().await? {
-        let bytes = file.write(&bytes)?;
-        byte_count += bytes;
-        trace!("Intermediate write of {bytes}");
+        let bytes_len = bytes.len();
+        file.write_all(&bytes)?;
+        trace!("Intermediate write of {bytes_len}");
+        byte_count += bytes_len;
     }
 
     Ok(byte_count)

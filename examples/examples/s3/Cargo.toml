@@ -29,7 +29,7 @@ rand = "0.8.5"
 thiserror = "1.0"
 tokio-stream = "0.1.8"
 tracing = "0.1.37"
-aws-config= { version = "0.100.0", path = "../../../sdk/aws-config" }
+aws-config= { version = "0.100.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-endpoint= { version = "0.58.0", path = "../../../sdk/aws-endpoint" }
 aws-sdk-s3= { version = "0.37.0", path = "../../../sdk/s3", features = ["rt-tokio"] }
 aws-smithy-runtime= { version = "0.58.0", path = "../../../sdk/aws-smithy-runtime" }
