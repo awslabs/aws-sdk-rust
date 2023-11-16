@@ -80,7 +80,7 @@ pub(crate) fn conflict_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_decoder_manifest_output_correct_errors(
+pub(crate) fn create_decoder_manifest_output_output_correct_errors(
     mut builder: crate::operation::create_decoder_manifest::builders::CreateDecoderManifestOutputBuilder,
 ) -> crate::operation::create_decoder_manifest::builders::CreateDecoderManifestOutputBuilder {
     if builder.name.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn create_decoder_manifest_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_fleet_output_correct_errors(
+pub(crate) fn create_fleet_output_output_correct_errors(
     mut builder: crate::operation::create_fleet::builders::CreateFleetOutputBuilder,
 ) -> crate::operation::create_fleet::builders::CreateFleetOutputBuilder {
     if builder.id.is_none() {
@@ -104,7 +104,7 @@ pub(crate) fn create_fleet_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_model_manifest_output_correct_errors(
+pub(crate) fn create_model_manifest_output_output_correct_errors(
     mut builder: crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder,
 ) -> crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder {
     if builder.name.is_none() {
@@ -116,7 +116,7 @@ pub(crate) fn create_model_manifest_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_signal_catalog_output_correct_errors(
+pub(crate) fn create_signal_catalog_output_output_correct_errors(
     mut builder: crate::operation::create_signal_catalog::builders::CreateSignalCatalogOutputBuilder,
 ) -> crate::operation::create_signal_catalog::builders::CreateSignalCatalogOutputBuilder {
     if builder.name.is_none() {
@@ -128,7 +128,7 @@ pub(crate) fn create_signal_catalog_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_decoder_manifest_output_correct_errors(
+pub(crate) fn delete_decoder_manifest_output_output_correct_errors(
     mut builder: crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestOutputBuilder,
 ) -> crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestOutputBuilder {
     if builder.name.is_none() {
@@ -140,7 +140,7 @@ pub(crate) fn delete_decoder_manifest_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_model_manifest_output_correct_errors(
+pub(crate) fn delete_model_manifest_output_output_correct_errors(
     mut builder: crate::operation::delete_model_manifest::builders::DeleteModelManifestOutputBuilder,
 ) -> crate::operation::delete_model_manifest::builders::DeleteModelManifestOutputBuilder {
     if builder.name.is_none() {
@@ -152,7 +152,7 @@ pub(crate) fn delete_model_manifest_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_signal_catalog_output_correct_errors(
+pub(crate) fn delete_signal_catalog_output_output_correct_errors(
     mut builder: crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogOutputBuilder,
 ) -> crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogOutputBuilder {
     if builder.name.is_none() {
@@ -164,7 +164,7 @@ pub(crate) fn delete_signal_catalog_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_vehicle_output_correct_errors(
+pub(crate) fn delete_vehicle_output_output_correct_errors(
     mut builder: crate::operation::delete_vehicle::builders::DeleteVehicleOutputBuilder,
 ) -> crate::operation::delete_vehicle::builders::DeleteVehicleOutputBuilder {
     if builder.vehicle_name.is_none() {
@@ -176,7 +176,7 @@ pub(crate) fn delete_vehicle_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_decoder_manifest_output_correct_errors(
+pub(crate) fn get_decoder_manifest_output_output_correct_errors(
     mut builder: crate::operation::get_decoder_manifest::builders::GetDecoderManifestOutputBuilder,
 ) -> crate::operation::get_decoder_manifest::builders::GetDecoderManifestOutputBuilder {
     if builder.name.is_none() {
@@ -194,7 +194,7 @@ pub(crate) fn get_decoder_manifest_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_encryption_configuration_output_correct_errors(
+pub(crate) fn get_encryption_configuration_output_output_correct_errors(
     mut builder: crate::operation::get_encryption_configuration::builders::GetEncryptionConfigurationOutputBuilder,
 ) -> crate::operation::get_encryption_configuration::builders::GetEncryptionConfigurationOutputBuilder {
     if builder.encryption_status.is_none() {
@@ -206,7 +206,7 @@ pub(crate) fn get_encryption_configuration_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_fleet_output_correct_errors(
+pub(crate) fn get_fleet_output_output_correct_errors(
     mut builder: crate::operation::get_fleet::builders::GetFleetOutputBuilder,
 ) -> crate::operation::get_fleet::builders::GetFleetOutputBuilder {
     if builder.id.is_none() {
@@ -227,7 +227,7 @@ pub(crate) fn get_fleet_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_logging_options_output_correct_errors(
+pub(crate) fn get_logging_options_output_output_correct_errors(
     mut builder: crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder,
 ) -> crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder {
     if builder.cloud_watch_log_delivery.is_none() {
@@ -239,7 +239,7 @@ pub(crate) fn get_logging_options_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_model_manifest_output_correct_errors(
+pub(crate) fn get_model_manifest_output_output_correct_errors(
     mut builder: crate::operation::get_model_manifest::builders::GetModelManifestOutputBuilder,
 ) -> crate::operation::get_model_manifest::builders::GetModelManifestOutputBuilder {
     if builder.name.is_none() {
@@ -257,7 +257,7 @@ pub(crate) fn get_model_manifest_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_register_account_status_output_correct_errors(
+pub(crate) fn get_register_account_status_output_output_correct_errors(
     mut builder: crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder,
 ) -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder {
     if builder.customer_account_id.is_none() {
@@ -281,7 +281,7 @@ pub(crate) fn get_register_account_status_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_signal_catalog_output_correct_errors(
+pub(crate) fn get_signal_catalog_output_output_correct_errors(
     mut builder: crate::operation::get_signal_catalog::builders::GetSignalCatalogOutputBuilder,
 ) -> crate::operation::get_signal_catalog::builders::GetSignalCatalogOutputBuilder {
     if builder.name.is_none() {
@@ -299,7 +299,7 @@ pub(crate) fn get_signal_catalog_output_correct_errors(
     builder
 }
 
-pub(crate) fn import_decoder_manifest_output_correct_errors(
+pub(crate) fn import_decoder_manifest_output_output_correct_errors(
     mut builder: crate::operation::import_decoder_manifest::builders::ImportDecoderManifestOutputBuilder,
 ) -> crate::operation::import_decoder_manifest::builders::ImportDecoderManifestOutputBuilder {
     if builder.name.is_none() {
@@ -311,7 +311,7 @@ pub(crate) fn import_decoder_manifest_output_correct_errors(
     builder
 }
 
-pub(crate) fn import_signal_catalog_output_correct_errors(
+pub(crate) fn import_signal_catalog_output_output_correct_errors(
     mut builder: crate::operation::import_signal_catalog::builders::ImportSignalCatalogOutputBuilder,
 ) -> crate::operation::import_signal_catalog::builders::ImportSignalCatalogOutputBuilder {
     if builder.name.is_none() {
@@ -323,7 +323,7 @@ pub(crate) fn import_signal_catalog_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_encryption_configuration_output_correct_errors(
+pub(crate) fn put_encryption_configuration_output_output_correct_errors(
     mut builder: crate::operation::put_encryption_configuration::builders::PutEncryptionConfigurationOutputBuilder,
 ) -> crate::operation::put_encryption_configuration::builders::PutEncryptionConfigurationOutputBuilder {
     if builder.encryption_status.is_none() {
@@ -335,7 +335,7 @@ pub(crate) fn put_encryption_configuration_output_correct_errors(
     builder
 }
 
-pub(crate) fn register_account_output_correct_errors(
+pub(crate) fn register_account_output_output_correct_errors(
     mut builder: crate::operation::register_account::builders::RegisterAccountOutputBuilder,
 ) -> crate::operation::register_account::builders::RegisterAccountOutputBuilder {
     if builder.register_account_status.is_none() {
@@ -356,7 +356,7 @@ pub(crate) fn register_account_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_decoder_manifest_output_correct_errors(
+pub(crate) fn update_decoder_manifest_output_output_correct_errors(
     mut builder: crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestOutputBuilder,
 ) -> crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestOutputBuilder {
     if builder.name.is_none() {
@@ -368,7 +368,7 @@ pub(crate) fn update_decoder_manifest_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_model_manifest_output_correct_errors(
+pub(crate) fn update_model_manifest_output_output_correct_errors(
     mut builder: crate::operation::update_model_manifest::builders::UpdateModelManifestOutputBuilder,
 ) -> crate::operation::update_model_manifest::builders::UpdateModelManifestOutputBuilder {
     if builder.name.is_none() {
@@ -380,7 +380,7 @@ pub(crate) fn update_model_manifest_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_signal_catalog_output_correct_errors(
+pub(crate) fn update_signal_catalog_output_output_correct_errors(
     mut builder: crate::operation::update_signal_catalog::builders::UpdateSignalCatalogOutputBuilder,
 ) -> crate::operation::update_signal_catalog::builders::UpdateSignalCatalogOutputBuilder {
     if builder.name.is_none() {

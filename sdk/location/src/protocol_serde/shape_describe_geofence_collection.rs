@@ -109,7 +109,7 @@ pub fn de_describe_geofence_collection_http_response(
         output = crate::protocol_serde::shape_describe_geofence_collection::de_describe_geofence_collection(_response_body, output)
             .map_err(crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_geofence_collection_output_correct_errors(output)
+        crate::serde_util::describe_geofence_collection_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError::unhandled)?
     })

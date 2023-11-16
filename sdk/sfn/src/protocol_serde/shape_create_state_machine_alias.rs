@@ -153,7 +153,7 @@ pub fn de_create_state_machine_alias_http_response(
         output = crate::protocol_serde::shape_create_state_machine_alias::de_create_state_machine_alias(_response_body, output)
             .map_err(crate::operation::create_state_machine_alias::CreateStateMachineAliasError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_state_machine_alias_output_correct_errors(output)
+        crate::serde_util::create_state_machine_alias_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::create_state_machine_alias::CreateStateMachineAliasError::unhandled)?
     })
@@ -164,7 +164,7 @@ pub fn ser_create_state_machine_alias_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_state_machine_alias_input::ser_create_state_machine_alias_input(&mut object, input)?;
+    crate::protocol_serde::shape_create_state_machine_alias_input::ser_create_state_machine_alias_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

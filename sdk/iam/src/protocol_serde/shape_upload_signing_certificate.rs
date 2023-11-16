@@ -169,7 +169,7 @@ pub fn de_upload_signing_certificate_http_response(
         output = crate::protocol_serde::shape_upload_signing_certificate::de_upload_signing_certificate(_response_body, output)
             .map_err(crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::upload_signing_certificate_output_correct_errors(output).build()
+        crate::serde_util::upload_signing_certificate_output_output_correct_errors(output).build()
     })
 }
 

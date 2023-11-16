@@ -99,7 +99,7 @@ pub fn de_start_query_planning_http_response(
         output = crate::protocol_serde::shape_start_query_planning::de_start_query_planning(_response_body, output)
             .map_err(crate::operation::start_query_planning::StartQueryPlanningError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::start_query_planning_output_correct_errors(output)
+        crate::serde_util::start_query_planning_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::start_query_planning::StartQueryPlanningError::unhandled)?
     })
@@ -110,7 +110,7 @@ pub fn ser_start_query_planning_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_start_query_planning_input::ser_start_query_planning_input(&mut object, input)?;
+    crate::protocol_serde::shape_start_query_planning_input::ser_start_query_planning_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

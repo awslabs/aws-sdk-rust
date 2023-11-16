@@ -64,7 +64,7 @@ pub fn de_list_coverage_http_response(
         output = crate::protocol_serde::shape_list_coverage::de_list_coverage(_response_body, output)
             .map_err(crate::operation::list_coverage::ListCoverageError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_coverage_output_correct_errors(output).build()
+        crate::serde_util::list_coverage_output_output_correct_errors(output).build()
     })
 }
 
@@ -73,7 +73,7 @@ pub fn ser_list_coverage_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_coverage_input::ser_list_coverage_input(&mut object, input)?;
+    crate::protocol_serde::shape_list_coverage_input::ser_list_coverage_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

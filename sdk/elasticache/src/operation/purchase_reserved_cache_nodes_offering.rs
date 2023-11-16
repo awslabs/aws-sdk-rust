@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PurchaseRese
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_purchase_reserved_cache_nodes_offering_input::ser_purchase_reserved_cache_nodes_offering_input_input(
+            crate::protocol_serde::shape_purchase_reserved_cache_nodes_offering_input::ser_purchase_reserved_cache_nodes_offering_input_input_input(
                 &input,
             )?,
         );

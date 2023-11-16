@@ -126,7 +126,7 @@ pub fn de_delete_sync_job_http_response(
         output = crate::protocol_serde::shape_delete_sync_job::de_delete_sync_job(_response_body, output)
             .map_err(crate::operation::delete_sync_job::DeleteSyncJobError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_sync_job_output_correct_errors(output)
+        crate::serde_util::delete_sync_job_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_sync_job::DeleteSyncJobError::unhandled)?
     })

@@ -116,7 +116,7 @@ pub fn de_get_cluster_snapshot_http_response(
         output = crate::protocol_serde::shape_get_cluster_snapshot::de_get_cluster_snapshot(_response_body, output)
             .map_err(crate::operation::get_cluster_snapshot::GetClusterSnapshotError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_cluster_snapshot_output_correct_errors(output).build()
+        crate::serde_util::get_cluster_snapshot_output_output_correct_errors(output).build()
     })
 }
 

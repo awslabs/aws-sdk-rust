@@ -123,7 +123,7 @@ pub fn de_get_read_set_export_job_http_response(
         output = crate::protocol_serde::shape_get_read_set_export_job::de_get_read_set_export_job(_response_body, output)
             .map_err(crate::operation::get_read_set_export_job::GetReadSetExportJobError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_read_set_export_job_output_correct_errors(output)
+        crate::serde_util::get_read_set_export_job_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_read_set_export_job::GetReadSetExportJobError::unhandled)?
     })

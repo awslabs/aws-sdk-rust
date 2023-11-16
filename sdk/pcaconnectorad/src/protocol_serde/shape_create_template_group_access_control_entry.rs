@@ -176,7 +176,7 @@ pub fn ser_create_template_group_access_control_entry_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_template_group_access_control_entry_input::ser_create_template_group_access_control_entry_input(
+    crate::protocol_serde::shape_create_template_group_access_control_entry_input::ser_create_template_group_access_control_entry_input_input(
         &mut object,
         input,
     )?;

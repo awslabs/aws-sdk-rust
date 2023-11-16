@@ -108,7 +108,7 @@ pub fn de_get_component_type_http_response(
         output = crate::protocol_serde::shape_get_component_type::de_get_component_type(_response_body, output)
             .map_err(crate::operation::get_component_type::GetComponentTypeError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_component_type_output_correct_errors(output)
+        crate::serde_util::get_component_type_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_component_type::GetComponentTypeError::unhandled)?
     })

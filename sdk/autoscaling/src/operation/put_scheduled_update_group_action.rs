@@ -196,7 +196,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutScheduled
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_put_scheduled_update_group_action_input::ser_put_scheduled_update_group_action_input_input(&input)?,
+            crate::protocol_serde::shape_put_scheduled_update_group_action_input::ser_put_scheduled_update_group_action_input_input_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();

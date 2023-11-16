@@ -35,7 +35,7 @@ pub fn de_configure_logs_for_playback_configuration_http_response(
         )
         .map_err(crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::configure_logs_for_playback_configuration_output_correct_errors(output).build()
+        crate::serde_util::configure_logs_for_playback_configuration_output_output_correct_errors(output).build()
     })
 }
 
@@ -44,7 +44,7 @@ pub fn ser_configure_logs_for_playback_configuration_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_configure_logs_for_playback_configuration_input::ser_configure_logs_for_playback_configuration_input(
+    crate::protocol_serde::shape_configure_logs_for_playback_configuration_input::ser_configure_logs_for_playback_configuration_input_input(
         &mut object,
         input,
     )?;

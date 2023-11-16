@@ -81,7 +81,7 @@ pub fn de_get_devices_in_placement_http_response(
         output = crate::protocol_serde::shape_get_devices_in_placement::de_get_devices_in_placement(_response_body, output)
             .map_err(crate::operation::get_devices_in_placement::GetDevicesInPlacementError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_devices_in_placement_output_correct_errors(output)
+        crate::serde_util::get_devices_in_placement_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_devices_in_placement::GetDevicesInPlacementError::unhandled)?
     })

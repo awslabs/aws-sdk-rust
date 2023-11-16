@@ -53,7 +53,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn connect_app_authorization_output_correct_errors(
+pub(crate) fn connect_app_authorization_output_output_correct_errors(
     mut builder: crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationOutputBuilder,
 ) -> crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationOutputBuilder {
     if builder.app_authorization_summary.is_none() {
@@ -101,7 +101,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_app_authorization_output_correct_errors(
+pub(crate) fn create_app_authorization_output_output_correct_errors(
     mut builder: crate::operation::create_app_authorization::builders::CreateAppAuthorizationOutputBuilder,
 ) -> crate::operation::create_app_authorization::builders::CreateAppAuthorizationOutputBuilder {
     if builder.app_authorization.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn create_app_authorization_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_app_bundle_output_correct_errors(
+pub(crate) fn create_app_bundle_output_output_correct_errors(
     mut builder: crate::operation::create_app_bundle::builders::CreateAppBundleOutputBuilder,
 ) -> crate::operation::create_app_bundle::builders::CreateAppBundleOutputBuilder {
     if builder.app_bundle.is_none() {
@@ -125,7 +125,7 @@ pub(crate) fn create_app_bundle_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_ingestion_output_correct_errors(
+pub(crate) fn create_ingestion_output_output_correct_errors(
     mut builder: crate::operation::create_ingestion::builders::CreateIngestionOutputBuilder,
 ) -> crate::operation::create_ingestion::builders::CreateIngestionOutputBuilder {
     if builder.ingestion.is_none() {
@@ -137,7 +137,7 @@ pub(crate) fn create_ingestion_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_ingestion_destination_output_correct_errors(
+pub(crate) fn create_ingestion_destination_output_output_correct_errors(
     mut builder: crate::operation::create_ingestion_destination::builders::CreateIngestionDestinationOutputBuilder,
 ) -> crate::operation::create_ingestion_destination::builders::CreateIngestionDestinationOutputBuilder {
     if builder.ingestion_destination.is_none() {
@@ -149,7 +149,7 @@ pub(crate) fn create_ingestion_destination_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_app_authorization_output_correct_errors(
+pub(crate) fn get_app_authorization_output_output_correct_errors(
     mut builder: crate::operation::get_app_authorization::builders::GetAppAuthorizationOutputBuilder,
 ) -> crate::operation::get_app_authorization::builders::GetAppAuthorizationOutputBuilder {
     if builder.app_authorization.is_none() {
@@ -161,7 +161,7 @@ pub(crate) fn get_app_authorization_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_app_bundle_output_correct_errors(
+pub(crate) fn get_app_bundle_output_output_correct_errors(
     mut builder: crate::operation::get_app_bundle::builders::GetAppBundleOutputBuilder,
 ) -> crate::operation::get_app_bundle::builders::GetAppBundleOutputBuilder {
     if builder.app_bundle.is_none() {
@@ -173,7 +173,7 @@ pub(crate) fn get_app_bundle_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_ingestion_output_correct_errors(
+pub(crate) fn get_ingestion_output_output_correct_errors(
     mut builder: crate::operation::get_ingestion::builders::GetIngestionOutputBuilder,
 ) -> crate::operation::get_ingestion::builders::GetIngestionOutputBuilder {
     if builder.ingestion.is_none() {
@@ -185,7 +185,7 @@ pub(crate) fn get_ingestion_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_ingestion_destination_output_correct_errors(
+pub(crate) fn get_ingestion_destination_output_output_correct_errors(
     mut builder: crate::operation::get_ingestion_destination::builders::GetIngestionDestinationOutputBuilder,
 ) -> crate::operation::get_ingestion_destination::builders::GetIngestionDestinationOutputBuilder {
     if builder.ingestion_destination.is_none() {
@@ -197,7 +197,7 @@ pub(crate) fn get_ingestion_destination_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_app_authorizations_output_correct_errors(
+pub(crate) fn list_app_authorizations_output_output_correct_errors(
     mut builder: crate::operation::list_app_authorizations::builders::ListAppAuthorizationsOutputBuilder,
 ) -> crate::operation::list_app_authorizations::builders::ListAppAuthorizationsOutputBuilder {
     if builder.app_authorization_summary_list.is_none() {
@@ -206,7 +206,7 @@ pub(crate) fn list_app_authorizations_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_app_bundles_output_correct_errors(
+pub(crate) fn list_app_bundles_output_output_correct_errors(
     mut builder: crate::operation::list_app_bundles::builders::ListAppBundlesOutputBuilder,
 ) -> crate::operation::list_app_bundles::builders::ListAppBundlesOutputBuilder {
     if builder.app_bundle_summary_list.is_none() {
@@ -215,7 +215,7 @@ pub(crate) fn list_app_bundles_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_ingestion_destinations_output_correct_errors(
+pub(crate) fn list_ingestion_destinations_output_output_correct_errors(
     mut builder: crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsOutputBuilder,
 ) -> crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsOutputBuilder {
     if builder.ingestion_destinations.is_none() {
@@ -224,7 +224,7 @@ pub(crate) fn list_ingestion_destinations_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_ingestions_output_correct_errors(
+pub(crate) fn list_ingestions_output_output_correct_errors(
     mut builder: crate::operation::list_ingestions::builders::ListIngestionsOutputBuilder,
 ) -> crate::operation::list_ingestions::builders::ListIngestionsOutputBuilder {
     if builder.ingestions.is_none() {
@@ -233,7 +233,7 @@ pub(crate) fn list_ingestions_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_app_authorization_output_correct_errors(
+pub(crate) fn update_app_authorization_output_output_correct_errors(
     mut builder: crate::operation::update_app_authorization::builders::UpdateAppAuthorizationOutputBuilder,
 ) -> crate::operation::update_app_authorization::builders::UpdateAppAuthorizationOutputBuilder {
     if builder.app_authorization.is_none() {
@@ -245,7 +245,7 @@ pub(crate) fn update_app_authorization_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_ingestion_destination_output_correct_errors(
+pub(crate) fn update_ingestion_destination_output_output_correct_errors(
     mut builder: crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationOutputBuilder,
 ) -> crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationOutputBuilder {
     if builder.ingestion_destination.is_none() {

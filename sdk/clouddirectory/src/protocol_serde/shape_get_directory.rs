@@ -123,7 +123,7 @@ pub fn de_get_directory_http_response(
         output = crate::protocol_serde::shape_get_directory::de_get_directory(_response_body, output)
             .map_err(crate::operation::get_directory::GetDirectoryError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_directory_output_correct_errors(output).build()
+        crate::serde_util::get_directory_output_output_correct_errors(output).build()
     })
 }
 

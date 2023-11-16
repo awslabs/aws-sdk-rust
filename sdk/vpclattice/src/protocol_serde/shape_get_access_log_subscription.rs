@@ -127,7 +127,7 @@ pub fn de_get_access_log_subscription_http_response(
         output = crate::protocol_serde::shape_get_access_log_subscription::de_get_access_log_subscription(_response_body, output)
             .map_err(crate::operation::get_access_log_subscription::GetAccessLogSubscriptionError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_access_log_subscription_output_correct_errors(output)
+        crate::serde_util::get_access_log_subscription_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_access_log_subscription::GetAccessLogSubscriptionError::unhandled)?
     })

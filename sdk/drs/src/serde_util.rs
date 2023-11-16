@@ -17,7 +17,7 @@ pub(crate) fn throttling_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_replication_configuration_template_output_correct_errors(
+pub(crate) fn create_replication_configuration_template_output_output_correct_errors(
     mut builder: crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateOutputBuilder,
 ) -> crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateOutputBuilder {
     if builder.replication_configuration_template_id.is_none() {
@@ -26,7 +26,7 @@ pub(crate) fn create_replication_configuration_template_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_failback_replication_configuration_output_correct_errors(
+pub(crate) fn get_failback_replication_configuration_output_output_correct_errors(
     mut builder: crate::operation::get_failback_replication_configuration::builders::GetFailbackReplicationConfigurationOutputBuilder,
 ) -> crate::operation::get_failback_replication_configuration::builders::GetFailbackReplicationConfigurationOutputBuilder {
     if builder.recovery_instance_id.is_none() {
@@ -35,7 +35,7 @@ pub(crate) fn get_failback_replication_configuration_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_replication_configuration_template_output_correct_errors(
+pub(crate) fn update_replication_configuration_template_output_output_correct_errors(
     mut builder: crate::operation::update_replication_configuration_template::builders::UpdateReplicationConfigurationTemplateOutputBuilder,
 ) -> crate::operation::update_replication_configuration_template::builders::UpdateReplicationConfigurationTemplateOutputBuilder {
     if builder.replication_configuration_template_id.is_none() {

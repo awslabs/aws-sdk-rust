@@ -39,7 +39,7 @@ pub fn de_get_object_http_response(
         );
         output = output.set_status_code(Some(_response_status as _));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_object_output_correct_errors(output).build()
+        crate::serde_util::get_object_output_output_correct_errors(output).build()
     })
 }
 

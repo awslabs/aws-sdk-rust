@@ -144,7 +144,7 @@ pub fn de_batch_delete_rum_metric_definitions_http_response(
         output = crate::protocol_serde::shape_batch_delete_rum_metric_definitions::de_batch_delete_rum_metric_definitions(_response_body, output)
             .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::batch_delete_rum_metric_definitions_output_correct_errors(output)
+        crate::serde_util::batch_delete_rum_metric_definitions_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?
     })

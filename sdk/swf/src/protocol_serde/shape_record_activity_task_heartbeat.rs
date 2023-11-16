@@ -72,7 +72,7 @@ pub fn de_record_activity_task_heartbeat_http_response(
         output = crate::protocol_serde::shape_record_activity_task_heartbeat::de_record_activity_task_heartbeat(_response_body, output)
             .map_err(crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::record_activity_task_heartbeat_output_correct_errors(output).build()
+        crate::serde_util::record_activity_task_heartbeat_output_output_correct_errors(output).build()
     })
 }
 
@@ -81,7 +81,7 @@ pub fn ser_record_activity_task_heartbeat_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_record_activity_task_heartbeat_input::ser_record_activity_task_heartbeat_input(&mut object, input)?;
+    crate::protocol_serde::shape_record_activity_task_heartbeat_input::ser_record_activity_task_heartbeat_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

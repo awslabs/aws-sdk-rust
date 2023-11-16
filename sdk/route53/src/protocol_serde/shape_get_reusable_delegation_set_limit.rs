@@ -69,7 +69,7 @@ pub fn de_get_reusable_delegation_set_limit_http_response(
         output = crate::protocol_serde::shape_get_reusable_delegation_set_limit::de_get_reusable_delegation_set_limit(_response_body, output)
             .map_err(crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_reusable_delegation_set_limit_output_correct_errors(output).build()
+        crate::serde_util::get_reusable_delegation_set_limit_output_output_correct_errors(output).build()
     })
 }
 

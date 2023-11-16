@@ -114,7 +114,7 @@ pub fn de_list_app_assessments_http_response(
         output = crate::protocol_serde::shape_list_app_assessments::de_list_app_assessments(_response_body, output)
             .map_err(crate::operation::list_app_assessments::ListAppAssessmentsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_app_assessments_output_correct_errors(output)
+        crate::serde_util::list_app_assessments_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_app_assessments::ListAppAssessmentsError::unhandled)?
     })

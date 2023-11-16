@@ -54,7 +54,7 @@ pub fn de_exchange_code_for_token_http_response(
         output = crate::protocol_serde::shape_exchange_code_for_token::de_exchange_code_for_token(_response_body, output)
             .map_err(crate::operation::exchange_code_for_token::ExchangeCodeForTokenError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::exchange_code_for_token_output_correct_errors(output)
+        crate::serde_util::exchange_code_for_token_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::exchange_code_for_token::ExchangeCodeForTokenError::unhandled)?
     })

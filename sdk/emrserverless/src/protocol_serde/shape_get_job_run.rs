@@ -75,7 +75,7 @@ pub fn de_get_job_run_http_response(
         output = crate::protocol_serde::shape_get_job_run::de_get_job_run(_response_body, output)
             .map_err(crate::operation::get_job_run::GetJobRunError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_job_run_output_correct_errors(output).build()
+        crate::serde_util::get_job_run_output_output_correct_errors(output).build()
     })
 }
 

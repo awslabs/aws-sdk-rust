@@ -69,7 +69,7 @@ pub fn de_get_service_last_accessed_details_http_response(
         output = crate::protocol_serde::shape_get_service_last_accessed_details::de_get_service_last_accessed_details(_response_body, output)
             .map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_service_last_accessed_details_output_correct_errors(output)
+        crate::serde_util::get_service_last_accessed_details_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?
     })

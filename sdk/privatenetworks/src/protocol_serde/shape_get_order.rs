@@ -80,7 +80,7 @@ pub fn de_get_order_http_response(
         output = crate::protocol_serde::shape_get_order::de_get_order(_response_body, output)
             .map_err(crate::operation::get_order::GetOrderError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_order_output_correct_errors(output).build()
+        crate::serde_util::get_order_output_output_correct_errors(output).build()
     })
 }
 

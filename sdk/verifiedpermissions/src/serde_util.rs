@@ -74,7 +74,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_identity_source_output_correct_errors(
+pub(crate) fn create_identity_source_output_output_correct_errors(
     mut builder: crate::operation::create_identity_source::builders::CreateIdentitySourceOutputBuilder,
 ) -> crate::operation::create_identity_source::builders::CreateIdentitySourceOutputBuilder {
     if builder.created_date.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn create_identity_source_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_policy_output_correct_errors(
+pub(crate) fn create_policy_output_output_correct_errors(
     mut builder: crate::operation::create_policy::builders::CreatePolicyOutputBuilder,
 ) -> crate::operation::create_policy::builders::CreatePolicyOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn create_policy_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_policy_store_output_correct_errors(
+pub(crate) fn create_policy_store_output_output_correct_errors(
     mut builder: crate::operation::create_policy_store::builders::CreatePolicyStoreOutputBuilder,
 ) -> crate::operation::create_policy_store::builders::CreatePolicyStoreOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -131,7 +131,7 @@ pub(crate) fn create_policy_store_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_policy_template_output_correct_errors(
+pub(crate) fn create_policy_template_output_output_correct_errors(
     mut builder: crate::operation::create_policy_template::builders::CreatePolicyTemplateOutputBuilder,
 ) -> crate::operation::create_policy_template::builders::CreatePolicyTemplateOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -149,7 +149,7 @@ pub(crate) fn create_policy_template_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_identity_source_output_correct_errors(
+pub(crate) fn get_identity_source_output_output_correct_errors(
     mut builder: crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder,
 ) -> crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder {
     if builder.created_date.is_none() {
@@ -176,7 +176,7 @@ pub(crate) fn get_identity_source_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_policy_output_correct_errors(
+pub(crate) fn get_policy_output_output_correct_errors(
     mut builder: crate::operation::get_policy::builders::GetPolicyOutputBuilder,
 ) -> crate::operation::get_policy::builders::GetPolicyOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -200,7 +200,7 @@ pub(crate) fn get_policy_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_policy_store_output_correct_errors(
+pub(crate) fn get_policy_store_output_output_correct_errors(
     mut builder: crate::operation::get_policy_store::builders::GetPolicyStoreOutputBuilder,
 ) -> crate::operation::get_policy_store::builders::GetPolicyStoreOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -224,7 +224,7 @@ pub(crate) fn get_policy_store_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_policy_template_output_correct_errors(
+pub(crate) fn get_policy_template_output_output_correct_errors(
     mut builder: crate::operation::get_policy_template::builders::GetPolicyTemplateOutputBuilder,
 ) -> crate::operation::get_policy_template::builders::GetPolicyTemplateOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -245,7 +245,7 @@ pub(crate) fn get_policy_template_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_schema_output_correct_errors(
+pub(crate) fn get_schema_output_output_correct_errors(
     mut builder: crate::operation::get_schema::builders::GetSchemaOutputBuilder,
 ) -> crate::operation::get_schema::builders::GetSchemaOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -263,7 +263,7 @@ pub(crate) fn get_schema_output_correct_errors(
     builder
 }
 
-pub(crate) fn is_authorized_output_correct_errors(
+pub(crate) fn is_authorized_output_output_correct_errors(
     mut builder: crate::operation::is_authorized::builders::IsAuthorizedOutputBuilder,
 ) -> crate::operation::is_authorized::builders::IsAuthorizedOutputBuilder {
     if builder.decision.is_none() {
@@ -278,7 +278,7 @@ pub(crate) fn is_authorized_output_correct_errors(
     builder
 }
 
-pub(crate) fn is_authorized_with_token_output_correct_errors(
+pub(crate) fn is_authorized_with_token_output_output_correct_errors(
     mut builder: crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder,
 ) -> crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder {
     if builder.decision.is_none() {
@@ -293,7 +293,7 @@ pub(crate) fn is_authorized_with_token_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_identity_sources_output_correct_errors(
+pub(crate) fn list_identity_sources_output_output_correct_errors(
     mut builder: crate::operation::list_identity_sources::builders::ListIdentitySourcesOutputBuilder,
 ) -> crate::operation::list_identity_sources::builders::ListIdentitySourcesOutputBuilder {
     if builder.identity_sources.is_none() {
@@ -302,7 +302,7 @@ pub(crate) fn list_identity_sources_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_policies_output_correct_errors(
+pub(crate) fn list_policies_output_output_correct_errors(
     mut builder: crate::operation::list_policies::builders::ListPoliciesOutputBuilder,
 ) -> crate::operation::list_policies::builders::ListPoliciesOutputBuilder {
     if builder.policies.is_none() {
@@ -311,7 +311,7 @@ pub(crate) fn list_policies_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_policy_stores_output_correct_errors(
+pub(crate) fn list_policy_stores_output_output_correct_errors(
     mut builder: crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder,
 ) -> crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder {
     if builder.policy_stores.is_none() {
@@ -320,7 +320,7 @@ pub(crate) fn list_policy_stores_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_policy_templates_output_correct_errors(
+pub(crate) fn list_policy_templates_output_output_correct_errors(
     mut builder: crate::operation::list_policy_templates::builders::ListPolicyTemplatesOutputBuilder,
 ) -> crate::operation::list_policy_templates::builders::ListPolicyTemplatesOutputBuilder {
     if builder.policy_templates.is_none() {
@@ -329,7 +329,7 @@ pub(crate) fn list_policy_templates_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_schema_output_correct_errors(
+pub(crate) fn put_schema_output_output_correct_errors(
     mut builder: crate::operation::put_schema::builders::PutSchemaOutputBuilder,
 ) -> crate::operation::put_schema::builders::PutSchemaOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -347,7 +347,7 @@ pub(crate) fn put_schema_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_identity_source_output_correct_errors(
+pub(crate) fn update_identity_source_output_output_correct_errors(
     mut builder: crate::operation::update_identity_source::builders::UpdateIdentitySourceOutputBuilder,
 ) -> crate::operation::update_identity_source::builders::UpdateIdentitySourceOutputBuilder {
     if builder.created_date.is_none() {
@@ -365,7 +365,7 @@ pub(crate) fn update_identity_source_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_policy_output_correct_errors(
+pub(crate) fn update_policy_output_output_correct_errors(
     mut builder: crate::operation::update_policy::builders::UpdatePolicyOutputBuilder,
 ) -> crate::operation::update_policy::builders::UpdatePolicyOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -386,7 +386,7 @@ pub(crate) fn update_policy_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_policy_store_output_correct_errors(
+pub(crate) fn update_policy_store_output_output_correct_errors(
     mut builder: crate::operation::update_policy_store::builders::UpdatePolicyStoreOutputBuilder,
 ) -> crate::operation::update_policy_store::builders::UpdatePolicyStoreOutputBuilder {
     if builder.policy_store_id.is_none() {
@@ -404,7 +404,7 @@ pub(crate) fn update_policy_store_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_policy_template_output_correct_errors(
+pub(crate) fn update_policy_template_output_output_correct_errors(
     mut builder: crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder,
 ) -> crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder {
     if builder.policy_store_id.is_none() {

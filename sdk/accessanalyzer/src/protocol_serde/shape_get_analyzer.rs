@@ -113,7 +113,7 @@ pub fn de_get_analyzer_http_response(
         output = crate::protocol_serde::shape_get_analyzer::de_get_analyzer(_response_body, output)
             .map_err(crate::operation::get_analyzer::GetAnalyzerError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_analyzer_output_correct_errors(output).build()
+        crate::serde_util::get_analyzer_output_output_correct_errors(output).build()
     })
 }
 

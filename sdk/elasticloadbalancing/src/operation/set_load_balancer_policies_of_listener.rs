@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SetLoadBalan
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_set_load_balancer_policies_of_listener_input::ser_set_load_balancer_policies_of_listener_input_input(
+            crate::protocol_serde::shape_set_load_balancer_policies_of_listener_input::ser_set_load_balancer_policies_of_listener_input_input_input(
                 &input,
             )?,
         );

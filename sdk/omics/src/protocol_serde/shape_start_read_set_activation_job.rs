@@ -142,7 +142,7 @@ pub fn de_start_read_set_activation_job_http_response(
         output = crate::protocol_serde::shape_start_read_set_activation_job::de_start_read_set_activation_job(_response_body, output)
             .map_err(crate::operation::start_read_set_activation_job::StartReadSetActivationJobError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::start_read_set_activation_job_output_correct_errors(output)
+        crate::serde_util::start_read_set_activation_job_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::start_read_set_activation_job::StartReadSetActivationJobError::unhandled)?
     })
@@ -153,7 +153,7 @@ pub fn ser_start_read_set_activation_job_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_start_read_set_activation_job_input::ser_start_read_set_activation_job_input(&mut object, input)?;
+    crate::protocol_serde::shape_start_read_set_activation_job_input::ser_start_read_set_activation_job_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

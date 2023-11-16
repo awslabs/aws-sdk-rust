@@ -129,7 +129,7 @@ pub fn de_list_service_network_service_associations_http_response(
         )
         .map_err(crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_service_network_service_associations_output_correct_errors(output)
+        crate::serde_util::list_service_network_service_associations_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled)?
     })

@@ -78,7 +78,7 @@ pub fn de_get_trust_anchor_http_response(
         output = crate::protocol_serde::shape_get_trust_anchor::de_get_trust_anchor(_response_body, output)
             .map_err(crate::operation::get_trust_anchor::GetTrustAnchorError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_trust_anchor_output_correct_errors(output).build()
+        crate::serde_util::get_trust_anchor_output_output_correct_errors(output).build()
     })
 }
 

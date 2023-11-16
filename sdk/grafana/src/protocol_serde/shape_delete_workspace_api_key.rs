@@ -137,7 +137,7 @@ pub fn de_delete_workspace_api_key_http_response(
         output = crate::protocol_serde::shape_delete_workspace_api_key::de_delete_workspace_api_key(_response_body, output)
             .map_err(crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_workspace_api_key_output_correct_errors(output)
+        crate::serde_util::delete_workspace_api_key_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError::unhandled)?
     })

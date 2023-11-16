@@ -112,7 +112,7 @@ pub fn ser_cancel_domain_transfer_to_another_aws_account_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_cancel_domain_transfer_to_another_aws_account_input::ser_cancel_domain_transfer_to_another_aws_account_input(
+    crate::protocol_serde::shape_cancel_domain_transfer_to_another_aws_account_input::ser_cancel_domain_transfer_to_another_aws_account_input_input(
         &mut object,
         input,
     )?;

@@ -103,7 +103,7 @@ pub fn de_remove_permission_http_response(
         output = crate::protocol_serde::shape_remove_permission::de_remove_permission(_response_body, output)
             .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::remove_permission_output_correct_errors(output)
+        crate::serde_util::remove_permission_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?
     })

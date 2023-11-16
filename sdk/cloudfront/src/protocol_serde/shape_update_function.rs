@@ -162,7 +162,7 @@ pub fn ser_update_function_op_input(
         let mut root = writer
             .start_el("UpdateFunctionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::protocol_serde::shape_update_function_input::ser_update_function_input_input(input, root)?
+        crate::protocol_serde::shape_update_function_input::ser_update_function_input_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

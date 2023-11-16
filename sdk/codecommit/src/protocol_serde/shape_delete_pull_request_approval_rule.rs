@@ -271,7 +271,7 @@ pub fn de_delete_pull_request_approval_rule_http_response(
         output = crate::protocol_serde::shape_delete_pull_request_approval_rule::de_delete_pull_request_approval_rule(_response_body, output)
             .map_err(crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_pull_request_approval_rule_output_correct_errors(output)
+        crate::serde_util::delete_pull_request_approval_rule_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::unhandled)?
     })
@@ -282,7 +282,7 @@ pub fn ser_delete_pull_request_approval_rule_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_delete_pull_request_approval_rule_input::ser_delete_pull_request_approval_rule_input(&mut object, input)?;
+    crate::protocol_serde::shape_delete_pull_request_approval_rule_input::ser_delete_pull_request_approval_rule_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

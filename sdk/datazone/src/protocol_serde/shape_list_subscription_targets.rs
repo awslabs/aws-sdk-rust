@@ -127,7 +127,7 @@ pub fn de_list_subscription_targets_http_response(
         output = crate::protocol_serde::shape_list_subscription_targets::de_list_subscription_targets(_response_body, output)
             .map_err(crate::operation::list_subscription_targets::ListSubscriptionTargetsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_subscription_targets_output_correct_errors(output)
+        crate::serde_util::list_subscription_targets_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_subscription_targets::ListSubscriptionTargetsError::unhandled)?
     })

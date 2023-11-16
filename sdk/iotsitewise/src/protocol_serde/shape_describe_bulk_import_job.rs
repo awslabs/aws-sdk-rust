@@ -95,7 +95,7 @@ pub fn de_describe_bulk_import_job_http_response(
         output = crate::protocol_serde::shape_describe_bulk_import_job::de_describe_bulk_import_job(_response_body, output)
             .map_err(crate::operation::describe_bulk_import_job::DescribeBulkImportJobError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_bulk_import_job_output_correct_errors(output)
+        crate::serde_util::describe_bulk_import_job_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_bulk_import_job::DescribeBulkImportJobError::unhandled)?
     })

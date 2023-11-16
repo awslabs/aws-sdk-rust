@@ -86,7 +86,7 @@ pub fn de_list_vpc_association_authorizations_http_response(
         output = crate::protocol_serde::shape_list_vpc_association_authorizations::de_list_vpc_association_authorizations(_response_body, output)
             .map_err(crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_vpc_association_authorizations_output_correct_errors(output)
+        crate::serde_util::list_vpc_association_authorizations_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError::unhandled)?
     })

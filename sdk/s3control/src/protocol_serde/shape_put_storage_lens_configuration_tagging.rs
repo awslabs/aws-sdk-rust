@@ -64,7 +64,7 @@ pub fn ser_put_storage_lens_configuration_tagging_op_input(
         let mut root = writer
             .start_el("PutStorageLensConfigurationTaggingRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::protocol_serde::shape_put_storage_lens_configuration_tagging_input::ser_put_storage_lens_configuration_tagging_input_input(
+        crate::protocol_serde::shape_put_storage_lens_configuration_tagging_input::ser_put_storage_lens_configuration_tagging_input_input_input(
             input, root,
         )?
     }

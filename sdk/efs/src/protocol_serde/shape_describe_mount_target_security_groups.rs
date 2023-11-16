@@ -114,7 +114,7 @@ pub fn de_describe_mount_target_security_groups_http_response(
         output = crate::protocol_serde::shape_describe_mount_target_security_groups::de_describe_mount_target_security_groups(_response_body, output)
             .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_mount_target_security_groups_output_correct_errors(output)
+        crate::serde_util::describe_mount_target_security_groups_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?
     })

@@ -148,7 +148,7 @@ pub fn de_list_data_sources_http_response(
         output = crate::protocol_serde::shape_list_data_sources::de_list_data_sources(_response_body, output)
             .map_err(crate::operation::list_data_sources::ListDataSourcesError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_data_sources_output_correct_errors(output)
+        crate::serde_util::list_data_sources_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_data_sources::ListDataSourcesError::unhandled)?
     })

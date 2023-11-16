@@ -99,7 +99,7 @@ pub fn de_batch_get_frame_metric_data_http_response(
         output = crate::protocol_serde::shape_batch_get_frame_metric_data::de_batch_get_frame_metric_data(_response_body, output)
             .map_err(crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::batch_get_frame_metric_data_output_correct_errors(output)
+        crate::serde_util::batch_get_frame_metric_data_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError::unhandled)?
     })
@@ -110,7 +110,7 @@ pub fn ser_batch_get_frame_metric_data_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_batch_get_frame_metric_data_input::ser_batch_get_frame_metric_data_input(&mut object, input)?;
+    crate::protocol_serde::shape_batch_get_frame_metric_data_input::ser_batch_get_frame_metric_data_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

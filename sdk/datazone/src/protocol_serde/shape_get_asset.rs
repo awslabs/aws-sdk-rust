@@ -117,7 +117,7 @@ pub fn de_get_asset_http_response(
         output = crate::protocol_serde::shape_get_asset::de_get_asset(_response_body, output)
             .map_err(crate::operation::get_asset::GetAssetError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_asset_output_correct_errors(output)
+        crate::serde_util::get_asset_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_asset::GetAssetError::unhandled)?
     })

@@ -107,7 +107,7 @@ pub fn de_list_traffic_policy_instances_by_hosted_zone_http_response(
         )
         .map_err(crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_traffic_policy_instances_by_hosted_zone_output_correct_errors(output)
+        crate::serde_util::list_traffic_policy_instances_by_hosted_zone_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?
     })

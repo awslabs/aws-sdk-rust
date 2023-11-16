@@ -161,7 +161,7 @@ pub fn de_translate_text_http_response(
         output = crate::protocol_serde::shape_translate_text::de_translate_text(_response_body, output)
             .map_err(crate::operation::translate_text::TranslateTextError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::translate_text_output_correct_errors(output)
+        crate::serde_util::translate_text_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::translate_text::TranslateTextError::unhandled)?
     })
@@ -172,7 +172,7 @@ pub fn ser_translate_text_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_translate_text_input::ser_translate_text_input(&mut object, input)?;
+    crate::protocol_serde::shape_translate_text_input::ser_translate_text_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

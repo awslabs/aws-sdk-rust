@@ -59,7 +59,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn get_routing_control_state_output_correct_errors(
+pub(crate) fn get_routing_control_state_output_output_correct_errors(
     mut builder: crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder,
 ) -> crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder {
     if builder.routing_control_arn.is_none() {
@@ -71,7 +71,7 @@ pub(crate) fn get_routing_control_state_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_routing_controls_output_correct_errors(
+pub(crate) fn list_routing_controls_output_output_correct_errors(
     mut builder: crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder,
 ) -> crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder {
     if builder.routing_controls.is_none() {

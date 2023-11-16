@@ -117,7 +117,7 @@ pub fn de_delete_image_set_http_response(
         output = crate::protocol_serde::shape_delete_image_set::de_delete_image_set(_response_body, output)
             .map_err(crate::operation::delete_image_set::DeleteImageSetError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_image_set_output_correct_errors(output)
+        crate::serde_util::delete_image_set_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_image_set::DeleteImageSetError::unhandled)?
     })

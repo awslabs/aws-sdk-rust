@@ -89,7 +89,7 @@ pub fn de_delete_vehicle_http_response(
         output = crate::protocol_serde::shape_delete_vehicle::de_delete_vehicle(_response_body, output)
             .map_err(crate::operation::delete_vehicle::DeleteVehicleError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_vehicle_output_correct_errors(output)
+        crate::serde_util::delete_vehicle_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_vehicle::DeleteVehicleError::unhandled)?
     })
@@ -100,7 +100,7 @@ pub fn ser_delete_vehicle_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_delete_vehicle_input::ser_delete_vehicle_input(&mut object, input)?;
+    crate::protocol_serde::shape_delete_vehicle_input::ser_delete_vehicle_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

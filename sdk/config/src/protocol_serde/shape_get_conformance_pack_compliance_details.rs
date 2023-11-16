@@ -121,7 +121,7 @@ pub fn de_get_conformance_pack_compliance_details_http_response(
             crate::protocol_serde::shape_get_conformance_pack_compliance_details::de_get_conformance_pack_compliance_details(_response_body, output)
                 .map_err(crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_conformance_pack_compliance_details_output_correct_errors(output)
+        crate::serde_util::get_conformance_pack_compliance_details_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::unhandled)?
     })
@@ -132,7 +132,7 @@ pub fn ser_get_conformance_pack_compliance_details_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_conformance_pack_compliance_details_input::ser_get_conformance_pack_compliance_details_input(
+    crate::protocol_serde::shape_get_conformance_pack_compliance_details_input::ser_get_conformance_pack_compliance_details_input_input(
         &mut object,
         input,
     )?;

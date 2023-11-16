@@ -107,7 +107,7 @@ pub fn de_get_schema_http_response(
         output = crate::protocol_serde::shape_get_schema::de_get_schema(_response_body, output)
             .map_err(crate::operation::get_schema::GetSchemaError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_schema_output_correct_errors(output).build()
+        crate::serde_util::get_schema_output_output_correct_errors(output).build()
     })
 }
 

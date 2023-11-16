@@ -98,7 +98,7 @@ pub fn de_list_managed_resources_http_response(
         output = crate::protocol_serde::shape_list_managed_resources::de_list_managed_resources(_response_body, output)
             .map_err(crate::operation::list_managed_resources::ListManagedResourcesError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_managed_resources_output_correct_errors(output)
+        crate::serde_util::list_managed_resources_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_managed_resources::ListManagedResourcesError::unhandled)?
     })

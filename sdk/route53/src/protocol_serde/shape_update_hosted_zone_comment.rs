@@ -88,7 +88,7 @@ pub fn de_update_hosted_zone_comment_http_response(
         output = crate::protocol_serde::shape_update_hosted_zone_comment::de_update_hosted_zone_comment(_response_body, output)
             .map_err(crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_hosted_zone_comment_output_correct_errors(output).build()
+        crate::serde_util::update_hosted_zone_comment_output_output_correct_errors(output).build()
     })
 }
 
@@ -102,7 +102,7 @@ pub fn ser_update_hosted_zone_comment_op_input(
         let mut root = writer
             .start_el("UpdateHostedZoneCommentRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_update_hosted_zone_comment_input::ser_update_hosted_zone_comment_input_input(input, root)?
+        crate::protocol_serde::shape_update_hosted_zone_comment_input::ser_update_hosted_zone_comment_input_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

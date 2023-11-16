@@ -112,7 +112,7 @@ pub fn de_enable_http_response(
         let mut output = crate::operation::enable::builders::EnableOutputBuilder::default();
         output = crate::protocol_serde::shape_enable::de_enable(_response_body, output).map_err(crate::operation::enable::EnableError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::enable_output_correct_errors(output)
+        crate::serde_util::enable_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::enable::EnableError::unhandled)?
     })
@@ -123,7 +123,7 @@ pub fn ser_enable_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_enable_input::ser_enable_input(&mut object, input)?;
+    crate::protocol_serde::shape_enable_input::ser_enable_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

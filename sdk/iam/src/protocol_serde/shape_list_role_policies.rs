@@ -63,7 +63,7 @@ pub fn de_list_role_policies_http_response(
         output = crate::protocol_serde::shape_list_role_policies::de_list_role_policies(_response_body, output)
             .map_err(crate::operation::list_role_policies::ListRolePoliciesError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_role_policies_output_correct_errors(output)
+        crate::serde_util::list_role_policies_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_role_policies::ListRolePoliciesError::unhandled)?
     })

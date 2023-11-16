@@ -108,7 +108,7 @@ pub fn de_get_quantum_task_http_response(
         output = crate::protocol_serde::shape_get_quantum_task::de_get_quantum_task(_response_body, output)
             .map_err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_quantum_task_output_correct_errors(output)
+        crate::serde_util::get_quantum_task_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled)?
     })

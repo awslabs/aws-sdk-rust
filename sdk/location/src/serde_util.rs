@@ -68,7 +68,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_delete_device_position_history_output_correct_errors(
+pub(crate) fn batch_delete_device_position_history_output_output_correct_errors(
     mut builder: crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryOutputBuilder,
 ) -> crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryOutputBuilder {
     if builder.errors.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn batch_delete_device_position_history_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_delete_geofence_output_correct_errors(
+pub(crate) fn batch_delete_geofence_output_output_correct_errors(
     mut builder: crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceOutputBuilder,
 ) -> crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceOutputBuilder {
     if builder.errors.is_none() {
@@ -86,7 +86,7 @@ pub(crate) fn batch_delete_geofence_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_evaluate_geofences_output_correct_errors(
+pub(crate) fn batch_evaluate_geofences_output_output_correct_errors(
     mut builder: crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesOutputBuilder,
 ) -> crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesOutputBuilder {
     if builder.errors.is_none() {
@@ -95,7 +95,7 @@ pub(crate) fn batch_evaluate_geofences_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_device_position_output_correct_errors(
+pub(crate) fn batch_get_device_position_output_output_correct_errors(
     mut builder: crate::operation::batch_get_device_position::builders::BatchGetDevicePositionOutputBuilder,
 ) -> crate::operation::batch_get_device_position::builders::BatchGetDevicePositionOutputBuilder {
     if builder.errors.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn batch_get_device_position_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_put_geofence_output_correct_errors(
+pub(crate) fn batch_put_geofence_output_output_correct_errors(
     mut builder: crate::operation::batch_put_geofence::builders::BatchPutGeofenceOutputBuilder,
 ) -> crate::operation::batch_put_geofence::builders::BatchPutGeofenceOutputBuilder {
     if builder.successes.is_none() {
@@ -119,7 +119,7 @@ pub(crate) fn batch_put_geofence_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_update_device_position_output_correct_errors(
+pub(crate) fn batch_update_device_position_output_output_correct_errors(
     mut builder: crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder,
 ) -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder {
     if builder.errors.is_none() {
@@ -128,7 +128,7 @@ pub(crate) fn batch_update_device_position_output_correct_errors(
     builder
 }
 
-pub(crate) fn calculate_route_output_correct_errors(
+pub(crate) fn calculate_route_output_output_correct_errors(
     mut builder: crate::operation::calculate_route::builders::CalculateRouteOutputBuilder,
 ) -> crate::operation::calculate_route::builders::CalculateRouteOutputBuilder {
     if builder.legs.is_none() {
@@ -143,7 +143,7 @@ pub(crate) fn calculate_route_output_correct_errors(
     builder
 }
 
-pub(crate) fn calculate_route_matrix_output_correct_errors(
+pub(crate) fn calculate_route_matrix_output_output_correct_errors(
     mut builder: crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixOutputBuilder,
 ) -> crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixOutputBuilder {
     if builder.route_matrix.is_none() {
@@ -158,7 +158,7 @@ pub(crate) fn calculate_route_matrix_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_geofence_collection_output_correct_errors(
+pub(crate) fn create_geofence_collection_output_output_correct_errors(
     mut builder: crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionOutputBuilder,
 ) -> crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionOutputBuilder {
     if builder.collection_name.is_none() {
@@ -173,7 +173,7 @@ pub(crate) fn create_geofence_collection_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_key_output_correct_errors(
+pub(crate) fn create_key_output_output_correct_errors(
     mut builder: crate::operation::create_key::builders::CreateKeyOutputBuilder,
 ) -> crate::operation::create_key::builders::CreateKeyOutputBuilder {
     if builder.key.is_none() {
@@ -191,7 +191,7 @@ pub(crate) fn create_key_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_map_output_correct_errors(
+pub(crate) fn create_map_output_output_correct_errors(
     mut builder: crate::operation::create_map::builders::CreateMapOutputBuilder,
 ) -> crate::operation::create_map::builders::CreateMapOutputBuilder {
     if builder.map_name.is_none() {
@@ -206,7 +206,7 @@ pub(crate) fn create_map_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_place_index_output_correct_errors(
+pub(crate) fn create_place_index_output_output_correct_errors(
     mut builder: crate::operation::create_place_index::builders::CreatePlaceIndexOutputBuilder,
 ) -> crate::operation::create_place_index::builders::CreatePlaceIndexOutputBuilder {
     if builder.index_name.is_none() {
@@ -221,7 +221,7 @@ pub(crate) fn create_place_index_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_route_calculator_output_correct_errors(
+pub(crate) fn create_route_calculator_output_output_correct_errors(
     mut builder: crate::operation::create_route_calculator::builders::CreateRouteCalculatorOutputBuilder,
 ) -> crate::operation::create_route_calculator::builders::CreateRouteCalculatorOutputBuilder {
     if builder.calculator_name.is_none() {
@@ -236,7 +236,7 @@ pub(crate) fn create_route_calculator_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_tracker_output_correct_errors(
+pub(crate) fn create_tracker_output_output_correct_errors(
     mut builder: crate::operation::create_tracker::builders::CreateTrackerOutputBuilder,
 ) -> crate::operation::create_tracker::builders::CreateTrackerOutputBuilder {
     if builder.tracker_name.is_none() {
@@ -251,7 +251,7 @@ pub(crate) fn create_tracker_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_geofence_collection_output_correct_errors(
+pub(crate) fn describe_geofence_collection_output_output_correct_errors(
     mut builder: crate::operation::describe_geofence_collection::builders::DescribeGeofenceCollectionOutputBuilder,
 ) -> crate::operation::describe_geofence_collection::builders::DescribeGeofenceCollectionOutputBuilder {
     if builder.collection_name.is_none() {
@@ -272,7 +272,7 @@ pub(crate) fn describe_geofence_collection_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_key_output_correct_errors(
+pub(crate) fn describe_key_output_output_correct_errors(
     mut builder: crate::operation::describe_key::builders::DescribeKeyOutputBuilder,
 ) -> crate::operation::describe_key::builders::DescribeKeyOutputBuilder {
     if builder.key.is_none() {
@@ -302,7 +302,7 @@ pub(crate) fn describe_key_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_map_output_correct_errors(
+pub(crate) fn describe_map_output_output_correct_errors(
     mut builder: crate::operation::describe_map::builders::DescribeMapOutputBuilder,
 ) -> crate::operation::describe_map::builders::DescribeMapOutputBuilder {
     if builder.map_name.is_none() {
@@ -332,7 +332,7 @@ pub(crate) fn describe_map_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_place_index_output_correct_errors(
+pub(crate) fn describe_place_index_output_output_correct_errors(
     mut builder: crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder,
 ) -> crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder {
     if builder.index_name.is_none() {
@@ -362,7 +362,7 @@ pub(crate) fn describe_place_index_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_route_calculator_output_correct_errors(
+pub(crate) fn describe_route_calculator_output_output_correct_errors(
     mut builder: crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorOutputBuilder,
 ) -> crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorOutputBuilder {
     if builder.calculator_name.is_none() {
@@ -386,7 +386,7 @@ pub(crate) fn describe_route_calculator_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_tracker_output_correct_errors(
+pub(crate) fn describe_tracker_output_output_correct_errors(
     mut builder: crate::operation::describe_tracker::builders::DescribeTrackerOutputBuilder,
 ) -> crate::operation::describe_tracker::builders::DescribeTrackerOutputBuilder {
     if builder.tracker_name.is_none() {
@@ -407,7 +407,7 @@ pub(crate) fn describe_tracker_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_device_position_output_correct_errors(
+pub(crate) fn get_device_position_output_output_correct_errors(
     mut builder: crate::operation::get_device_position::builders::GetDevicePositionOutputBuilder,
 ) -> crate::operation::get_device_position::builders::GetDevicePositionOutputBuilder {
     if builder.sample_time.is_none() {
@@ -422,7 +422,7 @@ pub(crate) fn get_device_position_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_device_position_history_output_correct_errors(
+pub(crate) fn get_device_position_history_output_output_correct_errors(
     mut builder: crate::operation::get_device_position_history::builders::GetDevicePositionHistoryOutputBuilder,
 ) -> crate::operation::get_device_position_history::builders::GetDevicePositionHistoryOutputBuilder {
     if builder.device_positions.is_none() {
@@ -431,7 +431,7 @@ pub(crate) fn get_device_position_history_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_geofence_output_correct_errors(
+pub(crate) fn get_geofence_output_output_correct_errors(
     mut builder: crate::operation::get_geofence::builders::GetGeofenceOutputBuilder,
 ) -> crate::operation::get_geofence::builders::GetGeofenceOutputBuilder {
     if builder.geofence_id.is_none() {
@@ -455,7 +455,7 @@ pub(crate) fn get_geofence_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_place_output_correct_errors(
+pub(crate) fn get_place_output_output_correct_errors(
     mut builder: crate::operation::get_place::builders::GetPlaceOutputBuilder,
 ) -> crate::operation::get_place::builders::GetPlaceOutputBuilder {
     if builder.place.is_none() {
@@ -467,7 +467,7 @@ pub(crate) fn get_place_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_device_positions_output_correct_errors(
+pub(crate) fn list_device_positions_output_output_correct_errors(
     mut builder: crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder,
 ) -> crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder {
     if builder.entries.is_none() {
@@ -476,7 +476,7 @@ pub(crate) fn list_device_positions_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_geofence_collections_output_correct_errors(
+pub(crate) fn list_geofence_collections_output_output_correct_errors(
     mut builder: crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsOutputBuilder,
 ) -> crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsOutputBuilder {
     if builder.entries.is_none() {
@@ -485,7 +485,7 @@ pub(crate) fn list_geofence_collections_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_geofences_output_correct_errors(
+pub(crate) fn list_geofences_output_output_correct_errors(
     mut builder: crate::operation::list_geofences::builders::ListGeofencesOutputBuilder,
 ) -> crate::operation::list_geofences::builders::ListGeofencesOutputBuilder {
     if builder.entries.is_none() {
@@ -494,7 +494,7 @@ pub(crate) fn list_geofences_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_keys_output_correct_errors(
+pub(crate) fn list_keys_output_output_correct_errors(
     mut builder: crate::operation::list_keys::builders::ListKeysOutputBuilder,
 ) -> crate::operation::list_keys::builders::ListKeysOutputBuilder {
     if builder.entries.is_none() {
@@ -503,7 +503,7 @@ pub(crate) fn list_keys_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_maps_output_correct_errors(
+pub(crate) fn list_maps_output_output_correct_errors(
     mut builder: crate::operation::list_maps::builders::ListMapsOutputBuilder,
 ) -> crate::operation::list_maps::builders::ListMapsOutputBuilder {
     if builder.entries.is_none() {
@@ -512,7 +512,7 @@ pub(crate) fn list_maps_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_place_indexes_output_correct_errors(
+pub(crate) fn list_place_indexes_output_output_correct_errors(
     mut builder: crate::operation::list_place_indexes::builders::ListPlaceIndexesOutputBuilder,
 ) -> crate::operation::list_place_indexes::builders::ListPlaceIndexesOutputBuilder {
     if builder.entries.is_none() {
@@ -521,7 +521,7 @@ pub(crate) fn list_place_indexes_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_route_calculators_output_correct_errors(
+pub(crate) fn list_route_calculators_output_output_correct_errors(
     mut builder: crate::operation::list_route_calculators::builders::ListRouteCalculatorsOutputBuilder,
 ) -> crate::operation::list_route_calculators::builders::ListRouteCalculatorsOutputBuilder {
     if builder.entries.is_none() {
@@ -530,7 +530,7 @@ pub(crate) fn list_route_calculators_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tracker_consumers_output_correct_errors(
+pub(crate) fn list_tracker_consumers_output_output_correct_errors(
     mut builder: crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder,
 ) -> crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder {
     if builder.consumer_arns.is_none() {
@@ -539,7 +539,7 @@ pub(crate) fn list_tracker_consumers_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_trackers_output_correct_errors(
+pub(crate) fn list_trackers_output_output_correct_errors(
     mut builder: crate::operation::list_trackers::builders::ListTrackersOutputBuilder,
 ) -> crate::operation::list_trackers::builders::ListTrackersOutputBuilder {
     if builder.entries.is_none() {
@@ -548,7 +548,7 @@ pub(crate) fn list_trackers_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_geofence_output_correct_errors(
+pub(crate) fn put_geofence_output_output_correct_errors(
     mut builder: crate::operation::put_geofence::builders::PutGeofenceOutputBuilder,
 ) -> crate::operation::put_geofence::builders::PutGeofenceOutputBuilder {
     if builder.geofence_id.is_none() {
@@ -563,7 +563,7 @@ pub(crate) fn put_geofence_output_correct_errors(
     builder
 }
 
-pub(crate) fn search_place_index_for_position_output_correct_errors(
+pub(crate) fn search_place_index_for_position_output_output_correct_errors(
     mut builder: crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionOutputBuilder,
 ) -> crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionOutputBuilder {
     if builder.summary.is_none() {
@@ -580,7 +580,7 @@ pub(crate) fn search_place_index_for_position_output_correct_errors(
     builder
 }
 
-pub(crate) fn search_place_index_for_suggestions_output_correct_errors(
+pub(crate) fn search_place_index_for_suggestions_output_output_correct_errors(
     mut builder: crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsOutputBuilder,
 ) -> crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsOutputBuilder {
     if builder.summary.is_none() {
@@ -597,7 +597,7 @@ pub(crate) fn search_place_index_for_suggestions_output_correct_errors(
     builder
 }
 
-pub(crate) fn search_place_index_for_text_output_correct_errors(
+pub(crate) fn search_place_index_for_text_output_output_correct_errors(
     mut builder: crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextOutputBuilder,
 ) -> crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextOutputBuilder {
     if builder.summary.is_none() {
@@ -614,7 +614,7 @@ pub(crate) fn search_place_index_for_text_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_geofence_collection_output_correct_errors(
+pub(crate) fn update_geofence_collection_output_output_correct_errors(
     mut builder: crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionOutputBuilder,
 ) -> crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionOutputBuilder {
     if builder.collection_name.is_none() {
@@ -629,7 +629,7 @@ pub(crate) fn update_geofence_collection_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_key_output_correct_errors(
+pub(crate) fn update_key_output_output_correct_errors(
     mut builder: crate::operation::update_key::builders::UpdateKeyOutputBuilder,
 ) -> crate::operation::update_key::builders::UpdateKeyOutputBuilder {
     if builder.key_arn.is_none() {
@@ -644,7 +644,7 @@ pub(crate) fn update_key_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_map_output_correct_errors(
+pub(crate) fn update_map_output_output_correct_errors(
     mut builder: crate::operation::update_map::builders::UpdateMapOutputBuilder,
 ) -> crate::operation::update_map::builders::UpdateMapOutputBuilder {
     if builder.map_name.is_none() {
@@ -659,7 +659,7 @@ pub(crate) fn update_map_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_place_index_output_correct_errors(
+pub(crate) fn update_place_index_output_output_correct_errors(
     mut builder: crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder,
 ) -> crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder {
     if builder.index_name.is_none() {
@@ -674,7 +674,7 @@ pub(crate) fn update_place_index_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_route_calculator_output_correct_errors(
+pub(crate) fn update_route_calculator_output_output_correct_errors(
     mut builder: crate::operation::update_route_calculator::builders::UpdateRouteCalculatorOutputBuilder,
 ) -> crate::operation::update_route_calculator::builders::UpdateRouteCalculatorOutputBuilder {
     if builder.calculator_name.is_none() {
@@ -689,7 +689,7 @@ pub(crate) fn update_route_calculator_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_tracker_output_correct_errors(
+pub(crate) fn update_tracker_output_output_correct_errors(
     mut builder: crate::operation::update_tracker::builders::UpdateTrackerOutputBuilder,
 ) -> crate::operation::update_tracker::builders::UpdateTrackerOutputBuilder {
     if builder.tracker_name.is_none() {

@@ -123,7 +123,7 @@ pub fn de_get_interpolated_asset_property_values_http_response(
             crate::protocol_serde::shape_get_interpolated_asset_property_values::de_get_interpolated_asset_property_values(_response_body, output)
                 .map_err(crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_interpolated_asset_property_values_output_correct_errors(output)
+        crate::serde_util::get_interpolated_asset_property_values_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError::unhandled)?
     })

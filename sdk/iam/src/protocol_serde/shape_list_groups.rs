@@ -48,7 +48,7 @@ pub fn de_list_groups_http_response(
         output = crate::protocol_serde::shape_list_groups::de_list_groups(_response_body, output)
             .map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_groups_output_correct_errors(output)
+        crate::serde_util::list_groups_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_groups::ListGroupsError::unhandled)?
     })

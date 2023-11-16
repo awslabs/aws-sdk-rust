@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_disassociate_client_vpn_target_network_input::ser_disassociate_client_vpn_target_network_input_input(
+            crate::protocol_serde::shape_disassociate_client_vpn_target_network_input::ser_disassociate_client_vpn_target_network_input_input_input(
                 &input,
             )?,
         );

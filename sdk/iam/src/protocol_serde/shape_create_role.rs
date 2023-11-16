@@ -130,7 +130,7 @@ pub fn de_create_role_http_response(
         output = crate::protocol_serde::shape_create_role::de_create_role(_response_body, output)
             .map_err(crate::operation::create_role::CreateRoleError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_role_output_correct_errors(output).build()
+        crate::serde_util::create_role_output_output_correct_errors(output).build()
     })
 }
 

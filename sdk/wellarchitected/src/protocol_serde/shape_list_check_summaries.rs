@@ -108,7 +108,7 @@ pub fn ser_list_check_summaries_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_check_summaries_input::ser_list_check_summaries_input(&mut object, input)?;
+    crate::protocol_serde::shape_list_check_summaries_input::ser_list_check_summaries_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

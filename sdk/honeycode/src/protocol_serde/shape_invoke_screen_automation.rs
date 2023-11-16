@@ -201,7 +201,7 @@ pub fn de_invoke_screen_automation_http_response(
         output = crate::protocol_serde::shape_invoke_screen_automation::de_invoke_screen_automation(_response_body, output)
             .map_err(crate::operation::invoke_screen_automation::InvokeScreenAutomationError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::invoke_screen_automation_output_correct_errors(output).build()
+        crate::serde_util::invoke_screen_automation_output_output_correct_errors(output).build()
     })
 }
 
@@ -210,7 +210,7 @@ pub fn ser_invoke_screen_automation_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_invoke_screen_automation_input::ser_invoke_screen_automation_input(&mut object, input)?;
+    crate::protocol_serde::shape_invoke_screen_automation_input::ser_invoke_screen_automation_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

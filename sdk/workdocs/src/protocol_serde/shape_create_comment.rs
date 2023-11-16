@@ -195,7 +195,7 @@ pub fn ser_create_comment_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_comment_input::ser_create_comment_input(&mut object, input)?;
+    crate::protocol_serde::shape_create_comment_input::ser_create_comment_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

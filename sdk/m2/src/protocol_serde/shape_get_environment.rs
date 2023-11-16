@@ -117,7 +117,7 @@ pub fn de_get_environment_http_response(
         output = crate::protocol_serde::shape_get_environment::de_get_environment(_response_body, output)
             .map_err(crate::operation::get_environment::GetEnvironmentError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_environment_output_correct_errors(output)
+        crate::serde_util::get_environment_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_environment::GetEnvironmentError::unhandled)?
     })

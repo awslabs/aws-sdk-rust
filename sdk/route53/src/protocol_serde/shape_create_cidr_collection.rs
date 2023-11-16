@@ -124,7 +124,7 @@ pub fn ser_create_cidr_collection_op_input(
         let mut root = writer
             .start_el("CreateCidrCollectionRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_create_cidr_collection_input::ser_create_cidr_collection_input_input(input, root)?
+        crate::protocol_serde::shape_create_cidr_collection_input::ser_create_cidr_collection_input_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

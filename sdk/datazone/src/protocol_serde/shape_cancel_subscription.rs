@@ -137,7 +137,7 @@ pub fn de_cancel_subscription_http_response(
         output = crate::protocol_serde::shape_cancel_subscription::de_cancel_subscription(_response_body, output)
             .map_err(crate::operation::cancel_subscription::CancelSubscriptionError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::cancel_subscription_output_correct_errors(output)
+        crate::serde_util::cancel_subscription_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::cancel_subscription::CancelSubscriptionError::unhandled)?
     })

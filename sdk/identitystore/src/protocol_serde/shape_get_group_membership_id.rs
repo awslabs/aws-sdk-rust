@@ -114,7 +114,7 @@ pub fn de_get_group_membership_id_http_response(
         output = crate::protocol_serde::shape_get_group_membership_id::de_get_group_membership_id(_response_body, output)
             .map_err(crate::operation::get_group_membership_id::GetGroupMembershipIdError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_group_membership_id_output_correct_errors(output)
+        crate::serde_util::get_group_membership_id_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_group_membership_id::GetGroupMembershipIdError::unhandled)?
     })
@@ -125,7 +125,7 @@ pub fn ser_get_group_membership_id_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_group_membership_id_input::ser_get_group_membership_id_input(&mut object, input)?;
+    crate::protocol_serde::shape_get_group_membership_id_input::ser_get_group_membership_id_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

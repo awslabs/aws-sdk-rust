@@ -75,7 +75,7 @@ pub fn de_get_scaling_plan_resource_forecast_data_http_response(
             crate::protocol_serde::shape_get_scaling_plan_resource_forecast_data::de_get_scaling_plan_resource_forecast_data(_response_body, output)
                 .map_err(crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_scaling_plan_resource_forecast_data_output_correct_errors(output)
+        crate::serde_util::get_scaling_plan_resource_forecast_data_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError::unhandled)?
     })
@@ -86,7 +86,7 @@ pub fn ser_get_scaling_plan_resource_forecast_data_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_scaling_plan_resource_forecast_data_input::ser_get_scaling_plan_resource_forecast_data_input(
+    crate::protocol_serde::shape_get_scaling_plan_resource_forecast_data_input::ser_get_scaling_plan_resource_forecast_data_input_input(
         &mut object,
         input,
     )?;

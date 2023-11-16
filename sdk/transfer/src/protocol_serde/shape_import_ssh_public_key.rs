@@ -126,7 +126,7 @@ pub fn de_import_ssh_public_key_http_response(
         output = crate::protocol_serde::shape_import_ssh_public_key::de_import_ssh_public_key(_response_body, output)
             .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::import_ssh_public_key_output_correct_errors(output)
+        crate::serde_util::import_ssh_public_key_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?
     })
@@ -137,7 +137,7 @@ pub fn ser_import_ssh_public_key_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_import_ssh_public_key_input::ser_import_ssh_public_key_input(&mut object, input)?;
+    crate::protocol_serde::shape_import_ssh_public_key_input::ser_import_ssh_public_key_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

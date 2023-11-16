@@ -63,7 +63,7 @@ pub fn de_list_assistants_http_response(
         output = crate::protocol_serde::shape_list_assistants::de_list_assistants(_response_body, output)
             .map_err(crate::operation::list_assistants::ListAssistantsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_assistants_output_correct_errors(output)
+        crate::serde_util::list_assistants_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_assistants::ListAssistantsError::unhandled)?
     })

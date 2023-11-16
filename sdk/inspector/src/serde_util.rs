@@ -68,7 +68,7 @@ pub(crate) fn service_temporarily_unavailable_exception_correct_errors(
     builder
 }
 
-pub(crate) fn add_attributes_to_findings_output_correct_errors(
+pub(crate) fn add_attributes_to_findings_output_output_correct_errors(
     mut builder: crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsOutputBuilder,
 ) -> crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsOutputBuilder {
     if builder.failed_items.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn limit_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_assessment_target_output_correct_errors(
+pub(crate) fn create_assessment_target_output_output_correct_errors(
     mut builder: crate::operation::create_assessment_target::builders::CreateAssessmentTargetOutputBuilder,
 ) -> crate::operation::create_assessment_target::builders::CreateAssessmentTargetOutputBuilder {
     if builder.assessment_target_arn.is_none() {
@@ -116,7 +116,7 @@ pub(crate) fn create_assessment_target_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_assessment_template_output_correct_errors(
+pub(crate) fn create_assessment_template_output_output_correct_errors(
     mut builder: crate::operation::create_assessment_template::builders::CreateAssessmentTemplateOutputBuilder,
 ) -> crate::operation::create_assessment_template::builders::CreateAssessmentTemplateOutputBuilder {
     if builder.assessment_template_arn.is_none() {
@@ -134,7 +134,7 @@ pub(crate) fn preview_generation_in_progress_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_exclusions_preview_output_correct_errors(
+pub(crate) fn create_exclusions_preview_output_output_correct_errors(
     mut builder: crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewOutputBuilder,
 ) -> crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewOutputBuilder {
     if builder.preview_token.is_none() {
@@ -143,7 +143,7 @@ pub(crate) fn create_exclusions_preview_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_resource_group_output_correct_errors(
+pub(crate) fn create_resource_group_output_output_correct_errors(
     mut builder: crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder,
 ) -> crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder {
     if builder.resource_group_arn.is_none() {
@@ -170,7 +170,7 @@ pub(crate) fn assessment_run_in_progress_exception_correct_errors(
     builder
 }
 
-pub(crate) fn describe_assessment_runs_output_correct_errors(
+pub(crate) fn describe_assessment_runs_output_output_correct_errors(
     mut builder: crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsOutputBuilder,
 ) -> crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsOutputBuilder {
     if builder.assessment_runs.is_none() {
@@ -182,7 +182,7 @@ pub(crate) fn describe_assessment_runs_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_assessment_targets_output_correct_errors(
+pub(crate) fn describe_assessment_targets_output_output_correct_errors(
     mut builder: crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsOutputBuilder,
 ) -> crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsOutputBuilder {
     if builder.assessment_targets.is_none() {
@@ -194,7 +194,7 @@ pub(crate) fn describe_assessment_targets_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_assessment_templates_output_correct_errors(
+pub(crate) fn describe_assessment_templates_output_output_correct_errors(
     mut builder: crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesOutputBuilder,
 ) -> crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesOutputBuilder {
     if builder.assessment_templates.is_none() {
@@ -206,7 +206,7 @@ pub(crate) fn describe_assessment_templates_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_cross_account_access_role_output_correct_errors(
+pub(crate) fn describe_cross_account_access_role_output_output_correct_errors(
     mut builder: crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder,
 ) -> crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder {
     if builder.role_arn.is_none() {
@@ -221,7 +221,7 @@ pub(crate) fn describe_cross_account_access_role_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_exclusions_output_correct_errors(
+pub(crate) fn describe_exclusions_output_output_correct_errors(
     mut builder: crate::operation::describe_exclusions::builders::DescribeExclusionsOutputBuilder,
 ) -> crate::operation::describe_exclusions::builders::DescribeExclusionsOutputBuilder {
     if builder.exclusions.is_none() {
@@ -233,7 +233,7 @@ pub(crate) fn describe_exclusions_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_findings_output_correct_errors(
+pub(crate) fn describe_findings_output_output_correct_errors(
     mut builder: crate::operation::describe_findings::builders::DescribeFindingsOutputBuilder,
 ) -> crate::operation::describe_findings::builders::DescribeFindingsOutputBuilder {
     if builder.findings.is_none() {
@@ -245,7 +245,7 @@ pub(crate) fn describe_findings_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_resource_groups_output_correct_errors(
+pub(crate) fn describe_resource_groups_output_output_correct_errors(
     mut builder: crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder,
 ) -> crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder {
     if builder.resource_groups.is_none() {
@@ -257,7 +257,7 @@ pub(crate) fn describe_resource_groups_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_rules_packages_output_correct_errors(
+pub(crate) fn describe_rules_packages_output_output_correct_errors(
     mut builder: crate::operation::describe_rules_packages::builders::DescribeRulesPackagesOutputBuilder,
 ) -> crate::operation::describe_rules_packages::builders::DescribeRulesPackagesOutputBuilder {
     if builder.rules_packages.is_none() {
@@ -281,7 +281,7 @@ pub(crate) fn unsupported_feature_exception_correct_errors(
     builder
 }
 
-pub(crate) fn get_assessment_report_output_correct_errors(
+pub(crate) fn get_assessment_report_output_output_correct_errors(
     mut builder: crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder,
 ) -> crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder {
     if builder.status.is_none() {
@@ -290,7 +290,7 @@ pub(crate) fn get_assessment_report_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_exclusions_preview_output_correct_errors(
+pub(crate) fn get_exclusions_preview_output_output_correct_errors(
     mut builder: crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewOutputBuilder,
 ) -> crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewOutputBuilder {
     if builder.preview_status.is_none() {
@@ -299,7 +299,7 @@ pub(crate) fn get_exclusions_preview_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_telemetry_metadata_output_correct_errors(
+pub(crate) fn get_telemetry_metadata_output_output_correct_errors(
     mut builder: crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataOutputBuilder,
 ) -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataOutputBuilder {
     if builder.telemetry_metadata.is_none() {
@@ -308,7 +308,7 @@ pub(crate) fn get_telemetry_metadata_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_assessment_run_agents_output_correct_errors(
+pub(crate) fn list_assessment_run_agents_output_output_correct_errors(
     mut builder: crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsOutputBuilder,
 ) -> crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsOutputBuilder {
     if builder.assessment_run_agents.is_none() {
@@ -317,7 +317,7 @@ pub(crate) fn list_assessment_run_agents_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_assessment_runs_output_correct_errors(
+pub(crate) fn list_assessment_runs_output_output_correct_errors(
     mut builder: crate::operation::list_assessment_runs::builders::ListAssessmentRunsOutputBuilder,
 ) -> crate::operation::list_assessment_runs::builders::ListAssessmentRunsOutputBuilder {
     if builder.assessment_run_arns.is_none() {
@@ -326,7 +326,7 @@ pub(crate) fn list_assessment_runs_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_assessment_targets_output_correct_errors(
+pub(crate) fn list_assessment_targets_output_output_correct_errors(
     mut builder: crate::operation::list_assessment_targets::builders::ListAssessmentTargetsOutputBuilder,
 ) -> crate::operation::list_assessment_targets::builders::ListAssessmentTargetsOutputBuilder {
     if builder.assessment_target_arns.is_none() {
@@ -335,7 +335,7 @@ pub(crate) fn list_assessment_targets_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_assessment_templates_output_correct_errors(
+pub(crate) fn list_assessment_templates_output_output_correct_errors(
     mut builder: crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesOutputBuilder,
 ) -> crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesOutputBuilder {
     if builder.assessment_template_arns.is_none() {
@@ -344,7 +344,7 @@ pub(crate) fn list_assessment_templates_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_event_subscriptions_output_correct_errors(
+pub(crate) fn list_event_subscriptions_output_output_correct_errors(
     mut builder: crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsOutputBuilder,
 ) -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsOutputBuilder {
     if builder.subscriptions.is_none() {
@@ -353,7 +353,7 @@ pub(crate) fn list_event_subscriptions_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_exclusions_output_correct_errors(
+pub(crate) fn list_exclusions_output_output_correct_errors(
     mut builder: crate::operation::list_exclusions::builders::ListExclusionsOutputBuilder,
 ) -> crate::operation::list_exclusions::builders::ListExclusionsOutputBuilder {
     if builder.exclusion_arns.is_none() {
@@ -362,7 +362,7 @@ pub(crate) fn list_exclusions_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_findings_output_correct_errors(
+pub(crate) fn list_findings_output_output_correct_errors(
     mut builder: crate::operation::list_findings::builders::ListFindingsOutputBuilder,
 ) -> crate::operation::list_findings::builders::ListFindingsOutputBuilder {
     if builder.finding_arns.is_none() {
@@ -371,7 +371,7 @@ pub(crate) fn list_findings_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_rules_packages_output_correct_errors(
+pub(crate) fn list_rules_packages_output_output_correct_errors(
     mut builder: crate::operation::list_rules_packages::builders::ListRulesPackagesOutputBuilder,
 ) -> crate::operation::list_rules_packages::builders::ListRulesPackagesOutputBuilder {
     if builder.rules_package_arns.is_none() {
@@ -380,7 +380,7 @@ pub(crate) fn list_rules_packages_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
@@ -389,7 +389,7 @@ pub(crate) fn list_tags_for_resource_output_correct_errors(
     builder
 }
 
-pub(crate) fn preview_agents_output_correct_errors(
+pub(crate) fn preview_agents_output_output_correct_errors(
     mut builder: crate::operation::preview_agents::builders::PreviewAgentsOutputBuilder,
 ) -> crate::operation::preview_agents::builders::PreviewAgentsOutputBuilder {
     if builder.agent_previews.is_none() {
@@ -398,7 +398,7 @@ pub(crate) fn preview_agents_output_correct_errors(
     builder
 }
 
-pub(crate) fn remove_attributes_from_findings_output_correct_errors(
+pub(crate) fn remove_attributes_from_findings_output_output_correct_errors(
     mut builder: crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsOutputBuilder,
 ) -> crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsOutputBuilder {
     if builder.failed_items.is_none() {
@@ -425,7 +425,7 @@ pub(crate) fn agents_already_running_assessment_exception_correct_errors(
     builder
 }
 
-pub(crate) fn start_assessment_run_output_correct_errors(
+pub(crate) fn start_assessment_run_output_output_correct_errors(
     mut builder: crate::operation::start_assessment_run::builders::StartAssessmentRunOutputBuilder,
 ) -> crate::operation::start_assessment_run::builders::StartAssessmentRunOutputBuilder {
     if builder.assessment_run_arn.is_none() {

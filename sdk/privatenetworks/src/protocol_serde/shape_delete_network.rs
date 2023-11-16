@@ -95,7 +95,7 @@ pub fn de_delete_network_http_response(
         output = crate::protocol_serde::shape_delete_network::de_delete_network(_response_body, output)
             .map_err(crate::operation::delete_network::DeleteNetworkError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_network_output_correct_errors(output).build()
+        crate::serde_util::delete_network_output_output_correct_errors(output).build()
     })
 }
 

@@ -99,7 +99,7 @@ pub fn de_list_sol_function_packages_http_response(
         output = crate::protocol_serde::shape_list_sol_function_packages::de_list_sol_function_packages(_response_body, output)
             .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_sol_function_packages_output_correct_errors(output)
+        crate::serde_util::list_sol_function_packages_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?
     })

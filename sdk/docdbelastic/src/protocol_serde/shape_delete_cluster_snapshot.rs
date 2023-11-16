@@ -130,7 +130,7 @@ pub fn de_delete_cluster_snapshot_http_response(
         output = crate::protocol_serde::shape_delete_cluster_snapshot::de_delete_cluster_snapshot(_response_body, output)
             .map_err(crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_cluster_snapshot_output_correct_errors(output).build()
+        crate::serde_util::delete_cluster_snapshot_output_output_correct_errors(output).build()
     })
 }
 

@@ -93,7 +93,7 @@ pub fn de_describe_domain_http_response(
         output = crate::protocol_serde::shape_describe_domain::de_describe_domain(_response_body, output)
             .map_err(crate::operation::describe_domain::DescribeDomainError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_domain_output_correct_errors(output).build()
+        crate::serde_util::describe_domain_output_output_correct_errors(output).build()
     })
 }
 

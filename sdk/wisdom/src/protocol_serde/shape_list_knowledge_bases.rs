@@ -69,7 +69,7 @@ pub fn de_list_knowledge_bases_http_response(
         output = crate::protocol_serde::shape_list_knowledge_bases::de_list_knowledge_bases(_response_body, output)
             .map_err(crate::operation::list_knowledge_bases::ListKnowledgeBasesError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_knowledge_bases_output_correct_errors(output)
+        crate::serde_util::list_knowledge_bases_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_knowledge_bases::ListKnowledgeBasesError::unhandled)?
     })

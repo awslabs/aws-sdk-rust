@@ -138,7 +138,7 @@ pub fn de_update_model_manifest_http_response(
         output = crate::protocol_serde::shape_update_model_manifest::de_update_model_manifest(_response_body, output)
             .map_err(crate::operation::update_model_manifest::UpdateModelManifestError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_model_manifest_output_correct_errors(output)
+        crate::serde_util::update_model_manifest_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::update_model_manifest::UpdateModelManifestError::unhandled)?
     })
@@ -149,7 +149,7 @@ pub fn ser_update_model_manifest_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_update_model_manifest_input::ser_update_model_manifest_input(&mut object, input)?;
+    crate::protocol_serde::shape_update_model_manifest_input::ser_update_model_manifest_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

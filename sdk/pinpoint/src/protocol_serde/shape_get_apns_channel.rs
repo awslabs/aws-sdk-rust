@@ -140,6 +140,6 @@ pub fn de_get_apns_channel_http_response(
             _response_body,
         )?);
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_apns_channel_output_correct_errors(output).build()
+        crate::serde_util::get_apns_channel_output_output_correct_errors(output).build()
     })
 }

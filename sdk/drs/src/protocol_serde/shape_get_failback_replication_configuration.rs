@@ -125,7 +125,7 @@ pub fn de_get_failback_replication_configuration_http_response(
             crate::protocol_serde::shape_get_failback_replication_configuration::de_get_failback_replication_configuration(_response_body, output)
                 .map_err(crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_failback_replication_configuration_output_correct_errors(output)
+        crate::serde_util::get_failback_replication_configuration_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError::unhandled)?
     })
@@ -136,7 +136,10 @@ pub fn ser_get_failback_replication_configuration_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_failback_replication_configuration_input::ser_get_failback_replication_configuration_input(&mut object, input)?;
+    crate::protocol_serde::shape_get_failback_replication_configuration_input::ser_get_failback_replication_configuration_input_input(
+        &mut object,
+        input,
+    )?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

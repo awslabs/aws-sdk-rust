@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ModifyVerifi
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_modify_verified_access_endpoint_policy_input::ser_modify_verified_access_endpoint_policy_input_input(
+            crate::protocol_serde::shape_modify_verified_access_endpoint_policy_input::ser_modify_verified_access_endpoint_policy_input_input_input(
                 &input,
             )?,
         );

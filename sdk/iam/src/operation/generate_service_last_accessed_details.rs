@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GenerateServ
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_generate_service_last_accessed_details_input::ser_generate_service_last_accessed_details_input_input(
+            crate::protocol_serde::shape_generate_service_last_accessed_details_input::ser_generate_service_last_accessed_details_input_input_input(
                 &input,
             )?,
         );

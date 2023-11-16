@@ -68,7 +68,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_create_rum_metric_definitions_output_correct_errors(
+pub(crate) fn batch_create_rum_metric_definitions_output_output_correct_errors(
     mut builder: crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsOutputBuilder,
 ) -> crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsOutputBuilder {
     if builder.errors.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn batch_create_rum_metric_definitions_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_delete_rum_metric_definitions_output_correct_errors(
+pub(crate) fn batch_delete_rum_metric_definitions_output_output_correct_errors(
     mut builder: crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder,
 ) -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder {
     if builder.errors.is_none() {
@@ -86,7 +86,7 @@ pub(crate) fn batch_delete_rum_metric_definitions_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.resource_arn.is_none() {

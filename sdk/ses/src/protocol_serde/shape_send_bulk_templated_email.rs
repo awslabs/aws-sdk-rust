@@ -147,7 +147,7 @@ pub fn de_send_bulk_templated_email_http_response(
         output = crate::protocol_serde::shape_send_bulk_templated_email::de_send_bulk_templated_email(_response_body, output)
             .map_err(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::send_bulk_templated_email_output_correct_errors(output)
+        crate::serde_util::send_bulk_templated_email_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled)?
     })

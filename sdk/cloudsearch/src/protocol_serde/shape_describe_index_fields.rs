@@ -84,7 +84,7 @@ pub fn de_describe_index_fields_http_response(
         output = crate::protocol_serde::shape_describe_index_fields::de_describe_index_fields(_response_body, output)
             .map_err(crate::operation::describe_index_fields::DescribeIndexFieldsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_index_fields_output_correct_errors(output)
+        crate::serde_util::describe_index_fields_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_index_fields::DescribeIndexFieldsError::unhandled)?
     })

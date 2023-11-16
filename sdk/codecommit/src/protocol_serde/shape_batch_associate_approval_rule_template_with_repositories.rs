@@ -197,7 +197,7 @@ pub fn de_batch_associate_approval_rule_template_with_repositories_http_response
         let mut output = crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder::default();
         output = crate::protocol_serde::shape_batch_associate_approval_rule_template_with_repositories::de_batch_associate_approval_rule_template_with_repositories(_response_body, output).map_err(crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::batch_associate_approval_rule_template_with_repositories_output_correct_errors(output).build().map_err(crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?
+        crate::serde_util::batch_associate_approval_rule_template_with_repositories_output_output_correct_errors(output).build().map_err(crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?
     })
 }
 
@@ -206,7 +206,7 @@ pub fn ser_batch_associate_approval_rule_template_with_repositories_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_batch_associate_approval_rule_template_with_repositories_input::ser_batch_associate_approval_rule_template_with_repositories_input(&mut object, input)?;
+    crate::protocol_serde::shape_batch_associate_approval_rule_template_with_repositories_input::ser_batch_associate_approval_rule_template_with_repositories_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

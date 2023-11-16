@@ -108,7 +108,7 @@ pub fn de_prepare_query_http_response(
         output = crate::protocol_serde::shape_prepare_query::de_prepare_query(_response_body, output)
             .map_err(crate::operation::prepare_query::PrepareQueryError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::prepare_query_output_correct_errors(output)
+        crate::serde_util::prepare_query_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::prepare_query::PrepareQueryError::unhandled)?
     })
@@ -119,7 +119,7 @@ pub fn ser_prepare_query_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_prepare_query_input::ser_prepare_query_input(&mut object, input)?;
+    crate::protocol_serde::shape_prepare_query_input::ser_prepare_query_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

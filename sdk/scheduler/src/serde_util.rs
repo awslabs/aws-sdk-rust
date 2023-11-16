@@ -53,7 +53,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_schedule_output_correct_errors(
+pub(crate) fn create_schedule_output_output_correct_errors(
     mut builder: crate::operation::create_schedule::builders::CreateScheduleOutputBuilder,
 ) -> crate::operation::create_schedule::builders::CreateScheduleOutputBuilder {
     if builder.schedule_arn.is_none() {
@@ -62,7 +62,7 @@ pub(crate) fn create_schedule_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_schedule_group_output_correct_errors(
+pub(crate) fn create_schedule_group_output_output_correct_errors(
     mut builder: crate::operation::create_schedule_group::builders::CreateScheduleGroupOutputBuilder,
 ) -> crate::operation::create_schedule_group::builders::CreateScheduleGroupOutputBuilder {
     if builder.schedule_group_arn.is_none() {
@@ -71,7 +71,7 @@ pub(crate) fn create_schedule_group_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_schedule_groups_output_correct_errors(
+pub(crate) fn list_schedule_groups_output_output_correct_errors(
     mut builder: crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder,
 ) -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder {
     if builder.schedule_groups.is_none() {
@@ -80,7 +80,7 @@ pub(crate) fn list_schedule_groups_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_schedules_output_correct_errors(
+pub(crate) fn list_schedules_output_output_correct_errors(
     mut builder: crate::operation::list_schedules::builders::ListSchedulesOutputBuilder,
 ) -> crate::operation::list_schedules::builders::ListSchedulesOutputBuilder {
     if builder.schedules.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn list_schedules_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_schedule_output_correct_errors(
+pub(crate) fn update_schedule_output_output_correct_errors(
     mut builder: crate::operation::update_schedule::builders::UpdateScheduleOutputBuilder,
 ) -> crate::operation::update_schedule::builders::UpdateScheduleOutputBuilder {
     if builder.schedule_arn.is_none() {

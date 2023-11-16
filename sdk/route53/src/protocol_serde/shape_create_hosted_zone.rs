@@ -173,7 +173,7 @@ pub fn de_create_hosted_zone_http_response(
             })?,
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_hosted_zone_output_correct_errors(output)
+        crate::serde_util::create_hosted_zone_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::create_hosted_zone::CreateHostedZoneError::unhandled)?
     })
@@ -189,7 +189,7 @@ pub fn ser_create_hosted_zone_op_input(
         let mut root = writer
             .start_el("CreateHostedZoneRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_create_hosted_zone_input::ser_create_hosted_zone_input_input(input, root)?
+        crate::protocol_serde::shape_create_hosted_zone_input::ser_create_hosted_zone_input_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

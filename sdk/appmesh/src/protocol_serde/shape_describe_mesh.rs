@@ -124,6 +124,6 @@ pub fn de_describe_mesh_http_response(
         let mut output = crate::operation::describe_mesh::builders::DescribeMeshOutputBuilder::default();
         output = output.set_mesh(crate::protocol_serde::shape_describe_mesh_output::de_mesh_payload(_response_body)?);
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_mesh_output_correct_errors(output).build()
+        crate::serde_util::describe_mesh_output_output_correct_errors(output).build()
     })
 }

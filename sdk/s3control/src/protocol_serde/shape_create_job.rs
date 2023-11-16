@@ -127,7 +127,7 @@ pub fn ser_create_job_op_input(
         let mut root = writer
             .start_el("CreateJobRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::protocol_serde::shape_create_job_input::ser_create_job_input_input(input, root)?
+        crate::protocol_serde::shape_create_job_input::ser_create_job_input_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

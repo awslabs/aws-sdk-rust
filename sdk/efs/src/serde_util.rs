@@ -104,7 +104,7 @@ pub(crate) fn unsupported_availability_zone_correct_errors(
     builder
 }
 
-pub(crate) fn create_file_system_output_correct_errors(
+pub(crate) fn create_file_system_output_output_correct_errors(
     mut builder: crate::operation::create_file_system::builders::CreateFileSystemOutputBuilder,
 ) -> crate::operation::create_file_system::builders::CreateFileSystemOutputBuilder {
     if builder.owner_id.is_none() {
@@ -203,7 +203,7 @@ pub(crate) fn subnet_not_found_correct_errors(
     builder
 }
 
-pub(crate) fn create_mount_target_output_correct_errors(
+pub(crate) fn create_mount_target_output_output_correct_errors(
     mut builder: crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder,
 ) -> crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder {
     if builder.mount_target_id.is_none() {
@@ -230,7 +230,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_replication_configuration_output_correct_errors(
+pub(crate) fn create_replication_configuration_output_output_correct_errors(
     mut builder: crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationOutputBuilder,
 ) -> crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationOutputBuilder {
     if builder.source_file_system_id.is_none() {
@@ -299,7 +299,7 @@ pub(crate) fn incorrect_mount_target_state_correct_errors(
     builder
 }
 
-pub(crate) fn describe_mount_target_security_groups_output_correct_errors(
+pub(crate) fn describe_mount_target_security_groups_output_output_correct_errors(
     mut builder: crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder,
 ) -> crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder {
     if builder.security_groups.is_none() {
@@ -308,7 +308,7 @@ pub(crate) fn describe_mount_target_security_groups_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_tags_output_correct_errors(
+pub(crate) fn describe_tags_output_output_correct_errors(
     mut builder: crate::operation::describe_tags::builders::DescribeTagsOutputBuilder,
 ) -> crate::operation::describe_tags::builders::DescribeTagsOutputBuilder {
     if builder.tags.is_none() {
@@ -326,7 +326,7 @@ pub(crate) fn too_many_requests_correct_errors(
     builder
 }
 
-pub(crate) fn update_file_system_output_correct_errors(
+pub(crate) fn update_file_system_output_output_correct_errors(
     mut builder: crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder,
 ) -> crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder {
     if builder.owner_id.is_none() {

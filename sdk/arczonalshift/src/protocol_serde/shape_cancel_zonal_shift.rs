@@ -120,7 +120,7 @@ pub fn de_cancel_zonal_shift_http_response(
         output = crate::protocol_serde::shape_cancel_zonal_shift::de_cancel_zonal_shift(_response_body, output)
             .map_err(crate::operation::cancel_zonal_shift::CancelZonalShiftError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::cancel_zonal_shift_output_correct_errors(output)
+        crate::serde_util::cancel_zonal_shift_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::cancel_zonal_shift::CancelZonalShiftError::unhandled)?
     })

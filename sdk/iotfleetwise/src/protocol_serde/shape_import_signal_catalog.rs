@@ -152,7 +152,7 @@ pub fn de_import_signal_catalog_http_response(
         output = crate::protocol_serde::shape_import_signal_catalog::de_import_signal_catalog(_response_body, output)
             .map_err(crate::operation::import_signal_catalog::ImportSignalCatalogError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::import_signal_catalog_output_correct_errors(output)
+        crate::serde_util::import_signal_catalog_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::import_signal_catalog::ImportSignalCatalogError::unhandled)?
     })
@@ -163,7 +163,7 @@ pub fn ser_import_signal_catalog_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_import_signal_catalog_input::ser_import_signal_catalog_input(&mut object, input)?;
+    crate::protocol_serde::shape_import_signal_catalog_input::ser_import_signal_catalog_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

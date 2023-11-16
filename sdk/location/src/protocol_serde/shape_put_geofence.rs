@@ -117,7 +117,7 @@ pub fn de_put_geofence_http_response(
         output = crate::protocol_serde::shape_put_geofence::de_put_geofence(_response_body, output)
             .map_err(crate::operation::put_geofence::PutGeofenceError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::put_geofence_output_correct_errors(output)
+        crate::serde_util::put_geofence_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::put_geofence::PutGeofenceError::unhandled)?
     })
@@ -128,7 +128,7 @@ pub fn ser_put_geofence_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_put_geofence_input::ser_put_geofence_input(&mut object, input)?;
+    crate::protocol_serde::shape_put_geofence_input::ser_put_geofence_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

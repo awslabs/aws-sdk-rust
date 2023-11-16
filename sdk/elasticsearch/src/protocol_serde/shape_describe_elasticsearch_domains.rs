@@ -84,7 +84,7 @@ pub fn de_describe_elasticsearch_domains_http_response(
         output = crate::protocol_serde::shape_describe_elasticsearch_domains::de_describe_elasticsearch_domains(_response_body, output)
             .map_err(crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_elasticsearch_domains_output_correct_errors(output)
+        crate::serde_util::describe_elasticsearch_domains_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError::unhandled)?
     })
@@ -95,7 +95,7 @@ pub fn ser_describe_elasticsearch_domains_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_describe_elasticsearch_domains_input::ser_describe_elasticsearch_domains_input(&mut object, input)?;
+    crate::protocol_serde::shape_describe_elasticsearch_domains_input::ser_describe_elasticsearch_domains_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -78,7 +78,7 @@ pub fn de_get_dnssec_http_response(
         output = crate::protocol_serde::shape_get_dnssec::de_get_dnssec(_response_body, output)
             .map_err(crate::operation::get_dnssec::GetDNSSECError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_dnssec_output_correct_errors(output)
+        crate::serde_util::get_dnssec_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_dnssec::GetDNSSECError::unhandled)?
     })

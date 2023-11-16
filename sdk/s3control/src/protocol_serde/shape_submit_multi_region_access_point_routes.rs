@@ -64,7 +64,7 @@ pub fn ser_submit_multi_region_access_point_routes_op_input(
         let mut root = writer
             .start_el("SubmitMultiRegionAccessPointRoutesRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::protocol_serde::shape_submit_multi_region_access_point_routes_input::ser_submit_multi_region_access_point_routes_input_input(
+        crate::protocol_serde::shape_submit_multi_region_access_point_routes_input::ser_submit_multi_region_access_point_routes_input_input_input(
             input, root,
         )?
     }

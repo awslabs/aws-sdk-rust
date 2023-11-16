@@ -85,7 +85,7 @@ pub fn de_create_health_check_http_response(
             })?,
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_health_check_output_correct_errors(output)
+        crate::serde_util::create_health_check_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::create_health_check::CreateHealthCheckError::unhandled)?
     })
@@ -101,7 +101,7 @@ pub fn ser_create_health_check_op_input(
         let mut root = writer
             .start_el("CreateHealthCheckRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_create_health_check_input::ser_create_health_check_input_input(input, root)?
+        crate::protocol_serde::shape_create_health_check_input::ser_create_health_check_input_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -62,7 +62,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn export_earth_observation_job_output_correct_errors(
+pub(crate) fn export_earth_observation_job_output_output_correct_errors(
     mut builder: crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobOutputBuilder,
 ) -> crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobOutputBuilder {
     if builder.arn.is_none() {
@@ -86,7 +86,7 @@ pub(crate) fn export_earth_observation_job_output_correct_errors(
     builder
 }
 
-pub(crate) fn export_vector_enrichment_job_output_correct_errors(
+pub(crate) fn export_vector_enrichment_job_output_output_correct_errors(
     mut builder: crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobOutputBuilder,
 ) -> crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobOutputBuilder {
     if builder.arn.is_none() {
@@ -110,7 +110,7 @@ pub(crate) fn export_vector_enrichment_job_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_earth_observation_job_output_correct_errors(
+pub(crate) fn get_earth_observation_job_output_output_correct_errors(
     mut builder: crate::operation::get_earth_observation_job::builders::GetEarthObservationJobOutputBuilder,
 ) -> crate::operation::get_earth_observation_job::builders::GetEarthObservationJobOutputBuilder {
     if builder.arn.is_none() {
@@ -140,7 +140,7 @@ pub(crate) fn get_earth_observation_job_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_raster_data_collection_output_correct_errors(
+pub(crate) fn get_raster_data_collection_output_output_correct_errors(
     mut builder: crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder,
 ) -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder {
     if builder.name.is_none() {
@@ -167,7 +167,7 @@ pub(crate) fn get_raster_data_collection_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_vector_enrichment_job_output_correct_errors(
+pub(crate) fn get_vector_enrichment_job_output_output_correct_errors(
     mut builder: crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder,
 ) -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder {
     if builder.arn.is_none() {
@@ -203,7 +203,7 @@ pub(crate) fn get_vector_enrichment_job_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_earth_observation_jobs_output_correct_errors(
+pub(crate) fn list_earth_observation_jobs_output_output_correct_errors(
     mut builder: crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsOutputBuilder,
 ) -> crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsOutputBuilder {
     if builder.earth_observation_job_summaries.is_none() {
@@ -212,7 +212,7 @@ pub(crate) fn list_earth_observation_jobs_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_raster_data_collections_output_correct_errors(
+pub(crate) fn list_raster_data_collections_output_output_correct_errors(
     mut builder: crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsOutputBuilder,
 ) -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsOutputBuilder {
     if builder.raster_data_collection_summaries.is_none() {
@@ -221,7 +221,7 @@ pub(crate) fn list_raster_data_collections_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_vector_enrichment_jobs_output_correct_errors(
+pub(crate) fn list_vector_enrichment_jobs_output_output_correct_errors(
     mut builder: crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsOutputBuilder,
 ) -> crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsOutputBuilder {
     if builder.vector_enrichment_job_summaries.is_none() {
@@ -230,7 +230,7 @@ pub(crate) fn list_vector_enrichment_jobs_output_correct_errors(
     builder
 }
 
-pub(crate) fn search_raster_data_collection_output_correct_errors(
+pub(crate) fn search_raster_data_collection_output_output_correct_errors(
     mut builder: crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionOutputBuilder,
 ) -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionOutputBuilder {
     if builder.approximate_result_count.is_none() {
@@ -239,7 +239,7 @@ pub(crate) fn search_raster_data_collection_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_earth_observation_job_output_correct_errors(
+pub(crate) fn start_earth_observation_job_output_output_correct_errors(
     mut builder: crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder,
 ) -> crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder {
     if builder.name.is_none() {
@@ -266,7 +266,7 @@ pub(crate) fn start_earth_observation_job_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_vector_enrichment_job_output_correct_errors(
+pub(crate) fn start_vector_enrichment_job_output_output_correct_errors(
     mut builder: crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder,
 ) -> crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder {
     if builder.name.is_none() {

@@ -38,7 +38,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn associate_member_output_correct_errors(
+pub(crate) fn associate_member_output_output_correct_errors(
     mut builder: crate::operation::associate_member::builders::AssociateMemberOutputBuilder,
 ) -> crate::operation::associate_member::builders::AssociateMemberOutputBuilder {
     if builder.account_id.is_none() {
@@ -56,7 +56,7 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_account_status_output_correct_errors(
+pub(crate) fn batch_get_account_status_output_output_correct_errors(
     mut builder: crate::operation::batch_get_account_status::builders::BatchGetAccountStatusOutputBuilder,
 ) -> crate::operation::batch_get_account_status::builders::BatchGetAccountStatusOutputBuilder {
     if builder.accounts.is_none() {
@@ -65,7 +65,7 @@ pub(crate) fn batch_get_account_status_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_free_trial_info_output_correct_errors(
+pub(crate) fn batch_get_free_trial_info_output_output_correct_errors(
     mut builder: crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoOutputBuilder,
 ) -> crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoOutputBuilder {
     if builder.accounts.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn batch_get_free_trial_info_output_correct_errors(
     builder
 }
 
-pub(crate) fn cancel_findings_report_output_correct_errors(
+pub(crate) fn cancel_findings_report_output_output_correct_errors(
     mut builder: crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder,
 ) -> crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder {
     if builder.report_id.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_filter_output_correct_errors(
+pub(crate) fn create_filter_output_output_correct_errors(
     mut builder: crate::operation::create_filter::builders::CreateFilterOutputBuilder,
 ) -> crate::operation::create_filter::builders::CreateFilterOutputBuilder {
     if builder.arn.is_none() {
@@ -116,7 +116,7 @@ pub(crate) fn create_filter_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_filter_output_correct_errors(
+pub(crate) fn delete_filter_output_output_correct_errors(
     mut builder: crate::operation::delete_filter::builders::DeleteFilterOutputBuilder,
 ) -> crate::operation::delete_filter::builders::DeleteFilterOutputBuilder {
     if builder.arn.is_none() {
@@ -125,7 +125,7 @@ pub(crate) fn delete_filter_output_correct_errors(
     builder
 }
 
-pub(crate) fn disable_output_correct_errors(
+pub(crate) fn disable_output_output_correct_errors(
     mut builder: crate::operation::disable::builders::DisableOutputBuilder,
 ) -> crate::operation::disable::builders::DisableOutputBuilder {
     if builder.accounts.is_none() {
@@ -149,7 +149,7 @@ pub(crate) fn conflict_exception_correct_errors(
     builder
 }
 
-pub(crate) fn disable_delegated_admin_account_output_correct_errors(
+pub(crate) fn disable_delegated_admin_account_output_output_correct_errors(
     mut builder: crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountOutputBuilder,
 ) -> crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountOutputBuilder {
     if builder.delegated_admin_account_id.is_none() {
@@ -158,7 +158,7 @@ pub(crate) fn disable_delegated_admin_account_output_correct_errors(
     builder
 }
 
-pub(crate) fn disassociate_member_output_correct_errors(
+pub(crate) fn disassociate_member_output_output_correct_errors(
     mut builder: crate::operation::disassociate_member::builders::DisassociateMemberOutputBuilder,
 ) -> crate::operation::disassociate_member::builders::DisassociateMemberOutputBuilder {
     if builder.account_id.is_none() {
@@ -167,7 +167,7 @@ pub(crate) fn disassociate_member_output_correct_errors(
     builder
 }
 
-pub(crate) fn enable_output_correct_errors(
+pub(crate) fn enable_output_output_correct_errors(
     mut builder: crate::operation::enable::builders::EnableOutputBuilder,
 ) -> crate::operation::enable::builders::EnableOutputBuilder {
     if builder.accounts.is_none() {
@@ -176,7 +176,7 @@ pub(crate) fn enable_output_correct_errors(
     builder
 }
 
-pub(crate) fn enable_delegated_admin_account_output_correct_errors(
+pub(crate) fn enable_delegated_admin_account_output_output_correct_errors(
     mut builder: crate::operation::enable_delegated_admin_account::builders::EnableDelegatedAdminAccountOutputBuilder,
 ) -> crate::operation::enable_delegated_admin_account::builders::EnableDelegatedAdminAccountOutputBuilder {
     if builder.delegated_admin_account_id.is_none() {
@@ -185,7 +185,7 @@ pub(crate) fn enable_delegated_admin_account_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_encryption_key_output_correct_errors(
+pub(crate) fn get_encryption_key_output_output_correct_errors(
     mut builder: crate::operation::get_encryption_key::builders::GetEncryptionKeyOutputBuilder,
 ) -> crate::operation::get_encryption_key::builders::GetEncryptionKeyOutputBuilder {
     if builder.kms_key_id.is_none() {
@@ -194,7 +194,7 @@ pub(crate) fn get_encryption_key_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_account_permissions_output_correct_errors(
+pub(crate) fn list_account_permissions_output_output_correct_errors(
     mut builder: crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder,
 ) -> crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder {
     if builder.permissions.is_none() {
@@ -203,7 +203,7 @@ pub(crate) fn list_account_permissions_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_coverage_statistics_output_correct_errors(
+pub(crate) fn list_coverage_statistics_output_output_correct_errors(
     mut builder: crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsOutputBuilder,
 ) -> crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsOutputBuilder {
     if builder.total_counts.is_none() {
@@ -212,7 +212,7 @@ pub(crate) fn list_coverage_statistics_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_filters_output_correct_errors(
+pub(crate) fn list_filters_output_output_correct_errors(
     mut builder: crate::operation::list_filters::builders::ListFiltersOutputBuilder,
 ) -> crate::operation::list_filters::builders::ListFiltersOutputBuilder {
     if builder.filters.is_none() {
@@ -221,7 +221,7 @@ pub(crate) fn list_filters_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_finding_aggregations_output_correct_errors(
+pub(crate) fn list_finding_aggregations_output_output_correct_errors(
     mut builder: crate::operation::list_finding_aggregations::builders::ListFindingAggregationsOutputBuilder,
 ) -> crate::operation::list_finding_aggregations::builders::ListFindingAggregationsOutputBuilder {
     if builder.aggregation_type.is_none() {
@@ -230,7 +230,7 @@ pub(crate) fn list_finding_aggregations_output_correct_errors(
     builder
 }
 
-pub(crate) fn search_vulnerabilities_output_correct_errors(
+pub(crate) fn search_vulnerabilities_output_output_correct_errors(
     mut builder: crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder,
 ) -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder {
     if builder.vulnerabilities.is_none() {
@@ -239,7 +239,7 @@ pub(crate) fn search_vulnerabilities_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_filter_output_correct_errors(
+pub(crate) fn update_filter_output_output_correct_errors(
     mut builder: crate::operation::update_filter::builders::UpdateFilterOutputBuilder,
 ) -> crate::operation::update_filter::builders::UpdateFilterOutputBuilder {
     if builder.arn.is_none() {
@@ -248,7 +248,7 @@ pub(crate) fn update_filter_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_organization_configuration_output_correct_errors(
+pub(crate) fn update_organization_configuration_output_output_correct_errors(
     mut builder: crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationOutputBuilder,
 ) -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationOutputBuilder {
     if builder.auto_enable.is_none() {

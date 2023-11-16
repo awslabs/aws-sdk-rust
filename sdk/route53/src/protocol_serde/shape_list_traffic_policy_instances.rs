@@ -74,7 +74,7 @@ pub fn de_list_traffic_policy_instances_http_response(
         output = crate::protocol_serde::shape_list_traffic_policy_instances::de_list_traffic_policy_instances(_response_body, output)
             .map_err(crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_traffic_policy_instances_output_correct_errors(output)
+        crate::serde_util::list_traffic_policy_instances_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError::unhandled)?
     })

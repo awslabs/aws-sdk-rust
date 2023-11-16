@@ -8,7 +8,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn decrypt_data_output_correct_errors(
+pub(crate) fn decrypt_data_output_output_correct_errors(
     mut builder: crate::operation::decrypt_data::builders::DecryptDataOutputBuilder,
 ) -> crate::operation::decrypt_data::builders::DecryptDataOutputBuilder {
     if builder.key_arn.is_none() {
@@ -23,7 +23,7 @@ pub(crate) fn decrypt_data_output_correct_errors(
     builder
 }
 
-pub(crate) fn encrypt_data_output_correct_errors(
+pub(crate) fn encrypt_data_output_output_correct_errors(
     mut builder: crate::operation::encrypt_data::builders::EncryptDataOutputBuilder,
 ) -> crate::operation::encrypt_data::builders::EncryptDataOutputBuilder {
     if builder.key_arn.is_none() {
@@ -35,7 +35,7 @@ pub(crate) fn encrypt_data_output_correct_errors(
     builder
 }
 
-pub(crate) fn generate_card_validation_data_output_correct_errors(
+pub(crate) fn generate_card_validation_data_output_output_correct_errors(
     mut builder: crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder,
 ) -> crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder {
     if builder.key_arn.is_none() {
@@ -50,7 +50,7 @@ pub(crate) fn generate_card_validation_data_output_correct_errors(
     builder
 }
 
-pub(crate) fn generate_mac_output_correct_errors(
+pub(crate) fn generate_mac_output_output_correct_errors(
     mut builder: crate::operation::generate_mac::builders::GenerateMacOutputBuilder,
 ) -> crate::operation::generate_mac::builders::GenerateMacOutputBuilder {
     if builder.key_arn.is_none() {
@@ -65,7 +65,7 @@ pub(crate) fn generate_mac_output_correct_errors(
     builder
 }
 
-pub(crate) fn generate_pin_data_output_correct_errors(
+pub(crate) fn generate_pin_data_output_output_correct_errors(
     mut builder: crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder,
 ) -> crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder {
     if builder.generation_key_arn.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn generate_pin_data_output_correct_errors(
     builder
 }
 
-pub(crate) fn re_encrypt_data_output_correct_errors(
+pub(crate) fn re_encrypt_data_output_output_correct_errors(
     mut builder: crate::operation::re_encrypt_data::builders::ReEncryptDataOutputBuilder,
 ) -> crate::operation::re_encrypt_data::builders::ReEncryptDataOutputBuilder {
     if builder.key_arn.is_none() {
@@ -104,7 +104,7 @@ pub(crate) fn re_encrypt_data_output_correct_errors(
     builder
 }
 
-pub(crate) fn translate_pin_data_output_correct_errors(
+pub(crate) fn translate_pin_data_output_output_correct_errors(
     mut builder: crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder,
 ) -> crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder {
     if builder.pin_block.is_none() {
@@ -131,7 +131,7 @@ pub(crate) fn verification_failed_exception_correct_errors(
     builder
 }
 
-pub(crate) fn verify_auth_request_cryptogram_output_correct_errors(
+pub(crate) fn verify_auth_request_cryptogram_output_output_correct_errors(
     mut builder: crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramOutputBuilder,
 ) -> crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramOutputBuilder {
     if builder.key_arn.is_none() {
@@ -143,7 +143,7 @@ pub(crate) fn verify_auth_request_cryptogram_output_correct_errors(
     builder
 }
 
-pub(crate) fn verify_card_validation_data_output_correct_errors(
+pub(crate) fn verify_card_validation_data_output_output_correct_errors(
     mut builder: crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataOutputBuilder,
 ) -> crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataOutputBuilder {
     if builder.key_arn.is_none() {
@@ -155,7 +155,7 @@ pub(crate) fn verify_card_validation_data_output_correct_errors(
     builder
 }
 
-pub(crate) fn verify_mac_output_correct_errors(
+pub(crate) fn verify_mac_output_output_correct_errors(
     mut builder: crate::operation::verify_mac::builders::VerifyMacOutputBuilder,
 ) -> crate::operation::verify_mac::builders::VerifyMacOutputBuilder {
     if builder.key_arn.is_none() {
@@ -167,7 +167,7 @@ pub(crate) fn verify_mac_output_correct_errors(
     builder
 }
 
-pub(crate) fn verify_pin_data_output_correct_errors(
+pub(crate) fn verify_pin_data_output_output_correct_errors(
     mut builder: crate::operation::verify_pin_data::builders::VerifyPinDataOutputBuilder,
 ) -> crate::operation::verify_pin_data::builders::VerifyPinDataOutputBuilder {
     if builder.verification_key_arn.is_none() {

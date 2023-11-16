@@ -117,7 +117,7 @@ pub fn de_get_archive_rule_http_response(
         output = crate::protocol_serde::shape_get_archive_rule::de_get_archive_rule(_response_body, output)
             .map_err(crate::operation::get_archive_rule::GetArchiveRuleError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_archive_rule_output_correct_errors(output).build()
+        crate::serde_util::get_archive_rule_output_output_correct_errors(output).build()
     })
 }
 

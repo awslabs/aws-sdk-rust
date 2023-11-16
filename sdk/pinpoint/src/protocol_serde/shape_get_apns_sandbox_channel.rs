@@ -146,6 +146,6 @@ pub fn de_get_apns_sandbox_channel_http_response(
             crate::protocol_serde::shape_get_apns_sandbox_channel_output::de_apns_sandbox_channel_response_payload(_response_body)?,
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_apns_sandbox_channel_output_correct_errors(output).build()
+        crate::serde_util::get_apns_sandbox_channel_output_output_correct_errors(output).build()
     })
 }

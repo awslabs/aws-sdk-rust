@@ -70,7 +70,7 @@ pub fn de_get_threat_intel_set_http_response(
         output = crate::protocol_serde::shape_get_threat_intel_set::de_get_threat_intel_set(_response_body, output)
             .map_err(crate::operation::get_threat_intel_set::GetThreatIntelSetError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_threat_intel_set_output_correct_errors(output).build()
+        crate::serde_util::get_threat_intel_set_output_output_correct_errors(output).build()
     })
 }
 

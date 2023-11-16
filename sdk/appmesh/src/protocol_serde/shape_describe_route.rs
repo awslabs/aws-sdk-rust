@@ -124,6 +124,6 @@ pub fn de_describe_route_http_response(
         let mut output = crate::operation::describe_route::builders::DescribeRouteOutputBuilder::default();
         output = output.set_route(crate::protocol_serde::shape_describe_route_output::de_route_payload(_response_body)?);
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_route_output_correct_errors(output).build()
+        crate::serde_util::describe_route_output_output_correct_errors(output).build()
     })
 }

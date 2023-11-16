@@ -73,7 +73,7 @@ pub fn de_create_scheduling_policy_http_response(
         output = crate::protocol_serde::shape_create_scheduling_policy::de_create_scheduling_policy(_response_body, output)
             .map_err(crate::operation::create_scheduling_policy::CreateSchedulingPolicyError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_scheduling_policy_output_correct_errors(output).build()
+        crate::serde_util::create_scheduling_policy_output_output_correct_errors(output).build()
     })
 }
 
@@ -82,7 +82,7 @@ pub fn ser_create_scheduling_policy_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_scheduling_policy_input::ser_create_scheduling_policy_input(&mut object, input)?;
+    crate::protocol_serde::shape_create_scheduling_policy_input::ser_create_scheduling_policy_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

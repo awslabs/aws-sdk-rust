@@ -136,7 +136,7 @@ pub fn ser_list_resolver_endpoint_ip_addresses_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_resolver_endpoint_ip_addresses_input::ser_list_resolver_endpoint_ip_addresses_input(&mut object, input)?;
+    crate::protocol_serde::shape_list_resolver_endpoint_ip_addresses_input::ser_list_resolver_endpoint_ip_addresses_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

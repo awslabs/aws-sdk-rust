@@ -199,7 +199,7 @@ pub fn de_get_records_http_response(
         output = crate::protocol_serde::shape_get_records::de_get_records(_response_body, output)
             .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_records_output_correct_errors(output)
+        crate::serde_util::get_records_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_records::GetRecordsError::unhandled)?
     })
@@ -210,7 +210,7 @@ pub fn ser_get_records_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_records_input::ser_get_records_input(&mut object, input)?;
+    crate::protocol_serde::shape_get_records_input::ser_get_records_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

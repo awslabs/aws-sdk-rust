@@ -142,6 +142,6 @@ pub fn de_send_users_messages_http_response(
             crate::protocol_serde::shape_send_users_messages_output::de_send_users_message_response_payload(_response_body)?,
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::send_users_messages_output_correct_errors(output).build()
+        crate::serde_util::send_users_messages_output_output_correct_errors(output).build()
     })
 }

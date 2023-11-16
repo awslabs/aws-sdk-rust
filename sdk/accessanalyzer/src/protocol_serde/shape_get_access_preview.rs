@@ -117,7 +117,7 @@ pub fn de_get_access_preview_http_response(
         output = crate::protocol_serde::shape_get_access_preview::de_get_access_preview(_response_body, output)
             .map_err(crate::operation::get_access_preview::GetAccessPreviewError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_access_preview_output_correct_errors(output).build()
+        crate::serde_util::get_access_preview_output_output_correct_errors(output).build()
     })
 }
 

@@ -64,7 +64,7 @@ pub fn de_list_detectors_http_response(
         output = crate::protocol_serde::shape_list_detectors::de_list_detectors(_response_body, output)
             .map_err(crate::operation::list_detectors::ListDetectorsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_detectors_output_correct_errors(output).build()
+        crate::serde_util::list_detectors_output_output_correct_errors(output).build()
     })
 }
 

@@ -93,7 +93,7 @@ pub fn de_get_branch_http_response(
         output = crate::protocol_serde::shape_get_branch::de_get_branch(_response_body, output)
             .map_err(crate::operation::get_branch::GetBranchError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_branch_output_correct_errors(output).build()
+        crate::serde_util::get_branch_output_output_correct_errors(output).build()
     })
 }
 

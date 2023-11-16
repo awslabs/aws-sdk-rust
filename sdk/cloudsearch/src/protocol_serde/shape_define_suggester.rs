@@ -123,7 +123,7 @@ pub fn de_define_suggester_http_response(
         output = crate::protocol_serde::shape_define_suggester::de_define_suggester(_response_body, output)
             .map_err(crate::operation::define_suggester::DefineSuggesterError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::define_suggester_output_correct_errors(output).build()
+        crate::serde_util::define_suggester_output_output_correct_errors(output).build()
     })
 }
 

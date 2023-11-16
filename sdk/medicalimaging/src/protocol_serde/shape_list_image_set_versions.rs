@@ -123,7 +123,7 @@ pub fn de_list_image_set_versions_http_response(
         output = crate::protocol_serde::shape_list_image_set_versions::de_list_image_set_versions(_response_body, output)
             .map_err(crate::operation::list_image_set_versions::ListImageSetVersionsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_image_set_versions_output_correct_errors(output)
+        crate::serde_util::list_image_set_versions_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_image_set_versions::ListImageSetVersionsError::unhandled)?
     })

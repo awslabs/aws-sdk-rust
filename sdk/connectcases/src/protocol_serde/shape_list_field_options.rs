@@ -110,7 +110,7 @@ pub fn de_list_field_options_http_response(
         output = crate::protocol_serde::shape_list_field_options::de_list_field_options(_response_body, output)
             .map_err(crate::operation::list_field_options::ListFieldOptionsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_field_options_output_correct_errors(output)
+        crate::serde_util::list_field_options_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_field_options::ListFieldOptionsError::unhandled)?
     })

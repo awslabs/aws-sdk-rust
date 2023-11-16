@@ -63,7 +63,7 @@ pub fn de_get_login_profile_http_response(
         output = crate::protocol_serde::shape_get_login_profile::de_get_login_profile(_response_body, output)
             .map_err(crate::operation::get_login_profile::GetLoginProfileError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_login_profile_output_correct_errors(output).build()
+        crate::serde_util::get_login_profile_output_output_correct_errors(output).build()
     })
 }
 

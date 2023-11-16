@@ -63,7 +63,7 @@ pub fn ser_put_access_point_policy_op_input(
         let mut root = writer
             .start_el("PutAccessPointPolicyRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::protocol_serde::shape_put_access_point_policy_input::ser_put_access_point_policy_input_input(input, root)?
+        crate::protocol_serde::shape_put_access_point_policy_input::ser_put_access_point_policy_input_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

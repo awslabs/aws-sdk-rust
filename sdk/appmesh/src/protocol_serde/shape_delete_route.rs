@@ -139,6 +139,6 @@ pub fn de_delete_route_http_response(
         let mut output = crate::operation::delete_route::builders::DeleteRouteOutputBuilder::default();
         output = output.set_route(crate::protocol_serde::shape_delete_route_output::de_route_payload(_response_body)?);
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_route_output_correct_errors(output).build()
+        crate::serde_util::delete_route_output_output_correct_errors(output).build()
     })
 }

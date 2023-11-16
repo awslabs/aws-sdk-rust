@@ -109,7 +109,7 @@ pub fn de_get_aggregate_discovered_resource_counts_http_response(
         )
         .map_err(crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_aggregate_discovered_resource_counts_output_correct_errors(output).build()
+        crate::serde_util::get_aggregate_discovered_resource_counts_output_output_correct_errors(output).build()
     })
 }
 
@@ -118,7 +118,7 @@ pub fn ser_get_aggregate_discovered_resource_counts_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_aggregate_discovered_resource_counts_input::ser_get_aggregate_discovered_resource_counts_input(
+    crate::protocol_serde::shape_get_aggregate_discovered_resource_counts_input::ser_get_aggregate_discovered_resource_counts_input_input(
         &mut object,
         input,
     )?;

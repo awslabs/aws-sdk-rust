@@ -108,7 +108,7 @@ pub fn de_get_worker_fleet_http_response(
         output = crate::protocol_serde::shape_get_worker_fleet::de_get_worker_fleet(_response_body, output)
             .map_err(crate::operation::get_worker_fleet::GetWorkerFleetError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_worker_fleet_output_correct_errors(output)
+        crate::serde_util::get_worker_fleet_output_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_worker_fleet::GetWorkerFleetError::unhandled)?
     })
