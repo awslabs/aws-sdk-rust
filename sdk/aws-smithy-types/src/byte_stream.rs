@@ -204,17 +204,16 @@ pin_project! {
     ///
     ///     _Note: The `rt-tokio` feature must be active to use `.into_async_read()`._
     ///
-    ///     It's possible to convert a `ByteStream` into a struct that implements [`tokio::io::AsyncRead`](tokio::io::AsyncRead).
-    ///     Then, you can use pre-existing tools like [`tokio::io::BufReader`](tokio::io::BufReader):
+    ///     It's possible to convert a `ByteStream` into a struct that implements [`tokio::io::AsyncBufRead`](tokio::io::AsyncBufRead).
     ///     ```no_run
     ///     use aws_smithy_types::byte_stream::ByteStream;
     ///     use aws_smithy_types::body::SdkBody;
-    ///     use tokio::io::{AsyncBufReadExt, BufReader};
+    ///     use tokio::io::AsyncBufReadExt;
     ///     #[cfg(feature = "rt-tokio")]
     ///     async fn example() -> std::io::Result<()> {
     ///        let stream = ByteStream::new(SdkBody::from("hello!\nThis is some data"));
-    ///        // Wrap the stream in a BufReader
-    ///        let buf_reader = BufReader::new(stream.into_async_read());
+    ///        // Convert the stream to a BufReader
+    ///        let buf_reader = stream.into_async_read();
     ///        let mut lines = buf_reader.lines();
     ///        assert_eq!(lines.next_line().await?, Some("hello!".to_owned()));
     ///        assert_eq!(lines.next_line().await?, Some("This is some data".to_owned()));
@@ -423,23 +422,23 @@ impl ByteStream {
     }
 
     #[cfg(feature = "rt-tokio")]
-    /// Convert this `ByteStream` into a struct that implements [`AsyncRead`](tokio::io::AsyncRead).
+    /// Convert this `ByteStream` into a struct that implements [`AsyncBufRead`](tokio::io::AsyncBufRead).
     ///
     /// # Example
     ///
     /// ```rust
-    /// use tokio::io::{BufReader, AsyncBufReadExt};
+    /// use tokio::io::AsyncBufReadExt;
     /// use aws_smithy_types::byte_stream::ByteStream;
     ///
     /// # async fn dox(my_bytestream: ByteStream) -> std::io::Result<()> {
-    /// let mut lines =  BufReader::new(my_bytestream.into_async_read()).lines();
+    /// let mut lines =  my_bytestream.into_async_read().lines();
     /// while let Some(line) = lines.next_line().await? {
     ///   // Do something line by line
     /// }
     /// # Ok(())
     /// # }
     /// ```
-    pub fn into_async_read(self) -> impl tokio::io::AsyncRead {
+    pub fn into_async_read(self) -> impl tokio::io::AsyncBufRead {
         // The `Stream` trait is currently unstable so we can only use it in private.
         // Here, we create a local struct just to enable the trait for `ByteStream` and pass it
         // to `StreamReader`.

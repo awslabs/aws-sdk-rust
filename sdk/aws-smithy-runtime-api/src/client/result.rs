@@ -7,6 +7,7 @@
 
 use crate::client::connection::ConnectionMetadata;
 use aws_smithy_types::error::metadata::{ProvideErrorMetadata, EMPTY_ERROR_METADATA};
+use aws_smithy_types::error::operation::BuildError;
 use aws_smithy_types::error::ErrorMetadata;
 use aws_smithy_types::retry::ErrorKind;
 use std::error::Error;
@@ -479,6 +480,12 @@ where
             SdkError::DispatchFailure(context) => Some(&context.source),
             SdkError::ServiceError(context) => Some(&context.source),
         }
+    }
+}
+
+impl<E, R> From<BuildError> for SdkError<E, R> {
+    fn from(value: BuildError) -> Self {
+        SdkError::ConstructionFailure(ConstructionFailure::builder().source(value).build())
     }
 }
 

@@ -57,7 +57,7 @@ mod default_connector {
                 ])
                 .with_safe_default_kx_groups()
                 .with_safe_default_protocol_versions()
-                .expect("Error with the TLS configuration. Please file a bug report under https://github.com/awslabs/smithy-rs/issues.")
+                .expect("Error with the TLS configuration. Please file a bug report under https://github.com/smithy-lang/smithy-rs/issues.")
                 .with_native_roots()
                 .with_no_client_auth()
         )

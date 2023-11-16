@@ -20,7 +20,7 @@ pub(crate) fn de_response_headers_prefix_header(
     let out: std::result::Result<_, _> = headers.map(|(key, header_name)| {
                             let values = header_map.get_all(header_name);
                             crate::protocol_serde::shape_send_api_asset_output::de_response_headers_inner(values.iter()).map(|v| (key.to_string(), v.expect(
-                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/awslabs/smithy-rs/issues"
+                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/smithy-lang/smithy-rs/issues"
                             )))
                         }).collect();
     out.map(Some)

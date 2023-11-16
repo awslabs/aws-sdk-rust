@@ -298,7 +298,7 @@ mod loader {
 
         /// Deprecated. Don't use.
         #[deprecated(
-            note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance."
+            note = "HTTP connector configuration changed. See https://github.com/smithy-lang/smithy-rs/discussions/3022 for upgrade guidance."
         )]
         pub fn http_connector(self, http_client: impl HttpClient + 'static) -> Self {
             self.http_client(http_client)

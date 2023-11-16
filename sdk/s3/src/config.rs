@@ -22,10 +22,10 @@ pub struct Config {
     // Both `config` and `cloneable` are the same config, but the cloneable one
     // is kept around so that it is possible to convert back into a builder. This can be
     // optimized in the future.
-    pub(crate) config: ::aws_smithy_types::config_bag::FrozenLayer,
+    pub(crate) config: crate::config::FrozenLayer,
     cloneable: ::aws_smithy_types::config_bag::CloneableLayer,
-    pub(crate) runtime_components: ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
-    pub(crate) runtime_plugins: ::std::vec::Vec<::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin>,
+    pub(crate) runtime_components: crate::config::RuntimeComponentsBuilder,
+    pub(crate) runtime_plugins: ::std::vec::Vec<crate::config::SharedRuntimePlugin>,
 }
 impl Config {
     /// Constructs a config builder.
@@ -41,13 +41,13 @@ impl Config {
         }
     }
     /// Deprecated. Don't use.
-    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
-    pub fn http_connector(&self) -> Option<::aws_smithy_runtime_api::client::http::SharedHttpClient> {
+    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/smithy-lang/smithy-rs/discussions/3022 for upgrade guidance.")]
+    pub fn http_connector(&self) -> Option<crate::config::SharedHttpClient> {
         self.runtime_components.http_client()
     }
 
-    /// Return the [`SharedHttpClient`](::aws_smithy_runtime_api::client::http::SharedHttpClient) to use when making requests, if any.
-    pub fn http_client(&self) -> Option<::aws_smithy_runtime_api::client::http::SharedHttpClient> {
+    /// Return the [`SharedHttpClient`](crate::config::SharedHttpClient) to use when making requests, if any.
+    pub fn http_client(&self) -> Option<crate::config::SharedHttpClient> {
         self.runtime_components.http_client()
     }
 
@@ -61,7 +61,7 @@ impl Config {
     }
 
     /// Return a cloned shared async sleep implementation from this config, if any.
-    pub fn sleep_impl(&self) -> ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep> {
+    pub fn sleep_impl(&self) -> ::std::option::Option<crate::config::SharedAsyncSleep> {
         self.runtime_components.sleep_impl()
     }
 
@@ -79,11 +79,11 @@ impl Config {
         self.config.load::<::aws_smithy_runtime::client::retries::RetryPartition>()
     }
     /// Returns the configured identity cache for auth.
-    pub fn identity_cache(&self) -> ::std::option::Option<::aws_smithy_runtime_api::client::identity::SharedIdentityCache> {
+    pub fn identity_cache(&self) -> ::std::option::Option<crate::config::SharedIdentityCache> {
         self.runtime_components.identity_cache()
     }
     /// Returns interceptors currently registered by the user.
-    pub fn interceptors(&self) -> impl Iterator<Item = ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor> + '_ {
+    pub fn interceptors(&self) -> impl Iterator<Item = crate::config::SharedInterceptor> + '_ {
         self.runtime_components.interceptors()
     }
     /// Return time source used for this service.
@@ -119,26 +119,26 @@ impl Config {
         "s3"
     }
     /// Returns the AWS region, if it was provided.
-    pub fn region(&self) -> ::std::option::Option<&::aws_types::region::Region> {
-        self.config.load::<::aws_types::region::Region>()
+    pub fn region(&self) -> ::std::option::Option<&crate::config::Region> {
+        self.config.load::<crate::config::Region>()
     }
     /// Returns the credentials provider for this service
-    pub fn credentials_provider(&self) -> Option<::aws_credential_types::provider::SharedCredentialsProvider> {
-        self.config.load::<::aws_credential_types::provider::SharedCredentialsProvider>().cloned()
+    pub fn credentials_provider(&self) -> Option<crate::config::SharedCredentialsProvider> {
+        self.config.load::<crate::config::SharedCredentialsProvider>().cloned()
     }
 }
 /// Builder for creating a `Config`.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Builder {
     pub(crate) config: ::aws_smithy_types::config_bag::CloneableLayer,
-    pub(crate) runtime_components: ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
-    pub(crate) runtime_plugins: ::std::vec::Vec<::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin>,
+    pub(crate) runtime_components: crate::config::RuntimeComponentsBuilder,
+    pub(crate) runtime_plugins: ::std::vec::Vec<crate::config::SharedRuntimePlugin>,
 }
 impl ::std::default::Default for Builder {
     fn default() -> Self {
         Self {
             config: ::std::default::Default::default(),
-            runtime_components: ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("service config"),
+            runtime_components: crate::config::RuntimeComponentsBuilder::new("service config"),
             runtime_plugins: ::std::default::Default::default(),
         }
     }
@@ -149,14 +149,14 @@ impl Builder {
         Self::default()
     }
     /// Deprecated. Don't use.
-    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
-    pub fn http_connector(self, http_client: impl ::aws_smithy_runtime_api::client::http::HttpClient + 'static) -> Self {
+    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/smithy-lang/smithy-rs/discussions/3022 for upgrade guidance.")]
+    pub fn http_connector(self, http_client: impl crate::config::HttpClient + 'static) -> Self {
         self.http_client(http_client)
     }
 
     /// Deprecated. Don't use.
-    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
-    pub fn set_http_connector(&mut self, http_client: Option<::aws_smithy_runtime_api::client::http::SharedHttpClient>) -> &mut Self {
+    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/smithy-lang/smithy-rs/discussions/3022 for upgrade guidance.")]
+    pub fn set_http_connector(&mut self, http_client: Option<crate::config::SharedHttpClient>) -> &mut Self {
         self.set_http_client(http_client)
     }
 
@@ -189,10 +189,8 @@ impl Builder {
     /// # }
     /// # }
     /// ```
-    pub fn http_client(mut self, http_client: impl ::aws_smithy_runtime_api::client::http::HttpClient + 'static) -> Self {
-        self.set_http_client(::std::option::Option::Some(::aws_smithy_runtime_api::shared::IntoShared::into_shared(
-            http_client,
-        )));
+    pub fn http_client(mut self, http_client: impl crate::config::HttpClient + 'static) -> Self {
+        self.set_http_client(::std::option::Option::Some(crate::config::IntoShared::into_shared(http_client)));
         self
     }
 
@@ -225,7 +223,7 @@ impl Builder {
     /// # }
     /// # }
     /// ```
-    pub fn set_http_client(&mut self, http_client: Option<::aws_smithy_runtime_api::client::http::SharedHttpClient>) -> &mut Self {
+    pub fn set_http_client(&mut self, http_client: Option<crate::config::SharedHttpClient>) -> &mut Self {
         self.runtime_components.set_http_client(http_client);
         self
     }
@@ -371,7 +369,7 @@ impl Builder {
     /// let sleep_impl = SharedAsyncSleep::new(ForeverSleep);
     /// let config = Config::builder().sleep_impl(sleep_impl).build();
     /// ```
-    pub fn sleep_impl(mut self, sleep_impl: impl ::aws_smithy_async::rt::sleep::AsyncSleep + 'static) -> Self {
+    pub fn sleep_impl(mut self, sleep_impl: impl crate::config::AsyncSleep + 'static) -> Self {
         self.set_sleep_impl(Some(::aws_smithy_runtime_api::shared::IntoShared::into_shared(sleep_impl)));
         self
     }
@@ -401,7 +399,7 @@ impl Builder {
     /// set_never_ending_sleep_impl(&mut builder);
     /// let config = builder.build();
     /// ```
-    pub fn set_sleep_impl(&mut self, sleep_impl: ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>) -> &mut Self {
+    pub fn set_sleep_impl(&mut self, sleep_impl: ::std::option::Option<crate::config::SharedAsyncSleep>) -> &mut Self {
         self.runtime_components.set_sleep_impl(sleep_impl);
         self
     }
@@ -475,7 +473,7 @@ impl Builder {
     /// the next request will result in refreshing the identity.
     ///
     /// This configuration allows you to disable or change the default caching mechanism.
-    /// To use a custom caching mechanism, implement the [`ResolveCachedIdentity`](::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity)
+    /// To use a custom caching mechanism, implement the [`ResolveCachedIdentity`](crate::config::ResolveCachedIdentity)
     /// trait and pass that implementation into this function.
     ///
     /// # Examples
@@ -508,7 +506,7 @@ impl Builder {
     /// let client = aws_sdk_s3::Client::from_conf(config);
     /// ```
 
-    pub fn identity_cache(mut self, identity_cache: impl ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity + 'static) -> Self {
+    pub fn identity_cache(mut self, identity_cache: impl crate::config::ResolveCachedIdentity + 'static) -> Self {
         self.set_identity_cache(identity_cache);
         self
     }
@@ -521,7 +519,7 @@ impl Builder {
     /// the next request will result in refreshing the identity.
     ///
     /// This configuration allows you to disable or change the default caching mechanism.
-    /// To use a custom caching mechanism, implement the [`ResolveCachedIdentity`](::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity)
+    /// To use a custom caching mechanism, implement the [`ResolveCachedIdentity`](crate::config::ResolveCachedIdentity)
     /// trait and pass that implementation into this function.
     ///
     /// # Examples
@@ -554,14 +552,11 @@ impl Builder {
     /// let client = aws_sdk_s3::Client::from_conf(config);
     /// ```
 
-    pub fn set_identity_cache(
-        &mut self,
-        identity_cache: impl ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity + 'static,
-    ) -> &mut Self {
+    pub fn set_identity_cache(&mut self, identity_cache: impl crate::config::ResolveCachedIdentity + 'static) -> &mut Self {
         self.runtime_components.set_identity_cache(::std::option::Option::Some(identity_cache));
         self
     }
-    /// Add an [interceptor](::aws_smithy_runtime_api::client::interceptors::Intercept) that runs at specific stages of the request execution pipeline.
+    /// Add an [interceptor](crate::config::Intercept) that runs at specific stages of the request execution pipeline.
     ///
     /// Interceptors targeted at a certain stage are executed according to the pre-defined priority.
     /// The SDK provides a default set of interceptors. An interceptor configured by this method
@@ -605,12 +600,12 @@ impl Builder {
     /// # }
     /// # }
     /// ```
-    pub fn interceptor(mut self, interceptor: impl ::aws_smithy_runtime_api::client::interceptors::Intercept + 'static) -> Self {
-        self.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(interceptor));
+    pub fn interceptor(mut self, interceptor: impl crate::config::Intercept + 'static) -> Self {
+        self.push_interceptor(crate::config::SharedInterceptor::new(interceptor));
         self
     }
 
-    /// Add a [`SharedInterceptor`](::aws_smithy_runtime_api::client::interceptors::SharedInterceptor) that runs at specific stages of the request execution pipeline.
+    /// Add a [`SharedInterceptor`](crate::config::SharedInterceptor) that runs at specific stages of the request execution pipeline.
     ///
     /// Interceptors targeted at a certain stage are executed according to the pre-defined priority.
     /// The SDK provides a default set of interceptors. An interceptor configured by this method
@@ -657,16 +652,13 @@ impl Builder {
     /// # }
     /// # }
     /// ```
-    pub fn push_interceptor(&mut self, interceptor: ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor) -> &mut Self {
+    pub fn push_interceptor(&mut self, interceptor: crate::config::SharedInterceptor) -> &mut Self {
         self.runtime_components.push_interceptor(interceptor);
         self
     }
 
-    /// Set [`SharedInterceptor`](::aws_smithy_runtime_api::client::interceptors::SharedInterceptor)s for the builder.
-    pub fn set_interceptors(
-        &mut self,
-        interceptors: impl IntoIterator<Item = ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor>,
-    ) -> &mut Self {
+    /// Set [`SharedInterceptor`](crate::config::SharedInterceptor)s for the builder.
+    pub fn set_interceptors(&mut self, interceptors: impl IntoIterator<Item = crate::config::SharedInterceptor>) -> &mut Self {
         self.runtime_components.set_interceptors(interceptors.into_iter());
         self
     }
@@ -960,39 +952,44 @@ impl Builder {
     ///     .region(Region::new("us-east-1"))
     ///     .build();
     /// ```
-    pub fn region(mut self, region: impl ::std::convert::Into<::std::option::Option<::aws_types::region::Region>>) -> Self {
+    pub fn region(mut self, region: impl ::std::convert::Into<::std::option::Option<crate::config::Region>>) -> Self {
         self.set_region(region.into());
         self
     }
     /// Sets the AWS region to use when making requests.
-    pub fn set_region(&mut self, region: ::std::option::Option<::aws_types::region::Region>) -> &mut Self {
+    pub fn set_region(&mut self, region: ::std::option::Option<crate::config::Region>) -> &mut Self {
         self.config.store_or_unset(region);
         self
     }
     /// Sets the credentials provider for this service
-    pub fn credentials_provider(mut self, credentials_provider: impl ::aws_credential_types::provider::ProvideCredentials + 'static) -> Self {
-        self.set_credentials_provider(::std::option::Option::Some(
-            ::aws_credential_types::provider::SharedCredentialsProvider::new(credentials_provider),
-        ));
+    pub fn credentials_provider(mut self, credentials_provider: impl crate::config::ProvideCredentials + 'static) -> Self {
+        self.set_credentials_provider(::std::option::Option::Some(crate::config::SharedCredentialsProvider::new(
+            credentials_provider,
+        )));
         self
     }
     /// Sets the credentials provider for this service
-    pub fn set_credentials_provider(
-        &mut self,
-        credentials_provider: ::std::option::Option<::aws_credential_types::provider::SharedCredentialsProvider>,
-    ) -> &mut Self {
-        self.config.store_or_unset(credentials_provider);
+    pub fn set_credentials_provider(&mut self, credentials_provider: ::std::option::Option<crate::config::SharedCredentialsProvider>) -> &mut Self {
+        if let Some(credentials_provider) = credentials_provider {
+            #[cfg(feature = "sigv4a")]
+            {
+                self.runtime_components
+                    .push_identity_resolver(::aws_runtime::auth::sigv4a::SCHEME_ID, credentials_provider.clone());
+            }
+            self.runtime_components
+                .push_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, credentials_provider);
+        }
         self
     }
     /// Adds a runtime plugin to the config.
     #[allow(unused)]
-    pub(crate) fn runtime_plugin(mut self, plugin: impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin + 'static) -> Self {
-        self.push_runtime_plugin(::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin::new(plugin));
+    pub(crate) fn runtime_plugin(mut self, plugin: impl crate::config::RuntimePlugin + 'static) -> Self {
+        self.push_runtime_plugin(crate::config::SharedRuntimePlugin::new(plugin));
         self
     }
     /// Adds a runtime plugin to the config.
     #[allow(unused)]
-    pub(crate) fn push_runtime_plugin(&mut self, plugin: ::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin) -> &mut Self {
+    pub(crate) fn push_runtime_plugin(&mut self, plugin: crate::config::SharedRuntimePlugin) -> &mut Self {
         self.runtime_plugins.push(plugin);
         self
     }
@@ -1004,7 +1001,7 @@ impl Builder {
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
         self.config.store_put(::aws_http::user_agent::AwsUserAgent::for_tests());
-        self.set_credentials_provider(Some(::aws_credential_types::provider::SharedCredentialsProvider::new(
+        self.set_credentials_provider(Some(crate::config::SharedCredentialsProvider::new(
             ::aws_credential_types::Credentials::for_tests(),
         )));
         self
@@ -1032,9 +1029,7 @@ impl Builder {
             .cloned()
             .map(|r| layer.store_put(::aws_types::region::SigningRegion::from(r)));
         Config {
-            config: ::aws_smithy_types::config_bag::Layer::from(layer.clone())
-                .with_name("aws_sdk_s3::config::Config")
-                .freeze(),
+            config: crate::config::Layer::from(layer.clone()).with_name("aws_sdk_s3::config::Config").freeze(),
             cloneable: layer,
             runtime_components: self.runtime_components,
             runtime_plugins: self.runtime_plugins,
@@ -1070,13 +1065,6 @@ impl ServiceRuntimePlugin {
             runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
                 ::aws_runtime::auth::sigv4a::SigV4aAuthScheme::new(),
             ));
-        }
-        if let Some(creds_provider) = _service_config.credentials_provider() {
-            #[cfg(feature = "sigv4a")]
-            {
-                runtime_components.push_identity_resolver(::aws_runtime::auth::sigv4a::SCHEME_ID, creds_provider.clone());
-            }
-            runtime_components.push_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, creds_provider);
         }
         Self { config, runtime_components }
     }
@@ -1154,14 +1142,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ConfigO
 }
 
 pub use ::aws_smithy_runtime::client::identity::IdentityCache;
-pub use ::aws_smithy_runtime_api::client::interceptors::Intercept;
-pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
 pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 pub use ::aws_smithy_types::config_bag::ConfigBag;
 
 pub use ::aws_credential_types::Credentials;
-
-pub use ::aws_types::region::Region;
 
 impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &::aws_types::sdk_config::SdkConfig) -> Self {
@@ -1196,7 +1180,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Config {
 
 pub use ::aws_types::app_name::AppName;
 
-pub use ::aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
+pub use ::aws_smithy_async::rt::sleep::Sleep;
 
 pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
     let mut configured_plugins = ::std::vec::Vec::new();
@@ -1222,6 +1206,28 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
     plugins
 }
 
+pub use ::aws_smithy_types::config_bag::FrozenLayer;
+
+pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+
+pub use ::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin;
+
+pub use ::aws_smithy_runtime_api::client::http::SharedHttpClient;
+
+pub use ::aws_smithy_async::rt::sleep::SharedAsyncSleep;
+
+pub use ::aws_smithy_runtime_api::client::identity::SharedIdentityCache;
+
+pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
+
+pub use ::aws_types::region::Region;
+
+pub use ::aws_credential_types::provider::SharedCredentialsProvider;
+
+pub use ::aws_smithy_runtime_api::client::http::HttpClient;
+
+pub use ::aws_smithy_runtime_api::shared::IntoShared;
+
 #[derive(Debug, Clone)]
 pub(crate) struct ForcePathStyle(pub(crate) bool);
 impl ::aws_smithy_types::config_bag::Storable for ForcePathStyle {
@@ -1245,6 +1251,18 @@ pub(crate) struct Accelerate(pub(crate) bool);
 impl ::aws_smithy_types::config_bag::Storable for Accelerate {
     type Storer = ::aws_smithy_types::config_bag::StoreReplace<Self>;
 }
+
+pub use ::aws_smithy_async::rt::sleep::AsyncSleep;
+
+pub use ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity;
+
+pub use ::aws_smithy_runtime_api::client::interceptors::Intercept;
+
+pub use ::aws_credential_types::provider::ProvideCredentials;
+
+pub use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+
+pub use ::aws_smithy_types::config_bag::Layer;
 
 /// Types needed to configure endpoint resolution.
 pub mod endpoint;

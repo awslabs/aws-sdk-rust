@@ -18,7 +18,7 @@
 //! for anyone writing a library for others to use with their generated clients.
 //!
 //! If you're needing to depend on this and you're not writing a library for Smithy
-//! generated clients, then please file an issue on [smithy-rs](https://github.com/awslabs/smithy-rs)
+//! generated clients, then please file an issue on [smithy-rs](https://github.com/smithy-lang/smithy-rs)
 //! as we likely missed re-exporting one of the APIs.
 //!
 //! All client-specific code is in the [`client`](crate::client) root level module

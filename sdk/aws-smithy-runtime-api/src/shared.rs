@@ -181,7 +181,7 @@ macro_rules! impl_shared_conversions {
     };
 }
 
-// TODO(https://github.com/awslabs/smithy-rs/issues/3016): Move these impls once aws-smithy-async is merged into aws-smithy-runtime-api
+// TODO(https://github.com/smithy-lang/smithy-rs/issues/3016): Move these impls once aws-smithy-async is merged into aws-smithy-runtime-api
 mod async_impls {
     use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::time::{SharedTimeSource, TimeSource};

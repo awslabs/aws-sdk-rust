@@ -41,7 +41,7 @@ async fn test_operation_should_not_normalize_uri_path() {
     let expected_uri = "https://test-bucket-ad7c9f01-7f7b-4669-b550-75cc6d4df0f1.s3.us-east-1.amazonaws.com/a/.././b.txt?x-id=PutObject";
     assert_eq!(actual_uri, expected_uri);
 
-    let expected_sig = "Signature=2ac540538c84dc2616d92fb51d4fc6146ccd9ccc1ee85f518a1a686c5ef97b86";
+    let expected_sig = "Signature=404fb9502378c8f46fb83544848c42d29d55610a14b4bed9577542e49e549d08";
     assert!(
         actual_auth.contains(expected_sig),
         "authorization header signature did not match expected signature: expected {} but not found in {}",

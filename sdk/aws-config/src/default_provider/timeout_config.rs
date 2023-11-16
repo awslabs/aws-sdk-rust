@@ -33,7 +33,7 @@ impl Builder {
 
     /// Resolve default timeout configuration
     pub async fn timeout_config(self) -> TimeoutConfig {
-        // TODO(https://github.com/awslabs/smithy-rs/issues/1732): Implement complete timeout defaults specification
+        // TODO(https://github.com/smithy-lang/smithy-rs/issues/1732): Implement complete timeout defaults specification
         TimeoutConfig::builder()
             .connect_timeout(SDK_DEFAULT_CONNECT_TIMEOUT)
             .build()

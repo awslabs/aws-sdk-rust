@@ -21,5 +21,5 @@ _Note:_ Conversions to and from [`SystemTime`](https://doc.rust-lang.org/std/tim
 into [`aws-smithy-types`](https://docs.rs/aws-smithy-types/0.30.0-alpha/aws_smithy_types/date_time/struct.DateTime.html#impl-From%3CSystemTime%3E).
 
 <!-- anchor_start:footer -->
-This crate is part of the [AWS SDK for Rust](https://awslabs.github.io/aws-sdk-rust/) and the [smithy-rs](https://github.com/awslabs/smithy-rs) code generator. In most cases, it should not be used directly.
+This crate is part of the [AWS SDK for Rust](https://awslabs.github.io/aws-sdk-rust/) and the [smithy-rs](https://github.com/smithy-lang/smithy-rs) code generator. In most cases, it should not be used directly.
 <!-- anchor_end:footer -->

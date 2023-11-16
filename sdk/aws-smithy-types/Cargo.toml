@@ -8,7 +8,7 @@ authors = [
 description = "Types for smithy-rs codegen."
 edition = "2021"
 license = "Apache-2.0"
-repository = "https://github.com/awslabs/smithy-rs"
+repository = "https://github.com/smithy-lang/smithy-rs"
 
 [features]
 byte-stream-poll-next = []

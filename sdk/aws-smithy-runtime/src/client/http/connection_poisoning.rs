@@ -31,7 +31,7 @@ use tracing::{debug, error};
 /// will call a `.poison` method on it, signalling that the connection should be dropped. It is
 /// up to the connection implementer to handle this.
 ///
-/// [`HyperConnector`]: https://github.com/awslabs/smithy-rs/blob/26a914ece072bba2dd9b5b49003204b70e7666ac/rust-runtime/aws-smithy-runtime/src/client/http/hyper_014.rs#L347
+/// [`HyperConnector`]: https://github.com/smithy-lang/smithy-rs/blob/26a914ece072bba2dd9b5b49003204b70e7666ac/rust-runtime/aws-smithy-runtime/src/client/http/hyper_014.rs#L347
 #[non_exhaustive]
 #[derive(Debug, Default)]
 pub struct ConnectionPoisoningInterceptor {}

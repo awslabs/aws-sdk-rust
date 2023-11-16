@@ -4,6 +4,6 @@ allowed_external_types = [
     "bytes::buf::buf_mut::BufMut",
     "bytes::bytes::Bytes",
 
-    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `derive-arbitrary` feature
+    # TODO(https://github.com/smithy-lang/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `derive-arbitrary` feature
     "arbitrary::Arbitrary",
 ]

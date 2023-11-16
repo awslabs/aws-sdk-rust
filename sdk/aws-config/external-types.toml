@@ -35,7 +35,7 @@ allowed_external_types = [
    "http::uri::Uri",
    "tower_service::Service",
 
-   # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if the following should be exposed
+   # TODO(https://github.com/smithy-lang/smithy-rs/issues/1193): Decide if the following should be exposed
    "hyper::client::connect::Connection",
    "tokio::io::async_read::AsyncRead",
    "tokio::io::async_write::AsyncWrite",

@@ -8,7 +8,7 @@ authors = [
 description = "This crate is no longer used by smithy-rs and is deprecated."
 edition = "2021"
 license = "Apache-2.0"
-repository = "https://github.com/awslabs/smithy-rs"
+repository = "https://github.com/smithy-lang/smithy-rs"
 
 [dependencies]
 

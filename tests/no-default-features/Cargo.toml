@@ -6,7 +6,7 @@ authors = ["Zelda Hessler <zhessler@amazon.com>"]
 description = "These tests ensure that things will fail (or not fail) as expected\nwhen default features are disabled for all SDK and runtime crates.\n"
 edition = "2021"
 license = "Apache-2.0"
-repository = "https://github.com/awslabs/smithy-rs"
+repository = "https://github.com/smithy-lang/smithy-rs"
 publish = false
 
 [dev-dependencies]
