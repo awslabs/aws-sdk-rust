@@ -12,6 +12,9 @@ all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
+[package.metadata.smithy-rs-release-tooling]
+stable = true
+
 [features]
 examples = ["dep:hyper-rustls", "aws-smithy-runtime/client", "aws-smithy-runtime/connector-hyper-0-14-x", "aws-smithy-runtime/tls-rustls"]
 

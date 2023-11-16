@@ -93,7 +93,9 @@ mod test {
         let meta = &BUILD_METADATA;
         // obviously a slightly brittle test. Will be a small update for Rust 2.0 and GA :-)
         assert!(meta.rust_version.starts_with("1."));
-        assert!(meta.core_pkg_version.starts_with("0."));
+        // In our release process towards GA, the package version could either be 0. or 1.
+        // so we need to make this `assert!` more flexible.
+        assert!(meta.core_pkg_version.starts_with("0.") || meta.core_pkg_version.starts_with("1."));
         // quick sanity check that we're parsing common platforms correctly
         if cfg!(target_os = "linux") {
             assert_eq!(meta.os_family, OsFamily::Linux);
