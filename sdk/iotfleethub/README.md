@@ -1,7 +1,7 @@
 # aws-sdk-iotfleethub
 
-**Please Note: The SDK is currently in Developer Preview and is intended strictly for
-feedback purposes only. Do not use this SDK for production workloads.**
+**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
+on production workloads. Any use in production is at your own risk.**
 
 With Fleet Hub for AWS IoT Device Management you can build stand-alone web applications for monitoring the health of your device fleets.
 
