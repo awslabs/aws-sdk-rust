@@ -169,6 +169,16 @@ pub(crate) fn reflens_list_namespaces_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_role_memberships_output_output_next_token(
+    input: &crate::operation::list_role_memberships::ListRoleMembershipsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_template_aliases_output_output_next_token(
     input: &crate::operation::list_template_aliases::ListTemplateAliasesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -483,6 +493,16 @@ pub(crate) fn lens_list_namespaces_output_output_namespaces(
     input: crate::operation::list_namespaces::ListNamespacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NamespaceInfoV2>> {
     let input = match input.namespaces {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_role_memberships_output_output_members_list(
+    input: crate::operation::list_role_memberships::ListRoleMembershipsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = match input.members_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

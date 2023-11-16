@@ -243,6 +243,13 @@ pub(crate) fn de_request_phone_number(
                             .transpose()?,
                     );
                 }
+                "TwoWayChannelRole" => {
+                    builder = builder.set_two_way_channel_role(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "SelfManagedOptOutsEnabled" => {
                     builder = builder.set_self_managed_opt_outs_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
@@ -258,6 +265,13 @@ pub(crate) fn de_request_phone_number(
                 }
                 "PoolId" => {
                     builder = builder.set_pool_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "RegistrationId" => {
+                    builder = builder.set_registration_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

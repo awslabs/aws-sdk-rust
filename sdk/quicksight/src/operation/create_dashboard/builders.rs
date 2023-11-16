@@ -333,4 +333,18 @@ impl CreateDashboardFluentBuilder {
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_folder_arns()
     }
+    /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
+    pub fn link_sharing_configuration(mut self, input: crate::types::LinkSharingConfiguration) -> Self {
+        self.inner = self.inner.link_sharing_configuration(input);
+        self
+    }
+    /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
+    pub fn set_link_sharing_configuration(mut self, input: ::std::option::Option<crate::types::LinkSharingConfiguration>) -> Self {
+        self.inner = self.inner.set_link_sharing_configuration(input);
+        self
+    }
+    /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
+    pub fn get_link_sharing_configuration(&self) -> &::std::option::Option<crate::types::LinkSharingConfiguration> {
+        self.inner.get_link_sharing_configuration()
+    }
 }

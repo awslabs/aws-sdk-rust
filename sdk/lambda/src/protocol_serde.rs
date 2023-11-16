@@ -365,6 +365,8 @@ pub(crate) mod shape_layers_list;
 
 pub(crate) mod shape_layers_reference_list;
 
+pub(crate) mod shape_logging_config;
+
 pub(crate) mod shape_provisioned_concurrency_config_list;
 
 pub(crate) mod shape_queues;

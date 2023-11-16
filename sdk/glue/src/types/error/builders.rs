@@ -41,6 +41,10 @@ pub use crate::types::error::_crawler_stopping_exception::CrawlerStoppingExcepti
 
 pub use crate::types::error::_crawler_not_running_exception::CrawlerNotRunningExceptionBuilder;
 
+pub use crate::types::error::_column_statistics_task_stopping_exception::ColumnStatisticsTaskStoppingExceptionBuilder;
+
+pub use crate::types::error::_column_statistics_task_not_running_exception::ColumnStatisticsTaskNotRunningExceptionBuilder;
+
 pub use crate::types::error::_concurrent_runs_exceeded_exception::ConcurrentRunsExceededExceptionBuilder;
 
 pub use crate::types::error::_ml_transform_not_ready_exception::MlTransformNotReadyExceptionBuilder;
@@ -50,6 +54,8 @@ pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 pub use crate::types::error::_scheduler_running_exception::SchedulerRunningExceptionBuilder;
 
 pub use crate::types::error::_no_schedule_exception::NoScheduleExceptionBuilder;
+
+pub use crate::types::error::_column_statistics_task_running_exception::ColumnStatisticsTaskRunningExceptionBuilder;
 
 pub use crate::types::error::_condition_check_failure_exception::ConditionCheckFailureExceptionBuilder;
 

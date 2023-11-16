@@ -7,12 +7,43 @@ pub struct CreateLifecyclePolicyInput {
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    /// <p>The activation state of the lifecycle policy after creation.</p>
     pub state: ::std::option::Option<crate::types::SettablePolicyStateValues>,
-    /// <p>The configuration details of the lifecycle policy.</p>
+    /// <p>The configuration details of the lifecycle policy.</p> <important>
+    /// <p>If you create a default policy, you can specify the request parameters either in the request body, or in the PolicyDetails request structure, but not both.</p>
+    /// </important>
     pub policy_details: ::std::option::Option<crate::types::PolicyDetails>,
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p> <b>[Default policies only]</b> Specify the type of default policy to create.</p>
+    /// <ul>
+    /// <li> <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p> </li>
+    /// <li> <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p> </li>
+    /// </ul>
+    pub default_policy: ::std::option::Option<crate::types::DefaultPolicyTypeValues>,
+    /// <p> <b>[Default policies only]</b> Specifies how often the policy should run and create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not specify a value, the default is 1.</p>
+    /// <p>Default: 1</p>
+    pub create_interval: ::std::option::Option<i32>,
+    /// <p> <b>[Default policies only]</b> Specifies how long the policy should retain snapshots or AMIs before deleting them. The retention period can range from 2 to 14 days, but it must be greater than the creation frequency to ensure that the policy retains at least 1 snapshot or AMI at any given time. If you do not specify a value, the default is 7.</p>
+    /// <p>Default: 7</p>
+    pub retain_interval: ::std::option::Option<i32>,
+    /// <p> <b>[Default policies only]</b> Indicates whether the policy should copy tags from the source resource to the snapshot or AMI. If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub copy_tags: ::std::option::Option<bool>,
+    /// <p> <b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
+    /// <p>By default (<b>ExtendDeletion=false</b>):</p>
+    /// <ul>
+    /// <li> <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p> </li>
+    /// <li> <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p> </li>
+    /// </ul>
+    /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
+    /// <p>If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub extend_deletion: ::std::option::Option<bool>,
+    /// <p> <b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
+    pub cross_region_copy_targets: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>>,
+    /// <p> <b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
+    pub exclusions: ::std::option::Option<crate::types::Exclusions>,
 }
 impl CreateLifecyclePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
@@ -23,17 +54,64 @@ impl CreateLifecyclePolicyInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    /// <p>The activation state of the lifecycle policy after creation.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::SettablePolicyStateValues> {
         self.state.as_ref()
     }
-    /// <p>The configuration details of the lifecycle policy.</p>
+    /// <p>The configuration details of the lifecycle policy.</p> <important>
+    /// <p>If you create a default policy, you can specify the request parameters either in the request body, or in the PolicyDetails request structure, but not both.</p>
+    /// </important>
     pub fn policy_details(&self) -> ::std::option::Option<&crate::types::PolicyDetails> {
         self.policy_details.as_ref()
     }
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p> <b>[Default policies only]</b> Specify the type of default policy to create.</p>
+    /// <ul>
+    /// <li> <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p> </li>
+    /// <li> <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p> </li>
+    /// </ul>
+    pub fn default_policy(&self) -> ::std::option::Option<&crate::types::DefaultPolicyTypeValues> {
+        self.default_policy.as_ref()
+    }
+    /// <p> <b>[Default policies only]</b> Specifies how often the policy should run and create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not specify a value, the default is 1.</p>
+    /// <p>Default: 1</p>
+    pub fn create_interval(&self) -> ::std::option::Option<i32> {
+        self.create_interval
+    }
+    /// <p> <b>[Default policies only]</b> Specifies how long the policy should retain snapshots or AMIs before deleting them. The retention period can range from 2 to 14 days, but it must be greater than the creation frequency to ensure that the policy retains at least 1 snapshot or AMI at any given time. If you do not specify a value, the default is 7.</p>
+    /// <p>Default: 7</p>
+    pub fn retain_interval(&self) -> ::std::option::Option<i32> {
+        self.retain_interval
+    }
+    /// <p> <b>[Default policies only]</b> Indicates whether the policy should copy tags from the source resource to the snapshot or AMI. If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub fn copy_tags(&self) -> ::std::option::Option<bool> {
+        self.copy_tags
+    }
+    /// <p> <b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
+    /// <p>By default (<b>ExtendDeletion=false</b>):</p>
+    /// <ul>
+    /// <li> <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p> </li>
+    /// <li> <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p> </li>
+    /// </ul>
+    /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
+    /// <p>If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub fn extend_deletion(&self) -> ::std::option::Option<bool> {
+        self.extend_deletion
+    }
+    /// <p> <b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_region_copy_targets.is_none()`.
+    pub fn cross_region_copy_targets(&self) -> &[crate::types::CrossRegionCopyTarget] {
+        self.cross_region_copy_targets.as_deref().unwrap_or_default()
+    }
+    /// <p> <b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
+    pub fn exclusions(&self) -> ::std::option::Option<&crate::types::Exclusions> {
+        self.exclusions.as_ref()
     }
 }
 impl CreateLifecyclePolicyInput {
@@ -52,6 +130,13 @@ pub struct CreateLifecyclePolicyInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SettablePolicyStateValues>,
     pub(crate) policy_details: ::std::option::Option<crate::types::PolicyDetails>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) default_policy: ::std::option::Option<crate::types::DefaultPolicyTypeValues>,
+    pub(crate) create_interval: ::std::option::Option<i32>,
+    pub(crate) retain_interval: ::std::option::Option<i32>,
+    pub(crate) copy_tags: ::std::option::Option<bool>,
+    pub(crate) extend_deletion: ::std::option::Option<bool>,
+    pub(crate) cross_region_copy_targets: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>>,
+    pub(crate) exclusions: ::std::option::Option<crate::types::Exclusions>,
 }
 impl CreateLifecyclePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
@@ -84,33 +169,38 @@ impl CreateLifecyclePolicyInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    /// <p>The activation state of the lifecycle policy after creation.</p>
     /// This field is required.
     pub fn state(mut self, input: crate::types::SettablePolicyStateValues) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    /// <p>The activation state of the lifecycle policy after creation.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SettablePolicyStateValues>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    /// <p>The activation state of the lifecycle policy after creation.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SettablePolicyStateValues> {
         &self.state
     }
-    /// <p>The configuration details of the lifecycle policy.</p>
-    /// This field is required.
+    /// <p>The configuration details of the lifecycle policy.</p> <important>
+    /// <p>If you create a default policy, you can specify the request parameters either in the request body, or in the PolicyDetails request structure, but not both.</p>
+    /// </important>
     pub fn policy_details(mut self, input: crate::types::PolicyDetails) -> Self {
         self.policy_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration details of the lifecycle policy.</p>
+    /// <p>The configuration details of the lifecycle policy.</p> <important>
+    /// <p>If you create a default policy, you can specify the request parameters either in the request body, or in the PolicyDetails request structure, but not both.</p>
+    /// </important>
     pub fn set_policy_details(mut self, input: ::std::option::Option<crate::types::PolicyDetails>) -> Self {
         self.policy_details = input;
         self
     }
-    /// <p>The configuration details of the lifecycle policy.</p>
+    /// <p>The configuration details of the lifecycle policy.</p> <important>
+    /// <p>If you create a default policy, you can specify the request parameters either in the request body, or in the PolicyDetails request structure, but not both.</p>
+    /// </important>
     pub fn get_policy_details(&self) -> &::std::option::Option<crate::types::PolicyDetails> {
         &self.policy_details
     }
@@ -134,6 +224,155 @@ impl CreateLifecyclePolicyInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p> <b>[Default policies only]</b> Specify the type of default policy to create.</p>
+    /// <ul>
+    /// <li> <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p> </li>
+    /// <li> <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p> </li>
+    /// </ul>
+    pub fn default_policy(mut self, input: crate::types::DefaultPolicyTypeValues) -> Self {
+        self.default_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specify the type of default policy to create.</p>
+    /// <ul>
+    /// <li> <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p> </li>
+    /// <li> <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p> </li>
+    /// </ul>
+    pub fn set_default_policy(mut self, input: ::std::option::Option<crate::types::DefaultPolicyTypeValues>) -> Self {
+        self.default_policy = input;
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specify the type of default policy to create.</p>
+    /// <ul>
+    /// <li> <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p> </li>
+    /// <li> <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p> </li>
+    /// </ul>
+    pub fn get_default_policy(&self) -> &::std::option::Option<crate::types::DefaultPolicyTypeValues> {
+        &self.default_policy
+    }
+    /// <p> <b>[Default policies only]</b> Specifies how often the policy should run and create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not specify a value, the default is 1.</p>
+    /// <p>Default: 1</p>
+    pub fn create_interval(mut self, input: i32) -> Self {
+        self.create_interval = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies how often the policy should run and create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not specify a value, the default is 1.</p>
+    /// <p>Default: 1</p>
+    pub fn set_create_interval(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.create_interval = input;
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies how often the policy should run and create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not specify a value, the default is 1.</p>
+    /// <p>Default: 1</p>
+    pub fn get_create_interval(&self) -> &::std::option::Option<i32> {
+        &self.create_interval
+    }
+    /// <p> <b>[Default policies only]</b> Specifies how long the policy should retain snapshots or AMIs before deleting them. The retention period can range from 2 to 14 days, but it must be greater than the creation frequency to ensure that the policy retains at least 1 snapshot or AMI at any given time. If you do not specify a value, the default is 7.</p>
+    /// <p>Default: 7</p>
+    pub fn retain_interval(mut self, input: i32) -> Self {
+        self.retain_interval = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies how long the policy should retain snapshots or AMIs before deleting them. The retention period can range from 2 to 14 days, but it must be greater than the creation frequency to ensure that the policy retains at least 1 snapshot or AMI at any given time. If you do not specify a value, the default is 7.</p>
+    /// <p>Default: 7</p>
+    pub fn set_retain_interval(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.retain_interval = input;
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies how long the policy should retain snapshots or AMIs before deleting them. The retention period can range from 2 to 14 days, but it must be greater than the creation frequency to ensure that the policy retains at least 1 snapshot or AMI at any given time. If you do not specify a value, the default is 7.</p>
+    /// <p>Default: 7</p>
+    pub fn get_retain_interval(&self) -> &::std::option::Option<i32> {
+        &self.retain_interval
+    }
+    /// <p> <b>[Default policies only]</b> Indicates whether the policy should copy tags from the source resource to the snapshot or AMI. If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub fn copy_tags(mut self, input: bool) -> Self {
+        self.copy_tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Indicates whether the policy should copy tags from the source resource to the snapshot or AMI. If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.copy_tags = input;
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Indicates whether the policy should copy tags from the source resource to the snapshot or AMI. If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags
+    }
+    /// <p> <b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
+    /// <p>By default (<b>ExtendDeletion=false</b>):</p>
+    /// <ul>
+    /// <li> <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p> </li>
+    /// <li> <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p> </li>
+    /// </ul>
+    /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
+    /// <p>If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub fn extend_deletion(mut self, input: bool) -> Self {
+        self.extend_deletion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
+    /// <p>By default (<b>ExtendDeletion=false</b>):</p>
+    /// <ul>
+    /// <li> <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p> </li>
+    /// <li> <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p> </li>
+    /// </ul>
+    /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
+    /// <p>If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub fn set_extend_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.extend_deletion = input;
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
+    /// <p>By default (<b>ExtendDeletion=false</b>):</p>
+    /// <ul>
+    /// <li> <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p> </li>
+    /// <li> <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p> </li>
+    /// </ul>
+    /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
+    /// <p>If you do not specify a value, the default is <code>false</code>.</p>
+    /// <p>Default: false</p>
+    pub fn get_extend_deletion(&self) -> &::std::option::Option<bool> {
+        &self.extend_deletion
+    }
+    /// Appends an item to `cross_region_copy_targets`.
+    ///
+    /// To override the contents of this collection use [`set_cross_region_copy_targets`](Self::set_cross_region_copy_targets).
+    ///
+    /// <p> <b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
+    pub fn cross_region_copy_targets(mut self, input: crate::types::CrossRegionCopyTarget) -> Self {
+        let mut v = self.cross_region_copy_targets.unwrap_or_default();
+        v.push(input);
+        self.cross_region_copy_targets = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
+    pub fn set_cross_region_copy_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>>) -> Self {
+        self.cross_region_copy_targets = input;
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
+    pub fn get_cross_region_copy_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>> {
+        &self.cross_region_copy_targets
+    }
+    /// <p> <b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
+    pub fn exclusions(mut self, input: crate::types::Exclusions) -> Self {
+        self.exclusions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
+    pub fn set_exclusions(mut self, input: ::std::option::Option<crate::types::Exclusions>) -> Self {
+        self.exclusions = input;
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
+    pub fn get_exclusions(&self) -> &::std::option::Option<crate::types::Exclusions> {
+        &self.exclusions
+    }
     /// Consumes the builder and constructs a [`CreateLifecyclePolicyInput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput).
     pub fn build(
         self,
@@ -145,6 +384,13 @@ impl CreateLifecyclePolicyInputBuilder {
             state: self.state,
             policy_details: self.policy_details,
             tags: self.tags,
+            default_policy: self.default_policy,
+            create_interval: self.create_interval,
+            retain_interval: self.retain_interval,
+            copy_tags: self.copy_tags,
+            extend_deletion: self.extend_deletion,
+            cross_region_copy_targets: self.cross_region_copy_targets,
+            exclusions: self.exclusions,
         })
     }
 }

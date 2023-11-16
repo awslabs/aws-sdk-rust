@@ -7,6 +7,12 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A resource to be created or added already exists.</p>
     AlreadyExistsException(crate::types::error::AlreadyExistsException),
+    /// <p>An exception thrown when you try to stop a task run when there is no task running.</p>
+    ColumnStatisticsTaskNotRunningException(crate::types::error::ColumnStatisticsTaskNotRunningException),
+    /// <p>An exception thrown when you try to start another job while running a column stats generation job.</p>
+    ColumnStatisticsTaskRunningException(crate::types::error::ColumnStatisticsTaskRunningException),
+    /// <p>An exception thrown when you try to stop a task run.</p>
+    ColumnStatisticsTaskStoppingException(crate::types::error::ColumnStatisticsTaskStoppingException),
     /// <p>Two processes are trying to modify a resource simultaneously.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>Too many jobs are being run concurrently.</p>
@@ -81,6 +87,9 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::AlreadyExistsException(inner) => inner.fmt(f),
+            Error::ColumnStatisticsTaskNotRunningException(inner) => inner.fmt(f),
+            Error::ColumnStatisticsTaskRunningException(inner) => inner.fmt(f),
+            Error::ColumnStatisticsTaskStoppingException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
             Error::ConcurrentRunsExceededException(inner) => inner.fmt(f),
             Error::ConditionCheckFailureException(inner) => inner.fmt(f),
@@ -134,6 +143,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::AlreadyExistsException(inner) => inner.meta(),
+            Self::ColumnStatisticsTaskNotRunningException(inner) => inner.meta(),
+            Self::ColumnStatisticsTaskRunningException(inner) => inner.meta(),
+            Self::ColumnStatisticsTaskStoppingException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
             Self::ConcurrentRunsExceededException(inner) => inner.meta(),
             Self::ConditionCheckFailureException(inner) => inner.meta(),
@@ -2613,6 +2625,70 @@ impl From<crate::operation::get_column_statistics_for_table::GetColumnStatistics
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunError> for Error {
+    fn from(err: crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunError) -> Self {
+        match err {
+            crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsError> for Error {
+    fn from(err: crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsError) -> Self {
+        match err {
+            crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connection::GetConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4401,6 +4477,37 @@ impl From<crate::operation::list_blueprints::ListBlueprintsError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_column_statistics_task_runs::ListColumnStatisticsTaskRunsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_column_statistics_task_runs::ListColumnStatisticsTaskRunsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_column_statistics_task_runs::ListColumnStatisticsTaskRunsError> for Error {
+    fn from(err: crate::operation::list_column_statistics_task_runs::ListColumnStatisticsTaskRunsError) -> Self {
+        match err {
+            crate::operation::list_column_statistics_task_runs::ListColumnStatisticsTaskRunsError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::list_column_statistics_task_runs::ListColumnStatisticsTaskRunsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_crawlers::ListCrawlersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5336,6 +5443,52 @@ impl From<crate::operation::start_blueprint_run::StartBlueprintRunError> for Err
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError> for Error {
+    fn from(err: crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError) -> Self {
+        match err {
+            crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError::ColumnStatisticsTaskRunningException(inner) => {
+                Error::ColumnStatisticsTaskRunningException(inner)
+            }
+            crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_crawler::StartCrawlerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5733,6 +5886,46 @@ impl From<crate::operation::start_workflow_run::StartWorkflowRunError> for Error
                 Error::ResourceNumberLimitExceededException(inner)
             }
             crate::operation::start_workflow_run::StartWorkflowRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunError> for Error {
+    fn from(err: crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunError) -> Self {
+        match err {
+            crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunError::ColumnStatisticsTaskNotRunningException(inner) => {
+                Error::ColumnStatisticsTaskNotRunningException(inner)
+            }
+            crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunError::ColumnStatisticsTaskStoppingException(inner) => {
+                Error::ColumnStatisticsTaskStoppingException(inner)
+            }
+            crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6654,6 +6847,9 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::AlreadyExistsException(inner) => inner.source(),
+            Error::ColumnStatisticsTaskNotRunningException(inner) => inner.source(),
+            Error::ColumnStatisticsTaskRunningException(inner) => inner.source(),
+            Error::ColumnStatisticsTaskStoppingException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
             Error::ConcurrentRunsExceededException(inner) => inner.source(),
             Error::ConditionCheckFailureException(inner) => inner.source(),
@@ -6693,6 +6889,9 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::AlreadyExistsException(e) => e.request_id(),
+            Self::ColumnStatisticsTaskNotRunningException(e) => e.request_id(),
+            Self::ColumnStatisticsTaskRunningException(e) => e.request_id(),
+            Self::ColumnStatisticsTaskStoppingException(e) => e.request_id(),
             Self::ConcurrentModificationException(e) => e.request_id(),
             Self::ConcurrentRunsExceededException(e) => e.request_id(),
             Self::ConditionCheckFailureException(e) => e.request_id(),

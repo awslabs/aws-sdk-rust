@@ -26,6 +26,8 @@ pub struct Provisioned {
     pub zookeeper_connect_string_tls: ::std::option::Option<::std::string::String>,
     /// <p>This controls storage mode for supported storage tiers.</p>
     pub storage_mode: ::std::option::Option<crate::types::StorageMode>,
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub customer_action_status: ::std::option::Option<crate::types::CustomerActionStatus>,
 }
 impl Provisioned {
     /// <p>Information about the brokers.</p>
@@ -72,6 +74,10 @@ impl Provisioned {
     pub fn storage_mode(&self) -> ::std::option::Option<&crate::types::StorageMode> {
         self.storage_mode.as_ref()
     }
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub fn customer_action_status(&self) -> ::std::option::Option<&crate::types::CustomerActionStatus> {
+        self.customer_action_status.as_ref()
+    }
 }
 impl Provisioned {
     /// Creates a new builder-style object to manufacture [`Provisioned`](crate::types::Provisioned).
@@ -95,6 +101,7 @@ pub struct ProvisionedBuilder {
     pub(crate) zookeeper_connect_string: ::std::option::Option<::std::string::String>,
     pub(crate) zookeeper_connect_string_tls: ::std::option::Option<::std::string::String>,
     pub(crate) storage_mode: ::std::option::Option<crate::types::StorageMode>,
+    pub(crate) customer_action_status: ::std::option::Option<crate::types::CustomerActionStatus>,
 }
 impl ProvisionedBuilder {
     /// <p>Information about the brokers.</p>
@@ -253,6 +260,20 @@ impl ProvisionedBuilder {
     pub fn get_storage_mode(&self) -> &::std::option::Option<crate::types::StorageMode> {
         &self.storage_mode
     }
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub fn customer_action_status(mut self, input: crate::types::CustomerActionStatus) -> Self {
+        self.customer_action_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub fn set_customer_action_status(mut self, input: ::std::option::Option<crate::types::CustomerActionStatus>) -> Self {
+        self.customer_action_status = input;
+        self
+    }
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub fn get_customer_action_status(&self) -> &::std::option::Option<crate::types::CustomerActionStatus> {
+        &self.customer_action_status
+    }
     /// Consumes the builder and constructs a [`Provisioned`](crate::types::Provisioned).
     pub fn build(self) -> crate::types::Provisioned {
         crate::types::Provisioned {
@@ -267,6 +288,7 @@ impl ProvisionedBuilder {
             zookeeper_connect_string: self.zookeeper_connect_string,
             zookeeper_connect_string_tls: self.zookeeper_connect_string_tls,
             storage_mode: self.storage_mode,
+            customer_action_status: self.customer_action_status,
         }
     }
 }

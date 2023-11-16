@@ -134,6 +134,7 @@ impl ListTimelineEventsFluentBuilder {
     ///
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
+    /// <li> <p> <code>eventReference</code> </p> </li>
     /// <li> <p> <code>eventTime</code> </p> </li>
     /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
@@ -149,6 +150,7 @@ impl ListTimelineEventsFluentBuilder {
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
+    /// <li> <p> <code>eventReference</code> </p> </li>
     /// <li> <p> <code>eventTime</code> </p> </li>
     /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
@@ -164,6 +166,7 @@ impl ListTimelineEventsFluentBuilder {
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
+    /// <li> <p> <code>eventReference</code> </p> </li>
     /// <li> <p> <code>eventTime</code> </p> </li>
     /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
@@ -218,17 +221,17 @@ impl ListTimelineEventsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

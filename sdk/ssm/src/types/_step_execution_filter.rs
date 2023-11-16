@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepExecutionFilter {
-    /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
+    /// <p>One or more keys to limit the results.</p>
     pub key: crate::types::StepExecutionFilterKey,
     /// <p>The values of the filter key.</p>
     pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl StepExecutionFilter {
-    /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
+    /// <p>One or more keys to limit the results.</p>
     pub fn key(&self) -> &crate::types::StepExecutionFilterKey {
         &self.key
     }
@@ -35,18 +35,18 @@ pub struct StepExecutionFilterBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StepExecutionFilterBuilder {
-    /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
+    /// <p>One or more keys to limit the results.</p>
     /// This field is required.
     pub fn key(mut self, input: crate::types::StepExecutionFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
+    /// <p>One or more keys to limit the results.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::StepExecutionFilterKey>) -> Self {
         self.key = input;
         self
     }
-    /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
+    /// <p>One or more keys to limit the results.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::StepExecutionFilterKey> {
         &self.key
     }

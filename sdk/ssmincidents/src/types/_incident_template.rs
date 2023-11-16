@@ -6,11 +6,22 @@
 pub struct IncidentTemplate {
     /// <p>The title of the incident. </p>
     pub title: ::std::string::String,
-    /// <p>The impact of the incident on your customers and applications. </p>
+    /// <p>The impact of the incident on your customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     pub impact: i32,
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
     pub summary: ::std::option::Option<::std::string::String>,
-    /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
+    /// <p>The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same account.</p>
+    /// <p>A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a deduplication string, Incident Manager searches for open incidents that contain the same string in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager deduplicates the newer incident into the existing incident.</p> <note>
+    /// <p>By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication for these resource types.</p>
+    /// </note>
     pub dedupe_string: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
@@ -23,7 +34,15 @@ impl IncidentTemplate {
         use std::ops::Deref;
         self.title.deref()
     }
-    /// <p>The impact of the incident on your customers and applications. </p>
+    /// <p>The impact of the incident on your customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     pub fn impact(&self) -> i32 {
         self.impact
     }
@@ -31,7 +50,10 @@ impl IncidentTemplate {
     pub fn summary(&self) -> ::std::option::Option<&str> {
         self.summary.as_deref()
     }
-    /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
+    /// <p>The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same account.</p>
+    /// <p>A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a deduplication string, Incident Manager searches for open incidents that contain the same string in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager deduplicates the newer incident into the existing incident.</p> <note>
+    /// <p>By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication for these resource types.</p>
+    /// </note>
     pub fn dedupe_string(&self) -> ::std::option::Option<&str> {
         self.dedupe_string.as_deref()
     }
@@ -80,18 +102,42 @@ impl IncidentTemplateBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>The impact of the incident on your customers and applications. </p>
+    /// <p>The impact of the incident on your customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     /// This field is required.
     pub fn impact(mut self, input: i32) -> Self {
         self.impact = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The impact of the incident on your customers and applications. </p>
+    /// <p>The impact of the incident on your customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.impact = input;
         self
     }
-    /// <p>The impact of the incident on your customers and applications. </p>
+    /// <p>The impact of the incident on your customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     pub fn get_impact(&self) -> &::std::option::Option<i32> {
         &self.impact
     }
@@ -109,17 +155,26 @@ impl IncidentTemplateBuilder {
     pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
         &self.summary
     }
-    /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
+    /// <p>The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same account.</p>
+    /// <p>A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a deduplication string, Incident Manager searches for open incidents that contain the same string in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager deduplicates the newer incident into the existing incident.</p> <note>
+    /// <p>By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication for these resource types.</p>
+    /// </note>
     pub fn dedupe_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dedupe_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
+    /// <p>The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same account.</p>
+    /// <p>A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a deduplication string, Incident Manager searches for open incidents that contain the same string in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager deduplicates the newer incident into the existing incident.</p> <note>
+    /// <p>By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication for these resource types.</p>
+    /// </note>
     pub fn set_dedupe_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dedupe_string = input;
         self
     }
-    /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
+    /// <p>The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same account.</p>
+    /// <p>A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a deduplication string, Incident Manager searches for open incidents that contain the same string in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager deduplicates the newer incident into the existing incident.</p> <note>
+    /// <p>By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication for these resource types.</p>
+    /// </note>
     pub fn get_dedupe_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.dedupe_string
     }

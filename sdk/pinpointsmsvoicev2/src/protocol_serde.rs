@@ -33,6 +33,16 @@ pub(crate) mod shape_create_opt_out_list;
 
 pub(crate) mod shape_create_pool;
 
+pub(crate) mod shape_create_registration;
+
+pub(crate) mod shape_create_registration_association;
+
+pub(crate) mod shape_create_registration_attachment;
+
+pub(crate) mod shape_create_registration_version;
+
+pub(crate) mod shape_create_verified_destination_number;
+
 pub(crate) mod shape_delete_configuration_set;
 
 pub(crate) mod shape_delete_default_message_type;
@@ -49,7 +59,15 @@ pub(crate) mod shape_delete_opted_out_number;
 
 pub(crate) mod shape_delete_pool;
 
+pub(crate) mod shape_delete_registration;
+
+pub(crate) mod shape_delete_registration_attachment;
+
+pub(crate) mod shape_delete_registration_field_value;
+
 pub(crate) mod shape_delete_text_message_spend_limit_override;
+
+pub(crate) mod shape_delete_verified_destination_number;
 
 pub(crate) mod shape_delete_voice_message_spend_limit_override;
 
@@ -69,13 +87,33 @@ pub(crate) mod shape_describe_phone_numbers;
 
 pub(crate) mod shape_describe_pools;
 
+pub(crate) mod shape_describe_registration_attachments;
+
+pub(crate) mod shape_describe_registration_field_definitions;
+
+pub(crate) mod shape_describe_registration_field_values;
+
+pub(crate) mod shape_describe_registration_section_definitions;
+
+pub(crate) mod shape_describe_registration_type_definitions;
+
+pub(crate) mod shape_describe_registration_versions;
+
+pub(crate) mod shape_describe_registrations;
+
 pub(crate) mod shape_describe_sender_ids;
 
 pub(crate) mod shape_describe_spend_limits;
 
+pub(crate) mod shape_describe_verified_destination_numbers;
+
 pub(crate) mod shape_disassociate_origination_identity;
 
+pub(crate) mod shape_discard_registration_version;
+
 pub(crate) mod shape_list_pool_origination_identities;
+
+pub(crate) mod shape_list_registration_associations;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -83,9 +121,17 @@ pub(crate) mod shape_put_keyword;
 
 pub(crate) mod shape_put_opted_out_number;
 
+pub(crate) mod shape_put_registration_field_value;
+
 pub(crate) mod shape_release_phone_number;
 
+pub(crate) mod shape_release_sender_id;
+
 pub(crate) mod shape_request_phone_number;
+
+pub(crate) mod shape_request_sender_id;
+
+pub(crate) mod shape_send_destination_number_verification_code;
 
 pub(crate) mod shape_send_text_message;
 
@@ -99,6 +145,8 @@ pub(crate) mod shape_set_text_message_spend_limit_override;
 
 pub(crate) mod shape_set_voice_message_spend_limit_override;
 
+pub(crate) mod shape_submit_registration_version;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -108,6 +156,10 @@ pub(crate) mod shape_update_event_destination;
 pub(crate) mod shape_update_phone_number;
 
 pub(crate) mod shape_update_pool;
+
+pub(crate) mod shape_update_sender_id;
+
+pub(crate) mod shape_verify_destination_number;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -131,6 +183,16 @@ pub(crate) mod shape_create_opt_out_list_input;
 
 pub(crate) mod shape_create_pool_input;
 
+pub(crate) mod shape_create_registration_association_input;
+
+pub(crate) mod shape_create_registration_attachment_input;
+
+pub(crate) mod shape_create_registration_input;
+
+pub(crate) mod shape_create_registration_version_input;
+
+pub(crate) mod shape_create_verified_destination_number_input;
+
 pub(crate) mod shape_delete_configuration_set_input;
 
 pub(crate) mod shape_delete_default_message_type_input;
@@ -146,6 +208,14 @@ pub(crate) mod shape_delete_opt_out_list_input;
 pub(crate) mod shape_delete_opted_out_number_input;
 
 pub(crate) mod shape_delete_pool_input;
+
+pub(crate) mod shape_delete_registration_attachment_input;
+
+pub(crate) mod shape_delete_registration_field_value_input;
+
+pub(crate) mod shape_delete_registration_input;
+
+pub(crate) mod shape_delete_verified_destination_number_input;
 
 pub(crate) mod shape_describe_account_attributes_input;
 
@@ -163,15 +233,35 @@ pub(crate) mod shape_describe_phone_numbers_input;
 
 pub(crate) mod shape_describe_pools_input;
 
+pub(crate) mod shape_describe_registration_attachments_input;
+
+pub(crate) mod shape_describe_registration_field_definitions_input;
+
+pub(crate) mod shape_describe_registration_field_values_input;
+
+pub(crate) mod shape_describe_registration_section_definitions_input;
+
+pub(crate) mod shape_describe_registration_type_definitions_input;
+
+pub(crate) mod shape_describe_registration_versions_input;
+
+pub(crate) mod shape_describe_registrations_input;
+
 pub(crate) mod shape_describe_sender_ids_input;
 
 pub(crate) mod shape_describe_spend_limits_input;
 
+pub(crate) mod shape_describe_verified_destination_numbers_input;
+
 pub(crate) mod shape_disassociate_origination_identity_input;
+
+pub(crate) mod shape_discard_registration_version_input;
 
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_pool_origination_identities_input;
+
+pub(crate) mod shape_list_registration_associations_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -179,11 +269,19 @@ pub(crate) mod shape_put_keyword_input;
 
 pub(crate) mod shape_put_opted_out_number_input;
 
+pub(crate) mod shape_put_registration_field_value_input;
+
 pub(crate) mod shape_release_phone_number_input;
+
+pub(crate) mod shape_release_sender_id_input;
 
 pub(crate) mod shape_request_phone_number_input;
 
+pub(crate) mod shape_request_sender_id_input;
+
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_send_destination_number_verification_code_input;
 
 pub(crate) mod shape_send_text_message_input;
 
@@ -199,6 +297,8 @@ pub(crate) mod shape_set_text_message_spend_limit_override_input;
 
 pub(crate) mod shape_set_voice_message_spend_limit_override_input;
 
+pub(crate) mod shape_submit_registration_version_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -211,7 +311,11 @@ pub(crate) mod shape_update_phone_number_input;
 
 pub(crate) mod shape_update_pool_input;
 
+pub(crate) mod shape_update_sender_id_input;
+
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_verify_destination_number_input;
 
 pub(crate) mod shape_account_attribute_list;
 
@@ -233,6 +337,8 @@ pub(crate) mod shape_keyword_information_list;
 
 pub(crate) mod shape_kinesis_firehose_destination;
 
+pub(crate) mod shape_message_type_list;
+
 pub(crate) mod shape_number_capability_list;
 
 pub(crate) mod shape_opt_out_list_information_list;
@@ -253,6 +359,36 @@ pub(crate) mod shape_pool_information_list;
 
 pub(crate) mod shape_pool_origination_identities_filter;
 
+pub(crate) mod shape_registration_association_filter;
+
+pub(crate) mod shape_registration_association_metadata_list;
+
+pub(crate) mod shape_registration_attachment_filter;
+
+pub(crate) mod shape_registration_attachments_information_list;
+
+pub(crate) mod shape_registration_field_definition_list;
+
+pub(crate) mod shape_registration_field_value_information_list;
+
+pub(crate) mod shape_registration_filter;
+
+pub(crate) mod shape_registration_information_list;
+
+pub(crate) mod shape_registration_section_definition_list;
+
+pub(crate) mod shape_registration_type_definition_list;
+
+pub(crate) mod shape_registration_type_filter;
+
+pub(crate) mod shape_registration_version_filter;
+
+pub(crate) mod shape_registration_version_information_list;
+
+pub(crate) mod shape_registration_version_status_history;
+
+pub(crate) mod shape_select_choice_list;
+
 pub(crate) mod shape_sender_id_and_country;
 
 pub(crate) mod shape_sender_id_filter;
@@ -263,11 +399,17 @@ pub(crate) mod shape_sns_destination;
 
 pub(crate) mod shape_spend_limit_list;
 
+pub(crate) mod shape_string_map;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_validation_exception_field_list;
+
+pub(crate) mod shape_verified_destination_number_filter;
+
+pub(crate) mod shape_verified_destination_number_information_list;
 
 pub(crate) mod shape_account_attribute;
 
@@ -289,10 +431,50 @@ pub(crate) mod shape_phone_number_information;
 
 pub(crate) mod shape_pool_information;
 
+pub(crate) mod shape_registration_association_metadata;
+
+pub(crate) mod shape_registration_attachments_information;
+
+pub(crate) mod shape_registration_field_definition;
+
+pub(crate) mod shape_registration_field_value_information;
+
+pub(crate) mod shape_registration_information;
+
+pub(crate) mod shape_registration_section_definition;
+
+pub(crate) mod shape_registration_type_definition;
+
+pub(crate) mod shape_registration_version_information;
+
 pub(crate) mod shape_sender_id_information;
 
 pub(crate) mod shape_spend_limit;
 
 pub(crate) mod shape_validation_exception_field;
 
-pub(crate) mod shape_message_type_list;
+pub(crate) mod shape_verified_destination_number_information;
+
+pub(crate) mod shape_registration_denied_reason_information_list;
+
+pub(crate) mod shape_registration_field_display_hints;
+
+pub(crate) mod shape_registration_section_display_hints;
+
+pub(crate) mod shape_registration_type_display_hints;
+
+pub(crate) mod shape_select_validation;
+
+pub(crate) mod shape_supported_association_list;
+
+pub(crate) mod shape_text_validation;
+
+pub(crate) mod shape_registration_denied_reason_information;
+
+pub(crate) mod shape_select_option_descriptions_list;
+
+pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_supported_association;
+
+pub(crate) mod shape_select_option_description;

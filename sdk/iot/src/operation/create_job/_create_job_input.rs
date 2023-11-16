@@ -46,7 +46,7 @@ pub struct CreateJobInput {
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
     pub scheduling_config: ::std::option::Option<crate::types::SchedulingConfig>,
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
-    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateJobInput {
@@ -129,7 +129,7 @@ impl CreateJobInput {
         self.scheduling_config.as_ref()
     }
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
-    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_package_versions.is_none()`.
     pub fn destination_package_versions(&self) -> &[::std::string::String] {
@@ -451,7 +451,7 @@ impl CreateJobInputBuilder {
     /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
     ///
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
-    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn destination_package_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_package_versions.unwrap_or_default();
         v.push(input.into());
@@ -459,13 +459,13 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
-    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn set_destination_package_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destination_package_versions = input;
         self
     }
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
-    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn get_destination_package_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destination_package_versions
     }

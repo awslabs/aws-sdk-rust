@@ -152,17 +152,17 @@ impl StartAssetBundleImportJobFluentBuilder {
     pub fn get_asset_bundle_import_source(&self) -> &::std::option::Option<crate::types::AssetBundleImportSource> {
         self.inner.get_asset_bundle_import_source()
     }
-    /// <p>Optional overrides to be applied to the resource configuration before import.</p>
+    /// <p>Optional overrides that are applied to the resource configuration before import.</p>
     pub fn override_parameters(mut self, input: crate::types::AssetBundleImportJobOverrideParameters) -> Self {
         self.inner = self.inner.override_parameters(input);
         self
     }
-    /// <p>Optional overrides to be applied to the resource configuration before import.</p>
+    /// <p>Optional overrides that are applied to the resource configuration before import.</p>
     pub fn set_override_parameters(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobOverrideParameters>) -> Self {
         self.inner = self.inner.set_override_parameters(input);
         self
     }
-    /// <p>Optional overrides to be applied to the resource configuration before import.</p>
+    /// <p>Optional overrides that are applied to the resource configuration before import.</p>
     pub fn get_override_parameters(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobOverrideParameters> {
         self.inner.get_override_parameters()
     }
@@ -185,5 +185,50 @@ impl StartAssetBundleImportJobFluentBuilder {
     /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the Amazon QuickSight account in an inconsistent state.</p>
     pub fn get_failure_action(&self) -> &::std::option::Option<crate::types::AssetBundleImportFailureAction> {
         self.inner.get_failure_action()
+    }
+    /// <p>Optional permission overrides that are applied to the resource configuration before import.</p>
+    pub fn override_permissions(mut self, input: crate::types::AssetBundleImportJobOverridePermissions) -> Self {
+        self.inner = self.inner.override_permissions(input);
+        self
+    }
+    /// <p>Optional permission overrides that are applied to the resource configuration before import.</p>
+    pub fn set_override_permissions(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobOverridePermissions>) -> Self {
+        self.inner = self.inner.set_override_permissions(input);
+        self
+    }
+    /// <p>Optional permission overrides that are applied to the resource configuration before import.</p>
+    pub fn get_override_permissions(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobOverridePermissions> {
+        self.inner.get_override_permissions()
+    }
+    /// <p>Optional tag overrides that are applied to the resource configuration before import.</p>
+    pub fn override_tags(mut self, input: crate::types::AssetBundleImportJobOverrideTags) -> Self {
+        self.inner = self.inner.override_tags(input);
+        self
+    }
+    /// <p>Optional tag overrides that are applied to the resource configuration before import.</p>
+    pub fn set_override_tags(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobOverrideTags>) -> Self {
+        self.inner = self.inner.set_override_tags(input);
+        self
+    }
+    /// <p>Optional tag overrides that are applied to the resource configuration before import.</p>
+    pub fn get_override_tags(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobOverrideTags> {
+        self.inner.get_override_tags()
+    }
+    /// <p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import. </p>
+    pub fn override_validation_strategy(mut self, input: crate::types::AssetBundleImportJobOverrideValidationStrategy) -> Self {
+        self.inner = self.inner.override_validation_strategy(input);
+        self
+    }
+    /// <p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import. </p>
+    pub fn set_override_validation_strategy(
+        mut self,
+        input: ::std::option::Option<crate::types::AssetBundleImportJobOverrideValidationStrategy>,
+    ) -> Self {
+        self.inner = self.inner.set_override_validation_strategy(input);
+        self
+    }
+    /// <p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import. </p>
+    pub fn get_override_validation_strategy(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobOverrideValidationStrategy> {
+        self.inner.get_override_validation_strategy()
     }
 }

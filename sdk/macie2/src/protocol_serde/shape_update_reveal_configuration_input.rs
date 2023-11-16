@@ -9,5 +9,11 @@ pub fn ser_update_reveal_configuration_input_input(
         crate::protocol_serde::shape_reveal_configuration::ser_reveal_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.retrieval_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("retrievalConfiguration").start_object();
+        crate::protocol_serde::shape_update_retrieval_configuration::ser_update_retrieval_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

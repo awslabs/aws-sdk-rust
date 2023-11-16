@@ -124,6 +124,10 @@ pub(crate) fn de_get_reveal_configuration(
                 "configuration" => {
                     builder = builder.set_configuration(crate::protocol_serde::shape_reveal_configuration::de_reveal_configuration(tokens)?);
                 }
+                "retrievalConfiguration" => {
+                    builder = builder
+                        .set_retrieval_configuration(crate::protocol_serde::shape_retrieval_configuration::de_retrieval_configuration(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

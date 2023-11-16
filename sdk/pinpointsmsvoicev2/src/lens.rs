@@ -79,6 +79,76 @@ pub(crate) fn reflens_describe_pools_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_registration_attachments_output_output_next_token(
+    input: &crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_registration_field_definitions_output_output_next_token(
+    input: &crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_registration_field_values_output_output_next_token(
+    input: &crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_registration_section_definitions_output_output_next_token(
+    input: &crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_registration_type_definitions_output_output_next_token(
+    input: &crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_registration_versions_output_output_next_token(
+    input: &crate::operation::describe_registration_versions::DescribeRegistrationVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_registrations_output_output_next_token(
+    input: &crate::operation::describe_registrations::DescribeRegistrationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_sender_ids_output_output_next_token(
     input: &crate::operation::describe_sender_ids::DescribeSenderIdsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -99,8 +169,28 @@ pub(crate) fn reflens_describe_spend_limits_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_verified_destination_numbers_output_output_next_token(
+    input: &crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_pool_origination_identities_output_output_next_token(
     input: &crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_registration_associations_output_output_next_token(
+    input: &crate::operation::list_registration_associations::ListRegistrationAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -189,6 +279,55 @@ pub(crate) fn lens_describe_pools_output_output_pools(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_registration_attachments_output_output_registration_attachments(
+    input: crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentsInformation>> {
+    let input = input.registration_attachments;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_registration_field_definitions_output_output_registration_field_definitions(
+    input: crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrationFieldDefinition>> {
+    let input = input.registration_field_definitions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_registration_field_values_output_output_registration_field_values(
+    input: crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrationFieldValueInformation>> {
+    let input = input.registration_field_values;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_registration_section_definitions_output_output_registration_section_definitions(
+    input: crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrationSectionDefinition>> {
+    let input = input.registration_section_definitions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_registration_type_definitions_output_output_registration_type_definitions(
+    input: crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeDefinition>> {
+    let input = input.registration_type_definitions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_registration_versions_output_output_registration_versions(
+    input: crate::operation::describe_registration_versions::DescribeRegistrationVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrationVersionInformation>> {
+    let input = input.registration_versions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_registrations_output_output_registrations(
+    input: crate::operation::describe_registrations::DescribeRegistrationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrationInformation>> {
+    let input = input.registrations;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_sender_ids_output_output_sender_ids(
     input: crate::operation::describe_sender_ids::DescribeSenderIdsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SenderIdInformation>> {
@@ -209,6 +348,13 @@ pub(crate) fn lens_describe_spend_limits_output_output_spend_limits(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_verified_destination_numbers_output_output_verified_destination_numbers(
+    input: crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberInformation>> {
+    let input = input.verified_destination_numbers;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_pool_origination_identities_output_output_origination_identities(
     input: crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OriginationIdentityMetadata>> {
@@ -216,5 +362,12 @@ pub(crate) fn lens_list_pool_origination_identities_output_output_origination_id
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_registration_associations_output_output_registration_associations(
+    input: crate::operation::list_registration_associations::ListRegistrationAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAssociationMetadata>> {
+    let input = input.registration_associations;
     ::std::option::Option::Some(input)
 }

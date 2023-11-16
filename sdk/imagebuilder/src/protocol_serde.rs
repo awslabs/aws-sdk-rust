@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_cancel_image_creation;
 
+pub(crate) mod shape_cancel_lifecycle_execution;
+
 pub(crate) mod shape_create_component;
 
 pub(crate) mod shape_create_container_recipe;
@@ -39,6 +41,8 @@ pub(crate) mod shape_create_image_recipe;
 
 pub(crate) mod shape_create_infrastructure_configuration;
 
+pub(crate) mod shape_create_lifecycle_policy;
+
 pub(crate) mod shape_delete_component;
 
 pub(crate) mod shape_delete_container_recipe;
@@ -52,6 +56,8 @@ pub(crate) mod shape_delete_image_pipeline;
 pub(crate) mod shape_delete_image_recipe;
 
 pub(crate) mod shape_delete_infrastructure_configuration;
+
+pub(crate) mod shape_delete_lifecycle_policy;
 
 pub(crate) mod shape_get_component;
 
@@ -74,6 +80,10 @@ pub(crate) mod shape_get_image_recipe;
 pub(crate) mod shape_get_image_recipe_policy;
 
 pub(crate) mod shape_get_infrastructure_configuration;
+
+pub(crate) mod shape_get_lifecycle_execution;
+
+pub(crate) mod shape_get_lifecycle_policy;
 
 pub(crate) mod shape_get_workflow_execution;
 
@@ -109,6 +119,12 @@ pub(crate) mod shape_list_images;
 
 pub(crate) mod shape_list_infrastructure_configurations;
 
+pub(crate) mod shape_list_lifecycle_execution_resources;
+
+pub(crate) mod shape_list_lifecycle_executions;
+
+pub(crate) mod shape_list_lifecycle_policies;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_workflow_executions;
@@ -125,6 +141,8 @@ pub(crate) mod shape_put_image_recipe_policy;
 
 pub(crate) mod shape_start_image_pipeline_execution;
 
+pub(crate) mod shape_start_resource_state_update;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -134,6 +152,8 @@ pub(crate) mod shape_update_distribution_configuration;
 pub(crate) mod shape_update_image_pipeline;
 
 pub(crate) mod shape_update_infrastructure_configuration;
+
+pub(crate) mod shape_update_lifecycle_policy;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -146,6 +166,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_call_rate_limit_exceeded_exception;
 
 pub(crate) mod shape_cancel_image_creation_input;
+
+pub(crate) mod shape_cancel_lifecycle_execution_input;
 
 pub(crate) mod shape_client_exception;
 
@@ -162,6 +184,8 @@ pub(crate) mod shape_create_image_pipeline_input;
 pub(crate) mod shape_create_image_recipe_input;
 
 pub(crate) mod shape_create_infrastructure_configuration_input;
+
+pub(crate) mod shape_create_lifecycle_policy_input;
 
 pub(crate) mod shape_forbidden_exception;
 
@@ -209,6 +233,12 @@ pub(crate) mod shape_list_images_input;
 
 pub(crate) mod shape_list_infrastructure_configurations_input;
 
+pub(crate) mod shape_list_lifecycle_execution_resources_input;
+
+pub(crate) mod shape_list_lifecycle_executions_input;
+
+pub(crate) mod shape_list_lifecycle_policies_input;
+
 pub(crate) mod shape_list_workflow_executions_input;
 
 pub(crate) mod shape_list_workflow_step_executions_input;
@@ -237,6 +267,8 @@ pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_start_image_pipeline_execution_input;
 
+pub(crate) mod shape_start_resource_state_update_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_distribution_configuration_input;
@@ -244,6 +276,8 @@ pub(crate) mod shape_update_distribution_configuration_input;
 pub(crate) mod shape_update_image_pipeline_input;
 
 pub(crate) mod shape_update_infrastructure_configuration_input;
+
+pub(crate) mod shape_update_lifecycle_policy_input;
 
 pub(crate) mod shape_additional_instance_configuration;
 
@@ -303,7 +337,29 @@ pub(crate) mod shape_instance_configuration;
 
 pub(crate) mod shape_instance_metadata_options;
 
+pub(crate) mod shape_lifecycle_execution;
+
+pub(crate) mod shape_lifecycle_execution_resource_list;
+
+pub(crate) mod shape_lifecycle_execution_state;
+
+pub(crate) mod shape_lifecycle_executions_list;
+
+pub(crate) mod shape_lifecycle_policy;
+
+pub(crate) mod shape_lifecycle_policy_detail;
+
+pub(crate) mod shape_lifecycle_policy_resource_selection;
+
+pub(crate) mod shape_lifecycle_policy_summary_list;
+
 pub(crate) mod shape_logging;
+
+pub(crate) mod shape_resource_state;
+
+pub(crate) mod shape_resource_state_update_exclusion_rules;
+
+pub(crate) mod shape_resource_state_update_include_resources;
 
 pub(crate) mod shape_schedule;
 
@@ -367,6 +423,24 @@ pub(crate) mod shape_instance_type_list;
 
 pub(crate) mod shape_launch_template_configuration;
 
+pub(crate) mod shape_lifecycle_execution_resource;
+
+pub(crate) mod shape_lifecycle_execution_resources_impacted_summary;
+
+pub(crate) mod shape_lifecycle_policy_detail_action;
+
+pub(crate) mod shape_lifecycle_policy_detail_exclusion_rules;
+
+pub(crate) mod shape_lifecycle_policy_detail_exclusion_rules_amis;
+
+pub(crate) mod shape_lifecycle_policy_detail_filter;
+
+pub(crate) mod shape_lifecycle_policy_details;
+
+pub(crate) mod shape_lifecycle_policy_resource_selection_recipe;
+
+pub(crate) mod shape_lifecycle_policy_summary;
+
 pub(crate) mod shape_os_version_list;
 
 pub(crate) mod shape_output_resources;
@@ -405,11 +479,25 @@ pub(crate) mod shape_inspector_score_details;
 
 pub(crate) mod shape_launch_permission_configuration;
 
+pub(crate) mod shape_lifecycle_execution_resource_action;
+
+pub(crate) mod shape_lifecycle_execution_resource_state;
+
+pub(crate) mod shape_lifecycle_execution_snapshot_resource_list;
+
+pub(crate) mod shape_lifecycle_policy_detail_action_include_resources;
+
+pub(crate) mod shape_lifecycle_policy_detail_exclusion_rules_amis_last_launched;
+
+pub(crate) mod shape_lifecycle_policy_resource_selection_recipes;
+
 pub(crate) mod shape_package_vulnerability_details;
 
 pub(crate) mod shape_region_list;
 
 pub(crate) mod shape_remediation;
+
+pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_vulnerability_id_aggregation;
 
@@ -431,13 +519,13 @@ pub(crate) mod shape_launch_template_configuration_list;
 
 pub(crate) mod shape_license_configuration_arn_list;
 
+pub(crate) mod shape_lifecycle_execution_snapshot_resource;
+
 pub(crate) mod shape_non_empty_string_list;
 
 pub(crate) mod shape_remediation_recommendation;
 
 pub(crate) mod shape_severity_counts;
-
-pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_vulnerability_id_list;
 

@@ -52,6 +52,12 @@ where
                                     .transpose()?,
                             );
                         }
+                        "IncludePermissions" => {
+                            builder = builder.set_include_permissions(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IncludeTags" => {
+                            builder = builder.set_include_tags(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

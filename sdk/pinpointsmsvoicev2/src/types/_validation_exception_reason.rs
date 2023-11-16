@@ -12,6 +12,7 @@
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
+///     ValidationExceptionReason::AttachmentTypeNotSupported => { /* ... */ },
 ///     ValidationExceptionReason::CannotAddOptedOutNumber => { /* ... */ },
 ///     ValidationExceptionReason::CannotParse => { /* ... */ },
 ///     ValidationExceptionReason::CountryCodeMismatch => { /* ... */ },
@@ -22,20 +23,33 @@
 ///     ValidationExceptionReason::InvalidIdentityForDestinationCountry => { /* ... */ },
 ///     ValidationExceptionReason::InvalidNextToken => { /* ... */ },
 ///     ValidationExceptionReason::InvalidParameter => { /* ... */ },
+///     ValidationExceptionReason::InvalidRegistrationAssociation => { /* ... */ },
+///     ValidationExceptionReason::InvalidRequest => { /* ... */ },
+///     ValidationExceptionReason::MaximumSizeExceeded => { /* ... */ },
 ///     ValidationExceptionReason::MissingParameter => { /* ... */ },
 ///     ValidationExceptionReason::Other => { /* ... */ },
 ///     ValidationExceptionReason::ParametersCannotBeUsedTogether => { /* ... */ },
 ///     ValidationExceptionReason::PhoneNumberCannotBeOptedIn => { /* ... */ },
 ///     ValidationExceptionReason::PhoneNumberCannotBeReleased => { /* ... */ },
 ///     ValidationExceptionReason::PriceOverThreshold => { /* ... */ },
+///     ValidationExceptionReason::RegistrationFieldCannotBeDeleted => { /* ... */ },
 ///     ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit => { /* ... */ },
+///     ValidationExceptionReason::ResourceNotAccessible => { /* ... */ },
 ///     ValidationExceptionReason::SenderIdNotRegistered => { /* ... */ },
 ///     ValidationExceptionReason::SenderIdNotSupported => { /* ... */ },
+///     ValidationExceptionReason::SenderIdRequiresRegistration => { /* ... */ },
+///     ValidationExceptionReason::TwoWayChannelNotPresent => { /* ... */ },
 ///     ValidationExceptionReason::TwoWayNotEnabled => { /* ... */ },
 ///     ValidationExceptionReason::TwoWayNotSupportedInCountry => { /* ... */ },
 ///     ValidationExceptionReason::TwoWayNotSupportedInRegion => { /* ... */ },
 ///     ValidationExceptionReason::TwoWayTopicNotPresent => { /* ... */ },
 ///     ValidationExceptionReason::UnknownOperation => { /* ... */ },
+///     ValidationExceptionReason::UnknownRegistrationField => { /* ... */ },
+///     ValidationExceptionReason::UnknownRegistrationSection => { /* ... */ },
+///     ValidationExceptionReason::UnknownRegistrationType => { /* ... */ },
+///     ValidationExceptionReason::UnknownRegistrationVersion => { /* ... */ },
+///     ValidationExceptionReason::VerificationCodeMismatch => { /* ... */ },
+///     ValidationExceptionReason::VoiceCapabilityNotAvailable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -64,6 +78,8 @@
 )]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    AttachmentTypeNotSupported,
+    #[allow(missing_docs)] // documentation missing in model
     CannotAddOptedOutNumber,
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -84,6 +100,12 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidParameter,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidRegistrationAssociation,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    MaximumSizeExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     MissingParameter,
     #[allow(missing_docs)] // documentation missing in model
     Other,
@@ -96,11 +118,19 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     PriceOverThreshold,
     #[allow(missing_docs)] // documentation missing in model
+    RegistrationFieldCannotBeDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     RequestedSpendLimitHigherThanServiceLimit,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotAccessible,
     #[allow(missing_docs)] // documentation missing in model
     SenderIdNotRegistered,
     #[allow(missing_docs)] // documentation missing in model
     SenderIdNotSupported,
+    #[allow(missing_docs)] // documentation missing in model
+    SenderIdRequiresRegistration,
+    #[allow(missing_docs)] // documentation missing in model
+    TwoWayChannelNotPresent,
     #[allow(missing_docs)] // documentation missing in model
     TwoWayNotEnabled,
     #[allow(missing_docs)] // documentation missing in model
@@ -111,6 +141,18 @@ pub enum ValidationExceptionReason {
     TwoWayTopicNotPresent,
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
+    #[allow(missing_docs)] // documentation missing in model
+    UnknownRegistrationField,
+    #[allow(missing_docs)] // documentation missing in model
+    UnknownRegistrationSection,
+    #[allow(missing_docs)] // documentation missing in model
+    UnknownRegistrationType,
+    #[allow(missing_docs)] // documentation missing in model
+    UnknownRegistrationVersion,
+    #[allow(missing_docs)] // documentation missing in model
+    VerificationCodeMismatch,
+    #[allow(missing_docs)] // documentation missing in model
+    VoiceCapabilityNotAvailable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -118,6 +160,7 @@ pub enum ValidationExceptionReason {
 impl ::std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "ATTACHMENT_TYPE_NOT_SUPPORTED" => ValidationExceptionReason::AttachmentTypeNotSupported,
             "CANNOT_ADD_OPTED_OUT_NUMBER" => ValidationExceptionReason::CannotAddOptedOutNumber,
             "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
             "COUNTRY_CODE_MISMATCH" => ValidationExceptionReason::CountryCodeMismatch,
@@ -128,20 +171,33 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY" => ValidationExceptionReason::InvalidIdentityForDestinationCountry,
             "INVALID_NEXT_TOKEN" => ValidationExceptionReason::InvalidNextToken,
             "INVALID_PARAMETER" => ValidationExceptionReason::InvalidParameter,
+            "INVALID_REGISTRATION_ASSOCIATION" => ValidationExceptionReason::InvalidRegistrationAssociation,
+            "INVALID_REQUEST" => ValidationExceptionReason::InvalidRequest,
+            "MAXIMUM_SIZE_EXCEEDED" => ValidationExceptionReason::MaximumSizeExceeded,
             "MISSING_PARAMETER" => ValidationExceptionReason::MissingParameter,
             "OTHER" => ValidationExceptionReason::Other,
             "PARAMETERS_CANNOT_BE_USED_TOGETHER" => ValidationExceptionReason::ParametersCannotBeUsedTogether,
             "PHONE_NUMBER_CANNOT_BE_OPTED_IN" => ValidationExceptionReason::PhoneNumberCannotBeOptedIn,
             "PHONE_NUMBER_CANNOT_BE_RELEASED" => ValidationExceptionReason::PhoneNumberCannotBeReleased,
             "PRICE_OVER_THRESHOLD" => ValidationExceptionReason::PriceOverThreshold,
+            "REGISTRATION_FIELD_CANNOT_BE_DELETED" => ValidationExceptionReason::RegistrationFieldCannotBeDeleted,
             "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT" => ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit,
+            "RESOURCE_NOT_ACCESSIBLE" => ValidationExceptionReason::ResourceNotAccessible,
             "SENDER_ID_NOT_REGISTERED" => ValidationExceptionReason::SenderIdNotRegistered,
             "SENDER_ID_NOT_SUPPORTED" => ValidationExceptionReason::SenderIdNotSupported,
+            "SENDER_ID_REQUIRES_REGISTRATION" => ValidationExceptionReason::SenderIdRequiresRegistration,
+            "TWO_WAY_CHANNEL_NOT_PRESENT" => ValidationExceptionReason::TwoWayChannelNotPresent,
             "TWO_WAY_NOT_ENABLED" => ValidationExceptionReason::TwoWayNotEnabled,
             "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY" => ValidationExceptionReason::TwoWayNotSupportedInCountry,
             "TWO_WAY_NOT_SUPPORTED_IN_REGION" => ValidationExceptionReason::TwoWayNotSupportedInRegion,
             "TWO_WAY_TOPIC_NOT_PRESENT" => ValidationExceptionReason::TwoWayTopicNotPresent,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
+            "UNKNOWN_REGISTRATION_FIELD" => ValidationExceptionReason::UnknownRegistrationField,
+            "UNKNOWN_REGISTRATION_SECTION" => ValidationExceptionReason::UnknownRegistrationSection,
+            "UNKNOWN_REGISTRATION_TYPE" => ValidationExceptionReason::UnknownRegistrationType,
+            "UNKNOWN_REGISTRATION_VERSION" => ValidationExceptionReason::UnknownRegistrationVersion,
+            "VERIFICATION_CODE_MISMATCH" => ValidationExceptionReason::VerificationCodeMismatch,
+            "VOICE_CAPABILITY_NOT_AVAILABLE" => ValidationExceptionReason::VoiceCapabilityNotAvailable,
             other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -157,6 +213,7 @@ impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ValidationExceptionReason::AttachmentTypeNotSupported => "ATTACHMENT_TYPE_NOT_SUPPORTED",
             ValidationExceptionReason::CannotAddOptedOutNumber => "CANNOT_ADD_OPTED_OUT_NUMBER",
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
             ValidationExceptionReason::CountryCodeMismatch => "COUNTRY_CODE_MISMATCH",
@@ -167,26 +224,40 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidIdentityForDestinationCountry => "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY",
             ValidationExceptionReason::InvalidNextToken => "INVALID_NEXT_TOKEN",
             ValidationExceptionReason::InvalidParameter => "INVALID_PARAMETER",
+            ValidationExceptionReason::InvalidRegistrationAssociation => "INVALID_REGISTRATION_ASSOCIATION",
+            ValidationExceptionReason::InvalidRequest => "INVALID_REQUEST",
+            ValidationExceptionReason::MaximumSizeExceeded => "MAXIMUM_SIZE_EXCEEDED",
             ValidationExceptionReason::MissingParameter => "MISSING_PARAMETER",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::ParametersCannotBeUsedTogether => "PARAMETERS_CANNOT_BE_USED_TOGETHER",
             ValidationExceptionReason::PhoneNumberCannotBeOptedIn => "PHONE_NUMBER_CANNOT_BE_OPTED_IN",
             ValidationExceptionReason::PhoneNumberCannotBeReleased => "PHONE_NUMBER_CANNOT_BE_RELEASED",
             ValidationExceptionReason::PriceOverThreshold => "PRICE_OVER_THRESHOLD",
+            ValidationExceptionReason::RegistrationFieldCannotBeDeleted => "REGISTRATION_FIELD_CANNOT_BE_DELETED",
             ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit => "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT",
+            ValidationExceptionReason::ResourceNotAccessible => "RESOURCE_NOT_ACCESSIBLE",
             ValidationExceptionReason::SenderIdNotRegistered => "SENDER_ID_NOT_REGISTERED",
             ValidationExceptionReason::SenderIdNotSupported => "SENDER_ID_NOT_SUPPORTED",
+            ValidationExceptionReason::SenderIdRequiresRegistration => "SENDER_ID_REQUIRES_REGISTRATION",
+            ValidationExceptionReason::TwoWayChannelNotPresent => "TWO_WAY_CHANNEL_NOT_PRESENT",
             ValidationExceptionReason::TwoWayNotEnabled => "TWO_WAY_NOT_ENABLED",
             ValidationExceptionReason::TwoWayNotSupportedInCountry => "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY",
             ValidationExceptionReason::TwoWayNotSupportedInRegion => "TWO_WAY_NOT_SUPPORTED_IN_REGION",
             ValidationExceptionReason::TwoWayTopicNotPresent => "TWO_WAY_TOPIC_NOT_PRESENT",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
+            ValidationExceptionReason::UnknownRegistrationField => "UNKNOWN_REGISTRATION_FIELD",
+            ValidationExceptionReason::UnknownRegistrationSection => "UNKNOWN_REGISTRATION_SECTION",
+            ValidationExceptionReason::UnknownRegistrationType => "UNKNOWN_REGISTRATION_TYPE",
+            ValidationExceptionReason::UnknownRegistrationVersion => "UNKNOWN_REGISTRATION_VERSION",
+            ValidationExceptionReason::VerificationCodeMismatch => "VERIFICATION_CODE_MISMATCH",
+            ValidationExceptionReason::VoiceCapabilityNotAvailable => "VOICE_CAPABILITY_NOT_AVAILABLE",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ATTACHMENT_TYPE_NOT_SUPPORTED",
             "CANNOT_ADD_OPTED_OUT_NUMBER",
             "CANNOT_PARSE",
             "COUNTRY_CODE_MISMATCH",
@@ -197,20 +268,33 @@ impl ValidationExceptionReason {
             "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY",
             "INVALID_NEXT_TOKEN",
             "INVALID_PARAMETER",
+            "INVALID_REGISTRATION_ASSOCIATION",
+            "INVALID_REQUEST",
+            "MAXIMUM_SIZE_EXCEEDED",
             "MISSING_PARAMETER",
             "OTHER",
             "PARAMETERS_CANNOT_BE_USED_TOGETHER",
             "PHONE_NUMBER_CANNOT_BE_OPTED_IN",
             "PHONE_NUMBER_CANNOT_BE_RELEASED",
             "PRICE_OVER_THRESHOLD",
+            "REGISTRATION_FIELD_CANNOT_BE_DELETED",
             "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT",
+            "RESOURCE_NOT_ACCESSIBLE",
             "SENDER_ID_NOT_REGISTERED",
             "SENDER_ID_NOT_SUPPORTED",
+            "SENDER_ID_REQUIRES_REGISTRATION",
+            "TWO_WAY_CHANNEL_NOT_PRESENT",
             "TWO_WAY_NOT_ENABLED",
             "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY",
             "TWO_WAY_NOT_SUPPORTED_IN_REGION",
             "TWO_WAY_TOPIC_NOT_PRESENT",
             "UNKNOWN_OPERATION",
+            "UNKNOWN_REGISTRATION_FIELD",
+            "UNKNOWN_REGISTRATION_SECTION",
+            "UNKNOWN_REGISTRATION_TYPE",
+            "UNKNOWN_REGISTRATION_VERSION",
+            "VERIFICATION_CODE_MISMATCH",
+            "VOICE_CAPABILITY_NOT_AVAILABLE",
         ]
     }
 }

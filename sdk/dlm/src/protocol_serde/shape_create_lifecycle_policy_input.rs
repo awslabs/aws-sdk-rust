@@ -3,30 +3,69 @@ pub fn ser_create_lifecycle_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_1) = &input.copy_tags {
+        object.key("CopyTags").boolean(*var_1);
     }
-    if let Some(var_2) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_2.as_str());
+    if let Some(var_2) = &input.create_interval {
+        object.key("CreateInterval").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
     }
-    if let Some(var_3) = &input.policy_details {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("PolicyDetails").start_object();
-        crate::protocol_serde::shape_policy_details::ser_policy_details(&mut object_4, var_3)?;
-        object_4.finish();
-    }
-    if let Some(var_5) = &input.state {
-        object.key("State").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("Tags").start_object();
-        for (key_8, value_9) in var_6 {
+    if let Some(var_3) = &input.cross_region_copy_targets {
+        let mut array_4 = object.key("CrossRegionCopyTargets").start_array();
+        for item_5 in var_3 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_cross_region_copy_target::ser_cross_region_copy_target(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        object_7.finish();
+        array_4.finish();
+    }
+    if let Some(var_7) = &input.default_policy {
+        object.key("DefaultPolicy").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.description {
+        object.key("Description").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.exclusions {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("Exclusions").start_object();
+        crate::protocol_serde::shape_exclusions::ser_exclusions(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.execution_role_arn {
+        object.key("ExecutionRoleArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.extend_deletion {
+        object.key("ExtendDeletion").boolean(*var_12);
+    }
+    if let Some(var_13) = &input.policy_details {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("PolicyDetails").start_object();
+        crate::protocol_serde::shape_policy_details::ser_policy_details(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.retain_interval {
+        object.key("RetainInterval").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
+    }
+    if let Some(var_16) = &input.state {
+        object.key("State").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("Tags").start_object();
+        for (key_19, value_20) in var_17 {
+            {
+                object_18.key(key_19.as_str()).string(value_20.as_str());
+            }
+        }
+        object_18.finish();
     }
     Ok(())
 }

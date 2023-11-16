@@ -14,7 +14,7 @@ impl super::Client {
     /// - On success, responds with [`ImportVmImageOutput`](crate::operation::import_vm_image::ImportVmImageOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::import_vm_image::ImportVmImageOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_arn(Option<String>)`](crate::operation::import_vm_image::ImportVmImageOutput::image_arn): <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
-    ///   - [`client_token(Option<String>)`](crate::operation::import_vm_image::ImportVmImageOutput::client_token): <p>The idempotency token that was used for this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::operation::import_vm_image::ImportVmImageOutput::client_token): <p>The client token that uniquely identifies the request.</p>
     /// - On failure, responds with [`SdkError<ImportVmImageError>`](crate::operation::import_vm_image::ImportVmImageError)
     pub fn import_vm_image(&self) -> crate::operation::import_vm_image::builders::ImportVmImageFluentBuilder {
         crate::operation::import_vm_image::builders::ImportVmImageFluentBuilder::new(self.handle.clone())

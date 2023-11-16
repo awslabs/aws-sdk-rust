@@ -13,6 +13,7 @@
 /// # let requestablenumbertype = unimplemented!();
 /// match requestablenumbertype {
 ///     RequestableNumberType::LongCode => { /* ... */ },
+///     RequestableNumberType::Simulator => { /* ... */ },
 ///     RequestableNumberType::TenDlc => { /* ... */ },
 ///     RequestableNumberType::TollFree => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum RequestableNumberType {
     #[allow(missing_docs)] // documentation missing in model
     LongCode,
     #[allow(missing_docs)] // documentation missing in model
+    Simulator,
+    #[allow(missing_docs)] // documentation missing in model
     TenDlc,
     #[allow(missing_docs)] // documentation missing in model
     TollFree,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for RequestableNumberType {
     fn from(s: &str) -> Self {
         match s {
             "LONG_CODE" => RequestableNumberType::LongCode,
+            "SIMULATOR" => RequestableNumberType::Simulator,
             "TEN_DLC" => RequestableNumberType::TenDlc,
             "TOLL_FREE" => RequestableNumberType::TollFree,
             other => RequestableNumberType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl RequestableNumberType {
     pub fn as_str(&self) -> &str {
         match self {
             RequestableNumberType::LongCode => "LONG_CODE",
+            RequestableNumberType::Simulator => "SIMULATOR",
             RequestableNumberType::TenDlc => "TEN_DLC",
             RequestableNumberType::TollFree => "TOLL_FREE",
             RequestableNumberType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl RequestableNumberType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LONG_CODE", "TEN_DLC", "TOLL_FREE"]
+        &["LONG_CODE", "SIMULATOR", "TEN_DLC", "TOLL_FREE"]
     }
 }
 impl ::std::convert::AsRef<str> for RequestableNumberType {

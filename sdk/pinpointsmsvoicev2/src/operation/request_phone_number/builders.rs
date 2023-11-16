@@ -168,17 +168,17 @@ impl RequestPhoneNumberFluentBuilder {
     pub fn get_number_type(&self) -> &::std::option::Option<crate::types::RequestableNumberType> {
         self.inner.get_number_type()
     }
-    /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
+    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p>
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
-    /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
+    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
-    /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
+    /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_opt_out_list_name()
     }

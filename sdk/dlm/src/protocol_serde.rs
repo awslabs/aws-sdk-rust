@@ -61,6 +61,10 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_lifecycle_policy_input;
 
+pub(crate) mod shape_cross_region_copy_target;
+
+pub(crate) mod shape_exclusions;
+
 pub(crate) mod shape_lifecycle_policy;
 
 pub(crate) mod shape_lifecycle_policy_summary_list;
@@ -95,6 +99,8 @@ pub(crate) mod shape_cross_region_copy_action;
 
 pub(crate) mod shape_cross_region_copy_rule;
 
+pub(crate) mod shape_cross_region_copy_target_list;
+
 pub(crate) mod shape_deprecate_rule;
 
 pub(crate) mod shape_event_parameters;
@@ -122,6 +128,10 @@ pub(crate) mod shape_cross_region_copy_retain_rule;
 pub(crate) mod shape_encryption_configuration;
 
 pub(crate) mod shape_exclude_data_volume_tag_list;
+
+pub(crate) mod shape_exclude_tags_list;
+
+pub(crate) mod shape_exclude_volume_types_list;
 
 pub(crate) mod shape_script;
 

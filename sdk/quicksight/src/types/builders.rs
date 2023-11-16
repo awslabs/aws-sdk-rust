@@ -1037,6 +1037,8 @@ pub use crate::types::_data_source_credentials::DataSourceCredentialsBuilder;
 
 pub use crate::types::_credential_pair::CredentialPairBuilder;
 
+pub use crate::types::_big_query_parameters::BigQueryParametersBuilder;
+
 pub use crate::types::_trino_parameters::TrinoParametersBuilder;
 
 pub use crate::types::_starburst_parameters::StarburstParametersBuilder;
@@ -1243,6 +1245,38 @@ pub use crate::types::_snapshot_anonymous_user::SnapshotAnonymousUserBuilder;
 
 pub use crate::types::_session_tag::SessionTagBuilder;
 
+pub use crate::types::_asset_bundle_import_job_override_validation_strategy::AssetBundleImportJobOverrideValidationStrategyBuilder;
+
+pub use crate::types::_asset_bundle_import_job_override_tags::AssetBundleImportJobOverrideTagsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_dashboard_override_tags::AssetBundleImportJobDashboardOverrideTagsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_analysis_override_tags::AssetBundleImportJobAnalysisOverrideTagsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_theme_override_tags::AssetBundleImportJobThemeOverrideTagsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_set_override_tags::AssetBundleImportJobDataSetOverrideTagsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_source_override_tags::AssetBundleImportJobDataSourceOverrideTagsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_vpc_connection_override_tags::AssetBundleImportJobVpcConnectionOverrideTagsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_override_permissions::AssetBundleImportJobOverridePermissionsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_dashboard_override_permissions::AssetBundleImportJobDashboardOverridePermissionsBuilder;
+
+pub use crate::types::_asset_bundle_resource_link_sharing_configuration::AssetBundleResourceLinkSharingConfigurationBuilder;
+
+pub use crate::types::_asset_bundle_resource_permissions::AssetBundleResourcePermissionsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_analysis_override_permissions::AssetBundleImportJobAnalysisOverridePermissionsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_theme_override_permissions::AssetBundleImportJobThemeOverridePermissionsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_set_override_permissions::AssetBundleImportJobDataSetOverridePermissionsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_source_override_permissions::AssetBundleImportJobDataSourceOverridePermissionsBuilder;
+
 pub use crate::types::_asset_bundle_import_job_override_parameters::AssetBundleImportJobOverrideParametersBuilder;
 
 pub use crate::types::_asset_bundle_import_job_dashboard_override_parameters::AssetBundleImportJobDashboardOverrideParametersBuilder;
@@ -1266,6 +1300,8 @@ pub use crate::types::_asset_bundle_import_job_vpc_connection_override_parameter
 pub use crate::types::_asset_bundle_import_job_resource_id_override_configuration::AssetBundleImportJobResourceIdOverrideConfigurationBuilder;
 
 pub use crate::types::_asset_bundle_import_source::AssetBundleImportSourceBuilder;
+
+pub use crate::types::_asset_bundle_export_job_validation_strategy::AssetBundleExportJobValidationStrategyBuilder;
 
 pub use crate::types::_asset_bundle_cloud_formation_override_property_configuration::AssetBundleCloudFormationOverridePropertyConfigurationBuilder;
 
@@ -1442,6 +1478,8 @@ pub use crate::types::_dashboard_version::DashboardVersionBuilder;
 pub use crate::types::_asset_bundle_import_source_description::AssetBundleImportSourceDescriptionBuilder;
 
 pub use crate::types::_asset_bundle_import_job_error::AssetBundleImportJobErrorBuilder;
+
+pub use crate::types::_asset_bundle_export_job_warning::AssetBundleExportJobWarningBuilder;
 
 pub use crate::types::_asset_bundle_export_job_error::AssetBundleExportJobErrorBuilder;
 

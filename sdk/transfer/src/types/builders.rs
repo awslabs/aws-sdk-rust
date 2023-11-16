@@ -3,6 +3,8 @@ pub use crate::types::_posix_profile::PosixProfileBuilder;
 
 pub use crate::types::_home_directory_map_entry::HomeDirectoryMapEntryBuilder;
 
+pub use crate::types::_s3_storage_options::S3StorageOptionsBuilder;
+
 pub use crate::types::_workflow_details::WorkflowDetailsBuilder;
 
 pub use crate::types::_workflow_detail::WorkflowDetailBuilder;

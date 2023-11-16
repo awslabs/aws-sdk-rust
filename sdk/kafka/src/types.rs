@@ -113,6 +113,8 @@ pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_provisioned::Provisioned;
 
+pub use crate::types::_customer_action_status::CustomerActionStatus;
+
 pub use crate::types::_broker_node_group_info::BrokerNodeGroupInfo;
 
 pub use crate::types::_storage_info::StorageInfo;
@@ -250,6 +252,8 @@ mod _connectivity_info;
 mod _consumer_group_replication;
 
 mod _consumer_group_replication_update;
+
+mod _customer_action_status;
 
 mod _ebs_storage_info;
 

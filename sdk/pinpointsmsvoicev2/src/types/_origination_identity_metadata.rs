@@ -12,6 +12,8 @@ pub struct OriginationIdentityMetadata {
     pub iso_country_code: ::std::string::String,
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
     pub number_capabilities: ::std::vec::Vec<crate::types::NumberCapability>,
+    /// <p>The phone number in E.164 format.</p>
+    pub phone_number: ::std::option::Option<::std::string::String>,
 }
 impl OriginationIdentityMetadata {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
@@ -34,6 +36,10 @@ impl OriginationIdentityMetadata {
         use std::ops::Deref;
         self.number_capabilities.deref()
     }
+    /// <p>The phone number in E.164 format.</p>
+    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
 }
 impl OriginationIdentityMetadata {
     /// Creates a new builder-style object to manufacture [`OriginationIdentityMetadata`](crate::types::OriginationIdentityMetadata).
@@ -50,6 +56,7 @@ pub struct OriginationIdentityMetadataBuilder {
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,
     pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,
     pub(crate) number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
+    pub(crate) phone_number: ::std::option::Option<::std::string::String>,
 }
 impl OriginationIdentityMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
@@ -117,6 +124,20 @@ impl OriginationIdentityMetadataBuilder {
     pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
         &self.number_capabilities
     }
+    /// <p>The phone number in E.164 format.</p>
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The phone number in E.164 format.</p>
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.phone_number = input;
+        self
+    }
+    /// <p>The phone number in E.164 format.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// Consumes the builder and constructs a [`OriginationIdentityMetadata`](crate::types::OriginationIdentityMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`origination_identity_arn`](crate::types::builders::OriginationIdentityMetadataBuilder::origination_identity_arn)
@@ -149,6 +170,7 @@ impl OriginationIdentityMetadataBuilder {
                     "number_capabilities was not specified but it is required when building OriginationIdentityMetadata",
                 )
             })?,
+            phone_number: self.phone_number,
         })
     }
 }

@@ -5,7 +5,7 @@
 pub struct ListImageScanFindingAggregationsInput {
     /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
     pub filter: ::std::option::Option<crate::types::Filter>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImageScanFindingAggregationsInput {
@@ -13,7 +13,7 @@ impl ListImageScanFindingAggregationsInput {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::Filter> {
         self.filter.as_ref()
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,17 +47,17 @@ impl ListImageScanFindingAggregationsInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
         &self.filter
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

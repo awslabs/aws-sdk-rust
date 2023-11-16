@@ -8,8 +8,8 @@ pub struct SimpleScopeTerm {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - EQ (equals) or NE (not equals)</p></li>
     /// <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-    /// <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
+    /// <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
     /// </ul>
     pub comparator: ::std::option::Option<crate::types::JobComparator>,
     /// <p>The object property to use in the condition.</p>
@@ -19,7 +19,7 @@ pub struct SimpleScopeTerm {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf</p></li>
     /// <li><p>OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z</p></li>
     /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
@@ -30,8 +30,8 @@ impl SimpleScopeTerm {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - EQ (equals) or NE (not equals)</p></li>
     /// <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-    /// <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
+    /// <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
     /// </ul>
     pub fn comparator(&self) -> ::std::option::Option<&crate::types::JobComparator> {
         self.comparator.as_ref()
@@ -45,7 +45,7 @@ impl SimpleScopeTerm {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf</p></li>
     /// <li><p>OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z</p></li>
     /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
@@ -75,8 +75,8 @@ impl SimpleScopeTermBuilder {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - EQ (equals) or NE (not equals)</p></li>
     /// <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-    /// <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
+    /// <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
     /// </ul>
     pub fn comparator(mut self, input: crate::types::JobComparator) -> Self {
         self.comparator = ::std::option::Option::Some(input);
@@ -86,8 +86,8 @@ impl SimpleScopeTermBuilder {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - EQ (equals) or NE (not equals)</p></li>
     /// <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-    /// <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
+    /// <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
     /// </ul>
     pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::JobComparator>) -> Self {
         self.comparator = input;
@@ -97,8 +97,8 @@ impl SimpleScopeTermBuilder {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - EQ (equals) or NE (not equals)</p></li>
     /// <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-    /// <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
+    /// <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
     /// </ul>
     pub fn get_comparator(&self) -> &::std::option::Option<crate::types::JobComparator> {
         &self.comparator
@@ -126,7 +126,7 @@ impl SimpleScopeTermBuilder {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf</p></li>
     /// <li><p>OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z</p></li>
     /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
@@ -141,7 +141,7 @@ impl SimpleScopeTermBuilder {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf</p></li>
     /// <li><p>OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z</p></li>
     /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
@@ -154,7 +154,7 @@ impl SimpleScopeTermBuilder {
     /// <ul>
     /// <li><p>OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf</p></li>
     /// <li><p>OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.</p></li>
-    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z</p></li>
+    /// <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z</p></li>
     /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>

@@ -317,6 +317,8 @@ pub use crate::types::_resolved_targets::ResolvedTargets;
 
 pub use crate::types::_step_execution::StepExecution;
 
+pub use crate::types::_parent_step_details::ParentStepDetails;
+
 pub use crate::types::_failure_details::FailureDetails;
 
 pub use crate::types::_automation_execution_status::AutomationExecutionStatus;
@@ -828,6 +830,8 @@ mod _parameter_type;
 mod _parameters_filter;
 
 mod _parameters_filter_key;
+
+mod _parent_step_details;
 
 mod _patch;
 

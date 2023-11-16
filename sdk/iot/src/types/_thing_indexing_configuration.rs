@@ -37,7 +37,13 @@ pub struct ThingIndexingConfiguration {
     pub managed_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     /// <p>Contains custom field names and their data type.</p>
     pub custom_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
-    /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+    /// <p>Provides additional selections for named shadows and geolocation data. </p>
+    /// <p>To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in <code>namedShadowNames</code> filter.</p>
+    /// <p>To add geolocation data to your fleet indexing configuration: </p>
+    /// <ul>
+    /// <li> <p>If you store geolocation data in a class/unnamed shadow, set <code>thingIndexingMode</code> to be <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in <code>geoLocations</code> filter. </p> </li>
+    /// <li> <p>If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code> to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter, and specify your geolocation data in <code>geoLocations</code> filter. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing fleet indexing</a>.</p> </li>
+    /// </ul>
     pub filter: ::std::option::Option<crate::types::IndexingFilter>,
 }
 impl ThingIndexingConfiguration {
@@ -90,7 +96,13 @@ impl ThingIndexingConfiguration {
     pub fn custom_fields(&self) -> &[crate::types::Field] {
         self.custom_fields.as_deref().unwrap_or_default()
     }
-    /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+    /// <p>Provides additional selections for named shadows and geolocation data. </p>
+    /// <p>To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in <code>namedShadowNames</code> filter.</p>
+    /// <p>To add geolocation data to your fleet indexing configuration: </p>
+    /// <ul>
+    /// <li> <p>If you store geolocation data in a class/unnamed shadow, set <code>thingIndexingMode</code> to be <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in <code>geoLocations</code> filter. </p> </li>
+    /// <li> <p>If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code> to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter, and specify your geolocation data in <code>geoLocations</code> filter. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing fleet indexing</a>.</p> </li>
+    /// </ul>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::IndexingFilter> {
         self.filter.as_ref()
     }
@@ -275,17 +287,35 @@ impl ThingIndexingConfigurationBuilder {
     pub fn get_custom_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
         &self.custom_fields
     }
-    /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+    /// <p>Provides additional selections for named shadows and geolocation data. </p>
+    /// <p>To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in <code>namedShadowNames</code> filter.</p>
+    /// <p>To add geolocation data to your fleet indexing configuration: </p>
+    /// <ul>
+    /// <li> <p>If you store geolocation data in a class/unnamed shadow, set <code>thingIndexingMode</code> to be <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in <code>geoLocations</code> filter. </p> </li>
+    /// <li> <p>If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code> to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter, and specify your geolocation data in <code>geoLocations</code> filter. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing fleet indexing</a>.</p> </li>
+    /// </ul>
     pub fn filter(mut self, input: crate::types::IndexingFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+    /// <p>Provides additional selections for named shadows and geolocation data. </p>
+    /// <p>To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in <code>namedShadowNames</code> filter.</p>
+    /// <p>To add geolocation data to your fleet indexing configuration: </p>
+    /// <ul>
+    /// <li> <p>If you store geolocation data in a class/unnamed shadow, set <code>thingIndexingMode</code> to be <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in <code>geoLocations</code> filter. </p> </li>
+    /// <li> <p>If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code> to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter, and specify your geolocation data in <code>geoLocations</code> filter. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing fleet indexing</a>.</p> </li>
+    /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::IndexingFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+    /// <p>Provides additional selections for named shadows and geolocation data. </p>
+    /// <p>To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in <code>namedShadowNames</code> filter.</p>
+    /// <p>To add geolocation data to your fleet indexing configuration: </p>
+    /// <ul>
+    /// <li> <p>If you store geolocation data in a class/unnamed shadow, set <code>thingIndexingMode</code> to be <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in <code>geoLocations</code> filter. </p> </li>
+    /// <li> <p>If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code> to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter, and specify your geolocation data in <code>geoLocations</code> filter. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing fleet indexing</a>.</p> </li>
+    /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::IndexingFilter> {
         &self.filter
     }

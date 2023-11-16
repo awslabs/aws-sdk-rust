@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateReplicationSet`](crate::operation::create_replication_set) operation has
-/// a [`Client::create_replication_set`], function which returns a builder for that operation.
+/// For example, the [`BatchGetIncidentFindings`](crate::operation::batch_get_incident_findings) operation has
+/// a [`Client::batch_get_incident_findings`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_replication_set()
-///     .client_token("example")
+/// let result = client.batch_get_incident_findings()
+///     .incident_record_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod batch_get_incident_findings;
+
 mod create_replication_set;
 
 mod create_response_plan;
@@ -153,7 +155,7 @@ mod create_timeline_event;
 /// # let client: aws_sdk_ssmincidents::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_replication_set()
+/// let result = client.batch_get_incident_findings()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -188,6 +190,8 @@ mod get_resource_policies;
 mod get_response_plan;
 
 mod get_timeline_event;
+
+mod list_incident_findings;
 
 mod list_incident_records;
 

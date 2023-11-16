@@ -10,17 +10,47 @@ pub mod attach_managed_policy_to_permission_set;
 /// Types for the `CreateAccountAssignment` operation.
 pub mod create_account_assignment;
 
+/// Types for the `CreateApplication` operation.
+pub mod create_application;
+
+/// Types for the `CreateApplicationAssignment` operation.
+pub mod create_application_assignment;
+
+/// Types for the `CreateInstance` operation.
+pub mod create_instance;
+
 /// Types for the `CreateInstanceAccessControlAttributeConfiguration` operation.
 pub mod create_instance_access_control_attribute_configuration;
 
 /// Types for the `CreatePermissionSet` operation.
 pub mod create_permission_set;
 
+/// Types for the `CreateTrustedTokenIssuer` operation.
+pub mod create_trusted_token_issuer;
+
 /// Types for the `DeleteAccountAssignment` operation.
 pub mod delete_account_assignment;
 
+/// Types for the `DeleteApplication` operation.
+pub mod delete_application;
+
+/// Types for the `DeleteApplicationAccessScope` operation.
+pub mod delete_application_access_scope;
+
+/// Types for the `DeleteApplicationAssignment` operation.
+pub mod delete_application_assignment;
+
+/// Types for the `DeleteApplicationAuthenticationMethod` operation.
+pub mod delete_application_authentication_method;
+
+/// Types for the `DeleteApplicationGrant` operation.
+pub mod delete_application_grant;
+
 /// Types for the `DeleteInlinePolicyFromPermissionSet` operation.
 pub mod delete_inline_policy_from_permission_set;
+
+/// Types for the `DeleteInstance` operation.
+pub mod delete_instance;
 
 /// Types for the `DeleteInstanceAccessControlAttributeConfiguration` operation.
 pub mod delete_instance_access_control_attribute_configuration;
@@ -31,11 +61,26 @@ pub mod delete_permission_set;
 /// Types for the `DeletePermissionsBoundaryFromPermissionSet` operation.
 pub mod delete_permissions_boundary_from_permission_set;
 
+/// Types for the `DeleteTrustedTokenIssuer` operation.
+pub mod delete_trusted_token_issuer;
+
 /// Types for the `DescribeAccountAssignmentCreationStatus` operation.
 pub mod describe_account_assignment_creation_status;
 
 /// Types for the `DescribeAccountAssignmentDeletionStatus` operation.
 pub mod describe_account_assignment_deletion_status;
+
+/// Types for the `DescribeApplication` operation.
+pub mod describe_application;
+
+/// Types for the `DescribeApplicationAssignment` operation.
+pub mod describe_application_assignment;
+
+/// Types for the `DescribeApplicationProvider` operation.
+pub mod describe_application_provider;
+
+/// Types for the `DescribeInstance` operation.
+pub mod describe_instance;
 
 /// Types for the `DescribeInstanceAccessControlAttributeConfiguration` operation.
 pub mod describe_instance_access_control_attribute_configuration;
@@ -46,11 +91,26 @@ pub mod describe_permission_set;
 /// Types for the `DescribePermissionSetProvisioningStatus` operation.
 pub mod describe_permission_set_provisioning_status;
 
+/// Types for the `DescribeTrustedTokenIssuer` operation.
+pub mod describe_trusted_token_issuer;
+
 /// Types for the `DetachCustomerManagedPolicyReferenceFromPermissionSet` operation.
 pub mod detach_customer_managed_policy_reference_from_permission_set;
 
 /// Types for the `DetachManagedPolicyFromPermissionSet` operation.
 pub mod detach_managed_policy_from_permission_set;
+
+/// Types for the `GetApplicationAccessScope` operation.
+pub mod get_application_access_scope;
+
+/// Types for the `GetApplicationAssignmentConfiguration` operation.
+pub mod get_application_assignment_configuration;
+
+/// Types for the `GetApplicationAuthenticationMethod` operation.
+pub mod get_application_authentication_method;
+
+/// Types for the `GetApplicationGrant` operation.
+pub mod get_application_grant;
 
 /// Types for the `GetInlinePolicyForPermissionSet` operation.
 pub mod get_inline_policy_for_permission_set;
@@ -67,8 +127,32 @@ pub mod list_account_assignment_deletion_status;
 /// Types for the `ListAccountAssignments` operation.
 pub mod list_account_assignments;
 
+/// Types for the `ListAccountAssignmentsForPrincipal` operation.
+pub mod list_account_assignments_for_principal;
+
 /// Types for the `ListAccountsForProvisionedPermissionSet` operation.
 pub mod list_accounts_for_provisioned_permission_set;
+
+/// Types for the `ListApplicationAccessScopes` operation.
+pub mod list_application_access_scopes;
+
+/// Types for the `ListApplicationAssignments` operation.
+pub mod list_application_assignments;
+
+/// Types for the `ListApplicationAssignmentsForPrincipal` operation.
+pub mod list_application_assignments_for_principal;
+
+/// Types for the `ListApplicationAuthenticationMethods` operation.
+pub mod list_application_authentication_methods;
+
+/// Types for the `ListApplicationGrants` operation.
+pub mod list_application_grants;
+
+/// Types for the `ListApplicationProviders` operation.
+pub mod list_application_providers;
+
+/// Types for the `ListApplications` operation.
+pub mod list_applications;
 
 /// Types for the `ListCustomerManagedPolicyReferencesInPermissionSet` operation.
 pub mod list_customer_managed_policy_references_in_permission_set;
@@ -91,8 +175,23 @@ pub mod list_permission_sets_provisioned_to_account;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListTrustedTokenIssuers` operation.
+pub mod list_trusted_token_issuers;
+
 /// Types for the `ProvisionPermissionSet` operation.
 pub mod provision_permission_set;
+
+/// Types for the `PutApplicationAccessScope` operation.
+pub mod put_application_access_scope;
+
+/// Types for the `PutApplicationAssignmentConfiguration` operation.
+pub mod put_application_assignment_configuration;
+
+/// Types for the `PutApplicationAuthenticationMethod` operation.
+pub mod put_application_authentication_method;
+
+/// Types for the `PutApplicationGrant` operation.
+pub mod put_application_grant;
 
 /// Types for the `PutInlinePolicyToPermissionSet` operation.
 pub mod put_inline_policy_to_permission_set;
@@ -106,8 +205,17 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateApplication` operation.
+pub mod update_application;
+
+/// Types for the `UpdateInstance` operation.
+pub mod update_instance;
+
 /// Types for the `UpdateInstanceAccessControlAttributeConfiguration` operation.
 pub mod update_instance_access_control_attribute_configuration;
 
 /// Types for the `UpdatePermissionSet` operation.
 pub mod update_permission_set;
+
+/// Types for the `UpdateTrustedTokenIssuer` operation.
+pub mod update_trusted_token_issuer;

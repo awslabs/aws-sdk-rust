@@ -19,6 +19,7 @@
 ///     DataSourceType::Aurora => { /* ... */ },
 ///     DataSourceType::AuroraPostgresql => { /* ... */ },
 ///     DataSourceType::AwsIotAnalytics => { /* ... */ },
+///     DataSourceType::Bigquery => { /* ... */ },
 ///     DataSourceType::Databricks => { /* ... */ },
 ///     DataSourceType::Exasol => { /* ... */ },
 ///     DataSourceType::Github => { /* ... */ },
@@ -35,8 +36,10 @@
 ///     DataSourceType::Snowflake => { /* ... */ },
 ///     DataSourceType::Spark => { /* ... */ },
 ///     DataSourceType::Sqlserver => { /* ... */ },
+///     DataSourceType::Starburst => { /* ... */ },
 ///     DataSourceType::Teradata => { /* ... */ },
 ///     DataSourceType::Timestream => { /* ... */ },
+///     DataSourceType::Trino => { /* ... */ },
 ///     DataSourceType::Twitter => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -80,6 +83,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsIotAnalytics,
     #[allow(missing_docs)] // documentation missing in model
+    Bigquery,
+    #[allow(missing_docs)] // documentation missing in model
     Databricks,
     #[allow(missing_docs)] // documentation missing in model
     Exasol,
@@ -112,9 +117,13 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Sqlserver,
     #[allow(missing_docs)] // documentation missing in model
+    Starburst,
+    #[allow(missing_docs)] // documentation missing in model
     Teradata,
     #[allow(missing_docs)] // documentation missing in model
     Timestream,
+    #[allow(missing_docs)] // documentation missing in model
+    Trino,
     #[allow(missing_docs)] // documentation missing in model
     Twitter,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -131,6 +140,7 @@ impl ::std::convert::From<&str> for DataSourceType {
             "AURORA" => DataSourceType::Aurora,
             "AURORA_POSTGRESQL" => DataSourceType::AuroraPostgresql,
             "AWS_IOT_ANALYTICS" => DataSourceType::AwsIotAnalytics,
+            "BIGQUERY" => DataSourceType::Bigquery,
             "DATABRICKS" => DataSourceType::Databricks,
             "EXASOL" => DataSourceType::Exasol,
             "GITHUB" => DataSourceType::Github,
@@ -147,8 +157,10 @@ impl ::std::convert::From<&str> for DataSourceType {
             "SNOWFLAKE" => DataSourceType::Snowflake,
             "SPARK" => DataSourceType::Spark,
             "SQLSERVER" => DataSourceType::Sqlserver,
+            "STARBURST" => DataSourceType::Starburst,
             "TERADATA" => DataSourceType::Teradata,
             "TIMESTREAM" => DataSourceType::Timestream,
+            "TRINO" => DataSourceType::Trino,
             "TWITTER" => DataSourceType::Twitter,
             other => DataSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -172,6 +184,7 @@ impl DataSourceType {
             DataSourceType::Aurora => "AURORA",
             DataSourceType::AuroraPostgresql => "AURORA_POSTGRESQL",
             DataSourceType::AwsIotAnalytics => "AWS_IOT_ANALYTICS",
+            DataSourceType::Bigquery => "BIGQUERY",
             DataSourceType::Databricks => "DATABRICKS",
             DataSourceType::Exasol => "EXASOL",
             DataSourceType::Github => "GITHUB",
@@ -188,8 +201,10 @@ impl DataSourceType {
             DataSourceType::Snowflake => "SNOWFLAKE",
             DataSourceType::Spark => "SPARK",
             DataSourceType::Sqlserver => "SQLSERVER",
+            DataSourceType::Starburst => "STARBURST",
             DataSourceType::Teradata => "TERADATA",
             DataSourceType::Timestream => "TIMESTREAM",
+            DataSourceType::Trino => "TRINO",
             DataSourceType::Twitter => "TWITTER",
             DataSourceType::Unknown(value) => value.as_str(),
         }
@@ -204,6 +219,7 @@ impl DataSourceType {
             "AURORA",
             "AURORA_POSTGRESQL",
             "AWS_IOT_ANALYTICS",
+            "BIGQUERY",
             "DATABRICKS",
             "EXASOL",
             "GITHUB",
@@ -220,8 +236,10 @@ impl DataSourceType {
             "SNOWFLAKE",
             "SPARK",
             "SQLSERVER",
+            "STARBURST",
             "TERADATA",
             "TIMESTREAM",
+            "TRINO",
             "TWITTER",
         ]
     }

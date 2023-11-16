@@ -8,7 +8,7 @@ pub struct TriggerDetails {
     pub source: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
     pub trigger_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The time that the incident was detected.</p>
+    /// <p>The timestamp for when the incident was detected.</p>
     pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub raw_data: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl TriggerDetails {
     pub fn trigger_arn(&self) -> ::std::option::Option<&str> {
         self.trigger_arn.as_deref()
     }
-    /// <p>The time that the incident was detected.</p>
+    /// <p>The timestamp for when the incident was detected.</p>
     pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.timestamp
     }
@@ -78,18 +78,18 @@ impl TriggerDetailsBuilder {
     pub fn get_trigger_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trigger_arn
     }
-    /// <p>The time that the incident was detected.</p>
+    /// <p>The timestamp for when the incident was detected.</p>
     /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that the incident was detected.</p>
+    /// <p>The timestamp for when the incident was detected.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
-    /// <p>The time that the incident was detected.</p>
+    /// <p>The timestamp for when the incident was detected.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }

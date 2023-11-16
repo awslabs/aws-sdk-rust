@@ -12,7 +12,7 @@ pub struct DashPackage {
     pub encryption: ::std::option::Option<crate::types::DashEncryption>,
     /// When enabled, an I-Frame only stream will be included in the output.
     pub include_iframe_only_stream: ::std::option::Option<bool>,
-    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and referenced at the AdaptationSet level.
     pub manifest_layout: ::std::option::Option<crate::types::ManifestLayout>,
     /// Time window (in seconds) contained in each manifest.
     pub manifest_window_seconds: ::std::option::Option<i32>,
@@ -56,7 +56,7 @@ impl DashPackage {
     pub fn include_iframe_only_stream(&self) -> ::std::option::Option<bool> {
         self.include_iframe_only_stream
     }
-    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and referenced at the AdaptationSet level.
     pub fn manifest_layout(&self) -> ::std::option::Option<&crate::types::ManifestLayout> {
         self.manifest_layout.as_ref()
     }
@@ -198,17 +198,17 @@ impl DashPackageBuilder {
     pub fn get_include_iframe_only_stream(&self) -> &::std::option::Option<bool> {
         &self.include_iframe_only_stream
     }
-    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and referenced at the AdaptationSet level.
     pub fn manifest_layout(mut self, input: crate::types::ManifestLayout) -> Self {
         self.manifest_layout = ::std::option::Option::Some(input);
         self
     }
-    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and referenced at the AdaptationSet level.
     pub fn set_manifest_layout(mut self, input: ::std::option::Option<crate::types::ManifestLayout>) -> Self {
         self.manifest_layout = input;
         self
     }
-    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and referenced at the AdaptationSet level.
     pub fn get_manifest_layout(&self) -> &::std::option::Option<crate::types::ManifestLayout> {
         &self.manifest_layout
     }

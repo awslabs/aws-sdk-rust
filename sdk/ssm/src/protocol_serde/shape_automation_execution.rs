@@ -202,6 +202,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Variables" => {
+                            builder = builder.set_variables(crate::protocol_serde::shape_automation_parameter_map::de_automation_parameter_map(
+                                tokens,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

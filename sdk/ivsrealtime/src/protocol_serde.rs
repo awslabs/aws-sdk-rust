@@ -23,19 +23,37 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_encoder_configuration;
+
 pub(crate) mod shape_create_participant_token;
 
 pub(crate) mod shape_create_stage;
 
+pub(crate) mod shape_create_storage_configuration;
+
+pub(crate) mod shape_delete_encoder_configuration;
+
 pub(crate) mod shape_delete_stage;
 
+pub(crate) mod shape_delete_storage_configuration;
+
 pub(crate) mod shape_disconnect_participant;
+
+pub(crate) mod shape_get_composition;
+
+pub(crate) mod shape_get_encoder_configuration;
 
 pub(crate) mod shape_get_participant;
 
 pub(crate) mod shape_get_stage;
 
 pub(crate) mod shape_get_stage_session;
+
+pub(crate) mod shape_get_storage_configuration;
+
+pub(crate) mod shape_list_compositions;
+
+pub(crate) mod shape_list_encoder_configurations;
 
 pub(crate) mod shape_list_participant_events;
 
@@ -45,7 +63,13 @@ pub(crate) mod shape_list_stage_sessions;
 
 pub(crate) mod shape_list_stages;
 
+pub(crate) mod shape_list_storage_configurations;
+
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_start_composition;
+
+pub(crate) mod shape_stop_composition;
 
 pub(crate) mod shape_tag_resource;
 
@@ -65,13 +89,25 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_encoder_configuration_input;
+
 pub(crate) mod shape_create_participant_token_input;
 
 pub(crate) mod shape_create_stage_input;
 
+pub(crate) mod shape_create_storage_configuration_input;
+
+pub(crate) mod shape_delete_encoder_configuration_input;
+
 pub(crate) mod shape_delete_stage_input;
 
+pub(crate) mod shape_delete_storage_configuration_input;
+
 pub(crate) mod shape_disconnect_participant_input;
+
+pub(crate) mod shape_get_composition_input;
+
+pub(crate) mod shape_get_encoder_configuration_input;
 
 pub(crate) mod shape_get_participant_input;
 
@@ -79,7 +115,13 @@ pub(crate) mod shape_get_stage_input;
 
 pub(crate) mod shape_get_stage_session_input;
 
+pub(crate) mod shape_get_storage_configuration_input;
+
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_compositions_input;
+
+pub(crate) mod shape_list_encoder_configurations_input;
 
 pub(crate) mod shape_list_participant_events_input;
 
@@ -89,11 +131,17 @@ pub(crate) mod shape_list_stage_sessions_input;
 
 pub(crate) mod shape_list_stages_input;
 
+pub(crate) mod shape_list_storage_configurations_input;
+
 pub(crate) mod shape_pending_verification;
 
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_start_composition_input;
+
+pub(crate) mod shape_stop_composition_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -101,7 +149,19 @@ pub(crate) mod shape_update_stage_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_composition;
+
+pub(crate) mod shape_composition_summary_list;
+
+pub(crate) mod shape_destination_configuration;
+
+pub(crate) mod shape_encoder_configuration;
+
+pub(crate) mod shape_encoder_configuration_summary_list;
+
 pub(crate) mod shape_event_list;
+
+pub(crate) mod shape_layout_configuration;
 
 pub(crate) mod shape_participant;
 
@@ -113,6 +173,8 @@ pub(crate) mod shape_participant_token_configuration;
 
 pub(crate) mod shape_participant_token_list;
 
+pub(crate) mod shape_s3_storage_configuration;
+
 pub(crate) mod shape_stage;
 
 pub(crate) mod shape_stage_session;
@@ -121,9 +183,25 @@ pub(crate) mod shape_stage_session_list;
 
 pub(crate) mod shape_stage_summary_list;
 
+pub(crate) mod shape_storage_configuration;
+
+pub(crate) mod shape_storage_configuration_summary_list;
+
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_video;
+
+pub(crate) mod shape_channel_destination_configuration;
+
+pub(crate) mod shape_composition_summary;
+
+pub(crate) mod shape_destination_list;
+
+pub(crate) mod shape_encoder_configuration_summary;
+
 pub(crate) mod shape_event;
+
+pub(crate) mod shape_grid_configuration;
 
 pub(crate) mod shape_participant_attributes;
 
@@ -133,6 +211,24 @@ pub(crate) mod shape_participant_token_attributes;
 
 pub(crate) mod shape_participant_token_capabilities;
 
+pub(crate) mod shape_s3_destination_configuration;
+
 pub(crate) mod shape_stage_session_summary;
 
 pub(crate) mod shape_stage_summary;
+
+pub(crate) mod shape_storage_configuration_summary;
+
+pub(crate) mod shape_destination;
+
+pub(crate) mod shape_destination_summary_list;
+
+pub(crate) mod shape_recording_configuration;
+
+pub(crate) mod shape_destination_detail;
+
+pub(crate) mod shape_destination_summary;
+
+pub(crate) mod shape_s3_detail;
+
+pub(crate) mod shape_encoder_configuration_arn_list;

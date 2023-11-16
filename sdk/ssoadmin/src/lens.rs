@@ -29,8 +29,88 @@ pub(crate) fn reflens_list_account_assignments_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_account_assignments_for_principal_output_output_next_token(
+    input: &crate::operation::list_account_assignments_for_principal::ListAccountAssignmentsForPrincipalOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_accounts_for_provisioned_permission_set_output_output_next_token(
     input: &crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_application_access_scopes_output_output_next_token(
+    input: &crate::operation::list_application_access_scopes::ListApplicationAccessScopesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_application_assignments_output_output_next_token(
+    input: &crate::operation::list_application_assignments::ListApplicationAssignmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_application_assignments_for_principal_output_output_next_token(
+    input: &crate::operation::list_application_assignments_for_principal::ListApplicationAssignmentsForPrincipalOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_application_authentication_methods_output_output_next_token(
+    input: &crate::operation::list_application_authentication_methods::ListApplicationAuthenticationMethodsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_application_grants_output_output_next_token(
+    input: &crate::operation::list_application_grants::ListApplicationGrantsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_application_providers_output_output_next_token(
+    input: &crate::operation::list_application_providers::ListApplicationProvidersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_applications_output_output_next_token(
+    input: &crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -109,6 +189,16 @@ pub(crate) fn reflens_list_tags_for_resource_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_trusted_token_issuers_output_output_next_token(
+    input: &crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_account_assignment_creation_status_output_output_account_assignments_creation_status(
     input: crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>> {
@@ -139,10 +229,84 @@ pub(crate) fn lens_list_account_assignments_output_output_account_assignments(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_account_assignments_for_principal_output_output_account_assignments(
+    input: crate::operation::list_account_assignments_for_principal::ListAccountAssignmentsForPrincipalOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentForPrincipal>> {
+    let input = match input.account_assignments {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_accounts_for_provisioned_permission_set_output_output_account_ids(
     input: crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = match input.account_ids {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_application_access_scopes_output_output_scopes(
+    input: crate::operation::list_application_access_scopes::ListApplicationAccessScopesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ScopeDetails>> {
+    let input = input.scopes;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_application_assignments_output_output_application_assignments(
+    input: crate::operation::list_application_assignments::ListApplicationAssignmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssignment>> {
+    let input = match input.application_assignments {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_application_assignments_for_principal_output_output_application_assignments(
+    input: crate::operation::list_application_assignments_for_principal::ListApplicationAssignmentsForPrincipalOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssignmentForPrincipal>> {
+    let input = match input.application_assignments {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_application_authentication_methods_output_output_authentication_methods(
+    input: crate::operation::list_application_authentication_methods::ListApplicationAuthenticationMethodsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationMethodItem>> {
+    let input = match input.authentication_methods {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_application_grants_output_output_grants(
+    input: crate::operation::list_application_grants::ListApplicationGrantsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GrantItem>> {
+    let input = input.grants;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_application_providers_output_output_application_providers(
+    input: crate::operation::list_application_providers::ListApplicationProvidersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationProvider>> {
+    let input = match input.application_providers {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_applications_output_output_applications(
+    input: crate::operation::list_applications::ListApplicationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    let input = match input.applications {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -213,6 +377,16 @@ pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
     let input = match input.tags {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_trusted_token_issuers_output_output_trusted_token_issuers(
+    input: crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TrustedTokenIssuerMetadata>> {
+    let input = match input.trusted_token_issuers {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

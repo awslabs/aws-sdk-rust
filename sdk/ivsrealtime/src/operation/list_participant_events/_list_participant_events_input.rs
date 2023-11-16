@@ -9,7 +9,7 @@ pub struct ListParticipantEventsInput {
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for this participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub participant_id: ::std::option::Option<::std::string::String>,
-    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -27,7 +27,7 @@ impl ListParticipantEventsInput {
     pub fn participant_id(&self) -> ::std::option::Option<&str> {
         self.participant_id.as_deref()
     }
-    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -99,17 +99,17 @@ impl ListParticipantEventsInputBuilder {
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.participant_id
     }
-    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

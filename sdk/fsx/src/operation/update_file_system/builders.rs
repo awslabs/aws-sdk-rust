@@ -43,6 +43,7 @@ impl UpdateFileSystemInputBuilder {
 /// <li> <p> <code>DataCompressionType</code> </p> </li>
 /// <li> <p> <code>LogConfiguration</code> </p> </li>
 /// <li> <p> <code>LustreRootSquashConfiguration</code> </p> </li>
+/// <li> <p> <code>PerUnitStorageThroughput</code> </p> </li>
 /// <li> <p> <code>StorageCapacity</code> </p> </li>
 /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
 /// </ul>

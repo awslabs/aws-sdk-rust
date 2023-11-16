@@ -42,6 +42,8 @@ pub struct ClusterInfo {
     pub zookeeper_connect_string_tls: ::std::option::Option<::std::string::String>,
     /// <p>This controls storage mode for supported storage tiers.</p>
     pub storage_mode: ::std::option::Option<crate::types::StorageMode>,
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub customer_action_status: ::std::option::Option<crate::types::CustomerActionStatus>,
 }
 impl ClusterInfo {
     /// <p>Arn of active cluster operation.</p>
@@ -120,6 +122,10 @@ impl ClusterInfo {
     pub fn storage_mode(&self) -> ::std::option::Option<&crate::types::StorageMode> {
         self.storage_mode.as_ref()
     }
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub fn customer_action_status(&self) -> ::std::option::Option<&crate::types::CustomerActionStatus> {
+        self.customer_action_status.as_ref()
+    }
 }
 impl ClusterInfo {
     /// Creates a new builder-style object to manufacture [`ClusterInfo`](crate::types::ClusterInfo).
@@ -151,6 +157,7 @@ pub struct ClusterInfoBuilder {
     pub(crate) zookeeper_connect_string: ::std::option::Option<::std::string::String>,
     pub(crate) zookeeper_connect_string_tls: ::std::option::Option<::std::string::String>,
     pub(crate) storage_mode: ::std::option::Option<crate::types::StorageMode>,
+    pub(crate) customer_action_status: ::std::option::Option<crate::types::CustomerActionStatus>,
 }
 impl ClusterInfoBuilder {
     /// <p>Arn of active cluster operation.</p>
@@ -425,6 +432,20 @@ impl ClusterInfoBuilder {
     pub fn get_storage_mode(&self) -> &::std::option::Option<crate::types::StorageMode> {
         &self.storage_mode
     }
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub fn customer_action_status(mut self, input: crate::types::CustomerActionStatus) -> Self {
+        self.customer_action_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub fn set_customer_action_status(mut self, input: ::std::option::Option<crate::types::CustomerActionStatus>) -> Self {
+        self.customer_action_status = input;
+        self
+    }
+    /// <p>Determines if there is an action required from the customer.</p>
+    pub fn get_customer_action_status(&self) -> &::std::option::Option<crate::types::CustomerActionStatus> {
+        &self.customer_action_status
+    }
     /// Consumes the builder and constructs a [`ClusterInfo`](crate::types::ClusterInfo).
     pub fn build(self) -> crate::types::ClusterInfo {
         crate::types::ClusterInfo {
@@ -447,6 +468,7 @@ impl ClusterInfoBuilder {
             zookeeper_connect_string: self.zookeeper_connect_string,
             zookeeper_connect_string_tls: self.zookeeper_connect_string_tls,
             storage_mode: self.storage_mode,
+            customer_action_status: self.customer_action_status,
         }
     }
 }

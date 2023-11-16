@@ -13,6 +13,14 @@ pub use crate::types::_on_failure::OnFailure;
 
 pub use crate::types::_on_success::OnSuccess;
 
+pub use crate::types::_logging_config::LoggingConfig;
+
+pub use crate::types::_system_log_level::SystemLogLevel;
+
+pub use crate::types::_application_log_level::ApplicationLogLevel;
+
+pub use crate::types::_log_format::LogFormat;
+
 pub use crate::types::_runtime_version_config::RuntimeVersionConfig;
 
 pub use crate::types::_runtime_version_error::RuntimeVersionError;
@@ -157,6 +165,8 @@ mod _allowed_publishers;
 
 mod _amazon_managed_kafka_event_source_config;
 
+mod _application_log_level;
+
 mod _architecture;
 
 mod _code_signing_config;
@@ -237,7 +247,11 @@ mod _layer_versions_list_item;
 
 mod _layers_list_item;
 
+mod _log_format;
+
 mod _log_type;
+
+mod _logging_config;
 
 mod _on_failure;
 
@@ -276,6 +290,8 @@ mod _source_access_type;
 mod _state;
 
 mod _state_reason_code;
+
+mod _system_log_level;
 
 mod _throttle_reason;
 

@@ -18,6 +18,7 @@
 ///     PoolFilterName::SelfManagedOptOutsEnabled => { /* ... */ },
 ///     PoolFilterName::SharedRoutesEnabled => { /* ... */ },
 ///     PoolFilterName::Status => { /* ... */ },
+///     PoolFilterName::TwoWayChannelArn => { /* ... */ },
 ///     PoolFilterName::TwoWayEnabled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum PoolFilterName {
     #[allow(missing_docs)] // documentation missing in model
     Status,
     #[allow(missing_docs)] // documentation missing in model
+    TwoWayChannelArn,
+    #[allow(missing_docs)] // documentation missing in model
     TwoWayEnabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for PoolFilterName {
             "self-managed-opt-outs-enabled" => PoolFilterName::SelfManagedOptOutsEnabled,
             "shared-routes-enabled" => PoolFilterName::SharedRoutesEnabled,
             "status" => PoolFilterName::Status,
+            "two-way-channel-arn" => PoolFilterName::TwoWayChannelArn,
             "two-way-enabled" => PoolFilterName::TwoWayEnabled,
             other => PoolFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -95,6 +99,7 @@ impl PoolFilterName {
             PoolFilterName::SelfManagedOptOutsEnabled => "self-managed-opt-outs-enabled",
             PoolFilterName::SharedRoutesEnabled => "shared-routes-enabled",
             PoolFilterName::Status => "status",
+            PoolFilterName::TwoWayChannelArn => "two-way-channel-arn",
             PoolFilterName::TwoWayEnabled => "two-way-enabled",
             PoolFilterName::Unknown(value) => value.as_str(),
         }
@@ -108,6 +113,7 @@ impl PoolFilterName {
             "self-managed-opt-outs-enabled",
             "shared-routes-enabled",
             "status",
+            "two-way-channel-arn",
             "two-way-enabled",
         ]
     }

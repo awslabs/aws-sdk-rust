@@ -9,6 +9,8 @@ pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
 
 pub use crate::types::_access_denied_exception_reason::AccessDeniedExceptionReason;
 
+pub use crate::types::_verification_status::VerificationStatus;
+
 pub use crate::types::_message_type::MessageType;
 
 pub use crate::types::_pool_status::PoolStatus;
@@ -33,21 +35,41 @@ pub use crate::types::_service_quota_exceeded_exception_reason::ServiceQuotaExce
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_registration_version_status_history::RegistrationVersionStatusHistory;
+
+pub use crate::types::_registration_version_status::RegistrationVersionStatus;
+
 pub use crate::types::_voice_id::VoiceId;
 
 pub use crate::types::_voice_message_body_text_type::VoiceMessageBodyTextType;
 
 pub use crate::types::_destination_country_parameter_key::DestinationCountryParameterKey;
 
+pub use crate::types::_language_code::LanguageCode;
+
+pub use crate::types::_verification_channel::VerificationChannel;
+
 pub use crate::types::_requestable_number_type::RequestableNumberType;
 
 pub use crate::types::_keyword_action::KeywordAction;
+
+pub use crate::types::_registration_association_metadata::RegistrationAssociationMetadata;
+
+pub use crate::types::_registration_association_filter::RegistrationAssociationFilter;
+
+pub use crate::types::_registration_association_filter_name::RegistrationAssociationFilterName;
 
 pub use crate::types::_origination_identity_metadata::OriginationIdentityMetadata;
 
 pub use crate::types::_pool_origination_identities_filter::PoolOriginationIdentitiesFilter;
 
 pub use crate::types::_pool_origination_identities_filter_name::PoolOriginationIdentitiesFilterName;
+
+pub use crate::types::_verified_destination_number_information::VerifiedDestinationNumberInformation;
+
+pub use crate::types::_verified_destination_number_filter::VerifiedDestinationNumberFilter;
+
+pub use crate::types::_verified_destination_number_filter_name::VerifiedDestinationNumberFilterName;
 
 pub use crate::types::_spend_limit::SpendLimit;
 
@@ -60,6 +82,66 @@ pub use crate::types::_sender_id_filter::SenderIdFilter;
 pub use crate::types::_sender_id_filter_name::SenderIdFilterName;
 
 pub use crate::types::_sender_id_and_country::SenderIdAndCountry;
+
+pub use crate::types::_registration_version_information::RegistrationVersionInformation;
+
+pub use crate::types::_registration_denied_reason_information::RegistrationDeniedReasonInformation;
+
+pub use crate::types::_registration_version_filter::RegistrationVersionFilter;
+
+pub use crate::types::_registration_version_filter_name::RegistrationVersionFilterName;
+
+pub use crate::types::_registration_type_definition::RegistrationTypeDefinition;
+
+pub use crate::types::_registration_type_display_hints::RegistrationTypeDisplayHints;
+
+pub use crate::types::_supported_association::SupportedAssociation;
+
+pub use crate::types::_registration_disassociation_behavior::RegistrationDisassociationBehavior;
+
+pub use crate::types::_registration_association_behavior::RegistrationAssociationBehavior;
+
+pub use crate::types::_registration_type_filter::RegistrationTypeFilter;
+
+pub use crate::types::_registration_type_filter_name::RegistrationTypeFilterName;
+
+pub use crate::types::_registration_section_definition::RegistrationSectionDefinition;
+
+pub use crate::types::_registration_section_display_hints::RegistrationSectionDisplayHints;
+
+pub use crate::types::_registration_information::RegistrationInformation;
+
+pub use crate::types::_registration_status::RegistrationStatus;
+
+pub use crate::types::_registration_filter::RegistrationFilter;
+
+pub use crate::types::_registration_filter_name::RegistrationFilterName;
+
+pub use crate::types::_registration_field_value_information::RegistrationFieldValueInformation;
+
+pub use crate::types::_registration_field_definition::RegistrationFieldDefinition;
+
+pub use crate::types::_registration_field_display_hints::RegistrationFieldDisplayHints;
+
+pub use crate::types::_select_option_description::SelectOptionDescription;
+
+pub use crate::types::_text_validation::TextValidation;
+
+pub use crate::types::_select_validation::SelectValidation;
+
+pub use crate::types::_field_requirement::FieldRequirement;
+
+pub use crate::types::_field_type::FieldType;
+
+pub use crate::types::_registration_attachments_information::RegistrationAttachmentsInformation;
+
+pub use crate::types::_attachment_upload_error_reason::AttachmentUploadErrorReason;
+
+pub use crate::types::_attachment_status::AttachmentStatus;
+
+pub use crate::types::_registration_attachment_filter::RegistrationAttachmentFilter;
+
+pub use crate::types::_registration_attachment_filter_name::RegistrationAttachmentFilterName;
 
 pub use crate::types::_pool_information::PoolInformation;
 
@@ -111,6 +193,10 @@ mod _account_limit;
 
 mod _account_limit_name;
 
+mod _attachment_status;
+
+mod _attachment_upload_error_reason;
+
 mod _cloud_watch_logs_destination;
 
 mod _configuration_set_filter;
@@ -127,6 +213,10 @@ mod _event_destination;
 
 mod _event_type;
 
+mod _field_requirement;
+
+mod _field_type;
+
 mod _keyword_action;
 
 mod _keyword_filter;
@@ -136,6 +226,8 @@ mod _keyword_filter_name;
 mod _keyword_information;
 
 mod _kinesis_firehose_destination;
+
+mod _language_code;
 
 mod _message_type;
 
@@ -173,9 +265,67 @@ mod _pool_origination_identities_filter_name;
 
 mod _pool_status;
 
+mod _registration_association_behavior;
+
+mod _registration_association_filter;
+
+mod _registration_association_filter_name;
+
+mod _registration_association_metadata;
+
+mod _registration_attachment_filter;
+
+mod _registration_attachment_filter_name;
+
+mod _registration_attachments_information;
+
+mod _registration_denied_reason_information;
+
+mod _registration_disassociation_behavior;
+
+mod _registration_field_definition;
+
+mod _registration_field_display_hints;
+
+mod _registration_field_value_information;
+
+mod _registration_filter;
+
+mod _registration_filter_name;
+
+mod _registration_information;
+
+mod _registration_section_definition;
+
+mod _registration_section_display_hints;
+
+mod _registration_status;
+
+mod _registration_type_definition;
+
+mod _registration_type_display_hints;
+
+mod _registration_type_filter;
+
+mod _registration_type_filter_name;
+
+mod _registration_version_filter;
+
+mod _registration_version_filter_name;
+
+mod _registration_version_information;
+
+mod _registration_version_status;
+
+mod _registration_version_status_history;
+
 mod _requestable_number_type;
 
 mod _resource_type;
+
+mod _select_option_description;
+
+mod _select_validation;
 
 mod _sender_id_and_country;
 
@@ -193,11 +343,25 @@ mod _spend_limit;
 
 mod _spend_limit_name;
 
+mod _supported_association;
+
 mod _tag;
+
+mod _text_validation;
 
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _verification_channel;
+
+mod _verification_status;
+
+mod _verified_destination_number_filter;
+
+mod _verified_destination_number_filter_name;
+
+mod _verified_destination_number_information;
 
 mod _voice_id;
 

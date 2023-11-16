@@ -53,6 +53,8 @@ pub(crate) mod shape_create_namespace;
 
 pub(crate) mod shape_create_refresh_schedule;
 
+pub(crate) mod shape_create_role_membership;
+
 pub(crate) mod shape_create_template;
 
 pub(crate) mod shape_create_template_alias;
@@ -94,6 +96,10 @@ pub(crate) mod shape_delete_iam_policy_assignment;
 pub(crate) mod shape_delete_namespace;
 
 pub(crate) mod shape_delete_refresh_schedule;
+
+pub(crate) mod shape_delete_role_custom_permission;
+
+pub(crate) mod shape_delete_role_membership;
 
 pub(crate) mod shape_delete_template;
 
@@ -169,6 +175,8 @@ pub(crate) mod shape_describe_namespace;
 
 pub(crate) mod shape_describe_refresh_schedule;
 
+pub(crate) mod shape_describe_role_custom_permission;
+
 pub(crate) mod shape_describe_template;
 
 pub(crate) mod shape_describe_template_alias;
@@ -234,6 +242,8 @@ pub(crate) mod shape_list_ingestions;
 pub(crate) mod shape_list_namespaces;
 
 pub(crate) mod shape_list_refresh_schedules;
+
+pub(crate) mod shape_list_role_memberships;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -322,6 +332,8 @@ pub(crate) mod shape_update_ip_restriction;
 pub(crate) mod shape_update_public_sharing_settings;
 
 pub(crate) mod shape_update_refresh_schedule;
+
+pub(crate) mod shape_update_role_custom_permission;
 
 pub(crate) mod shape_update_template;
 
@@ -491,6 +503,8 @@ pub(crate) mod shape_update_public_sharing_settings_input;
 
 pub(crate) mod shape_update_refresh_schedule_input;
 
+pub(crate) mod shape_update_role_custom_permission_input;
+
 pub(crate) mod shape_update_template_alias_input;
 
 pub(crate) mod shape_update_template_input;
@@ -541,9 +555,19 @@ pub(crate) mod shape_asset_bundle_export_job_error_list;
 
 pub(crate) mod shape_asset_bundle_export_job_summary_list;
 
+pub(crate) mod shape_asset_bundle_export_job_validation_strategy;
+
+pub(crate) mod shape_asset_bundle_export_job_warning_list;
+
 pub(crate) mod shape_asset_bundle_import_job_error_list;
 
 pub(crate) mod shape_asset_bundle_import_job_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_override_permissions;
+
+pub(crate) mod shape_asset_bundle_import_job_override_tags;
+
+pub(crate) mod shape_asset_bundle_import_job_override_validation_strategy;
 
 pub(crate) mod shape_asset_bundle_import_job_summary_list;
 
@@ -618,6 +642,8 @@ pub(crate) mod shape_group_member;
 pub(crate) mod shape_group_member_list;
 
 pub(crate) mod shape_group_search_filter;
+
+pub(crate) mod shape_groups_list;
 
 pub(crate) mod shape_iam_policy_assignment;
 
@@ -785,21 +811,55 @@ pub(crate) mod shape_asset_bundle_export_job_vpc_connection_override_properties;
 
 pub(crate) mod shape_asset_bundle_export_job_vpc_connection_override_properties_list;
 
+pub(crate) mod shape_asset_bundle_export_job_warning;
+
 pub(crate) mod shape_asset_bundle_import_job_analysis_override_parameters;
 
 pub(crate) mod shape_asset_bundle_import_job_analysis_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_analysis_override_permissions;
+
+pub(crate) mod shape_asset_bundle_import_job_analysis_override_permissions_list;
+
+pub(crate) mod shape_asset_bundle_import_job_analysis_override_tags;
+
+pub(crate) mod shape_asset_bundle_import_job_analysis_override_tags_list;
 
 pub(crate) mod shape_asset_bundle_import_job_dashboard_override_parameters;
 
 pub(crate) mod shape_asset_bundle_import_job_dashboard_override_parameters_list;
 
+pub(crate) mod shape_asset_bundle_import_job_dashboard_override_permissions;
+
+pub(crate) mod shape_asset_bundle_import_job_dashboard_override_permissions_list;
+
+pub(crate) mod shape_asset_bundle_import_job_dashboard_override_tags;
+
+pub(crate) mod shape_asset_bundle_import_job_dashboard_override_tags_list;
+
 pub(crate) mod shape_asset_bundle_import_job_data_set_override_parameters;
 
 pub(crate) mod shape_asset_bundle_import_job_data_set_override_parameters_list;
 
+pub(crate) mod shape_asset_bundle_import_job_data_set_override_permissions;
+
+pub(crate) mod shape_asset_bundle_import_job_data_set_override_permissions_list;
+
+pub(crate) mod shape_asset_bundle_import_job_data_set_override_tags;
+
+pub(crate) mod shape_asset_bundle_import_job_data_set_override_tags_list;
+
 pub(crate) mod shape_asset_bundle_import_job_data_source_override_parameters;
 
 pub(crate) mod shape_asset_bundle_import_job_data_source_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_data_source_override_permissions;
+
+pub(crate) mod shape_asset_bundle_import_job_data_source_override_permissions_list;
+
+pub(crate) mod shape_asset_bundle_import_job_data_source_override_tags;
+
+pub(crate) mod shape_asset_bundle_import_job_data_source_override_tags_list;
 
 pub(crate) mod shape_asset_bundle_import_job_error;
 
@@ -815,9 +875,21 @@ pub(crate) mod shape_asset_bundle_import_job_theme_override_parameters;
 
 pub(crate) mod shape_asset_bundle_import_job_theme_override_parameters_list;
 
+pub(crate) mod shape_asset_bundle_import_job_theme_override_permissions;
+
+pub(crate) mod shape_asset_bundle_import_job_theme_override_permissions_list;
+
+pub(crate) mod shape_asset_bundle_import_job_theme_override_tags;
+
+pub(crate) mod shape_asset_bundle_import_job_theme_override_tags_list;
+
 pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_parameters;
 
 pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_tags;
+
+pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_tags_list;
 
 pub(crate) mod shape_asset_options;
 
@@ -828,6 +900,8 @@ pub(crate) mod shape_aurora_parameters;
 pub(crate) mod shape_aurora_postgre_sql_parameters;
 
 pub(crate) mod shape_aws_iot_analytics_parameters;
+
+pub(crate) mod shape_big_query_parameters;
 
 pub(crate) mod shape_calculated_field;
 
@@ -1071,6 +1145,10 @@ pub(crate) mod shape_anonymous_user_snapshot_job_result;
 
 pub(crate) mod shape_asset_bundle_import_job_data_source_credentials;
 
+pub(crate) mod shape_asset_bundle_resource_link_sharing_configuration;
+
+pub(crate) mod shape_asset_bundle_resource_permissions;
+
 pub(crate) mod shape_cast_column_type_operation;
 
 pub(crate) mod shape_colors_configuration;
@@ -1218,6 +1296,8 @@ pub(crate) mod shape_asset_bundle_export_job_theme_property_to_override_list;
 pub(crate) mod shape_asset_bundle_export_job_vpc_connection_property_to_override_list;
 
 pub(crate) mod shape_asset_bundle_import_job_data_source_credential_pair;
+
+pub(crate) mod shape_asset_bundle_restrictive_resource_id_list;
 
 pub(crate) mod shape_bar_chart_visual;
 
@@ -1444,6 +1524,8 @@ pub(crate) mod shape_aggregation_function;
 pub(crate) mod shape_aggregation_sort_configuration;
 
 pub(crate) mod shape_anchor_date_configuration;
+
+pub(crate) mod shape_asset_bundle_principal_list;
 
 pub(crate) mod shape_bar_chart_configuration;
 

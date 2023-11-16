@@ -219,6 +219,9 @@ where
                             builder = builder
                                 .set_runtime_version_config(crate::protocol_serde::shape_runtime_version_config::de_runtime_version_config(tokens)?);
                         }
+                        "LoggingConfig" => {
+                            builder = builder.set_logging_config(crate::protocol_serde::shape_logging_config::de_logging_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

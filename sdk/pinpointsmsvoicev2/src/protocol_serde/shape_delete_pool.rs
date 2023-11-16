@@ -186,6 +186,13 @@ pub(crate) fn de_delete_pool(
                             .transpose()?,
                     );
                 }
+                "TwoWayChannelRole" => {
+                    builder = builder.set_two_way_channel_role(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "SelfManagedOptOutsEnabled" => {
                     builder = builder.set_self_managed_opt_outs_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

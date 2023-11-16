@@ -8,11 +8,11 @@ pub struct TimelineEvent {
     pub incident_record_arn: ::std::string::String,
     /// <p>The ID of the timeline event.</p>
     pub event_id: ::std::string::String,
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub event_time: ::aws_smithy_types::DateTime,
-    /// <p>The time that the timeline event was last updated.</p>
+    /// <p>The timestamp for when the timeline event was last updated.</p>
     pub event_updated_time: ::aws_smithy_types::DateTime,
-    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
+    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and <code>Note</code> types.</p>
     pub event_type: ::std::string::String,
     /// <p>A short description of the event.</p>
     pub event_data: ::std::string::String,
@@ -30,15 +30,15 @@ impl TimelineEvent {
         use std::ops::Deref;
         self.event_id.deref()
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn event_time(&self) -> &::aws_smithy_types::DateTime {
         &self.event_time
     }
-    /// <p>The time that the timeline event was last updated.</p>
+    /// <p>The timestamp for when the timeline event was last updated.</p>
     pub fn event_updated_time(&self) -> &::aws_smithy_types::DateTime {
         &self.event_updated_time
     }
-    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
+    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and <code>Note</code> types.</p>
     pub fn event_type(&self) -> &str {
         use std::ops::Deref;
         self.event_type.deref()
@@ -105,48 +105,48 @@ impl TimelineEventBuilder {
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     /// This field is required.
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_time = input;
         self
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.event_time
     }
-    /// <p>The time that the timeline event was last updated.</p>
+    /// <p>The timestamp for when the timeline event was last updated.</p>
     /// This field is required.
     pub fn event_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that the timeline event was last updated.</p>
+    /// <p>The timestamp for when the timeline event was last updated.</p>
     pub fn set_event_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_updated_time = input;
         self
     }
-    /// <p>The time that the timeline event was last updated.</p>
+    /// <p>The timestamp for when the timeline event was last updated.</p>
     pub fn get_event_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.event_updated_time
     }
-    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
+    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and <code>Note</code> types.</p>
     /// This field is required.
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
+    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and <code>Note</code> types.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
     }
-    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.</p>
+    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and <code>Note</code> types.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_type
     }

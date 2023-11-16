@@ -24,7 +24,7 @@ impl DeleteOptedOutNumberInputBuilder {
 ///
 /// <p>Deletes an existing opted out destination phone number from the specified opt-out list.</p>
 /// <p>Each destination phone number can only be deleted once every 30 days.</p>
-/// <p>If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an Error is returned.</p>
+/// <p>If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOptedOutNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

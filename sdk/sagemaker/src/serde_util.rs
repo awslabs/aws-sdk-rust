@@ -3953,9 +3953,6 @@ pub(crate) fn model_package_group_summary_correct_errors(
 pub(crate) fn model_package_summary_correct_errors(
     mut builder: crate::types::builders::ModelPackageSummaryBuilder,
 ) -> crate::types::builders::ModelPackageSummaryBuilder {
-    if builder.model_package_name.is_none() {
-        builder.model_package_name = Some(Default::default())
-    }
     if builder.model_package_arn.is_none() {
         builder.model_package_arn = Some(Default::default())
     }

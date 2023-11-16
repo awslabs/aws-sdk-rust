@@ -21,6 +21,12 @@
 //!
 //! If you're new to Amazon Pinpoint, it's also helpful to review the [Amazon Pinpoint Developer Guide](https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html). The _Amazon Pinpoint Developer Guide_ provides tutorials, code samples, and procedures that demonstrate how to use Amazon Pinpoint features programmatically and how to integrate Amazon Pinpoint functionality into mobile apps and other types of applications. The guide also provides key information, such as Amazon Pinpoint integration with other Amazon Web Services services, and the quotas that apply to use of the service.
 //!
+//! __Regional availability__
+//!
+//! The _Amazon Pinpoint SMS and Voice, version 2 API Reference_ is available in several Amazon Web Services Regions and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is currently available, see [Amazon Web Services Service Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region) and [Amazon Pinpoint endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/pinpoint.html) in the Amazon Web Services General Reference. To learn more about Amazon Web Services Regions, see [Managing Amazon Web Services Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the Amazon Web Services General Reference.
+//!
+//! In each Region, Amazon Web Services maintains multiple Availability Zones. These Availability Zones are physically isolated from each other, but are united by private, low-latency, high-throughput, and highly redundant network connections. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency. To learn more about the number of Availability Zones that are available in each Region, see [Amazon Web Services Global Infrastructure.](https://aws.amazon.com/about-aws/global-infrastructure/)
+//!
 //! ## Getting Started
 //!
 //! > Examples are available for many services and operations, check out the
@@ -199,11 +205,11 @@ mod serialization_settings;
 
 mod lens;
 
+mod serde_util;
+
 mod endpoint_lib;
 
 mod json_errors;
-
-mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

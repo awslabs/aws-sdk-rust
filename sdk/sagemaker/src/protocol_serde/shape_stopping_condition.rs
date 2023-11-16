@@ -15,6 +15,12 @@ pub fn ser_stopping_condition(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.max_pending_time_in_seconds {
+        object.key("MaxPendingTimeInSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }
 
@@ -42,6 +48,13 @@ where
                         }
                         "MaxWaitTimeInSeconds" => {
                             builder = builder.set_max_wait_time_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "MaxPendingTimeInSeconds" => {
+                            builder = builder.set_max_pending_time_in_seconds(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

@@ -617,6 +617,8 @@ pub use crate::types::_trust_provider_type::TrustProviderType;
 
 pub use crate::types::_verified_access_sse_specification_request::VerifiedAccessSseSpecificationRequest;
 
+pub use crate::types::_modify_verified_access_trust_provider_device_options::ModifyVerifiedAccessTrustProviderDeviceOptions;
+
 pub use crate::types::_modify_verified_access_trust_provider_oidc_options::ModifyVerifiedAccessTrustProviderOidcOptions;
 
 pub use crate::types::_verified_access_instance_logging_configuration::VerifiedAccessInstanceLoggingConfiguration;
@@ -3242,6 +3244,8 @@ mod _modify_transit_gateway_vpc_attachment_request_options;
 mod _modify_verified_access_endpoint_eni_options;
 
 mod _modify_verified_access_endpoint_load_balancer_options;
+
+mod _modify_verified_access_trust_provider_device_options;
 
 mod _modify_verified_access_trust_provider_oidc_options;
 

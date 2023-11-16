@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CancelImageCreation` operation.
 pub mod cancel_image_creation;
 
+/// Types for the `CancelLifecycleExecution` operation.
+pub mod cancel_lifecycle_execution;
+
 /// Types for the `CreateComponent` operation.
 pub mod create_component;
 
@@ -25,6 +28,9 @@ pub mod create_image_recipe;
 /// Types for the `CreateInfrastructureConfiguration` operation.
 pub mod create_infrastructure_configuration;
 
+/// Types for the `CreateLifecyclePolicy` operation.
+pub mod create_lifecycle_policy;
+
 /// Types for the `DeleteComponent` operation.
 pub mod delete_component;
 
@@ -45,6 +51,9 @@ pub mod delete_image_recipe;
 
 /// Types for the `DeleteInfrastructureConfiguration` operation.
 pub mod delete_infrastructure_configuration;
+
+/// Types for the `DeleteLifecyclePolicy` operation.
+pub mod delete_lifecycle_policy;
 
 /// Types for the `GetComponent` operation.
 pub mod get_component;
@@ -78,6 +87,12 @@ pub mod get_image_recipe_policy;
 
 /// Types for the `GetInfrastructureConfiguration` operation.
 pub mod get_infrastructure_configuration;
+
+/// Types for the `GetLifecycleExecution` operation.
+pub mod get_lifecycle_execution;
+
+/// Types for the `GetLifecyclePolicy` operation.
+pub mod get_lifecycle_policy;
 
 /// Types for the `GetWorkflowExecution` operation.
 pub mod get_workflow_execution;
@@ -130,6 +145,15 @@ pub mod list_images;
 /// Types for the `ListInfrastructureConfigurations` operation.
 pub mod list_infrastructure_configurations;
 
+/// Types for the `ListLifecycleExecutionResources` operation.
+pub mod list_lifecycle_execution_resources;
+
+/// Types for the `ListLifecycleExecutions` operation.
+pub mod list_lifecycle_executions;
+
+/// Types for the `ListLifecyclePolicies` operation.
+pub mod list_lifecycle_policies;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -154,6 +178,9 @@ pub mod put_image_recipe_policy;
 /// Types for the `StartImagePipelineExecution` operation.
 pub mod start_image_pipeline_execution;
 
+/// Types for the `StartResourceStateUpdate` operation.
+pub mod start_resource_state_update;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
@@ -168,3 +195,6 @@ pub mod update_image_pipeline;
 
 /// Types for the `UpdateInfrastructureConfiguration` operation.
 pub mod update_infrastructure_configuration;
+
+/// Types for the `UpdateLifecyclePolicy` operation.
+pub mod update_lifecycle_policy;

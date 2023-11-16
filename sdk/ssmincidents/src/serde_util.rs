@@ -8,15 +8,6 @@ pub(crate) fn access_denied_exception_correct_errors(
     builder
 }
 
-pub(crate) fn conflict_exception_correct_errors(
-    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
-) -> crate::types::error::builders::ConflictExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn internal_server_exception_correct_errors(
     mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
 ) -> crate::types::error::builders::InternalServerExceptionBuilder {
@@ -26,17 +17,11 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
-    }
-    if builder.service_code.is_none() {
-        builder.service_code = "no value was set".parse::<crate::types::ServiceCode>().ok()
-    }
-    if builder.quota_code.is_none() {
-        builder.quota_code = Some(Default::default())
     }
     builder
 }
@@ -65,20 +50,47 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_incident_findings_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_incident_findings::builders::BatchGetIncidentFindingsOutputBuilder,
+) -> crate::operation::batch_get_incident_findings::builders::BatchGetIncidentFindingsOutputBuilder {
+    if builder.findings.is_none() {
+        builder.findings = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.service_code.is_none() {
+        builder.service_code = "no value was set".parse::<crate::types::ServiceCode>().ok()
+    }
+    if builder.quota_code.is_none() {
+        builder.quota_code = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_replication_set_output_output_correct_errors(
     mut builder: crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder,
 ) -> crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn resource_not_found_exception_correct_errors(
-    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
-) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
     }
     builder
 }
@@ -163,6 +175,15 @@ pub(crate) fn get_timeline_event_output_output_correct_errors(
             let builder = crate::types::builders::TimelineEventBuilder::default();
             crate::serde_util::timeline_event_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn list_incident_findings_output_output_correct_errors(
+    mut builder: crate::operation::list_incident_findings::builders::ListIncidentFindingsOutputBuilder,
+) -> crate::operation::list_incident_findings::builders::ListIncidentFindingsOutputBuilder {
+    if builder.findings.is_none() {
+        builder.findings = Some(Default::default())
     }
     builder
 }
@@ -350,6 +371,21 @@ pub(crate) fn incident_record_source_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_incident_findings_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetIncidentFindingsErrorBuilder,
+) -> crate::types::builders::BatchGetIncidentFindingsErrorBuilder {
+    if builder.finding_id.is_none() {
+        builder.finding_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn event_summary_correct_errors(mut builder: crate::types::builders::EventSummaryBuilder) -> crate::types::builders::EventSummaryBuilder {
     if builder.incident_record_arn.is_none() {
         builder.incident_record_arn = Some(Default::default())
@@ -365,6 +401,31 @@ pub(crate) fn event_summary_correct_errors(mut builder: crate::types::builders::
     }
     if builder.event_type.is_none() {
         builder.event_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn finding_correct_errors(mut builder: crate::types::builders::FindingBuilder) -> crate::types::builders::FindingBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn finding_summary_correct_errors(
+    mut builder: crate::types::builders::FindingSummaryBuilder,
+) -> crate::types::builders::FindingSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -481,6 +542,33 @@ pub(crate) fn ssm_automation_correct_errors(
     }
     if builder.document_name.is_none() {
         builder.document_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cloud_formation_stack_update_correct_errors(
+    mut builder: crate::types::builders::CloudFormationStackUpdateBuilder,
+) -> crate::types::builders::CloudFormationStackUpdateBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.stack_arn.is_none() {
+        builder.stack_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_deploy_deployment_correct_errors(
+    mut builder: crate::types::builders::CodeDeployDeploymentBuilder,
+) -> crate::types::builders::CodeDeployDeploymentBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.deployment_group_arn.is_none() {
+        builder.deployment_group_arn = Some(Default::default())
+    }
+    if builder.deployment_id.is_none() {
+        builder.deployment_id = Some(Default::default())
     }
     builder
 }

@@ -9,6 +9,9 @@ pub fn ser_home_directory_map_entry(
     {
         object.key("Target").string(input.target.as_str());
     }
+    if let Some(var_1) = &input.r#type {
+        object.key("Type").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -38,6 +41,13 @@ where
                             builder = builder.set_target(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MapType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

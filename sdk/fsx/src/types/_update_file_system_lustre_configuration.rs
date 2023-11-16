@@ -31,6 +31,13 @@ pub struct UpdateFileSystemLustreConfiguration {
     pub log_configuration: ::std::option::Option<crate::types::LustreLogCreateConfiguration>,
     /// <p>The Lustre root squash configuration used when updating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
     pub root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
+    /// <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the deployment type of the file system, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput capacity</a>.</p>
+    pub per_unit_storage_throughput: ::std::option::Option<i32>,
 }
 impl UpdateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -74,6 +81,15 @@ impl UpdateFileSystemLustreConfiguration {
     pub fn root_squash_configuration(&self) -> ::std::option::Option<&crate::types::LustreRootSquashConfiguration> {
         self.root_squash_configuration.as_ref()
     }
+    /// <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the deployment type of the file system, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput capacity</a>.</p>
+    pub fn per_unit_storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.per_unit_storage_throughput
+    }
 }
 impl UpdateFileSystemLustreConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemLustreConfiguration`](crate::types::UpdateFileSystemLustreConfiguration).
@@ -93,6 +109,7 @@ pub struct UpdateFileSystemLustreConfigurationBuilder {
     pub(crate) data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LustreLogCreateConfiguration>,
     pub(crate) root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
+    pub(crate) per_unit_storage_throughput: ::std::option::Option<i32>,
 }
 impl UpdateFileSystemLustreConfigurationBuilder {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -232,6 +249,35 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     pub fn get_root_squash_configuration(&self) -> &::std::option::Option<crate::types::LustreRootSquashConfiguration> {
         &self.root_squash_configuration
     }
+    /// <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the deployment type of the file system, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput capacity</a>.</p>
+    pub fn per_unit_storage_throughput(mut self, input: i32) -> Self {
+        self.per_unit_storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the deployment type of the file system, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput capacity</a>.</p>
+    pub fn set_per_unit_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.per_unit_storage_throughput = input;
+        self
+    }
+    /// <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the deployment type of the file system, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput capacity</a>.</p>
+    pub fn get_per_unit_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.per_unit_storage_throughput
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemLustreConfiguration`](crate::types::UpdateFileSystemLustreConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemLustreConfiguration {
         crate::types::UpdateFileSystemLustreConfiguration {
@@ -242,6 +288,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
             data_compression_type: self.data_compression_type,
             log_configuration: self.log_configuration,
             root_squash_configuration: self.root_squash_configuration,
+            per_unit_storage_throughput: self.per_unit_storage_throughput,
         }
     }
 }

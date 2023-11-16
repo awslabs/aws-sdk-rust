@@ -19,6 +19,16 @@ pub(crate) fn reflens_get_classifiers_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_column_statistics_task_runs_output_output_next_token(
+    input: &crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_connections_output_output_next_token(
     input: &crate::operation::get_connections::GetConnectionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -211,6 +221,16 @@ pub(crate) fn reflens_get_workflow_runs_output_output_next_token(
 
 pub(crate) fn reflens_list_blueprints_output_output_next_token(
     input: &crate::operation::list_blueprints::ListBlueprintsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_column_statistics_task_runs_output_output_next_token(
+    input: &crate::operation::list_column_statistics_task_runs::ListColumnStatisticsTaskRunsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,

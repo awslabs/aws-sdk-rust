@@ -12,9 +12,15 @@
 /// ```text
 /// # let unavailabilityreasoncode = unimplemented!();
 /// match unavailabilityreasoncode {
+///     UnavailabilityReasonCode::AccountNotInOrganization => { /* ... */ },
 ///     UnavailabilityReasonCode::InvalidClassificationResult => { /* ... */ },
+///     UnavailabilityReasonCode::InvalidResultSignature => { /* ... */ },
+///     UnavailabilityReasonCode::MemberRoleTooPermissive => { /* ... */ },
+///     UnavailabilityReasonCode::MissingGetMemberPermission => { /* ... */ },
 ///     UnavailabilityReasonCode::ObjectExceedsSizeQuota => { /* ... */ },
 ///     UnavailabilityReasonCode::ObjectUnavailable => { /* ... */ },
+///     UnavailabilityReasonCode::ResultNotSigned => { /* ... */ },
+///     UnavailabilityReasonCode::RoleTooPermissive => { /* ... */ },
 ///     UnavailabilityReasonCode::UnsupportedFindingType => { /* ... */ },
 ///     UnavailabilityReasonCode::UnsupportedObjectType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,11 +51,23 @@
 )]
 pub enum UnavailabilityReasonCode {
     #[allow(missing_docs)] // documentation missing in model
+    AccountNotInOrganization,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidClassificationResult,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidResultSignature,
+    #[allow(missing_docs)] // documentation missing in model
+    MemberRoleTooPermissive,
+    #[allow(missing_docs)] // documentation missing in model
+    MissingGetMemberPermission,
     #[allow(missing_docs)] // documentation missing in model
     ObjectExceedsSizeQuota,
     #[allow(missing_docs)] // documentation missing in model
     ObjectUnavailable,
+    #[allow(missing_docs)] // documentation missing in model
+    ResultNotSigned,
+    #[allow(missing_docs)] // documentation missing in model
+    RoleTooPermissive,
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedFindingType,
     #[allow(missing_docs)] // documentation missing in model
@@ -61,9 +79,15 @@ pub enum UnavailabilityReasonCode {
 impl ::std::convert::From<&str> for UnavailabilityReasonCode {
     fn from(s: &str) -> Self {
         match s {
+            "ACCOUNT_NOT_IN_ORGANIZATION" => UnavailabilityReasonCode::AccountNotInOrganization,
             "INVALID_CLASSIFICATION_RESULT" => UnavailabilityReasonCode::InvalidClassificationResult,
+            "INVALID_RESULT_SIGNATURE" => UnavailabilityReasonCode::InvalidResultSignature,
+            "MEMBER_ROLE_TOO_PERMISSIVE" => UnavailabilityReasonCode::MemberRoleTooPermissive,
+            "MISSING_GET_MEMBER_PERMISSION" => UnavailabilityReasonCode::MissingGetMemberPermission,
             "OBJECT_EXCEEDS_SIZE_QUOTA" => UnavailabilityReasonCode::ObjectExceedsSizeQuota,
             "OBJECT_UNAVAILABLE" => UnavailabilityReasonCode::ObjectUnavailable,
+            "RESULT_NOT_SIGNED" => UnavailabilityReasonCode::ResultNotSigned,
+            "ROLE_TOO_PERMISSIVE" => UnavailabilityReasonCode::RoleTooPermissive,
             "UNSUPPORTED_FINDING_TYPE" => UnavailabilityReasonCode::UnsupportedFindingType,
             "UNSUPPORTED_OBJECT_TYPE" => UnavailabilityReasonCode::UnsupportedObjectType,
             other => UnavailabilityReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -81,9 +105,15 @@ impl UnavailabilityReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UnavailabilityReasonCode::AccountNotInOrganization => "ACCOUNT_NOT_IN_ORGANIZATION",
             UnavailabilityReasonCode::InvalidClassificationResult => "INVALID_CLASSIFICATION_RESULT",
+            UnavailabilityReasonCode::InvalidResultSignature => "INVALID_RESULT_SIGNATURE",
+            UnavailabilityReasonCode::MemberRoleTooPermissive => "MEMBER_ROLE_TOO_PERMISSIVE",
+            UnavailabilityReasonCode::MissingGetMemberPermission => "MISSING_GET_MEMBER_PERMISSION",
             UnavailabilityReasonCode::ObjectExceedsSizeQuota => "OBJECT_EXCEEDS_SIZE_QUOTA",
             UnavailabilityReasonCode::ObjectUnavailable => "OBJECT_UNAVAILABLE",
+            UnavailabilityReasonCode::ResultNotSigned => "RESULT_NOT_SIGNED",
+            UnavailabilityReasonCode::RoleTooPermissive => "ROLE_TOO_PERMISSIVE",
             UnavailabilityReasonCode::UnsupportedFindingType => "UNSUPPORTED_FINDING_TYPE",
             UnavailabilityReasonCode::UnsupportedObjectType => "UNSUPPORTED_OBJECT_TYPE",
             UnavailabilityReasonCode::Unknown(value) => value.as_str(),
@@ -92,9 +122,15 @@ impl UnavailabilityReasonCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ACCOUNT_NOT_IN_ORGANIZATION",
             "INVALID_CLASSIFICATION_RESULT",
+            "INVALID_RESULT_SIGNATURE",
+            "MEMBER_ROLE_TOO_PERMISSIVE",
+            "MISSING_GET_MEMBER_PERMISSION",
             "OBJECT_EXCEEDS_SIZE_QUOTA",
             "OBJECT_UNAVAILABLE",
+            "RESULT_NOT_SIGNED",
+            "ROLE_TOO_PERMISSIVE",
             "UNSUPPORTED_FINDING_TYPE",
             "UNSUPPORTED_OBJECT_TYPE",
         ]

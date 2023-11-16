@@ -98,6 +98,9 @@ pub struct CreateServerInput {
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
     pub structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
 }
 impl CreateServerInput {
     /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -233,6 +236,11 @@ impl CreateServerInput {
     pub fn structured_log_destinations(&self) -> &[::std::string::String] {
         self.structured_log_destinations.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub fn s3_storage_options(&self) -> ::std::option::Option<&crate::types::S3StorageOptions> {
+        self.s3_storage_options.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateServerInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -253,6 +261,7 @@ impl ::std::fmt::Debug for CreateServerInput {
         formatter.field("tags", &self.tags);
         formatter.field("workflow_details", &self.workflow_details);
         formatter.field("structured_log_destinations", &self.structured_log_destinations);
+        formatter.field("s3_storage_options", &self.s3_storage_options);
         formatter.finish()
     }
 }
@@ -283,6 +292,7 @@ pub struct CreateServerInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
     pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
 }
 impl CreateServerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -716,6 +726,23 @@ impl CreateServerInputBuilder {
     pub fn get_structured_log_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.structured_log_destinations
     }
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub fn s3_storage_options(mut self, input: crate::types::S3StorageOptions) -> Self {
+        self.s3_storage_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub fn set_s3_storage_options(mut self, input: ::std::option::Option<crate::types::S3StorageOptions>) -> Self {
+        self.s3_storage_options = input;
+        self
+    }
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub fn get_s3_storage_options(&self) -> &::std::option::Option<crate::types::S3StorageOptions> {
+        &self.s3_storage_options
+    }
     /// Consumes the builder and constructs a [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
     pub fn build(
         self,
@@ -737,6 +764,7 @@ impl CreateServerInputBuilder {
             tags: self.tags,
             workflow_details: self.workflow_details,
             structured_log_destinations: self.structured_log_destinations,
+            s3_storage_options: self.s3_storage_options,
         })
     }
 }
@@ -759,6 +787,7 @@ impl ::std::fmt::Debug for CreateServerInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("workflow_details", &self.workflow_details);
         formatter.field("structured_log_destinations", &self.structured_log_destinations);
+        formatter.field("s3_storage_options", &self.s3_storage_options);
         formatter.finish()
     }
 }

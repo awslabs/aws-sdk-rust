@@ -18,6 +18,7 @@
 ///     ImageStatus::Creating => { /* ... */ },
 ///     ImageStatus::Deleted => { /* ... */ },
 ///     ImageStatus::Deprecated => { /* ... */ },
+///     ImageStatus::Disabled => { /* ... */ },
 ///     ImageStatus::Distributing => { /* ... */ },
 ///     ImageStatus::Failed => { /* ... */ },
 ///     ImageStatus::Integrating => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum ImageStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deprecated,
     #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Distributing,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -85,6 +88,7 @@ impl ::std::convert::From<&str> for ImageStatus {
             "CREATING" => ImageStatus::Creating,
             "DELETED" => ImageStatus::Deleted,
             "DEPRECATED" => ImageStatus::Deprecated,
+            "DISABLED" => ImageStatus::Disabled,
             "DISTRIBUTING" => ImageStatus::Distributing,
             "FAILED" => ImageStatus::Failed,
             "INTEGRATING" => ImageStatus::Integrating,
@@ -111,6 +115,7 @@ impl ImageStatus {
             ImageStatus::Creating => "CREATING",
             ImageStatus::Deleted => "DELETED",
             ImageStatus::Deprecated => "DEPRECATED",
+            ImageStatus::Disabled => "DISABLED",
             ImageStatus::Distributing => "DISTRIBUTING",
             ImageStatus::Failed => "FAILED",
             ImageStatus::Integrating => "INTEGRATING",
@@ -128,6 +133,7 @@ impl ImageStatus {
             "CREATING",
             "DELETED",
             "DEPRECATED",
+            "DISABLED",
             "DISTRIBUTING",
             "FAILED",
             "INTEGRATING",

@@ -16,6 +16,13 @@ pub struct GetLifecyclePoliciesInput {
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
     pub tags_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p> <b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>VOLUME</code> - To get only the default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p> </li>
+    /// <li> <p> <code>ALL</code> - To get all default policies</p> </li>
+    /// </ul>
+    pub default_policy_type: ::std::option::Option<crate::types::DefaultPoliciesTypeValues>,
 }
 impl GetLifecyclePoliciesInput {
     /// <p>The identifiers of the data lifecycle policies.</p>
@@ -49,6 +56,15 @@ impl GetLifecyclePoliciesInput {
     pub fn tags_to_add(&self) -> &[::std::string::String] {
         self.tags_to_add.as_deref().unwrap_or_default()
     }
+    /// <p> <b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>VOLUME</code> - To get only the default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p> </li>
+    /// <li> <p> <code>ALL</code> - To get all default policies</p> </li>
+    /// </ul>
+    pub fn default_policy_type(&self) -> ::std::option::Option<&crate::types::DefaultPoliciesTypeValues> {
+        self.default_policy_type.as_ref()
+    }
 }
 impl GetLifecyclePoliciesInput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePoliciesInput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput).
@@ -66,6 +82,7 @@ pub struct GetLifecyclePoliciesInputBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
     pub(crate) target_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) default_policy_type: ::std::option::Option<crate::types::DefaultPoliciesTypeValues>,
 }
 impl GetLifecyclePoliciesInputBuilder {
     /// Appends an item to `policy_ids`.
@@ -171,6 +188,35 @@ impl GetLifecyclePoliciesInputBuilder {
     pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tags_to_add
     }
+    /// <p> <b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>VOLUME</code> - To get only the default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p> </li>
+    /// <li> <p> <code>ALL</code> - To get all default policies</p> </li>
+    /// </ul>
+    pub fn default_policy_type(mut self, input: crate::types::DefaultPoliciesTypeValues) -> Self {
+        self.default_policy_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>VOLUME</code> - To get only the default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p> </li>
+    /// <li> <p> <code>ALL</code> - To get all default policies</p> </li>
+    /// </ul>
+    pub fn set_default_policy_type(mut self, input: ::std::option::Option<crate::types::DefaultPoliciesTypeValues>) -> Self {
+        self.default_policy_type = input;
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>VOLUME</code> - To get only the default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p> </li>
+    /// <li> <p> <code>ALL</code> - To get all default policies</p> </li>
+    /// </ul>
+    pub fn get_default_policy_type(&self) -> &::std::option::Option<crate::types::DefaultPoliciesTypeValues> {
+        &self.default_policy_type
+    }
     /// Consumes the builder and constructs a [`GetLifecyclePoliciesInput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput).
     pub fn build(
         self,
@@ -182,6 +228,7 @@ impl GetLifecyclePoliciesInputBuilder {
             resource_types: self.resource_types,
             target_tags: self.target_tags,
             tags_to_add: self.tags_to_add,
+            default_policy_type: self.default_policy_type,
         })
     }
 }

@@ -156,17 +156,17 @@ impl ListParticipantEventsFluentBuilder {
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_participant_id()
     }
-    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

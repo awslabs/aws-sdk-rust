@@ -50,6 +50,8 @@ pub struct StepExecution {
     pub target_location: ::std::option::Option<crate::types::TargetLocation>,
     /// <p>The CloudWatch alarms that were invoked by the automation.</p>
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    /// <p>Information about the parent step.</p>
+    pub parent_step_details: ::std::option::Option<crate::types::ParentStepDetails>,
 }
 impl StepExecution {
     /// <p>The name of this execution step.</p>
@@ -152,6 +154,10 @@ impl StepExecution {
     pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
         self.triggered_alarms.as_deref().unwrap_or_default()
     }
+    /// <p>Information about the parent step.</p>
+    pub fn parent_step_details(&self) -> ::std::option::Option<&crate::types::ParentStepDetails> {
+        self.parent_step_details.as_ref()
+    }
 }
 impl StepExecution {
     /// Creates a new builder-style object to manufacture [`StepExecution`](crate::types::StepExecution).
@@ -188,6 +194,7 @@ pub struct StepExecutionBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) target_location: ::std::option::Option<crate::types::TargetLocation>,
     pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) parent_step_details: ::std::option::Option<crate::types::ParentStepDetails>,
 }
 impl StepExecutionBuilder {
     /// <p>The name of this execution step.</p>
@@ -556,6 +563,20 @@ impl StepExecutionBuilder {
     pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
+    /// <p>Information about the parent step.</p>
+    pub fn parent_step_details(mut self, input: crate::types::ParentStepDetails) -> Self {
+        self.parent_step_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the parent step.</p>
+    pub fn set_parent_step_details(mut self, input: ::std::option::Option<crate::types::ParentStepDetails>) -> Self {
+        self.parent_step_details = input;
+        self
+    }
+    /// <p>Information about the parent step.</p>
+    pub fn get_parent_step_details(&self) -> &::std::option::Option<crate::types::ParentStepDetails> {
+        &self.parent_step_details
+    }
     /// Consumes the builder and constructs a [`StepExecution`](crate::types::StepExecution).
     pub fn build(self) -> crate::types::StepExecution {
         crate::types::StepExecution {
@@ -582,6 +603,7 @@ impl StepExecutionBuilder {
             targets: self.targets,
             target_location: self.target_location,
             triggered_alarms: self.triggered_alarms,
+            parent_step_details: self.parent_step_details,
         }
     }
 }

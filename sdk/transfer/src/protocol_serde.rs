@@ -339,6 +339,8 @@ pub(crate) mod shape_posix_profile;
 
 pub(crate) mod shape_protocol_details;
 
+pub(crate) mod shape_s3_storage_options;
+
 pub(crate) mod shape_security_policy_names;
 
 pub(crate) mod shape_sftp_connector_config;

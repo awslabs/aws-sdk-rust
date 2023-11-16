@@ -14,7 +14,7 @@ pub struct ParticipantToken {
     /// <p>Application-provided attributes to encode into the token and attach to a stage. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
     /// <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
@@ -38,7 +38,7 @@ impl ParticipantToken {
         self.attributes.as_ref()
     }
     /// <p>Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
@@ -202,7 +202,7 @@ impl ParticipantTokenBuilder {
             token: self.token,
             user_id: self.user_id,
             attributes: self.attributes,
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             capabilities: self.capabilities,
             expiration_time: self.expiration_time,
         }

@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`instance_type(InstanceType)`](crate::operation::get_dev_environment::GetDevEnvironmentOutput::instance_type): <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     ///   - [`inactivity_timeout_minutes(i32)`](crate::operation::get_dev_environment::GetDevEnvironmentOutput::inactivity_timeout_minutes): <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     ///   - [`persistent_storage(Option<PersistentStorage>)`](crate::operation::get_dev_environment::GetDevEnvironmentOutput::persistent_storage): <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
+    ///   - [`vpc_connection_name(Option<String>)`](crate::operation::get_dev_environment::GetDevEnvironmentOutput::vpc_connection_name): <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
     /// - On failure, responds with [`SdkError<GetDevEnvironmentError>`](crate::operation::get_dev_environment::GetDevEnvironmentError)
     pub fn get_dev_environment(&self) -> crate::operation::get_dev_environment::builders::GetDevEnvironmentFluentBuilder {
         crate::operation::get_dev_environment::builders::GetDevEnvironmentFluentBuilder::new(self.handle.clone())

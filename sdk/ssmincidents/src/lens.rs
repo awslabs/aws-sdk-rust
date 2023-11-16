@@ -9,6 +9,16 @@ pub(crate) fn reflens_get_resource_policies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_incident_findings_output_output_next_token(
+    input: &crate::operation::list_incident_findings::ListIncidentFindingsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_incident_records_output_output_next_token(
     input: &crate::operation::list_incident_records::ListIncidentRecordsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -63,6 +73,13 @@ pub(crate) fn lens_get_resource_policies_output_output_resource_policies(
     input: crate::operation::get_resource_policies::GetResourcePoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>> {
     let input = input.resource_policies;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_incident_findings_output_output_findings(
+    input: crate::operation::list_incident_findings::ListIncidentFindingsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>> {
+    let input = input.findings;
     ::std::option::Option::Some(input)
 }
 

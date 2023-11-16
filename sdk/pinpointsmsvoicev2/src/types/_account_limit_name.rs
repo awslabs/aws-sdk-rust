@@ -16,6 +16,10 @@
 ///     AccountLimitName::OptOutLists => { /* ... */ },
 ///     AccountLimitName::PhoneNumbers => { /* ... */ },
 ///     AccountLimitName::Pools => { /* ... */ },
+///     AccountLimitName::Registrations => { /* ... */ },
+///     AccountLimitName::RegistrationAttachments => { /* ... */ },
+///     AccountLimitName::SenderIds => { /* ... */ },
+///     AccountLimitName::VerifiedDestinationNumbers => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +55,14 @@ pub enum AccountLimitName {
     PhoneNumbers,
     #[allow(missing_docs)] // documentation missing in model
     Pools,
+    #[allow(missing_docs)] // documentation missing in model
+    Registrations,
+    #[allow(missing_docs)] // documentation missing in model
+    RegistrationAttachments,
+    #[allow(missing_docs)] // documentation missing in model
+    SenderIds,
+    #[allow(missing_docs)] // documentation missing in model
+    VerifiedDestinationNumbers,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,6 +74,10 @@ impl ::std::convert::From<&str> for AccountLimitName {
             "OPT_OUT_LISTS" => AccountLimitName::OptOutLists,
             "PHONE_NUMBERS" => AccountLimitName::PhoneNumbers,
             "POOLS" => AccountLimitName::Pools,
+            "REGISTRATIONS" => AccountLimitName::Registrations,
+            "REGISTRATION_ATTACHMENTS" => AccountLimitName::RegistrationAttachments,
+            "SENDER_IDS" => AccountLimitName::SenderIds,
+            "VERIFIED_DESTINATION_NUMBERS" => AccountLimitName::VerifiedDestinationNumbers,
             other => AccountLimitName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,12 +97,25 @@ impl AccountLimitName {
             AccountLimitName::OptOutLists => "OPT_OUT_LISTS",
             AccountLimitName::PhoneNumbers => "PHONE_NUMBERS",
             AccountLimitName::Pools => "POOLS",
+            AccountLimitName::Registrations => "REGISTRATIONS",
+            AccountLimitName::RegistrationAttachments => "REGISTRATION_ATTACHMENTS",
+            AccountLimitName::SenderIds => "SENDER_IDS",
+            AccountLimitName::VerifiedDestinationNumbers => "VERIFIED_DESTINATION_NUMBERS",
             AccountLimitName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFIGURATION_SETS", "OPT_OUT_LISTS", "PHONE_NUMBERS", "POOLS"]
+        &[
+            "CONFIGURATION_SETS",
+            "OPT_OUT_LISTS",
+            "PHONE_NUMBERS",
+            "POOLS",
+            "REGISTRATIONS",
+            "REGISTRATION_ATTACHMENTS",
+            "SENDER_IDS",
+            "VERIFIED_DESTINATION_NUMBERS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AccountLimitName {

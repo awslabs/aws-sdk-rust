@@ -179,6 +179,10 @@ pub(crate) mod shape_get_column_statistics_for_partition;
 
 pub(crate) mod shape_get_column_statistics_for_table;
 
+pub(crate) mod shape_get_column_statistics_task_run;
+
+pub(crate) mod shape_get_column_statistics_task_runs;
+
 pub(crate) mod shape_get_connection;
 
 pub(crate) mod shape_get_connections;
@@ -299,6 +303,8 @@ pub(crate) mod shape_import_catalog_to_glue;
 
 pub(crate) mod shape_list_blueprints;
 
+pub(crate) mod shape_list_column_statistics_task_runs;
+
 pub(crate) mod shape_list_crawlers;
 
 pub(crate) mod shape_list_crawls;
@@ -359,6 +365,8 @@ pub(crate) mod shape_search_tables;
 
 pub(crate) mod shape_start_blueprint_run;
 
+pub(crate) mod shape_start_column_statistics_task_run;
+
 pub(crate) mod shape_start_crawler;
 
 pub(crate) mod shape_start_crawler_schedule;
@@ -380,6 +388,8 @@ pub(crate) mod shape_start_ml_labeling_set_generation_task_run;
 pub(crate) mod shape_start_trigger;
 
 pub(crate) mod shape_start_workflow_run;
+
+pub(crate) mod shape_stop_column_statistics_task_run;
 
 pub(crate) mod shape_stop_crawler;
 
@@ -494,6 +504,12 @@ pub(crate) mod shape_cancel_ml_task_run_input;
 pub(crate) mod shape_cancel_statement_input;
 
 pub(crate) mod shape_check_schema_version_validity_input;
+
+pub(crate) mod shape_column_statistics_task_not_running_exception;
+
+pub(crate) mod shape_column_statistics_task_running_exception;
+
+pub(crate) mod shape_column_statistics_task_stopping_exception;
 
 pub(crate) mod shape_concurrent_modification_exception;
 
@@ -628,6 +644,10 @@ pub(crate) mod shape_get_classifiers_input;
 pub(crate) mod shape_get_column_statistics_for_partition_input;
 
 pub(crate) mod shape_get_column_statistics_for_table_input;
+
+pub(crate) mod shape_get_column_statistics_task_run_input;
+
+pub(crate) mod shape_get_column_statistics_task_runs_input;
 
 pub(crate) mod shape_get_connection_input;
 
@@ -765,6 +785,8 @@ pub(crate) mod shape_invalid_state_exception;
 
 pub(crate) mod shape_list_blueprints_input;
 
+pub(crate) mod shape_list_column_statistics_task_runs_input;
+
 pub(crate) mod shape_list_crawlers_input;
 
 pub(crate) mod shape_list_crawls_input;
@@ -843,6 +865,8 @@ pub(crate) mod shape_search_tables_input;
 
 pub(crate) mod shape_start_blueprint_run_input;
 
+pub(crate) mod shape_start_column_statistics_task_run_input;
+
 pub(crate) mod shape_start_crawler_input;
 
 pub(crate) mod shape_start_crawler_schedule_input;
@@ -864,6 +888,8 @@ pub(crate) mod shape_start_ml_labeling_set_generation_task_run_input;
 pub(crate) mod shape_start_trigger_input;
 
 pub(crate) mod shape_start_workflow_run_input;
+
+pub(crate) mod shape_stop_column_statistics_task_run_input;
 
 pub(crate) mod shape_stop_crawler_input;
 
@@ -980,6 +1006,12 @@ pub(crate) mod shape_column_statistics;
 pub(crate) mod shape_column_statistics_errors;
 
 pub(crate) mod shape_column_statistics_list;
+
+pub(crate) mod shape_column_statistics_task_run;
+
+pub(crate) mod shape_column_statistics_task_run_id_list;
+
+pub(crate) mod shape_column_statistics_task_runs_list;
 
 pub(crate) mod shape_connection;
 
@@ -1322,6 +1354,8 @@ pub(crate) mod shape_column;
 pub(crate) mod shape_column_error;
 
 pub(crate) mod shape_column_list;
+
+pub(crate) mod shape_column_name_list;
 
 pub(crate) mod shape_column_row_filter;
 

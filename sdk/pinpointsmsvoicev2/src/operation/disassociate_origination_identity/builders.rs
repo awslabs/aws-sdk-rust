@@ -23,7 +23,7 @@ impl DisassociateOriginationIdentityInputBuilder {
 /// Fluent builder constructing a request to `DisassociateOriginationIdentity`.
 ///
 /// <p>Removes the specified origination identity from an existing pool.</p>
-/// <p>If the origination identity isn't associated with the specified pool, an Error is returned.</p>
+/// <p>If the origination identity isn't associated with the specified pool, an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateOriginationIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

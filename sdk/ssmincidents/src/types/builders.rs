@@ -29,6 +29,8 @@ pub use crate::types::_incident_record_summary::IncidentRecordSummaryBuilder;
 
 pub use crate::types::_incident_record_source::IncidentRecordSourceBuilder;
 
+pub use crate::types::_finding_summary::FindingSummaryBuilder;
+
 pub use crate::types::_timeline_event::TimelineEventBuilder;
 
 pub use crate::types::_incident_template::IncidentTemplateBuilder;
@@ -42,3 +44,11 @@ pub use crate::types::_region_info::RegionInfoBuilder;
 pub use crate::types::_incident_record::IncidentRecordBuilder;
 
 pub use crate::types::_region_map_input_value::RegionMapInputValueBuilder;
+
+pub use crate::types::_batch_get_incident_findings_error::BatchGetIncidentFindingsErrorBuilder;
+
+pub use crate::types::_finding::FindingBuilder;
+
+pub use crate::types::_cloud_formation_stack_update::CloudFormationStackUpdateBuilder;
+
+pub use crate::types::_code_deploy_deployment::CodeDeployDeploymentBuilder;

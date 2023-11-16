@@ -29,6 +29,8 @@ pub struct GetDevEnvironmentOutput {
     pub inactivity_timeout_minutes: i32,
     /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
     pub persistent_storage: ::std::option::Option<crate::types::PersistentStorage>,
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub vpc_connection_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDevEnvironmentOutput {
@@ -91,6 +93,10 @@ impl GetDevEnvironmentOutput {
     pub fn persistent_storage(&self) -> ::std::option::Option<&crate::types::PersistentStorage> {
         self.persistent_storage.as_ref()
     }
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub fn vpc_connection_name(&self) -> ::std::option::Option<&str> {
+        self.vpc_connection_name.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDevEnvironmentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -121,6 +127,7 @@ pub struct GetDevEnvironmentOutputBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) inactivity_timeout_minutes: ::std::option::Option<i32>,
     pub(crate) persistent_storage: ::std::option::Option<crate::types::PersistentStorage>,
+    pub(crate) vpc_connection_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDevEnvironmentOutputBuilder {
@@ -327,6 +334,20 @@ impl GetDevEnvironmentOutputBuilder {
     pub fn get_persistent_storage(&self) -> &::std::option::Option<crate::types::PersistentStorage> {
         &self.persistent_storage
     }
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub fn vpc_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_connection_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub fn set_vpc_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_connection_name = input;
+        self
+    }
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub fn get_vpc_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -403,6 +424,7 @@ impl GetDevEnvironmentOutputBuilder {
             })?,
             inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
             persistent_storage: self.persistent_storage,
+            vpc_connection_name: self.vpc_connection_name,
             _request_id: self._request_id,
         })
     }

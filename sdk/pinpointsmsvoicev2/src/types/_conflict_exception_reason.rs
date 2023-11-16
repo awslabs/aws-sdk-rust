@@ -12,25 +12,37 @@
 /// ```text
 /// # let conflictexceptionreason = unimplemented!();
 /// match conflictexceptionreason {
+///     ConflictExceptionReason::CreateRegistrationVersionNotAllowed => { /* ... */ },
 ///     ConflictExceptionReason::DeletionProtectionEnabled => { /* ... */ },
 ///     ConflictExceptionReason::DestinationPhoneNumberNotVerified => { /* ... */ },
 ///     ConflictExceptionReason::DestinationPhoneNumberOptedOut => { /* ... */ },
+///     ConflictExceptionReason::DisassociateRegistrationNotAllowed => { /* ... */ },
+///     ConflictExceptionReason::DiscardRegistrationVersionNotAllowed => { /* ... */ },
+///     ConflictExceptionReason::EditRegistrationFieldValuesNotAllowed => { /* ... */ },
 ///     ConflictExceptionReason::EventDestinationMismatch => { /* ... */ },
 ///     ConflictExceptionReason::KeywordMismatch => { /* ... */ },
 ///     ConflictExceptionReason::LastPhoneNumber => { /* ... */ },
 ///     ConflictExceptionReason::MessageTypeMismatch => { /* ... */ },
 ///     ConflictExceptionReason::NoOriginationIdentitiesFound => { /* ... */ },
+///     ConflictExceptionReason::NumberCapabilitiesMismatch => { /* ... */ },
 ///     ConflictExceptionReason::OptOutListMismatch => { /* ... */ },
 ///     ConflictExceptionReason::PhoneNumberAssociatedToPool => { /* ... */ },
+///     ConflictExceptionReason::PhoneNumberAssociatedToRegistration => { /* ... */ },
 ///     ConflictExceptionReason::PhoneNumberNotAssociatedToPool => { /* ... */ },
 ///     ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => { /* ... */ },
+///     ConflictExceptionReason::RegistrationAlreadySubmitted => { /* ... */ },
+///     ConflictExceptionReason::RegistrationNotComplete => { /* ... */ },
 ///     ConflictExceptionReason::ResourceAlreadyExists => { /* ... */ },
 ///     ConflictExceptionReason::ResourceDeletionNotAllowed => { /* ... */ },
 ///     ConflictExceptionReason::ResourceModificationNotAllowed => { /* ... */ },
 ///     ConflictExceptionReason::ResourceNotActive => { /* ... */ },
 ///     ConflictExceptionReason::ResourceNotEmpty => { /* ... */ },
 ///     ConflictExceptionReason::SelfManagedOptOutsMismatch => { /* ... */ },
+///     ConflictExceptionReason::SenderIdAssociatedToPool => { /* ... */ },
+///     ConflictExceptionReason::SubmitRegistrationVersionNotAllowed => { /* ... */ },
 ///     ConflictExceptionReason::TwoWayConfigMismatch => { /* ... */ },
+///     ConflictExceptionReason::VerificationAlreadyComplete => { /* ... */ },
+///     ConflictExceptionReason::VerificationCodeExpired => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -59,11 +71,19 @@
 )]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    CreateRegistrationVersionNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
     DeletionProtectionEnabled,
     #[allow(missing_docs)] // documentation missing in model
     DestinationPhoneNumberNotVerified,
     #[allow(missing_docs)] // documentation missing in model
     DestinationPhoneNumberOptedOut,
+    #[allow(missing_docs)] // documentation missing in model
+    DisassociateRegistrationNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
+    DiscardRegistrationVersionNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
+    EditRegistrationFieldValuesNotAllowed,
     #[allow(missing_docs)] // documentation missing in model
     EventDestinationMismatch,
     #[allow(missing_docs)] // documentation missing in model
@@ -75,13 +95,21 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     NoOriginationIdentitiesFound,
     #[allow(missing_docs)] // documentation missing in model
+    NumberCapabilitiesMismatch,
+    #[allow(missing_docs)] // documentation missing in model
     OptOutListMismatch,
     #[allow(missing_docs)] // documentation missing in model
     PhoneNumberAssociatedToPool,
     #[allow(missing_docs)] // documentation missing in model
+    PhoneNumberAssociatedToRegistration,
+    #[allow(missing_docs)] // documentation missing in model
     PhoneNumberNotAssociatedToPool,
     #[allow(missing_docs)] // documentation missing in model
     PhoneNumberNotInRegistrationRegion,
+    #[allow(missing_docs)] // documentation missing in model
+    RegistrationAlreadySubmitted,
+    #[allow(missing_docs)] // documentation missing in model
+    RegistrationNotComplete,
     #[allow(missing_docs)] // documentation missing in model
     ResourceAlreadyExists,
     #[allow(missing_docs)] // documentation missing in model
@@ -95,7 +123,15 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     SelfManagedOptOutsMismatch,
     #[allow(missing_docs)] // documentation missing in model
+    SenderIdAssociatedToPool,
+    #[allow(missing_docs)] // documentation missing in model
+    SubmitRegistrationVersionNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
     TwoWayConfigMismatch,
+    #[allow(missing_docs)] // documentation missing in model
+    VerificationAlreadyComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    VerificationCodeExpired,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -103,25 +139,37 @@ pub enum ConflictExceptionReason {
 impl ::std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "CREATE_REGISTRATION_VERSION_NOT_ALLOWED" => ConflictExceptionReason::CreateRegistrationVersionNotAllowed,
             "DELETION_PROTECTION_ENABLED" => ConflictExceptionReason::DeletionProtectionEnabled,
             "DESTINATION_PHONE_NUMBER_NOT_VERIFIED" => ConflictExceptionReason::DestinationPhoneNumberNotVerified,
             "DESTINATION_PHONE_NUMBER_OPTED_OUT" => ConflictExceptionReason::DestinationPhoneNumberOptedOut,
+            "DISASSOCIATE_REGISTRATION_NOT_ALLOWED" => ConflictExceptionReason::DisassociateRegistrationNotAllowed,
+            "DISCARD_REGISTRATION_VERSION_NOT_ALLOWED" => ConflictExceptionReason::DiscardRegistrationVersionNotAllowed,
+            "EDIT_REGISTRATION_FIELD_VALUES_NOT_ALLOWED" => ConflictExceptionReason::EditRegistrationFieldValuesNotAllowed,
             "EVENT_DESTINATION_MISMATCH" => ConflictExceptionReason::EventDestinationMismatch,
             "KEYWORD_MISMATCH" => ConflictExceptionReason::KeywordMismatch,
             "LAST_PHONE_NUMBER" => ConflictExceptionReason::LastPhoneNumber,
             "MESSAGE_TYPE_MISMATCH" => ConflictExceptionReason::MessageTypeMismatch,
             "NO_ORIGINATION_IDENTITIES_FOUND" => ConflictExceptionReason::NoOriginationIdentitiesFound,
+            "NUMBER_CAPABILITIES_MISMATCH" => ConflictExceptionReason::NumberCapabilitiesMismatch,
             "OPT_OUT_LIST_MISMATCH" => ConflictExceptionReason::OptOutListMismatch,
             "PHONE_NUMBER_ASSOCIATED_TO_POOL" => ConflictExceptionReason::PhoneNumberAssociatedToPool,
+            "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION" => ConflictExceptionReason::PhoneNumberAssociatedToRegistration,
             "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL" => ConflictExceptionReason::PhoneNumberNotAssociatedToPool,
             "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION" => ConflictExceptionReason::PhoneNumberNotInRegistrationRegion,
+            "REGISTRATION_ALREADY_SUBMITTED" => ConflictExceptionReason::RegistrationAlreadySubmitted,
+            "REGISTRATION_NOT_COMPLETE" => ConflictExceptionReason::RegistrationNotComplete,
             "RESOURCE_ALREADY_EXISTS" => ConflictExceptionReason::ResourceAlreadyExists,
             "RESOURCE_DELETION_NOT_ALLOWED" => ConflictExceptionReason::ResourceDeletionNotAllowed,
             "RESOURCE_MODIFICATION_NOT_ALLOWED" => ConflictExceptionReason::ResourceModificationNotAllowed,
             "RESOURCE_NOT_ACTIVE" => ConflictExceptionReason::ResourceNotActive,
             "RESOURCE_NOT_EMPTY" => ConflictExceptionReason::ResourceNotEmpty,
             "SELF_MANAGED_OPT_OUTS_MISMATCH" => ConflictExceptionReason::SelfManagedOptOutsMismatch,
+            "SENDER_ID_ASSOCIATED_TO_POOL" => ConflictExceptionReason::SenderIdAssociatedToPool,
+            "SUBMIT_REGISTRATION_VERSION_NOT_ALLOWED" => ConflictExceptionReason::SubmitRegistrationVersionNotAllowed,
             "TWO_WAY_CONFIG_MISMATCH" => ConflictExceptionReason::TwoWayConfigMismatch,
+            "VERIFICATION_ALREADY_COMPLETE" => ConflictExceptionReason::VerificationAlreadyComplete,
+            "VERIFICATION_CODE_EXPIRED" => ConflictExceptionReason::VerificationCodeExpired,
             other => ConflictExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -137,50 +185,74 @@ impl ConflictExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConflictExceptionReason::CreateRegistrationVersionNotAllowed => "CREATE_REGISTRATION_VERSION_NOT_ALLOWED",
             ConflictExceptionReason::DeletionProtectionEnabled => "DELETION_PROTECTION_ENABLED",
             ConflictExceptionReason::DestinationPhoneNumberNotVerified => "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
             ConflictExceptionReason::DestinationPhoneNumberOptedOut => "DESTINATION_PHONE_NUMBER_OPTED_OUT",
+            ConflictExceptionReason::DisassociateRegistrationNotAllowed => "DISASSOCIATE_REGISTRATION_NOT_ALLOWED",
+            ConflictExceptionReason::DiscardRegistrationVersionNotAllowed => "DISCARD_REGISTRATION_VERSION_NOT_ALLOWED",
+            ConflictExceptionReason::EditRegistrationFieldValuesNotAllowed => "EDIT_REGISTRATION_FIELD_VALUES_NOT_ALLOWED",
             ConflictExceptionReason::EventDestinationMismatch => "EVENT_DESTINATION_MISMATCH",
             ConflictExceptionReason::KeywordMismatch => "KEYWORD_MISMATCH",
             ConflictExceptionReason::LastPhoneNumber => "LAST_PHONE_NUMBER",
             ConflictExceptionReason::MessageTypeMismatch => "MESSAGE_TYPE_MISMATCH",
             ConflictExceptionReason::NoOriginationIdentitiesFound => "NO_ORIGINATION_IDENTITIES_FOUND",
+            ConflictExceptionReason::NumberCapabilitiesMismatch => "NUMBER_CAPABILITIES_MISMATCH",
             ConflictExceptionReason::OptOutListMismatch => "OPT_OUT_LIST_MISMATCH",
             ConflictExceptionReason::PhoneNumberAssociatedToPool => "PHONE_NUMBER_ASSOCIATED_TO_POOL",
+            ConflictExceptionReason::PhoneNumberAssociatedToRegistration => "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION",
             ConflictExceptionReason::PhoneNumberNotAssociatedToPool => "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL",
             ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION",
+            ConflictExceptionReason::RegistrationAlreadySubmitted => "REGISTRATION_ALREADY_SUBMITTED",
+            ConflictExceptionReason::RegistrationNotComplete => "REGISTRATION_NOT_COMPLETE",
             ConflictExceptionReason::ResourceAlreadyExists => "RESOURCE_ALREADY_EXISTS",
             ConflictExceptionReason::ResourceDeletionNotAllowed => "RESOURCE_DELETION_NOT_ALLOWED",
             ConflictExceptionReason::ResourceModificationNotAllowed => "RESOURCE_MODIFICATION_NOT_ALLOWED",
             ConflictExceptionReason::ResourceNotActive => "RESOURCE_NOT_ACTIVE",
             ConflictExceptionReason::ResourceNotEmpty => "RESOURCE_NOT_EMPTY",
             ConflictExceptionReason::SelfManagedOptOutsMismatch => "SELF_MANAGED_OPT_OUTS_MISMATCH",
+            ConflictExceptionReason::SenderIdAssociatedToPool => "SENDER_ID_ASSOCIATED_TO_POOL",
+            ConflictExceptionReason::SubmitRegistrationVersionNotAllowed => "SUBMIT_REGISTRATION_VERSION_NOT_ALLOWED",
             ConflictExceptionReason::TwoWayConfigMismatch => "TWO_WAY_CONFIG_MISMATCH",
+            ConflictExceptionReason::VerificationAlreadyComplete => "VERIFICATION_ALREADY_COMPLETE",
+            ConflictExceptionReason::VerificationCodeExpired => "VERIFICATION_CODE_EXPIRED",
             ConflictExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CREATE_REGISTRATION_VERSION_NOT_ALLOWED",
             "DELETION_PROTECTION_ENABLED",
             "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
             "DESTINATION_PHONE_NUMBER_OPTED_OUT",
+            "DISASSOCIATE_REGISTRATION_NOT_ALLOWED",
+            "DISCARD_REGISTRATION_VERSION_NOT_ALLOWED",
+            "EDIT_REGISTRATION_FIELD_VALUES_NOT_ALLOWED",
             "EVENT_DESTINATION_MISMATCH",
             "KEYWORD_MISMATCH",
             "LAST_PHONE_NUMBER",
             "MESSAGE_TYPE_MISMATCH",
             "NO_ORIGINATION_IDENTITIES_FOUND",
+            "NUMBER_CAPABILITIES_MISMATCH",
             "OPT_OUT_LIST_MISMATCH",
             "PHONE_NUMBER_ASSOCIATED_TO_POOL",
+            "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION",
             "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL",
             "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION",
+            "REGISTRATION_ALREADY_SUBMITTED",
+            "REGISTRATION_NOT_COMPLETE",
             "RESOURCE_ALREADY_EXISTS",
             "RESOURCE_DELETION_NOT_ALLOWED",
             "RESOURCE_MODIFICATION_NOT_ALLOWED",
             "RESOURCE_NOT_ACTIVE",
             "RESOURCE_NOT_EMPTY",
             "SELF_MANAGED_OPT_OUTS_MISMATCH",
+            "SENDER_ID_ASSOCIATED_TO_POOL",
+            "SUBMIT_REGISTRATION_VERSION_NOT_ALLOWED",
             "TWO_WAY_CONFIG_MISMATCH",
+            "VERIFICATION_ALREADY_COMPLETE",
+            "VERIFICATION_CODE_EXPIRED",
         ]
     }
 }

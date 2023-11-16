@@ -7,6 +7,8 @@ pub use crate::types::_on_failure::OnFailureBuilder;
 
 pub use crate::types::_on_success::OnSuccessBuilder;
 
+pub use crate::types::_logging_config::LoggingConfigBuilder;
+
 pub use crate::types::_runtime_version_config::RuntimeVersionConfigBuilder;
 
 pub use crate::types::_runtime_version_error::RuntimeVersionErrorBuilder;

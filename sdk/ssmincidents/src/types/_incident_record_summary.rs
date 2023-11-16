@@ -12,9 +12,9 @@ pub struct IncidentRecordSummary {
     pub status: crate::types::IncidentRecordStatus,
     /// <p>Defines the impact to customers and applications.</p>
     pub impact: i32,
-    /// <p>The time the incident was created.</p>
+    /// <p>The timestamp for when the incident was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The time the incident was resolved.</p>
+    /// <p>The timestamp for when the incident was resolved.</p>
     pub resolved_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>What caused Incident Manager to create the incident.</p>
     pub incident_record_source: ::std::option::Option<crate::types::IncidentRecordSource>,
@@ -38,11 +38,11 @@ impl IncidentRecordSummary {
     pub fn impact(&self) -> i32 {
         self.impact
     }
-    /// <p>The time the incident was created.</p>
+    /// <p>The timestamp for when the incident was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The time the incident was resolved.</p>
+    /// <p>The timestamp for when the incident was resolved.</p>
     pub fn resolved_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.resolved_time.as_ref()
     }
@@ -131,32 +131,32 @@ impl IncidentRecordSummaryBuilder {
     pub fn get_impact(&self) -> &::std::option::Option<i32> {
         &self.impact
     }
-    /// <p>The time the incident was created.</p>
+    /// <p>The timestamp for when the incident was created.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the incident was created.</p>
+    /// <p>The timestamp for when the incident was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The time the incident was created.</p>
+    /// <p>The timestamp for when the incident was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The time the incident was resolved.</p>
+    /// <p>The timestamp for when the incident was resolved.</p>
     pub fn resolved_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resolved_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the incident was resolved.</p>
+    /// <p>The timestamp for when the incident was resolved.</p>
     pub fn set_resolved_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.resolved_time = input;
         self
     }
-    /// <p>The time the incident was resolved.</p>
+    /// <p>The timestamp for when the incident was resolved.</p>
     pub fn get_resolved_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.resolved_time
     }

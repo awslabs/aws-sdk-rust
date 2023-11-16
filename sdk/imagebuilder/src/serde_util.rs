@@ -48,6 +48,24 @@ pub(crate) fn distribution_correct_errors(mut builder: crate::types::builders::D
     builder
 }
 
+pub(crate) fn lifecycle_policy_detail_correct_errors(
+    mut builder: crate::types::builders::LifecyclePolicyDetailBuilder,
+) -> crate::types::builders::LifecyclePolicyDetailBuilder {
+    if builder.action.is_none() {
+        builder.action = {
+            let builder = crate::types::builders::LifecyclePolicyDetailActionBuilder::default();
+            crate::serde_util::lifecycle_policy_detail_action_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.filter.is_none() {
+        builder.filter = {
+            let builder = crate::types::builders::LifecyclePolicyDetailFilterBuilder::default();
+            crate::serde_util::lifecycle_policy_detail_filter_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn package_vulnerability_details_correct_errors(
     mut builder: crate::types::builders::PackageVulnerabilityDetailsBuilder,
 ) -> crate::types::builders::PackageVulnerabilityDetailsBuilder {
@@ -65,6 +83,39 @@ pub(crate) fn container_distribution_configuration_correct_errors(
             let builder = crate::types::builders::TargetContainerRepositoryBuilder::default();
             crate::serde_util::target_container_repository_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn lifecycle_policy_detail_action_correct_errors(
+    mut builder: crate::types::builders::LifecyclePolicyDetailActionBuilder,
+) -> crate::types::builders::LifecyclePolicyDetailActionBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::LifecyclePolicyDetailActionType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn lifecycle_policy_detail_filter_correct_errors(
+    mut builder: crate::types::builders::LifecyclePolicyDetailFilterBuilder,
+) -> crate::types::builders::LifecyclePolicyDetailFilterBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::LifecyclePolicyDetailFilterType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn lifecycle_policy_resource_selection_recipe_correct_errors(
+    mut builder: crate::types::builders::LifecyclePolicyResourceSelectionRecipeBuilder,
+) -> crate::types::builders::LifecyclePolicyResourceSelectionRecipeBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.semantic_version.is_none() {
+        builder.semantic_version = Some(Default::default())
     }
     builder
 }
@@ -110,6 +161,18 @@ pub(crate) fn launch_template_configuration_correct_errors(
 ) -> crate::types::builders::LaunchTemplateConfigurationBuilder {
     if builder.launch_template_id.is_none() {
         builder.launch_template_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn lifecycle_policy_detail_exclusion_rules_amis_last_launched_correct_errors(
+    mut builder: crate::types::builders::LifecyclePolicyDetailExclusionRulesAmisLastLaunchedBuilder,
+) -> crate::types::builders::LifecyclePolicyDetailExclusionRulesAmisLastLaunchedBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::LifecyclePolicyTimeUnit>().ok()
     }
     builder
 }

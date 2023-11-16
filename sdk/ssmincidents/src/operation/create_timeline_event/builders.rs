@@ -136,31 +136,34 @@ impl CreateTimelineEventFluentBuilder {
     pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_incident_record_arn()
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.event_time(input);
         self
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_event_time(input);
         self
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_event_time()
     }
-    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>.</p>
+    /// <p>To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as the value for <code>eventReference</code>.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type(input.into());
         self
     }
-    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>.</p>
+    /// <p>To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as the value for <code>eventReference</code>.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type(input);
         self
     }
-    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>.</p>
+    /// <p>To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as the value for <code>eventReference</code>.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_type()
     }

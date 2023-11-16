@@ -41,6 +41,10 @@ pub use crate::types::error::_crawler_stopping_exception::CrawlerStoppingExcepti
 
 pub use crate::types::error::_crawler_not_running_exception::CrawlerNotRunningException;
 
+pub use crate::types::error::_column_statistics_task_stopping_exception::ColumnStatisticsTaskStoppingException;
+
+pub use crate::types::error::_column_statistics_task_not_running_exception::ColumnStatisticsTaskNotRunningException;
+
 pub use crate::types::error::_concurrent_runs_exceeded_exception::ConcurrentRunsExceededException;
 
 pub use crate::types::error::_ml_transform_not_ready_exception::MlTransformNotReadyException;
@@ -50,6 +54,8 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 pub use crate::types::error::_scheduler_running_exception::SchedulerRunningException;
 
 pub use crate::types::error::_no_schedule_exception::NoScheduleException;
+
+pub use crate::types::error::_column_statistics_task_running_exception::ColumnStatisticsTaskRunningException;
 
 pub use crate::types::error::_condition_check_failure_exception::ConditionCheckFailureException;
 
@@ -66,6 +72,12 @@ pub use crate::types::error::_federated_resource_already_exists_exception::Feder
 mod _access_denied_exception;
 
 mod _already_exists_exception;
+
+mod _column_statistics_task_not_running_exception;
+
+mod _column_statistics_task_running_exception;
+
+mod _column_statistics_task_stopping_exception;
 
 mod _concurrent_modification_exception;
 

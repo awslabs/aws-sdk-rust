@@ -23,7 +23,7 @@ impl UpdatePhoneNumberInputBuilder {
 /// Fluent builder constructing a request to `UpdatePhoneNumber`.
 ///
 /// <p>Updates the configuration of an existing origination phone number. You can update the opt-out list, enable or disable two-way messaging, change the TwoWayChannelArn, enable or disable self-managed opt-outs, and enable or disable deletion protection.</p>
-/// <p>If the origination phone number is associated with a pool, an Error is returned.</p>
+/// <p>If the origination phone number is associated with a pool, an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePhoneNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,6 +150,20 @@ impl UpdatePhoneNumberFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_two_way_channel_arn()
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn two_way_channel_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.two_way_channel_role(input.into());
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn set_two_way_channel_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_two_way_channel_role(input);
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_two_way_channel_role()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {

@@ -3,33 +3,33 @@ pub fn ser_participant_token_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParticipantTokenConfiguration,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if input.duration != 0 {
+    if let Some(var_1) = &input.duration {
         object.key("duration").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.duration).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.user_id {
-        object.key("userId").string(var_1.as_str());
+    if let Some(var_2) = &input.user_id {
+        object.key("userId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.attributes {
+    if let Some(var_3) = &input.attributes {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("attributes").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_4 = object.key("attributes").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_3.finish();
+        object_4.finish();
     }
-    if let Some(var_6) = &input.capabilities {
-        let mut array_7 = object.key("capabilities").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.capabilities {
+        let mut array_8 = object.key("capabilities").start_array();
+        for item_9 in var_7 {
             {
-                array_7.value().string(item_8.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
     Ok(())
 }

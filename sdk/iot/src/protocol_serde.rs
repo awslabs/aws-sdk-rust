@@ -1315,6 +1315,10 @@ pub(crate) mod shape_elasticsearch_action;
 
 pub(crate) mod shape_firehose_action;
 
+pub(crate) mod shape_geo_location_target;
+
+pub(crate) mod shape_geo_locations_filter;
+
 pub(crate) mod shape_http_action;
 
 pub(crate) mod shape_http_url_destination_summary;

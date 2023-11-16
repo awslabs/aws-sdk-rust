@@ -48,5 +48,8 @@ pub fn ser_create_dev_environment_input_input(
         }
         array_12.finish();
     }
+    if let Some(var_15) = &input.vpc_connection_name {
+        object.key("vpcConnectionName").string(var_15.as_str());
+    }
     Ok(())
 }

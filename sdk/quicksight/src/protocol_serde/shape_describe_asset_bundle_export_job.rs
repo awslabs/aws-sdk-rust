@@ -164,6 +164,12 @@ pub(crate) fn de_describe_asset_bundle_export_job(
                 "IncludeAllDependencies" => {
                     builder = builder.set_include_all_dependencies(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "IncludePermissions" => {
+                    builder = builder.set_include_permissions(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "IncludeTags" => {
+                    builder = builder.set_include_tags(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "JobStatus" => {
                     builder = builder.set_job_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -182,6 +188,18 @@ pub(crate) fn de_describe_asset_bundle_export_job(
                     builder = builder.set_resource_arns(crate::protocol_serde::shape_asset_bundle_resource_arns::de_asset_bundle_resource_arns(
                         tokens,
                     )?);
+                }
+                "ValidationStrategy" => {
+                    builder = builder.set_validation_strategy(
+                        crate::protocol_serde::shape_asset_bundle_export_job_validation_strategy::de_asset_bundle_export_job_validation_strategy(
+                            tokens,
+                        )?,
+                    );
+                }
+                "Warnings" => {
+                    builder = builder.set_warnings(
+                        crate::protocol_serde::shape_asset_bundle_export_job_warning_list::de_asset_bundle_export_job_warning_list(tokens)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

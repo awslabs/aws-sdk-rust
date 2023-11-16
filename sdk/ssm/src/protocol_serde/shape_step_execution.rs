@@ -140,6 +140,10 @@ where
                                 crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(tokens)?,
                             );
                         }
+                        "ParentStepDetails" => {
+                            builder =
+                                builder.set_parent_step_details(crate::protocol_serde::shape_parent_step_details::de_parent_step_details(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

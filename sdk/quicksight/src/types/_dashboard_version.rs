@@ -24,8 +24,6 @@ pub struct DashboardVersion {
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
-    /// <p>An array of analysis level configurations.</p>
-    pub options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl DashboardVersion {
     /// <p>The time that this dashboard version was created.</p>
@@ -74,10 +72,6 @@ impl DashboardVersion {
     pub fn sheets(&self) -> &[crate::types::Sheet] {
         self.sheets.as_deref().unwrap_or_default()
     }
-    /// <p>An array of analysis level configurations.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::AssetOptions> {
-        self.options.as_ref()
-    }
 }
 impl DashboardVersion {
     /// Creates a new builder-style object to manufacture [`DashboardVersion`](crate::types::DashboardVersion).
@@ -100,7 +94,6 @@ pub struct DashboardVersionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
-    pub(crate) options: ::std::option::Option<crate::types::AssetOptions>,
 }
 impl DashboardVersionBuilder {
     /// <p>The time that this dashboard version was created.</p>
@@ -261,20 +254,6 @@ impl DashboardVersionBuilder {
     pub fn get_sheets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sheet>> {
         &self.sheets
     }
-    /// <p>An array of analysis level configurations.</p>
-    pub fn options(mut self, input: crate::types::AssetOptions) -> Self {
-        self.options = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>An array of analysis level configurations.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AssetOptions>) -> Self {
-        self.options = input;
-        self
-    }
-    /// <p>An array of analysis level configurations.</p>
-    pub fn get_options(&self) -> &::std::option::Option<crate::types::AssetOptions> {
-        &self.options
-    }
     /// Consumes the builder and constructs a [`DashboardVersion`](crate::types::DashboardVersion).
     pub fn build(self) -> crate::types::DashboardVersion {
         crate::types::DashboardVersion {
@@ -288,7 +267,6 @@ impl DashboardVersionBuilder {
             description: self.description,
             theme_arn: self.theme_arn,
             sheets: self.sheets,
-            options: self.options,
         }
     }
 }

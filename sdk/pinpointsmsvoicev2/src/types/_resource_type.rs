@@ -21,7 +21,9 @@
 ///     ResourceType::PhoneNumber => { /* ... */ },
 ///     ResourceType::Pool => { /* ... */ },
 ///     ResourceType::Registration => { /* ... */ },
+///     ResourceType::RegistrationAttachment => { /* ... */ },
 ///     ResourceType::SenderId => { /* ... */ },
+///     ResourceType::VerifiedDestinationNumber => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -68,7 +70,11 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Registration,
     #[allow(missing_docs)] // documentation missing in model
+    RegistrationAttachment,
+    #[allow(missing_docs)] // documentation missing in model
     SenderId,
+    #[allow(missing_docs)] // documentation missing in model
+    VerifiedDestinationNumber,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -85,7 +91,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "phone-number" => ResourceType::PhoneNumber,
             "pool" => ResourceType::Pool,
             "registration" => ResourceType::Registration,
+            "registration-attachment" => ResourceType::RegistrationAttachment,
             "sender-id" => ResourceType::SenderId,
+            "verified-destination-number" => ResourceType::VerifiedDestinationNumber,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -110,7 +118,9 @@ impl ResourceType {
             ResourceType::PhoneNumber => "phone-number",
             ResourceType::Pool => "pool",
             ResourceType::Registration => "registration",
+            ResourceType::RegistrationAttachment => "registration-attachment",
             ResourceType::SenderId => "sender-id",
+            ResourceType::VerifiedDestinationNumber => "verified-destination-number",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -126,7 +136,9 @@ impl ResourceType {
             "phone-number",
             "pool",
             "registration",
+            "registration-attachment",
             "sender-id",
+            "verified-destination-number",
         ]
     }
 }

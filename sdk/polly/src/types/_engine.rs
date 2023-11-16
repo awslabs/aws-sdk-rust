@@ -12,6 +12,7 @@
 /// ```text
 /// # let engine = unimplemented!();
 /// match engine {
+///     Engine::LongForm => { /* ... */ },
 ///     Engine::Neural => { /* ... */ },
 ///     Engine::Standard => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum Engine {
     #[allow(missing_docs)] // documentation missing in model
+    LongForm,
+    #[allow(missing_docs)] // documentation missing in model
     Neural,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
@@ -52,6 +55,7 @@ pub enum Engine {
 impl ::std::convert::From<&str> for Engine {
     fn from(s: &str) -> Self {
         match s {
+            "long-form" => Engine::LongForm,
             "neural" => Engine::Neural,
             "standard" => Engine::Standard,
             other => Engine::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl Engine {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Engine::LongForm => "long-form",
             Engine::Neural => "neural",
             Engine::Standard => "standard",
             Engine::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl Engine {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["neural", "standard"]
+        &["long-form", "neural", "standard"]
     }
 }
 impl ::std::convert::AsRef<str> for Engine {

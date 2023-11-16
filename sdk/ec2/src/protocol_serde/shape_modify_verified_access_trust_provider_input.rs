@@ -18,24 +18,31 @@ pub fn ser_modify_verified_access_trust_provider_input_input_input(
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Description");
-    if let Some(var_6) = &input.description {
-        scope_5.string(var_6);
+    let mut scope_5 = writer.prefix("DeviceOptions");
+    if let Some(var_6) = &input.device_options {
+        crate::protocol_serde::shape_modify_verified_access_trust_provider_device_options::ser_modify_verified_access_trust_provider_device_options(
+            scope_5, var_6,
+        )?;
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("DryRun");
-    if let Some(var_8) = &input.dry_run {
-        scope_7.boolean(*var_8);
+    let mut scope_7 = writer.prefix("Description");
+    if let Some(var_8) = &input.description {
+        scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("ClientToken");
-    if let Some(var_10) = &input.client_token {
-        scope_9.string(var_10);
+    let mut scope_9 = writer.prefix("DryRun");
+    if let Some(var_10) = &input.dry_run {
+        scope_9.boolean(*var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("SseSpecification");
-    if let Some(var_12) = &input.sse_specification {
-        crate::protocol_serde::shape_verified_access_sse_specification_request::ser_verified_access_sse_specification_request(scope_11, var_12)?;
+    let mut scope_11 = writer.prefix("ClientToken");
+    if let Some(var_12) = &input.client_token {
+        scope_11.string(var_12);
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("SseSpecification");
+    if let Some(var_14) = &input.sse_specification {
+        crate::protocol_serde::shape_verified_access_sse_specification_request::ser_verified_access_sse_specification_request(scope_13, var_14)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

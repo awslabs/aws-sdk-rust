@@ -16,6 +16,8 @@ pub enum DataSourceParameters {
     AuroraPostgreSqlParameters(crate::types::AuroraPostgreSqlParameters),
     /// <p>The parameters for IoT Analytics.</p>
     AwsIotAnalyticsParameters(crate::types::AwsIotAnalyticsParameters),
+    /// <p>The parameters that are required to connect to a Google BigQuery data source.</p>
+    BigQueryParameters(crate::types::BigQueryParameters),
     /// <p>The parameters that are required to connect to a Databricks data source.</p>
     DatabricksParameters(crate::types::DatabricksParameters),
     /// <p>The parameters for Exasol.</p>
@@ -142,6 +144,19 @@ impl DataSourceParameters {
     /// Returns true if this is a [`AwsIotAnalyticsParameters`](crate::types::DataSourceParameters::AwsIotAnalyticsParameters).
     pub fn is_aws_iot_analytics_parameters(&self) -> bool {
         self.as_aws_iot_analytics_parameters().is_ok()
+    }
+    /// Tries to convert the enum instance into [`BigQueryParameters`](crate::types::DataSourceParameters::BigQueryParameters), extracting the inner [`BigQueryParameters`](crate::types::BigQueryParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_big_query_parameters(&self) -> ::std::result::Result<&crate::types::BigQueryParameters, &Self> {
+        if let DataSourceParameters::BigQueryParameters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`BigQueryParameters`](crate::types::DataSourceParameters::BigQueryParameters).
+    pub fn is_big_query_parameters(&self) -> bool {
+        self.as_big_query_parameters().is_ok()
     }
     /// Tries to convert the enum instance into [`DatabricksParameters`](crate::types::DataSourceParameters::DatabricksParameters), extracting the inner [`DatabricksParameters`](crate::types::DatabricksParameters).
     /// Returns `Err(&Self)` if it can't be converted.

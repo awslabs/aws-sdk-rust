@@ -3,17 +3,17 @@ pub fn ser_asset_bundle_export_job_refresh_schedule_override_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
     {
-        let mut array_2 = object.key("Properties").start_array();
-        for item_3 in &input.properties {
+        let mut array_1 = object.key("Properties").start_array();
+        for item_2 in &input.properties {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }

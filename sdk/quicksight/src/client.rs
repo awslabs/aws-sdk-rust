@@ -166,6 +166,8 @@ mod create_namespace;
 
 mod create_refresh_schedule;
 
+mod create_role_membership;
+
 mod create_template;
 
 mod create_template_alias;
@@ -234,6 +236,10 @@ mod delete_iam_policy_assignment;
 mod delete_namespace;
 
 mod delete_refresh_schedule;
+
+mod delete_role_custom_permission;
+
+mod delete_role_membership;
 
 mod delete_template;
 
@@ -309,6 +315,8 @@ mod describe_namespace;
 
 mod describe_refresh_schedule;
 
+mod describe_role_custom_permission;
+
 mod describe_template;
 
 mod describe_template_alias;
@@ -374,6 +382,8 @@ mod list_ingestions;
 mod list_namespaces;
 
 mod list_refresh_schedules;
+
+mod list_role_memberships;
 
 mod list_tags_for_resource;
 
@@ -462,6 +472,8 @@ mod update_ip_restriction;
 mod update_public_sharing_settings;
 
 mod update_refresh_schedule;
+
+mod update_role_custom_permission;
 
 mod update_template;
 

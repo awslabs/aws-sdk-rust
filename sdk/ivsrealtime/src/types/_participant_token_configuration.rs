@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantTokenConfiguration {
     /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 720 (12 hours).</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Application-provided attributes to encode into the corresponding participant token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
@@ -15,7 +15,7 @@ pub struct ParticipantTokenConfiguration {
 }
 impl ParticipantTokenConfiguration {
     /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 720 (12 hours).</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
@@ -121,7 +121,7 @@ impl ParticipantTokenConfigurationBuilder {
     /// Consumes the builder and constructs a [`ParticipantTokenConfiguration`](crate::types::ParticipantTokenConfiguration).
     pub fn build(self) -> crate::types::ParticipantTokenConfiguration {
         crate::types::ParticipantTokenConfiguration {
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             user_id: self.user_id,
             attributes: self.attributes,
             capabilities: self.capabilities,

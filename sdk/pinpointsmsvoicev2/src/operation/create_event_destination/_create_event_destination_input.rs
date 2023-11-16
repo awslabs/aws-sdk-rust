@@ -7,7 +7,9 @@ pub struct CreateEventDestinationInput {
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that identifies the event destination.</p>
     pub event_destination_name: ::std::option::Option<::std::string::String>,
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p> <note>
+    /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
+    /// </note>
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
     pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
@@ -27,7 +29,9 @@ impl CreateEventDestinationInput {
     pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
         self.event_destination_name.as_deref()
     }
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p> <note>
+    /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matching_event_types.is_none()`.
     pub fn matching_event_types(&self) -> &[crate::types::EventType] {
@@ -104,19 +108,25 @@ impl CreateEventDestinationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
     ///
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p> <note>
+    /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
+    /// </note>
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.matching_event_types.unwrap_or_default();
         v.push(input);
         self.matching_event_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p> <note>
+    /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
+    /// </note>
     pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.matching_event_types = input;
         self
     }
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p> <note>
+    /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
+    /// </note>
     pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
         &self.matching_event_types
     }

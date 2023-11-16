@@ -154,17 +154,17 @@ impl UpdateSensitivityInspectionTemplateFluentBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
-    /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when analyzing data.</p>
     pub fn includes(mut self, input: crate::types::SensitivityInspectionTemplateIncludes) -> Self {
         self.inner = self.inner.includes(input);
         self
     }
-    /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when analyzing data.</p>
     pub fn set_includes(mut self, input: ::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>) -> Self {
         self.inner = self.inner.set_includes(input);
         self
     }
-    /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when analyzing data.</p>
     pub fn get_includes(&self) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes> {
         self.inner.get_includes()
     }

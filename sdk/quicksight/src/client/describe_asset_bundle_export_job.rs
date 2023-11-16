@@ -19,6 +19,10 @@ impl super::Client {
     ///   - [`cloud_formation_override_property_configuration(Option<AssetBundleCloudFormationOverridePropertyConfiguration>)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::cloud_formation_override_property_configuration): <p>The CloudFormation override property configuration for the export job.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::status): <p>The HTTP status of the response.</p>
+    ///   - [`include_permissions(bool)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::include_permissions): <p>The include permissions flag.</p>
+    ///   - [`include_tags(bool)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::include_tags): <p>The include tags flag.</p>
+    ///   - [`validation_strategy(Option<AssetBundleExportJobValidationStrategy>)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::validation_strategy): <p>The validation strategy that is used to export the analysis or dashboard.</p>
+    ///   - [`warnings(Option<Vec::<AssetBundleExportJobWarning>>)`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput::warnings): <p>An array of warning records that describe the analysis or dashboard that is exported. This array includes UI errors that can be skipped during the validation process.</p>  <p>This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to <code>FALSE</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeAssetBundleExportJobError>`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError)
     pub fn describe_asset_bundle_export_job(
         &self,

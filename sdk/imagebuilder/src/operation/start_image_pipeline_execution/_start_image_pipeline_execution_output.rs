@@ -5,9 +5,9 @@
 pub struct StartImagePipelineExecutionOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>The client token that uniquely identifies the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that the request created.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,11 +16,11 @@ impl StartImagePipelineExecutionOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>The client token that uniquely identifies the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that the request created.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -61,31 +61,31 @@ impl StartImagePipelineExecutionOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>The client token that uniquely identifies the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>The client token that uniquely identifies the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>The client token that uniquely identifies the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that the request created.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that the request created.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that the request created.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }

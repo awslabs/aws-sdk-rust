@@ -130,6 +130,9 @@ where
                                 crate::protocol_serde::shape_structured_log_destinations::de_structured_log_destinations(tokens)?,
                             );
                         }
+                        "S3StorageOptions" => {
+                            builder = builder.set_s3_storage_options(crate::protocol_serde::shape_s3_storage_options::de_s3_storage_options(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

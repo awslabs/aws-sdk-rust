@@ -14,7 +14,7 @@ pub struct ResourceStatistics {
     pub total_items_classified: ::std::option::Option<i64>,
     /// <p>The total number of the bucket's objects that Amazon Macie has found sensitive data in.</p>
     pub total_items_sensitive: ::std::option::Option<i64>,
-    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
+    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, an object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
     pub total_items_skipped: ::std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are encrypted with a key that Macie can't access. The objects use server-side encryption with customer-provided keys (SSE-C).</p>
     pub total_items_skipped_invalid_encryption: ::std::option::Option<i64>,
@@ -44,7 +44,7 @@ impl ResourceStatistics {
     pub fn total_items_sensitive(&self) -> ::std::option::Option<i64> {
         self.total_items_sensitive
     }
-    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
+    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, an object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
     pub fn total_items_skipped(&self) -> ::std::option::Option<i64> {
         self.total_items_skipped
     }
@@ -153,17 +153,17 @@ impl ResourceStatisticsBuilder {
     pub fn get_total_items_sensitive(&self) -> &::std::option::Option<i64> {
         &self.total_items_sensitive
     }
-    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
+    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, an object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
     pub fn total_items_skipped(mut self, input: i64) -> Self {
         self.total_items_skipped = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
+    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, an object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
     pub fn set_total_items_skipped(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_items_skipped = input;
         self
     }
-    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
+    /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, an object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
     pub fn get_total_items_skipped(&self) -> &::std::option::Option<i64> {
         &self.total_items_skipped
     }

@@ -73,6 +73,8 @@ pub struct AutomationExecution {
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Change Manager change request.</p>
     pub change_request_name: ::std::option::Option<::std::string::String>,
+    /// <p>Variables defined for the automation.</p>
+    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl AutomationExecution {
     /// <p>The execution ID.</p>
@@ -221,6 +223,10 @@ impl AutomationExecution {
     pub fn change_request_name(&self) -> ::std::option::Option<&str> {
         self.change_request_name.as_deref()
     }
+    /// <p>Variables defined for the automation.</p>
+    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.variables.as_ref()
+    }
 }
 impl AutomationExecution {
     /// Creates a new builder-style object to manufacture [`AutomationExecution`](crate::types::AutomationExecution).
@@ -267,6 +273,7 @@ pub struct AutomationExecutionBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_request_name: ::std::option::Option<::std::string::String>,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl AutomationExecutionBuilder {
     /// <p>The execution ID.</p>
@@ -798,6 +805,31 @@ impl AutomationExecutionBuilder {
     pub fn get_change_request_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_request_name
     }
+    /// Adds a key-value pair to `variables`.
+    ///
+    /// To override the contents of this collection use [`set_variables`](Self::set_variables).
+    ///
+    /// <p>Variables defined for the automation.</p>
+    pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+        let mut hash_map = self.variables.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.variables = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Variables defined for the automation.</p>
+    pub fn set_variables(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    ) -> Self {
+        self.variables = input;
+        self
+    }
+    /// <p>Variables defined for the automation.</p>
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        &self.variables
+    }
     /// Consumes the builder and constructs a [`AutomationExecution`](crate::types::AutomationExecution).
     pub fn build(self) -> crate::types::AutomationExecution {
         crate::types::AutomationExecution {
@@ -834,6 +866,7 @@ impl AutomationExecutionBuilder {
             ops_item_id: self.ops_item_id,
             association_id: self.association_id,
             change_request_name: self.change_request_name,
+            variables: self.variables,
         }
     }
 }

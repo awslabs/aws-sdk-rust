@@ -235,6 +235,12 @@ pub mod get_column_statistics_for_partition;
 /// Types for the `GetColumnStatisticsForTable` operation.
 pub mod get_column_statistics_for_table;
 
+/// Types for the `GetColumnStatisticsTaskRun` operation.
+pub mod get_column_statistics_task_run;
+
+/// Types for the `GetColumnStatisticsTaskRuns` operation.
+pub mod get_column_statistics_task_runs;
+
 /// Types for the `GetConnection` operation.
 pub mod get_connection;
 
@@ -415,6 +421,9 @@ pub mod import_catalog_to_glue;
 /// Types for the `ListBlueprints` operation.
 pub mod list_blueprints;
 
+/// Types for the `ListColumnStatisticsTaskRuns` operation.
+pub mod list_column_statistics_task_runs;
+
 /// Types for the `ListCrawlers` operation.
 pub mod list_crawlers;
 
@@ -505,6 +514,9 @@ pub mod search_tables;
 /// Types for the `StartBlueprintRun` operation.
 pub mod start_blueprint_run;
 
+/// Types for the `StartColumnStatisticsTaskRun` operation.
+pub mod start_column_statistics_task_run;
+
 /// Types for the `StartCrawler` operation.
 pub mod start_crawler;
 
@@ -537,6 +549,9 @@ pub mod start_trigger;
 
 /// Types for the `StartWorkflowRun` operation.
 pub mod start_workflow_run;
+
+/// Types for the `StopColumnStatisticsTaskRun` operation.
+pub mod stop_column_statistics_task_run;
 
 /// Types for the `StopCrawler` operation.
 pub mod stop_crawler;

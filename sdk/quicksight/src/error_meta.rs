@@ -680,6 +680,44 @@ impl From<crate::operation::create_refresh_schedule::CreateRefreshScheduleError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_role_membership::CreateRoleMembershipError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_role_membership::CreateRoleMembershipError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_role_membership::CreateRoleMembershipError> for Error {
+    fn from(err: crate::operation::create_role_membership::CreateRoleMembershipError) -> Self {
+        match err {
+            crate::operation::create_role_membership::CreateRoleMembershipError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_role_membership::CreateRoleMembershipError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::create_role_membership::CreateRoleMembershipError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_role_membership::CreateRoleMembershipError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::create_role_membership::CreateRoleMembershipError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_role_membership::CreateRoleMembershipError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::create_role_membership::CreateRoleMembershipError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_role_membership::CreateRoleMembershipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_template::CreateTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1446,6 +1484,89 @@ impl From<crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError>
             }
             crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_refresh_schedule::DeleteRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError> for Error {
+    fn from(err: crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError) -> Self {
+        match err {
+            crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_role_custom_permission::DeleteRoleCustomPermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_role_membership::DeleteRoleMembershipError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_role_membership::DeleteRoleMembershipError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_role_membership::DeleteRoleMembershipError> for Error {
+    fn from(err: crate::operation::delete_role_membership::DeleteRoleMembershipError) -> Self {
+        match err {
+            crate::operation::delete_role_membership::DeleteRoleMembershipError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_role_membership::DeleteRoleMembershipError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_role_membership::DeleteRoleMembershipError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_role_membership::DeleteRoleMembershipError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::delete_role_membership::DeleteRoleMembershipError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_role_membership::DeleteRoleMembershipError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::delete_role_membership::DeleteRoleMembershipError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_role_membership::DeleteRoleMembershipError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2886,6 +3007,55 @@ impl From<crate::operation::describe_refresh_schedule::DescribeRefreshScheduleEr
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError> for Error {
+    fn from(err: crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError) -> Self {
+        match err {
+            crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_template::DescribeTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4096,6 +4266,48 @@ impl From<crate::operation::list_refresh_schedules::ListRefreshSchedulesError> f
             }
             crate::operation::list_refresh_schedules::ListRefreshSchedulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_refresh_schedules::ListRefreshSchedulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_role_memberships::ListRoleMembershipsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_role_memberships::ListRoleMembershipsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_role_memberships::ListRoleMembershipsError> for Error {
+    fn from(err: crate::operation::list_role_memberships::ListRoleMembershipsError) -> Self {
+        match err {
+            crate::operation::list_role_memberships::ListRoleMembershipsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_role_memberships::ListRoleMembershipsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_role_memberships::ListRoleMembershipsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_role_memberships::ListRoleMembershipsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_role_memberships::ListRoleMembershipsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_role_memberships::ListRoleMembershipsError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::list_role_memberships::ListRoleMembershipsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_role_memberships::ListRoleMembershipsError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::list_role_memberships::ListRoleMembershipsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_role_memberships::ListRoleMembershipsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5697,6 +5909,51 @@ impl From<crate::operation::update_refresh_schedule::UpdateRefreshScheduleError>
             }
             crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError> for Error {
+    fn from(err: crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError) -> Self {
+        match err {
+            crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -23,7 +23,7 @@ impl DeleteOptOutListInputBuilder {
 /// Fluent builder constructing a request to `DeleteOptOutList`.
 ///
 /// <p>Deletes an existing opt-out list. All opted out phone numbers in the opt-out list are deleted.</p>
-/// <p>If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an Error is returned.</p>
+/// <p>If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOptOutListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

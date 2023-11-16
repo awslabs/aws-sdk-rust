@@ -12,17 +12,20 @@ pub fn ser_update_pool_input_input(
     if let Some(var_3) = &input.two_way_channel_arn {
         object.key("TwoWayChannelArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.self_managed_opt_outs_enabled {
-        object.key("SelfManagedOptOutsEnabled").boolean(*var_4);
+    if let Some(var_4) = &input.two_way_channel_role {
+        object.key("TwoWayChannelRole").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.opt_out_list_name {
-        object.key("OptOutListName").string(var_5.as_str());
+    if let Some(var_5) = &input.self_managed_opt_outs_enabled {
+        object.key("SelfManagedOptOutsEnabled").boolean(*var_5);
     }
-    if let Some(var_6) = &input.shared_routes_enabled {
-        object.key("SharedRoutesEnabled").boolean(*var_6);
+    if let Some(var_6) = &input.opt_out_list_name {
+        object.key("OptOutListName").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.deletion_protection_enabled {
-        object.key("DeletionProtectionEnabled").boolean(*var_7);
+    if let Some(var_7) = &input.shared_routes_enabled {
+        object.key("SharedRoutesEnabled").boolean(*var_7);
+    }
+    if let Some(var_8) = &input.deletion_protection_enabled {
+        object.key("DeletionProtectionEnabled").boolean(*var_8);
     }
     Ok(())
 }

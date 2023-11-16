@@ -35,6 +35,10 @@ pub struct ImageSummary {
     pub build_type: ::std::option::Option<crate::types::BuildType>,
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
     pub image_source: ::std::option::Option<crate::types::ImageSource>,
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub deprecation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
@@ -94,6 +98,14 @@ impl ImageSummary {
     pub fn image_source(&self) -> ::std::option::Option<&crate::types::ImageSource> {
         self.image_source.as_ref()
     }
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub fn deprecation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.deprecation_time.as_ref()
+    }
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
+        self.lifecycle_execution_id.as_deref()
+    }
 }
 impl ImageSummary {
     /// Creates a new builder-style object to manufacture [`ImageSummary`](crate::types::ImageSummary).
@@ -119,6 +131,8 @@ pub struct ImageSummaryBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) build_type: ::std::option::Option<crate::types::BuildType>,
     pub(crate) image_source: ::std::option::Option<crate::types::ImageSource>,
+    pub(crate) deprecation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl ImageSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
@@ -324,6 +338,34 @@ impl ImageSummaryBuilder {
     pub fn get_image_source(&self) -> &::std::option::Option<crate::types::ImageSource> {
         &self.image_source
     }
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub fn deprecation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.deprecation_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub fn set_deprecation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.deprecation_time = input;
+        self
+    }
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub fn get_deprecation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deprecation_time
+    }
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub fn lifecycle_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lifecycle_execution_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lifecycle_execution_id = input;
+        self
+    }
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_execution_id
+    }
     /// Consumes the builder and constructs a [`ImageSummary`](crate::types::ImageSummary).
     pub fn build(self) -> crate::types::ImageSummary {
         crate::types::ImageSummary {
@@ -340,6 +382,8 @@ impl ImageSummaryBuilder {
             tags: self.tags,
             build_type: self.build_type,
             image_source: self.image_source,
+            deprecation_time: self.deprecation_time,
+            lifecycle_execution_id: self.lifecycle_execution_id,
         }
     }
 }

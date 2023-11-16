@@ -7,6 +7,8 @@ pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
 pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
 
+pub use crate::types::error::_invalid_parameter_combination_exception::InvalidParameterCombinationException;
+
 pub use crate::types::error::_idempotent_parameter_mismatch_exception::IdempotentParameterMismatchException;
 
 pub use crate::types::error::_forbidden_exception::ForbiddenException;
@@ -14,8 +16,6 @@ pub use crate::types::error::_forbidden_exception::ForbiddenException;
 pub use crate::types::error::_client_exception::ClientException;
 
 pub use crate::types::error::_call_rate_limit_exceeded_exception::CallRateLimitExceededException;
-
-pub use crate::types::error::_invalid_parameter_combination_exception::InvalidParameterCombinationException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 

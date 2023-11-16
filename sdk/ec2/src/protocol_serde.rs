@@ -2609,6 +2609,8 @@ pub(crate) mod shape_modify_verified_access_endpoint_eni_options;
 
 pub(crate) mod shape_modify_verified_access_endpoint_load_balancer_options;
 
+pub(crate) mod shape_modify_verified_access_trust_provider_device_options;
+
 pub(crate) mod shape_modify_verified_access_trust_provider_oidc_options;
 
 pub(crate) mod shape_modify_vpn_tunnel_options_specification;

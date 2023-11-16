@@ -57,44 +57,50 @@ pub fn ser_update_function_configuration_input_input(
         }
         array_17.finish();
     }
-    if let Some(var_19) = &input.memory_size {
+    if let Some(var_19) = &input.logging_config {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("LoggingConfig").start_object();
+        crate::protocol_serde::shape_logging_config::ser_logging_config(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.memory_size {
         object.key("MemorySize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_20) = &input.revision_id {
-        object.key("RevisionId").string(var_20.as_str());
+    if let Some(var_22) = &input.revision_id {
+        object.key("RevisionId").string(var_22.as_str());
     }
-    if let Some(var_21) = &input.role {
-        object.key("Role").string(var_21.as_str());
+    if let Some(var_23) = &input.role {
+        object.key("Role").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.runtime {
-        object.key("Runtime").string(var_22.as_str());
+    if let Some(var_24) = &input.runtime {
+        object.key("Runtime").string(var_24.as_str());
     }
-    if let Some(var_23) = &input.snap_start {
+    if let Some(var_25) = &input.snap_start {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("SnapStart").start_object();
-        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_26 = object.key("SnapStart").start_object();
+        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_25) = &input.timeout {
+    if let Some(var_27) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
-    if let Some(var_26) = &input.tracing_config {
+    if let Some(var_28) = &input.tracing_config {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("TracingConfig").start_object();
-        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_27, var_26)?;
-        object_27.finish();
-    }
-    if let Some(var_28) = &input.vpc_config {
-        #[allow(unused_mut)]
-        let mut object_29 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_29, var_28)?;
+        let mut object_29 = object.key("TracingConfig").start_object();
+        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_29, var_28)?;
         object_29.finish();
+    }
+    if let Some(var_30) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_31, var_30)?;
+        object_31.finish();
     }
     Ok(())
 }

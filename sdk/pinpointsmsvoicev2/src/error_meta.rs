@@ -247,6 +247,225 @@ impl From<crate::operation::create_pool::CreatePoolError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registration::CreateRegistrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registration::CreateRegistrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_registration::CreateRegistrationError> for Error {
+    fn from(err: crate::operation::create_registration::CreateRegistrationError) -> Self {
+        match err {
+            crate::operation::create_registration::CreateRegistrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_registration::CreateRegistrationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_registration::CreateRegistrationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_registration::CreateRegistrationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_registration::CreateRegistrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_registration::CreateRegistrationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_registration::CreateRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registration_association::CreateRegistrationAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_registration_association::CreateRegistrationAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_registration_association::CreateRegistrationAssociationError> for Error {
+    fn from(err: crate::operation::create_registration_association::CreateRegistrationAssociationError) -> Self {
+        match err {
+            crate::operation::create_registration_association::CreateRegistrationAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_registration_association::CreateRegistrationAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_registration_association::CreateRegistrationAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_registration_association::CreateRegistrationAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_registration_association::CreateRegistrationAssociationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_registration_association::CreateRegistrationAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_registration_association::CreateRegistrationAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_registration_association::CreateRegistrationAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registration_attachment::CreateRegistrationAttachmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_registration_attachment::CreateRegistrationAttachmentError> for Error {
+    fn from(err: crate::operation::create_registration_attachment::CreateRegistrationAttachmentError) -> Self {
+        match err {
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registration_version::CreateRegistrationVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registration_version::CreateRegistrationVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_registration_version::CreateRegistrationVersionError> for Error {
+    fn from(err: crate::operation::create_registration_version::CreateRegistrationVersionError) -> Self {
+        match err {
+            crate::operation::create_registration_version::CreateRegistrationVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_registration_version::CreateRegistrationVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_registration_version::CreateRegistrationVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_registration_version::CreateRegistrationVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_registration_version::CreateRegistrationVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_registration_version::CreateRegistrationVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_registration_version::CreateRegistrationVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_registration_version::CreateRegistrationVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError> for Error {
+    fn from(err: crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError) -> Self {
+        match err {
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configuration_set::DeleteConfigurationSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -502,6 +721,127 @@ impl From<crate::operation::delete_pool::DeletePoolError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registration::DeleteRegistrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registration::DeleteRegistrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_registration::DeleteRegistrationError> for Error {
+    fn from(err: crate::operation::delete_registration::DeleteRegistrationError) -> Self {
+        match err {
+            crate::operation::delete_registration::DeleteRegistrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_registration::DeleteRegistrationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_registration::DeleteRegistrationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_registration::DeleteRegistrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_registration::DeleteRegistrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_registration::DeleteRegistrationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_registration::DeleteRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError> for Error {
+    fn from(err: crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError) -> Self {
+        match err {
+            crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError> for Error {
+    fn from(err: crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError) -> Self {
+        match err {
+            crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -545,6 +885,56 @@ impl From<crate::operation::delete_text_message_spend_limit_override::DeleteText
             crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError> for Error {
+    fn from(err: crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError) -> Self {
+        match err {
+            crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -851,6 +1241,313 @@ impl From<crate::operation::describe_pools::DescribePoolsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError> for Error {
+    fn from(err: crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError) -> Self {
+        match err {
+            crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsError> for Error {
+    fn from(err: crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsError) -> Self {
+        match err {
+            crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError> for Error {
+    fn from(err: crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError) -> Self {
+        match err {
+            crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_registrations::DescribeRegistrationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_registrations::DescribeRegistrationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_registrations::DescribeRegistrationsError> for Error {
+    fn from(err: crate::operation::describe_registrations::DescribeRegistrationsError) -> Self {
+        match err {
+            crate::operation::describe_registrations::DescribeRegistrationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_registrations::DescribeRegistrationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_registrations::DescribeRegistrationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_registrations::DescribeRegistrationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_registrations::DescribeRegistrationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_registrations::DescribeRegistrationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsError> for Error {
+    fn from(err: crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsError) -> Self {
+        match err {
+            crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsError> for Error {
+    fn from(err: crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsError) -> Self {
+        match err {
+            crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_registration_versions::DescribeRegistrationVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_registration_versions::DescribeRegistrationVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_registration_versions::DescribeRegistrationVersionsError> for Error {
+    fn from(err: crate::operation::describe_registration_versions::DescribeRegistrationVersionsError) -> Self {
+        match err {
+            crate::operation::describe_registration_versions::DescribeRegistrationVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_registration_versions::DescribeRegistrationVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_registration_versions::DescribeRegistrationVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_registration_versions::DescribeRegistrationVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_registration_versions::DescribeRegistrationVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_registration_versions::DescribeRegistrationVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_sender_ids::DescribeSenderIdsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -909,6 +1606,55 @@ impl From<crate::operation::describe_spend_limits::DescribeSpendLimitsError> for
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError> for Error {
+    fn from(err: crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError) -> Self {
+        match err {
+            crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError,
             R,
         >,
@@ -956,6 +1702,48 @@ impl From<crate::operation::disassociate_origination_identity::DisassociateOrigi
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::discard_registration_version::DiscardRegistrationVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::discard_registration_version::DiscardRegistrationVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::discard_registration_version::DiscardRegistrationVersionError> for Error {
+    fn from(err: crate::operation::discard_registration_version::DiscardRegistrationVersionError) -> Self {
+        match err {
+            crate::operation::discard_registration_version::DiscardRegistrationVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::discard_registration_version::DiscardRegistrationVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::discard_registration_version::DiscardRegistrationVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::discard_registration_version::DiscardRegistrationVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::discard_registration_version::DiscardRegistrationVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::discard_registration_version::DiscardRegistrationVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::discard_registration_version::DiscardRegistrationVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesError, R>,
@@ -997,6 +1785,49 @@ impl From<crate::operation::list_pool_origination_identities::ListPoolOriginatio
                 Error::ValidationException(inner)
             }
             crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_registration_associations::ListRegistrationAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_registration_associations::ListRegistrationAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_registration_associations::ListRegistrationAssociationsError> for Error {
+    fn from(err: crate::operation::list_registration_associations::ListRegistrationAssociationsError) -> Self {
+        match err {
+            crate::operation::list_registration_associations::ListRegistrationAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_registration_associations::ListRegistrationAssociationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_registration_associations::ListRegistrationAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_registration_associations::ListRegistrationAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_registration_associations::ListRegistrationAssociationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_registration_associations::ListRegistrationAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1086,6 +1917,48 @@ impl From<crate::operation::put_opted_out_number::PutOptedOutNumberError> for Er
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_registration_field_value::PutRegistrationFieldValueError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_registration_field_value::PutRegistrationFieldValueError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_registration_field_value::PutRegistrationFieldValueError> for Error {
+    fn from(err: crate::operation::put_registration_field_value::PutRegistrationFieldValueError) -> Self {
+        match err {
+            crate::operation::put_registration_field_value::PutRegistrationFieldValueError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_registration_field_value::PutRegistrationFieldValueError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_registration_field_value::PutRegistrationFieldValueError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_registration_field_value::PutRegistrationFieldValueError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_registration_field_value::PutRegistrationFieldValueError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_registration_field_value::PutRegistrationFieldValueError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_registration_field_value::PutRegistrationFieldValueError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::release_phone_number::ReleasePhoneNumberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1112,6 +1985,33 @@ impl From<crate::operation::release_phone_number::ReleasePhoneNumberError> for E
             crate::operation::release_phone_number::ReleasePhoneNumberError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::release_phone_number::ReleasePhoneNumberError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::release_phone_number::ReleasePhoneNumberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::release_sender_id::ReleaseSenderIdError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::release_sender_id::ReleaseSenderIdError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::release_sender_id::ReleaseSenderIdError> for Error {
+    fn from(err: crate::operation::release_sender_id::ReleaseSenderIdError) -> Self {
+        match err {
+            crate::operation::release_sender_id::ReleaseSenderIdError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::release_sender_id::ReleaseSenderIdError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::release_sender_id::ReleaseSenderIdError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::release_sender_id::ReleaseSenderIdError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::release_sender_id::ReleaseSenderIdError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::release_sender_id::ReleaseSenderIdError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::release_sender_id::ReleaseSenderIdError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1144,6 +2044,74 @@ impl From<crate::operation::request_phone_number::RequestPhoneNumberError> for E
             crate::operation::request_phone_number::RequestPhoneNumberError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::request_phone_number::RequestPhoneNumberError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::request_phone_number::RequestPhoneNumberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::request_sender_id::RequestSenderIdError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::request_sender_id::RequestSenderIdError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::request_sender_id::RequestSenderIdError> for Error {
+    fn from(err: crate::operation::request_sender_id::RequestSenderIdError) -> Self {
+        match err {
+            crate::operation::request_sender_id::RequestSenderIdError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::request_sender_id::RequestSenderIdError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::request_sender_id::RequestSenderIdError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::request_sender_id::RequestSenderIdError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::request_sender_id::RequestSenderIdError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::request_sender_id::RequestSenderIdError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::request_sender_id::RequestSenderIdError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError> for Error {
+    fn from(err: crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError) -> Self {
+        match err {
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1361,6 +2329,48 @@ impl From<crate::operation::set_voice_message_spend_limit_override::SetVoiceMess
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::submit_registration_version::SubmitRegistrationVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::submit_registration_version::SubmitRegistrationVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::submit_registration_version::SubmitRegistrationVersionError> for Error {
+    fn from(err: crate::operation::submit_registration_version::SubmitRegistrationVersionError) -> Self {
+        match err {
+            crate::operation::submit_registration_version::SubmitRegistrationVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::submit_registration_version::SubmitRegistrationVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::submit_registration_version::SubmitRegistrationVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::submit_registration_version::SubmitRegistrationVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::submit_registration_version::SubmitRegistrationVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::submit_registration_version::SubmitRegistrationVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::submit_registration_version::SubmitRegistrationVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1502,6 +2512,72 @@ impl From<crate::operation::update_pool::UpdatePoolError> for Error {
             crate::operation::update_pool::UpdatePoolError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_pool::UpdatePoolError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_pool::UpdatePoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sender_id::UpdateSenderIdError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sender_id::UpdateSenderIdError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_sender_id::UpdateSenderIdError> for Error {
+    fn from(err: crate::operation::update_sender_id::UpdateSenderIdError) -> Self {
+        match err {
+            crate::operation::update_sender_id::UpdateSenderIdError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_sender_id::UpdateSenderIdError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_sender_id::UpdateSenderIdError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_sender_id::UpdateSenderIdError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_sender_id::UpdateSenderIdError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_sender_id::UpdateSenderIdError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_destination_number::VerifyDestinationNumberError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_destination_number::VerifyDestinationNumberError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::verify_destination_number::VerifyDestinationNumberError> for Error {
+    fn from(err: crate::operation::verify_destination_number::VerifyDestinationNumberError) -> Self {
+        match err {
+            crate::operation::verify_destination_number::VerifyDestinationNumberError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::verify_destination_number::VerifyDestinationNumberError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::verify_destination_number::VerifyDestinationNumberError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::verify_destination_number::VerifyDestinationNumberError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::verify_destination_number::VerifyDestinationNumberError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::verify_destination_number::VerifyDestinationNumberError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::verify_destination_number::VerifyDestinationNumberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -39,6 +39,8 @@ pub struct CreateDashboardInput {
     pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
     /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
     pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
+    pub link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
 }
 impl CreateDashboardInput {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
@@ -109,6 +111,10 @@ impl CreateDashboardInput {
     pub fn folder_arns(&self) -> &[::std::string::String] {
         self.folder_arns.as_deref().unwrap_or_default()
     }
+    /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
+    pub fn link_sharing_configuration(&self) -> ::std::option::Option<&crate::types::LinkSharingConfiguration> {
+        self.link_sharing_configuration.as_ref()
+    }
 }
 impl CreateDashboardInput {
     /// Creates a new builder-style object to manufacture [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
@@ -134,6 +140,7 @@ pub struct CreateDashboardInputBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::DashboardVersionDefinition>,
     pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
     pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
 }
 impl CreateDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
@@ -369,6 +376,20 @@ impl CreateDashboardInputBuilder {
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.folder_arns
     }
+    /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
+    pub fn link_sharing_configuration(mut self, input: crate::types::LinkSharingConfiguration) -> Self {
+        self.link_sharing_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
+    pub fn set_link_sharing_configuration(mut self, input: ::std::option::Option<crate::types::LinkSharingConfiguration>) -> Self {
+        self.link_sharing_configuration = input;
+        self
+    }
+    /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
+    pub fn get_link_sharing_configuration(&self) -> &::std::option::Option<crate::types::LinkSharingConfiguration> {
+        &self.link_sharing_configuration
+    }
     /// Consumes the builder and constructs a [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
     pub fn build(
         self,
@@ -387,6 +408,7 @@ impl CreateDashboardInputBuilder {
             definition: self.definition,
             validation_strategy: self.validation_strategy,
             folder_arns: self.folder_arns,
+            link_sharing_configuration: self.link_sharing_configuration,
         })
     }
 }

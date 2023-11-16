@@ -204,4 +204,33 @@ impl GetLifecyclePoliciesFluentBuilder {
     pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tags_to_add()
     }
+    /// <p> <b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>VOLUME</code> - To get only the default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p> </li>
+    /// <li> <p> <code>ALL</code> - To get all default policies</p> </li>
+    /// </ul>
+    pub fn default_policy_type(mut self, input: crate::types::DefaultPoliciesTypeValues) -> Self {
+        self.inner = self.inner.default_policy_type(input);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>VOLUME</code> - To get only the default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p> </li>
+    /// <li> <p> <code>ALL</code> - To get all default policies</p> </li>
+    /// </ul>
+    pub fn set_default_policy_type(mut self, input: ::std::option::Option<crate::types::DefaultPoliciesTypeValues>) -> Self {
+        self.inner = self.inner.set_default_policy_type(input);
+        self
+    }
+    /// <p> <b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>VOLUME</code> - To get only the default policy for EBS snapshots</p> </li>
+    /// <li> <p> <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p> </li>
+    /// <li> <p> <code>ALL</code> - To get all default policies</p> </li>
+    /// </ul>
+    pub fn get_default_policy_type(&self) -> &::std::option::Option<crate::types::DefaultPoliciesTypeValues> {
+        self.inner.get_default_policy_type()
+    }
 }

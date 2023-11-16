@@ -3,7 +3,11 @@ pub use crate::types::_sensitivity_inspection_template_includes::SensitivityInsp
 
 pub use crate::types::_sensitivity_inspection_template_excludes::SensitivityInspectionTemplateExcludesBuilder;
 
+pub use crate::types::_retrieval_configuration::RetrievalConfigurationBuilder;
+
 pub use crate::types::_reveal_configuration::RevealConfigurationBuilder;
+
+pub use crate::types::_update_retrieval_configuration::UpdateRetrievalConfigurationBuilder;
 
 pub use crate::types::_suppress_data_identifier::SuppressDataIdentifierBuilder;
 

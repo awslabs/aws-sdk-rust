@@ -23,7 +23,7 @@ impl DeletePoolInputBuilder {
 /// Fluent builder constructing a request to `DeletePool`.
 ///
 /// <p>Deletes an existing pool. Deleting a pool disassociates all origination identities from that pool.</p>
-/// <p>If the pool status isn't active or if deletion protection is enabled, an Error is returned.</p>
+/// <p>If the pool status isn't active or if deletion protection is enabled, an error is returned.</p>
 /// <p>A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds that are associated with your Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePoolFluentBuilder {

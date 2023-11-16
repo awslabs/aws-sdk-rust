@@ -77,6 +77,9 @@ pub struct DescribedServer {
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
     pub structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
 }
 impl DescribedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -199,6 +202,11 @@ impl DescribedServer {
     pub fn structured_log_destinations(&self) -> &[::std::string::String] {
         self.structured_log_destinations.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub fn s3_storage_options(&self) -> ::std::option::Option<&crate::types::S3StorageOptions> {
+        self.s3_storage_options.as_ref()
+    }
 }
 impl DescribedServer {
     /// Creates a new builder-style object to manufacture [`DescribedServer`](crate::types::DescribedServer).
@@ -231,6 +239,7 @@ pub struct DescribedServerBuilder {
     pub(crate) user_count: ::std::option::Option<i32>,
     pub(crate) workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
     pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
 }
 impl DescribedServerBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -631,6 +640,23 @@ impl DescribedServerBuilder {
     pub fn get_structured_log_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.structured_log_destinations
     }
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub fn s3_storage_options(mut self, input: crate::types::S3StorageOptions) -> Self {
+        self.s3_storage_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub fn set_s3_storage_options(mut self, input: ::std::option::Option<crate::types::S3StorageOptions>) -> Self {
+        self.s3_storage_options = input;
+        self
+    }
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
+    pub fn get_s3_storage_options(&self) -> &::std::option::Option<crate::types::S3StorageOptions> {
+        &self.s3_storage_options
+    }
     /// Consumes the builder and constructs a [`DescribedServer`](crate::types::DescribedServer).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedServerBuilder::arn)
@@ -661,6 +687,7 @@ impl DescribedServerBuilder {
             user_count: self.user_count,
             workflow_details: self.workflow_details,
             structured_log_destinations: self.structured_log_destinations,
+            s3_storage_options: self.s3_storage_options,
         })
     }
 }

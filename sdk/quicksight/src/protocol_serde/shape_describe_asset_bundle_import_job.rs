@@ -168,6 +168,23 @@ pub(crate) fn de_describe_asset_bundle_import_job(
                         )?,
                     );
                 }
+                "OverridePermissions" => {
+                    builder = builder.set_override_permissions(
+                        crate::protocol_serde::shape_asset_bundle_import_job_override_permissions::de_asset_bundle_import_job_override_permissions(
+                            tokens,
+                        )?,
+                    );
+                }
+                "OverrideTags" => {
+                    builder = builder.set_override_tags(
+                        crate::protocol_serde::shape_asset_bundle_import_job_override_tags::de_asset_bundle_import_job_override_tags(tokens)?,
+                    );
+                }
+                "OverrideValidationStrategy" => {
+                    builder = builder.set_override_validation_strategy(
+                            crate::protocol_serde::shape_asset_bundle_import_job_override_validation_strategy::de_asset_bundle_import_job_override_validation_strategy(tokens)?
+                        );
+                }
                 "RequestId" => {
                     builder = builder.set_request_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

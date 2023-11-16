@@ -29,13 +29,33 @@ pub(crate) mod shape_attach_managed_policy_to_permission_set;
 
 pub(crate) mod shape_create_account_assignment;
 
+pub(crate) mod shape_create_application;
+
+pub(crate) mod shape_create_application_assignment;
+
+pub(crate) mod shape_create_instance;
+
 pub(crate) mod shape_create_instance_access_control_attribute_configuration;
 
 pub(crate) mod shape_create_permission_set;
 
+pub(crate) mod shape_create_trusted_token_issuer;
+
 pub(crate) mod shape_delete_account_assignment;
 
+pub(crate) mod shape_delete_application;
+
+pub(crate) mod shape_delete_application_access_scope;
+
+pub(crate) mod shape_delete_application_assignment;
+
+pub(crate) mod shape_delete_application_authentication_method;
+
+pub(crate) mod shape_delete_application_grant;
+
 pub(crate) mod shape_delete_inline_policy_from_permission_set;
+
+pub(crate) mod shape_delete_instance;
 
 pub(crate) mod shape_delete_instance_access_control_attribute_configuration;
 
@@ -43,9 +63,19 @@ pub(crate) mod shape_delete_permission_set;
 
 pub(crate) mod shape_delete_permissions_boundary_from_permission_set;
 
+pub(crate) mod shape_delete_trusted_token_issuer;
+
 pub(crate) mod shape_describe_account_assignment_creation_status;
 
 pub(crate) mod shape_describe_account_assignment_deletion_status;
+
+pub(crate) mod shape_describe_application;
+
+pub(crate) mod shape_describe_application_assignment;
+
+pub(crate) mod shape_describe_application_provider;
+
+pub(crate) mod shape_describe_instance;
 
 pub(crate) mod shape_describe_instance_access_control_attribute_configuration;
 
@@ -53,9 +83,19 @@ pub(crate) mod shape_describe_permission_set;
 
 pub(crate) mod shape_describe_permission_set_provisioning_status;
 
+pub(crate) mod shape_describe_trusted_token_issuer;
+
 pub(crate) mod shape_detach_customer_managed_policy_reference_from_permission_set;
 
 pub(crate) mod shape_detach_managed_policy_from_permission_set;
+
+pub(crate) mod shape_get_application_access_scope;
+
+pub(crate) mod shape_get_application_assignment_configuration;
+
+pub(crate) mod shape_get_application_authentication_method;
+
+pub(crate) mod shape_get_application_grant;
 
 pub(crate) mod shape_get_inline_policy_for_permission_set;
 
@@ -67,7 +107,23 @@ pub(crate) mod shape_list_account_assignment_deletion_status;
 
 pub(crate) mod shape_list_account_assignments;
 
+pub(crate) mod shape_list_account_assignments_for_principal;
+
 pub(crate) mod shape_list_accounts_for_provisioned_permission_set;
+
+pub(crate) mod shape_list_application_access_scopes;
+
+pub(crate) mod shape_list_application_assignments;
+
+pub(crate) mod shape_list_application_assignments_for_principal;
+
+pub(crate) mod shape_list_application_authentication_methods;
+
+pub(crate) mod shape_list_application_grants;
+
+pub(crate) mod shape_list_application_providers;
+
+pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_customer_managed_policy_references_in_permission_set;
 
@@ -83,7 +139,17 @@ pub(crate) mod shape_list_permission_sets_provisioned_to_account;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_trusted_token_issuers;
+
 pub(crate) mod shape_provision_permission_set;
+
+pub(crate) mod shape_put_application_access_scope;
+
+pub(crate) mod shape_put_application_assignment_configuration;
+
+pub(crate) mod shape_put_application_authentication_method;
+
+pub(crate) mod shape_put_application_grant;
 
 pub(crate) mod shape_put_inline_policy_to_permission_set;
 
@@ -93,9 +159,15 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_application;
+
+pub(crate) mod shape_update_instance;
+
 pub(crate) mod shape_update_instance_access_control_attribute_configuration;
 
 pub(crate) mod shape_update_permission_set;
+
+pub(crate) mod shape_update_trusted_token_issuer;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -115,33 +187,73 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_account_assignment_input;
 
+pub(crate) mod shape_create_application_assignment_input;
+
+pub(crate) mod shape_create_application_input;
+
 pub(crate) mod shape_create_instance_access_control_attribute_configuration_input;
+
+pub(crate) mod shape_create_instance_input;
 
 pub(crate) mod shape_create_permission_set_input;
 
+pub(crate) mod shape_create_trusted_token_issuer_input;
+
 pub(crate) mod shape_delete_account_assignment_input;
+
+pub(crate) mod shape_delete_application_access_scope_input;
+
+pub(crate) mod shape_delete_application_assignment_input;
+
+pub(crate) mod shape_delete_application_authentication_method_input;
+
+pub(crate) mod shape_delete_application_grant_input;
+
+pub(crate) mod shape_delete_application_input;
 
 pub(crate) mod shape_delete_inline_policy_from_permission_set_input;
 
 pub(crate) mod shape_delete_instance_access_control_attribute_configuration_input;
 
+pub(crate) mod shape_delete_instance_input;
+
 pub(crate) mod shape_delete_permission_set_input;
 
 pub(crate) mod shape_delete_permissions_boundary_from_permission_set_input;
+
+pub(crate) mod shape_delete_trusted_token_issuer_input;
 
 pub(crate) mod shape_describe_account_assignment_creation_status_input;
 
 pub(crate) mod shape_describe_account_assignment_deletion_status_input;
 
+pub(crate) mod shape_describe_application_assignment_input;
+
+pub(crate) mod shape_describe_application_input;
+
+pub(crate) mod shape_describe_application_provider_input;
+
 pub(crate) mod shape_describe_instance_access_control_attribute_configuration_input;
+
+pub(crate) mod shape_describe_instance_input;
 
 pub(crate) mod shape_describe_permission_set_input;
 
 pub(crate) mod shape_describe_permission_set_provisioning_status_input;
 
+pub(crate) mod shape_describe_trusted_token_issuer_input;
+
 pub(crate) mod shape_detach_customer_managed_policy_reference_from_permission_set_input;
 
 pub(crate) mod shape_detach_managed_policy_from_permission_set_input;
+
+pub(crate) mod shape_get_application_access_scope_input;
+
+pub(crate) mod shape_get_application_assignment_configuration_input;
+
+pub(crate) mod shape_get_application_authentication_method_input;
+
+pub(crate) mod shape_get_application_grant_input;
 
 pub(crate) mod shape_get_inline_policy_for_permission_set_input;
 
@@ -153,9 +265,25 @@ pub(crate) mod shape_list_account_assignment_creation_status_input;
 
 pub(crate) mod shape_list_account_assignment_deletion_status_input;
 
+pub(crate) mod shape_list_account_assignments_for_principal_input;
+
 pub(crate) mod shape_list_account_assignments_input;
 
 pub(crate) mod shape_list_accounts_for_provisioned_permission_set_input;
+
+pub(crate) mod shape_list_application_access_scopes_input;
+
+pub(crate) mod shape_list_application_assignments_for_principal_input;
+
+pub(crate) mod shape_list_application_assignments_input;
+
+pub(crate) mod shape_list_application_authentication_methods_input;
+
+pub(crate) mod shape_list_application_grants_input;
+
+pub(crate) mod shape_list_application_providers_input;
+
+pub(crate) mod shape_list_applications_input;
 
 pub(crate) mod shape_list_customer_managed_policy_references_in_permission_set_input;
 
@@ -171,7 +299,17 @@ pub(crate) mod shape_list_permission_sets_provisioned_to_account_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
+pub(crate) mod shape_list_trusted_token_issuers_input;
+
 pub(crate) mod shape_provision_permission_set_input;
+
+pub(crate) mod shape_put_application_access_scope_input;
+
+pub(crate) mod shape_put_application_assignment_configuration_input;
+
+pub(crate) mod shape_put_application_authentication_method_input;
+
+pub(crate) mod shape_put_application_grant_input;
 
 pub(crate) mod shape_put_inline_policy_to_permission_set_input;
 
@@ -187,13 +325,21 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_application_input;
+
 pub(crate) mod shape_update_instance_access_control_attribute_configuration_input;
 
+pub(crate) mod shape_update_instance_input;
+
 pub(crate) mod shape_update_permission_set_input;
+
+pub(crate) mod shape_update_trusted_token_issuer_input;
 
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_account_assignment_list;
+
+pub(crate) mod shape_account_assignment_list_for_principal;
 
 pub(crate) mod shape_account_assignment_operation_status;
 
@@ -201,15 +347,39 @@ pub(crate) mod shape_account_assignment_operation_status_list;
 
 pub(crate) mod shape_account_list;
 
+pub(crate) mod shape_application_assignment_list_for_principal;
+
+pub(crate) mod shape_application_assignments_list;
+
+pub(crate) mod shape_application_list;
+
+pub(crate) mod shape_application_provider_list;
+
 pub(crate) mod shape_attached_managed_policy_list;
+
+pub(crate) mod shape_authentication_method;
+
+pub(crate) mod shape_authentication_methods;
 
 pub(crate) mod shape_customer_managed_policy_reference;
 
 pub(crate) mod shape_customer_managed_policy_reference_list;
 
+pub(crate) mod shape_display_data;
+
+pub(crate) mod shape_grant;
+
+pub(crate) mod shape_grants;
+
 pub(crate) mod shape_instance_access_control_attribute_configuration;
 
 pub(crate) mod shape_instance_list;
+
+pub(crate) mod shape_list_account_assignments_filter;
+
+pub(crate) mod shape_list_application_assignments_filter;
+
+pub(crate) mod shape_list_applications_filter;
 
 pub(crate) mod shape_operation_status_filter;
 
@@ -223,9 +393,25 @@ pub(crate) mod shape_permission_set_provisioning_status_list;
 
 pub(crate) mod shape_permissions_boundary;
 
+pub(crate) mod shape_portal_options;
+
+pub(crate) mod shape_resource_server_config;
+
+pub(crate) mod shape_scope_targets;
+
+pub(crate) mod shape_scopes;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_trusted_token_issuer_configuration;
+
+pub(crate) mod shape_trusted_token_issuer_list;
+
+pub(crate) mod shape_trusted_token_issuer_update_configuration;
+
+pub(crate) mod shape_update_application_portal_options;
 
 pub(crate) mod shape_access_control_attribute;
 
@@ -233,14 +419,56 @@ pub(crate) mod shape_access_control_attribute_list;
 
 pub(crate) mod shape_account_assignment;
 
+pub(crate) mod shape_account_assignment_for_principal;
+
 pub(crate) mod shape_account_assignment_operation_status_metadata;
+
+pub(crate) mod shape_application;
+
+pub(crate) mod shape_application_assignment;
+
+pub(crate) mod shape_application_assignment_for_principal;
+
+pub(crate) mod shape_application_provider;
 
 pub(crate) mod shape_attached_managed_policy;
 
+pub(crate) mod shape_authentication_method_item;
+
+pub(crate) mod shape_authorization_code_grant;
+
+pub(crate) mod shape_grant_item;
+
+pub(crate) mod shape_iam_authentication_method;
+
 pub(crate) mod shape_instance_metadata;
+
+pub(crate) mod shape_jwt_bearer_grant;
+
+pub(crate) mod shape_oidc_jwt_configuration;
+
+pub(crate) mod shape_oidc_jwt_update_configuration;
 
 pub(crate) mod shape_permission_set_provisioning_status_metadata;
 
+pub(crate) mod shape_resource_server_scopes;
+
+pub(crate) mod shape_scope_details;
+
+pub(crate) mod shape_sign_in_options;
+
+pub(crate) mod shape_trusted_token_issuer_metadata;
+
 pub(crate) mod shape_access_control_attribute_value;
 
+pub(crate) mod shape_authorized_token_issuer;
+
+pub(crate) mod shape_authorized_token_issuers;
+
+pub(crate) mod shape_redirect_uris;
+
+pub(crate) mod shape_resource_server_scope_details;
+
 pub(crate) mod shape_access_control_attribute_value_source_list;
+
+pub(crate) mod shape_token_issuer_audiences;

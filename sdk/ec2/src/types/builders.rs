@@ -403,6 +403,8 @@ pub use crate::types::_oidc_options::OidcOptionsBuilder;
 
 pub use crate::types::_verified_access_sse_specification_request::VerifiedAccessSseSpecificationRequestBuilder;
 
+pub use crate::types::_modify_verified_access_trust_provider_device_options::ModifyVerifiedAccessTrustProviderDeviceOptionsBuilder;
+
 pub use crate::types::_modify_verified_access_trust_provider_oidc_options::ModifyVerifiedAccessTrustProviderOidcOptionsBuilder;
 
 pub use crate::types::_verified_access_instance_logging_configuration::VerifiedAccessInstanceLoggingConfigurationBuilder;

@@ -12,6 +12,7 @@
 /// ```text
 /// # let servicequotaexceededexceptionreason = unimplemented!();
 /// match servicequotaexceededexceptionreason {
+///     ServiceQuotaExceededExceptionReason::AssociationsPerRegistration => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => { /* ... */ },
@@ -24,7 +25,14 @@
 ///     ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::PoolsPerAccount => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::RegistrationsPerAccount => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::RegistrationAttachmentsCreatedPerDay => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::RegistrationAttachmentsPerAccount => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::RegistrationVersionsCreatedPerDay => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::SenderIdsPerAccount => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::TagsPerResource => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::VerificationAttemptsPerDay => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::VerifiedDestinationNumbersPerAccount => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -53,6 +61,8 @@
 )]
 pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    AssociationsPerRegistration,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationSetsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
     DailyDestinationCallLimit,
@@ -77,7 +87,21 @@ pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     PoolsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
+    RegistrationsPerAccount,
+    #[allow(missing_docs)] // documentation missing in model
+    RegistrationAttachmentsCreatedPerDay,
+    #[allow(missing_docs)] // documentation missing in model
+    RegistrationAttachmentsPerAccount,
+    #[allow(missing_docs)] // documentation missing in model
+    RegistrationVersionsCreatedPerDay,
+    #[allow(missing_docs)] // documentation missing in model
+    SenderIdsPerAccount,
+    #[allow(missing_docs)] // documentation missing in model
     TagsPerResource,
+    #[allow(missing_docs)] // documentation missing in model
+    VerificationAttemptsPerDay,
+    #[allow(missing_docs)] // documentation missing in model
+    VerifiedDestinationNumbersPerAccount,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -85,6 +109,7 @@ pub enum ServiceQuotaExceededExceptionReason {
 impl ::std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "ASSOCIATIONS_PER_REGISTRATION" => ServiceQuotaExceededExceptionReason::AssociationsPerRegistration,
             "CONFIGURATION_SETS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount,
             "DAILY_DESTINATION_CALL_LIMIT" => ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit,
             "EVENT_DESTINATIONS_PER_CONFIGURATION_SET" => ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet,
@@ -97,7 +122,14 @@ impl ::std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
             "PHONE_NUMBERS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount,
             "PHONE_NUMBERS_PER_REGISTRATION" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration,
             "POOLS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PoolsPerAccount,
+            "REGISTRATIONS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::RegistrationsPerAccount,
+            "REGISTRATION_ATTACHMENTS_CREATED_PER_DAY" => ServiceQuotaExceededExceptionReason::RegistrationAttachmentsCreatedPerDay,
+            "REGISTRATION_ATTACHMENTS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::RegistrationAttachmentsPerAccount,
+            "REGISTRATION_VERSIONS_CREATED_PER_DAY" => ServiceQuotaExceededExceptionReason::RegistrationVersionsCreatedPerDay,
+            "SENDER_IDS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::SenderIdsPerAccount,
             "TAGS_PER_RESOURCE" => ServiceQuotaExceededExceptionReason::TagsPerResource,
+            "VERIFICATION_ATTEMPTS_PER_DAY" => ServiceQuotaExceededExceptionReason::VerificationAttemptsPerDay,
+            "VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::VerifiedDestinationNumbersPerAccount,
             other => ServiceQuotaExceededExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -113,6 +145,7 @@ impl ServiceQuotaExceededExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ServiceQuotaExceededExceptionReason::AssociationsPerRegistration => "ASSOCIATIONS_PER_REGISTRATION",
             ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount => "CONFIGURATION_SETS_PER_ACCOUNT",
             ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit => "DAILY_DESTINATION_CALL_LIMIT",
             ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => "EVENT_DESTINATIONS_PER_CONFIGURATION_SET",
@@ -125,13 +158,21 @@ impl ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => "PHONE_NUMBERS_PER_ACCOUNT",
             ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => "PHONE_NUMBERS_PER_REGISTRATION",
             ServiceQuotaExceededExceptionReason::PoolsPerAccount => "POOLS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::RegistrationsPerAccount => "REGISTRATIONS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::RegistrationAttachmentsCreatedPerDay => "REGISTRATION_ATTACHMENTS_CREATED_PER_DAY",
+            ServiceQuotaExceededExceptionReason::RegistrationAttachmentsPerAccount => "REGISTRATION_ATTACHMENTS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::RegistrationVersionsCreatedPerDay => "REGISTRATION_VERSIONS_CREATED_PER_DAY",
+            ServiceQuotaExceededExceptionReason::SenderIdsPerAccount => "SENDER_IDS_PER_ACCOUNT",
             ServiceQuotaExceededExceptionReason::TagsPerResource => "TAGS_PER_RESOURCE",
+            ServiceQuotaExceededExceptionReason::VerificationAttemptsPerDay => "VERIFICATION_ATTEMPTS_PER_DAY",
+            ServiceQuotaExceededExceptionReason::VerifiedDestinationNumbersPerAccount => "VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT",
             ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ASSOCIATIONS_PER_REGISTRATION",
             "CONFIGURATION_SETS_PER_ACCOUNT",
             "DAILY_DESTINATION_CALL_LIMIT",
             "EVENT_DESTINATIONS_PER_CONFIGURATION_SET",
@@ -144,7 +185,14 @@ impl ServiceQuotaExceededExceptionReason {
             "PHONE_NUMBERS_PER_ACCOUNT",
             "PHONE_NUMBERS_PER_REGISTRATION",
             "POOLS_PER_ACCOUNT",
+            "REGISTRATIONS_PER_ACCOUNT",
+            "REGISTRATION_ATTACHMENTS_CREATED_PER_DAY",
+            "REGISTRATION_ATTACHMENTS_PER_ACCOUNT",
+            "REGISTRATION_VERSIONS_CREATED_PER_DAY",
+            "SENDER_IDS_PER_ACCOUNT",
             "TAGS_PER_RESOURCE",
+            "VERIFICATION_ATTEMPTS_PER_DAY",
+            "VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT",
         ]
     }
 }

@@ -3,7 +3,13 @@ pub use crate::types::_posix_profile::PosixProfile;
 
 pub use crate::types::_home_directory_map_entry::HomeDirectoryMapEntry;
 
+pub use crate::types::_map_type::MapType;
+
 pub use crate::types::_home_directory_type::HomeDirectoryType;
+
+pub use crate::types::_s3_storage_options::S3StorageOptions;
+
+pub use crate::types::_directory_listing_optimization::DirectoryListingOptimization;
 
 pub use crate::types::_workflow_details::WorkflowDetails;
 
@@ -197,6 +203,8 @@ mod _described_user;
 
 mod _described_workflow;
 
+mod _directory_listing_optimization;
+
 mod _domain;
 
 mod _efs_file_location;
@@ -253,6 +261,8 @@ mod _listed_workflow;
 
 mod _logging_configuration;
 
+mod _map_type;
+
 mod _mdn_response;
 
 mod _mdn_signing_alg;
@@ -270,6 +280,8 @@ mod _protocol_details;
 mod _s3_file_location;
 
 mod _s3_input_file_location;
+
+mod _s3_storage_options;
 
 mod _s3_tag;
 

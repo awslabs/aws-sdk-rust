@@ -24,56 +24,62 @@ pub fn ser_create_dashboard_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.parameters {
+    if let Some(var_8) = &input.link_sharing_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Parameters").start_object();
-        crate::protocol_serde::shape_parameters::ser_parameters(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_9 = object.key("LinkSharingConfiguration").start_object();
+        crate::protocol_serde::shape_link_sharing_configuration::ser_link_sharing_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_11) = &input.permissions {
-        let mut array_12 = object.key("Permissions").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.name {
+        object.key("Name").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.parameters {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("Parameters").start_object();
+        crate::protocol_serde::shape_parameters::ser_parameters(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.permissions {
+        let mut array_14 = object.key("Permissions").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.source_entity {
+    if let Some(var_17) = &input.source_entity {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("SourceEntity").start_object();
-        crate::protocol_serde::shape_dashboard_source_entity::ser_dashboard_source_entity(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_18 = object.key("SourceEntity").start_object();
+        crate::protocol_serde::shape_dashboard_source_entity::ser_dashboard_source_entity(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_17) = &input.tags {
-        let mut array_18 = object.key("Tags").start_array();
-        for item_19 in var_17 {
+    if let Some(var_19) = &input.tags {
+        let mut array_20 = object.key("Tags").start_array();
+        for item_21 in var_19 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_20, item_19)?;
-                object_20.finish();
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_22, item_21)?;
+                object_22.finish();
             }
         }
-        array_18.finish();
+        array_20.finish();
     }
-    if let Some(var_21) = &input.theme_arn {
-        object.key("ThemeArn").string(var_21.as_str());
+    if let Some(var_23) = &input.theme_arn {
+        object.key("ThemeArn").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.validation_strategy {
+    if let Some(var_24) = &input.validation_strategy {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("ValidationStrategy").start_object();
-        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_23, var_22)?;
-        object_23.finish();
+        let mut object_25 = object.key("ValidationStrategy").start_object();
+        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_25, var_24)?;
+        object_25.finish();
     }
-    if let Some(var_24) = &input.version_description {
-        object.key("VersionDescription").string(var_24.as_str());
+    if let Some(var_26) = &input.version_description {
+        object.key("VersionDescription").string(var_26.as_str());
     }
     Ok(())
 }

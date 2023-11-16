@@ -78,57 +78,63 @@ pub fn ser_create_function_input_input(
         }
         array_24.finish();
     }
-    if let Some(var_26) = &input.memory_size {
+    if let Some(var_26) = &input.logging_config {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("LoggingConfig").start_object();
+        crate::protocol_serde::shape_logging_config::ser_logging_config(&mut object_27, var_26)?;
+        object_27.finish();
+    }
+    if let Some(var_28) = &input.memory_size {
         object.key("MemorySize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_26).into()),
+            ::aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
-    if let Some(var_27) = &input.package_type {
-        object.key("PackageType").string(var_27.as_str());
+    if let Some(var_29) = &input.package_type {
+        object.key("PackageType").string(var_29.as_str());
     }
-    if let Some(var_28) = &input.publish {
-        object.key("Publish").boolean(*var_28);
+    if let Some(var_30) = &input.publish {
+        object.key("Publish").boolean(*var_30);
     }
-    if let Some(var_29) = &input.role {
-        object.key("Role").string(var_29.as_str());
+    if let Some(var_31) = &input.role {
+        object.key("Role").string(var_31.as_str());
     }
-    if let Some(var_30) = &input.runtime {
-        object.key("Runtime").string(var_30.as_str());
+    if let Some(var_32) = &input.runtime {
+        object.key("Runtime").string(var_32.as_str());
     }
-    if let Some(var_31) = &input.snap_start {
+    if let Some(var_33) = &input.snap_start {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("SnapStart").start_object();
-        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_32, var_31)?;
-        object_32.finish();
-    }
-    if let Some(var_33) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_34 = object.key("Tags").start_object();
-        for (key_35, value_36) in var_33 {
-            {
-                object_34.key(key_35.as_str()).string(value_36.as_str());
-            }
-        }
+        let mut object_34 = object.key("SnapStart").start_object();
+        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_34, var_33)?;
         object_34.finish();
     }
-    if let Some(var_37) = &input.timeout {
+    if let Some(var_35) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("Tags").start_object();
+        for (key_37, value_38) in var_35 {
+            {
+                object_36.key(key_37.as_str()).string(value_38.as_str());
+            }
+        }
+        object_36.finish();
+    }
+    if let Some(var_39) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_37).into()),
+            ::aws_smithy_types::Number::NegInt((*var_39).into()),
         );
     }
-    if let Some(var_38) = &input.tracing_config {
+    if let Some(var_40) = &input.tracing_config {
         #[allow(unused_mut)]
-        let mut object_39 = object.key("TracingConfig").start_object();
-        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_39, var_38)?;
-        object_39.finish();
-    }
-    if let Some(var_40) = &input.vpc_config {
-        #[allow(unused_mut)]
-        let mut object_41 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_41, var_40)?;
+        let mut object_41 = object.key("TracingConfig").start_object();
+        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_41, var_40)?;
         object_41.finish();
+    }
+    if let Some(var_42) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_43 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_43, var_42)?;
+        object_43.finish();
     }
     Ok(())
 }

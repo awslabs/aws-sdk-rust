@@ -20,6 +20,8 @@ pub struct CreatePoolOutput {
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub two_way_channel_role: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the pool.</p>
@@ -63,6 +65,10 @@ impl CreatePoolOutput {
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn two_way_channel_arn(&self) -> ::std::option::Option<&str> {
         self.two_way_channel_arn.as_deref()
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
+        self.two_way_channel_role.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(&self) -> bool {
@@ -113,6 +119,7 @@ pub struct CreatePoolOutputBuilder {
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) two_way_enabled: ::std::option::Option<bool>,
     pub(crate) two_way_channel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) two_way_channel_role: ::std::option::Option<::std::string::String>,
     pub(crate) self_managed_opt_outs_enabled: ::std::option::Option<bool>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) shared_routes_enabled: ::std::option::Option<bool>,
@@ -220,6 +227,20 @@ impl CreatePoolOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.two_way_channel_arn
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn two_way_channel_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.two_way_channel_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn set_two_way_channel_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.two_way_channel_role = input;
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_channel_role
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -329,6 +350,7 @@ impl CreatePoolOutputBuilder {
             message_type: self.message_type,
             two_way_enabled: self.two_way_enabled.unwrap_or_default(),
             two_way_channel_arn: self.two_way_channel_arn,
+            two_way_channel_role: self.two_way_channel_role,
             self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled.unwrap_or_default(),
             opt_out_list_name: self.opt_out_list_name,
             shared_routes_enabled: self.shared_routes_enabled.unwrap_or_default(),

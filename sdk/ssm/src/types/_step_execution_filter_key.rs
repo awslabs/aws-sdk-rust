@@ -13,6 +13,9 @@
 /// # let stepexecutionfilterkey = unimplemented!();
 /// match stepexecutionfilterkey {
 ///     StepExecutionFilterKey::Action => { /* ... */ },
+///     StepExecutionFilterKey::ParentStepExecutionId => { /* ... */ },
+///     StepExecutionFilterKey::ParentStepIteration => { /* ... */ },
+///     StepExecutionFilterKey::ParentStepIteratorValue => { /* ... */ },
 ///     StepExecutionFilterKey::StartTimeAfter => { /* ... */ },
 ///     StepExecutionFilterKey::StartTimeBefore => { /* ... */ },
 ///     StepExecutionFilterKey::StepExecutionId => { /* ... */ },
@@ -48,6 +51,12 @@ pub enum StepExecutionFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     Action,
     #[allow(missing_docs)] // documentation missing in model
+    ParentStepExecutionId,
+    #[allow(missing_docs)] // documentation missing in model
+    ParentStepIteration,
+    #[allow(missing_docs)] // documentation missing in model
+    ParentStepIteratorValue,
+    #[allow(missing_docs)] // documentation missing in model
     StartTimeAfter,
     #[allow(missing_docs)] // documentation missing in model
     StartTimeBefore,
@@ -65,6 +74,9 @@ impl ::std::convert::From<&str> for StepExecutionFilterKey {
     fn from(s: &str) -> Self {
         match s {
             "Action" => StepExecutionFilterKey::Action,
+            "ParentStepExecutionId" => StepExecutionFilterKey::ParentStepExecutionId,
+            "ParentStepIteration" => StepExecutionFilterKey::ParentStepIteration,
+            "ParentStepIteratorValue" => StepExecutionFilterKey::ParentStepIteratorValue,
             "StartTimeAfter" => StepExecutionFilterKey::StartTimeAfter,
             "StartTimeBefore" => StepExecutionFilterKey::StartTimeBefore,
             "StepExecutionId" => StepExecutionFilterKey::StepExecutionId,
@@ -86,6 +98,9 @@ impl StepExecutionFilterKey {
     pub fn as_str(&self) -> &str {
         match self {
             StepExecutionFilterKey::Action => "Action",
+            StepExecutionFilterKey::ParentStepExecutionId => "ParentStepExecutionId",
+            StepExecutionFilterKey::ParentStepIteration => "ParentStepIteration",
+            StepExecutionFilterKey::ParentStepIteratorValue => "ParentStepIteratorValue",
             StepExecutionFilterKey::StartTimeAfter => "StartTimeAfter",
             StepExecutionFilterKey::StartTimeBefore => "StartTimeBefore",
             StepExecutionFilterKey::StepExecutionId => "StepExecutionId",
@@ -98,6 +113,9 @@ impl StepExecutionFilterKey {
     pub const fn values() -> &'static [&'static str] {
         &[
             "Action",
+            "ParentStepExecutionId",
+            "ParentStepIteration",
+            "ParentStepIteratorValue",
             "StartTimeAfter",
             "StartTimeBefore",
             "StepExecutionId",

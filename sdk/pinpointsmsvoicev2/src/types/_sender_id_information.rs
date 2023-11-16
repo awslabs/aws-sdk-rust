@@ -14,6 +14,12 @@ pub struct SenderIdInformation {
     pub message_types: ::std::vec::Vec<crate::types::MessageType>,
     /// <p>The monthly leasing price, in US dollars.</p>
     pub monthly_leasing_price: ::std::string::String,
+    /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
+    pub deletion_protection_enabled: bool,
+    /// <p>True if the sender ID is registered.</p>
+    pub registered: bool,
+    /// <p>The unique identifier for the registration.</p>
+    pub registration_id: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdInformation {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
@@ -41,6 +47,18 @@ impl SenderIdInformation {
         use std::ops::Deref;
         self.monthly_leasing_price.deref()
     }
+    /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
+    pub fn deletion_protection_enabled(&self) -> bool {
+        self.deletion_protection_enabled
+    }
+    /// <p>True if the sender ID is registered.</p>
+    pub fn registered(&self) -> bool {
+        self.registered
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn registration_id(&self) -> ::std::option::Option<&str> {
+        self.registration_id.as_deref()
+    }
 }
 impl SenderIdInformation {
     /// Creates a new builder-style object to manufacture [`SenderIdInformation`](crate::types::SenderIdInformation).
@@ -58,6 +76,9 @@ pub struct SenderIdInformationBuilder {
     pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,
     pub(crate) message_types: ::std::option::Option<::std::vec::Vec<crate::types::MessageType>>,
     pub(crate) monthly_leasing_price: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
+    pub(crate) registered: ::std::option::Option<bool>,
+    pub(crate) registration_id: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdInformationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
@@ -140,6 +161,50 @@ impl SenderIdInformationBuilder {
     pub fn get_monthly_leasing_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.monthly_leasing_price
     }
+    /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
+    /// This field is required.
+    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
+        self.deletion_protection_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
+    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deletion_protection_enabled = input;
+        self
+    }
+    /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection_enabled
+    }
+    /// <p>True if the sender ID is registered.</p>
+    /// This field is required.
+    pub fn registered(mut self, input: bool) -> Self {
+        self.registered = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>True if the sender ID is registered.</p>
+    pub fn set_registered(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.registered = input;
+        self
+    }
+    /// <p>True if the sender ID is registered.</p>
+    pub fn get_registered(&self) -> &::std::option::Option<bool> {
+        &self.registered
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn registration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.registration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.registration_id = input;
+        self
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registration_id
+    }
     /// Consumes the builder and constructs a [`SenderIdInformation`](crate::types::SenderIdInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`sender_id_arn`](crate::types::builders::SenderIdInformationBuilder::sender_id_arn)
@@ -179,6 +244,9 @@ impl SenderIdInformationBuilder {
                     "monthly_leasing_price was not specified but it is required when building SenderIdInformation",
                 )
             })?,
+            deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
+            registered: self.registered.unwrap_or_default(),
+            registration_id: self.registration_id,
         })
     }
 }

@@ -142,9 +142,17 @@ mod attach_managed_policy_to_permission_set;
 
 mod create_account_assignment;
 
+mod create_application;
+
+mod create_application_assignment;
+
+mod create_instance;
+
 mod create_instance_access_control_attribute_configuration;
 
 mod create_permission_set;
+
+mod create_trusted_token_issuer;
 
 /// Operation customization and supporting types.
 ///
@@ -175,7 +183,19 @@ pub mod customize;
 
 mod delete_account_assignment;
 
+mod delete_application;
+
+mod delete_application_access_scope;
+
+mod delete_application_assignment;
+
+mod delete_application_authentication_method;
+
+mod delete_application_grant;
+
 mod delete_inline_policy_from_permission_set;
+
+mod delete_instance;
 
 mod delete_instance_access_control_attribute_configuration;
 
@@ -183,9 +203,19 @@ mod delete_permission_set;
 
 mod delete_permissions_boundary_from_permission_set;
 
+mod delete_trusted_token_issuer;
+
 mod describe_account_assignment_creation_status;
 
 mod describe_account_assignment_deletion_status;
+
+mod describe_application;
+
+mod describe_application_assignment;
+
+mod describe_application_provider;
+
+mod describe_instance;
 
 mod describe_instance_access_control_attribute_configuration;
 
@@ -193,9 +223,19 @@ mod describe_permission_set;
 
 mod describe_permission_set_provisioning_status;
 
+mod describe_trusted_token_issuer;
+
 mod detach_customer_managed_policy_reference_from_permission_set;
 
 mod detach_managed_policy_from_permission_set;
+
+mod get_application_access_scope;
+
+mod get_application_assignment_configuration;
+
+mod get_application_authentication_method;
+
+mod get_application_grant;
 
 mod get_inline_policy_for_permission_set;
 
@@ -207,7 +247,23 @@ mod list_account_assignment_deletion_status;
 
 mod list_account_assignments;
 
+mod list_account_assignments_for_principal;
+
 mod list_accounts_for_provisioned_permission_set;
+
+mod list_application_access_scopes;
+
+mod list_application_assignments;
+
+mod list_application_assignments_for_principal;
+
+mod list_application_authentication_methods;
+
+mod list_application_grants;
+
+mod list_application_providers;
+
+mod list_applications;
 
 mod list_customer_managed_policy_references_in_permission_set;
 
@@ -223,7 +279,17 @@ mod list_permission_sets_provisioned_to_account;
 
 mod list_tags_for_resource;
 
+mod list_trusted_token_issuers;
+
 mod provision_permission_set;
+
+mod put_application_access_scope;
+
+mod put_application_assignment_configuration;
+
+mod put_application_authentication_method;
+
+mod put_application_grant;
 
 mod put_inline_policy_to_permission_set;
 
@@ -233,6 +299,12 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_application;
+
+mod update_instance;
+
 mod update_instance_access_control_attribute_configuration;
 
 mod update_permission_set;
+
+mod update_trusted_token_issuer;

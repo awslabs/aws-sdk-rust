@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationStrategy {
-    /// <p>The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
+    /// <p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
     pub mode: crate::types::ValidationStrategyMode,
 }
 impl ValidationStrategy {
-    /// <p>The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
+    /// <p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
     pub fn mode(&self) -> &crate::types::ValidationStrategyMode {
         &self.mode
     }
@@ -27,18 +27,18 @@ pub struct ValidationStrategyBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::ValidationStrategyMode>,
 }
 impl ValidationStrategyBuilder {
-    /// <p>The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
+    /// <p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
     /// This field is required.
     pub fn mode(mut self, input: crate::types::ValidationStrategyMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
+    /// <p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ValidationStrategyMode>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
+    /// <p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ValidationStrategyMode> {
         &self.mode
     }

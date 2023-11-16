@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SynthesisTask {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     pub engine: ::std::option::Option<crate::types::Engine>,
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ pub struct SynthesisTask {
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub sample_rate: ::std::option::Option<::std::string::String>,
     /// <p>The type of speech marks returned for the input text.</p>
@@ -39,7 +39,7 @@ pub struct SynthesisTask {
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl SynthesisTask {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     pub fn engine(&self) -> ::std::option::Option<&crate::types::Engine> {
         self.engine.as_ref()
     }
@@ -82,7 +82,7 @@ impl SynthesisTask {
         self.output_format.as_ref()
     }
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub fn sample_rate(&self) -> ::std::option::Option<&str> {
         self.sample_rate.as_deref()
@@ -135,17 +135,17 @@ pub struct SynthesisTaskBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl SynthesisTaskBuilder {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     pub fn engine(mut self, input: crate::types::Engine) -> Self {
         self.engine = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<crate::types::Engine>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     pub fn get_engine(&self) -> &::std::option::Option<crate::types::Engine> {
         &self.engine
     }
@@ -282,21 +282,21 @@ impl SynthesisTaskBuilder {
         &self.output_format
     }
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub fn sample_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub fn set_sample_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_rate = input;
         self
     }
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub fn get_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
         &self.sample_rate

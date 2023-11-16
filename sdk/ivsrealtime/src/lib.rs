@@ -22,7 +22,9 @@
 //! Terminology:
 //!   - A _stage_ is a virtual space where participants can exchange video in real time.
 //!   - A _participant token_ is a token that authenticates a participant when they join a stage.
-//!   - A _participant object_ represents participants (people) in the stage and contains information about them. When a token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant is associated with that participant ID There is a 1:1 mapping between participant tokens and participants.
+//!   - A _participant object_ represents participants (people) in the stage and contains information about them. When a token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant is associated with that participant ID. There is a 1:1 mapping between participant tokens and participants.
+//!   - Server-side composition: The _composition_ process composites participants of a stage into a single video and forwards it to a set of outputs (e.g., IVS channels). Composition endpoints support this process.
+//!   - Server-side composition: A _composition_ controls the look of the outputs, including how participants are positioned in the video.
 //!
 //! __Resources__
 //!
@@ -52,6 +54,24 @@
 //!   - ListStages — Gets summary information about all stages in your account, in the AWS region where the API request is processed.
 //!   - ListStageSessions — Gets all sessions for a specified stage.
 //!   - UpdateStage — Updates a stage’s configuration.
+//!
+//! __Composition Endpoints__
+//!   - GetComposition — Gets information about the specified Composition resource.
+//!   - ListCompositions — Gets summary information about all Compositions in your account, in the AWS region where the API request is processed.
+//!   - StartComposition — Starts a Composition from a stage based on the configuration provided in the request.
+//!   - StopComposition — Stops and deletes a Composition resource. Any broadcast from the Composition resource is stopped.
+//!
+//! __EncoderConfiguration Endpoints__
+//!   - CreateEncoderConfiguration — Creates an EncoderConfiguration object.
+//!   - DeleteEncoderConfiguration — Deletes an EncoderConfiguration resource. Ensures that no Compositions are using this template; otherwise, returns an error.
+//!   - GetEncoderConfiguration — Gets information about the specified EncoderConfiguration resource.
+//!   - ListEncoderConfigurations — Gets summary information about all EncoderConfigurations in your account, in the AWS region where the API request is processed.
+//!
+//! __StorageConfiguration Endpoints__
+//!   - CreateStorageConfiguration — Creates a new storage configuration, used to enable recording to Amazon S3.
+//!   - DeleteStorageConfiguration — Deletes the storage configuration for the specified ARN.
+//!   - GetStorageConfiguration — Gets the storage configuration for the specified ARN.
+//!   - ListStorageConfigurations — Gets summary information about all storage configurations in your account, in the AWS region where the API request is processed.
 //!
 //! __Tags Endpoints__
 //!   - ListTagsForResource — Gets information about AWS tags for the specified ARN.
@@ -187,14 +207,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateParticipantToken`](crate::operation::create_participant_token) operation has
-/// a [`Client::create_participant_token`], function which returns a builder for that operation.
+/// For example, the [`CreateEncoderConfiguration`](crate::operation::create_encoder_configuration) operation has
+/// a [`Client::create_encoder_configuration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_participant_token()
-///     .stage_arn("example")
+/// let result = client.create_encoder_configuration()
+///     .name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -225,6 +245,10 @@ pub mod primitives;
 pub mod types;
 
 mod auth_plugin;
+
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
 
 pub(crate) mod protocol_serde;
 

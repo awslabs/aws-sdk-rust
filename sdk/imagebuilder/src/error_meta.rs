@@ -145,6 +145,50 @@ impl From<crate::operation::cancel_image_creation::CancelImageCreationError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError> for Error {
+    fn from(err: crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError) -> Self {
+        match err {
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_component::CreateComponentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -485,6 +529,53 @@ impl From<crate::operation::create_infrastructure_configuration::CreateInfrastru
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError) -> Self {
+        match err {
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_component::DeleteComponentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -756,6 +847,44 @@ impl From<crate::operation::delete_infrastructure_configuration::DeleteInfrastru
             crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError) -> Self {
+        match err {
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ResourceDependencyException(inner) => {
+                Error::ResourceDependencyException(inner)
+            }
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1136,6 +1265,72 @@ impl From<crate::operation::get_infrastructure_configuration::GetInfrastructureC
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lifecycle_execution::GetLifecycleExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lifecycle_execution::GetLifecycleExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_lifecycle_execution::GetLifecycleExecutionError> for Error {
+    fn from(err: crate::operation::get_lifecycle_execution::GetLifecycleExecutionError) -> Self {
+        match err {
+            crate::operation::get_lifecycle_execution::GetLifecycleExecutionError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::get_lifecycle_execution::GetLifecycleExecutionError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::get_lifecycle_execution::GetLifecycleExecutionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_lifecycle_execution::GetLifecycleExecutionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_lifecycle_execution::GetLifecycleExecutionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_lifecycle_execution::GetLifecycleExecutionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_lifecycle_execution::GetLifecycleExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::get_lifecycle_policy::GetLifecyclePolicyError) -> Self {
+        match err {
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1797,6 +1992,136 @@ impl From<crate::operation::list_infrastructure_configurations::ListInfrastructu
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError> for Error {
+    fn from(err: crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError) -> Self {
+        match err {
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError> for Error {
+    fn from(err: crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError) -> Self {
+        match err {
+            crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_lifecycle_executions::ListLifecycleExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError> for Error {
+    fn from(err: crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError) -> Self {
+        match err {
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2116,6 +2441,53 @@ impl From<crate::operation::start_image_pipeline_execution::StartImagePipelineEx
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_resource_state_update::StartResourceStateUpdateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_resource_state_update::StartResourceStateUpdateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_resource_state_update::StartResourceStateUpdateError> for Error {
+    fn from(err: crate::operation::start_resource_state_update::StartResourceStateUpdateError) -> Self {
+        match err {
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_resource_state_update::StartResourceStateUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2315,6 +2687,50 @@ impl From<crate::operation::update_infrastructure_configuration::UpdateInfrastru
             crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError) -> Self {
+        match err {
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -23,7 +23,7 @@ impl ReleasePhoneNumberInputBuilder {
 /// Fluent builder constructing a request to `ReleasePhoneNumber`.
 ///
 /// <p>Releases an existing origination phone number in your account. Once released, a phone number is no longer available for sending messages.</p>
-/// <p>If the origination phone number has deletion protection enabled or is associated with a pool, an Error is returned.</p>
+/// <p>If the origination phone number has deletion protection enabled or is associated with a pool, an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReleasePhoneNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

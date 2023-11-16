@@ -45,6 +45,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DeletionProtectionEnabled" => {
+                            builder =
+                                builder.set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "Registered" => {
+                            builder = builder.set_registered(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "RegistrationId" => {
+                            builder = builder.set_registration_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

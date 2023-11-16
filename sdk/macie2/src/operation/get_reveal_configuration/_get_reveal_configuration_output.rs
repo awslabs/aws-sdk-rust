@@ -3,14 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRevealConfigurationOutput {
-    /// <p>The current configuration settings and the status of the configuration for the account.</p>
+    /// <p>The KMS key that's used to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub configuration: ::std::option::Option<crate::types::RevealConfiguration>,
+    /// <p>The access method and settings that are used to retrieve the sensitive data.</p>
+    pub retrieval_configuration: ::std::option::Option<crate::types::RetrievalConfiguration>,
     _request_id: Option<String>,
 }
 impl GetRevealConfigurationOutput {
-    /// <p>The current configuration settings and the status of the configuration for the account.</p>
+    /// <p>The KMS key that's used to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::RevealConfiguration> {
         self.configuration.as_ref()
+    }
+    /// <p>The access method and settings that are used to retrieve the sensitive data.</p>
+    pub fn retrieval_configuration(&self) -> ::std::option::Option<&crate::types::RetrievalConfiguration> {
+        self.retrieval_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRevealConfigurationOutput {
@@ -30,22 +36,37 @@ impl GetRevealConfigurationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRevealConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RevealConfiguration>,
+    pub(crate) retrieval_configuration: ::std::option::Option<crate::types::RetrievalConfiguration>,
     _request_id: Option<String>,
 }
 impl GetRevealConfigurationOutputBuilder {
-    /// <p>The current configuration settings and the status of the configuration for the account.</p>
+    /// <p>The KMS key that's used to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn configuration(mut self, input: crate::types::RevealConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current configuration settings and the status of the configuration for the account.</p>
+    /// <p>The KMS key that's used to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>The current configuration settings and the status of the configuration for the account.</p>
+    /// <p>The KMS key that's used to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
         &self.configuration
+    }
+    /// <p>The access method and settings that are used to retrieve the sensitive data.</p>
+    pub fn retrieval_configuration(mut self, input: crate::types::RetrievalConfiguration) -> Self {
+        self.retrieval_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The access method and settings that are used to retrieve the sensitive data.</p>
+    pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::RetrievalConfiguration>) -> Self {
+        self.retrieval_configuration = input;
+        self
+    }
+    /// <p>The access method and settings that are used to retrieve the sensitive data.</p>
+    pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::RetrievalConfiguration> {
+        &self.retrieval_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -60,6 +81,7 @@ impl GetRevealConfigurationOutputBuilder {
     pub fn build(self) -> crate::operation::get_reveal_configuration::GetRevealConfigurationOutput {
         crate::operation::get_reveal_configuration::GetRevealConfigurationOutput {
             configuration: self.configuration,
+            retrieval_configuration: self.retrieval_configuration,
             _request_id: self._request_id,
         }
     }

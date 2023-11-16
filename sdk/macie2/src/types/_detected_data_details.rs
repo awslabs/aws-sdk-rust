@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedDataDetails {
-    /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
+    /// <p>An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl DetectedDataDetails {
-    /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
+    /// <p>An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct DetectedDataDetailsBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl DetectedDataDetailsBuilder {
-    /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
+    /// <p>An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.</p>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
+    /// <p>An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
+    /// <p>An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

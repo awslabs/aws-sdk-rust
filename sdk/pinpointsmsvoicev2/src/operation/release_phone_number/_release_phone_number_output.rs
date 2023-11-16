@@ -25,10 +25,14 @@ pub struct ReleasePhoneNumberOutput {
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub two_way_channel_role: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList that was associated with the phone number.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the registration.</p>
+    pub registration_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -80,6 +84,10 @@ impl ReleasePhoneNumberOutput {
     pub fn two_way_channel_arn(&self) -> ::std::option::Option<&str> {
         self.two_way_channel_arn.as_deref()
     }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
+        self.two_way_channel_role.as_deref()
+    }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(&self) -> bool {
         self.self_managed_opt_outs_enabled
@@ -87,6 +95,10 @@ impl ReleasePhoneNumberOutput {
     /// <p>The name of the OptOutList that was associated with the phone number.</p>
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn registration_id(&self) -> ::std::option::Option<&str> {
+        self.registration_id.as_deref()
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -120,8 +132,10 @@ pub struct ReleasePhoneNumberOutputBuilder {
     pub(crate) monthly_leasing_price: ::std::option::Option<::std::string::String>,
     pub(crate) two_way_enabled: ::std::option::Option<bool>,
     pub(crate) two_way_channel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) two_way_channel_role: ::std::option::Option<::std::string::String>,
     pub(crate) self_managed_opt_outs_enabled: ::std::option::Option<bool>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
+    pub(crate) registration_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -286,6 +300,20 @@ impl ReleasePhoneNumberOutputBuilder {
     pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.two_way_channel_arn
     }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn two_way_channel_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.two_way_channel_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn set_two_way_channel_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.two_way_channel_role = input;
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_channel_role
+    }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
@@ -313,6 +341,20 @@ impl ReleasePhoneNumberOutputBuilder {
     /// <p>The name of the OptOutList that was associated with the phone number.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn registration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.registration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.registration_id = input;
+        self
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registration_id
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -351,8 +393,10 @@ impl ReleasePhoneNumberOutputBuilder {
             monthly_leasing_price: self.monthly_leasing_price,
             two_way_enabled: self.two_way_enabled.unwrap_or_default(),
             two_way_channel_arn: self.two_way_channel_arn,
+            two_way_channel_role: self.two_way_channel_role,
             self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled.unwrap_or_default(),
             opt_out_list_name: self.opt_out_list_name,
+            registration_id: self.registration_id,
             created_timestamp: self.created_timestamp,
             _request_id: self._request_id,
         }

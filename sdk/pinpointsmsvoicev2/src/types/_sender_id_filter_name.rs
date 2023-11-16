@@ -12,8 +12,10 @@
 /// ```text
 /// # let senderidfiltername = unimplemented!();
 /// match senderidfiltername {
+///     SenderIdFilterName::DeletionProtectionEnabled => { /* ... */ },
 ///     SenderIdFilterName::IsoCountryCode => { /* ... */ },
 ///     SenderIdFilterName::MessageType => { /* ... */ },
+///     SenderIdFilterName::Registered => { /* ... */ },
 ///     SenderIdFilterName::SenderId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -43,9 +45,13 @@
 )]
 pub enum SenderIdFilterName {
     #[allow(missing_docs)] // documentation missing in model
+    DeletionProtectionEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     IsoCountryCode,
     #[allow(missing_docs)] // documentation missing in model
     MessageType,
+    #[allow(missing_docs)] // documentation missing in model
+    Registered,
     #[allow(missing_docs)] // documentation missing in model
     SenderId,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -55,8 +61,10 @@ pub enum SenderIdFilterName {
 impl ::std::convert::From<&str> for SenderIdFilterName {
     fn from(s: &str) -> Self {
         match s {
+            "deletion-protection-enabled" => SenderIdFilterName::DeletionProtectionEnabled,
             "iso-country-code" => SenderIdFilterName::IsoCountryCode,
             "message-type" => SenderIdFilterName::MessageType,
+            "registered" => SenderIdFilterName::Registered,
             "sender-id" => SenderIdFilterName::SenderId,
             other => SenderIdFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -73,15 +81,23 @@ impl SenderIdFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SenderIdFilterName::DeletionProtectionEnabled => "deletion-protection-enabled",
             SenderIdFilterName::IsoCountryCode => "iso-country-code",
             SenderIdFilterName::MessageType => "message-type",
+            SenderIdFilterName::Registered => "registered",
             SenderIdFilterName::SenderId => "sender-id",
             SenderIdFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["iso-country-code", "message-type", "sender-id"]
+        &[
+            "deletion-protection-enabled",
+            "iso-country-code",
+            "message-type",
+            "registered",
+            "sender-id",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SenderIdFilterName {

@@ -275,6 +275,9 @@ pub(crate) fn de_publish_version(
                 "Layers" => {
                     builder = builder.set_layers(crate::protocol_serde::shape_layers_reference_list::de_layers_reference_list(tokens)?);
                 }
+                "LoggingConfig" => {
+                    builder = builder.set_logging_config(crate::protocol_serde::shape_logging_config::de_logging_config(tokens)?);
+                }
                 "MasterArn" => {
                     builder = builder.set_master_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

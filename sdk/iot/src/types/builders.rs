@@ -71,6 +71,8 @@ pub use crate::types::_thing_indexing_configuration::ThingIndexingConfigurationB
 
 pub use crate::types::_indexing_filter::IndexingFilterBuilder;
 
+pub use crate::types::_geo_location_target::GeoLocationTargetBuilder;
+
 pub use crate::types::_aggregation_type::AggregationTypeBuilder;
 
 pub use crate::types::_configuration::ConfigurationBuilder;

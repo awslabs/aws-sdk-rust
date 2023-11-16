@@ -9,5 +9,10 @@ pub fn ser_create_verified_access_trust_provider_device_options(
     if let Some(var_2) = &input.tenant_id {
         scope_1.string(var_2);
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("PublicSigningKeyUrl");
+    if let Some(var_4) = &input.public_signing_key_url {
+        scope_3.string(var_4);
+    }
     Ok(())
 }

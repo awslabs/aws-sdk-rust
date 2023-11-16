@@ -136,6 +136,20 @@ impl ModifyVerifiedAccessTrustProviderFluentBuilder {
     pub fn get_oidc_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions> {
         self.inner.get_oidc_options()
     }
+    /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub fn device_options(mut self, input: crate::types::ModifyVerifiedAccessTrustProviderDeviceOptions) -> Self {
+        self.inner = self.inner.device_options(input);
+        self
+    }
+    /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub fn set_device_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderDeviceOptions>) -> Self {
+        self.inner = self.inner.set_device_options(input);
+        self
+    }
+    /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub fn get_device_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderDeviceOptions> {
+        self.inner.get_device_options()
+    }
     /// <p>A description for the Verified Access trust provider.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

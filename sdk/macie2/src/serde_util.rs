@@ -17,6 +17,15 @@ pub(crate) fn allow_list_status_correct_errors(
     builder
 }
 
+pub(crate) fn retrieval_configuration_correct_errors(
+    mut builder: crate::types::builders::RetrievalConfigurationBuilder,
+) -> crate::types::builders::RetrievalConfigurationBuilder {
+    if builder.retrieval_mode.is_none() {
+        builder.retrieval_mode = "no value was set".parse::<crate::types::RetrievalMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn reveal_configuration_correct_errors(
     mut builder: crate::types::builders::RevealConfigurationBuilder,
 ) -> crate::types::builders::RevealConfigurationBuilder {

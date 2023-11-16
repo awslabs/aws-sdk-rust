@@ -203,6 +203,8 @@ pub use crate::types::_resolved_targets::ResolvedTargetsBuilder;
 
 pub use crate::types::_step_execution::StepExecutionBuilder;
 
+pub use crate::types::_parent_step_details::ParentStepDetailsBuilder;
+
 pub use crate::types::_failure_details::FailureDetailsBuilder;
 
 pub use crate::types::_session::SessionBuilder;

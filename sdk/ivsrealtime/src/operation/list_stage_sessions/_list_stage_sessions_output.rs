@@ -5,7 +5,7 @@
 pub struct ListStageSessionsOutput {
     /// <p>List of matching stage sessions.</p>
     pub stage_sessions: ::std::vec::Vec<crate::types::StageSessionSummary>,
-    /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListStageSessionsOutput {
         use std::ops::Deref;
         self.stage_sessions.deref()
     }
-    /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListStageSessionsOutputBuilder {
     pub fn get_stage_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>> {
         &self.stage_sessions
     }
-    /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

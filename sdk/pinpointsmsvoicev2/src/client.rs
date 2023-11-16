@@ -146,6 +146,16 @@ mod create_opt_out_list;
 
 mod create_pool;
 
+mod create_registration;
+
+mod create_registration_association;
+
+mod create_registration_attachment;
+
+mod create_registration_version;
+
+mod create_verified_destination_number;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -189,7 +199,15 @@ mod delete_opted_out_number;
 
 mod delete_pool;
 
+mod delete_registration;
+
+mod delete_registration_attachment;
+
+mod delete_registration_field_value;
+
 mod delete_text_message_spend_limit_override;
+
+mod delete_verified_destination_number;
 
 mod delete_voice_message_spend_limit_override;
 
@@ -209,13 +227,33 @@ mod describe_phone_numbers;
 
 mod describe_pools;
 
+mod describe_registration_attachments;
+
+mod describe_registration_field_definitions;
+
+mod describe_registration_field_values;
+
+mod describe_registration_section_definitions;
+
+mod describe_registration_type_definitions;
+
+mod describe_registration_versions;
+
+mod describe_registrations;
+
 mod describe_sender_ids;
 
 mod describe_spend_limits;
 
+mod describe_verified_destination_numbers;
+
 mod disassociate_origination_identity;
 
+mod discard_registration_version;
+
 mod list_pool_origination_identities;
+
+mod list_registration_associations;
 
 mod list_tags_for_resource;
 
@@ -223,9 +261,17 @@ mod put_keyword;
 
 mod put_opted_out_number;
 
+mod put_registration_field_value;
+
 mod release_phone_number;
 
+mod release_sender_id;
+
 mod request_phone_number;
+
+mod request_sender_id;
+
+mod send_destination_number_verification_code;
 
 mod send_text_message;
 
@@ -239,6 +285,8 @@ mod set_text_message_spend_limit_override;
 
 mod set_voice_message_spend_limit_override;
 
+mod submit_registration_version;
+
 mod tag_resource;
 
 mod untag_resource;
@@ -248,3 +296,7 @@ mod update_event_destination;
 mod update_phone_number;
 
 mod update_pool;
+
+mod update_sender_id;
+
+mod verify_destination_number;

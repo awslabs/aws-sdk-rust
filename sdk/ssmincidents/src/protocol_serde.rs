@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_get_incident_findings;
+
 pub(crate) mod shape_create_replication_set;
 
 pub(crate) mod shape_create_response_plan;
@@ -48,6 +50,8 @@ pub(crate) mod shape_get_resource_policies;
 pub(crate) mod shape_get_response_plan;
 
 pub(crate) mod shape_get_timeline_event;
+
+pub(crate) mod shape_list_incident_findings;
 
 pub(crate) mod shape_list_incident_records;
 
@@ -91,6 +95,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_get_incident_findings_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_replication_set_input;
@@ -110,6 +116,8 @@ pub(crate) mod shape_delete_timeline_event_input;
 pub(crate) mod shape_get_resource_policies_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_incident_findings_input;
 
 pub(crate) mod shape_list_incident_records_input;
 
@@ -151,6 +159,8 @@ pub(crate) mod shape_action;
 
 pub(crate) mod shape_actions_list;
 
+pub(crate) mod shape_batch_get_incident_findings_error_list;
+
 pub(crate) mod shape_chat_channel;
 
 pub(crate) mod shape_engagement_set;
@@ -160,6 +170,10 @@ pub(crate) mod shape_event_reference;
 pub(crate) mod shape_event_summary_list;
 
 pub(crate) mod shape_filter;
+
+pub(crate) mod shape_finding_list;
+
+pub(crate) mod shape_finding_summary_list;
 
 pub(crate) mod shape_incident_record;
 
@@ -201,6 +215,8 @@ pub(crate) mod shape_add_region_action;
 
 pub(crate) mod shape_automation_execution_set;
 
+pub(crate) mod shape_batch_get_incident_findings_error;
+
 pub(crate) mod shape_chatbot_sns_configuration_set;
 
 pub(crate) mod shape_condition;
@@ -212,6 +228,10 @@ pub(crate) mod shape_empty_chat_channel;
 pub(crate) mod shape_event_reference_list;
 
 pub(crate) mod shape_event_summary;
+
+pub(crate) mod shape_finding;
+
+pub(crate) mod shape_finding_summary;
 
 pub(crate) mod shape_incident_record_source;
 
@@ -237,11 +257,17 @@ pub(crate) mod shape_automation_execution;
 
 pub(crate) mod shape_dynamic_ssm_parameter_value;
 
+pub(crate) mod shape_finding_details;
+
 pub(crate) mod shape_item_value;
 
 pub(crate) mod shape_pager_duty_incident_configuration;
 
 pub(crate) mod shape_region_info;
+
+pub(crate) mod shape_cloud_formation_stack_update;
+
+pub(crate) mod shape_code_deploy_deployment;
 
 pub(crate) mod shape_dynamic_ssm_parameters;
 

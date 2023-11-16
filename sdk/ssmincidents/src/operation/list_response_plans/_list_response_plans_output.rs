@@ -5,7 +5,7 @@
 pub struct ListResponsePlansOutput {
     /// <p>Details of each response plan.</p>
     pub response_plan_summaries: ::std::vec::Vec<crate::types::ResponsePlanSummary>,
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListResponsePlansOutput {
         use std::ops::Deref;
         self.response_plan_summaries.deref()
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListResponsePlansOutputBuilder {
     pub fn get_response_plan_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>> {
         &self.response_plan_summaries
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

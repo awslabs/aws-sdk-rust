@@ -367,17 +367,17 @@ impl UpdateFunctionConfigurationFluentBuilder {
     pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
         self.inner.get_image_config()
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
         self.inner = self.inner.ephemeral_storage(input);
         self
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
         self.inner = self.inner.set_ephemeral_storage(input);
         self
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
         self.inner.get_ephemeral_storage()
     }
@@ -394,5 +394,19 @@ impl UpdateFunctionConfigurationFluentBuilder {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
     pub fn get_snap_start(&self) -> &::std::option::Option<crate::types::SnapStart> {
         self.inner.get_snap_start()
+    }
+    /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    pub fn logging_config(mut self, input: crate::types::LoggingConfig) -> Self {
+        self.inner = self.inner.logging_config(input);
+        self
+    }
+    /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::LoggingConfig>) -> Self {
+        self.inner = self.inner.set_logging_config(input);
+        self
+    }
+    /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
+        self.inner.get_logging_config()
     }
 }

@@ -7,6 +7,8 @@ pub struct ModifyVerifiedAccessTrustProviderInput {
     pub verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
     pub oidc_options: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions>,
+    /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub device_options: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderDeviceOptions>,
     /// <p>A description for the Verified Access trust provider.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -24,6 +26,10 @@ impl ModifyVerifiedAccessTrustProviderInput {
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
     pub fn oidc_options(&self) -> ::std::option::Option<&crate::types::ModifyVerifiedAccessTrustProviderOidcOptions> {
         self.oidc_options.as_ref()
+    }
+    /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub fn device_options(&self) -> ::std::option::Option<&crate::types::ModifyVerifiedAccessTrustProviderDeviceOptions> {
+        self.device_options.as_ref()
     }
     /// <p>A description for the Verified Access trust provider.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -55,6 +61,7 @@ impl ModifyVerifiedAccessTrustProviderInput {
 pub struct ModifyVerifiedAccessTrustProviderInputBuilder {
     pub(crate) verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
     pub(crate) oidc_options: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions>,
+    pub(crate) device_options: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderDeviceOptions>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -89,6 +96,20 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
     pub fn get_oidc_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions> {
         &self.oidc_options
+    }
+    /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub fn device_options(mut self, input: crate::types::ModifyVerifiedAccessTrustProviderDeviceOptions) -> Self {
+        self.device_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub fn set_device_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderDeviceOptions>) -> Self {
+        self.device_options = input;
+        self
+    }
+    /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
+    pub fn get_device_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderDeviceOptions> {
+        &self.device_options
     }
     /// <p>A description for the Verified Access trust provider.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +178,7 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
             crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput {
                 verified_access_trust_provider_id: self.verified_access_trust_provider_id,
                 oidc_options: self.oidc_options,
+                device_options: self.device_options,
                 description: self.description,
                 dry_run: self.dry_run,
                 client_token: self.client_token,

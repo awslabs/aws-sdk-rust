@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateParticipantToken`](crate::operation::create_participant_token) operation has
-/// a [`Client::create_participant_token`], function which returns a builder for that operation.
+/// For example, the [`CreateEncoderConfiguration`](crate::operation::create_encoder_configuration) operation has
+/// a [`Client::create_encoder_configuration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_participant_token()
-///     .stage_arn("example")
+/// let result = client.create_encoder_configuration()
+///     .name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,9 +136,13 @@ impl Client {
     }
 }
 
+mod create_encoder_configuration;
+
 mod create_participant_token;
 
 mod create_stage;
+
+mod create_storage_configuration;
 
 /// Operation customization and supporting types.
 ///
@@ -151,7 +155,7 @@ mod create_stage;
 /// # let client: aws_sdk_ivsrealtime::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_participant_token()
+/// let result = client.create_encoder_configuration()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -167,15 +171,29 @@ mod create_stage;
 /// ```
 pub mod customize;
 
+mod delete_encoder_configuration;
+
 mod delete_stage;
 
+mod delete_storage_configuration;
+
 mod disconnect_participant;
+
+mod get_composition;
+
+mod get_encoder_configuration;
 
 mod get_participant;
 
 mod get_stage;
 
 mod get_stage_session;
+
+mod get_storage_configuration;
+
+mod list_compositions;
+
+mod list_encoder_configurations;
 
 mod list_participant_events;
 
@@ -185,7 +203,13 @@ mod list_stage_sessions;
 
 mod list_stages;
 
+mod list_storage_configurations;
+
 mod list_tags_for_resource;
+
+mod start_composition;
+
+mod stop_composition;
 
 mod tag_resource;
 

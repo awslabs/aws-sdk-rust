@@ -33,5 +33,11 @@ pub fn ser_update_file_system_lustre_configuration(
         crate::protocol_serde::shape_lustre_root_squash_configuration::ser_lustre_root_squash_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.per_unit_storage_throughput {
+        object.key("PerUnitStorageThroughput").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
     Ok(())
 }

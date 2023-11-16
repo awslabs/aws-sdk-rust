@@ -13,12 +13,20 @@ pub struct IncidentRecord {
     /// <p>The current status of the incident.</p>
     pub status: crate::types::IncidentRecordStatus,
     /// <p>The impact of the incident on customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     pub impact: i32,
-    /// <p>The time that Incident Manager created the incident record.</p>
+    /// <p>The timestamp for when Incident Manager created the incident record.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
+    /// <p>The timestamp for when the incident was resolved. This appears as a timeline event.</p>
     pub resolved_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time at which the incident was most recently modified.</p>
+    /// <p>The timestamp for when the incident was most recently modified.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>Who modified the incident most recently.</p>
     pub last_modified_by: ::std::string::String,
@@ -53,18 +61,26 @@ impl IncidentRecord {
         &self.status
     }
     /// <p>The impact of the incident on customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     pub fn impact(&self) -> i32 {
         self.impact
     }
-    /// <p>The time that Incident Manager created the incident record.</p>
+    /// <p>The timestamp for when Incident Manager created the incident record.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
+    /// <p>The timestamp for when the incident was resolved. This appears as a timeline event.</p>
     pub fn resolved_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.resolved_time.as_ref()
     }
-    /// <p>The time at which the incident was most recently modified.</p>
+    /// <p>The timestamp for when the incident was most recently modified.</p>
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
@@ -186,61 +202,85 @@ impl IncidentRecordBuilder {
         &self.status
     }
     /// <p>The impact of the incident on customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     /// This field is required.
     pub fn impact(mut self, input: i32) -> Self {
         self.impact = ::std::option::Option::Some(input);
         self
     }
     /// <p>The impact of the incident on customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.impact = input;
         self
     }
     /// <p>The impact of the incident on customers and applications.</p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// </ul>
     pub fn get_impact(&self) -> &::std::option::Option<i32> {
         &self.impact
     }
-    /// <p>The time that Incident Manager created the incident record.</p>
+    /// <p>The timestamp for when Incident Manager created the incident record.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that Incident Manager created the incident record.</p>
+    /// <p>The timestamp for when Incident Manager created the incident record.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The time that Incident Manager created the incident record.</p>
+    /// <p>The timestamp for when Incident Manager created the incident record.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
+    /// <p>The timestamp for when the incident was resolved. This appears as a timeline event.</p>
     pub fn resolved_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resolved_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
+    /// <p>The timestamp for when the incident was resolved. This appears as a timeline event.</p>
     pub fn set_resolved_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.resolved_time = input;
         self
     }
-    /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
+    /// <p>The timestamp for when the incident was resolved. This appears as a timeline event.</p>
     pub fn get_resolved_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.resolved_time
     }
-    /// <p>The time at which the incident was most recently modified.</p>
+    /// <p>The timestamp for when the incident was most recently modified.</p>
     /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the incident was most recently modified.</p>
+    /// <p>The timestamp for when the incident was most recently modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>The time at which the incident was most recently modified.</p>
+    /// <p>The timestamp for when the incident was most recently modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }

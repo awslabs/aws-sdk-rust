@@ -10,7 +10,7 @@ pub struct RegionInfo {
     pub status: crate::types::RegionStatus,
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
+    /// <p>The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.</p>
     pub status_update_date_time: ::aws_smithy_types::DateTime,
 }
 impl RegionInfo {
@@ -26,7 +26,7 @@ impl RegionInfo {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
+    /// <p>The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.</p>
     pub fn status_update_date_time(&self) -> &::aws_smithy_types::DateTime {
         &self.status_update_date_time
     }
@@ -91,18 +91,18 @@ impl RegionInfoBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
+    /// <p>The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.</p>
     /// This field is required.
     pub fn status_update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.status_update_date_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
+    /// <p>The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.</p>
     pub fn set_status_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.status_update_date_time = input;
         self
     }
-    /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
+    /// <p>The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.</p>
     pub fn get_status_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.status_update_date_time
     }

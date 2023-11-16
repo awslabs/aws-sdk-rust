@@ -108,18 +108,32 @@ impl UpdateRevealConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn configuration(mut self, input: crate::types::RevealConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
         self.inner.get_configuration()
+    }
+    /// <p>The access method and settings to use to retrieve the sensitive data.</p>
+    pub fn retrieval_configuration(mut self, input: crate::types::UpdateRetrievalConfiguration) -> Self {
+        self.inner = self.inner.retrieval_configuration(input);
+        self
+    }
+    /// <p>The access method and settings to use to retrieve the sensitive data.</p>
+    pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::UpdateRetrievalConfiguration>) -> Self {
+        self.inner = self.inner.set_retrieval_configuration(input);
+        self
+    }
+    /// <p>The access method and settings to use to retrieve the sensitive data.</p>
+    pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::UpdateRetrievalConfiguration> {
+        self.inner.get_retrieval_configuration()
     }
 }

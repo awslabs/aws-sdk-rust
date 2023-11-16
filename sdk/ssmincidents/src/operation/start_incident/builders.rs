@@ -151,39 +151,39 @@ impl StartIncidentFluentBuilder {
         self.inner.get_title()
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"> <b>Possible impacts:</b> </p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
-    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
-    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
-    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
-    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn impact(mut self, input: i32) -> Self {
         self.inner = self.inner.impact(input);
         self
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"> <b>Possible impacts:</b> </p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
-    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
-    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
-    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
-    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_impact(input);
         self
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
-    /// <p class="title"> <b>Possible impacts:</b> </p>
+    /// <p class="title"> <b>Supported impact codes</b> </p>
     /// <ul>
-    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
-    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
-    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
-    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
-    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
+    /// <li> <p> <code>1</code> - Critical</p> </li>
+    /// <li> <p> <code>2</code> - High</p> </li>
+    /// <li> <p> <code>3</code> - Medium</p> </li>
+    /// <li> <p> <code>4</code> - Low</p> </li>
+    /// <li> <p> <code>5</code> - No Impact</p> </li>
     /// </ul>
     pub fn get_impact(&self) -> &::std::option::Option<i32> {
         self.inner.get_impact()

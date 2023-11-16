@@ -16,6 +16,21 @@ pub mod create_opt_out_list;
 /// Types for the `CreatePool` operation.
 pub mod create_pool;
 
+/// Types for the `CreateRegistration` operation.
+pub mod create_registration;
+
+/// Types for the `CreateRegistrationAssociation` operation.
+pub mod create_registration_association;
+
+/// Types for the `CreateRegistrationAttachment` operation.
+pub mod create_registration_attachment;
+
+/// Types for the `CreateRegistrationVersion` operation.
+pub mod create_registration_version;
+
+/// Types for the `CreateVerifiedDestinationNumber` operation.
+pub mod create_verified_destination_number;
+
 /// Types for the `DeleteConfigurationSet` operation.
 pub mod delete_configuration_set;
 
@@ -40,8 +55,20 @@ pub mod delete_opted_out_number;
 /// Types for the `DeletePool` operation.
 pub mod delete_pool;
 
+/// Types for the `DeleteRegistration` operation.
+pub mod delete_registration;
+
+/// Types for the `DeleteRegistrationAttachment` operation.
+pub mod delete_registration_attachment;
+
+/// Types for the `DeleteRegistrationFieldValue` operation.
+pub mod delete_registration_field_value;
+
 /// Types for the `DeleteTextMessageSpendLimitOverride` operation.
 pub mod delete_text_message_spend_limit_override;
+
+/// Types for the `DeleteVerifiedDestinationNumber` operation.
+pub mod delete_verified_destination_number;
 
 /// Types for the `DeleteVoiceMessageSpendLimitOverride` operation.
 pub mod delete_voice_message_spend_limit_override;
@@ -70,17 +97,47 @@ pub mod describe_phone_numbers;
 /// Types for the `DescribePools` operation.
 pub mod describe_pools;
 
+/// Types for the `DescribeRegistrationAttachments` operation.
+pub mod describe_registration_attachments;
+
+/// Types for the `DescribeRegistrationFieldDefinitions` operation.
+pub mod describe_registration_field_definitions;
+
+/// Types for the `DescribeRegistrationFieldValues` operation.
+pub mod describe_registration_field_values;
+
+/// Types for the `DescribeRegistrationSectionDefinitions` operation.
+pub mod describe_registration_section_definitions;
+
+/// Types for the `DescribeRegistrationTypeDefinitions` operation.
+pub mod describe_registration_type_definitions;
+
+/// Types for the `DescribeRegistrationVersions` operation.
+pub mod describe_registration_versions;
+
+/// Types for the `DescribeRegistrations` operation.
+pub mod describe_registrations;
+
 /// Types for the `DescribeSenderIds` operation.
 pub mod describe_sender_ids;
 
 /// Types for the `DescribeSpendLimits` operation.
 pub mod describe_spend_limits;
 
+/// Types for the `DescribeVerifiedDestinationNumbers` operation.
+pub mod describe_verified_destination_numbers;
+
 /// Types for the `DisassociateOriginationIdentity` operation.
 pub mod disassociate_origination_identity;
 
+/// Types for the `DiscardRegistrationVersion` operation.
+pub mod discard_registration_version;
+
 /// Types for the `ListPoolOriginationIdentities` operation.
 pub mod list_pool_origination_identities;
+
+/// Types for the `ListRegistrationAssociations` operation.
+pub mod list_registration_associations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -91,11 +148,23 @@ pub mod put_keyword;
 /// Types for the `PutOptedOutNumber` operation.
 pub mod put_opted_out_number;
 
+/// Types for the `PutRegistrationFieldValue` operation.
+pub mod put_registration_field_value;
+
 /// Types for the `ReleasePhoneNumber` operation.
 pub mod release_phone_number;
 
+/// Types for the `ReleaseSenderId` operation.
+pub mod release_sender_id;
+
 /// Types for the `RequestPhoneNumber` operation.
 pub mod request_phone_number;
+
+/// Types for the `RequestSenderId` operation.
+pub mod request_sender_id;
+
+/// Types for the `SendDestinationNumberVerificationCode` operation.
+pub mod send_destination_number_verification_code;
 
 /// Types for the `SendTextMessage` operation.
 pub mod send_text_message;
@@ -115,6 +184,9 @@ pub mod set_text_message_spend_limit_override;
 /// Types for the `SetVoiceMessageSpendLimitOverride` operation.
 pub mod set_voice_message_spend_limit_override;
 
+/// Types for the `SubmitRegistrationVersion` operation.
+pub mod submit_registration_version;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
@@ -129,3 +201,9 @@ pub mod update_phone_number;
 
 /// Types for the `UpdatePool` operation.
 pub mod update_pool;
+
+/// Types for the `UpdateSenderId` operation.
+pub mod update_sender_id;
+
+/// Types for the `VerifyDestinationNumber` operation.
+pub mod verify_destination_number;

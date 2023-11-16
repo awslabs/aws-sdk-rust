@@ -11,7 +11,7 @@ pub struct GetMacieSessionOutput {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
     pub status: ::std::option::Option<crate::types::MacieStatus>,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or configuration settings for the Amazon Macie account.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -32,7 +32,7 @@ impl GetMacieSessionOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::MacieStatus> {
         self.status.as_ref()
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or configuration settings for the Amazon Macie account.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -117,17 +117,17 @@ impl GetMacieSessionOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MacieStatus> {
         &self.status
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or configuration settings for the Amazon Macie account.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or configuration settings for the Amazon Macie account.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or configuration settings for the Amazon Macie account.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

@@ -9,7 +9,7 @@ pub struct UpdateDistributionConfigurationInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The distributions of the distribution configuration.</p>
     pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
-    /// <p>The idempotency token of the distribution configuration.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDistributionConfigurationInput {
@@ -27,7 +27,7 @@ impl UpdateDistributionConfigurationInput {
     pub fn distributions(&self) -> &[crate::types::Distribution] {
         self.distributions.as_deref().unwrap_or_default()
     }
-    /// <p>The idempotency token of the distribution configuration.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -98,18 +98,18 @@ impl UpdateDistributionConfigurationInputBuilder {
     pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
         &self.distributions
     }
-    /// <p>The idempotency token of the distribution configuration.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The idempotency token of the distribution configuration.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The idempotency token of the distribution configuration.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

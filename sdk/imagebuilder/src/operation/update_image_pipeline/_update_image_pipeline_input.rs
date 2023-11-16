@@ -23,7 +23,7 @@ pub struct UpdateImagePipelineInput {
     pub schedule: ::std::option::Option<crate::types::Schedule>,
     /// <p>The status of the image pipeline.</p>
     pub status: ::std::option::Option<crate::types::PipelineStatus>,
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Contains settings for vulnerability scans.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
@@ -69,7 +69,7 @@ impl UpdateImagePipelineInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::PipelineStatus> {
         self.status.as_ref()
     }
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -245,18 +245,18 @@ impl UpdateImagePipelineInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
         &self.status
     }
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

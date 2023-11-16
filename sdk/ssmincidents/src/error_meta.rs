@@ -68,6 +68,45 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError> for Error {
+    fn from(err: crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError) -> Self {
+        match err {
+            crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_replication_set::CreateReplicationSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -433,6 +472,36 @@ impl From<crate::operation::get_timeline_event::GetTimelineEventError> for Error
             crate::operation::get_timeline_event::GetTimelineEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_timeline_event::GetTimelineEventError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_timeline_event::GetTimelineEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_incident_findings::ListIncidentFindingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_incident_findings::ListIncidentFindingsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_incident_findings::ListIncidentFindingsError> for Error {
+    fn from(err: crate::operation::list_incident_findings::ListIncidentFindingsError) -> Self {
+        match err {
+            crate::operation::list_incident_findings::ListIncidentFindingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_incident_findings::ListIncidentFindingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_incident_findings::ListIncidentFindingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_incident_findings::ListIncidentFindingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_incident_findings::ListIncidentFindingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_incident_findings::ListIncidentFindingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

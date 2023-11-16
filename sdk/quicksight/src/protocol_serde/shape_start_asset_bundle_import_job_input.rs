@@ -24,5 +24,29 @@ pub fn ser_start_asset_bundle_import_job_input_input(
         )?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.override_permissions {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("OverridePermissions").start_object();
+        crate::protocol_serde::shape_asset_bundle_import_job_override_permissions::ser_asset_bundle_import_job_override_permissions(
+            &mut object_8,
+            var_7,
+        )?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.override_tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("OverrideTags").start_object();
+        crate::protocol_serde::shape_asset_bundle_import_job_override_tags::ser_asset_bundle_import_job_override_tags(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.override_validation_strategy {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("OverrideValidationStrategy").start_object();
+        crate::protocol_serde::shape_asset_bundle_import_job_override_validation_strategy::ser_asset_bundle_import_job_override_validation_strategy(
+            &mut object_12,
+            var_11,
+        )?;
+        object_12.finish();
+    }
     Ok(())
 }

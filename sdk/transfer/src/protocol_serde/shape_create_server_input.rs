@@ -84,5 +84,11 @@ pub fn ser_create_server_input_input(
         }
         array_26.finish();
     }
+    if let Some(var_28) = &input.s3_storage_options {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("S3StorageOptions").start_object();
+        crate::protocol_serde::shape_s3_storage_options::ser_s3_storage_options(&mut object_29, var_28)?;
+        object_29.finish();
+    }
     Ok(())
 }

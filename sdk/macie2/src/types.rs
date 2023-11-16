@@ -3,9 +3,15 @@ pub use crate::types::_sensitivity_inspection_template_includes::SensitivityInsp
 
 pub use crate::types::_sensitivity_inspection_template_excludes::SensitivityInspectionTemplateExcludes;
 
+pub use crate::types::_retrieval_configuration::RetrievalConfiguration;
+
+pub use crate::types::_retrieval_mode::RetrievalMode;
+
 pub use crate::types::_reveal_configuration::RevealConfiguration;
 
 pub use crate::types::_reveal_status::RevealStatus;
+
+pub use crate::types::_update_retrieval_configuration::UpdateRetrievalConfiguration;
 
 pub use crate::types::_suppress_data_identifier::SuppressDataIdentifier;
 
@@ -619,6 +625,10 @@ mod _resource_statistics;
 
 mod _resources_affected;
 
+mod _retrieval_configuration;
+
+mod _retrieval_mode;
+
 mod _reveal_configuration;
 
 mod _reveal_request_status;
@@ -738,6 +748,8 @@ mod _unavailability_reason_code;
 mod _unit;
 
 mod _unprocessed_account;
+
+mod _update_retrieval_configuration;
 
 mod _usage_by_account;
 

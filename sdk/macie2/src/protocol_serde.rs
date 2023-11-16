@@ -367,6 +367,8 @@ pub(crate) mod shape_object_level_statistics;
 
 pub(crate) mod shape_resource_statistics;
 
+pub(crate) mod shape_retrieval_configuration;
+
 pub(crate) mod shape_reveal_configuration;
 
 pub(crate) mod shape_s3_classification_scope;
@@ -398,6 +400,8 @@ pub(crate) mod shape_statistics;
 pub(crate) mod shape_suppress_data_identifier;
 
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_update_retrieval_configuration;
 
 pub(crate) mod shape_usage_statistics_filter;
 

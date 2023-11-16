@@ -87,7 +87,6 @@ pub struct ModelPackageSummaryBuilder {
 }
 impl ModelPackageSummaryBuilder {
     /// <p>The name of the model package.</p>
-    /// This field is required.
     pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self

@@ -239,6 +239,9 @@ pub(crate) fn amazon_open_search_parameters_correct_errors(
 pub(crate) fn asset_bundle_export_job_analysis_override_properties_correct_errors(
     mut builder: crate::types::builders::AssetBundleExportJobAnalysisOverridePropertiesBuilder,
 ) -> crate::types::builders::AssetBundleExportJobAnalysisOverridePropertiesBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
     if builder.properties.is_none() {
         builder.properties = Some(Default::default())
     }
@@ -248,6 +251,9 @@ pub(crate) fn asset_bundle_export_job_analysis_override_properties_correct_error
 pub(crate) fn asset_bundle_export_job_dashboard_override_properties_correct_errors(
     mut builder: crate::types::builders::AssetBundleExportJobDashboardOverridePropertiesBuilder,
 ) -> crate::types::builders::AssetBundleExportJobDashboardOverridePropertiesBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
     if builder.properties.is_none() {
         builder.properties = Some(Default::default())
     }
@@ -257,6 +263,9 @@ pub(crate) fn asset_bundle_export_job_dashboard_override_properties_correct_erro
 pub(crate) fn asset_bundle_export_job_data_set_override_properties_correct_errors(
     mut builder: crate::types::builders::AssetBundleExportJobDataSetOverridePropertiesBuilder,
 ) -> crate::types::builders::AssetBundleExportJobDataSetOverridePropertiesBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
     if builder.properties.is_none() {
         builder.properties = Some(Default::default())
     }
@@ -266,6 +275,9 @@ pub(crate) fn asset_bundle_export_job_data_set_override_properties_correct_error
 pub(crate) fn asset_bundle_export_job_data_source_override_properties_correct_errors(
     mut builder: crate::types::builders::AssetBundleExportJobDataSourceOverridePropertiesBuilder,
 ) -> crate::types::builders::AssetBundleExportJobDataSourceOverridePropertiesBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
     if builder.properties.is_none() {
         builder.properties = Some(Default::default())
     }
@@ -275,6 +287,9 @@ pub(crate) fn asset_bundle_export_job_data_source_override_properties_correct_er
 pub(crate) fn asset_bundle_export_job_refresh_schedule_override_properties_correct_errors(
     mut builder: crate::types::builders::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder,
 ) -> crate::types::builders::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
     if builder.properties.is_none() {
         builder.properties = Some(Default::default())
     }
@@ -284,6 +299,9 @@ pub(crate) fn asset_bundle_export_job_refresh_schedule_override_properties_corre
 pub(crate) fn asset_bundle_export_job_theme_override_properties_correct_errors(
     mut builder: crate::types::builders::AssetBundleExportJobThemeOverridePropertiesBuilder,
 ) -> crate::types::builders::AssetBundleExportJobThemeOverridePropertiesBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
     if builder.properties.is_none() {
         builder.properties = Some(Default::default())
     }
@@ -293,6 +311,9 @@ pub(crate) fn asset_bundle_export_job_theme_override_properties_correct_errors(
 pub(crate) fn asset_bundle_export_job_vpc_connection_override_properties_correct_errors(
     mut builder: crate::types::builders::AssetBundleExportJobVpcConnectionOverridePropertiesBuilder,
 ) -> crate::types::builders::AssetBundleExportJobVpcConnectionOverridePropertiesBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
     if builder.properties.is_none() {
         builder.properties = Some(Default::default())
     }
@@ -308,11 +329,59 @@ pub(crate) fn asset_bundle_import_job_analysis_override_parameters_correct_error
     builder
 }
 
+pub(crate) fn asset_bundle_import_job_analysis_override_permissions_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobAnalysisOverridePermissionsBuilder,
+) -> crate::types::builders::AssetBundleImportJobAnalysisOverridePermissionsBuilder {
+    if builder.analysis_ids.is_none() {
+        builder.analysis_ids = Some(Default::default())
+    }
+    if builder.permissions.is_none() {
+        builder.permissions = {
+            let builder = crate::types::builders::AssetBundleResourcePermissionsBuilder::default();
+            crate::serde_util::asset_bundle_resource_permissions_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_analysis_override_tags_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobAnalysisOverrideTagsBuilder,
+) -> crate::types::builders::AssetBundleImportJobAnalysisOverrideTagsBuilder {
+    if builder.analysis_ids.is_none() {
+        builder.analysis_ids = Some(Default::default())
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_bundle_import_job_dashboard_override_parameters_correct_errors(
     mut builder: crate::types::builders::AssetBundleImportJobDashboardOverrideParametersBuilder,
 ) -> crate::types::builders::AssetBundleImportJobDashboardOverrideParametersBuilder {
     if builder.dashboard_id.is_none() {
         builder.dashboard_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_dashboard_override_permissions_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobDashboardOverridePermissionsBuilder,
+) -> crate::types::builders::AssetBundleImportJobDashboardOverridePermissionsBuilder {
+    if builder.dashboard_ids.is_none() {
+        builder.dashboard_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_dashboard_override_tags_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobDashboardOverrideTagsBuilder,
+) -> crate::types::builders::AssetBundleImportJobDashboardOverrideTagsBuilder {
+    if builder.dashboard_ids.is_none() {
+        builder.dashboard_ids = Some(Default::default())
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
     }
     builder
 }
@@ -326,11 +395,65 @@ pub(crate) fn asset_bundle_import_job_data_set_override_parameters_correct_error
     builder
 }
 
+pub(crate) fn asset_bundle_import_job_data_set_override_permissions_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobDataSetOverridePermissionsBuilder,
+) -> crate::types::builders::AssetBundleImportJobDataSetOverridePermissionsBuilder {
+    if builder.data_set_ids.is_none() {
+        builder.data_set_ids = Some(Default::default())
+    }
+    if builder.permissions.is_none() {
+        builder.permissions = {
+            let builder = crate::types::builders::AssetBundleResourcePermissionsBuilder::default();
+            crate::serde_util::asset_bundle_resource_permissions_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_data_set_override_tags_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobDataSetOverrideTagsBuilder,
+) -> crate::types::builders::AssetBundleImportJobDataSetOverrideTagsBuilder {
+    if builder.data_set_ids.is_none() {
+        builder.data_set_ids = Some(Default::default())
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_bundle_import_job_data_source_override_parameters_correct_errors(
     mut builder: crate::types::builders::AssetBundleImportJobDataSourceOverrideParametersBuilder,
 ) -> crate::types::builders::AssetBundleImportJobDataSourceOverrideParametersBuilder {
     if builder.data_source_id.is_none() {
         builder.data_source_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_data_source_override_permissions_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobDataSourceOverridePermissionsBuilder,
+) -> crate::types::builders::AssetBundleImportJobDataSourceOverridePermissionsBuilder {
+    if builder.data_source_ids.is_none() {
+        builder.data_source_ids = Some(Default::default())
+    }
+    if builder.permissions.is_none() {
+        builder.permissions = {
+            let builder = crate::types::builders::AssetBundleResourcePermissionsBuilder::default();
+            crate::serde_util::asset_bundle_resource_permissions_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_data_source_override_tags_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobDataSourceOverrideTagsBuilder,
+) -> crate::types::builders::AssetBundleImportJobDataSourceOverrideTagsBuilder {
+    if builder.data_source_ids.is_none() {
+        builder.data_source_ids = Some(Default::default())
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
     }
     builder
 }
@@ -356,11 +479,50 @@ pub(crate) fn asset_bundle_import_job_theme_override_parameters_correct_errors(
     builder
 }
 
+pub(crate) fn asset_bundle_import_job_theme_override_permissions_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobThemeOverridePermissionsBuilder,
+) -> crate::types::builders::AssetBundleImportJobThemeOverridePermissionsBuilder {
+    if builder.theme_ids.is_none() {
+        builder.theme_ids = Some(Default::default())
+    }
+    if builder.permissions.is_none() {
+        builder.permissions = {
+            let builder = crate::types::builders::AssetBundleResourcePermissionsBuilder::default();
+            crate::serde_util::asset_bundle_resource_permissions_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_theme_override_tags_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobThemeOverrideTagsBuilder,
+) -> crate::types::builders::AssetBundleImportJobThemeOverrideTagsBuilder {
+    if builder.theme_ids.is_none() {
+        builder.theme_ids = Some(Default::default())
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_bundle_import_job_vpc_connection_override_parameters_correct_errors(
     mut builder: crate::types::builders::AssetBundleImportJobVpcConnectionOverrideParametersBuilder,
 ) -> crate::types::builders::AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
     if builder.vpc_connection_id.is_none() {
         builder.vpc_connection_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_vpc_connection_override_tags_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobVpcConnectionOverrideTagsBuilder,
+) -> crate::types::builders::AssetBundleImportJobVpcConnectionOverrideTagsBuilder {
+    if builder.vpc_connection_ids.is_none() {
+        builder.vpc_connection_ids = Some(Default::default())
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
     }
     builder
 }
@@ -400,6 +562,15 @@ pub(crate) fn aws_iot_analytics_parameters_correct_errors(
 ) -> crate::types::builders::AwsIotAnalyticsParametersBuilder {
     if builder.data_set_name.is_none() {
         builder.data_set_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn big_query_parameters_correct_errors(
+    mut builder: crate::types::builders::BigQueryParametersBuilder,
+) -> crate::types::builders::BigQueryParametersBuilder {
+    if builder.project_id.is_none() {
+        builder.project_id = Some(Default::default())
     }
     builder
 }
@@ -751,6 +922,18 @@ pub(crate) fn twitter_parameters_correct_errors(
     }
     if builder.max_rows.is_none() {
         builder.max_rows = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_resource_permissions_correct_errors(
+    mut builder: crate::types::builders::AssetBundleResourcePermissionsBuilder,
+) -> crate::types::builders::AssetBundleResourcePermissionsBuilder {
+    if builder.principals.is_none() {
+        builder.principals = Some(Default::default())
+    }
+    if builder.actions.is_none() {
+        builder.actions = Some(Default::default())
     }
     builder
 }

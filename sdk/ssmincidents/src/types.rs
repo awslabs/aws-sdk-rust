@@ -67,6 +67,8 @@ pub use crate::types::_incident_record_summary::IncidentRecordSummary;
 
 pub use crate::types::_incident_record_source::IncidentRecordSource;
 
+pub use crate::types::_finding_summary::FindingSummary;
+
 pub use crate::types::_timeline_event::TimelineEvent;
 
 pub use crate::types::_incident_template::IncidentTemplate;
@@ -87,6 +89,16 @@ pub use crate::types::_automation_execution::AutomationExecution;
 
 pub use crate::types::_region_map_input_value::RegionMapInputValue;
 
+pub use crate::types::_batch_get_incident_findings_error::BatchGetIncidentFindingsError;
+
+pub use crate::types::_finding::Finding;
+
+pub use crate::types::_finding_details::FindingDetails;
+
+pub use crate::types::_cloud_formation_stack_update::CloudFormationStackUpdate;
+
+pub use crate::types::_code_deploy_deployment::CodeDeployDeployment;
+
 mod _action;
 
 mod _add_region_action;
@@ -95,7 +107,13 @@ mod _attribute_value_list;
 
 mod _automation_execution;
 
+mod _batch_get_incident_findings_error;
+
 mod _chat_channel;
+
+mod _cloud_formation_stack_update;
+
+mod _code_deploy_deployment;
 
 mod _condition;
 
@@ -110,6 +128,12 @@ mod _event_reference;
 mod _event_summary;
 
 mod _filter;
+
+mod _finding;
+
+mod _finding_details;
+
+mod _finding_summary;
 
 mod _incident_record;
 

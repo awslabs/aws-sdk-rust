@@ -19,6 +19,7 @@
 ///     AutomationExecutionStatus::ChangeCalendarOverrideRejected => { /* ... */ },
 ///     AutomationExecutionStatus::CompletedWithFailure => { /* ... */ },
 ///     AutomationExecutionStatus::CompletedWithSuccess => { /* ... */ },
+///     AutomationExecutionStatus::Exited => { /* ... */ },
 ///     AutomationExecutionStatus::Failed => { /* ... */ },
 ///     AutomationExecutionStatus::Inprogress => { /* ... */ },
 ///     AutomationExecutionStatus::Pending => { /* ... */ },
@@ -72,6 +73,8 @@ pub enum AutomationExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     CompletedWithSuccess,
     #[allow(missing_docs)] // documentation missing in model
+    Exited,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Inprogress,
@@ -107,6 +110,7 @@ impl ::std::convert::From<&str> for AutomationExecutionStatus {
             "ChangeCalendarOverrideRejected" => AutomationExecutionStatus::ChangeCalendarOverrideRejected,
             "CompletedWithFailure" => AutomationExecutionStatus::CompletedWithFailure,
             "CompletedWithSuccess" => AutomationExecutionStatus::CompletedWithSuccess,
+            "Exited" => AutomationExecutionStatus::Exited,
             "Failed" => AutomationExecutionStatus::Failed,
             "InProgress" => AutomationExecutionStatus::Inprogress,
             "Pending" => AutomationExecutionStatus::Pending,
@@ -140,6 +144,7 @@ impl AutomationExecutionStatus {
             AutomationExecutionStatus::ChangeCalendarOverrideRejected => "ChangeCalendarOverrideRejected",
             AutomationExecutionStatus::CompletedWithFailure => "CompletedWithFailure",
             AutomationExecutionStatus::CompletedWithSuccess => "CompletedWithSuccess",
+            AutomationExecutionStatus::Exited => "Exited",
             AutomationExecutionStatus::Failed => "Failed",
             AutomationExecutionStatus::Inprogress => "InProgress",
             AutomationExecutionStatus::Pending => "Pending",
@@ -164,6 +169,7 @@ impl AutomationExecutionStatus {
             "ChangeCalendarOverrideRejected",
             "CompletedWithFailure",
             "CompletedWithSuccess",
+            "Exited",
             "Failed",
             "InProgress",
             "Pending",

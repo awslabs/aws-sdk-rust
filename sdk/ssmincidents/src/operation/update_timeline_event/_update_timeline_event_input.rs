@@ -9,9 +9,9 @@ pub struct UpdateTimelineEventInput {
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.</p>
     pub event_type: ::std::option::Option<::std::string::String>,
     /// <p>A short description of the event.</p>
     pub event_data: ::std::option::Option<::std::string::String>,
@@ -33,11 +33,11 @@ impl UpdateTimelineEventInput {
     pub fn event_id(&self) -> ::std::option::Option<&str> {
         self.event_id.as_deref()
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
-    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.</p>
     pub fn event_type(&self) -> ::std::option::Option<&str> {
         self.event_type.as_deref()
     }
@@ -118,31 +118,31 @@ impl UpdateTimelineEventInputBuilder {
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_time = input;
         self
     }
-    /// <p>The time that the event occurred.</p>
+    /// <p>The timestamp for when the event occurred.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.event_time
     }
-    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
     }
-    /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
+    /// <p>The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_type
     }

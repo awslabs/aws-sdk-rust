@@ -105,6 +105,10 @@ pub use crate::types::_thing_indexing_configuration::ThingIndexingConfiguration;
 
 pub use crate::types::_indexing_filter::IndexingFilter;
 
+pub use crate::types::_geo_location_target::GeoLocationTarget;
+
+pub use crate::types::_target_field_order::TargetFieldOrder;
+
 pub use crate::types::_named_shadow_indexing_mode::NamedShadowIndexingMode;
 
 pub use crate::types::_device_defender_indexing_mode::DeviceDefenderIndexingMode;
@@ -785,6 +789,8 @@ mod _fleet_metric_name_and_arn;
 
 mod _fleet_metric_unit;
 
+mod _geo_location_target;
+
 mod _group_name_and_arn;
 
 mod _http_action;
@@ -1026,6 +1032,8 @@ mod _stream_info;
 mod _stream_summary;
 
 mod _tag;
+
+mod _target_field_order;
 
 mod _target_selection;
 

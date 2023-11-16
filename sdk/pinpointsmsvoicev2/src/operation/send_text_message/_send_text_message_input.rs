@@ -9,7 +9,7 @@ pub struct SendTextMessageInput {
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The body of the text message.</p>
     pub message_body: ::std::option::Option<::std::string::String>,
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
     pub keyword: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl SendTextMessageInput {
     pub fn message_body(&self) -> ::std::option::Option<&str> {
         self.message_body.as_deref()
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
@@ -143,17 +143,17 @@ impl SendTextMessageInputBuilder {
     pub fn get_message_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_body
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
         self
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
         &self.message_type
     }

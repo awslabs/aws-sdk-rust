@@ -3,11 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SynthesizeSpeechInput {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available for each engine, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p> <b>NTTS-only voices</b> </p>
     /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p>
+    /// <p> <b>long-form-only voices</b> </p>
+    /// <p>When using long-form-only voices such as Danielle (en-US), this parameter is required and must be set to <code>long-form</code>. If the engine is not specified, or is set to <code>standard</code> or <code>neural</code>, this will result in an error. </p>
     /// <p>Type: String</p>
-    /// <p>Valid Values: <code>standard</code> | <code>neural</code> </p>
+    /// <p>Valid Values: <code>standard</code> | <code>neural</code> | <code>long-form</code> </p>
     /// <p>Required: Yes</p>
     /// <p> <b>Standard voices</b> </p>
     /// <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>
@@ -21,7 +23,7 @@ pub struct SynthesizeSpeechInput {
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub sample_rate: ::std::option::Option<::std::string::String>,
     /// <p>The type of speech marks returned for the input text.</p>
@@ -34,11 +36,13 @@ pub struct SynthesizeSpeechInput {
     pub voice_id: ::std::option::Option<crate::types::VoiceId>,
 }
 impl SynthesizeSpeechInput {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available for each engine, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p> <b>NTTS-only voices</b> </p>
     /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p>
+    /// <p> <b>long-form-only voices</b> </p>
+    /// <p>When using long-form-only voices such as Danielle (en-US), this parameter is required and must be set to <code>long-form</code>. If the engine is not specified, or is set to <code>standard</code> or <code>neural</code>, this will result in an error. </p>
     /// <p>Type: String</p>
-    /// <p>Valid Values: <code>standard</code> | <code>neural</code> </p>
+    /// <p>Valid Values: <code>standard</code> | <code>neural</code> | <code>long-form</code> </p>
     /// <p>Required: Yes</p>
     /// <p> <b>Standard voices</b> </p>
     /// <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>
@@ -62,7 +66,7 @@ impl SynthesizeSpeechInput {
         self.output_format.as_ref()
     }
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub fn sample_rate(&self) -> ::std::option::Option<&str> {
         self.sample_rate.as_deref()
@@ -108,11 +112,13 @@ pub struct SynthesizeSpeechInputBuilder {
     pub(crate) voice_id: ::std::option::Option<crate::types::VoiceId>,
 }
 impl SynthesizeSpeechInputBuilder {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available for each engine, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p> <b>NTTS-only voices</b> </p>
     /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p>
+    /// <p> <b>long-form-only voices</b> </p>
+    /// <p>When using long-form-only voices such as Danielle (en-US), this parameter is required and must be set to <code>long-form</code>. If the engine is not specified, or is set to <code>standard</code> or <code>neural</code>, this will result in an error. </p>
     /// <p>Type: String</p>
-    /// <p>Valid Values: <code>standard</code> | <code>neural</code> </p>
+    /// <p>Valid Values: <code>standard</code> | <code>neural</code> | <code>long-form</code> </p>
     /// <p>Required: Yes</p>
     /// <p> <b>Standard voices</b> </p>
     /// <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>
@@ -120,11 +126,13 @@ impl SynthesizeSpeechInputBuilder {
         self.engine = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available for each engine, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p> <b>NTTS-only voices</b> </p>
     /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p>
+    /// <p> <b>long-form-only voices</b> </p>
+    /// <p>When using long-form-only voices such as Danielle (en-US), this parameter is required and must be set to <code>long-form</code>. If the engine is not specified, or is set to <code>standard</code> or <code>neural</code>, this will result in an error. </p>
     /// <p>Type: String</p>
-    /// <p>Valid Values: <code>standard</code> | <code>neural</code> </p>
+    /// <p>Valid Values: <code>standard</code> | <code>neural</code> | <code>long-form</code> </p>
     /// <p>Required: Yes</p>
     /// <p> <b>Standard voices</b> </p>
     /// <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>
@@ -132,11 +140,13 @@ impl SynthesizeSpeechInputBuilder {
         self.engine = input;
         self
     }
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available for each engine, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p> <b>NTTS-only voices</b> </p>
     /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p>
+    /// <p> <b>long-form-only voices</b> </p>
+    /// <p>When using long-form-only voices such as Danielle (en-US), this parameter is required and must be set to <code>long-form</code>. If the engine is not specified, or is set to <code>standard</code> or <code>neural</code>, this will result in an error. </p>
     /// <p>Type: String</p>
-    /// <p>Valid Values: <code>standard</code> | <code>neural</code> </p>
+    /// <p>Valid Values: <code>standard</code> | <code>neural</code> | <code>long-form</code> </p>
     /// <p>Required: Yes</p>
     /// <p> <b>Standard voices</b> </p>
     /// <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>
@@ -199,21 +209,21 @@ impl SynthesizeSpeechInputBuilder {
         &self.output_format
     }
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub fn sample_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub fn set_sample_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_rate = input;
         self
     }
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub fn get_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
         &self.sample_rate

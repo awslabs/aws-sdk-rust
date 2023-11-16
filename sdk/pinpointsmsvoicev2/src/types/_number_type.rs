@@ -14,6 +14,7 @@
 /// match numbertype {
 ///     NumberType::LongCode => { /* ... */ },
 ///     NumberType::ShortCode => { /* ... */ },
+///     NumberType::Simulator => { /* ... */ },
 ///     NumberType::TenDlc => { /* ... */ },
 ///     NumberType::TollFree => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum NumberType {
     #[allow(missing_docs)] // documentation missing in model
     ShortCode,
     #[allow(missing_docs)] // documentation missing in model
+    Simulator,
+    #[allow(missing_docs)] // documentation missing in model
     TenDlc,
     #[allow(missing_docs)] // documentation missing in model
     TollFree,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for NumberType {
         match s {
             "LONG_CODE" => NumberType::LongCode,
             "SHORT_CODE" => NumberType::ShortCode,
+            "SIMULATOR" => NumberType::Simulator,
             "TEN_DLC" => NumberType::TenDlc,
             "TOLL_FREE" => NumberType::TollFree,
             other => NumberType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl NumberType {
         match self {
             NumberType::LongCode => "LONG_CODE",
             NumberType::ShortCode => "SHORT_CODE",
+            NumberType::Simulator => "SIMULATOR",
             NumberType::TenDlc => "TEN_DLC",
             NumberType::TollFree => "TOLL_FREE",
             NumberType::Unknown(value) => value.as_str(),
@@ -86,7 +91,7 @@ impl NumberType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LONG_CODE", "SHORT_CODE", "TEN_DLC", "TOLL_FREE"]
+        &["LONG_CODE", "SHORT_CODE", "SIMULATOR", "TEN_DLC", "TOLL_FREE"]
     }
 }
 impl ::std::convert::AsRef<str> for NumberType {

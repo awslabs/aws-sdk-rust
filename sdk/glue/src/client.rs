@@ -319,6 +319,10 @@ mod get_column_statistics_for_partition;
 
 mod get_column_statistics_for_table;
 
+mod get_column_statistics_task_run;
+
+mod get_column_statistics_task_runs;
+
 mod get_connection;
 
 mod get_connections;
@@ -439,6 +443,8 @@ mod import_catalog_to_glue;
 
 mod list_blueprints;
 
+mod list_column_statistics_task_runs;
+
 mod list_crawlers;
 
 mod list_crawls;
@@ -499,6 +505,8 @@ mod search_tables;
 
 mod start_blueprint_run;
 
+mod start_column_statistics_task_run;
+
 mod start_crawler;
 
 mod start_crawler_schedule;
@@ -520,6 +528,8 @@ mod start_ml_labeling_set_generation_task_run;
 mod start_trigger;
 
 mod start_workflow_run;
+
+mod stop_column_statistics_task_run;
 
 mod stop_crawler;
 

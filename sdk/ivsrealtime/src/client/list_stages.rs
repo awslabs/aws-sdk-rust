@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return. Default: 50.</p><br>
     /// - On success, responds with [`ListStagesOutput`](crate::operation::list_stages::ListStagesOutput) with field(s):
     ///   - [`stages(Vec::<StageSummary>)`](crate::operation::list_stages::ListStagesOutput::stages): <p>List of the matching stages (summary information only).</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_stages::ListStagesOutput::next_token): <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_stages::ListStagesOutput::next_token): <p>If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListStagesError>`](crate::operation::list_stages::ListStagesError)
     pub fn list_stages(&self) -> crate::operation::list_stages::builders::ListStagesFluentBuilder {
         crate::operation::list_stages::builders::ListStagesFluentBuilder::new(self.handle.clone())

@@ -46,6 +46,9 @@ pub mod create_namespace;
 /// Types for the `CreateRefreshSchedule` operation.
 pub mod create_refresh_schedule;
 
+/// Types for the `CreateRoleMembership` operation.
+pub mod create_role_membership;
+
 /// Types for the `CreateTemplate` operation.
 pub mod create_template;
 
@@ -108,6 +111,12 @@ pub mod delete_namespace;
 
 /// Types for the `DeleteRefreshSchedule` operation.
 pub mod delete_refresh_schedule;
+
+/// Types for the `DeleteRoleCustomPermission` operation.
+pub mod delete_role_custom_permission;
+
+/// Types for the `DeleteRoleMembership` operation.
+pub mod delete_role_membership;
 
 /// Types for the `DeleteTemplate` operation.
 pub mod delete_template;
@@ -220,6 +229,9 @@ pub mod describe_namespace;
 /// Types for the `DescribeRefreshSchedule` operation.
 pub mod describe_refresh_schedule;
 
+/// Types for the `DescribeRoleCustomPermission` operation.
+pub mod describe_role_custom_permission;
+
 /// Types for the `DescribeTemplate` operation.
 pub mod describe_template;
 
@@ -318,6 +330,9 @@ pub mod list_namespaces;
 
 /// Types for the `ListRefreshSchedules` operation.
 pub mod list_refresh_schedules;
+
+/// Types for the `ListRoleMemberships` operation.
+pub mod list_role_memberships;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -450,6 +465,9 @@ pub mod update_public_sharing_settings;
 
 /// Types for the `UpdateRefreshSchedule` operation.
 pub mod update_refresh_schedule;
+
+/// Types for the `UpdateRoleCustomPermission` operation.
+pub mod update_role_custom_permission;
 
 /// Types for the `UpdateTemplate` operation.
 pub mod update_template;

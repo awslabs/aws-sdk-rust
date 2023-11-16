@@ -71,6 +71,9 @@
 ///     AppInstanceType::MlT3Micro => { /* ... */ },
 ///     AppInstanceType::MlT3Small => { /* ... */ },
 ///     AppInstanceType::MlT3Xlarge => { /* ... */ },
+///     AppInstanceType::MlTrn12Xlarge => { /* ... */ },
+///     AppInstanceType::MlTrn132Xlarge => { /* ... */ },
+///     AppInstanceType::MlTrn1N32Xlarge => { /* ... */ },
 ///     AppInstanceType::System => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -218,6 +221,12 @@ pub enum AppInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlT3Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlTrn12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn132Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn1N32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     System,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -285,6 +294,9 @@ impl ::std::convert::From<&str> for AppInstanceType {
             "ml.t3.micro" => AppInstanceType::MlT3Micro,
             "ml.t3.small" => AppInstanceType::MlT3Small,
             "ml.t3.xlarge" => AppInstanceType::MlT3Xlarge,
+            "ml.trn1.2xlarge" => AppInstanceType::MlTrn12Xlarge,
+            "ml.trn1.32xlarge" => AppInstanceType::MlTrn132Xlarge,
+            "ml.trn1n.32xlarge" => AppInstanceType::MlTrn1N32Xlarge,
             "system" => AppInstanceType::System,
             other => AppInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -360,6 +372,9 @@ impl AppInstanceType {
             AppInstanceType::MlT3Micro => "ml.t3.micro",
             AppInstanceType::MlT3Small => "ml.t3.small",
             AppInstanceType::MlT3Xlarge => "ml.t3.xlarge",
+            AppInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
+            AppInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
+            AppInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
             AppInstanceType::System => "system",
             AppInstanceType::Unknown(value) => value.as_str(),
         }
@@ -426,6 +441,9 @@ impl AppInstanceType {
             "ml.t3.micro",
             "ml.t3.small",
             "ml.t3.xlarge",
+            "ml.trn1.2xlarge",
+            "ml.trn1.32xlarge",
+            "ml.trn1n.32xlarge",
             "system",
         ]
     }

@@ -20,6 +20,7 @@
 ///     PhoneNumberFilterName::OptOutListName => { /* ... */ },
 ///     PhoneNumberFilterName::SelfManagedOptOutsEnabled => { /* ... */ },
 ///     PhoneNumberFilterName::Status => { /* ... */ },
+///     PhoneNumberFilterName::TwoWayChannelArn => { /* ... */ },
 ///     PhoneNumberFilterName::TwoWayEnabled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum PhoneNumberFilterName {
     #[allow(missing_docs)] // documentation missing in model
     Status,
     #[allow(missing_docs)] // documentation missing in model
+    TwoWayChannelArn,
+    #[allow(missing_docs)] // documentation missing in model
     TwoWayEnabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -81,6 +84,7 @@ impl ::std::convert::From<&str> for PhoneNumberFilterName {
             "opt-out-list-name" => PhoneNumberFilterName::OptOutListName,
             "self-managed-opt-outs-enabled" => PhoneNumberFilterName::SelfManagedOptOutsEnabled,
             "status" => PhoneNumberFilterName::Status,
+            "two-way-channel-arn" => PhoneNumberFilterName::TwoWayChannelArn,
             "two-way-enabled" => PhoneNumberFilterName::TwoWayEnabled,
             other => PhoneNumberFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -105,6 +109,7 @@ impl PhoneNumberFilterName {
             PhoneNumberFilterName::OptOutListName => "opt-out-list-name",
             PhoneNumberFilterName::SelfManagedOptOutsEnabled => "self-managed-opt-outs-enabled",
             PhoneNumberFilterName::Status => "status",
+            PhoneNumberFilterName::TwoWayChannelArn => "two-way-channel-arn",
             PhoneNumberFilterName::TwoWayEnabled => "two-way-enabled",
             PhoneNumberFilterName::Unknown(value) => value.as_str(),
         }
@@ -120,6 +125,7 @@ impl PhoneNumberFilterName {
             "opt-out-list-name",
             "self-managed-opt-outs-enabled",
             "status",
+            "two-way-channel-arn",
             "two-way-enabled",
         ]
     }

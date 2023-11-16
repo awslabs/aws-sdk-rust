@@ -16,6 +16,10 @@ pub struct AssetBundleExportJobSummary {
     pub include_all_dependencies: bool,
     /// <p>The format for the export job.</p>
     pub export_format: ::std::option::Option<crate::types::AssetBundleExportFormat>,
+    /// <p>The flag that determines the inclusion of permissions associated with each resource ARN.</p>
+    pub include_permissions: bool,
+    /// <p>The flag that determines the inclusion of tags associated with each resource ARN.</p>
+    pub include_tags: bool,
 }
 impl AssetBundleExportJobSummary {
     /// <p>The current status of the export job.</p>
@@ -42,6 +46,14 @@ impl AssetBundleExportJobSummary {
     pub fn export_format(&self) -> ::std::option::Option<&crate::types::AssetBundleExportFormat> {
         self.export_format.as_ref()
     }
+    /// <p>The flag that determines the inclusion of permissions associated with each resource ARN.</p>
+    pub fn include_permissions(&self) -> bool {
+        self.include_permissions
+    }
+    /// <p>The flag that determines the inclusion of tags associated with each resource ARN.</p>
+    pub fn include_tags(&self) -> bool {
+        self.include_tags
+    }
 }
 impl AssetBundleExportJobSummary {
     /// Creates a new builder-style object to manufacture [`AssetBundleExportJobSummary`](crate::types::AssetBundleExportJobSummary).
@@ -60,6 +72,8 @@ pub struct AssetBundleExportJobSummaryBuilder {
     pub(crate) asset_bundle_export_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) include_all_dependencies: ::std::option::Option<bool>,
     pub(crate) export_format: ::std::option::Option<crate::types::AssetBundleExportFormat>,
+    pub(crate) include_permissions: ::std::option::Option<bool>,
+    pub(crate) include_tags: ::std::option::Option<bool>,
 }
 impl AssetBundleExportJobSummaryBuilder {
     /// <p>The current status of the export job.</p>
@@ -146,6 +160,34 @@ impl AssetBundleExportJobSummaryBuilder {
     pub fn get_export_format(&self) -> &::std::option::Option<crate::types::AssetBundleExportFormat> {
         &self.export_format
     }
+    /// <p>The flag that determines the inclusion of permissions associated with each resource ARN.</p>
+    pub fn include_permissions(mut self, input: bool) -> Self {
+        self.include_permissions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The flag that determines the inclusion of permissions associated with each resource ARN.</p>
+    pub fn set_include_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_permissions = input;
+        self
+    }
+    /// <p>The flag that determines the inclusion of permissions associated with each resource ARN.</p>
+    pub fn get_include_permissions(&self) -> &::std::option::Option<bool> {
+        &self.include_permissions
+    }
+    /// <p>The flag that determines the inclusion of tags associated with each resource ARN.</p>
+    pub fn include_tags(mut self, input: bool) -> Self {
+        self.include_tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The flag that determines the inclusion of tags associated with each resource ARN.</p>
+    pub fn set_include_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_tags = input;
+        self
+    }
+    /// <p>The flag that determines the inclusion of tags associated with each resource ARN.</p>
+    pub fn get_include_tags(&self) -> &::std::option::Option<bool> {
+        &self.include_tags
+    }
     /// Consumes the builder and constructs a [`AssetBundleExportJobSummary`](crate::types::AssetBundleExportJobSummary).
     pub fn build(self) -> crate::types::AssetBundleExportJobSummary {
         crate::types::AssetBundleExportJobSummary {
@@ -155,6 +197,8 @@ impl AssetBundleExportJobSummaryBuilder {
             asset_bundle_export_job_id: self.asset_bundle_export_job_id,
             include_all_dependencies: self.include_all_dependencies.unwrap_or_default(),
             export_format: self.export_format,
+            include_permissions: self.include_permissions.unwrap_or_default(),
+            include_tags: self.include_tags.unwrap_or_default(),
         }
     }
 }

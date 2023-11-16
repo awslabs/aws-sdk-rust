@@ -43,10 +43,12 @@ pub struct UpdateFunctionConfigurationInput {
     pub file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
     /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub image_config: ::std::option::Option<crate::types::ImageConfig>,
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
     pub snap_start: ::std::option::Option<crate::types::SnapStart>,
+    /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
 }
 impl UpdateFunctionConfigurationInput {
     /// <p>The name of the Lambda function.</p>
@@ -125,13 +127,17 @@ impl UpdateFunctionConfigurationInput {
     pub fn image_config(&self) -> ::std::option::Option<&crate::types::ImageConfig> {
         self.image_config.as_ref()
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
     pub fn snap_start(&self) -> ::std::option::Option<&crate::types::SnapStart> {
         self.snap_start.as_ref()
+    }
+    /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
+        self.logging_config.as_ref()
     }
 }
 impl UpdateFunctionConfigurationInput {
@@ -163,6 +169,7 @@ pub struct UpdateFunctionConfigurationInputBuilder {
     pub(crate) image_config: ::std::option::Option<crate::types::ImageConfig>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) snap_start: ::std::option::Option<crate::types::SnapStart>,
+    pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
 }
 impl UpdateFunctionConfigurationInputBuilder {
     /// <p>The name of the Lambda function.</p>
@@ -426,17 +433,17 @@ impl UpdateFunctionConfigurationInputBuilder {
     pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
         &self.image_config
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
         self.ephemeral_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
         self.ephemeral_storage = input;
         self
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
         &self.ephemeral_storage
     }
@@ -453,6 +460,20 @@ impl UpdateFunctionConfigurationInputBuilder {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
     pub fn get_snap_start(&self) -> &::std::option::Option<crate::types::SnapStart> {
         &self.snap_start
+    }
+    /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    pub fn logging_config(mut self, input: crate::types::LoggingConfig) -> Self {
+        self.logging_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::LoggingConfig>) -> Self {
+        self.logging_config = input;
+        self
+    }
+    /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
+        &self.logging_config
     }
     /// Consumes the builder and constructs a [`UpdateFunctionConfigurationInput`](crate::operation::update_function_configuration::UpdateFunctionConfigurationInput).
     pub fn build(
@@ -480,6 +501,7 @@ impl UpdateFunctionConfigurationInputBuilder {
             image_config: self.image_config,
             ephemeral_storage: self.ephemeral_storage,
             snap_start: self.snap_start,
+            logging_config: self.logging_config,
         })
     }
 }

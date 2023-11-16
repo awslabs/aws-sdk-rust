@@ -239,4 +239,46 @@ impl StartAssetBundleExportJobFluentBuilder {
     ) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
         self.inner.get_cloud_formation_override_property_configuration()
     }
+    /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported. </p>
+    pub fn include_permissions(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_permissions(input);
+        self
+    }
+    /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported. </p>
+    pub fn set_include_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_permissions(input);
+        self
+    }
+    /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported. </p>
+    pub fn get_include_permissions(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_permissions()
+    }
+    /// <p> A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
+    pub fn include_tags(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_tags(input);
+        self
+    }
+    /// <p> A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
+    pub fn set_include_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_tags(input);
+        self
+    }
+    /// <p> A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
+    pub fn get_include_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_tags()
+    }
+    /// <p>An optional parameter that determines which validation strategy to use for the export job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.</p>
+    pub fn validation_strategy(mut self, input: crate::types::AssetBundleExportJobValidationStrategy) -> Self {
+        self.inner = self.inner.validation_strategy(input);
+        self
+    }
+    /// <p>An optional parameter that determines which validation strategy to use for the export job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.</p>
+    pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>) -> Self {
+        self.inner = self.inner.set_validation_strategy(input);
+        self
+    }
+    /// <p>An optional parameter that determines which validation strategy to use for the export job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.</p>
+    pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy> {
+        self.inner.get_validation_strategy()
+    }
 }

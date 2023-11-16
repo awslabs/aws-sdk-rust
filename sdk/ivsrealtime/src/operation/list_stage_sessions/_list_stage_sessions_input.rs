@@ -5,7 +5,7 @@
 pub struct ListStageSessionsInput {
     /// <p>Stage ARN.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -15,7 +15,7 @@ impl ListStageSessionsInput {
     pub fn stage_arn(&self) -> ::std::option::Option<&str> {
         self.stage_arn.as_deref()
     }
-    /// <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -55,17 +55,17 @@ impl ListStageSessionsInputBuilder {
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stage_arn
     }
-    /// <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

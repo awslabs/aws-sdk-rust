@@ -19,7 +19,7 @@ pub struct ListIncidentRecordsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results per page.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIncidentRecordsInput {
@@ -45,7 +45,7 @@ impl ListIncidentRecordsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -136,17 +136,17 @@ impl ListIncidentRecordsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token to continue to the next page of results.</p>
+    /// <p>The pagination token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

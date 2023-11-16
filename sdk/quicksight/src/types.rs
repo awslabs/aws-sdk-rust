@@ -1297,6 +1297,8 @@ pub use crate::types::_template_source_analysis::TemplateSourceAnalysis;
 
 pub use crate::types::_data_set_reference::DataSetReference;
 
+pub use crate::types::_role::Role;
+
 pub use crate::types::_refresh_schedule::RefreshSchedule;
 
 pub use crate::types::_ingestion_type::IngestionType;
@@ -1322,6 +1324,8 @@ pub use crate::types::_data_source_credentials::DataSourceCredentials;
 pub use crate::types::_credential_pair::CredentialPair;
 
 pub use crate::types::_data_source_parameters::DataSourceParameters;
+
+pub use crate::types::_big_query_parameters::BigQueryParameters;
 
 pub use crate::types::_trino_parameters::TrinoParameters;
 
@@ -1571,6 +1575,38 @@ pub use crate::types::_snapshot_anonymous_user::SnapshotAnonymousUser;
 
 pub use crate::types::_session_tag::SessionTag;
 
+pub use crate::types::_asset_bundle_import_job_override_validation_strategy::AssetBundleImportJobOverrideValidationStrategy;
+
+pub use crate::types::_asset_bundle_import_job_override_tags::AssetBundleImportJobOverrideTags;
+
+pub use crate::types::_asset_bundle_import_job_dashboard_override_tags::AssetBundleImportJobDashboardOverrideTags;
+
+pub use crate::types::_asset_bundle_import_job_analysis_override_tags::AssetBundleImportJobAnalysisOverrideTags;
+
+pub use crate::types::_asset_bundle_import_job_theme_override_tags::AssetBundleImportJobThemeOverrideTags;
+
+pub use crate::types::_asset_bundle_import_job_data_set_override_tags::AssetBundleImportJobDataSetOverrideTags;
+
+pub use crate::types::_asset_bundle_import_job_data_source_override_tags::AssetBundleImportJobDataSourceOverrideTags;
+
+pub use crate::types::_asset_bundle_import_job_vpc_connection_override_tags::AssetBundleImportJobVpcConnectionOverrideTags;
+
+pub use crate::types::_asset_bundle_import_job_override_permissions::AssetBundleImportJobOverridePermissions;
+
+pub use crate::types::_asset_bundle_import_job_dashboard_override_permissions::AssetBundleImportJobDashboardOverridePermissions;
+
+pub use crate::types::_asset_bundle_resource_link_sharing_configuration::AssetBundleResourceLinkSharingConfiguration;
+
+pub use crate::types::_asset_bundle_resource_permissions::AssetBundleResourcePermissions;
+
+pub use crate::types::_asset_bundle_import_job_analysis_override_permissions::AssetBundleImportJobAnalysisOverridePermissions;
+
+pub use crate::types::_asset_bundle_import_job_theme_override_permissions::AssetBundleImportJobThemeOverridePermissions;
+
+pub use crate::types::_asset_bundle_import_job_data_set_override_permissions::AssetBundleImportJobDataSetOverridePermissions;
+
+pub use crate::types::_asset_bundle_import_job_data_source_override_permissions::AssetBundleImportJobDataSourceOverridePermissions;
+
 pub use crate::types::_asset_bundle_import_failure_action::AssetBundleImportFailureAction;
 
 pub use crate::types::_asset_bundle_import_job_override_parameters::AssetBundleImportJobOverrideParameters;
@@ -1596,6 +1632,8 @@ pub use crate::types::_asset_bundle_import_job_vpc_connection_override_parameter
 pub use crate::types::_asset_bundle_import_job_resource_id_override_configuration::AssetBundleImportJobResourceIdOverrideConfiguration;
 
 pub use crate::types::_asset_bundle_import_source::AssetBundleImportSource;
+
+pub use crate::types::_asset_bundle_export_job_validation_strategy::AssetBundleExportJobValidationStrategy;
 
 pub use crate::types::_asset_bundle_cloud_formation_override_property_configuration::AssetBundleCloudFormationOverridePropertyConfiguration;
 
@@ -1849,6 +1887,8 @@ pub use crate::types::_asset_bundle_import_source_description::AssetBundleImport
 
 pub use crate::types::_asset_bundle_import_job_error::AssetBundleImportJobError;
 
+pub use crate::types::_asset_bundle_export_job_warning::AssetBundleExportJobWarning;
+
 pub use crate::types::_asset_bundle_export_job_error::AssetBundleExportJobError;
 
 pub use crate::types::_analysis_error::AnalysisError;
@@ -1973,17 +2013,33 @@ mod _asset_bundle_export_job_theme_override_properties;
 
 mod _asset_bundle_export_job_theme_property_to_override;
 
+mod _asset_bundle_export_job_validation_strategy;
+
 mod _asset_bundle_export_job_vpc_connection_override_properties;
 
 mod _asset_bundle_export_job_vpc_connection_property_to_override;
+
+mod _asset_bundle_export_job_warning;
 
 mod _asset_bundle_import_failure_action;
 
 mod _asset_bundle_import_job_analysis_override_parameters;
 
+mod _asset_bundle_import_job_analysis_override_permissions;
+
+mod _asset_bundle_import_job_analysis_override_tags;
+
 mod _asset_bundle_import_job_dashboard_override_parameters;
 
+mod _asset_bundle_import_job_dashboard_override_permissions;
+
+mod _asset_bundle_import_job_dashboard_override_tags;
+
 mod _asset_bundle_import_job_data_set_override_parameters;
+
+mod _asset_bundle_import_job_data_set_override_permissions;
+
+mod _asset_bundle_import_job_data_set_override_tags;
 
 mod _asset_bundle_import_job_data_source_credential_pair;
 
@@ -1991,9 +2047,19 @@ mod _asset_bundle_import_job_data_source_credentials;
 
 mod _asset_bundle_import_job_data_source_override_parameters;
 
+mod _asset_bundle_import_job_data_source_override_permissions;
+
+mod _asset_bundle_import_job_data_source_override_tags;
+
 mod _asset_bundle_import_job_error;
 
 mod _asset_bundle_import_job_override_parameters;
+
+mod _asset_bundle_import_job_override_permissions;
+
+mod _asset_bundle_import_job_override_tags;
+
+mod _asset_bundle_import_job_override_validation_strategy;
 
 mod _asset_bundle_import_job_refresh_schedule_override_parameters;
 
@@ -2005,11 +2071,21 @@ mod _asset_bundle_import_job_summary;
 
 mod _asset_bundle_import_job_theme_override_parameters;
 
+mod _asset_bundle_import_job_theme_override_permissions;
+
+mod _asset_bundle_import_job_theme_override_tags;
+
 mod _asset_bundle_import_job_vpc_connection_override_parameters;
+
+mod _asset_bundle_import_job_vpc_connection_override_tags;
 
 mod _asset_bundle_import_source;
 
 mod _asset_bundle_import_source_description;
+
+mod _asset_bundle_resource_link_sharing_configuration;
+
+mod _asset_bundle_resource_permissions;
 
 mod _asset_options;
 
@@ -2068,6 +2144,8 @@ mod _bar_chart_visual;
 mod _bars_arrangement;
 
 mod _base_map_style_type;
+
+mod _big_query_parameters;
 
 mod _bin_count_options;
 
@@ -3192,6 +3270,8 @@ mod _resize_option;
 mod _resource_permission;
 
 mod _resource_status;
+
+mod _role;
 
 mod _rolling_date_configuration;
 

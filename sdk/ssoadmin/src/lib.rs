@@ -189,17 +189,21 @@ pub mod types;
 
 mod auth_plugin;
 
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
 mod lens;
 
+mod serde_util;
+
 mod endpoint_lib;
 
 mod json_errors;
-
-mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

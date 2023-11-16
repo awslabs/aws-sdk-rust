@@ -709,6 +709,10 @@ pub use crate::types::_connection::Connection;
 
 pub use crate::types::_get_connections_filter::GetConnectionsFilter;
 
+pub use crate::types::_column_statistics_task_run::ColumnStatisticsTaskRun;
+
+pub use crate::types::_column_statistics_state::ColumnStatisticsState;
+
 pub use crate::types::_column_error::ColumnError;
 
 pub use crate::types::_classifier::Classifier;
@@ -880,6 +884,10 @@ mod _column_statistics;
 mod _column_statistics_data;
 
 mod _column_statistics_error;
+
+mod _column_statistics_state;
+
+mod _column_statistics_task_run;
 
 mod _column_statistics_type;
 

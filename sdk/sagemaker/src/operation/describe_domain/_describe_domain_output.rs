@@ -13,6 +13,8 @@ pub struct DescribeDomainOutput {
     pub home_efs_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center managed application instance ID.</p>
     pub single_sign_on_managed_application_instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    pub single_sign_on_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>The creation time.</p>
@@ -72,6 +74,10 @@ impl DescribeDomainOutput {
     /// <p>The IAM Identity Center managed application instance ID.</p>
     pub fn single_sign_on_managed_application_instance_id(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_managed_application_instance_id.as_deref()
+    }
+    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    pub fn single_sign_on_application_arn(&self) -> ::std::option::Option<&str> {
+        self.single_sign_on_application_arn.as_deref()
     }
     /// <p>The status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
@@ -166,6 +172,7 @@ pub struct DescribeDomainOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) home_efs_file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) single_sign_on_managed_application_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) single_sign_on_application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DomainStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -254,6 +261,20 @@ impl DescribeDomainOutputBuilder {
     /// <p>The IAM Identity Center managed application instance ID.</p>
     pub fn get_single_sign_on_managed_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_managed_application_instance_id
+    }
+    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    pub fn single_sign_on_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.single_sign_on_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    pub fn set_single_sign_on_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.single_sign_on_application_arn = input;
+        self
+    }
+    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    pub fn get_single_sign_on_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.single_sign_on_application_arn
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::DomainStatus) -> Self {
@@ -517,6 +538,7 @@ impl DescribeDomainOutputBuilder {
             domain_name: self.domain_name,
             home_efs_file_system_id: self.home_efs_file_system_id,
             single_sign_on_managed_application_instance_id: self.single_sign_on_managed_application_instance_id,
+            single_sign_on_application_arn: self.single_sign_on_application_arn,
             status: self.status,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,

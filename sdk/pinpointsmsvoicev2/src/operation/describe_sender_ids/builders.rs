@@ -24,7 +24,7 @@ impl DescribeSenderIdsInputBuilder {
 ///
 /// <p>Describes the specified SenderIds or all SenderIds associated with your Amazon Web Services account.</p>
 /// <p>If you specify SenderIds, the output includes information for only the specified SenderIds. If you specify filters, the output includes information for only those SenderIds that meet the filter criteria. If you don't specify SenderIds or filters, the output includes information for all SenderIds.</p>
-/// <p>f you specify a sender ID that isn't valid, an Error is returned.</p>
+/// <p>f you specify a sender ID that isn't valid, an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSenderIdsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

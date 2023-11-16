@@ -162,14 +162,14 @@ impl UpdateServiceSettingFluentBuilder {
     }
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
     /// <ul>
-    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li>
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
+    /// <li> <p>For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role. </p> </li>
+    /// <li> <p>For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.</p> </li>
+    /// <li> <p>For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log group.</p> </li>
+    /// <li> <p>For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or <code>Disable</code>.</p> </li>
+    /// <li> <p>For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.</p> </li>
+    /// <li> <p> For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>. </p> </li>
+    /// <li> <p>For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>, or <code>Intelligent-Tiering</code> </p> </li>
+    /// <li> <p>For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.</p> </li>
     /// </ul>
     pub fn setting_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.setting_value(input.into());
@@ -177,14 +177,14 @@ impl UpdateServiceSettingFluentBuilder {
     }
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
     /// <ul>
-    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li>
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
+    /// <li> <p>For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role. </p> </li>
+    /// <li> <p>For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.</p> </li>
+    /// <li> <p>For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log group.</p> </li>
+    /// <li> <p>For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or <code>Disable</code>.</p> </li>
+    /// <li> <p>For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.</p> </li>
+    /// <li> <p> For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>. </p> </li>
+    /// <li> <p>For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>, or <code>Intelligent-Tiering</code> </p> </li>
+    /// <li> <p>For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.</p> </li>
     /// </ul>
     pub fn set_setting_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_setting_value(input);
@@ -192,14 +192,14 @@ impl UpdateServiceSettingFluentBuilder {
     }
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
     /// <ul>
-    /// <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
-    /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li>
-    /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
-    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
+    /// <li> <p>For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role. </p> </li>
+    /// <li> <p>For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.</p> </li>
+    /// <li> <p>For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log group.</p> </li>
+    /// <li> <p>For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or <code>Disable</code>.</p> </li>
+    /// <li> <p>For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.</p> </li>
+    /// <li> <p> For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>. </p> </li>
+    /// <li> <p>For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>, or <code>Intelligent-Tiering</code> </p> </li>
+    /// <li> <p>For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.</p> </li>
     /// </ul>
     pub fn get_setting_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_setting_value()

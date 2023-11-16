@@ -23,7 +23,7 @@ impl PutOptedOutNumberInputBuilder {
 /// Fluent builder constructing a request to `PutOptedOutNumber`.
 ///
 /// <p>Creates an opted out destination phone number in the opt-out list.</p>
-/// <p>If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an Error is returned.</p>
+/// <p>If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutOptedOutNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

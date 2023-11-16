@@ -18,14 +18,29 @@ pub fn ser_start_asset_bundle_export_job_input_input(
     if let Some(var_5) = &input.include_all_dependencies {
         object.key("IncludeAllDependencies").boolean(*var_5);
     }
-    if let Some(var_6) = &input.resource_arns {
-        let mut array_7 = object.key("ResourceArns").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.include_permissions {
+        object.key("IncludePermissions").boolean(*var_6);
+    }
+    if let Some(var_7) = &input.include_tags {
+        object.key("IncludeTags").boolean(*var_7);
+    }
+    if let Some(var_8) = &input.resource_arns {
+        let mut array_9 = object.key("ResourceArns").start_array();
+        for item_10 in var_8 {
             {
-                array_7.value().string(item_8.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_7.finish();
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.validation_strategy {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("ValidationStrategy").start_object();
+        crate::protocol_serde::shape_asset_bundle_export_job_validation_strategy::ser_asset_bundle_export_job_validation_strategy(
+            &mut object_12,
+            var_11,
+        )?;
+        object_12.finish();
     }
     Ok(())
 }

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_participants::builders::ListParticipantsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_participants::builders::ListParticipantsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return. Default: 50.</p><br>
     /// - On success, responds with [`ListParticipantsOutput`](crate::operation::list_participants::ListParticipantsOutput) with field(s):
     ///   - [`participants(Vec::<ParticipantSummary>)`](crate::operation::list_participants::ListParticipantsOutput::participants): <p>List of the matching participants (summary information only).</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_participants::ListParticipantsOutput::next_token): <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_participants::ListParticipantsOutput::next_token): <p>If there are more participants than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListParticipantsError>`](crate::operation::list_participants::ListParticipantsError)
     pub fn list_participants(&self) -> crate::operation::list_participants::builders::ListParticipantsFluentBuilder {
         crate::operation::list_participants::builders::ListParticipantsFluentBuilder::new(self.handle.clone())

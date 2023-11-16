@@ -128,17 +128,17 @@ impl ListStageSessionsFluentBuilder {
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stage_arn()
     }
-    /// <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    /// <p>The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

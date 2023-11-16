@@ -72,6 +72,48 @@ pub fn ser_policy_details(
         }
         array_21.finish();
     }
+    if let Some(var_24) = &input.policy_language {
+        object.key("PolicyLanguage").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.resource_type {
+        object.key("ResourceType").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.create_interval {
+        object.key("CreateInterval").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_26).into()),
+        );
+    }
+    if let Some(var_27) = &input.retain_interval {
+        object.key("RetainInterval").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+        );
+    }
+    if let Some(var_28) = &input.copy_tags {
+        object.key("CopyTags").boolean(*var_28);
+    }
+    if let Some(var_29) = &input.cross_region_copy_targets {
+        let mut array_30 = object.key("CrossRegionCopyTargets").start_array();
+        for item_31 in var_29 {
+            {
+                #[allow(unused_mut)]
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_cross_region_copy_target::ser_cross_region_copy_target(&mut object_32, item_31)?;
+                object_32.finish();
+            }
+        }
+        array_30.finish();
+    }
+    if let Some(var_33) = &input.extend_deletion {
+        object.key("ExtendDeletion").boolean(*var_33);
+    }
+    if let Some(var_34) = &input.exclusions {
+        #[allow(unused_mut)]
+        let mut object_35 = object.key("Exclusions").start_object();
+        crate::protocol_serde::shape_exclusions::ser_exclusions(&mut object_35, var_34)?;
+        object_35.finish();
+    }
     Ok(())
 }
 
@@ -120,6 +162,48 @@ where
                         }
                         "Actions" => {
                             builder = builder.set_actions(crate::protocol_serde::shape_action_list::de_action_list(tokens)?);
+                        }
+                        "PolicyLanguage" => {
+                            builder = builder.set_policy_language(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PolicyLanguageValues::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResourceType" => {
+                            builder = builder.set_resource_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResourceTypeValues::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateInterval" => {
+                            builder = builder.set_create_interval(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "RetainInterval" => {
+                            builder = builder.set_retain_interval(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "CopyTags" => {
+                            builder = builder.set_copy_tags(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "CrossRegionCopyTargets" => {
+                            builder = builder.set_cross_region_copy_targets(
+                                crate::protocol_serde::shape_cross_region_copy_target_list::de_cross_region_copy_target_list(tokens)?,
+                            );
+                        }
+                        "ExtendDeletion" => {
+                            builder = builder.set_extend_deletion(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "Exclusions" => {
+                            builder = builder.set_exclusions(crate::protocol_serde::shape_exclusions::de_exclusions(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

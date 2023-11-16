@@ -9,6 +9,8 @@ pub struct CreateDevEnvironmentOutput {
     pub project_name: ::std::string::String,
     /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub id: ::std::string::String,
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub vpc_connection_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDevEnvironmentOutput {
@@ -26,6 +28,10 @@ impl CreateDevEnvironmentOutput {
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
+    }
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub fn vpc_connection_name(&self) -> ::std::option::Option<&str> {
+        self.vpc_connection_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDevEnvironmentOutput {
@@ -47,6 +53,7 @@ pub struct CreateDevEnvironmentOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_connection_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDevEnvironmentOutputBuilder {
@@ -95,6 +102,20 @@ impl CreateDevEnvironmentOutputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub fn vpc_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_connection_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub fn set_vpc_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_connection_name = input;
+        self
+    }
+    /// <p>The name of the connection used to connect to Amazon VPC used when the Dev Environment was created, if any.</p>
+    pub fn get_vpc_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -132,6 +153,7 @@ impl CreateDevEnvironmentOutputBuilder {
                     "id was not specified but it is required when building CreateDevEnvironmentOutput",
                 )
             })?,
+            vpc_connection_name: self.vpc_connection_name,
             _request_id: self._request_id,
         })
     }

@@ -154,6 +154,12 @@ pub fn ser_data_source_parameters(
             crate::protocol_serde::shape_trino_parameters::ser_trino_parameters(&mut object_25, inner)?;
             object_25.finish();
         }
+        crate::types::DataSourceParameters::BigQueryParameters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_26 = object_5.key("BigQueryParameters").start_object();
+            crate::protocol_serde::shape_big_query_parameters::ser_big_query_parameters(&mut object_26, inner)?;
+            object_26.finish();
+        }
         crate::types::DataSourceParameters::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "DataSourceParameters",
@@ -324,6 +330,11 @@ where
                         "TrinoParameters" => Some(crate::types::DataSourceParameters::TrinoParameters(
                             crate::protocol_serde::shape_trino_parameters::de_trino_parameters(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TrinoParameters' cannot be null")
+                            })?,
+                        )),
+                        "BigQueryParameters" => Some(crate::types::DataSourceParameters::BigQueryParameters(
+                            crate::protocol_serde::shape_big_query_parameters::de_big_query_parameters(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BigQueryParameters' cannot be null")
                             })?,
                         )),
                         _ => {

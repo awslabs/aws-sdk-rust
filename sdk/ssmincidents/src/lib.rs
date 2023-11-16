@@ -148,14 +148,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateReplicationSet`](crate::operation::create_replication_set) operation has
-/// a [`Client::create_replication_set`], function which returns a builder for that operation.
+/// For example, the [`BatchGetIncidentFindings`](crate::operation::batch_get_incident_findings) operation has
+/// a [`Client::batch_get_incident_findings`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_replication_set()
-///     .client_token("example")
+/// let result = client.batch_get_incident_findings()
+///     .incident_record_arn("example")
 ///     .send()
 ///     .await;
 /// ```

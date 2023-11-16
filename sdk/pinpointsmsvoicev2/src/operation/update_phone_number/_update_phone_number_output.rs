@@ -25,12 +25,16 @@ pub struct UpdatePhoneNumberOutput {
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub two_way_channel_role: ::std::option::Option<::std::string::String>,
     /// <p>This is true if self managed opt-out are enabled.</p>
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the phone number.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to true the phone number can't be deleted.</p>
     pub deletion_protection_enabled: bool,
+    /// <p>The unique identifier for the registration.</p>
+    pub registration_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -82,6 +86,10 @@ impl UpdatePhoneNumberOutput {
     pub fn two_way_channel_arn(&self) -> ::std::option::Option<&str> {
         self.two_way_channel_arn.as_deref()
     }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
+        self.two_way_channel_role.as_deref()
+    }
     /// <p>This is true if self managed opt-out are enabled.</p>
     pub fn self_managed_opt_outs_enabled(&self) -> bool {
         self.self_managed_opt_outs_enabled
@@ -93,6 +101,10 @@ impl UpdatePhoneNumberOutput {
     /// <p>When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(&self) -> bool {
         self.deletion_protection_enabled
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn registration_id(&self) -> ::std::option::Option<&str> {
+        self.registration_id.as_deref()
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -126,9 +138,11 @@ pub struct UpdatePhoneNumberOutputBuilder {
     pub(crate) monthly_leasing_price: ::std::option::Option<::std::string::String>,
     pub(crate) two_way_enabled: ::std::option::Option<bool>,
     pub(crate) two_way_channel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) two_way_channel_role: ::std::option::Option<::std::string::String>,
     pub(crate) self_managed_opt_outs_enabled: ::std::option::Option<bool>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
+    pub(crate) registration_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -293,6 +307,20 @@ impl UpdatePhoneNumberOutputBuilder {
     pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.two_way_channel_arn
     }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn two_way_channel_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.two_way_channel_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn set_two_way_channel_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.two_way_channel_role = input;
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.two_way_channel_role
+    }
     /// <p>This is true if self managed opt-out are enabled.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
@@ -335,6 +363,20 @@ impl UpdatePhoneNumberOutputBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn registration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.registration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.registration_id = input;
+        self
+    }
+    /// <p>The unique identifier for the registration.</p>
+    pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registration_id
+    }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -372,9 +414,11 @@ impl UpdatePhoneNumberOutputBuilder {
             monthly_leasing_price: self.monthly_leasing_price,
             two_way_enabled: self.two_way_enabled.unwrap_or_default(),
             two_way_channel_arn: self.two_way_channel_arn,
+            two_way_channel_role: self.two_way_channel_role,
             self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled.unwrap_or_default(),
             opt_out_list_name: self.opt_out_list_name,
             deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
+            registration_id: self.registration_id,
             created_timestamp: self.created_timestamp,
             _request_id: self._request_id,
         }

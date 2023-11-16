@@ -82,6 +82,10 @@ pub struct Image {
     pub scan_state: ::std::option::Option<crate::types::ImageScanState>,
     /// <p>Contains settings for vulnerability scans.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub deprecation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl Image {
     /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
@@ -206,6 +210,14 @@ impl Image {
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub fn deprecation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.deprecation_time.as_ref()
+    }
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
+        self.lifecycle_execution_id.as_deref()
+    }
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
@@ -240,6 +252,8 @@ pub struct ImageBuilder {
     pub(crate) image_source: ::std::option::Option<crate::types::ImageSource>,
     pub(crate) scan_state: ::std::option::Option<crate::types::ImageScanState>,
     pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) deprecation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl ImageBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
@@ -658,6 +672,34 @@ impl ImageBuilder {
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub fn deprecation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.deprecation_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub fn set_deprecation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.deprecation_time = input;
+        self
+    }
+    /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
+    pub fn get_deprecation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deprecation_time
+    }
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub fn lifecycle_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lifecycle_execution_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lifecycle_execution_id = input;
+        self
+    }
+    /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
+    pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_execution_id
+    }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
@@ -683,6 +725,8 @@ impl ImageBuilder {
             image_source: self.image_source,
             scan_state: self.scan_state,
             image_scanning_configuration: self.image_scanning_configuration,
+            deprecation_time: self.deprecation_time,
+            lifecycle_execution_id: self.lifecycle_execution_id,
         }
     }
 }

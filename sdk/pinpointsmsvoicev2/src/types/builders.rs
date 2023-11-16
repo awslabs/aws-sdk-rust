@@ -11,9 +11,19 @@ pub use crate::types::_cloud_watch_logs_destination::CloudWatchLogsDestinationBu
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_registration_version_status_history::RegistrationVersionStatusHistoryBuilder;
+
+pub use crate::types::_registration_association_metadata::RegistrationAssociationMetadataBuilder;
+
+pub use crate::types::_registration_association_filter::RegistrationAssociationFilterBuilder;
+
 pub use crate::types::_origination_identity_metadata::OriginationIdentityMetadataBuilder;
 
 pub use crate::types::_pool_origination_identities_filter::PoolOriginationIdentitiesFilterBuilder;
+
+pub use crate::types::_verified_destination_number_information::VerifiedDestinationNumberInformationBuilder;
+
+pub use crate::types::_verified_destination_number_filter::VerifiedDestinationNumberFilterBuilder;
 
 pub use crate::types::_spend_limit::SpendLimitBuilder;
 
@@ -22,6 +32,44 @@ pub use crate::types::_sender_id_information::SenderIdInformationBuilder;
 pub use crate::types::_sender_id_filter::SenderIdFilterBuilder;
 
 pub use crate::types::_sender_id_and_country::SenderIdAndCountryBuilder;
+
+pub use crate::types::_registration_version_information::RegistrationVersionInformationBuilder;
+
+pub use crate::types::_registration_denied_reason_information::RegistrationDeniedReasonInformationBuilder;
+
+pub use crate::types::_registration_version_filter::RegistrationVersionFilterBuilder;
+
+pub use crate::types::_registration_type_definition::RegistrationTypeDefinitionBuilder;
+
+pub use crate::types::_registration_type_display_hints::RegistrationTypeDisplayHintsBuilder;
+
+pub use crate::types::_supported_association::SupportedAssociationBuilder;
+
+pub use crate::types::_registration_type_filter::RegistrationTypeFilterBuilder;
+
+pub use crate::types::_registration_section_definition::RegistrationSectionDefinitionBuilder;
+
+pub use crate::types::_registration_section_display_hints::RegistrationSectionDisplayHintsBuilder;
+
+pub use crate::types::_registration_information::RegistrationInformationBuilder;
+
+pub use crate::types::_registration_filter::RegistrationFilterBuilder;
+
+pub use crate::types::_registration_field_value_information::RegistrationFieldValueInformationBuilder;
+
+pub use crate::types::_registration_field_definition::RegistrationFieldDefinitionBuilder;
+
+pub use crate::types::_registration_field_display_hints::RegistrationFieldDisplayHintsBuilder;
+
+pub use crate::types::_select_option_description::SelectOptionDescriptionBuilder;
+
+pub use crate::types::_text_validation::TextValidationBuilder;
+
+pub use crate::types::_select_validation::SelectValidationBuilder;
+
+pub use crate::types::_registration_attachments_information::RegistrationAttachmentsInformationBuilder;
+
+pub use crate::types::_registration_attachment_filter::RegistrationAttachmentFilterBuilder;
 
 pub use crate::types::_pool_information::PoolInformationBuilder;
 

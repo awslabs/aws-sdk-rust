@@ -138,6 +138,8 @@ impl Client {
 
 mod cancel_image_creation;
 
+mod cancel_lifecycle_execution;
+
 mod create_component;
 
 mod create_container_recipe;
@@ -151,6 +153,8 @@ mod create_image_pipeline;
 mod create_image_recipe;
 
 mod create_infrastructure_configuration;
+
+mod create_lifecycle_policy;
 
 /// Operation customization and supporting types.
 ///
@@ -193,6 +197,8 @@ mod delete_image_recipe;
 
 mod delete_infrastructure_configuration;
 
+mod delete_lifecycle_policy;
+
 mod get_component;
 
 mod get_component_policy;
@@ -214,6 +220,10 @@ mod get_image_recipe;
 mod get_image_recipe_policy;
 
 mod get_infrastructure_configuration;
+
+mod get_lifecycle_execution;
+
+mod get_lifecycle_policy;
 
 mod get_workflow_execution;
 
@@ -249,6 +259,12 @@ mod list_images;
 
 mod list_infrastructure_configurations;
 
+mod list_lifecycle_execution_resources;
+
+mod list_lifecycle_executions;
+
+mod list_lifecycle_policies;
+
 mod list_tags_for_resource;
 
 mod list_workflow_executions;
@@ -265,6 +281,8 @@ mod put_image_recipe_policy;
 
 mod start_image_pipeline_execution;
 
+mod start_resource_state_update;
+
 mod tag_resource;
 
 mod untag_resource;
@@ -274,3 +292,5 @@ mod update_distribution_configuration;
 mod update_image_pipeline;
 
 mod update_infrastructure_configuration;
+
+mod update_lifecycle_policy;

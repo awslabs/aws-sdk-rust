@@ -112,17 +112,17 @@ impl DescribeVoicesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
     pub fn engine(mut self, input: crate::types::Engine) -> Self {
         self.inner = self.inner.engine(input);
         self
     }
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
     pub fn set_engine(mut self, input: ::std::option::Option<crate::types::Engine>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
     pub fn get_engine(&self) -> &::std::option::Option<crate::types::Engine> {
         self.inner.get_engine()
     }

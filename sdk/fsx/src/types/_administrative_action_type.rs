@@ -89,7 +89,7 @@
 /// <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
 /// storage capacity</a> in the <i>Amazon FSx for Windows
 /// File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
-/// and throughput capacity</a> in the <i>Amazon FSx for
+/// capacity</a> in the <i>Amazon FSx for
 /// Lustre User Guide</i>, and
 /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User
 /// Guide</i>.</p>

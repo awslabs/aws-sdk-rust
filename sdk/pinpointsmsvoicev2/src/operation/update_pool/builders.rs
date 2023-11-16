@@ -150,6 +150,20 @@ impl UpdatePoolFluentBuilder {
     pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_two_way_channel_arn()
     }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn two_way_channel_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.two_way_channel_role(input.into());
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn set_two_way_channel_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_two_way_channel_role(input);
+        self
+    }
+    /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
+    pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_two_way_channel_role()
+    }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.self_managed_opt_outs_enabled(input);

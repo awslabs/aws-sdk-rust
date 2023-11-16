@@ -58,6 +58,9 @@ version = "0.100.0"
 [dependencies.bytes]
 version = "1.0.0"
 
+[dependencies.fastrand]
+version = "2.0.0"
+
 [dependencies.http]
 version = "0.2.9"
 

@@ -129,6 +129,36 @@ pub(crate) fn reflens_list_infrastructure_configurations_output_output_next_toke
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_lifecycle_execution_resources_output_output_next_token(
+    input: &crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_lifecycle_executions_output_output_next_token(
+    input: &crate::operation::list_lifecycle_executions::ListLifecycleExecutionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_lifecycle_policies_output_output_next_token(
+    input: &crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workflow_executions_output_output_next_token(
     input: &crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -273,6 +303,36 @@ pub(crate) fn lens_list_infrastructure_configurations_output_output_infrastructu
     input: crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>> {
     let input = match input.infrastructure_configuration_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_lifecycle_execution_resources_output_output_resources(
+    input: crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecutionResource>> {
+    let input = match input.resources {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_lifecycle_executions_output_output_lifecycle_executions(
+    input: crate::operation::list_lifecycle_executions::ListLifecycleExecutionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecution>> {
+    let input = match input.lifecycle_executions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_lifecycle_policies_output_output_lifecycle_policy_summary_list(
+    input: crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicySummary>> {
+    let input = match input.lifecycle_policy_summary_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -1333,6 +1333,8 @@ pub(crate) mod shape_parameter_policy_list;
 
 pub(crate) mod shape_parameter_value_list;
 
+pub(crate) mod shape_parent_step_details;
+
 pub(crate) mod shape_patch_advisory_id_list;
 
 pub(crate) mod shape_patch_bugzilla_id_list;

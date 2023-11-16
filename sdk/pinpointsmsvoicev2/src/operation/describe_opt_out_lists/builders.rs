@@ -24,7 +24,7 @@ impl DescribeOptOutListsInputBuilder {
 ///
 /// <p>Describes the specified opt-out list or all opt-out lists in your account.</p>
 /// <p>If you specify opt-out list names, the output includes information for only the specified opt-out lists. Opt-out lists include only those that meet the filter criteria. If you don't specify opt-out list names or filters, the output includes information for all opt-out lists.</p>
-/// <p>If you specify an opt-out list name that isn't valid, an Error is returned.</p>
+/// <p>If you specify an opt-out list name that isn't valid, an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOptOutListsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

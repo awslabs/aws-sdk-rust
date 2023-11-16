@@ -20,6 +20,19 @@ pub fn de_device_options(
                 builder = builder.set_tenant_id(var_1);
             }
             ,
+            s if s.matches("publicSigningKeyUrl") /* PublicSigningKeyUrl com.amazonaws.ec2#DeviceOptions$PublicSigningKeyUrl */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_public_signing_key_url(var_2);
+            }
+            ,
             _ => {}
         }
     }

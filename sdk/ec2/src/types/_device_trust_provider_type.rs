@@ -14,6 +14,7 @@
 /// match devicetrustprovidertype {
 ///     DeviceTrustProviderType::Crowdstrike => { /* ... */ },
 ///     DeviceTrustProviderType::Jamf => { /* ... */ },
+///     DeviceTrustProviderType::Jumpcloud => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum DeviceTrustProviderType {
     Crowdstrike,
     #[allow(missing_docs)] // documentation missing in model
     Jamf,
+    #[allow(missing_docs)] // documentation missing in model
+    Jumpcloud,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for DeviceTrustProviderType {
         match s {
             "crowdstrike" => DeviceTrustProviderType::Crowdstrike,
             "jamf" => DeviceTrustProviderType::Jamf,
+            "jumpcloud" => DeviceTrustProviderType::Jumpcloud,
             other => DeviceTrustProviderType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl DeviceTrustProviderType {
         match self {
             DeviceTrustProviderType::Crowdstrike => "crowdstrike",
             DeviceTrustProviderType::Jamf => "jamf",
+            DeviceTrustProviderType::Jumpcloud => "jumpcloud",
             DeviceTrustProviderType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["crowdstrike", "jamf"]
+        &["crowdstrike", "jamf", "jumpcloud"]
     }
 }
 impl ::std::convert::AsRef<str> for DeviceTrustProviderType {
