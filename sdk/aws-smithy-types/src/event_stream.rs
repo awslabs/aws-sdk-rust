@@ -183,3 +183,21 @@ impl Message {
         &self.payload
     }
 }
+
+/// Raw message from an event stream receiver when a response error is encountered.
+#[derive(Debug)]
+#[non_exhaustive]
+pub enum RawMessage {
+    /// Message was decoded into a valid frame, but failed to unmarshall into a modeled type.
+    Decoded(Message),
+    /// Message failed to be decoded into a valid frame. The raw bytes may not be available in the
+    /// case where decoding consumed the buffer.
+    Invalid(Option<Bytes>),
+}
+
+impl RawMessage {
+    /// Creates a `RawMessage` for failure to decode a message into a valid frame.
+    pub fn invalid(bytes: Option<Bytes>) -> Self {
+        Self::Invalid(bytes)
+    }
+}

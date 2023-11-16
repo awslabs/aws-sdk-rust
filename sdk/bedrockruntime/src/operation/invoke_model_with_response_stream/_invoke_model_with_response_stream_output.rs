@@ -4,14 +4,14 @@
 #[derive(::std::fmt::Debug)]
 pub struct InvokeModelWithResponseStreamOutput {
     /// <p>Inference response from the model in the format specified by Content-Type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
-    pub body: ::aws_smithy_http::event_stream::Receiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
+    pub body: crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
     /// <p>The MIME type of the inference result.</p>
     pub content_type: ::std::string::String,
     _request_id: Option<String>,
 }
 impl InvokeModelWithResponseStreamOutput {
     /// <p>Inference response from the model in the format specified by Content-Type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
-    pub fn body(&self) -> &::aws_smithy_http::event_stream::Receiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError> {
+    pub fn body(&self) -> &crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError> {
         &self.body
     }
     /// <p>The MIME type of the inference result.</p>
@@ -37,7 +37,7 @@ impl InvokeModelWithResponseStreamOutput {
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct InvokeModelWithResponseStreamOutputBuilder {
     pub(crate) body:
-        ::std::option::Option<::aws_smithy_http::event_stream::Receiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,
+        ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -46,7 +46,7 @@ impl InvokeModelWithResponseStreamOutputBuilder {
     /// This field is required.
     pub fn body(
         mut self,
-        input: ::aws_smithy_http::event_stream::Receiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
+        input: crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
     ) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -54,9 +54,7 @@ impl InvokeModelWithResponseStreamOutputBuilder {
     /// <p>Inference response from the model in the format specified by Content-Type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub fn set_body(
         mut self,
-        input: ::std::option::Option<
-            ::aws_smithy_http::event_stream::Receiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
-        >,
+        input: ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,
     ) -> Self {
         self.body = input;
         self
@@ -64,8 +62,7 @@ impl InvokeModelWithResponseStreamOutputBuilder {
     /// <p>Inference response from the model in the format specified by Content-Type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub fn get_body(
         &self,
-    ) -> &::std::option::Option<::aws_smithy_http::event_stream::Receiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>
-    {
+    ) -> &::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>> {
         &self.body
     }
     /// <p>The MIME type of the inference result.</p>

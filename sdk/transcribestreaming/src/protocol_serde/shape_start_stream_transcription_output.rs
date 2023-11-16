@@ -191,12 +191,15 @@ pub(crate) fn de_show_speaker_label_header(
 pub fn de_transcript_result_stream_payload(
     body: &mut ::aws_smithy_types::body::SdkBody,
 ) -> std::result::Result<
-    ::aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
+    crate::event_receiver::EventReceiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
     crate::operation::start_stream_transcription::StartStreamTranscriptionError,
 > {
     let unmarshaller = crate::event_stream_serde::TranscriptResultStreamUnmarshaller::new();
     let body = std::mem::replace(body, ::aws_smithy_types::body::SdkBody::taken());
-    Ok(::aws_smithy_http::event_stream::Receiver::new(unmarshaller, body))
+    Ok(crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(
+        unmarshaller,
+        body,
+    )))
 }
 
 pub(crate) fn de_vocabulary_filter_method_header(

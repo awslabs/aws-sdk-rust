@@ -175,6 +175,8 @@ mod serde_util;
 
 mod endpoint_lib;
 
+mod event_receiver;
+
 mod event_stream_serde;
 
 mod json_errors;

@@ -22,10 +22,8 @@ pub struct StartMedicalStreamTranscriptionOutput {
     /// <p>Provides the identifier for your transcription session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides detailed information about your streaming session.</p>
-    pub transcript_result_stream: ::aws_smithy_http::event_stream::Receiver<
-        crate::types::MedicalTranscriptResultStream,
-        crate::types::error::MedicalTranscriptResultStreamError,
-    >,
+    pub transcript_result_stream:
+        crate::event_receiver::EventReceiver<crate::types::MedicalTranscriptResultStream, crate::types::error::MedicalTranscriptResultStreamError>,
     /// <p>Shows whether channel identification was enabled for your transcription.</p>
     pub enable_channel_identification: bool,
     /// <p>Provides the number of channels that you specified in your request.</p>
@@ -74,10 +72,8 @@ impl StartMedicalStreamTranscriptionOutput {
     /// <p>Provides detailed information about your streaming session.</p>
     pub fn transcript_result_stream(
         &self,
-    ) -> &::aws_smithy_http::event_stream::Receiver<
-        crate::types::MedicalTranscriptResultStream,
-        crate::types::error::MedicalTranscriptResultStreamError,
-    > {
+    ) -> &crate::event_receiver::EventReceiver<crate::types::MedicalTranscriptResultStream, crate::types::error::MedicalTranscriptResultStreamError>
+    {
         &self.transcript_result_stream
     }
     /// <p>Shows whether channel identification was enabled for your transcription.</p>
@@ -119,10 +115,7 @@ pub struct StartMedicalStreamTranscriptionOutputBuilder {
     pub(crate) show_speaker_label: ::std::option::Option<bool>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) transcript_result_stream: ::std::option::Option<
-        ::aws_smithy_http::event_stream::Receiver<
-            crate::types::MedicalTranscriptResultStream,
-            crate::types::error::MedicalTranscriptResultStreamError,
-        >,
+        crate::event_receiver::EventReceiver<crate::types::MedicalTranscriptResultStream, crate::types::error::MedicalTranscriptResultStreamError>,
     >,
     pub(crate) enable_channel_identification: ::std::option::Option<bool>,
     pub(crate) number_of_channels: ::std::option::Option<i32>,
@@ -259,7 +252,7 @@ impl StartMedicalStreamTranscriptionOutputBuilder {
     /// <p>Provides detailed information about your streaming session.</p>
     pub fn transcript_result_stream(
         mut self,
-        input: ::aws_smithy_http::event_stream::Receiver<
+        input: crate::event_receiver::EventReceiver<
             crate::types::MedicalTranscriptResultStream,
             crate::types::error::MedicalTranscriptResultStreamError,
         >,
@@ -271,7 +264,7 @@ impl StartMedicalStreamTranscriptionOutputBuilder {
     pub fn set_transcript_result_stream(
         mut self,
         input: ::std::option::Option<
-            ::aws_smithy_http::event_stream::Receiver<
+            crate::event_receiver::EventReceiver<
                 crate::types::MedicalTranscriptResultStream,
                 crate::types::error::MedicalTranscriptResultStreamError,
             >,
@@ -284,10 +277,7 @@ impl StartMedicalStreamTranscriptionOutputBuilder {
     pub fn get_transcript_result_stream(
         &self,
     ) -> &::std::option::Option<
-        ::aws_smithy_http::event_stream::Receiver<
-            crate::types::MedicalTranscriptResultStream,
-            crate::types::error::MedicalTranscriptResultStreamError,
-        >,
+        crate::event_receiver::EventReceiver<crate::types::MedicalTranscriptResultStream, crate::types::error::MedicalTranscriptResultStreamError>,
     > {
         &self.transcript_result_stream
     }

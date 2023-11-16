@@ -2,12 +2,15 @@
 pub fn de_body_payload(
     body: &mut ::aws_smithy_types::body::SdkBody,
 ) -> std::result::Result<
-    ::aws_smithy_http::event_stream::Receiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
+    crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
     crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
 > {
     let unmarshaller = crate::event_stream_serde::ResponseStreamUnmarshaller::new();
     let body = std::mem::replace(body, ::aws_smithy_types::body::SdkBody::taken());
-    Ok(::aws_smithy_http::event_stream::Receiver::new(unmarshaller, body))
+    Ok(crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(
+        unmarshaller,
+        body,
+    )))
 }
 
 pub(crate) fn de_content_type_header(

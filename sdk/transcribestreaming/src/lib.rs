@@ -196,6 +196,8 @@ mod serialization_settings;
 
 mod endpoint_lib;
 
+mod event_receiver;
+
 mod json_errors;
 
 #[doc(inline)]

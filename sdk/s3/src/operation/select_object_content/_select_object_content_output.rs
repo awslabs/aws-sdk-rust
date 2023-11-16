@@ -4,10 +4,8 @@
 #[derive(::std::fmt::Debug)]
 pub struct SelectObjectContentOutput {
     /// <p>The array of results.</p>
-    pub payload: ::aws_smithy_http::event_stream::Receiver<
-        crate::types::SelectObjectContentEventStream,
-        crate::types::error::SelectObjectContentEventStreamError,
-    >,
+    pub payload:
+        crate::event_receiver::EventReceiver<crate::types::SelectObjectContentEventStream, crate::types::error::SelectObjectContentEventStreamError>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -15,10 +13,8 @@ impl SelectObjectContentOutput {
     /// <p>The array of results.</p>
     pub fn payload(
         &self,
-    ) -> &::aws_smithy_http::event_stream::Receiver<
-        crate::types::SelectObjectContentEventStream,
-        crate::types::error::SelectObjectContentEventStreamError,
-    > {
+    ) -> &crate::event_receiver::EventReceiver<crate::types::SelectObjectContentEventStream, crate::types::error::SelectObjectContentEventStreamError>
+    {
         &self.payload
     }
 }
@@ -44,10 +40,7 @@ impl SelectObjectContentOutput {
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectObjectContentOutputBuilder {
     pub(crate) payload: ::std::option::Option<
-        ::aws_smithy_http::event_stream::Receiver<
-            crate::types::SelectObjectContentEventStream,
-            crate::types::error::SelectObjectContentEventStreamError,
-        >,
+        crate::event_receiver::EventReceiver<crate::types::SelectObjectContentEventStream, crate::types::error::SelectObjectContentEventStreamError>,
     >,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
@@ -56,7 +49,7 @@ impl SelectObjectContentOutputBuilder {
     /// <p>The array of results.</p>
     pub fn payload(
         mut self,
-        input: ::aws_smithy_http::event_stream::Receiver<
+        input: crate::event_receiver::EventReceiver<
             crate::types::SelectObjectContentEventStream,
             crate::types::error::SelectObjectContentEventStreamError,
         >,
@@ -68,7 +61,7 @@ impl SelectObjectContentOutputBuilder {
     pub fn set_payload(
         mut self,
         input: ::std::option::Option<
-            ::aws_smithy_http::event_stream::Receiver<
+            crate::event_receiver::EventReceiver<
                 crate::types::SelectObjectContentEventStream,
                 crate::types::error::SelectObjectContentEventStreamError,
             >,
@@ -81,10 +74,7 @@ impl SelectObjectContentOutputBuilder {
     pub fn get_payload(
         &self,
     ) -> &::std::option::Option<
-        ::aws_smithy_http::event_stream::Receiver<
-            crate::types::SelectObjectContentEventStream,
-            crate::types::error::SelectObjectContentEventStreamError,
-        >,
+        crate::event_receiver::EventReceiver<crate::types::SelectObjectContentEventStream, crate::types::error::SelectObjectContentEventStreamError>,
     > {
         &self.payload
     }

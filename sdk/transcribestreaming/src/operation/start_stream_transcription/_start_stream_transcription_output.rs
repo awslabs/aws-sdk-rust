@@ -17,7 +17,7 @@ pub struct StartStreamTranscriptionOutput {
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides detailed information about your streaming session.</p>
     pub transcript_result_stream:
-        ::aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
+        crate::event_receiver::EventReceiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
     /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
     pub vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the vocabulary filtering method used in your transcription.</p>
@@ -82,7 +82,7 @@ impl StartStreamTranscriptionOutput {
     /// <p>Provides detailed information about your streaming session.</p>
     pub fn transcript_result_stream(
         &self,
-    ) -> &::aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError> {
+    ) -> &crate::event_receiver::EventReceiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError> {
         &self.transcript_result_stream
     }
     /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
@@ -177,7 +177,7 @@ pub struct StartStreamTranscriptionOutputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) transcript_result_stream: ::std::option::Option<
-        ::aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
+        crate::event_receiver::EventReceiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
     >,
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
@@ -286,7 +286,7 @@ impl StartStreamTranscriptionOutputBuilder {
     /// <p>Provides detailed information about your streaming session.</p>
     pub fn transcript_result_stream(
         mut self,
-        input: ::aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
+        input: crate::event_receiver::EventReceiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
     ) -> Self {
         self.transcript_result_stream = ::std::option::Option::Some(input);
         self
@@ -295,7 +295,7 @@ impl StartStreamTranscriptionOutputBuilder {
     pub fn set_transcript_result_stream(
         mut self,
         input: ::std::option::Option<
-            ::aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
+            crate::event_receiver::EventReceiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
         >,
     ) -> Self {
         self.transcript_result_stream = input;
@@ -305,7 +305,7 @@ impl StartStreamTranscriptionOutputBuilder {
     pub fn get_transcript_result_stream(
         &self,
     ) -> &::std::option::Option<
-        ::aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
+        crate::event_receiver::EventReceiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
     > {
         &self.transcript_result_stream
     }

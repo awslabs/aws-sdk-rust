@@ -1,4 +1,4 @@
-smithy_rs_revision = 'c296e8e999b10e381d7a4e58ee21023c6c38bb7a'
+smithy_rs_revision = 'a42c818b4af8d20b94c53486f952f255ff0e4dff'
 aws_doc_sdk_examples_revision = '26f1a3d11de9c6488e9b1db175ffc92c370c5c27'
 
 [manual_interventions]
@@ -251,7 +251,7 @@ model_hash = '4616b442f54868478577197658ba1a61e532b9843bf09f1980382787892a0430'
 [crates.aws-sdk-bedrockruntime]
 category = 'AwsSdk'
 version = '0.6.0'
-source_hash = '241d5855014e5e9e01d23d2cdca5b81b108b66974da4f7200cd9ae746b3639ac'
+source_hash = '3dc4883252d5a01e7c6cf6f7789c5a3797c263f66d32aac18a956b8360db773c'
 model_hash = '1790bff3f22aef153fbe1d907eac2e55b79c6a1a818319b76e7b0fa21d76d869'
 
 [crates.aws-sdk-billingconductor]
@@ -1775,7 +1775,7 @@ model_hash = 'c62ce302df590edbecf1e8410825959bd53389d7aabe1ca4b1c014e9f8f3463f'
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
 version = '0.37.0'
-source_hash = '2d2c950451575d2aa88ad288c82f8755f2ff7be90ffa33ae82b2e098b6aa7bf2'
+source_hash = '98aefb2d040ab63a4c2b37218fbbd8d4cfdd225bc9f173ed89a13f95bc96e774'
 model_hash = '170b570a996cef2e6e71a9a3bf27da523d4673bb1ff6e38d97faa9db7eed7c9c'
 
 [crates.aws-sdk-s3control]
@@ -2075,7 +2075,7 @@ model_hash = 'd6be2cac40cd927e330d9251b66d01a16feb42ac4e467a7799e2fe5a97d1d5c0'
 [crates.aws-sdk-transcribestreaming]
 category = 'AwsSdk'
 version = '0.37.0'
-source_hash = '1ba2096cc9f8d96ef0a24f1d0d6163889849820d5e89a18f28483e6a5e529d49'
+source_hash = 'd7c0172b1cf58aa587c30dcf392a05acdcf19bbfb853ab0a17023838da44cece'
 model_hash = 'b6e54b8b7c1dfefaa67fbc4f5c237a2bbaad7916305a9b588ce31a4134abbce1'
 
 [crates.aws-sdk-transfer]
@@ -2218,7 +2218,7 @@ source_hash = 'ce7edf8660fcb350555666e1f9d8a2db153038636e1a34d5f4c53ac42f573bec'
 [crates.aws-smithy-http]
 category = 'SmithyRuntime'
 version = '0.57.1'
-source_hash = '0688bfc883d74e2f0c2052c14df4302c2180b99ac08313cc9d874e5fb9d6dadd'
+source_hash = 'a5620d983148fe286bb11089995ef353084a86f1caa5b31102849a4ff2e8b83d'
 
 [crates.aws-smithy-http-auth]
 category = 'SmithyRuntime'
@@ -2268,7 +2268,7 @@ source_hash = '5d7e005a5cace2bead0a1f981e7ebaf14d97612dba96a6c481a4a885e23e7b21'
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
 version = '0.57.1'
-source_hash = '957e6e90745cc2e52c69046e69f0722de25a191298b7afa1bb94b5898c12ec84'
+source_hash = '0f403ef6d97421c6564b454c68a1d7ced079271609747fe4e1937ab30805b280'
 
 [crates.aws-smithy-types-convert]
 category = 'SmithyRuntime'

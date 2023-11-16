@@ -108,12 +108,15 @@ pub(crate) fn de_specialty_header(
 pub fn de_transcript_result_stream_payload(
     body: &mut ::aws_smithy_types::body::SdkBody,
 ) -> std::result::Result<
-    ::aws_smithy_http::event_stream::Receiver<crate::types::MedicalTranscriptResultStream, crate::types::error::MedicalTranscriptResultStreamError>,
+    crate::event_receiver::EventReceiver<crate::types::MedicalTranscriptResultStream, crate::types::error::MedicalTranscriptResultStreamError>,
     crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError,
 > {
     let unmarshaller = crate::event_stream_serde::MedicalTranscriptResultStreamUnmarshaller::new();
     let body = std::mem::replace(body, ::aws_smithy_types::body::SdkBody::taken());
-    Ok(::aws_smithy_http::event_stream::Receiver::new(unmarshaller, body))
+    Ok(crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(
+        unmarshaller,
+        body,
+    )))
 }
 
 pub(crate) fn de_type_header(
