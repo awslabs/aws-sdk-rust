@@ -13,7 +13,7 @@ impl ProvisionProductOutput {
         self.record_detail.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ProvisionProductOutput {
+impl ::aws_types::request_id::RequestId for ProvisionProductOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

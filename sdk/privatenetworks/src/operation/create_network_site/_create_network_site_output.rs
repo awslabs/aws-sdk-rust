@@ -28,7 +28,7 @@ impl ::std::fmt::Debug for CreateNetworkSiteOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateNetworkSiteOutput {
+impl ::aws_types::request_id::RequestId for CreateNetworkSiteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

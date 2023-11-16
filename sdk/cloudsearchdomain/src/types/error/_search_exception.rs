@@ -26,7 +26,7 @@ impl ::std::fmt::Display for SearchException {
     }
 }
 impl ::std::error::Error for SearchException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SearchException {
+impl ::aws_types::request_id::RequestId for crate::types::error::SearchException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

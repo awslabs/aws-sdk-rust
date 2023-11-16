@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_http::http::HttpHeaders;
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
 use aws_smithy_runtime_api::client::retries::classifiers::{
@@ -65,8 +64,7 @@ where
 
         let retry_after = ctx
             .response()
-            .and_then(|res| res.http_headers().get("x-amz-retry-after"))
-            .and_then(|header| header.to_str().ok())
+            .and_then(|res| res.headers().get("x-amz-retry-after"))
             .and_then(|header| header.parse::<u64>().ok())
             .map(std::time::Duration::from_millis);
 
@@ -173,7 +171,7 @@ mod test {
         let test_response = http::Response::new("OK").map(SdkBody::from);
 
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
-        ctx.set_response(test_response);
+        ctx.set_response(test_response.try_into().unwrap());
         ctx.set_output_or_error(Err(OrchestratorError::operation(Error::erase(err))));
 
         assert_eq!(policy.classify_retry(&ctx), RetryAction::throttling_error());
@@ -189,7 +187,7 @@ mod test {
             .unwrap()
             .map(SdkBody::from);
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
-        ctx.set_response(res);
+        ctx.set_response(res.try_into().unwrap());
         ctx.set_output_or_error(Err(OrchestratorError::operation(Error::erase(err))));
 
         assert_eq!(

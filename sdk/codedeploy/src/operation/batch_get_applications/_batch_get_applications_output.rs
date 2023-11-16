@@ -16,7 +16,7 @@ impl BatchGetApplicationsOutput {
         self.applications_info.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetApplicationsOutput {
+impl ::aws_types::request_id::RequestId for BatchGetApplicationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

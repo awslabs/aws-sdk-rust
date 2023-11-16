@@ -13,7 +13,7 @@ impl DescribeWorkspaceAuthenticationOutput {
         self.authentication.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeWorkspaceAuthenticationOutput {
+impl ::aws_types::request_id::RequestId for DescribeWorkspaceAuthenticationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

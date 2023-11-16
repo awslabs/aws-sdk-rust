@@ -14,7 +14,7 @@ impl GetCorsPolicyOutput {
         self.cors_policy.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCorsPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetCorsPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

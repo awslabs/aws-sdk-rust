@@ -13,7 +13,7 @@ impl CreateLaunchConfigurationTemplateOutput {
         self.launch_configuration_template.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateLaunchConfigurationTemplateOutput {
+impl ::aws_types::request_id::RequestId for CreateLaunchConfigurationTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

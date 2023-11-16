@@ -165,7 +165,7 @@ impl DescribeBackupJobOutput {
         self.message_category.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBackupJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeBackupJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

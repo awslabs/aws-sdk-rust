@@ -14,7 +14,7 @@ impl SendCustomVerificationEmailOutput {
         self.message_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SendCustomVerificationEmailOutput {
+impl ::aws_types::request_id::RequestId for SendCustomVerificationEmailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

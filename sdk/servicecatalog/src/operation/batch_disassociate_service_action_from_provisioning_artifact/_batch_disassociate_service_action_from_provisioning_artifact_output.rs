@@ -15,7 +15,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
         self.failed_service_action_associations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchDisassociateServiceActionFromProvisioningArtifactOutput {
+impl ::aws_types::request_id::RequestId for BatchDisassociateServiceActionFromProvisioningArtifactOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

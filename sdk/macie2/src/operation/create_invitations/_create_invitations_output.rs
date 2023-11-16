@@ -15,7 +15,7 @@ impl CreateInvitationsOutput {
         self.unprocessed_accounts.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateInvitationsOutput {
+impl ::aws_types::request_id::RequestId for CreateInvitationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

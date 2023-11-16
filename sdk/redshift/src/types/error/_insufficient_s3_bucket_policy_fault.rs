@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InsufficientS3BucketPolicyFault {
     }
 }
 impl ::std::error::Error for InsufficientS3BucketPolicyFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InsufficientS3BucketPolicyFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::InsufficientS3BucketPolicyFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

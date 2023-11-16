@@ -20,7 +20,7 @@ impl ListPagesByEngagementOutput {
         self.pages.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListPagesByEngagementOutput {
+impl ::aws_types::request_id::RequestId for ListPagesByEngagementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

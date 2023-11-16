@@ -55,7 +55,7 @@ impl UpdateDeploymentStrategyOutput {
         self.replicate_to.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateDeploymentStrategyOutput {
+impl ::aws_types::request_id::RequestId for UpdateDeploymentStrategyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

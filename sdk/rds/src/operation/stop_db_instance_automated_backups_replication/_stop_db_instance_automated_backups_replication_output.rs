@@ -13,7 +13,7 @@ impl StopDbInstanceAutomatedBackupsReplicationOutput {
         self.db_instance_automated_backup.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StopDbInstanceAutomatedBackupsReplicationOutput {
+impl ::aws_types::request_id::RequestId for StopDbInstanceAutomatedBackupsReplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

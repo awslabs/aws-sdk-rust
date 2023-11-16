@@ -99,7 +99,7 @@ impl ::std::fmt::Debug for AdminGetUserOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for AdminGetUserOutput {
+impl ::aws_types::request_id::RequestId for AdminGetUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -14,7 +14,7 @@ impl ForgotPasswordOutput {
         self.code_delivery_details.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ForgotPasswordOutput {
+impl ::aws_types::request_id::RequestId for ForgotPasswordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

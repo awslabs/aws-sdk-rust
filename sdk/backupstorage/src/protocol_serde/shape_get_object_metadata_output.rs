@@ -8,23 +8,23 @@ pub fn de_metadata_blob_payload(
 }
 
 pub(crate) fn de_metadata_blob_checksum_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-checksum");
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_metadata_blob_checksum_algorithm_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<crate::types::DataChecksumAlgorithm>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-algorithm").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<crate::types::DataChecksumAlgorithm>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-checksum-algorithm");
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_metadata_blob_length_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<i64>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-data-length").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<i64>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-data-length");
     let var_1 = ::aws_smithy_http::header::read_many_primitive::<i64>(headers)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
@@ -38,8 +38,8 @@ pub(crate) fn de_metadata_blob_length_header(
 }
 
 pub(crate) fn de_metadata_string_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-metadata-string").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-metadata-string");
     ::aws_smithy_http::header::one_or_none(headers)
 }

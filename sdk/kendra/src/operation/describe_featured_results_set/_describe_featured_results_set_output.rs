@@ -67,7 +67,7 @@ impl DescribeFeaturedResultsSetOutput {
         self.creation_timestamp
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFeaturedResultsSetOutput {
+impl ::aws_types::request_id::RequestId for DescribeFeaturedResultsSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

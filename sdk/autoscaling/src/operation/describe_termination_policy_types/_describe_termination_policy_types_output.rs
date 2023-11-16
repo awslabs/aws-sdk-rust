@@ -15,7 +15,7 @@ impl DescribeTerminationPolicyTypesOutput {
         self.termination_policy_types.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeTerminationPolicyTypesOutput {
+impl ::aws_types::request_id::RequestId for DescribeTerminationPolicyTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

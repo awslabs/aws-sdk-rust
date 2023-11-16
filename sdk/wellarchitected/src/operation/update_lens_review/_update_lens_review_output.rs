@@ -20,7 +20,7 @@ impl UpdateLensReviewOutput {
         self.lens_review.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateLensReviewOutput {
+impl ::aws_types::request_id::RequestId for UpdateLensReviewOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

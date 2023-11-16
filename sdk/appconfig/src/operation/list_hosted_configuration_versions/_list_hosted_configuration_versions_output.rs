@@ -21,7 +21,7 @@ impl ListHostedConfigurationVersionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListHostedConfigurationVersionsOutput {
+impl ::aws_types::request_id::RequestId for ListHostedConfigurationVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

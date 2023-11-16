@@ -13,7 +13,7 @@ impl AssociateTransitGatewayConnectPeerOutput {
         self.transit_gateway_connect_peer_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateTransitGatewayConnectPeerOutput {
+impl ::aws_types::request_id::RequestId for AssociateTransitGatewayConnectPeerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

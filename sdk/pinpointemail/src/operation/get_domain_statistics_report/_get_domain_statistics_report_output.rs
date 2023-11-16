@@ -21,7 +21,7 @@ impl GetDomainStatisticsReportOutput {
         self.daily_volumes.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDomainStatisticsReportOutput {
+impl ::aws_types::request_id::RequestId for GetDomainStatisticsReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

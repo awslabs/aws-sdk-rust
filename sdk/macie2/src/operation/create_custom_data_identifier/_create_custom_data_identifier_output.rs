@@ -13,7 +13,7 @@ impl CreateCustomDataIdentifierOutput {
         self.custom_data_identifier_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCustomDataIdentifierOutput {
+impl ::aws_types::request_id::RequestId for CreateCustomDataIdentifierOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -28,7 +28,7 @@ impl AcceptPredictionsOutput {
         self.revision.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AcceptPredictionsOutput {
+impl ::aws_types::request_id::RequestId for AcceptPredictionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

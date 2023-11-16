@@ -13,7 +13,7 @@ impl GetLogDeliveryConfigurationOutput {
         self.log_delivery_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLogDeliveryConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetLogDeliveryConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

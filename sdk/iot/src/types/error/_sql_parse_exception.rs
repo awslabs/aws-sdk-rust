@@ -26,7 +26,7 @@ impl ::std::fmt::Display for SqlParseException {
     }
 }
 impl ::std::error::Error for SqlParseException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SqlParseException {
+impl ::aws_types::request_id::RequestId for crate::types::error::SqlParseException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

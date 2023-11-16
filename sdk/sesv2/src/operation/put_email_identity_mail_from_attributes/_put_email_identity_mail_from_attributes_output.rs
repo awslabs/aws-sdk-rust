@@ -6,7 +6,7 @@
 pub struct PutEmailIdentityMailFromAttributesOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutEmailIdentityMailFromAttributesOutput {
+impl ::aws_types::request_id::RequestId for PutEmailIdentityMailFromAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

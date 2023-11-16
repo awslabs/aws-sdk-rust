@@ -5,7 +5,7 @@
 pub struct UpdatePrimaryRegionOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdatePrimaryRegionOutput {
+impl ::aws_types::request_id::RequestId for UpdatePrimaryRegionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

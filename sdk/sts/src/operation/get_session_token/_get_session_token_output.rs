@@ -26,7 +26,7 @@ impl ::std::fmt::Debug for GetSessionTokenOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSessionTokenOutput {
+impl ::aws_types::request_id::RequestId for GetSessionTokenOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

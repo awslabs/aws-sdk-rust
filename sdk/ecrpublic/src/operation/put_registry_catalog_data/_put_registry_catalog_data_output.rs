@@ -13,7 +13,7 @@ impl PutRegistryCatalogDataOutput {
         self.registry_catalog_data.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutRegistryCatalogDataOutput {
+impl ::aws_types::request_id::RequestId for PutRegistryCatalogDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

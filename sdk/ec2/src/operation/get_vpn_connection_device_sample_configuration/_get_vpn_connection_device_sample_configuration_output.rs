@@ -21,7 +21,7 @@ impl ::std::fmt::Debug for GetVpnConnectionDeviceSampleConfigurationOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetVpnConnectionDeviceSampleConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetVpnConnectionDeviceSampleConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

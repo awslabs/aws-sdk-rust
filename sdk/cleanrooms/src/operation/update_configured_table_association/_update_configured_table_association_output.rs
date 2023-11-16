@@ -13,7 +13,7 @@ impl UpdateConfiguredTableAssociationOutput {
         self.configured_table_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateConfiguredTableAssociationOutput {
+impl ::aws_types::request_id::RequestId for UpdateConfiguredTableAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

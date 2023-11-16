@@ -20,7 +20,7 @@ impl ListMembershipsOutput {
         self.membership_summaries.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListMembershipsOutput {
+impl ::aws_types::request_id::RequestId for ListMembershipsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

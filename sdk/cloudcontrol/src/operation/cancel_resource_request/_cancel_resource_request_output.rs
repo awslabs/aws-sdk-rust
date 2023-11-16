@@ -13,7 +13,7 @@ impl CancelResourceRequestOutput {
         self.progress_event.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CancelResourceRequestOutput {
+impl ::aws_types::request_id::RequestId for CancelResourceRequestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

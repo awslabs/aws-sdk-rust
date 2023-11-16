@@ -21,7 +21,7 @@ impl ListEventIntegrationAssociationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListEventIntegrationAssociationsOutput {
+impl ::aws_types::request_id::RequestId for ListEventIntegrationAssociationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

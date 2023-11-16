@@ -105,7 +105,7 @@ impl ::std::fmt::Debug for RetryDataReplicationOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for RetryDataReplicationOutput {
+impl ::aws_types::request_id::RequestId for RetryDataReplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

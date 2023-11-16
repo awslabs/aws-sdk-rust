@@ -132,7 +132,7 @@ impl CheckDomainAvailabilityOutput {
         self.availability.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CheckDomainAvailabilityOutput {
+impl ::aws_types::request_id::RequestId for CheckDomainAvailabilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

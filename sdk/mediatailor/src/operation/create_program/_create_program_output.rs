@@ -75,7 +75,7 @@ impl CreateProgramOutput {
         self.duration_millis
     }
 }
-impl ::aws_http::request_id::RequestId for CreateProgramOutput {
+impl ::aws_types::request_id::RequestId for CreateProgramOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

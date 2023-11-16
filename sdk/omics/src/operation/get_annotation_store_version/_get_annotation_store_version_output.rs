@@ -92,7 +92,7 @@ impl GetAnnotationStoreVersionOutput {
         self.version_size_bytes
     }
 }
-impl ::aws_http::request_id::RequestId for GetAnnotationStoreVersionOutput {
+impl ::aws_types::request_id::RequestId for GetAnnotationStoreVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

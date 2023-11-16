@@ -14,7 +14,7 @@ impl UpdateChannelClassOutput {
         self.channel.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateChannelClassOutput {
+impl ::aws_types::request_id::RequestId for UpdateChannelClassOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

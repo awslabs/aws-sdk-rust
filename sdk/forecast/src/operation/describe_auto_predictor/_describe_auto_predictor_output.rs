@@ -155,7 +155,7 @@ impl DescribeAutoPredictorOutput {
         self.time_alignment_boundary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAutoPredictorOutput {
+impl ::aws_types::request_id::RequestId for DescribeAutoPredictorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

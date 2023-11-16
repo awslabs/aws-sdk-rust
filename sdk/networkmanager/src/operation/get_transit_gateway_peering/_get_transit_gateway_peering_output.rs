@@ -13,7 +13,7 @@ impl GetTransitGatewayPeeringOutput {
         self.transit_gateway_peering.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTransitGatewayPeeringOutput {
+impl ::aws_types::request_id::RequestId for GetTransitGatewayPeeringOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for IllegalStatusException {
     }
 }
 impl ::std::error::Error for IllegalStatusException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::IllegalStatusException {
+impl ::aws_types::request_id::RequestId for crate::types::error::IllegalStatusException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -21,7 +21,7 @@ impl DescribeOpsItemsOutput {
         self.ops_item_summaries.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeOpsItemsOutput {
+impl ::aws_types::request_id::RequestId for DescribeOpsItemsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

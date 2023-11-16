@@ -21,7 +21,7 @@ impl AssociateMacSecKeyOutput {
         self.mac_sec_keys.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateMacSecKeyOutput {
+impl ::aws_types::request_id::RequestId for AssociateMacSecKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

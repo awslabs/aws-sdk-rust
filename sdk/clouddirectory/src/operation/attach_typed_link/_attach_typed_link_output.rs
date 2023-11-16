@@ -13,7 +13,7 @@ impl AttachTypedLinkOutput {
         self.typed_link_specifier.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AttachTypedLinkOutput {
+impl ::aws_types::request_id::RequestId for AttachTypedLinkOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

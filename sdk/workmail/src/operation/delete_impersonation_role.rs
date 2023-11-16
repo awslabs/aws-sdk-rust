@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteImp
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_delete_impersonation_role::de_delete_impersonation_role_http_error(status, headers, body)
         } else {
@@ -291,7 +291,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteImperso
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::delete_impersonation_role::DeleteImpersonationRoleError {
+impl ::aws_types::request_id::RequestId for crate::operation::delete_impersonation_role::DeleteImpersonationRoleError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

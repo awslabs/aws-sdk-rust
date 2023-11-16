@@ -13,7 +13,7 @@ impl UpdatePushTemplateOutput {
         self.message_body.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdatePushTemplateOutput {
+impl ::aws_types::request_id::RequestId for UpdatePushTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

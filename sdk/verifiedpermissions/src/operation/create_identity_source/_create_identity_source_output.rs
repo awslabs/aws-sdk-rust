@@ -33,7 +33,7 @@ impl CreateIdentitySourceOutput {
         self.policy_store_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateIdentitySourceOutput {
+impl ::aws_types::request_id::RequestId for CreateIdentitySourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

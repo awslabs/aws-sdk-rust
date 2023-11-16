@@ -14,7 +14,7 @@ impl CreateWorkflowOutput {
         self.workflow_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateWorkflowOutput {
+impl ::aws_types::request_id::RequestId for CreateWorkflowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

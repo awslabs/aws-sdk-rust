@@ -20,7 +20,7 @@ impl GetTrustStoreCertificateOutput {
         self.certificate.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTrustStoreCertificateOutput {
+impl ::aws_types::request_id::RequestId for GetTrustStoreCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

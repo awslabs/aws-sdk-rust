@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidReplicationGroupStateFault {
     }
 }
 impl ::std::error::Error for InvalidReplicationGroupStateFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidReplicationGroupStateFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidReplicationGroupStateFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

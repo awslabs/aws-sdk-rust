@@ -14,7 +14,7 @@ impl ListCloudFrontOriginAccessIdentitiesOutput {
         self.cloud_front_origin_access_identity_list.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListCloudFrontOriginAccessIdentitiesOutput {
+impl ::aws_types::request_id::RequestId for ListCloudFrontOriginAccessIdentitiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

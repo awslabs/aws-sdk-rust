@@ -49,7 +49,7 @@ impl ::std::fmt::Display for WafEntityMigrationException {
     }
 }
 impl ::std::error::Error for WafEntityMigrationException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::WafEntityMigrationException {
+impl ::aws_types::request_id::RequestId for crate::types::error::WafEntityMigrationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

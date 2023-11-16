@@ -16,7 +16,7 @@ impl DescribeApplicationsOutput {
         self.applications.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeApplicationsOutput {
+impl ::aws_types::request_id::RequestId for DescribeApplicationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

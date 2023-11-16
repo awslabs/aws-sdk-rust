@@ -13,7 +13,7 @@ impl GetJourneyRunsOutput {
         self.journey_runs_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetJourneyRunsOutput {
+impl ::aws_types::request_id::RequestId for GetJourneyRunsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

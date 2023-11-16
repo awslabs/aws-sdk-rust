@@ -41,7 +41,7 @@ impl GetSparqlStreamOutput {
         self.total_records
     }
 }
-impl ::aws_http::request_id::RequestId for GetSparqlStreamOutput {
+impl ::aws_types::request_id::RequestId for GetSparqlStreamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

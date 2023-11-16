@@ -69,7 +69,7 @@ impl GetLabelDetectionOutput {
         self.get_request_metadata.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLabelDetectionOutput {
+impl ::aws_types::request_id::RequestId for GetLabelDetectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

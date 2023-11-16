@@ -19,7 +19,7 @@ impl RegisterOrganizationAdminAccountOutput {
         self.organization_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RegisterOrganizationAdminAccountOutput {
+impl ::aws_types::request_id::RequestId for RegisterOrganizationAdminAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for OperationNotFound {
     }
 }
 impl ::std::error::Error for OperationNotFound {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OperationNotFound {
+impl ::aws_types::request_id::RequestId for crate::types::error::OperationNotFound {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

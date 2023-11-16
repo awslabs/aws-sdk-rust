@@ -13,7 +13,7 @@ impl ConnectAppAuthorizationOutput {
         self.app_authorization_summary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ConnectAppAuthorizationOutput {
+impl ::aws_types::request_id::RequestId for ConnectAppAuthorizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

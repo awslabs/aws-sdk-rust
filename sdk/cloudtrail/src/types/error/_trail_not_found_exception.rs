@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TrailNotFoundException {
     }
 }
 impl ::std::error::Error for TrailNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TrailNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TrailNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

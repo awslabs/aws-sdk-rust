@@ -13,7 +13,7 @@ impl TestFailoverOutput {
         self.replication_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for TestFailoverOutput {
+impl ::aws_types::request_id::RequestId for TestFailoverOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

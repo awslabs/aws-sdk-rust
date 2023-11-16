@@ -13,7 +13,7 @@ impl DescribeEngineDefaultParametersOutput {
         self.engine_defaults.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEngineDefaultParametersOutput {
+impl ::aws_types::request_id::RequestId for DescribeEngineDefaultParametersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

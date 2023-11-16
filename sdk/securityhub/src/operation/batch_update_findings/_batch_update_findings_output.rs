@@ -23,7 +23,7 @@ impl BatchUpdateFindingsOutput {
         self.unprocessed_findings.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchUpdateFindingsOutput {
+impl ::aws_types::request_id::RequestId for BatchUpdateFindingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

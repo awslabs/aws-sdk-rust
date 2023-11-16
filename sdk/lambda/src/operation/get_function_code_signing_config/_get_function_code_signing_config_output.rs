@@ -35,7 +35,7 @@ impl GetFunctionCodeSigningConfigOutput {
         self.function_name.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetFunctionCodeSigningConfigOutput {
+impl ::aws_types::request_id::RequestId for GetFunctionCodeSigningConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

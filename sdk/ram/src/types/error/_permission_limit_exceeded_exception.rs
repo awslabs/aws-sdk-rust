@@ -24,7 +24,7 @@ impl ::std::fmt::Display for PermissionLimitExceededException {
     }
 }
 impl ::std::error::Error for PermissionLimitExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::PermissionLimitExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::PermissionLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -19,7 +19,7 @@ impl UpdateConnectivityInfoOutput {
         self.message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateConnectivityInfoOutput {
+impl ::aws_types::request_id::RequestId for UpdateConnectivityInfoOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -14,7 +14,7 @@ impl DeleteReplicationInstanceOutput {
         self.replication_instance.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteReplicationInstanceOutput {
+impl ::aws_types::request_id::RequestId for DeleteReplicationInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

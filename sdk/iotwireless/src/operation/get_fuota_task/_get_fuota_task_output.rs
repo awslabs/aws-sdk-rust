@@ -83,7 +83,7 @@ impl GetFuotaTaskOutput {
         self.fragment_interval_ms
     }
 }
-impl ::aws_http::request_id::RequestId for GetFuotaTaskOutput {
+impl ::aws_types::request_id::RequestId for GetFuotaTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

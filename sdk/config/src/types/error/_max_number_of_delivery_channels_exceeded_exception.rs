@@ -26,7 +26,7 @@ impl ::std::fmt::Display for MaxNumberOfDeliveryChannelsExceededException {
     }
 }
 impl ::std::error::Error for MaxNumberOfDeliveryChannelsExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::MaxNumberOfDeliveryChannelsExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::MaxNumberOfDeliveryChannelsExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

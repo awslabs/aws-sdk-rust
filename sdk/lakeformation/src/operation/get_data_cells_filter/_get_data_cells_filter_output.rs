@@ -13,7 +13,7 @@ impl GetDataCellsFilterOutput {
         self.data_cells_filter.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataCellsFilterOutput {
+impl ::aws_types::request_id::RequestId for GetDataCellsFilterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

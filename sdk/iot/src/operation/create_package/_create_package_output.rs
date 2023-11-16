@@ -35,7 +35,7 @@ impl ::std::fmt::Debug for CreatePackageOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePackageOutput {
+impl ::aws_types::request_id::RequestId for CreatePackageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

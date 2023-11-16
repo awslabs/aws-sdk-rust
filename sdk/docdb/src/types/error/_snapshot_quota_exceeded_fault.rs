@@ -26,7 +26,7 @@ impl ::std::fmt::Display for SnapshotQuotaExceededFault {
     }
 }
 impl ::std::error::Error for SnapshotQuotaExceededFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SnapshotQuotaExceededFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::SnapshotQuotaExceededFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

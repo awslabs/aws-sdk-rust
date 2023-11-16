@@ -5,7 +5,7 @@
 pub struct DisassociateMembershipOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DisassociateMembershipOutput {
+impl ::aws_types::request_id::RequestId for DisassociateMembershipOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

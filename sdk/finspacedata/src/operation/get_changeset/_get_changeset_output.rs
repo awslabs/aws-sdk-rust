@@ -96,7 +96,7 @@ impl GetChangesetOutput {
         self.updated_by_changeset_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetChangesetOutput {
+impl ::aws_types::request_id::RequestId for GetChangesetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -117,7 +117,7 @@ impl DescribeHyperParameterTuningJobOutput {
         self.autotune.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeHyperParameterTuningJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeHyperParameterTuningJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -5,7 +5,7 @@
 pub struct DeleteOrganizationConfigRuleOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteOrganizationConfigRuleOutput {
+impl ::aws_types::request_id::RequestId for DeleteOrganizationConfigRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

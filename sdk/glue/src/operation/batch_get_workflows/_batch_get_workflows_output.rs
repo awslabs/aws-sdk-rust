@@ -23,7 +23,7 @@ impl BatchGetWorkflowsOutput {
         self.missing_workflows.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetWorkflowsOutput {
+impl ::aws_types::request_id::RequestId for BatchGetWorkflowsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

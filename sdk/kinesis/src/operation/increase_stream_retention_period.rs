@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for IncreaseS
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_increase_stream_retention_period::de_increase_stream_retention_period_http_error(status, headers, body)
         } else {
@@ -307,7 +307,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for IncreaseStrea
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError {
+impl ::aws_types::request_id::RequestId for crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

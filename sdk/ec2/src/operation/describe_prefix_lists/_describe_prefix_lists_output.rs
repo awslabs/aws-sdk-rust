@@ -21,7 +21,7 @@ impl DescribePrefixListsOutput {
         self.prefix_lists.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePrefixListsOutput {
+impl ::aws_types::request_id::RequestId for DescribePrefixListsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

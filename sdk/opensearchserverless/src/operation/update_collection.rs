@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateCol
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_update_collection::de_update_collection_http_error(status, headers, body)
         } else {
@@ -304,7 +304,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateCollect
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::update_collection::UpdateCollectionError {
+impl ::aws_types::request_id::RequestId for crate::operation::update_collection::UpdateCollectionError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

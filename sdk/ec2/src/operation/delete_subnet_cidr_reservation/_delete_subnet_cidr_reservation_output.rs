@@ -13,7 +13,7 @@ impl DeleteSubnetCidrReservationOutput {
         self.deleted_subnet_cidr_reservation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteSubnetCidrReservationOutput {
+impl ::aws_types::request_id::RequestId for DeleteSubnetCidrReservationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

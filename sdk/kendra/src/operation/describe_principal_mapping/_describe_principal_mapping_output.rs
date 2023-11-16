@@ -47,7 +47,7 @@ impl DescribePrincipalMappingOutput {
         self.group_ordering_id_summaries.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePrincipalMappingOutput {
+impl ::aws_types::request_id::RequestId for DescribePrincipalMappingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

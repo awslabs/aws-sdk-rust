@@ -54,7 +54,7 @@ impl ::std::fmt::Debug for GetMessageInsightsOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetMessageInsightsOutput {
+impl ::aws_types::request_id::RequestId for GetMessageInsightsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

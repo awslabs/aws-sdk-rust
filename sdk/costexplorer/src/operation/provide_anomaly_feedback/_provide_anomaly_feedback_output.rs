@@ -14,7 +14,7 @@ impl ProvideAnomalyFeedbackOutput {
         self.anomaly_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ProvideAnomalyFeedbackOutput {
+impl ::aws_types::request_id::RequestId for ProvideAnomalyFeedbackOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

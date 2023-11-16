@@ -21,7 +21,7 @@ impl ListTestSetRecordsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTestSetRecordsOutput {
+impl ::aws_types::request_id::RequestId for ListTestSetRecordsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

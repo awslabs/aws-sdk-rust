@@ -34,7 +34,7 @@ impl ::std::fmt::Display for InvalidCodeSignatureException {
     }
 }
 impl ::std::error::Error for InvalidCodeSignatureException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidCodeSignatureException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidCodeSignatureException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

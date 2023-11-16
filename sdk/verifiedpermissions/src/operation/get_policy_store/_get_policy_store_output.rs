@@ -39,7 +39,7 @@ impl GetPolicyStoreOutput {
         &self.last_updated_date
     }
 }
-impl ::aws_http::request_id::RequestId for GetPolicyStoreOutput {
+impl ::aws_types::request_id::RequestId for GetPolicyStoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

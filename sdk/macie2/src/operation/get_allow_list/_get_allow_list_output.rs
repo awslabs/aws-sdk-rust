@@ -61,7 +61,7 @@ impl GetAllowListOutput {
         self.updated_at.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAllowListOutput {
+impl ::aws_types::request_id::RequestId for GetAllowListOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

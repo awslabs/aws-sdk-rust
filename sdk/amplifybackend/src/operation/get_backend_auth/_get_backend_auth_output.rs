@@ -37,7 +37,7 @@ impl GetBackendAuthOutput {
         self.resource_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBackendAuthOutput {
+impl ::aws_types::request_id::RequestId for GetBackendAuthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl GetFunctionConcurrencyOutput {
         self.reserved_concurrent_executions
     }
 }
-impl ::aws_http::request_id::RequestId for GetFunctionConcurrencyOutput {
+impl ::aws_types::request_id::RequestId for GetFunctionConcurrencyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

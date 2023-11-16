@@ -15,7 +15,7 @@ impl GetDeviceMethodsOutput {
         self.device_methods.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDeviceMethodsOutput {
+impl ::aws_types::request_id::RequestId for GetDeviceMethodsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

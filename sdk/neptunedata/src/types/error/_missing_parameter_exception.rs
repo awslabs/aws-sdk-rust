@@ -49,7 +49,7 @@ impl ::std::fmt::Display for MissingParameterException {
     }
 }
 impl ::std::error::Error for MissingParameterException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::MissingParameterException {
+impl ::aws_types::request_id::RequestId for crate::types::error::MissingParameterException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

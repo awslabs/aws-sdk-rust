@@ -20,7 +20,7 @@ impl ListNotebookSessionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListNotebookSessionsOutput {
+impl ::aws_types::request_id::RequestId for ListNotebookSessionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

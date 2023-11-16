@@ -30,7 +30,7 @@ impl DescribeCacheParametersOutput {
         self.cache_node_type_specific_parameters.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeCacheParametersOutput {
+impl ::aws_types::request_id::RequestId for DescribeCacheParametersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

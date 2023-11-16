@@ -20,7 +20,7 @@ impl ListEnvironmentTemplateVersionsOutput {
         self.template_versions.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListEnvironmentTemplateVersionsOutput {
+impl ::aws_types::request_id::RequestId for ListEnvironmentTemplateVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

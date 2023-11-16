@@ -190,7 +190,7 @@ impl DeleteEventSourceMappingOutput {
         self.document_db_event_source_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteEventSourceMappingOutput {
+impl ::aws_types::request_id::RequestId for DeleteEventSourceMappingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

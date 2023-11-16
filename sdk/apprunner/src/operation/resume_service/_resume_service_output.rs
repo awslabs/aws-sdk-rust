@@ -19,7 +19,7 @@ impl ResumeServiceOutput {
         self.operation_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ResumeServiceOutput {
+impl ::aws_types::request_id::RequestId for ResumeServiceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

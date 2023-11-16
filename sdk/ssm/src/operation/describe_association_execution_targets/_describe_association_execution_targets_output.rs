@@ -21,7 +21,7 @@ impl DescribeAssociationExecutionTargetsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAssociationExecutionTargetsOutput {
+impl ::aws_types::request_id::RequestId for DescribeAssociationExecutionTargetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

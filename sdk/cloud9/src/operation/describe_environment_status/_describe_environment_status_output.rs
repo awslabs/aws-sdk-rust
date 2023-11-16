@@ -38,7 +38,7 @@ impl DescribeEnvironmentStatusOutput {
         self.message.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEnvironmentStatusOutput {
+impl ::aws_types::request_id::RequestId for DescribeEnvironmentStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

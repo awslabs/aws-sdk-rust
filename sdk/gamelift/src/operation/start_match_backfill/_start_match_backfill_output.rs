@@ -13,7 +13,7 @@ impl StartMatchBackfillOutput {
         self.matchmaking_ticket.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartMatchBackfillOutput {
+impl ::aws_types::request_id::RequestId for StartMatchBackfillOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

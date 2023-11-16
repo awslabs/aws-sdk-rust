@@ -31,7 +31,7 @@ impl CreateProvisioningTemplateVersionOutput {
         self.is_default_version
     }
 }
-impl ::aws_http::request_id::RequestId for CreateProvisioningTemplateVersionOutput {
+impl ::aws_types::request_id::RequestId for CreateProvisioningTemplateVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

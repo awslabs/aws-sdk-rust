@@ -14,7 +14,7 @@ impl StartAssessmentRunOutput {
         self.assessment_run_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartAssessmentRunOutput {
+impl ::aws_types::request_id::RequestId for StartAssessmentRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

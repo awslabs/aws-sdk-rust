@@ -13,7 +13,7 @@ impl GetAppMonitorOutput {
         self.app_monitor.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAppMonitorOutput {
+impl ::aws_types::request_id::RequestId for GetAppMonitorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

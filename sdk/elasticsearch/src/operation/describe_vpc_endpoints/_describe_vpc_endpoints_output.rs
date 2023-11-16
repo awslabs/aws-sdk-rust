@@ -22,7 +22,7 @@ impl DescribeVpcEndpointsOutput {
         self.vpc_endpoint_errors.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeVpcEndpointsOutput {
+impl ::aws_types::request_id::RequestId for DescribeVpcEndpointsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

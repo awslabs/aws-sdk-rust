@@ -13,7 +13,7 @@ impl DeleteTemplateSyncConfigOutput {
         self.template_sync_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteTemplateSyncConfigOutput {
+impl ::aws_types::request_id::RequestId for DeleteTemplateSyncConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

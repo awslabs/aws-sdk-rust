@@ -21,7 +21,7 @@ impl BatchAssociateScramSecretOutput {
         self.unprocessed_scram_secrets.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchAssociateScramSecretOutput {
+impl ::aws_types::request_id::RequestId for BatchAssociateScramSecretOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

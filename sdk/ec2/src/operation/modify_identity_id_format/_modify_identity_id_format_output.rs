@@ -5,7 +5,7 @@
 pub struct ModifyIdentityIdFormatOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for ModifyIdentityIdFormatOutput {
+impl ::aws_types::request_id::RequestId for ModifyIdentityIdFormatOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

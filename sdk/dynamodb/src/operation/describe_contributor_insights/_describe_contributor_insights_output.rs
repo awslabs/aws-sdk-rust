@@ -59,7 +59,7 @@ impl DescribeContributorInsightsOutput {
         self.failure_exception.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeContributorInsightsOutput {
+impl ::aws_types::request_id::RequestId for DescribeContributorInsightsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -78,7 +78,7 @@ impl GetTopicAttributesOutput {
         self.attributes.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTopicAttributesOutput {
+impl ::aws_types::request_id::RequestId for GetTopicAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

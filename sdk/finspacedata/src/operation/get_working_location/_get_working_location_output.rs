@@ -25,7 +25,7 @@ impl GetWorkingLocationOutput {
         self.s3_bucket.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetWorkingLocationOutput {
+impl ::aws_types::request_id::RequestId for GetWorkingLocationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

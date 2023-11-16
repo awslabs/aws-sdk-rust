@@ -81,7 +81,7 @@ impl DescribeSimulationApplicationOutput {
         self.image_digest.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSimulationApplicationOutput {
+impl ::aws_types::request_id::RequestId for DescribeSimulationApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

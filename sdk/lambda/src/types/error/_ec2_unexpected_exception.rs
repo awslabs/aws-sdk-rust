@@ -40,7 +40,7 @@ impl ::std::fmt::Display for Ec2UnexpectedException {
     }
 }
 impl ::std::error::Error for Ec2UnexpectedException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::Ec2UnexpectedException {
+impl ::aws_types::request_id::RequestId for crate::types::error::Ec2UnexpectedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

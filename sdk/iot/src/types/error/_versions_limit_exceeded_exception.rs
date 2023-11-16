@@ -26,7 +26,7 @@ impl ::std::fmt::Display for VersionsLimitExceededException {
     }
 }
 impl ::std::error::Error for VersionsLimitExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::VersionsLimitExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::VersionsLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

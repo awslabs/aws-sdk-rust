@@ -34,7 +34,7 @@ impl DeleteFhirDatastoreOutput {
         self.datastore_endpoint.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteFhirDatastoreOutput {
+impl ::aws_types::request_id::RequestId for DeleteFhirDatastoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

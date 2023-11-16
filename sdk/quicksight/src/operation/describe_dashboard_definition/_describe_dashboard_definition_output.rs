@@ -93,7 +93,7 @@ impl DescribeDashboardDefinitionOutput {
         self.dashboard_publish_options.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDashboardDefinitionOutput {
+impl ::aws_types::request_id::RequestId for DescribeDashboardDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

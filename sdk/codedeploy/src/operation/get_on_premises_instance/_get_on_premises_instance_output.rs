@@ -14,7 +14,7 @@ impl GetOnPremisesInstanceOutput {
         self.instance_info.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetOnPremisesInstanceOutput {
+impl ::aws_types::request_id::RequestId for GetOnPremisesInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

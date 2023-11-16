@@ -13,7 +13,7 @@ impl CopyClusterSnapshotOutput {
         self.snapshot.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CopyClusterSnapshotOutput {
+impl ::aws_types::request_id::RequestId for CopyClusterSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

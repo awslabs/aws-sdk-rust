@@ -19,7 +19,7 @@ impl PutContainerRecipePolicyOutput {
         self.container_recipe_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutContainerRecipePolicyOutput {
+impl ::aws_types::request_id::RequestId for PutContainerRecipePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

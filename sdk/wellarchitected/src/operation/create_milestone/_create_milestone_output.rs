@@ -22,7 +22,7 @@ impl CreateMilestoneOutput {
         self.milestone_number
     }
 }
-impl ::aws_http::request_id::RequestId for CreateMilestoneOutput {
+impl ::aws_types::request_id::RequestId for CreateMilestoneOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

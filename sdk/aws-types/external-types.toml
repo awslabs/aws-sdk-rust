@@ -9,9 +9,11 @@ allowed_external_types = [
     "aws_smithy_runtime_api::client::http::SharedHttpClient",
     "aws_smithy_runtime_api::client::identity::ResolveCachedIdentity",
     "aws_smithy_runtime_api::client::identity::SharedIdentityCache",
+    "aws_smithy_runtime_api::http::headers::Headers",
     "aws_smithy_types::config_bag::storable::Storable",
     "aws_smithy_types::config_bag::storable::StoreReplace",
     "aws_smithy_types::config_bag::storable::Storer",
+    "aws_smithy_types::error::metadata::Builder",
     "aws_smithy_types::retry::RetryConfig",
     "aws_smithy_types::timeout::TimeoutConfig",
 ]

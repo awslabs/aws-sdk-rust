@@ -26,7 +26,7 @@ impl InitiateJobOutput {
         self.job_output_path.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for InitiateJobOutput {
+impl ::aws_types::request_id::RequestId for InitiateJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

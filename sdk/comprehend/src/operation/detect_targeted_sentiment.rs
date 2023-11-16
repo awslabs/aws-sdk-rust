@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DetectTar
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_detect_targeted_sentiment::de_detect_targeted_sentiment_http_error(status, headers, body)
         } else {
@@ -301,7 +301,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DetectTargete
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError {
+impl ::aws_types::request_id::RequestId for crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

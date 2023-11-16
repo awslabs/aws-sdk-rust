@@ -15,7 +15,7 @@ impl ListAvailableZonesOutput {
         self.az_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAvailableZonesOutput {
+impl ::aws_types::request_id::RequestId for ListAvailableZonesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

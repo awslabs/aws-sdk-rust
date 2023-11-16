@@ -20,7 +20,7 @@ impl DeleteChapCredentialsOutput {
         self.initiator_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteChapCredentialsOutput {
+impl ::aws_types::request_id::RequestId for DeleteChapCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

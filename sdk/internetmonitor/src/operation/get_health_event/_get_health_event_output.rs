@@ -76,7 +76,7 @@ impl GetHealthEventOutput {
         self.health_score_threshold
     }
 }
-impl ::aws_http::request_id::RequestId for GetHealthEventOutput {
+impl ::aws_types::request_id::RequestId for GetHealthEventOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,7 +19,7 @@ impl GetAttachmentOutput {
         self.url_expiry.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAttachmentOutput {
+impl ::aws_types::request_id::RequestId for GetAttachmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

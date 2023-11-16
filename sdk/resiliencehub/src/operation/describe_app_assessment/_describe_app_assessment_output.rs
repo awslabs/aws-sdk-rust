@@ -13,7 +13,7 @@ impl DescribeAppAssessmentOutput {
         self.assessment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAppAssessmentOutput {
+impl ::aws_types::request_id::RequestId for DescribeAppAssessmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

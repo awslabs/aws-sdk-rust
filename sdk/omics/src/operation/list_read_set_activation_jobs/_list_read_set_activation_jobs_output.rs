@@ -21,7 +21,7 @@ impl ListReadSetActivationJobsOutput {
         self.activation_jobs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListReadSetActivationJobsOutput {
+impl ::aws_types::request_id::RequestId for ListReadSetActivationJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

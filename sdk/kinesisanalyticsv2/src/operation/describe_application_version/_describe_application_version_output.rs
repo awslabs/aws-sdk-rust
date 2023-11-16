@@ -13,7 +13,7 @@ impl DescribeApplicationVersionOutput {
         self.application_version_detail.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeApplicationVersionOutput {
+impl ::aws_types::request_id::RequestId for DescribeApplicationVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

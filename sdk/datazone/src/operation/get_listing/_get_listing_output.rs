@@ -94,7 +94,7 @@ impl ::std::fmt::Debug for GetListingOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetListingOutput {
+impl ::aws_types::request_id::RequestId for GetListingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

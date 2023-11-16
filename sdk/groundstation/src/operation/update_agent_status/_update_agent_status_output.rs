@@ -14,7 +14,7 @@ impl UpdateAgentStatusOutput {
         self.agent_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAgentStatusOutput {
+impl ::aws_types::request_id::RequestId for UpdateAgentStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

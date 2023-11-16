@@ -13,7 +13,7 @@ impl DeleteAuthenticationProfileOutput {
         self.authentication_profile_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteAuthenticationProfileOutput {
+impl ::aws_types::request_id::RequestId for DeleteAuthenticationProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

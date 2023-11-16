@@ -59,7 +59,7 @@ impl GetExportOutput {
         self.url.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetExportOutput {
+impl ::aws_types::request_id::RequestId for GetExportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

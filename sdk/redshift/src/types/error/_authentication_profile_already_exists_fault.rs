@@ -26,7 +26,7 @@ impl ::std::fmt::Display for AuthenticationProfileAlreadyExistsFault {
     }
 }
 impl ::std::error::Error for AuthenticationProfileAlreadyExistsFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::AuthenticationProfileAlreadyExistsFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::AuthenticationProfileAlreadyExistsFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

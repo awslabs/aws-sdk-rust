@@ -51,7 +51,7 @@ impl GetDecoderManifestOutput {
         &self.last_modification_time
     }
 }
-impl ::aws_http::request_id::RequestId for GetDecoderManifestOutput {
+impl ::aws_types::request_id::RequestId for GetDecoderManifestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl RegisterTransitGatewayMulticastGroupSourcesOutput {
         self.registered_multicast_group_sources.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RegisterTransitGatewayMulticastGroupSourcesOutput {
+impl ::aws_types::request_id::RequestId for RegisterTransitGatewayMulticastGroupSourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

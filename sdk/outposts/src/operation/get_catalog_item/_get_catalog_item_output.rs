@@ -13,7 +13,7 @@ impl GetCatalogItemOutput {
         self.catalog_item.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCatalogItemOutput {
+impl ::aws_types::request_id::RequestId for GetCatalogItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

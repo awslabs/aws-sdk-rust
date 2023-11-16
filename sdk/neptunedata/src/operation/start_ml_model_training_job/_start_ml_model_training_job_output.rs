@@ -25,7 +25,7 @@ impl StartMlModelTrainingJobOutput {
         self.creation_time_in_millis
     }
 }
-impl ::aws_http::request_id::RequestId for StartMlModelTrainingJobOutput {
+impl ::aws_types::request_id::RequestId for StartMlModelTrainingJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

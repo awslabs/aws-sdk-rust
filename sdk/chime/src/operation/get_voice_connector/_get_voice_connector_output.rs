@@ -13,7 +13,7 @@ impl GetVoiceConnectorOutput {
         self.voice_connector.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetVoiceConnectorOutput {
+impl ::aws_types::request_id::RequestId for GetVoiceConnectorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

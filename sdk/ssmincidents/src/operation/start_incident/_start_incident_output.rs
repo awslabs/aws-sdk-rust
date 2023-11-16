@@ -14,7 +14,7 @@ impl StartIncidentOutput {
         self.incident_record_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartIncidentOutput {
+impl ::aws_types::request_id::RequestId for StartIncidentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

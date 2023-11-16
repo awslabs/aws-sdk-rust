@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListProfi
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_profile_notifications::de_list_profile_notifications_http_error(status, headers, body)
         } else {
@@ -313,7 +313,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListProfileNo
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_profile_notifications::ListProfileNotificationsError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_profile_notifications::ListProfileNotificationsError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

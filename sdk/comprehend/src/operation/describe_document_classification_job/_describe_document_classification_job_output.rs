@@ -13,7 +13,7 @@ impl DescribeDocumentClassificationJobOutput {
         self.document_classification_job_properties.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDocumentClassificationJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeDocumentClassificationJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

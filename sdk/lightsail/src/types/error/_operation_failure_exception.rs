@@ -46,7 +46,7 @@ impl ::std::fmt::Display for OperationFailureException {
     }
 }
 impl ::std::error::Error for OperationFailureException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OperationFailureException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OperationFailureException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

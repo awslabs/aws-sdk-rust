@@ -26,7 +26,7 @@ impl ::std::fmt::Display for HsmConfigurationQuotaExceededFault {
     }
 }
 impl ::std::error::Error for HsmConfigurationQuotaExceededFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::HsmConfigurationQuotaExceededFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::HsmConfigurationQuotaExceededFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TransactionCommittedException {
     }
 }
 impl ::std::error::Error for TransactionCommittedException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TransactionCommittedException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TransactionCommittedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

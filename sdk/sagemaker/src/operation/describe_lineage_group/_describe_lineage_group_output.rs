@@ -55,7 +55,7 @@ impl DescribeLineageGroupOutput {
         self.last_modified_by.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLineageGroupOutput {
+impl ::aws_types::request_id::RequestId for DescribeLineageGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -33,7 +33,7 @@ impl CreateGeofenceCollectionOutput {
         &self.create_time
     }
 }
-impl ::aws_http::request_id::RequestId for CreateGeofenceCollectionOutput {
+impl ::aws_types::request_id::RequestId for CreateGeofenceCollectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

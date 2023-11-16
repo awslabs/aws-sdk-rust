@@ -69,7 +69,7 @@ impl GetContentModerationOutput {
         self.get_request_metadata.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetContentModerationOutput {
+impl ::aws_types::request_id::RequestId for GetContentModerationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

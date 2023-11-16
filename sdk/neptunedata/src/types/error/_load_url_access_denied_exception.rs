@@ -49,7 +49,7 @@ impl ::std::fmt::Display for LoadUrlAccessDeniedException {
     }
 }
 impl ::std::error::Error for LoadUrlAccessDeniedException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::LoadUrlAccessDeniedException {
+impl ::aws_types::request_id::RequestId for crate::types::error::LoadUrlAccessDeniedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

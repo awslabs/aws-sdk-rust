@@ -79,7 +79,7 @@ impl ListAggregatedUtterancesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAggregatedUtterancesOutput {
+impl ::aws_types::request_id::RequestId for ListAggregatedUtterancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

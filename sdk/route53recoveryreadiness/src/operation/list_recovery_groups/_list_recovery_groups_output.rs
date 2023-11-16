@@ -21,7 +21,7 @@ impl ListRecoveryGroupsOutput {
         self.recovery_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListRecoveryGroupsOutput {
+impl ::aws_types::request_id::RequestId for ListRecoveryGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

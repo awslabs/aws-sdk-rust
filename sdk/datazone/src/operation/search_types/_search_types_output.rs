@@ -27,7 +27,7 @@ impl SearchTypesOutput {
         self.total_match_count
     }
 }
-impl ::aws_http::request_id::RequestId for SearchTypesOutput {
+impl ::aws_types::request_id::RequestId for SearchTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -105,7 +105,7 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
         self.pii_entity_types.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartCallAnalyticsStreamTranscriptionOutput {
+impl ::aws_types::request_id::RequestId for StartCallAnalyticsStreamTranscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

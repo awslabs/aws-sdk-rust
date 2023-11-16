@@ -14,7 +14,7 @@ impl CreateRemoteAccessSessionOutput {
         self.remote_access_session.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRemoteAccessSessionOutput {
+impl ::aws_types::request_id::RequestId for CreateRemoteAccessSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

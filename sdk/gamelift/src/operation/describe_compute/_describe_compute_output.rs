@@ -13,7 +13,7 @@ impl DescribeComputeOutput {
         self.compute.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeComputeOutput {
+impl ::aws_types::request_id::RequestId for DescribeComputeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

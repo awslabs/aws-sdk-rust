@@ -80,7 +80,7 @@ impl GetTemplateSummaryOutput {
         self.warnings.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTemplateSummaryOutput {
+impl ::aws_types::request_id::RequestId for GetTemplateSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

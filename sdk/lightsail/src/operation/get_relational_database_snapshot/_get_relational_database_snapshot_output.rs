@@ -13,7 +13,7 @@ impl GetRelationalDatabaseSnapshotOutput {
         self.relational_database_snapshot.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRelationalDatabaseSnapshotOutput {
+impl ::aws_types::request_id::RequestId for GetRelationalDatabaseSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

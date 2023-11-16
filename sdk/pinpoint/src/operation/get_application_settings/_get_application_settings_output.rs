@@ -13,7 +13,7 @@ impl GetApplicationSettingsOutput {
         self.application_settings_resource.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetApplicationSettingsOutput {
+impl ::aws_types::request_id::RequestId for GetApplicationSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

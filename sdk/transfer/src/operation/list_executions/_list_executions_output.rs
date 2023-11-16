@@ -27,7 +27,7 @@ impl ListExecutionsOutput {
         self.executions.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListExecutionsOutput {
+impl ::aws_types::request_id::RequestId for ListExecutionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

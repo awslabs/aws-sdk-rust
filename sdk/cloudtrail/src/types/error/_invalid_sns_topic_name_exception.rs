@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidSnsTopicNameException {
     }
 }
 impl ::std::error::Error for InvalidSnsTopicNameException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidSnsTopicNameException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidSnsTopicNameException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

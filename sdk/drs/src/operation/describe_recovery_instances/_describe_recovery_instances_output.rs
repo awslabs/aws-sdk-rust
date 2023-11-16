@@ -21,7 +21,7 @@ impl DescribeRecoveryInstancesOutput {
         self.items.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRecoveryInstancesOutput {
+impl ::aws_types::request_id::RequestId for DescribeRecoveryInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -25,7 +25,7 @@ impl PutDataProtectionPolicyOutput {
         self.last_updated_time
     }
 }
-impl ::aws_http::request_id::RequestId for PutDataProtectionPolicyOutput {
+impl ::aws_types::request_id::RequestId for PutDataProtectionPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

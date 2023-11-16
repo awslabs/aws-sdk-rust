@@ -13,7 +13,7 @@ impl DeleteTrustAnchorOutput {
         self.trust_anchor.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteTrustAnchorOutput {
+impl ::aws_types::request_id::RequestId for DeleteTrustAnchorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

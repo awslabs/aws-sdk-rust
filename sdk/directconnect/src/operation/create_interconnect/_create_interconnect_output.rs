@@ -118,7 +118,7 @@ impl CreateInterconnectOutput {
         self.provider_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateInterconnectOutput {
+impl ::aws_types::request_id::RequestId for CreateInterconnectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

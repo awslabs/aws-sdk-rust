@@ -109,7 +109,7 @@ impl GetWorkflowStepExecutionOutput {
         self.timeout_seconds
     }
 }
-impl ::aws_http::request_id::RequestId for GetWorkflowStepExecutionOutput {
+impl ::aws_types::request_id::RequestId for GetWorkflowStepExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -5,7 +5,7 @@
 pub struct DeleteVpnGatewayOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteVpnGatewayOutput {
+impl ::aws_types::request_id::RequestId for DeleteVpnGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

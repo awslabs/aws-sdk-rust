@@ -39,6 +39,10 @@ impl HttpError {
     pub(super) fn invalid_uri(err: InvalidUri) -> Self {
         Self(err.into())
     }
+
+    pub(super) fn invalid_status_code() -> Self {
+        Self("invalid HTTP status code".into())
+    }
 }
 
 impl Display for HttpError {

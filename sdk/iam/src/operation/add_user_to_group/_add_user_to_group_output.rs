@@ -5,7 +5,7 @@
 pub struct AddUserToGroupOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for AddUserToGroupOutput {
+impl ::aws_types::request_id::RequestId for AddUserToGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

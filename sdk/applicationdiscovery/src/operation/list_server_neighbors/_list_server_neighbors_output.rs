@@ -26,7 +26,7 @@ impl ListServerNeighborsOutput {
         self.known_dependency_count
     }
 }
-impl ::aws_http::request_id::RequestId for ListServerNeighborsOutput {
+impl ::aws_types::request_id::RequestId for ListServerNeighborsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

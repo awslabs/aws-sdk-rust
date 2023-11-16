@@ -13,7 +13,7 @@ impl GenerateTemplateOutput {
         self.s3_location.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GenerateTemplateOutput {
+impl ::aws_types::request_id::RequestId for GenerateTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,7 +19,7 @@ impl DeleteOrganizationOutput {
         self.state.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteOrganizationOutput {
+impl ::aws_types::request_id::RequestId for DeleteOrganizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl GetStudioOutput {
         self.studio.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetStudioOutput {
+impl ::aws_types::request_id::RequestId for GetStudioOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

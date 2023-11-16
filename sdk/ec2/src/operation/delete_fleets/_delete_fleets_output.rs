@@ -23,7 +23,7 @@ impl DeleteFleetsOutput {
         self.unsuccessful_fleet_deletions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteFleetsOutput {
+impl ::aws_types::request_id::RequestId for DeleteFleetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

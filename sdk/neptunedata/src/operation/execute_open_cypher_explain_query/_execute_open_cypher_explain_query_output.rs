@@ -13,7 +13,7 @@ impl ExecuteOpenCypherExplainQueryOutput {
         &self.results
     }
 }
-impl ::aws_http::request_id::RequestId for ExecuteOpenCypherExplainQueryOutput {
+impl ::aws_types::request_id::RequestId for ExecuteOpenCypherExplainQueryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

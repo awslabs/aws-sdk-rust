@@ -31,7 +31,7 @@ impl GetEventPredictionOutput {
         self.external_model_outputs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEventPredictionOutput {
+impl ::aws_types::request_id::RequestId for GetEventPredictionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

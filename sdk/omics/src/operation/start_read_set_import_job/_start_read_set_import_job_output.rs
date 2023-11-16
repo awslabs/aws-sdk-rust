@@ -40,7 +40,7 @@ impl StartReadSetImportJobOutput {
         &self.creation_time
     }
 }
-impl ::aws_http::request_id::RequestId for StartReadSetImportJobOutput {
+impl ::aws_types::request_id::RequestId for StartReadSetImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

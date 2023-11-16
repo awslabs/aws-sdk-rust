@@ -85,7 +85,7 @@ impl DescribeRestoreJobOutput {
         self.resource_type.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRestoreJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeRestoreJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

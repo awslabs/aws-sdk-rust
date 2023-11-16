@@ -14,7 +14,7 @@ impl CancelBundleTaskOutput {
         self.bundle_task.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CancelBundleTaskOutput {
+impl ::aws_types::request_id::RequestId for CancelBundleTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

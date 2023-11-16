@@ -25,7 +25,7 @@ impl GetDataLakeExceptionSubscriptionOutput {
         self.exception_time_to_live
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataLakeExceptionSubscriptionOutput {
+impl ::aws_types::request_id::RequestId for GetDataLakeExceptionSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -22,7 +22,7 @@ impl ViewBillingOutput {
         self.billing_records.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ViewBillingOutput {
+impl ::aws_types::request_id::RequestId for ViewBillingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

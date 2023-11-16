@@ -39,7 +39,7 @@ impl TestInvokeAuthorizerOutput {
         self.disconnect_after_in_seconds
     }
 }
-impl ::aws_http::request_id::RequestId for TestInvokeAuthorizerOutput {
+impl ::aws_types::request_id::RequestId for TestInvokeAuthorizerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

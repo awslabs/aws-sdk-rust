@@ -38,7 +38,7 @@ impl DescribeInputDeviceThumbnailOutput {
         self.last_modified.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeInputDeviceThumbnailOutput {
+impl ::aws_types::request_id::RequestId for DescribeInputDeviceThumbnailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

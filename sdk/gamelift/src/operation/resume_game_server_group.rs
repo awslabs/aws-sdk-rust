@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ResumeGam
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_resume_game_server_group::de_resume_game_server_group_http_error(status, headers, body)
         } else {
@@ -295,7 +295,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResumeGameSer
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::resume_game_server_group::ResumeGameServerGroupError {
+impl ::aws_types::request_id::RequestId for crate::operation::resume_game_server_group::ResumeGameServerGroupError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

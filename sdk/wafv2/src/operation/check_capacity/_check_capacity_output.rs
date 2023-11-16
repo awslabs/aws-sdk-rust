@@ -13,7 +13,7 @@ impl CheckCapacityOutput {
         self.capacity
     }
 }
-impl ::aws_http::request_id::RequestId for CheckCapacityOutput {
+impl ::aws_types::request_id::RequestId for CheckCapacityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

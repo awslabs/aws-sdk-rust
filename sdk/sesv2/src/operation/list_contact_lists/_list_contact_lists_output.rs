@@ -21,7 +21,7 @@ impl ListContactListsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListContactListsOutput {
+impl ::aws_types::request_id::RequestId for ListContactListsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

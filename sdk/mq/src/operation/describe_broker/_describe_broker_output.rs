@@ -217,7 +217,7 @@ impl DescribeBrokerOutput {
         self.pending_data_replication_mode.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBrokerOutput {
+impl ::aws_types::request_id::RequestId for DescribeBrokerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

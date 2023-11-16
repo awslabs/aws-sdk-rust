@@ -5,7 +5,7 @@
 pub struct DeleteInlinePolicyFromPermissionSetOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteInlinePolicyFromPermissionSetOutput {
+impl ::aws_types::request_id::RequestId for DeleteInlinePolicyFromPermissionSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -5,7 +5,7 @@
 pub struct SetV2LoggingLevelOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for SetV2LoggingLevelOutput {
+impl ::aws_types::request_id::RequestId for SetV2LoggingLevelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

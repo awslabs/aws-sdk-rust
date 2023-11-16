@@ -33,7 +33,7 @@ impl ValidateE911AddressOutput {
         self.candidate_address_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ValidateE911AddressOutput {
+impl ::aws_types::request_id::RequestId for ValidateE911AddressOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

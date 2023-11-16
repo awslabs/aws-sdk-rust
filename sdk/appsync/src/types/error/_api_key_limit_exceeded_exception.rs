@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ApiKeyLimitExceededException {
     }
 }
 impl ::std::error::Error for ApiKeyLimitExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ApiKeyLimitExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ApiKeyLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

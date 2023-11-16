@@ -49,7 +49,7 @@ impl ::std::fmt::Display for CancelledByUserException {
     }
 }
 impl ::std::error::Error for CancelledByUserException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CancelledByUserException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CancelledByUserException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

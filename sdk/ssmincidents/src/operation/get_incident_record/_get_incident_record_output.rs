@@ -13,7 +13,7 @@ impl GetIncidentRecordOutput {
         self.incident_record.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetIncidentRecordOutput {
+impl ::aws_types::request_id::RequestId for GetIncidentRecordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

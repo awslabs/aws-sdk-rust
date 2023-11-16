@@ -26,7 +26,7 @@ impl ::std::fmt::Display for Ipv6CidrBlockNotFoundFault {
     }
 }
 impl ::std::error::Error for Ipv6CidrBlockNotFoundFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::Ipv6CidrBlockNotFoundFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::Ipv6CidrBlockNotFoundFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

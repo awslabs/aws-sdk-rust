@@ -15,7 +15,7 @@ impl CreateDataSourceFromS3Output {
         self.data_source_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDataSourceFromS3Output {
+impl ::aws_types::request_id::RequestId for CreateDataSourceFromS3Output {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

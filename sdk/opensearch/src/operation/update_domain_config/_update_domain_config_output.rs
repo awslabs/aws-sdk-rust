@@ -26,7 +26,7 @@ impl UpdateDomainConfigOutput {
         self.dry_run_progress_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateDomainConfigOutput {
+impl ::aws_types::request_id::RequestId for UpdateDomainConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

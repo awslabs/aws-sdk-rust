@@ -5,7 +5,7 @@
 pub struct DisableDomainAutoRenewOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DisableDomainAutoRenewOutput {
+impl ::aws_types::request_id::RequestId for DisableDomainAutoRenewOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -23,7 +23,7 @@ impl BatchGetResourceConfigOutput {
         self.unprocessed_resource_keys.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetResourceConfigOutput {
+impl ::aws_types::request_id::RequestId for BatchGetResourceConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateDetectorModelOutput {
         self.detector_model_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDetectorModelOutput {
+impl ::aws_types::request_id::RequestId for CreateDetectorModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

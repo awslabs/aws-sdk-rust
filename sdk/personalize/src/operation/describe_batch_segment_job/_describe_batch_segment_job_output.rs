@@ -13,7 +13,7 @@ impl DescribeBatchSegmentJobOutput {
         self.batch_segment_job.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBatchSegmentJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeBatchSegmentJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

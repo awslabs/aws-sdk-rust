@@ -34,7 +34,7 @@ impl ::std::fmt::Display for DomainControllerLimitExceededException {
     }
 }
 impl ::std::error::Error for DomainControllerLimitExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DomainControllerLimitExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DomainControllerLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

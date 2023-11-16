@@ -13,7 +13,7 @@ impl CreateIngestionDestinationOutput {
         self.ingestion_destination.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateIngestionDestinationOutput {
+impl ::aws_types::request_id::RequestId for CreateIngestionDestinationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

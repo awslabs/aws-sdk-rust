@@ -75,7 +75,7 @@ impl GetAccessPointOutput {
         self.bucket_account_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAccessPointOutput {
+impl ::aws_types::request_id::RequestId for GetAccessPointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

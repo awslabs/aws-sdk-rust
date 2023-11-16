@@ -5,7 +5,7 @@
 pub struct UpdateAutomatedDiscoveryConfigurationOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateAutomatedDiscoveryConfigurationOutput {
+impl ::aws_types::request_id::RequestId for UpdateAutomatedDiscoveryConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DescribeAppInstanceBotOutput {
         self.app_instance_bot.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAppInstanceBotOutput {
+impl ::aws_types::request_id::RequestId for DescribeAppInstanceBotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

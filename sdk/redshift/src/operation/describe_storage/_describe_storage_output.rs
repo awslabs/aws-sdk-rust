@@ -19,7 +19,7 @@ impl DescribeStorageOutput {
         self.total_provisioned_storage_in_mega_bytes
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeStorageOutput {
+impl ::aws_types::request_id::RequestId for DescribeStorageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

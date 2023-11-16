@@ -30,7 +30,7 @@ impl ModifyDbClusterParameterGroupOutput {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyDbClusterParameterGroupOutput {
+impl ::aws_types::request_id::RequestId for ModifyDbClusterParameterGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

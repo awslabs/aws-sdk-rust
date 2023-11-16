@@ -14,7 +14,7 @@ impl RegisterElasticIpOutput {
         self.elastic_ip.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RegisterElasticIpOutput {
+impl ::aws_types::request_id::RequestId for RegisterElasticIpOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

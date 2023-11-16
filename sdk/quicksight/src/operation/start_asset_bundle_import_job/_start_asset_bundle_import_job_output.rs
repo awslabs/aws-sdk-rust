@@ -31,7 +31,7 @@ impl StartAssetBundleImportJobOutput {
         self.status
     }
 }
-impl ::aws_http::request_id::RequestId for StartAssetBundleImportJobOutput {
+impl ::aws_types::request_id::RequestId for StartAssetBundleImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

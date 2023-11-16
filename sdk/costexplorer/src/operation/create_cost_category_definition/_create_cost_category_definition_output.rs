@@ -19,7 +19,7 @@ impl CreateCostCategoryDefinitionOutput {
         self.effective_start.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCostCategoryDefinitionOutput {
+impl ::aws_types::request_id::RequestId for CreateCostCategoryDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

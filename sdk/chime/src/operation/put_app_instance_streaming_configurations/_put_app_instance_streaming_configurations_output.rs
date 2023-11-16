@@ -15,7 +15,7 @@ impl PutAppInstanceStreamingConfigurationsOutput {
         self.app_instance_streaming_configurations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for PutAppInstanceStreamingConfigurationsOutput {
+impl ::aws_types::request_id::RequestId for PutAppInstanceStreamingConfigurationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

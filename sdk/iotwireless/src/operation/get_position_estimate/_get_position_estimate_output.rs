@@ -13,7 +13,7 @@ impl GetPositionEstimateOutput {
         self.geo_json_payload.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPositionEstimateOutput {
+impl ::aws_types::request_id::RequestId for GetPositionEstimateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

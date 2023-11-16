@@ -53,7 +53,7 @@ impl UpdateProjectVisibilityOutput {
         self.project_visibility.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateProjectVisibilityOutput {
+impl ::aws_types::request_id::RequestId for UpdateProjectVisibilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

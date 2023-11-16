@@ -27,7 +27,7 @@ impl RestoreVolumeFromSnapshotOutput {
         self.administrative_actions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for RestoreVolumeFromSnapshotOutput {
+impl ::aws_types::request_id::RequestId for RestoreVolumeFromSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

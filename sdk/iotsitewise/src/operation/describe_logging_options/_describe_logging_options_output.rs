@@ -13,7 +13,7 @@ impl DescribeLoggingOptionsOutput {
         self.logging_options.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLoggingOptionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeLoggingOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

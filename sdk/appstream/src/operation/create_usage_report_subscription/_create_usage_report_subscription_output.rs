@@ -21,7 +21,7 @@ impl CreateUsageReportSubscriptionOutput {
         self.schedule.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateUsageReportSubscriptionOutput {
+impl ::aws_types::request_id::RequestId for CreateUsageReportSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

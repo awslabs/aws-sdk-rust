@@ -64,7 +64,7 @@ impl UpdateAnnotationStoreOutput {
         self.store_format.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAnnotationStoreOutput {
+impl ::aws_types::request_id::RequestId for UpdateAnnotationStoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

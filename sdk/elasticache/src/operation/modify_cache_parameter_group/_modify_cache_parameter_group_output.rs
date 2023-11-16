@@ -18,7 +18,7 @@ impl ModifyCacheParameterGroupOutput {
         self.cache_parameter_group_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyCacheParameterGroupOutput {
+impl ::aws_types::request_id::RequestId for ModifyCacheParameterGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -36,7 +36,7 @@ impl ::std::fmt::Debug for GetDashboardEmbedUrlOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDashboardEmbedUrlOutput {
+impl ::aws_types::request_id::RequestId for GetDashboardEmbedUrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

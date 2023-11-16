@@ -19,7 +19,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
         self.global_replication_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DecreaseNodeGroupsInGlobalReplicationGroupOutput {
+impl ::aws_types::request_id::RequestId for DecreaseNodeGroupsInGlobalReplicationGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

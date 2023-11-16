@@ -34,7 +34,7 @@ impl DescribeWorkingStorageOutput {
         self.working_storage_allocated_in_bytes
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeWorkingStorageOutput {
+impl ::aws_types::request_id::RequestId for DescribeWorkingStorageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -22,7 +22,7 @@ impl DescribeClusterSubnetGroupsOutput {
         self.cluster_subnet_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeClusterSubnetGroupsOutput {
+impl ::aws_types::request_id::RequestId for DescribeClusterSubnetGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

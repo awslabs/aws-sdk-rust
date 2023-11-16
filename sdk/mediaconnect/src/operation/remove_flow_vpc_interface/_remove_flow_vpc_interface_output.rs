@@ -27,7 +27,7 @@ impl RemoveFlowVpcInterfaceOutput {
         self.vpc_interface_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RemoveFlowVpcInterfaceOutput {
+impl ::aws_types::request_id::RequestId for RemoveFlowVpcInterfaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

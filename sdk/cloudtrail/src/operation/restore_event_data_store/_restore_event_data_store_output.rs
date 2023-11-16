@@ -83,7 +83,7 @@ impl RestoreEventDataStoreOutput {
         self.billing_mode.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RestoreEventDataStoreOutput {
+impl ::aws_types::request_id::RequestId for RestoreEventDataStoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

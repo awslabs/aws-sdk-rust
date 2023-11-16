@@ -183,8 +183,6 @@ fn parse_token_response(response: &HttpResponse) -> Result<TtlToken, TokenError>
         .headers()
         .get(X_AWS_EC2_METADATA_TOKEN_TTL_SECONDS)
         .ok_or(TokenErrorKind::NoTtl)?
-        .to_str()
-        .map_err(|_| TokenErrorKind::InvalidTtl)?
         .parse()
         .map_err(|_parse_error| TokenErrorKind::InvalidTtl)?;
     Ok(TtlToken {

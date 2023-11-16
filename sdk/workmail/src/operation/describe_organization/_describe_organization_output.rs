@@ -73,7 +73,7 @@ impl DescribeOrganizationOutput {
         self.interoperability_enabled
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeOrganizationOutput {
+impl ::aws_types::request_id::RequestId for DescribeOrganizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

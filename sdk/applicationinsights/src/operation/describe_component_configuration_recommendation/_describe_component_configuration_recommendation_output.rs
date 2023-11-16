@@ -13,7 +13,7 @@ impl DescribeComponentConfigurationRecommendationOutput {
         self.component_configuration.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeComponentConfigurationRecommendationOutput {
+impl ::aws_types::request_id::RequestId for DescribeComponentConfigurationRecommendationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

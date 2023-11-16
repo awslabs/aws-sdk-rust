@@ -13,7 +13,7 @@ impl DeleteSamplingRuleOutput {
         self.sampling_rule_record.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteSamplingRuleOutput {
+impl ::aws_types::request_id::RequestId for DeleteSamplingRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

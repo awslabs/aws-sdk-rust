@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidRequestException {
     }
 }
 impl ::std::error::Error for InvalidRequestException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidRequestException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidRequestException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

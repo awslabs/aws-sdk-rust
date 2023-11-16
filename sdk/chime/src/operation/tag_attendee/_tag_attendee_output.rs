@@ -5,7 +5,7 @@
 pub struct TagAttendeeOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for TagAttendeeOutput {
+impl ::aws_types::request_id::RequestId for TagAttendeeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

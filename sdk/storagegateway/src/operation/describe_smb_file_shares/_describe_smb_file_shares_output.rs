@@ -16,7 +16,7 @@ impl DescribeSmbFileSharesOutput {
         self.smb_file_share_info_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSmbFileSharesOutput {
+impl ::aws_types::request_id::RequestId for DescribeSmbFileSharesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

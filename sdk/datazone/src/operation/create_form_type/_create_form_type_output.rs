@@ -66,7 +66,7 @@ impl ::std::fmt::Debug for CreateFormTypeOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateFormTypeOutput {
+impl ::aws_types::request_id::RequestId for CreateFormTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

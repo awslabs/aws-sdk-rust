@@ -94,7 +94,7 @@ impl ::std::fmt::Debug for GetSolNetworkInstanceOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSolNetworkInstanceOutput {
+impl ::aws_types::request_id::RequestId for GetSolNetworkInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

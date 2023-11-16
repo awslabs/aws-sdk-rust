@@ -13,7 +13,7 @@ impl RevokeSnapshotAccessOutput {
         self.snapshot.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RevokeSnapshotAccessOutput {
+impl ::aws_types::request_id::RequestId for RevokeSnapshotAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

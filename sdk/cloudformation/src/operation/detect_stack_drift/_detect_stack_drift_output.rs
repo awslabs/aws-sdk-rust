@@ -15,7 +15,7 @@ impl DetectStackDriftOutput {
         self.stack_drift_detection_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DetectStackDriftOutput {
+impl ::aws_types::request_id::RequestId for DetectStackDriftOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

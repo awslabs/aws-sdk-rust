@@ -6,7 +6,7 @@
 pub struct PutPositionConfigurationOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutPositionConfigurationOutput {
+impl ::aws_types::request_id::RequestId for PutPositionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

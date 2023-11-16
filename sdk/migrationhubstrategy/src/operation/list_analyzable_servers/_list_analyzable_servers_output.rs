@@ -22,7 +22,7 @@ impl ListAnalyzableServersOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAnalyzableServersOutput {
+impl ::aws_types::request_id::RequestId for ListAnalyzableServersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

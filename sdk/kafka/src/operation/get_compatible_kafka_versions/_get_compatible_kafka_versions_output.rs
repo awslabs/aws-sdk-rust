@@ -15,7 +15,7 @@ impl GetCompatibleKafkaVersionsOutput {
         self.compatible_kafka_versions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCompatibleKafkaVersionsOutput {
+impl ::aws_types::request_id::RequestId for GetCompatibleKafkaVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

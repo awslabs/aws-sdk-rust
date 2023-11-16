@@ -19,7 +19,7 @@ impl CreateSecurityProfileOutput {
         self.security_profile_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateSecurityProfileOutput {
+impl ::aws_types::request_id::RequestId for CreateSecurityProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

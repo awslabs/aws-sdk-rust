@@ -23,7 +23,7 @@ impl CancelCapacityReservationFleetsOutput {
         self.failed_fleet_cancellations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for CancelCapacityReservationFleetsOutput {
+impl ::aws_types::request_id::RequestId for CancelCapacityReservationFleetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

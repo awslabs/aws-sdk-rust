@@ -20,7 +20,7 @@ impl ResetClusterParameterGroupOutput {
         self.parameter_group_status.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ResetClusterParameterGroupOutput {
+impl ::aws_types::request_id::RequestId for ResetClusterParameterGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

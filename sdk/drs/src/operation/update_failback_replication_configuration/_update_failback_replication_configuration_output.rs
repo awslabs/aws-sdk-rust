@@ -5,7 +5,7 @@
 pub struct UpdateFailbackReplicationConfigurationOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateFailbackReplicationConfigurationOutput {
+impl ::aws_types::request_id::RequestId for UpdateFailbackReplicationConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl ListRoutingControlsOutput {
         self.routing_controls.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListRoutingControlsOutput {
+impl ::aws_types::request_id::RequestId for ListRoutingControlsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

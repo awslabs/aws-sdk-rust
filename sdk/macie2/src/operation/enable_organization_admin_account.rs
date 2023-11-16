@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for EnableOrg
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_enable_organization_admin_account::de_enable_organization_admin_account_http_error(status, headers, body)
         } else {
@@ -318,7 +318,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for EnableOrganiz
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError {
+impl ::aws_types::request_id::RequestId for crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

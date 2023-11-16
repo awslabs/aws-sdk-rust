@@ -13,7 +13,7 @@ impl GetStorageLensConfigurationOutput {
         self.storage_lens_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetStorageLensConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetStorageLensConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

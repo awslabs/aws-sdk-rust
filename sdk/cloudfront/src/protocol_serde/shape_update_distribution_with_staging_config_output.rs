@@ -14,9 +14,9 @@ pub(crate) fn de_distribution_payload(
 }
 
 pub(crate) fn de_e_tag_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("ETag").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("ETag");
     ::aws_smithy_http::header::one_or_none(headers)
 }
 

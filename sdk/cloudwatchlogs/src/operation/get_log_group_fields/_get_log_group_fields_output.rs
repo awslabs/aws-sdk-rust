@@ -15,7 +15,7 @@ impl GetLogGroupFieldsOutput {
         self.log_group_fields.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLogGroupFieldsOutput {
+impl ::aws_types::request_id::RequestId for GetLogGroupFieldsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

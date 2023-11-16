@@ -14,7 +14,7 @@ impl GetIdentityVerificationAttributesOutput {
         &self.verification_attributes
     }
 }
-impl ::aws_http::request_id::RequestId for GetIdentityVerificationAttributesOutput {
+impl ::aws_types::request_id::RequestId for GetIdentityVerificationAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

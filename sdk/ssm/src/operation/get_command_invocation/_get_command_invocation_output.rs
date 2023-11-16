@@ -141,7 +141,7 @@ impl GetCommandInvocationOutput {
         self.cloud_watch_output_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCommandInvocationOutput {
+impl ::aws_types::request_id::RequestId for GetCommandInvocationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

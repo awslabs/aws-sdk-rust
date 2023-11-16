@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DuplicateDocumentContent {
     }
 }
 impl ::std::error::Error for DuplicateDocumentContent {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DuplicateDocumentContent {
+impl ::aws_types::request_id::RequestId for crate::types::error::DuplicateDocumentContent {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

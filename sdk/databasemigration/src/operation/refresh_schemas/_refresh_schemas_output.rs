@@ -14,7 +14,7 @@ impl RefreshSchemasOutput {
         self.refresh_schemas_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RefreshSchemasOutput {
+impl ::aws_types::request_id::RequestId for RefreshSchemasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

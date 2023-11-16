@@ -13,7 +13,7 @@ impl DescribeRoleAliasOutput {
         self.role_alias_description.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRoleAliasOutput {
+impl ::aws_types::request_id::RequestId for DescribeRoleAliasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

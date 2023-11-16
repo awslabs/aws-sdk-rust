@@ -13,7 +13,7 @@ impl GetFileUploadUrlOutput {
         self.file_upload_url.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetFileUploadUrlOutput {
+impl ::aws_types::request_id::RequestId for GetFileUploadUrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

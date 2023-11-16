@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AcceptRes
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_accept_reserved_node_exchange::de_accept_reserved_node_exchange_http_error(status, headers, body)
         } else {
@@ -308,7 +308,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AcceptReserve
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError {
+impl ::aws_types::request_id::RequestId for crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

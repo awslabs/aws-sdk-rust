@@ -39,7 +39,7 @@ impl UpdateRouteResponseOutput {
         self.route_response_key.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateRouteResponseOutput {
+impl ::aws_types::request_id::RequestId for UpdateRouteResponseOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

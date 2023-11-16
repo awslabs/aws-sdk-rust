@@ -5,7 +5,7 @@
 pub struct DeleteTestSetOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteTestSetOutput {
+impl ::aws_types::request_id::RequestId for DeleteTestSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

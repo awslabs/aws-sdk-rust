@@ -21,7 +21,7 @@ impl UpdatePackageVersionsStatusOutput {
         self.failed_versions.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdatePackageVersionsStatusOutput {
+impl ::aws_types::request_id::RequestId for UpdatePackageVersionsStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

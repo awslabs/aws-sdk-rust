@@ -13,7 +13,7 @@ impl ModifyIpamOutput {
         self.ipam.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyIpamOutput {
+impl ::aws_types::request_id::RequestId for ModifyIpamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

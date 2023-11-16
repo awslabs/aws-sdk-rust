@@ -71,7 +71,7 @@ impl DescribeEphemerisOutput {
         self.invalid_reason.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEphemerisOutput {
+impl ::aws_types::request_id::RequestId for DescribeEphemerisOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for OperationAbortedException {
     }
 }
 impl ::std::error::Error for OperationAbortedException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OperationAbortedException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OperationAbortedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

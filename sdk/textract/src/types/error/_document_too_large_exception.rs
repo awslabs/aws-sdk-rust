@@ -34,7 +34,7 @@ impl ::std::fmt::Display for DocumentTooLargeException {
     }
 }
 impl ::std::error::Error for DocumentTooLargeException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DocumentTooLargeException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DocumentTooLargeException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

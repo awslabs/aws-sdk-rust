@@ -13,7 +13,7 @@ impl PutVoiceConnectorProxyOutput {
         self.proxy.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutVoiceConnectorProxyOutput {
+impl ::aws_types::request_id::RequestId for PutVoiceConnectorProxyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

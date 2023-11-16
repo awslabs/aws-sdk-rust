@@ -19,7 +19,7 @@ impl CreateQueueOutput {
         self.queue_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateQueueOutput {
+impl ::aws_types::request_id::RequestId for CreateQueueOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

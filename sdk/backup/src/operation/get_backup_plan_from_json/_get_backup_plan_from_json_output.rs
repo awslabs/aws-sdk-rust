@@ -13,7 +13,7 @@ impl GetBackupPlanFromJsonOutput {
         self.backup_plan.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBackupPlanFromJsonOutput {
+impl ::aws_types::request_id::RequestId for GetBackupPlanFromJsonOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

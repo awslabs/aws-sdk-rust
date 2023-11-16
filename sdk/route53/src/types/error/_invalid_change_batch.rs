@@ -36,7 +36,7 @@ impl ::std::fmt::Display for InvalidChangeBatch {
     }
 }
 impl ::std::error::Error for InvalidChangeBatch {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidChangeBatch {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidChangeBatch {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

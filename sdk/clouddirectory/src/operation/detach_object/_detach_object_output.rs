@@ -13,7 +13,7 @@ impl DetachObjectOutput {
         self.detached_object_identifier.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DetachObjectOutput {
+impl ::aws_types::request_id::RequestId for DetachObjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

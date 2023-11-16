@@ -13,7 +13,7 @@ impl CreateMediaLiveConnectorPipelineOutput {
         self.media_live_connector_pipeline.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateMediaLiveConnectorPipelineOutput {
+impl ::aws_types::request_id::RequestId for CreateMediaLiveConnectorPipelineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

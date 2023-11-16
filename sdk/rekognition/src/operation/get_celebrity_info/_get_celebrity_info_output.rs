@@ -27,7 +27,7 @@ impl GetCelebrityInfoOutput {
         self.known_gender.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCelebrityInfoOutput {
+impl ::aws_types::request_id::RequestId for GetCelebrityInfoOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

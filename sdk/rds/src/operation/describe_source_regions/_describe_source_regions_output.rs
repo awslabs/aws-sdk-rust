@@ -22,7 +22,7 @@ impl DescribeSourceRegionsOutput {
         self.source_regions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSourceRegionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeSourceRegionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

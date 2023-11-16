@@ -25,7 +25,7 @@ impl StartMlModelTransformJobOutput {
         self.creation_time_in_millis
     }
 }
-impl ::aws_http::request_id::RequestId for StartMlModelTransformJobOutput {
+impl ::aws_types::request_id::RequestId for StartMlModelTransformJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

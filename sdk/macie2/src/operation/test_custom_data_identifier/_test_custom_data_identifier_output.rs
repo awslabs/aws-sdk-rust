@@ -13,7 +13,7 @@ impl TestCustomDataIdentifierOutput {
         self.match_count
     }
 }
-impl ::aws_http::request_id::RequestId for TestCustomDataIdentifierOutput {
+impl ::aws_types::request_id::RequestId for TestCustomDataIdentifierOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

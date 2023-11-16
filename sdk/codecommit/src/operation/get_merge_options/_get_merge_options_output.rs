@@ -35,7 +35,7 @@ impl GetMergeOptionsOutput {
         self.base_commit_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetMergeOptionsOutput {
+impl ::aws_types::request_id::RequestId for GetMergeOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

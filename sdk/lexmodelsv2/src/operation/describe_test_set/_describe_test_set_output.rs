@@ -67,7 +67,7 @@ impl DescribeTestSetOutput {
         self.last_updated_date_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeTestSetOutput {
+impl ::aws_types::request_id::RequestId for DescribeTestSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

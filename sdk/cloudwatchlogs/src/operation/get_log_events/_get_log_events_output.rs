@@ -27,7 +27,7 @@ impl GetLogEventsOutput {
         self.next_backward_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLogEventsOutput {
+impl ::aws_types::request_id::RequestId for GetLogEventsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

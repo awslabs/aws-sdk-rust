@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidDocumentVersion {
     }
 }
 impl ::std::error::Error for InvalidDocumentVersion {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidDocumentVersion {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidDocumentVersion {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

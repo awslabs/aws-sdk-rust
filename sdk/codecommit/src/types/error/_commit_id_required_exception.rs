@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CommitIdRequiredException {
     }
 }
 impl ::std::error::Error for CommitIdRequiredException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CommitIdRequiredException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CommitIdRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

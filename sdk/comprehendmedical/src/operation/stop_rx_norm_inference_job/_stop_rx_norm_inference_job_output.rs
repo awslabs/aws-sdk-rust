@@ -13,7 +13,7 @@ impl StopRxNormInferenceJobOutput {
         self.job_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StopRxNormInferenceJobOutput {
+impl ::aws_types::request_id::RequestId for StopRxNormInferenceJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

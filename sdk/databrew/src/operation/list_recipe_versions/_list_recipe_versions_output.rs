@@ -20,7 +20,7 @@ impl ListRecipeVersionsOutput {
         self.recipes.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListRecipeVersionsOutput {
+impl ::aws_types::request_id::RequestId for ListRecipeVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DistributionNotDisabled {
     }
 }
 impl ::std::error::Error for DistributionNotDisabled {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DistributionNotDisabled {
+impl ::aws_types::request_id::RequestId for crate::types::error::DistributionNotDisabled {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

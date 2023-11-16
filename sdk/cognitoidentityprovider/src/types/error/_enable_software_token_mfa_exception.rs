@@ -26,7 +26,7 @@ impl ::std::fmt::Display for EnableSoftwareTokenMfaException {
     }
 }
 impl ::std::error::Error for EnableSoftwareTokenMfaException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::EnableSoftwareTokenMfaException {
+impl ::aws_types::request_id::RequestId for crate::types::error::EnableSoftwareTokenMfaException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

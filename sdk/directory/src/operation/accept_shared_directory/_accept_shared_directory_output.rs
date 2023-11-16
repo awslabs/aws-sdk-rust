@@ -13,7 +13,7 @@ impl AcceptSharedDirectoryOutput {
         self.shared_directory.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AcceptSharedDirectoryOutput {
+impl ::aws_types::request_id::RequestId for AcceptSharedDirectoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

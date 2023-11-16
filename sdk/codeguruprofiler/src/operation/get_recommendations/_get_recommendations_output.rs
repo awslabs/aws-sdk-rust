@@ -41,7 +41,7 @@ impl GetRecommendationsOutput {
         self.anomalies.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRecommendationsOutput {
+impl ::aws_types::request_id::RequestId for GetRecommendationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

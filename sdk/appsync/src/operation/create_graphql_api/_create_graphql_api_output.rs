@@ -13,7 +13,7 @@ impl CreateGraphqlApiOutput {
         self.graphql_api.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateGraphqlApiOutput {
+impl ::aws_types::request_id::RequestId for CreateGraphqlApiOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

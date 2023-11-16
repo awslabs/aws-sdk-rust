@@ -23,7 +23,7 @@ impl DescribeEventDetailsOutput {
         self.failed_set.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEventDetailsOutput {
+impl ::aws_types::request_id::RequestId for DescribeEventDetailsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

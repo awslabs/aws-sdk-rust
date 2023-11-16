@@ -13,7 +13,7 @@ impl GetAccountAliasOutput {
         self.account_alias.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAccountAliasOutput {
+impl ::aws_types::request_id::RequestId for GetAccountAliasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

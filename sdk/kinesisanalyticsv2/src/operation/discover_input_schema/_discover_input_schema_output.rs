@@ -37,7 +37,7 @@ impl DiscoverInputSchemaOutput {
         self.raw_input_records.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DiscoverInputSchemaOutput {
+impl ::aws_types::request_id::RequestId for DiscoverInputSchemaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

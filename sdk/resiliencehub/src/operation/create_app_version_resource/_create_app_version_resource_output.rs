@@ -27,7 +27,7 @@ impl CreateAppVersionResourceOutput {
         self.physical_resource.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateAppVersionResourceOutput {
+impl ::aws_types::request_id::RequestId for CreateAppVersionResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl GetGroupsForCapacityReservationOutput {
         self.capacity_reservation_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetGroupsForCapacityReservationOutput {
+impl ::aws_types::request_id::RequestId for GetGroupsForCapacityReservationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

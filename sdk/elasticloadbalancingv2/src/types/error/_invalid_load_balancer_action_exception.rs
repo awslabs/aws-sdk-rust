@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidLoadBalancerActionException {
     }
 }
 impl ::std::error::Error for InvalidLoadBalancerActionException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidLoadBalancerActionException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidLoadBalancerActionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

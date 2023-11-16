@@ -76,7 +76,7 @@ impl ::std::fmt::Display for ConstraintViolationException {
     }
 }
 impl ::std::error::Error for ConstraintViolationException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ConstraintViolationException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ConstraintViolationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

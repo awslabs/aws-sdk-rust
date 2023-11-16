@@ -19,7 +19,7 @@ impl PutAuthPolicyOutput {
         self.state.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutAuthPolicyOutput {
+impl ::aws_types::request_id::RequestId for PutAuthPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

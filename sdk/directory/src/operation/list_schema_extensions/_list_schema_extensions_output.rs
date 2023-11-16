@@ -21,7 +21,7 @@ impl ListSchemaExtensionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListSchemaExtensionsOutput {
+impl ::aws_types::request_id::RequestId for ListSchemaExtensionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

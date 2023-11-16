@@ -13,7 +13,7 @@ impl StartSchemaMergeOutput {
         self.source_api_association_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartSchemaMergeOutput {
+impl ::aws_types::request_id::RequestId for StartSchemaMergeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

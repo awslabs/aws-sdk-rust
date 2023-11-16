@@ -21,7 +21,7 @@ impl ListWirelessDevicesOutput {
         self.wireless_device_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListWirelessDevicesOutput {
+impl ::aws_types::request_id::RequestId for ListWirelessDevicesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DeletePermissionGroupOutput {
         self.permission_group_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeletePermissionGroupOutput {
+impl ::aws_types::request_id::RequestId for DeletePermissionGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

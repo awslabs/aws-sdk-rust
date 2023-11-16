@@ -13,7 +13,7 @@ impl TestFunctionOutput {
         self.test_result.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for TestFunctionOutput {
+impl ::aws_types::request_id::RequestId for TestFunctionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

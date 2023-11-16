@@ -6,7 +6,7 @@
 pub struct PutConfigurationSetVdmOptionsOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutConfigurationSetVdmOptionsOutput {
+impl ::aws_types::request_id::RequestId for PutConfigurationSetVdmOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

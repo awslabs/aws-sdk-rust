@@ -13,7 +13,7 @@ impl PutAccountPolicyOutput {
         self.account_policy.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutAccountPolicyOutput {
+impl ::aws_types::request_id::RequestId for PutAccountPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

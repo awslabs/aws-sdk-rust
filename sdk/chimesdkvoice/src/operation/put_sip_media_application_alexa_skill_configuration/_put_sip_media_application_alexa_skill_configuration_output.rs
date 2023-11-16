@@ -15,7 +15,7 @@ impl PutSipMediaApplicationAlexaSkillConfigurationOutput {
         self.sip_media_application_alexa_skill_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutSipMediaApplicationAlexaSkillConfigurationOutput {
+impl ::aws_types::request_id::RequestId for PutSipMediaApplicationAlexaSkillConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

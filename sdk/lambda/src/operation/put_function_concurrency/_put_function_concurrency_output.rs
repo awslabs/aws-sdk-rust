@@ -13,7 +13,7 @@ impl PutFunctionConcurrencyOutput {
         self.reserved_concurrent_executions
     }
 }
-impl ::aws_http::request_id::RequestId for PutFunctionConcurrencyOutput {
+impl ::aws_types::request_id::RequestId for PutFunctionConcurrencyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

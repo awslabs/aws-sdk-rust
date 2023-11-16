@@ -20,7 +20,7 @@ impl GetHostedZoneLimitOutput {
         self.count
     }
 }
-impl ::aws_http::request_id::RequestId for GetHostedZoneLimitOutput {
+impl ::aws_types::request_id::RequestId for GetHostedZoneLimitOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

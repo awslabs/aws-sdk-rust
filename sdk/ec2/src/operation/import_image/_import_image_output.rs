@@ -109,7 +109,7 @@ impl ImportImageOutput {
         self.usage_operation.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ImportImageOutput {
+impl ::aws_types::request_id::RequestId for ImportImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

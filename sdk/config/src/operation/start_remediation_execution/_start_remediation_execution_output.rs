@@ -21,7 +21,7 @@ impl StartRemediationExecutionOutput {
         self.failed_items.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for StartRemediationExecutionOutput {
+impl ::aws_types::request_id::RequestId for StartRemediationExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

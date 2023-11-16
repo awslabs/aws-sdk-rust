@@ -44,7 +44,7 @@ impl ::std::fmt::Display for DecoderManifestValidationException {
     }
 }
 impl ::std::error::Error for DecoderManifestValidationException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DecoderManifestValidationException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DecoderManifestValidationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

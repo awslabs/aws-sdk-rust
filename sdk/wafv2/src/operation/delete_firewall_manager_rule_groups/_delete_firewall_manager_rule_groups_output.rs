@@ -13,7 +13,7 @@ impl DeleteFirewallManagerRuleGroupsOutput {
         self.next_web_acl_lock_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteFirewallManagerRuleGroupsOutput {
+impl ::aws_types::request_id::RequestId for DeleteFirewallManagerRuleGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

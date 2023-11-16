@@ -20,7 +20,7 @@ impl DeleteDatastoreOutput {
         &self.datastore_status
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDatastoreOutput {
+impl ::aws_types::request_id::RequestId for DeleteDatastoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

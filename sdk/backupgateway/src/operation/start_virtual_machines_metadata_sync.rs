@@ -148,7 +148,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartVirt
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_start_virtual_machines_metadata_sync::de_start_virtual_machines_metadata_sync_http_error(
                 status, headers, body,
@@ -312,7 +312,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartVirtualM
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncError {
+impl ::aws_types::request_id::RequestId for crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

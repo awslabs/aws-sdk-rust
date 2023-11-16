@@ -13,7 +13,7 @@ impl PutWebhookOutput {
         self.webhook.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutWebhookOutput {
+impl ::aws_types::request_id::RequestId for PutWebhookOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

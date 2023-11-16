@@ -23,7 +23,7 @@ impl ListFirewallDomainListsOutput {
         self.firewall_domain_lists.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListFirewallDomainListsOutput {
+impl ::aws_types::request_id::RequestId for ListFirewallDomainListsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

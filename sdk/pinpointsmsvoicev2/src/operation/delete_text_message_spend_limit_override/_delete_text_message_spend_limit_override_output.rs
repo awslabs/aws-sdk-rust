@@ -13,7 +13,7 @@ impl DeleteTextMessageSpendLimitOverrideOutput {
         self.monthly_limit
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteTextMessageSpendLimitOverrideOutput {
+impl ::aws_types::request_id::RequestId for DeleteTextMessageSpendLimitOverrideOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -43,7 +43,7 @@ impl DescribeDiscoveryJobOutput {
         self.job_end_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDiscoveryJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeDiscoveryJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

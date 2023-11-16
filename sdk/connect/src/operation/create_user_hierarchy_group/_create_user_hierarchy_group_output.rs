@@ -19,7 +19,7 @@ impl CreateUserHierarchyGroupOutput {
         self.hierarchy_group_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateUserHierarchyGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateUserHierarchyGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

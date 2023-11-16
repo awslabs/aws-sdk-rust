@@ -13,7 +13,7 @@ impl DeleteApnsVoipSandboxChannelOutput {
         self.apns_voip_sandbox_channel_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteApnsVoipSandboxChannelOutput {
+impl ::aws_types::request_id::RequestId for DeleteApnsVoipSandboxChannelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

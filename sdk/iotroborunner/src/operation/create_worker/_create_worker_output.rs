@@ -40,7 +40,7 @@ impl CreateWorkerOutput {
         self.site.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateWorkerOutput {
+impl ::aws_types::request_id::RequestId for CreateWorkerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

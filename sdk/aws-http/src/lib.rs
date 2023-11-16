@@ -19,6 +19,3 @@ pub mod user_agent;
 
 /// AWS-specific content-encoding tools
 pub mod content_encoding;
-
-/// AWS-specific request ID support
-pub mod request_id;

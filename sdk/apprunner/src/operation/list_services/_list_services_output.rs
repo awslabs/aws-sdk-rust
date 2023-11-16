@@ -20,7 +20,7 @@ impl ListServicesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListServicesOutput {
+impl ::aws_types::request_id::RequestId for ListServicesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -15,7 +15,7 @@ impl GetFindingStatisticsOutput {
         self.counts_by_group.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetFindingStatisticsOutput {
+impl ::aws_types::request_id::RequestId for GetFindingStatisticsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DescribeDeliveryStreamOutput {
         self.delivery_stream_description.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDeliveryStreamOutput {
+impl ::aws_types::request_id::RequestId for DescribeDeliveryStreamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

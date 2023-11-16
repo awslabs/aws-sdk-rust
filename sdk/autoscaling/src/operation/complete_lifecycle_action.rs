@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CompleteL
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_complete_lifecycle_action::de_complete_lifecycle_action_http_error(status, headers, body)
         } else {
@@ -284,7 +284,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CompleteLifec
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::complete_lifecycle_action::CompleteLifecycleActionError {
+impl ::aws_types::request_id::RequestId for crate::operation::complete_lifecycle_action::CompleteLifecycleActionError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

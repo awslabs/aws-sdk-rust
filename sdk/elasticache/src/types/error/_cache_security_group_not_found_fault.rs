@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CacheSecurityGroupNotFoundFault {
     }
 }
 impl ::std::error::Error for CacheSecurityGroupNotFoundFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CacheSecurityGroupNotFoundFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::CacheSecurityGroupNotFoundFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

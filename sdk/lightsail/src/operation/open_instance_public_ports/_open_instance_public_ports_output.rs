@@ -13,7 +13,7 @@ impl OpenInstancePublicPortsOutput {
         self.operation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for OpenInstancePublicPortsOutput {
+impl ::aws_types::request_id::RequestId for OpenInstancePublicPortsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

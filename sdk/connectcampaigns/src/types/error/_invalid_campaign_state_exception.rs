@@ -38,7 +38,7 @@ impl ::std::fmt::Display for InvalidCampaignStateException {
     }
 }
 impl ::std::error::Error for InvalidCampaignStateException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidCampaignStateException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidCampaignStateException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

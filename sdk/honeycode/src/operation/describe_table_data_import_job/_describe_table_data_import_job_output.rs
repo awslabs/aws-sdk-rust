@@ -32,7 +32,7 @@ impl DescribeTableDataImportJobOutput {
         self.error_code.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeTableDataImportJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeTableDataImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

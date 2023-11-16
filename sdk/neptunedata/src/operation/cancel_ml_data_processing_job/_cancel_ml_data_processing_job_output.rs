@@ -13,7 +13,7 @@ impl CancelMlDataProcessingJobOutput {
         self.status.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CancelMlDataProcessingJobOutput {
+impl ::aws_types::request_id::RequestId for CancelMlDataProcessingJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

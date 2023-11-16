@@ -35,7 +35,7 @@ impl ::std::fmt::Display for MountTargetConflict {
     }
 }
 impl ::std::error::Error for MountTargetConflict {}
-impl ::aws_http::request_id::RequestId for crate::types::error::MountTargetConflict {
+impl ::aws_types::request_id::RequestId for crate::types::error::MountTargetConflict {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

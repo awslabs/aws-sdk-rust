@@ -21,7 +21,7 @@ impl GetCostForecastOutput {
         self.forecast_results_by_time.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCostForecastOutput {
+impl ::aws_types::request_id::RequestId for GetCostForecastOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

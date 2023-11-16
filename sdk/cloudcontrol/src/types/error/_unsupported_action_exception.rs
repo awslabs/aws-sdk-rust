@@ -26,7 +26,7 @@ impl ::std::fmt::Display for UnsupportedActionException {
     }
 }
 impl ::std::error::Error for UnsupportedActionException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedActionException {
+impl ::aws_types::request_id::RequestId for crate::types::error::UnsupportedActionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

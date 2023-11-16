@@ -20,7 +20,7 @@ impl ListSlackChannelConfigurationsOutput {
         self.slack_channel_configurations.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListSlackChannelConfigurationsOutput {
+impl ::aws_types::request_id::RequestId for ListSlackChannelConfigurationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

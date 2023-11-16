@@ -19,7 +19,7 @@ impl AssociateSubnetCidrBlockOutput {
         self.subnet_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateSubnetCidrBlockOutput {
+impl ::aws_types::request_id::RequestId for AssociateSubnetCidrBlockOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

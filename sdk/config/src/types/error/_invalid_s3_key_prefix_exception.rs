@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidS3KeyPrefixException {
     }
 }
 impl ::std::error::Error for InvalidS3KeyPrefixException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidS3KeyPrefixException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidS3KeyPrefixException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

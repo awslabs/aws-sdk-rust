@@ -25,7 +25,7 @@ impl DescribeSecurityConfigurationOutput {
         self.creation_date_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSecurityConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeSecurityConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

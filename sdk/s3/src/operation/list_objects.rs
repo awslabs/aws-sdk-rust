@@ -147,7 +147,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListObjec
         if matches!(crate::rest_xml_unwrapped_errors::body_is_error(body), Ok(true)) {
             force_error = true;
         }
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_objects::de_list_objects_http_error(status, headers, body)
         } else {
@@ -333,10 +333,11 @@ mod list_objects_request_test {
                     .build(),
             ]))
             .build();
-        let mut http_response = ::http::response::Builder::new()
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http::response::Builder::new()
         .status(200)
                     .body(::aws_smithy_types::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ListBucketResult\n\txmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n\t<Name>bucketname</Name>\n\t<Prefix></Prefix>\n\t<Marker></Marker>\n\t<MaxKeys>1000</MaxKeys>\n\t<IsTruncated>false</IsTruncated>\n\t<Contents>\n\t\t<Key>    </Key>\n\t\t<LastModified>2021-07-16T16:20:53.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n\t<Contents>\n\t\t<Key> a </Key>\n\t\t<LastModified>2021-07-16T16:02:10.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n</ListBucketResult>\n"))
-                    .unwrap();
+                    .unwrap()
+                    ).unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
         use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
@@ -431,7 +432,7 @@ impl crate::s3_request_id::RequestIdExt for crate::operation::list_objects::List
         self.meta().extended_request_id()
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_objects::ListObjectsError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_objects::ListObjectsError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

@@ -14,7 +14,7 @@ impl UploadEntityDefinitionsOutput {
         self.upload_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UploadEntityDefinitionsOutput {
+impl ::aws_types::request_id::RequestId for UploadEntityDefinitionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

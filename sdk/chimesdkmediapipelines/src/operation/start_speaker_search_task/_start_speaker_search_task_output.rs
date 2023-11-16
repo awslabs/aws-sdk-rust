@@ -13,7 +13,7 @@ impl StartSpeakerSearchTaskOutput {
         self.speaker_search_task.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartSpeakerSearchTaskOutput {
+impl ::aws_types::request_id::RequestId for StartSpeakerSearchTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

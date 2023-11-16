@@ -29,7 +29,7 @@ impl ::std::fmt::Debug for TransferDomainToAnotherAwsAccountOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for TransferDomainToAnotherAwsAccountOutput {
+impl ::aws_types::request_id::RequestId for TransferDomainToAnotherAwsAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

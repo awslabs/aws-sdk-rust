@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DataUnavailableException {
     }
 }
 impl ::std::error::Error for DataUnavailableException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DataUnavailableException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DataUnavailableException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

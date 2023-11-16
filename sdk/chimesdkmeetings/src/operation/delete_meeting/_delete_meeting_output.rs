@@ -5,7 +5,7 @@
 pub struct DeleteMeetingOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteMeetingOutput {
+impl ::aws_types::request_id::RequestId for DeleteMeetingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateEntitlementOutput {
         self.entitlement.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateEntitlementOutput {
+impl ::aws_types::request_id::RequestId for CreateEntitlementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

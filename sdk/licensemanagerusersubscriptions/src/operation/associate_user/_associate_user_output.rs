@@ -13,7 +13,7 @@ impl AssociateUserOutput {
         self.instance_user_summary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateUserOutput {
+impl ::aws_types::request_id::RequestId for AssociateUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

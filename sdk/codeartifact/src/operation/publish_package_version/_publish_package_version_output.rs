@@ -49,7 +49,7 @@ impl PublishPackageVersionOutput {
         self.asset.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PublishPackageVersionOutput {
+impl ::aws_types::request_id::RequestId for PublishPackageVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

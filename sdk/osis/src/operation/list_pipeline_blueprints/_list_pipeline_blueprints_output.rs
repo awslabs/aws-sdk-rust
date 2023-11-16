@@ -15,7 +15,7 @@ impl ListPipelineBlueprintsOutput {
         self.blueprints.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListPipelineBlueprintsOutput {
+impl ::aws_types::request_id::RequestId for ListPipelineBlueprintsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

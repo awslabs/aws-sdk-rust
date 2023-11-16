@@ -13,7 +13,7 @@ impl CreateRegexPatternSetOutput {
         self.summary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRegexPatternSetOutput {
+impl ::aws_types::request_id::RequestId for CreateRegexPatternSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

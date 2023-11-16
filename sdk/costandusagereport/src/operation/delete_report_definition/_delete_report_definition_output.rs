@@ -14,7 +14,7 @@ impl DeleteReportDefinitionOutput {
         self.response_message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteReportDefinitionOutput {
+impl ::aws_types::request_id::RequestId for DeleteReportDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

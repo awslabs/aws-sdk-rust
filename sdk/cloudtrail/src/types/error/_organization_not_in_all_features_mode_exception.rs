@@ -26,7 +26,7 @@ impl ::std::fmt::Display for OrganizationNotInAllFeaturesModeException {
     }
 }
 impl ::std::error::Error for OrganizationNotInAllFeaturesModeException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OrganizationNotInAllFeaturesModeException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OrganizationNotInAllFeaturesModeException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

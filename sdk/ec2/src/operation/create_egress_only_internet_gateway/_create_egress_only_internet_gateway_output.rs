@@ -19,7 +19,7 @@ impl CreateEgressOnlyInternetGatewayOutput {
         self.egress_only_internet_gateway.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateEgressOnlyInternetGatewayOutput {
+impl ::aws_types::request_id::RequestId for CreateEgressOnlyInternetGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

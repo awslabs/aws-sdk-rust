@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DuplicateHandshakeException {
     }
 }
 impl ::std::error::Error for DuplicateHandshakeException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DuplicateHandshakeException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DuplicateHandshakeException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

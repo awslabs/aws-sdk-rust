@@ -21,7 +21,7 @@ impl ListAppImageConfigsOutput {
         self.app_image_configs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAppImageConfigsOutput {
+impl ::aws_types::request_id::RequestId for ListAppImageConfigsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

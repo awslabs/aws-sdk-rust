@@ -40,7 +40,7 @@ impl ::std::fmt::Display for ServiceQuotaExceededException {
     }
 }
 impl ::std::error::Error for ServiceQuotaExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ServiceQuotaExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ServiceQuotaExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

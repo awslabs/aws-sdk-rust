@@ -25,7 +25,7 @@ impl AssociateTargetsWithJobOutput {
         self.description.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateTargetsWithJobOutput {
+impl ::aws_types::request_id::RequestId for AssociateTargetsWithJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

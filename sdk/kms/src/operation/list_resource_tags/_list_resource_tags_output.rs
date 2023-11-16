@@ -33,7 +33,7 @@ impl ListResourceTagsOutput {
         self.truncated
     }
 }
-impl ::aws_http::request_id::RequestId for ListResourceTagsOutput {
+impl ::aws_types::request_id::RequestId for ListResourceTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

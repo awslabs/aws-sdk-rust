@@ -37,7 +37,7 @@ impl DescribeProductOutput {
         self.launch_paths.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeProductOutput {
+impl ::aws_types::request_id::RequestId for DescribeProductOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

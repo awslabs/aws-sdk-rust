@@ -21,7 +21,7 @@ impl DescribeGlobalReplicationGroupsOutput {
         self.global_replication_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeGlobalReplicationGroupsOutput {
+impl ::aws_types::request_id::RequestId for DescribeGlobalReplicationGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

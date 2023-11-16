@@ -13,7 +13,7 @@ impl RegisterInstanceEventNotificationAttributesOutput {
         self.instance_tag_attribute.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RegisterInstanceEventNotificationAttributesOutput {
+impl ::aws_types::request_id::RequestId for RegisterInstanceEventNotificationAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

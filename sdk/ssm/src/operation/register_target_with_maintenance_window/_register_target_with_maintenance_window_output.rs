@@ -13,7 +13,7 @@ impl RegisterTargetWithMaintenanceWindowOutput {
         self.window_target_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RegisterTargetWithMaintenanceWindowOutput {
+impl ::aws_types::request_id::RequestId for RegisterTargetWithMaintenanceWindowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

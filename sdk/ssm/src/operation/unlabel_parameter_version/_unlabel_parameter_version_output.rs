@@ -23,7 +23,7 @@ impl UnlabelParameterVersionOutput {
         self.invalid_labels.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for UnlabelParameterVersionOutput {
+impl ::aws_types::request_id::RequestId for UnlabelParameterVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

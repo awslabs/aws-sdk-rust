@@ -13,7 +13,7 @@ impl DisablePolicyTypeOutput {
         self.root.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisablePolicyTypeOutput {
+impl ::aws_types::request_id::RequestId for DisablePolicyTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

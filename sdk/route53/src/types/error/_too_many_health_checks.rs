@@ -29,7 +29,7 @@ impl ::std::fmt::Display for TooManyHealthChecks {
     }
 }
 impl ::std::error::Error for TooManyHealthChecks {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyHealthChecks {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyHealthChecks {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

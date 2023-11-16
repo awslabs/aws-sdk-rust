@@ -48,7 +48,7 @@ impl GeneratePinDataOutput {
         self.pin_data.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GeneratePinDataOutput {
+impl ::aws_types::request_id::RequestId for GeneratePinDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

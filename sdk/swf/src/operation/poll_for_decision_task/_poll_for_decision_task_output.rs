@@ -54,7 +54,7 @@ impl PollForDecisionTaskOutput {
         self.previous_started_event_id
     }
 }
-impl ::aws_http::request_id::RequestId for PollForDecisionTaskOutput {
+impl ::aws_types::request_id::RequestId for PollForDecisionTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

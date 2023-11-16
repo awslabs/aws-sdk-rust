@@ -53,7 +53,7 @@ impl DescribeAccessPolicyOutput {
         &self.access_policy_last_update_date
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAccessPolicyOutput {
+impl ::aws_types::request_id::RequestId for DescribeAccessPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

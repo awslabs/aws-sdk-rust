@@ -13,7 +13,7 @@ impl CreateEdgeDeploymentPlanOutput {
         self.edge_deployment_plan_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateEdgeDeploymentPlanOutput {
+impl ::aws_types::request_id::RequestId for CreateEdgeDeploymentPlanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

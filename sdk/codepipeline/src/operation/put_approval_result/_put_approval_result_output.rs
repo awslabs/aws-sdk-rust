@@ -14,7 +14,7 @@ impl PutApprovalResultOutput {
         self.approved_at.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutApprovalResultOutput {
+impl ::aws_types::request_id::RequestId for PutApprovalResultOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

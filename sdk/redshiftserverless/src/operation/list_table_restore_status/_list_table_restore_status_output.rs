@@ -21,7 +21,7 @@ impl ListTableRestoreStatusOutput {
         self.table_restore_statuses.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTableRestoreStatusOutput {
+impl ::aws_types::request_id::RequestId for ListTableRestoreStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

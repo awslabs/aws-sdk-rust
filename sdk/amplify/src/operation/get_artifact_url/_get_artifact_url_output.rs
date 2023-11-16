@@ -22,7 +22,7 @@ impl GetArtifactUrlOutput {
         self.artifact_url.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetArtifactUrlOutput {
+impl ::aws_types::request_id::RequestId for GetArtifactUrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

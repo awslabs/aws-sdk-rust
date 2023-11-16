@@ -5,7 +5,7 @@
 pub struct DeleteUserProfileOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteUserProfileOutput {
+impl ::aws_types::request_id::RequestId for DeleteUserProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

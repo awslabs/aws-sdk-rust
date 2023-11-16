@@ -27,7 +27,7 @@ impl ::std::fmt::Display for InstanceDoesNotExistException {
     }
 }
 impl ::std::error::Error for InstanceDoesNotExistException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InstanceDoesNotExistException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InstanceDoesNotExistException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

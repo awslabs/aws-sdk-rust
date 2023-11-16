@@ -20,7 +20,7 @@ impl ListScheduleGroupsOutput {
         self.schedule_groups.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListScheduleGroupsOutput {
+impl ::aws_types::request_id::RequestId for ListScheduleGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

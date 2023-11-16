@@ -39,7 +39,7 @@ impl RecognizeCelebritiesOutput {
         self.orientation_correction.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RecognizeCelebritiesOutput {
+impl ::aws_types::request_id::RequestId for RecognizeCelebritiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

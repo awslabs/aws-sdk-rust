@@ -26,7 +26,7 @@ impl ::std::fmt::Display for RegistrationCodeValidationException {
     }
 }
 impl ::std::error::Error for RegistrationCodeValidationException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::RegistrationCodeValidationException {
+impl ::aws_types::request_id::RequestId for crate::types::error::RegistrationCodeValidationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

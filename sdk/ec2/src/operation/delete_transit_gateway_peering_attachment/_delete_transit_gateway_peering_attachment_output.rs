@@ -13,7 +13,7 @@ impl DeleteTransitGatewayPeeringAttachmentOutput {
         self.transit_gateway_peering_attachment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteTransitGatewayPeeringAttachmentOutput {
+impl ::aws_types::request_id::RequestId for DeleteTransitGatewayPeeringAttachmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

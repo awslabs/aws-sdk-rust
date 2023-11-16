@@ -6,7 +6,7 @@
 pub struct AddApplicationOutputOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for AddApplicationOutputOutput {
+impl ::aws_types::request_id::RequestId for AddApplicationOutputOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

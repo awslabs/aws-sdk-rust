@@ -21,7 +21,7 @@ impl ListMulticastGroupsOutput {
         self.multicast_group_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListMulticastGroupsOutput {
+impl ::aws_types::request_id::RequestId for ListMulticastGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

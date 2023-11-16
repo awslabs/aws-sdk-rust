@@ -19,7 +19,7 @@ impl GetVerifiedAccessGroupPolicyOutput {
         self.policy_document.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetVerifiedAccessGroupPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetVerifiedAccessGroupPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -5,7 +5,7 @@
 pub struct PutJobTaggingOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutJobTaggingOutput {
+impl ::aws_types::request_id::RequestId for PutJobTaggingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -69,7 +69,7 @@ impl CreateRoomOutput {
         self.logging_configuration_identifiers.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRoomOutput {
+impl ::aws_types::request_id::RequestId for CreateRoomOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

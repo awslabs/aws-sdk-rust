@@ -33,7 +33,7 @@ impl ListTemplatesOutput {
         self.request_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTemplatesOutput {
+impl ::aws_types::request_id::RequestId for ListTemplatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -27,7 +27,7 @@ impl GetCurrentUserDataOutput {
         self.approximate_total_count
     }
 }
-impl ::aws_http::request_id::RequestId for GetCurrentUserDataOutput {
+impl ::aws_types::request_id::RequestId for GetCurrentUserDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

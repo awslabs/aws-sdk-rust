@@ -13,7 +13,7 @@ impl AssociateWebsiteAuthorizationProviderOutput {
         self.authorization_provider_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateWebsiteAuthorizationProviderOutput {
+impl ::aws_types::request_id::RequestId for AssociateWebsiteAuthorizationProviderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

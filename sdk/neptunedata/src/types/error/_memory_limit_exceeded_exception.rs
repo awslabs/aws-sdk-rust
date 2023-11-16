@@ -53,7 +53,7 @@ impl ::std::fmt::Display for MemoryLimitExceededException {
     }
 }
 impl ::std::error::Error for MemoryLimitExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::MemoryLimitExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::MemoryLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for KmsDisabledFault {
     }
 }
 impl ::std::error::Error for KmsDisabledFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::KmsDisabledFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::KmsDisabledFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

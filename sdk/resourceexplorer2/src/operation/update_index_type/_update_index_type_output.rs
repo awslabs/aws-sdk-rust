@@ -31,7 +31,7 @@ impl UpdateIndexTypeOutput {
         self.last_updated_at.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateIndexTypeOutput {
+impl ::aws_types::request_id::RequestId for UpdateIndexTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

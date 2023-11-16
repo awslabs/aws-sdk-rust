@@ -13,7 +13,7 @@ impl AllocateIpamPoolCidrOutput {
         self.ipam_pool_allocation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AllocateIpamPoolCidrOutput {
+impl ::aws_types::request_id::RequestId for AllocateIpamPoolCidrOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

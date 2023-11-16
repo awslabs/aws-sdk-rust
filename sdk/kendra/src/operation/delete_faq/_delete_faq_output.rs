@@ -5,7 +5,7 @@
 pub struct DeleteFaqOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteFaqOutput {
+impl ::aws_types::request_id::RequestId for DeleteFaqOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -49,7 +49,7 @@ impl ::std::fmt::Debug for UpdatePricingPlanOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdatePricingPlanOutput {
+impl ::aws_types::request_id::RequestId for UpdatePricingPlanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

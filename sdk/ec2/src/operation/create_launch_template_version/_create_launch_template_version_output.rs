@@ -19,7 +19,7 @@ impl CreateLaunchTemplateVersionOutput {
         self.warning.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateLaunchTemplateVersionOutput {
+impl ::aws_types::request_id::RequestId for CreateLaunchTemplateVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

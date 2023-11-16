@@ -34,7 +34,7 @@ impl UpdateSchemaMappingOutput {
         self.mapped_input_fields.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSchemaMappingOutput {
+impl ::aws_types::request_id::RequestId for UpdateSchemaMappingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DeregisterClusterOutput {
         self.cluster.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeregisterClusterOutput {
+impl ::aws_types::request_id::RequestId for DeregisterClusterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

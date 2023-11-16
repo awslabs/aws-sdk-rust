@@ -26,7 +26,7 @@ impl DescribeBandwidthRateLimitOutput {
         self.average_download_rate_limit_in_bits_per_sec
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBandwidthRateLimitOutput {
+impl ::aws_types::request_id::RequestId for DescribeBandwidthRateLimitOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

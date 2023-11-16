@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TooManyCertificates {
     }
 }
 impl ::std::error::Error for TooManyCertificates {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyCertificates {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyCertificates {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

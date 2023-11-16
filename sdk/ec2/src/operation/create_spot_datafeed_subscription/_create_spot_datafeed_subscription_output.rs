@@ -14,7 +14,7 @@ impl CreateSpotDatafeedSubscriptionOutput {
         self.spot_datafeed_subscription.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateSpotDatafeedSubscriptionOutput {
+impl ::aws_types::request_id::RequestId for CreateSpotDatafeedSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

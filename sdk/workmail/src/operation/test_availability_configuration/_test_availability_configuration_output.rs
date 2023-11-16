@@ -19,7 +19,7 @@ impl TestAvailabilityConfigurationOutput {
         self.failure_reason.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for TestAvailabilityConfigurationOutput {
+impl ::aws_types::request_id::RequestId for TestAvailabilityConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

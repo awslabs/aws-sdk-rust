@@ -14,7 +14,7 @@ impl GetDomainDeliverabilityCampaignOutput {
         self.domain_deliverability_campaign.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDomainDeliverabilityCampaignOutput {
+impl ::aws_types::request_id::RequestId for GetDomainDeliverabilityCampaignOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

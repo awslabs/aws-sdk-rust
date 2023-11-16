@@ -20,7 +20,7 @@ impl DescribePullRequestEventsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePullRequestEventsOutput {
+impl ::aws_types::request_id::RequestId for DescribePullRequestEventsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl DescribeIpv6PoolsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeIpv6PoolsOutput {
+impl ::aws_types::request_id::RequestId for DescribeIpv6PoolsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

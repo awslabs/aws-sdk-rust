@@ -13,7 +13,7 @@ impl StartOnDemandAuditTaskOutput {
         self.task_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartOnDemandAuditTaskOutput {
+impl ::aws_types::request_id::RequestId for StartOnDemandAuditTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

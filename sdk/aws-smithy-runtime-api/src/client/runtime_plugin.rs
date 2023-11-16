@@ -394,6 +394,8 @@ mod tests {
                         .status(200)
                         .header("rp1", "1")
                         .body(SdkBody::empty())
+                        .unwrap()
+                        .try_into()
                         .unwrap())
                 })
             }

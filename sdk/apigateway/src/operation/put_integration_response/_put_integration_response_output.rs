@@ -40,7 +40,7 @@ impl PutIntegrationResponseOutput {
         self.content_handling.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutIntegrationResponseOutput {
+impl ::aws_types::request_id::RequestId for PutIntegrationResponseOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

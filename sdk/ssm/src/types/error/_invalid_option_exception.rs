@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidOptionException {
     }
 }
 impl ::std::error::Error for InvalidOptionException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidOptionException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidOptionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -13,7 +13,7 @@ impl DescribeVpcConnectorOutput {
         self.vpc_connector.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeVpcConnectorOutput {
+impl ::aws_types::request_id::RequestId for DescribeVpcConnectorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -20,7 +20,7 @@ impl ListDefaultVocabulariesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListDefaultVocabulariesOutput {
+impl ::aws_types::request_id::RequestId for ListDefaultVocabulariesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

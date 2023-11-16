@@ -27,7 +27,7 @@ impl ::std::fmt::Display for HealthCheckInUse {
     }
 }
 impl ::std::error::Error for HealthCheckInUse {}
-impl ::aws_http::request_id::RequestId for crate::types::error::HealthCheckInUse {
+impl ::aws_types::request_id::RequestId for crate::types::error::HealthCheckInUse {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

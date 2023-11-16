@@ -25,7 +25,7 @@ impl GetMembersOutput {
         self.unprocessed_accounts.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetMembersOutput {
+impl ::aws_types::request_id::RequestId for GetMembersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

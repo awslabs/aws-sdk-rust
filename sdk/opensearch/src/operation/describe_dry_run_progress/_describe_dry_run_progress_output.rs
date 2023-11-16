@@ -25,7 +25,7 @@ impl DescribeDryRunProgressOutput {
         self.dry_run_results.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDryRunProgressOutput {
+impl ::aws_types::request_id::RequestId for DescribeDryRunProgressOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

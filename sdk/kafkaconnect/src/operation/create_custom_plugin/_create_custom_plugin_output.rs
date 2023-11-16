@@ -31,7 +31,7 @@ impl CreateCustomPluginOutput {
         self.revision
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCustomPluginOutput {
+impl ::aws_types::request_id::RequestId for CreateCustomPluginOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

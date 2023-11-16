@@ -4,11 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_http::http::HttpHeaders;
 use aws_smithy_runtime_api::client::result::SdkError;
+use aws_smithy_runtime_api::http::{Headers, Response};
 use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata, ProvideErrorMetadata};
 use aws_smithy_types::error::Unhandled;
-use http::{HeaderMap, HeaderValue};
 
 const EXTENDED_REQUEST_ID: &str = "s3_extended_request_id";
 
@@ -20,14 +19,11 @@ pub trait RequestIdExt {
     fn extended_request_id(&self) -> Option<&str>;
 }
 
-impl<E, R> RequestIdExt for SdkError<E, R>
-where
-    R: HttpHeaders,
-{
+impl<E> RequestIdExt for SdkError<E, Response> {
     fn extended_request_id(&self) -> Option<&str> {
         match self {
-            Self::ResponseError(err) => extract_extended_request_id(err.raw().http_headers()),
-            Self::ServiceError(err) => extract_extended_request_id(err.raw().http_headers()),
+            Self::ResponseError(err) => err.raw().headers().extended_request_id(),
+            Self::ServiceError(err) => err.raw().headers().extended_request_id(),
             _ => None,
         }
     }
@@ -45,15 +41,15 @@ impl RequestIdExt for Unhandled {
     }
 }
 
-impl<B> RequestIdExt for http::Response<B> {
+impl<B> RequestIdExt for Response<B> {
     fn extended_request_id(&self) -> Option<&str> {
-        extract_extended_request_id(self.headers())
+        self.headers().extended_request_id()
     }
 }
 
-impl RequestIdExt for HeaderMap {
+impl RequestIdExt for Headers {
     fn extended_request_id(&self) -> Option<&str> {
-        extract_extended_request_id(self)
+        self.get("x-amz-id-2")
     }
 }
 
@@ -72,17 +68,12 @@ where
 
 /// Applies the extended request ID to a generic error builder
 #[doc(hidden)]
-pub fn apply_extended_request_id(builder: ErrorMetadataBuilder, headers: &HeaderMap<HeaderValue>) -> ErrorMetadataBuilder {
-    if let Some(extended_request_id) = extract_extended_request_id(headers) {
+pub fn apply_extended_request_id(builder: ErrorMetadataBuilder, headers: &Headers) -> ErrorMetadataBuilder {
+    if let Some(extended_request_id) = headers.extended_request_id() {
         builder.custom(EXTENDED_REQUEST_ID, extended_request_id)
     } else {
         builder
     }
-}
-
-/// Extracts the S3 Extended Request ID from HTTP response headers
-fn extract_extended_request_id(headers: &HeaderMap<HeaderValue>) -> Option<&str> {
-    headers.get("x-amz-id-2").and_then(|value| value.to_str().ok())
 }
 
 #[cfg(test)]
@@ -90,11 +81,10 @@ mod test {
     use super::*;
     use aws_smithy_runtime_api::client::result::SdkError;
     use aws_smithy_types::body::SdkBody;
-    use http::Response;
 
     #[test]
     fn handle_missing_header() {
-        let resp = http::Response::builder().status(400).body("").unwrap();
+        let resp = Response::try_from(http::Response::builder().status(400).body("").unwrap()).unwrap();
         let mut builder = aws_smithy_types::Error::builder().message("123");
         builder = apply_extended_request_id(builder, resp.headers());
         assert_eq!(builder.build().extended_request_id(), None);
@@ -102,12 +92,15 @@ mod test {
 
     #[test]
     fn test_extended_request_id_sdk_error() {
-        let without_extended_request_id = || Response::builder().body(SdkBody::empty()).unwrap();
+        let without_extended_request_id = || Response::try_from(http::Response::builder().body(SdkBody::empty()).unwrap()).unwrap();
         let with_extended_request_id = || {
-            Response::builder()
-                .header("x-amz-id-2", HeaderValue::from_static("some-request-id"))
-                .body(SdkBody::empty())
-                .unwrap()
+            Response::try_from(
+                http::Response::builder()
+                    .header("x-amz-id-2", "some-request-id")
+                    .body(SdkBody::empty())
+                    .unwrap(),
+            )
+            .unwrap()
         };
         assert_eq!(
             None,
@@ -126,22 +119,22 @@ mod test {
 
     #[test]
     fn test_extract_extended_request_id() {
-        let mut headers = HeaderMap::new();
-        assert_eq!(None, extract_extended_request_id(&headers));
+        let mut headers = Headers::new();
+        assert_eq!(None, headers.extended_request_id());
 
-        headers.append("x-amz-id-2", HeaderValue::from_static("some-request-id"));
-        assert_eq!(Some("some-request-id"), extract_extended_request_id(&headers));
+        headers.append("x-amz-id-2", "some-request-id");
+        assert_eq!(Some("some-request-id"), headers.extended_request_id());
     }
 
     #[test]
     fn test_apply_extended_request_id() {
-        let mut headers = HeaderMap::new();
+        let mut headers = Headers::new();
         assert_eq!(
             ErrorMetadata::builder().build(),
             apply_extended_request_id(ErrorMetadata::builder(), &headers).build(),
         );
 
-        headers.append("x-amz-id-2", HeaderValue::from_static("some-request-id"));
+        headers.append("x-amz-id-2", "some-request-id");
         assert_eq!(
             ErrorMetadata::builder().custom(EXTENDED_REQUEST_ID, "some-request-id").build(),
             apply_extended_request_id(ErrorMetadata::builder(), &headers).build(),

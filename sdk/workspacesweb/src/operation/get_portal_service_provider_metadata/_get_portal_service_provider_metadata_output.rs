@@ -20,7 +20,7 @@ impl GetPortalServiceProviderMetadataOutput {
         self.service_provider_saml_metadata.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPortalServiceProviderMetadataOutput {
+impl ::aws_types::request_id::RequestId for GetPortalServiceProviderMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

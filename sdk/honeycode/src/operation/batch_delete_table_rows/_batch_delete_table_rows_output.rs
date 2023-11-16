@@ -21,7 +21,7 @@ impl BatchDeleteTableRowsOutput {
         self.failed_batch_items.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchDeleteTableRowsOutput {
+impl ::aws_types::request_id::RequestId for BatchDeleteTableRowsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

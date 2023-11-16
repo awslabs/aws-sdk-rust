@@ -46,7 +46,7 @@ impl GetDataflowEndpointGroupOutput {
         self.contact_post_pass_duration_seconds
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataflowEndpointGroupOutput {
+impl ::aws_types::request_id::RequestId for GetDataflowEndpointGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

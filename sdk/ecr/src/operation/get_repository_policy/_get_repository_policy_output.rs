@@ -25,7 +25,7 @@ impl GetRepositoryPolicyOutput {
         self.policy_text.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRepositoryPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetRepositoryPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

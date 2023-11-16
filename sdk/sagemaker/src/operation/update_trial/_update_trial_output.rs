@@ -13,7 +13,7 @@ impl UpdateTrialOutput {
         self.trial_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateTrialOutput {
+impl ::aws_types::request_id::RequestId for UpdateTrialOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

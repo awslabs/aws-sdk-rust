@@ -13,7 +13,7 @@ impl GetTranscriptionJobOutput {
         self.transcription_job.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTranscriptionJobOutput {
+impl ::aws_types::request_id::RequestId for GetTranscriptionJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

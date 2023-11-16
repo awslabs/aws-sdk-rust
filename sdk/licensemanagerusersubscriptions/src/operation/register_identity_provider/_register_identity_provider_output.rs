@@ -13,7 +13,7 @@ impl RegisterIdentityProviderOutput {
         self.identity_provider_summary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RegisterIdentityProviderOutput {
+impl ::aws_types::request_id::RequestId for RegisterIdentityProviderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

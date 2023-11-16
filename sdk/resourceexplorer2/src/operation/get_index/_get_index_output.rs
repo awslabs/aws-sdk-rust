@@ -78,7 +78,7 @@ impl ::std::fmt::Debug for GetIndexOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetIndexOutput {
+impl ::aws_types::request_id::RequestId for GetIndexOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

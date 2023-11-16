@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CustomMetadataLimitExceededException {
     }
 }
 impl ::std::error::Error for CustomMetadataLimitExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CustomMetadataLimitExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CustomMetadataLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -19,7 +19,7 @@ impl GetCalculationExecutionStatusOutput {
         self.statistics.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCalculationExecutionStatusOutput {
+impl ::aws_types::request_id::RequestId for GetCalculationExecutionStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

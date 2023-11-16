@@ -13,7 +13,7 @@ impl DescribeMediaStorageConfigurationOutput {
         self.media_storage_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeMediaStorageConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeMediaStorageConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

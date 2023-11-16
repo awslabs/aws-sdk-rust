@@ -21,7 +21,7 @@ impl ReplicateSecretToRegionsOutput {
         self.replication_status.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ReplicateSecretToRegionsOutput {
+impl ::aws_types::request_id::RequestId for ReplicateSecretToRegionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

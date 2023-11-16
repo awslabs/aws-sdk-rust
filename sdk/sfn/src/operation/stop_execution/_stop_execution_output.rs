@@ -13,7 +13,7 @@ impl StopExecutionOutput {
         &self.stop_date
     }
 }
-impl ::aws_http::request_id::RequestId for StopExecutionOutput {
+impl ::aws_types::request_id::RequestId for StopExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

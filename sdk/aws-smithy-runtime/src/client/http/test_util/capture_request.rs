@@ -36,7 +36,9 @@ impl HttpConnector for CaptureRequestHandler {
         HttpConnectorFuture::ready(Ok(inner
             .response
             .take()
-            .expect("could not handle second request")))
+            .expect("could not handle second request")
+            .try_into()
+            .unwrap()))
     }
 }
 

@@ -5,7 +5,7 @@
 pub struct DeleteBuildOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteBuildOutput {
+impl ::aws_types::request_id::RequestId for DeleteBuildOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

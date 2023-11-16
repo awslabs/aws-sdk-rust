@@ -19,7 +19,7 @@ impl GetConnectionOutput {
         self.connection_details.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetConnectionOutput {
+impl ::aws_types::request_id::RequestId for GetConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

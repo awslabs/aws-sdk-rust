@@ -20,7 +20,7 @@ impl ListServiceInstancesOutput {
         self.service_instances.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListServiceInstancesOutput {
+impl ::aws_types::request_id::RequestId for ListServiceInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

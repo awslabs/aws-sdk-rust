@@ -13,7 +13,7 @@ impl RestoreFromClusterSnapshotOutput {
         self.cluster.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RestoreFromClusterSnapshotOutput {
+impl ::aws_types::request_id::RequestId for RestoreFromClusterSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

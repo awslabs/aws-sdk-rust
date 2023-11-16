@@ -13,7 +13,7 @@ impl DeleteJourneyOutput {
         self.journey_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteJourneyOutput {
+impl ::aws_types::request_id::RequestId for DeleteJourneyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

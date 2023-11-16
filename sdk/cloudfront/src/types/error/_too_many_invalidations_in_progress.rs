@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TooManyInvalidationsInProgress {
     }
 }
 impl ::std::error::Error for TooManyInvalidationsInProgress {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyInvalidationsInProgress {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyInvalidationsInProgress {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

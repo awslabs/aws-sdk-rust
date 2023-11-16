@@ -16,7 +16,7 @@ impl ExecuteSqlOutput {
         self.sql_statement_results.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ExecuteSqlOutput {
+impl ::aws_types::request_id::RequestId for ExecuteSqlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

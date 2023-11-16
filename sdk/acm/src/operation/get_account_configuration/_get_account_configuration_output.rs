@@ -13,7 +13,7 @@ impl GetAccountConfigurationOutput {
         self.expiry_events.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAccountConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetAccountConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

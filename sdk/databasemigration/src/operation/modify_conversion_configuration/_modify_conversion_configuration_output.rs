@@ -13,7 +13,7 @@ impl ModifyConversionConfigurationOutput {
         self.migration_project_identifier.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyConversionConfigurationOutput {
+impl ::aws_types::request_id::RequestId for ModifyConversionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

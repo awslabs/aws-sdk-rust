@@ -13,7 +13,7 @@ impl UpdateScheduledActionOutput {
         self.scheduled_action.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateScheduledActionOutput {
+impl ::aws_types::request_id::RequestId for UpdateScheduledActionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

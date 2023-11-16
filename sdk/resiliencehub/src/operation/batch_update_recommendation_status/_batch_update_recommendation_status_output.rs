@@ -28,7 +28,7 @@ impl BatchUpdateRecommendationStatusOutput {
         self.failed_entries.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchUpdateRecommendationStatusOutput {
+impl ::aws_types::request_id::RequestId for BatchUpdateRecommendationStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

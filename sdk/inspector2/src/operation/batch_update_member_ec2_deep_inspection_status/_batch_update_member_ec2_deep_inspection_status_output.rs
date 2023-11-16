@@ -23,7 +23,7 @@ impl BatchUpdateMemberEc2DeepInspectionStatusOutput {
         self.failed_account_ids.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchUpdateMemberEc2DeepInspectionStatusOutput {
+impl ::aws_types::request_id::RequestId for BatchUpdateMemberEc2DeepInspectionStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

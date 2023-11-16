@@ -27,7 +27,7 @@ impl ::std::fmt::Display for InstanceIdRequiredException {
     }
 }
 impl ::std::error::Error for InstanceIdRequiredException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InstanceIdRequiredException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InstanceIdRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

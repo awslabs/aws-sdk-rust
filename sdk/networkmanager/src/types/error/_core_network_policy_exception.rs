@@ -34,7 +34,7 @@ impl ::std::fmt::Display for CoreNetworkPolicyException {
     }
 }
 impl ::std::error::Error for CoreNetworkPolicyException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CoreNetworkPolicyException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CoreNetworkPolicyException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

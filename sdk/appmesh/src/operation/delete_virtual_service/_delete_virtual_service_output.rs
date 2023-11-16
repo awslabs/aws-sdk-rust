@@ -13,7 +13,7 @@ impl DeleteVirtualServiceOutput {
         self.virtual_service.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteVirtualServiceOutput {
+impl ::aws_types::request_id::RequestId for DeleteVirtualServiceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

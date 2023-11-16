@@ -13,7 +13,7 @@ impl UpdateSceneOutput {
         &self.update_date_time
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSceneOutput {
+impl ::aws_types::request_id::RequestId for UpdateSceneOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

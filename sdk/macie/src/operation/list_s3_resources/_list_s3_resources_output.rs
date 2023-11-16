@@ -21,7 +21,7 @@ impl ListS3ResourcesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListS3ResourcesOutput {
+impl ::aws_types::request_id::RequestId for ListS3ResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

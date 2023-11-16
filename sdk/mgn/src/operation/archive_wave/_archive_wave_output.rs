@@ -77,7 +77,7 @@ impl ::std::fmt::Debug for ArchiveWaveOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for ArchiveWaveOutput {
+impl ::aws_types::request_id::RequestId for ArchiveWaveOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

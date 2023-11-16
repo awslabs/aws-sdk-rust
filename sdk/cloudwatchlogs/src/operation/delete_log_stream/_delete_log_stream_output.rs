@@ -5,7 +5,7 @@
 pub struct DeleteLogStreamOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteLogStreamOutput {
+impl ::aws_types::request_id::RequestId for DeleteLogStreamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

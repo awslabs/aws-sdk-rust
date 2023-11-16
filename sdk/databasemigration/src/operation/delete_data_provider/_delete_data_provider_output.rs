@@ -13,7 +13,7 @@ impl DeleteDataProviderOutput {
         self.data_provider.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDataProviderOutput {
+impl ::aws_types::request_id::RequestId for DeleteDataProviderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

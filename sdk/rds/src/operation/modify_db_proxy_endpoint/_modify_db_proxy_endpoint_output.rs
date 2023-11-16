@@ -13,7 +13,7 @@ impl ModifyDbProxyEndpointOutput {
         self.db_proxy_endpoint.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyDbProxyEndpointOutput {
+impl ::aws_types::request_id::RequestId for ModifyDbProxyEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

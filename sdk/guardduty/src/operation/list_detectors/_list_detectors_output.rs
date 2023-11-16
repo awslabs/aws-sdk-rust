@@ -21,7 +21,7 @@ impl ListDetectorsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListDetectorsOutput {
+impl ::aws_types::request_id::RequestId for ListDetectorsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

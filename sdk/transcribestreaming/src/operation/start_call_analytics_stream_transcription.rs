@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartCall
     ) -> ::std::option::Option<::aws_smithy_runtime_api::client::interceptors::context::OutputOrError> {
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
 
         // If this is an error, defer to the non-streaming parser
         if (!response.status().is_success() && response.status().as_u16() != 200) || force_error {
@@ -329,7 +329,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartCallAnal
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError {
+impl ::aws_types::request_id::RequestId for crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

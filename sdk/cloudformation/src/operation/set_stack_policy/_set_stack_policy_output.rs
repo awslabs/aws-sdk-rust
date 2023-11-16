@@ -5,7 +5,7 @@
 pub struct SetStackPolicyOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for SetStackPolicyOutput {
+impl ::aws_types::request_id::RequestId for SetStackPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

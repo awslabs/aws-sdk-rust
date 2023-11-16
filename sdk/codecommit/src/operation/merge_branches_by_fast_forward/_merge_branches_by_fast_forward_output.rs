@@ -19,7 +19,7 @@ impl MergeBranchesByFastForwardOutput {
         self.tree_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for MergeBranchesByFastForwardOutput {
+impl ::aws_types::request_id::RequestId for MergeBranchesByFastForwardOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

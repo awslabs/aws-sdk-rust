@@ -15,7 +15,7 @@ impl ModifyDbSnapshotAttributeOutput {
         self.db_snapshot_attributes_result.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyDbSnapshotAttributeOutput {
+impl ::aws_types::request_id::RequestId for ModifyDbSnapshotAttributeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

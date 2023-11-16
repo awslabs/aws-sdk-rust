@@ -13,7 +13,7 @@ impl GetPreparedStatementOutput {
         self.prepared_statement.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPreparedStatementOutput {
+impl ::aws_types::request_id::RequestId for GetPreparedStatementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

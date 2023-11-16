@@ -31,7 +31,7 @@ impl DescribeRouterConfigurationOutput {
         self.virtual_interface_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRouterConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeRouterConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

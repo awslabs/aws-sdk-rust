@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AdminDele
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_admin_delete_user::de_admin_delete_user_http_error(status, headers, body)
         } else {
@@ -307,7 +307,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AdminDeleteUs
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::admin_delete_user::AdminDeleteUserError {
+impl ::aws_types::request_id::RequestId for crate::operation::admin_delete_user::AdminDeleteUserError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

@@ -148,7 +148,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RemoveTag
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_remove_tags_from_on_premises_instances::de_remove_tags_from_on_premises_instances_http_error(
                 status, headers, body,
@@ -320,7 +320,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RemoveTagsFro
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError {
+impl ::aws_types::request_id::RequestId for crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

@@ -21,7 +21,7 @@ impl DisassociateResourceShareOutput {
         self.client_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisassociateResourceShareOutput {
+impl ::aws_types::request_id::RequestId for DisassociateResourceShareOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

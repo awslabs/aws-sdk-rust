@@ -76,7 +76,7 @@ impl GetSubscriptionOutput {
         self.retain_permissions
     }
 }
-impl ::aws_http::request_id::RequestId for GetSubscriptionOutput {
+impl ::aws_types::request_id::RequestId for GetSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

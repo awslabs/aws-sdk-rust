@@ -13,7 +13,7 @@ impl GetEvidenceOutput {
         self.evidence.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEvidenceOutput {
+impl ::aws_types::request_id::RequestId for GetEvidenceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

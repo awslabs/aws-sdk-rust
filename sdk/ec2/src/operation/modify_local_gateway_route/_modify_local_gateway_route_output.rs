@@ -13,7 +13,7 @@ impl ModifyLocalGatewayRouteOutput {
         self.route.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyLocalGatewayRouteOutput {
+impl ::aws_types::request_id::RequestId for ModifyLocalGatewayRouteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

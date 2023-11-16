@@ -21,7 +21,7 @@ impl ListEventConfigurationsOutput {
         self.event_configurations_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListEventConfigurationsOutput {
+impl ::aws_types::request_id::RequestId for ListEventConfigurationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

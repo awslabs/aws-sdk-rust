@@ -61,7 +61,7 @@ impl DescribeHarvestJobOutput {
         self.status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeHarvestJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeHarvestJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

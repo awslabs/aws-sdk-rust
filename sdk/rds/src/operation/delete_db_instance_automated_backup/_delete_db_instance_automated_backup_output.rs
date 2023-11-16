@@ -13,7 +13,7 @@ impl DeleteDbInstanceAutomatedBackupOutput {
         self.db_instance_automated_backup.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDbInstanceAutomatedBackupOutput {
+impl ::aws_types::request_id::RequestId for DeleteDbInstanceAutomatedBackupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

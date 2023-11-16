@@ -13,7 +13,7 @@ impl CreateCustomKeyStoreOutput {
         self.custom_key_store_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCustomKeyStoreOutput {
+impl ::aws_types::request_id::RequestId for CreateCustomKeyStoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

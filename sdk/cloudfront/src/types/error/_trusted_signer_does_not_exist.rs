@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TrustedSignerDoesNotExist {
     }
 }
 impl ::std::error::Error for TrustedSignerDoesNotExist {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TrustedSignerDoesNotExist {
+impl ::aws_types::request_id::RequestId for crate::types::error::TrustedSignerDoesNotExist {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

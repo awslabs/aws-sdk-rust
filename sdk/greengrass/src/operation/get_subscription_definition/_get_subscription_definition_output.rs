@@ -55,7 +55,7 @@ impl GetSubscriptionDefinitionOutput {
         self.tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSubscriptionDefinitionOutput {
+impl ::aws_types::request_id::RequestId for GetSubscriptionDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

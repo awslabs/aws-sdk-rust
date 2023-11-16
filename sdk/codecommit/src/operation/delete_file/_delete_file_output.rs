@@ -35,7 +35,7 @@ impl DeleteFileOutput {
         self.file_path.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteFileOutput {
+impl ::aws_types::request_id::RequestId for DeleteFileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateCommentOutput {
         self.comment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCommentOutput {
+impl ::aws_types::request_id::RequestId for CreateCommentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

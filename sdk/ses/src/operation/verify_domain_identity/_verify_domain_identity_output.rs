@@ -17,7 +17,7 @@ impl VerifyDomainIdentityOutput {
         self.verification_token.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for VerifyDomainIdentityOutput {
+impl ::aws_types::request_id::RequestId for VerifyDomainIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateReviewTemplateOutput {
         self.template_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateReviewTemplateOutput {
+impl ::aws_types::request_id::RequestId for CreateReviewTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

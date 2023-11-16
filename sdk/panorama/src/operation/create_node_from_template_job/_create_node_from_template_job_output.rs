@@ -14,7 +14,7 @@ impl CreateNodeFromTemplateJobOutput {
         self.job_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateNodeFromTemplateJobOutput {
+impl ::aws_types::request_id::RequestId for CreateNodeFromTemplateJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

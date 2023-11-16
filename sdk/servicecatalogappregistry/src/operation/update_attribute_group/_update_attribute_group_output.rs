@@ -13,7 +13,7 @@ impl UpdateAttributeGroupOutput {
         self.attribute_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAttributeGroupOutput {
+impl ::aws_types::request_id::RequestId for UpdateAttributeGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

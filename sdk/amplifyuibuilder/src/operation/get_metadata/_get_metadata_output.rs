@@ -13,7 +13,7 @@ impl GetMetadataOutput {
         &self.features
     }
 }
-impl ::aws_http::request_id::RequestId for GetMetadataOutput {
+impl ::aws_types::request_id::RequestId for GetMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

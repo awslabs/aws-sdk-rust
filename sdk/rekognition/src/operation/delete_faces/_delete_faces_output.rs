@@ -23,7 +23,7 @@ impl DeleteFacesOutput {
         self.unsuccessful_face_deletions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteFacesOutput {
+impl ::aws_types::request_id::RequestId for DeleteFacesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

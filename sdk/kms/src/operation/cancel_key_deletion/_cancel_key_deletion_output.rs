@@ -13,7 +13,7 @@ impl CancelKeyDeletionOutput {
         self.key_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CancelKeyDeletionOutput {
+impl ::aws_types::request_id::RequestId for CancelKeyDeletionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

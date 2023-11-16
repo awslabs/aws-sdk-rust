@@ -19,7 +19,7 @@ impl DeleteClusterOutput {
         self.state.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteClusterOutput {
+impl ::aws_types::request_id::RequestId for DeleteClusterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

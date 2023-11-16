@@ -26,7 +26,7 @@ impl PutRecordBatchOutput {
         self.request_responses.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutRecordBatchOutput {
+impl ::aws_types::request_id::RequestId for PutRecordBatchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

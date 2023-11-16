@@ -13,7 +13,7 @@ impl AssociateInstanceStorageConfigOutput {
         self.association_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateInstanceStorageConfigOutput {
+impl ::aws_types::request_id::RequestId for AssociateInstanceStorageConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

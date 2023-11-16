@@ -11,9 +11,9 @@ pub fn de_body_payload(
 }
 
 pub(crate) fn de_content_length_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<i64>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Length").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<i64>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Content-Length");
     let var_1 = ::aws_smithy_http::header::read_many_primitive::<i64>(headers)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
@@ -27,23 +27,23 @@ pub(crate) fn de_content_length_header(
 }
 
 pub(crate) fn de_content_type_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<crate::types::ContentType>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Type").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<crate::types::ContentType>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Content-Type");
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_e_tag_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("ETag").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("ETag");
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_last_modified_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<::aws_smithy_types::DateTime>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Last-Modified").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::aws_smithy_types::DateTime>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Last-Modified");
     let var_2: Vec<::aws_smithy_types::DateTime> = ::aws_smithy_http::header::many_dates(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
     if var_2.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(

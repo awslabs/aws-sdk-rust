@@ -13,7 +13,7 @@ impl CreateInternetGatewayOutput {
         self.internet_gateway.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateInternetGatewayOutput {
+impl ::aws_types::request_id::RequestId for CreateInternetGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

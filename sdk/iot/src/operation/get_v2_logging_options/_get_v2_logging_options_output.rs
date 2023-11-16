@@ -25,7 +25,7 @@ impl GetV2LoggingOptionsOutput {
         self.disable_all_logs
     }
 }
-impl ::aws_http::request_id::RequestId for GetV2LoggingOptionsOutput {
+impl ::aws_types::request_id::RequestId for GetV2LoggingOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

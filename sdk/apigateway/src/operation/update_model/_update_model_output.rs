@@ -38,7 +38,7 @@ impl UpdateModelOutput {
         self.content_type.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateModelOutput {
+impl ::aws_types::request_id::RequestId for UpdateModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

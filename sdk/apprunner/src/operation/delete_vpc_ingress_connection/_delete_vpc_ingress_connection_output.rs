@@ -13,7 +13,7 @@ impl DeleteVpcIngressConnectionOutput {
         self.vpc_ingress_connection.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteVpcIngressConnectionOutput {
+impl ::aws_types::request_id::RequestId for DeleteVpcIngressConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

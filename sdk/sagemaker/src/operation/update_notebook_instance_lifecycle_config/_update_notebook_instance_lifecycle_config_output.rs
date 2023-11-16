@@ -5,7 +5,7 @@
 pub struct UpdateNotebookInstanceLifecycleConfigOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateNotebookInstanceLifecycleConfigOutput {
+impl ::aws_types::request_id::RequestId for UpdateNotebookInstanceLifecycleConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

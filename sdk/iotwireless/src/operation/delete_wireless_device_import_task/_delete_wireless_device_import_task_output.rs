@@ -5,7 +5,7 @@
 pub struct DeleteWirelessDeviceImportTaskOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteWirelessDeviceImportTaskOutput {
+impl ::aws_types::request_id::RequestId for DeleteWirelessDeviceImportTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

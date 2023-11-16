@@ -20,7 +20,7 @@ impl ListStreamSessionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListStreamSessionsOutput {
+impl ::aws_types::request_id::RequestId for ListStreamSessionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

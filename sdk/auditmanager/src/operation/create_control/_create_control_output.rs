@@ -13,7 +13,7 @@ impl CreateControlOutput {
         self.control.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateControlOutput {
+impl ::aws_types::request_id::RequestId for CreateControlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl GetCoverageStatisticsOutput {
         self.coverage_statistics.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCoverageStatisticsOutput {
+impl ::aws_types::request_id::RequestId for GetCoverageStatisticsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

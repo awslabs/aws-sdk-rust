@@ -19,7 +19,7 @@ impl DeleteAppInputSourceOutput {
         self.app_input_source.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteAppInputSourceOutput {
+impl ::aws_types::request_id::RequestId for DeleteAppInputSourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

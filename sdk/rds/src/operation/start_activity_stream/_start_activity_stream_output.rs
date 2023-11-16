@@ -43,7 +43,7 @@ impl StartActivityStreamOutput {
         self.engine_native_audit_fields_included
     }
 }
-impl ::aws_http::request_id::RequestId for StartActivityStreamOutput {
+impl ::aws_types::request_id::RequestId for StartActivityStreamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

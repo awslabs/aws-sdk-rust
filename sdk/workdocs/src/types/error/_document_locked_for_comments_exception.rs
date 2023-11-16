@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DocumentLockedForCommentsException {
     }
 }
 impl ::std::error::Error for DocumentLockedForCommentsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DocumentLockedForCommentsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DocumentLockedForCommentsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

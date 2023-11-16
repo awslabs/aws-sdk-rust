@@ -26,7 +26,7 @@ impl ::std::fmt::Display for RevisionDoesNotExistException {
     }
 }
 impl ::std::error::Error for RevisionDoesNotExistException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::RevisionDoesNotExistException {
+impl ::aws_types::request_id::RequestId for crate::types::error::RevisionDoesNotExistException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

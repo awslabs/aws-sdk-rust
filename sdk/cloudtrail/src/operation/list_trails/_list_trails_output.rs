@@ -21,7 +21,7 @@ impl ListTrailsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTrailsOutput {
+impl ::aws_types::request_id::RequestId for ListTrailsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

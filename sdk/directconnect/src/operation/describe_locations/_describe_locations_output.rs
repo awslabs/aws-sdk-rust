@@ -15,7 +15,7 @@ impl DescribeLocationsOutput {
         self.locations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLocationsOutput {
+impl ::aws_types::request_id::RequestId for DescribeLocationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

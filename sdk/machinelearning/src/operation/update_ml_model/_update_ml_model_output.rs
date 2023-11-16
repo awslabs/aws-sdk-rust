@@ -15,7 +15,7 @@ impl UpdateMlModelOutput {
         self.ml_model_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateMlModelOutput {
+impl ::aws_types::request_id::RequestId for UpdateMlModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

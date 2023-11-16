@@ -13,7 +13,7 @@ impl GetDefaultCreditSpecificationOutput {
         self.instance_family_credit_specification.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDefaultCreditSpecificationOutput {
+impl ::aws_types::request_id::RequestId for GetDefaultCreditSpecificationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -31,7 +31,7 @@ impl GetKxUserOutput {
         self.iam_role.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetKxUserOutput {
+impl ::aws_types::request_id::RequestId for GetKxUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl GetDataProtectionPolicyOutput {
         self.data_protection_policy.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataProtectionPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetDataProtectionPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -42,7 +42,7 @@ impl RunInstancesOutput {
         self.reservation_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RunInstancesOutput {
+impl ::aws_types::request_id::RequestId for RunInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -14,7 +14,7 @@ impl UnsubscribeOutput {
         self.arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UnsubscribeOutput {
+impl ::aws_types::request_id::RequestId for UnsubscribeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

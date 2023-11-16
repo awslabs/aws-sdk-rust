@@ -21,7 +21,7 @@ impl ListModelMetadataOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListModelMetadataOutput {
+impl ::aws_types::request_id::RequestId for ListModelMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

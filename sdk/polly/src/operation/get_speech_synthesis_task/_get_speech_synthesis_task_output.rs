@@ -13,7 +13,7 @@ impl GetSpeechSynthesisTaskOutput {
         self.synthesis_task.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSpeechSynthesisTaskOutput {
+impl ::aws_types::request_id::RequestId for GetSpeechSynthesisTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

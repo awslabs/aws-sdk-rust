@@ -21,7 +21,7 @@ impl AssignPrivateNatGatewayAddressOutput {
         self.nat_gateway_addresses.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AssignPrivateNatGatewayAddressOutput {
+impl ::aws_types::request_id::RequestId for AssignPrivateNatGatewayAddressOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

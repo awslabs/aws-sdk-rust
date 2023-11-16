@@ -13,7 +13,7 @@ impl CancelCapacityReservationOutput {
         self.r#return
     }
 }
-impl ::aws_http::request_id::RequestId for CancelCapacityReservationOutput {
+impl ::aws_types::request_id::RequestId for CancelCapacityReservationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

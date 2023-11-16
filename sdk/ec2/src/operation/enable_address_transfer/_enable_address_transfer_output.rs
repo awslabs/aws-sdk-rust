@@ -13,7 +13,7 @@ impl EnableAddressTransferOutput {
         self.address_transfer.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for EnableAddressTransferOutput {
+impl ::aws_types::request_id::RequestId for EnableAddressTransferOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -38,7 +38,7 @@ impl DeleteFileSystemOutput {
         self.open_zfs_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteFileSystemOutput {
+impl ::aws_types::request_id::RequestId for DeleteFileSystemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

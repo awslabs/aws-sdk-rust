@@ -13,7 +13,7 @@ impl GetExperimentOutput {
         self.experiment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetExperimentOutput {
+impl ::aws_types::request_id::RequestId for GetExperimentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

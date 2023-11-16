@@ -67,7 +67,7 @@ impl LockSnapshotOutput {
         self.lock_duration_start_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for LockSnapshotOutput {
+impl ::aws_types::request_id::RequestId for LockSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

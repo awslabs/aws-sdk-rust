@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidDeploymentWaitTypeException {
     }
 }
 impl ::std::error::Error for InvalidDeploymentWaitTypeException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidDeploymentWaitTypeException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidDeploymentWaitTypeException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

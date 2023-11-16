@@ -28,7 +28,7 @@ impl DescribeReplicationTableStatisticsOutput {
         self.replication_table_statistics.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReplicationTableStatisticsOutput {
+impl ::aws_types::request_id::RequestId for DescribeReplicationTableStatisticsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

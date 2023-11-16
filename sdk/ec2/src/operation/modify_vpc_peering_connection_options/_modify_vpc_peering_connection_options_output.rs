@@ -19,7 +19,7 @@ impl ModifyVpcPeeringConnectionOptionsOutput {
         self.requester_peering_connection_options.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyVpcPeeringConnectionOptionsOutput {
+impl ::aws_types::request_id::RequestId for ModifyVpcPeeringConnectionOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

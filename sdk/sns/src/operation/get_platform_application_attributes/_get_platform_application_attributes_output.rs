@@ -32,7 +32,7 @@ impl GetPlatformApplicationAttributesOutput {
         self.attributes.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPlatformApplicationAttributesOutput {
+impl ::aws_types::request_id::RequestId for GetPlatformApplicationAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

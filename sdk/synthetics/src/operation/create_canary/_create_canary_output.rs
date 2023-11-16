@@ -13,7 +13,7 @@ impl CreateCanaryOutput {
         self.canary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCanaryOutput {
+impl ::aws_types::request_id::RequestId for CreateCanaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,7 +19,7 @@ impl ModifyInstanceMetadataOptionsOutput {
         self.instance_metadata_options.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyInstanceMetadataOptionsOutput {
+impl ::aws_types::request_id::RequestId for ModifyInstanceMetadataOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

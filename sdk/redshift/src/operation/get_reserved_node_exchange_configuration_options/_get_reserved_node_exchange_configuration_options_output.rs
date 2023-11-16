@@ -21,7 +21,7 @@ impl GetReservedNodeExchangeConfigurationOptionsOutput {
         self.reserved_node_configuration_option_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetReservedNodeExchangeConfigurationOptionsOutput {
+impl ::aws_types::request_id::RequestId for GetReservedNodeExchangeConfigurationOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

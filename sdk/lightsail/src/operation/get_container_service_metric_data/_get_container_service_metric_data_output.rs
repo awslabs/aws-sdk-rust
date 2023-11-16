@@ -21,7 +21,7 @@ impl GetContainerServiceMetricDataOutput {
         self.metric_data.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetContainerServiceMetricDataOutput {
+impl ::aws_types::request_id::RequestId for GetContainerServiceMetricDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

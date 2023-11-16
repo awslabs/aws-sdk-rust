@@ -5,7 +5,7 @@
 pub struct ExecuteScheduledQueryOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for ExecuteScheduledQueryOutput {
+impl ::aws_types::request_id::RequestId for ExecuteScheduledQueryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

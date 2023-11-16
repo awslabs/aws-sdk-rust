@@ -45,7 +45,7 @@ impl ::std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GenerateEmbedUrlForAnonymousUserOutput {
+impl ::aws_types::request_id::RequestId for GenerateEmbedUrlForAnonymousUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

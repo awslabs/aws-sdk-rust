@@ -35,7 +35,7 @@ impl ::std::fmt::Display for UnsupportedAvailabilityZone {
     }
 }
 impl ::std::error::Error for UnsupportedAvailabilityZone {}
-impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedAvailabilityZone {
+impl ::aws_types::request_id::RequestId for crate::types::error::UnsupportedAvailabilityZone {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

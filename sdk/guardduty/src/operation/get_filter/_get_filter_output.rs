@@ -43,7 +43,7 @@ impl GetFilterOutput {
         self.tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetFilterOutput {
+impl ::aws_types::request_id::RequestId for GetFilterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

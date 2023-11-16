@@ -13,7 +13,7 @@ impl StartRestoreJobOutput {
         self.restore_job_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartRestoreJobOutput {
+impl ::aws_types::request_id::RequestId for StartRestoreJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

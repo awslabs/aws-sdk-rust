@@ -45,7 +45,7 @@ impl DescribeDimensionOutput {
         self.last_modified_date.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDimensionOutput {
+impl ::aws_types::request_id::RequestId for DescribeDimensionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

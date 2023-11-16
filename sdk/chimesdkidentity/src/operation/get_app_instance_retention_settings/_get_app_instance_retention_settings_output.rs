@@ -19,7 +19,7 @@ impl GetAppInstanceRetentionSettingsOutput {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAppInstanceRetentionSettingsOutput {
+impl ::aws_types::request_id::RequestId for GetAppInstanceRetentionSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

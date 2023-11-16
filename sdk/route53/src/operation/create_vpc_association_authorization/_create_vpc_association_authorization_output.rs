@@ -21,7 +21,7 @@ impl CreateVpcAssociationAuthorizationOutput {
         self.vpc.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateVpcAssociationAuthorizationOutput {
+impl ::aws_types::request_id::RequestId for CreateVpcAssociationAuthorizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

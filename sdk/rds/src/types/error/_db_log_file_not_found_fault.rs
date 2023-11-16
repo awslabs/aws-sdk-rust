@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DbLogFileNotFoundFault {
     }
 }
 impl ::std::error::Error for DbLogFileNotFoundFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DbLogFileNotFoundFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::DbLogFileNotFoundFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

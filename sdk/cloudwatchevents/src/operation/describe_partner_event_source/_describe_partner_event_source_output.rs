@@ -19,7 +19,7 @@ impl DescribePartnerEventSourceOutput {
         self.name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePartnerEventSourceOutput {
+impl ::aws_types::request_id::RequestId for DescribePartnerEventSourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

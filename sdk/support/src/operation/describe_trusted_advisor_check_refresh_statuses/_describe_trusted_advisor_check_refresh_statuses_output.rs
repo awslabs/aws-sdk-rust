@@ -15,7 +15,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
         self.statuses.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckRefreshStatusesOutput {
+impl ::aws_types::request_id::RequestId for DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

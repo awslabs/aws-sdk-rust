@@ -13,7 +13,7 @@ impl CreateLocalGatewayRouteTableVpcAssociationOutput {
         self.local_gateway_route_table_vpc_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateLocalGatewayRouteTableVpcAssociationOutput {
+impl ::aws_types::request_id::RequestId for CreateLocalGatewayRouteTableVpcAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

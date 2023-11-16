@@ -42,7 +42,7 @@ impl UpdateAccessLogSubscriptionOutput {
         self.destination_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAccessLogSubscriptionOutput {
+impl ::aws_types::request_id::RequestId for UpdateAccessLogSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

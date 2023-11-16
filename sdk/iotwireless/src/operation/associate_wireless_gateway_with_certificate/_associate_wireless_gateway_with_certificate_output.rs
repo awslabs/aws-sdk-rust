@@ -13,7 +13,7 @@ impl AssociateWirelessGatewayWithCertificateOutput {
         self.iot_certificate_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateWirelessGatewayWithCertificateOutput {
+impl ::aws_types::request_id::RequestId for AssociateWirelessGatewayWithCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

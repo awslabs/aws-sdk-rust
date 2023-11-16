@@ -25,7 +25,7 @@ impl AssociateEnclaveCertificateIamRoleOutput {
         self.encryption_kms_key_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateEnclaveCertificateIamRoleOutput {
+impl ::aws_types::request_id::RequestId for AssociateEnclaveCertificateIamRoleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

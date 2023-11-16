@@ -13,7 +13,7 @@ impl DescribeAppInstanceUserOutput {
         self.app_instance_user.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAppInstanceUserOutput {
+impl ::aws_types::request_id::RequestId for DescribeAppInstanceUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

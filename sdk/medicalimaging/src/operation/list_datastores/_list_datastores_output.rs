@@ -21,7 +21,7 @@ impl ListDatastoresOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListDatastoresOutput {
+impl ::aws_types::request_id::RequestId for ListDatastoresOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

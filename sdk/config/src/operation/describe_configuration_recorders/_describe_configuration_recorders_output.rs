@@ -16,7 +16,7 @@ impl DescribeConfigurationRecordersOutput {
         self.configuration_recorders.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeConfigurationRecordersOutput {
+impl ::aws_types::request_id::RequestId for DescribeConfigurationRecordersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

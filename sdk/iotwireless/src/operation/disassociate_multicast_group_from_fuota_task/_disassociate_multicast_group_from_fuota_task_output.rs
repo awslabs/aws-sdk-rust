@@ -5,7 +5,7 @@
 pub struct DisassociateMulticastGroupFromFuotaTaskOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DisassociateMulticastGroupFromFuotaTaskOutput {
+impl ::aws_types::request_id::RequestId for DisassociateMulticastGroupFromFuotaTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

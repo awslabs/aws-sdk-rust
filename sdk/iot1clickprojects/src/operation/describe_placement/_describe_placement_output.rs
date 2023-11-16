@@ -13,7 +13,7 @@ impl DescribePlacementOutput {
         self.placement.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePlacementOutput {
+impl ::aws_types::request_id::RequestId for DescribePlacementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

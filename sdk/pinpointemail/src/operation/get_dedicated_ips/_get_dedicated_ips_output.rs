@@ -22,7 +22,7 @@ impl GetDedicatedIpsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDedicatedIpsOutput {
+impl ::aws_types::request_id::RequestId for GetDedicatedIpsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

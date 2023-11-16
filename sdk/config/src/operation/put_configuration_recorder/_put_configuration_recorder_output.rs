@@ -5,7 +5,7 @@
 pub struct PutConfigurationRecorderOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutConfigurationRecorderOutput {
+impl ::aws_types::request_id::RequestId for PutConfigurationRecorderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

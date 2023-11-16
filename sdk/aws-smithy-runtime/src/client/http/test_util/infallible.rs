@@ -7,7 +7,7 @@ use aws_smithy_runtime_api::client::http::{
     HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpClient,
     SharedHttpConnector,
 };
-use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::client::result::ConnectorError;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::shared::IntoShared;
@@ -60,7 +60,10 @@ impl InfallibleClientFn {
 
 impl HttpConnector for InfallibleClientFn {
     fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
-        HttpConnectorFuture::ready((self.response)(request.into_http02x().unwrap()))
+        HttpConnectorFuture::ready(
+            (self.response)(request.try_into_http02x().unwrap())
+                .map(|res| HttpResponse::try_from(res).unwrap()),
+        )
     }
 }
 

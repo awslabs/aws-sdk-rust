@@ -13,7 +13,7 @@ impl GetCardinalityOutput {
         self.cardinality
     }
 }
-impl ::aws_http::request_id::RequestId for GetCardinalityOutput {
+impl ::aws_types::request_id::RequestId for GetCardinalityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

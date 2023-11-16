@@ -5,7 +5,7 @@
 pub struct DeleteWorkspaceImageOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteWorkspaceImageOutput {
+impl ::aws_types::request_id::RequestId for DeleteWorkspaceImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

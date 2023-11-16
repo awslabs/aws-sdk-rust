@@ -107,7 +107,7 @@ impl UpdateKxEnvironmentNetworkOutput {
         self.availability_zone_ids.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateKxEnvironmentNetworkOutput {
+impl ::aws_types::request_id::RequestId for UpdateKxEnvironmentNetworkOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

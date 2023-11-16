@@ -15,7 +15,7 @@ impl DescribeVpcPeeringAuthorizationsOutput {
         self.vpc_peering_authorizations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeVpcPeeringAuthorizationsOutput {
+impl ::aws_types::request_id::RequestId for DescribeVpcPeeringAuthorizationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

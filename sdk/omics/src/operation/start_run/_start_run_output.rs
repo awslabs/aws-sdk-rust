@@ -43,7 +43,7 @@ impl StartRunOutput {
         self.run_output_uri.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartRunOutput {
+impl ::aws_types::request_id::RequestId for StartRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

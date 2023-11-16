@@ -29,7 +29,7 @@ impl ::std::fmt::Display for WafExpiredManagedRuleGroupVersionException {
     }
 }
 impl ::std::error::Error for WafExpiredManagedRuleGroupVersionException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::WafExpiredManagedRuleGroupVersionException {
+impl ::aws_types::request_id::RequestId for crate::types::error::WafExpiredManagedRuleGroupVersionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

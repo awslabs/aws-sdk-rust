@@ -13,7 +13,7 @@ impl GetSchemaAnalysisRuleOutput {
         self.analysis_rule.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSchemaAnalysisRuleOutput {
+impl ::aws_types::request_id::RequestId for GetSchemaAnalysisRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

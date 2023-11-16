@@ -21,7 +21,7 @@ impl SearchTablesByLfTagsOutput {
         self.table_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for SearchTablesByLfTagsOutput {
+impl ::aws_types::request_id::RequestId for SearchTablesByLfTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

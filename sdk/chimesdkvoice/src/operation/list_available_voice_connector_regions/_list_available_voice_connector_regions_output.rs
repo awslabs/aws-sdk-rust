@@ -15,7 +15,7 @@ impl ListAvailableVoiceConnectorRegionsOutput {
         self.voice_connector_regions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAvailableVoiceConnectorRegionsOutput {
+impl ::aws_types::request_id::RequestId for ListAvailableVoiceConnectorRegionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

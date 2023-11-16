@@ -14,7 +14,7 @@ impl StartReplicationOutput {
         self.replication.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartReplicationOutput {
+impl ::aws_types::request_id::RequestId for StartReplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CopyDistr
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 201 || force_error {
             crate::protocol_serde::shape_copy_distribution::de_copy_distribution_http_error(status, headers, body)
         } else {
@@ -557,7 +557,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CopyDistribut
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::copy_distribution::CopyDistributionError {
+impl ::aws_types::request_id::RequestId for crate::operation::copy_distribution::CopyDistributionError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

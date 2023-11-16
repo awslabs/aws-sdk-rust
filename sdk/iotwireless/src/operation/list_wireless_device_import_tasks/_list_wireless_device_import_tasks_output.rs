@@ -21,7 +21,7 @@ impl ListWirelessDeviceImportTasksOutput {
         self.wireless_device_import_task_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListWirelessDeviceImportTasksOutput {
+impl ::aws_types::request_id::RequestId for ListWirelessDeviceImportTasksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

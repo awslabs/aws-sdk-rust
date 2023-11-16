@@ -23,7 +23,7 @@ impl GetColumnStatisticsForTableOutput {
         self.errors.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetColumnStatisticsForTableOutput {
+impl ::aws_types::request_id::RequestId for GetColumnStatisticsForTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

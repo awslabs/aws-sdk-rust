@@ -13,7 +13,7 @@ impl CreateContentOutput {
         self.content.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateContentOutput {
+impl ::aws_types::request_id::RequestId for CreateContentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

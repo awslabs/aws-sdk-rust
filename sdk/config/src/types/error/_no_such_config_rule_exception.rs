@@ -26,7 +26,7 @@ impl ::std::fmt::Display for NoSuchConfigRuleException {
     }
 }
 impl ::std::error::Error for NoSuchConfigRuleException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::NoSuchConfigRuleException {
+impl ::aws_types::request_id::RequestId for crate::types::error::NoSuchConfigRuleException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

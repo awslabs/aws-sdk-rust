@@ -14,7 +14,7 @@ impl StartExportOutput {
         self.export_task.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartExportOutput {
+impl ::aws_types::request_id::RequestId for StartExportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

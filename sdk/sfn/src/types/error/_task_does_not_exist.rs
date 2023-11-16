@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TaskDoesNotExist {
     }
 }
 impl ::std::error::Error for TaskDoesNotExist {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TaskDoesNotExist {
+impl ::aws_types::request_id::RequestId for crate::types::error::TaskDoesNotExist {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

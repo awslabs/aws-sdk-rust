@@ -14,7 +14,7 @@ impl GetSshPublicKeyOutput {
         self.ssh_public_key.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSshPublicKeyOutput {
+impl ::aws_types::request_id::RequestId for GetSshPublicKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

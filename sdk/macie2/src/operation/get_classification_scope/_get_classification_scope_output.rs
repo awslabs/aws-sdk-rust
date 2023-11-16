@@ -25,7 +25,7 @@ impl GetClassificationScopeOutput {
         self.s3.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetClassificationScopeOutput {
+impl ::aws_types::request_id::RequestId for GetClassificationScopeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

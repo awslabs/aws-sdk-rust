@@ -19,7 +19,7 @@ impl StartSigningJobOutput {
         self.job_owner.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartSigningJobOutput {
+impl ::aws_types::request_id::RequestId for StartSigningJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -31,7 +31,7 @@ impl DescribeAccountLimitsOutput {
         self.number_of_launch_configurations
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAccountLimitsOutput {
+impl ::aws_types::request_id::RequestId for DescribeAccountLimitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

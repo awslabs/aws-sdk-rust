@@ -49,7 +49,7 @@ impl ::std::fmt::Display for ServerShutdownException {
     }
 }
 impl ::std::error::Error for ServerShutdownException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ServerShutdownException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ServerShutdownException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -13,7 +13,7 @@ impl CreateRecommenderOutput {
         self.recommender_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRecommenderOutput {
+impl ::aws_types::request_id::RequestId for CreateRecommenderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

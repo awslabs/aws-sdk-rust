@@ -83,7 +83,7 @@ impl RecognizeUtteranceOutput {
         self.recognized_bot_member.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RecognizeUtteranceOutput {
+impl ::aws_types::request_id::RequestId for RecognizeUtteranceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -5,7 +5,7 @@
 pub struct DeleteDeliveryChannelOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteDeliveryChannelOutput {
+impl ::aws_types::request_id::RequestId for DeleteDeliveryChannelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

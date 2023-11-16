@@ -14,7 +14,7 @@ impl CreateRoleOutput {
         self.role.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRoleOutput {
+impl ::aws_types::request_id::RequestId for CreateRoleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

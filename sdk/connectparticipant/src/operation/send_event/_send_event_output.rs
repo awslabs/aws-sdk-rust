@@ -21,7 +21,7 @@ impl SendEventOutput {
         self.absolute_time.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SendEventOutput {
+impl ::aws_types::request_id::RequestId for SendEventOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -25,7 +25,7 @@ impl EncryptOutput {
         self.encryption_algorithm.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for EncryptOutput {
+impl ::aws_types::request_id::RequestId for EncryptOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

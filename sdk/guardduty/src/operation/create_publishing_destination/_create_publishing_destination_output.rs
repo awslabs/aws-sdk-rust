@@ -13,7 +13,7 @@ impl CreatePublishingDestinationOutput {
         self.destination_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePublishingDestinationOutput {
+impl ::aws_types::request_id::RequestId for CreatePublishingDestinationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

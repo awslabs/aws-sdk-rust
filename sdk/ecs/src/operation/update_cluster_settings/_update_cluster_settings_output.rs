@@ -13,7 +13,7 @@ impl UpdateClusterSettingsOutput {
         self.cluster.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateClusterSettingsOutput {
+impl ::aws_types::request_id::RequestId for UpdateClusterSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

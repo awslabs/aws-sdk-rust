@@ -43,7 +43,7 @@ impl CreateBackendApiOutput {
         self.status.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateBackendApiOutput {
+impl ::aws_types::request_id::RequestId for CreateBackendApiOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

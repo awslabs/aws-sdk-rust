@@ -13,7 +13,7 @@ impl GetResolverQueryLogConfigPolicyOutput {
         self.resolver_query_log_config_policy.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetResolverQueryLogConfigPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetResolverQueryLogConfigPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -37,7 +37,7 @@ impl GetHostOutput {
         self.vpc_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetHostOutput {
+impl ::aws_types::request_id::RequestId for GetHostOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

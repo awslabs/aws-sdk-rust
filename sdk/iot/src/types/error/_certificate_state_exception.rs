@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CertificateStateException {
     }
 }
 impl ::std::error::Error for CertificateStateException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CertificateStateException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CertificateStateException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -13,7 +13,7 @@ impl StartHumanLoopOutput {
         self.human_loop_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartHumanLoopOutput {
+impl ::aws_types::request_id::RequestId for StartHumanLoopOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

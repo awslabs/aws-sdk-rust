@@ -21,7 +21,7 @@ impl DescribeRecommendationsOutput {
         self.recommendations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRecommendationsOutput {
+impl ::aws_types::request_id::RequestId for DescribeRecommendationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

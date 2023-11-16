@@ -19,7 +19,7 @@ impl CreateDetectorOutput {
         self.unprocessed_data_sources.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDetectorOutput {
+impl ::aws_types::request_id::RequestId for CreateDetectorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

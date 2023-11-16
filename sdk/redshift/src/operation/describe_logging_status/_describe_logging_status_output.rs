@@ -58,7 +58,7 @@ impl DescribeLoggingStatusOutput {
         self.log_exports.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLoggingStatusOutput {
+impl ::aws_types::request_id::RequestId for DescribeLoggingStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

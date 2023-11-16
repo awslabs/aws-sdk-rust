@@ -77,7 +77,7 @@ impl DeletePoolOutput {
         self.created_timestamp.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeletePoolOutput {
+impl ::aws_types::request_id::RequestId for DeletePoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

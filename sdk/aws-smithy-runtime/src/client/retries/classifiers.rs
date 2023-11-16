@@ -156,7 +156,7 @@ impl ClassifyRetry for HttpStatusCodeClassifier {
     fn classify_retry(&self, ctx: &InterceptorContext) -> RetryAction {
         let is_retryable = ctx
             .response()
-            .map(|res| res.status().as_u16())
+            .map(|res| res.status().into())
             .map(|status| self.retryable_status_codes.contains(&status))
             .unwrap_or_default();
 
@@ -247,7 +247,7 @@ mod test {
             .unwrap()
             .map(SdkBody::from);
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
-        ctx.set_response(res);
+        ctx.set_response(res.try_into().unwrap());
         assert_eq!(policy.classify_retry(&ctx), RetryAction::transient_error());
     }
 
@@ -260,7 +260,7 @@ mod test {
             .unwrap()
             .map(SdkBody::from);
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
-        ctx.set_response(res);
+        ctx.set_response(res.try_into().unwrap());
         assert_eq!(policy.classify_retry(&ctx), RetryAction::NoActionIndicated);
     }
 

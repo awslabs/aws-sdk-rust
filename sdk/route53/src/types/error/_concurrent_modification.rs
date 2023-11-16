@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ConcurrentModification {
     }
 }
 impl ::std::error::Error for ConcurrentModification {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ConcurrentModification {
+impl ::aws_types::request_id::RequestId for crate::types::error::ConcurrentModification {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

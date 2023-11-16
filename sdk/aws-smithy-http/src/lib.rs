@@ -35,7 +35,6 @@ pub mod endpoint;
 #[doc(hidden)]
 pub mod futures_stream_adapter;
 pub mod header;
-pub mod http;
 pub mod label;
 pub mod operation;
 pub mod query;

@@ -14,7 +14,7 @@ impl StartJobOutput {
         self.job_summary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartJobOutput {
+impl ::aws_types::request_id::RequestId for StartJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

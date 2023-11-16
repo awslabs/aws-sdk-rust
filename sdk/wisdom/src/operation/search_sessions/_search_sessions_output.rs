@@ -20,7 +20,7 @@ impl SearchSessionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SearchSessionsOutput {
+impl ::aws_types::request_id::RequestId for SearchSessionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

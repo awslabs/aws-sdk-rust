@@ -79,7 +79,7 @@ impl ModifyDbClusterEndpointOutput {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyDbClusterEndpointOutput {
+impl ::aws_types::request_id::RequestId for ModifyDbClusterEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

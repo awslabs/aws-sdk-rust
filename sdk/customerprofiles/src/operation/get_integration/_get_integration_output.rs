@@ -63,7 +63,7 @@ impl GetIntegrationOutput {
         self.is_unstructured
     }
 }
-impl ::aws_http::request_id::RequestId for GetIntegrationOutput {
+impl ::aws_types::request_id::RequestId for GetIntegrationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

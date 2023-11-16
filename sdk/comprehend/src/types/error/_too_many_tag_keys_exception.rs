@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TooManyTagKeysException {
     }
 }
 impl ::std::error::Error for TooManyTagKeysException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyTagKeysException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyTagKeysException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -13,7 +13,7 @@ impl GetRuleGroupOutput {
         self.rule_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRuleGroupOutput {
+impl ::aws_types::request_id::RequestId for GetRuleGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

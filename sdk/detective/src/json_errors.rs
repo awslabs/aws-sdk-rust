@@ -6,9 +6,8 @@
 
 use aws_smithy_json::deserialize::token::skip_value;
 use aws_smithy_json::deserialize::{error::DeserializeError, json_token_iter, Token};
+use aws_smithy_runtime_api::http::Headers;
 use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata};
-use http::header::ToStrError;
-use http::{HeaderMap, HeaderValue};
 use std::borrow::Cow;
 
 // currently only used by AwsJson
@@ -64,19 +63,11 @@ fn parse_error_body(bytes: &[u8]) -> Result<ErrorBody, DeserializeError> {
     Ok(ErrorBody { code: code.or(typ), message })
 }
 
-fn error_type_from_header(headers: &HeaderMap<HeaderValue>) -> Result<Option<&str>, ToStrError> {
-    headers.get("X-Amzn-Errortype").map(|v| v.to_str()).transpose()
-}
-
-pub fn parse_error_metadata(payload: &[u8], headers: &HeaderMap<HeaderValue>) -> Result<ErrorMetadataBuilder, DeserializeError> {
+pub fn parse_error_metadata(payload: &[u8], headers: &Headers) -> Result<ErrorMetadataBuilder, DeserializeError> {
     let ErrorBody { code, message } = parse_error_body(payload)?;
 
     let mut err_builder = ErrorMetadata::builder();
-    if let Some(code) = error_type_from_header(headers)
-        .map_err(|_| DeserializeError::custom("X-Amzn-Errortype header was not valid UTF-8"))?
-        .or(code.as_deref())
-        .map(sanitize_error_code)
-    {
+    if let Some(code) = headers.get("x-amzn-errortype").or(code.as_deref()).map(sanitize_error_code) {
         err_builder = err_builder.code(code);
     }
     if let Some(message) = message {
@@ -88,17 +79,22 @@ pub fn parse_error_metadata(payload: &[u8], headers: &HeaderMap<HeaderValue>) ->
 #[cfg(test)]
 mod test {
     use crate::json_errors::{parse_error_body, parse_error_metadata, sanitize_error_code};
-    use aws_smithy_types::Error;
-    use bytes::Bytes;
+    use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
+    use aws_smithy_types::{body::SdkBody, Error};
     use std::borrow::Cow;
 
     #[test]
     fn error_metadata() {
-        let response = http::Response::builder()
-            .body(Bytes::from_static(br#"{ "__type": "FooError", "message": "Go to foo" }"#))
-            .unwrap();
+        let response = HttpResponse::try_from(
+            http::Response::builder()
+                .body(SdkBody::from(r#"{ "__type": "FooError", "message": "Go to foo" }"#))
+                .unwrap(),
+        )
+        .unwrap();
         assert_eq!(
-            parse_error_metadata(response.body(), response.headers()).unwrap().build(),
+            parse_error_metadata(response.body().bytes().unwrap(), response.headers())
+                .unwrap()
+                .build(),
             Error::builder().code("FooError").message("Go to foo").build()
         )
     }
@@ -158,17 +154,22 @@ mod test {
     // services like lambda use an alternate `Message` instead of `message`
     #[test]
     fn alternative_error_message_names() {
-        let response = http::Response::builder()
-            .header("x-amzn-errortype", "ResourceNotFoundException")
-            .body(Bytes::from_static(
-                br#"{
+        let response = HttpResponse::try_from(
+            http::Response::builder()
+                .header("x-amzn-errortype", "ResourceNotFoundException")
+                .body(SdkBody::from(
+                    r#"{
                     "Type": "User",
                     "Message": "Functions from 'us-west-2' are not reachable from us-east-1"
                 }"#,
-            ))
-            .unwrap();
+                ))
+                .unwrap(),
+        )
+        .unwrap();
         assert_eq!(
-            parse_error_metadata(response.body(), response.headers()).unwrap().build(),
+            parse_error_metadata(response.body().bytes().unwrap(), response.headers())
+                .unwrap()
+                .build(),
             Error::builder()
                 .code("ResourceNotFoundException")
                 .message("Functions from 'us-west-2' are not reachable from us-east-1")

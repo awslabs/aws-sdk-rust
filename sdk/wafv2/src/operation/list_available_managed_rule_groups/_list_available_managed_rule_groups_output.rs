@@ -21,7 +21,7 @@ impl ListAvailableManagedRuleGroupsOutput {
         self.managed_rule_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAvailableManagedRuleGroupsOutput {
+impl ::aws_types::request_id::RequestId for ListAvailableManagedRuleGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

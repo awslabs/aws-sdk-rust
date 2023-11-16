@@ -14,7 +14,7 @@ impl CreateProvisionedModelThroughputOutput {
         self.provisioned_model_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateProvisionedModelThroughputOutput {
+impl ::aws_types::request_id::RequestId for CreateProvisionedModelThroughputOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

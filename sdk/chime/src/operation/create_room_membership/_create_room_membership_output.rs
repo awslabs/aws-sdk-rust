@@ -13,7 +13,7 @@ impl CreateRoomMembershipOutput {
         self.room_membership.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRoomMembershipOutput {
+impl ::aws_types::request_id::RequestId for CreateRoomMembershipOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

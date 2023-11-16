@@ -23,7 +23,7 @@ impl CreateGrantOutput {
         self.grant_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateGrantOutput {
+impl ::aws_types::request_id::RequestId for CreateGrantOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

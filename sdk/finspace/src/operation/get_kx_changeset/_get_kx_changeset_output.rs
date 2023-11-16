@@ -75,7 +75,7 @@ impl GetKxChangesetOutput {
         self.error_info.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetKxChangesetOutput {
+impl ::aws_types::request_id::RequestId for GetKxChangesetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

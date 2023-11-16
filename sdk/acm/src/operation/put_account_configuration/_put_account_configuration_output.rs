@@ -5,7 +5,7 @@
 pub struct PutAccountConfigurationOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutAccountConfigurationOutput {
+impl ::aws_types::request_id::RequestId for PutAccountConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

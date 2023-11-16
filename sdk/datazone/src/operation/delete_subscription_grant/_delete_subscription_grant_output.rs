@@ -79,7 +79,7 @@ impl DeleteSubscriptionGrantOutput {
         self.subscription_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteSubscriptionGrantOutput {
+impl ::aws_types::request_id::RequestId for DeleteSubscriptionGrantOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

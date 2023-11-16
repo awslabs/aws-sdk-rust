@@ -14,7 +14,7 @@ impl DisableDelegatedAdminAccountOutput {
         self.delegated_admin_account_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisableDelegatedAdminAccountOutput {
+impl ::aws_types::request_id::RequestId for DisableDelegatedAdminAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

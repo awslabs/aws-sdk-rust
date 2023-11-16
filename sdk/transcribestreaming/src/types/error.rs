@@ -69,7 +69,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TranscriptRes
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::types::error::TranscriptResultStreamError {
+impl ::aws_types::request_id::RequestId for crate::types::error::TranscriptResultStreamError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -183,7 +183,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AudioStreamEr
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::types::error::AudioStreamError {
+impl ::aws_types::request_id::RequestId for crate::types::error::AudioStreamError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -287,7 +287,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MedicalTransc
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::types::error::MedicalTranscriptResultStreamError {
+impl ::aws_types::request_id::RequestId for crate::types::error::MedicalTranscriptResultStreamError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -421,7 +421,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CallAnalytics
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::types::error::CallAnalyticsTranscriptResultStreamError {
+impl ::aws_types::request_id::RequestId for crate::types::error::CallAnalyticsTranscriptResultStreamError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

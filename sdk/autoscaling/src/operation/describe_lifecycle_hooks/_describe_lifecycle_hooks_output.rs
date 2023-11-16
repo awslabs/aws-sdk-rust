@@ -15,7 +15,7 @@ impl DescribeLifecycleHooksOutput {
         self.lifecycle_hooks.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLifecycleHooksOutput {
+impl ::aws_types::request_id::RequestId for DescribeLifecycleHooksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

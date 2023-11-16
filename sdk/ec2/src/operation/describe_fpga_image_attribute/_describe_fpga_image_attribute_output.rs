@@ -13,7 +13,7 @@ impl DescribeFpgaImageAttributeOutput {
         self.fpga_image_attribute.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFpgaImageAttributeOutput {
+impl ::aws_types::request_id::RequestId for DescribeFpgaImageAttributeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

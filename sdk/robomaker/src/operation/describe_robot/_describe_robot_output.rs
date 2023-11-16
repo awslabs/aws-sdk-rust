@@ -70,7 +70,7 @@ impl DescribeRobotOutput {
         self.tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRobotOutput {
+impl ::aws_types::request_id::RequestId for DescribeRobotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for LogDestinationPermissionException {
     }
 }
 impl ::std::error::Error for LogDestinationPermissionException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::LogDestinationPermissionException {
+impl ::aws_types::request_id::RequestId for crate::types::error::LogDestinationPermissionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

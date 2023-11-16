@@ -38,7 +38,7 @@ impl ::std::fmt::Debug for ReEncryptDataOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for ReEncryptDataOutput {
+impl ::aws_types::request_id::RequestId for ReEncryptDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

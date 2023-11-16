@@ -33,7 +33,7 @@ impl CreateSiteOutput {
         &self.updated_at
     }
 }
-impl ::aws_http::request_id::RequestId for CreateSiteOutput {
+impl ::aws_types::request_id::RequestId for CreateSiteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

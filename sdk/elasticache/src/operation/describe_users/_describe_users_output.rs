@@ -21,7 +21,7 @@ impl DescribeUsersOutput {
         self.marker.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeUsersOutput {
+impl ::aws_types::request_id::RequestId for DescribeUsersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

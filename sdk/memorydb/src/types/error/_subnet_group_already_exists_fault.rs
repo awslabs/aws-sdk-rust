@@ -26,7 +26,7 @@ impl ::std::fmt::Display for SubnetGroupAlreadyExistsFault {
     }
 }
 impl ::std::error::Error for SubnetGroupAlreadyExistsFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SubnetGroupAlreadyExistsFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::SubnetGroupAlreadyExistsFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

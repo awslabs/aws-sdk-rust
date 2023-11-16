@@ -13,7 +13,7 @@ impl EnableSerialConsoleAccessOutput {
         self.serial_console_access_enabled
     }
 }
-impl ::aws_http::request_id::RequestId for EnableSerialConsoleAccessOutput {
+impl ::aws_types::request_id::RequestId for EnableSerialConsoleAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

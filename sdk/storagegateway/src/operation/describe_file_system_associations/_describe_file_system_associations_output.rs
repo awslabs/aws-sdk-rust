@@ -15,7 +15,7 @@ impl DescribeFileSystemAssociationsOutput {
         self.file_system_association_info_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFileSystemAssociationsOutput {
+impl ::aws_types::request_id::RequestId for DescribeFileSystemAssociationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

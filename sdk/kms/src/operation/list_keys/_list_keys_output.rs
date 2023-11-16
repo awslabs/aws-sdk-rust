@@ -27,7 +27,7 @@ impl ListKeysOutput {
         self.truncated
     }
 }
-impl ::aws_http::request_id::RequestId for ListKeysOutput {
+impl ::aws_types::request_id::RequestId for ListKeysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

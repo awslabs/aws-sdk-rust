@@ -39,7 +39,7 @@ impl RejectDataShareOutput {
         self.managed_by.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RejectDataShareOutput {
+impl ::aws_types::request_id::RequestId for RejectDataShareOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

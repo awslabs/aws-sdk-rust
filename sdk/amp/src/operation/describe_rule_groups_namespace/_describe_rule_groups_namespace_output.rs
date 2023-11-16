@@ -14,7 +14,7 @@ impl DescribeRuleGroupsNamespaceOutput {
         self.rule_groups_namespace.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRuleGroupsNamespaceOutput {
+impl ::aws_types::request_id::RequestId for DescribeRuleGroupsNamespaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

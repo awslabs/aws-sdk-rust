@@ -25,7 +25,7 @@ impl GetMapSpritesOutput {
         self.cache_control.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetMapSpritesOutput {
+impl ::aws_types::request_id::RequestId for GetMapSpritesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

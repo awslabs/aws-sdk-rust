@@ -13,7 +13,7 @@ impl DeleteIpamResourceDiscoveryOutput {
         self.ipam_resource_discovery.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteIpamResourceDiscoveryOutput {
+impl ::aws_types::request_id::RequestId for DeleteIpamResourceDiscoveryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

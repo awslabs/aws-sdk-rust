@@ -20,7 +20,7 @@ impl GetAnomaliesOutput {
         self.next_page_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAnomaliesOutput {
+impl ::aws_types::request_id::RequestId for GetAnomaliesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

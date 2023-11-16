@@ -15,7 +15,7 @@ impl BatchCreatePartitionOutput {
         self.errors.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchCreatePartitionOutput {
+impl ::aws_types::request_id::RequestId for BatchCreatePartitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

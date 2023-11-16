@@ -67,7 +67,7 @@ impl GetWorkflowRunOutput {
         &self.last_updated_time
     }
 }
-impl ::aws_http::request_id::RequestId for GetWorkflowRunOutput {
+impl ::aws_types::request_id::RequestId for GetWorkflowRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

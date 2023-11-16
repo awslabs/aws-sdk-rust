@@ -26,7 +26,7 @@ impl ::std::fmt::Display for UnsupportedParameterType {
     }
 }
 impl ::std::error::Error for UnsupportedParameterType {}
-impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedParameterType {
+impl ::aws_types::request_id::RequestId for crate::types::error::UnsupportedParameterType {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

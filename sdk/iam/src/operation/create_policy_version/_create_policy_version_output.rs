@@ -14,7 +14,7 @@ impl CreatePolicyVersionOutput {
         self.policy_version.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePolicyVersionOutput {
+impl ::aws_types::request_id::RequestId for CreatePolicyVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

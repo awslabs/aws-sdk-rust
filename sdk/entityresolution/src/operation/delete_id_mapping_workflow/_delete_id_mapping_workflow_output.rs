@@ -14,7 +14,7 @@ impl DeleteIdMappingWorkflowOutput {
         self.message.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteIdMappingWorkflowOutput {
+impl ::aws_types::request_id::RequestId for DeleteIdMappingWorkflowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

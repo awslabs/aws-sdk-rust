@@ -213,7 +213,7 @@ impl CreateWorldGenerationJobOutput {
         self.world_tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateWorldGenerationJobOutput {
+impl ::aws_types::request_id::RequestId for CreateWorldGenerationJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

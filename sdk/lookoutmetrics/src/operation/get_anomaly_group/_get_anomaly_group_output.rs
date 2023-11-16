@@ -13,7 +13,7 @@ impl GetAnomalyGroupOutput {
         self.anomaly_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAnomalyGroupOutput {
+impl ::aws_types::request_id::RequestId for GetAnomalyGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

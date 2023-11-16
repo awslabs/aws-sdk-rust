@@ -21,7 +21,7 @@ impl DescribeProductViewOutput {
         self.provisioning_artifacts.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeProductViewOutput {
+impl ::aws_types::request_id::RequestId for DescribeProductViewOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

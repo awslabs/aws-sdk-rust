@@ -23,7 +23,7 @@ impl ListCidrBlocksOutput {
         self.cidr_blocks.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListCidrBlocksOutput {
+impl ::aws_types::request_id::RequestId for ListCidrBlocksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

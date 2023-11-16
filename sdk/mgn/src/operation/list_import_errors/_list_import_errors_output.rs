@@ -22,7 +22,7 @@ impl ListImportErrorsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListImportErrorsOutput {
+impl ::aws_types::request_id::RequestId for ListImportErrorsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

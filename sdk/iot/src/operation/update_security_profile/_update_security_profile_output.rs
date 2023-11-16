@@ -83,7 +83,7 @@ impl UpdateSecurityProfileOutput {
         self.metrics_export_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSecurityProfileOutput {
+impl ::aws_types::request_id::RequestId for UpdateSecurityProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

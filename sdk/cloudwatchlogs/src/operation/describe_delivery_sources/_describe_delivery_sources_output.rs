@@ -21,7 +21,7 @@ impl DescribeDeliverySourcesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDeliverySourcesOutput {
+impl ::aws_types::request_id::RequestId for DescribeDeliverySourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for OverrideAlreadySetException {
     }
 }
 impl ::std::error::Error for OverrideAlreadySetException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OverrideAlreadySetException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OverrideAlreadySetException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

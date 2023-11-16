@@ -15,7 +15,7 @@ impl BatchDeleteWorldsOutput {
         self.unprocessed_worlds.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchDeleteWorldsOutput {
+impl ::aws_types::request_id::RequestId for BatchDeleteWorldsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

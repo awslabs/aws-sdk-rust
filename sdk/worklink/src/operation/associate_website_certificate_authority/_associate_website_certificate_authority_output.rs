@@ -13,7 +13,7 @@ impl AssociateWebsiteCertificateAuthorityOutput {
         self.website_ca_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateWebsiteCertificateAuthorityOutput {
+impl ::aws_types::request_id::RequestId for AssociateWebsiteCertificateAuthorityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

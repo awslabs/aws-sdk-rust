@@ -15,7 +15,7 @@ impl StopInstanceOutput {
         self.operations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for StopInstanceOutput {
+impl ::aws_types::request_id::RequestId for StopInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

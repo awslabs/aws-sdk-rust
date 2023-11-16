@@ -26,7 +26,7 @@ impl ::std::fmt::Display for OrganizationalUnitNotEmptyException {
     }
 }
 impl ::std::error::Error for OrganizationalUnitNotEmptyException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OrganizationalUnitNotEmptyException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OrganizationalUnitNotEmptyException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

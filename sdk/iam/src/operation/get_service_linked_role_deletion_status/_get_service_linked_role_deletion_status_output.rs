@@ -19,7 +19,7 @@ impl GetServiceLinkedRoleDeletionStatusOutput {
         self.reason.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetServiceLinkedRoleDeletionStatusOutput {
+impl ::aws_types::request_id::RequestId for GetServiceLinkedRoleDeletionStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

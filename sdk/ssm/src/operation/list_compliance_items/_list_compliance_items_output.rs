@@ -21,7 +21,7 @@ impl ListComplianceItemsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListComplianceItemsOutput {
+impl ::aws_types::request_id::RequestId for ListComplianceItemsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

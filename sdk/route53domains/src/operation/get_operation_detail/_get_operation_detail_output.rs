@@ -70,7 +70,7 @@ impl GetOperationDetailOutput {
         self.status_flag.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetOperationDetailOutput {
+impl ::aws_types::request_id::RequestId for GetOperationDetailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

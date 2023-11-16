@@ -31,7 +31,7 @@ impl CreateArchiveOutput {
         self.creation_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateArchiveOutput {
+impl ::aws_types::request_id::RequestId for CreateArchiveOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

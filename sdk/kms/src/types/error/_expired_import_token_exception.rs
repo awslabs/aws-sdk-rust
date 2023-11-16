@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ExpiredImportTokenException {
     }
 }
 impl ::std::error::Error for ExpiredImportTokenException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ExpiredImportTokenException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ExpiredImportTokenException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

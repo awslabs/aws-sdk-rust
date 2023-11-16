@@ -13,7 +13,7 @@ impl UpdateDocumentDefaultVersionOutput {
         self.description.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateDocumentDefaultVersionOutput {
+impl ::aws_types::request_id::RequestId for UpdateDocumentDefaultVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

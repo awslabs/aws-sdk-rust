@@ -20,7 +20,7 @@ impl GetLoaderJobStatusOutput {
         &self.payload
     }
 }
-impl ::aws_http::request_id::RequestId for GetLoaderJobStatusOutput {
+impl ::aws_types::request_id::RequestId for GetLoaderJobStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

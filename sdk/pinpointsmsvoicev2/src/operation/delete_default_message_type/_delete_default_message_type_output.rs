@@ -25,7 +25,7 @@ impl DeleteDefaultMessageTypeOutput {
         self.message_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDefaultMessageTypeOutput {
+impl ::aws_types::request_id::RequestId for DeleteDefaultMessageTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

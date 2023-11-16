@@ -29,7 +29,7 @@ impl ::std::fmt::Debug for InvokeModelOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for InvokeModelOutput {
+impl ::aws_types::request_id::RequestId for InvokeModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

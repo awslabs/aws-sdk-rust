@@ -21,7 +21,7 @@ impl GetVariablesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetVariablesOutput {
+impl ::aws_types::request_id::RequestId for GetVariablesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

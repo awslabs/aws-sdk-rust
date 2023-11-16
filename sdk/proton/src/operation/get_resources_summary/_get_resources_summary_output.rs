@@ -13,7 +13,7 @@ impl GetResourcesSummaryOutput {
         self.counts.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetResourcesSummaryOutput {
+impl ::aws_types::request_id::RequestId for GetResourcesSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

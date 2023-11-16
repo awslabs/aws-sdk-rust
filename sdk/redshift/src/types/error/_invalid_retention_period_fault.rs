@@ -27,7 +27,7 @@ impl ::std::fmt::Display for InvalidRetentionPeriodFault {
     }
 }
 impl ::std::error::Error for InvalidRetentionPeriodFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidRetentionPeriodFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidRetentionPeriodFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

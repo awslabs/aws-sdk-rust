@@ -50,7 +50,7 @@ impl ::std::fmt::Debug for InvokeEndpointOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for InvokeEndpointOutput {
+impl ::aws_types::request_id::RequestId for InvokeEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

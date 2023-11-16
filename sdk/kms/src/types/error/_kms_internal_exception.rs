@@ -26,7 +26,7 @@ impl ::std::fmt::Display for KmsInternalException {
     }
 }
 impl ::std::error::Error for KmsInternalException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::KmsInternalException {
+impl ::aws_types::request_id::RequestId for crate::types::error::KmsInternalException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

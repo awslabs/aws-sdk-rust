@@ -16,7 +16,7 @@ impl GetContextKeysForCustomPolicyOutput {
         self.context_key_names.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetContextKeysForCustomPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetContextKeysForCustomPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

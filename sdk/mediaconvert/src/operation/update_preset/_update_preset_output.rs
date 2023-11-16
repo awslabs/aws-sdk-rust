@@ -13,7 +13,7 @@ impl UpdatePresetOutput {
         self.preset.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdatePresetOutput {
+impl ::aws_types::request_id::RequestId for UpdatePresetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -42,7 +42,7 @@ impl ::std::fmt::Debug for GetCredentialsOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCredentialsOutput {
+impl ::aws_types::request_id::RequestId for GetCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

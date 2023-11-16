@@ -31,7 +31,7 @@ impl DeleteThemeOutput {
         self.theme_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteThemeOutput {
+impl ::aws_types::request_id::RequestId for DeleteThemeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

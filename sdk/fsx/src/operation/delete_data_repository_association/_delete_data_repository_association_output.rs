@@ -25,7 +25,7 @@ impl DeleteDataRepositoryAssociationOutput {
         self.delete_data_in_file_system
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDataRepositoryAssociationOutput {
+impl ::aws_types::request_id::RequestId for DeleteDataRepositoryAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

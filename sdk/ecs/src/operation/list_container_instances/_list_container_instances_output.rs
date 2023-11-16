@@ -21,7 +21,7 @@ impl ListContainerInstancesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListContainerInstancesOutput {
+impl ::aws_types::request_id::RequestId for ListContainerInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

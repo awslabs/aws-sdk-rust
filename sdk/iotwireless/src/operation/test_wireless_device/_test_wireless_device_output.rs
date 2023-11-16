@@ -13,7 +13,7 @@ impl TestWirelessDeviceOutput {
         self.result.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for TestWirelessDeviceOutput {
+impl ::aws_types::request_id::RequestId for TestWirelessDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

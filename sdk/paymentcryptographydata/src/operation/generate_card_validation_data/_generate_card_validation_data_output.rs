@@ -28,7 +28,7 @@ impl GenerateCardValidationDataOutput {
         self.validation_data.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GenerateCardValidationDataOutput {
+impl ::aws_types::request_id::RequestId for GenerateCardValidationDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

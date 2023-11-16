@@ -31,7 +31,7 @@ impl UpdateServiceNetworkOutput {
         self.auth_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateServiceNetworkOutput {
+impl ::aws_types::request_id::RequestId for UpdateServiceNetworkOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

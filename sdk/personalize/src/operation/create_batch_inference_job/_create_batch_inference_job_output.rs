@@ -13,7 +13,7 @@ impl CreateBatchInferenceJobOutput {
         self.batch_inference_job_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateBatchInferenceJobOutput {
+impl ::aws_types::request_id::RequestId for CreateBatchInferenceJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

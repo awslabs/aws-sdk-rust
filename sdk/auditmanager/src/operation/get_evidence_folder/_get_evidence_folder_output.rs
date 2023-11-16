@@ -13,7 +13,7 @@ impl GetEvidenceFolderOutput {
         self.evidence_folder.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEvidenceFolderOutput {
+impl ::aws_types::request_id::RequestId for GetEvidenceFolderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

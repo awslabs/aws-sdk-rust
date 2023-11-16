@@ -13,7 +13,7 @@ impl DisassociateTransitGatewayPolicyTableOutput {
         self.association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisassociateTransitGatewayPolicyTableOutput {
+impl ::aws_types::request_id::RequestId for DisassociateTransitGatewayPolicyTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

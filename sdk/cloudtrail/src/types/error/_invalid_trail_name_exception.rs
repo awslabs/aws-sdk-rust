@@ -33,7 +33,7 @@ impl ::std::fmt::Display for InvalidTrailNameException {
     }
 }
 impl ::std::error::Error for InvalidTrailNameException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidTrailNameException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidTrailNameException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

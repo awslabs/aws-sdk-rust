@@ -21,7 +21,7 @@ impl ListFacetAttributesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListFacetAttributesOutput {
+impl ::aws_types::request_id::RequestId for ListFacetAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

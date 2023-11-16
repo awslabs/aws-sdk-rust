@@ -23,7 +23,7 @@ impl BatchGetMembershipDatasourcesOutput {
         self.unprocessed_graphs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetMembershipDatasourcesOutput {
+impl ::aws_types::request_id::RequestId for BatchGetMembershipDatasourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -14,7 +14,7 @@ impl CreateNetworkSettingsOutput {
         self.network_settings_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateNetworkSettingsOutput {
+impl ::aws_types::request_id::RequestId for CreateNetworkSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -79,7 +79,7 @@ impl DeleteDbClusterEndpointOutput {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDbClusterEndpointOutput {
+impl ::aws_types::request_id::RequestId for DeleteDbClusterEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

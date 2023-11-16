@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidGeoRestrictionParameter {
     }
 }
 impl ::std::error::Error for InvalidGeoRestrictionParameter {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidGeoRestrictionParameter {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidGeoRestrictionParameter {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -33,7 +33,7 @@ impl ::std::fmt::Display for ExecuteStatementException {
     }
 }
 impl ::std::error::Error for ExecuteStatementException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ExecuteStatementException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ExecuteStatementException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

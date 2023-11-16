@@ -21,7 +21,7 @@ impl ListMonitoringAlertHistoryOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListMonitoringAlertHistoryOutput {
+impl ::aws_types::request_id::RequestId for ListMonitoringAlertHistoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

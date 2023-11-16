@@ -19,7 +19,7 @@ impl DeleteConnectorOutput {
         self.connector_state.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteConnectorOutput {
+impl ::aws_types::request_id::RequestId for DeleteConnectorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

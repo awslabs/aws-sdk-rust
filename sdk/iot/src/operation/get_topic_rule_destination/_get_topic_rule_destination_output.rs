@@ -13,7 +13,7 @@ impl GetTopicRuleDestinationOutput {
         self.topic_rule_destination.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTopicRuleDestinationOutput {
+impl ::aws_types::request_id::RequestId for GetTopicRuleDestinationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

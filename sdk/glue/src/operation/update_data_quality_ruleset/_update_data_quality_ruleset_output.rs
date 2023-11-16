@@ -25,7 +25,7 @@ impl UpdateDataQualityRulesetOutput {
         self.ruleset.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateDataQualityRulesetOutput {
+impl ::aws_types::request_id::RequestId for UpdateDataQualityRulesetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

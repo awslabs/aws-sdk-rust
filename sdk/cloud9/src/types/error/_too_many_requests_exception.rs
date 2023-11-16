@@ -40,7 +40,7 @@ impl ::std::fmt::Display for TooManyRequestsException {
     }
 }
 impl ::std::error::Error for TooManyRequestsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyRequestsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyRequestsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

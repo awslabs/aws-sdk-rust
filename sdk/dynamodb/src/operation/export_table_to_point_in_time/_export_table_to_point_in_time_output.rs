@@ -13,7 +13,7 @@ impl ExportTableToPointInTimeOutput {
         self.export_description.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ExportTableToPointInTimeOutput {
+impl ::aws_types::request_id::RequestId for ExportTableToPointInTimeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

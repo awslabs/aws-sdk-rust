@@ -5,7 +5,7 @@
 pub struct DeleteDetectorVersionOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteDetectorVersionOutput {
+impl ::aws_types::request_id::RequestId for DeleteDetectorVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

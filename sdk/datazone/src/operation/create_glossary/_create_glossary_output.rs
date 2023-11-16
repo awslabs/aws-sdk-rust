@@ -60,7 +60,7 @@ impl ::std::fmt::Debug for CreateGlossaryOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateGlossaryOutput {
+impl ::aws_types::request_id::RequestId for CreateGlossaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

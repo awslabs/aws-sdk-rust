@@ -5,7 +5,7 @@
 pub struct DeletePredictorOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeletePredictorOutput {
+impl ::aws_types::request_id::RequestId for DeletePredictorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

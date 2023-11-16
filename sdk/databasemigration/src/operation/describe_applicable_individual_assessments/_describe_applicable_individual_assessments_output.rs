@@ -22,7 +22,7 @@ impl DescribeApplicableIndividualAssessmentsOutput {
         self.marker.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeApplicableIndividualAssessmentsOutput {
+impl ::aws_types::request_id::RequestId for DescribeApplicableIndividualAssessmentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateTagOptionOutput {
         self.tag_option_detail.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateTagOptionOutput {
+impl ::aws_types::request_id::RequestId for CreateTagOptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

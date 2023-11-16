@@ -32,7 +32,7 @@ impl ::std::fmt::Display for InvalidInstanceId {
     }
 }
 impl ::std::error::Error for InvalidInstanceId {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidInstanceId {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidInstanceId {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

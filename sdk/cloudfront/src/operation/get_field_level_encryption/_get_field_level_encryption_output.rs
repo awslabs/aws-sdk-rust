@@ -19,7 +19,7 @@ impl GetFieldLevelEncryptionOutput {
         self.e_tag.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetFieldLevelEncryptionOutput {
+impl ::aws_types::request_id::RequestId for GetFieldLevelEncryptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

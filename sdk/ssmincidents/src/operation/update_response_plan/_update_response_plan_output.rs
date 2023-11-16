@@ -5,7 +5,7 @@
 pub struct UpdateResponsePlanOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateResponsePlanOutput {
+impl ::aws_types::request_id::RequestId for UpdateResponsePlanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

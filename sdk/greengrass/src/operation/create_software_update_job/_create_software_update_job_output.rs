@@ -25,7 +25,7 @@ impl CreateSoftwareUpdateJobOutput {
         self.platform_software_version.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateSoftwareUpdateJobOutput {
+impl ::aws_types::request_id::RequestId for CreateSoftwareUpdateJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

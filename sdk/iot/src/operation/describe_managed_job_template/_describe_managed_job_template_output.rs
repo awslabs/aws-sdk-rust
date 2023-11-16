@@ -57,7 +57,7 @@ impl DescribeManagedJobTemplateOutput {
         self.document.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeManagedJobTemplateOutput {
+impl ::aws_types::request_id::RequestId for DescribeManagedJobTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

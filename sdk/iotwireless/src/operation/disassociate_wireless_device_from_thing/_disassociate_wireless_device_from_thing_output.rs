@@ -5,7 +5,7 @@
 pub struct DisassociateWirelessDeviceFromThingOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DisassociateWirelessDeviceFromThingOutput {
+impl ::aws_types::request_id::RequestId for DisassociateWirelessDeviceFromThingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

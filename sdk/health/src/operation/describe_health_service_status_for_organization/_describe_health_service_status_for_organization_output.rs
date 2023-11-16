@@ -15,7 +15,7 @@ impl DescribeHealthServiceStatusForOrganizationOutput {
         self.health_service_access_status_for_organization.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeHealthServiceStatusForOrganizationOutput {
+impl ::aws_types::request_id::RequestId for DescribeHealthServiceStatusForOrganizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

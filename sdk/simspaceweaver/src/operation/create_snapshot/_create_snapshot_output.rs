@@ -5,7 +5,7 @@
 pub struct CreateSnapshotOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for CreateSnapshotOutput {
+impl ::aws_types::request_id::RequestId for CreateSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

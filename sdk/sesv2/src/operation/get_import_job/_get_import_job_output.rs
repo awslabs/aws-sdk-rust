@@ -62,7 +62,7 @@ impl GetImportJobOutput {
         self.failed_records_count
     }
 }
-impl ::aws_http::request_id::RequestId for GetImportJobOutput {
+impl ::aws_types::request_id::RequestId for GetImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

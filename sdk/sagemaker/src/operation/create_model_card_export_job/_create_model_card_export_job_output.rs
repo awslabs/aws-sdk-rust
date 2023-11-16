@@ -13,7 +13,7 @@ impl CreateModelCardExportJobOutput {
         self.model_card_export_job_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateModelCardExportJobOutput {
+impl ::aws_types::request_id::RequestId for CreateModelCardExportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

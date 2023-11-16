@@ -21,7 +21,7 @@ impl ListGeoMatchSetsOutput {
         self.geo_match_sets.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListGeoMatchSetsOutput {
+impl ::aws_types::request_id::RequestId for ListGeoMatchSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

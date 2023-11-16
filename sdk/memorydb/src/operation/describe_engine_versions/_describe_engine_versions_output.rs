@@ -21,7 +21,7 @@ impl DescribeEngineVersionsOutput {
         self.engine_versions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEngineVersionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeEngineVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

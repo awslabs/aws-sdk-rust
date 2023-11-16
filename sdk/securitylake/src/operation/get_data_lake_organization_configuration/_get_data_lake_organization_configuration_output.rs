@@ -15,7 +15,7 @@ impl GetDataLakeOrganizationConfigurationOutput {
         self.auto_enable_new_account.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataLakeOrganizationConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetDataLakeOrganizationConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

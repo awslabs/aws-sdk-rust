@@ -33,7 +33,7 @@ impl CreateTrackerOutput {
         &self.create_time
     }
 }
-impl ::aws_http::request_id::RequestId for CreateTrackerOutput {
+impl ::aws_types::request_id::RequestId for CreateTrackerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

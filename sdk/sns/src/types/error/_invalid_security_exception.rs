@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidSecurityException {
     }
 }
 impl ::std::error::Error for InvalidSecurityException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidSecurityException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidSecurityException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

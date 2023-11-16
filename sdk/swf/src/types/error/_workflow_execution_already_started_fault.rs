@@ -26,7 +26,7 @@ impl ::std::fmt::Display for WorkflowExecutionAlreadyStartedFault {
     }
 }
 impl ::std::error::Error for WorkflowExecutionAlreadyStartedFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::WorkflowExecutionAlreadyStartedFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::WorkflowExecutionAlreadyStartedFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

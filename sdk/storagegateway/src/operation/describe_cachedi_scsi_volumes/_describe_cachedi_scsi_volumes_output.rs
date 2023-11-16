@@ -16,7 +16,7 @@ impl DescribeCachediScsiVolumesOutput {
         self.cachedi_scsi_volumes.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeCachediScsiVolumesOutput {
+impl ::aws_types::request_id::RequestId for DescribeCachediScsiVolumesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

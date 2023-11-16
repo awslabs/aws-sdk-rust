@@ -22,7 +22,7 @@ impl DescribeReplicationInstancesOutput {
         self.replication_instances.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReplicationInstancesOutput {
+impl ::aws_types::request_id::RequestId for DescribeReplicationInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

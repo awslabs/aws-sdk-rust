@@ -14,7 +14,7 @@ impl CompleteMultipartReadSetUploadOutput {
         self.read_set_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CompleteMultipartReadSetUploadOutput {
+impl ::aws_types::request_id::RequestId for CompleteMultipartReadSetUploadOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

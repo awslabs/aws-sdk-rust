@@ -13,7 +13,7 @@ impl StartMetadataModelImportOutput {
         self.request_identifier.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartMetadataModelImportOutput {
+impl ::aws_types::request_id::RequestId for StartMetadataModelImportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

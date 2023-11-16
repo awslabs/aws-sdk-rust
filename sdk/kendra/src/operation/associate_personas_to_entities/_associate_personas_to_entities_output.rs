@@ -15,7 +15,7 @@ impl AssociatePersonasToEntitiesOutput {
         self.failed_entity_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociatePersonasToEntitiesOutput {
+impl ::aws_types::request_id::RequestId for AssociatePersonasToEntitiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

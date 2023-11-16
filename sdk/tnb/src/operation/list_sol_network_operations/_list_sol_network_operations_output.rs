@@ -21,7 +21,7 @@ impl ListSolNetworkOperationsOutput {
         self.network_operations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListSolNetworkOperationsOutput {
+impl ::aws_types::request_id::RequestId for ListSolNetworkOperationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

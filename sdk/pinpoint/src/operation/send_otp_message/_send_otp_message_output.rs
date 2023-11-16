@@ -13,7 +13,7 @@ impl SendOtpMessageOutput {
         self.message_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for SendOtpMessageOutput {
+impl ::aws_types::request_id::RequestId for SendOtpMessageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

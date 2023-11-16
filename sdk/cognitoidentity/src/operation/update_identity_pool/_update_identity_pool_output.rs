@@ -76,7 +76,7 @@ impl UpdateIdentityPoolOutput {
         self.identity_pool_tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateIdentityPoolOutput {
+impl ::aws_types::request_id::RequestId for UpdateIdentityPoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

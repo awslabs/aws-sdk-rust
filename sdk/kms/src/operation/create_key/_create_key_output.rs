@@ -13,7 +13,7 @@ impl CreateKeyOutput {
         self.key_metadata.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateKeyOutput {
+impl ::aws_types::request_id::RequestId for CreateKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -5,7 +5,7 @@
 pub struct EnableVolumeIoOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for EnableVolumeIoOutput {
+impl ::aws_types::request_id::RequestId for EnableVolumeIoOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

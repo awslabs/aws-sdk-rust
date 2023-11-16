@@ -61,7 +61,7 @@ impl DescribeRescoreExecutionPlanOutput {
         self.error_message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRescoreExecutionPlanOutput {
+impl ::aws_types::request_id::RequestId for DescribeRescoreExecutionPlanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

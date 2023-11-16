@@ -27,7 +27,7 @@ impl ListCoverageStatisticsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListCoverageStatisticsOutput {
+impl ::aws_types::request_id::RequestId for ListCoverageStatisticsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

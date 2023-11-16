@@ -14,7 +14,7 @@ impl CreateStorageLocationOutput {
         self.s3_bucket.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateStorageLocationOutput {
+impl ::aws_types::request_id::RequestId for CreateStorageLocationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

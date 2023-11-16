@@ -20,7 +20,7 @@ impl CreateQueryLoggingConfigOutput {
         self.location.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateQueryLoggingConfigOutput {
+impl ::aws_types::request_id::RequestId for CreateQueryLoggingConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

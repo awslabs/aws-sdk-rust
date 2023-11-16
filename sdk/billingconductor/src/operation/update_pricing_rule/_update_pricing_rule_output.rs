@@ -109,7 +109,7 @@ impl ::std::fmt::Debug for UpdatePricingRuleOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdatePricingRuleOutput {
+impl ::aws_types::request_id::RequestId for UpdatePricingRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

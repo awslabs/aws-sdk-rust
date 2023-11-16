@@ -26,7 +26,7 @@ impl CreateKeySigningKeyOutput {
         self.location.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateKeySigningKeyOutput {
+impl ::aws_types::request_id::RequestId for CreateKeySigningKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

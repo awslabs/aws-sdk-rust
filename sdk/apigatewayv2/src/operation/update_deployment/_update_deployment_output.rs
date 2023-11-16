@@ -43,7 +43,7 @@ impl UpdateDeploymentOutput {
         self.description.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateDeploymentOutput {
+impl ::aws_types::request_id::RequestId for UpdateDeploymentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

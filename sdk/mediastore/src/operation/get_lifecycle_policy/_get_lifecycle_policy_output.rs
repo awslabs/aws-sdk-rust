@@ -14,7 +14,7 @@ impl GetLifecyclePolicyOutput {
         self.lifecycle_policy.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLifecyclePolicyOutput {
+impl ::aws_types::request_id::RequestId for GetLifecyclePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

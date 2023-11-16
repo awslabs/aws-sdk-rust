@@ -81,7 +81,7 @@ impl GetBatchJobExecutionOutput {
         self.batch_job_identifier.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBatchJobExecutionOutput {
+impl ::aws_types::request_id::RequestId for GetBatchJobExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

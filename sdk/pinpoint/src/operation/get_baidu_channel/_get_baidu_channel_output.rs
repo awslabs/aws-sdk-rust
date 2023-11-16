@@ -13,7 +13,7 @@ impl GetBaiduChannelOutput {
         self.baidu_channel_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBaiduChannelOutput {
+impl ::aws_types::request_id::RequestId for GetBaiduChannelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

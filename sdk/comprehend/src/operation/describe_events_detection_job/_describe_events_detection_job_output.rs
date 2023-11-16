@@ -13,7 +13,7 @@ impl DescribeEventsDetectionJobOutput {
         self.events_detection_job_properties.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEventsDetectionJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeEventsDetectionJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

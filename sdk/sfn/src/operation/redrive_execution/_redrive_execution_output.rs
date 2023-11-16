@@ -13,7 +13,7 @@ impl RedriveExecutionOutput {
         &self.redrive_date
     }
 }
-impl ::aws_http::request_id::RequestId for RedriveExecutionOutput {
+impl ::aws_types::request_id::RequestId for RedriveExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

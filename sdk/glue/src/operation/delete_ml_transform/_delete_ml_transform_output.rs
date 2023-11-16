@@ -13,7 +13,7 @@ impl DeleteMlTransformOutput {
         self.transform_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteMlTransformOutput {
+impl ::aws_types::request_id::RequestId for DeleteMlTransformOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

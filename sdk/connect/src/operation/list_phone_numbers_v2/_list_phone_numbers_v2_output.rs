@@ -21,7 +21,7 @@ impl ListPhoneNumbersV2Output {
         self.list_phone_numbers_summary_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListPhoneNumbersV2Output {
+impl ::aws_types::request_id::RequestId for ListPhoneNumbersV2Output {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

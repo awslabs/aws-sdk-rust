@@ -13,7 +13,7 @@ impl DisassociateUserFromPermissionGroupOutput {
         self.status_code
     }
 }
-impl ::aws_http::request_id::RequestId for DisassociateUserFromPermissionGroupOutput {
+impl ::aws_types::request_id::RequestId for DisassociateUserFromPermissionGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

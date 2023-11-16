@@ -31,7 +31,7 @@ impl GetCalculatedAttributeForProfileOutput {
         self.value.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCalculatedAttributeForProfileOutput {
+impl ::aws_types::request_id::RequestId for GetCalculatedAttributeForProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

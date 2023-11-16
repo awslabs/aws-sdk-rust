@@ -19,7 +19,7 @@ impl GetPricingPlanOutput {
         self.pending_pricing_plan.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPricingPlanOutput {
+impl ::aws_types::request_id::RequestId for GetPricingPlanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

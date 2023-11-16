@@ -131,7 +131,7 @@ impl ::std::fmt::Debug for UpdateSubscriptionTargetOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSubscriptionTargetOutput {
+impl ::aws_types::request_id::RequestId for UpdateSubscriptionTargetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DeleteEnvironmentTemplateOutput {
         self.environment_template.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteEnvironmentTemplateOutput {
+impl ::aws_types::request_id::RequestId for DeleteEnvironmentTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateHyperParameterTuningJobOutput {
         self.hyper_parameter_tuning_job_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateHyperParameterTuningJobOutput {
+impl ::aws_types::request_id::RequestId for CreateHyperParameterTuningJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

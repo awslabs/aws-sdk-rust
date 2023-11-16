@@ -33,7 +33,7 @@ impl CreateFleetLocationsOutput {
         self.location_states.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateFleetLocationsOutput {
+impl ::aws_types::request_id::RequestId for CreateFleetLocationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

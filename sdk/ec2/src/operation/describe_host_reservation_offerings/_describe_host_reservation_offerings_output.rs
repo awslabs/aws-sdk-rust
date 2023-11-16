@@ -21,7 +21,7 @@ impl DescribeHostReservationOfferingsOutput {
         self.offering_set.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeHostReservationOfferingsOutput {
+impl ::aws_types::request_id::RequestId for DescribeHostReservationOfferingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -20,7 +20,7 @@ impl ListPagesByContactOutput {
         self.pages.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListPagesByContactOutput {
+impl ::aws_types::request_id::RequestId for ListPagesByContactOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

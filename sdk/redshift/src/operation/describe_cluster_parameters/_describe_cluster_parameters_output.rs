@@ -22,7 +22,7 @@ impl DescribeClusterParametersOutput {
         self.marker.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeClusterParametersOutput {
+impl ::aws_types::request_id::RequestId for DescribeClusterParametersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

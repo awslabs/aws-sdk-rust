@@ -13,7 +13,7 @@ impl StartChangeRequestExecutionOutput {
         self.automation_execution_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartChangeRequestExecutionOutput {
+impl ::aws_types::request_id::RequestId for StartChangeRequestExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

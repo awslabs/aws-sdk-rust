@@ -21,7 +21,7 @@ impl GetSavingsPlansUtilizationOutput {
         self.total.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSavingsPlansUtilizationOutput {
+impl ::aws_types::request_id::RequestId for GetSavingsPlansUtilizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

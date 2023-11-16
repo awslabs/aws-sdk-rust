@@ -19,7 +19,7 @@ impl RegisterPatchBaselineForPatchGroupOutput {
         self.patch_group.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RegisterPatchBaselineForPatchGroupOutput {
+impl ::aws_types::request_id::RequestId for RegisterPatchBaselineForPatchGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

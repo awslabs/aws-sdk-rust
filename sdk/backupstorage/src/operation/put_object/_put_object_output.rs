@@ -33,7 +33,7 @@ impl PutObjectOutput {
         &self.object_checksum_algorithm
     }
 }
-impl ::aws_http::request_id::RequestId for PutObjectOutput {
+impl ::aws_types::request_id::RequestId for PutObjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

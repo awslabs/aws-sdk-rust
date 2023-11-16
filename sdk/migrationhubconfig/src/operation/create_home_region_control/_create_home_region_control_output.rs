@@ -13,7 +13,7 @@ impl CreateHomeRegionControlOutput {
         self.home_region_control.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateHomeRegionControlOutput {
+impl ::aws_types::request_id::RequestId for CreateHomeRegionControlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

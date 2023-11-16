@@ -13,7 +13,7 @@ impl StartSchemaCreationOutput {
         self.status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartSchemaCreationOutput {
+impl ::aws_types::request_id::RequestId for StartSchemaCreationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

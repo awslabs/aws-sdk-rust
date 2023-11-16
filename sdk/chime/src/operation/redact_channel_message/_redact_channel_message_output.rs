@@ -19,7 +19,7 @@ impl RedactChannelMessageOutput {
         self.message_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RedactChannelMessageOutput {
+impl ::aws_types::request_id::RequestId for RedactChannelMessageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

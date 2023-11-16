@@ -15,7 +15,7 @@ impl GetDataQualityMetricsOutput {
         self.anomaly_detector_data_quality_metric_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataQualityMetricsOutput {
+impl ::aws_types::request_id::RequestId for GetDataQualityMetricsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -20,7 +20,7 @@ impl ListDeliveryStreamsOutput {
         self.has_more_delivery_streams
     }
 }
-impl ::aws_http::request_id::RequestId for ListDeliveryStreamsOutput {
+impl ::aws_types::request_id::RequestId for ListDeliveryStreamsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

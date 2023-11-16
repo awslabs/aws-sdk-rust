@@ -22,7 +22,7 @@ impl GetAccessKeyLastUsedOutput {
         self.access_key_last_used.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAccessKeyLastUsedOutput {
+impl ::aws_types::request_id::RequestId for GetAccessKeyLastUsedOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

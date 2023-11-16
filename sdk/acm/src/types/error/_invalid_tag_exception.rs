@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidTagException {
     }
 }
 impl ::std::error::Error for InvalidTagException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidTagException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidTagException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

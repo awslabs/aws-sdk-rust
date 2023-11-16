@@ -14,7 +14,7 @@ impl UpdateHostedZoneCommentOutput {
         self.hosted_zone.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateHostedZoneCommentOutput {
+impl ::aws_types::request_id::RequestId for UpdateHostedZoneCommentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

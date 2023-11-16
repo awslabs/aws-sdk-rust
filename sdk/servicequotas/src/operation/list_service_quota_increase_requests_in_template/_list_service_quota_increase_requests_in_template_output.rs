@@ -21,7 +21,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListServiceQuotaIncreaseRequestsInTemplateOutput {
+impl ::aws_types::request_id::RequestId for ListServiceQuotaIncreaseRequestsInTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

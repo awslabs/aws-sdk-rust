@@ -21,7 +21,7 @@ impl VerifyCardValidationDataOutput {
         self.key_check_value.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for VerifyCardValidationDataOutput {
+impl ::aws_types::request_id::RequestId for VerifyCardValidationDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

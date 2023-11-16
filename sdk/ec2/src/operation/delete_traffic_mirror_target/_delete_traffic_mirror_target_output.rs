@@ -13,7 +13,7 @@ impl DeleteTrafficMirrorTargetOutput {
         self.traffic_mirror_target_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteTrafficMirrorTargetOutput {
+impl ::aws_types::request_id::RequestId for DeleteTrafficMirrorTargetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

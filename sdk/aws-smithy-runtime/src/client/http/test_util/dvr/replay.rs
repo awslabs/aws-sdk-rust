@@ -8,14 +8,14 @@ use aws_smithy_protocol_test::MediaType;
 use aws_smithy_runtime_api::client::http::{
     HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpConnector,
 };
-use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::client::result::ConnectorError;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use bytes::{Bytes, BytesMut};
-use http::{Request, Version};
+use http::Request;
 use http_body_0_4::Body;
 use std::collections::{HashMap, VecDeque};
 use std::error::Error;
@@ -270,14 +270,6 @@ async fn replay_body(events: VecDeque<Event>, mut sender: hyper_0_14::body::Send
     }
 }
 
-fn convert_version(version: &str) -> Version {
-    match version {
-        "HTTP/1.1" => Version::HTTP_11,
-        "HTTP/2.0" => Version::HTTP_2,
-        _ => panic!("unsupported: {}", version),
-    }
-}
-
 impl HttpConnector for ReplayingClient {
     fn call(&self, mut request: HttpRequest) -> HttpConnectorFuture {
         let event_id = self.next_id();
@@ -303,7 +295,7 @@ impl HttpConnector for ReplayingClient {
                     .extend_from_slice(data.expect("in memory request should not fail").as_ref())
             }
             request
-                .into_http02x()
+                .try_into_http02x()
                 .unwrap()
                 .map(|_body| Bytes::from(data_read))
         });
@@ -329,9 +321,7 @@ impl HttpConnector for ReplayingClient {
                     Action::Response {
                         response: Ok(response),
                     } => {
-                        let mut builder = http::Response::builder()
-                            .status(response.status)
-                            .version(convert_version(&response.version));
+                        let mut builder = http::Response::builder().status(response.status);
                         for (name, values) in response.headers {
                             for value in values {
                                 builder = builder.header(&name, &value);
@@ -341,7 +331,10 @@ impl HttpConnector for ReplayingClient {
                             replay_body(events, sender).await;
                             // insert the finalized body into
                         });
-                        break Ok(builder.body(body).expect("valid builder"));
+                        break Ok(HttpResponse::try_from(
+                            builder.body(body).expect("valid builder"),
+                        )
+                        .unwrap());
                     }
 
                     Action::Data {

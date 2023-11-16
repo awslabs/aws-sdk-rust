@@ -33,7 +33,7 @@ impl DescribeUploadBufferOutput {
         self.upload_buffer_allocated_in_bytes
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeUploadBufferOutput {
+impl ::aws_types::request_id::RequestId for DescribeUploadBufferOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl ListPerformanceAnalysisReportsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListPerformanceAnalysisReportsOutput {
+impl ::aws_types::request_id::RequestId for ListPerformanceAnalysisReportsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

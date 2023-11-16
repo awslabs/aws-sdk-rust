@@ -6,7 +6,7 @@
 pub struct UpdateNotificationOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateNotificationOutput {
+impl ::aws_types::request_id::RequestId for UpdateNotificationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

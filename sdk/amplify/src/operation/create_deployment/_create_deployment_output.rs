@@ -27,7 +27,7 @@ impl CreateDeploymentOutput {
         self.zip_upload_url.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDeploymentOutput {
+impl ::aws_types::request_id::RequestId for CreateDeploymentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

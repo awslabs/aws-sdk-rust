@@ -19,7 +19,7 @@ impl CreateUpdatedImageOutput {
         self.can_update_image
     }
 }
-impl ::aws_http::request_id::RequestId for CreateUpdatedImageOutput {
+impl ::aws_types::request_id::RequestId for CreateUpdatedImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

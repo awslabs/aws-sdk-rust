@@ -13,7 +13,7 @@ impl RebootReplicationInstanceOutput {
         self.replication_instance.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RebootReplicationInstanceOutput {
+impl ::aws_types::request_id::RequestId for RebootReplicationInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

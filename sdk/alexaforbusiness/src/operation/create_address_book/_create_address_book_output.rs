@@ -13,7 +13,7 @@ impl CreateAddressBookOutput {
         self.address_book_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateAddressBookOutput {
+impl ::aws_types::request_id::RequestId for CreateAddressBookOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

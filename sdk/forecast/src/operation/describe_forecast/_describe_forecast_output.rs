@@ -105,7 +105,7 @@ impl DescribeForecastOutput {
         self.time_series_selector.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeForecastOutput {
+impl ::aws_types::request_id::RequestId for DescribeForecastOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

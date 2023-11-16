@@ -28,7 +28,7 @@ impl ::std::fmt::Debug for GetPhoneNumberSettingsOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPhoneNumberSettingsOutput {
+impl ::aws_types::request_id::RequestId for GetPhoneNumberSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

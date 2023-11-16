@@ -26,7 +26,7 @@ impl ::std::fmt::Display for S3BucketDoesNotExistException {
     }
 }
 impl ::std::error::Error for S3BucketDoesNotExistException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::S3BucketDoesNotExistException {
+impl ::aws_types::request_id::RequestId for crate::types::error::S3BucketDoesNotExistException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

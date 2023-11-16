@@ -141,7 +141,7 @@ impl GetWorkflowStepOutput {
         self.total_no_of_srv
     }
 }
-impl ::aws_http::request_id::RequestId for GetWorkflowStepOutput {
+impl ::aws_types::request_id::RequestId for GetWorkflowStepOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

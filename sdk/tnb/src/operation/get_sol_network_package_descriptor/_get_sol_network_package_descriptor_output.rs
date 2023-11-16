@@ -19,7 +19,7 @@ impl GetSolNetworkPackageDescriptorOutput {
         self.nsd.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSolNetworkPackageDescriptorOutput {
+impl ::aws_types::request_id::RequestId for GetSolNetworkPackageDescriptorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

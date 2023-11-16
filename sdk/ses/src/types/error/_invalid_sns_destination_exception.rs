@@ -40,7 +40,7 @@ impl ::std::fmt::Display for InvalidSnsDestinationException {
     }
 }
 impl ::std::error::Error for InvalidSnsDestinationException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidSnsDestinationException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidSnsDestinationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

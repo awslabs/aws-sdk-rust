@@ -13,7 +13,7 @@ impl CreateAssessmentReportOutput {
         self.assessment_report.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateAssessmentReportOutput {
+impl ::aws_types::request_id::RequestId for CreateAssessmentReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

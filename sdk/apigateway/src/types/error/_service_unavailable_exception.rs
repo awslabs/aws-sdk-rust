@@ -34,7 +34,7 @@ impl ::std::fmt::Display for ServiceUnavailableException {
     }
 }
 impl ::std::error::Error for ServiceUnavailableException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ServiceUnavailableException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ServiceUnavailableException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

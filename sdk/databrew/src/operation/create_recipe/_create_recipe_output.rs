@@ -14,7 +14,7 @@ impl CreateRecipeOutput {
         self.name.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRecipeOutput {
+impl ::aws_types::request_id::RequestId for CreateRecipeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

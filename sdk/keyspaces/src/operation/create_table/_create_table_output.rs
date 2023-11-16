@@ -14,7 +14,7 @@ impl CreateTableOutput {
         self.resource_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateTableOutput {
+impl ::aws_types::request_id::RequestId for CreateTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

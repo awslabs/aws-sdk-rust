@@ -19,7 +19,7 @@ impl CreateInstanceOutput {
         self.arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateInstanceOutput {
+impl ::aws_types::request_id::RequestId for CreateInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

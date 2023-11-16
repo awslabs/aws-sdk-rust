@@ -14,7 +14,7 @@ impl DisableControlOutput {
         self.operation_identifier.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisableControlOutput {
+impl ::aws_types::request_id::RequestId for DisableControlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

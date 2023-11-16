@@ -25,7 +25,7 @@ impl ModifyVerifiedAccessEndpointPolicyOutput {
         self.sse_specification.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyVerifiedAccessEndpointPolicyOutput {
+impl ::aws_types::request_id::RequestId for ModifyVerifiedAccessEndpointPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

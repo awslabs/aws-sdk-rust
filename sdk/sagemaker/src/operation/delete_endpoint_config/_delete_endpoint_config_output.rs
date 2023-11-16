@@ -5,7 +5,7 @@
 pub struct DeleteEndpointConfigOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteEndpointConfigOutput {
+impl ::aws_types::request_id::RequestId for DeleteEndpointConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

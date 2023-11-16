@@ -28,7 +28,7 @@ impl ::std::fmt::Debug for GetDeviceIdentifierOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDeviceIdentifierOutput {
+impl ::aws_types::request_id::RequestId for GetDeviceIdentifierOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

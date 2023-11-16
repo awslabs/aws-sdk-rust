@@ -122,7 +122,7 @@ impl CancelResizeOutput {
         self.data_transfer_progress_percent
     }
 }
-impl ::aws_http::request_id::RequestId for CancelResizeOutput {
+impl ::aws_types::request_id::RequestId for CancelResizeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

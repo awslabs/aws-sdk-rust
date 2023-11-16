@@ -30,7 +30,7 @@ impl ::std::fmt::Display for TooManyHostedZones {
     }
 }
 impl ::std::error::Error for TooManyHostedZones {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyHostedZones {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyHostedZones {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

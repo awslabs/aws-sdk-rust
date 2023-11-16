@@ -21,7 +21,7 @@ impl ListDataIntegrationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListDataIntegrationsOutput {
+impl ::aws_types::request_id::RequestId for ListDataIntegrationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

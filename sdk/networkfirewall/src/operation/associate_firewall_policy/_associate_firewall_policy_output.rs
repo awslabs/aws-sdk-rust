@@ -35,7 +35,7 @@ impl AssociateFirewallPolicyOutput {
         self.update_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateFirewallPolicyOutput {
+impl ::aws_types::request_id::RequestId for AssociateFirewallPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

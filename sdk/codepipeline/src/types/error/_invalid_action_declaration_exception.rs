@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidActionDeclarationException {
     }
 }
 impl ::std::error::Error for InvalidActionDeclarationException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidActionDeclarationException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidActionDeclarationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

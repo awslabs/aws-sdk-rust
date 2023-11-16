@@ -15,7 +15,7 @@ impl CreateTargetGroupOutput {
         self.target_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateTargetGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateTargetGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

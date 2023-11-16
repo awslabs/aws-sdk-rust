@@ -20,7 +20,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutput {
         self.reservation_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PurchaseReservedElasticsearchInstanceOfferingOutput {
+impl ::aws_types::request_id::RequestId for PurchaseReservedElasticsearchInstanceOfferingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

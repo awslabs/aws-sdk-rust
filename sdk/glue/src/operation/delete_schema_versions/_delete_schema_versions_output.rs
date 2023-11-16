@@ -15,7 +15,7 @@ impl DeleteSchemaVersionsOutput {
         self.schema_version_errors.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteSchemaVersionsOutput {
+impl ::aws_types::request_id::RequestId for DeleteSchemaVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

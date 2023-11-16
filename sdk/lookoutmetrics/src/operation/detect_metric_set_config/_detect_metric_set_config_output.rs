@@ -13,7 +13,7 @@ impl DetectMetricSetConfigOutput {
         self.detected_metric_set_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DetectMetricSetConfigOutput {
+impl ::aws_types::request_id::RequestId for DetectMetricSetConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

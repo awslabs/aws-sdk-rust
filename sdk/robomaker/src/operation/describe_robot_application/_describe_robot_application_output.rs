@@ -69,7 +69,7 @@ impl DescribeRobotApplicationOutput {
         self.image_digest.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRobotApplicationOutput {
+impl ::aws_types::request_id::RequestId for DescribeRobotApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

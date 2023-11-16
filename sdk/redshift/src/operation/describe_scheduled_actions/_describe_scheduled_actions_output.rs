@@ -21,7 +21,7 @@ impl DescribeScheduledActionsOutput {
         self.scheduled_actions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeScheduledActionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeScheduledActionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

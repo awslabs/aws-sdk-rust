@@ -13,7 +13,7 @@ impl GetPublicAccessBlockOutput {
         self.public_access_block_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPublicAccessBlockOutput {
+impl ::aws_types::request_id::RequestId for GetPublicAccessBlockOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

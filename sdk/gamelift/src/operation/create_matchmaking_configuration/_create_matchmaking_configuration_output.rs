@@ -13,7 +13,7 @@ impl CreateMatchmakingConfigurationOutput {
         self.configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateMatchmakingConfigurationOutput {
+impl ::aws_types::request_id::RequestId for CreateMatchmakingConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

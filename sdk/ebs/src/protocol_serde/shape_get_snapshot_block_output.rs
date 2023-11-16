@@ -8,23 +8,23 @@ pub fn de_block_data_payload(
 }
 
 pub(crate) fn de_checksum_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-Checksum").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-Checksum");
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_checksum_algorithm_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<crate::types::ChecksumAlgorithm>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-Checksum-Algorithm").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<crate::types::ChecksumAlgorithm>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-Checksum-Algorithm");
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_data_length_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-Data-Length").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-Data-Length");
     let var_1 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(

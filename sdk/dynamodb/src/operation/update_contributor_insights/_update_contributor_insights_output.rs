@@ -25,7 +25,7 @@ impl UpdateContributorInsightsOutput {
         self.contributor_insights_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateContributorInsightsOutput {
+impl ::aws_types::request_id::RequestId for UpdateContributorInsightsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

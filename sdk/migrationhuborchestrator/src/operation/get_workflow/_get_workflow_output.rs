@@ -156,7 +156,7 @@ impl ::std::fmt::Debug for GetWorkflowOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetWorkflowOutput {
+impl ::aws_types::request_id::RequestId for GetWorkflowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

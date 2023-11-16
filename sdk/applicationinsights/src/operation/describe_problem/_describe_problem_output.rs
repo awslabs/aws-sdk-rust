@@ -13,7 +13,7 @@ impl DescribeProblemOutput {
         self.problem.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeProblemOutput {
+impl ::aws_types::request_id::RequestId for DescribeProblemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

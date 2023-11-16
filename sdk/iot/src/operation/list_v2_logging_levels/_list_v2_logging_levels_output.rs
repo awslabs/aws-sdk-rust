@@ -21,7 +21,7 @@ impl ListV2LoggingLevelsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListV2LoggingLevelsOutput {
+impl ::aws_types::request_id::RequestId for ListV2LoggingLevelsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

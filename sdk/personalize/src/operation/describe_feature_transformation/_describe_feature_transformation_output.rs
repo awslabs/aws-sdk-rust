@@ -13,7 +13,7 @@ impl DescribeFeatureTransformationOutput {
         self.feature_transformation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFeatureTransformationOutput {
+impl ::aws_types::request_id::RequestId for DescribeFeatureTransformationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

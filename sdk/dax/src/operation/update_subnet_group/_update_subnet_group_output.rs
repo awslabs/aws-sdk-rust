@@ -13,7 +13,7 @@ impl UpdateSubnetGroupOutput {
         self.subnet_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSubnetGroupOutput {
+impl ::aws_types::request_id::RequestId for UpdateSubnetGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

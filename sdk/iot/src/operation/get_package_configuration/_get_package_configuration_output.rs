@@ -13,7 +13,7 @@ impl GetPackageConfigurationOutput {
         self.version_update_by_jobs_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPackageConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetPackageConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DeleteServiceOutput {
         self.service.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteServiceOutput {
+impl ::aws_types::request_id::RequestId for DeleteServiceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

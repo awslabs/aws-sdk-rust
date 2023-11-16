@@ -15,7 +15,7 @@ impl DeleteLoadBalancerTlsCertificateOutput {
         self.operations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteLoadBalancerTlsCertificateOutput {
+impl ::aws_types::request_id::RequestId for DeleteLoadBalancerTlsCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

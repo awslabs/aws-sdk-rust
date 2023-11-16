@@ -14,7 +14,7 @@ impl UpdateVtlDeviceTypeOutput {
         self.vtl_device_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateVtlDeviceTypeOutput {
+impl ::aws_types::request_id::RequestId for UpdateVtlDeviceTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

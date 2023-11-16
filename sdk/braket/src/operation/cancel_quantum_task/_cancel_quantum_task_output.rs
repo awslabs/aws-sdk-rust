@@ -20,7 +20,7 @@ impl CancelQuantumTaskOutput {
         &self.cancellation_status
     }
 }
-impl ::aws_http::request_id::RequestId for CancelQuantumTaskOutput {
+impl ::aws_types::request_id::RequestId for CancelQuantumTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

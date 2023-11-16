@@ -33,7 +33,7 @@ impl GetBackupVaultNotificationsOutput {
         self.backup_vault_events.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBackupVaultNotificationsOutput {
+impl ::aws_types::request_id::RequestId for GetBackupVaultNotificationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

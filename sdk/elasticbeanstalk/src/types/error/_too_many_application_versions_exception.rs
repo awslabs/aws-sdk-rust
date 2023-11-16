@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TooManyApplicationVersionsException {
     }
 }
 impl ::std::error::Error for TooManyApplicationVersionsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyApplicationVersionsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyApplicationVersionsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

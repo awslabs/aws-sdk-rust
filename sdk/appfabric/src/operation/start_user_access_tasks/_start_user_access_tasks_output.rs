@@ -15,7 +15,7 @@ impl StartUserAccessTasksOutput {
         self.user_access_tasks_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for StartUserAccessTasksOutput {
+impl ::aws_types::request_id::RequestId for StartUserAccessTasksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

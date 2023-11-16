@@ -13,7 +13,7 @@ impl UpdateWorkgroupOutput {
         self.workgroup.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateWorkgroupOutput {
+impl ::aws_types::request_id::RequestId for UpdateWorkgroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

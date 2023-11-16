@@ -26,7 +26,7 @@ impl ::std::fmt::Display for Ec2InstanceStateInvalidException {
     }
 }
 impl ::std::error::Error for Ec2InstanceStateInvalidException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::Ec2InstanceStateInvalidException {
+impl ::aws_types::request_id::RequestId for crate::types::error::Ec2InstanceStateInvalidException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

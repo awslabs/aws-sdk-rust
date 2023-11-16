@@ -34,7 +34,7 @@ impl CreateFhirDatastoreOutput {
         self.datastore_endpoint.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateFhirDatastoreOutput {
+impl ::aws_types::request_id::RequestId for CreateFhirDatastoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

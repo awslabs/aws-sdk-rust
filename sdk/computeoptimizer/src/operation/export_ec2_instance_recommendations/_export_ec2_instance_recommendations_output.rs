@@ -21,7 +21,7 @@ impl ExportEc2InstanceRecommendationsOutput {
         self.s3_destination.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ExportEc2InstanceRecommendationsOutput {
+impl ::aws_types::request_id::RequestId for ExportEc2InstanceRecommendationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

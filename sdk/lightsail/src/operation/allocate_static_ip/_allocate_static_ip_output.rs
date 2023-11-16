@@ -15,7 +15,7 @@ impl AllocateStaticIpOutput {
         self.operations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AllocateStaticIpOutput {
+impl ::aws_types::request_id::RequestId for AllocateStaticIpOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

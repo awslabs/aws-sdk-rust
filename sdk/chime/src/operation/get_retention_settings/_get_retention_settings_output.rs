@@ -19,7 +19,7 @@ impl GetRetentionSettingsOutput {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRetentionSettingsOutput {
+impl ::aws_types::request_id::RequestId for GetRetentionSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

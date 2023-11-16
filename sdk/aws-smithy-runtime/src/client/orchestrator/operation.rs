@@ -412,7 +412,7 @@ mod tests {
             .timeout_config(TimeoutConfig::disabled())
             .serializer(|input: String| Ok(HttpRequest::new(SdkBody::from(input.as_bytes()))))
             .deserializer::<_, Infallible>(|response| {
-                assert_eq!(418, response.status());
+                assert_eq!(418, u16::from(response.status()));
                 Ok(std::str::from_utf8(response.body().bytes().unwrap())
                     .unwrap()
                     .to_string())
@@ -466,12 +466,12 @@ mod tests {
             .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
             .serializer(|input: String| Ok(HttpRequest::new(SdkBody::from(input.as_bytes()))))
             .deserializer::<_, Infallible>(|response| {
-                if response.status() == 503 {
+                if u16::from(response.status()) == 503 {
                     Err(OrchestratorError::connector(ConnectorError::io(
                         "test".into(),
                     )))
                 } else {
-                    assert_eq!(418, response.status());
+                    assert_eq!(418, u16::from(response.status()));
                     Ok(std::str::from_utf8(response.body().bytes().unwrap())
                         .unwrap()
                         .to_string())

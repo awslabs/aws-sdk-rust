@@ -20,7 +20,7 @@ impl ListWorkflowStepGroupsOutput {
         self.workflow_step_groups_summary.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListWorkflowStepGroupsOutput {
+impl ::aws_types::request_id::RequestId for ListWorkflowStepGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

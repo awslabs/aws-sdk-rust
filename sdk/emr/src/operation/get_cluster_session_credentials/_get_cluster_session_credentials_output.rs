@@ -19,7 +19,7 @@ impl GetClusterSessionCredentialsOutput {
         self.expires_at.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetClusterSessionCredentialsOutput {
+impl ::aws_types::request_id::RequestId for GetClusterSessionCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

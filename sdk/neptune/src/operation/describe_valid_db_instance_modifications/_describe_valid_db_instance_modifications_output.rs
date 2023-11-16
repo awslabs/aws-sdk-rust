@@ -13,7 +13,7 @@ impl DescribeValidDbInstanceModificationsOutput {
         self.valid_db_instance_modifications_message.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeValidDbInstanceModificationsOutput {
+impl ::aws_types::request_id::RequestId for DescribeValidDbInstanceModificationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

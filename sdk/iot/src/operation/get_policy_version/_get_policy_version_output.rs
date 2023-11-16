@@ -56,7 +56,7 @@ impl GetPolicyVersionOutput {
         self.generation_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPolicyVersionOutput {
+impl ::aws_types::request_id::RequestId for GetPolicyVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

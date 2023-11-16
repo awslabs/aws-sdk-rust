@@ -25,7 +25,7 @@ impl GetDashboardOutput {
         self.dashboard_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDashboardOutput {
+impl ::aws_types::request_id::RequestId for GetDashboardOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

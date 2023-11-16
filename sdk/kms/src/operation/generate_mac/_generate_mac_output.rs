@@ -27,7 +27,7 @@ impl GenerateMacOutput {
         self.key_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GenerateMacOutput {
+impl ::aws_types::request_id::RequestId for GenerateMacOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

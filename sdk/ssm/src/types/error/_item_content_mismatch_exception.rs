@@ -34,7 +34,7 @@ impl ::std::fmt::Display for ItemContentMismatchException {
     }
 }
 impl ::std::error::Error for ItemContentMismatchException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ItemContentMismatchException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ItemContentMismatchException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

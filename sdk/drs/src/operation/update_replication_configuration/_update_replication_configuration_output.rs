@@ -139,7 +139,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateReplicationConfigurationOutput {
+impl ::aws_types::request_id::RequestId for UpdateReplicationConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

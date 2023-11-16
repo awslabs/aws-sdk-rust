@@ -13,7 +13,7 @@ impl ReleaseFileSystemNfsV3LocksOutput {
         self.file_system.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ReleaseFileSystemNfsV3LocksOutput {
+impl ::aws_types::request_id::RequestId for ReleaseFileSystemNfsV3LocksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

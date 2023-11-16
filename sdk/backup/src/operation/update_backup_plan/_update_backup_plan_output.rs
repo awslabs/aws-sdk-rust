@@ -39,7 +39,7 @@ impl UpdateBackupPlanOutput {
         self.advanced_backup_settings.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateBackupPlanOutput {
+impl ::aws_types::request_id::RequestId for UpdateBackupPlanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

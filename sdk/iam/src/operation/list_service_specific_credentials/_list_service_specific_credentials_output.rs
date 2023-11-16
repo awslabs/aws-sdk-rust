@@ -15,7 +15,7 @@ impl ListServiceSpecificCredentialsOutput {
         self.service_specific_credentials.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListServiceSpecificCredentialsOutput {
+impl ::aws_types::request_id::RequestId for ListServiceSpecificCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

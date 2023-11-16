@@ -13,7 +13,7 @@ impl GetCoreNetworkPolicyOutput {
         self.core_network_policy.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCoreNetworkPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetCoreNetworkPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

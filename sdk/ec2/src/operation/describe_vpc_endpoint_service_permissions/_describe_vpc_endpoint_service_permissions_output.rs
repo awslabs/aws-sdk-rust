@@ -21,7 +21,7 @@ impl DescribeVpcEndpointServicePermissionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeVpcEndpointServicePermissionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeVpcEndpointServicePermissionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

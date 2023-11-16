@@ -14,7 +14,7 @@ impl RecordActivityTaskHeartbeatOutput {
         self.cancel_requested
     }
 }
-impl ::aws_http::request_id::RequestId for RecordActivityTaskHeartbeatOutput {
+impl ::aws_types::request_id::RequestId for RecordActivityTaskHeartbeatOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

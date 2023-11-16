@@ -26,7 +26,7 @@ impl ::std::fmt::Display for SendingPausedException {
     }
 }
 impl ::std::error::Error for SendingPausedException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SendingPausedException {
+impl ::aws_types::request_id::RequestId for crate::types::error::SendingPausedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

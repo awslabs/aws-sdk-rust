@@ -13,7 +13,7 @@ impl CreateReplicationJobOutput {
         self.replication_job_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateReplicationJobOutput {
+impl ::aws_types::request_id::RequestId for CreateReplicationJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

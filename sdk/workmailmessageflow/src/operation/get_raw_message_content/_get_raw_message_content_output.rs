@@ -13,7 +13,7 @@ impl GetRawMessageContentOutput {
         &self.message_content
     }
 }
-impl ::aws_http::request_id::RequestId for GetRawMessageContentOutput {
+impl ::aws_types::request_id::RequestId for GetRawMessageContentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

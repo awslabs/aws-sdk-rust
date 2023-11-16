@@ -54,7 +54,7 @@ impl GetAccessLogSubscriptionOutput {
         &self.last_updated_at
     }
 }
-impl ::aws_http::request_id::RequestId for GetAccessLogSubscriptionOutput {
+impl ::aws_types::request_id::RequestId for GetAccessLogSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

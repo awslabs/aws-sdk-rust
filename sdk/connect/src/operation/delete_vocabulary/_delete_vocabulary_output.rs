@@ -27,7 +27,7 @@ impl DeleteVocabularyOutput {
         &self.state
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteVocabularyOutput {
+impl ::aws_types::request_id::RequestId for DeleteVocabularyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

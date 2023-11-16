@@ -26,7 +26,7 @@ impl DescribeElasticsearchInstanceTypeLimitsOutput {
         self.limits_by_role.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeElasticsearchInstanceTypeLimitsOutput {
+impl ::aws_types::request_id::RequestId for DescribeElasticsearchInstanceTypeLimitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

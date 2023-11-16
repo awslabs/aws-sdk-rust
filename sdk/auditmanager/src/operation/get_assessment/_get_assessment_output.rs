@@ -19,7 +19,7 @@ impl GetAssessmentOutput {
         self.user_role.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAssessmentOutput {
+impl ::aws_types::request_id::RequestId for GetAssessmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

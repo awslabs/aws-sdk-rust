@@ -21,7 +21,7 @@ impl ListResourceDataSyncOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListResourceDataSyncOutput {
+impl ::aws_types::request_id::RequestId for ListResourceDataSyncOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

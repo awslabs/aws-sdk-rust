@@ -13,7 +13,7 @@ impl DescribeReservationOutput {
         self.reservation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReservationOutput {
+impl ::aws_types::request_id::RequestId for DescribeReservationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

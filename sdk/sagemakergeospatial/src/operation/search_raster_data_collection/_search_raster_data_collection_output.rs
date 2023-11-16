@@ -37,7 +37,7 @@ impl ::std::fmt::Debug for SearchRasterDataCollectionOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for SearchRasterDataCollectionOutput {
+impl ::aws_types::request_id::RequestId for SearchRasterDataCollectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

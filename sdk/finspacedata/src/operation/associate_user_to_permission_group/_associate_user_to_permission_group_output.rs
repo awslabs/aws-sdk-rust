@@ -13,7 +13,7 @@ impl AssociateUserToPermissionGroupOutput {
         self.status_code
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateUserToPermissionGroupOutput {
+impl ::aws_types::request_id::RequestId for AssociateUserToPermissionGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

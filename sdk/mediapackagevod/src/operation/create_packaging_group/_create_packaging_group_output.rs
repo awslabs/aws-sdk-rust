@@ -49,7 +49,7 @@ impl CreatePackagingGroupOutput {
         self.tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePackagingGroupOutput {
+impl ::aws_types::request_id::RequestId for CreatePackagingGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

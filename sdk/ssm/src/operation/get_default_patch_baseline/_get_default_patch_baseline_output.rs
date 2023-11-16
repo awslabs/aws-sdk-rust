@@ -19,7 +19,7 @@ impl GetDefaultPatchBaselineOutput {
         self.operating_system.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDefaultPatchBaselineOutput {
+impl ::aws_types::request_id::RequestId for GetDefaultPatchBaselineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

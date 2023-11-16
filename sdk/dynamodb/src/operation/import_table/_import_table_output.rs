@@ -13,7 +13,7 @@ impl ImportTableOutput {
         self.import_table_description.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ImportTableOutput {
+impl ::aws_types::request_id::RequestId for ImportTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

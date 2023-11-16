@@ -26,7 +26,7 @@ impl ::std::fmt::Display for PullRequestStatusRequiredException {
     }
 }
 impl ::std::error::Error for PullRequestStatusRequiredException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::PullRequestStatusRequiredException {
+impl ::aws_types::request_id::RequestId for crate::types::error::PullRequestStatusRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

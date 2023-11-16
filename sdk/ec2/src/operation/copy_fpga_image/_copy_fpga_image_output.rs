@@ -13,7 +13,7 @@ impl CopyFpgaImageOutput {
         self.fpga_image_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CopyFpgaImageOutput {
+impl ::aws_types::request_id::RequestId for CopyFpgaImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

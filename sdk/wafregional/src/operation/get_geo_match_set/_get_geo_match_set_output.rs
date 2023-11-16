@@ -13,7 +13,7 @@ impl GetGeoMatchSetOutput {
         self.geo_match_set.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetGeoMatchSetOutput {
+impl ::aws_types::request_id::RequestId for GetGeoMatchSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

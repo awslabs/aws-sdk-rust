@@ -21,7 +21,7 @@ impl DescribeLaunchConfigurationTemplatesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLaunchConfigurationTemplatesOutput {
+impl ::aws_types::request_id::RequestId for DescribeLaunchConfigurationTemplatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DbClusterAlreadyExistsFault {
     }
 }
 impl ::std::error::Error for DbClusterAlreadyExistsFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DbClusterAlreadyExistsFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::DbClusterAlreadyExistsFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -35,7 +35,7 @@ impl ::std::fmt::Display for IncorrectFileSystemLifeCycleState {
     }
 }
 impl ::std::error::Error for IncorrectFileSystemLifeCycleState {}
-impl ::aws_http::request_id::RequestId for crate::types::error::IncorrectFileSystemLifeCycleState {
+impl ::aws_types::request_id::RequestId for crate::types::error::IncorrectFileSystemLifeCycleState {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

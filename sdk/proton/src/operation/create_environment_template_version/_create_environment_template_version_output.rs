@@ -13,7 +13,7 @@ impl CreateEnvironmentTemplateVersionOutput {
         self.environment_template_version.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateEnvironmentTemplateVersionOutput {
+impl ::aws_types::request_id::RequestId for CreateEnvironmentTemplateVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

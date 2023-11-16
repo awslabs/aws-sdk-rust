@@ -13,7 +13,7 @@ impl CreateCollectionOutput {
         self.create_collection_detail.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCollectionOutput {
+impl ::aws_types::request_id::RequestId for CreateCollectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

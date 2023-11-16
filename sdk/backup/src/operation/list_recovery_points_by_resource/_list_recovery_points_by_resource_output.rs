@@ -25,7 +25,7 @@ impl ListRecoveryPointsByResourceOutput {
         self.recovery_points.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListRecoveryPointsByResourceOutput {
+impl ::aws_types::request_id::RequestId for ListRecoveryPointsByResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

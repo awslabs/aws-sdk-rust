@@ -13,7 +13,7 @@ impl GetCaseEventConfigurationOutput {
         self.event_bridge.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCaseEventConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetCaseEventConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

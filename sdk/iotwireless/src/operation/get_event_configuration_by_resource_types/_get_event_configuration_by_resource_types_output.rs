@@ -37,7 +37,7 @@ impl GetEventConfigurationByResourceTypesOutput {
         self.message_delivery_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEventConfigurationByResourceTypesOutput {
+impl ::aws_types::request_id::RequestId for GetEventConfigurationByResourceTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

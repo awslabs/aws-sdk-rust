@@ -21,7 +21,7 @@ impl DescribeAppBlocksOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAppBlocksOutput {
+impl ::aws_types::request_id::RequestId for DescribeAppBlocksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

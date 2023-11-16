@@ -21,7 +21,7 @@ impl ListTaskDefinitionFamiliesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTaskDefinitionFamiliesOutput {
+impl ::aws_types::request_id::RequestId for ListTaskDefinitionFamiliesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

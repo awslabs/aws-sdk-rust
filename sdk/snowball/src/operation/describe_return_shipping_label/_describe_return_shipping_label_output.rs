@@ -25,7 +25,7 @@ impl DescribeReturnShippingLabelOutput {
         self.return_shipping_label_uri.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReturnShippingLabelOutput {
+impl ::aws_types::request_id::RequestId for DescribeReturnShippingLabelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

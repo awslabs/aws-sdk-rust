@@ -13,7 +13,7 @@ impl DeleteDbClusterAutomatedBackupOutput {
         self.db_cluster_automated_backup.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDbClusterAutomatedBackupOutput {
+impl ::aws_types::request_id::RequestId for DeleteDbClusterAutomatedBackupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

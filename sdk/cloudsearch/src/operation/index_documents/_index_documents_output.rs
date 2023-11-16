@@ -16,7 +16,7 @@ impl IndexDocumentsOutput {
         self.field_names.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for IndexDocumentsOutput {
+impl ::aws_types::request_id::RequestId for IndexDocumentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

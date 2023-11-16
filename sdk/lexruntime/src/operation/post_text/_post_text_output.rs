@@ -160,7 +160,7 @@ impl ::std::fmt::Debug for PostTextOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for PostTextOutput {
+impl ::aws_types::request_id::RequestId for PostTextOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

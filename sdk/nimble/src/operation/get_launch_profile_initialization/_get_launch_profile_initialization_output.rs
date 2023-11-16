@@ -13,7 +13,7 @@ impl GetLaunchProfileInitializationOutput {
         self.launch_profile_initialization.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLaunchProfileInitializationOutput {
+impl ::aws_types::request_id::RequestId for GetLaunchProfileInitializationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

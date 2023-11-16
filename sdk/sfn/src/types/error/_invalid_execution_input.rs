@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidExecutionInput {
     }
 }
 impl ::std::error::Error for InvalidExecutionInput {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidExecutionInput {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidExecutionInput {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

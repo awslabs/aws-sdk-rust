@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidCertificateFault {
     }
 }
 impl ::std::error::Error for InvalidCertificateFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidCertificateFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidCertificateFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

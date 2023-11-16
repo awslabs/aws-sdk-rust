@@ -21,7 +21,7 @@ impl ListThesauriOutput {
         self.thesaurus_summary_items.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListThesauriOutput {
+impl ::aws_types::request_id::RequestId for ListThesauriOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

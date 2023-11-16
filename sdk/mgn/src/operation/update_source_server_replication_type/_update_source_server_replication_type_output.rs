@@ -112,7 +112,7 @@ impl ::std::fmt::Debug for UpdateSourceServerReplicationTypeOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSourceServerReplicationTypeOutput {
+impl ::aws_types::request_id::RequestId for UpdateSourceServerReplicationTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

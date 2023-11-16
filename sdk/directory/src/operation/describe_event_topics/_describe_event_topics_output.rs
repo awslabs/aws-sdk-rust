@@ -16,7 +16,7 @@ impl DescribeEventTopicsOutput {
         self.event_topics.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEventTopicsOutput {
+impl ::aws_types::request_id::RequestId for DescribeEventTopicsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

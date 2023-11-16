@@ -13,7 +13,7 @@ impl CopyDbClusterParameterGroupOutput {
         self.db_cluster_parameter_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CopyDbClusterParameterGroupOutput {
+impl ::aws_types::request_id::RequestId for CopyDbClusterParameterGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

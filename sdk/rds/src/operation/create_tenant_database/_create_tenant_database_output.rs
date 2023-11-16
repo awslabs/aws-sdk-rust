@@ -13,7 +13,7 @@ impl CreateTenantDatabaseOutput {
         self.tenant_database.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateTenantDatabaseOutput {
+impl ::aws_types::request_id::RequestId for CreateTenantDatabaseOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -44,7 +44,7 @@ impl GetDomainMaintenanceStatusOutput {
         self.updated_at.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDomainMaintenanceStatusOutput {
+impl ::aws_types::request_id::RequestId for GetDomainMaintenanceStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

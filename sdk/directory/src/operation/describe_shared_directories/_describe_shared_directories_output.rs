@@ -21,7 +21,7 @@ impl DescribeSharedDirectoriesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSharedDirectoriesOutput {
+impl ::aws_types::request_id::RequestId for DescribeSharedDirectoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

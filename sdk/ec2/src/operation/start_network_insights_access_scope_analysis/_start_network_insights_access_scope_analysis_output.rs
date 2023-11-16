@@ -13,7 +13,7 @@ impl StartNetworkInsightsAccessScopeAnalysisOutput {
         self.network_insights_access_scope_analysis.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartNetworkInsightsAccessScopeAnalysisOutput {
+impl ::aws_types::request_id::RequestId for StartNetworkInsightsAccessScopeAnalysisOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

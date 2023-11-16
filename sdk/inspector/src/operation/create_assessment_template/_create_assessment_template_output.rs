@@ -14,7 +14,7 @@ impl CreateAssessmentTemplateOutput {
         self.assessment_template_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateAssessmentTemplateOutput {
+impl ::aws_types::request_id::RequestId for CreateAssessmentTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

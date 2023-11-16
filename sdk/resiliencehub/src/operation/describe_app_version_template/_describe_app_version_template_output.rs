@@ -158,7 +158,7 @@ impl DescribeAppVersionTemplateOutput {
         self.app_template_body.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAppVersionTemplateOutput {
+impl ::aws_types::request_id::RequestId for DescribeAppVersionTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl ListDiscoverersOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListDiscoverersOutput {
+impl ::aws_types::request_id::RequestId for ListDiscoverersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

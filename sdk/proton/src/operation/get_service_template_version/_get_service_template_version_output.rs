@@ -13,7 +13,7 @@ impl GetServiceTemplateVersionOutput {
         self.service_template_version.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetServiceTemplateVersionOutput {
+impl ::aws_types::request_id::RequestId for GetServiceTemplateVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

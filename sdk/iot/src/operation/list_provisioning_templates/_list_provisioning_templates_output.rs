@@ -21,7 +21,7 @@ impl ListProvisioningTemplatesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListProvisioningTemplatesOutput {
+impl ::aws_types::request_id::RequestId for ListProvisioningTemplatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,7 +19,7 @@ impl CreateSizeConstraintSetOutput {
         self.change_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateSizeConstraintSetOutput {
+impl ::aws_types::request_id::RequestId for CreateSizeConstraintSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

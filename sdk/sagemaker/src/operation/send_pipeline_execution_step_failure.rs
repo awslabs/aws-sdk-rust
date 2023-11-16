@@ -158,7 +158,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SendPipel
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_send_pipeline_execution_step_failure::de_send_pipeline_execution_step_failure_http_error(
                 status, headers, body,
@@ -310,7 +310,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SendPipelineE
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError {
+impl ::aws_types::request_id::RequestId for crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

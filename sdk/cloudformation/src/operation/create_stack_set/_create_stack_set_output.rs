@@ -13,7 +13,7 @@ impl CreateStackSetOutput {
         self.stack_set_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateStackSetOutput {
+impl ::aws_types::request_id::RequestId for CreateStackSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

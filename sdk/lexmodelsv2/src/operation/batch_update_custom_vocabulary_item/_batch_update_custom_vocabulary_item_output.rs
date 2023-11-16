@@ -41,7 +41,7 @@ impl BatchUpdateCustomVocabularyItemOutput {
         self.resources.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchUpdateCustomVocabularyItemOutput {
+impl ::aws_types::request_id::RequestId for BatchUpdateCustomVocabularyItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

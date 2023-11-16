@@ -13,7 +13,7 @@ impl GetAttendeeOutput {
         self.attendee.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAttendeeOutput {
+impl ::aws_types::request_id::RequestId for GetAttendeeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

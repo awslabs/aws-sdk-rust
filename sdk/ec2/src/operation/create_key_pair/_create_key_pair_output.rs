@@ -58,7 +58,7 @@ impl ::std::fmt::Debug for CreateKeyPairOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateKeyPairOutput {
+impl ::aws_types::request_id::RequestId for CreateKeyPairOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

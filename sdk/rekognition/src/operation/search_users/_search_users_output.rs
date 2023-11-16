@@ -33,7 +33,7 @@ impl SearchUsersOutput {
         self.searched_user.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for SearchUsersOutput {
+impl ::aws_types::request_id::RequestId for SearchUsersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

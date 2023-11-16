@@ -20,7 +20,7 @@ impl ListAssistantsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAssistantsOutput {
+impl ::aws_types::request_id::RequestId for ListAssistantsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -25,7 +25,7 @@ impl PutEncryptionConfigurationOutput {
         &self.encryption_type
     }
 }
-impl ::aws_http::request_id::RequestId for PutEncryptionConfigurationOutput {
+impl ::aws_types::request_id::RequestId for PutEncryptionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

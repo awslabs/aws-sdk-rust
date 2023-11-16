@@ -13,7 +13,7 @@ impl CreatePullRequestOutput {
         self.pull_request.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePullRequestOutput {
+impl ::aws_types::request_id::RequestId for CreatePullRequestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

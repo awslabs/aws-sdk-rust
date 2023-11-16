@@ -20,7 +20,7 @@ impl NotifyObjectCompleteOutput {
         &self.object_checksum_algorithm
     }
 }
-impl ::aws_http::request_id::RequestId for NotifyObjectCompleteOutput {
+impl ::aws_types::request_id::RequestId for NotifyObjectCompleteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

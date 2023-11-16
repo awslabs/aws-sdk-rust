@@ -13,7 +13,7 @@ impl CreateEnvironmentAccountConnectionOutput {
         self.environment_account_connection.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateEnvironmentAccountConnectionOutput {
+impl ::aws_types::request_id::RequestId for CreateEnvironmentAccountConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

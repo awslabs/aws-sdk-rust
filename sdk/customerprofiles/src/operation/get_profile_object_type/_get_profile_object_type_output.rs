@@ -100,7 +100,7 @@ impl ::std::fmt::Debug for GetProfileObjectTypeOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetProfileObjectTypeOutput {
+impl ::aws_types::request_id::RequestId for GetProfileObjectTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

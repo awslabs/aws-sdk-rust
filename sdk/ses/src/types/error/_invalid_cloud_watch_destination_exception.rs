@@ -40,7 +40,7 @@ impl ::std::fmt::Display for InvalidCloudWatchDestinationException {
     }
 }
 impl ::std::error::Error for InvalidCloudWatchDestinationException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidCloudWatchDestinationException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidCloudWatchDestinationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

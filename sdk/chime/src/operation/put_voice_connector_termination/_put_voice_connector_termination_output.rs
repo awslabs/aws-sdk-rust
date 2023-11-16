@@ -13,7 +13,7 @@ impl PutVoiceConnectorTerminationOutput {
         self.termination.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutVoiceConnectorTerminationOutput {
+impl ::aws_types::request_id::RequestId for PutVoiceConnectorTerminationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

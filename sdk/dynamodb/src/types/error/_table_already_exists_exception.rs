@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TableAlreadyExistsException {
     }
 }
 impl ::std::error::Error for TableAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TableAlreadyExistsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TableAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -21,7 +21,7 @@ impl ListSlackWorkspaceConfigurationsOutput {
         self.slack_workspace_configurations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListSlackWorkspaceConfigurationsOutput {
+impl ::aws_types::request_id::RequestId for ListSlackWorkspaceConfigurationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

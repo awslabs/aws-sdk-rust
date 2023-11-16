@@ -26,7 +26,7 @@ impl DownloadDbLogFilePortionOutput {
         self.additional_data_pending
     }
 }
-impl ::aws_http::request_id::RequestId for DownloadDbLogFilePortionOutput {
+impl ::aws_types::request_id::RequestId for DownloadDbLogFilePortionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -77,7 +77,7 @@ impl ::std::fmt::Debug for GetCalculatedAttributeDefinitionOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCalculatedAttributeDefinitionOutput {
+impl ::aws_types::request_id::RequestId for GetCalculatedAttributeDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -27,7 +27,7 @@ impl ListInstanceProfilesForRoleOutput {
         self.marker.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListInstanceProfilesForRoleOutput {
+impl ::aws_types::request_id::RequestId for ListInstanceProfilesForRoleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidRuleContentSha256Exception {
     }
 }
 impl ::std::error::Error for InvalidRuleContentSha256Exception {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidRuleContentSha256Exception {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidRuleContentSha256Exception {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -135,7 +135,7 @@ impl ::std::fmt::Debug for DescribeConnectorOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeConnectorOutput {
+impl ::aws_types::request_id::RequestId for DescribeConnectorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

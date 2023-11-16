@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeF
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_describe_fpga_image_attribute::de_describe_fpga_image_attribute_http_error(status, headers, body)
         } else {
@@ -274,7 +274,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeFpgaI
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError {
+impl ::aws_types::request_id::RequestId for crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

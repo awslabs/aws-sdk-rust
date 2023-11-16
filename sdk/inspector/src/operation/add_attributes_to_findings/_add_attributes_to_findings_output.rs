@@ -13,7 +13,7 @@ impl AddAttributesToFindingsOutput {
         &self.failed_items
     }
 }
-impl ::aws_http::request_id::RequestId for AddAttributesToFindingsOutput {
+impl ::aws_types::request_id::RequestId for AddAttributesToFindingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

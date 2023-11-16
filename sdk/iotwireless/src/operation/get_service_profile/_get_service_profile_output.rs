@@ -31,7 +31,7 @@ impl GetServiceProfileOutput {
         self.lo_ra_wan.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetServiceProfileOutput {
+impl ::aws_types::request_id::RequestId for GetServiceProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

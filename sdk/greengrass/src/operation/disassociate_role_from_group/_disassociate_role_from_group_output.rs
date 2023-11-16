@@ -13,7 +13,7 @@ impl DisassociateRoleFromGroupOutput {
         self.disassociated_at.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisassociateRoleFromGroupOutput {
+impl ::aws_types::request_id::RequestId for DisassociateRoleFromGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

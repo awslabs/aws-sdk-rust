@@ -13,7 +13,7 @@ impl PutImageOutput {
         self.image.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutImageOutput {
+impl ::aws_types::request_id::RequestId for PutImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

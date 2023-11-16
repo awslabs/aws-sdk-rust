@@ -13,7 +13,7 @@ impl GetCollaborationOutput {
         self.collaboration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCollaborationOutput {
+impl ::aws_types::request_id::RequestId for GetCollaborationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

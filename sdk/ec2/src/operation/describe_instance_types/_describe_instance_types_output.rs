@@ -21,7 +21,7 @@ impl DescribeInstanceTypesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeInstanceTypesOutput {
+impl ::aws_types::request_id::RequestId for DescribeInstanceTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

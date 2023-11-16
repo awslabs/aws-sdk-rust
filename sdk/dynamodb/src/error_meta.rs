@@ -2007,7 +2007,7 @@ impl ::std::error::Error for Error {
         }
     }
 }
-impl ::aws_http::request_id::RequestId for Error {
+impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::BackupInUseException(e) => e.request_id(),

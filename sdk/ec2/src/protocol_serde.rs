@@ -17,7 +17,7 @@ where
 
 pub fn parse_http_error_metadata(
     _response_status: u16,
-    _response_headers: &::http::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     response_body: &[u8],
 ) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_xml::decode::XmlDecodeError> {
     crate::ec2_query_errors::parse_error_metadata(response_body)

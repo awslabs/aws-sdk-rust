@@ -13,7 +13,7 @@ impl StreamJournalToKinesisOutput {
         self.stream_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StreamJournalToKinesisOutput {
+impl ::aws_types::request_id::RequestId for StreamJournalToKinesisOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -33,7 +33,7 @@ impl ::std::fmt::Display for OrganizationAccessDeniedException {
     }
 }
 impl ::std::error::Error for OrganizationAccessDeniedException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OrganizationAccessDeniedException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OrganizationAccessDeniedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

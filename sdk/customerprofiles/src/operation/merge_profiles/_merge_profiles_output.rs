@@ -13,7 +13,7 @@ impl MergeProfilesOutput {
         self.message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for MergeProfilesOutput {
+impl ::aws_types::request_id::RequestId for MergeProfilesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

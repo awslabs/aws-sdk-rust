@@ -83,7 +83,7 @@ impl DescribePatchGroupStateOutput {
         self.instances_with_other_non_compliant_patches
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePatchGroupStateOutput {
+impl ::aws_types::request_id::RequestId for DescribePatchGroupStateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

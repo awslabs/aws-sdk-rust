@@ -19,7 +19,7 @@ impl GetAppsListOutput {
         self.apps_list_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAppsListOutput {
+impl ::aws_types::request_id::RequestId for GetAppsListOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

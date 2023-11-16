@@ -26,7 +26,7 @@ impl StartFhirImportJobOutput {
         self.datastore_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartFhirImportJobOutput {
+impl ::aws_types::request_id::RequestId for StartFhirImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl UpdateMediaPipelineKinesisVideoStreamPoolOutput {
         self.kinesis_video_stream_pool_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateMediaPipelineKinesisVideoStreamPoolOutput {
+impl ::aws_types::request_id::RequestId for UpdateMediaPipelineKinesisVideoStreamPoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

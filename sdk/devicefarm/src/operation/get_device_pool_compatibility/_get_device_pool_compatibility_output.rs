@@ -24,7 +24,7 @@ impl GetDevicePoolCompatibilityOutput {
         self.incompatible_devices.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDevicePoolCompatibilityOutput {
+impl ::aws_types::request_id::RequestId for GetDevicePoolCompatibilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

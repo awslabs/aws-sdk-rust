@@ -21,7 +21,7 @@ impl ListMulticastGroupsByFuotaTaskOutput {
         self.multicast_group_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListMulticastGroupsByFuotaTaskOutput {
+impl ::aws_types::request_id::RequestId for ListMulticastGroupsByFuotaTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

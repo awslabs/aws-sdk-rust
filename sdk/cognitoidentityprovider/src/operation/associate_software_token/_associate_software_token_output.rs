@@ -28,7 +28,7 @@ impl ::std::fmt::Debug for AssociateSoftwareTokenOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateSoftwareTokenOutput {
+impl ::aws_types::request_id::RequestId for AssociateSoftwareTokenOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

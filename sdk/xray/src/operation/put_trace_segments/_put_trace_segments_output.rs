@@ -15,7 +15,7 @@ impl PutTraceSegmentsOutput {
         self.unprocessed_trace_segments.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for PutTraceSegmentsOutput {
+impl ::aws_types::request_id::RequestId for PutTraceSegmentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

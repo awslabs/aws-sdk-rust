@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListTarge
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_targets::de_list_targets_http_error(status, headers, body)
         } else {
@@ -325,7 +325,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTargetsEr
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_targets::ListTargetsError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_targets::ListTargetsError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

@@ -58,7 +58,7 @@ impl GetSchemaMappingOutput {
         self.has_workflows
     }
 }
-impl ::aws_http::request_id::RequestId for GetSchemaMappingOutput {
+impl ::aws_types::request_id::RequestId for GetSchemaMappingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

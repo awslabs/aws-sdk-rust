@@ -19,7 +19,7 @@ impl VerifyDomainDkimOutput {
         self.dkim_tokens.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for VerifyDomainDkimOutput {
+impl ::aws_types::request_id::RequestId for VerifyDomainDkimOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

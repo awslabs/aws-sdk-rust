@@ -13,7 +13,7 @@ impl UpdateSipMediaApplicationOutput {
         self.sip_media_application.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSipMediaApplicationOutput {
+impl ::aws_types::request_id::RequestId for UpdateSipMediaApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

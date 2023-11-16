@@ -67,7 +67,7 @@ impl GetBootstrapBrokersOutput {
         self.bootstrap_broker_string_vpc_connectivity_sasl_iam.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBootstrapBrokersOutput {
+impl ::aws_types::request_id::RequestId for GetBootstrapBrokersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

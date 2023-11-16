@@ -55,7 +55,7 @@ impl DescribeApplicationInstanceDetailsOutput {
         self.application_instance_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeApplicationInstanceDetailsOutput {
+impl ::aws_types::request_id::RequestId for DescribeApplicationInstanceDetailsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

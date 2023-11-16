@@ -33,7 +33,7 @@ impl ::std::fmt::Display for BatchExecuteStatementException {
     }
 }
 impl ::std::error::Error for BatchExecuteStatementException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::BatchExecuteStatementException {
+impl ::aws_types::request_id::RequestId for crate::types::error::BatchExecuteStatementException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ReservedNodeQuotaExceededFault {
     }
 }
 impl ::std::error::Error for ReservedNodeQuotaExceededFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ReservedNodeQuotaExceededFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::ReservedNodeQuotaExceededFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

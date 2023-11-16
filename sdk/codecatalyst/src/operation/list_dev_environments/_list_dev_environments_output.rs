@@ -20,7 +20,7 @@ impl ListDevEnvironmentsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListDevEnvironmentsOutput {
+impl ::aws_types::request_id::RequestId for ListDevEnvironmentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

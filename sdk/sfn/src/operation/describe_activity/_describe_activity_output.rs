@@ -45,7 +45,7 @@ impl DescribeActivityOutput {
         &self.creation_date
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeActivityOutput {
+impl ::aws_types::request_id::RequestId for DescribeActivityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

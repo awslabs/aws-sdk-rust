@@ -45,7 +45,7 @@ impl PutEmailIdentityDkimSigningAttributesOutput {
         self.dkim_tokens.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for PutEmailIdentityDkimSigningAttributesOutput {
+impl ::aws_types::request_id::RequestId for PutEmailIdentityDkimSigningAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

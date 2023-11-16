@@ -31,7 +31,7 @@ impl GetResourceLfTagsOutput {
         self.lf_tags_on_columns.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetResourceLfTagsOutput {
+impl ::aws_types::request_id::RequestId for GetResourceLfTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl DescribeDbClusterParameterGroupsOutput {
         self.db_cluster_parameter_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDbClusterParameterGroupsOutput {
+impl ::aws_types::request_id::RequestId for DescribeDbClusterParameterGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

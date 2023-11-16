@@ -13,7 +13,7 @@ impl UpdateStackOutput {
         self.stack.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateStackOutput {
+impl ::aws_types::request_id::RequestId for UpdateStackOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -98,7 +98,7 @@ impl ::std::fmt::Debug for CreateRouteOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRouteOutput {
+impl ::aws_types::request_id::RequestId for CreateRouteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

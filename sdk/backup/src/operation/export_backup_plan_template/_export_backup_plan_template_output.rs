@@ -17,7 +17,7 @@ impl ExportBackupPlanTemplateOutput {
         self.backup_plan_template_json.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ExportBackupPlanTemplateOutput {
+impl ::aws_types::request_id::RequestId for ExportBackupPlanTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

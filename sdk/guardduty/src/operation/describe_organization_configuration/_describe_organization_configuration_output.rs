@@ -61,7 +61,7 @@ impl DescribeOrganizationConfigurationOutput {
         self.auto_enable_organization_members.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeOrganizationConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeOrganizationConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

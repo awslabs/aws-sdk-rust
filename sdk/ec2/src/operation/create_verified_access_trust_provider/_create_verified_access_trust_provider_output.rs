@@ -13,7 +13,7 @@ impl CreateVerifiedAccessTrustProviderOutput {
         self.verified_access_trust_provider.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateVerifiedAccessTrustProviderOutput {
+impl ::aws_types::request_id::RequestId for CreateVerifiedAccessTrustProviderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

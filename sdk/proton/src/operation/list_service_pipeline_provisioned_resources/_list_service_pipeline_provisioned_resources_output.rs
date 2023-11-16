@@ -20,7 +20,7 @@ impl ListServicePipelineProvisionedResourcesOutput {
         self.provisioned_resources.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListServicePipelineProvisionedResourcesOutput {
+impl ::aws_types::request_id::RequestId for ListServicePipelineProvisionedResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

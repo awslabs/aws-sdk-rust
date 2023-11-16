@@ -22,7 +22,7 @@ impl DescribeHsmClientCertificatesOutput {
         self.hsm_client_certificates.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeHsmClientCertificatesOutput {
+impl ::aws_types::request_id::RequestId for DescribeHsmClientCertificatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

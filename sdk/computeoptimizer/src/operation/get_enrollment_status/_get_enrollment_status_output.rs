@@ -39,7 +39,7 @@ impl GetEnrollmentStatusOutput {
         self.number_of_member_accounts_opted_in
     }
 }
-impl ::aws_http::request_id::RequestId for GetEnrollmentStatusOutput {
+impl ::aws_types::request_id::RequestId for GetEnrollmentStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -6,7 +6,7 @@
 pub struct AdminConfirmSignUpOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for AdminConfirmSignUpOutput {
+impl ::aws_types::request_id::RequestId for AdminConfirmSignUpOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

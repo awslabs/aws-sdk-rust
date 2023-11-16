@@ -59,8 +59,7 @@ fn extract_time_sent_from_response(
         .response()
         .headers()
         .get("date")
-        .ok_or("Response from server does not include a `date` header")?
-        .to_str()?;
+        .ok_or("Response from server does not include a `date` header")?;
     DateTime::from_str(date_header, Format::HttpDate).map_err(Into::into)
 }
 

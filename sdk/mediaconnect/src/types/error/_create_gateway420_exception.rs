@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CreateGateway420Exception {
     }
 }
 impl ::std::error::Error for CreateGateway420Exception {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CreateGateway420Exception {
+impl ::aws_types::request_id::RequestId for crate::types::error::CreateGateway420Exception {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

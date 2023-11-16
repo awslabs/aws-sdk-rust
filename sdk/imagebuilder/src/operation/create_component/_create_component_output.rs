@@ -25,7 +25,7 @@ impl CreateComponentOutput {
         self.component_build_version_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateComponentOutput {
+impl ::aws_types::request_id::RequestId for CreateComponentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

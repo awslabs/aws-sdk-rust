@@ -153,7 +153,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for NotifyPro
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_notify_provision_product_engine_workflow_result::de_notify_provision_product_engine_workflow_result_http_error(status, headers, body)
         } else {
@@ -303,7 +303,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for NotifyProvisi
         }
     }
 }
-impl ::aws_http::request_id::RequestId
+impl ::aws_types::request_id::RequestId
     for crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError
 {
     fn request_id(&self) -> Option<&str> {

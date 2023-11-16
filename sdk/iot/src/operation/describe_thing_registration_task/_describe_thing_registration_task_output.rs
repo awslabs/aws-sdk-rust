@@ -79,7 +79,7 @@ impl DescribeThingRegistrationTaskOutput {
         self.percentage_progress
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeThingRegistrationTaskOutput {
+impl ::aws_types::request_id::RequestId for DescribeThingRegistrationTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

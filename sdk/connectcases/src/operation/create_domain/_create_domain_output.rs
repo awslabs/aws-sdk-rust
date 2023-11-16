@@ -27,7 +27,7 @@ impl CreateDomainOutput {
         &self.domain_status
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDomainOutput {
+impl ::aws_types::request_id::RequestId for CreateDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

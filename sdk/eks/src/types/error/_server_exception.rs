@@ -52,7 +52,7 @@ impl ::std::fmt::Display for ServerException {
     }
 }
 impl ::std::error::Error for ServerException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ServerException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ServerException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

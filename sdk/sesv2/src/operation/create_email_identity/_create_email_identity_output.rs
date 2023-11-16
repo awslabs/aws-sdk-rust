@@ -27,7 +27,7 @@ impl CreateEmailIdentityOutput {
         self.dkim_attributes.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateEmailIdentityOutput {
+impl ::aws_types::request_id::RequestId for CreateEmailIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -114,7 +114,7 @@ impl UpdateFileSystemOutput {
         self.tags.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateFileSystemOutput {
+impl ::aws_types::request_id::RequestId for UpdateFileSystemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

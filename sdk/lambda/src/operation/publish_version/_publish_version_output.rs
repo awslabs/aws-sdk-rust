@@ -226,7 +226,7 @@ impl PublishVersionOutput {
         self.runtime_version_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PublishVersionOutput {
+impl ::aws_types::request_id::RequestId for PublishVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -27,7 +27,7 @@ impl GetUnfilteredPartitionMetadataOutput {
         self.is_registered_with_lake_formation
     }
 }
-impl ::aws_http::request_id::RequestId for GetUnfilteredPartitionMetadataOutput {
+impl ::aws_types::request_id::RequestId for GetUnfilteredPartitionMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

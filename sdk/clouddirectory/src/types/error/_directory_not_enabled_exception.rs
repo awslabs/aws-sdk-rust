@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DirectoryNotEnabledException {
     }
 }
 impl ::std::error::Error for DirectoryNotEnabledException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DirectoryNotEnabledException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DirectoryNotEnabledException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

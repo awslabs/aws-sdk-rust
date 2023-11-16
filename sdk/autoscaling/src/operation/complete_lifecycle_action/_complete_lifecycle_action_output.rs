@@ -5,7 +5,7 @@
 pub struct CompleteLifecycleActionOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for CompleteLifecycleActionOutput {
+impl ::aws_types::request_id::RequestId for CompleteLifecycleActionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

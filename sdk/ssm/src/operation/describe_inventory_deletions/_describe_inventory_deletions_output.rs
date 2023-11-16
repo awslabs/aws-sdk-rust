@@ -21,7 +21,7 @@ impl DescribeInventoryDeletionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeInventoryDeletionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeInventoryDeletionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

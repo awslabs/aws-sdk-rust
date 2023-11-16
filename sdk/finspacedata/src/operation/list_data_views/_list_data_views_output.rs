@@ -21,7 +21,7 @@ impl ListDataViewsOutput {
         self.data_views.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListDataViewsOutput {
+impl ::aws_types::request_id::RequestId for ListDataViewsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

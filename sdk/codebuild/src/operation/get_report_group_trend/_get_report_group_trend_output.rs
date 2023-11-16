@@ -21,7 +21,7 @@ impl GetReportGroupTrendOutput {
         self.raw_data.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetReportGroupTrendOutput {
+impl ::aws_types::request_id::RequestId for GetReportGroupTrendOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

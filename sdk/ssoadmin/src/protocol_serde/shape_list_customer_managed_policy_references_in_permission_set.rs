@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_customer_managed_policy_references_in_permission_set_http_error(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput,
@@ -10,7 +10,7 @@ pub fn de_list_customer_managed_policy_references_in_permission_set_http_error(
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError::unhandled)?;
-    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -106,7 +106,7 @@ pub fn de_list_customer_managed_policy_references_in_permission_set_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_customer_managed_policy_references_in_permission_set_http_response(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput,
@@ -116,7 +116,7 @@ pub fn de_list_customer_managed_policy_references_in_permission_set_http_respons
         #[allow(unused_mut)]
         let mut output = crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder::default();
         output = crate::protocol_serde::shape_list_customer_managed_policy_references_in_permission_set::de_list_customer_managed_policy_references_in_permission_set(_response_body, output).map_err(crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError::unhandled)?;
-        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

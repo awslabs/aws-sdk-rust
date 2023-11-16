@@ -31,7 +31,7 @@ impl GetAccessPointForObjectLambdaOutput {
         self.alias.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAccessPointForObjectLambdaOutput {
+impl ::aws_types::request_id::RequestId for GetAccessPointForObjectLambdaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

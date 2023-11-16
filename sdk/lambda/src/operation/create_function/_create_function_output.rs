@@ -226,7 +226,7 @@ impl CreateFunctionOutput {
         self.runtime_version_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateFunctionOutput {
+impl ::aws_types::request_id::RequestId for CreateFunctionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

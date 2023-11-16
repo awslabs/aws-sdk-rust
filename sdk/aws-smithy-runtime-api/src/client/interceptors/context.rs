@@ -451,7 +451,13 @@ mod tests {
 
         context.enter_transmit_phase();
         let _ = context.take_request();
-        context.set_response(http::Response::builder().body(SdkBody::empty()).unwrap());
+        context.set_response(
+            http::Response::builder()
+                .body(SdkBody::empty())
+                .unwrap()
+                .try_into()
+                .unwrap(),
+        );
 
         context.enter_before_deserialization_phase();
         context.response();
@@ -508,7 +514,13 @@ mod tests {
             "request-modified-after-signing",
             request.headers().get("test").unwrap()
         );
-        context.set_response(http::Response::builder().body(SdkBody::empty()).unwrap());
+        context.set_response(
+            http::Response::builder()
+                .body(SdkBody::empty())
+                .unwrap()
+                .try_into()
+                .unwrap(),
+        );
 
         context.enter_before_deserialization_phase();
         context.enter_deserialization_phase();
@@ -524,7 +536,13 @@ mod tests {
 
         context.enter_transmit_phase();
         let _ = context.take_request();
-        context.set_response(http::Response::builder().body(SdkBody::empty()).unwrap());
+        context.set_response(
+            http::Response::builder()
+                .body(SdkBody::empty())
+                .unwrap()
+                .try_into()
+                .unwrap(),
+        );
 
         context.enter_before_deserialization_phase();
         context.enter_deserialization_phase();

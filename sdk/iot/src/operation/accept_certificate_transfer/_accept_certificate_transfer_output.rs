@@ -5,7 +5,7 @@
 pub struct AcceptCertificateTransferOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for AcceptCertificateTransferOutput {
+impl ::aws_types::request_id::RequestId for AcceptCertificateTransferOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

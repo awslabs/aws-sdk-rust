@@ -14,7 +14,7 @@ impl GetTelemetryMetadataOutput {
         self.telemetry_metadata.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTelemetryMetadataOutput {
+impl ::aws_types::request_id::RequestId for GetTelemetryMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

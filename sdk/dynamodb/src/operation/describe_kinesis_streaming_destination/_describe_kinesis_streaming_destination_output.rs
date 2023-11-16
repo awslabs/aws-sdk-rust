@@ -21,7 +21,7 @@ impl DescribeKinesisStreamingDestinationOutput {
         self.kinesis_data_stream_destinations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeKinesisStreamingDestinationOutput {
+impl ::aws_types::request_id::RequestId for DescribeKinesisStreamingDestinationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

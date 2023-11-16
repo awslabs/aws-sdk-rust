@@ -57,7 +57,7 @@ impl GetObjectOutput {
         self.status_code
     }
 }
-impl ::aws_http::request_id::RequestId for GetObjectOutput {
+impl ::aws_types::request_id::RequestId for GetObjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

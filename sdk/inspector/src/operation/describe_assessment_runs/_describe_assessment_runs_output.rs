@@ -20,7 +20,7 @@ impl DescribeAssessmentRunsOutput {
         &self.failed_items
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAssessmentRunsOutput {
+impl ::aws_types::request_id::RequestId for DescribeAssessmentRunsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

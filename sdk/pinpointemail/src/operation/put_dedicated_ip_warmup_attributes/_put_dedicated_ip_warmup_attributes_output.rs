@@ -6,7 +6,7 @@
 pub struct PutDedicatedIpWarmupAttributesOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutDedicatedIpWarmupAttributesOutput {
+impl ::aws_types::request_id::RequestId for PutDedicatedIpWarmupAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

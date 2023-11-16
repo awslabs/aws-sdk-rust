@@ -13,7 +13,7 @@ impl DeleteApnsVoipChannelOutput {
         self.apns_voip_channel_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteApnsVoipChannelOutput {
+impl ::aws_types::request_id::RequestId for DeleteApnsVoipChannelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

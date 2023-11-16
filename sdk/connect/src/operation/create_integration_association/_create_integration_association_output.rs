@@ -19,7 +19,7 @@ impl CreateIntegrationAssociationOutput {
         self.integration_association_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateIntegrationAssociationOutput {
+impl ::aws_types::request_id::RequestId for CreateIntegrationAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

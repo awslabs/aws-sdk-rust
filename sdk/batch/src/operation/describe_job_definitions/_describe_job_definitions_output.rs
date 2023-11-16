@@ -21,7 +21,7 @@ impl DescribeJobDefinitionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeJobDefinitionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeJobDefinitionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

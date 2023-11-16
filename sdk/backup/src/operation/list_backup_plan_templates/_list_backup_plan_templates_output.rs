@@ -21,7 +21,7 @@ impl ListBackupPlanTemplatesOutput {
         self.backup_plan_templates_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListBackupPlanTemplatesOutput {
+impl ::aws_types::request_id::RequestId for ListBackupPlanTemplatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -40,7 +40,7 @@ impl DescribeNetworkInterfaceAttributeOutput {
         self.source_dest_check.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeNetworkInterfaceAttributeOutput {
+impl ::aws_types::request_id::RequestId for DescribeNetworkInterfaceAttributeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

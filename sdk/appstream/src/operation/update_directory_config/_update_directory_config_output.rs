@@ -13,7 +13,7 @@ impl UpdateDirectoryConfigOutput {
         self.directory_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateDirectoryConfigOutput {
+impl ::aws_types::request_id::RequestId for UpdateDirectoryConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

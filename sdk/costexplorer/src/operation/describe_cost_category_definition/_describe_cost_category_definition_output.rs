@@ -13,7 +13,7 @@ impl DescribeCostCategoryDefinitionOutput {
         self.cost_category.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeCostCategoryDefinitionOutput {
+impl ::aws_types::request_id::RequestId for DescribeCostCategoryDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

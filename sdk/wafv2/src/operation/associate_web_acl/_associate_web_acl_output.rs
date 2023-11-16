@@ -5,7 +5,7 @@
 pub struct AssociateWebAclOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for AssociateWebAclOutput {
+impl ::aws_types::request_id::RequestId for AssociateWebAclOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

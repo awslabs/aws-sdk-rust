@@ -13,7 +13,7 @@ impl GetLensOutput {
         self.lens.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLensOutput {
+impl ::aws_types::request_id::RequestId for GetLensOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

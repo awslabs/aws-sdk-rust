@@ -13,7 +13,7 @@ impl CreateServiceActionOutput {
         self.service_action_detail.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateServiceActionOutput {
+impl ::aws_types::request_id::RequestId for CreateServiceActionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

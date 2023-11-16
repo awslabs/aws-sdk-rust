@@ -19,7 +19,7 @@ impl DescribeEmailMonitoringConfigurationOutput {
         self.log_group_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEmailMonitoringConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeEmailMonitoringConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

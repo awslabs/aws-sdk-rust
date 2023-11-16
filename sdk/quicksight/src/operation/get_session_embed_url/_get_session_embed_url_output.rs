@@ -35,7 +35,7 @@ impl ::std::fmt::Debug for GetSessionEmbedUrlOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSessionEmbedUrlOutput {
+impl ::aws_types::request_id::RequestId for GetSessionEmbedUrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -27,7 +27,7 @@ impl ListCallAnalyticsJobsOutput {
         self.call_analytics_job_summaries.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListCallAnalyticsJobsOutput {
+impl ::aws_types::request_id::RequestId for ListCallAnalyticsJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

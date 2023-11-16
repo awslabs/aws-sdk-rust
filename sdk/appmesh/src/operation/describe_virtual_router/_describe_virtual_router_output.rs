@@ -13,7 +13,7 @@ impl DescribeVirtualRouterOutput {
         self.virtual_router.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeVirtualRouterOutput {
+impl ::aws_types::request_id::RequestId for DescribeVirtualRouterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

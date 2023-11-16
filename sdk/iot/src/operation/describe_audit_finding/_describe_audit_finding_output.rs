@@ -13,7 +13,7 @@ impl DescribeAuditFindingOutput {
         self.finding.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAuditFindingOutput {
+impl ::aws_types::request_id::RequestId for DescribeAuditFindingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

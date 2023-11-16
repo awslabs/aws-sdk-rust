@@ -13,7 +13,7 @@ impl CreateWhatIfForecastOutput {
         self.what_if_forecast_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateWhatIfForecastOutput {
+impl ::aws_types::request_id::RequestId for CreateWhatIfForecastOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

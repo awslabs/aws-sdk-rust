@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidForwardCookies {
     }
 }
 impl ::std::error::Error for InvalidForwardCookies {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidForwardCookies {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidForwardCookies {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -28,7 +28,7 @@ impl QueryObjectsOutput {
         self.has_more_results
     }
 }
-impl ::aws_http::request_id::RequestId for QueryObjectsOutput {
+impl ::aws_types::request_id::RequestId for QueryObjectsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

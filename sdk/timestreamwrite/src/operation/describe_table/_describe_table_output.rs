@@ -13,7 +13,7 @@ impl DescribeTableOutput {
         self.table.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeTableOutput {
+impl ::aws_types::request_id::RequestId for DescribeTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

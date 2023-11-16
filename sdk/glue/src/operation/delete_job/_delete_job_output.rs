@@ -13,7 +13,7 @@ impl DeleteJobOutput {
         self.job_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteJobOutput {
+impl ::aws_types::request_id::RequestId for DeleteJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

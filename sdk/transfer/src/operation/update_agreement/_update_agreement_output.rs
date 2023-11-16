@@ -14,7 +14,7 @@ impl UpdateAgreementOutput {
         self.agreement_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAgreementOutput {
+impl ::aws_types::request_id::RequestId for UpdateAgreementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

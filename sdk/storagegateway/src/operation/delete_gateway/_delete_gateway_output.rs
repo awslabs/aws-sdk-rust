@@ -14,7 +14,7 @@ impl DeleteGatewayOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteGatewayOutput {
+impl ::aws_types::request_id::RequestId for DeleteGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

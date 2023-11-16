@@ -31,7 +31,7 @@ impl BatchGetRecordOutput {
         self.unprocessed_identifiers.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetRecordOutput {
+impl ::aws_types::request_id::RequestId for BatchGetRecordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

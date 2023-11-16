@@ -5,7 +5,7 @@
 pub struct RemoveFacetFromObjectOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for RemoveFacetFromObjectOutput {
+impl ::aws_types::request_id::RequestId for RemoveFacetFromObjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

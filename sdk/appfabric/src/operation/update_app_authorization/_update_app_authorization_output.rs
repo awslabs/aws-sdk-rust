@@ -13,7 +13,7 @@ impl UpdateAppAuthorizationOutput {
         self.app_authorization.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAppAuthorizationOutput {
+impl ::aws_types::request_id::RequestId for UpdateAppAuthorizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

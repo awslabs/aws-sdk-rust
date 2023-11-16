@@ -14,7 +14,7 @@ impl StartMediaAnalysisJobOutput {
         self.job_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartMediaAnalysisJobOutput {
+impl ::aws_types::request_id::RequestId for StartMediaAnalysisJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

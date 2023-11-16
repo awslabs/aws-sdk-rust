@@ -21,7 +21,7 @@ impl ListCodeSigningConfigsOutput {
         self.code_signing_configs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListCodeSigningConfigsOutput {
+impl ::aws_types::request_id::RequestId for ListCodeSigningConfigsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

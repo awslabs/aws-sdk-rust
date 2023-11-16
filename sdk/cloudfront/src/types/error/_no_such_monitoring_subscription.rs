@@ -26,7 +26,7 @@ impl ::std::fmt::Display for NoSuchMonitoringSubscription {
     }
 }
 impl ::std::error::Error for NoSuchMonitoringSubscription {}
-impl ::aws_http::request_id::RequestId for crate::types::error::NoSuchMonitoringSubscription {
+impl ::aws_types::request_id::RequestId for crate::types::error::NoSuchMonitoringSubscription {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

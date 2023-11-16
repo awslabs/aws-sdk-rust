@@ -13,7 +13,7 @@ impl GetCollaborationAnalysisTemplateOutput {
         self.collaboration_analysis_template.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCollaborationAnalysisTemplateOutput {
+impl ::aws_types::request_id::RequestId for GetCollaborationAnalysisTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

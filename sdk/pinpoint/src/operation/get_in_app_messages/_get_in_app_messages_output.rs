@@ -13,7 +13,7 @@ impl GetInAppMessagesOutput {
         self.in_app_messages_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetInAppMessagesOutput {
+impl ::aws_types::request_id::RequestId for GetInAppMessagesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

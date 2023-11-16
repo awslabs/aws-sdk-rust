@@ -21,7 +21,7 @@ impl ListHyperParameterTuningJobsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListHyperParameterTuningJobsOutput {
+impl ::aws_types::request_id::RequestId for ListHyperParameterTuningJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

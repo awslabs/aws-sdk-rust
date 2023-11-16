@@ -14,7 +14,7 @@ impl RestoreTableOutput {
         self.restored_table_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RestoreTableOutput {
+impl ::aws_types::request_id::RequestId for RestoreTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -53,7 +53,7 @@ impl GetExpenseAnalysisOutput {
         self.analyze_expense_model_version.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetExpenseAnalysisOutput {
+impl ::aws_types::request_id::RequestId for GetExpenseAnalysisOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

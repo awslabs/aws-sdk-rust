@@ -28,7 +28,7 @@ impl ::std::fmt::Debug for GetNetworkResourceOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetNetworkResourceOutput {
+impl ::aws_types::request_id::RequestId for GetNetworkResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -16,7 +16,7 @@ impl DescribeElasticLoadBalancersOutput {
         self.elastic_load_balancers.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeElasticLoadBalancersOutput {
+impl ::aws_types::request_id::RequestId for DescribeElasticLoadBalancersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

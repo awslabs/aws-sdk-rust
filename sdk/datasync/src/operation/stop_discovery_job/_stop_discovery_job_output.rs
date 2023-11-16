@@ -5,7 +5,7 @@
 pub struct StopDiscoveryJobOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for StopDiscoveryJobOutput {
+impl ::aws_types::request_id::RequestId for StopDiscoveryJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

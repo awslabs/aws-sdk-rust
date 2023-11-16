@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidS3KmsKeyArnException {
     }
 }
 impl ::std::error::Error for InvalidS3KmsKeyArnException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidS3KmsKeyArnException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidS3KmsKeyArnException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

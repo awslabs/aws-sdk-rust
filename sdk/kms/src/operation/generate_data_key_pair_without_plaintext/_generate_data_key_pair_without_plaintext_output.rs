@@ -31,7 +31,7 @@ impl GenerateDataKeyPairWithoutPlaintextOutput {
         self.key_pair_spec.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GenerateDataKeyPairWithoutPlaintextOutput {
+impl ::aws_types::request_id::RequestId for GenerateDataKeyPairWithoutPlaintextOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

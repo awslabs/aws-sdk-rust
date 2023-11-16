@@ -19,7 +19,7 @@ impl DescribeInsightOutput {
         self.reactive_insight.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeInsightOutput {
+impl ::aws_types::request_id::RequestId for DescribeInsightOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

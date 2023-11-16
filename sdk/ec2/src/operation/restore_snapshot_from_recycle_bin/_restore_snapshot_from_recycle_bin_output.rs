@@ -73,7 +73,7 @@ impl RestoreSnapshotFromRecycleBinOutput {
         self.sse_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RestoreSnapshotFromRecycleBinOutput {
+impl ::aws_types::request_id::RequestId for RestoreSnapshotFromRecycleBinOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

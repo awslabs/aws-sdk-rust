@@ -21,7 +21,7 @@ impl DeleteWorkspaceApiKeyOutput {
         self.workspace_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteWorkspaceApiKeyOutput {
+impl ::aws_types::request_id::RequestId for DeleteWorkspaceApiKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

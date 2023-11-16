@@ -13,7 +13,7 @@ impl ListRealtimeLogConfigsOutput {
         self.realtime_log_configs.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListRealtimeLogConfigsOutput {
+impl ::aws_types::request_id::RequestId for ListRealtimeLogConfigsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

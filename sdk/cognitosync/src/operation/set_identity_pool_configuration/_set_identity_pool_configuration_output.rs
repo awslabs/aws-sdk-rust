@@ -26,7 +26,7 @@ impl SetIdentityPoolConfigurationOutput {
         self.cognito_streams.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for SetIdentityPoolConfigurationOutput {
+impl ::aws_types::request_id::RequestId for SetIdentityPoolConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DescribeConnectorOutput {
         self.connector_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeConnectorOutput {
+impl ::aws_types::request_id::RequestId for DescribeConnectorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

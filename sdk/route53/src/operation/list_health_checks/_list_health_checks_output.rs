@@ -40,7 +40,7 @@ impl ListHealthChecksOutput {
         self.max_items
     }
 }
-impl ::aws_http::request_id::RequestId for ListHealthChecksOutput {
+impl ::aws_types::request_id::RequestId for ListHealthChecksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

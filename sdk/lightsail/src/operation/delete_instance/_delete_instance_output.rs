@@ -15,7 +15,7 @@ impl DeleteInstanceOutput {
         self.operations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteInstanceOutput {
+impl ::aws_types::request_id::RequestId for DeleteInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -33,7 +33,7 @@ impl DeleteImageSetOutput {
         &self.image_set_workflow_status
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteImageSetOutput {
+impl ::aws_types::request_id::RequestId for DeleteImageSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

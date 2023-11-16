@@ -70,7 +70,7 @@ impl ::std::fmt::Debug for GetHostedConfigurationVersionOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetHostedConfigurationVersionOutput {
+impl ::aws_types::request_id::RequestId for GetHostedConfigurationVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

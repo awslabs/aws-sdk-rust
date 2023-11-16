@@ -21,7 +21,7 @@ impl DescribeRecommendationLimitationsOutput {
         self.limitations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRecommendationLimitationsOutput {
+impl ::aws_types::request_id::RequestId for DescribeRecommendationLimitationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

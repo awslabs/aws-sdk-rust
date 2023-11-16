@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CredentialReportNotReadyException {
     }
 }
 impl ::std::error::Error for CredentialReportNotReadyException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CredentialReportNotReadyException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CredentialReportNotReadyException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

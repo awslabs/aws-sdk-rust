@@ -5,7 +5,7 @@
 pub struct UpdateKxClusterDatabasesOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateKxClusterDatabasesOutput {
+impl ::aws_types::request_id::RequestId for UpdateKxClusterDatabasesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

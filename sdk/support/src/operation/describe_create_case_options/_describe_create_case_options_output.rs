@@ -31,7 +31,7 @@ impl DescribeCreateCaseOptionsOutput {
         self.communication_types.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeCreateCaseOptionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeCreateCaseOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

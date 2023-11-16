@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TagNotFoundFault {
     }
 }
 impl ::std::error::Error for TagNotFoundFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TagNotFoundFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::TagNotFoundFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

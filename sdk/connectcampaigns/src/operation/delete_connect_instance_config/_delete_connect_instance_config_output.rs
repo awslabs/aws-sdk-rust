@@ -5,7 +5,7 @@
 pub struct DeleteConnectInstanceConfigOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteConnectInstanceConfigOutput {
+impl ::aws_types::request_id::RequestId for DeleteConnectInstanceConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

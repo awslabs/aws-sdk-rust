@@ -5,7 +5,7 @@
 pub struct StopCanaryOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for StopCanaryOutput {
+impl ::aws_types::request_id::RequestId for StopCanaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

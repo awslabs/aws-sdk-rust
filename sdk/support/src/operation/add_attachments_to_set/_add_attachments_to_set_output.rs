@@ -20,7 +20,7 @@ impl AddAttachmentsToSetOutput {
         self.expiry_time.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AddAttachmentsToSetOutput {
+impl ::aws_types::request_id::RequestId for AddAttachmentsToSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

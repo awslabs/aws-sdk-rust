@@ -19,7 +19,7 @@ impl CreateFlywheelOutput {
         self.active_model_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateFlywheelOutput {
+impl ::aws_types::request_id::RequestId for CreateFlywheelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

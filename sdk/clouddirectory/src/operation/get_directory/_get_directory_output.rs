@@ -13,7 +13,7 @@ impl GetDirectoryOutput {
         self.directory.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDirectoryOutput {
+impl ::aws_types::request_id::RequestId for GetDirectoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

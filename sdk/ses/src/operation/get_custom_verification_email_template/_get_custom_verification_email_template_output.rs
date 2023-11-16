@@ -44,7 +44,7 @@ impl GetCustomVerificationEmailTemplateOutput {
         self.failure_redirection_url.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCustomVerificationEmailTemplateOutput {
+impl ::aws_types::request_id::RequestId for GetCustomVerificationEmailTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

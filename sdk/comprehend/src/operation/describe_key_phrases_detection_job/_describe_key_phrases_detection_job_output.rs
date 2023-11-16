@@ -13,7 +13,7 @@ impl DescribeKeyPhrasesDetectionJobOutput {
         self.key_phrases_detection_job_properties.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeKeyPhrasesDetectionJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeKeyPhrasesDetectionJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

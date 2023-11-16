@@ -31,7 +31,7 @@ impl DescribeOrganizationHealthOutput {
         self.resource_hours
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeOrganizationHealthOutput {
+impl ::aws_types::request_id::RequestId for DescribeOrganizationHealthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -32,7 +32,7 @@ impl GetChunkOutput {
         &self.checksum_algorithm
     }
 }
-impl ::aws_http::request_id::RequestId for GetChunkOutput {
+impl ::aws_types::request_id::RequestId for GetChunkOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

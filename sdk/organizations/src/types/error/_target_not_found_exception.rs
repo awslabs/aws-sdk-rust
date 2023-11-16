@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TargetNotFoundException {
     }
 }
 impl ::std::error::Error for TargetNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TargetNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TargetNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

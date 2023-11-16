@@ -15,7 +15,7 @@ impl StartQueryPlanningOutput {
         self.query_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartQueryPlanningOutput {
+impl ::aws_types::request_id::RequestId for StartQueryPlanningOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

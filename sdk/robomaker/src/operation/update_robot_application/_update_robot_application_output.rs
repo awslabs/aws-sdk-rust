@@ -57,7 +57,7 @@ impl UpdateRobotApplicationOutput {
         self.environment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateRobotApplicationOutput {
+impl ::aws_types::request_id::RequestId for UpdateRobotApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

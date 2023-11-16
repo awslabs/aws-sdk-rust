@@ -13,7 +13,7 @@ impl DeleteUsageLimitOutput {
         self.usage_limit.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteUsageLimitOutput {
+impl ::aws_types::request_id::RequestId for DeleteUsageLimitOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

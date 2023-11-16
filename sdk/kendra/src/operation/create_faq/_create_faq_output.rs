@@ -13,7 +13,7 @@ impl CreateFaqOutput {
         self.id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateFaqOutput {
+impl ::aws_types::request_id::RequestId for CreateFaqOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -8,7 +8,7 @@
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::primitive::Parse;
 use aws_smithy_types::DateTime;
-use http::header::{HeaderMap, HeaderName, HeaderValue, ValueIter};
+use http::header::{HeaderMap, HeaderName, HeaderValue};
 use std::borrow::Cow;
 use std::convert::TryFrom;
 use std::error::Error;
@@ -31,7 +31,8 @@ impl ParseError {
         }
     }
 
-    fn with_source(self, source: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
+    /// Attach a source to this error.
+    pub fn with_source(self, source: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
         Self {
             source: Some(source.into()),
             ..self
@@ -55,15 +56,13 @@ impl Error for ParseError {
 ///
 /// This is separate from `read_many` below because we need to invoke `DateTime::read` to take advantage
 /// of comma-aware parsing
-pub fn many_dates(
-    values: ValueIter<'_, HeaderValue>,
+pub fn many_dates<'a>(
+    values: impl Iterator<Item = &'a str>,
     format: Format,
 ) -> Result<Vec<DateTime>, ParseError> {
     let mut out = vec![];
     for header in values {
-        let mut header = header
-            .to_str()
-            .map_err(|_| ParseError::new("header was not valid utf-8 string"))?;
+        let mut header = header;
         while !header.is_empty() {
             let (v, next) = DateTime::read(header, format, ',').map_err(|err| {
                 ParseError::new(format!("header could not be parsed as date: {}", err))
@@ -78,19 +77,18 @@ pub fn many_dates(
 /// Returns an iterator over pairs where the first element is the unprefixed header name that
 /// starts with the input `key` prefix, and the second element is the full header name.
 pub fn headers_for_prefix<'a>(
-    headers: &'a http::HeaderMap,
+    header_names: impl Iterator<Item = &'a str>,
     key: &'a str,
-) -> impl Iterator<Item = (&'a str, &'a HeaderName)> {
+) -> impl Iterator<Item = (&'a str, &'a str)> {
     let lower_key = key.to_ascii_lowercase();
-    headers
-        .keys()
-        .filter(move |k| k.as_str().starts_with(&lower_key))
-        .map(move |h| (&h.as_str()[key.len()..], h))
+    header_names
+        .filter(move |k| k.starts_with(&lower_key))
+        .map(move |k| (&k[key.len()..], k))
 }
 
 /// Convert a `HeaderValue` into a `Vec<T>` where `T: FromStr`
-pub fn read_many_from_str<T: FromStr>(
-    values: ValueIter<'_, HeaderValue>,
+pub fn read_many_from_str<'a, T: FromStr>(
+    values: impl Iterator<Item = &'a str>,
 ) -> Result<Vec<T>, ParseError>
 where
     T::Err: Error + Send + Sync + 'static,
@@ -103,8 +101,8 @@ where
 }
 
 /// Convert a `HeaderValue` into a `Vec<T>` where `T: Parse`
-pub fn read_many_primitive<T: Parse>(
-    values: ValueIter<'_, HeaderValue>,
+pub fn read_many_primitive<'a, T: Parse>(
+    values: impl Iterator<Item = &'a str>,
 ) -> Result<Vec<T>, ParseError> {
     read_many(values, |v: &str| {
         T::parse_smithy_primitive(v)
@@ -113,8 +111,8 @@ pub fn read_many_primitive<T: Parse>(
 }
 
 /// Read many comma / header delimited values from HTTP headers for `FromStr` types
-fn read_many<T>(
-    values: ValueIter<'_, HeaderValue>,
+fn read_many<'a, T>(
+    values: impl Iterator<Item = &'a str>,
     f: impl Fn(&str) -> Result<T, ParseError>,
 ) -> Result<Vec<T>, ParseError> {
     let mut out = vec![];
@@ -132,8 +130,8 @@ fn read_many<T>(
 /// Read exactly one or none from a headers iterator
 ///
 /// This function does not perform comma splitting like `read_many`
-pub fn one_or_none<T: FromStr>(
-    mut values: ValueIter<'_, HeaderValue>,
+pub fn one_or_none<'a, T: FromStr>(
+    mut values: impl Iterator<Item = &'a str>,
 ) -> Result<Option<T>, ParseError>
 where
     T::Err: Error + Send + Sync + 'static,
@@ -142,10 +140,8 @@ where
         Some(v) => v,
         None => return Ok(None),
     };
-    let value =
-        std::str::from_utf8(first.as_bytes()).map_err(|_| ParseError::new("invalid utf-8"))?;
     match values.next() {
-        None => T::from_str(value.trim())
+        None => T::from_str(first.trim())
             .map_err(|err| ParseError::new("failed to parse string").with_source(err))
             .map(Some),
         Some(_) => Err(ParseError::new(
@@ -348,6 +344,7 @@ mod test {
     };
 
     use super::quote_header_value;
+    use aws_smithy_runtime_api::http::Request;
     use aws_smithy_types::error::display::DisplayErrorContext;
 
     #[test]
@@ -396,15 +393,27 @@ mod test {
             .body(())
             .unwrap();
         assert_eq!(
-            read_many_primitive::<f32>(test_request.headers().get_all("X-Float-Multi").iter())
-                .expect("valid"),
+            read_many_primitive::<f32>(
+                test_request
+                    .headers()
+                    .get_all("X-Float-Multi")
+                    .iter()
+                    .map(|v| v.to_str().unwrap())
+            )
+            .expect("valid"),
             vec![0.0, f32::INFINITY, f32::NEG_INFINITY, 5555.5]
         );
         let message = format!(
             "{}",
             DisplayErrorContext(
-                read_many_primitive::<f32>(test_request.headers().get_all("X-Float-Error").iter())
-                    .expect_err("invalid")
+                read_many_primitive::<f32>(
+                    test_request
+                        .headers()
+                        .get_all("X-Float-Error")
+                        .iter()
+                        .map(|v| v.to_str().unwrap())
+                )
+                .expect_err("invalid")
             )
         );
         let expected = "output failed to parse in headers: failed reading a list of primitives: failed to parse input as f32";
@@ -428,7 +437,14 @@ mod test {
             .body(())
             .unwrap();
         let read = |name: &str, format: Format| {
-            many_dates(test_request.headers().get_all(name).iter(), format)
+            many_dates(
+                test_request
+                    .headers()
+                    .get_all(name)
+                    .iter()
+                    .map(|v| v.to_str().unwrap()),
+                format,
+            )
         };
         let read_valid = |name: &str, format: Format| read(name, format).expect("valid");
         assert_eq!(
@@ -478,8 +494,15 @@ mod test {
             .header("EscapedSlashesInQuotes", "foo, \"(foo\\\\bar)\"")
             .body(())
             .unwrap();
-        let read =
-            |name: &str| read_many_from_str::<String>(test_request.headers().get_all(name).iter());
+        let read = |name: &str| {
+            read_many_from_str::<String>(
+                test_request
+                    .headers()
+                    .get_all(name)
+                    .iter()
+                    .map(|v| v.to_str().unwrap()),
+            )
+        };
         let read_valid = |name: &str| read(name).expect("valid");
         assert_eq!(read_valid("Empty"), Vec::<String>::new());
         assert_eq!(read_valid("Foo"), vec!["foo"]);
@@ -515,27 +538,58 @@ mod test {
             .body(())
             .unwrap();
         assert_eq!(
-            read_many_primitive::<bool>(test_request.headers().get_all("X-Bool-Multi").iter())
-                .expect("valid"),
+            read_many_primitive::<bool>(
+                test_request
+                    .headers()
+                    .get_all("X-Bool-Multi")
+                    .iter()
+                    .map(|v| v.to_str().unwrap())
+            )
+            .expect("valid"),
             vec![true, false, true]
         );
 
         assert_eq!(
-            read_many_primitive::<bool>(test_request.headers().get_all("X-Bool").iter()).unwrap(),
+            read_many_primitive::<bool>(
+                test_request
+                    .headers()
+                    .get_all("X-Bool")
+                    .iter()
+                    .map(|v| v.to_str().unwrap())
+            )
+            .unwrap(),
             vec![true]
         );
         assert_eq!(
-            read_many_primitive::<bool>(test_request.headers().get_all("X-Bool-Single").iter())
-                .unwrap(),
+            read_many_primitive::<bool>(
+                test_request
+                    .headers()
+                    .get_all("X-Bool-Single")
+                    .iter()
+                    .map(|v| v.to_str().unwrap())
+            )
+            .unwrap(),
             vec![true, false, true, true]
         );
         assert_eq!(
-            read_many_primitive::<bool>(test_request.headers().get_all("X-Bool-Quoted").iter())
-                .unwrap(),
+            read_many_primitive::<bool>(
+                test_request
+                    .headers()
+                    .get_all("X-Bool-Quoted")
+                    .iter()
+                    .map(|v| v.to_str().unwrap())
+            )
+            .unwrap(),
             vec![true, false, true, true]
         );
-        read_many_primitive::<bool>(test_request.headers().get_all("X-Bool-Invalid").iter())
-            .expect_err("invalid");
+        read_many_primitive::<bool>(
+            test_request
+                .headers()
+                .get_all("X-Bool-Invalid")
+                .iter()
+                .map(|v| v.to_str().unwrap()),
+        )
+        .expect_err("invalid");
     }
 
     #[test]
@@ -550,43 +604,77 @@ mod test {
             .body(())
             .unwrap();
         assert_eq!(
-            read_many_primitive::<i16>(test_request.headers().get_all("X-Multi").iter())
-                .expect("valid"),
+            read_many_primitive::<i16>(
+                test_request
+                    .headers()
+                    .get_all("X-Multi")
+                    .iter()
+                    .map(|v| v.to_str().unwrap())
+            )
+            .expect("valid"),
             vec![123, 456, 789]
         );
 
         assert_eq!(
-            read_many_primitive::<i16>(test_request.headers().get_all("X-Num").iter()).unwrap(),
+            read_many_primitive::<i16>(
+                test_request
+                    .headers()
+                    .get_all("X-Num")
+                    .iter()
+                    .map(|v| v.to_str().unwrap())
+            )
+            .unwrap(),
             vec![777]
         );
         assert_eq!(
-            read_many_primitive::<i16>(test_request.headers().get_all("X-Num-Single").iter())
-                .unwrap(),
+            read_many_primitive::<i16>(
+                test_request
+                    .headers()
+                    .get_all("X-Num-Single")
+                    .iter()
+                    .map(|v| v.to_str().unwrap())
+            )
+            .unwrap(),
             vec![1, 2, 3, -4, 5]
         );
         assert_eq!(
-            read_many_primitive::<i16>(test_request.headers().get_all("X-Num-Quoted").iter())
-                .unwrap(),
+            read_many_primitive::<i16>(
+                test_request
+                    .headers()
+                    .get_all("X-Num-Quoted")
+                    .iter()
+                    .map(|v| v.to_str().unwrap())
+            )
+            .unwrap(),
             vec![1, 2, 3, -4, 5]
         );
-        read_many_primitive::<i16>(test_request.headers().get_all("X-Num-Invalid").iter())
-            .expect_err("invalid");
+        read_many_primitive::<i16>(
+            test_request
+                .headers()
+                .get_all("X-Num-Invalid")
+                .iter()
+                .map(|v| v.to_str().unwrap()),
+        )
+        .expect_err("invalid");
     }
 
     #[test]
     fn test_prefix_headers() {
-        let test_request = http::Request::builder()
-            .header("X-Prefix-A", "123,456")
-            .header("X-Prefix-B", "789")
-            .header("X-Prefix-C", "777")
-            .header("X-Prefix-C", "777")
-            .body(())
-            .unwrap();
+        let test_request = Request::try_from(
+            http::Request::builder()
+                .header("X-Prefix-A", "123,456")
+                .header("X-Prefix-B", "789")
+                .header("X-Prefix-C", "777")
+                .header("X-Prefix-C", "777")
+                .body(())
+                .unwrap(),
+        )
+        .unwrap();
         let resp: Result<HashMap<String, Vec<i16>>, ParseError> =
-            headers_for_prefix(test_request.headers(), "X-Prefix-")
+            headers_for_prefix(test_request.headers().iter().map(|h| h.0), "X-Prefix-")
                 .map(|(key, header_name)| {
                     let values = test_request.headers().get_all(header_name);
-                    read_many_primitive(values.iter()).map(|v| (key.to_string(), v))
+                    read_many_primitive(values).map(|v| (key.to_string(), v))
                 })
                 .collect();
         let resp = resp.expect("valid");

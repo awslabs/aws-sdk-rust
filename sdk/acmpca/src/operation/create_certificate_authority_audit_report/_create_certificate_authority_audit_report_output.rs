@@ -19,7 +19,7 @@ impl CreateCertificateAuthorityAuditReportOutput {
         self.s3_key.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCertificateAuthorityAuditReportOutput {
+impl ::aws_types::request_id::RequestId for CreateCertificateAuthorityAuditReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

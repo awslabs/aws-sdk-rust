@@ -19,7 +19,7 @@ impl CreateRepositoryOutput {
         self.catalog_data.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRepositoryOutput {
+impl ::aws_types::request_id::RequestId for CreateRepositoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

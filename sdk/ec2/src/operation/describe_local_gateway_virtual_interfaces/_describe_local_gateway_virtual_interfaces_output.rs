@@ -21,7 +21,7 @@ impl DescribeLocalGatewayVirtualInterfacesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLocalGatewayVirtualInterfacesOutput {
+impl ::aws_types::request_id::RequestId for DescribeLocalGatewayVirtualInterfacesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

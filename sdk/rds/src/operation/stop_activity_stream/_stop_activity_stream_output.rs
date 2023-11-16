@@ -27,7 +27,7 @@ impl StopActivityStreamOutput {
         self.status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StopActivityStreamOutput {
+impl ::aws_types::request_id::RequestId for StopActivityStreamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

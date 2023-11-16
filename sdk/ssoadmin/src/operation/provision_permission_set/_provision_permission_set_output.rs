@@ -13,7 +13,7 @@ impl ProvisionPermissionSetOutput {
         self.permission_set_provisioning_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ProvisionPermissionSetOutput {
+impl ::aws_types::request_id::RequestId for ProvisionPermissionSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

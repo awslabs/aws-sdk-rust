@@ -21,7 +21,7 @@ impl ListComponentVersionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListComponentVersionsOutput {
+impl ::aws_types::request_id::RequestId for ListComponentVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

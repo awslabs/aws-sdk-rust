@@ -57,7 +57,7 @@ impl DescribeHumanLoopOutput {
         self.human_loop_output.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeHumanLoopOutput {
+impl ::aws_types::request_id::RequestId for DescribeHumanLoopOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

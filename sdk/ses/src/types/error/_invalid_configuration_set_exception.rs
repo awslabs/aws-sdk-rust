@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidConfigurationSetException {
     }
 }
 impl ::std::error::Error for InvalidConfigurationSetException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidConfigurationSetException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidConfigurationSetException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

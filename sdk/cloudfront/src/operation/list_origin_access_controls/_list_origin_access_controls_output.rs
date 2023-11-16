@@ -13,7 +13,7 @@ impl ListOriginAccessControlsOutput {
         self.origin_access_control_list.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListOriginAccessControlsOutput {
+impl ::aws_types::request_id::RequestId for ListOriginAccessControlsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

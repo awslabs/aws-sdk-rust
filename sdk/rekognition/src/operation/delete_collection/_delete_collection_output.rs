@@ -13,7 +13,7 @@ impl DeleteCollectionOutput {
         self.status_code
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteCollectionOutput {
+impl ::aws_types::request_id::RequestId for DeleteCollectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

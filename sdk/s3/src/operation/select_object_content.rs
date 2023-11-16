@@ -141,7 +141,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SelectObj
         #[allow(unused_mut)]
         let mut force_error = false;
         ::tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
 
         // If this is an error, defer to the non-streaming parser
         if (!response.status().is_success() && response.status().as_u16() != 200) || force_error {
@@ -330,7 +330,7 @@ impl crate::s3_request_id::RequestIdExt for crate::operation::select_object_cont
         self.meta().extended_request_id()
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::select_object_content::SelectObjectContentError {
+impl ::aws_types::request_id::RequestId for crate::operation::select_object_content::SelectObjectContentError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

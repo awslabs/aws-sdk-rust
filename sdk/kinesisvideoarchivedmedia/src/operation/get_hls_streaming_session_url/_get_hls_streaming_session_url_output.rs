@@ -13,7 +13,7 @@ impl GetHlsStreamingSessionUrlOutput {
         self.hls_streaming_session_url.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetHlsStreamingSessionUrlOutput {
+impl ::aws_types::request_id::RequestId for GetHlsStreamingSessionUrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

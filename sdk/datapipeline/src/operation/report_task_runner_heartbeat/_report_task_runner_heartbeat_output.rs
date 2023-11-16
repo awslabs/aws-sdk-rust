@@ -14,7 +14,7 @@ impl ReportTaskRunnerHeartbeatOutput {
         self.terminate
     }
 }
-impl ::aws_http::request_id::RequestId for ReportTaskRunnerHeartbeatOutput {
+impl ::aws_types::request_id::RequestId for ReportTaskRunnerHeartbeatOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

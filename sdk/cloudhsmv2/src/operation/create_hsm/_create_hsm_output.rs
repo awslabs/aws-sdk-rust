@@ -13,7 +13,7 @@ impl CreateHsmOutput {
         self.hsm.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateHsmOutput {
+impl ::aws_types::request_id::RequestId for CreateHsmOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

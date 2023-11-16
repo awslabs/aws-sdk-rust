@@ -13,7 +13,7 @@ impl UpdateConfiguredTableAnalysisRuleOutput {
         self.analysis_rule.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateConfiguredTableAnalysisRuleOutput {
+impl ::aws_types::request_id::RequestId for UpdateConfiguredTableAnalysisRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

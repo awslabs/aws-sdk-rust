@@ -40,7 +40,7 @@ impl GetLayoutOutput {
         self.tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLayoutOutput {
+impl ::aws_types::request_id::RequestId for GetLayoutOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

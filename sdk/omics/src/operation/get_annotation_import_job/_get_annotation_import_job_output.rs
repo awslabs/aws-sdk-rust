@@ -91,7 +91,7 @@ impl GetAnnotationImportJobOutput {
         self.annotation_fields.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAnnotationImportJobOutput {
+impl ::aws_types::request_id::RequestId for GetAnnotationImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

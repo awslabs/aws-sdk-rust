@@ -26,7 +26,7 @@ impl ::std::fmt::Display for LayerInaccessibleException {
     }
 }
 impl ::std::error::Error for LayerInaccessibleException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::LayerInaccessibleException {
+impl ::aws_types::request_id::RequestId for crate::types::error::LayerInaccessibleException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

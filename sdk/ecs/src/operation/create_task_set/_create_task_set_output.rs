@@ -13,7 +13,7 @@ impl CreateTaskSetOutput {
         self.task_set.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateTaskSetOutput {
+impl ::aws_types::request_id::RequestId for CreateTaskSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

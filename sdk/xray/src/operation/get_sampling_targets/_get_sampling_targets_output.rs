@@ -29,7 +29,7 @@ impl GetSamplingTargetsOutput {
         self.unprocessed_statistics.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSamplingTargetsOutput {
+impl ::aws_types::request_id::RequestId for GetSamplingTargetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl UpdateShareInvitationOutput {
         self.share_invitation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateShareInvitationOutput {
+impl ::aws_types::request_id::RequestId for UpdateShareInvitationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

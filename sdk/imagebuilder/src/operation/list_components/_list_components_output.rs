@@ -53,7 +53,7 @@ impl ListComponentsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListComponentsOutput {
+impl ::aws_types::request_id::RequestId for ListComponentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,7 +19,7 @@ impl crate::s3_request_id::RequestIdExt for GetObjectRetentionOutput {
         self._extended_request_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetObjectRetentionOutput {
+impl ::aws_types::request_id::RequestId for GetObjectRetentionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

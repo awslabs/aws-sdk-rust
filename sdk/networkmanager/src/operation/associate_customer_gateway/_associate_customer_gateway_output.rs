@@ -13,7 +13,7 @@ impl AssociateCustomerGatewayOutput {
         self.customer_gateway_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateCustomerGatewayOutput {
+impl ::aws_types::request_id::RequestId for AssociateCustomerGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

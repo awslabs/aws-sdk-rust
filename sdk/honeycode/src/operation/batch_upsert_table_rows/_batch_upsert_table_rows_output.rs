@@ -27,7 +27,7 @@ impl BatchUpsertTableRowsOutput {
         self.failed_batch_items.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchUpsertTableRowsOutput {
+impl ::aws_types::request_id::RequestId for BatchUpsertTableRowsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

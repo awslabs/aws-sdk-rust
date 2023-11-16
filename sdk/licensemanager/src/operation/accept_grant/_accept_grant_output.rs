@@ -25,7 +25,7 @@ impl AcceptGrantOutput {
         self.version.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AcceptGrantOutput {
+impl ::aws_types::request_id::RequestId for AcceptGrantOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

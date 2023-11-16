@@ -15,7 +15,7 @@ impl DescribeElasticsearchDomainsOutput {
         self.domain_status_list.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeElasticsearchDomainsOutput {
+impl ::aws_types::request_id::RequestId for DescribeElasticsearchDomainsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

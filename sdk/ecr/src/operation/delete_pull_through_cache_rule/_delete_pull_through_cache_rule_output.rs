@@ -31,7 +31,7 @@ impl DeletePullThroughCacheRuleOutput {
         self.registry_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeletePullThroughCacheRuleOutput {
+impl ::aws_types::request_id::RequestId for DeletePullThroughCacheRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

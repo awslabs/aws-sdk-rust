@@ -2,13 +2,13 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_package_http_error(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<crate::operation::describe_package::DescribePackageOutput, crate::operation::describe_package::DescribePackageError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::describe_package::DescribePackageError::unhandled)?;
-    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -101,7 +101,7 @@ pub fn de_describe_package_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_package_http_response(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<crate::operation::describe_package::DescribePackageOutput, crate::operation::describe_package::DescribePackageError> {
     Ok({
@@ -109,7 +109,7 @@ pub fn de_describe_package_http_response(
         let mut output = crate::operation::describe_package::builders::DescribePackageOutputBuilder::default();
         output = crate::protocol_serde::shape_describe_package::de_describe_package(_response_body, output)
             .map_err(crate::operation::describe_package::DescribePackageError::unhandled)?;
-        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::describe_package_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_package::DescribePackageError::unhandled)?

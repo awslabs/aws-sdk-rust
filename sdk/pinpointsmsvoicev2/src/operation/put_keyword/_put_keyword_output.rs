@@ -37,7 +37,7 @@ impl PutKeywordOutput {
         self.keyword_action.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutKeywordOutput {
+impl ::aws_types::request_id::RequestId for PutKeywordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

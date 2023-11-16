@@ -13,7 +13,7 @@ impl CreateMlTransformOutput {
         self.transform_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateMlTransformOutput {
+impl ::aws_types::request_id::RequestId for CreateMlTransformOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -64,7 +64,7 @@ impl BatchGetItemOutput {
         self.consumed_capacity.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetItemOutput {
+impl ::aws_types::request_id::RequestId for BatchGetItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

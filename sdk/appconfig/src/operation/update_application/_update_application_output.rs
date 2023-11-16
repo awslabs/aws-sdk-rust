@@ -25,7 +25,7 @@ impl UpdateApplicationOutput {
         self.description.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateApplicationOutput {
+impl ::aws_types::request_id::RequestId for UpdateApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

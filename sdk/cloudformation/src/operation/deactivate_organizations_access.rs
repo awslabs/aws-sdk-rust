@@ -148,7 +148,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for Deactivat
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_deactivate_organizations_access::de_deactivate_organizations_access_http_error(status, headers, body)
         } else {
@@ -288,7 +288,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeactivateOrg
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError {
+impl ::aws_types::request_id::RequestId for crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for RetryableConflictException {
     }
 }
 impl ::std::error::Error for RetryableConflictException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::RetryableConflictException {
+impl ::aws_types::request_id::RequestId for crate::types::error::RetryableConflictException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

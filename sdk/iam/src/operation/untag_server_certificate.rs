@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UntagServ
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_untag_server_certificate::de_untag_server_certificate_http_error(status, headers, body)
         } else {
@@ -289,7 +289,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UntagServerCe
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::untag_server_certificate::UntagServerCertificateError {
+impl ::aws_types::request_id::RequestId for crate::operation::untag_server_certificate::UntagServerCertificateError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

@@ -31,7 +31,7 @@ impl StartChatContactOutput {
         self.continued_from_contact_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartChatContactOutput {
+impl ::aws_types::request_id::RequestId for StartChatContactOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

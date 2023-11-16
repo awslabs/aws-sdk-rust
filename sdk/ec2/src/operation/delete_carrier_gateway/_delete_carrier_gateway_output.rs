@@ -13,7 +13,7 @@ impl DeleteCarrierGatewayOutput {
         self.carrier_gateway.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteCarrierGatewayOutput {
+impl ::aws_types::request_id::RequestId for DeleteCarrierGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl RemoveAttributesOutput {
         self.attributes_resource.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RemoveAttributesOutput {
+impl ::aws_types::request_id::RequestId for RemoveAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

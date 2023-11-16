@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InstanceNotFound {
     }
 }
 impl ::std::error::Error for InstanceNotFound {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InstanceNotFound {
+impl ::aws_types::request_id::RequestId for crate::types::error::InstanceNotFound {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

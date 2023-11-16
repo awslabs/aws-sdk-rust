@@ -13,7 +13,7 @@ impl CreateCustomLogSourceOutput {
         self.source.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCustomLogSourceOutput {
+impl ::aws_types::request_id::RequestId for CreateCustomLogSourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

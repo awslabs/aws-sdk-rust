@@ -46,7 +46,7 @@ impl ::std::fmt::Debug for DecryptOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for DecryptOutput {
+impl ::aws_types::request_id::RequestId for DecryptOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

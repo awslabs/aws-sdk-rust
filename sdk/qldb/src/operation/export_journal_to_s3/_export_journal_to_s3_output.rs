@@ -16,7 +16,7 @@ impl ExportJournalToS3Output {
         self.export_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ExportJournalToS3Output {
+impl ::aws_types::request_id::RequestId for ExportJournalToS3Output {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

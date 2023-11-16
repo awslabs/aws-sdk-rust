@@ -69,7 +69,7 @@ impl StartZonalShiftOutput {
         self.comment.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartZonalShiftOutput {
+impl ::aws_types::request_id::RequestId for StartZonalShiftOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

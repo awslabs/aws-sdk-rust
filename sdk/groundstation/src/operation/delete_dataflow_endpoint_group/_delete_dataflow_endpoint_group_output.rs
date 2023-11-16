@@ -14,7 +14,7 @@ impl DeleteDataflowEndpointGroupOutput {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDataflowEndpointGroupOutput {
+impl ::aws_types::request_id::RequestId for DeleteDataflowEndpointGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

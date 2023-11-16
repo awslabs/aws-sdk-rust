@@ -13,7 +13,7 @@ impl TestEventPatternOutput {
         self.result
     }
 }
-impl ::aws_http::request_id::RequestId for TestEventPatternOutput {
+impl ::aws_types::request_id::RequestId for TestEventPatternOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -14,7 +14,7 @@ impl DescribeBundleOutput {
         self.details.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBundleOutput {
+impl ::aws_types::request_id::RequestId for DescribeBundleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

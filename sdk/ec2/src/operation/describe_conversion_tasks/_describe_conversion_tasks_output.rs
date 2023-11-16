@@ -15,7 +15,7 @@ impl DescribeConversionTasksOutput {
         self.conversion_tasks.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeConversionTasksOutput {
+impl ::aws_types::request_id::RequestId for DescribeConversionTasksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

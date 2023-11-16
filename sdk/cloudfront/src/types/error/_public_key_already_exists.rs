@@ -26,7 +26,7 @@ impl ::std::fmt::Display for PublicKeyAlreadyExists {
     }
 }
 impl ::std::error::Error for PublicKeyAlreadyExists {}
-impl ::aws_http::request_id::RequestId for crate::types::error::PublicKeyAlreadyExists {
+impl ::aws_types::request_id::RequestId for crate::types::error::PublicKeyAlreadyExists {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

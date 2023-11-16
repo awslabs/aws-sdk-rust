@@ -46,7 +46,7 @@ impl ::std::fmt::Display for ModelError {
     }
 }
 impl ::std::error::Error for ModelError {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ModelError {
+impl ::aws_types::request_id::RequestId for crate::types::error::ModelError {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

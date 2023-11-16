@@ -101,7 +101,7 @@ impl GetDataQualityRulesetEvaluationRunOutput {
         self.additional_data_sources.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataQualityRulesetEvaluationRunOutput {
+impl ::aws_types::request_id::RequestId for GetDataQualityRulesetEvaluationRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

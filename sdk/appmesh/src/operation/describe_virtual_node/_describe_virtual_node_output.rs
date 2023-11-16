@@ -13,7 +13,7 @@ impl DescribeVirtualNodeOutput {
         self.virtual_node.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeVirtualNodeOutput {
+impl ::aws_types::request_id::RequestId for DescribeVirtualNodeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,7 +19,7 @@ impl CreateFpgaImageOutput {
         self.fpga_image_global_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateFpgaImageOutput {
+impl ::aws_types::request_id::RequestId for CreateFpgaImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

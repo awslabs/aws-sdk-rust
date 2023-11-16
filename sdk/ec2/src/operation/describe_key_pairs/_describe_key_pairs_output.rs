@@ -15,7 +15,7 @@ impl DescribeKeyPairsOutput {
         self.key_pairs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeKeyPairsOutput {
+impl ::aws_types::request_id::RequestId for DescribeKeyPairsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl ListLabelingJobsForWorkteamOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListLabelingJobsForWorkteamOutput {
+impl ::aws_types::request_id::RequestId for ListLabelingJobsForWorkteamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

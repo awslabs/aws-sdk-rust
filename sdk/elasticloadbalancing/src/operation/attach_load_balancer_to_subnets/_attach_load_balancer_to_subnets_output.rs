@@ -16,7 +16,7 @@ impl AttachLoadBalancerToSubnetsOutput {
         self.subnets.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AttachLoadBalancerToSubnetsOutput {
+impl ::aws_types::request_id::RequestId for AttachLoadBalancerToSubnetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

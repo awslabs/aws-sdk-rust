@@ -25,7 +25,7 @@ impl VerifyOutput {
         self.signing_algorithm.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for VerifyOutput {
+impl ::aws_types::request_id::RequestId for VerifyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

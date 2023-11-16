@@ -13,7 +13,7 @@ impl PutVoiceConnectorOriginationOutput {
         self.origination.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutVoiceConnectorOriginationOutput {
+impl ::aws_types::request_id::RequestId for PutVoiceConnectorOriginationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

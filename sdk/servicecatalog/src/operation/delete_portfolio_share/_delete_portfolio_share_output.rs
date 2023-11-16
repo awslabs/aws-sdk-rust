@@ -13,7 +13,7 @@ impl DeletePortfolioShareOutput {
         self.portfolio_share_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeletePortfolioShareOutput {
+impl ::aws_types::request_id::RequestId for DeletePortfolioShareOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

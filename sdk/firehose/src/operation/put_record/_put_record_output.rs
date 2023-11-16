@@ -20,7 +20,7 @@ impl PutRecordOutput {
         self.encrypted
     }
 }
-impl ::aws_http::request_id::RequestId for PutRecordOutput {
+impl ::aws_types::request_id::RequestId for PutRecordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

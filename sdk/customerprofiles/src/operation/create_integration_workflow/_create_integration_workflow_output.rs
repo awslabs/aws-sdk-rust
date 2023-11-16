@@ -21,7 +21,7 @@ impl CreateIntegrationWorkflowOutput {
         self.message.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateIntegrationWorkflowOutput {
+impl ::aws_types::request_id::RequestId for CreateIntegrationWorkflowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

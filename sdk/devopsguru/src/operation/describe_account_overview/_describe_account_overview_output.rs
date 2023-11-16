@@ -25,7 +25,7 @@ impl DescribeAccountOverviewOutput {
         self.mean_time_to_recover_in_milliseconds
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAccountOverviewOutput {
+impl ::aws_types::request_id::RequestId for DescribeAccountOverviewOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

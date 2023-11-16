@@ -14,7 +14,7 @@ impl CreateScheduleGroupOutput {
         self.schedule_group_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateScheduleGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateScheduleGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

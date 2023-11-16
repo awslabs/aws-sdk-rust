@@ -13,7 +13,7 @@ impl DeclineHandshakeOutput {
         self.handshake.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeclineHandshakeOutput {
+impl ::aws_types::request_id::RequestId for DeclineHandshakeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

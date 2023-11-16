@@ -32,7 +32,7 @@ impl ::std::fmt::Debug for GenerateRandomOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GenerateRandomOutput {
+impl ::aws_types::request_id::RequestId for GenerateRandomOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

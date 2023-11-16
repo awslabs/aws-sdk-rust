@@ -21,7 +21,7 @@ impl ListProtectedResourcesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListProtectedResourcesOutput {
+impl ::aws_types::request_id::RequestId for ListProtectedResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -24,7 +24,7 @@ impl SetSecurityGroupsOutput {
         self.enforce_security_group_inbound_rules_on_private_link_traffic.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for SetSecurityGroupsOutput {
+impl ::aws_types::request_id::RequestId for SetSecurityGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

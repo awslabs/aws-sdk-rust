@@ -21,7 +21,7 @@ impl DescribeRuntimeVersionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRuntimeVersionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeRuntimeVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

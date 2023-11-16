@@ -131,7 +131,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutBotRes
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_put_bot::de_put_bot_http_error(status, headers, body)
         } else {
@@ -290,7 +290,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutBotError {
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::put_bot::PutBotError {
+impl ::aws_types::request_id::RequestId for crate::operation::put_bot::PutBotError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

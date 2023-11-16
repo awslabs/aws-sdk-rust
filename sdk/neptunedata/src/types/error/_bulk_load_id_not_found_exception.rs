@@ -53,7 +53,7 @@ impl ::std::fmt::Display for BulkLoadIdNotFoundException {
     }
 }
 impl ::std::error::Error for BulkLoadIdNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::BulkLoadIdNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::BulkLoadIdNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

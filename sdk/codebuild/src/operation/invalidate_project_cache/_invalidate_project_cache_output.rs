@@ -5,7 +5,7 @@
 pub struct InvalidateProjectCacheOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for InvalidateProjectCacheOutput {
+impl ::aws_types::request_id::RequestId for InvalidateProjectCacheOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

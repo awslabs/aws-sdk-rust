@@ -35,7 +35,7 @@ impl UpdateFirewallEncryptionConfigurationOutput {
         self.encryption_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateFirewallEncryptionConfigurationOutput {
+impl ::aws_types::request_id::RequestId for UpdateFirewallEncryptionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

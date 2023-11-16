@@ -35,7 +35,7 @@ impl GetUnfilteredTableMetadataOutput {
         self.cell_filters.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetUnfilteredTableMetadataOutput {
+impl ::aws_types::request_id::RequestId for GetUnfilteredTableMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -5,7 +5,7 @@
 pub struct DeleteMediaPipelineOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteMediaPipelineOutput {
+impl ::aws_types::request_id::RequestId for DeleteMediaPipelineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

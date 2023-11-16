@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartVari
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_start_variant_import_job::de_start_variant_import_job_http_error(status, headers, body)
         } else {
@@ -302,7 +302,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartVariantI
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::start_variant_import_job::StartVariantImportJobError {
+impl ::aws_types::request_id::RequestId for crate::operation::start_variant_import_job::StartVariantImportJobError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

@@ -15,7 +15,7 @@ impl DescribeAcceleratorOfferingsOutput {
         self.accelerator_type_offerings.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAcceleratorOfferingsOutput {
+impl ::aws_types::request_id::RequestId for DescribeAcceleratorOfferingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

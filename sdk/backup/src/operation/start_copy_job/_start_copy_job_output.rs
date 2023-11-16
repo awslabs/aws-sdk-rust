@@ -25,7 +25,7 @@ impl StartCopyJobOutput {
         self.is_parent
     }
 }
-impl ::aws_http::request_id::RequestId for StartCopyJobOutput {
+impl ::aws_types::request_id::RequestId for StartCopyJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

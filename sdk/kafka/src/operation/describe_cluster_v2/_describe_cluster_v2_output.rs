@@ -13,7 +13,7 @@ impl DescribeClusterV2Output {
         self.cluster_info.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeClusterV2Output {
+impl ::aws_types::request_id::RequestId for DescribeClusterV2Output {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

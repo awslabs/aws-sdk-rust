@@ -43,7 +43,7 @@ impl GetEncryptionConfigurationOutput {
         self.last_modification_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEncryptionConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetEncryptionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

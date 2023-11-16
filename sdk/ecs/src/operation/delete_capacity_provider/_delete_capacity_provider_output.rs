@@ -13,7 +13,7 @@ impl DeleteCapacityProviderOutput {
         self.capacity_provider.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteCapacityProviderOutput {
+impl ::aws_types::request_id::RequestId for DeleteCapacityProviderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

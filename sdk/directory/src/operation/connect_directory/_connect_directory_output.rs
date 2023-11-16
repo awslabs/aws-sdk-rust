@@ -14,7 +14,7 @@ impl ConnectDirectoryOutput {
         self.directory_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ConnectDirectoryOutput {
+impl ::aws_types::request_id::RequestId for ConnectDirectoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

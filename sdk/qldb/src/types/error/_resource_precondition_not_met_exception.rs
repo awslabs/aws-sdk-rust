@@ -40,7 +40,7 @@ impl ::std::fmt::Display for ResourcePreconditionNotMetException {
     }
 }
 impl ::std::error::Error for ResourcePreconditionNotMetException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ResourcePreconditionNotMetException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ResourcePreconditionNotMetException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

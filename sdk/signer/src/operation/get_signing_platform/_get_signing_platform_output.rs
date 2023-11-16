@@ -61,7 +61,7 @@ impl GetSigningPlatformOutput {
         self.revocation_supported
     }
 }
-impl ::aws_http::request_id::RequestId for GetSigningPlatformOutput {
+impl ::aws_types::request_id::RequestId for GetSigningPlatformOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

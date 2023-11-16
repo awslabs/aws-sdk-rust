@@ -13,7 +13,7 @@ impl StartTriggerOutput {
         self.name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartTriggerOutput {
+impl ::aws_types::request_id::RequestId for StartTriggerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

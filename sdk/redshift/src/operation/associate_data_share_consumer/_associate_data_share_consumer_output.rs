@@ -39,7 +39,7 @@ impl AssociateDataShareConsumerOutput {
         self.managed_by.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateDataShareConsumerOutput {
+impl ::aws_types::request_id::RequestId for AssociateDataShareConsumerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

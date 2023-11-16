@@ -51,7 +51,7 @@ impl GetReportDefinitionOutput {
         &self.last_updated
     }
 }
-impl ::aws_http::request_id::RequestId for GetReportDefinitionOutput {
+impl ::aws_types::request_id::RequestId for GetReportDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

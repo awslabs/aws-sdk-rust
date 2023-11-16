@@ -21,7 +21,7 @@ impl ListFunctionsByCodeSigningConfigOutput {
         self.function_arns.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListFunctionsByCodeSigningConfigOutput {
+impl ::aws_types::request_id::RequestId for ListFunctionsByCodeSigningConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

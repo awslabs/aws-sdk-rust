@@ -16,7 +16,7 @@ impl DescribeAgentVersionsOutput {
         self.agent_versions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAgentVersionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeAgentVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

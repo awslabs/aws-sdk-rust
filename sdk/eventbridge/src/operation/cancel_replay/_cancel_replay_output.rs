@@ -25,7 +25,7 @@ impl CancelReplayOutput {
         self.state_reason.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CancelReplayOutput {
+impl ::aws_types::request_id::RequestId for CancelReplayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

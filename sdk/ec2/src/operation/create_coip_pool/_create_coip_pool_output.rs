@@ -13,7 +13,7 @@ impl CreateCoipPoolOutput {
         self.coip_pool.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCoipPoolOutput {
+impl ::aws_types::request_id::RequestId for CreateCoipPoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

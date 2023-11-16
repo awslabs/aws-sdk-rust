@@ -27,7 +27,7 @@ impl AssociateThirdPartyFirewallOutput {
         self.third_party_firewall_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateThirdPartyFirewallOutput {
+impl ::aws_types::request_id::RequestId for AssociateThirdPartyFirewallOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

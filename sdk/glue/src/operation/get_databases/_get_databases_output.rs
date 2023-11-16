@@ -20,7 +20,7 @@ impl GetDatabasesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDatabasesOutput {
+impl ::aws_types::request_id::RequestId for GetDatabasesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

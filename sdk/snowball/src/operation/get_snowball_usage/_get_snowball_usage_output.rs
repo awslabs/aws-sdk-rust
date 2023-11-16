@@ -19,7 +19,7 @@ impl GetSnowballUsageOutput {
         self.snowballs_in_use
     }
 }
-impl ::aws_http::request_id::RequestId for GetSnowballUsageOutput {
+impl ::aws_types::request_id::RequestId for GetSnowballUsageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

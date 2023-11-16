@@ -25,7 +25,7 @@ impl UpdateTeamMemberOutput {
         self.remote_access_allowed
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateTeamMemberOutput {
+impl ::aws_types::request_id::RequestId for UpdateTeamMemberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

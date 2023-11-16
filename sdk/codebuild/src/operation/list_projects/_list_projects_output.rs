@@ -21,7 +21,7 @@ impl ListProjectsOutput {
         self.projects.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListProjectsOutput {
+impl ::aws_types::request_id::RequestId for ListProjectsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

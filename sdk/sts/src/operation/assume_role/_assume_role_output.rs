@@ -51,7 +51,7 @@ impl ::std::fmt::Debug for AssumeRoleOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for AssumeRoleOutput {
+impl ::aws_types::request_id::RequestId for AssumeRoleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

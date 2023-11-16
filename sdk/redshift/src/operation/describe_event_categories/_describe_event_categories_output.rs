@@ -16,7 +16,7 @@ impl DescribeEventCategoriesOutput {
         self.event_categories_map_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEventCategoriesOutput {
+impl ::aws_types::request_id::RequestId for DescribeEventCategoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

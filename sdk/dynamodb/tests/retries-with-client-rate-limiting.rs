@@ -9,7 +9,6 @@ use aws_smithy_async::test_util::instant_time_and_sleep;
 use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
 use aws_smithy_runtime::client::retries::RetryPartition;
-use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
 use aws_smithy_types::body::SdkBody;
 use std::time::{Duration, SystemTime};
 
@@ -19,7 +18,7 @@ fn req() -> http::Request<SdkBody> {
         .unwrap()
 }
 
-fn ok() -> HttpResponse {
+fn ok() -> http::Response<SdkBody> {
     http::Response::builder()
         .status(200)
         .header("server", "Server")
@@ -31,14 +30,14 @@ fn ok() -> HttpResponse {
         .unwrap()
 }
 
-fn err() -> HttpResponse {
+fn err() -> http::Response<SdkBody> {
     http::Response::builder()
         .status(500)
         .body(SdkBody::from("{ \"message\": \"The request has failed because of an unknown error, exception or failure.\", \"code\": \"InternalServerError\" }"))
         .unwrap()
 }
 
-fn throttling_err() -> HttpResponse {
+fn throttling_err() -> http::Response<SdkBody> {
     http::Response::builder()
         .status(400)
         .body(SdkBody::from("{ \"message\": \"The request was denied due to request throttling.\", \"code\": \"ThrottlingException\" }"))

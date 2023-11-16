@@ -49,7 +49,7 @@ impl ::std::fmt::Display for QueryTooLargeException {
     }
 }
 impl ::std::error::Error for QueryTooLargeException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::QueryTooLargeException {
+impl ::aws_types::request_id::RequestId for crate::types::error::QueryTooLargeException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

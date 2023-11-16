@@ -36,7 +36,7 @@ impl DeleteItemOutput {
         self.item_collection_metrics.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteItemOutput {
+impl ::aws_types::request_id::RequestId for DeleteItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

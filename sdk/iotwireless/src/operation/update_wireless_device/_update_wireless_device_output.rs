@@ -5,7 +5,7 @@
 pub struct UpdateWirelessDeviceOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateWirelessDeviceOutput {
+impl ::aws_types::request_id::RequestId for UpdateWirelessDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

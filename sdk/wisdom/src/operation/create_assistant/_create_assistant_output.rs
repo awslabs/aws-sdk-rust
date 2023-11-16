@@ -13,7 +13,7 @@ impl CreateAssistantOutput {
         self.assistant.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateAssistantOutput {
+impl ::aws_types::request_id::RequestId for CreateAssistantOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

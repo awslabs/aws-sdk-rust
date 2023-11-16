@@ -13,7 +13,7 @@ impl RollbackStackOutput {
         self.stack_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RollbackStackOutput {
+impl ::aws_types::request_id::RequestId for RollbackStackOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

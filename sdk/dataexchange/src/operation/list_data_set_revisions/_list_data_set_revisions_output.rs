@@ -21,7 +21,7 @@ impl ListDataSetRevisionsOutput {
         self.revisions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListDataSetRevisionsOutput {
+impl ::aws_types::request_id::RequestId for ListDataSetRevisionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

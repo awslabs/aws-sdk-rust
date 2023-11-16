@@ -30,7 +30,7 @@ impl DescribeActivityTypeOutput {
         self.configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeActivityTypeOutput {
+impl ::aws_types::request_id::RequestId for DescribeActivityTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

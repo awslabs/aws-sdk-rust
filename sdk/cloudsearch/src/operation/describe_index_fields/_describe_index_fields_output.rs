@@ -15,7 +15,7 @@ impl DescribeIndexFieldsOutput {
         self.index_fields.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeIndexFieldsOutput {
+impl ::aws_types::request_id::RequestId for DescribeIndexFieldsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

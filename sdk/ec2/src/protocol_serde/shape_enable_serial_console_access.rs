@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_enable_serial_console_access_http_error(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::enable_serial_console_access::EnableSerialConsoleAccessOutput,
@@ -11,7 +11,7 @@ pub fn de_enable_serial_console_access_http_error(
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::enable_serial_console_access::EnableSerialConsoleAccessError::unhandled)?;
-    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::enable_serial_console_access::EnableSerialConsoleAccessError::generic(
         generic,
@@ -21,7 +21,7 @@ pub fn de_enable_serial_console_access_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_enable_serial_console_access_http_response(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::enable_serial_console_access::EnableSerialConsoleAccessOutput,
@@ -32,7 +32,7 @@ pub fn de_enable_serial_console_access_http_response(
         let mut output = crate::operation::enable_serial_console_access::builders::EnableSerialConsoleAccessOutputBuilder::default();
         output = crate::protocol_serde::shape_enable_serial_console_access::de_enable_serial_console_access(_response_body, output)
             .map_err(crate::operation::enable_serial_console_access::EnableSerialConsoleAccessError::unhandled)?;
-        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

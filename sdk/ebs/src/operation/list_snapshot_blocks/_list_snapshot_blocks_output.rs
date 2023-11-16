@@ -51,7 +51,7 @@ impl ::std::fmt::Debug for ListSnapshotBlocksOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for ListSnapshotBlocksOutput {
+impl ::aws_types::request_id::RequestId for ListSnapshotBlocksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TokenAlreadyExistsException {
     }
 }
 impl ::std::error::Error for TokenAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TokenAlreadyExistsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TokenAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

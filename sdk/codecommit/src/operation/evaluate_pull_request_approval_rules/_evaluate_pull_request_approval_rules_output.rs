@@ -13,7 +13,7 @@ impl EvaluatePullRequestApprovalRulesOutput {
         self.evaluation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for EvaluatePullRequestApprovalRulesOutput {
+impl ::aws_types::request_id::RequestId for EvaluatePullRequestApprovalRulesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

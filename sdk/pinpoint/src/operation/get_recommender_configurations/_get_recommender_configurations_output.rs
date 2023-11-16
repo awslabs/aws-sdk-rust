@@ -13,7 +13,7 @@ impl GetRecommenderConfigurationsOutput {
         self.list_recommender_configurations_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRecommenderConfigurationsOutput {
+impl ::aws_types::request_id::RequestId for GetRecommenderConfigurationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

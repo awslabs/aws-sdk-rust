@@ -26,7 +26,7 @@ impl ::std::fmt::Display for OpsMetadataTooManyUpdatesException {
     }
 }
 impl ::std::error::Error for OpsMetadataTooManyUpdatesException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OpsMetadataTooManyUpdatesException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OpsMetadataTooManyUpdatesException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

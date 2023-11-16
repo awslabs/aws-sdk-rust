@@ -13,7 +13,7 @@ impl GetLicenseManagerReportGeneratorOutput {
         self.report_generator.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLicenseManagerReportGeneratorOutput {
+impl ::aws_types::request_id::RequestId for GetLicenseManagerReportGeneratorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

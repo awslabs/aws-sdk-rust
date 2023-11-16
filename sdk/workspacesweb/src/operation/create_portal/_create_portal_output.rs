@@ -21,7 +21,7 @@ impl CreatePortalOutput {
         self.portal_endpoint.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePortalOutput {
+impl ::aws_types::request_id::RequestId for CreatePortalOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

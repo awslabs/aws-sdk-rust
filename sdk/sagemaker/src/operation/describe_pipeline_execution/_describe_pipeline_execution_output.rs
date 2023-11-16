@@ -85,7 +85,7 @@ impl DescribePipelineExecutionOutput {
         self.selective_execution_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePipelineExecutionOutput {
+impl ::aws_types::request_id::RequestId for DescribePipelineExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

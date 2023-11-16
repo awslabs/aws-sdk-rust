@@ -14,7 +14,7 @@ impl CreateDirectoryOutput {
         self.directory_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDirectoryOutput {
+impl ::aws_types::request_id::RequestId for CreateDirectoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

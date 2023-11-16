@@ -41,7 +41,7 @@ impl DescribeFleetHistoryOutput {
         self.start_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFleetHistoryOutput {
+impl ::aws_types::request_id::RequestId for DescribeFleetHistoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateNodegroupOutput {
         self.nodegroup.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateNodegroupOutput {
+impl ::aws_types::request_id::RequestId for CreateNodegroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

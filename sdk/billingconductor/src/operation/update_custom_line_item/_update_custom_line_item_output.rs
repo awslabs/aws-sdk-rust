@@ -63,7 +63,7 @@ impl ::std::fmt::Debug for UpdateCustomLineItemOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateCustomLineItemOutput {
+impl ::aws_types::request_id::RequestId for UpdateCustomLineItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

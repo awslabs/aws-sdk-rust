@@ -25,7 +25,7 @@ impl GetRelationalDatabaseParametersOutput {
         self.next_page_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRelationalDatabaseParametersOutput {
+impl ::aws_types::request_id::RequestId for GetRelationalDatabaseParametersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

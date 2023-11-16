@@ -33,7 +33,7 @@ impl GetAppLaunchConfigurationOutput {
         self.server_group_launch_configurations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAppLaunchConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetAppLaunchConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

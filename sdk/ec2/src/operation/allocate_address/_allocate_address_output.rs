@@ -55,7 +55,7 @@ impl AllocateAddressOutput {
         self.carrier_ip.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AllocateAddressOutput {
+impl ::aws_types::request_id::RequestId for AllocateAddressOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

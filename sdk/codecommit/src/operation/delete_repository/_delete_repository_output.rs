@@ -14,7 +14,7 @@ impl DeleteRepositoryOutput {
         self.repository_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteRepositoryOutput {
+impl ::aws_types::request_id::RequestId for DeleteRepositoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

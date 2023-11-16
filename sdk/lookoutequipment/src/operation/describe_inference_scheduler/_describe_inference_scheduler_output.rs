@@ -91,7 +91,7 @@ impl DescribeInferenceSchedulerOutput {
         self.latest_inference_result.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeInferenceSchedulerOutput {
+impl ::aws_types::request_id::RequestId for DescribeInferenceSchedulerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

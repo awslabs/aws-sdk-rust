@@ -19,7 +19,7 @@ impl ProvisionPublicIpv4PoolCidrOutput {
         self.pool_address_range.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ProvisionPublicIpv4PoolCidrOutput {
+impl ::aws_types::request_id::RequestId for ProvisionPublicIpv4PoolCidrOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

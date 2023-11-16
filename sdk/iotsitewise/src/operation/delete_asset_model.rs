@@ -148,7 +148,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteAss
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 202 || force_error {
             crate::protocol_serde::shape_delete_asset_model::de_delete_asset_model_http_error(status, headers, body)
         } else {
@@ -327,7 +327,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteAssetMo
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::delete_asset_model::DeleteAssetModelError {
+impl ::aws_types::request_id::RequestId for crate::operation::delete_asset_model::DeleteAssetModelError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

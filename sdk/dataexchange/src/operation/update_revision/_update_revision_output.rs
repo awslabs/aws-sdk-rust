@@ -73,7 +73,7 @@ impl UpdateRevisionOutput {
         self.revoked_at.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateRevisionOutput {
+impl ::aws_types::request_id::RequestId for UpdateRevisionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

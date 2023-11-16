@@ -24,7 +24,7 @@ impl TransactWriteItemsOutput {
         self.item_collection_metrics.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for TransactWriteItemsOutput {
+impl ::aws_types::request_id::RequestId for TransactWriteItemsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

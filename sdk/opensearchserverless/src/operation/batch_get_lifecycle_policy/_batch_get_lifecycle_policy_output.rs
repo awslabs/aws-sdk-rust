@@ -23,7 +23,7 @@ impl BatchGetLifecyclePolicyOutput {
         self.lifecycle_policy_error_details.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetLifecyclePolicyOutput {
+impl ::aws_types::request_id::RequestId for BatchGetLifecyclePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

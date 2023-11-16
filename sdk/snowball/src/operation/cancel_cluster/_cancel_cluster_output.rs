@@ -5,7 +5,7 @@
 pub struct CancelClusterOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for CancelClusterOutput {
+impl ::aws_types::request_id::RequestId for CancelClusterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

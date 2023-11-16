@@ -13,7 +13,7 @@ impl CreateServiceSyncConfigOutput {
         self.service_sync_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateServiceSyncConfigOutput {
+impl ::aws_types::request_id::RequestId for CreateServiceSyncConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ClusterNotFoundException {
     }
 }
 impl ::std::error::Error for ClusterNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ClusterNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ClusterNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

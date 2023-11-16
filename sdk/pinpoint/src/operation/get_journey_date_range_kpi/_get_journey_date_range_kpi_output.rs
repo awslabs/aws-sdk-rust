@@ -13,7 +13,7 @@ impl GetJourneyDateRangeKpiOutput {
         self.journey_date_range_kpi_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetJourneyDateRangeKpiOutput {
+impl ::aws_types::request_id::RequestId for GetJourneyDateRangeKpiOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

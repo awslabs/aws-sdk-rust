@@ -13,7 +13,7 @@ impl GetTargetResourceTypeOutput {
         self.target_resource_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTargetResourceTypeOutput {
+impl ::aws_types::request_id::RequestId for GetTargetResourceTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

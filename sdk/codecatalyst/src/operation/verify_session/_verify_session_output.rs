@@ -13,7 +13,7 @@ impl VerifySessionOutput {
         self.identity.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for VerifySessionOutput {
+impl ::aws_types::request_id::RequestId for VerifySessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

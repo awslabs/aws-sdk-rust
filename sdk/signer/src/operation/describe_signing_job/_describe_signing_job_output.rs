@@ -121,7 +121,7 @@ impl DescribeSigningJobOutput {
         self.job_invoker.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSigningJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeSigningJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

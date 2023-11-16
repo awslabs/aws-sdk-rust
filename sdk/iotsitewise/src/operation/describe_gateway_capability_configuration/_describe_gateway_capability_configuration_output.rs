@@ -44,7 +44,7 @@ impl DescribeGatewayCapabilityConfigurationOutput {
         &self.capability_sync_status
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeGatewayCapabilityConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeGatewayCapabilityConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

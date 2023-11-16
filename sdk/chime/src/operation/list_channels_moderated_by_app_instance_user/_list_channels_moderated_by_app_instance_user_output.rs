@@ -30,7 +30,7 @@ impl ::std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for ListChannelsModeratedByAppInstanceUserOutput {
+impl ::aws_types::request_id::RequestId for ListChannelsModeratedByAppInstanceUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

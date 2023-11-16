@@ -13,7 +13,7 @@ impl EnableProfileOutput {
         self.profile.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for EnableProfileOutput {
+impl ::aws_types::request_id::RequestId for EnableProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

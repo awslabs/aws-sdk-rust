@@ -168,7 +168,7 @@ impl ::std::fmt::Debug for GetDataSourceOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataSourceOutput {
+impl ::aws_types::request_id::RequestId for GetDataSourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

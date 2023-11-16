@@ -21,7 +21,7 @@ impl GetConnectivityInfoOutput {
         self.message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetConnectivityInfoOutput {
+impl ::aws_types::request_id::RequestId for GetConnectivityInfoOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateNotebookInstanceLifecycleConfigOutput {
         self.notebook_instance_lifecycle_config_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateNotebookInstanceLifecycleConfigOutput {
+impl ::aws_types::request_id::RequestId for CreateNotebookInstanceLifecycleConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

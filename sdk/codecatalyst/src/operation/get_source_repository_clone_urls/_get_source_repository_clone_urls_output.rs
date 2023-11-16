@@ -14,7 +14,7 @@ impl GetSourceRepositoryCloneUrlsOutput {
         self.https.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSourceRepositoryCloneUrlsOutput {
+impl ::aws_types::request_id::RequestId for GetSourceRepositoryCloneUrlsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

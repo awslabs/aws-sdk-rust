@@ -21,7 +21,7 @@ impl ListProvisionedProductPlansOutput {
         self.next_page_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListProvisionedProductPlansOutput {
+impl ::aws_types::request_id::RequestId for ListProvisionedProductPlansOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -71,7 +71,7 @@ impl CreateMountTargetOutput {
         self.vpc_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateMountTargetOutput {
+impl ::aws_types::request_id::RequestId for CreateMountTargetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

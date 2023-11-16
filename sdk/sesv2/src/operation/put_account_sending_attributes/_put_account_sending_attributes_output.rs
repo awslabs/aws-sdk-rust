@@ -6,7 +6,7 @@
 pub struct PutAccountSendingAttributesOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutAccountSendingAttributesOutput {
+impl ::aws_types::request_id::RequestId for PutAccountSendingAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

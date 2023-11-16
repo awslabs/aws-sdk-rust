@@ -35,7 +35,7 @@ impl UpdateFirewallPolicyChangeProtectionOutput {
         self.firewall_policy_change_protection
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateFirewallPolicyChangeProtectionOutput {
+impl ::aws_types::request_id::RequestId for UpdateFirewallPolicyChangeProtectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

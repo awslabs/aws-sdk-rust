@@ -26,7 +26,7 @@ impl CreateConfigOutput {
         self.config_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateConfigOutput {
+impl ::aws_types::request_id::RequestId for CreateConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -33,7 +33,7 @@ impl GetBucketsOutput {
         self.account_level_bpa_sync.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBucketsOutput {
+impl ::aws_types::request_id::RequestId for GetBucketsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

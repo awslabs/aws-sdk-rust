@@ -40,7 +40,7 @@ impl GetQueryResultsOutput {
         self.error_message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetQueryResultsOutput {
+impl ::aws_types::request_id::RequestId for GetQueryResultsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

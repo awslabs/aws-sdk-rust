@@ -13,7 +13,7 @@ impl GetAuthorizationTokenOutput {
         self.authorization_data.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAuthorizationTokenOutput {
+impl ::aws_types::request_id::RequestId for GetAuthorizationTokenOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

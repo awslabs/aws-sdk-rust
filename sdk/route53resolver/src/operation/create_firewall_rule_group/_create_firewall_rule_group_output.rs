@@ -13,7 +13,7 @@ impl CreateFirewallRuleGroupOutput {
         self.firewall_rule_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateFirewallRuleGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateFirewallRuleGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,7 +19,7 @@ impl PutRegistryPolicyOutput {
         self.policy_text.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutRegistryPolicyOutput {
+impl ::aws_types::request_id::RequestId for PutRegistryPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

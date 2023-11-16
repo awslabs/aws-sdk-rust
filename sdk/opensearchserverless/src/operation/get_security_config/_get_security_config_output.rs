@@ -13,7 +13,7 @@ impl GetSecurityConfigOutput {
         self.security_config_detail.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSecurityConfigOutput {
+impl ::aws_types::request_id::RequestId for GetSecurityConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

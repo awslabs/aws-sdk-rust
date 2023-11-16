@@ -15,7 +15,7 @@ impl GetCheckerIpRangesOutput {
         self.checker_ip_ranges.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCheckerIpRangesOutput {
+impl ::aws_types::request_id::RequestId for GetCheckerIpRangesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

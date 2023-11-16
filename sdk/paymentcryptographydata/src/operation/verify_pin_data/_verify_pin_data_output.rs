@@ -35,7 +35,7 @@ impl VerifyPinDataOutput {
         self.encryption_key_check_value.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for VerifyPinDataOutput {
+impl ::aws_types::request_id::RequestId for VerifyPinDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

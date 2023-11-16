@@ -27,7 +27,7 @@ impl ::std::fmt::Display for InvalidCiphertextException {
     }
 }
 impl ::std::error::Error for InvalidCiphertextException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidCiphertextException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidCiphertextException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

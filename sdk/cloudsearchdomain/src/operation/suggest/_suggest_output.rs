@@ -20,7 +20,7 @@ impl SuggestOutput {
         self.suggest.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for SuggestOutput {
+impl ::aws_types::request_id::RequestId for SuggestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -636,11 +636,14 @@ pub(crate) mod test {
     }
 
     pub(crate) fn token_response(ttl: u32, token: &'static str) -> HttpResponse {
-        http::Response::builder()
-            .status(200)
-            .header("X-aws-ec2-metadata-token-ttl-seconds", ttl)
-            .body(SdkBody::from(token))
-            .unwrap()
+        HttpResponse::try_from(
+            http::Response::builder()
+                .status(200)
+                .header("X-aws-ec2-metadata-token-ttl-seconds", ttl)
+                .body(SdkBody::from(token))
+                .unwrap(),
+        )
+        .unwrap()
     }
 
     pub(crate) fn imds_request(path: &'static str, token: &str) -> HttpRequest {
@@ -655,10 +658,13 @@ pub(crate) mod test {
     }
 
     pub(crate) fn imds_response(body: &'static str) -> HttpResponse {
-        http::Response::builder()
-            .status(200)
-            .body(SdkBody::from(body))
-            .unwrap()
+        HttpResponse::try_from(
+            http::Response::builder()
+                .status(200)
+                .body(SdkBody::from(body))
+                .unwrap(),
+        )
+        .unwrap()
     }
 
     pub(crate) fn make_imds_client(http_client: &StaticReplayClient) -> super::Client {

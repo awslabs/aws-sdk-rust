@@ -13,7 +13,7 @@ impl CreateTransitGatewayPolicyTableOutput {
         self.transit_gateway_policy_table.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateTransitGatewayPolicyTableOutput {
+impl ::aws_types::request_id::RequestId for CreateTransitGatewayPolicyTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

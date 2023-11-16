@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListPlatf
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_platform_branches::de_list_platform_branches_http_error(status, headers, body)
         } else {
@@ -280,7 +280,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListPlatformB
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_platform_branches::ListPlatformBranchesError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_platform_branches::ListPlatformBranchesError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

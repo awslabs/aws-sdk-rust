@@ -61,7 +61,7 @@ impl UpdateFunctionUrlConfigOutput {
         self.invoke_mode.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateFunctionUrlConfigOutput {
+impl ::aws_types::request_id::RequestId for UpdateFunctionUrlConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

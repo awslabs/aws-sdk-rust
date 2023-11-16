@@ -13,7 +13,7 @@ impl ModifyTrafficMirrorSessionOutput {
         self.traffic_mirror_session.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyTrafficMirrorSessionOutput {
+impl ::aws_types::request_id::RequestId for ModifyTrafficMirrorSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

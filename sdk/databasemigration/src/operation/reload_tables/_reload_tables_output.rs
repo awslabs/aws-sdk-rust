@@ -13,7 +13,7 @@ impl ReloadTablesOutput {
         self.replication_task_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ReloadTablesOutput {
+impl ::aws_types::request_id::RequestId for ReloadTablesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

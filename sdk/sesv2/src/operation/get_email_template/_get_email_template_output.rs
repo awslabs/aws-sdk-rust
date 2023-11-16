@@ -21,7 +21,7 @@ impl GetEmailTemplateOutput {
         self.template_content.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEmailTemplateOutput {
+impl ::aws_types::request_id::RequestId for GetEmailTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

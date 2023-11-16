@@ -19,7 +19,7 @@ impl CreateDimensionOutput {
         self.arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDimensionOutput {
+impl ::aws_types::request_id::RequestId for CreateDimensionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -15,7 +15,7 @@ impl ListTagsForResourcesOutput {
         self.resource_tag_sets.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTagsForResourcesOutput {
+impl ::aws_types::request_id::RequestId for ListTagsForResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -28,7 +28,7 @@ impl ::std::fmt::Debug for UpdateNetworkSitePlanOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateNetworkSitePlanOutput {
+impl ::aws_types::request_id::RequestId for UpdateNetworkSitePlanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

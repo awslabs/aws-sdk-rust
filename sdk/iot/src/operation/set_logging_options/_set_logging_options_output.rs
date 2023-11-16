@@ -5,7 +5,7 @@
 pub struct SetLoggingOptionsOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for SetLoggingOptionsOutput {
+impl ::aws_types::request_id::RequestId for SetLoggingOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

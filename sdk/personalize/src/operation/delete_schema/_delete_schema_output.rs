@@ -5,7 +5,7 @@
 pub struct DeleteSchemaOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteSchemaOutput {
+impl ::aws_types::request_id::RequestId for DeleteSchemaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

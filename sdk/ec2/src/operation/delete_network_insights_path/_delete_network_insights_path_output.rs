@@ -13,7 +13,7 @@ impl DeleteNetworkInsightsPathOutput {
         self.network_insights_path_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteNetworkInsightsPathOutput {
+impl ::aws_types::request_id::RequestId for DeleteNetworkInsightsPathOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

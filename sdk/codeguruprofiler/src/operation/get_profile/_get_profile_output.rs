@@ -27,7 +27,7 @@ impl GetProfileOutput {
         self.content_encoding.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetProfileOutput {
+impl ::aws_types::request_id::RequestId for GetProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

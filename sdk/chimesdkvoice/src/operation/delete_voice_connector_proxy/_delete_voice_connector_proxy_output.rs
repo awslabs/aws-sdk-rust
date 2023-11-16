@@ -5,7 +5,7 @@
 pub struct DeleteVoiceConnectorProxyOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteVoiceConnectorProxyOutput {
+impl ::aws_types::request_id::RequestId for DeleteVoiceConnectorProxyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

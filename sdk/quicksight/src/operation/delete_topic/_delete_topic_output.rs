@@ -31,7 +31,7 @@ impl DeleteTopicOutput {
         self.status
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteTopicOutput {
+impl ::aws_types::request_id::RequestId for DeleteTopicOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

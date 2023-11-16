@@ -31,7 +31,7 @@ impl GetEffectiveRecommendationPreferencesOutput {
         self.external_metrics_preference.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEffectiveRecommendationPreferencesOutput {
+impl ::aws_types::request_id::RequestId for GetEffectiveRecommendationPreferencesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

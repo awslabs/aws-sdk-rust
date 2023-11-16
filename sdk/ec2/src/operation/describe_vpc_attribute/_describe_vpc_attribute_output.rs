@@ -31,7 +31,7 @@ impl DescribeVpcAttributeOutput {
         self.enable_network_address_usage_metrics.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeVpcAttributeOutput {
+impl ::aws_types::request_id::RequestId for DescribeVpcAttributeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

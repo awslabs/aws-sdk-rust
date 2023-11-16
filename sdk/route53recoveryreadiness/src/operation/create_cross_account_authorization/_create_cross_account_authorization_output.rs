@@ -13,7 +13,7 @@ impl CreateCrossAccountAuthorizationOutput {
         self.cross_account_authorization.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCrossAccountAuthorizationOutput {
+impl ::aws_types::request_id::RequestId for CreateCrossAccountAuthorizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

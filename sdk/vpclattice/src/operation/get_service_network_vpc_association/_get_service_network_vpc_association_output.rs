@@ -87,7 +87,7 @@ impl GetServiceNetworkVpcAssociationOutput {
         self.last_updated_at.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetServiceNetworkVpcAssociationOutput {
+impl ::aws_types::request_id::RequestId for GetServiceNetworkVpcAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

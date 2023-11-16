@@ -27,7 +27,7 @@ impl ::std::fmt::Display for IncorrectTrustAnchorException {
     }
 }
 impl ::std::error::Error for IncorrectTrustAnchorException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::IncorrectTrustAnchorException {
+impl ::aws_types::request_id::RequestId for crate::types::error::IncorrectTrustAnchorException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

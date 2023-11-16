@@ -97,7 +97,7 @@ impl DescribeMetricSetOutput {
         self.dimension_filter_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeMetricSetOutput {
+impl ::aws_types::request_id::RequestId for DescribeMetricSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

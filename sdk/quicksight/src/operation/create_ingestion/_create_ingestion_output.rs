@@ -37,7 +37,7 @@ impl CreateIngestionOutput {
         self.status
     }
 }
-impl ::aws_http::request_id::RequestId for CreateIngestionOutput {
+impl ::aws_types::request_id::RequestId for CreateIngestionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl GetJourneyExecutionActivityMetricsOutput {
         self.journey_execution_activity_metrics_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetJourneyExecutionActivityMetricsOutput {
+impl ::aws_types::request_id::RequestId for GetJourneyExecutionActivityMetricsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

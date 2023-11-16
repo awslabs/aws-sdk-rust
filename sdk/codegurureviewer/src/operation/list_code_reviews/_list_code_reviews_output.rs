@@ -21,7 +21,7 @@ impl ListCodeReviewsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListCodeReviewsOutput {
+impl ::aws_types::request_id::RequestId for ListCodeReviewsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DisableImageDeprecationOutput {
         self.r#return
     }
 }
-impl ::aws_http::request_id::RequestId for DisableImageDeprecationOutput {
+impl ::aws_types::request_id::RequestId for DisableImageDeprecationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

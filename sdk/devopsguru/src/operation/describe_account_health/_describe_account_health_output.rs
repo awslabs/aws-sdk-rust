@@ -37,7 +37,7 @@ impl DescribeAccountHealthOutput {
         self.analyzed_resource_count
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAccountHealthOutput {
+impl ::aws_types::request_id::RequestId for DescribeAccountHealthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

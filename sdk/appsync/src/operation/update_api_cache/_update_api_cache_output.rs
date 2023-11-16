@@ -14,7 +14,7 @@ impl UpdateApiCacheOutput {
         self.api_cache.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateApiCacheOutput {
+impl ::aws_types::request_id::RequestId for UpdateApiCacheOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl RestoreTableFromClusterSnapshotOutput {
         self.table_restore_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RestoreTableFromClusterSnapshotOutput {
+impl ::aws_types::request_id::RequestId for RestoreTableFromClusterSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

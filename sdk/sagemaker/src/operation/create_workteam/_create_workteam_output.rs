@@ -13,7 +13,7 @@ impl CreateWorkteamOutput {
         self.workteam_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateWorkteamOutput {
+impl ::aws_types::request_id::RequestId for CreateWorkteamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

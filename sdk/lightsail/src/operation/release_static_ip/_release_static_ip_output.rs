@@ -15,7 +15,7 @@ impl ReleaseStaticIpOutput {
         self.operations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ReleaseStaticIpOutput {
+impl ::aws_types::request_id::RequestId for ReleaseStaticIpOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

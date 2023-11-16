@@ -22,7 +22,7 @@ impl ListUserImportJobsOutput {
         self.pagination_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListUserImportJobsOutput {
+impl ::aws_types::request_id::RequestId for ListUserImportJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

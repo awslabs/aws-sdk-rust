@@ -19,7 +19,7 @@ impl GetGeneratedPolicyOutput {
         self.generated_policy_result.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetGeneratedPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetGeneratedPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

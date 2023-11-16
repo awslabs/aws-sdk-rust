@@ -67,7 +67,7 @@ impl DescribeFlowDefinitionOutput {
         self.failure_reason.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFlowDefinitionOutput {
+impl ::aws_types::request_id::RequestId for DescribeFlowDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

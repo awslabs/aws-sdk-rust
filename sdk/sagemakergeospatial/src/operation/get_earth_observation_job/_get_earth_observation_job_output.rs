@@ -95,7 +95,7 @@ impl GetEarthObservationJobOutput {
         self.tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEarthObservationJobOutput {
+impl ::aws_types::request_id::RequestId for GetEarthObservationJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

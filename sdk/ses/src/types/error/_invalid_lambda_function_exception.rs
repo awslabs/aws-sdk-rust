@@ -34,7 +34,7 @@ impl ::std::fmt::Display for InvalidLambdaFunctionException {
     }
 }
 impl ::std::error::Error for InvalidLambdaFunctionException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidLambdaFunctionException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidLambdaFunctionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

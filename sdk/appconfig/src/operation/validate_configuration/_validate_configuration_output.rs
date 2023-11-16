@@ -5,7 +5,7 @@
 pub struct ValidateConfigurationOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for ValidateConfigurationOutput {
+impl ::aws_types::request_id::RequestId for ValidateConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

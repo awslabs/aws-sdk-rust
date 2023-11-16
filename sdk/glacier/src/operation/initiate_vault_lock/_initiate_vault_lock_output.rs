@@ -14,7 +14,7 @@ impl InitiateVaultLockOutput {
         self.lock_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for InitiateVaultLockOutput {
+impl ::aws_types::request_id::RequestId for InitiateVaultLockOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

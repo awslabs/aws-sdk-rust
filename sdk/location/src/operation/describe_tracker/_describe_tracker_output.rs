@@ -100,7 +100,7 @@ impl DescribeTrackerOutput {
         self.kms_key_enable_geospatial_queries
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeTrackerOutput {
+impl ::aws_types::request_id::RequestId for DescribeTrackerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

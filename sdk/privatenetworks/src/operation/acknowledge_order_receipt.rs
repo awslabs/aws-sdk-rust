@@ -146,7 +146,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for Acknowled
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_acknowledge_order_receipt::de_acknowledge_order_receipt_http_error(status, headers, body)
         } else {
@@ -293,7 +293,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AcknowledgeOr
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError {
+impl ::aws_types::request_id::RequestId for crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

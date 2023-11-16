@@ -13,7 +13,7 @@ impl CreateAutoMlJobV2Output {
         self.auto_ml_job_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateAutoMlJobV2Output {
+impl ::aws_types::request_id::RequestId for CreateAutoMlJobV2Output {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

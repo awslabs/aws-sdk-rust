@@ -23,7 +23,7 @@ impl BatchDeleteBuildsOutput {
         self.builds_not_deleted.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchDeleteBuildsOutput {
+impl ::aws_types::request_id::RequestId for BatchDeleteBuildsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

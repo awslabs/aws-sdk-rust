@@ -46,7 +46,7 @@ impl DescribeMergeConflictsOutput {
         self.base_commit_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeMergeConflictsOutput {
+impl ::aws_types::request_id::RequestId for DescribeMergeConflictsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

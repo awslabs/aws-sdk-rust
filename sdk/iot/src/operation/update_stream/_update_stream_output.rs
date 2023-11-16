@@ -31,7 +31,7 @@ impl UpdateStreamOutput {
         self.stream_version
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateStreamOutput {
+impl ::aws_types::request_id::RequestId for UpdateStreamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

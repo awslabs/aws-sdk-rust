@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidAutomationExecutionParametersException {
     }
 }
 impl ::std::error::Error for InvalidAutomationExecutionParametersException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidAutomationExecutionParametersException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidAutomationExecutionParametersException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

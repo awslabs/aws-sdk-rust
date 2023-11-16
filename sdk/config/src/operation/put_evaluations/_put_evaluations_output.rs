@@ -16,7 +16,7 @@ impl PutEvaluationsOutput {
         self.failed_evaluations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for PutEvaluationsOutput {
+impl ::aws_types::request_id::RequestId for PutEvaluationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

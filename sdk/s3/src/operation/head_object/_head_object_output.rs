@@ -283,7 +283,7 @@ impl crate::s3_request_id::RequestIdExt for HeadObjectOutput {
         self._extended_request_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for HeadObjectOutput {
+impl ::aws_types::request_id::RequestId for HeadObjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

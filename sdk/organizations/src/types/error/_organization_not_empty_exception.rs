@@ -26,7 +26,7 @@ impl ::std::fmt::Display for OrganizationNotEmptyException {
     }
 }
 impl ::std::error::Error for OrganizationNotEmptyException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OrganizationNotEmptyException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OrganizationNotEmptyException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -13,7 +13,7 @@ impl CreateDataRepositoryAssociationOutput {
         self.association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDataRepositoryAssociationOutput {
+impl ::aws_types::request_id::RequestId for CreateDataRepositoryAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

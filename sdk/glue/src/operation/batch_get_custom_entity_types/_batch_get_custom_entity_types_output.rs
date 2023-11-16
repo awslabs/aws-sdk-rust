@@ -23,7 +23,7 @@ impl BatchGetCustomEntityTypesOutput {
         self.custom_entity_types_not_found.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetCustomEntityTypesOutput {
+impl ::aws_types::request_id::RequestId for BatchGetCustomEntityTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

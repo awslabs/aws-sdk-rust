@@ -37,7 +37,7 @@ impl ::std::fmt::Debug for ListChannelMessagesOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for ListChannelMessagesOutput {
+impl ::aws_types::request_id::RequestId for ListChannelMessagesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

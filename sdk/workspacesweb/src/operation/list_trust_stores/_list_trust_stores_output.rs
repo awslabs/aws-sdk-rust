@@ -21,7 +21,7 @@ impl ListTrustStoresOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTrustStoresOutput {
+impl ::aws_types::request_id::RequestId for ListTrustStoresOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

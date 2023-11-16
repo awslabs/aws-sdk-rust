@@ -25,7 +25,7 @@ impl AddApplicationVpcConfigurationOutput {
         self.vpc_configuration_description.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AddApplicationVpcConfigurationOutput {
+impl ::aws_types::request_id::RequestId for AddApplicationVpcConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

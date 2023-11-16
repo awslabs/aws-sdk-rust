@@ -13,7 +13,7 @@ impl CreateDatasetOutput {
         self.dataset_metadata.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDatasetOutput {
+impl ::aws_types::request_id::RequestId for CreateDatasetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

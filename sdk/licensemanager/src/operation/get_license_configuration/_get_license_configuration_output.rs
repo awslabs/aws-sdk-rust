@@ -119,7 +119,7 @@ impl GetLicenseConfigurationOutput {
         self.disassociate_when_not_found
     }
 }
-impl ::aws_http::request_id::RequestId for GetLicenseConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetLicenseConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

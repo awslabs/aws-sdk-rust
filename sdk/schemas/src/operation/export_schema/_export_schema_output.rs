@@ -37,7 +37,7 @@ impl ExportSchemaOutput {
         self.r#type.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ExportSchemaOutput {
+impl ::aws_types::request_id::RequestId for ExportSchemaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

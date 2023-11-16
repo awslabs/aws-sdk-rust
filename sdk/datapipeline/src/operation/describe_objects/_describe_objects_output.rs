@@ -27,7 +27,7 @@ impl DescribeObjectsOutput {
         self.has_more_results
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeObjectsOutput {
+impl ::aws_types::request_id::RequestId for DescribeObjectsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

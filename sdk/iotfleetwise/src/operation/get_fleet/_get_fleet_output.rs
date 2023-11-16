@@ -46,7 +46,7 @@ impl GetFleetOutput {
         &self.last_modification_time
     }
 }
-impl ::aws_http::request_id::RequestId for GetFleetOutput {
+impl ::aws_types::request_id::RequestId for GetFleetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

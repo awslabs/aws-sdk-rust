@@ -13,7 +13,7 @@ impl CreateDirectConnectGatewayAssociationProposalOutput {
         self.direct_connect_gateway_association_proposal.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDirectConnectGatewayAssociationProposalOutput {
+impl ::aws_types::request_id::RequestId for CreateDirectConnectGatewayAssociationProposalOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

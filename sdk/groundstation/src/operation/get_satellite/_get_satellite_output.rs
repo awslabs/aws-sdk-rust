@@ -40,7 +40,7 @@ impl GetSatelliteOutput {
         self.current_ephemeris.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSatelliteOutput {
+impl ::aws_types::request_id::RequestId for GetSatelliteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

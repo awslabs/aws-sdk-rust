@@ -26,7 +26,7 @@ impl ::std::fmt::Display for NotLatestPipelineExecutionException {
     }
 }
 impl ::std::error::Error for NotLatestPipelineExecutionException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::NotLatestPipelineExecutionException {
+impl ::aws_types::request_id::RequestId for crate::types::error::NotLatestPipelineExecutionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -21,7 +21,7 @@ impl DescribeProvisionedProductOutput {
         self.cloud_watch_dashboards.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeProvisionedProductOutput {
+impl ::aws_types::request_id::RequestId for DescribeProvisionedProductOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

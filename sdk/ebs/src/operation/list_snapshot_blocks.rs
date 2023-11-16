@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListSnaps
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_snapshot_blocks::de_list_snapshot_blocks_http_error(status, headers, body)
         } else {
@@ -272,20 +272,23 @@ mod list_snapshot_blocks_request_test {
         let expected_output = crate::types::error::ValidationException::builder()
             .set_message(::std::option::Option::Some("1 validation error detected".to_owned()))
             .build();
-        let mut http_response = ::http::response::Builder::new()
-            .header("content-length", "77")
-            .header("content-type", "application/json")
-            .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
-            .header(
-                "x-amzn-errortype",
-                "ValidationException:http://internal.amazon.com/coral/com.amazon.coral.validate/",
-            )
-            .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
-            .status(400)
-            .body(::aws_smithy_types::body::SdkBody::from(
-                "{\n  \"message\": \"1 validation error detected\"\n}\n",
-            ))
-            .unwrap();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
+            ::http::response::Builder::new()
+                .header("content-length", "77")
+                .header("content-type", "application/json")
+                .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
+                .header(
+                    "x-amzn-errortype",
+                    "ValidationException:http://internal.amazon.com/coral/com.amazon.coral.validate/",
+                )
+                .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
+                .status(400)
+                .body(::aws_smithy_types::body::SdkBody::from(
+                    "{\n  \"message\": \"1 validation error detected\"\n}\n",
+                ))
+                .unwrap(),
+        )
+        .unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
         use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
@@ -324,20 +327,23 @@ mod list_snapshot_blocks_request_test {
                     .expect("static value validated to member"),
             ))
             .build();
-        let mut http_response = ::http::response::Builder::new()
-            .header("content-length", "77")
-            .header("content-type", "application/json")
-            .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
-            .header(
-                "x-amzn-errortype",
-                "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/",
-            )
-            .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
-            .status(400)
-            .body(::aws_smithy_types::body::SdkBody::from(
-                "{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n",
-            ))
-            .unwrap();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
+            ::http::response::Builder::new()
+                .header("content-length", "77")
+                .header("content-type", "application/json")
+                .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
+                .header(
+                    "x-amzn-errortype",
+                    "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/",
+                )
+                .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
+                .status(400)
+                .body(::aws_smithy_types::body::SdkBody::from(
+                    "{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n",
+                ))
+                .unwrap(),
+        )
+        .unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
         use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
@@ -429,7 +435,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListSnapshotB
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_snapshot_blocks::ListSnapshotBlocksError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_snapshot_blocks::ListSnapshotBlocksError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

@@ -13,7 +13,7 @@ impl GetKeyOutput {
         self.key.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetKeyOutput {
+impl ::aws_types::request_id::RequestId for GetKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

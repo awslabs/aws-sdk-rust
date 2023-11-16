@@ -23,7 +23,7 @@ impl DeleteParametersOutput {
         self.invalid_parameters.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteParametersOutput {
+impl ::aws_types::request_id::RequestId for DeleteParametersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

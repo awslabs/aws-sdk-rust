@@ -13,7 +13,7 @@ impl UpdateResolverOutput {
         self.resolver.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateResolverOutput {
+impl ::aws_types::request_id::RequestId for UpdateResolverOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

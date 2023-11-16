@@ -13,7 +13,7 @@ impl DescribeFeedbackOutput {
         self.insight_feedback.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFeedbackOutput {
+impl ::aws_types::request_id::RequestId for DescribeFeedbackOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

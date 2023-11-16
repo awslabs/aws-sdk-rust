@@ -19,7 +19,7 @@ impl GetClipOutput {
         &self.payload
     }
 }
-impl ::aws_http::request_id::RequestId for GetClipOutput {
+impl ::aws_types::request_id::RequestId for GetClipOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateVerifiedAccessInstanceOutput {
         self.verified_access_instance.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateVerifiedAccessInstanceOutput {
+impl ::aws_types::request_id::RequestId for CreateVerifiedAccessInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

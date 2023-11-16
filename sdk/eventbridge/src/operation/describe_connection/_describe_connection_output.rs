@@ -73,7 +73,7 @@ impl DescribeConnectionOutput {
         self.last_authorized_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeConnectionOutput {
+impl ::aws_types::request_id::RequestId for DescribeConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

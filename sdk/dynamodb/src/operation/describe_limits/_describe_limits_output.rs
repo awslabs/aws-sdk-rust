@@ -32,7 +32,7 @@ impl DescribeLimitsOutput {
         self.table_max_write_capacity_units
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLimitsOutput {
+impl ::aws_types::request_id::RequestId for DescribeLimitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

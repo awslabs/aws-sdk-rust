@@ -14,7 +14,7 @@ impl DeleteGitHubAccountTokenOutput {
         self.token_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteGitHubAccountTokenOutput {
+impl ::aws_types::request_id::RequestId for DeleteGitHubAccountTokenOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

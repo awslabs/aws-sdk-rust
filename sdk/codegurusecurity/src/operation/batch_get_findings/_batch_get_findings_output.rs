@@ -21,7 +21,7 @@ impl BatchGetFindingsOutput {
         self.failed_findings.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetFindingsOutput {
+impl ::aws_types::request_id::RequestId for BatchGetFindingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

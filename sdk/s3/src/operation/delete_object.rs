@@ -147,7 +147,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteObj
         if matches!(crate::rest_xml_unwrapped_errors::body_is_error(body), Ok(true)) {
             force_error = true;
         }
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 204 || force_error {
             crate::protocol_serde::shape_delete_object::de_delete_object_http_error(status, headers, body)
         } else {
@@ -318,7 +318,7 @@ impl crate::s3_request_id::RequestIdExt for crate::operation::delete_object::Del
         self.meta().extended_request_id()
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::delete_object::DeleteObjectError {
+impl ::aws_types::request_id::RequestId for crate::operation::delete_object::DeleteObjectError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

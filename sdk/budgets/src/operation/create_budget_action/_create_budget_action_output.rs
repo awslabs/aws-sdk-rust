@@ -28,7 +28,7 @@ impl CreateBudgetActionOutput {
         self.action_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateBudgetActionOutput {
+impl ::aws_types::request_id::RequestId for CreateBudgetActionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

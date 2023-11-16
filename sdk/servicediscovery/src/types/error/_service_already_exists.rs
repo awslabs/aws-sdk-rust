@@ -40,7 +40,7 @@ impl ::std::fmt::Display for ServiceAlreadyExists {
     }
 }
 impl ::std::error::Error for ServiceAlreadyExists {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ServiceAlreadyExists {
+impl ::aws_types::request_id::RequestId for crate::types::error::ServiceAlreadyExists {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

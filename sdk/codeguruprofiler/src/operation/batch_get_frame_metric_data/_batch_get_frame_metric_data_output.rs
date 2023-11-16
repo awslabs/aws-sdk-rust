@@ -56,7 +56,7 @@ impl BatchGetFrameMetricDataOutput {
         self.frame_metric_data.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetFrameMetricDataOutput {
+impl ::aws_types::request_id::RequestId for BatchGetFrameMetricDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

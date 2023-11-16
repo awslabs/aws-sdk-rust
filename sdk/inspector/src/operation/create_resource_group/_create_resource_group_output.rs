@@ -14,7 +14,7 @@ impl CreateResourceGroupOutput {
         self.resource_group_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateResourceGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateResourceGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

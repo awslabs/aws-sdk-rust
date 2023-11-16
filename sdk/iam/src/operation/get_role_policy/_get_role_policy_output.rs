@@ -31,7 +31,7 @@ impl GetRolePolicyOutput {
         self.policy_document.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRolePolicyOutput {
+impl ::aws_types::request_id::RequestId for GetRolePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

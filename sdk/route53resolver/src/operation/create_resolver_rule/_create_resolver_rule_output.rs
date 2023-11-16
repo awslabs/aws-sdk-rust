@@ -13,7 +13,7 @@ impl CreateResolverRuleOutput {
         self.resolver_rule.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateResolverRuleOutput {
+impl ::aws_types::request_id::RequestId for CreateResolverRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

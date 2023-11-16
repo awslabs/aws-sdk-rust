@@ -13,7 +13,7 @@ impl GetAccessorOutput {
         self.accessor.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAccessorOutput {
+impl ::aws_types::request_id::RequestId for GetAccessorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

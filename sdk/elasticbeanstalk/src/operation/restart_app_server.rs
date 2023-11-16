@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RestartAp
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_restart_app_server::de_restart_app_server_http_error(status, headers, body)
         } else {
@@ -274,7 +274,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestartAppSer
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::restart_app_server::RestartAppServerError {
+impl ::aws_types::request_id::RequestId for crate::operation::restart_app_server::RestartAppServerError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

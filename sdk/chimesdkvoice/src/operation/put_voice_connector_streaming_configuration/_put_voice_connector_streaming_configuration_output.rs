@@ -13,7 +13,7 @@ impl PutVoiceConnectorStreamingConfigurationOutput {
         self.streaming_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutVoiceConnectorStreamingConfigurationOutput {
+impl ::aws_types::request_id::RequestId for PutVoiceConnectorStreamingConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

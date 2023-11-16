@@ -26,7 +26,7 @@ impl ::std::fmt::Display for KmsThrottled {
     }
 }
 impl ::std::error::Error for KmsThrottled {}
-impl ::aws_http::request_id::RequestId for crate::types::error::KmsThrottled {
+impl ::aws_types::request_id::RequestId for crate::types::error::KmsThrottled {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

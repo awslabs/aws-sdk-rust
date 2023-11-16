@@ -23,7 +23,7 @@ impl GetDataflowGraphOutput {
         self.dag_edges.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataflowGraphOutput {
+impl ::aws_types::request_id::RequestId for GetDataflowGraphOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

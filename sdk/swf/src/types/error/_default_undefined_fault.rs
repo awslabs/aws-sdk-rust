@@ -29,7 +29,7 @@ impl ::std::fmt::Display for DefaultUndefinedFault {
     }
 }
 impl ::std::error::Error for DefaultUndefinedFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DefaultUndefinedFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::DefaultUndefinedFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

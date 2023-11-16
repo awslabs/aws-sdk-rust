@@ -21,7 +21,7 @@ impl DescribeUpdateActionsOutput {
         self.update_actions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeUpdateActionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeUpdateActionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

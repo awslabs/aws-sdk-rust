@@ -15,7 +15,7 @@ impl DeleteEvaluationOutput {
         self.evaluation_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteEvaluationOutput {
+impl ::aws_types::request_id::RequestId for DeleteEvaluationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

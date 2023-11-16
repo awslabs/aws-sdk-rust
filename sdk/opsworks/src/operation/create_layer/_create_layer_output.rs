@@ -14,7 +14,7 @@ impl CreateLayerOutput {
         self.layer_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateLayerOutput {
+impl ::aws_types::request_id::RequestId for CreateLayerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

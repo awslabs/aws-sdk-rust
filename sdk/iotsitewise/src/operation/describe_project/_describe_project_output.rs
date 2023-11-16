@@ -55,7 +55,7 @@ impl DescribeProjectOutput {
         &self.project_last_update_date
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeProjectOutput {
+impl ::aws_types::request_id::RequestId for DescribeProjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

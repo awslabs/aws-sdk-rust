@@ -5,7 +5,7 @@
 pub struct DeleteV2LoggingLevelOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteV2LoggingLevelOutput {
+impl ::aws_types::request_id::RequestId for DeleteV2LoggingLevelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

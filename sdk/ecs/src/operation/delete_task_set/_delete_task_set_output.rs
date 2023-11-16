@@ -13,7 +13,7 @@ impl DeleteTaskSetOutput {
         self.task_set.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteTaskSetOutput {
+impl ::aws_types::request_id::RequestId for DeleteTaskSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

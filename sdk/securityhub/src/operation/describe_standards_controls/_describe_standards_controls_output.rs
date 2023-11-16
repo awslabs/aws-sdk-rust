@@ -21,7 +21,7 @@ impl DescribeStandardsControlsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeStandardsControlsOutput {
+impl ::aws_types::request_id::RequestId for DescribeStandardsControlsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

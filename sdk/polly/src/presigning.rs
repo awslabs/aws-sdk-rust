@@ -199,7 +199,7 @@ impl PresignedRequest {
         let http_request = inner.map(|_body| SdkBody::empty());
         // this should never fail, a presigned request should always be convertible, but better to
         // protect against this potential panic
-        let _ = http_request.try_clone().expect("must be cloneable, body is empty").into_http02x()?;
+        let _ = http_request.try_clone().expect("must be cloneable, body is empty").try_into_http02x()?;
         Ok(Self { http_request })
     }
 
@@ -228,7 +228,7 @@ impl PresignedRequest {
     /// Converts this `PresignedRequest` directly into an `http` request.
     pub fn into_http_02x_request<B>(self, body: B) -> http::Request<B> {
         self.http_request
-            .into_http02x()
+            .try_into_http02x()
             .expect("constructor validated convertibility")
             .map(|_req| body)
     }

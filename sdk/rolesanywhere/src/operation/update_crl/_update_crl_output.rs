@@ -13,7 +13,7 @@ impl UpdateCrlOutput {
         self.crl.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateCrlOutput {
+impl ::aws_types::request_id::RequestId for UpdateCrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

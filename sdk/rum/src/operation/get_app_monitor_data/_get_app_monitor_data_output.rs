@@ -21,7 +21,7 @@ impl GetAppMonitorDataOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAppMonitorDataOutput {
+impl ::aws_types::request_id::RequestId for GetAppMonitorDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

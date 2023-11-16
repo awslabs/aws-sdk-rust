@@ -13,7 +13,7 @@ impl StopKeyUsageOutput {
         self.key.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StopKeyUsageOutput {
+impl ::aws_types::request_id::RequestId for StopKeyUsageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

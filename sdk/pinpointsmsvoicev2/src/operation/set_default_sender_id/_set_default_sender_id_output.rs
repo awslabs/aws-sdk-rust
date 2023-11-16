@@ -25,7 +25,7 @@ impl SetDefaultSenderIdOutput {
         self.sender_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SetDefaultSenderIdOutput {
+impl ::aws_types::request_id::RequestId for SetDefaultSenderIdOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

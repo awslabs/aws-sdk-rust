@@ -46,7 +46,7 @@ impl GetConfigurationSetOutput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetConfigurationSetOutput {
+impl ::aws_types::request_id::RequestId for GetConfigurationSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

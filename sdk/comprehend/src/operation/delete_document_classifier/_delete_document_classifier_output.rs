@@ -5,7 +5,7 @@
 pub struct DeleteDocumentClassifierOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteDocumentClassifierOutput {
+impl ::aws_types::request_id::RequestId for DeleteDocumentClassifierOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

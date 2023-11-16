@@ -5,7 +5,7 @@
 pub struct UpdateQueueStatusOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateQueueStatusOutput {
+impl ::aws_types::request_id::RequestId for UpdateQueueStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

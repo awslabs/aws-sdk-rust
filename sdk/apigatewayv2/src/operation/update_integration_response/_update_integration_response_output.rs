@@ -49,7 +49,7 @@ impl UpdateIntegrationResponseOutput {
         self.template_selection_expression.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateIntegrationResponseOutput {
+impl ::aws_types::request_id::RequestId for UpdateIntegrationResponseOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

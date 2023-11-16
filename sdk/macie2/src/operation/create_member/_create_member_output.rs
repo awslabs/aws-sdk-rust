@@ -13,7 +13,7 @@ impl CreateMemberOutput {
         self.arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateMemberOutput {
+impl ::aws_types::request_id::RequestId for CreateMemberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

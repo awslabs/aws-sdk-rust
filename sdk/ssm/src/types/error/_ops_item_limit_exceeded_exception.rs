@@ -48,7 +48,7 @@ impl ::std::fmt::Display for OpsItemLimitExceededException {
     }
 }
 impl ::std::error::Error for OpsItemLimitExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OpsItemLimitExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OpsItemLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

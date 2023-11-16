@@ -13,7 +13,7 @@ impl GetBlueprintOutput {
         self.blueprint.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBlueprintOutput {
+impl ::aws_types::request_id::RequestId for GetBlueprintOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

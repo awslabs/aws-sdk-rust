@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ApplicationAlreadyExistsException {
     }
 }
 impl ::std::error::Error for ApplicationAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ApplicationAlreadyExistsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ApplicationAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

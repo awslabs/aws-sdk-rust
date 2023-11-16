@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeC
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_describe_compute_environments::de_describe_compute_environments_http_error(status, headers, body)
         } else {
@@ -291,10 +291,11 @@ mod describe_compute_environments_request_test {
                 ))
                 .build()]))
             .build();
-        let mut http_response = ::http::response::Builder::new()
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http::response::Builder::new()
         .status(200)
                     .body(::aws_smithy_types::body::SdkBody::from("    {\n        \"computeEnvironments\":[{\n            \"computeEnvironmentName\":\"test-batch-compute\",\n            \"computeEnvironmentArn\":\"arn\",\n            \"ecsClusterArn\":\"clusteran\",\n            \"tags\":{\"foo\": \"bar\"},\n            \"type\":\"MANAGED\",\n            \"state\":\"ENABLED\",\n            \"status\":\"VALID\",\n            \"statusReason\":\"ComputeEnvironment Healthy\",\n            \"computeResources\":{\n                \"type\":\"EC2\",\n                \"minvCpus\":0,\n                \"maxvCpus\":256,\n                \"desiredvCpus\":0,\n                \"instanceTypes\":[\"optimal\"],\n                \"subnets\":[\"subnet-c745b79c\",\"subnet-d4e24fe8\"],\n                \"securityGroupIds\":[\"sg-06a55e7b\"],\n                \"instanceRole\":\"instancerole\",\n                \"tags\":{\"Name\":\"batch-compute\"},\n                \"ec2Configuration\":[{\"imageType\":\"ECS_AL1\"}]\n            },\n            \"serviceRole\":\"arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole\"\n        }]\n    }\n"))
-                    .unwrap();
+                    .unwrap()
+                    ).unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
         use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
@@ -371,7 +372,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeCompu
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError {
+impl ::aws_types::request_id::RequestId for crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

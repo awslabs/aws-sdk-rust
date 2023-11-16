@@ -22,7 +22,7 @@ impl ListXssMatchSetsOutput {
         self.xss_match_sets.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListXssMatchSetsOutput {
+impl ::aws_types::request_id::RequestId for ListXssMatchSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

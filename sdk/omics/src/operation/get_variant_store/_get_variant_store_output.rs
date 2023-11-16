@@ -84,7 +84,7 @@ impl GetVariantStoreOutput {
         self.store_size_bytes
     }
 }
-impl ::aws_http::request_id::RequestId for GetVariantStoreOutput {
+impl ::aws_types::request_id::RequestId for GetVariantStoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

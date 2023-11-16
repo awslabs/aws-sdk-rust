@@ -20,7 +20,7 @@ impl ListContactChannelsOutput {
         self.contact_channels.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListContactChannelsOutput {
+impl ::aws_types::request_id::RequestId for ListContactChannelsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

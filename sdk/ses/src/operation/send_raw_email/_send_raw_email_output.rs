@@ -15,7 +15,7 @@ impl SendRawEmailOutput {
         self.message_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SendRawEmailOutput {
+impl ::aws_types::request_id::RequestId for SendRawEmailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

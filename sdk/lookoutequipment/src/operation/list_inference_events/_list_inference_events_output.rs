@@ -21,7 +21,7 @@ impl ListInferenceEventsOutput {
         self.inference_event_summaries.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListInferenceEventsOutput {
+impl ::aws_types::request_id::RequestId for ListInferenceEventsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

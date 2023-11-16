@@ -102,7 +102,7 @@ impl ::std::fmt::Debug for GetAssetTypeOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAssetTypeOutput {
+impl ::aws_types::request_id::RequestId for GetAssetTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

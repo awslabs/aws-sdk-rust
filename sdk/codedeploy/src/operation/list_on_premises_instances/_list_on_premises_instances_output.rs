@@ -22,7 +22,7 @@ impl ListOnPremisesInstancesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListOnPremisesInstancesOutput {
+impl ::aws_types::request_id::RequestId for ListOnPremisesInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -11,7 +11,7 @@ impl crate::s3_request_id::RequestIdExt for PutBucketWebsiteOutput {
         self._extended_request_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutBucketWebsiteOutput {
+impl ::aws_types::request_id::RequestId for PutBucketWebsiteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

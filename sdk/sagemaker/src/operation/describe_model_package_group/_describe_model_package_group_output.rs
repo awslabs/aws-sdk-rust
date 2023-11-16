@@ -43,7 +43,7 @@ impl DescribeModelPackageGroupOutput {
         self.model_package_group_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeModelPackageGroupOutput {
+impl ::aws_types::request_id::RequestId for DescribeModelPackageGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -38,7 +38,7 @@ impl UpdateItemOutput {
         self.item_collection_metrics.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateItemOutput {
+impl ::aws_types::request_id::RequestId for UpdateItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

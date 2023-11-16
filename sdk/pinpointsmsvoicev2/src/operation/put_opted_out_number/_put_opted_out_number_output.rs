@@ -37,7 +37,7 @@ impl PutOptedOutNumberOutput {
         self.end_user_opted_out
     }
 }
-impl ::aws_http::request_id::RequestId for PutOptedOutNumberOutput {
+impl ::aws_types::request_id::RequestId for PutOptedOutNumberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

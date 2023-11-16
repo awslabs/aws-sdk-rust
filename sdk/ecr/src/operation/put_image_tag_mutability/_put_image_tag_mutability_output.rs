@@ -25,7 +25,7 @@ impl PutImageTagMutabilityOutput {
         self.image_tag_mutability.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutImageTagMutabilityOutput {
+impl ::aws_types::request_id::RequestId for PutImageTagMutabilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

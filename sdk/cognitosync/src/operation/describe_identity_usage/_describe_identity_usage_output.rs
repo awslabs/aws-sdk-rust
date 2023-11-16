@@ -14,7 +14,7 @@ impl DescribeIdentityUsageOutput {
         self.identity_usage.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeIdentityUsageOutput {
+impl ::aws_types::request_id::RequestId for DescribeIdentityUsageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

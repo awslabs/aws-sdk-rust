@@ -71,7 +71,7 @@ impl GetSlotTypeOutput {
         self.slot_type_configurations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSlotTypeOutput {
+impl ::aws_types::request_id::RequestId for GetSlotTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateGroupCertificateAuthorityOutput {
         self.group_certificate_authority_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateGroupCertificateAuthorityOutput {
+impl ::aws_types::request_id::RequestId for CreateGroupCertificateAuthorityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

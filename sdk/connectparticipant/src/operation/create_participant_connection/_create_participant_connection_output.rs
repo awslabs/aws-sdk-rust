@@ -19,7 +19,7 @@ impl CreateParticipantConnectionOutput {
         self.connection_credentials.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateParticipantConnectionOutput {
+impl ::aws_types::request_id::RequestId for CreateParticipantConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

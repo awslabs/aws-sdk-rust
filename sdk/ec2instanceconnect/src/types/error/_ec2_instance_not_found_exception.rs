@@ -26,7 +26,7 @@ impl ::std::fmt::Display for Ec2InstanceNotFoundException {
     }
 }
 impl ::std::error::Error for Ec2InstanceNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::Ec2InstanceNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::Ec2InstanceNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

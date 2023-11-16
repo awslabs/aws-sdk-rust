@@ -57,7 +57,7 @@ impl GetJobOutput {
         self.updated_at.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetJobOutput {
+impl ::aws_types::request_id::RequestId for GetJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

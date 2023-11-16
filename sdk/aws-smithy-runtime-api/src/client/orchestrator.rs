@@ -21,7 +21,6 @@ use crate::client::interceptors::context::phase::Phase;
 use crate::client::interceptors::context::Error;
 use crate::client::interceptors::InterceptorError;
 use crate::client::result::{ConnectorError, SdkError};
-use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use bytes::Bytes;
 use std::error::Error as StdError;
@@ -31,7 +30,7 @@ use std::fmt;
 pub type HttpRequest = crate::http::Request;
 
 /// Type alias for the HTTP response type that the orchestrator uses.
-pub type HttpResponse = http::Response<SdkBody>;
+pub type HttpResponse = crate::http::Response;
 
 /// Informs the orchestrator on whether or not the request body needs to be loaded into memory before transmit.
 ///

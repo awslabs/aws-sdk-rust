@@ -15,7 +15,7 @@ impl GetContainerServicesOutput {
         self.container_services.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetContainerServicesOutput {
+impl ::aws_types::request_id::RequestId for GetContainerServicesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,7 +19,7 @@ impl DeleteApplicationInputProcessingConfigurationOutput {
         self.application_version_id
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteApplicationInputProcessingConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DeleteApplicationInputProcessingConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl ListLogSubscriptionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListLogSubscriptionsOutput {
+impl ::aws_types::request_id::RequestId for ListLogSubscriptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

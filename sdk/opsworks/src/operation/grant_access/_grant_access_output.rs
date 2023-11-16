@@ -14,7 +14,7 @@ impl GrantAccessOutput {
         self.temporary_credential.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GrantAccessOutput {
+impl ::aws_types::request_id::RequestId for GrantAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

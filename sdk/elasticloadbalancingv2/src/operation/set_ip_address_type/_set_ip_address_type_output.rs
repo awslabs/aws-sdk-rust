@@ -13,7 +13,7 @@ impl SetIpAddressTypeOutput {
         self.ip_address_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for SetIpAddressTypeOutput {
+impl ::aws_types::request_id::RequestId for SetIpAddressTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

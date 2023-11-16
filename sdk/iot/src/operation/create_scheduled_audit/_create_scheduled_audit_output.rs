@@ -13,7 +13,7 @@ impl CreateScheduledAuditOutput {
         self.scheduled_audit_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateScheduledAuditOutput {
+impl ::aws_types::request_id::RequestId for CreateScheduledAuditOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

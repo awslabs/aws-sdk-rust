@@ -13,7 +13,7 @@ impl GetStageSessionOutput {
         self.stage_session.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetStageSessionOutput {
+impl ::aws_types::request_id::RequestId for GetStageSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

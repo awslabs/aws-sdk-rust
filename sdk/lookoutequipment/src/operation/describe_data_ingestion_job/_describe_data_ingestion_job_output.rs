@@ -91,7 +91,7 @@ impl DescribeDataIngestionJobOutput {
         self.source_dataset_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDataIngestionJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeDataIngestionJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

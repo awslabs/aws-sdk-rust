@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CacheSubnetGroupNotFoundFault {
     }
 }
 impl ::std::error::Error for CacheSubnetGroupNotFoundFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CacheSubnetGroupNotFoundFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::CacheSubnetGroupNotFoundFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

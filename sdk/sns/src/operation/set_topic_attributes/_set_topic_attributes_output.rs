@@ -5,7 +5,7 @@
 pub struct SetTopicAttributesOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for SetTopicAttributesOutput {
+impl ::aws_types::request_id::RequestId for SetTopicAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

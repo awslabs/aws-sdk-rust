@@ -33,7 +33,7 @@ impl ListResolverQueryLogConfigAssociationsOutput {
         self.resolver_query_log_config_associations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListResolverQueryLogConfigAssociationsOutput {
+impl ::aws_types::request_id::RequestId for ListResolverQueryLogConfigAssociationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

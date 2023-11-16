@@ -13,7 +13,7 @@ impl GetApprovalRuleTemplateOutput {
         self.approval_rule_template.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetApprovalRuleTemplateOutput {
+impl ::aws_types::request_id::RequestId for GetApprovalRuleTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

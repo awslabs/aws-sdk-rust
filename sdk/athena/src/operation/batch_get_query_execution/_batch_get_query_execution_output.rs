@@ -23,7 +23,7 @@ impl BatchGetQueryExecutionOutput {
         self.unprocessed_query_execution_ids.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetQueryExecutionOutput {
+impl ::aws_types::request_id::RequestId for BatchGetQueryExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

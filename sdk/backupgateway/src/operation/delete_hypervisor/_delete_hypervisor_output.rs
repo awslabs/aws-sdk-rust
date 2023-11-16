@@ -13,7 +13,7 @@ impl DeleteHypervisorOutput {
         self.hypervisor_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteHypervisorOutput {
+impl ::aws_types::request_id::RequestId for DeleteHypervisorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

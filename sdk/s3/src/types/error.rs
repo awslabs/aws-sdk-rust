@@ -44,7 +44,7 @@ impl crate::s3_request_id::RequestIdExt for crate::types::error::SelectObjectCon
         self.meta().extended_request_id()
     }
 }
-impl ::aws_http::request_id::RequestId for crate::types::error::SelectObjectContentEventStreamError {
+impl ::aws_types::request_id::RequestId for crate::types::error::SelectObjectContentEventStreamError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

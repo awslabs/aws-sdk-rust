@@ -31,7 +31,7 @@ impl CreateApiMappingOutput {
         self.stage.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateApiMappingOutput {
+impl ::aws_types::request_id::RequestId for CreateApiMappingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

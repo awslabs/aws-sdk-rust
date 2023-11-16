@@ -13,7 +13,7 @@ impl CreateEnvironmentMembershipOutput {
         self.membership.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateEnvironmentMembershipOutput {
+impl ::aws_types::request_id::RequestId for CreateEnvironmentMembershipOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

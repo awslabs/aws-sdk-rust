@@ -43,7 +43,7 @@ impl PutProvisionedConcurrencyConfigOutput {
         self.last_modified.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutProvisionedConcurrencyConfigOutput {
+impl ::aws_types::request_id::RequestId for PutProvisionedConcurrencyConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

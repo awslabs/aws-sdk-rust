@@ -21,7 +21,7 @@ impl RevokeSecurityGroupIngressOutput {
         self.unknown_ip_permissions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for RevokeSecurityGroupIngressOutput {
+impl ::aws_types::request_id::RequestId for RevokeSecurityGroupIngressOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

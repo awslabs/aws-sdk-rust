@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RegisterT
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_register_to_work_mail::de_register_to_work_mail_http_error(status, headers, body)
         } else {
@@ -322,7 +322,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RegisterToWor
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::register_to_work_mail::RegisterToWorkMailError {
+impl ::aws_types::request_id::RequestId for crate::operation::register_to_work_mail::RegisterToWorkMailError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

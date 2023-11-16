@@ -20,7 +20,7 @@ impl AddTagsOutput {
         self.resource_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AddTagsOutput {
+impl ::aws_types::request_id::RequestId for AddTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

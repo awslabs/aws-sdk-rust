@@ -81,7 +81,7 @@ impl DescribeBulkImportJobOutput {
         &self.job_last_update_date
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBulkImportJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeBulkImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

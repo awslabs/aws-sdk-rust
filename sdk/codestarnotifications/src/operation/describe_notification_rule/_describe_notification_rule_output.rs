@@ -96,7 +96,7 @@ impl ::std::fmt::Debug for DescribeNotificationRuleOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeNotificationRuleOutput {
+impl ::aws_types::request_id::RequestId for DescribeNotificationRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

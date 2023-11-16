@@ -13,7 +13,7 @@ impl CreateManagedPrefixListOutput {
         self.prefix_list.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateManagedPrefixListOutput {
+impl ::aws_types::request_id::RequestId for CreateManagedPrefixListOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

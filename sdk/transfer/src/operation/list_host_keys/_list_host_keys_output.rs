@@ -27,7 +27,7 @@ impl ListHostKeysOutput {
         self.host_keys.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListHostKeysOutput {
+impl ::aws_types::request_id::RequestId for ListHostKeysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

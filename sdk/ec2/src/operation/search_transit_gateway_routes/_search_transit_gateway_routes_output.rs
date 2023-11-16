@@ -21,7 +21,7 @@ impl SearchTransitGatewayRoutesOutput {
         self.additional_routes_available
     }
 }
-impl ::aws_http::request_id::RequestId for SearchTransitGatewayRoutesOutput {
+impl ::aws_types::request_id::RequestId for SearchTransitGatewayRoutesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

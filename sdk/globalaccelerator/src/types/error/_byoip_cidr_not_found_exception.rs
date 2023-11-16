@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ByoipCidrNotFoundException {
     }
 }
 impl ::std::error::Error for ByoipCidrNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ByoipCidrNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ByoipCidrNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

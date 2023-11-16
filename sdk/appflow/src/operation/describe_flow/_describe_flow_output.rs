@@ -137,7 +137,7 @@ impl DescribeFlowOutput {
         self.schema_version
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFlowOutput {
+impl ::aws_types::request_id::RequestId for DescribeFlowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

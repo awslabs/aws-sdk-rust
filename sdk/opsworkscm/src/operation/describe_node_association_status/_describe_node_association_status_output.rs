@@ -33,7 +33,7 @@ impl DescribeNodeAssociationStatusOutput {
         self.engine_attributes.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeNodeAssociationStatusOutput {
+impl ::aws_types::request_id::RequestId for DescribeNodeAssociationStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

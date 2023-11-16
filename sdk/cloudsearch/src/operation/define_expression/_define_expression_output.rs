@@ -14,7 +14,7 @@ impl DefineExpressionOutput {
         self.expression.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DefineExpressionOutput {
+impl ::aws_types::request_id::RequestId for DefineExpressionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -30,7 +30,7 @@ impl ::std::fmt::Display for InvalidTrackingOptionsException {
     }
 }
 impl ::std::error::Error for InvalidTrackingOptionsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidTrackingOptionsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidTrackingOptionsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

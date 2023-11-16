@@ -13,7 +13,7 @@ impl DescribeAccountAssignmentCreationStatusOutput {
         self.account_assignment_creation_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAccountAssignmentCreationStatusOutput {
+impl ::aws_types::request_id::RequestId for DescribeAccountAssignmentCreationStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

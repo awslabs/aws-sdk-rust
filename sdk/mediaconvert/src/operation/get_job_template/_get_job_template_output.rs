@@ -13,7 +13,7 @@ impl GetJobTemplateOutput {
         self.job_template.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetJobTemplateOutput {
+impl ::aws_types::request_id::RequestId for GetJobTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

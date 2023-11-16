@@ -5,7 +5,7 @@
 pub struct DeleteEventSubscriptionOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteEventSubscriptionOutput {
+impl ::aws_types::request_id::RequestId for DeleteEventSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

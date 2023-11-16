@@ -15,7 +15,7 @@ impl DescribeSuggestersOutput {
         self.suggesters.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSuggestersOutput {
+impl ::aws_types::request_id::RequestId for DescribeSuggestersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

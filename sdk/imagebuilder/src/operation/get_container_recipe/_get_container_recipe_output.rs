@@ -19,7 +19,7 @@ impl GetContainerRecipeOutput {
         self.container_recipe.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetContainerRecipeOutput {
+impl ::aws_types::request_id::RequestId for GetContainerRecipeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

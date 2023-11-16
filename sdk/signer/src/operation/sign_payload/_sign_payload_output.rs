@@ -31,7 +31,7 @@ impl SignPayloadOutput {
         self.signature.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for SignPayloadOutput {
+impl ::aws_types::request_id::RequestId for SignPayloadOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

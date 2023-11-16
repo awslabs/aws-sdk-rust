@@ -21,7 +21,7 @@ impl DescribeSubnetGroupsOutput {
         self.subnet_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSubnetGroupsOutput {
+impl ::aws_types::request_id::RequestId for DescribeSubnetGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

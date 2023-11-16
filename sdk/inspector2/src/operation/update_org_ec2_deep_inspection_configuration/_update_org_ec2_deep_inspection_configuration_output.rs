@@ -5,7 +5,7 @@
 pub struct UpdateOrgEc2DeepInspectionConfigurationOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateOrgEc2DeepInspectionConfigurationOutput {
+impl ::aws_types::request_id::RequestId for UpdateOrgEc2DeepInspectionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

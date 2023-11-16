@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SubmitTas
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_submit_task_state_change::de_submit_task_state_change_http_error(status, headers, body)
         } else {
@@ -294,7 +294,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SubmitTaskSta
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::submit_task_state_change::SubmitTaskStateChangeError {
+impl ::aws_types::request_id::RequestId for crate::operation::submit_task_state_change::SubmitTaskStateChangeError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

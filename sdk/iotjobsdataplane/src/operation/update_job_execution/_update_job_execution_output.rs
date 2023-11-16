@@ -19,7 +19,7 @@ impl UpdateJobExecutionOutput {
         self.job_document.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateJobExecutionOutput {
+impl ::aws_types::request_id::RequestId for UpdateJobExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

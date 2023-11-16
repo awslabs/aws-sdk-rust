@@ -14,7 +14,7 @@ impl UpdateRecipeJobOutput {
         self.name.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateRecipeJobOutput {
+impl ::aws_types::request_id::RequestId for UpdateRecipeJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

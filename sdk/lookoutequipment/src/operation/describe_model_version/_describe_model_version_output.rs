@@ -201,7 +201,7 @@ impl DescribeModelVersionOutput {
         self.auto_promotion_result_reason.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeModelVersionOutput {
+impl ::aws_types::request_id::RequestId for DescribeModelVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

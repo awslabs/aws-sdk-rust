@@ -22,7 +22,7 @@ impl ListAgentsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAgentsOutput {
+impl ::aws_types::request_id::RequestId for ListAgentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

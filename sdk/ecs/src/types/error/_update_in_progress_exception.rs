@@ -26,7 +26,7 @@ impl ::std::fmt::Display for UpdateInProgressException {
     }
 }
 impl ::std::error::Error for UpdateInProgressException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::UpdateInProgressException {
+impl ::aws_types::request_id::RequestId for crate::types::error::UpdateInProgressException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

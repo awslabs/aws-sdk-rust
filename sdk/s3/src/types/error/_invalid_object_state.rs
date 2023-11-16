@@ -46,7 +46,7 @@ impl crate::s3_request_id::RequestIdExt for crate::types::error::InvalidObjectSt
         self.meta().extended_request_id()
     }
 }
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidObjectState {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidObjectState {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

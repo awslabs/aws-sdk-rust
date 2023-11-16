@@ -45,7 +45,7 @@ impl ExportEarthObservationJobOutput {
         self.export_source_images
     }
 }
-impl ::aws_http::request_id::RequestId for ExportEarthObservationJobOutput {
+impl ::aws_types::request_id::RequestId for ExportEarthObservationJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

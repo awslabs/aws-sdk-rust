@@ -13,7 +13,7 @@ impl CreateNotebookOutput {
         self.notebook_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateNotebookOutput {
+impl ::aws_types::request_id::RequestId for CreateNotebookOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

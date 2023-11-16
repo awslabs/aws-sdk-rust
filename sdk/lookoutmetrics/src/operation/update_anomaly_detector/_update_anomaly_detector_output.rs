@@ -13,7 +13,7 @@ impl UpdateAnomalyDetectorOutput {
         self.anomaly_detector_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAnomalyDetectorOutput {
+impl ::aws_types::request_id::RequestId for UpdateAnomalyDetectorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

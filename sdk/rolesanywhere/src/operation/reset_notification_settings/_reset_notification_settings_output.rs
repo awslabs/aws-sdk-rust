@@ -13,7 +13,7 @@ impl ResetNotificationSettingsOutput {
         self.trust_anchor.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ResetNotificationSettingsOutput {
+impl ::aws_types::request_id::RequestId for ResetNotificationSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

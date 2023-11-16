@@ -21,7 +21,7 @@ impl ListAvailableResourceMetricsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAvailableResourceMetricsOutput {
+impl ::aws_types::request_id::RequestId for ListAvailableResourceMetricsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

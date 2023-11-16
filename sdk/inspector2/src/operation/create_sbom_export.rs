@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateSbo
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_create_sbom_export::de_create_sbom_export_http_error(status, headers, body)
         } else {
@@ -291,7 +291,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateSbomExp
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::create_sbom_export::CreateSbomExportError {
+impl ::aws_types::request_id::RequestId for crate::operation::create_sbom_export::CreateSbomExportError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

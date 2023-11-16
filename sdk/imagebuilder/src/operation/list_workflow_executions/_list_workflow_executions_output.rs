@@ -39,7 +39,7 @@ impl ListWorkflowExecutionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListWorkflowExecutionsOutput {
+impl ::aws_types::request_id::RequestId for ListWorkflowExecutionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

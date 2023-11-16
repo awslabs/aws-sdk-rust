@@ -27,7 +27,7 @@ impl ListTranscriptionJobsOutput {
         self.transcription_job_summaries.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTranscriptionJobsOutput {
+impl ::aws_types::request_id::RequestId for ListTranscriptionJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

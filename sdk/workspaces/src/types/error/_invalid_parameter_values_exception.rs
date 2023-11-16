@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidParameterValuesException {
     }
 }
 impl ::std::error::Error for InvalidParameterValuesException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidParameterValuesException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidParameterValuesException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

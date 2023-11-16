@@ -13,7 +13,7 @@ impl PutMultiRegionAccessPointPolicyOutput {
         self.request_token_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutMultiRegionAccessPointPolicyOutput {
+impl ::aws_types::request_id::RequestId for PutMultiRegionAccessPointPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

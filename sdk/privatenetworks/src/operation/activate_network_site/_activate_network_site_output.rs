@@ -13,7 +13,7 @@ impl ActivateNetworkSiteOutput {
         self.network_site.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ActivateNetworkSiteOutput {
+impl ::aws_types::request_id::RequestId for ActivateNetworkSiteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

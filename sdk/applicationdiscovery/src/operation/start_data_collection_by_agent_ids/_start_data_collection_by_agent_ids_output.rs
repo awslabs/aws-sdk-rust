@@ -15,7 +15,7 @@ impl StartDataCollectionByAgentIdsOutput {
         self.agents_configuration_status.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for StartDataCollectionByAgentIdsOutput {
+impl ::aws_types::request_id::RequestId for StartDataCollectionByAgentIdsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

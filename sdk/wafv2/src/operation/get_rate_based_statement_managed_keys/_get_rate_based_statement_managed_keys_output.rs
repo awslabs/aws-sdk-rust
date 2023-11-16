@@ -19,7 +19,7 @@ impl GetRateBasedStatementManagedKeysOutput {
         self.managed_keys_ipv6.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRateBasedStatementManagedKeysOutput {
+impl ::aws_types::request_id::RequestId for GetRateBasedStatementManagedKeysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

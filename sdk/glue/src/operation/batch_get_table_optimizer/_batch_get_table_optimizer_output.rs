@@ -23,7 +23,7 @@ impl BatchGetTableOptimizerOutput {
         self.failures.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetTableOptimizerOutput {
+impl ::aws_types::request_id::RequestId for BatchGetTableOptimizerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

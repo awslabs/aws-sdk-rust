@@ -25,7 +25,7 @@ impl CreateSnapshotFromVolumeRecoveryPointOutput {
         self.volume_recovery_point_time.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateSnapshotFromVolumeRecoveryPointOutput {
+impl ::aws_types::request_id::RequestId for CreateSnapshotFromVolumeRecoveryPointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

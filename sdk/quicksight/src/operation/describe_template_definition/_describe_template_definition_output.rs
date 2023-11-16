@@ -77,7 +77,7 @@ impl DescribeTemplateDefinitionOutput {
         self.request_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeTemplateDefinitionOutput {
+impl ::aws_types::request_id::RequestId for DescribeTemplateDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

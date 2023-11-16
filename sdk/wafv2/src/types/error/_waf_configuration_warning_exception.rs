@@ -28,7 +28,7 @@ impl ::std::fmt::Display for WafConfigurationWarningException {
     }
 }
 impl ::std::error::Error for WafConfigurationWarningException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::WafConfigurationWarningException {
+impl ::aws_types::request_id::RequestId for crate::types::error::WafConfigurationWarningException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

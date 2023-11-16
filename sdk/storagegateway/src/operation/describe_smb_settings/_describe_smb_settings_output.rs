@@ -79,7 +79,7 @@ impl DescribeSmbSettingsOutput {
         self.smb_local_groups.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSmbSettingsOutput {
+impl ::aws_types::request_id::RequestId for DescribeSmbSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

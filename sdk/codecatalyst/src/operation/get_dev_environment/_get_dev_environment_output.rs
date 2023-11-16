@@ -92,7 +92,7 @@ impl GetDevEnvironmentOutput {
         self.persistent_storage.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDevEnvironmentOutput {
+impl ::aws_types::request_id::RequestId for GetDevEnvironmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -15,7 +15,7 @@ impl GetEntitiesOutput {
         self.descriptions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEntitiesOutput {
+impl ::aws_types::request_id::RequestId for GetEntitiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -165,7 +165,7 @@ impl DescribeModelPackageOutput {
         self.skip_model_validation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeModelPackageOutput {
+impl ::aws_types::request_id::RequestId for DescribeModelPackageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

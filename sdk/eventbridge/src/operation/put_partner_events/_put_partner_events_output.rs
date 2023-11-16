@@ -21,7 +21,7 @@ impl PutPartnerEventsOutput {
         self.entries.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for PutPartnerEventsOutput {
+impl ::aws_types::request_id::RequestId for PutPartnerEventsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

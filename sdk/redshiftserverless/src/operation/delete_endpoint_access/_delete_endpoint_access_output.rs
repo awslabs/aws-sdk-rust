@@ -13,7 +13,7 @@ impl DeleteEndpointAccessOutput {
         self.endpoint.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteEndpointAccessOutput {
+impl ::aws_types::request_id::RequestId for DeleteEndpointAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

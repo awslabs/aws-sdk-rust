@@ -51,7 +51,7 @@ impl CreateSequenceStoreOutput {
         self.fallback_location.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateSequenceStoreOutput {
+impl ::aws_types::request_id::RequestId for CreateSequenceStoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

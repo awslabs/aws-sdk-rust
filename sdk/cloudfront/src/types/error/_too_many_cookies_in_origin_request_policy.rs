@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TooManyCookiesInOriginRequestPolicy {
     }
 }
 impl ::std::error::Error for TooManyCookiesInOriginRequestPolicy {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyCookiesInOriginRequestPolicy {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyCookiesInOriginRequestPolicy {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

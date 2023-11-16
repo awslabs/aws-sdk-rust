@@ -13,7 +13,7 @@ impl UpdateAssessmentFrameworkShareOutput {
         self.assessment_framework_share_request.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAssessmentFrameworkShareOutput {
+impl ::aws_types::request_id::RequestId for UpdateAssessmentFrameworkShareOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

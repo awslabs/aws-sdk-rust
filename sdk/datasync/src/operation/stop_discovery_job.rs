@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StopDisco
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_stop_discovery_job::de_stop_discovery_job_http_error(status, headers, body)
         } else {
@@ -289,7 +289,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StopDiscovery
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::stop_discovery_job::StopDiscoveryJobError {
+impl ::aws_types::request_id::RequestId for crate::operation::stop_discovery_job::StopDiscoveryJobError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

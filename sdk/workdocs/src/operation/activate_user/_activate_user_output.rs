@@ -13,7 +13,7 @@ impl ActivateUserOutput {
         self.user.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ActivateUserOutput {
+impl ::aws_types::request_id::RequestId for ActivateUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

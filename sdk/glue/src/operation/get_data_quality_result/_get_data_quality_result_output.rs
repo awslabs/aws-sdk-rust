@@ -75,7 +75,7 @@ impl GetDataQualityResultOutput {
         self.rule_results.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDataQualityResultOutput {
+impl ::aws_types::request_id::RequestId for GetDataQualityResultOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

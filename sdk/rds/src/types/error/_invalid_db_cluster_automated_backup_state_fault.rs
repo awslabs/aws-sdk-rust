@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidDbClusterAutomatedBackupStateFault {
     }
 }
 impl ::std::error::Error for InvalidDbClusterAutomatedBackupStateFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidDbClusterAutomatedBackupStateFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidDbClusterAutomatedBackupStateFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

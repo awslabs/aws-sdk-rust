@@ -51,7 +51,7 @@ impl GetModelManifestOutput {
         &self.last_modification_time
     }
 }
-impl ::aws_http::request_id::RequestId for GetModelManifestOutput {
+impl ::aws_types::request_id::RequestId for GetModelManifestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

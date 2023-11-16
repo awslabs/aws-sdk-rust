@@ -39,7 +39,7 @@ impl PurchaseHostReservationOutput {
         self.total_upfront_price.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PurchaseHostReservationOutput {
+impl ::aws_types::request_id::RequestId for PurchaseHostReservationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

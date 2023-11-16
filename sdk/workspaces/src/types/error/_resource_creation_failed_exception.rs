@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ResourceCreationFailedException {
     }
 }
 impl ::std::error::Error for ResourceCreationFailedException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ResourceCreationFailedException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ResourceCreationFailedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

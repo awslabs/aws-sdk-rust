@@ -6,12 +6,12 @@
 use aws_smithy_runtime_api::client::http::{
     HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpConnector,
 };
-use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::body::SdkBody;
 
-pub(crate) fn make_request(_req: http::Request<SdkBody>) -> Result<http::Response<SdkBody>, ()> {
+pub(crate) fn make_request(_req: HttpRequest) -> Result<HttpResponse, ()> {
     // Consumers here would pass the HTTP request to
     // the Wasm host in order to get the response back
     let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
@@ -31,7 +31,7 @@ pub(crate) fn make_request(_req: http::Request<SdkBody>) -> Result<http::Respons
         <ID>a3a42310-42d0-46d1-9745-0cee9f4fb851</ID>
     </Owner>
     </ListAllMyBucketsResult>";
-    Ok(http::Response::new(SdkBody::from(body)))
+    Ok(HttpResponse::try_from(http::Response::new(SdkBody::from(body))).unwrap())
 }
 
 #[derive(Default, Debug, Clone)]
@@ -45,7 +45,7 @@ impl WasmHttpConnector {
 impl HttpConnector for WasmHttpConnector {
     fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
         println!("Adapter: sending request...");
-        let res = make_request(request.into_http02x().unwrap()).unwrap();
+        let res = make_request(request).unwrap();
         println!("{:?}", res);
         HttpConnectorFuture::new(async move { Ok(res) })
     }

@@ -15,7 +15,7 @@ impl DescribeIdFormatOutput {
         self.statuses.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeIdFormatOutput {
+impl ::aws_types::request_id::RequestId for DescribeIdFormatOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

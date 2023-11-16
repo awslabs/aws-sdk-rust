@@ -25,7 +25,7 @@ impl DescribeComponentConfigurationOutput {
         self.component_configuration.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeComponentConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeComponentConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

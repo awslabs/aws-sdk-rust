@@ -13,7 +13,7 @@ impl DisableTransitGatewayRouteTablePropagationOutput {
         self.propagation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisableTransitGatewayRouteTablePropagationOutput {
+impl ::aws_types::request_id::RequestId for DisableTransitGatewayRouteTablePropagationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

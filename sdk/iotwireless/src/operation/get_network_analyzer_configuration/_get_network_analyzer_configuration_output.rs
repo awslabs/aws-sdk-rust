@@ -55,7 +55,7 @@ impl GetNetworkAnalyzerConfigurationOutput {
         self.multicast_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetNetworkAnalyzerConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetNetworkAnalyzerConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

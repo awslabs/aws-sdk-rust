@@ -43,7 +43,7 @@ impl ::std::fmt::Debug for AdminRespondToAuthChallengeOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for AdminRespondToAuthChallengeOutput {
+impl ::aws_types::request_id::RequestId for AdminRespondToAuthChallengeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -46,7 +46,7 @@ impl GetBulkPublishDetailsOutput {
         self.failure_message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBulkPublishDetailsOutput {
+impl ::aws_types::request_id::RequestId for GetBulkPublishDetailsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

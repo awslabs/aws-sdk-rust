@@ -15,7 +15,7 @@ impl ListSourceCredentialsOutput {
         self.source_credentials_infos.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListSourceCredentialsOutput {
+impl ::aws_types::request_id::RequestId for ListSourceCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

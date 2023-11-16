@@ -194,7 +194,7 @@ impl CreatePrivateVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePrivateVirtualInterfaceOutput {
+impl ::aws_types::request_id::RequestId for CreatePrivateVirtualInterfaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -20,7 +20,7 @@ impl DescribeLoaOutput {
         self.loa_content_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLoaOutput {
+impl ::aws_types::request_id::RequestId for DescribeLoaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

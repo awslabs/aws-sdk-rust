@@ -40,7 +40,7 @@ impl UpdateWorkerFleetOutput {
         self.additional_fixed_properties.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateWorkerFleetOutput {
+impl ::aws_types::request_id::RequestId for UpdateWorkerFleetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

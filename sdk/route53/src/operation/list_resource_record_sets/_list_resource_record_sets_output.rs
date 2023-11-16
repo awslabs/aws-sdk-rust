@@ -51,7 +51,7 @@ impl ListResourceRecordSetsOutput {
         self.max_items
     }
 }
-impl ::aws_http::request_id::RequestId for ListResourceRecordSetsOutput {
+impl ::aws_types::request_id::RequestId for ListResourceRecordSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

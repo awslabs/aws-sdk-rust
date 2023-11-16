@@ -13,7 +13,7 @@ impl DescribeSentimentDetectionJobOutput {
         self.sentiment_detection_job_properties.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSentimentDetectionJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeSentimentDetectionJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

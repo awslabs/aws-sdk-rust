@@ -6,7 +6,7 @@
 pub struct CreateConditionalForwarderOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for CreateConditionalForwarderOutput {
+impl ::aws_types::request_id::RequestId for CreateConditionalForwarderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

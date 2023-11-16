@@ -13,7 +13,7 @@ impl GetSubscriptionStateOutput {
         &self.subscription_state
     }
 }
-impl ::aws_http::request_id::RequestId for GetSubscriptionStateOutput {
+impl ::aws_types::request_id::RequestId for GetSubscriptionStateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

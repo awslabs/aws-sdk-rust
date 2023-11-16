@@ -15,7 +15,7 @@ impl DescribePartnersOutput {
         self.partner_integration_info_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePartnersOutput {
+impl ::aws_types::request_id::RequestId for DescribePartnersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

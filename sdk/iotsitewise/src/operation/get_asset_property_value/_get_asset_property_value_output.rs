@@ -13,7 +13,7 @@ impl GetAssetPropertyValueOutput {
         self.property_value.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAssetPropertyValueOutput {
+impl ::aws_types::request_id::RequestId for GetAssetPropertyValueOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

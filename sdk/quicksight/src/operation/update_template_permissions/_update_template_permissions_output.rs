@@ -39,7 +39,7 @@ impl UpdateTemplatePermissionsOutput {
         self.status
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateTemplatePermissionsOutput {
+impl ::aws_types::request_id::RequestId for UpdateTemplatePermissionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

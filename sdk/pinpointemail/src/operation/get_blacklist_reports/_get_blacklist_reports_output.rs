@@ -14,7 +14,7 @@ impl GetBlacklistReportsOutput {
         &self.blacklist_report
     }
 }
-impl ::aws_http::request_id::RequestId for GetBlacklistReportsOutput {
+impl ::aws_types::request_id::RequestId for GetBlacklistReportsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

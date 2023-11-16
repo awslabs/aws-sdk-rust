@@ -21,7 +21,7 @@ impl ListReportGroupsOutput {
         self.report_groups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListReportGroupsOutput {
+impl ::aws_types::request_id::RequestId for ListReportGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl FailoverPrimaryComputeOutput {
         self.cluster.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for FailoverPrimaryComputeOutput {
+impl ::aws_types::request_id::RequestId for FailoverPrimaryComputeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

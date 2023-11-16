@@ -14,7 +14,7 @@ impl GetIdOutput {
         self.identity_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetIdOutput {
+impl ::aws_types::request_id::RequestId for GetIdOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

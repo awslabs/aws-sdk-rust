@@ -29,7 +29,7 @@ impl AssignIpv6AddressesOutput {
         self.network_interface_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssignIpv6AddressesOutput {
+impl ::aws_types::request_id::RequestId for AssignIpv6AddressesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

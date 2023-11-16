@@ -26,7 +26,7 @@ impl ::std::fmt::Display for OpsMetadataNotFoundException {
     }
 }
 impl ::std::error::Error for OpsMetadataNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OpsMetadataNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OpsMetadataNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

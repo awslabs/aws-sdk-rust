@@ -14,7 +14,7 @@ impl SignalApplicationInstanceNodeInstancesOutput {
         self.application_instance_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SignalApplicationInstanceNodeInstancesOutput {
+impl ::aws_types::request_id::RequestId for SignalApplicationInstanceNodeInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

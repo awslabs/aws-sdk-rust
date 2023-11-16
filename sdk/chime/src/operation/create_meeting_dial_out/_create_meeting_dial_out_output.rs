@@ -13,7 +13,7 @@ impl CreateMeetingDialOutOutput {
         self.transaction_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateMeetingDialOutOutput {
+impl ::aws_types::request_id::RequestId for CreateMeetingDialOutOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl GetDeliveryDestinationPolicyOutput {
         self.policy.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDeliveryDestinationPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetDeliveryDestinationPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

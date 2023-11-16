@@ -37,7 +37,7 @@ impl ScheduleKeyDeletionOutput {
         self.pending_window_in_days
     }
 }
-impl ::aws_http::request_id::RequestId for ScheduleKeyDeletionOutput {
+impl ::aws_types::request_id::RequestId for ScheduleKeyDeletionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

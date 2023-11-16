@@ -70,7 +70,7 @@ impl GetAuthorizerOutput {
         self.authorizer_result_ttl_in_seconds
     }
 }
-impl ::aws_http::request_id::RequestId for GetAuthorizerOutput {
+impl ::aws_types::request_id::RequestId for GetAuthorizerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

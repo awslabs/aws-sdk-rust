@@ -147,7 +147,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetBucket
         if matches!(crate::rest_xml_unwrapped_errors::body_is_error(body), Ok(true)) {
             force_error = true;
         }
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_get_bucket_location::de_get_bucket_location_http_error(status, headers, body)
         } else {
@@ -271,10 +271,11 @@ mod get_bucket_location_request_test {
                     .expect("static value validated to member"),
             ))
             .build();
-        let mut http_response = ::http::response::Builder::new()
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http::response::Builder::new()
         .status(200)
                     .body(::aws_smithy_types::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<LocationConstraint xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">us-west-2</LocationConstraint>"))
-                    .unwrap();
+                    .unwrap()
+                    ).unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
         use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
@@ -347,7 +348,7 @@ impl crate::s3_request_id::RequestIdExt for crate::operation::get_bucket_locatio
         self.meta().extended_request_id()
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::get_bucket_location::GetBucketLocationError {
+impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_location::GetBucketLocationError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

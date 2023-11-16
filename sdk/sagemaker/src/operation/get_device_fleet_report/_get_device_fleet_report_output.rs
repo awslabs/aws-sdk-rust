@@ -59,7 +59,7 @@ impl GetDeviceFleetReportOutput {
         self.model_stats.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDeviceFleetReportOutput {
+impl ::aws_types::request_id::RequestId for GetDeviceFleetReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

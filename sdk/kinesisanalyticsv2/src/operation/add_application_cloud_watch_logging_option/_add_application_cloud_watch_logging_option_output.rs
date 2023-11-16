@@ -27,7 +27,7 @@ impl AddApplicationCloudWatchLoggingOptionOutput {
         self.cloud_watch_logging_option_descriptions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AddApplicationCloudWatchLoggingOptionOutput {
+impl ::aws_types::request_id::RequestId for AddApplicationCloudWatchLoggingOptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

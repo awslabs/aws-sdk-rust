@@ -13,7 +13,7 @@ impl GetDelegatedAdminAccountOutput {
         self.delegated_admin.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDelegatedAdminAccountOutput {
+impl ::aws_types::request_id::RequestId for GetDelegatedAdminAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CloudWatchLogsDeliveryUnavailableException {
     }
 }
 impl ::std::error::Error for CloudWatchLogsDeliveryUnavailableException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CloudWatchLogsDeliveryUnavailableException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CloudWatchLogsDeliveryUnavailableException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

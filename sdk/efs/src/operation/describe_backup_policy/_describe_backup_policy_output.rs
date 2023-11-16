@@ -13,7 +13,7 @@ impl DescribeBackupPolicyOutput {
         self.backup_policy.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBackupPolicyOutput {
+impl ::aws_types::request_id::RequestId for DescribeBackupPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

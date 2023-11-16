@@ -14,7 +14,7 @@ impl CreateModelCustomizationJobOutput {
         self.job_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateModelCustomizationJobOutput {
+impl ::aws_types::request_id::RequestId for CreateModelCustomizationJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

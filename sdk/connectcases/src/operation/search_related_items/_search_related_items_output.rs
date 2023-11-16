@@ -20,7 +20,7 @@ impl SearchRelatedItemsOutput {
         self.related_items.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SearchRelatedItemsOutput {
+impl ::aws_types::request_id::RequestId for SearchRelatedItemsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

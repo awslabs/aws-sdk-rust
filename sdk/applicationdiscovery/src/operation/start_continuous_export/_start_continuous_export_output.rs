@@ -43,7 +43,7 @@ impl StartContinuousExportOutput {
         self.schema_storage_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartContinuousExportOutput {
+impl ::aws_types::request_id::RequestId for StartContinuousExportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

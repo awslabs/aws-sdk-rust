@@ -53,7 +53,7 @@ impl GetWorkspaceOutput {
         &self.update_date_time
     }
 }
-impl ::aws_http::request_id::RequestId for GetWorkspaceOutput {
+impl ::aws_types::request_id::RequestId for GetWorkspaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

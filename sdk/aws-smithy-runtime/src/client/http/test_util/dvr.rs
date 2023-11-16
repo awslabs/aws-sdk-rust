@@ -9,7 +9,7 @@
 //!
 //! DVR is an extremely experimental record & replay framework that supports multi-frame HTTP request / response traffic.
 
-use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::http::Headers;
 use aws_smithy_types::base64;
 use bytes::Bytes;
@@ -80,7 +80,6 @@ pub struct Request {
 #[derive(Debug, Serialize, Deserialize, Clone, Eq, PartialEq)]
 pub struct Response {
     status: u16,
-    version: String,
     headers: HashMap<String, Vec<String>>,
 }
 
@@ -131,15 +130,32 @@ fn headers_to_map_02x(headers: &HeaderMap) -> HashMap<String, Vec<String>> {
     out
 }
 
+fn headers_to_map(headers: &Headers) -> HashMap<String, Vec<String>> {
+    let mut out: HashMap<_, Vec<_>> = HashMap::new();
+    for (header_name, header_value) in headers.iter() {
+        let entry = out.entry(header_name.to_string()).or_default();
+        entry.push(
+            std::str::from_utf8(header_value.as_ref())
+                .unwrap()
+                .to_string(),
+        );
+    }
+    out
+}
+
 impl<'a, B> From<&'a http::Response<B>> for Response {
     fn from(resp: &'a http::Response<B>) -> Self {
         let status = resp.status().as_u16();
-        let version = format!("{:?}", resp.version());
         let headers = headers_to_map_02x(resp.headers());
+        Self { status, headers }
+    }
+}
+
+impl From<&HttpResponse> for Response {
+    fn from(resp: &HttpResponse) -> Self {
         Self {
-            status,
-            version,
-            headers,
+            status: resp.status().into(),
+            headers: headers_to_map(resp.headers()),
         }
     }
 }

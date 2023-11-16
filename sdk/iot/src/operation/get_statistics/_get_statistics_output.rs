@@ -13,7 +13,7 @@ impl GetStatisticsOutput {
         self.statistics.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetStatisticsOutput {
+impl ::aws_types::request_id::RequestId for GetStatisticsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

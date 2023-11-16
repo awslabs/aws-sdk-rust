@@ -21,7 +21,7 @@ impl BatchAssociateResourceOutput {
         self.failed_items.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchAssociateResourceOutput {
+impl ::aws_types::request_id::RequestId for BatchAssociateResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -34,7 +34,7 @@ impl ::std::fmt::Display for InternalException {
     }
 }
 impl ::std::error::Error for InternalException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InternalException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InternalException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

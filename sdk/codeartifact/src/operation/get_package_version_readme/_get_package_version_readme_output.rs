@@ -53,7 +53,7 @@ impl GetPackageVersionReadmeOutput {
         self.readme.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPackageVersionReadmeOutput {
+impl ::aws_types::request_id::RequestId for GetPackageVersionReadmeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

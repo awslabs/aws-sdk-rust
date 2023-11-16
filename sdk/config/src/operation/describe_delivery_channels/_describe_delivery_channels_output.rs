@@ -16,7 +16,7 @@ impl DescribeDeliveryChannelsOutput {
         self.delivery_channels.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDeliveryChannelsOutput {
+impl ::aws_types::request_id::RequestId for DescribeDeliveryChannelsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl GetWebAclForResourceOutput {
         self.web_acl.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetWebAclForResourceOutput {
+impl ::aws_types::request_id::RequestId for GetWebAclForResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

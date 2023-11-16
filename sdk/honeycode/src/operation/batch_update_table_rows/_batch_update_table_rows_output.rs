@@ -21,7 +21,7 @@ impl BatchUpdateTableRowsOutput {
         self.failed_batch_items.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchUpdateTableRowsOutput {
+impl ::aws_types::request_id::RequestId for BatchUpdateTableRowsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

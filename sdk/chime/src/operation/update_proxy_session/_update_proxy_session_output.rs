@@ -13,7 +13,7 @@ impl UpdateProxySessionOutput {
         self.proxy_session.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateProxySessionOutput {
+impl ::aws_types::request_id::RequestId for UpdateProxySessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

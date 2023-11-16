@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ResponseHeadersPolicyInUse {
     }
 }
 impl ::std::error::Error for ResponseHeadersPolicyInUse {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ResponseHeadersPolicyInUse {
+impl ::aws_types::request_id::RequestId for crate::types::error::ResponseHeadersPolicyInUse {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

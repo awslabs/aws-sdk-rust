@@ -42,7 +42,7 @@ impl TranslateTextOutput {
         self.applied_settings.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for TranslateTextOutput {
+impl ::aws_types::request_id::RequestId for TranslateTextOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl StartAppBlockBuilderOutput {
         self.app_block_builder.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartAppBlockBuilderOutput {
+impl ::aws_types::request_id::RequestId for StartAppBlockBuilderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

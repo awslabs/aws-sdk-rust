@@ -33,7 +33,7 @@ impl SearchFacesByImageOutput {
         self.face_model_version.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SearchFacesByImageOutput {
+impl ::aws_types::request_id::RequestId for SearchFacesByImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

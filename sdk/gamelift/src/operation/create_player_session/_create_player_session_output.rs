@@ -13,7 +13,7 @@ impl CreatePlayerSessionOutput {
         self.player_session.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePlayerSessionOutput {
+impl ::aws_types::request_id::RequestId for CreatePlayerSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

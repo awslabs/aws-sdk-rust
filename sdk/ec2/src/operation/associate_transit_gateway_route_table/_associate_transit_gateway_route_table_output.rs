@@ -13,7 +13,7 @@ impl AssociateTransitGatewayRouteTableOutput {
         self.association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateTransitGatewayRouteTableOutput {
+impl ::aws_types::request_id::RequestId for AssociateTransitGatewayRouteTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

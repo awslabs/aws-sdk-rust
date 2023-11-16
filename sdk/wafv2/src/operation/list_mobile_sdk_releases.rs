@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListMobil
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_mobile_sdk_releases::de_list_mobile_sdk_releases_http_error(status, headers, body)
         } else {
@@ -296,7 +296,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListMobileSdk
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

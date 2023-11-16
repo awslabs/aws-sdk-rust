@@ -5,7 +5,7 @@
 pub struct StartContactRecordingOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for StartContactRecordingOutput {
+impl ::aws_types::request_id::RequestId for StartContactRecordingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

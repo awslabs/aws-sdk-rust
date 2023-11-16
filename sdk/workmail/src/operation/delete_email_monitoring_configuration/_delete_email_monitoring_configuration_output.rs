@@ -5,7 +5,7 @@
 pub struct DeleteEmailMonitoringConfigurationOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteEmailMonitoringConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DeleteEmailMonitoringConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

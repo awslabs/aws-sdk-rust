@@ -21,7 +21,7 @@ impl DescribeDbClusterSnapshotsOutput {
         self.db_cluster_snapshots.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDbClusterSnapshotsOutput {
+impl ::aws_types::request_id::RequestId for DescribeDbClusterSnapshotsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

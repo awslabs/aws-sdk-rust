@@ -26,7 +26,7 @@ impl ::std::fmt::Display for QueryArgProfileEmpty {
     }
 }
 impl ::std::error::Error for QueryArgProfileEmpty {}
-impl ::aws_http::request_id::RequestId for crate::types::error::QueryArgProfileEmpty {
+impl ::aws_types::request_id::RequestId for crate::types::error::QueryArgProfileEmpty {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

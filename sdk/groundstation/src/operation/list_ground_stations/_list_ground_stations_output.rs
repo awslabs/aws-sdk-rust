@@ -22,7 +22,7 @@ impl ListGroundStationsOutput {
         self.ground_station_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListGroundStationsOutput {
+impl ::aws_types::request_id::RequestId for ListGroundStationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

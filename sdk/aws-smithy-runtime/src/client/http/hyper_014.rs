@@ -12,7 +12,7 @@ use aws_smithy_runtime_api::client::http::{
     HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpClient,
     SharedHttpConnector,
 };
-use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::client::result::ConnectorError;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::shared::IntoShared;
@@ -345,9 +345,12 @@ where
     C::Error: Into<BoxError>,
 {
     fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
-        let mut request = request
-            .into_http02x()
-            .expect("TODO(httpRefactor): no panics");
+        let mut request = match request.try_into_http02x() {
+            Ok(request) => request,
+            Err(err) => {
+                return HttpConnectorFuture::ready(Err(ConnectorError::other(err.into(), None)));
+            }
+        };
         let capture_connection = capture_connection(&mut request);
         if let Some(capture_smithy_connection) =
             request.extensions().get::<CaptureSmithyConnection>()
@@ -358,10 +361,14 @@ where
         let mut client = self.client.clone();
         let fut = client.call(request);
         HttpConnectorFuture::new(async move {
-            Ok(fut
+            let response = fut
                 .await
                 .map_err(downcast_error)?
-                .map(SdkBody::from_body_0_4))
+                .map(SdkBody::from_body_0_4);
+            match HttpResponse::try_from(response) {
+                Ok(response) => Ok(response),
+                Err(err) => Err(ConnectorError::other(err.into(), None)),
+            }
         })
     }
 }

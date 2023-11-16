@@ -13,7 +13,7 @@ impl GetAlternateContactOutput {
         self.alternate_contact.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAlternateContactOutput {
+impl ::aws_types::request_id::RequestId for GetAlternateContactOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

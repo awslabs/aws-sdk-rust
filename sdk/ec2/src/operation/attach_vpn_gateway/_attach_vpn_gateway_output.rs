@@ -14,7 +14,7 @@ impl AttachVpnGatewayOutput {
         self.vpc_attachment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AttachVpnGatewayOutput {
+impl ::aws_types::request_id::RequestId for AttachVpnGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

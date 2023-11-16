@@ -40,7 +40,7 @@ impl ::std::fmt::Display for SessionNotFoundException {
     }
 }
 impl ::std::error::Error for SessionNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SessionNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::SessionNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

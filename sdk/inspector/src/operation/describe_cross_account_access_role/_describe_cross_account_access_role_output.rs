@@ -26,7 +26,7 @@ impl DescribeCrossAccountAccessRoleOutput {
         &self.registered_at
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeCrossAccountAccessRoleOutput {
+impl ::aws_types::request_id::RequestId for DescribeCrossAccountAccessRoleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

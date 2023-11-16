@@ -14,7 +14,7 @@ impl ConfirmDeviceOutput {
         self.user_confirmation_necessary
     }
 }
-impl ::aws_http::request_id::RequestId for ConfirmDeviceOutput {
+impl ::aws_types::request_id::RequestId for ConfirmDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -16,7 +16,7 @@ impl DescribeNfsFileSharesOutput {
         self.nfs_file_share_info_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeNfsFileSharesOutput {
+impl ::aws_types::request_id::RequestId for DescribeNfsFileSharesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

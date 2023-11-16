@@ -5,7 +5,7 @@
 pub struct PutRolePolicyOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutRolePolicyOutput {
+impl ::aws_types::request_id::RequestId for PutRolePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

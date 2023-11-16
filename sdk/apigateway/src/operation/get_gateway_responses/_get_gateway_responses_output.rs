@@ -22,7 +22,7 @@ impl GetGatewayResponsesOutput {
         self.position.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetGatewayResponsesOutput {
+impl ::aws_types::request_id::RequestId for GetGatewayResponsesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

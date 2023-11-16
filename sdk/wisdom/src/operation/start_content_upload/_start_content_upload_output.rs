@@ -44,7 +44,7 @@ impl ::std::fmt::Debug for StartContentUploadOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for StartContentUploadOutput {
+impl ::aws_types::request_id::RequestId for StartContentUploadOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

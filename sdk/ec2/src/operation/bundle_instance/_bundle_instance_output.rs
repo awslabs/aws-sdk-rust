@@ -14,7 +14,7 @@ impl BundleInstanceOutput {
         self.bundle_task.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for BundleInstanceOutput {
+impl ::aws_types::request_id::RequestId for BundleInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

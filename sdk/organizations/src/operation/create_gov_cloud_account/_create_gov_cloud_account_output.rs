@@ -13,7 +13,7 @@ impl CreateGovCloudAccountOutput {
         self.create_account_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateGovCloudAccountOutput {
+impl ::aws_types::request_id::RequestId for CreateGovCloudAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -45,7 +45,7 @@ impl DescribeFolderResolvedPermissionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFolderResolvedPermissionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeFolderResolvedPermissionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

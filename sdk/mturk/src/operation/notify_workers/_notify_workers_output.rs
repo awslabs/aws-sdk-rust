@@ -15,7 +15,7 @@ impl NotifyWorkersOutput {
         self.notify_workers_failure_statuses.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for NotifyWorkersOutput {
+impl ::aws_types::request_id::RequestId for NotifyWorkersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

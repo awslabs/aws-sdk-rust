@@ -13,7 +13,7 @@ impl CreateModelPackageGroupOutput {
         self.model_package_group_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateModelPackageGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateModelPackageGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

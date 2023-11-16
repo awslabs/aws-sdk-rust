@@ -137,7 +137,7 @@ impl DescribeAutoMlJobOutput {
         self.model_deploy_result.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAutoMlJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeAutoMlJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

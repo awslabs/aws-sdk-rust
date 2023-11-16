@@ -34,7 +34,7 @@ impl ::std::fmt::Display for InvalidZipFileException {
     }
 }
 impl ::std::error::Error for InvalidZipFileException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidZipFileException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidZipFileException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

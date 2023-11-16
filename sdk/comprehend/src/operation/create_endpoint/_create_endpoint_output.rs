@@ -19,7 +19,7 @@ impl CreateEndpointOutput {
         self.model_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateEndpointOutput {
+impl ::aws_types::request_id::RequestId for CreateEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

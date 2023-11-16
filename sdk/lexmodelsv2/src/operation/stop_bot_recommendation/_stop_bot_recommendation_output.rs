@@ -37,7 +37,7 @@ impl StopBotRecommendationOutput {
         self.bot_recommendation_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StopBotRecommendationOutput {
+impl ::aws_types::request_id::RequestId for StopBotRecommendationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

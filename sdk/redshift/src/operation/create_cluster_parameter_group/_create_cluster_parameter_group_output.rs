@@ -13,7 +13,7 @@ impl CreateClusterParameterGroupOutput {
         self.cluster_parameter_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateClusterParameterGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateClusterParameterGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

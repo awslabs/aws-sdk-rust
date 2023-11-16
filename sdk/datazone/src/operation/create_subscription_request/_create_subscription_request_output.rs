@@ -104,7 +104,7 @@ impl ::std::fmt::Debug for CreateSubscriptionRequestOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateSubscriptionRequestOutput {
+impl ::aws_types::request_id::RequestId for CreateSubscriptionRequestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

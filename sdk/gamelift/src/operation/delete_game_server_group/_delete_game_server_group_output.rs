@@ -13,7 +13,7 @@ impl DeleteGameServerGroupOutput {
         self.game_server_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteGameServerGroupOutput {
+impl ::aws_types::request_id::RequestId for DeleteGameServerGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

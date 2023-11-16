@@ -37,7 +37,7 @@ impl DescribeCodeRepositoryOutput {
         self.git_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeCodeRepositoryOutput {
+impl ::aws_types::request_id::RequestId for DescribeCodeRepositoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

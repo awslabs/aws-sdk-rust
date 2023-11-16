@@ -13,7 +13,7 @@ impl DisassociateNodeOutput {
         self.node_association_status_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisassociateNodeOutput {
+impl ::aws_types::request_id::RequestId for DisassociateNodeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

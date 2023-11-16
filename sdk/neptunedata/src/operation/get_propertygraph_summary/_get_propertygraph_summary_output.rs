@@ -19,7 +19,7 @@ impl GetPropertygraphSummaryOutput {
         self.payload.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPropertygraphSummaryOutput {
+impl ::aws_types::request_id::RequestId for GetPropertygraphSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

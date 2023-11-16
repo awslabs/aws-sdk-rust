@@ -13,7 +13,7 @@ impl PurchaseReservedCacheNodesOfferingOutput {
         self.reserved_cache_node.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PurchaseReservedCacheNodesOfferingOutput {
+impl ::aws_types::request_id::RequestId for PurchaseReservedCacheNodesOfferingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

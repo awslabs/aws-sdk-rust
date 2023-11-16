@@ -25,7 +25,7 @@ impl DeleteSecretOutput {
         self.deletion_date.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteSecretOutput {
+impl ::aws_types::request_id::RequestId for DeleteSecretOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

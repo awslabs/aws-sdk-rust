@@ -13,7 +13,7 @@ impl CreateVpcPeeringAuthorizationOutput {
         self.vpc_peering_authorization.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateVpcPeeringAuthorizationOutput {
+impl ::aws_types::request_id::RequestId for CreateVpcPeeringAuthorizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

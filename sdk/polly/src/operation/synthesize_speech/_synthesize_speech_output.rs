@@ -39,7 +39,7 @@ impl SynthesizeSpeechOutput {
         self.request_characters
     }
 }
-impl ::aws_http::request_id::RequestId for SynthesizeSpeechOutput {
+impl ::aws_types::request_id::RequestId for SynthesizeSpeechOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

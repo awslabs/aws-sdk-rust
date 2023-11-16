@@ -65,7 +65,7 @@ impl UpdateVpcLinkOutput {
         self.vpc_link_version.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateVpcLinkOutput {
+impl ::aws_types::request_id::RequestId for UpdateVpcLinkOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

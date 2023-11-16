@@ -19,7 +19,7 @@ impl ClaimDevicesByClaimCodeOutput {
         self.total
     }
 }
-impl ::aws_http::request_id::RequestId for ClaimDevicesByClaimCodeOutput {
+impl ::aws_types::request_id::RequestId for ClaimDevicesByClaimCodeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

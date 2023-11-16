@@ -26,7 +26,7 @@ impl ::std::fmt::Display for MaximumResultReturnedException {
     }
 }
 impl ::std::error::Error for MaximumResultReturnedException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::MaximumResultReturnedException {
+impl ::aws_types::request_id::RequestId for crate::types::error::MaximumResultReturnedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

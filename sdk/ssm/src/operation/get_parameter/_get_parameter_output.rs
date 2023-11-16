@@ -13,7 +13,7 @@ impl GetParameterOutput {
         self.parameter.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetParameterOutput {
+impl ::aws_types::request_id::RequestId for GetParameterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

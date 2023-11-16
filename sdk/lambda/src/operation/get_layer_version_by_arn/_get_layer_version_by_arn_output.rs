@@ -67,7 +67,7 @@ impl GetLayerVersionByArnOutput {
         self.compatible_architectures.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLayerVersionByArnOutput {
+impl ::aws_types::request_id::RequestId for GetLayerVersionByArnOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

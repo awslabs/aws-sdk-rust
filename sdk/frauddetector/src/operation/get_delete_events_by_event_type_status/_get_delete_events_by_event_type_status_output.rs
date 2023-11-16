@@ -19,7 +19,7 @@ impl GetDeleteEventsByEventTypeStatusOutput {
         self.events_deletion_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDeleteEventsByEventTypeStatusOutput {
+impl ::aws_types::request_id::RequestId for GetDeleteEventsByEventTypeStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

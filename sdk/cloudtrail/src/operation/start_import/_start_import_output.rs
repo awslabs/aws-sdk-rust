@@ -57,7 +57,7 @@ impl StartImportOutput {
         self.updated_timestamp.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartImportOutput {
+impl ::aws_types::request_id::RequestId for StartImportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

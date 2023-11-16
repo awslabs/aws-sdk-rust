@@ -71,7 +71,7 @@ impl DescribePackageVersionOutput {
         self.registered_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePackageVersionOutput {
+impl ::aws_types::request_id::RequestId for DescribePackageVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

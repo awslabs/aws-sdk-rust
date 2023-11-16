@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidFormatFault {
     }
 }
 impl ::std::error::Error for InvalidFormatFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidFormatFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidFormatFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

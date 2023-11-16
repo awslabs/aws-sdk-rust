@@ -43,7 +43,7 @@ impl GetFindingsReportStatusOutput {
         self.filter_criteria.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetFindingsReportStatusOutput {
+impl ::aws_types::request_id::RequestId for GetFindingsReportStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

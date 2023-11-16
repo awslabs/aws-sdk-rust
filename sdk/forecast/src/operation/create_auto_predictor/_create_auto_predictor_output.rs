@@ -13,7 +13,7 @@ impl CreateAutoPredictorOutput {
         self.predictor_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateAutoPredictorOutput {
+impl ::aws_types::request_id::RequestId for CreateAutoPredictorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

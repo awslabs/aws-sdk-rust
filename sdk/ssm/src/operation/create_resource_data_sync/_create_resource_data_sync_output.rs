@@ -5,7 +5,7 @@
 pub struct CreateResourceDataSyncOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for CreateResourceDataSyncOutput {
+impl ::aws_types::request_id::RequestId for CreateResourceDataSyncOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

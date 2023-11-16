@@ -13,7 +13,7 @@ impl GetPhoneNumberOrderOutput {
         self.phone_number_order.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetPhoneNumberOrderOutput {
+impl ::aws_types::request_id::RequestId for GetPhoneNumberOrderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

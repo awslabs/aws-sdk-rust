@@ -16,7 +16,7 @@ impl UpdateRecordsOutput {
         self.records.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateRecordsOutput {
+impl ::aws_types::request_id::RequestId for UpdateRecordsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

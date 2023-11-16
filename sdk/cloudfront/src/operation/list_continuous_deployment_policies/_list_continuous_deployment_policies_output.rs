@@ -13,7 +13,7 @@ impl ListContinuousDeploymentPoliciesOutput {
         self.continuous_deployment_policy_list.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListContinuousDeploymentPoliciesOutput {
+impl ::aws_types::request_id::RequestId for ListContinuousDeploymentPoliciesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

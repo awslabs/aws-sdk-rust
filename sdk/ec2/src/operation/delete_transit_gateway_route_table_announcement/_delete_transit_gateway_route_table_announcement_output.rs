@@ -13,7 +13,7 @@ impl DeleteTransitGatewayRouteTableAnnouncementOutput {
         self.transit_gateway_route_table_announcement.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteTransitGatewayRouteTableAnnouncementOutput {
+impl ::aws_types::request_id::RequestId for DeleteTransitGatewayRouteTableAnnouncementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

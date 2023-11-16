@@ -15,7 +15,7 @@ impl GetTypedLinkFacetInformationOutput {
         self.identity_attribute_order.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTypedLinkFacetInformationOutput {
+impl ::aws_types::request_id::RequestId for GetTypedLinkFacetInformationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

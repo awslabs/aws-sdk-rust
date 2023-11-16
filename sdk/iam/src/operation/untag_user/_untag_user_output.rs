@@ -5,7 +5,7 @@
 pub struct UntagUserOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UntagUserOutput {
+impl ::aws_types::request_id::RequestId for UntagUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

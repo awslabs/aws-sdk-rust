@@ -34,7 +34,7 @@ impl ::std::fmt::Display for DirectoryInDesiredStateException {
     }
 }
 impl ::std::error::Error for DirectoryInDesiredStateException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DirectoryInDesiredStateException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DirectoryInDesiredStateException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

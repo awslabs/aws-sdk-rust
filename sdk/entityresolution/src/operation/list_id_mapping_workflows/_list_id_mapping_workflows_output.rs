@@ -21,7 +21,7 @@ impl ListIdMappingWorkflowsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListIdMappingWorkflowsOutput {
+impl ::aws_types::request_id::RequestId for ListIdMappingWorkflowsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

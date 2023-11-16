@@ -6,7 +6,7 @@
 pub struct DeleteEmailIdentityPolicyOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteEmailIdentityPolicyOutput {
+impl ::aws_types::request_id::RequestId for DeleteEmailIdentityPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

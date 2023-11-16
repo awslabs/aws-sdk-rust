@@ -13,7 +13,7 @@ impl PutConfigurationAggregatorOutput {
         self.configuration_aggregator.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutConfigurationAggregatorOutput {
+impl ::aws_types::request_id::RequestId for PutConfigurationAggregatorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

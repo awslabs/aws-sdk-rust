@@ -15,7 +15,7 @@ impl DescribeDomainsOutput {
         self.domain_status_list.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDomainsOutput {
+impl ::aws_types::request_id::RequestId for DescribeDomainsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

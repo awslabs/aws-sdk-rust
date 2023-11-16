@@ -13,7 +13,7 @@ impl DeleteWorkgroupOutput {
         self.workgroup.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteWorkgroupOutput {
+impl ::aws_types::request_id::RequestId for DeleteWorkgroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for NoAvailableDeliveryChannelException {
     }
 }
 impl ::std::error::Error for NoAvailableDeliveryChannelException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::NoAvailableDeliveryChannelException {
+impl ::aws_types::request_id::RequestId for crate::types::error::NoAvailableDeliveryChannelException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

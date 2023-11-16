@@ -45,7 +45,7 @@ impl GetVocabularyOutput {
         self.download_uri.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetVocabularyOutput {
+impl ::aws_types::request_id::RequestId for GetVocabularyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

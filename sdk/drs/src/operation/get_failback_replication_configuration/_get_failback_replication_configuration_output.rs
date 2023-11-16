@@ -32,7 +32,7 @@ impl GetFailbackReplicationConfigurationOutput {
         self.use_private_ip
     }
 }
-impl ::aws_http::request_id::RequestId for GetFailbackReplicationConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetFailbackReplicationConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

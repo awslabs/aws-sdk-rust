@@ -21,7 +21,7 @@ impl ListDataQualityRulesetEvaluationRunsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListDataQualityRulesetEvaluationRunsOutput {
+impl ::aws_types::request_id::RequestId for ListDataQualityRulesetEvaluationRunsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

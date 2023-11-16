@@ -13,7 +13,7 @@ impl TestSegmentPatternOutput {
         self.r#match
     }
 }
-impl ::aws_http::request_id::RequestId for TestSegmentPatternOutput {
+impl ::aws_types::request_id::RequestId for TestSegmentPatternOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

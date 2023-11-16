@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CfnRegistryException {
     }
 }
 impl ::std::error::Error for CfnRegistryException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CfnRegistryException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CfnRegistryException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

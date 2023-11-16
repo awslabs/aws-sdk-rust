@@ -43,7 +43,7 @@ impl DeleteRouteOutput {
         self.last_updated_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteRouteOutput {
+impl ::aws_types::request_id::RequestId for DeleteRouteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

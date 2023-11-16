@@ -13,7 +13,7 @@ impl AuthorizeVpcEndpointAccessOutput {
         self.authorized_principal.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AuthorizeVpcEndpointAccessOutput {
+impl ::aws_types::request_id::RequestId for AuthorizeVpcEndpointAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

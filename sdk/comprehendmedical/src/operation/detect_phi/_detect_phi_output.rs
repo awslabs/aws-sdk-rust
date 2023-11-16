@@ -27,7 +27,7 @@ impl DetectPhiOutput {
         self.model_version.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DetectPhiOutput {
+impl ::aws_types::request_id::RequestId for DetectPhiOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

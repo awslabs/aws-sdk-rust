@@ -14,7 +14,7 @@ impl GetIdentityNotificationAttributesOutput {
         &self.notification_attributes
     }
 }
-impl ::aws_http::request_id::RequestId for GetIdentityNotificationAttributesOutput {
+impl ::aws_types::request_id::RequestId for GetIdentityNotificationAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

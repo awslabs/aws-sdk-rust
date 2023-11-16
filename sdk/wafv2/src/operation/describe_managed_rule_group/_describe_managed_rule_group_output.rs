@@ -73,7 +73,7 @@ impl DescribeManagedRuleGroupOutput {
         self.consumed_labels.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeManagedRuleGroupOutput {
+impl ::aws_types::request_id::RequestId for DescribeManagedRuleGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

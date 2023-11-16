@@ -148,7 +148,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetInterp
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_get_interpolated_asset_property_values::de_get_interpolated_asset_property_values_http_error(
                 status, headers, body,
@@ -389,7 +389,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetInterpolat
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError {
+impl ::aws_types::request_id::RequestId for crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

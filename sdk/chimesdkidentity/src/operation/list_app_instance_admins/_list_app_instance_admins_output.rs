@@ -37,7 +37,7 @@ impl ::std::fmt::Debug for ListAppInstanceAdminsOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAppInstanceAdminsOutput {
+impl ::aws_types::request_id::RequestId for ListAppInstanceAdminsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

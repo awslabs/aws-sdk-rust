@@ -13,7 +13,7 @@ impl UpdateMonitoringScheduleOutput {
         self.monitoring_schedule_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateMonitoringScheduleOutput {
+impl ::aws_types::request_id::RequestId for UpdateMonitoringScheduleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

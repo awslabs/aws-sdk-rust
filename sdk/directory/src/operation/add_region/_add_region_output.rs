@@ -5,7 +5,7 @@
 pub struct AddRegionOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for AddRegionOutput {
+impl ::aws_types::request_id::RequestId for AddRegionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

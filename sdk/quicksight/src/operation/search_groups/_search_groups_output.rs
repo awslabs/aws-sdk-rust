@@ -33,7 +33,7 @@ impl SearchGroupsOutput {
         self.status
     }
 }
-impl ::aws_http::request_id::RequestId for SearchGroupsOutput {
+impl ::aws_types::request_id::RequestId for SearchGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

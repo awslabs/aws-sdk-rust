@@ -26,7 +26,7 @@ impl ::std::fmt::Display for RootNotFoundException {
     }
 }
 impl ::std::error::Error for RootNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::RootNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::RootNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

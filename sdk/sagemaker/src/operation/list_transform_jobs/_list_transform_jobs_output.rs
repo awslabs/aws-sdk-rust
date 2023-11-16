@@ -21,7 +21,7 @@ impl ListTransformJobsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTransformJobsOutput {
+impl ::aws_types::request_id::RequestId for ListTransformJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

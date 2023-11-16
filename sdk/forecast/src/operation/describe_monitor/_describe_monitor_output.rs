@@ -73,7 +73,7 @@ impl DescribeMonitorOutput {
         self.estimated_evaluation_time_remaining_in_minutes
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeMonitorOutput {
+impl ::aws_types::request_id::RequestId for DescribeMonitorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

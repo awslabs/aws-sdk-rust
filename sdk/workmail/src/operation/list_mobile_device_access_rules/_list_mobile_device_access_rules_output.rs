@@ -15,7 +15,7 @@ impl ListMobileDeviceAccessRulesOutput {
         self.rules.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListMobileDeviceAccessRulesOutput {
+impl ::aws_types::request_id::RequestId for ListMobileDeviceAccessRulesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

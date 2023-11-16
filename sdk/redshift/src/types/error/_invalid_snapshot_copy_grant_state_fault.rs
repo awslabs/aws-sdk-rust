@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidSnapshotCopyGrantStateFault {
     }
 }
 impl ::std::error::Error for InvalidSnapshotCopyGrantStateFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidSnapshotCopyGrantStateFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidSnapshotCopyGrantStateFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

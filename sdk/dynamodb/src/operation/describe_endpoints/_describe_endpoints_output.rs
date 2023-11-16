@@ -14,7 +14,7 @@ impl DescribeEndpointsOutput {
         self.endpoints.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEndpointsOutput {
+impl ::aws_types::request_id::RequestId for DescribeEndpointsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

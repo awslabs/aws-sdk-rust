@@ -13,7 +13,7 @@ impl DescribeUserHierarchyStructureOutput {
         self.hierarchy_structure.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeUserHierarchyStructureOutput {
+impl ::aws_types::request_id::RequestId for DescribeUserHierarchyStructureOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

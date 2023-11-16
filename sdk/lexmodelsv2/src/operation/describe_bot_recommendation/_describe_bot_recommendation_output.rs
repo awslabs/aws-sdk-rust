@@ -75,7 +75,7 @@ impl DescribeBotRecommendationOutput {
         self.bot_recommendation_results.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBotRecommendationOutput {
+impl ::aws_types::request_id::RequestId for DescribeBotRecommendationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

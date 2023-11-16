@@ -33,7 +33,7 @@ impl GetFindingAggregatorOutput {
         self.regions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetFindingAggregatorOutput {
+impl ::aws_types::request_id::RequestId for GetFindingAggregatorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

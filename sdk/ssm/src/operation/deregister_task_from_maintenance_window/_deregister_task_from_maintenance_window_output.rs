@@ -19,7 +19,7 @@ impl DeregisterTaskFromMaintenanceWindowOutput {
         self.window_task_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeregisterTaskFromMaintenanceWindowOutput {
+impl ::aws_types::request_id::RequestId for DeregisterTaskFromMaintenanceWindowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

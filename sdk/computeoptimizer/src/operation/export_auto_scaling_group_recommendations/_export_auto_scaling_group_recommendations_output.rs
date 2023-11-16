@@ -21,7 +21,7 @@ impl ExportAutoScalingGroupRecommendationsOutput {
         self.s3_destination.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ExportAutoScalingGroupRecommendationsOutput {
+impl ::aws_types::request_id::RequestId for ExportAutoScalingGroupRecommendationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

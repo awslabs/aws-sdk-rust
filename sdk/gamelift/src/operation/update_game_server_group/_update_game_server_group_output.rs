@@ -13,7 +13,7 @@ impl UpdateGameServerGroupOutput {
         self.game_server_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateGameServerGroupOutput {
+impl ::aws_types::request_id::RequestId for UpdateGameServerGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

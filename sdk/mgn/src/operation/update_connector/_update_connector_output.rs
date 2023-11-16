@@ -56,7 +56,7 @@ impl ::std::fmt::Debug for UpdateConnectorOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateConnectorOutput {
+impl ::aws_types::request_id::RequestId for UpdateConnectorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

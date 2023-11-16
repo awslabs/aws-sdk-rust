@@ -5,7 +5,7 @@
 pub struct PutBucketVersioningOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutBucketVersioningOutput {
+impl ::aws_types::request_id::RequestId for PutBucketVersioningOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

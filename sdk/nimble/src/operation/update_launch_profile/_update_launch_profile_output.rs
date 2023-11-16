@@ -13,7 +13,7 @@ impl UpdateLaunchProfileOutput {
         self.launch_profile.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateLaunchProfileOutput {
+impl ::aws_types::request_id::RequestId for UpdateLaunchProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

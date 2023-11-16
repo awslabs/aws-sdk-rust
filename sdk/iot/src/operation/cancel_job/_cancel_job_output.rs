@@ -25,7 +25,7 @@ impl CancelJobOutput {
         self.description.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CancelJobOutput {
+impl ::aws_types::request_id::RequestId for CancelJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

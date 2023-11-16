@@ -5,7 +5,7 @@
 pub struct CreateOrUpdateTagsOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for CreateOrUpdateTagsOutput {
+impl ::aws_types::request_id::RequestId for CreateOrUpdateTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

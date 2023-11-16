@@ -39,7 +39,7 @@ impl CreateHostedZoneOutput {
         self.location.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateHostedZoneOutput {
+impl ::aws_types::request_id::RequestId for CreateHostedZoneOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

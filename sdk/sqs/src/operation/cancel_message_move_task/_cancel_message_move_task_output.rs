@@ -13,7 +13,7 @@ impl CancelMessageMoveTaskOutput {
         self.approximate_number_of_messages_moved
     }
 }
-impl ::aws_http::request_id::RequestId for CancelMessageMoveTaskOutput {
+impl ::aws_types::request_id::RequestId for CancelMessageMoveTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

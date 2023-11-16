@@ -53,7 +53,7 @@ impl GetWorkerFleetOutput {
         self.additional_fixed_properties.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetWorkerFleetOutput {
+impl ::aws_types::request_id::RequestId for GetWorkerFleetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

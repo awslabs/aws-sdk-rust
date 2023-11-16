@@ -13,7 +13,7 @@ impl CreateProjectVersionOutput {
         self.project_version_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateProjectVersionOutput {
+impl ::aws_types::request_id::RequestId for CreateProjectVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

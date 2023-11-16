@@ -2,13 +2,13 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_route_http_error(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<crate::operation::create_route::CreateRouteOutput, crate::operation::create_route::CreateRouteError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::create_route::CreateRouteError::unhandled)?;
-    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -146,14 +146,14 @@ pub fn de_create_route_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_route_http_response(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<crate::operation::create_route::CreateRouteOutput, crate::operation::create_route::CreateRouteError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_route::builders::CreateRouteOutputBuilder::default();
         output = output.set_route(crate::protocol_serde::shape_create_route_output::de_route_payload(_response_body)?);
-        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::create_route_output_correct_errors(output).build()
     })
 }

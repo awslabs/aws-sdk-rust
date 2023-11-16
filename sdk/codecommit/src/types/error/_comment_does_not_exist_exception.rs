@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CommentDoesNotExistException {
     }
 }
 impl ::std::error::Error for CommentDoesNotExistException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CommentDoesNotExistException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CommentDoesNotExistException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

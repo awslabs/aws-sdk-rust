@@ -13,7 +13,7 @@ impl RegisterTransitGatewayOutput {
         self.transit_gateway_registration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RegisterTransitGatewayOutput {
+impl ::aws_types::request_id::RequestId for RegisterTransitGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

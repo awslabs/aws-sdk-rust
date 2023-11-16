@@ -19,7 +19,7 @@ impl GetPartnerAccountOutput {
         self.account_linked
     }
 }
-impl ::aws_http::request_id::RequestId for GetPartnerAccountOutput {
+impl ::aws_types::request_id::RequestId for GetPartnerAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -33,7 +33,7 @@ impl UpdateAppVersionOutput {
         self.additional_info.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAppVersionOutput {
+impl ::aws_types::request_id::RequestId for UpdateAppVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

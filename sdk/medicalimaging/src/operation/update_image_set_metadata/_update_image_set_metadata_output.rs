@@ -58,7 +58,7 @@ impl UpdateImageSetMetadataOutput {
         self.message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateImageSetMetadataOutput {
+impl ::aws_types::request_id::RequestId for UpdateImageSetMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

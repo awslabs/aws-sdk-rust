@@ -13,7 +13,7 @@ impl DeleteImageBuilderOutput {
         self.image_builder.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteImageBuilderOutput {
+impl ::aws_types::request_id::RequestId for DeleteImageBuilderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

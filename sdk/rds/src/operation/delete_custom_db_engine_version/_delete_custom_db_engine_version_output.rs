@@ -248,7 +248,7 @@ impl DeleteCustomDbEngineVersionOutput {
         self.supports_integrations
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteCustomDbEngineVersionOutput {
+impl ::aws_types::request_id::RequestId for DeleteCustomDbEngineVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

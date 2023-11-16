@@ -5,7 +5,7 @@
 pub struct DeleteDocumentVersionOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteDocumentVersionOutput {
+impl ::aws_types::request_id::RequestId for DeleteDocumentVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

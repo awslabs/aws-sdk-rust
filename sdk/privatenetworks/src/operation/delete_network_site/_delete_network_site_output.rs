@@ -13,7 +13,7 @@ impl DeleteNetworkSiteOutput {
         self.network_site.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteNetworkSiteOutput {
+impl ::aws_types::request_id::RequestId for DeleteNetworkSiteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

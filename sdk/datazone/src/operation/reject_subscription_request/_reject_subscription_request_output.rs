@@ -104,7 +104,7 @@ impl ::std::fmt::Debug for RejectSubscriptionRequestOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for RejectSubscriptionRequestOutput {
+impl ::aws_types::request_id::RequestId for RejectSubscriptionRequestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

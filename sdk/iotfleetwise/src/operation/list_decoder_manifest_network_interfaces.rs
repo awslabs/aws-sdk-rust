@@ -148,7 +148,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListDecod
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_decoder_manifest_network_interfaces::de_list_decoder_manifest_network_interfaces_http_error(
                 status, headers, body,
@@ -330,7 +330,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListDecoderMa
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

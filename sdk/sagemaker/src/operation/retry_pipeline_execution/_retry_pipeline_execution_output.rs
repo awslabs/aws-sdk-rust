@@ -13,7 +13,7 @@ impl RetryPipelineExecutionOutput {
         self.pipeline_execution_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RetryPipelineExecutionOutput {
+impl ::aws_types::request_id::RequestId for RetryPipelineExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl DescribeAutomationExecutionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAutomationExecutionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeAutomationExecutionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

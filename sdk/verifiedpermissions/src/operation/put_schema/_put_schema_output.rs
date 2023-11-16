@@ -33,7 +33,7 @@ impl PutSchemaOutput {
         &self.last_updated_date
     }
 }
-impl ::aws_http::request_id::RequestId for PutSchemaOutput {
+impl ::aws_types::request_id::RequestId for PutSchemaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

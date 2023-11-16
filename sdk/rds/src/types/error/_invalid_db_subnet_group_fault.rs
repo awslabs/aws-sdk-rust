@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidDbSubnetGroupFault {
     }
 }
 impl ::std::error::Error for InvalidDbSubnetGroupFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidDbSubnetGroupFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidDbSubnetGroupFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

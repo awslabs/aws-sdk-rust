@@ -96,7 +96,7 @@ impl GetRestApiOutput {
         self.root_resource_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRestApiOutput {
+impl ::aws_types::request_id::RequestId for GetRestApiOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

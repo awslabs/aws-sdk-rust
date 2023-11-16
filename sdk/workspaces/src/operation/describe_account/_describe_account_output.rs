@@ -21,7 +21,7 @@ impl DescribeAccountOutput {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAccountOutput {
+impl ::aws_types::request_id::RequestId for DescribeAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

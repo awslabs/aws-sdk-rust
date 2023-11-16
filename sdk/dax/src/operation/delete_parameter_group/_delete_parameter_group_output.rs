@@ -13,7 +13,7 @@ impl DeleteParameterGroupOutput {
         self.deletion_message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteParameterGroupOutput {
+impl ::aws_types::request_id::RequestId for DeleteParameterGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

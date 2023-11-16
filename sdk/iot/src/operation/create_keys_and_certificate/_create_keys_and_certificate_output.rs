@@ -32,7 +32,7 @@ impl CreateKeysAndCertificateOutput {
         self.key_pair.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateKeysAndCertificateOutput {
+impl ::aws_types::request_id::RequestId for CreateKeysAndCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl ListKxClusterNodesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListKxClusterNodesOutput {
+impl ::aws_types::request_id::RequestId for ListKxClusterNodesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

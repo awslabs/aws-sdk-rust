@@ -74,7 +74,7 @@ impl DescribeOfferingOutput {
         self.usage_price
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeOfferingOutput {
+impl ::aws_types::request_id::RequestId for DescribeOfferingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

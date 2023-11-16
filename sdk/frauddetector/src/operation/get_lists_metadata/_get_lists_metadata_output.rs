@@ -21,7 +21,7 @@ impl GetListsMetadataOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetListsMetadataOutput {
+impl ::aws_types::request_id::RequestId for GetListsMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

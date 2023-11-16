@@ -32,7 +32,7 @@ impl DescribeAccountAuditConfigurationOutput {
         self.audit_check_configurations.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAccountAuditConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeAccountAuditConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

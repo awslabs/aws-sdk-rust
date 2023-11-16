@@ -21,7 +21,7 @@ impl ListVolumeRecoveryPointsOutput {
         self.volume_recovery_point_infos.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListVolumeRecoveryPointsOutput {
+impl ::aws_types::request_id::RequestId for ListVolumeRecoveryPointsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl RegisterContainerImageOutput {
         self.container_image.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RegisterContainerImageOutput {
+impl ::aws_types::request_id::RequestId for RegisterContainerImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

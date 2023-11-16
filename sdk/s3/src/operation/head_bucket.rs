@@ -147,7 +147,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for HeadBucke
         if matches!(crate::rest_xml_unwrapped_errors::body_is_error(body), Ok(true)) {
             force_error = true;
         }
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_head_bucket::de_head_bucket_http_error(status, headers, body)
         } else {
@@ -254,18 +254,21 @@ mod head_bucket_request_test {
     #[allow(unused_mut)]
     async fn head_object_empty_body_response() {
         let expected_output = crate::types::error::NotFound::builder().build();
-        let mut http_response = ::http::response::Builder::new()
-            .header("content-type", "application/xml")
-            .header("date", "Thu, 03 Jun 2021 04:05:52 GMT")
-            .header("server", "AmazonS3")
-            .header(
-                "x-amz-id-2",
-                "UTniwu6QmCIjVeuK2ZfeWBOnu7SqMQOS3Vac6B/K4H2ZCawYUl+nDbhGTImuyhZ5DFiojR3Kcz4=",
-            )
-            .header("x-amz-request-id", "GRZ6BZ468DF52F2E")
-            .status(404)
-            .body(::aws_smithy_types::body::SdkBody::from(""))
-            .unwrap();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
+            ::http::response::Builder::new()
+                .header("content-type", "application/xml")
+                .header("date", "Thu, 03 Jun 2021 04:05:52 GMT")
+                .header("server", "AmazonS3")
+                .header(
+                    "x-amz-id-2",
+                    "UTniwu6QmCIjVeuK2ZfeWBOnu7SqMQOS3Vac6B/K4H2ZCawYUl+nDbhGTImuyhZ5DFiojR3Kcz4=",
+                )
+                .header("x-amz-request-id", "GRZ6BZ468DF52F2E")
+                .status(404)
+                .body(::aws_smithy_types::body::SdkBody::from(""))
+                .unwrap(),
+        )
+        .unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
         use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
@@ -340,7 +343,7 @@ impl crate::s3_request_id::RequestIdExt for crate::operation::head_bucket::HeadB
         self.meta().extended_request_id()
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::head_bucket::HeadBucketError {
+impl ::aws_types::request_id::RequestId for crate::operation::head_bucket::HeadBucketError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

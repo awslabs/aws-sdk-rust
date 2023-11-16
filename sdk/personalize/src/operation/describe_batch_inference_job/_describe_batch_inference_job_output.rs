@@ -13,7 +13,7 @@ impl DescribeBatchInferenceJobOutput {
         self.batch_inference_job.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBatchInferenceJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeBatchInferenceJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

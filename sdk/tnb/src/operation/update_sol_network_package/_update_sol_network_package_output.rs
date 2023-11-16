@@ -13,7 +13,7 @@ impl UpdateSolNetworkPackageOutput {
         &self.nsd_operational_state
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSolNetworkPackageOutput {
+impl ::aws_types::request_id::RequestId for UpdateSolNetworkPackageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

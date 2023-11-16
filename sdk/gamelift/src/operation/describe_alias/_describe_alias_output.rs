@@ -13,7 +13,7 @@ impl DescribeAliasOutput {
         self.alias.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAliasOutput {
+impl ::aws_types::request_id::RequestId for DescribeAliasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

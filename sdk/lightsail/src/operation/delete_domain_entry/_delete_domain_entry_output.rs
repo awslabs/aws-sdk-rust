@@ -13,7 +13,7 @@ impl DeleteDomainEntryOutput {
         self.operation.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDomainEntryOutput {
+impl ::aws_types::request_id::RequestId for DeleteDomainEntryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

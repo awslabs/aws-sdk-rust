@@ -49,7 +49,7 @@ impl ::std::fmt::Display for IllegalArgumentException {
     }
 }
 impl ::std::error::Error for IllegalArgumentException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::IllegalArgumentException {
+impl ::aws_types::request_id::RequestId for crate::types::error::IllegalArgumentException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

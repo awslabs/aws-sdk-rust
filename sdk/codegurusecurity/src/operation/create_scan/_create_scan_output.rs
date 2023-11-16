@@ -39,7 +39,7 @@ impl CreateScanOutput {
         self.scan_name_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateScanOutput {
+impl ::aws_types::request_id::RequestId for CreateScanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

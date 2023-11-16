@@ -52,7 +52,7 @@ impl ::std::fmt::Debug for GetParametersForImportOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetParametersForImportOutput {
+impl ::aws_types::request_id::RequestId for GetParametersForImportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateForecastExportJobOutput {
         self.forecast_export_job_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateForecastExportJobOutput {
+impl ::aws_types::request_id::RequestId for CreateForecastExportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

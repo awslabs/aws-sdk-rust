@@ -37,7 +37,7 @@ impl GetPoliciesStatsOutput {
         self.total_policy_count
     }
 }
-impl ::aws_http::request_id::RequestId for GetPoliciesStatsOutput {
+impl ::aws_types::request_id::RequestId for GetPoliciesStatsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

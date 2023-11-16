@@ -13,7 +13,7 @@ impl WithdrawByoipCidrOutput {
         self.byoip_cidr.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for WithdrawByoipCidrOutput {
+impl ::aws_types::request_id::RequestId for WithdrawByoipCidrOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

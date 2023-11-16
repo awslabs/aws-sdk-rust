@@ -14,7 +14,7 @@ impl ModifyReplicationSubnetGroupOutput {
         self.replication_subnet_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyReplicationSubnetGroupOutput {
+impl ::aws_types::request_id::RequestId for ModifyReplicationSubnetGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

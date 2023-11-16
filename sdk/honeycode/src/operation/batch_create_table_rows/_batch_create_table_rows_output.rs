@@ -27,7 +27,7 @@ impl BatchCreateTableRowsOutput {
         self.failed_batch_items.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchCreateTableRowsOutput {
+impl ::aws_types::request_id::RequestId for BatchCreateTableRowsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

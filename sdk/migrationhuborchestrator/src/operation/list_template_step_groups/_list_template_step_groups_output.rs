@@ -20,7 +20,7 @@ impl ListTemplateStepGroupsOutput {
         self.template_step_group_summary.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTemplateStepGroupsOutput {
+impl ::aws_types::request_id::RequestId for ListTemplateStepGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

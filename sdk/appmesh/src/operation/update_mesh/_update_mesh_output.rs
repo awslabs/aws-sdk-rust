@@ -13,7 +13,7 @@ impl UpdateMeshOutput {
         self.mesh.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateMeshOutput {
+impl ::aws_types::request_id::RequestId for UpdateMeshOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

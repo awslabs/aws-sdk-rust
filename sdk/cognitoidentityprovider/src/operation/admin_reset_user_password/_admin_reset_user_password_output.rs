@@ -6,7 +6,7 @@
 pub struct AdminResetUserPasswordOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for AdminResetUserPasswordOutput {
+impl ::aws_types::request_id::RequestId for AdminResetUserPasswordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

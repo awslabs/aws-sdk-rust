@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListCompl
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_compliance_status::de_list_compliance_status_http_error(status, headers, body)
         } else {
@@ -286,7 +286,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListComplianc
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_compliance_status::ListComplianceStatusError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_compliance_status::ListComplianceStatusError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

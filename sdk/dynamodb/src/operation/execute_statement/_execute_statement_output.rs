@@ -33,7 +33,7 @@ impl ExecuteStatementOutput {
         self.last_evaluated_key.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ExecuteStatementOutput {
+impl ::aws_types::request_id::RequestId for ExecuteStatementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

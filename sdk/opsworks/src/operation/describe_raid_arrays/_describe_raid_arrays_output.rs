@@ -16,7 +16,7 @@ impl DescribeRaidArraysOutput {
         self.raid_arrays.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRaidArraysOutput {
+impl ::aws_types::request_id::RequestId for DescribeRaidArraysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

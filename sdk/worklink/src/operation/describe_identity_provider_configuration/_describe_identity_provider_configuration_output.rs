@@ -25,7 +25,7 @@ impl DescribeIdentityProviderConfigurationOutput {
         self.identity_provider_saml_metadata.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeIdentityProviderConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeIdentityProviderConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

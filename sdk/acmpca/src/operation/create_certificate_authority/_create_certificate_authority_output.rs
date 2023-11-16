@@ -15,7 +15,7 @@ impl CreateCertificateAuthorityOutput {
         self.certificate_authority_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCertificateAuthorityOutput {
+impl ::aws_types::request_id::RequestId for CreateCertificateAuthorityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

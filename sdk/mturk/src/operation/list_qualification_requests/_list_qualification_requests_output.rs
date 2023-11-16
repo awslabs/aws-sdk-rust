@@ -27,7 +27,7 @@ impl ListQualificationRequestsOutput {
         self.qualification_requests.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListQualificationRequestsOutput {
+impl ::aws_types::request_id::RequestId for ListQualificationRequestsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

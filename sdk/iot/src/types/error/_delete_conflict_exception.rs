@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DeleteConflictException {
     }
 }
 impl ::std::error::Error for DeleteConflictException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DeleteConflictException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DeleteConflictException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

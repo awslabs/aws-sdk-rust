@@ -31,7 +31,7 @@ impl GetGroupPolicyOutput {
         self.policy_document.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetGroupPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetGroupPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

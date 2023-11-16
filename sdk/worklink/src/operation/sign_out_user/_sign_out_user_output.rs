@@ -5,7 +5,7 @@
 pub struct SignOutUserOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for SignOutUserOutput {
+impl ::aws_types::request_id::RequestId for SignOutUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

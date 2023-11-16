@@ -13,7 +13,7 @@ impl GetInsightResultsOutput {
         self.insight_results.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetInsightResultsOutput {
+impl ::aws_types::request_id::RequestId for GetInsightResultsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

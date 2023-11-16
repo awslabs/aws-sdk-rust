@@ -13,7 +13,7 @@ impl DisassociateLinkOutput {
         self.link_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisassociateLinkOutput {
+impl ::aws_types::request_id::RequestId for DisassociateLinkOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

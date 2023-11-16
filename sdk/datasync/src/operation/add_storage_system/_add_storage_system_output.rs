@@ -14,7 +14,7 @@ impl AddStorageSystemOutput {
         self.storage_system_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AddStorageSystemOutput {
+impl ::aws_types::request_id::RequestId for AddStorageSystemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

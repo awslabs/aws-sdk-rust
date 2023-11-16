@@ -29,7 +29,7 @@ impl CreateAssetModelOutput {
         self.asset_model_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateAssetModelOutput {
+impl ::aws_types::request_id::RequestId for CreateAssetModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ExpiredIteratorException {
     }
 }
 impl ::std::error::Error for ExpiredIteratorException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ExpiredIteratorException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ExpiredIteratorException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

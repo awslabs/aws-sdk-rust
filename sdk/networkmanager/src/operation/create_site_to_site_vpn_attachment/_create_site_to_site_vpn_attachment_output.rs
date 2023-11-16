@@ -13,7 +13,7 @@ impl CreateSiteToSiteVpnAttachmentOutput {
         self.site_to_site_vpn_attachment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateSiteToSiteVpnAttachmentOutput {
+impl ::aws_types::request_id::RequestId for CreateSiteToSiteVpnAttachmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

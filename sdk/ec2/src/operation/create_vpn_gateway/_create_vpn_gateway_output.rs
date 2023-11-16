@@ -14,7 +14,7 @@ impl CreateVpnGatewayOutput {
         self.vpn_gateway.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateVpnGatewayOutput {
+impl ::aws_types::request_id::RequestId for CreateVpnGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

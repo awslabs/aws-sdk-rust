@@ -63,7 +63,7 @@ impl StartTargetedSentimentDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartTargetedSentimentDetectionJobOutput {
+impl ::aws_types::request_id::RequestId for StartTargetedSentimentDetectionJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

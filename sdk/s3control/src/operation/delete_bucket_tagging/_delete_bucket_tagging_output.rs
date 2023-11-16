@@ -5,7 +5,7 @@
 pub struct DeleteBucketTaggingOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteBucketTaggingOutput {
+impl ::aws_types::request_id::RequestId for DeleteBucketTaggingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

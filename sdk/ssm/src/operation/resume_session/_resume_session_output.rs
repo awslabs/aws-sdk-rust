@@ -29,7 +29,7 @@ impl ResumeSessionOutput {
         self.stream_url.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ResumeSessionOutput {
+impl ::aws_types::request_id::RequestId for ResumeSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for EncryptionKeyDisabledException {
     }
 }
 impl ::std::error::Error for EncryptionKeyDisabledException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::EncryptionKeyDisabledException {
+impl ::aws_types::request_id::RequestId for crate::types::error::EncryptionKeyDisabledException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -61,7 +61,7 @@ impl DisableFastLaunchOutput {
         self.state_transition_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisableFastLaunchOutput {
+impl ::aws_types::request_id::RequestId for DisableFastLaunchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

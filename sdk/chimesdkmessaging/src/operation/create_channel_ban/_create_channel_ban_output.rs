@@ -19,7 +19,7 @@ impl CreateChannelBanOutput {
         self.member.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateChannelBanOutput {
+impl ::aws_types::request_id::RequestId for CreateChannelBanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

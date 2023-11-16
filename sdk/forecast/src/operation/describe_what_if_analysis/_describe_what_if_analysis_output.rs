@@ -103,7 +103,7 @@ impl DescribeWhatIfAnalysisOutput {
         self.time_series_selector.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeWhatIfAnalysisOutput {
+impl ::aws_types::request_id::RequestId for DescribeWhatIfAnalysisOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

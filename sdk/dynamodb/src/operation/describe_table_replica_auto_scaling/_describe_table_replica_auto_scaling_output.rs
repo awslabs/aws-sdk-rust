@@ -13,7 +13,7 @@ impl DescribeTableReplicaAutoScalingOutput {
         self.table_auto_scaling_description.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeTableReplicaAutoScalingOutput {
+impl ::aws_types::request_id::RequestId for DescribeTableReplicaAutoScalingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

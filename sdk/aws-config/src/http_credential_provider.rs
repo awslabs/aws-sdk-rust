@@ -30,7 +30,7 @@ use aws_smithy_types::config_bag::Layer;
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
 use http::header::{ACCEPT, AUTHORIZATION};
-use http::{HeaderValue, Response};
+use http::HeaderValue;
 use std::time::Duration;
 
 const DEFAULT_READ_TIMEOUT: Duration = Duration::from_secs(5);
@@ -149,7 +149,7 @@ impl Builder {
 
 fn parse_response(
     provider_name: &'static str,
-    response: &Response<SdkBody>,
+    response: &HttpResponse,
 ) -> Result<Credentials, OrchestratorError<CredentialsError>> {
     if !response.status().is_success() {
         return Err(OrchestratorError::operation(

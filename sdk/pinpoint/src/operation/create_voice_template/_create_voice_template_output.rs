@@ -13,7 +13,7 @@ impl CreateVoiceTemplateOutput {
         self.create_template_message_body.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateVoiceTemplateOutput {
+impl ::aws_types::request_id::RequestId for CreateVoiceTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

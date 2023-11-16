@@ -38,7 +38,7 @@ impl PutGatewayResponseOutput {
         self.default_response
     }
 }
-impl ::aws_http::request_id::RequestId for PutGatewayResponseOutput {
+impl ::aws_types::request_id::RequestId for PutGatewayResponseOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

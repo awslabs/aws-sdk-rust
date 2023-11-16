@@ -13,7 +13,7 @@ impl GetGlobalSettingsOutput {
         self.voice_connector.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetGlobalSettingsOutput {
+impl ::aws_types::request_id::RequestId for GetGlobalSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

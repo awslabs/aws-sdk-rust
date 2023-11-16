@@ -15,7 +15,7 @@ impl DescribeEc2InstanceLimitsOutput {
         self.ec2_instance_limits.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEc2InstanceLimitsOutput {
+impl ::aws_types::request_id::RequestId for DescribeEc2InstanceLimitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

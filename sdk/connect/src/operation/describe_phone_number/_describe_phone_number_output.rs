@@ -13,7 +13,7 @@ impl DescribePhoneNumberOutput {
         self.claimed_phone_number_summary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePhoneNumberOutput {
+impl ::aws_types::request_id::RequestId for DescribePhoneNumberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

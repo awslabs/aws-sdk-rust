@@ -15,7 +15,7 @@ impl ResolveComponentCandidatesOutput {
         self.resolved_component_versions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ResolveComponentCandidatesOutput {
+impl ::aws_types::request_id::RequestId for ResolveComponentCandidatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

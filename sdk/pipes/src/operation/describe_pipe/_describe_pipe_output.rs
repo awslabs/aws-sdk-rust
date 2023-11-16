@@ -135,7 +135,7 @@ impl ::std::fmt::Debug for DescribePipeOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePipeOutput {
+impl ::aws_types::request_id::RequestId for DescribePipeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

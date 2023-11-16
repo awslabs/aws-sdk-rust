@@ -13,7 +13,7 @@ impl CreateBackupOutput {
         self.backup_details.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateBackupOutput {
+impl ::aws_types::request_id::RequestId for CreateBackupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

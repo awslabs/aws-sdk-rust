@@ -13,7 +13,7 @@ impl ActivateTypeOutput {
         self.arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ActivateTypeOutput {
+impl ::aws_types::request_id::RequestId for ActivateTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

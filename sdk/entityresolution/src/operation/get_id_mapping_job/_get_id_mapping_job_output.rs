@@ -44,7 +44,7 @@ impl GetIdMappingJobOutput {
         self.error_details.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetIdMappingJobOutput {
+impl ::aws_types::request_id::RequestId for GetIdMappingJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

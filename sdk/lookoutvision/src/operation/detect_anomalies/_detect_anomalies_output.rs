@@ -13,7 +13,7 @@ impl DetectAnomaliesOutput {
         self.detect_anomaly_result.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DetectAnomaliesOutput {
+impl ::aws_types::request_id::RequestId for DetectAnomaliesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

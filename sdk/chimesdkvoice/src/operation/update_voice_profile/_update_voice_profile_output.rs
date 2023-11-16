@@ -13,7 +13,7 @@ impl UpdateVoiceProfileOutput {
         self.voice_profile.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateVoiceProfileOutput {
+impl ::aws_types::request_id::RequestId for UpdateVoiceProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

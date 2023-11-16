@@ -13,7 +13,7 @@ impl DeleteSnapshotOutput {
         self.snapshot.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteSnapshotOutput {
+impl ::aws_types::request_id::RequestId for DeleteSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

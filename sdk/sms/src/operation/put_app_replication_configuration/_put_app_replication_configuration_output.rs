@@ -5,7 +5,7 @@
 pub struct PutAppReplicationConfigurationOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for PutAppReplicationConfigurationOutput {
+impl ::aws_types::request_id::RequestId for PutAppReplicationConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

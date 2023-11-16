@@ -13,7 +13,7 @@ impl AcceptTransitGatewayVpcAttachmentOutput {
         self.transit_gateway_vpc_attachment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AcceptTransitGatewayVpcAttachmentOutput {
+impl ::aws_types::request_id::RequestId for AcceptTransitGatewayVpcAttachmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

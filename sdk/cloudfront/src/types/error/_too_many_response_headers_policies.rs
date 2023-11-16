@@ -27,7 +27,7 @@ impl ::std::fmt::Display for TooManyResponseHeadersPolicies {
     }
 }
 impl ::std::error::Error for TooManyResponseHeadersPolicies {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyResponseHeadersPolicies {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyResponseHeadersPolicies {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

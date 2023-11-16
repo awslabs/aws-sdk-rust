@@ -20,7 +20,7 @@ impl ListSolNetworkPackagesOutput {
         self.network_packages.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListSolNetworkPackagesOutput {
+impl ::aws_types::request_id::RequestId for ListSolNetworkPackagesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

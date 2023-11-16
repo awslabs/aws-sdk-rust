@@ -73,7 +73,7 @@ impl ::std::fmt::Debug for InitiateAuthOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for InitiateAuthOutput {
+impl ::aws_types::request_id::RequestId for InitiateAuthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

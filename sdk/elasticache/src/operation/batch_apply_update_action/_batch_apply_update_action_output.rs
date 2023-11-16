@@ -23,7 +23,7 @@ impl BatchApplyUpdateActionOutput {
         self.unprocessed_update_actions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchApplyUpdateActionOutput {
+impl ::aws_types::request_id::RequestId for BatchApplyUpdateActionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl ListFlowDefinitionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListFlowDefinitionsOutput {
+impl ::aws_types::request_id::RequestId for ListFlowDefinitionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

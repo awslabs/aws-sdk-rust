@@ -22,7 +22,7 @@ impl GetOrganizationConformancePackDetailedStatusOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetOrganizationConformancePackDetailedStatusOutput {
+impl ::aws_types::request_id::RequestId for GetOrganizationConformancePackDetailedStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl EnableIpamOrganizationAdminAccountOutput {
         self.success
     }
 }
-impl ::aws_http::request_id::RequestId for EnableIpamOrganizationAdminAccountOutput {
+impl ::aws_types::request_id::RequestId for EnableIpamOrganizationAdminAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

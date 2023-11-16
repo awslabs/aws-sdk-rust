@@ -76,7 +76,7 @@ impl ::std::fmt::Debug for UpdateProjectOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateProjectOutput {
+impl ::aws_types::request_id::RequestId for UpdateProjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

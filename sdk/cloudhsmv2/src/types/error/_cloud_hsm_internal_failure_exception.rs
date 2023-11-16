@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CloudHsmInternalFailureException {
     }
 }
 impl ::std::error::Error for CloudHsmInternalFailureException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CloudHsmInternalFailureException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CloudHsmInternalFailureException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

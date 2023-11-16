@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InsufficientDeliveryPolicyException {
     }
 }
 impl ::std::error::Error for InsufficientDeliveryPolicyException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InsufficientDeliveryPolicyException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InsufficientDeliveryPolicyException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

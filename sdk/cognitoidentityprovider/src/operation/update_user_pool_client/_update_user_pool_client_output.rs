@@ -14,7 +14,7 @@ impl UpdateUserPoolClientOutput {
         self.user_pool_client.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateUserPoolClientOutput {
+impl ::aws_types::request_id::RequestId for UpdateUserPoolClientOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

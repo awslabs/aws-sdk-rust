@@ -14,7 +14,7 @@ impl GetSignedBluinsightsUrlOutput {
         self.signed_bi_url.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSignedBluinsightsUrlOutput {
+impl ::aws_types::request_id::RequestId for GetSignedBluinsightsUrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

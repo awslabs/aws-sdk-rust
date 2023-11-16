@@ -24,7 +24,7 @@ impl ::std::fmt::Display for OcuLimitExceededException {
     }
 }
 impl ::std::error::Error for OcuLimitExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::OcuLimitExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::OcuLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

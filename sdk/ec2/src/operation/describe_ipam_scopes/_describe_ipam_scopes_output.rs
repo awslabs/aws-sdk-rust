@@ -21,7 +21,7 @@ impl DescribeIpamScopesOutput {
         self.ipam_scopes.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeIpamScopesOutput {
+impl ::aws_types::request_id::RequestId for DescribeIpamScopesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

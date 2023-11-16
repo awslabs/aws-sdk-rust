@@ -107,7 +107,7 @@ impl crate::s3_request_id::RequestIdExt for ListPartsOutput {
         self._extended_request_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListPartsOutput {
+impl ::aws_types::request_id::RequestId for ListPartsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

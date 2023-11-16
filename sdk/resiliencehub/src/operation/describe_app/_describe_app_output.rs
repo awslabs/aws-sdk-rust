@@ -13,7 +13,7 @@ impl DescribeAppOutput {
         self.app.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAppOutput {
+impl ::aws_types::request_id::RequestId for DescribeAppOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

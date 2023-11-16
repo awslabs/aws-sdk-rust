@@ -25,7 +25,7 @@ impl BatchDescribeModelPackageOutput {
         self.batch_describe_model_package_error_map.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchDescribeModelPackageOutput {
+impl ::aws_types::request_id::RequestId for BatchDescribeModelPackageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -44,7 +44,7 @@ impl DescribeVaultOutput {
         self.size_in_bytes
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeVaultOutput {
+impl ::aws_types::request_id::RequestId for DescribeVaultOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,10 +19,6 @@ http-body = "0.4.5"
 tracing = "0.1"
 pin-project-lite = "0.2.9"
 
-[dependencies.aws-smithy-http]
-path = "../aws-smithy-http"
-version = "0.57.1"
-
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
@@ -30,6 +26,7 @@ version = "0.57.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
+features = ["http-body-0-4-x"]
 version = "0.57.1"
 
 [dependencies.aws-types]

@@ -43,8 +43,8 @@ pub(crate) fn de_invalid_state_exception_json_err(
 }
 
 pub(crate) fn de_x_amz_error_type_header(
-    header_map: &::http::HeaderMap,
-) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amzn-ErrorType").iter();
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-ErrorType");
     ::aws_smithy_http::header::one_or_none(headers)
 }

@@ -13,7 +13,7 @@ impl CreatePerformanceAnalysisReportOutput {
         self.analysis_report_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePerformanceAnalysisReportOutput {
+impl ::aws_types::request_id::RequestId for CreatePerformanceAnalysisReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

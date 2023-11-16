@@ -13,7 +13,7 @@ impl DescribePromptOutput {
         self.prompt.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribePromptOutput {
+impl ::aws_types::request_id::RequestId for DescribePromptOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

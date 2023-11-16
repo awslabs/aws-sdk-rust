@@ -24,7 +24,7 @@ impl GetTemplateOutput {
         self.stages_available.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTemplateOutput {
+impl ::aws_types::request_id::RequestId for GetTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

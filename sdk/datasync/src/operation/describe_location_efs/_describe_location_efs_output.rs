@@ -50,7 +50,7 @@ impl DescribeLocationEfsOutput {
         self.in_transit_encryption.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLocationEfsOutput {
+impl ::aws_types::request_id::RequestId for DescribeLocationEfsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

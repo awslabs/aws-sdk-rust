@@ -13,7 +13,7 @@ impl StartModelOutput {
         self.status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartModelOutput {
+impl ::aws_types::request_id::RequestId for StartModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

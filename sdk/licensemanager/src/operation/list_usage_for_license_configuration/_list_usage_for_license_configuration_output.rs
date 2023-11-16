@@ -21,7 +21,7 @@ impl ListUsageForLicenseConfigurationOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListUsageForLicenseConfigurationOutput {
+impl ::aws_types::request_id::RequestId for ListUsageForLicenseConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

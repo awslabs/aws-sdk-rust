@@ -21,7 +21,7 @@ impl DescribeWorkspaceDirectoriesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeWorkspaceDirectoriesOutput {
+impl ::aws_types::request_id::RequestId for DescribeWorkspaceDirectoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

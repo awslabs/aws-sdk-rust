@@ -13,7 +13,7 @@ impl GetManagedScalingPolicyOutput {
         self.managed_scaling_policy.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetManagedScalingPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetManagedScalingPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

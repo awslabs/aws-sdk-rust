@@ -26,7 +26,7 @@ impl ::std::fmt::Display for RepositoryNameRequiredException {
     }
 }
 impl ::std::error::Error for RepositoryNameRequiredException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::RepositoryNameRequiredException {
+impl ::aws_types::request_id::RequestId for crate::types::error::RepositoryNameRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

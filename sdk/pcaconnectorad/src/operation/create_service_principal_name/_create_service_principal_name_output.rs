@@ -5,7 +5,7 @@
 pub struct CreateServicePrincipalNameOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for CreateServicePrincipalNameOutput {
+impl ::aws_types::request_id::RequestId for CreateServicePrincipalNameOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

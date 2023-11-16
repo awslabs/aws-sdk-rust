@@ -49,7 +49,7 @@ impl GetResourceEvaluationSummaryOutput {
         self.resource_details.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetResourceEvaluationSummaryOutput {
+impl ::aws_types::request_id::RequestId for GetResourceEvaluationSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

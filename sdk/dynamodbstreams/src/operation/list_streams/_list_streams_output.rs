@@ -26,7 +26,7 @@ impl ListStreamsOutput {
         self.last_evaluated_stream_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListStreamsOutput {
+impl ::aws_types::request_id::RequestId for ListStreamsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

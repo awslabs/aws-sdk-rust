@@ -25,7 +25,7 @@ impl DescribeLogPatternOutput {
         self.log_pattern.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLogPatternOutput {
+impl ::aws_types::request_id::RequestId for DescribeLogPatternOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

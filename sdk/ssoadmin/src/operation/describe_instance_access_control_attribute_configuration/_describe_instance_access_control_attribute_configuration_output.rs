@@ -27,7 +27,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationOutput {
         self.instance_access_control_attribute_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeInstanceAccessControlAttributeConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeInstanceAccessControlAttributeConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

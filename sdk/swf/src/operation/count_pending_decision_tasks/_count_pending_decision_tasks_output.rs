@@ -20,7 +20,7 @@ impl CountPendingDecisionTasksOutput {
         self.truncated
     }
 }
-impl ::aws_http::request_id::RequestId for CountPendingDecisionTasksOutput {
+impl ::aws_types::request_id::RequestId for CountPendingDecisionTasksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

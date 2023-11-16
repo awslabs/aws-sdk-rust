@@ -19,7 +19,7 @@ impl DeleteDataSetRefreshPropertiesOutput {
         self.status
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDataSetRefreshPropertiesOutput {
+impl ::aws_types::request_id::RequestId for DeleteDataSetRefreshPropertiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

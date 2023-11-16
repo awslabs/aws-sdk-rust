@@ -13,7 +13,7 @@ impl DeleteLocalGatewayRouteTableOutput {
         self.local_gateway_route_table.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteLocalGatewayRouteTableOutput {
+impl ::aws_types::request_id::RequestId for DeleteLocalGatewayRouteTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

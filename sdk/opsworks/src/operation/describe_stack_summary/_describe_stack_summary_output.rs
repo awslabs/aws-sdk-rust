@@ -14,7 +14,7 @@ impl DescribeStackSummaryOutput {
         self.stack_summary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeStackSummaryOutput {
+impl ::aws_types::request_id::RequestId for DescribeStackSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

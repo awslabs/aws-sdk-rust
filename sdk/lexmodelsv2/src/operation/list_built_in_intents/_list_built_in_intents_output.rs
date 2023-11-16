@@ -27,7 +27,7 @@ impl ListBuiltInIntentsOutput {
         self.locale_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListBuiltInIntentsOutput {
+impl ::aws_types::request_id::RequestId for ListBuiltInIntentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

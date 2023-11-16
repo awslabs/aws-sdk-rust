@@ -87,7 +87,7 @@ impl UpdateSlotTypeOutput {
         self.composite_slot_type_setting.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSlotTypeOutput {
+impl ::aws_types::request_id::RequestId for UpdateSlotTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

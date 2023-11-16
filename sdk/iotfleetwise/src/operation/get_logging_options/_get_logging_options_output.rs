@@ -13,7 +13,7 @@ impl GetLoggingOptionsOutput {
         self.cloud_watch_log_delivery.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLoggingOptionsOutput {
+impl ::aws_types::request_id::RequestId for GetLoggingOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

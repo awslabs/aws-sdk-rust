@@ -13,7 +13,7 @@ impl CreateNetworkAclOutput {
         self.network_acl.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateNetworkAclOutput {
+impl ::aws_types::request_id::RequestId for CreateNetworkAclOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

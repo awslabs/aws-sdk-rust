@@ -97,7 +97,7 @@ impl DescribeEdgePackagingJobOutput {
         self.preset_deployment_output.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEdgePackagingJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeEdgePackagingJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

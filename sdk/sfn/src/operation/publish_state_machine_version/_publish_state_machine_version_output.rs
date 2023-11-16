@@ -20,7 +20,7 @@ impl PublishStateMachineVersionOutput {
         self.state_machine_version_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PublishStateMachineVersionOutput {
+impl ::aws_types::request_id::RequestId for PublishStateMachineVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

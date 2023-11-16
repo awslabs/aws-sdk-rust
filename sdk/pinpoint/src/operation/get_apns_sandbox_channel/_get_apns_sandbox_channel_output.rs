@@ -13,7 +13,7 @@ impl GetApnsSandboxChannelOutput {
         self.apns_sandbox_channel_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetApnsSandboxChannelOutput {
+impl ::aws_types::request_id::RequestId for GetApnsSandboxChannelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

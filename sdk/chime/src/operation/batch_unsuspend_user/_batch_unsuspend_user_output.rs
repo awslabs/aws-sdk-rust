@@ -15,7 +15,7 @@ impl BatchUnsuspendUserOutput {
         self.user_errors.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchUnsuspendUserOutput {
+impl ::aws_types::request_id::RequestId for BatchUnsuspendUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

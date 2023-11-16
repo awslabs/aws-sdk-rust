@@ -26,7 +26,7 @@ impl ::std::fmt::Display for SslPolicyNotFoundException {
     }
 }
 impl ::std::error::Error for SslPolicyNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SslPolicyNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::SslPolicyNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

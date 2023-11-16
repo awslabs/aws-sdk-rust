@@ -37,7 +37,7 @@ impl DisassociateOriginationIdentityOutput {
         self.iso_country_code.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisassociateOriginationIdentityOutput {
+impl ::aws_types::request_id::RequestId for DisassociateOriginationIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

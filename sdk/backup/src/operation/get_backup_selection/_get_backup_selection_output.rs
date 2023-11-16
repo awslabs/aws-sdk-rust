@@ -37,7 +37,7 @@ impl GetBackupSelectionOutput {
         self.creator_request_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBackupSelectionOutput {
+impl ::aws_types::request_id::RequestId for GetBackupSelectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl GetIdentityPoolRolesOutput {
         self.role_mappings.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetIdentityPoolRolesOutput {
+impl ::aws_types::request_id::RequestId for GetIdentityPoolRolesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

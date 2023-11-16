@@ -13,7 +13,7 @@ impl DescribeImageGenerationConfigurationOutput {
         self.image_generation_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeImageGenerationConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeImageGenerationConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

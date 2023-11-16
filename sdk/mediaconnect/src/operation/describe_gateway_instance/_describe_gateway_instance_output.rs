@@ -13,7 +13,7 @@ impl DescribeGatewayInstanceOutput {
         self.gateway_instance.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeGatewayInstanceOutput {
+impl ::aws_types::request_id::RequestId for DescribeGatewayInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

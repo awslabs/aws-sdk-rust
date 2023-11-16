@@ -5,7 +5,7 @@
 pub struct StopStreamEncryptionOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for StopStreamEncryptionOutput {
+impl ::aws_types::request_id::RequestId for StopStreamEncryptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

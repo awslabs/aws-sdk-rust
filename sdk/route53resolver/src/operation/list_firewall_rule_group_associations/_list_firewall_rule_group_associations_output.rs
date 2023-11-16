@@ -23,7 +23,7 @@ impl ListFirewallRuleGroupAssociationsOutput {
         self.firewall_rule_group_associations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListFirewallRuleGroupAssociationsOutput {
+impl ::aws_types::request_id::RequestId for ListFirewallRuleGroupAssociationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

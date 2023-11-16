@@ -27,7 +27,7 @@ impl GetCustomEntityTypeOutput {
         self.context_words.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCustomEntityTypeOutput {
+impl ::aws_types::request_id::RequestId for GetCustomEntityTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

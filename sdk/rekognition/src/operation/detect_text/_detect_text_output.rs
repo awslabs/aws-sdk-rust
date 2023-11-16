@@ -21,7 +21,7 @@ impl DetectTextOutput {
         self.text_model_version.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DetectTextOutput {
+impl ::aws_types::request_id::RequestId for DetectTextOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

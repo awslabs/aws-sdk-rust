@@ -121,7 +121,7 @@ impl ::std::fmt::Display for TransactionCanceledException {
     }
 }
 impl ::std::error::Error for TransactionCanceledException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TransactionCanceledException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TransactionCanceledException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

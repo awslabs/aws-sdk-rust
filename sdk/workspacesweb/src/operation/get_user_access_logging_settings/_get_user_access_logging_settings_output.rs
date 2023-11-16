@@ -13,7 +13,7 @@ impl GetUserAccessLoggingSettingsOutput {
         self.user_access_logging_settings.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetUserAccessLoggingSettingsOutput {
+impl ::aws_types::request_id::RequestId for GetUserAccessLoggingSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

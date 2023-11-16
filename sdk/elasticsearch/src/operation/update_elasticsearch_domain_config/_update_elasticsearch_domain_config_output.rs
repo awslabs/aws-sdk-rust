@@ -20,7 +20,7 @@ impl UpdateElasticsearchDomainConfigOutput {
         self.dry_run_results.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateElasticsearchDomainConfigOutput {
+impl ::aws_types::request_id::RequestId for UpdateElasticsearchDomainConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

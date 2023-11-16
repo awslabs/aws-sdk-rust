@@ -102,7 +102,7 @@ impl GetAnnotationStoreOutput {
         self.num_versions
     }
 }
-impl ::aws_http::request_id::RequestId for GetAnnotationStoreOutput {
+impl ::aws_types::request_id::RequestId for GetAnnotationStoreOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

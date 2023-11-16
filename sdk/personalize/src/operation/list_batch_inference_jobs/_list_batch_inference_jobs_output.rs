@@ -21,7 +21,7 @@ impl ListBatchInferenceJobsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListBatchInferenceJobsOutput {
+impl ::aws_types::request_id::RequestId for ListBatchInferenceJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

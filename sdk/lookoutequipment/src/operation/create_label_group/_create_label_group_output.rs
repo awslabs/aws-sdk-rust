@@ -19,7 +19,7 @@ impl CreateLabelGroupOutput {
         self.label_group_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateLabelGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateLabelGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

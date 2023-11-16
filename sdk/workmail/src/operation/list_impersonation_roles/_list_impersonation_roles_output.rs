@@ -21,7 +21,7 @@ impl ListImpersonationRolesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListImpersonationRolesOutput {
+impl ::aws_types::request_id::RequestId for ListImpersonationRolesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

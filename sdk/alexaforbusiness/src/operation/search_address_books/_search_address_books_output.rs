@@ -27,7 +27,7 @@ impl SearchAddressBooksOutput {
         self.total_count
     }
 }
-impl ::aws_http::request_id::RequestId for SearchAddressBooksOutput {
+impl ::aws_types::request_id::RequestId for SearchAddressBooksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

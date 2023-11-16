@@ -21,7 +21,7 @@ impl ListAwsDefaultServiceQuotasOutput {
         self.quotas.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAwsDefaultServiceQuotasOutput {
+impl ::aws_types::request_id::RequestId for ListAwsDefaultServiceQuotasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

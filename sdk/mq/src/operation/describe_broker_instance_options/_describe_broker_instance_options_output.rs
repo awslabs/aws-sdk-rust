@@ -27,7 +27,7 @@ impl DescribeBrokerInstanceOptionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBrokerInstanceOptionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeBrokerInstanceOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

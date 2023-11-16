@@ -13,7 +13,7 @@ impl AssociateSourceGraphqlApiOutput {
         self.source_api_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateSourceGraphqlApiOutput {
+impl ::aws_types::request_id::RequestId for AssociateSourceGraphqlApiOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -28,7 +28,7 @@ impl ::std::fmt::Debug for ListTagsOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for ListTagsOutput {
+impl ::aws_types::request_id::RequestId for ListTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

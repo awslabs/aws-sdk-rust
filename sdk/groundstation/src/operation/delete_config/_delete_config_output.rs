@@ -26,7 +26,7 @@ impl DeleteConfigOutput {
         self.config_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteConfigOutput {
+impl ::aws_types::request_id::RequestId for DeleteConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

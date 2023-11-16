@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidBlobIdException {
     }
 }
 impl ::std::error::Error for InvalidBlobIdException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidBlobIdException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidBlobIdException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

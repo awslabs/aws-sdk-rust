@@ -13,7 +13,7 @@ impl StartNextPendingJobExecutionOutput {
         self.execution.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartNextPendingJobExecutionOutput {
+impl ::aws_types::request_id::RequestId for StartNextPendingJobExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

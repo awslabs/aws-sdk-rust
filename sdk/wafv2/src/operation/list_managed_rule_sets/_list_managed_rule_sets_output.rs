@@ -21,7 +21,7 @@ impl ListManagedRuleSetsOutput {
         self.managed_rule_sets.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListManagedRuleSetsOutput {
+impl ::aws_types::request_id::RequestId for ListManagedRuleSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

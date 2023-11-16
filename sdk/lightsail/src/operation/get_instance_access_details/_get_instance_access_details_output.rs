@@ -13,7 +13,7 @@ impl GetInstanceAccessDetailsOutput {
         self.access_details.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetInstanceAccessDetailsOutput {
+impl ::aws_types::request_id::RequestId for GetInstanceAccessDetailsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

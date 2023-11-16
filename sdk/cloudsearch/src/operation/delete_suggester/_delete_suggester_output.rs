@@ -14,7 +14,7 @@ impl DeleteSuggesterOutput {
         self.suggester.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteSuggesterOutput {
+impl ::aws_types::request_id::RequestId for DeleteSuggesterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

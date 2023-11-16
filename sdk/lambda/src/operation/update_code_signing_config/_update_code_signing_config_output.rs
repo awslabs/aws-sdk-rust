@@ -13,7 +13,7 @@ impl UpdateCodeSigningConfigOutput {
         self.code_signing_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateCodeSigningConfigOutput {
+impl ::aws_types::request_id::RequestId for UpdateCodeSigningConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

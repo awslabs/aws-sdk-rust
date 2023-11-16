@@ -13,7 +13,7 @@ impl CreateVoiceConnectorGroupOutput {
         self.voice_connector_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateVoiceConnectorGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateVoiceConnectorGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

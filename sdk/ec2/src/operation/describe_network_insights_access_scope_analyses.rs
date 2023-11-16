@@ -148,7 +148,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeN
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_describe_network_insights_access_scope_analyses::de_describe_network_insights_access_scope_analyses_http_error(status, headers, body)
         } else {
@@ -281,7 +281,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeNetwo
         }
     }
 }
-impl ::aws_http::request_id::RequestId
+impl ::aws_types::request_id::RequestId
     for crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError
 {
     fn request_id(&self) -> Option<&str> {

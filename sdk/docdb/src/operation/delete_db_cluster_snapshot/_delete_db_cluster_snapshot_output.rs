@@ -13,7 +13,7 @@ impl DeleteDbClusterSnapshotOutput {
         self.db_cluster_snapshot.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDbClusterSnapshotOutput {
+impl ::aws_types::request_id::RequestId for DeleteDbClusterSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

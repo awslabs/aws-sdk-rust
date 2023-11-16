@@ -13,7 +13,7 @@ impl DescribeChannelBanOutput {
         self.channel_ban.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeChannelBanOutput {
+impl ::aws_types::request_id::RequestId for DescribeChannelBanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

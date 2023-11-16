@@ -27,7 +27,7 @@ impl ListJournalS3ExportsForLedgerOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListJournalS3ExportsForLedgerOutput {
+impl ::aws_types::request_id::RequestId for ListJournalS3ExportsForLedgerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

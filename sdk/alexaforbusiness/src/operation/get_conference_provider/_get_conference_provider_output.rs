@@ -13,7 +13,7 @@ impl GetConferenceProviderOutput {
         self.conference_provider.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetConferenceProviderOutput {
+impl ::aws_types::request_id::RequestId for GetConferenceProviderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

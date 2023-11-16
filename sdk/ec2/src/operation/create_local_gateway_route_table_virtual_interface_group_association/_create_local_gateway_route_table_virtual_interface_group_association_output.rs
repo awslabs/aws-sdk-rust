@@ -16,7 +16,7 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
         self.local_gateway_route_table_virtual_interface_group_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
+impl ::aws_types::request_id::RequestId for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

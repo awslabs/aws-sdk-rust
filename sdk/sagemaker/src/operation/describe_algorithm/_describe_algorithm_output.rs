@@ -73,7 +73,7 @@ impl DescribeAlgorithmOutput {
         self.certify_for_marketplace
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAlgorithmOutput {
+impl ::aws_types::request_id::RequestId for DescribeAlgorithmOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

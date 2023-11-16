@@ -27,7 +27,7 @@ impl DescribeDatasetExportJobOutput {
         self.dataset_export_job.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDatasetExportJobOutput {
+impl ::aws_types::request_id::RequestId for DescribeDatasetExportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

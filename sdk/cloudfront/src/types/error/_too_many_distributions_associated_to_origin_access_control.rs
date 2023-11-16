@@ -27,7 +27,7 @@ impl ::std::fmt::Display for TooManyDistributionsAssociatedToOriginAccessControl
     }
 }
 impl ::std::error::Error for TooManyDistributionsAssociatedToOriginAccessControl {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TooManyDistributionsAssociatedToOriginAccessControl {
+impl ::aws_types::request_id::RequestId for crate::types::error::TooManyDistributionsAssociatedToOriginAccessControl {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

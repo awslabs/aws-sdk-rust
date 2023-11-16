@@ -32,7 +32,7 @@ impl GetRequestValidatorOutput {
         self.validate_request_parameters
     }
 }
-impl ::aws_http::request_id::RequestId for GetRequestValidatorOutput {
+impl ::aws_types::request_id::RequestId for GetRequestValidatorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

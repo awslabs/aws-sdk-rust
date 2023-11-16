@@ -13,7 +13,7 @@ impl AssociateTeamMemberOutput {
         self.client_request_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateTeamMemberOutput {
+impl ::aws_types::request_id::RequestId for AssociateTeamMemberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

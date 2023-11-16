@@ -21,7 +21,7 @@ impl ListOrganizationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListOrganizationsOutput {
+impl ::aws_types::request_id::RequestId for ListOrganizationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

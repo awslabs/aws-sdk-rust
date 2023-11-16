@@ -23,7 +23,7 @@ impl CreateCacheSecurityGroupOutput {
         self.cache_security_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCacheSecurityGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateCacheSecurityGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

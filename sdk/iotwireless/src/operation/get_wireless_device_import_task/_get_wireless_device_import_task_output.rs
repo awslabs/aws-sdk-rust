@@ -73,7 +73,7 @@ impl GetWirelessDeviceImportTaskOutput {
         self.failed_imported_device_count
     }
 }
-impl ::aws_http::request_id::RequestId for GetWirelessDeviceImportTaskOutput {
+impl ::aws_types::request_id::RequestId for GetWirelessDeviceImportTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

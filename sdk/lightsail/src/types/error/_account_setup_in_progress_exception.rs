@@ -46,7 +46,7 @@ impl ::std::fmt::Display for AccountSetupInProgressException {
     }
 }
 impl ::std::error::Error for AccountSetupInProgressException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::AccountSetupInProgressException {
+impl ::aws_types::request_id::RequestId for crate::types::error::AccountSetupInProgressException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

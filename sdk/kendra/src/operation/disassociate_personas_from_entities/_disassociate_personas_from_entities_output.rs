@@ -15,7 +15,7 @@ impl DisassociatePersonasFromEntitiesOutput {
         self.failed_entity_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DisassociatePersonasFromEntitiesOutput {
+impl ::aws_types::request_id::RequestId for DisassociatePersonasFromEntitiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

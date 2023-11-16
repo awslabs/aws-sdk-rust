@@ -13,7 +13,7 @@ impl CreateOptionGroupOutput {
         self.option_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateOptionGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateOptionGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

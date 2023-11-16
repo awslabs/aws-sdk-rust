@@ -19,7 +19,7 @@ impl UpdateBridgeOutputOutput {
         self.output.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateBridgeOutputOutput {
+impl ::aws_types::request_id::RequestId for UpdateBridgeOutputOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

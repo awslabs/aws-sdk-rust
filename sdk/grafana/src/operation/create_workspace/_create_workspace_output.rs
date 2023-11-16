@@ -13,7 +13,7 @@ impl CreateWorkspaceOutput {
         self.workspace.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateWorkspaceOutput {
+impl ::aws_types::request_id::RequestId for CreateWorkspaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

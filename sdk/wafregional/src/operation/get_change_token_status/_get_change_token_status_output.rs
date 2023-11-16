@@ -13,7 +13,7 @@ impl GetChangeTokenStatusOutput {
         self.change_token_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetChangeTokenStatusOutput {
+impl ::aws_types::request_id::RequestId for GetChangeTokenStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

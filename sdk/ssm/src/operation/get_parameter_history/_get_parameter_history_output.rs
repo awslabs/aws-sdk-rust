@@ -21,7 +21,7 @@ impl GetParameterHistoryOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetParameterHistoryOutput {
+impl ::aws_types::request_id::RequestId for GetParameterHistoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

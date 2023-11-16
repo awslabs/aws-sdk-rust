@@ -19,7 +19,7 @@ impl DescribeGlobalSettingsOutput {
         self.last_update_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeGlobalSettingsOutput {
+impl ::aws_types::request_id::RequestId for DescribeGlobalSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -94,7 +94,7 @@ impl UpdateTrailOutput {
         self.is_organization_trail
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateTrailOutput {
+impl ::aws_types::request_id::RequestId for UpdateTrailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

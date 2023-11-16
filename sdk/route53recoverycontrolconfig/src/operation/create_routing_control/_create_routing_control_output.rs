@@ -13,7 +13,7 @@ impl CreateRoutingControlOutput {
         self.routing_control.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRoutingControlOutput {
+impl ::aws_types::request_id::RequestId for CreateRoutingControlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

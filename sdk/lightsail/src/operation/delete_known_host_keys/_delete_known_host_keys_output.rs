@@ -15,7 +15,7 @@ impl DeleteKnownHostKeysOutput {
         self.operations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteKnownHostKeysOutput {
+impl ::aws_types::request_id::RequestId for DeleteKnownHostKeysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

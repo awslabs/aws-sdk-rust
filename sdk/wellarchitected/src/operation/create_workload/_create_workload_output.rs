@@ -20,7 +20,7 @@ impl CreateWorkloadOutput {
         self.workload_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateWorkloadOutput {
+impl ::aws_types::request_id::RequestId for CreateWorkloadOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

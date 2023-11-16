@@ -27,7 +27,7 @@ impl ListAvailableManagedRuleGroupVersionsOutput {
         self.current_default_version.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAvailableManagedRuleGroupVersionsOutput {
+impl ::aws_types::request_id::RequestId for ListAvailableManagedRuleGroupVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

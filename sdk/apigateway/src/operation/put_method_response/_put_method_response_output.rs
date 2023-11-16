@@ -26,7 +26,7 @@ impl PutMethodResponseOutput {
         self.response_models.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutMethodResponseOutput {
+impl ::aws_types::request_id::RequestId for PutMethodResponseOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

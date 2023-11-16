@@ -64,7 +64,7 @@ impl RevokeEndpointAccessOutput {
         self.endpoint_count
     }
 }
-impl ::aws_http::request_id::RequestId for RevokeEndpointAccessOutput {
+impl ::aws_types::request_id::RequestId for RevokeEndpointAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

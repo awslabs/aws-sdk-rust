@@ -14,7 +14,7 @@ impl DescribeReceiptRuleOutput {
         self.rule.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReceiptRuleOutput {
+impl ::aws_types::request_id::RequestId for DescribeReceiptRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

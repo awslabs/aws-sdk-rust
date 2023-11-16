@@ -21,7 +21,7 @@ impl ListPublishingDestinationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListPublishingDestinationsOutput {
+impl ::aws_types::request_id::RequestId for ListPublishingDestinationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -30,7 +30,7 @@ impl ::std::fmt::Display for ThrottledException {
     }
 }
 impl ::std::error::Error for ThrottledException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ThrottledException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ThrottledException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

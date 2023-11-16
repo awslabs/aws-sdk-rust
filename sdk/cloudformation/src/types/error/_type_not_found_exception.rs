@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TypeNotFoundException {
     }
 }
 impl ::std::error::Error for TypeNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TypeNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TypeNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -13,7 +13,7 @@ impl GetMultiRegionAccessPointPolicyStatusOutput {
         self.established.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetMultiRegionAccessPointPolicyStatusOutput {
+impl ::aws_types::request_id::RequestId for GetMultiRegionAccessPointPolicyStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

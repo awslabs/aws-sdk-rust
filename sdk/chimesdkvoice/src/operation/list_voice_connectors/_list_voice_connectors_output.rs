@@ -21,7 +21,7 @@ impl ListVoiceConnectorsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListVoiceConnectorsOutput {
+impl ::aws_types::request_id::RequestId for ListVoiceConnectorsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

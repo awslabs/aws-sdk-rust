@@ -26,7 +26,7 @@ impl UpdateServiceSyncBlockerOutput {
         self.service_sync_blocker.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateServiceSyncBlockerOutput {
+impl ::aws_types::request_id::RequestId for UpdateServiceSyncBlockerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -22,7 +22,7 @@ impl DescribeReservedInstanceOfferingsOutput {
         self.reserved_instance_offerings.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReservedInstanceOfferingsOutput {
+impl ::aws_types::request_id::RequestId for DescribeReservedInstanceOfferingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

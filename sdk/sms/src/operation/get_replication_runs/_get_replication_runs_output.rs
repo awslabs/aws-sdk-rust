@@ -27,7 +27,7 @@ impl GetReplicationRunsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetReplicationRunsOutput {
+impl ::aws_types::request_id::RequestId for GetReplicationRunsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

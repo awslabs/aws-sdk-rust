@@ -13,7 +13,7 @@ impl StartOnDemandReplicationRunOutput {
         self.replication_run_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartOnDemandReplicationRunOutput {
+impl ::aws_types::request_id::RequestId for StartOnDemandReplicationRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

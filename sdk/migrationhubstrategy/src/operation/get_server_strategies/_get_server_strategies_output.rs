@@ -15,7 +15,7 @@ impl GetServerStrategiesOutput {
         self.server_strategies.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetServerStrategiesOutput {
+impl ::aws_types::request_id::RequestId for GetServerStrategiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

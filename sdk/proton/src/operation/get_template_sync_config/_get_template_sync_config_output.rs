@@ -13,7 +13,7 @@ impl GetTemplateSyncConfigOutput {
         self.template_sync_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTemplateSyncConfigOutput {
+impl ::aws_types::request_id::RequestId for GetTemplateSyncConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

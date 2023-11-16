@@ -13,7 +13,7 @@ impl CreateTrialOutput {
         self.trial_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateTrialOutput {
+impl ::aws_types::request_id::RequestId for CreateTrialOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

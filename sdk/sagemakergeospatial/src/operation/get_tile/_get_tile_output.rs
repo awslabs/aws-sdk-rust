@@ -13,7 +13,7 @@ impl GetTileOutput {
         &self.binary_file
     }
 }
-impl ::aws_http::request_id::RequestId for GetTileOutput {
+impl ::aws_types::request_id::RequestId for GetTileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

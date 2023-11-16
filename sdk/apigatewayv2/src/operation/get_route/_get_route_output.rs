@@ -89,7 +89,7 @@ impl GetRouteOutput {
         self.target.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRouteOutput {
+impl ::aws_types::request_id::RequestId for GetRouteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

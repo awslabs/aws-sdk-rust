@@ -42,7 +42,7 @@ impl GetDeliverabilityDashboardOptionsOutput {
         self.pending_expiration_subscribed_domains.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDeliverabilityDashboardOptionsOutput {
+impl ::aws_types::request_id::RequestId for GetDeliverabilityDashboardOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateReplaceRootVolumeTaskOutput {
         self.replace_root_volume_task.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateReplaceRootVolumeTaskOutput {
+impl ::aws_types::request_id::RequestId for CreateReplaceRootVolumeTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

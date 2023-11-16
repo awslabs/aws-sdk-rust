@@ -15,7 +15,7 @@ impl SwitchoverBlueGreenDeploymentOutput {
         self.blue_green_deployment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for SwitchoverBlueGreenDeploymentOutput {
+impl ::aws_types::request_id::RequestId for SwitchoverBlueGreenDeploymentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

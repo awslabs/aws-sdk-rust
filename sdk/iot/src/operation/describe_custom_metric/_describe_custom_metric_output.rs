@@ -47,7 +47,7 @@ impl DescribeCustomMetricOutput {
         self.last_modified_date.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeCustomMetricOutput {
+impl ::aws_types::request_id::RequestId for DescribeCustomMetricOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

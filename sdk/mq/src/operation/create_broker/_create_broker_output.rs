@@ -19,7 +19,7 @@ impl CreateBrokerOutput {
         self.broker_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateBrokerOutput {
+impl ::aws_types::request_id::RequestId for CreateBrokerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -19,7 +19,7 @@ impl PutDashboardOutput {
         self.dashboard_validation_messages.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for PutDashboardOutput {
+impl ::aws_types::request_id::RequestId for PutDashboardOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

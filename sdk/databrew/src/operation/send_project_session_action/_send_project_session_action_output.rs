@@ -26,7 +26,7 @@ impl SendProjectSessionActionOutput {
         self.action_id
     }
 }
-impl ::aws_http::request_id::RequestId for SendProjectSessionActionOutput {
+impl ::aws_types::request_id::RequestId for SendProjectSessionActionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

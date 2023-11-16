@@ -15,7 +15,7 @@ impl StopWorkspacesOutput {
         self.failed_requests.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for StopWorkspacesOutput {
+impl ::aws_types::request_id::RequestId for StopWorkspacesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

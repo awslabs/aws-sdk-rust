@@ -43,7 +43,7 @@ impl CreateBulkImportJobOutput {
         &self.job_status
     }
 }
-impl ::aws_http::request_id::RequestId for CreateBulkImportJobOutput {
+impl ::aws_types::request_id::RequestId for CreateBulkImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

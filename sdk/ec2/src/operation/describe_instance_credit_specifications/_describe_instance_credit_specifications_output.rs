@@ -21,7 +21,7 @@ impl DescribeInstanceCreditSpecificationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeInstanceCreditSpecificationsOutput {
+impl ::aws_types::request_id::RequestId for DescribeInstanceCreditSpecificationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -41,7 +41,7 @@ impl CreateResourceSetOutput {
         self.tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateResourceSetOutput {
+impl ::aws_types::request_id::RequestId for CreateResourceSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

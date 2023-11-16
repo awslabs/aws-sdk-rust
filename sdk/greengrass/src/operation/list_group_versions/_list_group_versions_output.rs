@@ -21,7 +21,7 @@ impl ListGroupVersionsOutput {
         self.versions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListGroupVersionsOutput {
+impl ::aws_types::request_id::RequestId for ListGroupVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

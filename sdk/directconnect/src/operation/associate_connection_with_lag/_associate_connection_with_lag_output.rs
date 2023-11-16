@@ -170,7 +170,7 @@ impl AssociateConnectionWithLagOutput {
         self.mac_sec_keys.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateConnectionWithLagOutput {
+impl ::aws_types::request_id::RequestId for AssociateConnectionWithLagOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

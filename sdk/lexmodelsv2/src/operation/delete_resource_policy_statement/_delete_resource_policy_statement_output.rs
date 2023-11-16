@@ -19,7 +19,7 @@ impl DeleteResourcePolicyStatementOutput {
         self.revision_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteResourcePolicyStatementOutput {
+impl ::aws_types::request_id::RequestId for DeleteResourcePolicyStatementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

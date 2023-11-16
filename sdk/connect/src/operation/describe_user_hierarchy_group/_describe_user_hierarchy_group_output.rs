@@ -13,7 +13,7 @@ impl DescribeUserHierarchyGroupOutput {
         self.hierarchy_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeUserHierarchyGroupOutput {
+impl ::aws_types::request_id::RequestId for DescribeUserHierarchyGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

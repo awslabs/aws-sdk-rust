@@ -99,7 +99,7 @@ impl GetBucketStatisticsOutput {
         self.unclassifiable_object_size_in_bytes.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBucketStatisticsOutput {
+impl ::aws_types::request_id::RequestId for GetBucketStatisticsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

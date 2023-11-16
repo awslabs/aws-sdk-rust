@@ -13,7 +13,7 @@ impl GetCalculationExecutionCodeOutput {
         self.code_block.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCalculationExecutionCodeOutput {
+impl ::aws_types::request_id::RequestId for GetCalculationExecutionCodeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

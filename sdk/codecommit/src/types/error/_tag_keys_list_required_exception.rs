@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TagKeysListRequiredException {
     }
 }
 impl ::std::error::Error for TagKeysListRequiredException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TagKeysListRequiredException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TagKeysListRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

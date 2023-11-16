@@ -20,7 +20,7 @@ impl ListServiceInstanceProvisionedResourcesOutput {
         self.provisioned_resources.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListServiceInstanceProvisionedResourcesOutput {
+impl ::aws_types::request_id::RequestId for ListServiceInstanceProvisionedResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

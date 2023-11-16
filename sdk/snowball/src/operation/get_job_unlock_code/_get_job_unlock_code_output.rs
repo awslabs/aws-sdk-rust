@@ -13,7 +13,7 @@ impl GetJobUnlockCodeOutput {
         self.unlock_code.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetJobUnlockCodeOutput {
+impl ::aws_types::request_id::RequestId for GetJobUnlockCodeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

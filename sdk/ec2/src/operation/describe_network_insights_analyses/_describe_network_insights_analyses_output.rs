@@ -21,7 +21,7 @@ impl DescribeNetworkInsightsAnalysesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeNetworkInsightsAnalysesOutput {
+impl ::aws_types::request_id::RequestId for DescribeNetworkInsightsAnalysesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -5,7 +5,7 @@
 pub struct UpdateContactChannelOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateContactChannelOutput {
+impl ::aws_types::request_id::RequestId for UpdateContactChannelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

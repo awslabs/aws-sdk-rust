@@ -13,7 +13,7 @@ impl DeleteMeshOutput {
         self.mesh.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteMeshOutput {
+impl ::aws_types::request_id::RequestId for DeleteMeshOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

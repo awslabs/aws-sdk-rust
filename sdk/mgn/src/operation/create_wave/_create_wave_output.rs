@@ -77,7 +77,7 @@ impl ::std::fmt::Debug for CreateWaveOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateWaveOutput {
+impl ::aws_types::request_id::RequestId for CreateWaveOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

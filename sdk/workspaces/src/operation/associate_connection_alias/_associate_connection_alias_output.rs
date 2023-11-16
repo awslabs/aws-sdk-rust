@@ -13,7 +13,7 @@ impl AssociateConnectionAliasOutput {
         self.connection_identifier.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateConnectionAliasOutput {
+impl ::aws_types::request_id::RequestId for AssociateConnectionAliasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

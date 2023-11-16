@@ -22,7 +22,7 @@ impl DescribeReplicationTaskIndividualAssessmentsOutput {
         self.replication_task_individual_assessments.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReplicationTaskIndividualAssessmentsOutput {
+impl ::aws_types::request_id::RequestId for DescribeReplicationTaskIndividualAssessmentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

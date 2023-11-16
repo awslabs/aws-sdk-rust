@@ -13,7 +13,7 @@ impl CreateNetworkInsightsPathOutput {
         self.network_insights_path.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateNetworkInsightsPathOutput {
+impl ::aws_types::request_id::RequestId for CreateNetworkInsightsPathOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

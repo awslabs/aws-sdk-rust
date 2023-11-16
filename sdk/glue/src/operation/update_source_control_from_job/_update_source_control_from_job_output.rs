@@ -13,7 +13,7 @@ impl UpdateSourceControlFromJobOutput {
         self.job_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSourceControlFromJobOutput {
+impl ::aws_types::request_id::RequestId for UpdateSourceControlFromJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

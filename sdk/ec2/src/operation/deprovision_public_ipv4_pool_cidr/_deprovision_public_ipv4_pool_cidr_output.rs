@@ -21,7 +21,7 @@ impl DeprovisionPublicIpv4PoolCidrOutput {
         self.deprovisioned_addresses.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeprovisionPublicIpv4PoolCidrOutput {
+impl ::aws_types::request_id::RequestId for DeprovisionPublicIpv4PoolCidrOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

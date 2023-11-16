@@ -13,7 +13,7 @@ impl GetVoiceToneAnalysisTaskOutput {
         self.voice_tone_analysis_task.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetVoiceToneAnalysisTaskOutput {
+impl ::aws_types::request_id::RequestId for GetVoiceToneAnalysisTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

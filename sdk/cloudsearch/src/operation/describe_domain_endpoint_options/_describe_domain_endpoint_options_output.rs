@@ -14,7 +14,7 @@ impl DescribeDomainEndpointOptionsOutput {
         self.domain_endpoint_options.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDomainEndpointOptionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeDomainEndpointOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

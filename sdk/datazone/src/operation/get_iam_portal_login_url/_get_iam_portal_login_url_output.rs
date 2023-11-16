@@ -20,7 +20,7 @@ impl GetIamPortalLoginUrlOutput {
         self.user_profile_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetIamPortalLoginUrlOutput {
+impl ::aws_types::request_id::RequestId for GetIamPortalLoginUrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

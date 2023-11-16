@@ -13,7 +13,7 @@ impl UpdateGeoMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateGeoMatchSetOutput {
+impl ::aws_types::request_id::RequestId for UpdateGeoMatchSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

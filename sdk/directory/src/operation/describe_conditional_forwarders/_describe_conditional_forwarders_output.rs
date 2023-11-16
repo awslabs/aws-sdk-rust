@@ -16,7 +16,7 @@ impl DescribeConditionalForwardersOutput {
         self.conditional_forwarders.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeConditionalForwardersOutput {
+impl ::aws_types::request_id::RequestId for DescribeConditionalForwardersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

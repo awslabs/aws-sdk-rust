@@ -60,7 +60,7 @@ impl CreateMatchingWorkflowOutput {
         self.role_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateMatchingWorkflowOutput {
+impl ::aws_types::request_id::RequestId for CreateMatchingWorkflowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

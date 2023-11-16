@@ -13,7 +13,7 @@ impl UpdateSecurityGroupRuleDescriptionsEgressOutput {
         self.r#return
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateSecurityGroupRuleDescriptionsEgressOutput {
+impl ::aws_types::request_id::RequestId for UpdateSecurityGroupRuleDescriptionsEgressOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

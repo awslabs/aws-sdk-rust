@@ -21,7 +21,7 @@ impl ListFargateProfilesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListFargateProfilesOutput {
+impl ::aws_types::request_id::RequestId for ListFargateProfilesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

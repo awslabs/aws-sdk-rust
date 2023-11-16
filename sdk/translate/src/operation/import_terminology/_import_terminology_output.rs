@@ -19,7 +19,7 @@ impl ImportTerminologyOutput {
         self.auxiliary_data_location.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ImportTerminologyOutput {
+impl ::aws_types::request_id::RequestId for ImportTerminologyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -20,7 +20,7 @@ impl GetItemOutput {
         self.consumed_capacity.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetItemOutput {
+impl ::aws_types::request_id::RequestId for GetItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

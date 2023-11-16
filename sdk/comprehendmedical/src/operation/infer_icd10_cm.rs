@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for InferICD1
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_infer_icd10_cm::de_infer_icd10_cm_http_error(status, headers, body)
         } else {
@@ -301,7 +301,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InferICD10CME
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::infer_icd10_cm::InferICD10CMError {
+impl ::aws_types::request_id::RequestId for crate::operation::infer_icd10_cm::InferICD10CMError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

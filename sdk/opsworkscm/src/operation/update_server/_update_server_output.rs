@@ -13,7 +13,7 @@ impl UpdateServerOutput {
         self.server.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateServerOutput {
+impl ::aws_types::request_id::RequestId for UpdateServerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

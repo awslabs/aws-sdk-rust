@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TagsMapRequiredException {
     }
 }
 impl ::std::error::Error for TagsMapRequiredException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TagsMapRequiredException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TagsMapRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -8,7 +8,9 @@
 mod error;
 mod headers;
 mod request;
+mod response;
 
 pub use error::HttpError;
 pub use headers::{HeaderValue, Headers, HeadersIter};
-pub use request::Request;
+pub use request::{Request, RequestParts};
+pub use response::Response;

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidIamSessionArnException {
     }
 }
 impl ::std::error::Error for InvalidIamSessionArnException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidIamSessionArnException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidIamSessionArnException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

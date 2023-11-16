@@ -15,7 +15,7 @@ impl ModifyDbClusterSnapshotAttributeOutput {
         self.db_cluster_snapshot_attributes_result.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyDbClusterSnapshotAttributeOutput {
+impl ::aws_types::request_id::RequestId for ModifyDbClusterSnapshotAttributeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

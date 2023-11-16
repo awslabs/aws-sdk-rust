@@ -30,7 +30,7 @@ impl ::std::fmt::Debug for BatchDetectEntitiesOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchDetectEntitiesOutput {
+impl ::aws_types::request_id::RequestId for BatchDetectEntitiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

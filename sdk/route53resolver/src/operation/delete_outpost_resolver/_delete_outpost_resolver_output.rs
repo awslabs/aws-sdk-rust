@@ -13,7 +13,7 @@ impl DeleteOutpostResolverOutput {
         self.outpost_resolver.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteOutpostResolverOutput {
+impl ::aws_types::request_id::RequestId for DeleteOutpostResolverOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

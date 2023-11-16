@@ -21,7 +21,7 @@ impl VerifyMacOutput {
         self.key_check_value.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for VerifyMacOutput {
+impl ::aws_types::request_id::RequestId for VerifyMacOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

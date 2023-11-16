@@ -19,7 +19,7 @@ impl RemoveBridgeOutputOutput {
         self.output_name.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for RemoveBridgeOutputOutput {
+impl ::aws_types::request_id::RequestId for RemoveBridgeOutputOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

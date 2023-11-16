@@ -21,7 +21,7 @@ impl AddProfileKeyOutput {
         self.values.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AddProfileKeyOutput {
+impl ::aws_types::request_id::RequestId for AddProfileKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

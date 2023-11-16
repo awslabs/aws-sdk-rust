@@ -19,7 +19,7 @@ impl StartFlywheelIterationOutput {
         self.flywheel_iteration_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartFlywheelIterationOutput {
+impl ::aws_types::request_id::RequestId for StartFlywheelIterationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -6,7 +6,7 @@
 pub struct ConfirmForgotPasswordOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for ConfirmForgotPasswordOutput {
+impl ::aws_types::request_id::RequestId for ConfirmForgotPasswordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

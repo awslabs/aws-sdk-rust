@@ -13,7 +13,7 @@ impl CreateReturnShippingLabelOutput {
         self.status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateReturnShippingLabelOutput {
+impl ::aws_types::request_id::RequestId for CreateReturnShippingLabelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

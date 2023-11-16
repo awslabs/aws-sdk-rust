@@ -27,7 +27,7 @@ impl EvaluateMappingTemplateOutput {
         self.logs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for EvaluateMappingTemplateOutput {
+impl ::aws_types::request_id::RequestId for EvaluateMappingTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

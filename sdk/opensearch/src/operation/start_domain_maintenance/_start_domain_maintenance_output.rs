@@ -14,7 +14,7 @@ impl StartDomainMaintenanceOutput {
         self.maintenance_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartDomainMaintenanceOutput {
+impl ::aws_types::request_id::RequestId for StartDomainMaintenanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

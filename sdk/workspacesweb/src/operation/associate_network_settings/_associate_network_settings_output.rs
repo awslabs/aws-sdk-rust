@@ -21,7 +21,7 @@ impl AssociateNetworkSettingsOutput {
         self.network_settings_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateNetworkSettingsOutput {
+impl ::aws_types::request_id::RequestId for AssociateNetworkSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

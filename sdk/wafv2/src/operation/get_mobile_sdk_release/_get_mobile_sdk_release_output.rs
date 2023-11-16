@@ -13,7 +13,7 @@ impl GetMobileSdkReleaseOutput {
         self.mobile_sdk_release.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetMobileSdkReleaseOutput {
+impl ::aws_types::request_id::RequestId for GetMobileSdkReleaseOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

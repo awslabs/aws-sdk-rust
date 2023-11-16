@@ -69,7 +69,7 @@ impl UpdateRuleOutput {
         self.lock_end_time.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateRuleOutput {
+impl ::aws_types::request_id::RequestId for UpdateRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

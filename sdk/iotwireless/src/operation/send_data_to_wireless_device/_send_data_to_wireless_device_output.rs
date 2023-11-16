@@ -13,7 +13,7 @@ impl SendDataToWirelessDeviceOutput {
         self.message_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SendDataToWirelessDeviceOutput {
+impl ::aws_types::request_id::RequestId for SendDataToWirelessDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

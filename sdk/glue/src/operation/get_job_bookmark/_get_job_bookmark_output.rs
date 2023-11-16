@@ -13,7 +13,7 @@ impl GetJobBookmarkOutput {
         self.job_bookmark_entry.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetJobBookmarkOutput {
+impl ::aws_types::request_id::RequestId for GetJobBookmarkOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

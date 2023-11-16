@@ -15,7 +15,7 @@ impl AddResourcePermissionsOutput {
         self.share_results.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AddResourcePermissionsOutput {
+impl ::aws_types::request_id::RequestId for AddResourcePermissionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

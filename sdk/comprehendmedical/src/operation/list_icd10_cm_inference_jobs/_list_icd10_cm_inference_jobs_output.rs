@@ -21,7 +21,7 @@ impl ListIcd10CmInferenceJobsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListIcd10CmInferenceJobsOutput {
+impl ::aws_types::request_id::RequestId for ListIcd10CmInferenceJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

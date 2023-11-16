@@ -23,7 +23,7 @@ impl BatchGetDevEndpointsOutput {
         self.dev_endpoints_not_found.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchGetDevEndpointsOutput {
+impl ::aws_types::request_id::RequestId for BatchGetDevEndpointsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl SubmitAttachmentStateChangesOutput {
         self.acknowledgment.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SubmitAttachmentStateChangesOutput {
+impl ::aws_types::request_id::RequestId for SubmitAttachmentStateChangesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

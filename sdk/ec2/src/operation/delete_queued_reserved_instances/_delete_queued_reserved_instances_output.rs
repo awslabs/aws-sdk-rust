@@ -23,7 +23,7 @@ impl DeleteQueuedReservedInstancesOutput {
         self.failed_queued_purchase_deletions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteQueuedReservedInstancesOutput {
+impl ::aws_types::request_id::RequestId for DeleteQueuedReservedInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

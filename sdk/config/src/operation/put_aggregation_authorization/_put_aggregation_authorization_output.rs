@@ -13,7 +13,7 @@ impl PutAggregationAuthorizationOutput {
         self.aggregation_authorization.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutAggregationAuthorizationOutput {
+impl ::aws_types::request_id::RequestId for PutAggregationAuthorizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

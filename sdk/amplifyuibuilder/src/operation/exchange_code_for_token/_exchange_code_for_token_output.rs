@@ -37,7 +37,7 @@ impl ::std::fmt::Debug for ExchangeCodeForTokenOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for ExchangeCodeForTokenOutput {
+impl ::aws_types::request_id::RequestId for ExchangeCodeForTokenOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

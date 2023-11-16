@@ -13,7 +13,7 @@ impl CreateDatasetExportJobOutput {
         self.dataset_export_job_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateDatasetExportJobOutput {
+impl ::aws_types::request_id::RequestId for CreateDatasetExportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

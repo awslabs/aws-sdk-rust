@@ -13,7 +13,7 @@ impl GetMediaInsightsPipelineConfigurationOutput {
         self.media_insights_pipeline_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetMediaInsightsPipelineConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetMediaInsightsPipelineConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

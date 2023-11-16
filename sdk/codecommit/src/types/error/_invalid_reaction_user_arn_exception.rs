@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidReactionUserArnException {
     }
 }
 impl ::std::error::Error for InvalidReactionUserArnException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidReactionUserArnException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidReactionUserArnException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

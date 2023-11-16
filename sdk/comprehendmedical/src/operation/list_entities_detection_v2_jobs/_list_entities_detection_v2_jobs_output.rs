@@ -21,7 +21,7 @@ impl ListEntitiesDetectionV2JobsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListEntitiesDetectionV2JobsOutput {
+impl ::aws_types::request_id::RequestId for ListEntitiesDetectionV2JobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

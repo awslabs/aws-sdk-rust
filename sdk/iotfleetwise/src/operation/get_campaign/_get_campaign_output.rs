@@ -131,7 +131,7 @@ impl GetCampaignOutput {
         self.data_destination_configs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCampaignOutput {
+impl ::aws_types::request_id::RequestId for GetCampaignOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

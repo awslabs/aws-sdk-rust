@@ -32,7 +32,7 @@ impl ListVolumesOutput {
         self.volume_infos.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListVolumesOutput {
+impl ::aws_types::request_id::RequestId for ListVolumesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

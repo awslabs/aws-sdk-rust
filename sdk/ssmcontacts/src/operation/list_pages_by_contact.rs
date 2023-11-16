@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListPages
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_pages_by_contact::de_list_pages_by_contact_http_error(status, headers, body)
         } else {
@@ -299,7 +299,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListPagesByCo
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_pages_by_contact::ListPagesByContactError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_pages_by_contact::ListPagesByContactError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

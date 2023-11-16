@@ -13,7 +13,7 @@ impl SubmitContainerStateChangeOutput {
         self.acknowledgment.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for SubmitContainerStateChangeOutput {
+impl ::aws_types::request_id::RequestId for SubmitContainerStateChangeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

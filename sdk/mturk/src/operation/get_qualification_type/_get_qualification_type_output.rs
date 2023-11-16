@@ -13,7 +13,7 @@ impl GetQualificationTypeOutput {
         self.qualification_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetQualificationTypeOutput {
+impl ::aws_types::request_id::RequestId for GetQualificationTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

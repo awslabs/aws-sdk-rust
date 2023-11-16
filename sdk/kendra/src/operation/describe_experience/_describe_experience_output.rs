@@ -75,7 +75,7 @@ impl DescribeExperienceOutput {
         self.error_message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeExperienceOutput {
+impl ::aws_types::request_id::RequestId for DescribeExperienceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

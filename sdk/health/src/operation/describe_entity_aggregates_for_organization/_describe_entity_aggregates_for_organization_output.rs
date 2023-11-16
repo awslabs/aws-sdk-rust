@@ -15,7 +15,7 @@ impl DescribeEntityAggregatesForOrganizationOutput {
         self.organization_entity_aggregates.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeEntityAggregatesForOrganizationOutput {
+impl ::aws_types::request_id::RequestId for DescribeEntityAggregatesForOrganizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

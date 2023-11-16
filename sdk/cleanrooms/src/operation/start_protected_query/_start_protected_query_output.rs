@@ -13,7 +13,7 @@ impl StartProtectedQueryOutput {
         self.protected_query.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartProtectedQueryOutput {
+impl ::aws_types::request_id::RequestId for StartProtectedQueryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

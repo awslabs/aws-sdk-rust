@@ -13,7 +13,7 @@ impl GetShareOutput {
         self.share.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetShareOutput {
+impl ::aws_types::request_id::RequestId for GetShareOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

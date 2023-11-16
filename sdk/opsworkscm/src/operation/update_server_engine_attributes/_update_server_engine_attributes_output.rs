@@ -13,7 +13,7 @@ impl UpdateServerEngineAttributesOutput {
         self.server.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateServerEngineAttributesOutput {
+impl ::aws_types::request_id::RequestId for UpdateServerEngineAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

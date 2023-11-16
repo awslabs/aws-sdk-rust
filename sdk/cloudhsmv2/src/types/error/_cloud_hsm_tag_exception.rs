@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CloudHsmTagException {
     }
 }
 impl ::std::error::Error for CloudHsmTagException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CloudHsmTagException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CloudHsmTagException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

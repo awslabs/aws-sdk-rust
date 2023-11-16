@@ -13,7 +13,7 @@ impl DescribeDocumentClassifierOutput {
         self.document_classifier_properties.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDocumentClassifierOutput {
+impl ::aws_types::request_id::RequestId for DescribeDocumentClassifierOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -51,7 +51,7 @@ impl RecognizeTextOutput {
         self.recognized_bot_member.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RecognizeTextOutput {
+impl ::aws_types::request_id::RequestId for RecognizeTextOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

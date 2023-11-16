@@ -13,7 +13,7 @@ impl InvokeDeviceMethodOutput {
         self.device_method_response.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for InvokeDeviceMethodOutput {
+impl ::aws_types::request_id::RequestId for InvokeDeviceMethodOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

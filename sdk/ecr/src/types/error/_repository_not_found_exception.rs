@@ -26,7 +26,7 @@ impl ::std::fmt::Display for RepositoryNotFoundException {
     }
 }
 impl ::std::error::Error for RepositoryNotFoundException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::RepositoryNotFoundException {
+impl ::aws_types::request_id::RequestId for crate::types::error::RepositoryNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

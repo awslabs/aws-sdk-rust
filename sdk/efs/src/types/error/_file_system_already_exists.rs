@@ -42,7 +42,7 @@ impl ::std::fmt::Display for FileSystemAlreadyExists {
     }
 }
 impl ::std::error::Error for FileSystemAlreadyExists {}
-impl ::aws_http::request_id::RequestId for crate::types::error::FileSystemAlreadyExists {
+impl ::aws_types::request_id::RequestId for crate::types::error::FileSystemAlreadyExists {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -13,7 +13,7 @@ impl CreateBotOutput {
         self.bot.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateBotOutput {
+impl ::aws_types::request_id::RequestId for CreateBotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

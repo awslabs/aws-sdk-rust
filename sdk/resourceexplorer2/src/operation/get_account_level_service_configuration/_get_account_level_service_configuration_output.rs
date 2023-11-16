@@ -13,7 +13,7 @@ impl GetAccountLevelServiceConfigurationOutput {
         self.org_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAccountLevelServiceConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetAccountLevelServiceConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

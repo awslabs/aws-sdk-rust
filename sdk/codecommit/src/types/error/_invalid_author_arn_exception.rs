@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidAuthorArnException {
     }
 }
 impl ::std::error::Error for InvalidAuthorArnException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidAuthorArnException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidAuthorArnException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

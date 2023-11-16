@@ -21,7 +21,7 @@ impl GetUsageForecastOutput {
         self.forecast_results_by_time.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetUsageForecastOutput {
+impl ::aws_types::request_id::RequestId for GetUsageForecastOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

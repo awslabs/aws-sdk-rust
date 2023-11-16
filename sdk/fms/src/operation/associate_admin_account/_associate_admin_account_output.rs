@@ -5,7 +5,7 @@
 pub struct AssociateAdminAccountOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for AssociateAdminAccountOutput {
+impl ::aws_types::request_id::RequestId for AssociateAdminAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

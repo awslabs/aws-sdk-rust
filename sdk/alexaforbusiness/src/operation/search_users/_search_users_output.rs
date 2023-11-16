@@ -27,7 +27,7 @@ impl SearchUsersOutput {
         self.total_count
     }
 }
-impl ::aws_http::request_id::RequestId for SearchUsersOutput {
+impl ::aws_types::request_id::RequestId for SearchUsersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

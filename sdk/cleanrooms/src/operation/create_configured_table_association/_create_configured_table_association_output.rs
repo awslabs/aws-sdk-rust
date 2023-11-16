@@ -13,7 +13,7 @@ impl CreateConfiguredTableAssociationOutput {
         self.configured_table_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateConfiguredTableAssociationOutput {
+impl ::aws_types::request_id::RequestId for CreateConfiguredTableAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

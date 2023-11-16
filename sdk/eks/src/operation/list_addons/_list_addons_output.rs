@@ -25,7 +25,7 @@ impl ListAddonsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAddonsOutput {
+impl ::aws_types::request_id::RequestId for ListAddonsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

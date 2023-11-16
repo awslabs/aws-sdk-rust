@@ -13,7 +13,7 @@ impl GetMeetingOutput {
         self.meeting.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetMeetingOutput {
+impl ::aws_types::request_id::RequestId for GetMeetingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

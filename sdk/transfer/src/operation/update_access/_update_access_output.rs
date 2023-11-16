@@ -21,7 +21,7 @@ impl UpdateAccessOutput {
         self.external_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAccessOutput {
+impl ::aws_types::request_id::RequestId for UpdateAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

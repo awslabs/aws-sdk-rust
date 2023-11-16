@@ -23,7 +23,7 @@ impl GetImageBlockPublicAccessStateOutput {
         self.image_block_public_access_state.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetImageBlockPublicAccessStateOutput {
+impl ::aws_types::request_id::RequestId for GetImageBlockPublicAccessStateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

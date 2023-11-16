@@ -14,7 +14,7 @@ impl CreateMultiplexProgramOutput {
         self.multiplex_program.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateMultiplexProgramOutput {
+impl ::aws_types::request_id::RequestId for CreateMultiplexProgramOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

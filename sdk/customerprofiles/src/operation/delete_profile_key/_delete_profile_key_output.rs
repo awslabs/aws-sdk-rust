@@ -13,7 +13,7 @@ impl DeleteProfileKeyOutput {
         self.message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteProfileKeyOutput {
+impl ::aws_types::request_id::RequestId for DeleteProfileKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

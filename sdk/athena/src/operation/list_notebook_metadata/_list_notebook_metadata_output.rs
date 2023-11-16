@@ -21,7 +21,7 @@ impl ListNotebookMetadataOutput {
         self.notebook_metadata_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListNotebookMetadataOutput {
+impl ::aws_types::request_id::RequestId for ListNotebookMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

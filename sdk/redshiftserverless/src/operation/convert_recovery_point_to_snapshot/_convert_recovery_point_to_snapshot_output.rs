@@ -13,7 +13,7 @@ impl ConvertRecoveryPointToSnapshotOutput {
         self.snapshot.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ConvertRecoveryPointToSnapshotOutput {
+impl ::aws_types::request_id::RequestId for ConvertRecoveryPointToSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

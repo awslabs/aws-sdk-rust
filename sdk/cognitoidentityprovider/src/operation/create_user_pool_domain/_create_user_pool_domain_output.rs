@@ -13,7 +13,7 @@ impl CreateUserPoolDomainOutput {
         self.cloud_front_domain.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateUserPoolDomainOutput {
+impl ::aws_types::request_id::RequestId for CreateUserPoolDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

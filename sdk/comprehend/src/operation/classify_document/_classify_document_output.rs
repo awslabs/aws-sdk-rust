@@ -70,7 +70,7 @@ impl ::std::fmt::Debug for ClassifyDocumentOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for ClassifyDocumentOutput {
+impl ::aws_types::request_id::RequestId for ClassifyDocumentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

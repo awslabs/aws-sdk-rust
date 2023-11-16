@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CidrCollectionAlreadyExistsException {
     }
 }
 impl ::std::error::Error for CidrCollectionAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CidrCollectionAlreadyExistsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CidrCollectionAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

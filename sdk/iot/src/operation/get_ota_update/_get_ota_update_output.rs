@@ -13,7 +13,7 @@ impl GetOtaUpdateOutput {
         self.ota_update_info.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetOtaUpdateOutput {
+impl ::aws_types::request_id::RequestId for GetOtaUpdateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

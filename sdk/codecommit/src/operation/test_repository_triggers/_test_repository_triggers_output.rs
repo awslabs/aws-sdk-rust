@@ -24,7 +24,7 @@ impl TestRepositoryTriggersOutput {
         self.failed_executions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for TestRepositoryTriggersOutput {
+impl ::aws_types::request_id::RequestId for TestRepositoryTriggersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

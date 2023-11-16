@@ -13,7 +13,7 @@ impl UpdateServicePipelineOutput {
         self.pipeline.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateServicePipelineOutput {
+impl ::aws_types::request_id::RequestId for UpdateServicePipelineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

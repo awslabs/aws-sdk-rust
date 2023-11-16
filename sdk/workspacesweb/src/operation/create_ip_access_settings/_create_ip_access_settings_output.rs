@@ -14,7 +14,7 @@ impl CreateIpAccessSettingsOutput {
         self.ip_access_settings_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateIpAccessSettingsOutput {
+impl ::aws_types::request_id::RequestId for CreateIpAccessSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

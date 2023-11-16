@@ -15,7 +15,7 @@ impl DescribeAuthenticationProfilesOutput {
         self.authentication_profiles.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAuthenticationProfilesOutput {
+impl ::aws_types::request_id::RequestId for DescribeAuthenticationProfilesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

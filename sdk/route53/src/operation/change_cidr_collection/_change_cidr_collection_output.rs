@@ -14,7 +14,7 @@ impl ChangeCidrCollectionOutput {
         self.id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ChangeCidrCollectionOutput {
+impl ::aws_types::request_id::RequestId for ChangeCidrCollectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

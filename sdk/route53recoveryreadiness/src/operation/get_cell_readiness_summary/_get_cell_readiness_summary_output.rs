@@ -27,7 +27,7 @@ impl GetCellReadinessSummaryOutput {
         self.readiness_checks.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetCellReadinessSummaryOutput {
+impl ::aws_types::request_id::RequestId for GetCellReadinessSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

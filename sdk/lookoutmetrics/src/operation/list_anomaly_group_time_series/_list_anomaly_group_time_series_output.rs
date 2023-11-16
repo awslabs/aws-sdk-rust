@@ -41,7 +41,7 @@ impl ListAnomalyGroupTimeSeriesOutput {
         self.time_series_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListAnomalyGroupTimeSeriesOutput {
+impl ::aws_types::request_id::RequestId for ListAnomalyGroupTimeSeriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

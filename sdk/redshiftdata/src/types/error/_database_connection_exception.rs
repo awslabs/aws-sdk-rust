@@ -24,7 +24,7 @@ impl ::std::fmt::Display for DatabaseConnectionException {
     }
 }
 impl ::std::error::Error for DatabaseConnectionException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DatabaseConnectionException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DatabaseConnectionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

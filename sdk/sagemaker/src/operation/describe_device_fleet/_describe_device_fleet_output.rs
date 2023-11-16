@@ -55,7 +55,7 @@ impl DescribeDeviceFleetOutput {
         self.iot_role_alias.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDeviceFleetOutput {
+impl ::aws_types::request_id::RequestId for DescribeDeviceFleetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

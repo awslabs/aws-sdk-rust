@@ -148,7 +148,7 @@ impl DescribeChangeSetOutput {
         self.on_stack_failure.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeChangeSetOutput {
+impl ::aws_types::request_id::RequestId for DescribeChangeSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ApprovalStateRequiredException {
     }
 }
 impl ::std::error::Error for ApprovalStateRequiredException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ApprovalStateRequiredException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ApprovalStateRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

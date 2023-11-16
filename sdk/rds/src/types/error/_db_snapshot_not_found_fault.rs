@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DbSnapshotNotFoundFault {
     }
 }
 impl ::std::error::Error for DbSnapshotNotFoundFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DbSnapshotNotFoundFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::DbSnapshotNotFoundFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

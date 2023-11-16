@@ -37,7 +37,7 @@ impl DescribeLunaClientOutput {
         self.label.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeLunaClientOutput {
+impl ::aws_types::request_id::RequestId for DescribeLunaClientOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

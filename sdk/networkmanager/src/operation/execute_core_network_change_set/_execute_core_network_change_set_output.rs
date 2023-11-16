@@ -5,7 +5,7 @@
 pub struct ExecuteCoreNetworkChangeSetOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for ExecuteCoreNetworkChangeSetOutput {
+impl ::aws_types::request_id::RequestId for ExecuteCoreNetworkChangeSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -31,7 +31,7 @@ impl ModifyCustomDomainAssociationOutput {
         self.custom_domain_cert_expiry_time.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyCustomDomainAssociationOutput {
+impl ::aws_types::request_id::RequestId for ModifyCustomDomainAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

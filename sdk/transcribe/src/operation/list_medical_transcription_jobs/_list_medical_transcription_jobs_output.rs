@@ -27,7 +27,7 @@ impl ListMedicalTranscriptionJobsOutput {
         self.medical_transcription_job_summaries.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListMedicalTranscriptionJobsOutput {
+impl ::aws_types::request_id::RequestId for ListMedicalTranscriptionJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

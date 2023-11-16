@@ -20,7 +20,7 @@ impl ListServiceTemplatesOutput {
         self.templates.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListServiceTemplatesOutput {
+impl ::aws_types::request_id::RequestId for ListServiceTemplatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DescribeRecipeOutput {
         self.recipe.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRecipeOutput {
+impl ::aws_types::request_id::RequestId for DescribeRecipeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

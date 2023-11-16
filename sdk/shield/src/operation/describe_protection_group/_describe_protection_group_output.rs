@@ -13,7 +13,7 @@ impl DescribeProtectionGroupOutput {
         self.protection_group.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeProtectionGroupOutput {
+impl ::aws_types::request_id::RequestId for DescribeProtectionGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

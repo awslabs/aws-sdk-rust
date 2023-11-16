@@ -13,7 +13,7 @@ impl DeleteVoiceChannelOutput {
         self.voice_channel_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteVoiceChannelOutput {
+impl ::aws_types::request_id::RequestId for DeleteVoiceChannelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

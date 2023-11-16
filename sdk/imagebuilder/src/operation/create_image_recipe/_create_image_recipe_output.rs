@@ -25,7 +25,7 @@ impl CreateImageRecipeOutput {
         self.image_recipe_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateImageRecipeOutput {
+impl ::aws_types::request_id::RequestId for CreateImageRecipeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

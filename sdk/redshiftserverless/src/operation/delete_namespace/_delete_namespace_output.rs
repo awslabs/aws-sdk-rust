@@ -13,7 +13,7 @@ impl DeleteNamespaceOutput {
         self.namespace.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteNamespaceOutput {
+impl ::aws_types::request_id::RequestId for DeleteNamespaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

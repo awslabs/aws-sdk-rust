@@ -13,7 +13,7 @@ impl DescribeAutoScalingConfigurationOutput {
         self.auto_scaling_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAutoScalingConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeAutoScalingConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

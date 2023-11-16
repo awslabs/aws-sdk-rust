@@ -99,7 +99,7 @@ impl DescribeApplicationInstanceOutput {
         self.runtime_context_states.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeApplicationInstanceOutput {
+impl ::aws_types::request_id::RequestId for DescribeApplicationInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

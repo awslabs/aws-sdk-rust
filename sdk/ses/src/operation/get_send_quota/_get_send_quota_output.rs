@@ -30,7 +30,7 @@ impl GetSendQuotaOutput {
         self.sent_last24_hours
     }
 }
-impl ::aws_http::request_id::RequestId for GetSendQuotaOutput {
+impl ::aws_types::request_id::RequestId for GetSendQuotaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

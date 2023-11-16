@@ -22,7 +22,7 @@ impl DescribeSpotFleetRequestsOutput {
         self.spot_fleet_request_configs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeSpotFleetRequestsOutput {
+impl ::aws_types::request_id::RequestId for DescribeSpotFleetRequestsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

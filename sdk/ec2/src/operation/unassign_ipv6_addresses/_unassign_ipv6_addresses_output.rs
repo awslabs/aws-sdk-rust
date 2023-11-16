@@ -29,7 +29,7 @@ impl UnassignIpv6AddressesOutput {
         self.unassigned_ipv6_prefixes.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for UnassignIpv6AddressesOutput {
+impl ::aws_types::request_id::RequestId for UnassignIpv6AddressesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

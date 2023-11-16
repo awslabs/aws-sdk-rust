@@ -13,7 +13,7 @@ impl CreateCodeReviewOutput {
         self.code_review.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateCodeReviewOutput {
+impl ::aws_types::request_id::RequestId for CreateCodeReviewOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

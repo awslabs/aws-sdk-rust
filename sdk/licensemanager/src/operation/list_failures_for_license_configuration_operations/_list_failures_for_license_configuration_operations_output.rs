@@ -21,7 +21,7 @@ impl ListFailuresForLicenseConfigurationOperationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListFailuresForLicenseConfigurationOperationsOutput {
+impl ::aws_types::request_id::RequestId for ListFailuresForLicenseConfigurationOperationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

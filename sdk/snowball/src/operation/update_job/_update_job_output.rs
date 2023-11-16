@@ -5,7 +5,7 @@
 pub struct UpdateJobOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateJobOutput {
+impl ::aws_types::request_id::RequestId for UpdateJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

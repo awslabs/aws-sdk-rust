@@ -34,7 +34,7 @@ impl ::std::fmt::Display for UnsupportedOperationException {
     }
 }
 impl ::std::error::Error for UnsupportedOperationException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedOperationException {
+impl ::aws_types::request_id::RequestId for crate::types::error::UnsupportedOperationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

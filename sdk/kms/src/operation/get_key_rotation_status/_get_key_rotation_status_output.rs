@@ -13,7 +13,7 @@ impl GetKeyRotationStatusOutput {
         self.key_rotation_enabled
     }
 }
-impl ::aws_http::request_id::RequestId for GetKeyRotationStatusOutput {
+impl ::aws_types::request_id::RequestId for GetKeyRotationStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

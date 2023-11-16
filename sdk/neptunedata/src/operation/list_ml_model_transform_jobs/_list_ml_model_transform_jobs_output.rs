@@ -15,7 +15,7 @@ impl ListMlModelTransformJobsOutput {
         self.ids.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListMlModelTransformJobsOutput {
+impl ::aws_types::request_id::RequestId for ListMlModelTransformJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

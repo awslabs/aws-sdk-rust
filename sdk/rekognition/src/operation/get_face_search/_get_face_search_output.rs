@@ -57,7 +57,7 @@ impl GetFaceSearchOutput {
         self.job_tag.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetFaceSearchOutput {
+impl ::aws_types::request_id::RequestId for GetFaceSearchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

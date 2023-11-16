@@ -19,7 +19,7 @@ impl DeleteApplicationVpcConfigurationOutput {
         self.application_version_id
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteApplicationVpcConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DeleteApplicationVpcConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

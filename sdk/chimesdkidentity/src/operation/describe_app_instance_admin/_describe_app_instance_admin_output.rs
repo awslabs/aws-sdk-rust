@@ -13,7 +13,7 @@ impl DescribeAppInstanceAdminOutput {
         self.app_instance_admin.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAppInstanceAdminOutput {
+impl ::aws_types::request_id::RequestId for DescribeAppInstanceAdminOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

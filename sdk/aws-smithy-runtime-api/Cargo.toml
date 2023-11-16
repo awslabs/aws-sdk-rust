@@ -42,6 +42,10 @@ features = ["sync"]
 [dependencies.zeroize]
 version = "1"
 optional = true
+
+[dev-dependencies]
+proptest = "1"
+
 [dev-dependencies.tokio]
 version = "1.25"
 features = ["rt", "macros"]

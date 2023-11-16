@@ -26,7 +26,7 @@ impl ::std::fmt::Display for NoManagementAccountSlrExistsException {
     }
 }
 impl ::std::error::Error for NoManagementAccountSlrExistsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::NoManagementAccountSlrExistsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::NoManagementAccountSlrExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

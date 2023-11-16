@@ -15,7 +15,7 @@ impl DescribeVirtualGatewaysOutput {
         self.virtual_gateways.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeVirtualGatewaysOutput {
+impl ::aws_types::request_id::RequestId for DescribeVirtualGatewaysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

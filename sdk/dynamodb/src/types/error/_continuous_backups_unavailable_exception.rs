@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ContinuousBackupsUnavailableException {
     }
 }
 impl ::std::error::Error for ContinuousBackupsUnavailableException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ContinuousBackupsUnavailableException {
+impl ::aws_types::request_id::RequestId for crate::types::error::ContinuousBackupsUnavailableException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

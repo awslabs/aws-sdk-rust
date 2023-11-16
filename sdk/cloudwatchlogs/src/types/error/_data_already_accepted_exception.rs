@@ -36,7 +36,7 @@ impl ::std::fmt::Display for DataAlreadyAcceptedException {
     }
 }
 impl ::std::error::Error for DataAlreadyAcceptedException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DataAlreadyAcceptedException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DataAlreadyAcceptedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

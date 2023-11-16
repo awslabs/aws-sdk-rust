@@ -13,7 +13,7 @@ impl CreateFileCacheOutput {
         self.file_cache.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateFileCacheOutput {
+impl ::aws_types::request_id::RequestId for CreateFileCacheOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

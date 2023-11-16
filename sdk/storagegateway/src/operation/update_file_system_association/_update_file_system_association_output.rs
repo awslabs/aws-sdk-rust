@@ -13,7 +13,7 @@ impl UpdateFileSystemAssociationOutput {
         self.file_system_association_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateFileSystemAssociationOutput {
+impl ::aws_types::request_id::RequestId for UpdateFileSystemAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

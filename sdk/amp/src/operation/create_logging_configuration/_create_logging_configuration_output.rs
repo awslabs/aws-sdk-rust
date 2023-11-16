@@ -14,7 +14,7 @@ impl CreateLoggingConfigurationOutput {
         self.status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateLoggingConfigurationOutput {
+impl ::aws_types::request_id::RequestId for CreateLoggingConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

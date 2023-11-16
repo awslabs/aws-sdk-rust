@@ -25,7 +25,7 @@ impl DeleteBotAliasOutput {
         self.bot_alias_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteBotAliasOutput {
+impl ::aws_types::request_id::RequestId for DeleteBotAliasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

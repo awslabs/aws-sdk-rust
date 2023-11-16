@@ -16,7 +16,7 @@ impl ChangeResourceRecordSetsOutput {
         self.change_info.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ChangeResourceRecordSetsOutput {
+impl ::aws_types::request_id::RequestId for ChangeResourceRecordSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -20,7 +20,7 @@ impl ListIngestionDestinationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListIngestionDestinationsOutput {
+impl ::aws_types::request_id::RequestId for ListIngestionDestinationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

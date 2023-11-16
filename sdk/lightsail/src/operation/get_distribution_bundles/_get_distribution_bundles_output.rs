@@ -15,7 +15,7 @@ impl GetDistributionBundlesOutput {
         self.bundles.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDistributionBundlesOutput {
+impl ::aws_types::request_id::RequestId for GetDistributionBundlesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

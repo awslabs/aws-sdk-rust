@@ -37,7 +37,7 @@ impl ListCopyJobSummariesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListCopyJobSummariesOutput {
+impl ::aws_types::request_id::RequestId for ListCopyJobSummariesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

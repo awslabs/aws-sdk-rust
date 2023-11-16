@@ -13,7 +13,7 @@ impl DescribeFleetLocationUtilizationOutput {
         self.fleet_utilization.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeFleetLocationUtilizationOutput {
+impl ::aws_types::request_id::RequestId for DescribeFleetLocationUtilizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

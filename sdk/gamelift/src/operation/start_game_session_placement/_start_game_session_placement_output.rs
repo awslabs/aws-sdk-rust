@@ -13,7 +13,7 @@ impl StartGameSessionPlacementOutput {
         self.game_session_placement.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartGameSessionPlacementOutput {
+impl ::aws_types::request_id::RequestId for StartGameSessionPlacementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

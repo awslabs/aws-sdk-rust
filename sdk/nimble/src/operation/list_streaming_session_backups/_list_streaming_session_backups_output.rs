@@ -21,7 +21,7 @@ impl ListStreamingSessionBackupsOutput {
         self.streaming_session_backups.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListStreamingSessionBackupsOutput {
+impl ::aws_types::request_id::RequestId for ListStreamingSessionBackupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

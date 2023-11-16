@@ -31,7 +31,7 @@ impl UpdateReviewTemplateAnswerOutput {
         self.answer.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateReviewTemplateAnswerOutput {
+impl ::aws_types::request_id::RequestId for UpdateReviewTemplateAnswerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

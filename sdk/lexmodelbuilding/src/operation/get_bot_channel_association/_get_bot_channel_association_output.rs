@@ -87,7 +87,7 @@ impl ::std::fmt::Debug for GetBotChannelAssociationOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBotChannelAssociationOutput {
+impl ::aws_types::request_id::RequestId for GetBotChannelAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DependencyTimeoutException {
     }
 }
 impl ::std::error::Error for DependencyTimeoutException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DependencyTimeoutException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DependencyTimeoutException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

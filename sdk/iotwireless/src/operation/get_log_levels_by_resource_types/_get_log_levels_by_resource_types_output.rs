@@ -29,7 +29,7 @@ impl GetLogLevelsByResourceTypesOutput {
         self.wireless_device_log_options.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetLogLevelsByResourceTypesOutput {
+impl ::aws_types::request_id::RequestId for GetLogLevelsByResourceTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

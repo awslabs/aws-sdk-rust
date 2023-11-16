@@ -20,7 +20,7 @@ impl ListCollaborationsOutput {
         self.collaboration_list.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListCollaborationsOutput {
+impl ::aws_types::request_id::RequestId for ListCollaborationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

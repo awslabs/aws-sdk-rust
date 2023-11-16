@@ -23,7 +23,7 @@ impl ListResolverDnssecConfigsOutput {
         self.resolver_dnssec_configs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListResolverDnssecConfigsOutput {
+impl ::aws_types::request_id::RequestId for ListResolverDnssecConfigsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

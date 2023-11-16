@@ -26,7 +26,7 @@ impl ::std::fmt::Display for DuplicateAccountException {
     }
 }
 impl ::std::error::Error for DuplicateAccountException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DuplicateAccountException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DuplicateAccountException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

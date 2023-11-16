@@ -14,7 +14,7 @@ impl UpdateRulesetOutput {
         self.name.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateRulesetOutput {
+impl ::aws_types::request_id::RequestId for UpdateRulesetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

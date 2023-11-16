@@ -25,7 +25,7 @@ impl DescribeRegionSettingsOutput {
         self.resource_type_management_preference.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeRegionSettingsOutput {
+impl ::aws_types::request_id::RequestId for DescribeRegionSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

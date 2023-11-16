@@ -13,7 +13,7 @@ impl ListFieldLevelEncryptionProfilesOutput {
         self.field_level_encryption_profile_list.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListFieldLevelEncryptionProfilesOutput {
+impl ::aws_types::request_id::RequestId for ListFieldLevelEncryptionProfilesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

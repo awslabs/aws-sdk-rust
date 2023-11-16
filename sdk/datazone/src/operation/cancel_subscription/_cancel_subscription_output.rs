@@ -76,7 +76,7 @@ impl CancelSubscriptionOutput {
         self.retain_permissions
     }
 }
-impl ::aws_http::request_id::RequestId for CancelSubscriptionOutput {
+impl ::aws_types::request_id::RequestId for CancelSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DescribeBatchLoadTaskOutput {
         self.batch_load_task_description.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeBatchLoadTaskOutput {
+impl ::aws_types::request_id::RequestId for DescribeBatchLoadTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

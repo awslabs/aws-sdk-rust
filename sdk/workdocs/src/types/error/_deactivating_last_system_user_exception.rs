@@ -34,7 +34,7 @@ impl ::std::fmt::Display for DeactivatingLastSystemUserException {
     }
 }
 impl ::std::error::Error for DeactivatingLastSystemUserException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::DeactivatingLastSystemUserException {
+impl ::aws_types::request_id::RequestId for crate::types::error::DeactivatingLastSystemUserException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

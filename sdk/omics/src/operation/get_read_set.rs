@@ -135,7 +135,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetReadSe
     ) -> ::std::option::Option<::aws_smithy_runtime_api::client::interceptors::context::OutputOrError> {
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
 
         // If this is an error, defer to the non-streaming parser
         if (!response.status().is_success() && response.status().as_u16() != 200) || force_error {
@@ -360,7 +360,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetReadSetErr
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::get_read_set::GetReadSetError {
+impl ::aws_types::request_id::RequestId for crate::operation::get_read_set::GetReadSetError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

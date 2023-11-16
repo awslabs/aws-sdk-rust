@@ -13,7 +13,7 @@ impl StartVirtualMachinesMetadataSyncOutput {
         self.hypervisor_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartVirtualMachinesMetadataSyncOutput {
+impl ::aws_types::request_id::RequestId for StartVirtualMachinesMetadataSyncOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

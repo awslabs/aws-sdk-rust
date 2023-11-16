@@ -13,7 +13,7 @@ impl GetTestGridProjectOutput {
         self.test_grid_project.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTestGridProjectOutput {
+impl ::aws_types::request_id::RequestId for GetTestGridProjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

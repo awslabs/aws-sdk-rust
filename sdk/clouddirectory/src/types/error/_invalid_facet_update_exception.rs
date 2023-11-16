@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidFacetUpdateException {
     }
 }
 impl ::std::error::Error for InvalidFacetUpdateException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidFacetUpdateException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidFacetUpdateException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

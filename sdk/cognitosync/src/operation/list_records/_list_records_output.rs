@@ -66,7 +66,7 @@ impl ListRecordsOutput {
         self.sync_session_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListRecordsOutput {
+impl ::aws_types::request_id::RequestId for ListRecordsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

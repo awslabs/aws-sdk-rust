@@ -26,7 +26,7 @@ impl CreateThingTypeOutput {
         self.thing_type_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateThingTypeOutput {
+impl ::aws_types::request_id::RequestId for CreateThingTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

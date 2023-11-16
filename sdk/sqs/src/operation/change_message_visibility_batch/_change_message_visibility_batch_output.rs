@@ -22,7 +22,7 @@ impl ChangeMessageVisibilityBatchOutput {
         self.failed.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ChangeMessageVisibilityBatchOutput {
+impl ::aws_types::request_id::RequestId for ChangeMessageVisibilityBatchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

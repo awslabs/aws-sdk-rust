@@ -26,7 +26,7 @@ impl ::std::fmt::Display for RepositoryTriggerDestinationArnRequiredException {
     }
 }
 impl ::std::error::Error for RepositoryTriggerDestinationArnRequiredException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::RepositoryTriggerDestinationArnRequiredException {
+impl ::aws_types::request_id::RequestId for crate::types::error::RepositoryTriggerDestinationArnRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -31,7 +31,7 @@ impl ::std::fmt::Display for SnapshotFeatureNotSupportedFault {
     }
 }
 impl ::std::error::Error for SnapshotFeatureNotSupportedFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SnapshotFeatureNotSupportedFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::SnapshotFeatureNotSupportedFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

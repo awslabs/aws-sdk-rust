@@ -15,7 +15,7 @@ impl RestoreDbInstanceFromS3Output {
         self.db_instance.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RestoreDbInstanceFromS3Output {
+impl ::aws_types::request_id::RequestId for RestoreDbInstanceFromS3Output {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

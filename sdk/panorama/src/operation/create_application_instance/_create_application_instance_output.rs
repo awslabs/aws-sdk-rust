@@ -14,7 +14,7 @@ impl CreateApplicationInstanceOutput {
         self.application_instance_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateApplicationInstanceOutput {
+impl ::aws_types::request_id::RequestId for CreateApplicationInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

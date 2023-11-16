@@ -137,7 +137,7 @@ impl ::std::fmt::Debug for PutSessionOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for PutSessionOutput {
+impl ::aws_types::request_id::RequestId for PutSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

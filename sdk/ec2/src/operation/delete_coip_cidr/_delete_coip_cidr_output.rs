@@ -13,7 +13,7 @@ impl DeleteCoipCidrOutput {
         self.coip_cidr.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteCoipCidrOutput {
+impl ::aws_types::request_id::RequestId for DeleteCoipCidrOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

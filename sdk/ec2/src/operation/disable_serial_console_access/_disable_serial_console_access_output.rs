@@ -13,7 +13,7 @@ impl DisableSerialConsoleAccessOutput {
         self.serial_console_access_enabled
     }
 }
-impl ::aws_http::request_id::RequestId for DisableSerialConsoleAccessOutput {
+impl ::aws_types::request_id::RequestId for DisableSerialConsoleAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

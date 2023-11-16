@@ -13,7 +13,7 @@ impl DeleteInstanceConnectEndpointOutput {
         self.instance_connect_endpoint.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteInstanceConnectEndpointOutput {
+impl ::aws_types::request_id::RequestId for DeleteInstanceConnectEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

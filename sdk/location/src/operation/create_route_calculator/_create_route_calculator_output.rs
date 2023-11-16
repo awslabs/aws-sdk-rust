@@ -45,7 +45,7 @@ impl CreateRouteCalculatorOutput {
         &self.create_time
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRouteCalculatorOutput {
+impl ::aws_types::request_id::RequestId for CreateRouteCalculatorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -25,7 +25,7 @@ impl PutDefaultEncryptionConfigurationOutput {
         self.configuration_status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutDefaultEncryptionConfigurationOutput {
+impl ::aws_types::request_id::RequestId for PutDefaultEncryptionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

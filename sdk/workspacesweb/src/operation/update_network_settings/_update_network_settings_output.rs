@@ -13,7 +13,7 @@ impl UpdateNetworkSettingsOutput {
         self.network_settings.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateNetworkSettingsOutput {
+impl ::aws_types::request_id::RequestId for UpdateNetworkSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

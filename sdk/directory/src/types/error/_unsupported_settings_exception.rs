@@ -34,7 +34,7 @@ impl ::std::fmt::Display for UnsupportedSettingsException {
     }
 }
 impl ::std::error::Error for UnsupportedSettingsException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedSettingsException {
+impl ::aws_types::request_id::RequestId for crate::types::error::UnsupportedSettingsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

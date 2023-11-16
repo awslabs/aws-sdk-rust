@@ -20,7 +20,7 @@ impl DeleteTagsOutput {
         self.resource_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteTagsOutput {
+impl ::aws_types::request_id::RequestId for DeleteTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

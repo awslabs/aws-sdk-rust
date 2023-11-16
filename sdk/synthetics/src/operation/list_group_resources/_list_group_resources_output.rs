@@ -21,7 +21,7 @@ impl ListGroupResourcesOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListGroupResourcesOutput {
+impl ::aws_types::request_id::RequestId for ListGroupResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

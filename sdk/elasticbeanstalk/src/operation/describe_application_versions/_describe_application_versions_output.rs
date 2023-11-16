@@ -22,7 +22,7 @@ impl DescribeApplicationVersionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeApplicationVersionsOutput {
+impl ::aws_types::request_id::RequestId for DescribeApplicationVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

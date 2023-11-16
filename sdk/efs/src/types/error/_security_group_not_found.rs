@@ -35,7 +35,7 @@ impl ::std::fmt::Display for SecurityGroupNotFound {
     }
 }
 impl ::std::error::Error for SecurityGroupNotFound {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SecurityGroupNotFound {
+impl ::aws_types::request_id::RequestId for crate::types::error::SecurityGroupNotFound {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

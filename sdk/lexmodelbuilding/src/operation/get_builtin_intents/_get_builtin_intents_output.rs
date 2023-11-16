@@ -21,7 +21,7 @@ impl GetBuiltinIntentsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetBuiltinIntentsOutput {
+impl ::aws_types::request_id::RequestId for GetBuiltinIntentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

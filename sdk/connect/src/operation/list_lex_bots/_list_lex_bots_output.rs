@@ -21,7 +21,7 @@ impl ListLexBotsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListLexBotsOutput {
+impl ::aws_types::request_id::RequestId for ListLexBotsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

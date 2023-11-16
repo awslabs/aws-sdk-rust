@@ -46,7 +46,7 @@ impl TestInvokeMethodOutput {
         self.latency
     }
 }
-impl ::aws_http::request_id::RequestId for TestInvokeMethodOutput {
+impl ::aws_types::request_id::RequestId for TestInvokeMethodOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

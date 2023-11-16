@@ -13,7 +13,7 @@ impl StartMisconfiguredStateRecoveryOutput {
         self.file_system.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartMisconfiguredStateRecoveryOutput {
+impl ::aws_types::request_id::RequestId for StartMisconfiguredStateRecoveryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl GetTableVersionsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTableVersionsOutput {
+impl ::aws_types::request_id::RequestId for GetTableVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

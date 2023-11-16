@@ -5,7 +5,7 @@
 pub struct UpdateClusterOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateClusterOutput {
+impl ::aws_types::request_id::RequestId for UpdateClusterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl UpdateAppInstanceUserOutput {
         self.app_instance_user_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAppInstanceUserOutput {
+impl ::aws_types::request_id::RequestId for UpdateAppInstanceUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

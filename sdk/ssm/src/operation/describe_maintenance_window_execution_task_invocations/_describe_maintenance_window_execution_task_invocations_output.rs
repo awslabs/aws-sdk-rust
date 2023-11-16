@@ -22,7 +22,7 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
+impl ::aws_types::request_id::RequestId for DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

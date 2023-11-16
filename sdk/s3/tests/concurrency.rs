@@ -3,11 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use std::future::Future;
-use std::iter::repeat_with;
-use std::net::SocketAddr;
-use std::sync::Arc;
-
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_credential_types::Credentials;
 use aws_sdk_s3::Client;
@@ -15,9 +10,12 @@ use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::region::Region;
 use aws_types::SdkConfig;
 use bytes::BytesMut;
-use futures_util::future;
 use hdrhistogram::sync::SyncHistogram;
 use hdrhistogram::Histogram;
+use std::future::Future;
+use std::iter::repeat_with;
+use std::net::SocketAddr;
+use std::sync::Arc;
 use tokio::sync::Semaphore;
 use tokio::time::{Duration, Instant};
 use tracing::debug;
@@ -218,7 +216,7 @@ async fn test_concurrency(sdk_config: SdkConfig) {
     });
 
     debug!("joining futures");
-    let res: Vec<_> = future::join_all(futures).await;
+    let res: Vec<_> = ::futures_util::future::join_all(futures).await;
     // Assert we ran all the tasks
     assert_eq!(TASK_COUNT, res.len());
 

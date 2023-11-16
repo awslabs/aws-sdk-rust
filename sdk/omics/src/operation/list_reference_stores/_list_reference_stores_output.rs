@@ -20,7 +20,7 @@ impl ListReferenceStoresOutput {
         self.reference_stores.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListReferenceStoresOutput {
+impl ::aws_types::request_id::RequestId for ListReferenceStoresOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

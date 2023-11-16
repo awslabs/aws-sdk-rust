@@ -21,7 +21,7 @@ impl ListViolationEventsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListViolationEventsOutput {
+impl ::aws_types::request_id::RequestId for ListViolationEventsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

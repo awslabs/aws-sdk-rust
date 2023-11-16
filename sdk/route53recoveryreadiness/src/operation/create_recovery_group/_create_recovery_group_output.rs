@@ -33,7 +33,7 @@ impl CreateRecoveryGroupOutput {
         self.tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRecoveryGroupOutput {
+impl ::aws_types::request_id::RequestId for CreateRecoveryGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

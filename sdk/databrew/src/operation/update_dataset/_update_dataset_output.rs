@@ -14,7 +14,7 @@ impl UpdateDatasetOutput {
         self.name.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateDatasetOutput {
+impl ::aws_types::request_id::RequestId for UpdateDatasetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

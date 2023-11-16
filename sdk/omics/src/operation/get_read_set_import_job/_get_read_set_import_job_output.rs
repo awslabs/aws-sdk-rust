@@ -59,7 +59,7 @@ impl GetReadSetImportJobOutput {
         self.sources.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetReadSetImportJobOutput {
+impl ::aws_types::request_id::RequestId for GetReadSetImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

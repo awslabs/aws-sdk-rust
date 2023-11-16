@@ -13,7 +13,7 @@ impl GetRegexMatchSetOutput {
         self.regex_match_set.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRegexMatchSetOutput {
+impl ::aws_types::request_id::RequestId for GetRegexMatchSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

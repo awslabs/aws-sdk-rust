@@ -27,7 +27,7 @@ impl GetRecoveryGroupReadinessSummaryOutput {
         self.readiness_checks.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRecoveryGroupReadinessSummaryOutput {
+impl ::aws_types::request_id::RequestId for GetRecoveryGroupReadinessSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl AcceptReservedNodeExchangeOutput {
         self.exchanged_reserved_node.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AcceptReservedNodeExchangeOutput {
+impl ::aws_types::request_id::RequestId for AcceptReservedNodeExchangeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

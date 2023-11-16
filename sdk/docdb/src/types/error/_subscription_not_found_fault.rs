@@ -26,7 +26,7 @@ impl ::std::fmt::Display for SubscriptionNotFoundFault {
     }
 }
 impl ::std::error::Error for SubscriptionNotFoundFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::SubscriptionNotFoundFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::SubscriptionNotFoundFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

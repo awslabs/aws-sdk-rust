@@ -79,7 +79,7 @@ impl UpdateLaunchConfigurationOutput {
         self.map_auto_tagging_mpe_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateLaunchConfigurationOutput {
+impl ::aws_types::request_id::RequestId for UpdateLaunchConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

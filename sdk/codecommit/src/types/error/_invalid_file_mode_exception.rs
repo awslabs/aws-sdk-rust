@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidFileModeException {
     }
 }
 impl ::std::error::Error for InvalidFileModeException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidFileModeException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidFileModeException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

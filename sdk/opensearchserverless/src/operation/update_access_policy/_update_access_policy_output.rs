@@ -13,7 +13,7 @@ impl UpdateAccessPolicyOutput {
         self.access_policy_detail.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAccessPolicyOutput {
+impl ::aws_types::request_id::RequestId for UpdateAccessPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

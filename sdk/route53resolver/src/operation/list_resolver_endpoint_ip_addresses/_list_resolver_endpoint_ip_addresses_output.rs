@@ -27,7 +27,7 @@ impl ListResolverEndpointIpAddressesOutput {
         self.ip_addresses.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListResolverEndpointIpAddressesOutput {
+impl ::aws_types::request_id::RequestId for ListResolverEndpointIpAddressesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

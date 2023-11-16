@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListServi
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_service_pipeline_outputs::de_list_service_pipeline_outputs_http_error(status, headers, body)
         } else {
@@ -300,7 +300,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListServicePi
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError {
+impl ::aws_types::request_id::RequestId for crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

@@ -15,7 +15,7 @@ impl ListIdentityPoliciesOutput {
         self.policy_names.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListIdentityPoliciesOutput {
+impl ::aws_types::request_id::RequestId for ListIdentityPoliciesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

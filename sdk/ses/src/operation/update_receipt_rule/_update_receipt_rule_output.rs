@@ -6,7 +6,7 @@
 pub struct UpdateReceiptRuleOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for UpdateReceiptRuleOutput {
+impl ::aws_types::request_id::RequestId for UpdateReceiptRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

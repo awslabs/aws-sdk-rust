@@ -21,7 +21,7 @@ impl ListSegmentsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListSegmentsOutput {
+impl ::aws_types::request_id::RequestId for ListSegmentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

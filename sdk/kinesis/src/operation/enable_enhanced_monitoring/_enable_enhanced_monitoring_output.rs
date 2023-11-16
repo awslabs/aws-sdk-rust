@@ -36,7 +36,7 @@ impl EnableEnhancedMonitoringOutput {
         self.stream_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for EnableEnhancedMonitoringOutput {
+impl ::aws_types::request_id::RequestId for EnableEnhancedMonitoringOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

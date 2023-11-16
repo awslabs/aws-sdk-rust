@@ -20,7 +20,7 @@ impl ListPolicyGenerationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListPolicyGenerationsOutput {
+impl ::aws_types::request_id::RequestId for ListPolicyGenerationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

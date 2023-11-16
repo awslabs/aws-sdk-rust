@@ -37,7 +37,7 @@ impl DescribeWorkerConfigurationOutput {
         self.worker_configuration_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeWorkerConfigurationOutput {
+impl ::aws_types::request_id::RequestId for DescribeWorkerConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

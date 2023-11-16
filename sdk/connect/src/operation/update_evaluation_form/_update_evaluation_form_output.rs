@@ -27,7 +27,7 @@ impl UpdateEvaluationFormOutput {
         self.evaluation_form_version
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateEvaluationFormOutput {
+impl ::aws_types::request_id::RequestId for UpdateEvaluationFormOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

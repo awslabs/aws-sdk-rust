@@ -19,7 +19,7 @@ impl CreateRoleAliasOutput {
         self.role_alias_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRoleAliasOutput {
+impl ::aws_types::request_id::RequestId for CreateRoleAliasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

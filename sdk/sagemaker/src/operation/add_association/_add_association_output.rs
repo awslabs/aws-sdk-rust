@@ -19,7 +19,7 @@ impl AddAssociationOutput {
         self.destination_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for AddAssociationOutput {
+impl ::aws_types::request_id::RequestId for AddAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

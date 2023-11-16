@@ -13,7 +13,7 @@ impl EnableImageOutput {
         self.r#return
     }
 }
-impl ::aws_http::request_id::RequestId for EnableImageOutput {
+impl ::aws_types::request_id::RequestId for EnableImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

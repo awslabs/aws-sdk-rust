@@ -5,7 +5,7 @@
 pub struct StartServerOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for StartServerOutput {
+impl ::aws_types::request_id::RequestId for StartServerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

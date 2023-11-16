@@ -13,7 +13,7 @@ impl DeleteDirectConnectGatewayAssociationOutput {
         self.direct_connect_gateway_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDirectConnectGatewayAssociationOutput {
+impl ::aws_types::request_id::RequestId for DeleteDirectConnectGatewayAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

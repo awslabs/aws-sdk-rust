@@ -14,7 +14,7 @@ impl StopJobRunOutput {
         self.run_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StopJobRunOutput {
+impl ::aws_types::request_id::RequestId for StopJobRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

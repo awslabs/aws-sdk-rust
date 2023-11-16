@@ -23,7 +23,7 @@ impl ReleaseHostsOutput {
         self.unsuccessful.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ReleaseHostsOutput {
+impl ::aws_types::request_id::RequestId for ReleaseHostsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

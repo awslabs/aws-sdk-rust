@@ -22,7 +22,7 @@ impl DescribeReservedCacheNodesOfferingsOutput {
         self.reserved_cache_nodes_offerings.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReservedCacheNodesOfferingsOutput {
+impl ::aws_types::request_id::RequestId for DescribeReservedCacheNodesOfferingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -15,7 +15,7 @@ impl DescribeMatchmakingOutput {
         self.ticket_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeMatchmakingOutput {
+impl ::aws_types::request_id::RequestId for DescribeMatchmakingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

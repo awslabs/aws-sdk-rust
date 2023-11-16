@@ -13,7 +13,7 @@ impl AssociateResolverQueryLogConfigOutput {
         self.resolver_query_log_config_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssociateResolverQueryLogConfigOutput {
+impl ::aws_types::request_id::RequestId for AssociateResolverQueryLogConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

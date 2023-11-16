@@ -13,7 +13,7 @@ impl GetSipMediaApplicationLoggingConfigurationOutput {
         self.sip_media_application_logging_configuration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSipMediaApplicationLoggingConfigurationOutput {
+impl ::aws_types::request_id::RequestId for GetSipMediaApplicationLoggingConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

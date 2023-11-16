@@ -13,7 +13,7 @@ impl DescribeCampaignOutput {
         self.campaign.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeCampaignOutput {
+impl ::aws_types::request_id::RequestId for DescribeCampaignOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

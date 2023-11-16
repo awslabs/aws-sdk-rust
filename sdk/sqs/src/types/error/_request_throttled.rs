@@ -31,7 +31,7 @@ impl ::std::fmt::Display for RequestThrottled {
     }
 }
 impl ::std::error::Error for RequestThrottled {}
-impl ::aws_http::request_id::RequestId for crate::types::error::RequestThrottled {
+impl ::aws_types::request_id::RequestId for crate::types::error::RequestThrottled {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

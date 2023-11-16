@@ -25,7 +25,7 @@ impl DescribeIamPolicyAssignmentOutput {
         self.status
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeIamPolicyAssignmentOutput {
+impl ::aws_types::request_id::RequestId for DescribeIamPolicyAssignmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

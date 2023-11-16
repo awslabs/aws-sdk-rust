@@ -14,7 +14,7 @@ impl GetEncryptionKeyOutput {
         self.kms_key_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEncryptionKeyOutput {
+impl ::aws_types::request_id::RequestId for GetEncryptionKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

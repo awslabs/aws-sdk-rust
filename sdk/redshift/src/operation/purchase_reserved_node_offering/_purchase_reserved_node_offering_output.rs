@@ -13,7 +13,7 @@ impl PurchaseReservedNodeOfferingOutput {
         self.reserved_node.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PurchaseReservedNodeOfferingOutput {
+impl ::aws_types::request_id::RequestId for PurchaseReservedNodeOfferingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

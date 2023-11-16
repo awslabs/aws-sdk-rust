@@ -21,7 +21,7 @@ impl ListThingRegistrationTasksOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListThingRegistrationTasksOutput {
+impl ::aws_types::request_id::RequestId for ListThingRegistrationTasksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

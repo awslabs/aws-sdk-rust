@@ -31,7 +31,7 @@ impl ::std::fmt::Display for TrimmedDataAccessException {
     }
 }
 impl ::std::error::Error for TrimmedDataAccessException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TrimmedDataAccessException {
+impl ::aws_types::request_id::RequestId for crate::types::error::TrimmedDataAccessException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

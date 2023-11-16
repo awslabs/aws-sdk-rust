@@ -13,7 +13,7 @@ impl GetRoomSkillParameterOutput {
         self.room_skill_parameter.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRoomSkillParameterOutput {
+impl ::aws_types::request_id::RequestId for GetRoomSkillParameterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

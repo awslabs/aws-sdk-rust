@@ -13,7 +13,7 @@ impl GetWorldTemplateBodyOutput {
         self.template_body.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetWorldTemplateBodyOutput {
+impl ::aws_types::request_id::RequestId for GetWorldTemplateBodyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

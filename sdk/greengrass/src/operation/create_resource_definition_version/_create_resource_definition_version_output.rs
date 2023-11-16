@@ -31,7 +31,7 @@ impl CreateResourceDefinitionVersionOutput {
         self.version.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateResourceDefinitionVersionOutput {
+impl ::aws_types::request_id::RequestId for CreateResourceDefinitionVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

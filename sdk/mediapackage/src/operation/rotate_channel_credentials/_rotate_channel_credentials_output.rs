@@ -56,7 +56,7 @@ impl RotateChannelCredentialsOutput {
         self.tags.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RotateChannelCredentialsOutput {
+impl ::aws_types::request_id::RequestId for RotateChannelCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

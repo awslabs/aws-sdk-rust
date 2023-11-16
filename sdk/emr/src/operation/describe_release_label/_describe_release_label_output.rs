@@ -35,7 +35,7 @@ impl DescribeReleaseLabelOutput {
         self.available_os_releases.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReleaseLabelOutput {
+impl ::aws_types::request_id::RequestId for DescribeReleaseLabelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

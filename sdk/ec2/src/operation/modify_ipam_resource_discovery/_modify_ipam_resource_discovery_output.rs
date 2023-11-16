@@ -13,7 +13,7 @@ impl ModifyIpamResourceDiscoveryOutput {
         self.ipam_resource_discovery.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyIpamResourceDiscoveryOutput {
+impl ::aws_types::request_id::RequestId for ModifyIpamResourceDiscoveryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

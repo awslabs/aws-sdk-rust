@@ -13,7 +13,7 @@ impl SetTextMessageSpendLimitOverrideOutput {
         self.monthly_limit
     }
 }
-impl ::aws_http::request_id::RequestId for SetTextMessageSpendLimitOverrideOutput {
+impl ::aws_types::request_id::RequestId for SetTextMessageSpendLimitOverrideOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -49,7 +49,7 @@ impl TestDnsAnswerOutput {
         self.protocol.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for TestDnsAnswerOutput {
+impl ::aws_types::request_id::RequestId for TestDnsAnswerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

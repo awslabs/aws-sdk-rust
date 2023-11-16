@@ -14,7 +14,7 @@ impl DeleteSchemaMappingOutput {
         self.message.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteSchemaMappingOutput {
+impl ::aws_types::request_id::RequestId for DeleteSchemaMappingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -15,7 +15,7 @@ impl GetApplicationPolicyOutput {
         self.statements.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetApplicationPolicyOutput {
+impl ::aws_types::request_id::RequestId for GetApplicationPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

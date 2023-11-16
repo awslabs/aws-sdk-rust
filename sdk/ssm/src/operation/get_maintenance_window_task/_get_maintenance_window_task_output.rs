@@ -147,7 +147,7 @@ impl ::std::fmt::Debug for GetMaintenanceWindowTaskOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetMaintenanceWindowTaskOutput {
+impl ::aws_types::request_id::RequestId for GetMaintenanceWindowTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

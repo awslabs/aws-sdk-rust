@@ -86,7 +86,7 @@ impl ::std::fmt::Debug for DescribeKeyOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeKeyOutput {
+impl ::aws_types::request_id::RequestId for DescribeKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl GetRepositoryEndpointOutput {
         self.repository_endpoint.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetRepositoryEndpointOutput {
+impl ::aws_types::request_id::RequestId for GetRepositoryEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -21,7 +21,7 @@ impl ListSubscriptionDefinitionVersionsOutput {
         self.versions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListSubscriptionDefinitionVersionsOutput {
+impl ::aws_types::request_id::RequestId for ListSubscriptionDefinitionVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

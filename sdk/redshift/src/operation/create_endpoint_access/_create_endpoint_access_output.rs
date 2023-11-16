@@ -70,7 +70,7 @@ impl CreateEndpointAccessOutput {
         self.vpc_endpoint.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateEndpointAccessOutput {
+impl ::aws_types::request_id::RequestId for CreateEndpointAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

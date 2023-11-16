@@ -20,7 +20,7 @@ impl ListServicePipelineOutputsOutput {
         self.outputs.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListServicePipelineOutputsOutput {
+impl ::aws_types::request_id::RequestId for ListServicePipelineOutputsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl UpdateApiKeyOutput {
         self.api_key.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateApiKeyOutput {
+impl ::aws_types::request_id::RequestId for UpdateApiKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

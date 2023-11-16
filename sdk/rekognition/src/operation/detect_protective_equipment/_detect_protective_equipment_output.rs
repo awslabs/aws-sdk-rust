@@ -27,7 +27,7 @@ impl DetectProtectiveEquipmentOutput {
         self.summary.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DetectProtectiveEquipmentOutput {
+impl ::aws_types::request_id::RequestId for DetectProtectiveEquipmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ModifyNet
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_modify_network_interface_attribute::de_modify_network_interface_attribute_http_error(status, headers, body)
         } else {
@@ -282,7 +282,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyNetwork
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError {
+impl ::aws_types::request_id::RequestId for crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

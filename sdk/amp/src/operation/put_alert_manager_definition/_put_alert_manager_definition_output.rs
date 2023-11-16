@@ -14,7 +14,7 @@ impl PutAlertManagerDefinitionOutput {
         self.status.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutAlertManagerDefinitionOutput {
+impl ::aws_types::request_id::RequestId for PutAlertManagerDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

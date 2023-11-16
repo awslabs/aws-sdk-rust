@@ -89,7 +89,7 @@ impl StartMedicalStreamTranscriptionOutput {
         self.content_identification_type.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartMedicalStreamTranscriptionOutput {
+impl ::aws_types::request_id::RequestId for StartMedicalStreamTranscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -37,7 +37,7 @@ impl DescribeAppImageConfigOutput {
         self.kernel_gateway_image_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeAppImageConfigOutput {
+impl ::aws_types::request_id::RequestId for DescribeAppImageConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

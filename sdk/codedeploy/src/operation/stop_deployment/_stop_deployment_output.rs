@@ -28,7 +28,7 @@ impl StopDeploymentOutput {
         self.status_message.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for StopDeploymentOutput {
+impl ::aws_types::request_id::RequestId for StopDeploymentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

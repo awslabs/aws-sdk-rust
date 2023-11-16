@@ -33,7 +33,7 @@ impl ListComponentTypesOutput {
         self.max_results
     }
 }
-impl ::aws_http::request_id::RequestId for ListComponentTypesOutput {
+impl ::aws_types::request_id::RequestId for ListComponentTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

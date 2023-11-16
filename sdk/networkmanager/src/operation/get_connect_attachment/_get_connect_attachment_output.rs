@@ -13,7 +13,7 @@ impl GetConnectAttachmentOutput {
         self.connect_attachment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetConnectAttachmentOutput {
+impl ::aws_types::request_id::RequestId for GetConnectAttachmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

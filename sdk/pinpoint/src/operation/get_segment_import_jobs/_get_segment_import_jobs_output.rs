@@ -13,7 +13,7 @@ impl GetSegmentImportJobsOutput {
         self.import_jobs_response.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSegmentImportJobsOutput {
+impl ::aws_types::request_id::RequestId for GetSegmentImportJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

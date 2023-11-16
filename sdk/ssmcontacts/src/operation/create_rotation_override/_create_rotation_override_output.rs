@@ -14,7 +14,7 @@ impl CreateRotationOverrideOutput {
         self.rotation_override_id.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateRotationOverrideOutput {
+impl ::aws_types::request_id::RequestId for CreateRotationOverrideOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

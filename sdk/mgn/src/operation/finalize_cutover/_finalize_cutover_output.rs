@@ -112,7 +112,7 @@ impl ::std::fmt::Debug for FinalizeCutoverOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for FinalizeCutoverOutput {
+impl ::aws_types::request_id::RequestId for FinalizeCutoverOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

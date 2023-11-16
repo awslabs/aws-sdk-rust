@@ -84,7 +84,7 @@ impl ::std::fmt::Debug for UnarchiveApplicationOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for UnarchiveApplicationOutput {
+impl ::aws_types::request_id::RequestId for UnarchiveApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl CreateExplainabilityOutput {
         self.explainability_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateExplainabilityOutput {
+impl ::aws_types::request_id::RequestId for CreateExplainabilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

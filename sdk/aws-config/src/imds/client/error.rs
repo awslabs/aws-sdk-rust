@@ -8,7 +8,6 @@
 use aws_smithy_http::endpoint::error::InvalidEndpointError;
 use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
 use aws_smithy_runtime_api::client::result::SdkError;
-use aws_smithy_types::body::SdkBody;
 use std::error::Error;
 use std::fmt;
 
@@ -32,12 +31,12 @@ impl FailedToLoadToken {
 /// Error context for [`ImdsError::ErrorResponse`]
 #[derive(Debug)]
 pub struct ErrorResponse {
-    raw: http::Response<SdkBody>,
+    raw: HttpResponse,
 }
 
 impl ErrorResponse {
     /// Returns the raw response from IMDS
-    pub fn response(&self) -> &http::Response<SdkBody> {
+    pub fn response(&self) -> &HttpResponse {
         &self.raw
     }
 }
@@ -81,7 +80,7 @@ impl ImdsError {
         Self::FailedToLoadToken(FailedToLoadToken { source })
     }
 
-    pub(super) fn error_response(raw: http::Response<SdkBody>) -> Self {
+    pub(super) fn error_response(raw: HttpResponse) -> Self {
         Self::ErrorResponse(ErrorResponse { raw })
     }
 

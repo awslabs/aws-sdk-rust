@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_regex_pattern_set_http_error(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
@@ -11,7 +11,7 @@ pub fn de_update_regex_pattern_set_http_error(
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::unhandled)?;
-    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -161,7 +161,7 @@ pub fn de_update_regex_pattern_set_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_regex_pattern_set_http_response(
     _response_status: u16,
-    _response_headers: &::http::header::HeaderMap,
+    _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
@@ -172,7 +172,7 @@ pub fn de_update_regex_pattern_set_http_response(
         let mut output = crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetOutputBuilder::default();
         output = crate::protocol_serde::shape_update_regex_pattern_set::de_update_regex_pattern_set(_response_body, output)
             .map_err(crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError::unhandled)?;
-        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

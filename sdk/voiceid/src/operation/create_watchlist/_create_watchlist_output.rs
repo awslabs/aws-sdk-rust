@@ -13,7 +13,7 @@ impl CreateWatchlistOutput {
         self.watchlist.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateWatchlistOutput {
+impl ::aws_types::request_id::RequestId for CreateWatchlistOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

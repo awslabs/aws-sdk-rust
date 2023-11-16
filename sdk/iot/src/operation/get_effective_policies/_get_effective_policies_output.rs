@@ -15,7 +15,7 @@ impl GetEffectivePoliciesOutput {
         self.effective_policies.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEffectivePoliciesOutput {
+impl ::aws_types::request_id::RequestId for GetEffectivePoliciesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

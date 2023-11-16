@@ -15,7 +15,7 @@ impl PutMessagingStreamingConfigurationsOutput {
         self.streaming_configurations.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for PutMessagingStreamingConfigurationsOutput {
+impl ::aws_types::request_id::RequestId for PutMessagingStreamingConfigurationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

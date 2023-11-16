@@ -13,7 +13,7 @@ impl ModifyVpnTunnelOptionsOutput {
         self.vpn_connection.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for ModifyVpnTunnelOptionsOutput {
+impl ::aws_types::request_id::RequestId for ModifyVpnTunnelOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

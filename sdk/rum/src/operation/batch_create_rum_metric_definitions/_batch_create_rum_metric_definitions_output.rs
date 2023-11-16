@@ -22,7 +22,7 @@ impl BatchCreateRumMetricDefinitionsOutput {
         self.metric_definitions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchCreateRumMetricDefinitionsOutput {
+impl ::aws_types::request_id::RequestId for BatchCreateRumMetricDefinitionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

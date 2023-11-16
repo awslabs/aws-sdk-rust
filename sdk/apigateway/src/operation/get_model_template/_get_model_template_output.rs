@@ -14,7 +14,7 @@ impl GetModelTemplateOutput {
         self.value.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetModelTemplateOutput {
+impl ::aws_types::request_id::RequestId for GetModelTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

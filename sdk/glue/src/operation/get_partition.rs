@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetPartit
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_get_partition::de_get_partition_http_error(status, headers, body)
         } else {
@@ -304,7 +304,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetPartitionE
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::get_partition::GetPartitionError {
+impl ::aws_types::request_id::RequestId for crate::operation::get_partition::GetPartitionError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

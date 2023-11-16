@@ -15,7 +15,7 @@ impl UpdateColumnStatisticsForPartitionOutput {
         self.errors.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateColumnStatisticsForPartitionOutput {
+impl ::aws_types::request_id::RequestId for UpdateColumnStatisticsForPartitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl GetEulaOutput {
         self.eula.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetEulaOutput {
+impl ::aws_types::request_id::RequestId for GetEulaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

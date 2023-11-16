@@ -22,7 +22,7 @@ impl GetDocumentationVersionsOutput {
         self.position.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetDocumentationVersionsOutput {
+impl ::aws_types::request_id::RequestId for GetDocumentationVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

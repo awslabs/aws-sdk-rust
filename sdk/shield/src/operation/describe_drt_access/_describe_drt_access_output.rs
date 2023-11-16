@@ -21,7 +21,7 @@ impl DescribeDrtAccessOutput {
         self.log_bucket_list.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeDrtAccessOutput {
+impl ::aws_types::request_id::RequestId for DescribeDrtAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

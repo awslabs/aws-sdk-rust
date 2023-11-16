@@ -13,7 +13,7 @@ impl DiscoverInstancesRevisionOutput {
         self.instances_revision
     }
 }
-impl ::aws_http::request_id::RequestId for DiscoverInstancesRevisionOutput {
+impl ::aws_types::request_id::RequestId for DiscoverInstancesRevisionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

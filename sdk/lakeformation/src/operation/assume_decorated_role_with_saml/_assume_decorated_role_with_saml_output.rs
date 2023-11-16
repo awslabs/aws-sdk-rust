@@ -31,7 +31,7 @@ impl AssumeDecoratedRoleWithSamlOutput {
         self.expiration.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for AssumeDecoratedRoleWithSamlOutput {
+impl ::aws_types::request_id::RequestId for AssumeDecoratedRoleWithSamlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

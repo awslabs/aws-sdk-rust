@@ -26,7 +26,7 @@ impl ::std::fmt::Display for CommitMessageLengthExceededException {
     }
 }
 impl ::std::error::Error for CommitMessageLengthExceededException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::CommitMessageLengthExceededException {
+impl ::aws_types::request_id::RequestId for crate::types::error::CommitMessageLengthExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

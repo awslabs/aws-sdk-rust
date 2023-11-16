@@ -16,7 +16,7 @@ impl GetComplianceSummaryByResourceTypeOutput {
         self.compliance_summaries_by_resource_type.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for GetComplianceSummaryByResourceTypeOutput {
+impl ::aws_types::request_id::RequestId for GetComplianceSummaryByResourceTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

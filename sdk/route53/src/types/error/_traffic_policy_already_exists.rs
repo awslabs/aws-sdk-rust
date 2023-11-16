@@ -26,7 +26,7 @@ impl ::std::fmt::Display for TrafficPolicyAlreadyExists {
     }
 }
 impl ::std::error::Error for TrafficPolicyAlreadyExists {}
-impl ::aws_http::request_id::RequestId for crate::types::error::TrafficPolicyAlreadyExists {
+impl ::aws_types::request_id::RequestId for crate::types::error::TrafficPolicyAlreadyExists {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

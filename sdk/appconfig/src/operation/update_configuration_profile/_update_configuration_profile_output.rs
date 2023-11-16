@@ -73,7 +73,7 @@ impl UpdateConfigurationProfileOutput {
         self.kms_key_identifier.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateConfigurationProfileOutput {
+impl ::aws_types::request_id::RequestId for UpdateConfigurationProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

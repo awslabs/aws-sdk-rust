@@ -57,7 +57,7 @@ impl ::std::fmt::Debug for GetSessionOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSessionOutput {
+impl ::aws_types::request_id::RequestId for GetSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DeleteEgressOnlyInternetGatewayOutput {
         self.return_code
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteEgressOnlyInternetGatewayOutput {
+impl ::aws_types::request_id::RequestId for DeleteEgressOnlyInternetGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

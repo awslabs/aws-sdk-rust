@@ -55,7 +55,7 @@ impl PutSchemaVersionMetadataOutput {
         self.metadata_value.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for PutSchemaVersionMetadataOutput {
+impl ::aws_types::request_id::RequestId for PutSchemaVersionMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

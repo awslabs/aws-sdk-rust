@@ -13,7 +13,7 @@ impl StartImageBuilderOutput {
         self.image_builder.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for StartImageBuilderOutput {
+impl ::aws_types::request_id::RequestId for StartImageBuilderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

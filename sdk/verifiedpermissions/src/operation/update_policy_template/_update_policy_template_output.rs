@@ -33,7 +33,7 @@ impl UpdatePolicyTemplateOutput {
         &self.last_updated_date
     }
 }
-impl ::aws_http::request_id::RequestId for UpdatePolicyTemplateOutput {
+impl ::aws_types::request_id::RequestId for UpdatePolicyTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

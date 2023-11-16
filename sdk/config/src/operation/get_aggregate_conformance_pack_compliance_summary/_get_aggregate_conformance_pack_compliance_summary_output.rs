@@ -28,7 +28,7 @@ impl GetAggregateConformancePackComplianceSummaryOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetAggregateConformancePackComplianceSummaryOutput {
+impl ::aws_types::request_id::RequestId for GetAggregateConformancePackComplianceSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

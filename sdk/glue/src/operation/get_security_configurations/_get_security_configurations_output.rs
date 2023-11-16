@@ -21,7 +21,7 @@ impl GetSecurityConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetSecurityConfigurationsOutput {
+impl ::aws_types::request_id::RequestId for GetSecurityConfigurationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -49,7 +49,7 @@ impl PostCommentForComparedCommitOutput {
         self.comment.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for PostCommentForComparedCommitOutput {
+impl ::aws_types::request_id::RequestId for PostCommentForComparedCommitOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -61,7 +61,7 @@ impl ::std::fmt::Debug for GetComputeAccessOutput {
         formatter.finish()
     }
 }
-impl ::aws_http::request_id::RequestId for GetComputeAccessOutput {
+impl ::aws_types::request_id::RequestId for GetComputeAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

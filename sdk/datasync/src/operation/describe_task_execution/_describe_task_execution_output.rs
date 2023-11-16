@@ -136,7 +136,7 @@ impl DescribeTaskExecutionOutput {
         self.estimated_files_to_delete
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeTaskExecutionOutput {
+impl ::aws_types::request_id::RequestId for DescribeTaskExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

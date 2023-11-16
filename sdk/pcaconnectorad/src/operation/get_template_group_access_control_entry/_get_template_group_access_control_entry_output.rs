@@ -13,7 +13,7 @@ impl GetTemplateGroupAccessControlEntryOutput {
         self.access_control_entry.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for GetTemplateGroupAccessControlEntryOutput {
+impl ::aws_types::request_id::RequestId for GetTemplateGroupAccessControlEntryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

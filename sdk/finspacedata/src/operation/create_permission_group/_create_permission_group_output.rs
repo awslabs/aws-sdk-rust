@@ -13,7 +13,7 @@ impl CreatePermissionGroupOutput {
         self.permission_group_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreatePermissionGroupOutput {
+impl ::aws_types::request_id::RequestId for CreatePermissionGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

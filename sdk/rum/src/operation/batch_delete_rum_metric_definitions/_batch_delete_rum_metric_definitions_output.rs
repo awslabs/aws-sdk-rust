@@ -22,7 +22,7 @@ impl BatchDeleteRumMetricDefinitionsOutput {
         self.metric_definition_ids.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for BatchDeleteRumMetricDefinitionsOutput {
+impl ::aws_types::request_id::RequestId for BatchDeleteRumMetricDefinitionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

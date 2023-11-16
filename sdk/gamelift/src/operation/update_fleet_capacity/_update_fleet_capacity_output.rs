@@ -31,7 +31,7 @@ impl UpdateFleetCapacityOutput {
         self.location.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateFleetCapacityOutput {
+impl ::aws_types::request_id::RequestId for UpdateFleetCapacityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

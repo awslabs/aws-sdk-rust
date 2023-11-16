@@ -21,7 +21,7 @@ impl ListFirewallConfigsOutput {
         self.firewall_configs.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for ListFirewallConfigsOutput {
+impl ::aws_types::request_id::RequestId for ListFirewallConfigsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

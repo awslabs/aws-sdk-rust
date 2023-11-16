@@ -26,7 +26,7 @@ impl ::std::fmt::Display for ResourceInUseFault {
     }
 }
 impl ::std::error::Error for ResourceInUseFault {}
-impl ::aws_http::request_id::RequestId for crate::types::error::ResourceInUseFault {
+impl ::aws_types::request_id::RequestId for crate::types::error::ResourceInUseFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

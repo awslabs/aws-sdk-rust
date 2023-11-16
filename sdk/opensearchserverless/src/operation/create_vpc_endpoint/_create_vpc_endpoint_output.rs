@@ -13,7 +13,7 @@ impl CreateVpcEndpointOutput {
         self.create_vpc_endpoint_detail.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateVpcEndpointOutput {
+impl ::aws_types::request_id::RequestId for CreateVpcEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

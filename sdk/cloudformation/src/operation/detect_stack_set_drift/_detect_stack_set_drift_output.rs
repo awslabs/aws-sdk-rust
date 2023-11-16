@@ -15,7 +15,7 @@ impl DetectStackSetDriftOutput {
         self.operation_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DetectStackSetDriftOutput {
+impl ::aws_types::request_id::RequestId for DetectStackSetDriftOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -69,7 +69,7 @@ impl UpdateZonalShiftOutput {
         self.comment.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateZonalShiftOutput {
+impl ::aws_types::request_id::RequestId for UpdateZonalShiftOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -13,7 +13,7 @@ impl DisableImageBlockPublicAccessOutput {
         self.image_block_public_access_state.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DisableImageBlockPublicAccessOutput {
+impl ::aws_types::request_id::RequestId for DisableImageBlockPublicAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

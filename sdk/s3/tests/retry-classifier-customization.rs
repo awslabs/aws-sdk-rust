@@ -36,8 +36,8 @@ impl ClassifyRetry for CustomizationTestClassifier {
         // ensure that it has the expected status code.
         if let Some(res) = ctx.response() {
             assert_eq!(
-                res.status(),
                 500,
+                res.status().as_u16(),
                 "expected a 500 response from test connection"
             );
         }

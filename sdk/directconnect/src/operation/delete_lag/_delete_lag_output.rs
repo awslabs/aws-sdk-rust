@@ -160,7 +160,7 @@ impl DeleteLagOutput {
         self.mac_sec_keys.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteLagOutput {
+impl ::aws_types::request_id::RequestId for DeleteLagOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

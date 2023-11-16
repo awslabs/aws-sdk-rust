@@ -14,7 +14,7 @@ impl UpdateAnomalySubscriptionOutput {
         self.subscription_arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateAnomalySubscriptionOutput {
+impl ::aws_types::request_id::RequestId for UpdateAnomalySubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

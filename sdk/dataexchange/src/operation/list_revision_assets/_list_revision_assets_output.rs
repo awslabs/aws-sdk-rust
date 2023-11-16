@@ -21,7 +21,7 @@ impl ListRevisionAssetsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ListRevisionAssetsOutput {
+impl ::aws_types::request_id::RequestId for ListRevisionAssetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

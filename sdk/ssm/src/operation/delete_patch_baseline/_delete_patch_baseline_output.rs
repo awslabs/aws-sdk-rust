@@ -13,7 +13,7 @@ impl DeletePatchBaselineOutput {
         self.baseline_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeletePatchBaselineOutput {
+impl ::aws_types::request_id::RequestId for DeletePatchBaselineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

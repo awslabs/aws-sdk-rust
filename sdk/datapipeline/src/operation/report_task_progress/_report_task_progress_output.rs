@@ -14,7 +14,7 @@ impl ReportTaskProgressOutput {
         self.canceled
     }
 }
-impl ::aws_http::request_id::RequestId for ReportTaskProgressOutput {
+impl ::aws_types::request_id::RequestId for ReportTaskProgressOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

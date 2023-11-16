@@ -5,7 +5,7 @@
 pub struct ModifyCertificateBasedAuthPropertiesOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for ModifyCertificateBasedAuthPropertiesOutput {
+impl ::aws_types::request_id::RequestId for ModifyCertificateBasedAuthPropertiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

@@ -14,7 +14,7 @@ impl RenewOfferingOutput {
         self.offering_transaction.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for RenewOfferingOutput {
+impl ::aws_types::request_id::RequestId for RenewOfferingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

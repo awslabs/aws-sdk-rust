@@ -34,7 +34,7 @@ impl ::std::fmt::Display for BadDocumentException {
     }
 }
 impl ::std::error::Error for BadDocumentException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::BadDocumentException {
+impl ::aws_types::request_id::RequestId for crate::types::error::BadDocumentException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

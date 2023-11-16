@@ -13,7 +13,7 @@ impl DescribeJournalS3ExportOutput {
         self.export_description.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeJournalS3ExportOutput {
+impl ::aws_types::request_id::RequestId for DescribeJournalS3ExportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

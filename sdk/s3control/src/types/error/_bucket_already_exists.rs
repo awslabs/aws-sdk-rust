@@ -26,7 +26,7 @@ impl ::std::fmt::Display for BucketAlreadyExists {
     }
 }
 impl ::std::error::Error for BucketAlreadyExists {}
-impl ::aws_http::request_id::RequestId for crate::types::error::BucketAlreadyExists {
+impl ::aws_types::request_id::RequestId for crate::types::error::BucketAlreadyExists {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

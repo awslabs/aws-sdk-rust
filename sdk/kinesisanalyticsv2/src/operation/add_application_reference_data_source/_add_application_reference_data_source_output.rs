@@ -27,7 +27,7 @@ impl AddApplicationReferenceDataSourceOutput {
         self.reference_data_source_descriptions.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for AddApplicationReferenceDataSourceOutput {
+impl ::aws_types::request_id::RequestId for AddApplicationReferenceDataSourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

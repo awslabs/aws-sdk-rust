@@ -26,7 +26,7 @@ impl ::std::fmt::Display for InvalidQueryStatementException {
     }
 }
 impl ::std::error::Error for InvalidQueryStatementException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidQueryStatementException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidQueryStatementException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

@@ -25,7 +25,7 @@ impl UpdateTemplateAliasOutput {
         self.request_id.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateTemplateAliasOutput {
+impl ::aws_types::request_id::RequestId for UpdateTemplateAliasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

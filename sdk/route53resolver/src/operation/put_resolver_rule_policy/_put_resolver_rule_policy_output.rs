@@ -14,7 +14,7 @@ impl PutResolverRulePolicyOutput {
         self.return_value
     }
 }
-impl ::aws_http::request_id::RequestId for PutResolverRulePolicyOutput {
+impl ::aws_types::request_id::RequestId for PutResolverRulePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

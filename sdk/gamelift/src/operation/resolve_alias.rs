@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ResolveAl
         let body = response.body().bytes().expect("body loaded");
         #[allow(unused_mut)]
         let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_resolve_alias::de_resolve_alias_http_error(status, headers, body)
         } else {
@@ -296,7 +296,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResolveAliasE
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::resolve_alias::ResolveAliasError {
+impl ::aws_types::request_id::RequestId for crate::operation::resolve_alias::ResolveAliasError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

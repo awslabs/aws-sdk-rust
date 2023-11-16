@@ -13,7 +13,7 @@ impl CreateTransitVirtualInterfaceOutput {
         self.virtual_interface.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for CreateTransitVirtualInterfaceOutput {
+impl ::aws_types::request_id::RequestId for CreateTransitVirtualInterfaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

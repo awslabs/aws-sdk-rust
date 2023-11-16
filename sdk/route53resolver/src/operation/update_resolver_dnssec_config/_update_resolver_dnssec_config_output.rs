@@ -13,7 +13,7 @@ impl UpdateResolverDnssecConfigOutput {
         self.resolver_dnssec_config.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateResolverDnssecConfigOutput {
+impl ::aws_types::request_id::RequestId for UpdateResolverDnssecConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

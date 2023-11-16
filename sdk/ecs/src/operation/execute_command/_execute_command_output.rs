@@ -43,7 +43,7 @@ impl ExecuteCommandOutput {
         self.task_arn.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId for ExecuteCommandOutput {
+impl ::aws_types::request_id::RequestId for ExecuteCommandOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

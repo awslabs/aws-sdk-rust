@@ -22,7 +22,7 @@ impl DescribeReservedNodesOutput {
         self.reserved_nodes.as_deref().unwrap_or_default()
     }
 }
-impl ::aws_http::request_id::RequestId for DescribeReservedNodesOutput {
+impl ::aws_types::request_id::RequestId for DescribeReservedNodesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

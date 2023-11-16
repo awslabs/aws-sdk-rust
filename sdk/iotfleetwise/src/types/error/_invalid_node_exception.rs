@@ -42,7 +42,7 @@ impl ::std::fmt::Display for InvalidNodeException {
     }
 }
 impl ::std::error::Error for InvalidNodeException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::InvalidNodeException {
+impl ::aws_types::request_id::RequestId for crate::types::error::InvalidNodeException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

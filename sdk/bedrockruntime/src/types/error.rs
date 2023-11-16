@@ -79,7 +79,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResponseStrea
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::types::error::ResponseStreamError {
+impl ::aws_types::request_id::RequestId for crate::types::error::ResponseStreamError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }

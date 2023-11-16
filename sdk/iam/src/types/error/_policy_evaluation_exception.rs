@@ -26,7 +26,7 @@ impl ::std::fmt::Display for PolicyEvaluationException {
     }
 }
 impl ::std::error::Error for PolicyEvaluationException {}
-impl ::aws_http::request_id::RequestId for crate::types::error::PolicyEvaluationException {
+impl ::aws_types::request_id::RequestId for crate::types::error::PolicyEvaluationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()

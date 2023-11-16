@@ -21,7 +21,7 @@ impl DeleteDecoderManifestOutput {
         self.arn.deref()
     }
 }
-impl ::aws_http::request_id::RequestId for DeleteDecoderManifestOutput {
+impl ::aws_types::request_id::RequestId for DeleteDecoderManifestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

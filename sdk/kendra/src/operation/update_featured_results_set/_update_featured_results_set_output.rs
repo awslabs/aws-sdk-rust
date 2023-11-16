@@ -13,7 +13,7 @@ impl UpdateFeaturedResultsSetOutput {
         self.featured_results_set.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId for UpdateFeaturedResultsSetOutput {
+impl ::aws_types::request_id::RequestId for UpdateFeaturedResultsSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }

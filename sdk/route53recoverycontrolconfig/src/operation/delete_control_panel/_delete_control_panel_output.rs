@@ -5,7 +5,7 @@
 pub struct DeleteControlPanelOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId for DeleteControlPanelOutput {
+impl ::aws_types::request_id::RequestId for DeleteControlPanelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
