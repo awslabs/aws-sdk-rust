@@ -46,14 +46,15 @@ pub enum H264ScanType {
     #[allow(missing_docs)] // documentation missing in model
     Progressive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for H264ScanType {
     fn from(s: &str) -> Self {
         match s {
             "INTERLACED" => H264ScanType::Interlaced,
             "PROGRESSIVE" => H264ScanType::Progressive,
-            other => H264ScanType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => H264ScanType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl H264ScanType {
 impl ::std::convert::AsRef<str> for H264ScanType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl H264ScanType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

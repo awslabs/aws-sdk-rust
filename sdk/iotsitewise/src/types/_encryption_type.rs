@@ -46,14 +46,15 @@ pub enum EncryptionType {
     #[allow(missing_docs)] // documentation missing in model
     SitewiseDefaultEncryption,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for EncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "KMS_BASED_ENCRYPTION" => EncryptionType::KmsBasedEncryption,
             "SITEWISE_DEFAULT_ENCRYPTION" => EncryptionType::SitewiseDefaultEncryption,
-            other => EncryptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => EncryptionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl EncryptionType {
 impl ::std::convert::AsRef<str> for EncryptionType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl EncryptionType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

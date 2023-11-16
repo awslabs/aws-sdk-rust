@@ -255,31 +255,42 @@ pub enum UpdateHealthCheckError {
     /// <p>No health check exists with the specified ID.</p>
     NoSuchHealthCheck(crate::types::error::NoSuchHealthCheck),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-UpdateHealthCheckError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl UpdateHealthCheckError {
     /// Creates the `UpdateHealthCheckError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `UpdateHealthCheckError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `UpdateHealthCheckError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::HealthCheckVersionMismatch(e) => e.meta(),
-            Self::InvalidInput(e) => e.meta(),
-            Self::NoSuchHealthCheck(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::HealthCheckVersionMismatch(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidInput(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchHealthCheck(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `UpdateHealthCheckError::HealthCheckVersionMismatch`.
@@ -301,7 +312,7 @@ impl ::std::error::Error for UpdateHealthCheckError {
             Self::HealthCheckVersionMismatch(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInput(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchHealthCheck(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -311,7 +322,13 @@ impl ::std::fmt::Display for UpdateHealthCheckError {
             Self::HealthCheckVersionMismatch(_inner) => _inner.fmt(f),
             Self::InvalidInput(_inner) => _inner.fmt(f),
             Self::NoSuchHealthCheck(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -329,7 +346,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateHealthC
             Self::HealthCheckVersionMismatch(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInput(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchHealthCheck(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -338,10 +355,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for UpdateHe
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

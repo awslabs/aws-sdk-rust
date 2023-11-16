@@ -46,14 +46,15 @@ pub enum HostedZoneLimitType {
     #[allow(missing_docs)] // documentation missing in model
     MaxVpcsAssociatedByZone,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for HostedZoneLimitType {
     fn from(s: &str) -> Self {
         match s {
             "MAX_RRSETS_BY_ZONE" => HostedZoneLimitType::MaxRrsetsByZone,
             "MAX_VPCS_ASSOCIATED_BY_ZONE" => HostedZoneLimitType::MaxVpcsAssociatedByZone,
-            other => HostedZoneLimitType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => HostedZoneLimitType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl HostedZoneLimitType {
 impl ::std::convert::AsRef<str> for HostedZoneLimitType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl HostedZoneLimitType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

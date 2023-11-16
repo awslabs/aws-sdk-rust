@@ -268,40 +268,51 @@ pub enum StartLendingAnalysisError {
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::types::error::UnsupportedDocumentException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-StartLendingAnalysisError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl StartLendingAnalysisError {
     /// Creates the `StartLendingAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `StartLendingAnalysisError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `StartLendingAnalysisError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::AccessDeniedException(e) => e.meta(),
-            Self::BadDocumentException(e) => e.meta(),
-            Self::DocumentTooLargeException(e) => e.meta(),
-            Self::IdempotentParameterMismatchException(e) => e.meta(),
-            Self::InternalServerError(e) => e.meta(),
-            Self::InvalidKmsKeyException(e) => e.meta(),
-            Self::InvalidParameterException(e) => e.meta(),
-            Self::InvalidS3ObjectException(e) => e.meta(),
-            Self::LimitExceededException(e) => e.meta(),
-            Self::ProvisionedThroughputExceededException(e) => e.meta(),
-            Self::ThrottlingException(e) => e.meta(),
-            Self::UnsupportedDocumentException(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::BadDocumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DocumentTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IdempotentParameterMismatchException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidKmsKeyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidS3ObjectException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ProvisionedThroughputExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedDocumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisError::AccessDeniedException`.
@@ -368,7 +379,7 @@ impl ::std::error::Error for StartLendingAnalysisError {
             Self::ProvisionedThroughputExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedDocumentException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -387,7 +398,13 @@ impl ::std::fmt::Display for StartLendingAnalysisError {
             Self::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UnsupportedDocumentException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -414,7 +431,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartLendingA
             Self::ProvisionedThroughputExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedDocumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -423,10 +440,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for StartLen
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

@@ -61,7 +61,8 @@ pub enum FailbackState {
     #[allow(missing_docs)] // documentation missing in model
     FailbackReadyForLaunch,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for FailbackState {
     fn from(s: &str) -> Self {
@@ -73,7 +74,7 @@ impl ::std::convert::From<&str> for FailbackState {
             "FAILBACK_NOT_READY_FOR_LAUNCH" => FailbackState::FailbackNotReadyForLaunch,
             "FAILBACK_NOT_STARTED" => FailbackState::FailbackNotStarted,
             "FAILBACK_READY_FOR_LAUNCH" => FailbackState::FailbackReadyForLaunch,
-            other => FailbackState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => FailbackState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -114,5 +115,17 @@ impl FailbackState {
 impl ::std::convert::AsRef<str> for FailbackState {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl FailbackState {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

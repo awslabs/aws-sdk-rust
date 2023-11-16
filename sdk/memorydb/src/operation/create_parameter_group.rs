@@ -258,35 +258,46 @@ pub enum CreateParameterGroupError {
     /// <p></p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-CreateParameterGroupError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl CreateParameterGroupError {
     /// Creates the `CreateParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `CreateParameterGroupError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `CreateParameterGroupError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::InvalidParameterCombinationException(e) => e.meta(),
-            Self::InvalidParameterGroupStateFault(e) => e.meta(),
-            Self::InvalidParameterValueException(e) => e.meta(),
-            Self::ParameterGroupAlreadyExistsFault(e) => e.meta(),
-            Self::ParameterGroupQuotaExceededFault(e) => e.meta(),
-            Self::ServiceLinkedRoleNotFoundFault(e) => e.meta(),
-            Self::TagQuotaPerResourceExceeded(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ParameterGroupAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ParameterGroupQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceLinkedRoleNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TagQuotaPerResourceExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `CreateParameterGroupError::InvalidParameterCombinationException`.
@@ -328,7 +339,7 @@ impl ::std::error::Error for CreateParameterGroupError {
             Self::ParameterGroupQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceLinkedRoleNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TagQuotaPerResourceExceeded(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -342,7 +353,13 @@ impl ::std::fmt::Display for CreateParameterGroupError {
             Self::ParameterGroupQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             Self::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -364,7 +381,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateParamet
             Self::ParameterGroupQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceLinkedRoleNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TagQuotaPerResourceExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -373,10 +390,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CreatePa
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

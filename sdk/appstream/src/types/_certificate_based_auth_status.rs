@@ -49,7 +49,8 @@ pub enum CertificateBasedAuthStatus {
     #[allow(missing_docs)] // documentation missing in model
     EnabledNoDirectoryLoginFallback,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for CertificateBasedAuthStatus {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for CertificateBasedAuthStatus {
             "DISABLED" => CertificateBasedAuthStatus::Disabled,
             "ENABLED" => CertificateBasedAuthStatus::Enabled,
             "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK" => CertificateBasedAuthStatus::EnabledNoDirectoryLoginFallback,
-            other => CertificateBasedAuthStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => CertificateBasedAuthStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl CertificateBasedAuthStatus {
 impl ::std::convert::AsRef<str> for CertificateBasedAuthStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl CertificateBasedAuthStatus {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

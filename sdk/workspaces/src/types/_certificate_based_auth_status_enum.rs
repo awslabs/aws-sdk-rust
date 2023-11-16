@@ -46,14 +46,15 @@ pub enum CertificateBasedAuthStatusEnum {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for CertificateBasedAuthStatusEnum {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => CertificateBasedAuthStatusEnum::Disabled,
             "ENABLED" => CertificateBasedAuthStatusEnum::Enabled,
-            other => CertificateBasedAuthStatusEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => CertificateBasedAuthStatusEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl CertificateBasedAuthStatusEnum {
 impl ::std::convert::AsRef<str> for CertificateBasedAuthStatusEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl CertificateBasedAuthStatusEnum {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

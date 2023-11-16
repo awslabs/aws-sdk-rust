@@ -55,7 +55,8 @@ pub enum VideoSelectorColorSpace {
     #[allow(missing_docs)] // documentation missing in model
     Rec709,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for VideoSelectorColorSpace {
     fn from(s: &str) -> Self {
@@ -65,7 +66,7 @@ impl ::std::convert::From<&str> for VideoSelectorColorSpace {
             "HLG_2020" => VideoSelectorColorSpace::Hlg2020,
             "REC_601" => VideoSelectorColorSpace::Rec601,
             "REC_709" => VideoSelectorColorSpace::Rec709,
-            other => VideoSelectorColorSpace::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => VideoSelectorColorSpace::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -96,5 +97,17 @@ impl VideoSelectorColorSpace {
 impl ::std::convert::AsRef<str> for VideoSelectorColorSpace {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl VideoSelectorColorSpace {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

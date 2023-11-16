@@ -46,14 +46,15 @@ pub enum FullDocument {
     #[allow(missing_docs)] // documentation missing in model
     UpdateLookup,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for FullDocument {
     fn from(s: &str) -> Self {
         match s {
             "Default" => FullDocument::Default,
             "UpdateLookup" => FullDocument::UpdateLookup,
-            other => FullDocument::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => FullDocument::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl FullDocument {
 impl ::std::convert::AsRef<str> for FullDocument {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl FullDocument {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

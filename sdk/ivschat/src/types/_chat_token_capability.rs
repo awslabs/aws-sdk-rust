@@ -49,7 +49,8 @@ pub enum ChatTokenCapability {
     #[allow(missing_docs)] // documentation missing in model
     SendMessage,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ChatTokenCapability {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for ChatTokenCapability {
             "DELETE_MESSAGE" => ChatTokenCapability::DeleteMessage,
             "DISCONNECT_USER" => ChatTokenCapability::DisconnectUser,
             "SEND_MESSAGE" => ChatTokenCapability::SendMessage,
-            other => ChatTokenCapability::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ChatTokenCapability::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl ChatTokenCapability {
 impl ::std::convert::AsRef<str> for ChatTokenCapability {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ChatTokenCapability {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

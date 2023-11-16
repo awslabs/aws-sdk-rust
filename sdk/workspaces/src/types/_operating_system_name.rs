@@ -73,7 +73,8 @@ pub enum OperatingSystemName {
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2022,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for OperatingSystemName {
     fn from(s: &str) -> Self {
@@ -89,7 +90,7 @@ impl ::std::convert::From<&str> for OperatingSystemName {
             "WINDOWS_SERVER_2016" => OperatingSystemName::WindowsServer2016,
             "WINDOWS_SERVER_2019" => OperatingSystemName::WindowsServer2019,
             "WINDOWS_SERVER_2022" => OperatingSystemName::WindowsServer2022,
-            other => OperatingSystemName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => OperatingSystemName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -138,5 +139,17 @@ impl OperatingSystemName {
 impl ::std::convert::AsRef<str> for OperatingSystemName {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl OperatingSystemName {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

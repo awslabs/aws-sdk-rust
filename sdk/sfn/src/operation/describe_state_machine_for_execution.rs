@@ -259,30 +259,41 @@ pub enum DescribeStateMachineForExecutionError {
     /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::types::error::InvalidArn),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-DescribeStateMachineForExecutionError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl DescribeStateMachineForExecutionError {
     /// Creates the `DescribeStateMachineForExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `DescribeStateMachineForExecutionError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `DescribeStateMachineForExecutionError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::ExecutionDoesNotExist(e) => e.meta(),
-            Self::InvalidArn(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::ExecutionDoesNotExist(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidArn(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `DescribeStateMachineForExecutionError::ExecutionDoesNotExist`.
@@ -299,7 +310,7 @@ impl ::std::error::Error for DescribeStateMachineForExecutionError {
         match self {
             Self::ExecutionDoesNotExist(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArn(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -308,7 +319,13 @@ impl ::std::fmt::Display for DescribeStateMachineForExecutionError {
         match self {
             Self::ExecutionDoesNotExist(_inner) => _inner.fmt(f),
             Self::InvalidArn(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -325,7 +342,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeState
         match self {
             Self::ExecutionDoesNotExist(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArn(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -334,10 +351,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for Describe
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

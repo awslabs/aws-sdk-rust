@@ -49,7 +49,8 @@ pub enum InvalidParameterProblem {
     /// The client called the service before the time specified in the poll interval.
     PollIntervalNotSatisfied,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for InvalidParameterProblem {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for InvalidParameterProblem {
             "Corrupted" => InvalidParameterProblem::Corrupted,
             "Expired" => InvalidParameterProblem::Expired,
             "PollIntervalNotSatisfied" => InvalidParameterProblem::PollIntervalNotSatisfied,
-            other => InvalidParameterProblem::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => InvalidParameterProblem::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl InvalidParameterProblem {
 impl ::std::convert::AsRef<str> for InvalidParameterProblem {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl InvalidParameterProblem {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

@@ -55,7 +55,8 @@ pub enum H264InterlaceMode {
     #[allow(missing_docs)] // documentation missing in model
     TopField,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for H264InterlaceMode {
     fn from(s: &str) -> Self {
@@ -65,7 +66,7 @@ impl ::std::convert::From<&str> for H264InterlaceMode {
             "FOLLOW_TOP_FIELD" => H264InterlaceMode::FollowTopField,
             "PROGRESSIVE" => H264InterlaceMode::Progressive,
             "TOP_FIELD" => H264InterlaceMode::TopField,
-            other => H264InterlaceMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => H264InterlaceMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -96,5 +97,17 @@ impl H264InterlaceMode {
 impl ::std::convert::AsRef<str> for H264InterlaceMode {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl H264InterlaceMode {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

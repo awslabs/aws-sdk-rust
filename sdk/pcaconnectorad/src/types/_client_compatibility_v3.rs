@@ -55,7 +55,8 @@ pub enum ClientCompatibilityV3 {
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2016,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ClientCompatibilityV3 {
     fn from(s: &str) -> Self {
@@ -65,7 +66,7 @@ impl ::std::convert::From<&str> for ClientCompatibilityV3 {
             "WINDOWS_SERVER_2012" => ClientCompatibilityV3::WindowsServer2012,
             "WINDOWS_SERVER_2012_R2" => ClientCompatibilityV3::WindowsServer2012R2,
             "WINDOWS_SERVER_2016" => ClientCompatibilityV3::WindowsServer2016,
-            other => ClientCompatibilityV3::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ClientCompatibilityV3::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -102,5 +103,17 @@ impl ClientCompatibilityV3 {
 impl ::std::convert::AsRef<str> for ClientCompatibilityV3 {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ClientCompatibilityV3 {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

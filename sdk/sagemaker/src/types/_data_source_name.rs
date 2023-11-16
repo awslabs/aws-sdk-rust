@@ -46,14 +46,15 @@ pub enum DataSourceName {
     #[allow(missing_docs)] // documentation missing in model
     Snowflake,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for DataSourceName {
     fn from(s: &str) -> Self {
         match s {
             "SalesforceGenie" => DataSourceName::SalesforceGenie,
             "Snowflake" => DataSourceName::Snowflake,
-            other => DataSourceName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => DataSourceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl DataSourceName {
 impl ::std::convert::AsRef<str> for DataSourceName {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl DataSourceName {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

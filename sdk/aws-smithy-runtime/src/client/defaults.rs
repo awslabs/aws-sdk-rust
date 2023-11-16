@@ -15,7 +15,7 @@ use crate::client::retries::RetryPartition;
 use aws_smithy_async::rt::sleep::default_async_sleep;
 use aws_smithy_async::time::SystemTimeSource;
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion;
+use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 use aws_smithy_runtime_api::client::http::SharedHttpClient;
 use aws_smithy_runtime_api::client::runtime_components::{
     RuntimeComponentsBuilder, SharedConfigValidator,
@@ -171,7 +171,7 @@ pub fn default_identity_cache_plugin() -> Option<SharedRuntimePlugin> {
 #[derive(Debug, Default)]
 pub struct DefaultPluginParams {
     retry_partition_name: Option<Cow<'static, str>>,
-    behavior_major_version: Option<BehaviorMajorVersion>,
+    behavior_version: Option<BehaviorVersion>,
 }
 
 impl DefaultPluginParams {
@@ -187,8 +187,8 @@ impl DefaultPluginParams {
     }
 
     /// Sets the behavior major version.
-    pub fn with_behavior_major_version(mut self, version: BehaviorMajorVersion) -> Self {
-        self.behavior_major_version = Some(version);
+    pub fn with_behavior_version(mut self, version: BehaviorVersion) -> Self {
+        self.behavior_version = Some(version);
         self
     }
 }

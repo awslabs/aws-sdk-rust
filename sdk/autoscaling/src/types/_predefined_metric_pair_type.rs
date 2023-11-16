@@ -52,7 +52,8 @@ pub enum PredefinedMetricPairType {
     #[allow(missing_docs)] // documentation missing in model
     AsgNetworkOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for PredefinedMetricPairType {
     fn from(s: &str) -> Self {
@@ -61,7 +62,7 @@ impl ::std::convert::From<&str> for PredefinedMetricPairType {
             "ASGCPUUtilization" => PredefinedMetricPairType::AsgcpuUtilization,
             "ASGNetworkIn" => PredefinedMetricPairType::AsgNetworkIn,
             "ASGNetworkOut" => PredefinedMetricPairType::AsgNetworkOut,
-            other => PredefinedMetricPairType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => PredefinedMetricPairType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,5 +92,17 @@ impl PredefinedMetricPairType {
 impl ::std::convert::AsRef<str> for PredefinedMetricPairType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl PredefinedMetricPairType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

@@ -261,39 +261,50 @@ pub enum CreateBlueGreenDeploymentError {
     /// <p>The source DB instance isn't supported for a blue/green deployment.</p>
     SourceDatabaseNotSupportedFault(crate::types::error::SourceDatabaseNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-CreateBlueGreenDeploymentError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl CreateBlueGreenDeploymentError {
     /// Creates the `CreateBlueGreenDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `CreateBlueGreenDeploymentError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `CreateBlueGreenDeploymentError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::BlueGreenDeploymentAlreadyExistsFault(e) => e.meta(),
-            Self::DbClusterNotFoundFault(e) => e.meta(),
-            Self::DbClusterParameterGroupNotFoundFault(e) => e.meta(),
-            Self::DbClusterQuotaExceededFault(e) => e.meta(),
-            Self::DbInstanceNotFoundFault(e) => e.meta(),
-            Self::DbParameterGroupNotFoundFault(e) => e.meta(),
-            Self::InstanceQuotaExceededFault(e) => e.meta(),
-            Self::InvalidDbClusterStateFault(e) => e.meta(),
-            Self::InvalidDbInstanceStateFault(e) => e.meta(),
-            Self::SourceClusterNotSupportedFault(e) => e.meta(),
-            Self::SourceDatabaseNotSupportedFault(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::BlueGreenDeploymentAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbClusterParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbClusterQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InstanceQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SourceClusterNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SourceDatabaseNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `CreateBlueGreenDeploymentError::BlueGreenDeploymentAlreadyExistsFault`.
@@ -355,7 +366,7 @@ impl ::std::error::Error for CreateBlueGreenDeploymentError {
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SourceClusterNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SourceDatabaseNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -373,7 +384,13 @@ impl ::std::fmt::Display for CreateBlueGreenDeploymentError {
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::SourceClusterNotSupportedFault(_inner) => _inner.fmt(f),
             Self::SourceDatabaseNotSupportedFault(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -399,7 +416,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateBlueGre
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SourceClusterNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SourceDatabaseNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -408,10 +425,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CreateBl
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

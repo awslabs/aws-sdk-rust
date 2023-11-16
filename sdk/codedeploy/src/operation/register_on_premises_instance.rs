@@ -270,38 +270,49 @@ pub enum RegisterOnPremisesInstanceError {
     /// <p>Both an user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
     MultipleIamArnsProvidedException(crate::types::error::MultipleIamArnsProvidedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-RegisterOnPremisesInstanceError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl RegisterOnPremisesInstanceError {
     /// Creates the `RegisterOnPremisesInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `RegisterOnPremisesInstanceError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `RegisterOnPremisesInstanceError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::IamArnRequiredException(e) => e.meta(),
-            Self::IamSessionArnAlreadyRegisteredException(e) => e.meta(),
-            Self::IamUserArnAlreadyRegisteredException(e) => e.meta(),
-            Self::IamUserArnRequiredException(e) => e.meta(),
-            Self::InstanceNameAlreadyRegisteredException(e) => e.meta(),
-            Self::InstanceNameRequiredException(e) => e.meta(),
-            Self::InvalidIamSessionArnException(e) => e.meta(),
-            Self::InvalidIamUserArnException(e) => e.meta(),
-            Self::InvalidInstanceNameException(e) => e.meta(),
-            Self::MultipleIamArnsProvidedException(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::IamArnRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IamSessionArnAlreadyRegisteredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IamUserArnAlreadyRegisteredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IamUserArnRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InstanceNameAlreadyRegisteredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InstanceNameRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidIamSessionArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidIamUserArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidInstanceNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::MultipleIamArnsProvidedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceError::IamArnRequiredException`.
@@ -358,7 +369,7 @@ impl ::std::error::Error for RegisterOnPremisesInstanceError {
             Self::InvalidIamUserArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInstanceNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::MultipleIamArnsProvidedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -375,7 +386,13 @@ impl ::std::fmt::Display for RegisterOnPremisesInstanceError {
             Self::InvalidIamUserArnException(_inner) => _inner.fmt(f),
             Self::InvalidInstanceNameException(_inner) => _inner.fmt(f),
             Self::MultipleIamArnsProvidedException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -400,7 +417,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RegisterOnPre
             Self::InvalidIamUserArnException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInstanceNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MultipleIamArnsProvidedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -409,10 +426,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for Register
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

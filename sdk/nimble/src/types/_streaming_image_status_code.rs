@@ -61,7 +61,8 @@ pub enum StreamingImageStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     StreamingImageUpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for StreamingImageStatusCode {
     fn from(s: &str) -> Self {
@@ -73,7 +74,7 @@ impl ::std::convert::From<&str> for StreamingImageStatusCode {
             "STREAMING_IMAGE_DELETE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageDeleteInProgress,
             "STREAMING_IMAGE_READY" => StreamingImageStatusCode::StreamingImageReady,
             "STREAMING_IMAGE_UPDATE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageUpdateInProgress,
-            other => StreamingImageStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => StreamingImageStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -114,5 +115,17 @@ impl StreamingImageStatusCode {
 impl ::std::convert::AsRef<str> for StreamingImageStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl StreamingImageStatusCode {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

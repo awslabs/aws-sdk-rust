@@ -46,14 +46,15 @@ pub enum TemplateParameterDataType {
     #[allow(missing_docs)] // documentation missing in model
     String,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for TemplateParameterDataType {
     fn from(s: &str) -> Self {
         match s {
             "NUMBER" => TemplateParameterDataType::Number,
             "STRING" => TemplateParameterDataType::String,
-            other => TemplateParameterDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => TemplateParameterDataType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl TemplateParameterDataType {
 impl ::std::convert::AsRef<str> for TemplateParameterDataType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl TemplateParameterDataType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

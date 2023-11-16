@@ -82,7 +82,8 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     UnknownError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -101,7 +102,7 @@ impl ::std::convert::From<&str> for ErrorCode {
             "SYSTEM_LIMIT_ERROR" => ErrorCode::SystemLimitError,
             "TABLE_NOT_FOUND_ERROR" => ErrorCode::TableNotFoundError,
             "UNKNOWN_ERROR" => ErrorCode::UnknownError,
-            other => ErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -156,5 +157,17 @@ impl ErrorCode {
 impl ::std::convert::AsRef<str> for ErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ErrorCode {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

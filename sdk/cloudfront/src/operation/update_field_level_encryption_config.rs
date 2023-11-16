@@ -290,39 +290,50 @@ pub enum UpdateFieldLevelEncryptionConfigError {
     /// <p>The maximum number of query arg profiles for field-level encryption have been created.</p>
     TooManyFieldLevelEncryptionQueryArgProfiles(crate::types::error::TooManyFieldLevelEncryptionQueryArgProfiles),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-UpdateFieldLevelEncryptionConfigError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl UpdateFieldLevelEncryptionConfigError {
     /// Creates the `UpdateFieldLevelEncryptionConfigError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `UpdateFieldLevelEncryptionConfigError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `UpdateFieldLevelEncryptionConfigError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::AccessDenied(e) => e.meta(),
-            Self::IllegalUpdate(e) => e.meta(),
-            Self::InconsistentQuantities(e) => e.meta(),
-            Self::InvalidArgument(e) => e.meta(),
-            Self::InvalidIfMatchVersion(e) => e.meta(),
-            Self::NoSuchFieldLevelEncryptionConfig(e) => e.meta(),
-            Self::NoSuchFieldLevelEncryptionProfile(e) => e.meta(),
-            Self::PreconditionFailed(e) => e.meta(),
-            Self::QueryArgProfileEmpty(e) => e.meta(),
-            Self::TooManyFieldLevelEncryptionContentTypeProfiles(e) => e.meta(),
-            Self::TooManyFieldLevelEncryptionQueryArgProfiles(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::AccessDenied(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IllegalUpdate(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InconsistentQuantities(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidArgument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidIfMatchVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchFieldLevelEncryptionConfig(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchFieldLevelEncryptionProfile(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PreconditionFailed(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::QueryArgProfileEmpty(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyFieldLevelEncryptionContentTypeProfiles(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyFieldLevelEncryptionQueryArgProfiles(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigError::AccessDenied`.
@@ -384,7 +395,7 @@ impl ::std::error::Error for UpdateFieldLevelEncryptionConfigError {
             Self::QueryArgProfileEmpty(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyFieldLevelEncryptionContentTypeProfiles(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyFieldLevelEncryptionQueryArgProfiles(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -402,7 +413,13 @@ impl ::std::fmt::Display for UpdateFieldLevelEncryptionConfigError {
             Self::QueryArgProfileEmpty(_inner) => _inner.fmt(f),
             Self::TooManyFieldLevelEncryptionContentTypeProfiles(_inner) => _inner.fmt(f),
             Self::TooManyFieldLevelEncryptionQueryArgProfiles(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -428,7 +445,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateFieldLe
             Self::QueryArgProfileEmpty(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyFieldLevelEncryptionContentTypeProfiles(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyFieldLevelEncryptionQueryArgProfiles(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -437,10 +454,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for UpdateFi
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

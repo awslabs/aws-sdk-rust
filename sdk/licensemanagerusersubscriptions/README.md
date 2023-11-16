@@ -16,7 +16,7 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "0.57.1", features = ["behavior-version-latest"] }
+aws-config = { version = "0.100.0", features = ["behavior-version-latest"] }
 aws-sdk-licensemanagerusersubscriptions = "0.21.0"
 tokio = { version = "1", features = ["full"] }
 ```

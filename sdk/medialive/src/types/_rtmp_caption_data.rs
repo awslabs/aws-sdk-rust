@@ -49,7 +49,8 @@ pub enum RtmpCaptionData {
     #[allow(missing_docs)] // documentation missing in model
     Field1AndField2608,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for RtmpCaptionData {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for RtmpCaptionData {
             "ALL" => RtmpCaptionData::All,
             "FIELD1_608" => RtmpCaptionData::Field1608,
             "FIELD1_AND_FIELD2_608" => RtmpCaptionData::Field1AndField2608,
-            other => RtmpCaptionData::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => RtmpCaptionData::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl RtmpCaptionData {
 impl ::std::convert::AsRef<str> for RtmpCaptionData {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl RtmpCaptionData {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

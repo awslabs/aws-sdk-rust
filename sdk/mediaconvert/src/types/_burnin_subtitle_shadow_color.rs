@@ -52,7 +52,8 @@ pub enum BurninSubtitleShadowColor {
     #[allow(missing_docs)] // documentation missing in model
     White,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for BurninSubtitleShadowColor {
     fn from(s: &str) -> Self {
@@ -61,7 +62,7 @@ impl ::std::convert::From<&str> for BurninSubtitleShadowColor {
             "BLACK" => BurninSubtitleShadowColor::Black,
             "NONE" => BurninSubtitleShadowColor::None,
             "WHITE" => BurninSubtitleShadowColor::White,
-            other => BurninSubtitleShadowColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => BurninSubtitleShadowColor::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,5 +92,17 @@ impl BurninSubtitleShadowColor {
 impl ::std::convert::AsRef<str> for BurninSubtitleShadowColor {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl BurninSubtitleShadowColor {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

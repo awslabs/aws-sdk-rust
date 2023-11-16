@@ -287,43 +287,54 @@ pub enum OverridePullRequestApprovalRulesError {
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::types::error::RevisionNotCurrentException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-OverridePullRequestApprovalRulesError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl OverridePullRequestApprovalRulesError {
     /// Creates the `OverridePullRequestApprovalRulesError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `OverridePullRequestApprovalRulesError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `OverridePullRequestApprovalRulesError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::EncryptionIntegrityChecksFailedException(e) => e.meta(),
-            Self::EncryptionKeyAccessDeniedException(e) => e.meta(),
-            Self::EncryptionKeyDisabledException(e) => e.meta(),
-            Self::EncryptionKeyNotFoundException(e) => e.meta(),
-            Self::EncryptionKeyUnavailableException(e) => e.meta(),
-            Self::InvalidOverrideStatusException(e) => e.meta(),
-            Self::InvalidPullRequestIdException(e) => e.meta(),
-            Self::InvalidRevisionIdException(e) => e.meta(),
-            Self::OverrideAlreadySetException(e) => e.meta(),
-            Self::OverrideStatusRequiredException(e) => e.meta(),
-            Self::PullRequestAlreadyClosedException(e) => e.meta(),
-            Self::PullRequestDoesNotExistException(e) => e.meta(),
-            Self::PullRequestIdRequiredException(e) => e.meta(),
-            Self::RevisionIdRequiredException(e) => e.meta(),
-            Self::RevisionNotCurrentException(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::EncryptionIntegrityChecksFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidOverrideStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidPullRequestIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRevisionIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OverrideAlreadySetException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OverrideStatusRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PullRequestAlreadyClosedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PullRequestDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PullRequestIdRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RevisionIdRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RevisionNotCurrentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesError::EncryptionIntegrityChecksFailedException`.
@@ -405,7 +416,7 @@ impl ::std::error::Error for OverridePullRequestApprovalRulesError {
             Self::PullRequestIdRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::RevisionIdRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::RevisionNotCurrentException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -427,7 +438,13 @@ impl ::std::fmt::Display for OverridePullRequestApprovalRulesError {
             Self::PullRequestIdRequiredException(_inner) => _inner.fmt(f),
             Self::RevisionIdRequiredException(_inner) => _inner.fmt(f),
             Self::RevisionNotCurrentException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -457,7 +474,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for OverridePullR
             Self::PullRequestIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RevisionIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RevisionNotCurrentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -466,10 +483,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for Override
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

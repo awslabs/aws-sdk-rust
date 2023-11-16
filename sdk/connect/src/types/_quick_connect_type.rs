@@ -49,7 +49,8 @@ pub enum QuickConnectType {
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for QuickConnectType {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for QuickConnectType {
             "PHONE_NUMBER" => QuickConnectType::PhoneNumber,
             "QUEUE" => QuickConnectType::Queue,
             "USER" => QuickConnectType::User,
-            other => QuickConnectType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => QuickConnectType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl QuickConnectType {
 impl ::std::convert::AsRef<str> for QuickConnectType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl QuickConnectType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

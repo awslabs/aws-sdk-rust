@@ -17,7 +17,7 @@ pub use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 pub use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 pub use aws_smithy_async::time::{SharedTimeSource, TimeSource};
-use aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion;
+use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 use aws_smithy_runtime_api::client::http::HttpClient;
 pub use aws_smithy_runtime_api::client::http::SharedHttpClient;
 use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
@@ -63,7 +63,7 @@ pub struct SdkConfig {
     http_client: Option<SharedHttpClient>,
     use_fips: Option<bool>,
     use_dual_stack: Option<bool>,
-    behavior_major_version: Option<BehaviorMajorVersion>,
+    behavior_version: Option<BehaviorVersion>,
 }
 
 /// Builder for AWS Shared Configuration
@@ -85,7 +85,7 @@ pub struct Builder {
     http_client: Option<SharedHttpClient>,
     use_fips: Option<bool>,
     use_dual_stack: Option<bool>,
-    behavior_major_version: Option<BehaviorMajorVersion>,
+    behavior_version: Option<BehaviorVersion>,
 }
 
 impl Builder {
@@ -539,18 +539,15 @@ impl Builder {
         self
     }
 
-    /// Sets the [`BehaviorMajorVersion`] for the [`SdkConfig`]
-    pub fn behavior_major_version(mut self, behavior_major_version: BehaviorMajorVersion) -> Self {
-        self.set_behavior_major_version(Some(behavior_major_version));
+    /// Sets the [`BehaviorVersion`] for the [`SdkConfig`]
+    pub fn behavior_version(mut self, behavior_version: BehaviorVersion) -> Self {
+        self.set_behavior_version(Some(behavior_version));
         self
     }
 
-    /// Sets the [`BehaviorMajorVersion`] for the [`SdkConfig`]
-    pub fn set_behavior_major_version(
-        &mut self,
-        behavior_major_version: Option<BehaviorMajorVersion>,
-    ) -> &mut Self {
-        self.behavior_major_version = behavior_major_version;
+    /// Sets the [`BehaviorVersion`] for the [`SdkConfig`]
+    pub fn set_behavior_version(&mut self, behavior_version: Option<BehaviorVersion>) -> &mut Self {
+        self.behavior_version = behavior_version;
         self
     }
 
@@ -569,7 +566,7 @@ impl Builder {
             use_fips: self.use_fips,
             use_dual_stack: self.use_dual_stack,
             time_source: self.time_source,
-            behavior_major_version: self.behavior_major_version,
+            behavior_version: self.behavior_version,
         }
     }
 }
@@ -637,8 +634,8 @@ impl SdkConfig {
     }
 
     /// Behavior major version configured for this client
-    pub fn behavior_major_version(&self) -> Option<BehaviorMajorVersion> {
-        self.behavior_major_version.clone()
+    pub fn behavior_version(&self) -> Option<BehaviorVersion> {
+        self.behavior_version.clone()
     }
 
     /// Config builder
@@ -670,7 +667,7 @@ impl SdkConfig {
             http_client: self.http_client,
             use_fips: self.use_fips,
             use_dual_stack: self.use_dual_stack,
-            behavior_major_version: self.behavior_major_version,
+            behavior_version: self.behavior_version,
         }
     }
 }

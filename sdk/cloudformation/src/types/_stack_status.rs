@@ -109,7 +109,8 @@ pub enum StackStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateRollbackInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for StackStatus {
     fn from(s: &str) -> Self {
@@ -137,7 +138,7 @@ impl ::std::convert::From<&str> for StackStatus {
             "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" => StackStatus::UpdateRollbackCompleteCleanupInProgress,
             "UPDATE_ROLLBACK_FAILED" => StackStatus::UpdateRollbackFailed,
             "UPDATE_ROLLBACK_IN_PROGRESS" => StackStatus::UpdateRollbackInProgress,
-            other => StackStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => StackStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -210,5 +211,17 @@ impl StackStatus {
 impl ::std::convert::AsRef<str> for StackStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl StackStatus {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

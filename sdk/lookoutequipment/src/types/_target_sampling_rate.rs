@@ -73,7 +73,8 @@ pub enum TargetSamplingRate {
     #[allow(missing_docs)] // documentation missing in model
     Pt5S,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for TargetSamplingRate {
     fn from(s: &str) -> Self {
@@ -89,7 +90,7 @@ impl ::std::convert::From<&str> for TargetSamplingRate {
             "PT30S" => TargetSamplingRate::Pt30S,
             "PT5M" => TargetSamplingRate::Pt5M,
             "PT5S" => TargetSamplingRate::Pt5S,
-            other => TargetSamplingRate::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => TargetSamplingRate::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -128,5 +129,17 @@ impl TargetSamplingRate {
 impl ::std::convert::AsRef<str> for TargetSamplingRate {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl TargetSamplingRate {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

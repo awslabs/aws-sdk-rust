@@ -17,7 +17,7 @@ fn test_client(update_builder: fn(Builder) -> Builder) -> (CaptureRequestReceive
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-west-4"))
         .http_client(http_client)
-        .behavior_major_version(aws_sdk_s3::config::BehaviorMajorVersion::latest())
+        .behavior_version(aws_sdk_s3::config::BehaviorVersion::latest())
         .with_test_defaults();
     let client = Client::from_conf(update_builder(config).build());
     (captured_request, client)

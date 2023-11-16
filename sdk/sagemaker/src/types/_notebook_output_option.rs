@@ -46,14 +46,15 @@ pub enum NotebookOutputOption {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for NotebookOutputOption {
     fn from(s: &str) -> Self {
         match s {
             "Allowed" => NotebookOutputOption::Allowed,
             "Disabled" => NotebookOutputOption::Disabled,
-            other => NotebookOutputOption::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => NotebookOutputOption::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl NotebookOutputOption {
 impl ::std::convert::AsRef<str> for NotebookOutputOption {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl NotebookOutputOption {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

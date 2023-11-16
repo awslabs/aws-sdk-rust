@@ -46,14 +46,15 @@ pub enum ConfigRuleComplianceSummaryGroupKey {
     #[allow(missing_docs)] // documentation missing in model
     AwsRegion,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ConfigRuleComplianceSummaryGroupKey {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_ID" => ConfigRuleComplianceSummaryGroupKey::AccountId,
             "AWS_REGION" => ConfigRuleComplianceSummaryGroupKey::AwsRegion,
-            other => ConfigRuleComplianceSummaryGroupKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ConfigRuleComplianceSummaryGroupKey::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl ConfigRuleComplianceSummaryGroupKey {
 impl ::std::convert::AsRef<str> for ConfigRuleComplianceSummaryGroupKey {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ConfigRuleComplianceSummaryGroupKey {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

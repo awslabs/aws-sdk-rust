@@ -58,7 +58,8 @@ pub enum ResolverAutodefinedReverseStatus {
     #[allow(missing_docs)] // documentation missing in model
     UseLocalResourceSetting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ResolverAutodefinedReverseStatus {
     fn from(s: &str) -> Self {
@@ -69,7 +70,7 @@ impl ::std::convert::From<&str> for ResolverAutodefinedReverseStatus {
             "ENABLING" => ResolverAutodefinedReverseStatus::Enabling,
             "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING" => ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting,
             "USE_LOCAL_RESOURCE_SETTING" => ResolverAutodefinedReverseStatus::UseLocalResourceSetting,
-            other => ResolverAutodefinedReverseStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ResolverAutodefinedReverseStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,5 +109,17 @@ impl ResolverAutodefinedReverseStatus {
 impl ::std::convert::AsRef<str> for ResolverAutodefinedReverseStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ResolverAutodefinedReverseStatus {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

@@ -11,6 +11,8 @@ use aws_smithy_runtime_api::http::Response;
 use aws_smithy_types::error::metadata::{
     Builder as ErrorMetadataBuilder, ErrorMetadata, ProvideErrorMetadata,
 };
+
+#[allow(deprecated)]
 use aws_smithy_types::error::Unhandled;
 
 /// Constant for the [`ErrorMetadata`] extra field that contains the request ID
@@ -38,6 +40,7 @@ impl RequestId for ErrorMetadata {
     }
 }
 
+#[allow(deprecated)]
 impl RequestId for Unhandled {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()

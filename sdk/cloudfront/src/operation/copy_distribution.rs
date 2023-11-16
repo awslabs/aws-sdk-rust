@@ -384,92 +384,105 @@ pub enum CopyDistributionError {
     /// <p>One or more of your trusted signers don't exist.</p>
     TrustedSignerDoesNotExist(crate::types::error::TrustedSignerDoesNotExist),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-CopyDistributionError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl CopyDistributionError {
     /// Creates the `CopyDistributionError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `CopyDistributionError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `CopyDistributionError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::AccessDenied(e) => e.meta(),
-            Self::CnameAlreadyExists(e) => e.meta(),
-            Self::DistributionAlreadyExists(e) => e.meta(),
-            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(e) => e.meta(),
-            Self::InconsistentQuantities(e) => e.meta(),
-            Self::InvalidArgument(e) => e.meta(),
-            Self::InvalidDefaultRootObject(e) => e.meta(),
-            Self::InvalidErrorCode(e) => e.meta(),
-            Self::InvalidForwardCookies(e) => e.meta(),
-            Self::InvalidFunctionAssociation(e) => e.meta(),
-            Self::InvalidGeoRestrictionParameter(e) => e.meta(),
-            Self::InvalidHeadersForS3Origin(e) => e.meta(),
-            Self::InvalidIfMatchVersion(e) => e.meta(),
-            Self::InvalidLambdaFunctionAssociation(e) => e.meta(),
-            Self::InvalidLocationCode(e) => e.meta(),
-            Self::InvalidMinimumProtocolVersion(e) => e.meta(),
-            Self::InvalidOrigin(e) => e.meta(),
-            Self::InvalidOriginAccessControl(e) => e.meta(),
-            Self::InvalidOriginAccessIdentity(e) => e.meta(),
-            Self::InvalidOriginKeepaliveTimeout(e) => e.meta(),
-            Self::InvalidOriginReadTimeout(e) => e.meta(),
-            Self::InvalidProtocolSettings(e) => e.meta(),
-            Self::InvalidQueryStringParameters(e) => e.meta(),
-            Self::InvalidRelativePath(e) => e.meta(),
-            Self::InvalidRequiredProtocol(e) => e.meta(),
-            Self::InvalidResponseCode(e) => e.meta(),
-            Self::InvalidTtlOrder(e) => e.meta(),
-            Self::InvalidViewerCertificate(e) => e.meta(),
-            Self::InvalidWebAclId(e) => e.meta(),
-            Self::MissingBody(e) => e.meta(),
-            Self::NoSuchCachePolicy(e) => e.meta(),
-            Self::NoSuchDistribution(e) => e.meta(),
-            Self::NoSuchFieldLevelEncryptionConfig(e) => e.meta(),
-            Self::NoSuchOrigin(e) => e.meta(),
-            Self::NoSuchOriginRequestPolicy(e) => e.meta(),
-            Self::NoSuchRealtimeLogConfig(e) => e.meta(),
-            Self::NoSuchResponseHeadersPolicy(e) => e.meta(),
-            Self::PreconditionFailed(e) => e.meta(),
-            Self::RealtimeLogConfigOwnerMismatch(e) => e.meta(),
-            Self::TooManyCacheBehaviors(e) => e.meta(),
-            Self::TooManyCertificates(e) => e.meta(),
-            Self::TooManyCookieNamesInWhiteList(e) => e.meta(),
-            Self::TooManyDistributionCnamEs(e) => e.meta(),
-            Self::TooManyDistributions(e) => e.meta(),
-            Self::TooManyDistributionsAssociatedToCachePolicy(e) => e.meta(),
-            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(e) => e.meta(),
-            Self::TooManyDistributionsAssociatedToKeyGroup(e) => e.meta(),
-            Self::TooManyDistributionsAssociatedToOriginAccessControl(e) => e.meta(),
-            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(e) => e.meta(),
-            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(e) => e.meta(),
-            Self::TooManyDistributionsWithFunctionAssociations(e) => e.meta(),
-            Self::TooManyDistributionsWithLambdaAssociations(e) => e.meta(),
-            Self::TooManyDistributionsWithSingleFunctionArn(e) => e.meta(),
-            Self::TooManyFunctionAssociations(e) => e.meta(),
-            Self::TooManyHeadersInForwardedValues(e) => e.meta(),
-            Self::TooManyKeyGroupsAssociatedToDistribution(e) => e.meta(),
-            Self::TooManyLambdaFunctionAssociations(e) => e.meta(),
-            Self::TooManyOriginCustomHeaders(e) => e.meta(),
-            Self::TooManyOriginGroupsPerDistribution(e) => e.meta(),
-            Self::TooManyOrigins(e) => e.meta(),
-            Self::TooManyQueryStringParameters(e) => e.meta(),
-            Self::TooManyTrustedSigners(e) => e.meta(),
-            Self::TrustedKeyGroupDoesNotExist(e) => e.meta(),
-            Self::TrustedSignerDoesNotExist(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::AccessDenied(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CnameAlreadyExists(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DistributionAlreadyExists(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(e) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e)
+            }
+            Self::InconsistentQuantities(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidArgument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDefaultRootObject(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidErrorCode(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidForwardCookies(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidFunctionAssociation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidGeoRestrictionParameter(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidHeadersForS3Origin(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidIfMatchVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidLambdaFunctionAssociation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidLocationCode(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidMinimumProtocolVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidOrigin(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidOriginAccessControl(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidOriginAccessIdentity(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidOriginKeepaliveTimeout(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidOriginReadTimeout(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidProtocolSettings(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidQueryStringParameters(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRelativePath(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRequiredProtocol(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidResponseCode(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidTtlOrder(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidViewerCertificate(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidWebAclId(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::MissingBody(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchCachePolicy(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchDistribution(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchFieldLevelEncryptionConfig(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchOrigin(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchOriginRequestPolicy(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchRealtimeLogConfig(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchResponseHeadersPolicy(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PreconditionFailed(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RealtimeLogConfigOwnerMismatch(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyCacheBehaviors(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyCertificates(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyCookieNamesInWhiteList(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionCnamEs(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributions(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionsAssociatedToCachePolicy(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionsAssociatedToKeyGroup(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionsAssociatedToOriginAccessControl(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionsWithFunctionAssociations(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionsWithLambdaAssociations(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyDistributionsWithSingleFunctionArn(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyFunctionAssociations(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyHeadersInForwardedValues(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyKeyGroupsAssociatedToDistribution(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyLambdaFunctionAssociations(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyOriginCustomHeaders(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyOriginGroupsPerDistribution(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyOrigins(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyQueryStringParameters(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyTrustedSigners(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TrustedKeyGroupDoesNotExist(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TrustedSignerDoesNotExist(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `CopyDistributionError::AccessDenied`.
@@ -796,7 +809,7 @@ impl ::std::error::Error for CopyDistributionError {
             Self::TooManyTrustedSigners(_inner) => ::std::option::Option::Some(_inner),
             Self::TrustedKeyGroupDoesNotExist(_inner) => ::std::option::Option::Some(_inner),
             Self::TrustedSignerDoesNotExist(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -867,7 +880,13 @@ impl ::std::fmt::Display for CopyDistributionError {
             Self::TooManyTrustedSigners(_inner) => _inner.fmt(f),
             Self::TrustedKeyGroupDoesNotExist(_inner) => _inner.fmt(f),
             Self::TrustedSignerDoesNotExist(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -956,7 +975,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CopyDistribut
             Self::TooManyTrustedSigners(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TrustedKeyGroupDoesNotExist(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TrustedSignerDoesNotExist(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -965,10 +984,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CopyDist
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

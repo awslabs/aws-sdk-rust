@@ -49,7 +49,8 @@ pub enum Vc3FramerateConversionAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Interpolate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for Vc3FramerateConversionAlgorithm {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for Vc3FramerateConversionAlgorithm {
             "DUPLICATE_DROP" => Vc3FramerateConversionAlgorithm::DuplicateDrop,
             "FRAMEFORMER" => Vc3FramerateConversionAlgorithm::Frameformer,
             "INTERPOLATE" => Vc3FramerateConversionAlgorithm::Interpolate,
-            other => Vc3FramerateConversionAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => Vc3FramerateConversionAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl Vc3FramerateConversionAlgorithm {
 impl ::std::convert::AsRef<str> for Vc3FramerateConversionAlgorithm {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl Vc3FramerateConversionAlgorithm {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

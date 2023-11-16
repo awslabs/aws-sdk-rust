@@ -55,7 +55,8 @@ pub enum FunnelChartMeasureDataLabelStyle {
     #[allow(missing_docs)] // documentation missing in model
     ValueOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for FunnelChartMeasureDataLabelStyle {
     fn from(s: &str) -> Self {
@@ -65,7 +66,7 @@ impl ::std::convert::From<&str> for FunnelChartMeasureDataLabelStyle {
             "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE" => FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage,
             "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE" => FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage,
             "VALUE_ONLY" => FunnelChartMeasureDataLabelStyle::ValueOnly,
-            other => FunnelChartMeasureDataLabelStyle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => FunnelChartMeasureDataLabelStyle::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -102,5 +103,17 @@ impl FunnelChartMeasureDataLabelStyle {
 impl ::std::convert::AsRef<str> for FunnelChartMeasureDataLabelStyle {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl FunnelChartMeasureDataLabelStyle {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

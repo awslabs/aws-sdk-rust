@@ -55,7 +55,8 @@ pub enum NetworkStatus {
     #[allow(missing_docs)] // documentation missing in model
     Provisioning,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for NetworkStatus {
     fn from(s: &str) -> Self {
@@ -65,7 +66,7 @@ impl ::std::convert::From<&str> for NetworkStatus {
             "DELETED" => NetworkStatus::Deleted,
             "DEPROVISIONING" => NetworkStatus::Deprovisioning,
             "PROVISIONING" => NetworkStatus::Provisioning,
-            other => NetworkStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => NetworkStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -96,5 +97,17 @@ impl NetworkStatus {
 impl ::std::convert::AsRef<str> for NetworkStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl NetworkStatus {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

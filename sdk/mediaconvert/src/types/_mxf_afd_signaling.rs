@@ -46,14 +46,15 @@ pub enum MxfAfdSignaling {
     #[allow(missing_docs)] // documentation missing in model
     NoCopy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for MxfAfdSignaling {
     fn from(s: &str) -> Self {
         match s {
             "COPY_FROM_VIDEO" => MxfAfdSignaling::CopyFromVideo,
             "NO_COPY" => MxfAfdSignaling::NoCopy,
-            other => MxfAfdSignaling::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => MxfAfdSignaling::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl MxfAfdSignaling {
 impl ::std::convert::AsRef<str> for MxfAfdSignaling {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl MxfAfdSignaling {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

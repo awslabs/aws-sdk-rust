@@ -46,14 +46,15 @@ pub enum M2tsDataPtsControl {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for M2tsDataPtsControl {
     fn from(s: &str) -> Self {
         match s {
             "ALIGN_TO_VIDEO" => M2tsDataPtsControl::AlignToVideo,
             "AUTO" => M2tsDataPtsControl::Auto,
-            other => M2tsDataPtsControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => M2tsDataPtsControl::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl M2tsDataPtsControl {
 impl ::std::convert::AsRef<str> for M2tsDataPtsControl {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl M2tsDataPtsControl {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

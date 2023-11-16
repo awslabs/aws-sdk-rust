@@ -9,6 +9,7 @@ use aws_sdk_lambda::operation::RequestId;
 use aws_sdk_lambda::{Client, Config};
 use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
 
+#[allow(deprecated)]
 async fn run_test(
     response: impl Fn() -> http::Response<&'static str> + Send + Sync + 'static,
     expect_error: bool,

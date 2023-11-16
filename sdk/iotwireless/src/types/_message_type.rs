@@ -53,7 +53,8 @@ pub enum MessageType {
     #[allow(missing_docs)] // documentation missing in model
     CustomCommandIdSet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for MessageType {
     fn from(s: &str) -> Self {
@@ -62,7 +63,7 @@ impl ::std::convert::From<&str> for MessageType {
             "CUSTOM_COMMAND_ID_NOTIFY" => MessageType::CustomCommandIdNotify,
             "CUSTOM_COMMAND_ID_RESP" => MessageType::CustomCommandIdResp,
             "CUSTOM_COMMAND_ID_SET" => MessageType::CustomCommandIdSet,
-            other => MessageType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => MessageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -97,5 +98,17 @@ impl MessageType {
 impl ::std::convert::AsRef<str> for MessageType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl MessageType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

@@ -272,39 +272,50 @@ pub enum UpdatePullRequestStatusError {
     /// <p>A pull request status is required, but none was provided.</p>
     PullRequestStatusRequiredException(crate::types::error::PullRequestStatusRequiredException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-UpdatePullRequestStatusError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl UpdatePullRequestStatusError {
     /// Creates the `UpdatePullRequestStatusError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `UpdatePullRequestStatusError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `UpdatePullRequestStatusError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::EncryptionIntegrityChecksFailedException(e) => e.meta(),
-            Self::EncryptionKeyAccessDeniedException(e) => e.meta(),
-            Self::EncryptionKeyDisabledException(e) => e.meta(),
-            Self::EncryptionKeyNotFoundException(e) => e.meta(),
-            Self::EncryptionKeyUnavailableException(e) => e.meta(),
-            Self::InvalidPullRequestIdException(e) => e.meta(),
-            Self::InvalidPullRequestStatusException(e) => e.meta(),
-            Self::InvalidPullRequestStatusUpdateException(e) => e.meta(),
-            Self::PullRequestDoesNotExistException(e) => e.meta(),
-            Self::PullRequestIdRequiredException(e) => e.meta(),
-            Self::PullRequestStatusRequiredException(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::EncryptionIntegrityChecksFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidPullRequestIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidPullRequestStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidPullRequestStatusUpdateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PullRequestDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PullRequestIdRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PullRequestStatusRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `UpdatePullRequestStatusError::EncryptionIntegrityChecksFailedException`.
@@ -366,7 +377,7 @@ impl ::std::error::Error for UpdatePullRequestStatusError {
             Self::PullRequestDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::PullRequestIdRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::PullRequestStatusRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -384,7 +395,13 @@ impl ::std::fmt::Display for UpdatePullRequestStatusError {
             Self::PullRequestDoesNotExistException(_inner) => _inner.fmt(f),
             Self::PullRequestIdRequiredException(_inner) => _inner.fmt(f),
             Self::PullRequestStatusRequiredException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -410,7 +427,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdatePullReq
             Self::PullRequestDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PullRequestIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PullRequestStatusRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -419,10 +436,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for UpdatePu
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

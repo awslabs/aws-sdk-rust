@@ -316,7 +316,8 @@ pub enum CloudWatchLogsEncoding {
     #[allow(missing_docs)] // documentation missing in model
     Utf8Sig,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for CloudWatchLogsEncoding {
     fn from(s: &str) -> Self {
@@ -413,7 +414,7 @@ impl ::std::convert::From<&str> for CloudWatchLogsEncoding {
             "utf_7" => CloudWatchLogsEncoding::Utf7,
             "utf_8" => CloudWatchLogsEncoding::Utf8,
             "utf_8_sig" => CloudWatchLogsEncoding::Utf8Sig,
-            other => CloudWatchLogsEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => CloudWatchLogsEncoding::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -624,5 +625,17 @@ impl CloudWatchLogsEncoding {
 impl ::std::convert::AsRef<str> for CloudWatchLogsEncoding {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl CloudWatchLogsEncoding {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

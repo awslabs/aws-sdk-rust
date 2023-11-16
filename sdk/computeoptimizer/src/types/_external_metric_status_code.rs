@@ -70,7 +70,8 @@ pub enum ExternalMetricStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     NoExternalMetricSet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ExternalMetricStatusCode {
     fn from(s: &str) -> Self {
@@ -85,7 +86,7 @@ impl ::std::convert::From<&str> for ExternalMetricStatusCode {
             "INTEGRATION_SUCCESS" => ExternalMetricStatusCode::IntegrationSuccess,
             "NEWRELIC_INTEGRATION_ERROR" => ExternalMetricStatusCode::NewrelicIntegrationError,
             "NO_EXTERNAL_METRIC_SET" => ExternalMetricStatusCode::NoExternalMetricSet,
-            other => ExternalMetricStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ExternalMetricStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -132,5 +133,17 @@ impl ExternalMetricStatusCode {
 impl ::std::convert::AsRef<str> for ExternalMetricStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ExternalMetricStatusCode {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

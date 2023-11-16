@@ -58,7 +58,8 @@ pub enum ResolverDnssecValidationStatus {
     #[allow(missing_docs)] // documentation missing in model
     UseLocalResourceSetting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ResolverDnssecValidationStatus {
     fn from(s: &str) -> Self {
@@ -69,7 +70,7 @@ impl ::std::convert::From<&str> for ResolverDnssecValidationStatus {
             "ENABLING" => ResolverDnssecValidationStatus::Enabling,
             "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING" => ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting,
             "USE_LOCAL_RESOURCE_SETTING" => ResolverDnssecValidationStatus::UseLocalResourceSetting,
-            other => ResolverDnssecValidationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ResolverDnssecValidationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,5 +109,17 @@ impl ResolverDnssecValidationStatus {
 impl ::std::convert::AsRef<str> for ResolverDnssecValidationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ResolverDnssecValidationStatus {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

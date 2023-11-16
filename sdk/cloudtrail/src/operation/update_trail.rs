@@ -325,61 +325,72 @@ pub enum UpdateTrailError {
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-UpdateTrailError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl UpdateTrailError {
     /// Creates the `UpdateTrailError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `UpdateTrailError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `UpdateTrailError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::CloudTrailAccessNotEnabledException(e) => e.meta(),
-            Self::CloudTrailArnInvalidException(e) => e.meta(),
-            Self::CloudTrailInvalidClientTokenIdException(e) => e.meta(),
-            Self::CloudWatchLogsDeliveryUnavailableException(e) => e.meta(),
-            Self::ConflictException(e) => e.meta(),
-            Self::InsufficientDependencyServiceAccessPermissionException(e) => e.meta(),
-            Self::InsufficientEncryptionPolicyException(e) => e.meta(),
-            Self::InsufficientS3BucketPolicyException(e) => e.meta(),
-            Self::InsufficientSnsTopicPolicyException(e) => e.meta(),
-            Self::InvalidCloudWatchLogsLogGroupArnException(e) => e.meta(),
-            Self::InvalidCloudWatchLogsRoleArnException(e) => e.meta(),
-            Self::InvalidEventSelectorsException(e) => e.meta(),
-            Self::InvalidHomeRegionException(e) => e.meta(),
-            Self::InvalidKmsKeyIdException(e) => e.meta(),
-            Self::InvalidParameterCombinationException(e) => e.meta(),
-            Self::InvalidParameterException(e) => e.meta(),
-            Self::InvalidS3BucketNameException(e) => e.meta(),
-            Self::InvalidS3PrefixException(e) => e.meta(),
-            Self::InvalidSnsTopicNameException(e) => e.meta(),
-            Self::InvalidTrailNameException(e) => e.meta(),
-            Self::KmsException(e) => e.meta(),
-            Self::KmsKeyDisabledException(e) => e.meta(),
-            Self::KmsKeyNotFoundException(e) => e.meta(),
-            Self::NoManagementAccountSlrExistsException(e) => e.meta(),
-            Self::NotOrganizationMasterAccountException(e) => e.meta(),
-            Self::OperationNotPermittedException(e) => e.meta(),
-            Self::OrganizationNotInAllFeaturesModeException(e) => e.meta(),
-            Self::OrganizationsNotInUseException(e) => e.meta(),
-            Self::S3BucketDoesNotExistException(e) => e.meta(),
-            Self::ThrottlingException(e) => e.meta(),
-            Self::TrailNotFoundException(e) => e.meta(),
-            Self::TrailNotProvidedException(e) => e.meta(),
-            Self::UnsupportedOperationException(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::CloudTrailAccessNotEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CloudTrailArnInvalidException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CloudTrailInvalidClientTokenIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CloudWatchLogsDeliveryUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InsufficientDependencyServiceAccessPermissionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InsufficientEncryptionPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InsufficientS3BucketPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InsufficientSnsTopicPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidCloudWatchLogsLogGroupArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidCloudWatchLogsRoleArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidEventSelectorsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidHomeRegionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidKmsKeyIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidS3BucketNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidS3PrefixException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidSnsTopicNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidTrailNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsKeyDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsKeyNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoManagementAccountSlrExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NotOrganizationMasterAccountException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OrganizationNotInAllFeaturesModeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OrganizationsNotInUseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::S3BucketDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TrailNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TrailNotProvidedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `UpdateTrailError::CloudTrailAccessNotEnabledException`.
@@ -551,7 +562,7 @@ impl ::std::error::Error for UpdateTrailError {
             Self::TrailNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TrailNotProvidedException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -591,7 +602,13 @@ impl ::std::fmt::Display for UpdateTrailError {
             Self::TrailNotFoundException(_inner) => _inner.fmt(f),
             Self::TrailNotProvidedException(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -641,7 +658,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateTrailEr
             Self::TrailNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TrailNotProvidedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -650,10 +667,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for UpdateTr
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

@@ -46,14 +46,15 @@ pub enum Mp2CodingMode {
     #[allow(missing_docs)] // documentation missing in model
     CodingMode20,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for Mp2CodingMode {
     fn from(s: &str) -> Self {
         match s {
             "CODING_MODE_1_0" => Mp2CodingMode::CodingMode10,
             "CODING_MODE_2_0" => Mp2CodingMode::CodingMode20,
-            other => Mp2CodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => Mp2CodingMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl Mp2CodingMode {
 impl ::std::convert::AsRef<str> for Mp2CodingMode {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl Mp2CodingMode {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

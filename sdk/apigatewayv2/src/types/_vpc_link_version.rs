@@ -43,13 +43,14 @@ pub enum VpcLinkVersion {
     #[allow(missing_docs)] // documentation missing in model
     V2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for VpcLinkVersion {
     fn from(s: &str) -> Self {
         match s {
             "V2" => VpcLinkVersion::V2,
-            other => VpcLinkVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => VpcLinkVersion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -76,5 +77,17 @@ impl VpcLinkVersion {
 impl ::std::convert::AsRef<str> for VpcLinkVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl VpcLinkVersion {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

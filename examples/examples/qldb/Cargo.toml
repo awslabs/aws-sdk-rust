@@ -7,7 +7,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
+aws-config= { version = "0.100.0", path = "../../../sdk/aws-config" }
 aws-sdk-qldb= { version = "0.37.0", path = "../../../sdk/qldb" }
 aws-sdk-qldbsession= { version = "0.37.0", path = "../../../sdk/qldbsession" }
 

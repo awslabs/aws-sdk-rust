@@ -73,7 +73,8 @@ pub enum ManagedCredentialsStatus {
     #[allow(missing_docs)] // documentation missing in model
     PendingStartRemovalByOwner,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ManagedCredentialsStatus {
     fn from(s: &str) -> Self {
@@ -89,7 +90,7 @@ impl ::std::convert::From<&str> for ManagedCredentialsStatus {
             "PENDING_REMOVAL_BY_OWNER" => ManagedCredentialsStatus::PendingRemovalByOwner,
             "PENDING_START_REMOVAL_BY_COLLABORATOR" => ManagedCredentialsStatus::PendingStartRemovalByCollaborator,
             "PENDING_START_REMOVAL_BY_OWNER" => ManagedCredentialsStatus::PendingStartRemovalByOwner,
-            other => ManagedCredentialsStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ManagedCredentialsStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -138,5 +139,17 @@ impl ManagedCredentialsStatus {
 impl ::std::convert::AsRef<str> for ManagedCredentialsStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ManagedCredentialsStatus {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

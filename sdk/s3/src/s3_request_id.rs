@@ -7,6 +7,7 @@
 use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_runtime_api::http::{Headers, Response};
 use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata, ProvideErrorMetadata};
+#[allow(deprecated)]
 use aws_smithy_types::error::Unhandled;
 
 const EXTENDED_REQUEST_ID: &str = "s3_extended_request_id";
@@ -35,6 +36,7 @@ impl RequestIdExt for ErrorMetadata {
     }
 }
 
+#[allow(deprecated)]
 impl RequestIdExt for Unhandled {
     fn extended_request_id(&self) -> Option<&str> {
         self.meta().extended_request_id()

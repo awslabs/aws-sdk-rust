@@ -46,14 +46,15 @@ pub enum TlsSecurityPolicy {
     #[allow(missing_docs)] // documentation missing in model
     PolicyMinTls12201907,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for TlsSecurityPolicy {
     fn from(s: &str) -> Self {
         match s {
             "Policy-Min-TLS-1-0-2019-07" => TlsSecurityPolicy::PolicyMinTls10201907,
             "Policy-Min-TLS-1-2-2019-07" => TlsSecurityPolicy::PolicyMinTls12201907,
-            other => TlsSecurityPolicy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => TlsSecurityPolicy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl TlsSecurityPolicy {
 impl ::std::convert::AsRef<str> for TlsSecurityPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl TlsSecurityPolicy {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

@@ -46,14 +46,15 @@ pub enum SupportedStorageEnum {
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for SupportedStorageEnum {
     fn from(s: &str) -> Self {
         match s {
             "EBS" => SupportedStorageEnum::Ebs,
             "S3" => SupportedStorageEnum::S3,
-            other => SupportedStorageEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => SupportedStorageEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl SupportedStorageEnum {
 impl ::std::convert::AsRef<str> for SupportedStorageEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl SupportedStorageEnum {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

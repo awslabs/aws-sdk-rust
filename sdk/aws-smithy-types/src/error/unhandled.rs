@@ -3,11 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![allow(deprecated)]
+
 //! Unhandled error type.
 
 use crate::error::{metadata::ProvideErrorMetadata, ErrorMetadata};
 use std::error::Error as StdError;
 
+#[deprecated(note = "The `Unhandled` type is no longer used by errors.")]
 /// Builder for [`Unhandled`]
 #[derive(Default, Debug)]
 pub struct Builder {
@@ -58,6 +61,7 @@ impl Builder {
 /// [`DisplayErrorContext`](crate::error::display::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+#[deprecated(note = "This type is no longer used by errors.")]
 #[derive(Debug)]
 pub struct Unhandled {
     source: Box<dyn StdError + Send + Sync + 'static>,

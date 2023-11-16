@@ -55,7 +55,8 @@ pub enum ConnectorCapability {
     #[allow(missing_docs)] // documentation missing in model
     VSphere,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ConnectorCapability {
     fn from(s: &str) -> Self {
@@ -65,7 +66,7 @@ impl ::std::convert::From<&str> for ConnectorCapability {
             "SMS_OPTIMIZED" => ConnectorCapability::SmsOptimized,
             "SNAPSHOT_BATCHING" => ConnectorCapability::SnapshotBatching,
             "VSPHERE" => ConnectorCapability::VSphere,
-            other => ConnectorCapability::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ConnectorCapability::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -96,5 +97,17 @@ impl ConnectorCapability {
 impl ::std::convert::AsRef<str> for ConnectorCapability {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ConnectorCapability {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

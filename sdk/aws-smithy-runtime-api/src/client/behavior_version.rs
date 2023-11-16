@@ -11,9 +11,9 @@
 /// compatible. For example, a change which introduces new default timeouts or a new retry-mode for
 /// all operations might be the ideal behavior but could break existing applications.
 #[derive(Debug, Clone)]
-pub struct BehaviorMajorVersion {}
+pub struct BehaviorVersion {}
 
-impl BehaviorMajorVersion {
+impl BehaviorVersion {
     /// This method will always return the latest major version.
     ///
     /// This is the recommend choice for customers who aren't reliant on extremely specific behavior
@@ -23,7 +23,7 @@ impl BehaviorMajorVersion {
     /// If, however, you're writing a service that is very latency sensitive, or that has written
     /// code to tune Rust SDK behaviors, consider pinning to a specific major version.
     ///
-    /// The latest version is currently [`BehaviorMajorVersion::v2023_11_09`]
+    /// The latest version is currently [`BehaviorVersion::v2023_11_09`]
     pub fn latest() -> Self {
         Self {}
     }

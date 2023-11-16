@@ -25,7 +25,7 @@ pub struct Config {
     cloneable: ::aws_smithy_types::config_bag::CloneableLayer,
     pub(crate) runtime_components: crate::config::RuntimeComponentsBuilder,
     pub(crate) runtime_plugins: ::std::vec::Vec<crate::config::SharedRuntimePlugin>,
-    behavior_major_version: ::std::option::Option<crate::config::BehaviorMajorVersion>,
+    behavior_version: ::std::option::Option<crate::config::BehaviorVersion>,
 }
 impl Config {
     /// Constructs a config builder.
@@ -38,7 +38,7 @@ impl Config {
             config: self.cloneable.clone(),
             runtime_components: self.runtime_components.clone(),
             runtime_plugins: self.runtime_plugins.clone(),
-            behavior_major_version: self.behavior_major_version.clone(),
+            behavior_version: self.behavior_version.clone(),
         }
     }
     /// Deprecated. Don't use.
@@ -133,7 +133,7 @@ pub struct Builder {
     pub(crate) config: ::aws_smithy_types::config_bag::CloneableLayer,
     pub(crate) runtime_components: crate::config::RuntimeComponentsBuilder,
     pub(crate) runtime_plugins: ::std::vec::Vec<crate::config::SharedRuntimePlugin>,
-    pub(crate) behavior_major_version: ::std::option::Option<crate::config::BehaviorMajorVersion>,
+    pub(crate) behavior_version: ::std::option::Option<crate::config::BehaviorVersion>,
 }
 impl ::std::default::Default for Builder {
     fn default() -> Self {
@@ -141,7 +141,7 @@ impl ::std::default::Default for Builder {
             config: ::std::default::Default::default(),
             runtime_components: crate::config::RuntimeComponentsBuilder::new("service config"),
             runtime_plugins: ::std::default::Default::default(),
-            behavior_major_version: ::std::default::Default::default(),
+            behavior_version: ::std::default::Default::default(),
         }
     }
 }
@@ -950,7 +950,7 @@ impl Builder {
         }
         self
     }
-    /// Sets the [`behavior major version`](crate::config::BehaviorMajorVersion).
+    /// Sets the [`behavior major version`](crate::config::BehaviorVersion).
     ///
     /// Over time, new best-practice behaviors are introduced. However, these behaviors might not be backwards
     /// compatible. For example, a change which introduces new default timeouts or a new retry-mode for
@@ -960,10 +960,10 @@ impl Builder {
     ///
     /// Set the behavior major version to `latest`. This is equivalent to enabling the `behavior-version-latest` cargo feature.
     /// ```no_run
-    /// use aws_sdk_emrserverless::config::BehaviorMajorVersion;
+    /// use aws_sdk_emrserverless::config::BehaviorVersion;
     ///
     /// let config = aws_sdk_emrserverless::Config::builder()
-    ///     .behavior_major_version(BehaviorMajorVersion::latest())
+    ///     .behavior_version(BehaviorVersion::latest())
     ///     // ...
     ///     .build();
     /// let client = aws_sdk_emrserverless::Client::from_conf(config);
@@ -971,21 +971,21 @@ impl Builder {
     ///
     /// Customizing behavior major version:
     /// ```no_run
-    /// use aws_sdk_emrserverless::config::BehaviorMajorVersion;
+    /// use aws_sdk_emrserverless::config::BehaviorVersion;
     ///
     /// let config = aws_sdk_emrserverless::Config::builder()
-    ///     .behavior_major_version(BehaviorMajorVersion::v2023_11_09())
+    ///     .behavior_version(BehaviorVersion::v2023_11_09())
     ///     // ...
     ///     .build();
     /// let client = aws_sdk_emrserverless::Client::from_conf(config);
     /// ```
 
-    pub fn behavior_major_version(mut self, behavior_major_version: crate::config::BehaviorMajorVersion) -> Self {
-        self.set_behavior_major_version(Some(behavior_major_version));
+    pub fn behavior_version(mut self, behavior_version: crate::config::BehaviorVersion) -> Self {
+        self.set_behavior_version(Some(behavior_version));
         self
     }
 
-    /// Sets the [`behavior major version`](crate::config::BehaviorMajorVersion).
+    /// Sets the [`behavior major version`](crate::config::BehaviorVersion).
     ///
     /// Over time, new best-practice behaviors are introduced. However, these behaviors might not be backwards
     /// compatible. For example, a change which introduces new default timeouts or a new retry-mode for
@@ -995,10 +995,10 @@ impl Builder {
     ///
     /// Set the behavior major version to `latest`. This is equivalent to enabling the `behavior-version-latest` cargo feature.
     /// ```no_run
-    /// use aws_sdk_emrserverless::config::BehaviorMajorVersion;
+    /// use aws_sdk_emrserverless::config::BehaviorVersion;
     ///
     /// let config = aws_sdk_emrserverless::Config::builder()
-    ///     .behavior_major_version(BehaviorMajorVersion::latest())
+    ///     .behavior_version(BehaviorVersion::latest())
     ///     // ...
     ///     .build();
     /// let client = aws_sdk_emrserverless::Client::from_conf(config);
@@ -1006,25 +1006,25 @@ impl Builder {
     ///
     /// Customizing behavior major version:
     /// ```no_run
-    /// use aws_sdk_emrserverless::config::BehaviorMajorVersion;
+    /// use aws_sdk_emrserverless::config::BehaviorVersion;
     ///
     /// let config = aws_sdk_emrserverless::Config::builder()
-    ///     .behavior_major_version(BehaviorMajorVersion::v2023_11_09())
+    ///     .behavior_version(BehaviorVersion::v2023_11_09())
     ///     // ...
     ///     .build();
     /// let client = aws_sdk_emrserverless::Client::from_conf(config);
     /// ```
 
-    pub fn set_behavior_major_version(&mut self, behavior_major_version: Option<crate::config::BehaviorMajorVersion>) -> &mut Self {
-        self.behavior_major_version = behavior_major_version;
+    pub fn set_behavior_version(&mut self, behavior_version: Option<crate::config::BehaviorVersion>) -> &mut Self {
+        self.behavior_version = behavior_version;
         self
     }
 
     /// Convenience method to set the latest behavior major version
     ///
     /// This is equivalent to enabling the `behavior-version-latest` Cargo feature
-    pub fn behavior_major_version_latest(mut self) -> Self {
-        self.set_behavior_major_version(Some(crate::config::BehaviorMajorVersion::latest()));
+    pub fn behavior_version_latest(mut self) -> Self {
+        self.set_behavior_version(Some(crate::config::BehaviorVersion::latest()));
         self
     }
     /// Adds a runtime plugin to the config.
@@ -1081,7 +1081,7 @@ impl Builder {
             cloneable: layer,
             runtime_components: self.runtime_components,
             runtime_plugins: self.runtime_plugins,
-            behavior_major_version: self.behavior_major_version,
+            behavior_version: self.behavior_version,
         }
     }
 }
@@ -1209,7 +1209,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
 
         builder.set_http_client(input.http_client());
         builder.set_time_source(input.time_source());
-        builder.set_behavior_major_version(input.behavior_major_version());
+        builder.set_behavior_version(input.behavior_version());
 
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
@@ -1234,11 +1234,11 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
     let mut configured_plugins = ::std::vec::Vec::new();
     ::std::mem::swap(&mut config.runtime_plugins, &mut configured_plugins);
     #[allow(unused_mut)]
-    let mut behavior_major_version = config.behavior_major_version.clone();
+    let mut behavior_version = config.behavior_version.clone();
     #[cfg(feature = "behavior-version-latest")]
     {
-        if behavior_major_version.is_none() {
-            behavior_major_version = Some(::aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion::latest());
+        if behavior_version.is_none() {
+            behavior_version = Some(::aws_smithy_runtime_api::client::behavior_version::BehaviorVersion::latest());
         }
     }
 
@@ -1247,7 +1247,7 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
                     .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
                         ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new()
                             .with_retry_partition_name("emrserverless")
-                            .with_behavior_major_version(behavior_major_version.expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
+                            .with_behavior_version(behavior_version.expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
                     ))
                     // user config
                     .with_client_plugin(
@@ -1271,7 +1271,7 @@ pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsB
 
 pub use ::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin;
 
-pub use ::aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion;
+pub use ::aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 
 pub use ::aws_smithy_runtime_api::client::http::SharedHttpClient;
 

@@ -151,7 +151,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     UrlUserInfo,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ValidationExceptionType {
     fn from(s: &str) -> Self {
@@ -195,7 +196,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "URL_SCHEME" => ValidationExceptionType::UrlScheme,
             "URL_UNKNOWN_HOST" => ValidationExceptionType::UrlUnknownHost,
             "URL_USER_INFO" => ValidationExceptionType::UrlUserInfo,
-            other => ValidationExceptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ValidationExceptionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -298,5 +299,17 @@ impl ValidationExceptionType {
 impl ::std::convert::AsRef<str> for ValidationExceptionType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ValidationExceptionType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

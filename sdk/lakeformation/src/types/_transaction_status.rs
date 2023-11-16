@@ -52,7 +52,8 @@ pub enum TransactionStatus {
     #[allow(missing_docs)] // documentation missing in model
     CommitInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for TransactionStatus {
     fn from(s: &str) -> Self {
@@ -61,7 +62,7 @@ impl ::std::convert::From<&str> for TransactionStatus {
             "ACTIVE" => TransactionStatus::Active,
             "COMMITTED" => TransactionStatus::Committed,
             "COMMIT_IN_PROGRESS" => TransactionStatus::CommitInProgress,
-            other => TransactionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => TransactionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,5 +92,17 @@ impl TransactionStatus {
 impl ::std::convert::AsRef<str> for TransactionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl TransactionStatus {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

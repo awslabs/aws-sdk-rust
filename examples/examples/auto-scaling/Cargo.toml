@@ -10,10 +10,10 @@ publish = false
 anyhow = "1.0.75"
 tracing = "0.1.37"
 tokio-stream = "0.1.14"
-aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
+aws-config= { version = "0.100.0", path = "../../../sdk/aws-config" }
 aws-sdk-autoscaling= { version = "0.37.0", path = "../../../sdk/autoscaling" }
 aws-sdk-ec2= { version = "0.37.0", path = "../../../sdk/ec2" }
-aws-types= { version = "0.57.1", path = "../../../sdk/aws-types" }
+aws-types= { version = "0.100.0", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]
 version = "1.20.1"

@@ -46,14 +46,15 @@ pub enum CancelWorkflowExecutionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
     UnhandledDecision,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for CancelWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "OPERATION_NOT_PERMITTED" => CancelWorkflowExecutionFailedCause::OperationNotPermitted,
             "UNHANDLED_DECISION" => CancelWorkflowExecutionFailedCause::UnhandledDecision,
-            other => CancelWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => CancelWorkflowExecutionFailedCause::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl CancelWorkflowExecutionFailedCause {
 impl ::std::convert::AsRef<str> for CancelWorkflowExecutionFailedCause {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl CancelWorkflowExecutionFailedCause {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

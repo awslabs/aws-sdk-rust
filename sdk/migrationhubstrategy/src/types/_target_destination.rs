@@ -82,7 +82,8 @@ pub enum TargetDestination {
     #[allow(missing_docs)] // documentation missing in model
     NoneSpecified,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for TargetDestination {
     fn from(s: &str) -> Self {
@@ -101,7 +102,7 @@ impl ::std::convert::From<&str> for TargetDestination {
             "Aurora PostgreSQL" => TargetDestination::AuroraPostgresql,
             "Babelfish for Aurora PostgreSQL" => TargetDestination::BabelfishAuroraPostgresql,
             "None specified" => TargetDestination::NoneSpecified,
-            other => TargetDestination::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => TargetDestination::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -156,5 +157,17 @@ impl TargetDestination {
 impl ::std::convert::AsRef<str> for TargetDestination {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl TargetDestination {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

@@ -55,7 +55,8 @@ pub enum XavcProfile {
     #[allow(missing_docs)] // documentation missing in model
     XavcHdIntraCbg,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for XavcProfile {
     fn from(s: &str) -> Self {
@@ -65,7 +66,7 @@ impl ::std::convert::From<&str> for XavcProfile {
             "XAVC_4K_INTRA_VBR" => XavcProfile::Xavc4KIntraVbr,
             "XAVC_HD" => XavcProfile::XavcHd,
             "XAVC_HD_INTRA_CBG" => XavcProfile::XavcHdIntraCbg,
-            other => XavcProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => XavcProfile::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -96,5 +97,17 @@ impl XavcProfile {
 impl ::std::convert::AsRef<str> for XavcProfile {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl XavcProfile {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

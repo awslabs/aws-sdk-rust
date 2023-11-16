@@ -58,7 +58,8 @@ pub enum RuleGroupsNamespaceStatusCode {
     /// Namespace is being updated. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for RuleGroupsNamespaceStatusCode {
     fn from(s: &str) -> Self {
@@ -69,7 +70,7 @@ impl ::std::convert::From<&str> for RuleGroupsNamespaceStatusCode {
             "DELETING" => RuleGroupsNamespaceStatusCode::Deleting,
             "UPDATE_FAILED" => RuleGroupsNamespaceStatusCode::UpdateFailed,
             "UPDATING" => RuleGroupsNamespaceStatusCode::Updating,
-            other => RuleGroupsNamespaceStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => RuleGroupsNamespaceStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -101,5 +102,17 @@ impl RuleGroupsNamespaceStatusCode {
 impl ::std::convert::AsRef<str> for RuleGroupsNamespaceStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl RuleGroupsNamespaceStatusCode {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

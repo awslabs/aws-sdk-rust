@@ -91,7 +91,7 @@ mod tests {
     use crate::profile::profile_file::{ProfileFileKind, ProfileFiles};
     use crate::provider_config::ProviderConfig;
     use crate::test_case::{no_traffic_client, InstantSleep};
-    use aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion;
+    use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
     use aws_types::os_shim_internal::{Env, Fs};
 
     #[tokio::test]
@@ -118,7 +118,7 @@ mod tests {
     #[tokio::test]
     async fn profile_name_override() {
         let fs = Fs::from_slice(&[("test_config", "[profile custom]\nsdk_ua_app_id = correct")]);
-        let conf = crate::from_env_with_version(BehaviorMajorVersion::latest())
+        let conf = crate::defaults(BehaviorVersion::latest())
             .sleep_impl(InstantSleep)
             .fs(fs)
             .http_client(no_traffic_client())

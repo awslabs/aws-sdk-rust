@@ -8,5 +8,6 @@ allowed_external_types = [
     "http::header::value::HeaderValue",
     "http::request::Request",
     "http::response::Response",
+    "http::status::StatusCode",
     "http::uri::Uri",
 ]

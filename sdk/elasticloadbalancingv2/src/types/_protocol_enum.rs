@@ -61,7 +61,8 @@ pub enum ProtocolEnum {
     #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ProtocolEnum {
     fn from(s: &str) -> Self {
@@ -73,7 +74,7 @@ impl ::std::convert::From<&str> for ProtocolEnum {
             "TCP_UDP" => ProtocolEnum::TcpUdp,
             "TLS" => ProtocolEnum::Tls,
             "UDP" => ProtocolEnum::Udp,
-            other => ProtocolEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ProtocolEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -106,5 +107,17 @@ impl ProtocolEnum {
 impl ::std::convert::AsRef<str> for ProtocolEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ProtocolEnum {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

@@ -59,6 +59,7 @@ async fn get_request_id_from_modeled_error() {
 }
 
 #[tokio::test]
+#[allow(deprecated)]
 async fn get_request_id_from_unmodeled_error() {
     let (http_client, request) = capture_request(Some(
         http::Response::builder()

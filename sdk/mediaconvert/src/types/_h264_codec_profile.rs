@@ -58,7 +58,8 @@ pub enum H264CodecProfile {
     #[allow(missing_docs)] // documentation missing in model
     Main,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for H264CodecProfile {
     fn from(s: &str) -> Self {
@@ -69,7 +70,7 @@ impl ::std::convert::From<&str> for H264CodecProfile {
             "HIGH_422" => H264CodecProfile::High422,
             "HIGH_422_10BIT" => H264CodecProfile::High42210Bit,
             "MAIN" => H264CodecProfile::Main,
-            other => H264CodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => H264CodecProfile::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -101,5 +102,17 @@ impl H264CodecProfile {
 impl ::std::convert::AsRef<str> for H264CodecProfile {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl H264CodecProfile {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

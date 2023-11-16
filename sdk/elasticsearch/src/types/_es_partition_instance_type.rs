@@ -214,7 +214,8 @@ pub enum EsPartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     Ultrawarm1MediumElasticsearch,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for EsPartitionInstanceType {
     fn from(s: &str) -> Self {
@@ -277,7 +278,7 @@ impl ::std::convert::From<&str> for EsPartitionInstanceType {
             "t2.small.elasticsearch" => EsPartitionInstanceType::T2SmallElasticsearch,
             "ultrawarm1.large.elasticsearch" => EsPartitionInstanceType::Ultrawarm1LargeElasticsearch,
             "ultrawarm1.medium.elasticsearch" => EsPartitionInstanceType::Ultrawarm1MediumElasticsearch,
-            other => EsPartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => EsPartitionInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -420,5 +421,17 @@ impl EsPartitionInstanceType {
 impl ::std::convert::AsRef<str> for EsPartitionInstanceType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl EsPartitionInstanceType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

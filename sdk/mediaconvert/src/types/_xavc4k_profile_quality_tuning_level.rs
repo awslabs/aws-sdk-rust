@@ -49,7 +49,8 @@ pub enum Xavc4kProfileQualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
     SinglePassHq,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for Xavc4kProfileQualityTuningLevel {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for Xavc4kProfileQualityTuningLevel {
             "MULTI_PASS_HQ" => Xavc4kProfileQualityTuningLevel::MultiPassHq,
             "SINGLE_PASS" => Xavc4kProfileQualityTuningLevel::SinglePass,
             "SINGLE_PASS_HQ" => Xavc4kProfileQualityTuningLevel::SinglePassHq,
-            other => Xavc4kProfileQualityTuningLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => Xavc4kProfileQualityTuningLevel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl Xavc4kProfileQualityTuningLevel {
 impl ::std::convert::AsRef<str> for Xavc4kProfileQualityTuningLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl Xavc4kProfileQualityTuningLevel {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

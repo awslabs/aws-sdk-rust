@@ -221,7 +221,7 @@ impl AssumeRoleProviderBuilder {
     pub async fn build(self) -> AssumeRoleProvider {
         let mut conf = match self.sdk_config {
             Some(conf) => conf,
-            None => crate::load_from_env_with_version(crate::BehaviorMajorVersion::latest()).await,
+            None => crate::load_defaults(crate::BehaviorVersion::latest()).await,
         };
         // ignore a identity cache set from SdkConfig
         conf = conf
@@ -264,7 +264,7 @@ impl AssumeRoleProviderBuilder {
     ) -> AssumeRoleProvider {
         let conf = match self.sdk_config {
             Some(conf) => conf,
-            None => crate::load_from_env_with_version(crate::BehaviorMajorVersion::latest()).await,
+            None => crate::load_defaults(crate::BehaviorVersion::latest()).await,
         };
         let conf = conf
             .into_builder()
@@ -334,7 +334,7 @@ mod test {
         capture_request, ReplayEvent, StaticReplayClient,
     };
     use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
-    use aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion;
+    use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
     use aws_smithy_types::body::SdkBody;
     use aws_types::os_shim_internal::Env;
     use aws_types::region::Region;
@@ -352,7 +352,7 @@ mod test {
             ))
             .http_client(http_client)
             .region(Region::from_static("this-will-be-overridden"))
-            .behavior_major_version(crate::BehaviorMajorVersion::latest())
+            .behavior_version(crate::BehaviorVersion::latest())
             .build();
         let provider = AssumeRoleProvider::builder("myrole")
             .configure(&sdk_config)
@@ -373,7 +373,7 @@ mod test {
     async fn loads_region_from_sdk_config() {
         let (http_client, request) = capture_request(None);
         let sdk_config = SdkConfig::builder()
-            .behavior_major_version(crate::BehaviorMajorVersion::latest())
+            .behavior_version(crate::BehaviorVersion::latest())
             .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
             .time_source(StaticTimeSource::new(
                 UNIX_EPOCH + Duration::from_secs(1234567890 - 120),
@@ -408,7 +408,7 @@ mod test {
                 .body(SdkBody::from(""))
                 .unwrap(),
         ));
-        let conf = crate::from_env_with_version(BehaviorMajorVersion::latest())
+        let conf = crate::defaults(BehaviorVersion::latest())
             .env(Env::from_slice(&[
                 ("AWS_ACCESS_KEY_ID", "123-key"),
                 ("AWS_SECRET_ACCESS_KEY", "456"),
@@ -457,7 +457,7 @@ mod test {
             .sleep_impl(SharedAsyncSleep::new(sleep))
             .time_source(testing_time_source.clone())
             .http_client(http_client)
-            .behavior_major_version(crate::BehaviorMajorVersion::latest())
+            .behavior_version(crate::BehaviorVersion::latest())
             .build();
         let credentials_list = std::sync::Arc::new(std::sync::Mutex::new(vec![
             Credentials::new(

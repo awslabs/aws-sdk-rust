@@ -49,7 +49,8 @@ pub enum ServerSideEncryption {
     #[allow(missing_docs)] // documentation missing in model
     AwsKmsDsse,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ServerSideEncryption {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for ServerSideEncryption {
             "AES256" => ServerSideEncryption::Aes256,
             "aws:kms" => ServerSideEncryption::AwsKms,
             "aws:kms:dsse" => ServerSideEncryption::AwsKmsDsse,
-            other => ServerSideEncryption::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ServerSideEncryption::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl ServerSideEncryption {
 impl ::std::convert::AsRef<str> for ServerSideEncryption {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ServerSideEncryption {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

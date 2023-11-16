@@ -319,66 +319,77 @@ pub enum CreateCommitError {
     /// <p>The commit cannot be created because no source files or file content have been specified for the commit.</p>
     SourceFileOrContentRequiredException(crate::types::error::SourceFileOrContentRequiredException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(::aws_smithy_types::error::Unhandled),
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-CreateCommitError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl CreateCommitError {
     /// Creates the `CreateCommitError::Unhandled` variant from any error type.
     pub fn unhandled(
         err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
     }
 
-    /// Creates the `CreateCommitError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    /// Creates the `CreateCommitError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
     }
     ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::BranchDoesNotExistException(e) => e.meta(),
-            Self::BranchNameIsTagNameException(e) => e.meta(),
-            Self::BranchNameRequiredException(e) => e.meta(),
-            Self::CommitMessageLengthExceededException(e) => e.meta(),
-            Self::DirectoryNameConflictsWithFileNameException(e) => e.meta(),
-            Self::EncryptionIntegrityChecksFailedException(e) => e.meta(),
-            Self::EncryptionKeyAccessDeniedException(e) => e.meta(),
-            Self::EncryptionKeyDisabledException(e) => e.meta(),
-            Self::EncryptionKeyNotFoundException(e) => e.meta(),
-            Self::EncryptionKeyUnavailableException(e) => e.meta(),
-            Self::FileContentAndSourceFileSpecifiedException(e) => e.meta(),
-            Self::FileContentSizeLimitExceededException(e) => e.meta(),
-            Self::FileDoesNotExistException(e) => e.meta(),
-            Self::FileEntryRequiredException(e) => e.meta(),
-            Self::FileModeRequiredException(e) => e.meta(),
-            Self::FileNameConflictsWithDirectoryNameException(e) => e.meta(),
-            Self::FilePathConflictsWithSubmodulePathException(e) => e.meta(),
-            Self::FolderContentSizeLimitExceededException(e) => e.meta(),
-            Self::InvalidBranchNameException(e) => e.meta(),
-            Self::InvalidDeletionParameterException(e) => e.meta(),
-            Self::InvalidEmailException(e) => e.meta(),
-            Self::InvalidFileModeException(e) => e.meta(),
-            Self::InvalidParentCommitIdException(e) => e.meta(),
-            Self::InvalidPathException(e) => e.meta(),
-            Self::InvalidRepositoryNameException(e) => e.meta(),
-            Self::MaximumFileEntriesExceededException(e) => e.meta(),
-            Self::NameLengthExceededException(e) => e.meta(),
-            Self::NoChangeException(e) => e.meta(),
-            Self::ParentCommitDoesNotExistException(e) => e.meta(),
-            Self::ParentCommitIdOutdatedException(e) => e.meta(),
-            Self::ParentCommitIdRequiredException(e) => e.meta(),
-            Self::PathRequiredException(e) => e.meta(),
-            Self::PutFileEntryConflictException(e) => e.meta(),
-            Self::RepositoryDoesNotExistException(e) => e.meta(),
-            Self::RepositoryNameRequiredException(e) => e.meta(),
-            Self::RestrictedSourceFileException(e) => e.meta(),
-            Self::SamePathRequestException(e) => e.meta(),
-            Self::SourceFileOrContentRequiredException(e) => e.meta(),
-            Self::Unhandled(e) => e.meta(),
+            Self::BranchDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::BranchNameIsTagNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::BranchNameRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CommitMessageLengthExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DirectoryNameConflictsWithFileNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionIntegrityChecksFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FileContentAndSourceFileSpecifiedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FileContentSizeLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FileDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FileEntryRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FileModeRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FileNameConflictsWithDirectoryNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FilePathConflictsWithSubmodulePathException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FolderContentSizeLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidBranchNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDeletionParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidEmailException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidFileModeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParentCommitIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidPathException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRepositoryNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::MaximumFileEntriesExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NameLengthExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoChangeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ParentCommitDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ParentCommitIdOutdatedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ParentCommitIdRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PathRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PutFileEntryConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RepositoryDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RepositoryNameRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RestrictedSourceFileException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SamePathRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SourceFileOrContentRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `CreateCommitError::BranchDoesNotExistException`.
@@ -575,7 +586,7 @@ impl ::std::error::Error for CreateCommitError {
             Self::RestrictedSourceFileException(_inner) => ::std::option::Option::Some(_inner),
             Self::SamePathRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::SourceFileOrContentRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
 }
@@ -620,7 +631,13 @@ impl ::std::fmt::Display for CreateCommitError {
             Self::RestrictedSourceFileException(_inner) => _inner.fmt(f),
             Self::SamePathRequestException(_inner) => _inner.fmt(f),
             Self::SourceFileOrContentRequiredException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
         }
     }
 }
@@ -673,7 +690,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateCommitE
             Self::RestrictedSourceFileException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SamePathRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SourceFileOrContentRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
@@ -682,10 +699,9 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CreateCo
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
         })
     }
 }

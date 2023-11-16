@@ -52,7 +52,8 @@ pub enum S3ObjectCannedAcl {
     #[allow(missing_docs)] // documentation missing in model
     PublicRead,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for S3ObjectCannedAcl {
     fn from(s: &str) -> Self {
@@ -61,7 +62,7 @@ impl ::std::convert::From<&str> for S3ObjectCannedAcl {
             "BUCKET_OWNER_FULL_CONTROL" => S3ObjectCannedAcl::BucketOwnerFullControl,
             "BUCKET_OWNER_READ" => S3ObjectCannedAcl::BucketOwnerRead,
             "PUBLIC_READ" => S3ObjectCannedAcl::PublicRead,
-            other => S3ObjectCannedAcl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => S3ObjectCannedAcl::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,5 +92,17 @@ impl S3ObjectCannedAcl {
 impl ::std::convert::AsRef<str> for S3ObjectCannedAcl {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl S3ObjectCannedAcl {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

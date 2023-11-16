@@ -49,7 +49,8 @@ pub enum Permissions {
     #[allow(missing_docs)] // documentation missing in model
     ReadWrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for Permissions {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for Permissions {
             "owner" => Permissions::Owner,
             "read-only" => Permissions::ReadOnly,
             "read-write" => Permissions::ReadWrite,
-            other => Permissions::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => Permissions::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl Permissions {
 impl ::std::convert::AsRef<str> for Permissions {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl Permissions {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

@@ -49,7 +49,8 @@ pub enum H265RateControlMode {
     #[allow(missing_docs)] // documentation missing in model
     Qvbr,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for H265RateControlMode {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for H265RateControlMode {
             "CBR" => H265RateControlMode::Cbr,
             "MULTIPLEX" => H265RateControlMode::Multiplex,
             "QVBR" => H265RateControlMode::Qvbr,
-            other => H265RateControlMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => H265RateControlMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl H265RateControlMode {
 impl ::std::convert::AsRef<str> for H265RateControlMode {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl H265RateControlMode {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

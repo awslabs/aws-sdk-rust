@@ -49,7 +49,8 @@ pub enum FilterNullOption {
     #[allow(missing_docs)] // documentation missing in model
     NullsOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for FilterNullOption {
     fn from(s: &str) -> Self {
@@ -57,7 +58,7 @@ impl ::std::convert::From<&str> for FilterNullOption {
             "ALL_VALUES" => FilterNullOption::AllValues,
             "NON_NULLS_ONLY" => FilterNullOption::NonNullsOnly,
             "NULLS_ONLY" => FilterNullOption::NullsOnly,
-            other => FilterNullOption::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => FilterNullOption::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,5 +87,17 @@ impl FilterNullOption {
 impl ::std::convert::AsRef<str> for FilterNullOption {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl FilterNullOption {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

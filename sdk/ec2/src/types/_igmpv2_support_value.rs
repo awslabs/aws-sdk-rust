@@ -46,14 +46,15 @@ pub enum Igmpv2SupportValue {
     #[allow(missing_docs)] // documentation missing in model
     Enable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for Igmpv2SupportValue {
     fn from(s: &str) -> Self {
         match s {
             "disable" => Igmpv2SupportValue::Disable,
             "enable" => Igmpv2SupportValue::Enable,
-            other => Igmpv2SupportValue::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => Igmpv2SupportValue::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl Igmpv2SupportValue {
 impl ::std::convert::AsRef<str> for Igmpv2SupportValue {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl Igmpv2SupportValue {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

@@ -6,7 +6,7 @@
 use aws_sdk_s3::config::IdentityCache;
 
 use aws_sdk_s3::config::{
-    retry::RetryConfig, timeout::TimeoutConfig, BehaviorMajorVersion, Config, Credentials, Region,
+    retry::RetryConfig, timeout::TimeoutConfig, BehaviorVersion, Config, Credentials, Region,
     SharedAsyncSleep, Sleep,
 };
 use aws_sdk_s3::primitives::SdkBody;
@@ -26,7 +26,7 @@ use std::time::Duration;
     expected = "Enable the `rustls` crate feature or configure a HTTP client to fix this."
 )]
 async fn test_clients_from_sdk_config() {
-    aws_config::load_from_env_with_version(BehaviorMajorVersion::latest()).await;
+    aws_config::load_defaults(BehaviorVersion::latest()).await;
 }
 
 // This will fail due to lack of a connector when constructing the service client
@@ -46,7 +46,7 @@ async fn test_clients_from_service_config() {
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
         .sleep_impl(SharedAsyncSleep::new(StubSleep))
-        .behavior_major_version(BehaviorMajorVersion::latest())
+        .behavior_version(BehaviorVersion::latest())
         .build();
     // Creating the client shouldn't panic or error since presigning doesn't require a connector
     let client = aws_sdk_s3::Client::from_conf(config);
@@ -65,7 +65,7 @@ async fn test_clients_from_service_config() {
 
 #[tokio::test]
 #[should_panic(expected = "Invalid client configuration: A behavior major version must be set")]
-async fn test_missing_behavior_major_version() {
+async fn test_missing_behavior_version() {
     use aws_sdk_s3::config::Region;
     let http_client =
         infallible_client_fn(|_req| http::Response::builder().body(SdkBody::empty()).unwrap());
@@ -95,7 +95,7 @@ async fn test_missing_async_sleep_time_source_retries() {
         .credentials_provider(Credentials::for_tests())
         .retry_config(RetryConfig::standard())
         .timeout_config(TimeoutConfig::disabled())
-        .behavior_major_version(BehaviorMajorVersion::latest())
+        .behavior_version(BehaviorVersion::latest())
         .build();
 
     // should panic with a validation error
@@ -116,7 +116,7 @@ async fn test_missing_async_sleep_time_source_timeouts() {
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
         .retry_config(RetryConfig::disabled())
-        .behavior_major_version(BehaviorMajorVersion::latest())
+        .behavior_version(BehaviorVersion::latest())
         .timeout_config(
             TimeoutConfig::builder()
                 .operation_timeout(Duration::from_secs(5))
@@ -144,7 +144,7 @@ async fn test_time_source_for_identity_cache() {
         .credentials_provider(Credentials::for_tests())
         .retry_config(RetryConfig::disabled())
         .timeout_config(TimeoutConfig::disabled())
-        .behavior_major_version(BehaviorMajorVersion::latest())
+        .behavior_version(BehaviorVersion::latest())
         .build();
 
     // should panic with a validation error
@@ -154,7 +154,7 @@ async fn test_time_source_for_identity_cache() {
 #[tokio::test]
 async fn behavior_mv_from_aws_config() {
     let (http_client, req) = capture_request(None);
-    let cfg = aws_config::from_env_with_version(BehaviorMajorVersion::v2023_11_09())
+    let cfg = aws_config::defaults(BehaviorVersion::v2023_11_09())
         .http_client(http_client)
         .retry_config(RetryConfig::disabled())
         .credentials_provider(Credentials::for_tests())
@@ -188,7 +188,7 @@ async fn behavior_mv_from_client_construction() {
     let s3_client = aws_sdk_s3::Client::from_conf(
         aws_sdk_s3::config::Builder::from(&cfg)
             .credentials_provider(Credentials::for_tests())
-            .behavior_major_version(aws_sdk_s3::config::BehaviorMajorVersion::v2023_11_09())
+            .behavior_version(aws_sdk_s3::config::BehaviorVersion::v2023_11_09())
             .build(),
     );
     let _err = dbg!(s3_client

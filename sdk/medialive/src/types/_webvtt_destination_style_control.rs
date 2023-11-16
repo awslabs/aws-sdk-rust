@@ -46,14 +46,15 @@ pub enum WebvttDestinationStyleControl {
     #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for WebvttDestinationStyleControl {
     fn from(s: &str) -> Self {
         match s {
             "NO_STYLE_DATA" => WebvttDestinationStyleControl::NoStyleData,
             "PASSTHROUGH" => WebvttDestinationStyleControl::Passthrough,
-            other => WebvttDestinationStyleControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => WebvttDestinationStyleControl::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -81,5 +82,17 @@ impl WebvttDestinationStyleControl {
 impl ::std::convert::AsRef<str> for WebvttDestinationStyleControl {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl WebvttDestinationStyleControl {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

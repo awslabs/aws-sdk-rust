@@ -565,7 +565,8 @@ pub enum Ec2InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     T2Small,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for Ec2InstanceType {
     fn from(s: &str) -> Self {
@@ -745,7 +746,7 @@ impl ::std::convert::From<&str> for Ec2InstanceType {
             "t2.medium" => Ec2InstanceType::T2Medium,
             "t2.micro" => Ec2InstanceType::T2Micro,
             "t2.small" => Ec2InstanceType::T2Small,
-            other => Ec2InstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => Ec2InstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1122,5 +1123,17 @@ impl Ec2InstanceType {
 impl ::std::convert::AsRef<str> for Ec2InstanceType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl Ec2InstanceType {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

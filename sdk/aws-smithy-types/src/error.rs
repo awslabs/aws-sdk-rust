@@ -13,6 +13,8 @@ pub mod operation;
 mod unhandled;
 
 pub use metadata::ErrorMetadata;
+
+#[allow(deprecated)]
 pub use unhandled::Unhandled;
 
 #[derive(Debug)]

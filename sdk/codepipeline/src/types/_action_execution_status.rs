@@ -52,7 +52,8 @@ pub enum ActionExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ActionExecutionStatus {
     fn from(s: &str) -> Self {
@@ -61,7 +62,7 @@ impl ::std::convert::From<&str> for ActionExecutionStatus {
             "Failed" => ActionExecutionStatus::Failed,
             "InProgress" => ActionExecutionStatus::InProgress,
             "Succeeded" => ActionExecutionStatus::Succeeded,
-            other => ActionExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => ActionExecutionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,5 +92,17 @@ impl ActionExecutionStatus {
 impl ::std::convert::AsRef<str> for ActionExecutionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ActionExecutionStatus {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }

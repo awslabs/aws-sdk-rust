@@ -70,7 +70,8 @@ pub enum NotebookExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     StopPending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for NotebookExecutionStatus {
     fn from(s: &str) -> Self {
@@ -85,7 +86,7 @@ impl ::std::convert::From<&str> for NotebookExecutionStatus {
             "STOPPED" => NotebookExecutionStatus::Stopped,
             "STOPPING" => NotebookExecutionStatus::Stopping,
             "STOP_PENDING" => NotebookExecutionStatus::StopPending,
-            other => NotebookExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+            other => NotebookExecutionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -132,5 +133,17 @@ impl NotebookExecutionStatus {
 impl ::std::convert::AsRef<str> for NotebookExecutionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl NotebookExecutionStatus {
+    /// Parses the enum value while disallowing unknown variants.
+    ///
+    /// Unknown variants will result in an error.
+    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+        match Self::from(value) {
+            #[allow(deprecated)]
+            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+            known => Ok(known),
+        }
     }
 }
