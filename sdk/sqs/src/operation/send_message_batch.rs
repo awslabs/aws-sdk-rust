@@ -183,6 +183,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SendMessageB
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
+            builder = _header_serialization_settings.set_default_header(
+                builder,
+                ::http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonSQS.SendMessageBatch",
+            );
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_send_message_batch::ser_send_message_batch_input(&input)?);
