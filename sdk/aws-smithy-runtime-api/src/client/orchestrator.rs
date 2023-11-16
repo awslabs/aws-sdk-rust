@@ -28,7 +28,7 @@ use std::error::Error as StdError;
 use std::fmt;
 
 /// Type alias for the HTTP request type that the orchestrator uses.
-pub type HttpRequest = crate::client::http::request::Request;
+pub type HttpRequest = crate::http::Request;
 
 /// Type alias for the HTTP response type that the orchestrator uses.
 pub type HttpResponse = http::Response<SdkBody>;

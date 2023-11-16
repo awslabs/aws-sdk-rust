@@ -16,8 +16,8 @@ mod xml;
 use crate::sealed::GetNormalizedHeader;
 use crate::xml::try_xml_equivalent;
 use assert_json_diff::assert_json_eq_no_panic;
-use aws_smithy_runtime_api::client::http::request::Headers;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::http::Headers;
 use http::{HeaderMap, Uri};
 use pretty_assertions::Comparison;
 use std::collections::HashSet;
@@ -413,8 +413,8 @@ mod tests {
         forbid_headers, forbid_query_params, require_headers, require_query_params, validate_body,
         validate_headers, validate_query_string, FloatEquals, MediaType, ProtocolTestFailure,
     };
-    use aws_smithy_runtime_api::client::http::request::Headers;
     use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+    use aws_smithy_runtime_api::http::Headers;
 
     fn make_request(uri: &str) -> HttpRequest {
         let mut req = HttpRequest::empty();

@@ -9,6 +9,8 @@
 //!
 //! DVR is an extremely experimental record & replay framework that supports multi-frame HTTP request / response traffic.
 
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::http::Headers;
 use aws_smithy_types::base64;
 use bytes::Bytes;
 use http::HeaderMap;
@@ -19,8 +21,6 @@ mod record;
 mod replay;
 
 pub use aws_smithy_protocol_test::MediaType;
-use aws_smithy_runtime_api::client::http::request::Headers;
-use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 pub use record::RecordingClient;
 pub use replay::ReplayingClient;
 
