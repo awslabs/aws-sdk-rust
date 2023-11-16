@@ -62,7 +62,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn disable_control_output_output_correct_errors(
+pub(crate) fn disable_control_output_correct_errors(
     mut builder: crate::operation::disable_control::builders::DisableControlOutputBuilder,
 ) -> crate::operation::disable_control::builders::DisableControlOutputBuilder {
     if builder.operation_identifier.is_none() {
@@ -71,7 +71,7 @@ pub(crate) fn disable_control_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn enable_control_output_output_correct_errors(
+pub(crate) fn enable_control_output_correct_errors(
     mut builder: crate::operation::enable_control::builders::EnableControlOutputBuilder,
 ) -> crate::operation::enable_control::builders::EnableControlOutputBuilder {
     if builder.operation_identifier.is_none() {
@@ -80,7 +80,7 @@ pub(crate) fn enable_control_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_control_operation_output_output_correct_errors(
+pub(crate) fn get_control_operation_output_correct_errors(
     mut builder: crate::operation::get_control_operation::builders::GetControlOperationOutputBuilder,
 ) -> crate::operation::get_control_operation::builders::GetControlOperationOutputBuilder {
     if builder.control_operation.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn get_control_operation_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_enabled_control_output_output_correct_errors(
+pub(crate) fn get_enabled_control_output_correct_errors(
     mut builder: crate::operation::get_enabled_control::builders::GetEnabledControlOutputBuilder,
 ) -> crate::operation::get_enabled_control::builders::GetEnabledControlOutputBuilder {
     if builder.enabled_control_details.is_none() {
@@ -104,7 +104,7 @@ pub(crate) fn get_enabled_control_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_enabled_controls_output_output_correct_errors(
+pub(crate) fn list_enabled_controls_output_correct_errors(
     mut builder: crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder,
 ) -> crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder {
     if builder.enabled_controls.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn list_enabled_controls_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {

@@ -137,7 +137,7 @@ pub fn de_get_iam_portal_login_url_http_response(
         output = crate::protocol_serde::shape_get_iam_portal_login_url::de_get_iam_portal_login_url(_response_body, output)
             .map_err(crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_iam_portal_login_url_output_output_correct_errors(output)
+        crate::serde_util::get_iam_portal_login_url_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlError::unhandled)?
     })

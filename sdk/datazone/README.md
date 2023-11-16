@@ -1,7 +1,7 @@
 # aws-sdk-datazone
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon DataZone is a data management service that enables you to catalog, discover, govern, share, and analyze your data. With Amazon DataZone, you can share and access your data across accounts and supported regions. Amazon DataZone simplifies your experience across Amazon Web Services services, including, but not limited to, Amazon Redshift, Amazon Athena, Amazon Web Services Glue, and Amazon Web Services Lake Formation.
 
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-datazone = "0.4.0"
+aws-config = "0.57.1"
+aws-sdk-datazone = "0.5.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

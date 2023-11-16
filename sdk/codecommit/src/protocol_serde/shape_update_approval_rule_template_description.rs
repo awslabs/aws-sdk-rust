@@ -109,7 +109,7 @@ pub fn de_update_approval_rule_template_description_http_response(
         )
         .map_err(crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_approval_rule_template_description_output_output_correct_errors(output).build()
+        crate::serde_util::update_approval_rule_template_description_output_correct_errors(output).build()
     })
 }
 
@@ -118,7 +118,7 @@ pub fn ser_update_approval_rule_template_description_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_update_approval_rule_template_description_input::ser_update_approval_rule_template_description_input_input(
+    crate::protocol_serde::shape_update_approval_rule_template_description_input::ser_update_approval_rule_template_description_input(
         &mut object,
         input,
     )?;

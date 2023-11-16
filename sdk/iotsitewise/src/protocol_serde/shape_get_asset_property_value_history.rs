@@ -119,7 +119,7 @@ pub fn de_get_asset_property_value_history_http_response(
         output = crate::protocol_serde::shape_get_asset_property_value_history::de_get_asset_property_value_history(_response_body, output)
             .map_err(crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_asset_property_value_history_output_output_correct_errors(output)
+        crate::serde_util::get_asset_property_value_history_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError::unhandled)?
     })

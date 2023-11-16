@@ -62,7 +62,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn describe_package_output_output_correct_errors(
+pub(crate) fn describe_package_output_correct_errors(
     mut builder: crate::operation::describe_package::builders::DescribePackageOutputBuilder,
 ) -> crate::operation::describe_package::builders::DescribePackageOutputBuilder {
     if builder.package.is_none() {
@@ -74,7 +74,7 @@ pub(crate) fn describe_package_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_package_version_output_output_correct_errors(
+pub(crate) fn describe_package_version_output_correct_errors(
     mut builder: crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder,
 ) -> crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder {
     if builder.package_version.is_none() {

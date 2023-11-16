@@ -141,7 +141,7 @@ pub fn de_reject_subscription_request_http_response(
         output = crate::protocol_serde::shape_reject_subscription_request::de_reject_subscription_request(_response_body, output)
             .map_err(crate::operation::reject_subscription_request::RejectSubscriptionRequestError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::reject_subscription_request_output_output_correct_errors(output)
+        crate::serde_util::reject_subscription_request_output_correct_errors(output)
             .build()
             .map_err(crate::operation::reject_subscription_request::RejectSubscriptionRequestError::unhandled)?
     })
@@ -152,7 +152,7 @@ pub fn ser_reject_subscription_request_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_reject_subscription_request_input::ser_reject_subscription_request_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_reject_subscription_request_input::ser_reject_subscription_request_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

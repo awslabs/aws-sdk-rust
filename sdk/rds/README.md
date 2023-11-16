@@ -1,7 +1,7 @@
 # aws-sdk-rds
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a relational database in the cloud. It provides cost-efficient, resizeable capacity for an industry-standard relational database and manages common database administration tasks, freeing up developers to focus on what makes their applications and businesses unique.
 
@@ -30,8 +30,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-rds = "0.36.1"
+aws-config = "0.57.1"
+aws-sdk-rds = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

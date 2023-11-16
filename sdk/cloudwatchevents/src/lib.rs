@@ -12,8 +12,8 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-//! on production workloads. Any use in production is at your own risk.**
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
 //!
 //! Amazon EventBridge helps you to respond to state changes in your Amazon Web Services resources. When your resources change state, they automatically send events to an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a predetermined schedule. For example, you can configure rules to:
 //!   - Automatically invoke an Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance enters the running state.
@@ -33,8 +33,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.2"
-//! aws-sdk-cloudwatchevents = "0.36.0"
+//! aws-config = "0.57.1"
+//! aws-sdk-cloudwatchevents = "0.37.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

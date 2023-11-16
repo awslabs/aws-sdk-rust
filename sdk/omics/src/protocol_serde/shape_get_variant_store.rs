@@ -103,7 +103,7 @@ pub fn de_get_variant_store_http_response(
         output = crate::protocol_serde::shape_get_variant_store::de_get_variant_store(_response_body, output)
             .map_err(crate::operation::get_variant_store::GetVariantStoreError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_variant_store_output_output_correct_errors(output)
+        crate::serde_util::get_variant_store_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_variant_store::GetVariantStoreError::unhandled)?
     })

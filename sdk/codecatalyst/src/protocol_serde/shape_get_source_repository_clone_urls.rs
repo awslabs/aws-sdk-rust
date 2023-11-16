@@ -131,7 +131,7 @@ pub fn de_get_source_repository_clone_urls_http_response(
         output = crate::protocol_serde::shape_get_source_repository_clone_urls::de_get_source_repository_clone_urls(_response_body, output)
             .map_err(crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_source_repository_clone_urls_output_output_correct_errors(output)
+        crate::serde_util::get_source_repository_clone_urls_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError::unhandled)?
     })

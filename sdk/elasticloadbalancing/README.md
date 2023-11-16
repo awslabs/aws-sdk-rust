@@ -1,7 +1,7 @@
 # aws-sdk-elasticloadbalancing
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 A load balancer can distribute incoming traffic across your EC2 instances. This enables you to increase the availability of your application. The load balancer also monitors the health of its registered instances and ensures that it routes traffic only to healthy instances. You configure your load balancer to accept incoming traffic by specifying one or more listeners, which are configured with a protocol and port number for connections from clients to the load balancer and a protocol and port number for connections from the load balancer to the instances.
 
@@ -24,8 +24,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-elasticloadbalancing = "0.36.0"
+aws-config = "0.57.1"
+aws-sdk-elasticloadbalancing = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

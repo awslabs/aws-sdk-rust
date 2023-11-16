@@ -44,7 +44,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_batch_load_task_output_output_correct_errors(
+pub(crate) fn create_batch_load_task_output_correct_errors(
     mut builder: crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskOutputBuilder,
 ) -> crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskOutputBuilder {
     if builder.task_id.is_none() {
@@ -53,7 +53,7 @@ pub(crate) fn create_batch_load_task_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_batch_load_task_output_output_correct_errors(
+pub(crate) fn describe_batch_load_task_output_correct_errors(
     mut builder: crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskOutputBuilder,
 ) -> crate::operation::describe_batch_load_task::builders::DescribeBatchLoadTaskOutputBuilder {
     if builder.batch_load_task_description.is_none() {
@@ -65,7 +65,7 @@ pub(crate) fn describe_batch_load_task_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_endpoints_output_output_correct_errors(
+pub(crate) fn describe_endpoints_output_correct_errors(
     mut builder: crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder,
 ) -> crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder {
     if builder.endpoints.is_none() {

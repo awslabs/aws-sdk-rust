@@ -159,7 +159,7 @@ pub fn ser_describe_client_authentication_settings_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_describe_client_authentication_settings_input::ser_describe_client_authentication_settings_input_input(
+    crate::protocol_serde::shape_describe_client_authentication_settings_input::ser_describe_client_authentication_settings_input(
         &mut object,
         input,
     )?;

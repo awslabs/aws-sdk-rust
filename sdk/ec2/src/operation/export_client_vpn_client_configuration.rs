@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ExportClient
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_export_client_vpn_client_configuration_input::ser_export_client_vpn_client_configuration_input_input_input(
+            crate::protocol_serde::shape_export_client_vpn_client_configuration_input::ser_export_client_vpn_client_configuration_input_input(
                 &input,
             )?,
         );

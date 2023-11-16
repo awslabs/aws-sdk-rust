@@ -59,7 +59,7 @@ pub(crate) fn too_many_requests_exception_correct_errors(
     builder
 }
 
-pub(crate) fn describe_placement_output_output_correct_errors(
+pub(crate) fn describe_placement_output_correct_errors(
     mut builder: crate::operation::describe_placement::builders::DescribePlacementOutputBuilder,
 ) -> crate::operation::describe_placement::builders::DescribePlacementOutputBuilder {
     if builder.placement.is_none() {
@@ -71,7 +71,7 @@ pub(crate) fn describe_placement_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_project_output_output_correct_errors(
+pub(crate) fn describe_project_output_correct_errors(
     mut builder: crate::operation::describe_project::builders::DescribeProjectOutputBuilder,
 ) -> crate::operation::describe_project::builders::DescribeProjectOutputBuilder {
     if builder.project.is_none() {
@@ -83,7 +83,7 @@ pub(crate) fn describe_project_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_devices_in_placement_output_output_correct_errors(
+pub(crate) fn get_devices_in_placement_output_correct_errors(
     mut builder: crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementOutputBuilder,
 ) -> crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementOutputBuilder {
     if builder.devices.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn get_devices_in_placement_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_placements_output_output_correct_errors(
+pub(crate) fn list_placements_output_correct_errors(
     mut builder: crate::operation::list_placements::builders::ListPlacementsOutputBuilder,
 ) -> crate::operation::list_placements::builders::ListPlacementsOutputBuilder {
     if builder.placements.is_none() {
@@ -101,7 +101,7 @@ pub(crate) fn list_placements_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_projects_output_output_correct_errors(
+pub(crate) fn list_projects_output_correct_errors(
     mut builder: crate::operation::list_projects::builders::ListProjectsOutputBuilder,
 ) -> crate::operation::list_projects::builders::ListProjectsOutputBuilder {
     if builder.projects.is_none() {

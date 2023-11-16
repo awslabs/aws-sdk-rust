@@ -53,7 +53,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_sol_function_package_output_output_correct_errors(
+pub(crate) fn create_sol_function_package_output_correct_errors(
     mut builder: crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageOutputBuilder,
 ) -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageOutputBuilder {
     if builder.id.is_none() {
@@ -74,7 +74,7 @@ pub(crate) fn create_sol_function_package_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_sol_network_instance_output_output_correct_errors(
+pub(crate) fn create_sol_network_instance_output_correct_errors(
     mut builder: crate::operation::create_sol_network_instance::builders::CreateSolNetworkInstanceOutputBuilder,
 ) -> crate::operation::create_sol_network_instance::builders::CreateSolNetworkInstanceOutputBuilder {
     if builder.id.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn create_sol_network_instance_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_sol_network_package_output_output_correct_errors(
+pub(crate) fn create_sol_network_package_output_correct_errors(
     mut builder: crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageOutputBuilder,
 ) -> crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageOutputBuilder {
     if builder.id.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn create_sol_network_package_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_sol_function_instance_output_output_correct_errors(
+pub(crate) fn get_sol_function_instance_output_correct_errors(
     mut builder: crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder,
 ) -> crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder {
     if builder.id.is_none() {
@@ -143,7 +143,7 @@ pub(crate) fn get_sol_function_instance_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_sol_function_package_output_output_correct_errors(
+pub(crate) fn get_sol_function_package_output_correct_errors(
     mut builder: crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder,
 ) -> crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder {
     if builder.id.is_none() {
@@ -164,7 +164,7 @@ pub(crate) fn get_sol_function_package_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_sol_network_instance_output_output_correct_errors(
+pub(crate) fn get_sol_network_instance_output_correct_errors(
     mut builder: crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceOutputBuilder,
 ) -> crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceOutputBuilder {
     if builder.id.is_none() {
@@ -194,7 +194,7 @@ pub(crate) fn get_sol_network_instance_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_sol_network_operation_output_output_correct_errors(
+pub(crate) fn get_sol_network_operation_output_correct_errors(
     mut builder: crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder,
 ) -> crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder {
     if builder.arn.is_none() {
@@ -203,7 +203,7 @@ pub(crate) fn get_sol_network_operation_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_sol_network_package_output_output_correct_errors(
+pub(crate) fn get_sol_network_package_output_correct_errors(
     mut builder: crate::operation::get_sol_network_package::builders::GetSolNetworkPackageOutputBuilder,
 ) -> crate::operation::get_sol_network_package::builders::GetSolNetworkPackageOutputBuilder {
     if builder.id.is_none() {
@@ -242,7 +242,7 @@ pub(crate) fn get_sol_network_package_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn instantiate_sol_network_instance_output_output_correct_errors(
+pub(crate) fn instantiate_sol_network_instance_output_correct_errors(
     mut builder: crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceOutputBuilder,
 ) -> crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceOutputBuilder {
     if builder.ns_lcm_op_occ_id.is_none() {
@@ -251,7 +251,7 @@ pub(crate) fn instantiate_sol_network_instance_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_sol_function_packages_output_output_correct_errors(
+pub(crate) fn list_sol_function_packages_output_correct_errors(
     mut builder: crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesOutputBuilder,
 ) -> crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesOutputBuilder {
     if builder.function_packages.is_none() {
@@ -260,7 +260,7 @@ pub(crate) fn list_sol_function_packages_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_sol_network_packages_output_output_correct_errors(
+pub(crate) fn list_sol_network_packages_output_correct_errors(
     mut builder: crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesOutputBuilder,
 ) -> crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesOutputBuilder {
     if builder.network_packages.is_none() {
@@ -269,7 +269,7 @@ pub(crate) fn list_sol_network_packages_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
@@ -278,7 +278,7 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_sol_function_package_content_output_output_correct_errors(
+pub(crate) fn put_sol_function_package_content_output_correct_errors(
     mut builder: crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder,
 ) -> crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder {
     if builder.id.is_none() {
@@ -305,7 +305,7 @@ pub(crate) fn put_sol_function_package_content_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_sol_network_package_content_output_output_correct_errors(
+pub(crate) fn put_sol_network_package_content_output_correct_errors(
     mut builder: crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder,
 ) -> crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder {
     if builder.id.is_none() {
@@ -335,7 +335,7 @@ pub(crate) fn put_sol_network_package_content_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_sol_function_package_output_output_correct_errors(
+pub(crate) fn update_sol_function_package_output_correct_errors(
     mut builder: crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageOutputBuilder,
 ) -> crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageOutputBuilder {
     if builder.operational_state.is_none() {
@@ -344,7 +344,7 @@ pub(crate) fn update_sol_function_package_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_sol_network_package_output_output_correct_errors(
+pub(crate) fn update_sol_network_package_output_correct_errors(
     mut builder: crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageOutputBuilder,
 ) -> crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageOutputBuilder {
     if builder.nsd_operational_state.is_none() {
@@ -353,7 +353,7 @@ pub(crate) fn update_sol_network_package_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn validate_sol_function_package_content_output_output_correct_errors(
+pub(crate) fn validate_sol_function_package_content_output_correct_errors(
     mut builder: crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder,
 ) -> crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder {
     if builder.id.is_none() {
@@ -380,7 +380,7 @@ pub(crate) fn validate_sol_function_package_content_output_output_correct_errors
     builder
 }
 
-pub(crate) fn validate_sol_network_package_content_output_output_correct_errors(
+pub(crate) fn validate_sol_network_package_content_output_correct_errors(
     mut builder: crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder,
 ) -> crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder {
     if builder.id.is_none() {

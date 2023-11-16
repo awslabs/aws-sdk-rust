@@ -89,7 +89,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_contact_output_output_correct_errors(
+pub(crate) fn create_contact_output_correct_errors(
     mut builder: crate::operation::create_contact::builders::CreateContactOutputBuilder,
 ) -> crate::operation::create_contact::builders::CreateContactOutputBuilder {
     if builder.contact_arn.is_none() {
@@ -98,7 +98,7 @@ pub(crate) fn create_contact_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_contact_channel_output_output_correct_errors(
+pub(crate) fn create_contact_channel_output_correct_errors(
     mut builder: crate::operation::create_contact_channel::builders::CreateContactChannelOutputBuilder,
 ) -> crate::operation::create_contact_channel::builders::CreateContactChannelOutputBuilder {
     if builder.contact_channel_arn.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn create_contact_channel_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_rotation_output_output_correct_errors(
+pub(crate) fn create_rotation_output_correct_errors(
     mut builder: crate::operation::create_rotation::builders::CreateRotationOutputBuilder,
 ) -> crate::operation::create_rotation::builders::CreateRotationOutputBuilder {
     if builder.rotation_arn.is_none() {
@@ -116,7 +116,7 @@ pub(crate) fn create_rotation_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_rotation_override_output_output_correct_errors(
+pub(crate) fn create_rotation_override_output_correct_errors(
     mut builder: crate::operation::create_rotation_override::builders::CreateRotationOverrideOutputBuilder,
 ) -> crate::operation::create_rotation_override::builders::CreateRotationOverrideOutputBuilder {
     if builder.rotation_override_id.is_none() {
@@ -125,7 +125,7 @@ pub(crate) fn create_rotation_override_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_engagement_output_output_correct_errors(
+pub(crate) fn describe_engagement_output_correct_errors(
     mut builder: crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder,
 ) -> crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder {
     if builder.contact_arn.is_none() {
@@ -146,7 +146,7 @@ pub(crate) fn describe_engagement_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_page_output_output_correct_errors(
+pub(crate) fn describe_page_output_correct_errors(
     mut builder: crate::operation::describe_page::builders::DescribePageOutputBuilder,
 ) -> crate::operation::describe_page::builders::DescribePageOutputBuilder {
     if builder.page_arn.is_none() {
@@ -170,7 +170,7 @@ pub(crate) fn describe_page_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_contact_output_output_correct_errors(
+pub(crate) fn get_contact_output_correct_errors(
     mut builder: crate::operation::get_contact::builders::GetContactOutputBuilder,
 ) -> crate::operation::get_contact::builders::GetContactOutputBuilder {
     if builder.contact_arn.is_none() {
@@ -191,7 +191,7 @@ pub(crate) fn get_contact_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_contact_channel_output_output_correct_errors(
+pub(crate) fn get_contact_channel_output_correct_errors(
     mut builder: crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder,
 ) -> crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder {
     if builder.contact_arn.is_none() {
@@ -215,7 +215,7 @@ pub(crate) fn get_contact_channel_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_rotation_output_output_correct_errors(
+pub(crate) fn get_rotation_output_correct_errors(
     mut builder: crate::operation::get_rotation::builders::GetRotationOutputBuilder,
 ) -> crate::operation::get_rotation::builders::GetRotationOutputBuilder {
     if builder.rotation_arn.is_none() {
@@ -242,7 +242,7 @@ pub(crate) fn get_rotation_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_contact_channels_output_output_correct_errors(
+pub(crate) fn list_contact_channels_output_correct_errors(
     mut builder: crate::operation::list_contact_channels::builders::ListContactChannelsOutputBuilder,
 ) -> crate::operation::list_contact_channels::builders::ListContactChannelsOutputBuilder {
     if builder.contact_channels.is_none() {
@@ -251,7 +251,7 @@ pub(crate) fn list_contact_channels_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_engagements_output_output_correct_errors(
+pub(crate) fn list_engagements_output_correct_errors(
     mut builder: crate::operation::list_engagements::builders::ListEngagementsOutputBuilder,
 ) -> crate::operation::list_engagements::builders::ListEngagementsOutputBuilder {
     if builder.engagements.is_none() {
@@ -260,7 +260,7 @@ pub(crate) fn list_engagements_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_page_resolutions_output_output_correct_errors(
+pub(crate) fn list_page_resolutions_output_correct_errors(
     mut builder: crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder,
 ) -> crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder {
     if builder.page_resolutions.is_none() {
@@ -269,7 +269,7 @@ pub(crate) fn list_page_resolutions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_pages_by_contact_output_output_correct_errors(
+pub(crate) fn list_pages_by_contact_output_correct_errors(
     mut builder: crate::operation::list_pages_by_contact::builders::ListPagesByContactOutputBuilder,
 ) -> crate::operation::list_pages_by_contact::builders::ListPagesByContactOutputBuilder {
     if builder.pages.is_none() {
@@ -278,7 +278,7 @@ pub(crate) fn list_pages_by_contact_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_pages_by_engagement_output_output_correct_errors(
+pub(crate) fn list_pages_by_engagement_output_correct_errors(
     mut builder: crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder,
 ) -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder {
     if builder.pages.is_none() {
@@ -287,7 +287,7 @@ pub(crate) fn list_pages_by_engagement_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_rotations_output_output_correct_errors(
+pub(crate) fn list_rotations_output_correct_errors(
     mut builder: crate::operation::list_rotations::builders::ListRotationsOutputBuilder,
 ) -> crate::operation::list_rotations::builders::ListRotationsOutputBuilder {
     if builder.rotations.is_none() {
@@ -296,7 +296,7 @@ pub(crate) fn list_rotations_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_engagement_output_output_correct_errors(
+pub(crate) fn start_engagement_output_correct_errors(
     mut builder: crate::operation::start_engagement::builders::StartEngagementOutputBuilder,
 ) -> crate::operation::start_engagement::builders::StartEngagementOutputBuilder {
     if builder.engagement_arn.is_none() {

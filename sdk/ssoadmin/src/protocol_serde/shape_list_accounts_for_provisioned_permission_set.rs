@@ -150,7 +150,7 @@ pub fn ser_list_accounts_for_provisioned_permission_set_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_accounts_for_provisioned_permission_set_input::ser_list_accounts_for_provisioned_permission_set_input_input(
+    crate::protocol_serde::shape_list_accounts_for_provisioned_permission_set_input::ser_list_accounts_for_provisioned_permission_set_input(
         &mut object,
         input,
     )?;

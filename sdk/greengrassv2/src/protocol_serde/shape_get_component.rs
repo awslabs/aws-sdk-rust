@@ -113,7 +113,7 @@ pub fn de_get_component_http_response(
         output = crate::protocol_serde::shape_get_component::de_get_component(_response_body, output)
             .map_err(crate::operation::get_component::GetComponentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_component_output_output_correct_errors(output)
+        crate::serde_util::get_component_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_component::GetComponentError::unhandled)?
     })

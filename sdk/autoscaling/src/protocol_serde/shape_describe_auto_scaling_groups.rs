@@ -73,7 +73,7 @@ pub fn de_describe_auto_scaling_groups_http_response(
         output = crate::protocol_serde::shape_describe_auto_scaling_groups::de_describe_auto_scaling_groups(_response_body, output)
             .map_err(crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_auto_scaling_groups_output_output_correct_errors(output).build()
+        crate::serde_util::describe_auto_scaling_groups_output_correct_errors(output).build()
     })
 }
 

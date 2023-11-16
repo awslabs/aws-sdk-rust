@@ -156,7 +156,7 @@ pub fn de_start_assessment_run_http_response(
         output = crate::protocol_serde::shape_start_assessment_run::de_start_assessment_run(_response_body, output)
             .map_err(crate::operation::start_assessment_run::StartAssessmentRunError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::start_assessment_run_output_output_correct_errors(output)
+        crate::serde_util::start_assessment_run_output_correct_errors(output)
             .build()
             .map_err(crate::operation::start_assessment_run::StartAssessmentRunError::unhandled)?
     })
@@ -167,7 +167,7 @@ pub fn ser_start_assessment_run_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_start_assessment_run_input::ser_start_assessment_run_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_start_assessment_run_input::ser_start_assessment_run_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

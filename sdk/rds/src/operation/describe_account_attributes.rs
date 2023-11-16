@@ -187,7 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeAcco
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_describe_account_attributes_input::ser_describe_account_attributes_input_input_input(&input)?,
+            crate::protocol_serde::shape_describe_account_attributes_input::ser_describe_account_attributes_input_input(&input)?,
         );
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())

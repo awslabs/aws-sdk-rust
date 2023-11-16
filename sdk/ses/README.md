@@ -1,7 +1,7 @@
 # aws-sdk-ses
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 This document contains reference information for the [Amazon Simple Email Service](https://aws.amazon.com/ses/) (Amazon SES) API, version 2010-12-01. This document is best used in conjunction with the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html).
 
@@ -22,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-ses = "0.36.0"
+aws-config = "0.57.1"
+aws-sdk-ses = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

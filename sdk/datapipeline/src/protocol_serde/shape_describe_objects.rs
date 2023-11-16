@@ -93,7 +93,7 @@ pub fn de_describe_objects_http_response(
         output = crate::protocol_serde::shape_describe_objects::de_describe_objects(_response_body, output)
             .map_err(crate::operation::describe_objects::DescribeObjectsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_objects_output_output_correct_errors(output)
+        crate::serde_util::describe_objects_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_objects::DescribeObjectsError::unhandled)?
     })
@@ -104,7 +104,7 @@ pub fn ser_describe_objects_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_describe_objects_input::ser_describe_objects_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_describe_objects_input::ser_describe_objects_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

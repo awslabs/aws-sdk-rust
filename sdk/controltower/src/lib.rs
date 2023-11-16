@@ -12,8 +12,8 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-//! on production workloads. Any use in production is at your own risk.**
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
 //!
 //! These interfaces allow you to apply the AWS library of pre-defined _controls_ to your organizational units, programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms.
 //!
@@ -62,8 +62,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.2"
-//! aws-sdk-controltower = "0.17.0"
+//! aws-config = "0.57.1"
+//! aws-sdk-controltower = "0.18.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

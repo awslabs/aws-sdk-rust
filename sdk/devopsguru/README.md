@@ -1,7 +1,7 @@
 # aws-sdk-devopsguru
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon DevOps Guru is a fully managed service that helps you identify anomalous behavior in business critical operational applications. You specify the Amazon Web Services resources that you want DevOps Guru to cover, then the Amazon CloudWatch metrics and Amazon Web Services CloudTrail events related to those resources are analyzed. When anomalous behavior is detected, DevOps Guru creates an _insight_ that includes recommendations, related events, and related metrics that can help you improve your operational applications. For more information, see [What is Amazon DevOps Guru](https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html).
 
@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-devopsguru = "0.36.0"
+aws-config = "0.57.1"
+aws-sdk-devopsguru = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

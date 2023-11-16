@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeRese
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_describe_reserved_node_exchange_status_input::ser_describe_reserved_node_exchange_status_input_input_input(
+            crate::protocol_serde::shape_describe_reserved_node_exchange_status_input::ser_describe_reserved_node_exchange_status_input_input(
                 &input,
             )?,
         );

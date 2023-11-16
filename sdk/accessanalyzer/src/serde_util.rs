@@ -83,7 +83,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_access_preview_output_output_correct_errors(
+pub(crate) fn create_access_preview_output_correct_errors(
     mut builder: crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder,
 ) -> crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder {
     if builder.id.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn create_access_preview_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_access_preview_output_output_correct_errors(
+pub(crate) fn get_access_preview_output_correct_errors(
     mut builder: crate::operation::get_access_preview::builders::GetAccessPreviewOutputBuilder,
 ) -> crate::operation::get_access_preview::builders::GetAccessPreviewOutputBuilder {
     if builder.access_preview.is_none() {
@@ -104,7 +104,7 @@ pub(crate) fn get_access_preview_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_analyzer_output_output_correct_errors(
+pub(crate) fn get_analyzer_output_correct_errors(
     mut builder: crate::operation::get_analyzer::builders::GetAnalyzerOutputBuilder,
 ) -> crate::operation::get_analyzer::builders::GetAnalyzerOutputBuilder {
     if builder.analyzer.is_none() {
@@ -116,7 +116,7 @@ pub(crate) fn get_analyzer_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_archive_rule_output_output_correct_errors(
+pub(crate) fn get_archive_rule_output_correct_errors(
     mut builder: crate::operation::get_archive_rule::builders::GetArchiveRuleOutputBuilder,
 ) -> crate::operation::get_archive_rule::builders::GetArchiveRuleOutputBuilder {
     if builder.archive_rule.is_none() {
@@ -128,7 +128,7 @@ pub(crate) fn get_archive_rule_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_generated_policy_output_output_correct_errors(
+pub(crate) fn get_generated_policy_output_correct_errors(
     mut builder: crate::operation::get_generated_policy::builders::GetGeneratedPolicyOutputBuilder,
 ) -> crate::operation::get_generated_policy::builders::GetGeneratedPolicyOutputBuilder {
     if builder.job_details.is_none() {
@@ -146,7 +146,7 @@ pub(crate) fn get_generated_policy_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_access_preview_findings_output_output_correct_errors(
+pub(crate) fn list_access_preview_findings_output_correct_errors(
     mut builder: crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder,
 ) -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder {
     if builder.findings.is_none() {
@@ -155,7 +155,7 @@ pub(crate) fn list_access_preview_findings_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_access_previews_output_output_correct_errors(
+pub(crate) fn list_access_previews_output_correct_errors(
     mut builder: crate::operation::list_access_previews::builders::ListAccessPreviewsOutputBuilder,
 ) -> crate::operation::list_access_previews::builders::ListAccessPreviewsOutputBuilder {
     if builder.access_previews.is_none() {
@@ -164,7 +164,7 @@ pub(crate) fn list_access_previews_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_analyzed_resources_output_output_correct_errors(
+pub(crate) fn list_analyzed_resources_output_correct_errors(
     mut builder: crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesOutputBuilder,
 ) -> crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesOutputBuilder {
     if builder.analyzed_resources.is_none() {
@@ -173,7 +173,7 @@ pub(crate) fn list_analyzed_resources_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_analyzers_output_output_correct_errors(
+pub(crate) fn list_analyzers_output_correct_errors(
     mut builder: crate::operation::list_analyzers::builders::ListAnalyzersOutputBuilder,
 ) -> crate::operation::list_analyzers::builders::ListAnalyzersOutputBuilder {
     if builder.analyzers.is_none() {
@@ -182,7 +182,7 @@ pub(crate) fn list_analyzers_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_archive_rules_output_output_correct_errors(
+pub(crate) fn list_archive_rules_output_correct_errors(
     mut builder: crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder,
 ) -> crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder {
     if builder.archive_rules.is_none() {
@@ -191,7 +191,7 @@ pub(crate) fn list_archive_rules_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_findings_output_output_correct_errors(
+pub(crate) fn list_findings_output_correct_errors(
     mut builder: crate::operation::list_findings::builders::ListFindingsOutputBuilder,
 ) -> crate::operation::list_findings::builders::ListFindingsOutputBuilder {
     if builder.findings.is_none() {
@@ -200,7 +200,7 @@ pub(crate) fn list_findings_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_policy_generations_output_output_correct_errors(
+pub(crate) fn list_policy_generations_output_correct_errors(
     mut builder: crate::operation::list_policy_generations::builders::ListPolicyGenerationsOutputBuilder,
 ) -> crate::operation::list_policy_generations::builders::ListPolicyGenerationsOutputBuilder {
     if builder.policy_generations.is_none() {
@@ -209,7 +209,7 @@ pub(crate) fn list_policy_generations_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_policy_generation_output_output_correct_errors(
+pub(crate) fn start_policy_generation_output_correct_errors(
     mut builder: crate::operation::start_policy_generation::builders::StartPolicyGenerationOutputBuilder,
 ) -> crate::operation::start_policy_generation::builders::StartPolicyGenerationOutputBuilder {
     if builder.job_id.is_none() {
@@ -218,7 +218,7 @@ pub(crate) fn start_policy_generation_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn validate_policy_output_output_correct_errors(
+pub(crate) fn validate_policy_output_correct_errors(
     mut builder: crate::operation::validate_policy::builders::ValidatePolicyOutputBuilder,
 ) -> crate::operation::validate_policy::builders::ValidatePolicyOutputBuilder {
     if builder.findings.is_none() {

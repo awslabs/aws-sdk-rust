@@ -89,7 +89,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_component_version_output_output_correct_errors(
+pub(crate) fn create_component_version_output_correct_errors(
     mut builder: crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder,
 ) -> crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder {
     if builder.component_name.is_none() {
@@ -110,7 +110,7 @@ pub(crate) fn create_component_version_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_component_output_output_correct_errors(
+pub(crate) fn get_component_output_correct_errors(
     mut builder: crate::operation::get_component::builders::GetComponentOutputBuilder,
 ) -> crate::operation::get_component::builders::GetComponentOutputBuilder {
     if builder.recipe_output_format.is_none() {
@@ -122,7 +122,7 @@ pub(crate) fn get_component_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_component_version_artifact_output_output_correct_errors(
+pub(crate) fn get_component_version_artifact_output_correct_errors(
     mut builder: crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactOutputBuilder,
 ) -> crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactOutputBuilder {
     if builder.pre_signed_url.is_none() {

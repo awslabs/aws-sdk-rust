@@ -64,7 +64,7 @@ pub fn de_get_ip_set_http_response(
         output = crate::protocol_serde::shape_get_ip_set::de_get_ip_set(_response_body, output)
             .map_err(crate::operation::get_ip_set::GetIPSetError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_ip_set_output_output_correct_errors(output).build()
+        crate::serde_util::get_ip_set_output_correct_errors(output).build()
     })
 }
 

@@ -158,7 +158,7 @@ pub fn de_associate_user_access_logging_settings_http_response(
             crate::protocol_serde::shape_associate_user_access_logging_settings::de_associate_user_access_logging_settings(_response_body, output)
                 .map_err(crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::associate_user_access_logging_settings_output_output_correct_errors(output)
+        crate::serde_util::associate_user_access_logging_settings_output_correct_errors(output)
             .build()
             .map_err(crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError::unhandled)?
     })

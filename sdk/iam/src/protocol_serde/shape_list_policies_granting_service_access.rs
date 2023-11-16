@@ -69,7 +69,7 @@ pub fn de_list_policies_granting_service_access_http_response(
         output = crate::protocol_serde::shape_list_policies_granting_service_access::de_list_policies_granting_service_access(_response_body, output)
             .map_err(crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_policies_granting_service_access_output_output_correct_errors(output)
+        crate::serde_util::list_policies_granting_service_access_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError::unhandled)?
     })

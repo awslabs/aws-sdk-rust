@@ -130,7 +130,7 @@ pub fn de_signal_application_instance_node_instances_http_response(
         )
         .map_err(crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::signal_application_instance_node_instances_output_output_correct_errors(output)
+        crate::serde_util::signal_application_instance_node_instances_output_correct_errors(output)
             .build()
             .map_err(crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError::unhandled)?
     })
@@ -141,7 +141,7 @@ pub fn ser_signal_application_instance_node_instances_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_signal_application_instance_node_instances_input::ser_signal_application_instance_node_instances_input_input(
+    crate::protocol_serde::shape_signal_application_instance_node_instances_input::ser_signal_application_instance_node_instances_input(
         &mut object,
         input,
     )?;

@@ -65,9 +65,7 @@ pub fn ser_create_access_point_for_object_lambda_op_input(
         let mut root = writer
             .start_el("CreateAccessPointForObjectLambdaRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::protocol_serde::shape_create_access_point_for_object_lambda_input::ser_create_access_point_for_object_lambda_input_input_input(
-            input, root,
-        )?
+        crate::protocol_serde::shape_create_access_point_for_object_lambda_input::ser_create_access_point_for_object_lambda_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

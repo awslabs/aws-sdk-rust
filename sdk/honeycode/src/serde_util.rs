@@ -17,7 +17,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_create_table_rows_output_output_correct_errors(
+pub(crate) fn batch_create_table_rows_output_correct_errors(
     mut builder: crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsOutputBuilder,
 ) -> crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsOutputBuilder {
     if builder.workbook_cursor.is_none() {
@@ -29,7 +29,7 @@ pub(crate) fn batch_create_table_rows_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_delete_table_rows_output_output_correct_errors(
+pub(crate) fn batch_delete_table_rows_output_correct_errors(
     mut builder: crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsOutputBuilder,
 ) -> crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsOutputBuilder {
     if builder.workbook_cursor.is_none() {
@@ -38,7 +38,7 @@ pub(crate) fn batch_delete_table_rows_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_update_table_rows_output_output_correct_errors(
+pub(crate) fn batch_update_table_rows_output_correct_errors(
     mut builder: crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsOutputBuilder,
 ) -> crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsOutputBuilder {
     if builder.workbook_cursor.is_none() {
@@ -47,7 +47,7 @@ pub(crate) fn batch_update_table_rows_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_upsert_table_rows_output_output_correct_errors(
+pub(crate) fn batch_upsert_table_rows_output_correct_errors(
     mut builder: crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsOutputBuilder,
 ) -> crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsOutputBuilder {
     if builder.rows.is_none() {
@@ -59,7 +59,7 @@ pub(crate) fn batch_upsert_table_rows_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_table_data_import_job_output_output_correct_errors(
+pub(crate) fn describe_table_data_import_job_output_correct_errors(
     mut builder: crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobOutputBuilder,
 ) -> crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobOutputBuilder {
     if builder.job_status.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn describe_table_data_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_screen_data_output_output_correct_errors(
+pub(crate) fn get_screen_data_output_correct_errors(
     mut builder: crate::operation::get_screen_data::builders::GetScreenDataOutputBuilder,
 ) -> crate::operation::get_screen_data::builders::GetScreenDataOutputBuilder {
     if builder.results.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn get_screen_data_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn invoke_screen_automation_output_output_correct_errors(
+pub(crate) fn invoke_screen_automation_output_correct_errors(
     mut builder: crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationOutputBuilder,
 ) -> crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationOutputBuilder {
     if builder.workbook_cursor.is_none() {
@@ -98,7 +98,7 @@ pub(crate) fn invoke_screen_automation_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_table_columns_output_output_correct_errors(
+pub(crate) fn list_table_columns_output_correct_errors(
     mut builder: crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder,
 ) -> crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder {
     if builder.table_columns.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn list_table_columns_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_table_rows_output_output_correct_errors(
+pub(crate) fn list_table_rows_output_correct_errors(
     mut builder: crate::operation::list_table_rows::builders::ListTableRowsOutputBuilder,
 ) -> crate::operation::list_table_rows::builders::ListTableRowsOutputBuilder {
     if builder.column_ids.is_none() {
@@ -122,7 +122,7 @@ pub(crate) fn list_table_rows_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tables_output_output_correct_errors(
+pub(crate) fn list_tables_output_correct_errors(
     mut builder: crate::operation::list_tables::builders::ListTablesOutputBuilder,
 ) -> crate::operation::list_tables::builders::ListTablesOutputBuilder {
     if builder.tables.is_none() {
@@ -131,7 +131,7 @@ pub(crate) fn list_tables_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn query_table_rows_output_output_correct_errors(
+pub(crate) fn query_table_rows_output_correct_errors(
     mut builder: crate::operation::query_table_rows::builders::QueryTableRowsOutputBuilder,
 ) -> crate::operation::query_table_rows::builders::QueryTableRowsOutputBuilder {
     if builder.column_ids.is_none() {
@@ -146,7 +146,7 @@ pub(crate) fn query_table_rows_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_table_data_import_job_output_output_correct_errors(
+pub(crate) fn start_table_data_import_job_output_correct_errors(
     mut builder: crate::operation::start_table_data_import_job::builders::StartTableDataImportJobOutputBuilder,
 ) -> crate::operation::start_table_data_import_job::builders::StartTableDataImportJobOutputBuilder {
     if builder.job_id.is_none() {

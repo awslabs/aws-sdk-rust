@@ -99,7 +99,7 @@ pub fn de_describe_logging_options_http_response(
         output = crate::protocol_serde::shape_describe_logging_options::de_describe_logging_options(_response_body, output)
             .map_err(crate::operation::describe_logging_options::DescribeLoggingOptionsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_logging_options_output_output_correct_errors(output).build()
+        crate::serde_util::describe_logging_options_output_correct_errors(output).build()
     })
 }
 

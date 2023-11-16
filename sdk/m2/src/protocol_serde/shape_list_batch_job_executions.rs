@@ -127,7 +127,7 @@ pub fn de_list_batch_job_executions_http_response(
         output = crate::protocol_serde::shape_list_batch_job_executions::de_list_batch_job_executions(_response_body, output)
             .map_err(crate::operation::list_batch_job_executions::ListBatchJobExecutionsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_batch_job_executions_output_output_correct_errors(output)
+        crate::serde_util::list_batch_job_executions_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_batch_job_executions::ListBatchJobExecutionsError::unhandled)?
     })

@@ -126,7 +126,7 @@ pub fn ser_modify_certificate_based_auth_properties_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_modify_certificate_based_auth_properties_input::ser_modify_certificate_based_auth_properties_input_input(
+    crate::protocol_serde::shape_modify_certificate_based_auth_properties_input::ser_modify_certificate_based_auth_properties_input(
         &mut object,
         input,
     )?;

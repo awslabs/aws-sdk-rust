@@ -44,7 +44,7 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn list_template_step_groups_output_output_correct_errors(
+pub(crate) fn list_template_step_groups_output_correct_errors(
     mut builder: crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsOutputBuilder,
 ) -> crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsOutputBuilder {
     if builder.template_step_group_summary.is_none() {
@@ -53,7 +53,7 @@ pub(crate) fn list_template_step_groups_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_templates_output_output_correct_errors(
+pub(crate) fn list_templates_output_correct_errors(
     mut builder: crate::operation::list_templates::builders::ListTemplatesOutputBuilder,
 ) -> crate::operation::list_templates::builders::ListTemplatesOutputBuilder {
     if builder.template_summary.is_none() {
@@ -62,7 +62,7 @@ pub(crate) fn list_templates_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_workflow_step_groups_output_output_correct_errors(
+pub(crate) fn list_workflow_step_groups_output_correct_errors(
     mut builder: crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsOutputBuilder,
 ) -> crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsOutputBuilder {
     if builder.workflow_step_groups_summary.is_none() {
@@ -71,7 +71,7 @@ pub(crate) fn list_workflow_step_groups_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_workflow_steps_output_output_correct_errors(
+pub(crate) fn list_workflow_steps_output_correct_errors(
     mut builder: crate::operation::list_workflow_steps::builders::ListWorkflowStepsOutputBuilder,
 ) -> crate::operation::list_workflow_steps::builders::ListWorkflowStepsOutputBuilder {
     if builder.workflow_steps_summary.is_none() {
@@ -80,7 +80,7 @@ pub(crate) fn list_workflow_steps_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_workflows_output_output_correct_errors(
+pub(crate) fn list_workflows_output_correct_errors(
     mut builder: crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder,
 ) -> crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder {
     if builder.migration_workflow_summary.is_none() {

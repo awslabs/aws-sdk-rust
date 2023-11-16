@@ -193,7 +193,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeScal
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_describe_scaling_process_types_input::ser_describe_scaling_process_types_input_input_input(&input)?,
+            crate::protocol_serde::shape_describe_scaling_process_types_input::ser_describe_scaling_process_types_input_input(&input)?,
         );
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())

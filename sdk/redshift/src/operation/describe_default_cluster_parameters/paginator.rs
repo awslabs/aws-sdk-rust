@@ -94,7 +94,7 @@ impl DescribeDefaultClusterParametersPaginator {
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
                                 let new_token =
-                                    crate::lens::reflens_describe_default_cluster_parameters_output_output_default_cluster_parameters_marker(resp);
+                                    crate::lens::reflens_describe_default_cluster_parameters_output_default_cluster_parameters_marker(resp);
                                 let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                 if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                     true
@@ -143,7 +143,7 @@ impl DescribeDefaultClusterParametersPaginatorItems {
         >,
     > {
         ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_describe_default_cluster_parameters_output_output_default_cluster_parameters_parameters(page)
+            crate::lens::lens_describe_default_cluster_parameters_output_default_cluster_parameters_parameters(page)
                 .unwrap_or_default()
                 .into_iter()
         })

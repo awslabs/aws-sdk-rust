@@ -1,7 +1,7 @@
 # aws-sdk-networkfirewall
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 This is the API Reference for Network Firewall. This guide is for developers who need detailed information about the Network Firewall API actions, data types, and errors.
   - The REST API requires you to handle connection details, such as calculating signatures, handling request retries, and error handling. For general information about using the Amazon Web Services REST APIs, see [Amazon Web Services APIs](https://docs.aws.amazon.com/general/latest/gr/aws-apis.html). To access Network Firewall using the REST API endpoint: https://network-firewall..amazonaws.com
@@ -37,8 +37,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-networkfirewall = "0.36.0"
+aws-config = "0.57.1"
+aws-sdk-networkfirewall = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

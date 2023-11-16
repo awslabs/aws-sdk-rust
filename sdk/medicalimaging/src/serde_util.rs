@@ -62,7 +62,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn copy_image_set_output_output_correct_errors(
+pub(crate) fn copy_image_set_output_correct_errors(
     mut builder: crate::operation::copy_image_set::builders::CopyImageSetOutputBuilder,
 ) -> crate::operation::copy_image_set::builders::CopyImageSetOutputBuilder {
     if builder.datastore_id.is_none() {
@@ -85,7 +85,7 @@ pub(crate) fn copy_image_set_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_datastore_output_output_correct_errors(
+pub(crate) fn create_datastore_output_correct_errors(
     mut builder: crate::operation::create_datastore::builders::CreateDatastoreOutputBuilder,
 ) -> crate::operation::create_datastore::builders::CreateDatastoreOutputBuilder {
     if builder.datastore_id.is_none() {
@@ -97,7 +97,7 @@ pub(crate) fn create_datastore_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_datastore_output_output_correct_errors(
+pub(crate) fn delete_datastore_output_correct_errors(
     mut builder: crate::operation::delete_datastore::builders::DeleteDatastoreOutputBuilder,
 ) -> crate::operation::delete_datastore::builders::DeleteDatastoreOutputBuilder {
     if builder.datastore_id.is_none() {
@@ -109,7 +109,7 @@ pub(crate) fn delete_datastore_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_image_set_output_output_correct_errors(
+pub(crate) fn delete_image_set_output_correct_errors(
     mut builder: crate::operation::delete_image_set::builders::DeleteImageSetOutputBuilder,
 ) -> crate::operation::delete_image_set::builders::DeleteImageSetOutputBuilder {
     if builder.datastore_id.is_none() {
@@ -127,7 +127,7 @@ pub(crate) fn delete_image_set_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_datastore_output_output_correct_errors(
+pub(crate) fn get_datastore_output_correct_errors(
     mut builder: crate::operation::get_datastore::builders::GetDatastoreOutputBuilder,
 ) -> crate::operation::get_datastore::builders::GetDatastoreOutputBuilder {
     if builder.datastore_properties.is_none() {
@@ -139,7 +139,7 @@ pub(crate) fn get_datastore_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_dicom_import_job_output_output_correct_errors(
+pub(crate) fn get_dicom_import_job_output_correct_errors(
     mut builder: crate::operation::get_dicom_import_job::builders::GetDicomImportJobOutputBuilder,
 ) -> crate::operation::get_dicom_import_job::builders::GetDicomImportJobOutputBuilder {
     if builder.job_properties.is_none() {
@@ -151,7 +151,7 @@ pub(crate) fn get_dicom_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_image_set_output_output_correct_errors(
+pub(crate) fn get_image_set_output_correct_errors(
     mut builder: crate::operation::get_image_set::builders::GetImageSetOutputBuilder,
 ) -> crate::operation::get_image_set::builders::GetImageSetOutputBuilder {
     if builder.datastore_id.is_none() {
@@ -169,7 +169,7 @@ pub(crate) fn get_image_set_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_dicom_import_jobs_output_output_correct_errors(
+pub(crate) fn list_dicom_import_jobs_output_correct_errors(
     mut builder: crate::operation::list_dicom_import_jobs::builders::ListDicomImportJobsOutputBuilder,
 ) -> crate::operation::list_dicom_import_jobs::builders::ListDicomImportJobsOutputBuilder {
     if builder.job_summaries.is_none() {
@@ -178,7 +178,7 @@ pub(crate) fn list_dicom_import_jobs_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_image_set_versions_output_output_correct_errors(
+pub(crate) fn list_image_set_versions_output_correct_errors(
     mut builder: crate::operation::list_image_set_versions::builders::ListImageSetVersionsOutputBuilder,
 ) -> crate::operation::list_image_set_versions::builders::ListImageSetVersionsOutputBuilder {
     if builder.image_set_properties_list.is_none() {
@@ -187,7 +187,7 @@ pub(crate) fn list_image_set_versions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
@@ -196,7 +196,7 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn search_image_sets_output_output_correct_errors(
+pub(crate) fn search_image_sets_output_correct_errors(
     mut builder: crate::operation::search_image_sets::builders::SearchImageSetsOutputBuilder,
 ) -> crate::operation::search_image_sets::builders::SearchImageSetsOutputBuilder {
     if builder.image_sets_metadata_summaries.is_none() {
@@ -205,7 +205,7 @@ pub(crate) fn search_image_sets_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_dicom_import_job_output_output_correct_errors(
+pub(crate) fn start_dicom_import_job_output_correct_errors(
     mut builder: crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder,
 ) -> crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder {
     if builder.datastore_id.is_none() {
@@ -223,7 +223,7 @@ pub(crate) fn start_dicom_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_image_set_metadata_output_output_correct_errors(
+pub(crate) fn update_image_set_metadata_output_correct_errors(
     mut builder: crate::operation::update_image_set_metadata::builders::UpdateImageSetMetadataOutputBuilder,
 ) -> crate::operation::update_image_set_metadata::builders::UpdateImageSetMetadataOutputBuilder {
     if builder.datastore_id.is_none() {

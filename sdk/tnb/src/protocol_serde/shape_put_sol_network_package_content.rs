@@ -112,7 +112,7 @@ pub fn de_put_sol_network_package_content_http_response(
         output = crate::protocol_serde::shape_put_sol_network_package_content::de_put_sol_network_package_content(_response_body, output)
             .map_err(crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::put_sol_network_package_content_output_output_correct_errors(output)
+        crate::serde_util::put_sol_network_package_content_output_correct_errors(output)
             .build()
             .map_err(crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::unhandled)?
     })

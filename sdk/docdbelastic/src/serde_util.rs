@@ -62,7 +62,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_cluster_output_output_correct_errors(
+pub(crate) fn create_cluster_output_correct_errors(
     mut builder: crate::operation::create_cluster::builders::CreateClusterOutputBuilder,
 ) -> crate::operation::create_cluster::builders::CreateClusterOutputBuilder {
     if builder.cluster.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_cluster_snapshot_output_output_correct_errors(
+pub(crate) fn create_cluster_snapshot_output_correct_errors(
     mut builder: crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotOutputBuilder,
 ) -> crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotOutputBuilder {
     if builder.snapshot.is_none() {
@@ -101,7 +101,7 @@ pub(crate) fn create_cluster_snapshot_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_cluster_output_output_correct_errors(
+pub(crate) fn delete_cluster_output_correct_errors(
     mut builder: crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder,
 ) -> crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder {
     if builder.cluster.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn delete_cluster_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_cluster_snapshot_output_output_correct_errors(
+pub(crate) fn delete_cluster_snapshot_output_correct_errors(
     mut builder: crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder,
 ) -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder {
     if builder.snapshot.is_none() {
@@ -125,7 +125,7 @@ pub(crate) fn delete_cluster_snapshot_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_cluster_output_output_correct_errors(
+pub(crate) fn get_cluster_output_correct_errors(
     mut builder: crate::operation::get_cluster::builders::GetClusterOutputBuilder,
 ) -> crate::operation::get_cluster::builders::GetClusterOutputBuilder {
     if builder.cluster.is_none() {
@@ -137,7 +137,7 @@ pub(crate) fn get_cluster_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_cluster_snapshot_output_output_correct_errors(
+pub(crate) fn get_cluster_snapshot_output_correct_errors(
     mut builder: crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotOutputBuilder,
 ) -> crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotOutputBuilder {
     if builder.snapshot.is_none() {
@@ -149,7 +149,7 @@ pub(crate) fn get_cluster_snapshot_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn restore_cluster_from_snapshot_output_output_correct_errors(
+pub(crate) fn restore_cluster_from_snapshot_output_correct_errors(
     mut builder: crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotOutputBuilder,
 ) -> crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotOutputBuilder {
     if builder.cluster.is_none() {
@@ -161,7 +161,7 @@ pub(crate) fn restore_cluster_from_snapshot_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_cluster_output_output_correct_errors(
+pub(crate) fn update_cluster_output_correct_errors(
     mut builder: crate::operation::update_cluster::builders::UpdateClusterOutputBuilder,
 ) -> crate::operation::update_cluster::builders::UpdateClusterOutputBuilder {
     if builder.cluster.is_none() {

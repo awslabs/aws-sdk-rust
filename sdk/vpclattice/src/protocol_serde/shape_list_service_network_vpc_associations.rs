@@ -117,7 +117,7 @@ pub fn de_list_service_network_vpc_associations_http_response(
         output = crate::protocol_serde::shape_list_service_network_vpc_associations::de_list_service_network_vpc_associations(_response_body, output)
             .map_err(crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_service_network_vpc_associations_output_output_correct_errors(output)
+        crate::serde_util::list_service_network_vpc_associations_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsError::unhandled)?
     })

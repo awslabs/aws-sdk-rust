@@ -138,7 +138,7 @@ pub fn de_batch_get_collaboration_analysis_template_http_response(
         )
         .map_err(crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::batch_get_collaboration_analysis_template_output_output_correct_errors(output)
+        crate::serde_util::batch_get_collaboration_analysis_template_output_correct_errors(output)
             .build()
             .map_err(crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::unhandled)?
     })
@@ -149,7 +149,7 @@ pub fn ser_batch_get_collaboration_analysis_template_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_batch_get_collaboration_analysis_template_input::ser_batch_get_collaboration_analysis_template_input_input(
+    crate::protocol_serde::shape_batch_get_collaboration_analysis_template_input::ser_batch_get_collaboration_analysis_template_input(
         &mut object,
         input,
     )?;

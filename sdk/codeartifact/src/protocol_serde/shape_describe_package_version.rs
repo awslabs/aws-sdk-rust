@@ -134,7 +134,7 @@ pub fn de_describe_package_version_http_response(
         output = crate::protocol_serde::shape_describe_package_version::de_describe_package_version(_response_body, output)
             .map_err(crate::operation::describe_package_version::DescribePackageVersionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_package_version_output_output_correct_errors(output).build()
+        crate::serde_util::describe_package_version_output_correct_errors(output).build()
     })
 }
 

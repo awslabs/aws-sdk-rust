@@ -1,7 +1,7 @@
 # aws-sdk-applicationdiscovery
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon Web Services Application Discovery Service (Application Discovery Service) helps you plan application migration projects. It automatically identifies servers, virtual machines (VMs), and network dependencies in your on-premises data centers. For more information, see the [Amazon Web Services Application Discovery Service FAQ](http://aws.amazon.com/application-discovery/faqs/).
 
@@ -37,8 +37,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-applicationdiscovery = "0.36.0"
+aws-config = "0.57.1"
+aws-sdk-applicationdiscovery = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

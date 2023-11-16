@@ -7,9 +7,9 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.57.2", path = "../../../sdk/aws-config" }
-aws-sdk-qldb= { version = "0.36.0", path = "../../../sdk/qldb" }
-aws-sdk-qldbsession= { version = "0.36.0", path = "../../../sdk/qldbsession" }
+aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
+aws-sdk-qldb= { version = "0.37.0", path = "../../../sdk/qldb" }
+aws-sdk-qldbsession= { version = "0.37.0", path = "../../../sdk/qldbsession" }
 
 [dependencies.tokio]
 version = "1.20.1"

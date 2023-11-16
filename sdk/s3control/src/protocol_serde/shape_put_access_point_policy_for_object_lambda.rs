@@ -64,7 +64,7 @@ pub fn ser_put_access_point_policy_for_object_lambda_op_input(
         let mut root = writer
             .start_el("PutAccessPointPolicyForObjectLambdaRequest")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
-        crate::protocol_serde::shape_put_access_point_policy_for_object_lambda_input::ser_put_access_point_policy_for_object_lambda_input_input_input(
+        crate::protocol_serde::shape_put_access_point_policy_for_object_lambda_input::ser_put_access_point_policy_for_object_lambda_input_input(
             input, root,
         )?
     }

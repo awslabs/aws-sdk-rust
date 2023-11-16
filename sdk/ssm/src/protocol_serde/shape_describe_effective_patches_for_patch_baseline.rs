@@ -136,7 +136,7 @@ pub fn ser_describe_effective_patches_for_patch_baseline_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_describe_effective_patches_for_patch_baseline_input::ser_describe_effective_patches_for_patch_baseline_input_input(
+    crate::protocol_serde::shape_describe_effective_patches_for_patch_baseline_input::ser_describe_effective_patches_for_patch_baseline_input(
         &mut object,
         input,
     )?;

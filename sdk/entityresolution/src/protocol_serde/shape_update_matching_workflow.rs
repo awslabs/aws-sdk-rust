@@ -118,7 +118,7 @@ pub fn de_update_matching_workflow_http_response(
         output = crate::protocol_serde::shape_update_matching_workflow::de_update_matching_workflow(_response_body, output)
             .map_err(crate::operation::update_matching_workflow::UpdateMatchingWorkflowError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_matching_workflow_output_output_correct_errors(output)
+        crate::serde_util::update_matching_workflow_output_correct_errors(output)
             .build()
             .map_err(crate::operation::update_matching_workflow::UpdateMatchingWorkflowError::unhandled)?
     })
@@ -129,7 +129,7 @@ pub fn ser_update_matching_workflow_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_update_matching_workflow_input::ser_update_matching_workflow_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_update_matching_workflow_input::ser_update_matching_workflow_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

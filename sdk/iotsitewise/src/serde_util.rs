@@ -83,7 +83,7 @@ pub(crate) fn service_unavailable_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_asset_property_aggregates_output_output_correct_errors(
+pub(crate) fn batch_get_asset_property_aggregates_output_correct_errors(
     mut builder: crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesOutputBuilder,
 ) -> crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesOutputBuilder {
     if builder.error_entries.is_none() {
@@ -98,7 +98,7 @@ pub(crate) fn batch_get_asset_property_aggregates_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_asset_property_value_output_output_correct_errors(
+pub(crate) fn batch_get_asset_property_value_output_correct_errors(
     mut builder: crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueOutputBuilder,
 ) -> crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueOutputBuilder {
     if builder.error_entries.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn batch_get_asset_property_value_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_asset_property_value_history_output_output_correct_errors(
+pub(crate) fn batch_get_asset_property_value_history_output_correct_errors(
     mut builder: crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryOutputBuilder,
 ) -> crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryOutputBuilder {
     if builder.error_entries.is_none() {
@@ -128,7 +128,7 @@ pub(crate) fn batch_get_asset_property_value_history_output_output_correct_error
     builder
 }
 
-pub(crate) fn batch_put_asset_property_value_output_output_correct_errors(
+pub(crate) fn batch_put_asset_property_value_output_correct_errors(
     mut builder: crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueOutputBuilder,
 ) -> crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueOutputBuilder {
     if builder.error_entries.is_none() {
@@ -137,7 +137,7 @@ pub(crate) fn batch_put_asset_property_value_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_access_policy_output_output_correct_errors(
+pub(crate) fn create_access_policy_output_correct_errors(
     mut builder: crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder,
 ) -> crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder {
     if builder.access_policy_id.is_none() {
@@ -149,7 +149,7 @@ pub(crate) fn create_access_policy_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_asset_output_output_correct_errors(
+pub(crate) fn create_asset_output_correct_errors(
     mut builder: crate::operation::create_asset::builders::CreateAssetOutputBuilder,
 ) -> crate::operation::create_asset::builders::CreateAssetOutputBuilder {
     if builder.asset_id.is_none() {
@@ -167,7 +167,7 @@ pub(crate) fn create_asset_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_asset_model_output_output_correct_errors(
+pub(crate) fn create_asset_model_output_correct_errors(
     mut builder: crate::operation::create_asset_model::builders::CreateAssetModelOutputBuilder,
 ) -> crate::operation::create_asset_model::builders::CreateAssetModelOutputBuilder {
     if builder.asset_model_id.is_none() {
@@ -185,7 +185,7 @@ pub(crate) fn create_asset_model_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_bulk_import_job_output_output_correct_errors(
+pub(crate) fn create_bulk_import_job_output_correct_errors(
     mut builder: crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder,
 ) -> crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder {
     if builder.job_id.is_none() {
@@ -200,7 +200,7 @@ pub(crate) fn create_bulk_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_dashboard_output_output_correct_errors(
+pub(crate) fn create_dashboard_output_correct_errors(
     mut builder: crate::operation::create_dashboard::builders::CreateDashboardOutputBuilder,
 ) -> crate::operation::create_dashboard::builders::CreateDashboardOutputBuilder {
     if builder.dashboard_id.is_none() {
@@ -212,7 +212,7 @@ pub(crate) fn create_dashboard_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_gateway_output_output_correct_errors(
+pub(crate) fn create_gateway_output_correct_errors(
     mut builder: crate::operation::create_gateway::builders::CreateGatewayOutputBuilder,
 ) -> crate::operation::create_gateway::builders::CreateGatewayOutputBuilder {
     if builder.gateway_id.is_none() {
@@ -224,7 +224,7 @@ pub(crate) fn create_gateway_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_portal_output_output_correct_errors(
+pub(crate) fn create_portal_output_correct_errors(
     mut builder: crate::operation::create_portal::builders::CreatePortalOutputBuilder,
 ) -> crate::operation::create_portal::builders::CreatePortalOutputBuilder {
     if builder.portal_id.is_none() {
@@ -248,7 +248,7 @@ pub(crate) fn create_portal_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_project_output_output_correct_errors(
+pub(crate) fn create_project_output_correct_errors(
     mut builder: crate::operation::create_project::builders::CreateProjectOutputBuilder,
 ) -> crate::operation::create_project::builders::CreateProjectOutputBuilder {
     if builder.project_id.is_none() {
@@ -260,7 +260,7 @@ pub(crate) fn create_project_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_asset_output_output_correct_errors(
+pub(crate) fn delete_asset_output_correct_errors(
     mut builder: crate::operation::delete_asset::builders::DeleteAssetOutputBuilder,
 ) -> crate::operation::delete_asset::builders::DeleteAssetOutputBuilder {
     if builder.asset_status.is_none() {
@@ -272,7 +272,7 @@ pub(crate) fn delete_asset_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_asset_model_output_output_correct_errors(
+pub(crate) fn delete_asset_model_output_correct_errors(
     mut builder: crate::operation::delete_asset_model::builders::DeleteAssetModelOutputBuilder,
 ) -> crate::operation::delete_asset_model::builders::DeleteAssetModelOutputBuilder {
     if builder.asset_model_status.is_none() {
@@ -284,7 +284,7 @@ pub(crate) fn delete_asset_model_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_portal_output_output_correct_errors(
+pub(crate) fn delete_portal_output_correct_errors(
     mut builder: crate::operation::delete_portal::builders::DeletePortalOutputBuilder,
 ) -> crate::operation::delete_portal::builders::DeletePortalOutputBuilder {
     if builder.portal_status.is_none() {
@@ -296,7 +296,7 @@ pub(crate) fn delete_portal_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_access_policy_output_output_correct_errors(
+pub(crate) fn describe_access_policy_output_correct_errors(
     mut builder: crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder,
 ) -> crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder {
     if builder.access_policy_id.is_none() {
@@ -329,7 +329,7 @@ pub(crate) fn describe_access_policy_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_asset_output_output_correct_errors(
+pub(crate) fn describe_asset_output_correct_errors(
     mut builder: crate::operation::describe_asset::builders::DescribeAssetOutputBuilder,
 ) -> crate::operation::describe_asset::builders::DescribeAssetOutputBuilder {
     if builder.asset_id.is_none() {
@@ -365,7 +365,7 @@ pub(crate) fn describe_asset_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_asset_model_output_output_correct_errors(
+pub(crate) fn describe_asset_model_output_correct_errors(
     mut builder: crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder,
 ) -> crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder {
     if builder.asset_model_id.is_none() {
@@ -401,7 +401,7 @@ pub(crate) fn describe_asset_model_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_asset_property_output_output_correct_errors(
+pub(crate) fn describe_asset_property_output_correct_errors(
     mut builder: crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder,
 ) -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder {
     if builder.asset_id.is_none() {
@@ -416,7 +416,7 @@ pub(crate) fn describe_asset_property_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_bulk_import_job_output_output_correct_errors(
+pub(crate) fn describe_bulk_import_job_output_correct_errors(
     mut builder: crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder,
 ) -> crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder {
     if builder.job_id.is_none() {
@@ -455,7 +455,7 @@ pub(crate) fn describe_bulk_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_dashboard_output_output_correct_errors(
+pub(crate) fn describe_dashboard_output_correct_errors(
     mut builder: crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder,
 ) -> crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder {
     if builder.dashboard_id.is_none() {
@@ -482,7 +482,7 @@ pub(crate) fn describe_dashboard_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_default_encryption_configuration_output_output_correct_errors(
+pub(crate) fn describe_default_encryption_configuration_output_correct_errors(
     mut builder: crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationOutputBuilder,
 ) -> crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationOutputBuilder {
     if builder.encryption_type.is_none() {
@@ -497,7 +497,7 @@ pub(crate) fn describe_default_encryption_configuration_output_output_correct_er
     builder
 }
 
-pub(crate) fn describe_gateway_output_output_correct_errors(
+pub(crate) fn describe_gateway_output_correct_errors(
     mut builder: crate::operation::describe_gateway::builders::DescribeGatewayOutputBuilder,
 ) -> crate::operation::describe_gateway::builders::DescribeGatewayOutputBuilder {
     if builder.gateway_id.is_none() {
@@ -521,7 +521,7 @@ pub(crate) fn describe_gateway_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_gateway_capability_configuration_output_output_correct_errors(
+pub(crate) fn describe_gateway_capability_configuration_output_correct_errors(
     mut builder: crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationOutputBuilder,
 ) -> crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationOutputBuilder {
     if builder.gateway_id.is_none() {
@@ -539,7 +539,7 @@ pub(crate) fn describe_gateway_capability_configuration_output_output_correct_er
     builder
 }
 
-pub(crate) fn describe_logging_options_output_output_correct_errors(
+pub(crate) fn describe_logging_options_output_correct_errors(
     mut builder: crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder,
 ) -> crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder {
     if builder.logging_options.is_none() {
@@ -551,7 +551,7 @@ pub(crate) fn describe_logging_options_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_portal_output_output_correct_errors(
+pub(crate) fn describe_portal_output_correct_errors(
     mut builder: crate::operation::describe_portal::builders::DescribePortalOutputBuilder,
 ) -> crate::operation::describe_portal::builders::DescribePortalOutputBuilder {
     if builder.portal_id.is_none() {
@@ -587,7 +587,7 @@ pub(crate) fn describe_portal_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_project_output_output_correct_errors(
+pub(crate) fn describe_project_output_correct_errors(
     mut builder: crate::operation::describe_project::builders::DescribeProjectOutputBuilder,
 ) -> crate::operation::describe_project::builders::DescribeProjectOutputBuilder {
     if builder.project_id.is_none() {
@@ -611,7 +611,7 @@ pub(crate) fn describe_project_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_storage_configuration_output_output_correct_errors(
+pub(crate) fn describe_storage_configuration_output_correct_errors(
     mut builder: crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder,
 ) -> crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder {
     if builder.storage_type.is_none() {
@@ -626,7 +626,7 @@ pub(crate) fn describe_storage_configuration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_time_series_output_output_correct_errors(
+pub(crate) fn describe_time_series_output_correct_errors(
     mut builder: crate::operation::describe_time_series::builders::DescribeTimeSeriesOutputBuilder,
 ) -> crate::operation::describe_time_series::builders::DescribeTimeSeriesOutputBuilder {
     if builder.time_series_id.is_none() {
@@ -647,7 +647,7 @@ pub(crate) fn describe_time_series_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_asset_property_aggregates_output_output_correct_errors(
+pub(crate) fn get_asset_property_aggregates_output_correct_errors(
     mut builder: crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesOutputBuilder,
 ) -> crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesOutputBuilder {
     if builder.aggregated_values.is_none() {
@@ -656,7 +656,7 @@ pub(crate) fn get_asset_property_aggregates_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_asset_property_value_history_output_output_correct_errors(
+pub(crate) fn get_asset_property_value_history_output_correct_errors(
     mut builder: crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder,
 ) -> crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder {
     if builder.asset_property_value_history.is_none() {
@@ -665,7 +665,7 @@ pub(crate) fn get_asset_property_value_history_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_interpolated_asset_property_values_output_output_correct_errors(
+pub(crate) fn get_interpolated_asset_property_values_output_correct_errors(
     mut builder: crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesOutputBuilder,
 ) -> crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesOutputBuilder {
     if builder.interpolated_asset_property_values.is_none() {
@@ -674,7 +674,7 @@ pub(crate) fn get_interpolated_asset_property_values_output_output_correct_error
     builder
 }
 
-pub(crate) fn list_access_policies_output_output_correct_errors(
+pub(crate) fn list_access_policies_output_correct_errors(
     mut builder: crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder,
 ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder {
     if builder.access_policy_summaries.is_none() {
@@ -683,7 +683,7 @@ pub(crate) fn list_access_policies_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_asset_model_properties_output_output_correct_errors(
+pub(crate) fn list_asset_model_properties_output_correct_errors(
     mut builder: crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesOutputBuilder,
 ) -> crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesOutputBuilder {
     if builder.asset_model_property_summaries.is_none() {
@@ -692,7 +692,7 @@ pub(crate) fn list_asset_model_properties_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_asset_models_output_output_correct_errors(
+pub(crate) fn list_asset_models_output_correct_errors(
     mut builder: crate::operation::list_asset_models::builders::ListAssetModelsOutputBuilder,
 ) -> crate::operation::list_asset_models::builders::ListAssetModelsOutputBuilder {
     if builder.asset_model_summaries.is_none() {
@@ -701,7 +701,7 @@ pub(crate) fn list_asset_models_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_asset_properties_output_output_correct_errors(
+pub(crate) fn list_asset_properties_output_correct_errors(
     mut builder: crate::operation::list_asset_properties::builders::ListAssetPropertiesOutputBuilder,
 ) -> crate::operation::list_asset_properties::builders::ListAssetPropertiesOutputBuilder {
     if builder.asset_property_summaries.is_none() {
@@ -710,7 +710,7 @@ pub(crate) fn list_asset_properties_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_asset_relationships_output_output_correct_errors(
+pub(crate) fn list_asset_relationships_output_correct_errors(
     mut builder: crate::operation::list_asset_relationships::builders::ListAssetRelationshipsOutputBuilder,
 ) -> crate::operation::list_asset_relationships::builders::ListAssetRelationshipsOutputBuilder {
     if builder.asset_relationship_summaries.is_none() {
@@ -719,7 +719,7 @@ pub(crate) fn list_asset_relationships_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_assets_output_output_correct_errors(
+pub(crate) fn list_assets_output_correct_errors(
     mut builder: crate::operation::list_assets::builders::ListAssetsOutputBuilder,
 ) -> crate::operation::list_assets::builders::ListAssetsOutputBuilder {
     if builder.asset_summaries.is_none() {
@@ -728,7 +728,7 @@ pub(crate) fn list_assets_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_associated_assets_output_output_correct_errors(
+pub(crate) fn list_associated_assets_output_correct_errors(
     mut builder: crate::operation::list_associated_assets::builders::ListAssociatedAssetsOutputBuilder,
 ) -> crate::operation::list_associated_assets::builders::ListAssociatedAssetsOutputBuilder {
     if builder.asset_summaries.is_none() {
@@ -737,7 +737,7 @@ pub(crate) fn list_associated_assets_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_bulk_import_jobs_output_output_correct_errors(
+pub(crate) fn list_bulk_import_jobs_output_correct_errors(
     mut builder: crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder,
 ) -> crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder {
     if builder.job_summaries.is_none() {
@@ -746,7 +746,7 @@ pub(crate) fn list_bulk_import_jobs_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_dashboards_output_output_correct_errors(
+pub(crate) fn list_dashboards_output_correct_errors(
     mut builder: crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder,
 ) -> crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder {
     if builder.dashboard_summaries.is_none() {
@@ -755,7 +755,7 @@ pub(crate) fn list_dashboards_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_gateways_output_output_correct_errors(
+pub(crate) fn list_gateways_output_correct_errors(
     mut builder: crate::operation::list_gateways::builders::ListGatewaysOutputBuilder,
 ) -> crate::operation::list_gateways::builders::ListGatewaysOutputBuilder {
     if builder.gateway_summaries.is_none() {
@@ -764,7 +764,7 @@ pub(crate) fn list_gateways_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_project_assets_output_output_correct_errors(
+pub(crate) fn list_project_assets_output_correct_errors(
     mut builder: crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder,
 ) -> crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder {
     if builder.asset_ids.is_none() {
@@ -773,7 +773,7 @@ pub(crate) fn list_project_assets_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_projects_output_output_correct_errors(
+pub(crate) fn list_projects_output_correct_errors(
     mut builder: crate::operation::list_projects::builders::ListProjectsOutputBuilder,
 ) -> crate::operation::list_projects::builders::ListProjectsOutputBuilder {
     if builder.project_summaries.is_none() {
@@ -791,7 +791,7 @@ pub(crate) fn unauthorized_exception_correct_errors(
     builder
 }
 
-pub(crate) fn list_time_series_output_output_correct_errors(
+pub(crate) fn list_time_series_output_correct_errors(
     mut builder: crate::operation::list_time_series::builders::ListTimeSeriesOutputBuilder,
 ) -> crate::operation::list_time_series::builders::ListTimeSeriesOutputBuilder {
     if builder.time_series_summaries.is_none() {
@@ -800,7 +800,7 @@ pub(crate) fn list_time_series_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_default_encryption_configuration_output_output_correct_errors(
+pub(crate) fn put_default_encryption_configuration_output_correct_errors(
     mut builder: crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder,
 ) -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder {
     if builder.encryption_type.is_none() {
@@ -815,7 +815,7 @@ pub(crate) fn put_default_encryption_configuration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_storage_configuration_output_output_correct_errors(
+pub(crate) fn put_storage_configuration_output_correct_errors(
     mut builder: crate::operation::put_storage_configuration::builders::PutStorageConfigurationOutputBuilder,
 ) -> crate::operation::put_storage_configuration::builders::PutStorageConfigurationOutputBuilder {
     if builder.storage_type.is_none() {
@@ -830,7 +830,7 @@ pub(crate) fn put_storage_configuration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_asset_output_output_correct_errors(
+pub(crate) fn update_asset_output_correct_errors(
     mut builder: crate::operation::update_asset::builders::UpdateAssetOutputBuilder,
 ) -> crate::operation::update_asset::builders::UpdateAssetOutputBuilder {
     if builder.asset_status.is_none() {
@@ -842,7 +842,7 @@ pub(crate) fn update_asset_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_asset_model_output_output_correct_errors(
+pub(crate) fn update_asset_model_output_correct_errors(
     mut builder: crate::operation::update_asset_model::builders::UpdateAssetModelOutputBuilder,
 ) -> crate::operation::update_asset_model::builders::UpdateAssetModelOutputBuilder {
     if builder.asset_model_status.is_none() {
@@ -854,7 +854,7 @@ pub(crate) fn update_asset_model_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_gateway_capability_configuration_output_output_correct_errors(
+pub(crate) fn update_gateway_capability_configuration_output_correct_errors(
     mut builder: crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationOutputBuilder,
 ) -> crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationOutputBuilder {
     if builder.capability_namespace.is_none() {
@@ -866,7 +866,7 @@ pub(crate) fn update_gateway_capability_configuration_output_output_correct_erro
     builder
 }
 
-pub(crate) fn update_portal_output_output_correct_errors(
+pub(crate) fn update_portal_output_correct_errors(
     mut builder: crate::operation::update_portal::builders::UpdatePortalOutputBuilder,
 ) -> crate::operation::update_portal::builders::UpdatePortalOutputBuilder {
     if builder.portal_status.is_none() {

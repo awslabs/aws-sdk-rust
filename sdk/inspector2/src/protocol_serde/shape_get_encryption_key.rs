@@ -117,7 +117,7 @@ pub fn de_get_encryption_key_http_response(
         output = crate::protocol_serde::shape_get_encryption_key::de_get_encryption_key(_response_body, output)
             .map_err(crate::operation::get_encryption_key::GetEncryptionKeyError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_encryption_key_output_output_correct_errors(output)
+        crate::serde_util::get_encryption_key_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_encryption_key::GetEncryptionKeyError::unhandled)?
     })

@@ -168,6 +168,6 @@ pub fn de_get_journey_execution_activity_metrics_http_response(
             )?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_journey_execution_activity_metrics_output_output_correct_errors(output).build()
+        crate::serde_util::get_journey_execution_activity_metrics_output_correct_errors(output).build()
     })
 }

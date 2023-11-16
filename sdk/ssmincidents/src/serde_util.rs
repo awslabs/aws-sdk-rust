@@ -65,7 +65,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_replication_set_output_output_correct_errors(
+pub(crate) fn create_replication_set_output_correct_errors(
     mut builder: crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder,
 ) -> crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder {
     if builder.arn.is_none() {
@@ -83,7 +83,7 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_response_plan_output_output_correct_errors(
+pub(crate) fn create_response_plan_output_correct_errors(
     mut builder: crate::operation::create_response_plan::builders::CreateResponsePlanOutputBuilder,
 ) -> crate::operation::create_response_plan::builders::CreateResponsePlanOutputBuilder {
     if builder.arn.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn create_response_plan_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_timeline_event_output_output_correct_errors(
+pub(crate) fn create_timeline_event_output_correct_errors(
     mut builder: crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder,
 ) -> crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder {
     if builder.incident_record_arn.is_none() {
@@ -104,7 +104,7 @@ pub(crate) fn create_timeline_event_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_incident_record_output_output_correct_errors(
+pub(crate) fn get_incident_record_output_correct_errors(
     mut builder: crate::operation::get_incident_record::builders::GetIncidentRecordOutputBuilder,
 ) -> crate::operation::get_incident_record::builders::GetIncidentRecordOutputBuilder {
     if builder.incident_record.is_none() {
@@ -116,7 +116,7 @@ pub(crate) fn get_incident_record_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_replication_set_output_output_correct_errors(
+pub(crate) fn get_replication_set_output_correct_errors(
     mut builder: crate::operation::get_replication_set::builders::GetReplicationSetOutputBuilder,
 ) -> crate::operation::get_replication_set::builders::GetReplicationSetOutputBuilder {
     if builder.replication_set.is_none() {
@@ -128,7 +128,7 @@ pub(crate) fn get_replication_set_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_resource_policies_output_output_correct_errors(
+pub(crate) fn get_resource_policies_output_correct_errors(
     mut builder: crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder,
 ) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder {
     if builder.resource_policies.is_none() {
@@ -137,7 +137,7 @@ pub(crate) fn get_resource_policies_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_response_plan_output_output_correct_errors(
+pub(crate) fn get_response_plan_output_correct_errors(
     mut builder: crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder,
 ) -> crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder {
     if builder.arn.is_none() {
@@ -155,7 +155,7 @@ pub(crate) fn get_response_plan_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_timeline_event_output_output_correct_errors(
+pub(crate) fn get_timeline_event_output_correct_errors(
     mut builder: crate::operation::get_timeline_event::builders::GetTimelineEventOutputBuilder,
 ) -> crate::operation::get_timeline_event::builders::GetTimelineEventOutputBuilder {
     if builder.event.is_none() {
@@ -167,7 +167,7 @@ pub(crate) fn get_timeline_event_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_incident_records_output_output_correct_errors(
+pub(crate) fn list_incident_records_output_correct_errors(
     mut builder: crate::operation::list_incident_records::builders::ListIncidentRecordsOutputBuilder,
 ) -> crate::operation::list_incident_records::builders::ListIncidentRecordsOutputBuilder {
     if builder.incident_record_summaries.is_none() {
@@ -176,7 +176,7 @@ pub(crate) fn list_incident_records_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_related_items_output_output_correct_errors(
+pub(crate) fn list_related_items_output_correct_errors(
     mut builder: crate::operation::list_related_items::builders::ListRelatedItemsOutputBuilder,
 ) -> crate::operation::list_related_items::builders::ListRelatedItemsOutputBuilder {
     if builder.related_items.is_none() {
@@ -185,7 +185,7 @@ pub(crate) fn list_related_items_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_replication_sets_output_output_correct_errors(
+pub(crate) fn list_replication_sets_output_correct_errors(
     mut builder: crate::operation::list_replication_sets::builders::ListReplicationSetsOutputBuilder,
 ) -> crate::operation::list_replication_sets::builders::ListReplicationSetsOutputBuilder {
     if builder.replication_set_arns.is_none() {
@@ -194,7 +194,7 @@ pub(crate) fn list_replication_sets_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_response_plans_output_output_correct_errors(
+pub(crate) fn list_response_plans_output_correct_errors(
     mut builder: crate::operation::list_response_plans::builders::ListResponsePlansOutputBuilder,
 ) -> crate::operation::list_response_plans::builders::ListResponsePlansOutputBuilder {
     if builder.response_plan_summaries.is_none() {
@@ -203,7 +203,7 @@ pub(crate) fn list_response_plans_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
@@ -212,7 +212,7 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_timeline_events_output_output_correct_errors(
+pub(crate) fn list_timeline_events_output_correct_errors(
     mut builder: crate::operation::list_timeline_events::builders::ListTimelineEventsOutputBuilder,
 ) -> crate::operation::list_timeline_events::builders::ListTimelineEventsOutputBuilder {
     if builder.event_summaries.is_none() {
@@ -221,7 +221,7 @@ pub(crate) fn list_timeline_events_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_resource_policy_output_output_correct_errors(
+pub(crate) fn put_resource_policy_output_correct_errors(
     mut builder: crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder,
 ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder {
     if builder.policy_id.is_none() {
@@ -230,7 +230,7 @@ pub(crate) fn put_resource_policy_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_incident_output_output_correct_errors(
+pub(crate) fn start_incident_output_correct_errors(
     mut builder: crate::operation::start_incident::builders::StartIncidentOutputBuilder,
 ) -> crate::operation::start_incident::builders::StartIncidentOutputBuilder {
     if builder.incident_record_arn.is_none() {

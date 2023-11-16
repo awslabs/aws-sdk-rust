@@ -145,6 +145,6 @@ pub fn de_update_email_channel_http_response(
         output = output
             .set_email_channel_response(crate::protocol_serde::shape_update_email_channel_output::de_email_channel_response_payload(_response_body)?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_email_channel_output_output_correct_errors(output).build()
+        crate::serde_util::update_email_channel_output_correct_errors(output).build()
     })
 }

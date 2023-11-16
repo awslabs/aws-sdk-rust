@@ -63,7 +63,7 @@ pub fn de_disable_crl_http_response(
         output = crate::protocol_serde::shape_disable_crl::de_disable_crl(_response_body, output)
             .map_err(crate::operation::disable_crl::DisableCrlError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::disable_crl_output_output_correct_errors(output).build()
+        crate::serde_util::disable_crl_output_correct_errors(output).build()
     })
 }
 

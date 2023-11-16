@@ -186,7 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSendStati
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_get_send_statistics_input::ser_get_send_statistics_input_input_input(&input)?,
+            crate::protocol_serde::shape_get_send_statistics_input::ser_get_send_statistics_input_input(&input)?,
         );
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())

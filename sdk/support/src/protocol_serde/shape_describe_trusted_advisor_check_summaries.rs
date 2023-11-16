@@ -79,7 +79,7 @@ pub fn de_describe_trusted_advisor_check_summaries_http_response(
         )
         .map_err(crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::describe_trusted_advisor_check_summaries_output_output_correct_errors(output)
+        crate::serde_util::describe_trusted_advisor_check_summaries_output_correct_errors(output)
             .build()
             .map_err(crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesError::unhandled)?
     })
@@ -90,7 +90,7 @@ pub fn ser_describe_trusted_advisor_check_summaries_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_describe_trusted_advisor_check_summaries_input::ser_describe_trusted_advisor_check_summaries_input_input(
+    crate::protocol_serde::shape_describe_trusted_advisor_check_summaries_input::ser_describe_trusted_advisor_check_summaries_input(
         &mut object,
         input,
     )?;

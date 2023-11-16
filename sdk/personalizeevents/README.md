@@ -1,7 +1,7 @@
 # aws-sdk-personalizeevents
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon Personalize can consume real-time user event data, such as _stream_ or _click_ data, and use it for model training either alone or combined with historical data. For more information see [Recording Events](https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html).
 
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-personalizeevents = "0.36.0"
+aws-config = "0.57.1"
+aws-sdk-personalizeevents = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

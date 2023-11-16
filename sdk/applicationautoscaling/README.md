@@ -1,7 +1,7 @@
 # aws-sdk-applicationautoscaling
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 With Application Auto Scaling, you can configure automatic scaling for the following resources:
   - Amazon AppStream 2.0 fleets
@@ -40,8 +40,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-applicationautoscaling = "0.36.0"
+aws-config = "0.57.1"
+aws-sdk-applicationautoscaling = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

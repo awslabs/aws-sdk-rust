@@ -88,7 +88,7 @@ pub fn de_delete_service_linked_role_http_response(
         output = crate::protocol_serde::shape_delete_service_linked_role::de_delete_service_linked_role(_response_body, output)
             .map_err(crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_service_linked_role_output_output_correct_errors(output)
+        crate::serde_util::delete_service_linked_role_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleError::unhandled)?
     })

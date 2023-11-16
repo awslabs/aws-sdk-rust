@@ -138,7 +138,7 @@ pub fn de_start_matching_job_http_response(
         output = crate::protocol_serde::shape_start_matching_job::de_start_matching_job(_response_body, output)
             .map_err(crate::operation::start_matching_job::StartMatchingJobError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::start_matching_job_output_output_correct_errors(output)
+        crate::serde_util::start_matching_job_output_correct_errors(output)
             .build()
             .map_err(crate::operation::start_matching_job::StartMatchingJobError::unhandled)?
     })

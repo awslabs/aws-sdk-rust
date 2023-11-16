@@ -126,7 +126,7 @@ pub fn ser_change_tags_for_resource_op_input(
         let mut root = writer
             .start_el("ChangeTagsForResourceRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_change_tags_for_resource_input::ser_change_tags_for_resource_input_input_input(input, root)?
+        crate::protocol_serde::shape_change_tags_for_resource_input::ser_change_tags_for_resource_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -103,7 +103,7 @@ pub fn de_delete_id_mapping_workflow_http_response(
         output = crate::protocol_serde::shape_delete_id_mapping_workflow::de_delete_id_mapping_workflow(_response_body, output)
             .map_err(crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_id_mapping_workflow_output_output_correct_errors(output)
+        crate::serde_util::delete_id_mapping_workflow_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::unhandled)?
     })

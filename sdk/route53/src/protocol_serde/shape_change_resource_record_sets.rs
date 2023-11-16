@@ -118,7 +118,7 @@ pub fn de_change_resource_record_sets_http_response(
         output = crate::protocol_serde::shape_change_resource_record_sets::de_change_resource_record_sets(_response_body, output)
             .map_err(crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::change_resource_record_sets_output_output_correct_errors(output).build()
+        crate::serde_util::change_resource_record_sets_output_correct_errors(output).build()
     })
 }
 
@@ -132,7 +132,7 @@ pub fn ser_change_resource_record_sets_op_input(
         let mut root = writer
             .start_el("ChangeResourceRecordSetsRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_change_resource_record_sets_input::ser_change_resource_record_sets_input_input_input(input, root)?
+        crate::protocol_serde::shape_change_resource_record_sets_input::ser_change_resource_record_sets_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -170,7 +170,7 @@ pub fn ser_delete_data_lake_organization_configuration_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_delete_data_lake_organization_configuration_input::ser_delete_data_lake_organization_configuration_input_input(
+    crate::protocol_serde::shape_delete_data_lake_organization_configuration_input::ser_delete_data_lake_organization_configuration_input(
         &mut object,
         input,
     )?;

@@ -144,7 +144,7 @@ pub fn de_update_image_set_metadata_http_response(
         output = crate::protocol_serde::shape_update_image_set_metadata::de_update_image_set_metadata(_response_body, output)
             .map_err(crate::operation::update_image_set_metadata::UpdateImageSetMetadataError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_image_set_metadata_output_output_correct_errors(output)
+        crate::serde_util::update_image_set_metadata_output_correct_errors(output)
             .build()
             .map_err(crate::operation::update_image_set_metadata::UpdateImageSetMetadataError::unhandled)?
     })

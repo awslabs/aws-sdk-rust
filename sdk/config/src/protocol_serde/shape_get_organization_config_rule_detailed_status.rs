@@ -120,7 +120,7 @@ pub fn ser_get_organization_config_rule_detailed_status_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_organization_config_rule_detailed_status_input::ser_get_organization_config_rule_detailed_status_input_input(
+    crate::protocol_serde::shape_get_organization_config_rule_detailed_status_input::ser_get_organization_config_rule_detailed_status_input(
         &mut object,
         input,
     )?;

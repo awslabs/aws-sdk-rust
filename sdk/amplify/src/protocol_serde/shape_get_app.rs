@@ -93,7 +93,7 @@ pub fn de_get_app_http_response(
         output =
             crate::protocol_serde::shape_get_app::de_get_app(_response_body, output).map_err(crate::operation::get_app::GetAppError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_app_output_output_correct_errors(output).build()
+        crate::serde_util::get_app_output_correct_errors(output).build()
     })
 }
 

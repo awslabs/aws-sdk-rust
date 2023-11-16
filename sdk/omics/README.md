@@ -1,7 +1,7 @@
 # aws-sdk-omics
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 This is the _AWS HealthOmics API Reference_. For an introduction to the service, see [What is AWS HealthOmics?](https://docs.aws.amazon.com/omics/latest/dev/) in the _AWS HealthOmics User Guide_.
 
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-omics = "0.14.0"
+aws-config = "0.57.1"
+aws-sdk-omics = "0.15.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

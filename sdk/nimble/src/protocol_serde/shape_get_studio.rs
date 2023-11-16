@@ -142,7 +142,7 @@ pub fn de_get_studio_http_response(
         output = crate::protocol_serde::shape_get_studio::de_get_studio(_response_body, output)
             .map_err(crate::operation::get_studio::GetStudioError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_studio_output_output_correct_errors(output).build()
+        crate::serde_util::get_studio_output_correct_errors(output).build()
     })
 }
 

@@ -129,7 +129,7 @@ pub fn de_define_analysis_scheme_http_response(
         output = crate::protocol_serde::shape_define_analysis_scheme::de_define_analysis_scheme(_response_body, output)
             .map_err(crate::operation::define_analysis_scheme::DefineAnalysisSchemeError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::define_analysis_scheme_output_output_correct_errors(output).build()
+        crate::serde_util::define_analysis_scheme_output_correct_errors(output).build()
     })
 }
 

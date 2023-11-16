@@ -113,7 +113,7 @@ pub fn ser_select_object_content_op_input(
         let mut root = writer
             .start_el("SelectObjectContentRequest")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::protocol_serde::shape_select_object_content_input::ser_select_object_content_input_input_input(input, root)?
+        crate::protocol_serde::shape_select_object_content_input::ser_select_object_content_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

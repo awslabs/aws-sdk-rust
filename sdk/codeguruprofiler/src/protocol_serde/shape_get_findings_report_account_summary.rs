@@ -83,7 +83,7 @@ pub fn de_get_findings_report_account_summary_http_response(
         output = crate::protocol_serde::shape_get_findings_report_account_summary::de_get_findings_report_account_summary(_response_body, output)
             .map_err(crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_findings_report_account_summary_output_output_correct_errors(output)
+        crate::serde_util::get_findings_report_account_summary_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryError::unhandled)?
     })

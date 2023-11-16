@@ -54,7 +54,7 @@ pub fn de_get_subscription_state_http_response(
         output = crate::protocol_serde::shape_get_subscription_state::de_get_subscription_state(_response_body, output)
             .map_err(crate::operation::get_subscription_state::GetSubscriptionStateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_subscription_state_output_output_correct_errors(output)
+        crate::serde_util::get_subscription_state_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_subscription_state::GetSubscriptionStateError::unhandled)?
     })

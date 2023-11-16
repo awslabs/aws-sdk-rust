@@ -139,6 +139,6 @@ pub fn de_get_email_template_http_response(
         output = output
             .set_email_template_response(crate::protocol_serde::shape_get_email_template_output::de_email_template_response_payload(_response_body)?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_email_template_output_output_correct_errors(output).build()
+        crate::serde_util::get_email_template_output_correct_errors(output).build()
     })
 }

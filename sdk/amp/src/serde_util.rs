@@ -89,7 +89,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_alert_manager_definition_output_output_correct_errors(
+pub(crate) fn create_alert_manager_definition_output_correct_errors(
     mut builder: crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionOutputBuilder,
 ) -> crate::operation::create_alert_manager_definition::builders::CreateAlertManagerDefinitionOutputBuilder {
     if builder.status.is_none() {
@@ -101,7 +101,7 @@ pub(crate) fn create_alert_manager_definition_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_logging_configuration_output_output_correct_errors(
+pub(crate) fn create_logging_configuration_output_correct_errors(
     mut builder: crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder,
 ) -> crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder {
     if builder.status.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn create_logging_configuration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_rule_groups_namespace_output_output_correct_errors(
+pub(crate) fn create_rule_groups_namespace_output_correct_errors(
     mut builder: crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceOutputBuilder,
 ) -> crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceOutputBuilder {
     if builder.name.is_none() {
@@ -131,7 +131,7 @@ pub(crate) fn create_rule_groups_namespace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_workspace_output_output_correct_errors(
+pub(crate) fn create_workspace_output_correct_errors(
     mut builder: crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder,
 ) -> crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder {
     if builder.workspace_id.is_none() {
@@ -149,7 +149,7 @@ pub(crate) fn create_workspace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_alert_manager_definition_output_output_correct_errors(
+pub(crate) fn describe_alert_manager_definition_output_correct_errors(
     mut builder: crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionOutputBuilder,
 ) -> crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionOutputBuilder {
     if builder.alert_manager_definition.is_none() {
@@ -163,7 +163,7 @@ pub(crate) fn describe_alert_manager_definition_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_logging_configuration_output_output_correct_errors(
+pub(crate) fn describe_logging_configuration_output_correct_errors(
     mut builder: crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationOutputBuilder,
 ) -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationOutputBuilder {
     if builder.logging_configuration.is_none() {
@@ -175,7 +175,7 @@ pub(crate) fn describe_logging_configuration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_rule_groups_namespace_output_output_correct_errors(
+pub(crate) fn describe_rule_groups_namespace_output_correct_errors(
     mut builder: crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceOutputBuilder,
 ) -> crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceOutputBuilder {
     if builder.rule_groups_namespace.is_none() {
@@ -187,7 +187,7 @@ pub(crate) fn describe_rule_groups_namespace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_workspace_output_output_correct_errors(
+pub(crate) fn describe_workspace_output_correct_errors(
     mut builder: crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder,
 ) -> crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder {
     if builder.workspace.is_none() {
@@ -199,7 +199,7 @@ pub(crate) fn describe_workspace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_rule_groups_namespaces_output_output_correct_errors(
+pub(crate) fn list_rule_groups_namespaces_output_correct_errors(
     mut builder: crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder,
 ) -> crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder {
     if builder.rule_groups_namespaces.is_none() {
@@ -208,7 +208,7 @@ pub(crate) fn list_rule_groups_namespaces_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_workspaces_output_output_correct_errors(
+pub(crate) fn list_workspaces_output_correct_errors(
     mut builder: crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder,
 ) -> crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder {
     if builder.workspaces.is_none() {
@@ -217,7 +217,7 @@ pub(crate) fn list_workspaces_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_alert_manager_definition_output_output_correct_errors(
+pub(crate) fn put_alert_manager_definition_output_correct_errors(
     mut builder: crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionOutputBuilder,
 ) -> crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionOutputBuilder {
     if builder.status.is_none() {
@@ -229,7 +229,7 @@ pub(crate) fn put_alert_manager_definition_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_rule_groups_namespace_output_output_correct_errors(
+pub(crate) fn put_rule_groups_namespace_output_correct_errors(
     mut builder: crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder,
 ) -> crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder {
     if builder.name.is_none() {
@@ -247,7 +247,7 @@ pub(crate) fn put_rule_groups_namespace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_logging_configuration_output_output_correct_errors(
+pub(crate) fn update_logging_configuration_output_correct_errors(
     mut builder: crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationOutputBuilder,
 ) -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationOutputBuilder {
     if builder.status.is_none() {

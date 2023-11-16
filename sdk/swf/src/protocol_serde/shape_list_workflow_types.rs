@@ -66,7 +66,7 @@ pub fn de_list_workflow_types_http_response(
         output = crate::protocol_serde::shape_list_workflow_types::de_list_workflow_types(_response_body, output)
             .map_err(crate::operation::list_workflow_types::ListWorkflowTypesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_workflow_types_output_output_correct_errors(output)
+        crate::serde_util::list_workflow_types_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_workflow_types::ListWorkflowTypesError::unhandled)?
     })
@@ -77,7 +77,7 @@ pub fn ser_list_workflow_types_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_workflow_types_input::ser_list_workflow_types_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_list_workflow_types_input::ser_list_workflow_types_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -116,7 +116,7 @@ pub fn de_list_cases_for_contact_http_response(
         output = crate::protocol_serde::shape_list_cases_for_contact::de_list_cases_for_contact(_response_body, output)
             .map_err(crate::operation::list_cases_for_contact::ListCasesForContactError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_cases_for_contact_output_output_correct_errors(output)
+        crate::serde_util::list_cases_for_contact_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_cases_for_contact::ListCasesForContactError::unhandled)?
     })
@@ -127,7 +127,7 @@ pub fn ser_list_cases_for_contact_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_cases_for_contact_input::ser_list_cases_for_contact_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_list_cases_for_contact_input::ser_list_cases_for_contact_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

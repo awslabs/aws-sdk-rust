@@ -118,7 +118,7 @@ pub fn de_list_resiliency_policies_http_response(
         output = crate::protocol_serde::shape_list_resiliency_policies::de_list_resiliency_policies(_response_body, output)
             .map_err(crate::operation::list_resiliency_policies::ListResiliencyPoliciesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_resiliency_policies_output_output_correct_errors(output)
+        crate::serde_util::list_resiliency_policies_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_resiliency_policies::ListResiliencyPoliciesError::unhandled)?
     })

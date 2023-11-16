@@ -53,7 +53,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_frame_metric_data_output_output_correct_errors(
+pub(crate) fn batch_get_frame_metric_data_output_correct_errors(
     mut builder: crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataOutputBuilder,
 ) -> crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataOutputBuilder {
     if builder.start_time.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn batch_get_frame_metric_data_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn configure_agent_output_output_correct_errors(
+pub(crate) fn configure_agent_output_correct_errors(
     mut builder: crate::operation::configure_agent::builders::ConfigureAgentOutputBuilder,
 ) -> crate::operation::configure_agent::builders::ConfigureAgentOutputBuilder {
     if builder.configuration.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn configure_agent_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_profiling_group_output_output_correct_errors(
+pub(crate) fn create_profiling_group_output_correct_errors(
     mut builder: crate::operation::create_profiling_group::builders::CreateProfilingGroupOutputBuilder,
 ) -> crate::operation::create_profiling_group::builders::CreateProfilingGroupOutputBuilder {
     if builder.profiling_group.is_none() {
@@ -101,7 +101,7 @@ pub(crate) fn create_profiling_group_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_profiling_group_output_output_correct_errors(
+pub(crate) fn describe_profiling_group_output_correct_errors(
     mut builder: crate::operation::describe_profiling_group::builders::DescribeProfilingGroupOutputBuilder,
 ) -> crate::operation::describe_profiling_group::builders::DescribeProfilingGroupOutputBuilder {
     if builder.profiling_group.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn describe_profiling_group_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_findings_report_account_summary_output_output_correct_errors(
+pub(crate) fn get_findings_report_account_summary_output_correct_errors(
     mut builder: crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryOutputBuilder,
 ) -> crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryOutputBuilder {
     if builder.report_summaries.is_none() {
@@ -122,7 +122,7 @@ pub(crate) fn get_findings_report_account_summary_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_notification_configuration_output_output_correct_errors(
+pub(crate) fn get_notification_configuration_output_correct_errors(
     mut builder: crate::operation::get_notification_configuration::builders::GetNotificationConfigurationOutputBuilder,
 ) -> crate::operation::get_notification_configuration::builders::GetNotificationConfigurationOutputBuilder {
     if builder.notification_configuration.is_none() {
@@ -134,7 +134,7 @@ pub(crate) fn get_notification_configuration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_policy_output_output_correct_errors(
+pub(crate) fn get_policy_output_correct_errors(
     mut builder: crate::operation::get_policy::builders::GetPolicyOutputBuilder,
 ) -> crate::operation::get_policy::builders::GetPolicyOutputBuilder {
     if builder.policy.is_none() {
@@ -146,7 +146,7 @@ pub(crate) fn get_policy_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_profile_output_output_correct_errors(
+pub(crate) fn get_profile_output_correct_errors(
     mut builder: crate::operation::get_profile::builders::GetProfileOutputBuilder,
 ) -> crate::operation::get_profile::builders::GetProfileOutputBuilder {
     if builder.profile.is_none() {
@@ -158,7 +158,7 @@ pub(crate) fn get_profile_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_recommendations_output_output_correct_errors(
+pub(crate) fn get_recommendations_output_correct_errors(
     mut builder: crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder,
 ) -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
     if builder.profiling_group_name.is_none() {
@@ -179,7 +179,7 @@ pub(crate) fn get_recommendations_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_findings_reports_output_output_correct_errors(
+pub(crate) fn list_findings_reports_output_correct_errors(
     mut builder: crate::operation::list_findings_reports::builders::ListFindingsReportsOutputBuilder,
 ) -> crate::operation::list_findings_reports::builders::ListFindingsReportsOutputBuilder {
     if builder.findings_report_summaries.is_none() {
@@ -188,7 +188,7 @@ pub(crate) fn list_findings_reports_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_profile_times_output_output_correct_errors(
+pub(crate) fn list_profile_times_output_correct_errors(
     mut builder: crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder,
 ) -> crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder {
     if builder.profile_times.is_none() {
@@ -197,7 +197,7 @@ pub(crate) fn list_profile_times_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_profiling_groups_output_output_correct_errors(
+pub(crate) fn list_profiling_groups_output_correct_errors(
     mut builder: crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder,
 ) -> crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder {
     if builder.profiling_group_names.is_none() {
@@ -206,7 +206,7 @@ pub(crate) fn list_profiling_groups_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_permission_output_output_correct_errors(
+pub(crate) fn put_permission_output_correct_errors(
     mut builder: crate::operation::put_permission::builders::PutPermissionOutputBuilder,
 ) -> crate::operation::put_permission::builders::PutPermissionOutputBuilder {
     if builder.policy.is_none() {
@@ -218,7 +218,7 @@ pub(crate) fn put_permission_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn remove_permission_output_output_correct_errors(
+pub(crate) fn remove_permission_output_correct_errors(
     mut builder: crate::operation::remove_permission::builders::RemovePermissionOutputBuilder,
 ) -> crate::operation::remove_permission::builders::RemovePermissionOutputBuilder {
     if builder.policy.is_none() {
@@ -230,7 +230,7 @@ pub(crate) fn remove_permission_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_profiling_group_output_output_correct_errors(
+pub(crate) fn update_profiling_group_output_correct_errors(
     mut builder: crate::operation::update_profiling_group::builders::UpdateProfilingGroupOutputBuilder,
 ) -> crate::operation::update_profiling_group::builders::UpdateProfilingGroupOutputBuilder {
     if builder.profiling_group.is_none() {

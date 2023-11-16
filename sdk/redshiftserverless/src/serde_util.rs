@@ -53,7 +53,7 @@ pub(crate) fn insufficient_capacity_exception_correct_errors(
     builder
 }
 
-pub(crate) fn delete_namespace_output_output_correct_errors(
+pub(crate) fn delete_namespace_output_correct_errors(
     mut builder: crate::operation::delete_namespace::builders::DeleteNamespaceOutputBuilder,
 ) -> crate::operation::delete_namespace::builders::DeleteNamespaceOutputBuilder {
     if builder.namespace.is_none() {
@@ -65,7 +65,7 @@ pub(crate) fn delete_namespace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_workgroup_output_output_correct_errors(
+pub(crate) fn delete_workgroup_output_correct_errors(
     mut builder: crate::operation::delete_workgroup::builders::DeleteWorkgroupOutputBuilder,
 ) -> crate::operation::delete_workgroup::builders::DeleteWorkgroupOutputBuilder {
     if builder.workgroup.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn delete_workgroup_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_namespace_output_output_correct_errors(
+pub(crate) fn get_namespace_output_correct_errors(
     mut builder: crate::operation::get_namespace::builders::GetNamespaceOutputBuilder,
 ) -> crate::operation::get_namespace::builders::GetNamespaceOutputBuilder {
     if builder.namespace.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn get_namespace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_workgroup_output_output_correct_errors(
+pub(crate) fn get_workgroup_output_correct_errors(
     mut builder: crate::operation::get_workgroup::builders::GetWorkgroupOutputBuilder,
 ) -> crate::operation::get_workgroup::builders::GetWorkgroupOutputBuilder {
     if builder.workgroup.is_none() {
@@ -110,7 +110,7 @@ pub(crate) fn invalid_pagination_exception_correct_errors(
     builder
 }
 
-pub(crate) fn list_endpoint_access_output_output_correct_errors(
+pub(crate) fn list_endpoint_access_output_correct_errors(
     mut builder: crate::operation::list_endpoint_access::builders::ListEndpointAccessOutputBuilder,
 ) -> crate::operation::list_endpoint_access::builders::ListEndpointAccessOutputBuilder {
     if builder.endpoints.is_none() {
@@ -119,7 +119,7 @@ pub(crate) fn list_endpoint_access_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_namespaces_output_output_correct_errors(
+pub(crate) fn list_namespaces_output_correct_errors(
     mut builder: crate::operation::list_namespaces::builders::ListNamespacesOutputBuilder,
 ) -> crate::operation::list_namespaces::builders::ListNamespacesOutputBuilder {
     if builder.namespaces.is_none() {
@@ -128,7 +128,7 @@ pub(crate) fn list_namespaces_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_workgroups_output_output_correct_errors(
+pub(crate) fn list_workgroups_output_correct_errors(
     mut builder: crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder,
 ) -> crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder {
     if builder.workgroups.is_none() {
@@ -137,7 +137,7 @@ pub(crate) fn list_workgroups_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_namespace_output_output_correct_errors(
+pub(crate) fn update_namespace_output_correct_errors(
     mut builder: crate::operation::update_namespace::builders::UpdateNamespaceOutputBuilder,
 ) -> crate::operation::update_namespace::builders::UpdateNamespaceOutputBuilder {
     if builder.namespace.is_none() {
@@ -149,7 +149,7 @@ pub(crate) fn update_namespace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_workgroup_output_output_correct_errors(
+pub(crate) fn update_workgroup_output_correct_errors(
     mut builder: crate::operation::update_workgroup::builders::UpdateWorkgroupOutputBuilder,
 ) -> crate::operation::update_workgroup::builders::UpdateWorkgroupOutputBuilder {
     if builder.workgroup.is_none() {

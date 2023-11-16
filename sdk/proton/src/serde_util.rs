@@ -53,7 +53,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn accept_environment_account_connection_output_output_correct_errors(
+pub(crate) fn accept_environment_account_connection_output_correct_errors(
     mut builder: crate::operation::accept_environment_account_connection::builders::AcceptEnvironmentAccountConnectionOutputBuilder,
 ) -> crate::operation::accept_environment_account_connection::builders::AcceptEnvironmentAccountConnectionOutputBuilder {
     if builder.environment_account_connection.is_none() {
@@ -65,7 +65,7 @@ pub(crate) fn accept_environment_account_connection_output_output_correct_errors
     builder
 }
 
-pub(crate) fn cancel_component_deployment_output_output_correct_errors(
+pub(crate) fn cancel_component_deployment_output_correct_errors(
     mut builder: crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentOutputBuilder,
 ) -> crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentOutputBuilder {
     if builder.component.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn cancel_component_deployment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn cancel_environment_deployment_output_output_correct_errors(
+pub(crate) fn cancel_environment_deployment_output_correct_errors(
     mut builder: crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentOutputBuilder,
 ) -> crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentOutputBuilder {
     if builder.environment.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn cancel_environment_deployment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn cancel_service_instance_deployment_output_output_correct_errors(
+pub(crate) fn cancel_service_instance_deployment_output_correct_errors(
     mut builder: crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder,
 ) -> crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder {
     if builder.service_instance.is_none() {
@@ -101,7 +101,7 @@ pub(crate) fn cancel_service_instance_deployment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn cancel_service_pipeline_deployment_output_output_correct_errors(
+pub(crate) fn cancel_service_pipeline_deployment_output_correct_errors(
     mut builder: crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentOutputBuilder,
 ) -> crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentOutputBuilder {
     if builder.pipeline.is_none() {
@@ -122,7 +122,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_component_output_output_correct_errors(
+pub(crate) fn create_component_output_correct_errors(
     mut builder: crate::operation::create_component::builders::CreateComponentOutputBuilder,
 ) -> crate::operation::create_component::builders::CreateComponentOutputBuilder {
     if builder.component.is_none() {
@@ -134,7 +134,7 @@ pub(crate) fn create_component_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_environment_output_output_correct_errors(
+pub(crate) fn create_environment_output_correct_errors(
     mut builder: crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder,
 ) -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
     if builder.environment.is_none() {
@@ -146,7 +146,7 @@ pub(crate) fn create_environment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_environment_account_connection_output_output_correct_errors(
+pub(crate) fn create_environment_account_connection_output_correct_errors(
     mut builder: crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionOutputBuilder,
 ) -> crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionOutputBuilder {
     if builder.environment_account_connection.is_none() {
@@ -158,7 +158,7 @@ pub(crate) fn create_environment_account_connection_output_output_correct_errors
     builder
 }
 
-pub(crate) fn create_environment_template_output_output_correct_errors(
+pub(crate) fn create_environment_template_output_correct_errors(
     mut builder: crate::operation::create_environment_template::builders::CreateEnvironmentTemplateOutputBuilder,
 ) -> crate::operation::create_environment_template::builders::CreateEnvironmentTemplateOutputBuilder {
     if builder.environment_template.is_none() {
@@ -170,7 +170,7 @@ pub(crate) fn create_environment_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_environment_template_version_output_output_correct_errors(
+pub(crate) fn create_environment_template_version_output_correct_errors(
     mut builder: crate::operation::create_environment_template_version::builders::CreateEnvironmentTemplateVersionOutputBuilder,
 ) -> crate::operation::create_environment_template_version::builders::CreateEnvironmentTemplateVersionOutputBuilder {
     if builder.environment_template_version.is_none() {
@@ -182,7 +182,7 @@ pub(crate) fn create_environment_template_version_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_repository_output_output_correct_errors(
+pub(crate) fn create_repository_output_correct_errors(
     mut builder: crate::operation::create_repository::builders::CreateRepositoryOutputBuilder,
 ) -> crate::operation::create_repository::builders::CreateRepositoryOutputBuilder {
     if builder.repository.is_none() {
@@ -194,7 +194,7 @@ pub(crate) fn create_repository_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_service_output_output_correct_errors(
+pub(crate) fn create_service_output_correct_errors(
     mut builder: crate::operation::create_service::builders::CreateServiceOutputBuilder,
 ) -> crate::operation::create_service::builders::CreateServiceOutputBuilder {
     if builder.service.is_none() {
@@ -206,7 +206,7 @@ pub(crate) fn create_service_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_service_instance_output_output_correct_errors(
+pub(crate) fn create_service_instance_output_correct_errors(
     mut builder: crate::operation::create_service_instance::builders::CreateServiceInstanceOutputBuilder,
 ) -> crate::operation::create_service_instance::builders::CreateServiceInstanceOutputBuilder {
     if builder.service_instance.is_none() {
@@ -218,7 +218,7 @@ pub(crate) fn create_service_instance_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_service_template_output_output_correct_errors(
+pub(crate) fn create_service_template_output_correct_errors(
     mut builder: crate::operation::create_service_template::builders::CreateServiceTemplateOutputBuilder,
 ) -> crate::operation::create_service_template::builders::CreateServiceTemplateOutputBuilder {
     if builder.service_template.is_none() {
@@ -230,7 +230,7 @@ pub(crate) fn create_service_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_service_template_version_output_output_correct_errors(
+pub(crate) fn create_service_template_version_output_correct_errors(
     mut builder: crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionOutputBuilder,
 ) -> crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionOutputBuilder {
     if builder.service_template_version.is_none() {
@@ -242,7 +242,7 @@ pub(crate) fn create_service_template_version_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_environment_output_output_correct_errors(
+pub(crate) fn get_environment_output_correct_errors(
     mut builder: crate::operation::get_environment::builders::GetEnvironmentOutputBuilder,
 ) -> crate::operation::get_environment::builders::GetEnvironmentOutputBuilder {
     if builder.environment.is_none() {
@@ -254,7 +254,7 @@ pub(crate) fn get_environment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_environment_account_connection_output_output_correct_errors(
+pub(crate) fn get_environment_account_connection_output_correct_errors(
     mut builder: crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionOutputBuilder,
 ) -> crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionOutputBuilder {
     if builder.environment_account_connection.is_none() {
@@ -266,7 +266,7 @@ pub(crate) fn get_environment_account_connection_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_environment_template_output_output_correct_errors(
+pub(crate) fn get_environment_template_output_correct_errors(
     mut builder: crate::operation::get_environment_template::builders::GetEnvironmentTemplateOutputBuilder,
 ) -> crate::operation::get_environment_template::builders::GetEnvironmentTemplateOutputBuilder {
     if builder.environment_template.is_none() {
@@ -278,7 +278,7 @@ pub(crate) fn get_environment_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_environment_template_version_output_output_correct_errors(
+pub(crate) fn get_environment_template_version_output_correct_errors(
     mut builder: crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionOutputBuilder,
 ) -> crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionOutputBuilder {
     if builder.environment_template_version.is_none() {
@@ -290,7 +290,7 @@ pub(crate) fn get_environment_template_version_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_repository_output_output_correct_errors(
+pub(crate) fn get_repository_output_correct_errors(
     mut builder: crate::operation::get_repository::builders::GetRepositoryOutputBuilder,
 ) -> crate::operation::get_repository::builders::GetRepositoryOutputBuilder {
     if builder.repository.is_none() {
@@ -302,7 +302,7 @@ pub(crate) fn get_repository_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_resources_summary_output_output_correct_errors(
+pub(crate) fn get_resources_summary_output_correct_errors(
     mut builder: crate::operation::get_resources_summary::builders::GetResourcesSummaryOutputBuilder,
 ) -> crate::operation::get_resources_summary::builders::GetResourcesSummaryOutputBuilder {
     if builder.counts.is_none() {
@@ -314,7 +314,7 @@ pub(crate) fn get_resources_summary_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_service_instance_output_output_correct_errors(
+pub(crate) fn get_service_instance_output_correct_errors(
     mut builder: crate::operation::get_service_instance::builders::GetServiceInstanceOutputBuilder,
 ) -> crate::operation::get_service_instance::builders::GetServiceInstanceOutputBuilder {
     if builder.service_instance.is_none() {
@@ -326,7 +326,7 @@ pub(crate) fn get_service_instance_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_service_template_output_output_correct_errors(
+pub(crate) fn get_service_template_output_correct_errors(
     mut builder: crate::operation::get_service_template::builders::GetServiceTemplateOutputBuilder,
 ) -> crate::operation::get_service_template::builders::GetServiceTemplateOutputBuilder {
     if builder.service_template.is_none() {
@@ -338,7 +338,7 @@ pub(crate) fn get_service_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_service_template_version_output_output_correct_errors(
+pub(crate) fn get_service_template_version_output_correct_errors(
     mut builder: crate::operation::get_service_template_version::builders::GetServiceTemplateVersionOutputBuilder,
 ) -> crate::operation::get_service_template_version::builders::GetServiceTemplateVersionOutputBuilder {
     if builder.service_template_version.is_none() {
@@ -350,7 +350,7 @@ pub(crate) fn get_service_template_version_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_component_outputs_output_output_correct_errors(
+pub(crate) fn list_component_outputs_output_correct_errors(
     mut builder: crate::operation::list_component_outputs::builders::ListComponentOutputsOutputBuilder,
 ) -> crate::operation::list_component_outputs::builders::ListComponentOutputsOutputBuilder {
     if builder.outputs.is_none() {
@@ -359,7 +359,7 @@ pub(crate) fn list_component_outputs_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_component_provisioned_resources_output_output_correct_errors(
+pub(crate) fn list_component_provisioned_resources_output_correct_errors(
     mut builder: crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesOutputBuilder,
 ) -> crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesOutputBuilder {
     if builder.provisioned_resources.is_none() {
@@ -368,7 +368,7 @@ pub(crate) fn list_component_provisioned_resources_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_components_output_output_correct_errors(
+pub(crate) fn list_components_output_correct_errors(
     mut builder: crate::operation::list_components::builders::ListComponentsOutputBuilder,
 ) -> crate::operation::list_components::builders::ListComponentsOutputBuilder {
     if builder.components.is_none() {
@@ -377,7 +377,7 @@ pub(crate) fn list_components_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_deployments_output_output_correct_errors(
+pub(crate) fn list_deployments_output_correct_errors(
     mut builder: crate::operation::list_deployments::builders::ListDeploymentsOutputBuilder,
 ) -> crate::operation::list_deployments::builders::ListDeploymentsOutputBuilder {
     if builder.deployments.is_none() {
@@ -386,7 +386,7 @@ pub(crate) fn list_deployments_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_environment_account_connections_output_output_correct_errors(
+pub(crate) fn list_environment_account_connections_output_correct_errors(
     mut builder: crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsOutputBuilder,
 ) -> crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsOutputBuilder {
     if builder.environment_account_connections.is_none() {
@@ -395,7 +395,7 @@ pub(crate) fn list_environment_account_connections_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_environment_outputs_output_output_correct_errors(
+pub(crate) fn list_environment_outputs_output_correct_errors(
     mut builder: crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsOutputBuilder,
 ) -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsOutputBuilder {
     if builder.outputs.is_none() {
@@ -404,7 +404,7 @@ pub(crate) fn list_environment_outputs_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_environment_provisioned_resources_output_output_correct_errors(
+pub(crate) fn list_environment_provisioned_resources_output_correct_errors(
     mut builder: crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesOutputBuilder,
 ) -> crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesOutputBuilder {
     if builder.provisioned_resources.is_none() {
@@ -413,7 +413,7 @@ pub(crate) fn list_environment_provisioned_resources_output_output_correct_error
     builder
 }
 
-pub(crate) fn list_environment_template_versions_output_output_correct_errors(
+pub(crate) fn list_environment_template_versions_output_correct_errors(
     mut builder: crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsOutputBuilder,
 ) -> crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsOutputBuilder {
     if builder.template_versions.is_none() {
@@ -422,7 +422,7 @@ pub(crate) fn list_environment_template_versions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_environment_templates_output_output_correct_errors(
+pub(crate) fn list_environment_templates_output_correct_errors(
     mut builder: crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesOutputBuilder,
 ) -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesOutputBuilder {
     if builder.templates.is_none() {
@@ -431,7 +431,7 @@ pub(crate) fn list_environment_templates_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_environments_output_output_correct_errors(
+pub(crate) fn list_environments_output_correct_errors(
     mut builder: crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder,
 ) -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
     if builder.environments.is_none() {
@@ -440,7 +440,7 @@ pub(crate) fn list_environments_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_repositories_output_output_correct_errors(
+pub(crate) fn list_repositories_output_correct_errors(
     mut builder: crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder,
 ) -> crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder {
     if builder.repositories.is_none() {
@@ -449,7 +449,7 @@ pub(crate) fn list_repositories_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_repository_sync_definitions_output_output_correct_errors(
+pub(crate) fn list_repository_sync_definitions_output_correct_errors(
     mut builder: crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsOutputBuilder,
 ) -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsOutputBuilder {
     if builder.sync_definitions.is_none() {
@@ -458,7 +458,7 @@ pub(crate) fn list_repository_sync_definitions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_service_instance_outputs_output_output_correct_errors(
+pub(crate) fn list_service_instance_outputs_output_correct_errors(
     mut builder: crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsOutputBuilder,
 ) -> crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsOutputBuilder {
     if builder.outputs.is_none() {
@@ -467,7 +467,7 @@ pub(crate) fn list_service_instance_outputs_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_service_instance_provisioned_resources_output_output_correct_errors(
+pub(crate) fn list_service_instance_provisioned_resources_output_correct_errors(
     mut builder: crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesOutputBuilder,
 ) -> crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesOutputBuilder {
     if builder.provisioned_resources.is_none() {
@@ -476,7 +476,7 @@ pub(crate) fn list_service_instance_provisioned_resources_output_output_correct_
     builder
 }
 
-pub(crate) fn list_service_instances_output_output_correct_errors(
+pub(crate) fn list_service_instances_output_correct_errors(
     mut builder: crate::operation::list_service_instances::builders::ListServiceInstancesOutputBuilder,
 ) -> crate::operation::list_service_instances::builders::ListServiceInstancesOutputBuilder {
     if builder.service_instances.is_none() {
@@ -485,7 +485,7 @@ pub(crate) fn list_service_instances_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_service_pipeline_outputs_output_output_correct_errors(
+pub(crate) fn list_service_pipeline_outputs_output_correct_errors(
     mut builder: crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsOutputBuilder,
 ) -> crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsOutputBuilder {
     if builder.outputs.is_none() {
@@ -494,7 +494,7 @@ pub(crate) fn list_service_pipeline_outputs_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_service_pipeline_provisioned_resources_output_output_correct_errors(
+pub(crate) fn list_service_pipeline_provisioned_resources_output_correct_errors(
     mut builder: crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesOutputBuilder,
 ) -> crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesOutputBuilder {
     if builder.provisioned_resources.is_none() {
@@ -503,7 +503,7 @@ pub(crate) fn list_service_pipeline_provisioned_resources_output_output_correct_
     builder
 }
 
-pub(crate) fn list_service_template_versions_output_output_correct_errors(
+pub(crate) fn list_service_template_versions_output_correct_errors(
     mut builder: crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsOutputBuilder,
 ) -> crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsOutputBuilder {
     if builder.template_versions.is_none() {
@@ -512,7 +512,7 @@ pub(crate) fn list_service_template_versions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_service_templates_output_output_correct_errors(
+pub(crate) fn list_service_templates_output_correct_errors(
     mut builder: crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder,
 ) -> crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder {
     if builder.templates.is_none() {
@@ -521,7 +521,7 @@ pub(crate) fn list_service_templates_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_services_output_output_correct_errors(
+pub(crate) fn list_services_output_correct_errors(
     mut builder: crate::operation::list_services::builders::ListServicesOutputBuilder,
 ) -> crate::operation::list_services::builders::ListServicesOutputBuilder {
     if builder.services.is_none() {
@@ -530,7 +530,7 @@ pub(crate) fn list_services_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
@@ -539,7 +539,7 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn reject_environment_account_connection_output_output_correct_errors(
+pub(crate) fn reject_environment_account_connection_output_correct_errors(
     mut builder: crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionOutputBuilder,
 ) -> crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionOutputBuilder {
     if builder.environment_account_connection.is_none() {
@@ -551,7 +551,7 @@ pub(crate) fn reject_environment_account_connection_output_output_correct_errors
     builder
 }
 
-pub(crate) fn update_account_settings_output_output_correct_errors(
+pub(crate) fn update_account_settings_output_correct_errors(
     mut builder: crate::operation::update_account_settings::builders::UpdateAccountSettingsOutputBuilder,
 ) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsOutputBuilder {
     if builder.account_settings.is_none() {
@@ -563,7 +563,7 @@ pub(crate) fn update_account_settings_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_component_output_output_correct_errors(
+pub(crate) fn update_component_output_correct_errors(
     mut builder: crate::operation::update_component::builders::UpdateComponentOutputBuilder,
 ) -> crate::operation::update_component::builders::UpdateComponentOutputBuilder {
     if builder.component.is_none() {
@@ -575,7 +575,7 @@ pub(crate) fn update_component_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_environment_output_output_correct_errors(
+pub(crate) fn update_environment_output_correct_errors(
     mut builder: crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder,
 ) -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
     if builder.environment.is_none() {
@@ -587,7 +587,7 @@ pub(crate) fn update_environment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_environment_account_connection_output_output_correct_errors(
+pub(crate) fn update_environment_account_connection_output_correct_errors(
     mut builder: crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionOutputBuilder,
 ) -> crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionOutputBuilder {
     if builder.environment_account_connection.is_none() {
@@ -599,7 +599,7 @@ pub(crate) fn update_environment_account_connection_output_output_correct_errors
     builder
 }
 
-pub(crate) fn update_environment_template_output_output_correct_errors(
+pub(crate) fn update_environment_template_output_correct_errors(
     mut builder: crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateOutputBuilder,
 ) -> crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateOutputBuilder {
     if builder.environment_template.is_none() {
@@ -611,7 +611,7 @@ pub(crate) fn update_environment_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_environment_template_version_output_output_correct_errors(
+pub(crate) fn update_environment_template_version_output_correct_errors(
     mut builder: crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionOutputBuilder,
 ) -> crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionOutputBuilder {
     if builder.environment_template_version.is_none() {
@@ -623,7 +623,7 @@ pub(crate) fn update_environment_template_version_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_service_output_output_correct_errors(
+pub(crate) fn update_service_output_correct_errors(
     mut builder: crate::operation::update_service::builders::UpdateServiceOutputBuilder,
 ) -> crate::operation::update_service::builders::UpdateServiceOutputBuilder {
     if builder.service.is_none() {
@@ -635,7 +635,7 @@ pub(crate) fn update_service_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_service_instance_output_output_correct_errors(
+pub(crate) fn update_service_instance_output_correct_errors(
     mut builder: crate::operation::update_service_instance::builders::UpdateServiceInstanceOutputBuilder,
 ) -> crate::operation::update_service_instance::builders::UpdateServiceInstanceOutputBuilder {
     if builder.service_instance.is_none() {
@@ -647,7 +647,7 @@ pub(crate) fn update_service_instance_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_service_pipeline_output_output_correct_errors(
+pub(crate) fn update_service_pipeline_output_correct_errors(
     mut builder: crate::operation::update_service_pipeline::builders::UpdateServicePipelineOutputBuilder,
 ) -> crate::operation::update_service_pipeline::builders::UpdateServicePipelineOutputBuilder {
     if builder.pipeline.is_none() {
@@ -659,7 +659,7 @@ pub(crate) fn update_service_pipeline_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_service_sync_blocker_output_output_correct_errors(
+pub(crate) fn update_service_sync_blocker_output_correct_errors(
     mut builder: crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerOutputBuilder,
 ) -> crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerOutputBuilder {
     if builder.service_name.is_none() {
@@ -674,7 +674,7 @@ pub(crate) fn update_service_sync_blocker_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_service_template_output_output_correct_errors(
+pub(crate) fn update_service_template_output_correct_errors(
     mut builder: crate::operation::update_service_template::builders::UpdateServiceTemplateOutputBuilder,
 ) -> crate::operation::update_service_template::builders::UpdateServiceTemplateOutputBuilder {
     if builder.service_template.is_none() {
@@ -686,7 +686,7 @@ pub(crate) fn update_service_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_service_template_version_output_output_correct_errors(
+pub(crate) fn update_service_template_version_output_correct_errors(
     mut builder: crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionOutputBuilder,
 ) -> crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionOutputBuilder {
     if builder.service_template_version.is_none() {

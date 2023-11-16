@@ -167,7 +167,7 @@ pub fn ser_notify_resource_deployment_status_change_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_notify_resource_deployment_status_change_input::ser_notify_resource_deployment_status_change_input_input(
+    crate::protocol_serde::shape_notify_resource_deployment_status_change_input::ser_notify_resource_deployment_status_change_input(
         &mut object,
         input,
     )?;

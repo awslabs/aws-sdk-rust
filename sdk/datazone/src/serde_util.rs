@@ -62,7 +62,7 @@ pub(crate) fn unauthorized_exception_correct_errors(
     builder
 }
 
-pub(crate) fn accept_predictions_output_output_correct_errors(
+pub(crate) fn accept_predictions_output_correct_errors(
     mut builder: crate::operation::accept_predictions::builders::AcceptPredictionsOutputBuilder,
 ) -> crate::operation::accept_predictions::builders::AcceptPredictionsOutputBuilder {
     if builder.domain_id.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn accept_predictions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn accept_subscription_request_output_output_correct_errors(
+pub(crate) fn accept_subscription_request_output_correct_errors(
     mut builder: crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestOutputBuilder,
 ) -> crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestOutputBuilder {
     if builder.id.is_none() {
@@ -110,7 +110,7 @@ pub(crate) fn accept_subscription_request_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn cancel_subscription_output_output_correct_errors(
+pub(crate) fn cancel_subscription_output_correct_errors(
     mut builder: crate::operation::cancel_subscription::builders::CancelSubscriptionOutputBuilder,
 ) -> crate::operation::cancel_subscription::builders::CancelSubscriptionOutputBuilder {
     if builder.id.is_none() {
@@ -152,7 +152,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_asset_output_output_correct_errors(
+pub(crate) fn create_asset_output_correct_errors(
     mut builder: crate::operation::create_asset::builders::CreateAssetOutputBuilder,
 ) -> crate::operation::create_asset::builders::CreateAssetOutputBuilder {
     if builder.id.is_none() {
@@ -182,7 +182,7 @@ pub(crate) fn create_asset_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_asset_revision_output_output_correct_errors(
+pub(crate) fn create_asset_revision_output_correct_errors(
     mut builder: crate::operation::create_asset_revision::builders::CreateAssetRevisionOutputBuilder,
 ) -> crate::operation::create_asset_revision::builders::CreateAssetRevisionOutputBuilder {
     if builder.id.is_none() {
@@ -212,7 +212,7 @@ pub(crate) fn create_asset_revision_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_asset_type_output_output_correct_errors(
+pub(crate) fn create_asset_type_output_correct_errors(
     mut builder: crate::operation::create_asset_type::builders::CreateAssetTypeOutputBuilder,
 ) -> crate::operation::create_asset_type::builders::CreateAssetTypeOutputBuilder {
     if builder.domain_id.is_none() {
@@ -230,7 +230,7 @@ pub(crate) fn create_asset_type_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_data_source_output_output_correct_errors(
+pub(crate) fn create_data_source_output_correct_errors(
     mut builder: crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder,
 ) -> crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder {
     if builder.id.is_none() {
@@ -251,7 +251,7 @@ pub(crate) fn create_data_source_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_domain_output_output_correct_errors(
+pub(crate) fn create_domain_output_correct_errors(
     mut builder: crate::operation::create_domain::builders::CreateDomainOutputBuilder,
 ) -> crate::operation::create_domain::builders::CreateDomainOutputBuilder {
     if builder.id.is_none() {
@@ -260,7 +260,7 @@ pub(crate) fn create_domain_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_environment_output_output_correct_errors(
+pub(crate) fn create_environment_output_correct_errors(
     mut builder: crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder,
 ) -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
     if builder.project_id.is_none() {
@@ -284,7 +284,7 @@ pub(crate) fn create_environment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_environment_profile_output_output_correct_errors(
+pub(crate) fn create_environment_profile_output_correct_errors(
     mut builder: crate::operation::create_environment_profile::builders::CreateEnvironmentProfileOutputBuilder,
 ) -> crate::operation::create_environment_profile::builders::CreateEnvironmentProfileOutputBuilder {
     if builder.id.is_none() {
@@ -305,7 +305,7 @@ pub(crate) fn create_environment_profile_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_form_type_output_output_correct_errors(
+pub(crate) fn create_form_type_output_correct_errors(
     mut builder: crate::operation::create_form_type::builders::CreateFormTypeOutputBuilder,
 ) -> crate::operation::create_form_type::builders::CreateFormTypeOutputBuilder {
     if builder.domain_id.is_none() {
@@ -320,7 +320,7 @@ pub(crate) fn create_form_type_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_glossary_output_output_correct_errors(
+pub(crate) fn create_glossary_output_correct_errors(
     mut builder: crate::operation::create_glossary::builders::CreateGlossaryOutputBuilder,
 ) -> crate::operation::create_glossary::builders::CreateGlossaryOutputBuilder {
     if builder.domain_id.is_none() {
@@ -338,7 +338,7 @@ pub(crate) fn create_glossary_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_glossary_term_output_output_correct_errors(
+pub(crate) fn create_glossary_term_output_correct_errors(
     mut builder: crate::operation::create_glossary_term::builders::CreateGlossaryTermOutputBuilder,
 ) -> crate::operation::create_glossary_term::builders::CreateGlossaryTermOutputBuilder {
     if builder.id.is_none() {
@@ -359,7 +359,7 @@ pub(crate) fn create_glossary_term_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_listing_change_set_output_output_correct_errors(
+pub(crate) fn create_listing_change_set_output_correct_errors(
     mut builder: crate::operation::create_listing_change_set::builders::CreateListingChangeSetOutputBuilder,
 ) -> crate::operation::create_listing_change_set::builders::CreateListingChangeSetOutputBuilder {
     if builder.listing_id.is_none() {
@@ -374,7 +374,7 @@ pub(crate) fn create_listing_change_set_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_project_output_output_correct_errors(
+pub(crate) fn create_project_output_correct_errors(
     mut builder: crate::operation::create_project::builders::CreateProjectOutputBuilder,
 ) -> crate::operation::create_project::builders::CreateProjectOutputBuilder {
     if builder.domain_id.is_none() {
@@ -392,7 +392,7 @@ pub(crate) fn create_project_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_subscription_grant_output_output_correct_errors(
+pub(crate) fn create_subscription_grant_output_correct_errors(
     mut builder: crate::operation::create_subscription_grant::builders::CreateSubscriptionGrantOutputBuilder,
 ) -> crate::operation::create_subscription_grant::builders::CreateSubscriptionGrantOutputBuilder {
     if builder.id.is_none() {
@@ -422,7 +422,7 @@ pub(crate) fn create_subscription_grant_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_subscription_request_output_output_correct_errors(
+pub(crate) fn create_subscription_request_output_correct_errors(
     mut builder: crate::operation::create_subscription_request::builders::CreateSubscriptionRequestOutputBuilder,
 ) -> crate::operation::create_subscription_request::builders::CreateSubscriptionRequestOutputBuilder {
     if builder.id.is_none() {
@@ -455,7 +455,7 @@ pub(crate) fn create_subscription_request_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_subscription_target_output_output_correct_errors(
+pub(crate) fn create_subscription_target_output_correct_errors(
     mut builder: crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder,
 ) -> crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder {
     if builder.id.is_none() {
@@ -500,7 +500,7 @@ pub(crate) fn create_subscription_target_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_data_source_output_output_correct_errors(
+pub(crate) fn delete_data_source_output_correct_errors(
     mut builder: crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder,
 ) -> crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder {
     if builder.id.is_none() {
@@ -521,7 +521,7 @@ pub(crate) fn delete_data_source_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_domain_output_output_correct_errors(
+pub(crate) fn delete_domain_output_correct_errors(
     mut builder: crate::operation::delete_domain::builders::DeleteDomainOutputBuilder,
 ) -> crate::operation::delete_domain::builders::DeleteDomainOutputBuilder {
     if builder.status.is_none() {
@@ -530,7 +530,7 @@ pub(crate) fn delete_domain_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_subscription_grant_output_output_correct_errors(
+pub(crate) fn delete_subscription_grant_output_correct_errors(
     mut builder: crate::operation::delete_subscription_grant::builders::DeleteSubscriptionGrantOutputBuilder,
 ) -> crate::operation::delete_subscription_grant::builders::DeleteSubscriptionGrantOutputBuilder {
     if builder.id.is_none() {
@@ -560,7 +560,7 @@ pub(crate) fn delete_subscription_grant_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_asset_output_output_correct_errors(
+pub(crate) fn get_asset_output_correct_errors(
     mut builder: crate::operation::get_asset::builders::GetAssetOutputBuilder,
 ) -> crate::operation::get_asset::builders::GetAssetOutputBuilder {
     if builder.id.is_none() {
@@ -590,7 +590,7 @@ pub(crate) fn get_asset_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_asset_type_output_output_correct_errors(
+pub(crate) fn get_asset_type_output_correct_errors(
     mut builder: crate::operation::get_asset_type::builders::GetAssetTypeOutputBuilder,
 ) -> crate::operation::get_asset_type::builders::GetAssetTypeOutputBuilder {
     if builder.domain_id.is_none() {
@@ -611,7 +611,7 @@ pub(crate) fn get_asset_type_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_data_source_output_output_correct_errors(
+pub(crate) fn get_data_source_output_correct_errors(
     mut builder: crate::operation::get_data_source::builders::GetDataSourceOutputBuilder,
 ) -> crate::operation::get_data_source::builders::GetDataSourceOutputBuilder {
     if builder.id.is_none() {
@@ -632,7 +632,7 @@ pub(crate) fn get_data_source_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_data_source_run_output_output_correct_errors(
+pub(crate) fn get_data_source_run_output_correct_errors(
     mut builder: crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder,
 ) -> crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder {
     if builder.domain_id.is_none() {
@@ -662,7 +662,7 @@ pub(crate) fn get_data_source_run_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_domain_output_output_correct_errors(
+pub(crate) fn get_domain_output_correct_errors(
     mut builder: crate::operation::get_domain::builders::GetDomainOutputBuilder,
 ) -> crate::operation::get_domain::builders::GetDomainOutputBuilder {
     if builder.id.is_none() {
@@ -677,7 +677,7 @@ pub(crate) fn get_domain_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_environment_output_output_correct_errors(
+pub(crate) fn get_environment_output_correct_errors(
     mut builder: crate::operation::get_environment::builders::GetEnvironmentOutputBuilder,
 ) -> crate::operation::get_environment::builders::GetEnvironmentOutputBuilder {
     if builder.project_id.is_none() {
@@ -701,7 +701,7 @@ pub(crate) fn get_environment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_environment_blueprint_output_output_correct_errors(
+pub(crate) fn get_environment_blueprint_output_correct_errors(
     mut builder: crate::operation::get_environment_blueprint::builders::GetEnvironmentBlueprintOutputBuilder,
 ) -> crate::operation::get_environment_blueprint::builders::GetEnvironmentBlueprintOutputBuilder {
     if builder.id.is_none() {
@@ -719,7 +719,7 @@ pub(crate) fn get_environment_blueprint_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_environment_blueprint_configuration_output_output_correct_errors(
+pub(crate) fn get_environment_blueprint_configuration_output_correct_errors(
     mut builder: crate::operation::get_environment_blueprint_configuration::builders::GetEnvironmentBlueprintConfigurationOutputBuilder,
 ) -> crate::operation::get_environment_blueprint_configuration::builders::GetEnvironmentBlueprintConfigurationOutputBuilder {
     if builder.domain_id.is_none() {
@@ -731,7 +731,7 @@ pub(crate) fn get_environment_blueprint_configuration_output_output_correct_erro
     builder
 }
 
-pub(crate) fn get_environment_profile_output_output_correct_errors(
+pub(crate) fn get_environment_profile_output_correct_errors(
     mut builder: crate::operation::get_environment_profile::builders::GetEnvironmentProfileOutputBuilder,
 ) -> crate::operation::get_environment_profile::builders::GetEnvironmentProfileOutputBuilder {
     if builder.id.is_none() {
@@ -752,7 +752,7 @@ pub(crate) fn get_environment_profile_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_form_type_output_output_correct_errors(
+pub(crate) fn get_form_type_output_correct_errors(
     mut builder: crate::operation::get_form_type::builders::GetFormTypeOutputBuilder,
 ) -> crate::operation::get_form_type::builders::GetFormTypeOutputBuilder {
     if builder.domain_id.is_none() {
@@ -770,7 +770,7 @@ pub(crate) fn get_form_type_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_glossary_output_output_correct_errors(
+pub(crate) fn get_glossary_output_correct_errors(
     mut builder: crate::operation::get_glossary::builders::GetGlossaryOutputBuilder,
 ) -> crate::operation::get_glossary::builders::GetGlossaryOutputBuilder {
     if builder.domain_id.is_none() {
@@ -791,7 +791,7 @@ pub(crate) fn get_glossary_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_glossary_term_output_output_correct_errors(
+pub(crate) fn get_glossary_term_output_correct_errors(
     mut builder: crate::operation::get_glossary_term::builders::GetGlossaryTermOutputBuilder,
 ) -> crate::operation::get_glossary_term::builders::GetGlossaryTermOutputBuilder {
     if builder.domain_id.is_none() {
@@ -812,7 +812,7 @@ pub(crate) fn get_glossary_term_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_iam_portal_login_url_output_output_correct_errors(
+pub(crate) fn get_iam_portal_login_url_output_correct_errors(
     mut builder: crate::operation::get_iam_portal_login_url::builders::GetIamPortalLoginUrlOutputBuilder,
 ) -> crate::operation::get_iam_portal_login_url::builders::GetIamPortalLoginUrlOutputBuilder {
     if builder.user_profile_id.is_none() {
@@ -821,7 +821,7 @@ pub(crate) fn get_iam_portal_login_url_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_listing_output_output_correct_errors(
+pub(crate) fn get_listing_output_correct_errors(
     mut builder: crate::operation::get_listing::builders::GetListingOutputBuilder,
 ) -> crate::operation::get_listing::builders::GetListingOutputBuilder {
     if builder.domain_id.is_none() {
@@ -836,7 +836,7 @@ pub(crate) fn get_listing_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_project_output_output_correct_errors(
+pub(crate) fn get_project_output_correct_errors(
     mut builder: crate::operation::get_project::builders::GetProjectOutputBuilder,
 ) -> crate::operation::get_project::builders::GetProjectOutputBuilder {
     if builder.domain_id.is_none() {
@@ -854,7 +854,7 @@ pub(crate) fn get_project_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_subscription_output_output_correct_errors(
+pub(crate) fn get_subscription_output_correct_errors(
     mut builder: crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder,
 ) -> crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder {
     if builder.id.is_none() {
@@ -887,7 +887,7 @@ pub(crate) fn get_subscription_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_subscription_grant_output_output_correct_errors(
+pub(crate) fn get_subscription_grant_output_correct_errors(
     mut builder: crate::operation::get_subscription_grant::builders::GetSubscriptionGrantOutputBuilder,
 ) -> crate::operation::get_subscription_grant::builders::GetSubscriptionGrantOutputBuilder {
     if builder.id.is_none() {
@@ -917,7 +917,7 @@ pub(crate) fn get_subscription_grant_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_subscription_request_details_output_output_correct_errors(
+pub(crate) fn get_subscription_request_details_output_correct_errors(
     mut builder: crate::operation::get_subscription_request_details::builders::GetSubscriptionRequestDetailsOutputBuilder,
 ) -> crate::operation::get_subscription_request_details::builders::GetSubscriptionRequestDetailsOutputBuilder {
     if builder.id.is_none() {
@@ -950,7 +950,7 @@ pub(crate) fn get_subscription_request_details_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_subscription_target_output_output_correct_errors(
+pub(crate) fn get_subscription_target_output_correct_errors(
     mut builder: crate::operation::get_subscription_target::builders::GetSubscriptionTargetOutputBuilder,
 ) -> crate::operation::get_subscription_target::builders::GetSubscriptionTargetOutputBuilder {
     if builder.id.is_none() {
@@ -995,7 +995,7 @@ pub(crate) fn get_subscription_target_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_data_source_run_activities_output_output_correct_errors(
+pub(crate) fn list_data_source_run_activities_output_correct_errors(
     mut builder: crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesOutputBuilder,
 ) -> crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesOutputBuilder {
     if builder.items.is_none() {
@@ -1004,7 +1004,7 @@ pub(crate) fn list_data_source_run_activities_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_data_source_runs_output_output_correct_errors(
+pub(crate) fn list_data_source_runs_output_correct_errors(
     mut builder: crate::operation::list_data_source_runs::builders::ListDataSourceRunsOutputBuilder,
 ) -> crate::operation::list_data_source_runs::builders::ListDataSourceRunsOutputBuilder {
     if builder.items.is_none() {
@@ -1013,7 +1013,7 @@ pub(crate) fn list_data_source_runs_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_data_sources_output_output_correct_errors(
+pub(crate) fn list_data_sources_output_correct_errors(
     mut builder: crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder,
 ) -> crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder {
     if builder.items.is_none() {
@@ -1022,7 +1022,7 @@ pub(crate) fn list_data_sources_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_domains_output_output_correct_errors(
+pub(crate) fn list_domains_output_correct_errors(
     mut builder: crate::operation::list_domains::builders::ListDomainsOutputBuilder,
 ) -> crate::operation::list_domains::builders::ListDomainsOutputBuilder {
     if builder.items.is_none() {
@@ -1031,7 +1031,7 @@ pub(crate) fn list_domains_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_environment_blueprints_output_output_correct_errors(
+pub(crate) fn list_environment_blueprints_output_correct_errors(
     mut builder: crate::operation::list_environment_blueprints::builders::ListEnvironmentBlueprintsOutputBuilder,
 ) -> crate::operation::list_environment_blueprints::builders::ListEnvironmentBlueprintsOutputBuilder {
     if builder.items.is_none() {
@@ -1040,7 +1040,7 @@ pub(crate) fn list_environment_blueprints_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_environment_profiles_output_output_correct_errors(
+pub(crate) fn list_environment_profiles_output_correct_errors(
     mut builder: crate::operation::list_environment_profiles::builders::ListEnvironmentProfilesOutputBuilder,
 ) -> crate::operation::list_environment_profiles::builders::ListEnvironmentProfilesOutputBuilder {
     if builder.items.is_none() {
@@ -1049,7 +1049,7 @@ pub(crate) fn list_environment_profiles_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_environments_output_output_correct_errors(
+pub(crate) fn list_environments_output_correct_errors(
     mut builder: crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder,
 ) -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
     if builder.items.is_none() {
@@ -1058,7 +1058,7 @@ pub(crate) fn list_environments_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_project_memberships_output_output_correct_errors(
+pub(crate) fn list_project_memberships_output_correct_errors(
     mut builder: crate::operation::list_project_memberships::builders::ListProjectMembershipsOutputBuilder,
 ) -> crate::operation::list_project_memberships::builders::ListProjectMembershipsOutputBuilder {
     if builder.members.is_none() {
@@ -1067,7 +1067,7 @@ pub(crate) fn list_project_memberships_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_subscription_grants_output_output_correct_errors(
+pub(crate) fn list_subscription_grants_output_correct_errors(
     mut builder: crate::operation::list_subscription_grants::builders::ListSubscriptionGrantsOutputBuilder,
 ) -> crate::operation::list_subscription_grants::builders::ListSubscriptionGrantsOutputBuilder {
     if builder.items.is_none() {
@@ -1076,7 +1076,7 @@ pub(crate) fn list_subscription_grants_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_subscription_requests_output_output_correct_errors(
+pub(crate) fn list_subscription_requests_output_correct_errors(
     mut builder: crate::operation::list_subscription_requests::builders::ListSubscriptionRequestsOutputBuilder,
 ) -> crate::operation::list_subscription_requests::builders::ListSubscriptionRequestsOutputBuilder {
     if builder.items.is_none() {
@@ -1085,7 +1085,7 @@ pub(crate) fn list_subscription_requests_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_subscription_targets_output_output_correct_errors(
+pub(crate) fn list_subscription_targets_output_correct_errors(
     mut builder: crate::operation::list_subscription_targets::builders::ListSubscriptionTargetsOutputBuilder,
 ) -> crate::operation::list_subscription_targets::builders::ListSubscriptionTargetsOutputBuilder {
     if builder.items.is_none() {
@@ -1094,7 +1094,7 @@ pub(crate) fn list_subscription_targets_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_subscriptions_output_output_correct_errors(
+pub(crate) fn list_subscriptions_output_correct_errors(
     mut builder: crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder,
 ) -> crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder {
     if builder.items.is_none() {
@@ -1103,7 +1103,7 @@ pub(crate) fn list_subscriptions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn put_environment_blueprint_configuration_output_output_correct_errors(
+pub(crate) fn put_environment_blueprint_configuration_output_correct_errors(
     mut builder: crate::operation::put_environment_blueprint_configuration::builders::PutEnvironmentBlueprintConfigurationOutputBuilder,
 ) -> crate::operation::put_environment_blueprint_configuration::builders::PutEnvironmentBlueprintConfigurationOutputBuilder {
     if builder.domain_id.is_none() {
@@ -1115,7 +1115,7 @@ pub(crate) fn put_environment_blueprint_configuration_output_output_correct_erro
     builder
 }
 
-pub(crate) fn reject_predictions_output_output_correct_errors(
+pub(crate) fn reject_predictions_output_correct_errors(
     mut builder: crate::operation::reject_predictions::builders::RejectPredictionsOutputBuilder,
 ) -> crate::operation::reject_predictions::builders::RejectPredictionsOutputBuilder {
     if builder.domain_id.is_none() {
@@ -1130,7 +1130,7 @@ pub(crate) fn reject_predictions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn reject_subscription_request_output_output_correct_errors(
+pub(crate) fn reject_subscription_request_output_correct_errors(
     mut builder: crate::operation::reject_subscription_request::builders::RejectSubscriptionRequestOutputBuilder,
 ) -> crate::operation::reject_subscription_request::builders::RejectSubscriptionRequestOutputBuilder {
     if builder.id.is_none() {
@@ -1163,7 +1163,7 @@ pub(crate) fn reject_subscription_request_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn revoke_subscription_output_output_correct_errors(
+pub(crate) fn revoke_subscription_output_correct_errors(
     mut builder: crate::operation::revoke_subscription::builders::RevokeSubscriptionOutputBuilder,
 ) -> crate::operation::revoke_subscription::builders::RevokeSubscriptionOutputBuilder {
     if builder.id.is_none() {
@@ -1196,7 +1196,7 @@ pub(crate) fn revoke_subscription_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_data_source_run_output_output_correct_errors(
+pub(crate) fn start_data_source_run_output_correct_errors(
     mut builder: crate::operation::start_data_source_run::builders::StartDataSourceRunOutputBuilder,
 ) -> crate::operation::start_data_source_run::builders::StartDataSourceRunOutputBuilder {
     if builder.domain_id.is_none() {
@@ -1226,7 +1226,7 @@ pub(crate) fn start_data_source_run_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_data_source_output_output_correct_errors(
+pub(crate) fn update_data_source_output_correct_errors(
     mut builder: crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder,
 ) -> crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder {
     if builder.id.is_none() {
@@ -1247,7 +1247,7 @@ pub(crate) fn update_data_source_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_domain_output_output_correct_errors(
+pub(crate) fn update_domain_output_correct_errors(
     mut builder: crate::operation::update_domain::builders::UpdateDomainOutputBuilder,
 ) -> crate::operation::update_domain::builders::UpdateDomainOutputBuilder {
     if builder.id.is_none() {
@@ -1256,7 +1256,7 @@ pub(crate) fn update_domain_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_environment_output_output_correct_errors(
+pub(crate) fn update_environment_output_correct_errors(
     mut builder: crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder,
 ) -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
     if builder.project_id.is_none() {
@@ -1280,7 +1280,7 @@ pub(crate) fn update_environment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_environment_profile_output_output_correct_errors(
+pub(crate) fn update_environment_profile_output_correct_errors(
     mut builder: crate::operation::update_environment_profile::builders::UpdateEnvironmentProfileOutputBuilder,
 ) -> crate::operation::update_environment_profile::builders::UpdateEnvironmentProfileOutputBuilder {
     if builder.id.is_none() {
@@ -1301,7 +1301,7 @@ pub(crate) fn update_environment_profile_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_glossary_output_output_correct_errors(
+pub(crate) fn update_glossary_output_correct_errors(
     mut builder: crate::operation::update_glossary::builders::UpdateGlossaryOutputBuilder,
 ) -> crate::operation::update_glossary::builders::UpdateGlossaryOutputBuilder {
     if builder.domain_id.is_none() {
@@ -1319,7 +1319,7 @@ pub(crate) fn update_glossary_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_glossary_term_output_output_correct_errors(
+pub(crate) fn update_glossary_term_output_correct_errors(
     mut builder: crate::operation::update_glossary_term::builders::UpdateGlossaryTermOutputBuilder,
 ) -> crate::operation::update_glossary_term::builders::UpdateGlossaryTermOutputBuilder {
     if builder.id.is_none() {
@@ -1340,7 +1340,7 @@ pub(crate) fn update_glossary_term_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_project_output_output_correct_errors(
+pub(crate) fn update_project_output_correct_errors(
     mut builder: crate::operation::update_project::builders::UpdateProjectOutputBuilder,
 ) -> crate::operation::update_project::builders::UpdateProjectOutputBuilder {
     if builder.domain_id.is_none() {
@@ -1358,7 +1358,7 @@ pub(crate) fn update_project_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_subscription_grant_status_output_output_correct_errors(
+pub(crate) fn update_subscription_grant_status_output_correct_errors(
     mut builder: crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder,
 ) -> crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder {
     if builder.id.is_none() {
@@ -1388,7 +1388,7 @@ pub(crate) fn update_subscription_grant_status_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_subscription_request_output_output_correct_errors(
+pub(crate) fn update_subscription_request_output_correct_errors(
     mut builder: crate::operation::update_subscription_request::builders::UpdateSubscriptionRequestOutputBuilder,
 ) -> crate::operation::update_subscription_request::builders::UpdateSubscriptionRequestOutputBuilder {
     if builder.id.is_none() {
@@ -1421,7 +1421,7 @@ pub(crate) fn update_subscription_request_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_subscription_target_output_output_correct_errors(
+pub(crate) fn update_subscription_target_output_correct_errors(
     mut builder: crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder,
 ) -> crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetOutputBuilder {
     if builder.id.is_none() {

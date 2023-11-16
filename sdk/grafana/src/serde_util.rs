@@ -53,7 +53,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn associate_license_output_output_correct_errors(
+pub(crate) fn associate_license_output_correct_errors(
     mut builder: crate::operation::associate_license::builders::AssociateLicenseOutputBuilder,
 ) -> crate::operation::associate_license::builders::AssociateLicenseOutputBuilder {
     if builder.workspace.is_none() {
@@ -101,7 +101,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_workspace_output_output_correct_errors(
+pub(crate) fn create_workspace_output_correct_errors(
     mut builder: crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder,
 ) -> crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder {
     if builder.workspace.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn create_workspace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_workspace_api_key_output_output_correct_errors(
+pub(crate) fn create_workspace_api_key_output_correct_errors(
     mut builder: crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder,
 ) -> crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder {
     if builder.key_name.is_none() {
@@ -128,7 +128,7 @@ pub(crate) fn create_workspace_api_key_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_workspace_output_output_correct_errors(
+pub(crate) fn delete_workspace_output_correct_errors(
     mut builder: crate::operation::delete_workspace::builders::DeleteWorkspaceOutputBuilder,
 ) -> crate::operation::delete_workspace::builders::DeleteWorkspaceOutputBuilder {
     if builder.workspace.is_none() {
@@ -140,7 +140,7 @@ pub(crate) fn delete_workspace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_workspace_api_key_output_output_correct_errors(
+pub(crate) fn delete_workspace_api_key_output_correct_errors(
     mut builder: crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder,
 ) -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder {
     if builder.key_name.is_none() {
@@ -152,7 +152,7 @@ pub(crate) fn delete_workspace_api_key_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_workspace_output_output_correct_errors(
+pub(crate) fn describe_workspace_output_correct_errors(
     mut builder: crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder,
 ) -> crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder {
     if builder.workspace.is_none() {
@@ -164,7 +164,7 @@ pub(crate) fn describe_workspace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_workspace_authentication_output_output_correct_errors(
+pub(crate) fn describe_workspace_authentication_output_correct_errors(
     mut builder: crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationOutputBuilder,
 ) -> crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationOutputBuilder {
     if builder.authentication.is_none() {
@@ -176,7 +176,7 @@ pub(crate) fn describe_workspace_authentication_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_workspace_configuration_output_output_correct_errors(
+pub(crate) fn describe_workspace_configuration_output_correct_errors(
     mut builder: crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder,
 ) -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder {
     if builder.configuration.is_none() {
@@ -185,7 +185,7 @@ pub(crate) fn describe_workspace_configuration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn disassociate_license_output_output_correct_errors(
+pub(crate) fn disassociate_license_output_correct_errors(
     mut builder: crate::operation::disassociate_license::builders::DisassociateLicenseOutputBuilder,
 ) -> crate::operation::disassociate_license::builders::DisassociateLicenseOutputBuilder {
     if builder.workspace.is_none() {
@@ -197,7 +197,7 @@ pub(crate) fn disassociate_license_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_permissions_output_output_correct_errors(
+pub(crate) fn list_permissions_output_correct_errors(
     mut builder: crate::operation::list_permissions::builders::ListPermissionsOutputBuilder,
 ) -> crate::operation::list_permissions::builders::ListPermissionsOutputBuilder {
     if builder.permissions.is_none() {
@@ -206,7 +206,7 @@ pub(crate) fn list_permissions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_workspaces_output_output_correct_errors(
+pub(crate) fn list_workspaces_output_correct_errors(
     mut builder: crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder,
 ) -> crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder {
     if builder.workspaces.is_none() {
@@ -215,7 +215,7 @@ pub(crate) fn list_workspaces_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_permissions_output_output_correct_errors(
+pub(crate) fn update_permissions_output_correct_errors(
     mut builder: crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder,
 ) -> crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder {
     if builder.errors.is_none() {
@@ -224,7 +224,7 @@ pub(crate) fn update_permissions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_workspace_output_output_correct_errors(
+pub(crate) fn update_workspace_output_correct_errors(
     mut builder: crate::operation::update_workspace::builders::UpdateWorkspaceOutputBuilder,
 ) -> crate::operation::update_workspace::builders::UpdateWorkspaceOutputBuilder {
     if builder.workspace.is_none() {
@@ -236,7 +236,7 @@ pub(crate) fn update_workspace_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_workspace_authentication_output_output_correct_errors(
+pub(crate) fn update_workspace_authentication_output_correct_errors(
     mut builder: crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationOutputBuilder,
 ) -> crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationOutputBuilder {
     if builder.authentication.is_none() {

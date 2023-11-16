@@ -62,7 +62,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_application_output_output_correct_errors(
+pub(crate) fn create_application_output_correct_errors(
     mut builder: crate::operation::create_application::builders::CreateApplicationOutputBuilder,
 ) -> crate::operation::create_application::builders::CreateApplicationOutputBuilder {
     if builder.application_arn.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn create_application_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_data_set_import_task_output_output_correct_errors(
+pub(crate) fn create_data_set_import_task_output_correct_errors(
     mut builder: crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder,
 ) -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder {
     if builder.task_id.is_none() {
@@ -86,7 +86,7 @@ pub(crate) fn create_data_set_import_task_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_deployment_output_output_correct_errors(
+pub(crate) fn create_deployment_output_correct_errors(
     mut builder: crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder,
 ) -> crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder {
     if builder.deployment_id.is_none() {
@@ -95,7 +95,7 @@ pub(crate) fn create_deployment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_environment_output_output_correct_errors(
+pub(crate) fn create_environment_output_correct_errors(
     mut builder: crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder,
 ) -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
     if builder.environment_id.is_none() {
@@ -104,7 +104,7 @@ pub(crate) fn create_environment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_application_output_output_correct_errors(
+pub(crate) fn get_application_output_correct_errors(
     mut builder: crate::operation::get_application::builders::GetApplicationOutputBuilder,
 ) -> crate::operation::get_application::builders::GetApplicationOutputBuilder {
     if builder.name.is_none() {
@@ -134,7 +134,7 @@ pub(crate) fn get_application_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_application_version_output_output_correct_errors(
+pub(crate) fn get_application_version_output_correct_errors(
     mut builder: crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder,
 ) -> crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder {
     if builder.name.is_none() {
@@ -155,7 +155,7 @@ pub(crate) fn get_application_version_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_batch_job_execution_output_output_correct_errors(
+pub(crate) fn get_batch_job_execution_output_correct_errors(
     mut builder: crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder,
 ) -> crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder {
     if builder.execution_id.is_none() {
@@ -191,7 +191,7 @@ pub(crate) fn service_unavailable_exception_correct_errors(
     builder
 }
 
-pub(crate) fn get_data_set_details_output_output_correct_errors(
+pub(crate) fn get_data_set_details_output_correct_errors(
     mut builder: crate::operation::get_data_set_details::builders::GetDataSetDetailsOutputBuilder,
 ) -> crate::operation::get_data_set_details::builders::GetDataSetDetailsOutputBuilder {
     if builder.data_set_name.is_none() {
@@ -200,7 +200,7 @@ pub(crate) fn get_data_set_details_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_data_set_import_task_output_output_correct_errors(
+pub(crate) fn get_data_set_import_task_output_correct_errors(
     mut builder: crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder,
 ) -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder {
     if builder.task_id.is_none() {
@@ -212,7 +212,7 @@ pub(crate) fn get_data_set_import_task_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_deployment_output_output_correct_errors(
+pub(crate) fn get_deployment_output_correct_errors(
     mut builder: crate::operation::get_deployment::builders::GetDeploymentOutputBuilder,
 ) -> crate::operation::get_deployment::builders::GetDeploymentOutputBuilder {
     if builder.deployment_id.is_none() {
@@ -236,7 +236,7 @@ pub(crate) fn get_deployment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_environment_output_output_correct_errors(
+pub(crate) fn get_environment_output_correct_errors(
     mut builder: crate::operation::get_environment::builders::GetEnvironmentOutputBuilder,
 ) -> crate::operation::get_environment::builders::GetEnvironmentOutputBuilder {
     if builder.name.is_none() {
@@ -275,7 +275,7 @@ pub(crate) fn get_environment_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_signed_bluinsights_url_output_output_correct_errors(
+pub(crate) fn get_signed_bluinsights_url_output_correct_errors(
     mut builder: crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlOutputBuilder,
 ) -> crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlOutputBuilder {
     if builder.signed_bi_url.is_none() {
@@ -284,7 +284,7 @@ pub(crate) fn get_signed_bluinsights_url_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_application_versions_output_output_correct_errors(
+pub(crate) fn list_application_versions_output_correct_errors(
     mut builder: crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder,
 ) -> crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder {
     if builder.application_versions.is_none() {
@@ -293,7 +293,7 @@ pub(crate) fn list_application_versions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_applications_output_output_correct_errors(
+pub(crate) fn list_applications_output_correct_errors(
     mut builder: crate::operation::list_applications::builders::ListApplicationsOutputBuilder,
 ) -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
     if builder.applications.is_none() {
@@ -302,7 +302,7 @@ pub(crate) fn list_applications_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_batch_job_definitions_output_output_correct_errors(
+pub(crate) fn list_batch_job_definitions_output_correct_errors(
     mut builder: crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsOutputBuilder,
 ) -> crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsOutputBuilder {
     if builder.batch_job_definitions.is_none() {
@@ -311,7 +311,7 @@ pub(crate) fn list_batch_job_definitions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_batch_job_executions_output_output_correct_errors(
+pub(crate) fn list_batch_job_executions_output_correct_errors(
     mut builder: crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsOutputBuilder,
 ) -> crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsOutputBuilder {
     if builder.batch_job_executions.is_none() {
@@ -320,7 +320,7 @@ pub(crate) fn list_batch_job_executions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_data_set_import_history_output_output_correct_errors(
+pub(crate) fn list_data_set_import_history_output_correct_errors(
     mut builder: crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder,
 ) -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder {
     if builder.data_set_import_tasks.is_none() {
@@ -329,7 +329,7 @@ pub(crate) fn list_data_set_import_history_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_data_sets_output_output_correct_errors(
+pub(crate) fn list_data_sets_output_correct_errors(
     mut builder: crate::operation::list_data_sets::builders::ListDataSetsOutputBuilder,
 ) -> crate::operation::list_data_sets::builders::ListDataSetsOutputBuilder {
     if builder.data_sets.is_none() {
@@ -338,7 +338,7 @@ pub(crate) fn list_data_sets_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_deployments_output_output_correct_errors(
+pub(crate) fn list_deployments_output_correct_errors(
     mut builder: crate::operation::list_deployments::builders::ListDeploymentsOutputBuilder,
 ) -> crate::operation::list_deployments::builders::ListDeploymentsOutputBuilder {
     if builder.deployments.is_none() {
@@ -347,7 +347,7 @@ pub(crate) fn list_deployments_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_engine_versions_output_output_correct_errors(
+pub(crate) fn list_engine_versions_output_correct_errors(
     mut builder: crate::operation::list_engine_versions::builders::ListEngineVersionsOutputBuilder,
 ) -> crate::operation::list_engine_versions::builders::ListEngineVersionsOutputBuilder {
     if builder.engine_versions.is_none() {
@@ -356,7 +356,7 @@ pub(crate) fn list_engine_versions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_environments_output_output_correct_errors(
+pub(crate) fn list_environments_output_correct_errors(
     mut builder: crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder,
 ) -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
     if builder.environments.is_none() {
@@ -365,7 +365,7 @@ pub(crate) fn list_environments_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
@@ -374,7 +374,7 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_batch_job_output_output_correct_errors(
+pub(crate) fn start_batch_job_output_correct_errors(
     mut builder: crate::operation::start_batch_job::builders::StartBatchJobOutputBuilder,
 ) -> crate::operation::start_batch_job::builders::StartBatchJobOutputBuilder {
     if builder.execution_id.is_none() {
@@ -383,7 +383,7 @@ pub(crate) fn start_batch_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_application_output_output_correct_errors(
+pub(crate) fn update_application_output_correct_errors(
     mut builder: crate::operation::update_application::builders::UpdateApplicationOutputBuilder,
 ) -> crate::operation::update_application::builders::UpdateApplicationOutputBuilder {
     if builder.application_version.is_none() {
@@ -392,7 +392,7 @@ pub(crate) fn update_application_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_environment_output_output_correct_errors(
+pub(crate) fn update_environment_output_correct_errors(
     mut builder: crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder,
 ) -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
     if builder.environment_id.is_none() {

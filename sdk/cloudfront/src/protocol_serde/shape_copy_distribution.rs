@@ -1103,7 +1103,7 @@ pub fn ser_copy_distribution_op_input(
         let mut root = writer
             .start_el("CopyDistributionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::protocol_serde::shape_copy_distribution_input::ser_copy_distribution_input_input_input(input, root)?
+        crate::protocol_serde::shape_copy_distribution_input::ser_copy_distribution_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

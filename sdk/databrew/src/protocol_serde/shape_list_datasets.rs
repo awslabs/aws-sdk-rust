@@ -48,7 +48,7 @@ pub fn de_list_datasets_http_response(
         output = crate::protocol_serde::shape_list_datasets::de_list_datasets(_response_body, output)
             .map_err(crate::operation::list_datasets::ListDatasetsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_datasets_output_output_correct_errors(output)
+        crate::serde_util::list_datasets_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_datasets::ListDatasetsError::unhandled)?
     })

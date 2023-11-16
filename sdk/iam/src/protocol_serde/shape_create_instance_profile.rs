@@ -118,7 +118,7 @@ pub fn de_create_instance_profile_http_response(
         output = crate::protocol_serde::shape_create_instance_profile::de_create_instance_profile(_response_body, output)
             .map_err(crate::operation::create_instance_profile::CreateInstanceProfileError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_instance_profile_output_output_correct_errors(output).build()
+        crate::serde_util::create_instance_profile_output_correct_errors(output).build()
     })
 }
 

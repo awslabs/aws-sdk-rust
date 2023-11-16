@@ -154,7 +154,7 @@ pub fn de_create_route_http_response(
         let mut output = crate::operation::create_route::builders::CreateRouteOutputBuilder::default();
         output = output.set_route(crate::protocol_serde::shape_create_route_output::de_route_payload(_response_body)?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_route_output_output_correct_errors(output).build()
+        crate::serde_util::create_route_output_correct_errors(output).build()
     })
 }
 
@@ -163,7 +163,7 @@ pub fn ser_create_route_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_route_input::ser_create_route_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_create_route_input::ser_create_route_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

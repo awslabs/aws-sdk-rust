@@ -88,7 +88,7 @@ async fn test_s3_signer_with_naughty_string_metadata() {
 
     // This is a snapshot test taken from a known working test result
     let snapshot_signature =
-        "Signature=733dba2f1ca3c9a39f4eef3a6750a71eff00297cd765408ad3cef5dcdc44d642";
+        "Signature=a5115604df66219874a9e5a8eab4c9f7a28c992ab2d918037a285756c019f3b2";
     assert!(
         auth_header .contains(snapshot_signature),
         "authorization header signature did not match expected signature: got {}, expected it to contain {}",

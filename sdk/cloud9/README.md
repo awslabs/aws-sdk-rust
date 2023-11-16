@@ -1,7 +1,7 @@
 # aws-sdk-cloud9
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the cloud.
 
@@ -33,8 +33,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-cloud9 = "0.36.0"
+aws-config = "0.57.1"
+aws-sdk-cloud9 = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -84,7 +84,7 @@ pub fn de_list_tags_for_resource_http_response(
         output = crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource(_response_body, output)
             .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_tags_for_resource_output_output_correct_errors(output)
+        crate::serde_util::list_tags_for_resource_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
     })
@@ -95,7 +95,7 @@ pub fn ser_list_tags_for_resource_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_tags_for_resource_input::ser_list_tags_for_resource_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_list_tags_for_resource_input::ser_list_tags_for_resource_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

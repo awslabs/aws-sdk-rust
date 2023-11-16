@@ -63,7 +63,7 @@ pub fn de_test_dns_answer_http_response(
         output = crate::protocol_serde::shape_test_dns_answer::de_test_dns_answer(_response_body, output)
             .map_err(crate::operation::test_dns_answer::TestDNSAnswerError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::test_dns_answer_output_output_correct_errors(output)
+        crate::serde_util::test_dns_answer_output_correct_errors(output)
             .build()
             .map_err(crate::operation::test_dns_answer::TestDNSAnswerError::unhandled)?
     })

@@ -195,7 +195,7 @@ pub fn de_create_deliverability_test_report_http_response(
         output = crate::protocol_serde::shape_create_deliverability_test_report::de_create_deliverability_test_report(_response_body, output)
             .map_err(crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_deliverability_test_report_output_output_correct_errors(output)
+        crate::serde_util::create_deliverability_test_report_output_correct_errors(output)
             .build()
             .map_err(crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError::unhandled)?
     })
@@ -206,7 +206,7 @@ pub fn ser_create_deliverability_test_report_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_deliverability_test_report_input::ser_create_deliverability_test_report_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_create_deliverability_test_report_input::ser_create_deliverability_test_report_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

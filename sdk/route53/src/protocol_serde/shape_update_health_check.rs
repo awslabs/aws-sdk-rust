@@ -80,7 +80,7 @@ pub fn de_update_health_check_http_response(
         output = crate::protocol_serde::shape_update_health_check::de_update_health_check(_response_body, output)
             .map_err(crate::operation::update_health_check::UpdateHealthCheckError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_health_check_output_output_correct_errors(output).build()
+        crate::serde_util::update_health_check_output_correct_errors(output).build()
     })
 }
 
@@ -94,7 +94,7 @@ pub fn ser_update_health_check_op_input(
         let mut root = writer
             .start_el("UpdateHealthCheckRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_update_health_check_input::ser_update_health_check_input_input_input(input, root)?
+        crate::protocol_serde::shape_update_health_check_input::ser_update_health_check_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

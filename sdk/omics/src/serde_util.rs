@@ -80,7 +80,7 @@ pub(crate) fn conflict_exception_correct_errors(
     builder
 }
 
-pub(crate) fn complete_multipart_read_set_upload_output_output_correct_errors(
+pub(crate) fn complete_multipart_read_set_upload_output_correct_errors(
     mut builder: crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadOutputBuilder,
 ) -> crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadOutputBuilder {
     if builder.read_set_id.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn complete_multipart_read_set_upload_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_annotation_store_output_output_correct_errors(
+pub(crate) fn create_annotation_store_output_correct_errors(
     mut builder: crate::operation::create_annotation_store::builders::CreateAnnotationStoreOutputBuilder,
 ) -> crate::operation::create_annotation_store::builders::CreateAnnotationStoreOutputBuilder {
     if builder.id.is_none() {
@@ -110,7 +110,7 @@ pub(crate) fn create_annotation_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_annotation_store_version_output_output_correct_errors(
+pub(crate) fn create_annotation_store_version_output_correct_errors(
     mut builder: crate::operation::create_annotation_store_version::builders::CreateAnnotationStoreVersionOutputBuilder,
 ) -> crate::operation::create_annotation_store_version::builders::CreateAnnotationStoreVersionOutputBuilder {
     if builder.id.is_none() {
@@ -134,7 +134,7 @@ pub(crate) fn create_annotation_store_version_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_multipart_read_set_upload_output_output_correct_errors(
+pub(crate) fn create_multipart_read_set_upload_output_correct_errors(
     mut builder: crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadOutputBuilder,
 ) -> crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadOutputBuilder {
     if builder.sequence_store_id.is_none() {
@@ -161,7 +161,7 @@ pub(crate) fn create_multipart_read_set_upload_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_reference_store_output_output_correct_errors(
+pub(crate) fn create_reference_store_output_correct_errors(
     mut builder: crate::operation::create_reference_store::builders::CreateReferenceStoreOutputBuilder,
 ) -> crate::operation::create_reference_store::builders::CreateReferenceStoreOutputBuilder {
     if builder.id.is_none() {
@@ -176,7 +176,7 @@ pub(crate) fn create_reference_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_sequence_store_output_output_correct_errors(
+pub(crate) fn create_sequence_store_output_correct_errors(
     mut builder: crate::operation::create_sequence_store::builders::CreateSequenceStoreOutputBuilder,
 ) -> crate::operation::create_sequence_store::builders::CreateSequenceStoreOutputBuilder {
     if builder.id.is_none() {
@@ -191,7 +191,7 @@ pub(crate) fn create_sequence_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_variant_store_output_output_correct_errors(
+pub(crate) fn create_variant_store_output_correct_errors(
     mut builder: crate::operation::create_variant_store::builders::CreateVariantStoreOutputBuilder,
 ) -> crate::operation::create_variant_store::builders::CreateVariantStoreOutputBuilder {
     if builder.id.is_none() {
@@ -209,7 +209,7 @@ pub(crate) fn create_variant_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_annotation_store_output_output_correct_errors(
+pub(crate) fn delete_annotation_store_output_correct_errors(
     mut builder: crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder,
 ) -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder {
     if builder.status.is_none() {
@@ -218,7 +218,7 @@ pub(crate) fn delete_annotation_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_variant_store_output_output_correct_errors(
+pub(crate) fn delete_variant_store_output_correct_errors(
     mut builder: crate::operation::delete_variant_store::builders::DeleteVariantStoreOutputBuilder,
 ) -> crate::operation::delete_variant_store::builders::DeleteVariantStoreOutputBuilder {
     if builder.status.is_none() {
@@ -227,7 +227,7 @@ pub(crate) fn delete_variant_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_annotation_import_job_output_output_correct_errors(
+pub(crate) fn get_annotation_import_job_output_correct_errors(
     mut builder: crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder,
 ) -> crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobOutputBuilder {
     if builder.id.is_none() {
@@ -269,7 +269,7 @@ pub(crate) fn get_annotation_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_annotation_store_output_output_correct_errors(
+pub(crate) fn get_annotation_store_output_correct_errors(
     mut builder: crate::operation::get_annotation_store::builders::GetAnnotationStoreOutputBuilder,
 ) -> crate::operation::get_annotation_store::builders::GetAnnotationStoreOutputBuilder {
     if builder.id.is_none() {
@@ -317,7 +317,7 @@ pub(crate) fn get_annotation_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_annotation_store_version_output_output_correct_errors(
+pub(crate) fn get_annotation_store_version_output_correct_errors(
     mut builder: crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionOutputBuilder,
 ) -> crate::operation::get_annotation_store_version::builders::GetAnnotationStoreVersionOutputBuilder {
     if builder.store_id.is_none() {
@@ -368,7 +368,7 @@ pub(crate) fn range_not_satisfiable_exception_correct_errors(
     builder
 }
 
-pub(crate) fn get_read_set_activation_job_output_output_correct_errors(
+pub(crate) fn get_read_set_activation_job_output_correct_errors(
     mut builder: crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder,
 ) -> crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder {
     if builder.id.is_none() {
@@ -386,7 +386,7 @@ pub(crate) fn get_read_set_activation_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_read_set_export_job_output_output_correct_errors(
+pub(crate) fn get_read_set_export_job_output_correct_errors(
     mut builder: crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder,
 ) -> crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder {
     if builder.id.is_none() {
@@ -407,7 +407,7 @@ pub(crate) fn get_read_set_export_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_read_set_import_job_output_output_correct_errors(
+pub(crate) fn get_read_set_import_job_output_correct_errors(
     mut builder: crate::operation::get_read_set_import_job::builders::GetReadSetImportJobOutputBuilder,
 ) -> crate::operation::get_read_set_import_job::builders::GetReadSetImportJobOutputBuilder {
     if builder.id.is_none() {
@@ -431,7 +431,7 @@ pub(crate) fn get_read_set_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_read_set_metadata_output_output_correct_errors(
+pub(crate) fn get_read_set_metadata_output_correct_errors(
     mut builder: crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder,
 ) -> crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder {
     if builder.id.is_none() {
@@ -455,7 +455,7 @@ pub(crate) fn get_read_set_metadata_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_reference_import_job_output_output_correct_errors(
+pub(crate) fn get_reference_import_job_output_correct_errors(
     mut builder: crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder,
 ) -> crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder {
     if builder.id.is_none() {
@@ -479,7 +479,7 @@ pub(crate) fn get_reference_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_reference_metadata_output_output_correct_errors(
+pub(crate) fn get_reference_metadata_output_correct_errors(
     mut builder: crate::operation::get_reference_metadata::builders::GetReferenceMetadataOutputBuilder,
 ) -> crate::operation::get_reference_metadata::builders::GetReferenceMetadataOutputBuilder {
     if builder.id.is_none() {
@@ -503,7 +503,7 @@ pub(crate) fn get_reference_metadata_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_reference_store_output_output_correct_errors(
+pub(crate) fn get_reference_store_output_correct_errors(
     mut builder: crate::operation::get_reference_store::builders::GetReferenceStoreOutputBuilder,
 ) -> crate::operation::get_reference_store::builders::GetReferenceStoreOutputBuilder {
     if builder.id.is_none() {
@@ -518,7 +518,7 @@ pub(crate) fn get_reference_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_sequence_store_output_output_correct_errors(
+pub(crate) fn get_sequence_store_output_correct_errors(
     mut builder: crate::operation::get_sequence_store::builders::GetSequenceStoreOutputBuilder,
 ) -> crate::operation::get_sequence_store::builders::GetSequenceStoreOutputBuilder {
     if builder.id.is_none() {
@@ -533,7 +533,7 @@ pub(crate) fn get_sequence_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_variant_import_job_output_output_correct_errors(
+pub(crate) fn get_variant_import_job_output_correct_errors(
     mut builder: crate::operation::get_variant_import_job::builders::GetVariantImportJobOutputBuilder,
 ) -> crate::operation::get_variant_import_job::builders::GetVariantImportJobOutputBuilder {
     if builder.id.is_none() {
@@ -566,7 +566,7 @@ pub(crate) fn get_variant_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_variant_store_output_output_correct_errors(
+pub(crate) fn get_variant_store_output_correct_errors(
     mut builder: crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder,
 ) -> crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder {
     if builder.id.is_none() {
@@ -611,7 +611,7 @@ pub(crate) fn get_variant_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_read_sets_output_output_correct_errors(
+pub(crate) fn list_read_sets_output_correct_errors(
     mut builder: crate::operation::list_read_sets::builders::ListReadSetsOutputBuilder,
 ) -> crate::operation::list_read_sets::builders::ListReadSetsOutputBuilder {
     if builder.read_sets.is_none() {
@@ -620,7 +620,7 @@ pub(crate) fn list_read_sets_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_reference_stores_output_output_correct_errors(
+pub(crate) fn list_reference_stores_output_correct_errors(
     mut builder: crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder,
 ) -> crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder {
     if builder.reference_stores.is_none() {
@@ -629,7 +629,7 @@ pub(crate) fn list_reference_stores_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_references_output_output_correct_errors(
+pub(crate) fn list_references_output_correct_errors(
     mut builder: crate::operation::list_references::builders::ListReferencesOutputBuilder,
 ) -> crate::operation::list_references::builders::ListReferencesOutputBuilder {
     if builder.references.is_none() {
@@ -638,7 +638,7 @@ pub(crate) fn list_references_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_sequence_stores_output_output_correct_errors(
+pub(crate) fn list_sequence_stores_output_correct_errors(
     mut builder: crate::operation::list_sequence_stores::builders::ListSequenceStoresOutputBuilder,
 ) -> crate::operation::list_sequence_stores::builders::ListSequenceStoresOutputBuilder {
     if builder.sequence_stores.is_none() {
@@ -647,7 +647,7 @@ pub(crate) fn list_sequence_stores_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_shares_output_output_correct_errors(
+pub(crate) fn list_shares_output_correct_errors(
     mut builder: crate::operation::list_shares::builders::ListSharesOutputBuilder,
 ) -> crate::operation::list_shares::builders::ListSharesOutputBuilder {
     if builder.shares.is_none() {
@@ -656,7 +656,7 @@ pub(crate) fn list_shares_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
@@ -665,7 +665,7 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_annotation_import_job_output_output_correct_errors(
+pub(crate) fn start_annotation_import_job_output_correct_errors(
     mut builder: crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobOutputBuilder,
 ) -> crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobOutputBuilder {
     if builder.job_id.is_none() {
@@ -674,7 +674,7 @@ pub(crate) fn start_annotation_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_read_set_activation_job_output_output_correct_errors(
+pub(crate) fn start_read_set_activation_job_output_correct_errors(
     mut builder: crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobOutputBuilder,
 ) -> crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobOutputBuilder {
     if builder.id.is_none() {
@@ -692,7 +692,7 @@ pub(crate) fn start_read_set_activation_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_read_set_export_job_output_output_correct_errors(
+pub(crate) fn start_read_set_export_job_output_correct_errors(
     mut builder: crate::operation::start_read_set_export_job::builders::StartReadSetExportJobOutputBuilder,
 ) -> crate::operation::start_read_set_export_job::builders::StartReadSetExportJobOutputBuilder {
     if builder.id.is_none() {
@@ -713,7 +713,7 @@ pub(crate) fn start_read_set_export_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_read_set_import_job_output_output_correct_errors(
+pub(crate) fn start_read_set_import_job_output_correct_errors(
     mut builder: crate::operation::start_read_set_import_job::builders::StartReadSetImportJobOutputBuilder,
 ) -> crate::operation::start_read_set_import_job::builders::StartReadSetImportJobOutputBuilder {
     if builder.id.is_none() {
@@ -734,7 +734,7 @@ pub(crate) fn start_read_set_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_reference_import_job_output_output_correct_errors(
+pub(crate) fn start_reference_import_job_output_correct_errors(
     mut builder: crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder,
 ) -> crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder {
     if builder.id.is_none() {
@@ -755,7 +755,7 @@ pub(crate) fn start_reference_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_variant_import_job_output_output_correct_errors(
+pub(crate) fn start_variant_import_job_output_correct_errors(
     mut builder: crate::operation::start_variant_import_job::builders::StartVariantImportJobOutputBuilder,
 ) -> crate::operation::start_variant_import_job::builders::StartVariantImportJobOutputBuilder {
     if builder.job_id.is_none() {
@@ -764,7 +764,7 @@ pub(crate) fn start_variant_import_job_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_annotation_store_output_output_correct_errors(
+pub(crate) fn update_annotation_store_output_correct_errors(
     mut builder: crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder,
 ) -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder {
     if builder.id.is_none() {
@@ -791,7 +791,7 @@ pub(crate) fn update_annotation_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_annotation_store_version_output_output_correct_errors(
+pub(crate) fn update_annotation_store_version_output_correct_errors(
     mut builder: crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder,
 ) -> crate::operation::update_annotation_store_version::builders::UpdateAnnotationStoreVersionOutputBuilder {
     if builder.store_id.is_none() {
@@ -821,7 +821,7 @@ pub(crate) fn update_annotation_store_version_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_variant_store_output_output_correct_errors(
+pub(crate) fn update_variant_store_output_correct_errors(
     mut builder: crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder,
 ) -> crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder {
     if builder.id.is_none() {
@@ -848,7 +848,7 @@ pub(crate) fn update_variant_store_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn upload_read_set_part_output_output_correct_errors(
+pub(crate) fn upload_read_set_part_output_correct_errors(
     mut builder: crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder,
 ) -> crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder {
     if builder.checksum.is_none() {

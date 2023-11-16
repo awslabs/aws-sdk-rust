@@ -103,7 +103,7 @@ pub fn de_list_contact_evaluations_http_response(
         output = crate::protocol_serde::shape_list_contact_evaluations::de_list_contact_evaluations(_response_body, output)
             .map_err(crate::operation::list_contact_evaluations::ListContactEvaluationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_contact_evaluations_output_output_correct_errors(output)
+        crate::serde_util::list_contact_evaluations_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_contact_evaluations::ListContactEvaluationsError::unhandled)?
     })

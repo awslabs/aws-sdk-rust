@@ -73,7 +73,7 @@ pub fn de_list_instance_profile_tags_http_response(
         output = crate::protocol_serde::shape_list_instance_profile_tags::de_list_instance_profile_tags(_response_body, output)
             .map_err(crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_instance_profile_tags_output_output_correct_errors(output)
+        crate::serde_util::list_instance_profile_tags_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError::unhandled)?
     })

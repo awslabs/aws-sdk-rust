@@ -68,7 +68,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_access_log_subscription_output_output_correct_errors(
+pub(crate) fn create_access_log_subscription_output_correct_errors(
     mut builder: crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionOutputBuilder,
 ) -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionOutputBuilder {
     if builder.id.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn get_access_log_subscription_output_output_correct_errors(
+pub(crate) fn get_access_log_subscription_output_correct_errors(
     mut builder: crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionOutputBuilder,
 ) -> crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionOutputBuilder {
     if builder.id.is_none() {
@@ -134,7 +134,7 @@ pub(crate) fn get_access_log_subscription_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_access_log_subscriptions_output_output_correct_errors(
+pub(crate) fn list_access_log_subscriptions_output_correct_errors(
     mut builder: crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder,
 ) -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder {
     if builder.items.is_none() {
@@ -143,7 +143,7 @@ pub(crate) fn list_access_log_subscriptions_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_listeners_output_output_correct_errors(
+pub(crate) fn list_listeners_output_correct_errors(
     mut builder: crate::operation::list_listeners::builders::ListListenersOutputBuilder,
 ) -> crate::operation::list_listeners::builders::ListListenersOutputBuilder {
     if builder.items.is_none() {
@@ -152,7 +152,7 @@ pub(crate) fn list_listeners_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_rules_output_output_correct_errors(
+pub(crate) fn list_rules_output_correct_errors(
     mut builder: crate::operation::list_rules::builders::ListRulesOutputBuilder,
 ) -> crate::operation::list_rules::builders::ListRulesOutputBuilder {
     if builder.items.is_none() {
@@ -161,7 +161,7 @@ pub(crate) fn list_rules_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_service_network_service_associations_output_output_correct_errors(
+pub(crate) fn list_service_network_service_associations_output_correct_errors(
     mut builder: crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsOutputBuilder,
 ) -> crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsOutputBuilder {
     if builder.items.is_none() {
@@ -170,7 +170,7 @@ pub(crate) fn list_service_network_service_associations_output_output_correct_er
     builder
 }
 
-pub(crate) fn list_service_network_vpc_associations_output_output_correct_errors(
+pub(crate) fn list_service_network_vpc_associations_output_correct_errors(
     mut builder: crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsOutputBuilder,
 ) -> crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsOutputBuilder {
     if builder.items.is_none() {
@@ -179,7 +179,7 @@ pub(crate) fn list_service_network_vpc_associations_output_output_correct_errors
     builder
 }
 
-pub(crate) fn list_service_networks_output_output_correct_errors(
+pub(crate) fn list_service_networks_output_correct_errors(
     mut builder: crate::operation::list_service_networks::builders::ListServiceNetworksOutputBuilder,
 ) -> crate::operation::list_service_networks::builders::ListServiceNetworksOutputBuilder {
     if builder.items.is_none() {
@@ -188,7 +188,7 @@ pub(crate) fn list_service_networks_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_targets_output_output_correct_errors(
+pub(crate) fn list_targets_output_correct_errors(
     mut builder: crate::operation::list_targets::builders::ListTargetsOutputBuilder,
 ) -> crate::operation::list_targets::builders::ListTargetsOutputBuilder {
     if builder.items.is_none() {
@@ -197,7 +197,7 @@ pub(crate) fn list_targets_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_access_log_subscription_output_output_correct_errors(
+pub(crate) fn update_access_log_subscription_output_correct_errors(
     mut builder: crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder,
 ) -> crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder {
     if builder.id.is_none() {

@@ -61,7 +61,7 @@ pub fn de_list_job_runs_http_response(
         output = crate::protocol_serde::shape_list_job_runs::de_list_job_runs(_response_body, output)
             .map_err(crate::operation::list_job_runs::ListJobRunsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_job_runs_output_output_correct_errors(output)
+        crate::serde_util::list_job_runs_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_job_runs::ListJobRunsError::unhandled)?
     })

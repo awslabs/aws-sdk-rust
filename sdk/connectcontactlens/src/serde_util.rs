@@ -17,7 +17,7 @@ pub(crate) fn throttling_exception_correct_errors(
     builder
 }
 
-pub(crate) fn list_realtime_contact_analysis_segments_output_output_correct_errors(
+pub(crate) fn list_realtime_contact_analysis_segments_output_correct_errors(
     mut builder: crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsOutputBuilder,
 ) -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsOutputBuilder {
     if builder.segments.is_none() {

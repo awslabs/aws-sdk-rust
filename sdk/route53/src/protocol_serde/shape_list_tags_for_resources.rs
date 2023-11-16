@@ -114,7 +114,7 @@ pub fn de_list_tags_for_resources_http_response(
         output = crate::protocol_serde::shape_list_tags_for_resources::de_list_tags_for_resources(_response_body, output)
             .map_err(crate::operation::list_tags_for_resources::ListTagsForResourcesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_tags_for_resources_output_output_correct_errors(output)
+        crate::serde_util::list_tags_for_resources_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_tags_for_resources::ListTagsForResourcesError::unhandled)?
     })
@@ -130,7 +130,7 @@ pub fn ser_list_tags_for_resources_op_input(
         let mut root = writer
             .start_el("ListTagsForResourcesRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_list_tags_for_resources_input::ser_list_tags_for_resources_input_input_input(input, root)?
+        crate::protocol_serde::shape_list_tags_for_resources_input::ser_list_tags_for_resources_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

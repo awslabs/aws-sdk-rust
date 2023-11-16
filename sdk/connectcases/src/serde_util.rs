@@ -50,7 +50,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_field_output_output_correct_errors(
+pub(crate) fn batch_get_field_output_correct_errors(
     mut builder: crate::operation::batch_get_field::builders::BatchGetFieldOutputBuilder,
 ) -> crate::operation::batch_get_field::builders::BatchGetFieldOutputBuilder {
     if builder.fields.is_none() {
@@ -80,7 +80,7 @@ pub(crate) fn conflict_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_case_output_output_correct_errors(
+pub(crate) fn create_case_output_correct_errors(
     mut builder: crate::operation::create_case::builders::CreateCaseOutputBuilder,
 ) -> crate::operation::create_case::builders::CreateCaseOutputBuilder {
     if builder.case_id.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn create_case_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_domain_output_output_correct_errors(
+pub(crate) fn create_domain_output_correct_errors(
     mut builder: crate::operation::create_domain::builders::CreateDomainOutputBuilder,
 ) -> crate::operation::create_domain::builders::CreateDomainOutputBuilder {
     if builder.domain_id.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn create_domain_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_field_output_output_correct_errors(
+pub(crate) fn create_field_output_correct_errors(
     mut builder: crate::operation::create_field::builders::CreateFieldOutputBuilder,
 ) -> crate::operation::create_field::builders::CreateFieldOutputBuilder {
     if builder.field_id.is_none() {
@@ -119,7 +119,7 @@ pub(crate) fn create_field_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_layout_output_output_correct_errors(
+pub(crate) fn create_layout_output_correct_errors(
     mut builder: crate::operation::create_layout::builders::CreateLayoutOutputBuilder,
 ) -> crate::operation::create_layout::builders::CreateLayoutOutputBuilder {
     if builder.layout_id.is_none() {
@@ -131,7 +131,7 @@ pub(crate) fn create_layout_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_related_item_output_output_correct_errors(
+pub(crate) fn create_related_item_output_correct_errors(
     mut builder: crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder,
 ) -> crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder {
     if builder.related_item_id.is_none() {
@@ -143,7 +143,7 @@ pub(crate) fn create_related_item_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_template_output_output_correct_errors(
+pub(crate) fn create_template_output_correct_errors(
     mut builder: crate::operation::create_template::builders::CreateTemplateOutputBuilder,
 ) -> crate::operation::create_template::builders::CreateTemplateOutputBuilder {
     if builder.template_id.is_none() {
@@ -155,7 +155,7 @@ pub(crate) fn create_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_case_output_output_correct_errors(
+pub(crate) fn get_case_output_correct_errors(
     mut builder: crate::operation::get_case::builders::GetCaseOutputBuilder,
 ) -> crate::operation::get_case::builders::GetCaseOutputBuilder {
     if builder.fields.is_none() {
@@ -167,7 +167,7 @@ pub(crate) fn get_case_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_case_event_configuration_output_output_correct_errors(
+pub(crate) fn get_case_event_configuration_output_correct_errors(
     mut builder: crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationOutputBuilder,
 ) -> crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationOutputBuilder {
     if builder.event_bridge.is_none() {
@@ -179,7 +179,7 @@ pub(crate) fn get_case_event_configuration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_domain_output_output_correct_errors(
+pub(crate) fn get_domain_output_correct_errors(
     mut builder: crate::operation::get_domain::builders::GetDomainOutputBuilder,
 ) -> crate::operation::get_domain::builders::GetDomainOutputBuilder {
     if builder.domain_id.is_none() {
@@ -200,7 +200,7 @@ pub(crate) fn get_domain_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_layout_output_output_correct_errors(
+pub(crate) fn get_layout_output_correct_errors(
     mut builder: crate::operation::get_layout::builders::GetLayoutOutputBuilder,
 ) -> crate::operation::get_layout::builders::GetLayoutOutputBuilder {
     if builder.layout_id.is_none() {
@@ -218,7 +218,7 @@ pub(crate) fn get_layout_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_template_output_output_correct_errors(
+pub(crate) fn get_template_output_correct_errors(
     mut builder: crate::operation::get_template::builders::GetTemplateOutputBuilder,
 ) -> crate::operation::get_template::builders::GetTemplateOutputBuilder {
     if builder.template_id.is_none() {
@@ -236,7 +236,7 @@ pub(crate) fn get_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_cases_for_contact_output_output_correct_errors(
+pub(crate) fn list_cases_for_contact_output_correct_errors(
     mut builder: crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder,
 ) -> crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder {
     if builder.cases.is_none() {
@@ -245,7 +245,7 @@ pub(crate) fn list_cases_for_contact_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_domains_output_output_correct_errors(
+pub(crate) fn list_domains_output_correct_errors(
     mut builder: crate::operation::list_domains::builders::ListDomainsOutputBuilder,
 ) -> crate::operation::list_domains::builders::ListDomainsOutputBuilder {
     if builder.domains.is_none() {
@@ -254,7 +254,7 @@ pub(crate) fn list_domains_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_field_options_output_output_correct_errors(
+pub(crate) fn list_field_options_output_correct_errors(
     mut builder: crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder,
 ) -> crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder {
     if builder.options.is_none() {
@@ -263,7 +263,7 @@ pub(crate) fn list_field_options_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_fields_output_output_correct_errors(
+pub(crate) fn list_fields_output_correct_errors(
     mut builder: crate::operation::list_fields::builders::ListFieldsOutputBuilder,
 ) -> crate::operation::list_fields::builders::ListFieldsOutputBuilder {
     if builder.fields.is_none() {
@@ -272,7 +272,7 @@ pub(crate) fn list_fields_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_layouts_output_output_correct_errors(
+pub(crate) fn list_layouts_output_correct_errors(
     mut builder: crate::operation::list_layouts::builders::ListLayoutsOutputBuilder,
 ) -> crate::operation::list_layouts::builders::ListLayoutsOutputBuilder {
     if builder.layouts.is_none() {
@@ -281,7 +281,7 @@ pub(crate) fn list_layouts_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_templates_output_output_correct_errors(
+pub(crate) fn list_templates_output_correct_errors(
     mut builder: crate::operation::list_templates::builders::ListTemplatesOutputBuilder,
 ) -> crate::operation::list_templates::builders::ListTemplatesOutputBuilder {
     if builder.templates.is_none() {
@@ -290,7 +290,7 @@ pub(crate) fn list_templates_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn search_cases_output_output_correct_errors(
+pub(crate) fn search_cases_output_correct_errors(
     mut builder: crate::operation::search_cases::builders::SearchCasesOutputBuilder,
 ) -> crate::operation::search_cases::builders::SearchCasesOutputBuilder {
     if builder.cases.is_none() {
@@ -299,7 +299,7 @@ pub(crate) fn search_cases_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn search_related_items_output_output_correct_errors(
+pub(crate) fn search_related_items_output_correct_errors(
     mut builder: crate::operation::search_related_items::builders::SearchRelatedItemsOutputBuilder,
 ) -> crate::operation::search_related_items::builders::SearchRelatedItemsOutputBuilder {
     if builder.related_items.is_none() {

@@ -26,7 +26,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn cancel_job_run_output_output_correct_errors(
+pub(crate) fn cancel_job_run_output_correct_errors(
     mut builder: crate::operation::cancel_job_run::builders::CancelJobRunOutputBuilder,
 ) -> crate::operation::cancel_job_run::builders::CancelJobRunOutputBuilder {
     if builder.application_id.is_none() {
@@ -47,7 +47,7 @@ pub(crate) fn conflict_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_application_output_output_correct_errors(
+pub(crate) fn create_application_output_correct_errors(
     mut builder: crate::operation::create_application::builders::CreateApplicationOutputBuilder,
 ) -> crate::operation::create_application::builders::CreateApplicationOutputBuilder {
     if builder.application_id.is_none() {
@@ -59,7 +59,7 @@ pub(crate) fn create_application_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_application_output_output_correct_errors(
+pub(crate) fn get_application_output_correct_errors(
     mut builder: crate::operation::get_application::builders::GetApplicationOutputBuilder,
 ) -> crate::operation::get_application::builders::GetApplicationOutputBuilder {
     if builder.application.is_none() {
@@ -71,7 +71,7 @@ pub(crate) fn get_application_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_job_run_output_output_correct_errors(
+pub(crate) fn get_job_run_output_correct_errors(
     mut builder: crate::operation::get_job_run::builders::GetJobRunOutputBuilder,
 ) -> crate::operation::get_job_run::builders::GetJobRunOutputBuilder {
     if builder.job_run.is_none() {
@@ -83,7 +83,7 @@ pub(crate) fn get_job_run_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_applications_output_output_correct_errors(
+pub(crate) fn list_applications_output_correct_errors(
     mut builder: crate::operation::list_applications::builders::ListApplicationsOutputBuilder,
 ) -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
     if builder.applications.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn list_applications_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_job_runs_output_output_correct_errors(
+pub(crate) fn list_job_runs_output_correct_errors(
     mut builder: crate::operation::list_job_runs::builders::ListJobRunsOutputBuilder,
 ) -> crate::operation::list_job_runs::builders::ListJobRunsOutputBuilder {
     if builder.job_runs.is_none() {
@@ -110,7 +110,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn start_job_run_output_output_correct_errors(
+pub(crate) fn start_job_run_output_correct_errors(
     mut builder: crate::operation::start_job_run::builders::StartJobRunOutputBuilder,
 ) -> crate::operation::start_job_run::builders::StartJobRunOutputBuilder {
     if builder.application_id.is_none() {
@@ -125,7 +125,7 @@ pub(crate) fn start_job_run_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_application_output_output_correct_errors(
+pub(crate) fn update_application_output_correct_errors(
     mut builder: crate::operation::update_application::builders::UpdateApplicationOutputBuilder,
 ) -> crate::operation::update_application::builders::UpdateApplicationOutputBuilder {
     if builder.application.is_none() {

@@ -89,7 +89,7 @@ impl SimulateCustomPolicyPaginator {
                         // If the input member is None or it was an error
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
-                                let new_token = crate::lens::reflens_simulate_custom_policy_output_output_marker(resp);
+                                let new_token = crate::lens::reflens_simulate_custom_policy_output_marker(resp);
                                 let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                 if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                     true
@@ -138,7 +138,7 @@ impl SimulateCustomPolicyPaginatorItems {
         >,
     > {
         ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_simulate_custom_policy_output_output_evaluation_results(page)
+            crate::lens::lens_simulate_custom_policy_output_evaluation_results(page)
                 .unwrap_or_default()
                 .into_iter()
         })

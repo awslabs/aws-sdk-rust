@@ -108,7 +108,7 @@ pub fn de_delete_webhook_http_response(
         output = crate::protocol_serde::shape_delete_webhook::de_delete_webhook(_response_body, output)
             .map_err(crate::operation::delete_webhook::DeleteWebhookError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_webhook_output_output_correct_errors(output).build()
+        crate::serde_util::delete_webhook_output_correct_errors(output).build()
     })
 }
 

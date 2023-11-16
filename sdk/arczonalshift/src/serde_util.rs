@@ -32,7 +32,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn cancel_zonal_shift_output_output_correct_errors(
+pub(crate) fn cancel_zonal_shift_output_correct_errors(
     mut builder: crate::operation::cancel_zonal_shift::builders::CancelZonalShiftOutputBuilder,
 ) -> crate::operation::cancel_zonal_shift::builders::CancelZonalShiftOutputBuilder {
     if builder.zonal_shift_id.is_none() {
@@ -59,7 +59,7 @@ pub(crate) fn cancel_zonal_shift_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_managed_resource_output_output_correct_errors(
+pub(crate) fn get_managed_resource_output_correct_errors(
     mut builder: crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder,
 ) -> crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder {
     if builder.applied_weights.is_none() {
@@ -71,7 +71,7 @@ pub(crate) fn get_managed_resource_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_managed_resources_output_output_correct_errors(
+pub(crate) fn list_managed_resources_output_correct_errors(
     mut builder: crate::operation::list_managed_resources::builders::ListManagedResourcesOutputBuilder,
 ) -> crate::operation::list_managed_resources::builders::ListManagedResourcesOutputBuilder {
     if builder.items.is_none() {
@@ -80,7 +80,7 @@ pub(crate) fn list_managed_resources_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_zonal_shift_output_output_correct_errors(
+pub(crate) fn start_zonal_shift_output_correct_errors(
     mut builder: crate::operation::start_zonal_shift::builders::StartZonalShiftOutputBuilder,
 ) -> crate::operation::start_zonal_shift::builders::StartZonalShiftOutputBuilder {
     if builder.zonal_shift_id.is_none() {
@@ -107,7 +107,7 @@ pub(crate) fn start_zonal_shift_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_zonal_shift_output_output_correct_errors(
+pub(crate) fn update_zonal_shift_output_correct_errors(
     mut builder: crate::operation::update_zonal_shift::builders::UpdateZonalShiftOutputBuilder,
 ) -> crate::operation::update_zonal_shift::builders::UpdateZonalShiftOutputBuilder {
     if builder.zonal_shift_id.is_none() {

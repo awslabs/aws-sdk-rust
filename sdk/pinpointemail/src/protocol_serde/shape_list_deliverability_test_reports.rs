@@ -87,7 +87,7 @@ pub fn de_list_deliverability_test_reports_http_response(
         output = crate::protocol_serde::shape_list_deliverability_test_reports::de_list_deliverability_test_reports(_response_body, output)
             .map_err(crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_deliverability_test_reports_output_output_correct_errors(output)
+        crate::serde_util::list_deliverability_test_reports_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsError::unhandled)?
     })

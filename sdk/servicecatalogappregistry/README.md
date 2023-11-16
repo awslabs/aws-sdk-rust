@@ -1,7 +1,7 @@
 # aws-sdk-servicecatalogappregistry
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
+feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon Web Services Service Catalog AppRegistry enables organizations to understand the application context of their Amazon Web Services resources. AppRegistry provides a repository of your applications, their resources, and the application metadata that you use within your enterprise.
 
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.2"
-aws-sdk-servicecatalogappregistry = "0.36.0"
+aws-config = "0.57.1"
+aws-sdk-servicecatalogappregistry = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

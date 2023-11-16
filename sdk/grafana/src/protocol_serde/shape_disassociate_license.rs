@@ -123,7 +123,7 @@ pub fn de_disassociate_license_http_response(
         output = crate::protocol_serde::shape_disassociate_license::de_disassociate_license(_response_body, output)
             .map_err(crate::operation::disassociate_license::DisassociateLicenseError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::disassociate_license_output_output_correct_errors(output).build()
+        crate::serde_util::disassociate_license_output_correct_errors(output).build()
     })
 }
 

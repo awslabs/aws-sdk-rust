@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SetSecurityT
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_set_security_token_service_preferences_input::ser_set_security_token_service_preferences_input_input_input(
+            crate::protocol_serde::shape_set_security_token_service_preferences_input::ser_set_security_token_service_preferences_input_input(
                 &input,
             )?,
         );

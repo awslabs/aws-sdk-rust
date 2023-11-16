@@ -95,7 +95,7 @@ pub fn de_get_cors_policy_http_response(
         output = crate::protocol_serde::shape_get_cors_policy::de_get_cors_policy(_response_body, output)
             .map_err(crate::operation::get_cors_policy::GetCorsPolicyError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_cors_policy_output_output_correct_errors(output)
+        crate::serde_util::get_cors_policy_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_cors_policy::GetCorsPolicyError::unhandled)?
     })
@@ -106,7 +106,7 @@ pub fn ser_get_cors_policy_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_cors_policy_input::ser_get_cors_policy_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_get_cors_policy_input::ser_get_cors_policy_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

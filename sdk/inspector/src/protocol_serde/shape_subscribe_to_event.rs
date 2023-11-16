@@ -125,7 +125,7 @@ pub fn ser_subscribe_to_event_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_subscribe_to_event_input::ser_subscribe_to_event_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_subscribe_to_event_input::ser_subscribe_to_event_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

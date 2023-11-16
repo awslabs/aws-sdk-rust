@@ -87,7 +87,7 @@ pub fn de_get_domain_deliverability_campaign_http_response(
         output = crate::protocol_serde::shape_get_domain_deliverability_campaign::de_get_domain_deliverability_campaign(_response_body, output)
             .map_err(crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_domain_deliverability_campaign_output_output_correct_errors(output).build()
+        crate::serde_util::get_domain_deliverability_campaign_output_correct_errors(output).build()
     })
 }
 

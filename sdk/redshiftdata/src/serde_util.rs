@@ -41,7 +41,7 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn describe_statement_output_output_correct_errors(
+pub(crate) fn describe_statement_output_correct_errors(
     mut builder: crate::operation::describe_statement::builders::DescribeStatementOutputBuilder,
 ) -> crate::operation::describe_statement::builders::DescribeStatementOutputBuilder {
     if builder.id.is_none() {
@@ -62,7 +62,7 @@ pub(crate) fn execute_statement_exception_correct_errors(
     builder
 }
 
-pub(crate) fn get_statement_result_output_output_correct_errors(
+pub(crate) fn get_statement_result_output_correct_errors(
     mut builder: crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder,
 ) -> crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder {
     if builder.records.is_none() {
@@ -71,7 +71,7 @@ pub(crate) fn get_statement_result_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_statements_output_output_correct_errors(
+pub(crate) fn list_statements_output_correct_errors(
     mut builder: crate::operation::list_statements::builders::ListStatementsOutputBuilder,
 ) -> crate::operation::list_statements::builders::ListStatementsOutputBuilder {
     if builder.statements.is_none() {

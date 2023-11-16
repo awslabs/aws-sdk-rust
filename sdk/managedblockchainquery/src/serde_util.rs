@@ -80,7 +80,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_token_balance_output_output_correct_errors(
+pub(crate) fn batch_get_token_balance_output_correct_errors(
     mut builder: crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceOutputBuilder,
 ) -> crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceOutputBuilder {
     if builder.token_balances.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn batch_get_token_balance_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_asset_contract_output_output_correct_errors(
+pub(crate) fn get_asset_contract_output_correct_errors(
     mut builder: crate::operation::get_asset_contract::builders::GetAssetContractOutputBuilder,
 ) -> crate::operation::get_asset_contract::builders::GetAssetContractOutputBuilder {
     if builder.contract_identifier.is_none() {
@@ -110,7 +110,7 @@ pub(crate) fn get_asset_contract_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_token_balance_output_output_correct_errors(
+pub(crate) fn get_token_balance_output_correct_errors(
     mut builder: crate::operation::get_token_balance::builders::GetTokenBalanceOutputBuilder,
 ) -> crate::operation::get_token_balance::builders::GetTokenBalanceOutputBuilder {
     if builder.balance.is_none() {
@@ -125,7 +125,7 @@ pub(crate) fn get_token_balance_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_transaction_output_output_correct_errors(
+pub(crate) fn get_transaction_output_correct_errors(
     mut builder: crate::operation::get_transaction::builders::GetTransactionOutputBuilder,
 ) -> crate::operation::get_transaction::builders::GetTransactionOutputBuilder {
     if builder.transaction.is_none() {
@@ -137,7 +137,7 @@ pub(crate) fn get_transaction_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_asset_contracts_output_output_correct_errors(
+pub(crate) fn list_asset_contracts_output_correct_errors(
     mut builder: crate::operation::list_asset_contracts::builders::ListAssetContractsOutputBuilder,
 ) -> crate::operation::list_asset_contracts::builders::ListAssetContractsOutputBuilder {
     if builder.contracts.is_none() {
@@ -146,7 +146,7 @@ pub(crate) fn list_asset_contracts_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_token_balances_output_output_correct_errors(
+pub(crate) fn list_token_balances_output_correct_errors(
     mut builder: crate::operation::list_token_balances::builders::ListTokenBalancesOutputBuilder,
 ) -> crate::operation::list_token_balances::builders::ListTokenBalancesOutputBuilder {
     if builder.token_balances.is_none() {
@@ -155,7 +155,7 @@ pub(crate) fn list_token_balances_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_transaction_events_output_output_correct_errors(
+pub(crate) fn list_transaction_events_output_correct_errors(
     mut builder: crate::operation::list_transaction_events::builders::ListTransactionEventsOutputBuilder,
 ) -> crate::operation::list_transaction_events::builders::ListTransactionEventsOutputBuilder {
     if builder.events.is_none() {
@@ -164,7 +164,7 @@ pub(crate) fn list_transaction_events_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_transactions_output_output_correct_errors(
+pub(crate) fn list_transactions_output_correct_errors(
     mut builder: crate::operation::list_transactions::builders::ListTransactionsOutputBuilder,
 ) -> crate::operation::list_transactions::builders::ListTransactionsOutputBuilder {
     if builder.transactions.is_none() {

@@ -79,7 +79,10 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
                         // If the input member is None or it was an error
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
-                                let new_token = crate::lens::reflens_describe_local_gateway_route_table_virtual_interface_group_associations_output_output_next_token(resp);
+                                let new_token =
+                                    crate::lens::reflens_describe_local_gateway_route_table_virtual_interface_group_associations_output_next_token(
+                                        resp,
+                                    );
                                 let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                 if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                     true
@@ -119,6 +122,6 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginatorIte
     ///
     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
     pub fn send(self) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<::std::result::Result<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>>{
-        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_local_gateway_route_table_virtual_interface_group_associations_output_output_local_gateway_route_table_virtual_interface_group_associations(page).unwrap_or_default().into_iter())
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_local_gateway_route_table_virtual_interface_group_associations_output_local_gateway_route_table_virtual_interface_group_associations(page).unwrap_or_default().into_iter())
     }
 }

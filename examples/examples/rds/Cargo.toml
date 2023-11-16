@@ -14,10 +14,10 @@ inquire = "0.6.2"
 mockall = "0.11.4"
 secrecy = "0.8.0"
 tracing = "0.1.37"
-aws-config= { version = "0.57.2", path = "../../../sdk/aws-config" }
-aws-smithy-http= { version = "0.57.2", path = "../../../sdk/aws-smithy-http" }
-aws-smithy-runtime-api= { version = "0.57.2", path = "../../../sdk/aws-smithy-runtime-api" }
-aws-sdk-rds= { version = "0.36.1", path = "../../../sdk/rds" }
+aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
+aws-smithy-http= { version = "0.57.1", path = "../../../sdk/aws-smithy-http" }
+aws-smithy-runtime-api= { version = "0.57.1", path = "../../../sdk/aws-smithy-runtime-api" }
+aws-sdk-rds= { version = "0.37.0", path = "../../../sdk/rds" }
 
 [dependencies.clap]
 version = "~4.4"

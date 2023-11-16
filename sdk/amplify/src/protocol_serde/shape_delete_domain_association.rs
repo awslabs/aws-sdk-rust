@@ -123,7 +123,7 @@ pub fn de_delete_domain_association_http_response(
         output = crate::protocol_serde::shape_delete_domain_association::de_delete_domain_association(_response_body, output)
             .map_err(crate::operation::delete_domain_association::DeleteDomainAssociationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_domain_association_output_output_correct_errors(output).build()
+        crate::serde_util::delete_domain_association_output_correct_errors(output).build()
     })
 }
 

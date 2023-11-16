@@ -109,7 +109,7 @@ pub fn de_list_pages_by_engagement_http_response(
         output = crate::protocol_serde::shape_list_pages_by_engagement::de_list_pages_by_engagement(_response_body, output)
             .map_err(crate::operation::list_pages_by_engagement::ListPagesByEngagementError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_pages_by_engagement_output_output_correct_errors(output)
+        crate::serde_util::list_pages_by_engagement_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_pages_by_engagement::ListPagesByEngagementError::unhandled)?
     })
@@ -120,7 +120,7 @@ pub fn ser_list_pages_by_engagement_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_pages_by_engagement_input::ser_list_pages_by_engagement_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_list_pages_by_engagement_input::ser_list_pages_by_engagement_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

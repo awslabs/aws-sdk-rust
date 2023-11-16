@@ -120,7 +120,7 @@ pub fn de_create_connector_http_response(
         output = crate::protocol_serde::shape_create_connector::de_create_connector(_response_body, output)
             .map_err(crate::operation::create_connector::CreateConnectorError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_connector_output_output_correct_errors(output)
+        crate::serde_util::create_connector_output_correct_errors(output)
             .build()
             .map_err(crate::operation::create_connector::CreateConnectorError::unhandled)?
     })
@@ -131,7 +131,7 @@ pub fn ser_create_connector_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_connector_input::ser_create_connector_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_create_connector_input::ser_create_connector_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

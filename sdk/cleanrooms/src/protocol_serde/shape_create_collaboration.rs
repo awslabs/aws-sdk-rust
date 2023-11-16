@@ -116,7 +116,7 @@ pub fn de_create_collaboration_http_response(
         output = crate::protocol_serde::shape_create_collaboration::de_create_collaboration(_response_body, output)
             .map_err(crate::operation::create_collaboration::CreateCollaborationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::create_collaboration_output_output_correct_errors(output).build()
+        crate::serde_util::create_collaboration_output_correct_errors(output).build()
     })
 }
 
@@ -125,7 +125,7 @@ pub fn ser_create_collaboration_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_collaboration_input::ser_create_collaboration_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_create_collaboration_input::ser_create_collaboration_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

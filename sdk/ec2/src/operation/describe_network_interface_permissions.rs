@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeNetw
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_describe_network_interface_permissions_input::ser_describe_network_interface_permissions_input_input_input(
+            crate::protocol_serde::shape_describe_network_interface_permissions_input::ser_describe_network_interface_permissions_input_input(
                 &input,
             )?,
         );

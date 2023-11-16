@@ -35,7 +35,7 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn acknowledge_order_receipt_output_output_correct_errors(
+pub(crate) fn acknowledge_order_receipt_output_correct_errors(
     mut builder: crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptOutputBuilder,
 ) -> crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptOutputBuilder {
     if builder.order.is_none() {
@@ -47,7 +47,7 @@ pub(crate) fn acknowledge_order_receipt_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn activate_device_identifier_output_output_correct_errors(
+pub(crate) fn activate_device_identifier_output_correct_errors(
     mut builder: crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierOutputBuilder,
 ) -> crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierOutputBuilder {
     if builder.device_identifier.is_none() {
@@ -59,7 +59,7 @@ pub(crate) fn activate_device_identifier_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn configure_access_point_output_output_correct_errors(
+pub(crate) fn configure_access_point_output_correct_errors(
     mut builder: crate::operation::configure_access_point::builders::ConfigureAccessPointOutputBuilder,
 ) -> crate::operation::configure_access_point::builders::ConfigureAccessPointOutputBuilder {
     if builder.access_point.is_none() {
@@ -80,7 +80,7 @@ pub(crate) fn limit_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_network_output_output_correct_errors(
+pub(crate) fn create_network_output_correct_errors(
     mut builder: crate::operation::create_network::builders::CreateNetworkOutputBuilder,
 ) -> crate::operation::create_network::builders::CreateNetworkOutputBuilder {
     if builder.network.is_none() {
@@ -92,7 +92,7 @@ pub(crate) fn create_network_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn deactivate_device_identifier_output_output_correct_errors(
+pub(crate) fn deactivate_device_identifier_output_correct_errors(
     mut builder: crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierOutputBuilder,
 ) -> crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierOutputBuilder {
     if builder.device_identifier.is_none() {
@@ -104,7 +104,7 @@ pub(crate) fn deactivate_device_identifier_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn delete_network_output_output_correct_errors(
+pub(crate) fn delete_network_output_correct_errors(
     mut builder: crate::operation::delete_network::builders::DeleteNetworkOutputBuilder,
 ) -> crate::operation::delete_network::builders::DeleteNetworkOutputBuilder {
     if builder.network.is_none() {
@@ -116,7 +116,7 @@ pub(crate) fn delete_network_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_network_output_output_correct_errors(
+pub(crate) fn get_network_output_correct_errors(
     mut builder: crate::operation::get_network::builders::GetNetworkOutputBuilder,
 ) -> crate::operation::get_network::builders::GetNetworkOutputBuilder {
     if builder.network.is_none() {
@@ -128,7 +128,7 @@ pub(crate) fn get_network_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_network_resource_output_output_correct_errors(
+pub(crate) fn get_network_resource_output_correct_errors(
     mut builder: crate::operation::get_network_resource::builders::GetNetworkResourceOutputBuilder,
 ) -> crate::operation::get_network_resource::builders::GetNetworkResourceOutputBuilder {
     if builder.network_resource.is_none() {
@@ -140,7 +140,7 @@ pub(crate) fn get_network_resource_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_order_output_output_correct_errors(
+pub(crate) fn get_order_output_correct_errors(
     mut builder: crate::operation::get_order::builders::GetOrderOutputBuilder,
 ) -> crate::operation::get_order::builders::GetOrderOutputBuilder {
     if builder.order.is_none() {

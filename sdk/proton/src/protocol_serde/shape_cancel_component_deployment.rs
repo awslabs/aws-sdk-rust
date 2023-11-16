@@ -127,7 +127,7 @@ pub fn de_cancel_component_deployment_http_response(
         output = crate::protocol_serde::shape_cancel_component_deployment::de_cancel_component_deployment(_response_body, output)
             .map_err(crate::operation::cancel_component_deployment::CancelComponentDeploymentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::cancel_component_deployment_output_output_correct_errors(output).build()
+        crate::serde_util::cancel_component_deployment_output_correct_errors(output).build()
     })
 }
 
@@ -136,7 +136,7 @@ pub fn ser_cancel_component_deployment_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_cancel_component_deployment_input::ser_cancel_component_deployment_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_cancel_component_deployment_input::ser_cancel_component_deployment_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

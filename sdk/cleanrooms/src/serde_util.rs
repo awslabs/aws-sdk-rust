@@ -14,7 +14,7 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn batch_get_collaboration_analysis_template_output_output_correct_errors(
+pub(crate) fn batch_get_collaboration_analysis_template_output_correct_errors(
     mut builder: crate::operation::batch_get_collaboration_analysis_template::builders::BatchGetCollaborationAnalysisTemplateOutputBuilder,
 ) -> crate::operation::batch_get_collaboration_analysis_template::builders::BatchGetCollaborationAnalysisTemplateOutputBuilder {
     if builder.collaboration_analysis_templates.is_none() {
@@ -26,7 +26,7 @@ pub(crate) fn batch_get_collaboration_analysis_template_output_output_correct_er
     builder
 }
 
-pub(crate) fn batch_get_schema_output_output_correct_errors(
+pub(crate) fn batch_get_schema_output_correct_errors(
     mut builder: crate::operation::batch_get_schema::builders::BatchGetSchemaOutputBuilder,
 ) -> crate::operation::batch_get_schema::builders::BatchGetSchemaOutputBuilder {
     if builder.schemas.is_none() {
@@ -53,7 +53,7 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
-pub(crate) fn create_analysis_template_output_output_correct_errors(
+pub(crate) fn create_analysis_template_output_correct_errors(
     mut builder: crate::operation::create_analysis_template::builders::CreateAnalysisTemplateOutputBuilder,
 ) -> crate::operation::create_analysis_template::builders::CreateAnalysisTemplateOutputBuilder {
     if builder.analysis_template.is_none() {
@@ -65,7 +65,7 @@ pub(crate) fn create_analysis_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_collaboration_output_output_correct_errors(
+pub(crate) fn create_collaboration_output_correct_errors(
     mut builder: crate::operation::create_collaboration::builders::CreateCollaborationOutputBuilder,
 ) -> crate::operation::create_collaboration::builders::CreateCollaborationOutputBuilder {
     if builder.collaboration.is_none() {
@@ -77,7 +77,7 @@ pub(crate) fn create_collaboration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_configured_table_output_output_correct_errors(
+pub(crate) fn create_configured_table_output_correct_errors(
     mut builder: crate::operation::create_configured_table::builders::CreateConfiguredTableOutputBuilder,
 ) -> crate::operation::create_configured_table::builders::CreateConfiguredTableOutputBuilder {
     if builder.configured_table.is_none() {
@@ -89,7 +89,7 @@ pub(crate) fn create_configured_table_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_configured_table_analysis_rule_output_output_correct_errors(
+pub(crate) fn create_configured_table_analysis_rule_output_correct_errors(
     mut builder: crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleOutputBuilder,
 ) -> crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleOutputBuilder {
     if builder.analysis_rule.is_none() {
@@ -101,7 +101,7 @@ pub(crate) fn create_configured_table_analysis_rule_output_output_correct_errors
     builder
 }
 
-pub(crate) fn create_configured_table_association_output_output_correct_errors(
+pub(crate) fn create_configured_table_association_output_correct_errors(
     mut builder: crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationOutputBuilder,
 ) -> crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationOutputBuilder {
     if builder.configured_table_association.is_none() {
@@ -113,7 +113,7 @@ pub(crate) fn create_configured_table_association_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_membership_output_output_correct_errors(
+pub(crate) fn create_membership_output_correct_errors(
     mut builder: crate::operation::create_membership::builders::CreateMembershipOutputBuilder,
 ) -> crate::operation::create_membership::builders::CreateMembershipOutputBuilder {
     if builder.membership.is_none() {
@@ -125,7 +125,7 @@ pub(crate) fn create_membership_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_analysis_template_output_output_correct_errors(
+pub(crate) fn get_analysis_template_output_correct_errors(
     mut builder: crate::operation::get_analysis_template::builders::GetAnalysisTemplateOutputBuilder,
 ) -> crate::operation::get_analysis_template::builders::GetAnalysisTemplateOutputBuilder {
     if builder.analysis_template.is_none() {
@@ -137,7 +137,7 @@ pub(crate) fn get_analysis_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_collaboration_output_output_correct_errors(
+pub(crate) fn get_collaboration_output_correct_errors(
     mut builder: crate::operation::get_collaboration::builders::GetCollaborationOutputBuilder,
 ) -> crate::operation::get_collaboration::builders::GetCollaborationOutputBuilder {
     if builder.collaboration.is_none() {
@@ -149,7 +149,7 @@ pub(crate) fn get_collaboration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_collaboration_analysis_template_output_output_correct_errors(
+pub(crate) fn get_collaboration_analysis_template_output_correct_errors(
     mut builder: crate::operation::get_collaboration_analysis_template::builders::GetCollaborationAnalysisTemplateOutputBuilder,
 ) -> crate::operation::get_collaboration_analysis_template::builders::GetCollaborationAnalysisTemplateOutputBuilder {
     if builder.collaboration_analysis_template.is_none() {
@@ -161,7 +161,7 @@ pub(crate) fn get_collaboration_analysis_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_configured_table_output_output_correct_errors(
+pub(crate) fn get_configured_table_output_correct_errors(
     mut builder: crate::operation::get_configured_table::builders::GetConfiguredTableOutputBuilder,
 ) -> crate::operation::get_configured_table::builders::GetConfiguredTableOutputBuilder {
     if builder.configured_table.is_none() {
@@ -173,7 +173,7 @@ pub(crate) fn get_configured_table_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_configured_table_analysis_rule_output_output_correct_errors(
+pub(crate) fn get_configured_table_analysis_rule_output_correct_errors(
     mut builder: crate::operation::get_configured_table_analysis_rule::builders::GetConfiguredTableAnalysisRuleOutputBuilder,
 ) -> crate::operation::get_configured_table_analysis_rule::builders::GetConfiguredTableAnalysisRuleOutputBuilder {
     if builder.analysis_rule.is_none() {
@@ -185,7 +185,7 @@ pub(crate) fn get_configured_table_analysis_rule_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_configured_table_association_output_output_correct_errors(
+pub(crate) fn get_configured_table_association_output_correct_errors(
     mut builder: crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationOutputBuilder,
 ) -> crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationOutputBuilder {
     if builder.configured_table_association.is_none() {
@@ -197,7 +197,7 @@ pub(crate) fn get_configured_table_association_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_membership_output_output_correct_errors(
+pub(crate) fn get_membership_output_correct_errors(
     mut builder: crate::operation::get_membership::builders::GetMembershipOutputBuilder,
 ) -> crate::operation::get_membership::builders::GetMembershipOutputBuilder {
     if builder.membership.is_none() {
@@ -209,7 +209,7 @@ pub(crate) fn get_membership_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_protected_query_output_output_correct_errors(
+pub(crate) fn get_protected_query_output_correct_errors(
     mut builder: crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder,
 ) -> crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder {
     if builder.protected_query.is_none() {
@@ -221,7 +221,7 @@ pub(crate) fn get_protected_query_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_schema_output_output_correct_errors(
+pub(crate) fn get_schema_output_correct_errors(
     mut builder: crate::operation::get_schema::builders::GetSchemaOutputBuilder,
 ) -> crate::operation::get_schema::builders::GetSchemaOutputBuilder {
     if builder.schema.is_none() {
@@ -233,7 +233,7 @@ pub(crate) fn get_schema_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_schema_analysis_rule_output_output_correct_errors(
+pub(crate) fn get_schema_analysis_rule_output_correct_errors(
     mut builder: crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder,
 ) -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder {
     if builder.analysis_rule.is_none() {
@@ -245,7 +245,7 @@ pub(crate) fn get_schema_analysis_rule_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_analysis_templates_output_output_correct_errors(
+pub(crate) fn list_analysis_templates_output_correct_errors(
     mut builder: crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder,
 ) -> crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder {
     if builder.analysis_template_summaries.is_none() {
@@ -254,7 +254,7 @@ pub(crate) fn list_analysis_templates_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_collaboration_analysis_templates_output_output_correct_errors(
+pub(crate) fn list_collaboration_analysis_templates_output_correct_errors(
     mut builder: crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder,
 ) -> crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder {
     if builder.collaboration_analysis_template_summaries.is_none() {
@@ -263,7 +263,7 @@ pub(crate) fn list_collaboration_analysis_templates_output_output_correct_errors
     builder
 }
 
-pub(crate) fn list_collaborations_output_output_correct_errors(
+pub(crate) fn list_collaborations_output_correct_errors(
     mut builder: crate::operation::list_collaborations::builders::ListCollaborationsOutputBuilder,
 ) -> crate::operation::list_collaborations::builders::ListCollaborationsOutputBuilder {
     if builder.collaboration_list.is_none() {
@@ -272,7 +272,7 @@ pub(crate) fn list_collaborations_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_configured_table_associations_output_output_correct_errors(
+pub(crate) fn list_configured_table_associations_output_correct_errors(
     mut builder: crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsOutputBuilder,
 ) -> crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsOutputBuilder {
     if builder.configured_table_association_summaries.is_none() {
@@ -281,7 +281,7 @@ pub(crate) fn list_configured_table_associations_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_configured_tables_output_output_correct_errors(
+pub(crate) fn list_configured_tables_output_correct_errors(
     mut builder: crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder,
 ) -> crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder {
     if builder.configured_table_summaries.is_none() {
@@ -290,7 +290,7 @@ pub(crate) fn list_configured_tables_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_members_output_output_correct_errors(
+pub(crate) fn list_members_output_correct_errors(
     mut builder: crate::operation::list_members::builders::ListMembersOutputBuilder,
 ) -> crate::operation::list_members::builders::ListMembersOutputBuilder {
     if builder.member_summaries.is_none() {
@@ -299,7 +299,7 @@ pub(crate) fn list_members_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_memberships_output_output_correct_errors(
+pub(crate) fn list_memberships_output_correct_errors(
     mut builder: crate::operation::list_memberships::builders::ListMembershipsOutputBuilder,
 ) -> crate::operation::list_memberships::builders::ListMembershipsOutputBuilder {
     if builder.membership_summaries.is_none() {
@@ -308,7 +308,7 @@ pub(crate) fn list_memberships_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_protected_queries_output_output_correct_errors(
+pub(crate) fn list_protected_queries_output_correct_errors(
     mut builder: crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder,
 ) -> crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder {
     if builder.protected_queries.is_none() {
@@ -317,7 +317,7 @@ pub(crate) fn list_protected_queries_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_schemas_output_output_correct_errors(
+pub(crate) fn list_schemas_output_correct_errors(
     mut builder: crate::operation::list_schemas::builders::ListSchemasOutputBuilder,
 ) -> crate::operation::list_schemas::builders::ListSchemasOutputBuilder {
     if builder.schema_summaries.is_none() {
@@ -326,7 +326,7 @@ pub(crate) fn list_schemas_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+pub(crate) fn list_tags_for_resource_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
@@ -335,7 +335,7 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn start_protected_query_output_output_correct_errors(
+pub(crate) fn start_protected_query_output_correct_errors(
     mut builder: crate::operation::start_protected_query::builders::StartProtectedQueryOutputBuilder,
 ) -> crate::operation::start_protected_query::builders::StartProtectedQueryOutputBuilder {
     if builder.protected_query.is_none() {
@@ -347,7 +347,7 @@ pub(crate) fn start_protected_query_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_analysis_template_output_output_correct_errors(
+pub(crate) fn update_analysis_template_output_correct_errors(
     mut builder: crate::operation::update_analysis_template::builders::UpdateAnalysisTemplateOutputBuilder,
 ) -> crate::operation::update_analysis_template::builders::UpdateAnalysisTemplateOutputBuilder {
     if builder.analysis_template.is_none() {
@@ -359,7 +359,7 @@ pub(crate) fn update_analysis_template_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_collaboration_output_output_correct_errors(
+pub(crate) fn update_collaboration_output_correct_errors(
     mut builder: crate::operation::update_collaboration::builders::UpdateCollaborationOutputBuilder,
 ) -> crate::operation::update_collaboration::builders::UpdateCollaborationOutputBuilder {
     if builder.collaboration.is_none() {
@@ -371,7 +371,7 @@ pub(crate) fn update_collaboration_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_configured_table_output_output_correct_errors(
+pub(crate) fn update_configured_table_output_correct_errors(
     mut builder: crate::operation::update_configured_table::builders::UpdateConfiguredTableOutputBuilder,
 ) -> crate::operation::update_configured_table::builders::UpdateConfiguredTableOutputBuilder {
     if builder.configured_table.is_none() {
@@ -383,7 +383,7 @@ pub(crate) fn update_configured_table_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_configured_table_analysis_rule_output_output_correct_errors(
+pub(crate) fn update_configured_table_analysis_rule_output_correct_errors(
     mut builder: crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleOutputBuilder,
 ) -> crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleOutputBuilder {
     if builder.analysis_rule.is_none() {
@@ -395,7 +395,7 @@ pub(crate) fn update_configured_table_analysis_rule_output_output_correct_errors
     builder
 }
 
-pub(crate) fn update_configured_table_association_output_output_correct_errors(
+pub(crate) fn update_configured_table_association_output_correct_errors(
     mut builder: crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationOutputBuilder,
 ) -> crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationOutputBuilder {
     if builder.configured_table_association.is_none() {
@@ -407,7 +407,7 @@ pub(crate) fn update_configured_table_association_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_membership_output_output_correct_errors(
+pub(crate) fn update_membership_output_correct_errors(
     mut builder: crate::operation::update_membership::builders::UpdateMembershipOutputBuilder,
 ) -> crate::operation::update_membership::builders::UpdateMembershipOutputBuilder {
     if builder.membership.is_none() {
@@ -419,7 +419,7 @@ pub(crate) fn update_membership_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn update_protected_query_output_output_correct_errors(
+pub(crate) fn update_protected_query_output_correct_errors(
     mut builder: crate::operation::update_protected_query::builders::UpdateProtectedQueryOutputBuilder,
 ) -> crate::operation::update_protected_query::builders::UpdateProtectedQueryOutputBuilder {
     if builder.protected_query.is_none() {

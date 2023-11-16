@@ -120,7 +120,7 @@ pub fn de_delete_space_http_response(
         output = crate::protocol_serde::shape_delete_space::de_delete_space(_response_body, output)
             .map_err(crate::operation::delete_space::DeleteSpaceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_space_output_output_correct_errors(output)
+        crate::serde_util::delete_space_output_correct_errors(output)
             .build()
             .map_err(crate::operation::delete_space::DeleteSpaceError::unhandled)?
     })

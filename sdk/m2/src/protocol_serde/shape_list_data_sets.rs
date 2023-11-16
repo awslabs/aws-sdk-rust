@@ -156,7 +156,7 @@ pub fn de_list_data_sets_http_response(
         output = crate::protocol_serde::shape_list_data_sets::de_list_data_sets(_response_body, output)
             .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_data_sets_output_output_correct_errors(output)
+        crate::serde_util::list_data_sets_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_data_sets::ListDataSetsError::unhandled)?
     })

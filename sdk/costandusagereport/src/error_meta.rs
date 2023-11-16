@@ -28,11 +28,6 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
-    }
-}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_report_definition::DeleteReportDefinitionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

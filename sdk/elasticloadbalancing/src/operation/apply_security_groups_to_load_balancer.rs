@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ApplySecurit
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_apply_security_groups_to_load_balancer_input::ser_apply_security_groups_to_load_balancer_input_input_input(
+            crate::protocol_serde::shape_apply_security_groups_to_load_balancer_input::ser_apply_security_groups_to_load_balancer_input_input(
                 &input,
             )?,
         );

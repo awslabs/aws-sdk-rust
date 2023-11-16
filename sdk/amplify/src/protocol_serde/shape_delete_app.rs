@@ -111,7 +111,7 @@ pub fn de_delete_app_http_response(
         output = crate::protocol_serde::shape_delete_app::de_delete_app(_response_body, output)
             .map_err(crate::operation::delete_app::DeleteAppError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::delete_app_output_output_correct_errors(output).build()
+        crate::serde_util::delete_app_output_correct_errors(output).build()
     })
 }
 

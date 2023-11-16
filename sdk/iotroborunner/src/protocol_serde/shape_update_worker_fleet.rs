@@ -110,7 +110,7 @@ pub fn de_update_worker_fleet_http_response(
         output = crate::protocol_serde::shape_update_worker_fleet::de_update_worker_fleet(_response_body, output)
             .map_err(crate::operation::update_worker_fleet::UpdateWorkerFleetError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_worker_fleet_output_output_correct_errors(output)
+        crate::serde_util::update_worker_fleet_output_correct_errors(output)
             .build()
             .map_err(crate::operation::update_worker_fleet::UpdateWorkerFleetError::unhandled)?
     })
@@ -121,7 +121,7 @@ pub fn ser_update_worker_fleet_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_update_worker_fleet_input::ser_update_worker_fleet_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_update_worker_fleet_input::ser_update_worker_fleet_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

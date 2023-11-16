@@ -25,8 +25,8 @@ The SDK provides one crate per AWS service. You must add [Tokio](https://crates.
 
     ```toml
     [dependencies]
-    aws-config = "0.57.2"
-    aws-sdk-dynamodb = "0.36.0"
+    aws-config = "0.57.1"
+    aws-sdk-dynamodb = "0.37.0"
     tokio = { version = "1", features = ["full"] }
     ```
 

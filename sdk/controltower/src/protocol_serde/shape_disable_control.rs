@@ -141,7 +141,7 @@ pub fn de_disable_control_http_response(
         output = crate::protocol_serde::shape_disable_control::de_disable_control(_response_body, output)
             .map_err(crate::operation::disable_control::DisableControlError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::disable_control_output_output_correct_errors(output)
+        crate::serde_util::disable_control_output_correct_errors(output)
             .build()
             .map_err(crate::operation::disable_control::DisableControlError::unhandled)?
     })
@@ -152,7 +152,7 @@ pub fn ser_disable_control_input(
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_disable_control_input::ser_disable_control_input_input(&mut object, input)?;
+    crate::protocol_serde::shape_disable_control_input::ser_disable_control_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

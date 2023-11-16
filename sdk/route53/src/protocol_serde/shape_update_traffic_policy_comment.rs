@@ -84,7 +84,7 @@ pub fn de_update_traffic_policy_comment_http_response(
         output = crate::protocol_serde::shape_update_traffic_policy_comment::de_update_traffic_policy_comment(_response_body, output)
             .map_err(crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::update_traffic_policy_comment_output_output_correct_errors(output).build()
+        crate::serde_util::update_traffic_policy_comment_output_correct_errors(output).build()
     })
 }
 
@@ -98,7 +98,7 @@ pub fn ser_update_traffic_policy_comment_op_input(
         let mut root = writer
             .start_el("UpdateTrafficPolicyCommentRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::protocol_serde::shape_update_traffic_policy_comment_input::ser_update_traffic_policy_comment_input_input_input(input, root)?
+        crate::protocol_serde::shape_update_traffic_policy_comment_input::ser_update_traffic_policy_comment_input_input(input, root)?
     }
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

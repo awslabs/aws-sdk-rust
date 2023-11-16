@@ -130,7 +130,7 @@ pub fn de_activate_key_signing_key_http_response(
         output = crate::protocol_serde::shape_activate_key_signing_key::de_activate_key_signing_key(_response_body, output)
             .map_err(crate::operation::activate_key_signing_key::ActivateKeySigningKeyError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::activate_key_signing_key_output_output_correct_errors(output).build()
+        crate::serde_util::activate_key_signing_key_output_correct_errors(output).build()
     })
 }
 

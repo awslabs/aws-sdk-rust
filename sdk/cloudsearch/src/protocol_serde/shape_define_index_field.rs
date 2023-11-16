@@ -123,7 +123,7 @@ pub fn de_define_index_field_http_response(
         output = crate::protocol_serde::shape_define_index_field::de_define_index_field(_response_body, output)
             .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::define_index_field_output_output_correct_errors(output).build()
+        crate::serde_util::define_index_field_output_correct_errors(output).build()
     })
 }
 

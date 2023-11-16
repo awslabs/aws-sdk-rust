@@ -99,7 +99,7 @@ pub fn de_list_sol_network_packages_http_response(
         output = crate::protocol_serde::shape_list_sol_network_packages::de_list_sol_network_packages(_response_body, output)
             .map_err(crate::operation::list_sol_network_packages::ListSolNetworkPackagesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::list_sol_network_packages_output_output_correct_errors(output)
+        crate::serde_util::list_sol_network_packages_output_correct_errors(output)
             .build()
             .map_err(crate::operation::list_sol_network_packages::ListSolNetworkPackagesError::unhandled)?
     })

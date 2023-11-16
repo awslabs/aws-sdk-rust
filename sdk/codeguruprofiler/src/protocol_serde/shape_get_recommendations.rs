@@ -95,7 +95,7 @@ pub fn de_get_recommendations_http_response(
         output = crate::protocol_serde::shape_get_recommendations::de_get_recommendations(_response_body, output)
             .map_err(crate::operation::get_recommendations::GetRecommendationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_recommendations_output_output_correct_errors(output)
+        crate::serde_util::get_recommendations_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_recommendations::GetRecommendationsError::unhandled)?
     })

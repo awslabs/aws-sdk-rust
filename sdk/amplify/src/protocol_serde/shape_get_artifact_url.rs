@@ -108,7 +108,7 @@ pub fn de_get_artifact_url_http_response(
         output = crate::protocol_serde::shape_get_artifact_url::de_get_artifact_url(_response_body, output)
             .map_err(crate::operation::get_artifact_url::GetArtifactUrlError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::get_artifact_url_output_output_correct_errors(output)
+        crate::serde_util::get_artifact_url_output_correct_errors(output)
             .build()
             .map_err(crate::operation::get_artifact_url::GetArtifactUrlError::unhandled)?
     })

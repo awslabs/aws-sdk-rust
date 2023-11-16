@@ -90,7 +90,7 @@ impl DescribeDbSubnetGroupsPaginator {
                         // If the input member is None or it was an error
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
-                                let new_token = crate::lens::reflens_describe_db_subnet_groups_output_output_marker(resp);
+                                let new_token = crate::lens::reflens_describe_db_subnet_groups_output_marker(resp);
                                 let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                 if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                     true
@@ -139,7 +139,7 @@ impl DescribeDbSubnetGroupsPaginatorItems {
         >,
     > {
         ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_describe_db_subnet_groups_output_output_db_subnet_groups(page)
+            crate::lens::lens_describe_db_subnet_groups_output_db_subnet_groups(page)
                 .unwrap_or_default()
                 .into_iter()
         })
